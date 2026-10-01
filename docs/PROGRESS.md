@@ -26,8 +26,13 @@
   - `covariates_beataml.tsv`: 671 RNA samples / 613 subjects; one per subject (initial diagnosis > residual > relapse; marrow > blood); 472 flagged samples have drug response.
   - `genes_protein_coding_v23.tsv`: 19,797 genes.
   - The one ALL "T-lineage" relapse sample belongs to a clinically B-precursor patient (excluded anyway).
+- BeatAML one-per-subject now prefers the drug-tested specimen within a disease stage (475/479 drug-tested subjects covered).
+- Step 4 (signatures): `scripts/30_signatures.R` -> `results/step4/signature_summary.tsv`, `z_tumor_vs_gtex.tsv`, `z_tumor_vs_adjacent.tsv` (gene x group signed z); full topTables in `data/processed/step4/` (not in git).
+  - limma-voom, protein-coding genes, filterByExpr + TMM; ~ condition + sex + age + ESTIMATE score + tumor sample-type indicators; one sample per patient/donor; contrasts need >= 10 normals.
+  - 38 groups have a tumor-vs-GTEx signature; 18 also tumor-vs-adjacent (BLCA adjacent only: GTEx bladder n=9). Spearman agreement GTEx vs adjacent: median ~0.6 (0.33 KIRC, 0.35 PRAD to 0.80 BRCA-Basal/UCEC-EEC).
+  - No signature (no usable normal): TCGA-LAML, TARGET-AML, ALL-B, DLBC, MESO, THYM, UVM, CHOL (9 adjacent), CESC-SCC and CESC-AD (GTEx cervix 7 donors after one-per-donor).
+  - Open: BRCA GTEx normals include male donors (sex-adjusted, but consider female-only); extended signature with lincRNA/antisense genes for mechanism (optional).
 
 ## Next
 - CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
 - Decide: subtype splits for mixed cohorts; whether to pull DepMap; recount3 non-cancer diseases.
-- Step 4: limma-voom signatures per included group using covariates_toil.tsv (primary_per_patient rows).

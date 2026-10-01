@@ -1,0 +1,99 @@
+group_id	contrast	n_tumor	n_normal	status	note	n_dropped_missing_cov	n_dropped_rare_type	covariates	n_genes	n_de_fdr05_lfc1	n_up	n_down	spearman_gtex_vs_adjacent
+ALL-B	adjacent	149	0	skipped	< 10 normals								
+ALL-B	gtex	149	0	skipped	< 10 normals								
+BRCA-Basal	adjacent	190	17	ok	""	0	0	age_z,estimate_z	17523	5202	2083	3119	0.802
+BRCA-Basal	gtex	190	178	ok	""	0	0	age_z,estimate_z,sexmale	17418	7238	3077	4161	0.802
+BRCA-Her2	adjacent	81	9	skipped	< 10 normals								
+BRCA-Her2	gtex	81	178	ok	""	0	0	age_z,estimate_z,sexmale	17036	7321	2924	4397	
+BRCA-LumA	adjacent	563	62	ok	""	2	0	age_z,estimate_z,sexmale	18275	4461	1940	2521	0.693
+BRCA-LumA	gtex	563	178	ok	""	2	0	age_z,estimate_z,sexmale	17478	6302	2474	3828	0.693
+BRCA-LumB	adjacent	217	23	ok	""	0	0	age_z,estimate_z,sexmale	17668	5535	1945	3590	0.78
+BRCA-LumB	gtex	217	178	ok	""	0	0	age_z,estimate_z,sexmale	17386	7409	2996	4413	0.78
+CESC-AD	adjacent	46	1	skipped	< 10 normals								
+CESC-AD	gtex	46	7	skipped	< 10 normals								
+CESC-SCC	adjacent	252	2	skipped	< 10 normals								
+CESC-SCC	gtex	252	7	skipped	< 10 normals								
+ESCA-AD	adjacent	89	10	ok	""	0	0	age_z,estimate_z,sexmale	17951	3393	1178	2215	0.502
+ESCA-AD	gtex	89	317	ok	""	0	0	age_z,estimate_z,sexmale	17379	6641	3074	3567	0.502
+ESCA-SCC	adjacent	92	3	skipped	< 10 normals								
+ESCA-SCC	gtex	92	317	ok	""	0	0	age_z,estimate_z,sexmale	17098	5608	2585	3023	
+LGG-IDHmut-codel	adjacent	173	0	skipped	< 10 normals								
+LGG-IDHmut-codel	gtex	172	151	ok	""	0	1	age_z,estimate_z,sexmale	17217	5917	2159	3758	
+LGG-IDHmut-noncodel	adjacent	241	0	skipped	< 10 normals								
+LGG-IDHmut-noncodel	gtex	239	151	ok	""	1	1	age_z,estimate_z,sexmale	17271	5715	1894	3821	
+LGG-IDHwt	adjacent	94	0	skipped	< 10 normals								
+LGG-IDHwt	gtex	94	151	ok	""	0	0	age_z,estimate_z,sexmale	17143	4735	1496	3239	
+PCPG-PGL	adjacent	31	0	skipped	< 10 normals								
+PCPG-PGL	gtex	31	125	ok	""	0	0	age_z,estimate_z,sexmale	16438	6233	3142	3091	
+PCPG-PHEO	adjacent	146	3	skipped	< 10 normals								
+PCPG-PHEO	gtex	146	125	ok	""	0	0	age_z,estimate_z,sexmale	17099	6225	3240	2985	
+SARC-DDLPS	adjacent	57	1	skipped	< 10 normals								
+SARC-DDLPS	gtex	57	385	ok	""	0	0	age_z,estimate_z,sexmale	17072	5594	2199	3395	
+SARC-LMS	adjacent	104	1	skipped	< 10 normals								
+SARC-LMS	gtex	104	379	ok	""	0	0	age_z,estimate_z,sexmale	16979	7657	3983	3674	
+SARC-UPS	adjacent	76	0	skipped	< 10 normals								
+SARC-UPS	gtex	76	478	ok	""	0	0	age_z,estimate_z,sexmale	16597	6214	2641	3573	
+TARGET-AML	adjacent	162	0	skipped	< 10 normals								
+TARGET-AML	gtex	162	0	skipped	< 10 normals								
+TARGET-NBL	adjacent	155	0	skipped	< 10 normals								
+TARGET-NBL	gtex	153	125	ok	""	0	2	age_z,estimate_z,sexmale	17370	7357	3890	3467	
+TARGET-WT	adjacent	121	6	skipped	< 10 normals								
+TARGET-WT	gtex	120	28	ok	""	0	1	age_z,estimate_z,sexmale	17987	2804	1199	1605	
+TCGA-ACC	adjacent	77	0	skipped	< 10 normals								
+TCGA-ACC	gtex	77	125	ok	""	0	0	age_z,estimate_z,sexmale	16893	4488	1508	2980	
+TCGA-BLCA	adjacent	407	19	ok	""	0	0	age_z,estimate_z,sexmale	17670	3975	1712	2263	
+TCGA-BLCA	gtex	407	9	skipped	< 10 normals								
+TCGA-CHOL	adjacent	36	9	skipped	< 10 normals								
+TCGA-CHOL	gtex	36	0	skipped	< 10 normals								
+TCGA-COAD	adjacent	285	41	ok	""	2	0	age_z,estimate_z,sexmale	17003	4331	1813	2518	0.555
+TCGA-COAD	gtex	285	165	ok	""	2	0	age_z,estimate_z,sexmale	17270	6699	3155	3544	0.555
+TCGA-DLBC	adjacent	47	0	skipped	< 10 normals								
+TCGA-DLBC	gtex	47	0	skipped	< 10 normals								
+TCGA-GBM	adjacent	160	5	skipped	< 10 normals								
+TCGA-GBM	gtex	159	151	ok	""	1	0	age_z,estimate_z,st_recurrent,sexmale	17596	7045	2838	4207	
+TCGA-HNSC	adjacent	517	44	ok	""	1	0	age_z,estimate_z,sexmale	17654	4158	1552	2606	0.631
+TCGA-HNSC	gtex	517	269	ok	""	1	0	age_z,estimate_z,sexmale	17431	5946	2434	3512	0.631
+TCGA-KICH	adjacent	66	25	ok	""	0	0	age_z,estimate_z,sexmale	17104	5693	1851	3842	0.747
+TCGA-KICH	gtex	66	28	ok	""	0	0	age_z,estimate_z,sexmale	17281	7442	3845	3597	0.747
+TCGA-KIRC	adjacent	530	72	ok	""	0	0	age_z,estimate_z,sexmale	17365	4186	1624	2562	0.329
+TCGA-KIRC	gtex	530	28	ok	""	0	0	age_z,estimate_z,sexmale	17598	6342	3475	2867	0.329
+TCGA-KIRP	adjacent	285	32	ok	""	3	0	age_z,estimate_z,sexmale	17203	4815	1714	3101	0.586
+TCGA-KIRP	gtex	285	28	ok	""	3	0	age_z,estimate_z,sexmale	17279	5960	3195	2765	0.586
+TCGA-LAML	adjacent	173	0	skipped	< 10 normals								
+TCGA-LAML	gtex	173	0	skipped	< 10 normals								
+TCGA-LIHC	adjacent	368	50	ok	""	1	0	age_z,estimate_z,sexmale	17003	3752	1710	2042	0.44
+TCGA-LIHC	gtex	368	109	ok	""	1	0	age_z,estimate_z,sexmale	17079	4868	1709	3159	0.44
+TCGA-LUAD	adjacent	494	59	ok	""	19	0	age_z,estimate_z,sexmale	17473	3995	1745	2250	0.593
+TCGA-LUAD	gtex	494	266	ok	""	19	0	age_z,estimate_z,sexmale	17478	5746	2983	2763	0.593
+TCGA-LUSC	adjacent	489	50	ok	""	9	0	age_z,estimate_z,sexmale	17822	5114	2609	2505	0.726
+TCGA-LUSC	gtex	489	266	ok	""	9	0	age_z,estimate_z,sexmale	17683	6955	3656	3299	0.726
+TCGA-MESO	adjacent	87	0	skipped	< 10 normals								
+TCGA-MESO	gtex	87	0	skipped	< 10 normals								
+TCGA-OV	adjacent	422	0	skipped	< 10 normals								
+TCGA-OV	gtex	420	88	ok	""	0	2	age_z,estimate_z	17651	8615	4553	4062	
+TCGA-PAAD	adjacent	178	4	skipped	< 10 normals								
+TCGA-PAAD	gtex	178	165	ok	""	0	0	age_z,estimate_z,sexmale	17123	5651	3119	2532	
+TCGA-PRAD	adjacent	494	51	ok	""	0	0	age_z,estimate_z	17306	2250	786	1464	0.347
+TCGA-PRAD	gtex	494	100	ok	""	0	0	age_z,estimate_z	17477	5155	1984	3171	0.347
+TCGA-READ	adjacent	91	10	ok	""	1	0	age_z,estimate_z,sexmale	16793	3865	1534	2331	0.572
+TCGA-READ	gtex	91	165	ok	""	1	0	age_z,estimate_z,sexmale	17016	6944	3423	3521	0.572
+TCGA-SKCM	adjacent	466	1	skipped	< 10 normals								
+TCGA-SKCM	gtex	458	394	ok	""	8	0	age_z,estimate_z,st_metastatic,sexmale	17573	8379	3158	5221	
+TCGA-STAD	adjacent	408	36	ok	""	5	0	age_z,estimate_z,sexmale	18087	4041	1554	2487	0.628
+TCGA-STAD	gtex	408	172	ok	""	5	0	age_z,estimate_z,sexmale	17708	6268	2689	3579	0.628
+TCGA-THCA	adjacent	504	59	ok	""	0	0	age_z,estimate_z,sexmale	16977	2953	1390	1563	0.488
+TCGA-THCA	gtex	504	272	ok	""	0	0	age_z,estimate_z,sexmale	17308	5342	1814	3528	0.488
+TCGA-THYM	adjacent	119	2	skipped	< 10 normals								
+TCGA-THYM	gtex	119	0	skipped	< 10 normals								
+TCGA-UCS	adjacent	57	0	skipped	< 10 normals								
+TCGA-UCS	gtex	57	78	ok	""	0	0	age_z,estimate_z	17540	8147	4341	3806	
+TCGA-UVM	adjacent	79	0	skipped	< 10 normals								
+TCGA-UVM	gtex	79	0	skipped	< 10 normals								
+TGCT-NSGCT	adjacent	70	0	skipped	< 10 normals								
+TGCT-NSGCT	gtex	70	165	ok	""	0	0	age_z,estimate_z	18596	9335	4012	5323	
+TGCT-SEM	adjacent	62	0	skipped	< 10 normals								
+TGCT-SEM	gtex	62	165	ok	""	0	0	age_z,estimate_z	18450	10368	4283	6085	
+UCEC-EEC	adjacent	104	10	ok	""	3	0	age_z,estimate_z	17288	5851	2743	3108	0.803
+UCEC-EEC	gtex	104	78	ok	""	3	0	age_z,estimate_z	17199	8639	4343	4296	0.803
+UCEC-SER	adjacent	60	3	skipped	< 10 normals								
+UCEC-SER	gtex	60	78	ok	""	0	0	age_z,estimate_z	17324	8521	4301	4220	
