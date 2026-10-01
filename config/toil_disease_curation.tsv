@@ -9,7 +9,7 @@ TCGA-COAD	TCGA	Colon Adenocarcinoma	MONDO:0002271	COAD	UBERON:0001155	Colon - Tr
 TCGA-DLBC	TCGA	Diffuse Large B-Cell Lymphoma	MONDO:0018905	DLBCLNOS	UBERON:0000029		none	solid	no	hematologic; no GTEx lymph node
 TCGA-ESCA	TCGA	Esophageal Carcinoma	MONDO:0019086	ESCA;ESCC	UBERON:0001043	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial	solid	yes	adenocarcinoma + squamous; split by histology before Step 4
 TCGA-GBM	TCGA	Glioblastoma Multiforme	MONDO:0018177	GB	UBERON:0000955	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	no	
-TCGA-HNSC	TCGA	Head & Neck Squamous Cell Carcinoma	MONDO:0010150	HNSC	UBERON:0003343	Minor Salivary Gland	partial	solid	no	salivary gland only proxy for oral mucosa; HPV status matters
+TCGA-HNSC	TCGA	Head & Neck Squamous Cell Carcinoma	MONDO:0010150	HNSC	UBERON:0003343	Esophagus - Mucosa	partial	solid	no	esophageal squamous mucosa as proxy for oral/pharyngeal mucosa (no GTEx oral tissue); HPV status matters; CPTAC-HNSCC (GDC, STAR/v36) is a candidate replication cohort, not pooled
 TCGA-KICH	TCGA	Kidney Chromophobe	MONDO:0017885	CHRCC	UBERON:0002113	Kidney - Cortex	partial	solid	no	GTEx kidney n=28
 TCGA-KIRC	TCGA	Kidney Clear Cell Carcinoma	MONDO:0005005	CCRCC	UBERON:0002113	Kidney - Cortex	partial	solid	no	GTEx kidney n=28
 TCGA-KIRP	TCGA	Kidney Papillary Cell Carcinoma	MONDO:0017884	PRCC	UBERON:0002113	Kidney - Cortex	partial	solid	no	GTEx kidney n=28
@@ -22,7 +22,7 @@ TCGA-PAAD	TCGA	Pancreatic Adenocarcinoma	MONDO:0006047	PAAD	UBERON:0001264	Pancr
 TCGA-PCPG	TCGA	Pheochromocytoma & Paraganglioma	MONDO:0035540	PHC;PGNG	UBERON:0001236	Adrenal Gland	partial	solid	yes	GTEx adrenal is cortex-dominated
 TCGA-PRAD	TCGA	Prostate Adenocarcinoma	MONDO:0005082	PRAD	UBERON:0002367	Prostate	good	solid	no	
 TCGA-READ	TCGA	Rectum Adenocarcinoma	MONDO:0002169	READ	UBERON:0001052	Colon - Transverse	partial	solid	no	no GTEx rectum; colon mucosa proxy
-TCGA-SARC	TCGA	Sarcoma	MONDO:0018078	SARCNOS	UBERON:0002384		none	solid	yes	LMS/DDLPS/UPS/MFS/SS/MPNST mix; split by histology
+TCGA-SARC	TCGA	Sarcoma	MONDO:0018078	SARCNOS	UBERON:0002384	Muscle - Skeletal;Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial	solid	yes	LMS/DDLPS/UPS/MFS/SS/MPNST mix; split by histology, then pick muscle (e.g. LMS) or adipose (e.g. DDLPS) per subtype
 TCGA-SKCM	TCGA	Skin Cutaneous Melanoma	MONDO:0005012	SKCM	UBERON:0002097	Skin - Not Sun Exposed (Suprapubic);Skin - Sun Exposed (Lower Leg)	partial	solid	no	mostly metastatic samples; melanocytes are a minor fraction of skin
 TCGA-STAD	TCGA	Stomach Adenocarcinoma	MONDO:0005036	STAD	UBERON:0000945	Stomach	good	solid	no	
 TCGA-TGCT	TCGA	Testicular Germ Cell Tumor	MONDO:0010108	SEM;NSGCT	UBERON:0000473	Testis	good	solid	yes	seminoma + non-seminoma

@@ -7,12 +7,13 @@
 - Note: Toil expected-count file is `TcgaTargetGtex_gene_expected_count.gz` (not `_rsem_`).
 
 - Step 1 (Toil cohorts): `config/toil_disease_curation.tsv` (hand-curated) -> `scripts/10_ground_toil.py` -> `results/step1/disease_grounding_toil.tsv` + `mondo_descendants.tsv`. 40 cohorts (33 TCGA, 7 TARGET), all IDs validated against pinned MONDO/UBERON/OncoTree/GTEx labels; 10,530 tumor samples.
-  - GTEx normal match: 13 good, 18 partial, 9 none (CHOL, DLBC, MESO, SARC, THYM, UVM, all leukemias).
+  - GTEx normal match: 13 good, 19 partial, 8 none (CHOL, DLBC, MESO, THYM, UVM, all leukemias).
+  - GTEx tissue choices reviewed and approved by PI. Changes: HNSC -> Esophagus - Mucosa (was Minor Salivary Gland); SARC -> Muscle - Skeletal + Adipose (subcutaneous, visceral), to be narrowed per histology.
   - Mixed-histology cohorts to split before Step 4: LGG, BRCA, CESC, ESCA, PCPG, SARC, TGCT, UCEC, TARGET-ALL.
   - TARGET-RT has no tumor samples in Toil (5 normals only); TARGET-CCSK has 13 tumors.
   - DepMap lineage column empty until DepMap is pulled.
 
 ## Next
-- Review curation calls (esp. GTEx tissue choices and `partial` matches).
+- CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
 - Decide: subtype splits for mixed cohorts; whether to pull DepMap; recount3 non-cancer diseases.
 - Step 3 covariate table (purity/ESTIMATE, batch, sex, age).
