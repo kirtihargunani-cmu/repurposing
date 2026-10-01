@@ -196,7 +196,10 @@ def beataml_covariates():
                        usecols=["dbgap_rnaseq_sample"]).dropna()
     stage_prio = {"Initial Diagnosis": 1, "Residual": 2, "Unknown": 3, "Relapse": 4, "Remission": 5}
     spec_prio = {"Bone Marrow Aspirate": 1, "Peripheral Blood": 2, "Leukapheresis": 3}
-    c["_p"] = (c.diseaseStageAtSpecimenCollection.map(stage_prio).fillna(3) * 10
+    # disease stage first; within a stage prefer the drug-tested specimen (for drug-response validation),
+    # then marrow over blood
+    c["_p"] = (c.diseaseStageAtSpecimenCollection.map(stage_prio).fillna(3) * 100
+               + (~c.dbgap_rnaseq_sample.isin(drug.dbgap_rnaseq_sample)) * 10
                + c.specimenType.map(spec_prio).fillna(3))
     c = c.sort_values(["dbgap_subject_id", "_p", "dbgap_rnaseq_sample"])
     c["primary_per_patient"] = ~c.duplicated("dbgap_subject_id")
