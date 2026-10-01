@@ -1,0 +1,839 @@
+mondo_id	descendant_id	descendant_label
+MONDO:0006639	MONDO:0008734	adrenocortical carcinoma, hereditary
+MONDO:0005611	MONDO:0003889	infiltrating bladder urothelial carcinoma, clear cell variant
+MONDO:0005611	MONDO:0003890	infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0003930	non-invasive bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004056	bladder papillary urothelial carcinoma
+MONDO:0005611	MONDO:0004057	micropapillary variant infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004163	bladder urachal urothelial carcinoma
+MONDO:0005611	MONDO:0004278	infiltrating bladder urothelial carcinoma sarcomatoid variant
+MONDO:0005611	MONDO:0004299	infiltrating bladder lymphoepithelioma-like carcinoma
+MONDO:0005611	MONDO:0004415	lipid-cell variant infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004416	plasmacytoid variant infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004417	nested variant infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004418	microcystic variant infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004419	lymphoma-like variant infiltrating bladder urothelial carcinoma
+MONDO:0005611	MONDO:0004703	bladder carcinoma in situ
+MONDO:0005611	MONDO:0850347	bladder sarcomatoid transitional cell carcinoma
+MONDO:0021637	MONDO:0000519	corpus callosum oligodendroglioma
+MONDO:0021637	MONDO:0001400	schwannoma of ureter
+MONDO:0021637	MONDO:0001569	acoustic neuroma
+MONDO:0021637	MONDO:0002540	childhood oligodendroglioma
+MONDO:0021637	MONDO:0002541	spinal cord oligodendroglioma
+MONDO:0021637	MONDO:0002543	adult oligodendroglioma
+MONDO:0021637	MONDO:0002544	brain oligodendroglioma
+MONDO:0021637	MONDO:0002546	schwannoma
+MONDO:0021637	MONDO:0002548	cellular schwannoma
+MONDO:0021637	MONDO:0002549	schwannoma of twelfth cranial nerve
+MONDO:0021637	MONDO:0002554	sympathetic neurilemmoma
+MONDO:0021637	MONDO:0002555	trigeminal schwannoma
+MONDO:0021637	MONDO:0002556	microcystic/reticular schwannoma
+MONDO:0021637	MONDO:0002558	melanotic neurilemmoma
+MONDO:0021637	MONDO:0002559	plexiform schwannoma
+MONDO:0021637	MONDO:0003168	cerebellar pilocytic astrocytoma
+MONDO:0021637	MONDO:0003470	cellular ependymoma
+MONDO:0021637	MONDO:0003473	spinal cord ependymoma
+MONDO:0021637	MONDO:0003474	tanycytic ependymoma
+MONDO:0021637	MONDO:0003475	papillary ependymoma
+MONDO:0021637	MONDO:0003476	clear cell ependymoma
+MONDO:0021637	MONDO:0003477	brain stem ependymoma
+MONDO:0021637	MONDO:0003478	childhood ependymoma
+MONDO:0021637	MONDO:0003894	mediastinal melanocytic neurilemmoma
+MONDO:0021637	MONDO:0003926	neurilemmoma of the pleura
+MONDO:0021637	MONDO:0003980	schwannoma of jugular foramen
+MONDO:0021637	MONDO:0003999	juvenile pilocytic astrocytoma
+MONDO:0021637	MONDO:0004000	childhood pilocytic astrocytoma
+MONDO:0021637	MONDO:0004249	pediatric supratentorial ependymoma
+MONDO:0021637	MONDO:0004361	adult spinal cord ependymoma
+MONDO:0021637	MONDO:0004397	benign mediastinal psammomatous neurilemmoma
+MONDO:0021637	MONDO:0004398	mediastinal schwannoma
+MONDO:0021637	MONDO:0004820	peripheral nerve schwannoma
+MONDO:0021637	MONDO:0006372	pituicytoma
+MONDO:0021637	MONDO:0007667	subependymoma
+MONDO:0021637	MONDO:0008075	schwannomatosis
+MONDO:0021637	MONDO:0008080	neurofibromatosis, type III, mixed central and peripheral
+MONDO:0021637	MONDO:0014299	LZTR1-related schwannomatosis
+MONDO:0021637	MONDO:0016685	low-grade astrocytoma
+MONDO:0021637	MONDO:0016686	diffuse astrocytoma
+MONDO:0021637	MONDO:0016687	protoplasmic astrocytoma
+MONDO:0021637	MONDO:0016688	fibrillary astrocytoma
+MONDO:0021637	MONDO:0016689	gemistocytic astrocytoma
+MONDO:0021637	MONDO:0016690	pleomorphic xanthoastrocytoma
+MONDO:0021637	MONDO:0016691	pilocytic astrocytoma
+MONDO:0021637	MONDO:0016692	pilomyxoid astrocytoma
+MONDO:0021637	MONDO:0016693	subependymal giant cell astrocytoma
+MONDO:0021637	MONDO:0016695	oligodendroglioma
+MONDO:0021637	MONDO:0016697	low grade ependymoma
+MONDO:0021637	MONDO:0016698	ependymoma
+MONDO:0021637	MONDO:0016702	oligoastrocytoma
+MONDO:0021637	MONDO:0016703	anaplastic oligoastrocytoma
+MONDO:0021637	MONDO:0016705	angiocentric glioma
+MONDO:0021637	MONDO:0016706	chordoid glioma of the third ventricle
+MONDO:0021637	MONDO:0021638	low grade astrocytic tumor
+MONDO:0021637	MONDO:0021639	grade II glioma
+MONDO:0021637	MONDO:0024517	SMARCB1-related schwannomatosis
+MONDO:0021637	MONDO:0035136	isolated melanotic schwannoma
+MONDO:0021637	MONDO:0850338	spinal ependymoma, MYCN-amplified
+MONDO:0021637	MONDO:0859591	childhood low-grade glioma
+MONDO:0021637	MONDO:0859614	diffuse low-grade glioma, MAPK pathway–altered
+MONDO:0021637	MONDO:0859615	diffuse astrocytoma, MYB- or MYBL1-altered
+MONDO:0021637	MONDO:0971118	pilocytic astrocytoma with histological features of anaplasia
+MONDO:0021637	MONDO:1030016	22q-related schwannomatosis
+MONDO:0006256	MONDO:0002671	signet ring cell breast carcinoma
+MONDO:0006256	MONDO:0002707	breast mucinous carcinoma
+MONDO:0006256	MONDO:0003087	mucoepidermoid breast carcinoma
+MONDO:0006256	MONDO:0003185	adenoid cystic breast carcinoma
+MONDO:0006256	MONDO:0003208	breast secretory carcinoma
+MONDO:0006256	MONDO:0003390	glycogen-rich clear cell breast carcinoma
+MONDO:0006256	MONDO:0003548	adenosquamous breast carcinoma
+MONDO:0006256	MONDO:0003624	acinic cell breast carcinoma
+MONDO:0006256	MONDO:0003635	sebaceous breast carcinoma
+MONDO:0006256	MONDO:0003935	oncocytic breast carcinoma
+MONDO:0006256	MONDO:0003936	invasive tubular breast carcinoma
+MONDO:0006256	MONDO:0003959	breast large cell neuroendocrine carcinoma
+MONDO:0006256	MONDO:0003990	malignant breast myoepithelioma
+MONDO:0006256	MONDO:0004229	acantholytic variant squamous cell breast carcinoma
+MONDO:0006256	MONDO:0004231	spindle cell variant squamous cell breast carcinoma
+MONDO:0006256	MONDO:0004232	large cell keratinizing variant squamous cell breast carcinoma
+MONDO:0006256	MONDO:0004269	breast cystic hypersecretory carcinoma
+MONDO:0006256	MONDO:0004274	mixed epithelial/mesenchymal metaplastic breast carcinoma
+MONDO:0006256	MONDO:0004288	scirrhous breast carcinoma
+MONDO:0006256	MONDO:0004472	breast columnar cell mucinous carcinoma
+MONDO:0006256	MONDO:0004953	invasive ductal breast carcinoma
+MONDO:0006256	MONDO:0004984	basal-like breast carcinoma
+MONDO:0006256	MONDO:0005050	invasive ductal and lobular carcinoma
+MONDO:0006256	MONDO:0005051	invasive lobular breast carcinoma
+MONDO:0006256	MONDO:0005063	medullary breast carcinoma
+MONDO:0006256	MONDO:0006043	metaplastic breast carcinoma
+MONDO:0006256	MONDO:0006050	pleomorphic breast carcinoma
+MONDO:0006256	MONDO:0006056	squamous cell breast carcinoma
+MONDO:0006256	MONDO:0006804	inflammatory breast carcinoma
+MONDO:0005131	MONDO:0000554	endocervical adenocarcinoma
+MONDO:0005131	MONDO:0002455	exocervical carcinoma
+MONDO:0005131	MONDO:0002740	uterine ligament mucinous adenocarcinoma
+MONDO:0005131	MONDO:0002741	uterine ligament adenocarcinoma
+MONDO:0005131	MONDO:0002742	cervical mucinous adenocarcinoma
+MONDO:0005131	MONDO:0002761	cervical verrucous carcinoma
+MONDO:0005131	MONDO:0003384	uterine ligament clear cell adenocarcinoma
+MONDO:0005131	MONDO:0003410	Wolffian duct adenocarcinoma
+MONDO:0005131	MONDO:0003626	uterine ligament serous adenocarcinoma
+MONDO:0005131	MONDO:0003631	cervical serous adenocarcinoma
+MONDO:0005131	MONDO:0003663	uterine ligament endometrioid adenocarcinoma
+MONDO:0005131	MONDO:0003665	cervical endometrioid adenocarcinoma
+MONDO:0005131	MONDO:0003768	signet ring cell variant cervical mucinous adenocarcinoma
+MONDO:0005131	MONDO:0004088	cervical basaloid carcinoma
+MONDO:0005131	MONDO:0004239	cervical keratinizing squamous cell carcinoma
+MONDO:0005131	MONDO:0004259	endocervical carcinoma
+MONDO:0005131	MONDO:0004296	cervical lymphoepithelioma-like carcinoma
+MONDO:0005131	MONDO:0004413	cervical non-keratinizing squamous cell carcinoma
+MONDO:0005131	MONDO:0004530	early invasive cervical adenocarcinoma
+MONDO:0005131	MONDO:0004537	intestinal variant cervical mucinous adenocarcinoma
+MONDO:0005131	MONDO:0004538	endocervical type cervical mucinous adenocarcinoma
+MONDO:0005131	MONDO:0004542	cervical adenosquamous carcinoma, glassy cell variant
+MONDO:0005131	MONDO:0004552	microinvasive cervical squamous cell carcinoma
+MONDO:0005131	MONDO:0005153	cervical adenocarcinoma
+MONDO:0005131	MONDO:0006132	cervical adenoid basal carcinoma
+MONDO:0005131	MONDO:0006133	cervical adenoid cystic carcinoma
+MONDO:0005131	MONDO:0006134	cervical adenosquamous carcinoma
+MONDO:0005131	MONDO:0006135	cervical clear cell adenocarcinoma
+MONDO:0005131	MONDO:0006138	cervical large cell neuroendocrine carcinoma
+MONDO:0005131	MONDO:0006140	cervical mucinous adenocarcinoma, minimal deviation variant
+MONDO:0005131	MONDO:0006141	cervical villoglandular adenocarcinoma
+MONDO:0005131	MONDO:0006142	cervical small cell carcinoma
+MONDO:0005131	MONDO:0006143	cervical squamous cell carcinoma
+MONDO:0005131	MONDO:0016285	papillary carcinoma of the cervix uteri
+MONDO:0005131	MONDO:0042487	uterine cervix carcinoma in situ
+MONDO:0019087	MONDO:0003210	intrahepatic cholangiocarcinoma
+MONDO:0019087	MONDO:0003345	hilar cholangiocarcinoma
+MONDO:0019087	MONDO:0004078	mucinous intrahepatic cholangiocarcinoma
+MONDO:0019087	MONDO:0004315	cholangiolocellular carcinoma
+MONDO:0019087	MONDO:0004346	signet ring cell intrahepatic cholangiocarcinoma
+MONDO:0019087	MONDO:0004451	sarcomatous intrahepatic cholangiocarcinoma
+MONDO:0019087	MONDO:0044788	perihilar intrahepatic cholangiocarcinoma
+MONDO:0002271	MONDO:0000892	colon medullary carcinoma
+MONDO:0002271	MONDO:0002495	colon signet ring cell adenocarcinoma
+MONDO:0002271	MONDO:0002496	submucosal invasive colon adenocarcinoma
+MONDO:0002271	MONDO:0002703	appendix mucinous cystadenocarcinoma
+MONDO:0002271	MONDO:0005007	colon mucinous adenocarcinoma
+MONDO:0002271	MONDO:0006028	cecum adenocarcinoma
+MONDO:0002271	MONDO:0006087	appendix adenocarcinoma
+MONDO:0002271	MONDO:0017048	pseudomyxoma peritonei
+MONDO:0002271	MONDO:0018330	mucinous adenocarcinoma of the appendix
+MONDO:0018905	MONDO:0000901	relapsed/refractory diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006117	breast diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006158	colorectal diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006223	gastric diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006268	liver diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006383	primary cutaneous diffuse large B-cell lymphoma, Leg type
+MONDO:0018905	MONDO:0006387	primary pulmonary diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006417	small intestinal diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006428	splenic diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0006462	thyroid gland diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0017346	Epstein-Barr virus-positive diffuse large B-cell lymphoma of the elderly
+MONDO:0018905	MONDO:0017347	plasmablastic lymphoma
+MONDO:0018905	MONDO:0017596	diffuse large B-cell lymphoma of the central nervous system
+MONDO:0018905	MONDO:0017597	T-cell/histiocyte rich large B cell lymphoma
+MONDO:0018905	MONDO:0017601	diffuse large B-cell lymphoma with chronic inflammation
+MONDO:0018905	MONDO:0018225	ALK-positive large B-cell lymphoma
+MONDO:0018905	MONDO:0018842	primary effusion lymphoma
+MONDO:0018905	MONDO:0019466	lymphomatoid granulomatosis
+MONDO:0018905	MONDO:0020323	primary mediastinal large B-cell lymphoma
+MONDO:0018905	MONDO:0020324	intravascular large B-cell lymphoma
+MONDO:0018905	MONDO:0044889	high grade B-cell lymphoma
+MONDO:0018905	MONDO:0850418	diffuse large B-cell lymphoma activated B-cell type
+MONDO:0018905	MONDO:0850419	diffuse large B-cell lymphoma germinal center B-cell type
+MONDO:0018905	MONDO:0850468	BN2 diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0850469	EZB diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0850470	MCD diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0850471	N1 diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0850472	ST2 diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0850473	A53 diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0859747	grade I lymphomatoid granulomatosis
+MONDO:0018905	MONDO:0859748	grade II lymphomatoid granulomatosis
+MONDO:0018905	MONDO:0859749	grade III lymphomatoid granulomatosis
+MONDO:0018905	MONDO:0956987	EZB-MYC+ diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0956988	EZB-MYC- diffuse large B-cell lymphoma
+MONDO:0018905	MONDO:0979292	primary vitreoretinal large b-cell lymphoma
+MONDO:0019086	MONDO:0002762	esophagus verrucous carcinoma
+MONDO:0019086	MONDO:0003093	mucoepidermoid esophageal carcinoma
+MONDO:0019086	MONDO:0003186	esophageal adenoid cystic carcinoma
+MONDO:0019086	MONDO:0003550	esophageal adenosquamous carcinoma
+MONDO:0019086	MONDO:0004093	esophageal basaloid carcinoma
+MONDO:0019086	MONDO:0004116	esophageal small cell neuroendocrine carcinoma
+MONDO:0019086	MONDO:0004405	Barrett adenocarcinoma
+MONDO:0019086	MONDO:0004708	esophagus carcinoma in situ
+MONDO:0019086	MONDO:0005028	esophageal adenocarcinoma
+MONDO:0019086	MONDO:0005580	esophageal squamous cell carcinoma
+MONDO:0019086	MONDO:0018480	carcinoma of esophagus, salivary gland type
+MONDO:0019086	MONDO:0018481	undifferentiated carcinoma of esophagus
+MONDO:0018177	MONDO:0000457	classical glioblastoma
+MONDO:0018177	MONDO:0000458	proneural glioblastoma
+MONDO:0018177	MONDO:0000459	mesenchymal glioblastoma
+MONDO:0018177	MONDO:0000460	neural glioblastoma
+MONDO:0018177	MONDO:0002501	brain glioblastoma
+MONDO:0018177	MONDO:0004363	adult spinal cord glioblastoma
+MONDO:0018177	MONDO:0016681	gliosarcoma
+MONDO:0018177	MONDO:0016682	giant cell glioblastoma
+MONDO:0018177	MONDO:0020690	adult glioblastoma
+MONDO:0018177	MONDO:0850335	IDH-wildtype glioblastoma
+MONDO:0018177	MONDO:1060180	brain stem glioblastoma
+MONDO:0010150	MONDO:0000500	tongue squamous cell carcinoma
+MONDO:0010150	MONDO:0000536	pharyngeal squamous cell carcinoma
+MONDO:0010150	MONDO:0001740	cornea squamous cell carcinoma
+MONDO:0010150	MONDO:0001995	sphenoid sinus squamous cell carcinoma
+MONDO:0010150	MONDO:0002301	frontal sinus squamous cell carcinoma
+MONDO:0010150	MONDO:0002416	ethmoid sinus squamous cell carcinoma
+MONDO:0010150	MONDO:0002766	larynx verrucous carcinoma
+MONDO:0010150	MONDO:0002831	non-keratinizing sinonasal squamous cell carcinoma
+MONDO:0010150	MONDO:0003492	lacrimal gland squamous cell carcinoma
+MONDO:0010150	MONDO:0003501	external ear squamous cell carcinoma
+MONDO:0010150	MONDO:0004080	glottis squamous cell carcinoma
+MONDO:0010150	MONDO:0004289	glottis verrucous carcinoma
+MONDO:0010150	MONDO:0004290	subglottis verrucous carcinoma
+MONDO:0010150	MONDO:0004291	subglottis squamous cell carcinoma
+MONDO:0010150	MONDO:0004292	supraglottis verrucous carcinoma
+MONDO:0010150	MONDO:0004293	supraglottis squamous cell carcinoma
+MONDO:0010150	MONDO:0004394	maxillary sinus squamous cell carcinoma
+MONDO:0010150	MONDO:0004958	oral cavity squamous cell carcinoma
+MONDO:0010150	MONDO:0005595	laryngeal squamous cell carcinoma
+MONDO:0010150	MONDO:0006059	nasal cavity squamous cell carcinoma
+MONDO:0010150	MONDO:0006060	nasopharyngeal squamous cell carcinoma
+MONDO:0010150	MONDO:0006173	conjunctival squamous cell carcinoma
+MONDO:0010150	MONDO:0006303	middle ear squamous cell carcinoma
+MONDO:0010150	MONDO:0006358	parotid gland squamous cell carcinoma
+MONDO:0010150	MONDO:0006385	primary intraosseous squamous cell carcinoma
+MONDO:0010150	MONDO:0006401	salivary gland adenosquamous carcinoma
+MONDO:0010150	MONDO:0006470	tonsillar squamous cell carcinoma
+MONDO:0010150	MONDO:0018708	squamous cell carcinoma of the oral tongue
+MONDO:0010150	MONDO:0021427	squamous cell carcinoma of lip
+MONDO:0010150	MONDO:0021429	squamous cell carcinoma of floor of mouth
+MONDO:0010150	MONDO:0021431	squamous cell carcinoma of buccal mucosa
+MONDO:0010150	MONDO:0021538	verrucous carcinoma of oral cavity
+MONDO:0010150	MONDO:0044638	hypopharynx squamous cell carcinoma
+MONDO:0010150	MONDO:0044704	oropharynx squamous cell carcinoma
+MONDO:0010150	MONDO:0044705	paranasal sinus squamous cell carcinoma
+MONDO:0010150	MONDO:0044710	lip and oral cavity squamous cell carcinoma
+MONDO:0010150	MONDO:0044740	salivary gland squamous cell carcinoma
+MONDO:0010150	MONDO:0044787	nasal cavity and paranasal sinus squamous cell carcinoma
+MONDO:0017885	MONDO:0003941	classic variant of chromophobe renal cell carcinoma
+MONDO:0017885	MONDO:0003942	eosinophilic variant of chromophobe renal cell carcinoma
+MONDO:0005005	MONDO:0003010	multilocular clear cell renal cell carcinoma
+MONDO:0005005	MONDO:0018492	hereditary clear cell renal cell carcinoma
+MONDO:0017884	MONDO:0003789	hereditary papillary renal cell carcinoma
+MONDO:0007256	MONDO:0000891	mixed fibrolamellar hepatocellular carcinoma
+MONDO:0007256	MONDO:0003243	hepatocellular clear cell carcinoma
+MONDO:0007256	MONDO:0003245	aflatoxin-related hepatocellular carcinoma
+MONDO:0007256	MONDO:0003246	sclerosing hepatic carcinoma
+MONDO:0007256	MONDO:0003650	mixed hepatoblastoma
+MONDO:0007256	MONDO:0003651	macrotrabecular hepatoblastoma
+MONDO:0007256	MONDO:0006210	fibrolamellar hepatocellular carcinoma
+MONDO:0007256	MONDO:0006268	liver diffuse large B-cell lymphoma
+MONDO:0007256	MONDO:0016216	adult hepatocellular carcinoma
+MONDO:0007256	MONDO:0018055	pediatric hepatocellular carcinoma
+MONDO:0007256	MONDO:0018666	hepatoblastoma
+MONDO:0005061	MONDO:0000503	lung adenocarcinoma in situ
+MONDO:0005061	MONDO:0000531	bronchus mucoepidermoid carcinoma
+MONDO:0005061	MONDO:0000532	lung combined type small cell adenocarcinoma
+MONDO:0005061	MONDO:0000893	mixed mucinous and nonmucinous bronchioloalveolar adenocarcinoma
+MONDO:0005061	MONDO:0000894	mucinous bronchioloalveolar adenocarcinoma
+MONDO:0005061	MONDO:0000895	nonmucinous bronchioloalveolar adenocarcinoma
+MONDO:0005061	MONDO:0003181	lung adenoid cystic carcinoma
+MONDO:0005061	MONDO:0003892	acinar lung adenocarcinoma
+MONDO:0005061	MONDO:0004127	lung occult adenocarcinoma
+MONDO:0005061	MONDO:0004991	minimally invasive lung adenocarcinoma
+MONDO:0005061	MONDO:0005616	pulmonary mucoepidermoid carcinoma
+MONDO:0005061	MONDO:0006049	papillary lung adenocarcinoma
+MONDO:0005061	MONDO:0006281	lung signet ring cell carcinoma
+MONDO:0005061	MONDO:0017292	well-differentiated fetal adenocarcinoma of the lung
+MONDO:0005061	MONDO:0027772	lung colloid adenocarcinoma
+MONDO:0005061	MONDO:0850122	solid adenocarcinoma with mucin production
+MONDO:0005097	MONDO:0003904	lung occult squamous cell carcinoma
+MONDO:0005097	MONDO:0004973	adenosquamous lung carcinoma
+MONDO:0005097	MONDO:0056806	non-small cell squamous lung carcinoma
+MONDO:0003308	MONDO:0005112	malignant pleural mesothelioma
+MONDO:0003308	MONDO:0006378	pleural epithelioid mesothelioma
+MONDO:0003308	MONDO:0006380	pleural sarcomatoid mesothelioma
+MONDO:0003308	MONDO:0024326	pleural adenomatoid tumor
+MONDO:0006047	MONDO:0002666	pancreatic signet ring cell adenocarcinoma
+MONDO:0006047	MONDO:0002867	pancreatic cystadenocarcinoma
+MONDO:0006047	MONDO:0003630	pancreatic serous cystadenocarcinoma
+MONDO:0006047	MONDO:0004156	pancreatic mucinous cystadenocarcinoma
+MONDO:0006047	MONDO:0004158	pancreatic mucinous-cystic neoplasm with an associated invasive carcinoma
+MONDO:0006047	MONDO:0004159	pancreatic non-invasive mucinous cystadenocarcinoma
+MONDO:0006047	MONDO:0004287	pancreatic foamy gland adenocarcinoma
+MONDO:0006047	MONDO:0004340	mixed ductal-endocrine carcinoma of pancreas
+MONDO:0006047	MONDO:0004341	colloid carcinoma of the pancreas
+MONDO:0006047	MONDO:0004343	pancreatic acinar cell cystadenocarcinoma
+MONDO:0006047	MONDO:0004481	pancreatic intraductal papillary-mucinous neoplasm with an associated invasive carcinoma
+MONDO:0006047	MONDO:0005184	pancreatic ductal adenocarcinoma
+MONDO:0006047	MONDO:0006346	pancreatic acinar cell carcinoma
+MONDO:0006047	MONDO:0006478	undifferentiated pancreatic carcinoma
+MONDO:0006047	MONDO:0006479	undifferentiated pancreatic carcinoma with osteoclast-like giant cells
+MONDO:0006047	MONDO:0850257	mucinous pancreas adenocarcinoma
+MONDO:0005082	MONDO:0002493	prostatic acinar adenocarcinoma
+MONDO:0005082	MONDO:0002672	acinar prostate adenocarcinoma, signet ring variant
+MONDO:0005082	MONDO:0003177	prostate adenoid cystic carcinoma
+MONDO:0005082	MONDO:0004164	lymphoepithelioma-like acinar prostate adenocarcinoma
+MONDO:0005082	MONDO:0006066	acinar prostate adenocarcinoma, foamy gland variant
+MONDO:0005082	MONDO:0006067	acinar prostate mucinous adenocarcinoma
+MONDO:0002169	MONDO:0002651	anal Paget disease
+MONDO:0002169	MONDO:0002652	anus adenocarcinoma
+MONDO:0002169	MONDO:0002734	anal mucinous adenocarcinoma
+MONDO:0002169	MONDO:0002735	anal canal adenocarcinoma
+MONDO:0002169	MONDO:0002748	rectum mucinous adenocarcinoma
+MONDO:0002169	MONDO:0004266	anal gland adenocarcinoma
+MONDO:0002169	MONDO:0004336	rectal signet ring cell adenocarcinoma
+MONDO:0002169	MONDO:0004337	perianal skin Paget disease
+MONDO:0002169	MONDO:0004468	anal canal Paget disease
+MONDO:0002169	MONDO:0020801	rectal medullary carcinoma
+MONDO:0018078	MONDO:0000539	striated muscle rhabdoid tumor
+MONDO:0018078	MONDO:0000756	parameningeal embryonal rhabdomyosarcoma
+MONDO:0018078	MONDO:0001204	esophagus sarcoma
+MONDO:0018078	MONDO:0001374	bladder sarcoma
+MONDO:0018078	MONDO:0001387	penile sarcoma
+MONDO:0018078	MONDO:0001418	trachea sarcoma
+MONDO:0018078	MONDO:0001501	retroperitoneal sarcoma
+MONDO:0018078	MONDO:0001758	paranasal sinus sarcoma
+MONDO:0018078	MONDO:0001894	spinal cord sarcoma
+MONDO:0018078	MONDO:0001990	malignant cardiac peripheral nerve sheath neoplasm
+MONDO:0018078	MONDO:0002117	pancreas sarcoma
+MONDO:0018078	MONDO:0002140	vagina sarcoma
+MONDO:0018078	MONDO:0002141	cutaneous undifferentiated pleomorphic sarcoma
+MONDO:0018078	MONDO:0002142	undifferentiated pleomorphic sarcoma
+MONDO:0018078	MONDO:0002159	fallopian tube leiomyosarcoma
+MONDO:0018078	MONDO:0002216	brain sarcoma
+MONDO:0018078	MONDO:0002217	central nervous system sarcoma
+MONDO:0018078	MONDO:0002225	ovarian sarcoma
+MONDO:0018078	MONDO:0002376	spleen angiosarcoma
+MONDO:0018078	MONDO:0002387	liver angiosarcoma
+MONDO:0018078	MONDO:0002397	liver sarcoma
+MONDO:0018078	MONDO:0002426	lung sarcoma
+MONDO:0018078	MONDO:0002448	laryngeal sarcoma
+MONDO:0018078	MONDO:0002490	breast sarcoma
+MONDO:0018078	MONDO:0002574	prostate embryonal rhabdomyosarcoma
+MONDO:0018078	MONDO:0002576	embryonal extrahepatic bile duct rhabdomyosarcoma
+MONDO:0018078	MONDO:0002577	extrahepatic bile duct rhabdomyosarcoma
+MONDO:0018078	MONDO:0002578	botryoid rhabdomyosarcoma
+MONDO:0018078	MONDO:0002579	orbit embryonal rhabdomyosarcoma
+MONDO:0018078	MONDO:0002580	orbit rhabdomyosarcoma
+MONDO:0018078	MONDO:0002581	spindle cell rhabdomyosarcoma
+MONDO:0018078	MONDO:0002617	bone angiosarcoma
+MONDO:0018078	MONDO:0002619	bone fibrosarcoma
+MONDO:0018078	MONDO:0002621	extraosseous osteosarcoma
+MONDO:0018078	MONDO:0002624	bone leiomyosarcoma
+MONDO:0018078	MONDO:0002634	liposarcoma of bone
+MONDO:0018078	MONDO:0002676	adult fibrosarcoma
+MONDO:0018078	MONDO:0002677	conventional fibrosarcoma
+MONDO:0018078	MONDO:0002678	pediatric fibrosarcoma
+MONDO:0018078	MONDO:0002728	rhabdoid tumor
+MONDO:0018078	MONDO:0002729	rhabdoid tumor of the kidney
+MONDO:0018078	MONDO:0002849	liver rhabdomyosarcoma
+MONDO:0018078	MONDO:0002850	central nervous system rhabdomyosarcoma
+MONDO:0018078	MONDO:0002851	mediastinum rhabdomyosarcoma
+MONDO:0018078	MONDO:0002852	mediastinum sarcoma
+MONDO:0018078	MONDO:0002853	rectum rhabdomyosarcoma
+MONDO:0018078	MONDO:0002854	prostate sarcoma
+MONDO:0018078	MONDO:0002856	gallbladder rhabdomyosarcoma
+MONDO:0018078	MONDO:0002857	gallbladder sarcoma
+MONDO:0018078	MONDO:0002858	ovary rhabdomyosarcoma
+MONDO:0018078	MONDO:0002859	breast rhabdomyosarcoma
+MONDO:0018078	MONDO:0002860	testis rhabdomyosarcoma
+MONDO:0018078	MONDO:0002861	testis sarcoma
+MONDO:0018078	MONDO:0002862	bile duct sarcoma
+MONDO:0018078	MONDO:0002863	rhabdomyosarcoma with mixed embryonal and alveolar features
+MONDO:0018078	MONDO:0002864	anus rhabdomyosarcoma
+MONDO:0018078	MONDO:0002865	anus sarcoma
+MONDO:0018078	MONDO:0002926	clear cell sarcoma
+MONDO:0018078	MONDO:0002930	kidney sarcoma
+MONDO:0018078	MONDO:0002978	orbit alveolar rhabdomyosarcoma
+MONDO:0018078	MONDO:0003003	cervical alveolar soft part sarcoma
+MONDO:0018078	MONDO:0003021	central nervous system angiosarcoma
+MONDO:0018078	MONDO:0003022	pediatric angiosarcoma
+MONDO:0018078	MONDO:0003023	aorta angiosarcoma
+MONDO:0018078	MONDO:0003024	breast angiosarcoma
+MONDO:0018078	MONDO:0003025	conventional angiosarcoma
+MONDO:0018078	MONDO:0003026	gallbladder angiosarcoma
+MONDO:0018078	MONDO:0003027	thyroid gland angiosarcoma
+MONDO:0018078	MONDO:0003028	thyroid sarcoma
+MONDO:0018078	MONDO:0003029	skin angiosarcoma
+MONDO:0018078	MONDO:0003032	superior vena cava angiosarcoma
+MONDO:0018078	MONDO:0003033	prostate angiosarcoma
+MONDO:0018078	MONDO:0003034	mediastinum angiosarcoma
+MONDO:0018078	MONDO:0003035	ovarian angiosarcoma
+MONDO:0018078	MONDO:0003313	endometrioid stromal sarcoma of the vagina
+MONDO:0018078	MONDO:0003347	inflammatory leiomyosarcoma
+MONDO:0018078	MONDO:0003348	conventional leiomyosarcoma
+MONDO:0018078	MONDO:0003349	central nervous system leiomyosarcoma
+MONDO:0018078	MONDO:0003350	granular cell leiomyosarcoma
+MONDO:0018078	MONDO:0003351	colon leiomyosarcoma
+MONDO:0018078	MONDO:0003353	heart leiomyosarcoma
+MONDO:0018078	MONDO:0003354	heart sarcoma
+MONDO:0018078	MONDO:0003355	ovary leiomyosarcoma
+MONDO:0018078	MONDO:0003356	epithelioid leiomyosarcoma
+MONDO:0018078	MONDO:0003357	lung leiomyosarcoma
+MONDO:0018078	MONDO:0003358	anus leiomyosarcoma
+MONDO:0018078	MONDO:0003359	myxoid leiomyosarcoma
+MONDO:0018078	MONDO:0003360	small intestine leiomyosarcoma
+MONDO:0018078	MONDO:0003361	small intestinal sarcoma
+MONDO:0018078	MONDO:0003362	cutaneous leiomyosarcoma
+MONDO:0018078	MONDO:0003364	gallbladder leiomyosarcoma
+MONDO:0018078	MONDO:0003365	esophagus leiomyosarcoma
+MONDO:0018078	MONDO:0003367	gastric leiomyosarcoma
+MONDO:0018078	MONDO:0003368	prostate leiomyosarcoma
+MONDO:0018078	MONDO:0003369	vagina leiomyosarcoma
+MONDO:0018078	MONDO:0003370	retroperitoneal leiomyosarcoma
+MONDO:0018078	MONDO:0003371	breast leiomyosarcoma
+MONDO:0018078	MONDO:0003372	vulvar leiomyosarcoma
+MONDO:0018078	MONDO:0003373	kidney leiomyosarcoma
+MONDO:0018078	MONDO:0003374	laryngeal leiomyosarcoma
+MONDO:0018078	MONDO:0003376	mediastinum leiomyosarcoma
+MONDO:0018078	MONDO:0003377	extrahepatic bile duct leiomyosarcoma
+MONDO:0018078	MONDO:0003378	liver leiomyosarcoma
+MONDO:0018078	MONDO:0003379	rectum leiomyosarcoma
+MONDO:0018078	MONDO:0003391	vulvar alveolar soft part sarcoma
+MONDO:0018078	MONDO:0003465	fibrous synovial sarcoma
+MONDO:0018078	MONDO:0003466	spindle cell synovial sarcoma
+MONDO:0018078	MONDO:0003467	mediastinum synovial sarcoma
+MONDO:0018078	MONDO:0003468	biphasic synovial sarcoma
+MONDO:0018078	MONDO:0003469	epithelioid cell synovial sarcoma
+MONDO:0018078	MONDO:0003561	malignant giant cell tumor of soft parts
+MONDO:0018078	MONDO:0003585	adult liposarcoma
+MONDO:0018078	MONDO:0003586	esophagus liposarcoma
+MONDO:0018078	MONDO:0003587	pediatric liposarcoma
+MONDO:0018078	MONDO:0003588	larynx liposarcoma
+MONDO:0018078	MONDO:0003589	liposarcoma of the ovary
+MONDO:0018078	MONDO:0003590	fibroblastic liposarcoma
+MONDO:0018078	MONDO:0003591	kidney liposarcoma
+MONDO:0018078	MONDO:0003592	gastric liposarcoma
+MONDO:0018078	MONDO:0003593	breast liposarcoma
+MONDO:0018078	MONDO:0003594	mixed liposarcoma
+MONDO:0018078	MONDO:0003595	sclerosing liposarcoma
+MONDO:0018078	MONDO:0003596	spindle cell liposarcoma
+MONDO:0018078	MONDO:0003599	vulvar liposarcoma
+MONDO:0018078	MONDO:0003600	cutaneous liposarcoma
+MONDO:0018078	MONDO:0003601	mediastinum liposarcoma
+MONDO:0018078	MONDO:0003602	intracranial liposarcoma
+MONDO:0018078	MONDO:0003720	kidney fibrosarcoma
+MONDO:0018078	MONDO:0003721	kidney osteogenic sarcoma
+MONDO:0018078	MONDO:0003728	breast fibrosarcoma
+MONDO:0018078	MONDO:0003742	heart fibrosarcoma
+MONDO:0018078	MONDO:0003782	uterine corpus epithelioid leiomyosarcoma
+MONDO:0018078	MONDO:0003796	rectum Kaposi sarcoma
+MONDO:0018078	MONDO:0003808	mediastinal extraskeletal osteosarcoma
+MONDO:0018078	MONDO:0003862	melanotic psammomatous malignant peripheral nerve sheath tumor
+MONDO:0018078	MONDO:0003863	malignant melanocytic neoplasm of the peripheral nerve sheath
+MONDO:0018078	MONDO:0003866	liver extraskeletal osteosarcoma
+MONDO:0018078	MONDO:0003882	central nervous system fibrosarcoma
+MONDO:0018078	MONDO:0003928	uterine corpus myxoid leiomyosarcoma
+MONDO:0018078	MONDO:0003992	childhood botryoid rhabdomyosarcoma
+MONDO:0018078	MONDO:0003993	childhood vagina botryoid rhabdomyosarcoma
+MONDO:0018078	MONDO:0003994	botryoid-type embryonal rhabdomyosarcoma of the vagina
+MONDO:0018078	MONDO:0003995	vulvar childhood botryoid-type embryonal rhabdomyosarcoma
+MONDO:0018078	MONDO:0003997	colon Kaposi sarcoma
+MONDO:0018078	MONDO:0004012	adult botryoid rhabdomyosarcoma
+MONDO:0018078	MONDO:0004013	adult vagina botryoid embryonal rhabdomyosarcoma
+MONDO:0018078	MONDO:0004028	small intestinal fibrosarcoma
+MONDO:0018078	MONDO:0004060	peripheral epithelioid sarcoma
+MONDO:0018078	MONDO:0004098	malignant melanocytic peripheral nerve sheath tumor of mediastinum
+MONDO:0018078	MONDO:0004105	childhood epithelioid sarcoma
+MONDO:0018078	MONDO:0004124	prostate stromal sarcoma
+MONDO:0018078	MONDO:0004176	childhood extraosseous osteosarcoma
+MONDO:0018078	MONDO:0004206	pulmonary vein leiomyosarcoma
+MONDO:0018078	MONDO:0004207	pulmonary artery leiomyosarcoma
+MONDO:0018078	MONDO:0004208	superior vena cava leiomyosarcoma
+MONDO:0018078	MONDO:0004233	childhood pleomorphic rhabdomyosarcoma
+MONDO:0018078	MONDO:0004243	vulvar proximal-type epithelioid sarcoma
+MONDO:0018078	MONDO:0004244	proximal-type epithelioid sarcoma
+MONDO:0018078	MONDO:0004307	sarcomatosis of the meninges
+MONDO:0018078	MONDO:0004308	meningeal sarcoma
+MONDO:0018078	MONDO:0004330	leptomeningeal sarcoma
+MONDO:0018078	MONDO:0004345	childhood malignant schwannoma
+MONDO:0018078	MONDO:0004360	breast extraskeletal osteosarcoma
+MONDO:0018078	MONDO:0004374	adult extraskeletal osteosarcoma
+MONDO:0018078	MONDO:0004392	intracranial extraskeletal myxoid chondrosarcoma
+MONDO:0018078	MONDO:0004423	central nervous system extraskeletal osteosarcoma
+MONDO:0018078	MONDO:0004435	liver fibrosarcoma
+MONDO:0018078	MONDO:0004436	ovarian myxoid liposarcoma
+MONDO:0018078	MONDO:0004510	inflammatory liposarcoma
+MONDO:0018078	MONDO:0004513	adult pleomorphic rhabdomyosarcoma
+MONDO:0018078	MONDO:0004521	adult epithelioid sarcoma
+MONDO:0018078	MONDO:0004540	epithelioid malignant peripheral nerve sheath tumor
+MONDO:0018078	MONDO:0004545	adult malignant schwannoma
+MONDO:0018078	MONDO:0004557	congenital fibrosarcoma
+MONDO:0018078	MONDO:0004559	malignant glandular tumor of peripheral nerve sheath
+MONDO:0018078	MONDO:0005006	clear cell sarcoma of kidney
+MONDO:0018078	MONDO:0005055	Kaposi's sarcoma
+MONDO:0018078	MONDO:0005058	leiomyosarcoma
+MONDO:0018078	MONDO:0005060	liposarcoma
+MONDO:0018078	MONDO:0005067	monophasic synovial sarcoma
+MONDO:0018078	MONDO:0005102	undifferentiated (embryonal) sarcoma
+MONDO:0018078	MONDO:0005103	well-differentiated liposarcoma
+MONDO:0018078	MONDO:0005164	fibrosarcoma
+MONDO:0018078	MONDO:0005188	iatrogenic Kaposi's sarcoma
+MONDO:0018078	MONDO:0005212	rhabdomyosarcoma
+MONDO:0018078	MONDO:0005214	vulva sarcoma
+MONDO:0018078	MONDO:0005238	round cell liposarcoma
+MONDO:0018078	MONDO:0006027	breast synovial sarcoma
+MONDO:0018078	MONDO:0006255	intimal sarcoma
+MONDO:0018078	MONDO:0006272	low grade fibromyxoid sarcoma
+MONDO:0018078	MONDO:0006273	low grade fibromyxoid sarcoma with giant collagen rosettes
+MONDO:0018078	MONDO:0006389	prostate rhabdomyosarcoma
+MONDO:0018078	MONDO:0006414	skin sarcoma
+MONDO:0018078	MONDO:0006480	undifferentiated pleomorphic sarcoma, inflammatory variant
+MONDO:0018078	MONDO:0006863	myxosarcoma
+MONDO:0018078	MONDO:0007300	cerebral sarcoma
+MONDO:0018078	MONDO:0009993	embryonal rhabdomyosarcoma
+MONDO:0018078	MONDO:0009994	alveolar rhabdomyosarcoma
+MONDO:0018078	MONDO:0010434	synovial sarcoma
+MONDO:0018078	MONDO:0011655	alveolar soft part sarcoma
+MONDO:0018078	MONDO:0011934	dermatofibrosarcoma protuberans
+MONDO:0018078	MONDO:0012252	rhabdoid tumor predisposition syndrome 1
+MONDO:0018078	MONDO:0012825	extraskeletal myxoid chondrosarcoma
+MONDO:0018078	MONDO:0013224	rhabdoid tumor predisposition syndrome 2
+MONDO:0018078	MONDO:0013280	myxoid liposarcoma
+MONDO:0018078	MONDO:0016095	vaginal rhabdomyosarcoma
+MONDO:0018078	MONDO:0016260	uterine corpus rhabdomyosarcoma
+MONDO:0018078	MONDO:0016262	leiomyosarcoma of the corpus uteri
+MONDO:0018078	MONDO:0016282	rhabdomyosarcoma of the cervix uteri
+MONDO:0018078	MONDO:0016283	leiomyosarcoma of the cervix uteri
+MONDO:0018078	MONDO:0016473	familial rhabdoid tumor
+MONDO:0018078	MONDO:0016757	malignant triton tumor
+MONDO:0018078	MONDO:0016982	angiosarcoma
+MONDO:0018078	MONDO:0017386	pleomorphic rhabdomyosarcoma
+MONDO:0018078	MONDO:0017387	epithelioid sarcoma
+MONDO:0018078	MONDO:0017827	malignant peripheral nerve sheath tumor
+MONDO:0018078	MONDO:0018270	extraskeletal Ewing sarcoma
+MONDO:0018078	MONDO:0018761	SMARCA4-deficient sarcoma of thorax
+MONDO:0018078	MONDO:0019202	myxofibrosarcoma
+MONDO:0018078	MONDO:0019373	desmoplastic small round cell tumor
+MONDO:0018078	MONDO:0020560	atypical teratoid rhabdoid tumor
+MONDO:0018078	MONDO:0020561	myxoid/round cell liposarcoma
+MONDO:0018078	MONDO:0020562	pleomorphic liposarcoma
+MONDO:0018078	MONDO:0020563	dedifferentiated liposarcoma
+MONDO:0018078	MONDO:0020661	undifferentiated round cell sarcoma
+MONDO:0018078	MONDO:0021010	skin lymphangiosarcoma
+MONDO:0018078	MONDO:0022454	angiosarcoma of the scalp
+MONDO:0018078	MONDO:0022772	classic Kaposi sarcoma
+MONDO:0018078	MONDO:0023067	endemic Kaposi sarcoma
+MONDO:0018078	MONDO:0023273	pigmented dermatofibrosarcoma protuberans
+MONDO:0018078	MONDO:0024658	extrahepatic bile duct sarcoma
+MONDO:0018078	MONDO:0024659	colorectal Kaposi sarcoma
+MONDO:0018078	MONDO:0035136	isolated melanotic schwannoma
+MONDO:0018078	MONDO:0044337	stromal sarcoma
+MONDO:0018078	MONDO:0044916	extrarenal rhabdoid tumor
+MONDO:0018078	MONDO:0100055	intraosseous spindle cell rhabdomyosarcoma with TFCP2/NCOA2 rearrangements
+MONDO:0018078	MONDO:0100060	congenital/infantile spindle cell rhabdomyosarcoma with VGLL2/NCOA2/CITED2 rearrangements
+MONDO:0018078	MONDO:0100067	childhood spindle cell rhabdomyosarcoma
+MONDO:0018078	MONDO:0850346	oral rhabdomyosarcoma
+MONDO:0018078	MONDO:0858967	primary intracranial sarcoma, DICER1-mutant
+MONDO:0018078	MONDO:0859046	rhabdomyosarcoma, embryonal, 2
+MONDO:0018078	MONDO:0958165	anaplastic sarcoma of the kidney
+MONDO:0018078	MONDO:1060249	atypical teratoid rhabdoid tumor, SHH-activated
+MONDO:0018078	MONDO:1060250	atypical teratoid rhabdoid tumor, MYC-activated
+MONDO:0018078	MONDO:1060251	atypical teratoid rhabdoid tumor, TYR-activated
+MONDO:0005012	MONDO:0000928	eyelid melanoma
+MONDO:0005012	MONDO:0000929	balloon cell malignant melanoma
+MONDO:0005012	MONDO:0000930	nodular malignant melanoma
+MONDO:0005012	MONDO:0003865	acral lentiginous melanoma
+MONDO:0005012	MONDO:0005208	amelanotic skin melanoma
+MONDO:0005012	MONDO:0020638	superficial spreading melanoma
+MONDO:0005012	MONDO:0023619	lentigo maligna melanoma
+MONDO:0005012	MONDO:0044785	desmoplastic melanoma
+MONDO:0005012	MONDO:0850101	spitzoid melanoma
+MONDO:0005012	MONDO:0850110	melanoma in congenital melanocytic nevus
+MONDO:0005036	MONDO:0001060	microinvasive gastric cancer
+MONDO:0005036	MONDO:0003835	gastric cardia adenocarcinoma
+MONDO:0005036	MONDO:0005017	diffuse gastric adenocarcinoma
+MONDO:0005036	MONDO:0005037	gastric intestinal type adenocarcinoma
+MONDO:0005036	MONDO:0006035	gastric tubular adenocarcinoma
+MONDO:0005036	MONDO:0006228	gastric papillary adenocarcinoma
+MONDO:0005036	MONDO:0006309	mucinous gastric adenocarcinoma
+MONDO:0005036	MONDO:0006409	signet ring cell gastric adenocarcinoma
+MONDO:0005036	MONDO:0007648	hereditary diffuse gastric adenocarcinoma
+MONDO:0005036	MONDO:0018184	gastric linitis plastica
+MONDO:0005036	MONDO:0100256	CTNNA1-related diffuse gastric and lobular breast cancer syndrome
+MONDO:0010108	MONDO:0002871	testicular trophoblastic tumor
+MONDO:0010108	MONDO:0002874	testicular pure germ cell tumor
+MONDO:0010108	MONDO:0003120	mixed testicular germ cell cancer
+MONDO:0010108	MONDO:0003402	testicular yolk sac tumor
+MONDO:0010108	MONDO:0003403	testicular non-seminomatous germ cell cancer
+MONDO:0010108	MONDO:0003508	choriocarcinoma of testis
+MONDO:0010108	MONDO:0003510	malignant testicular germ cell tumor
+MONDO:0010108	MONDO:0003669	testicular seminoma
+MONDO:0010108	MONDO:0003758	childhood testicular germ cell tumor
+MONDO:0010108	MONDO:0003786	childhood testicular choriocarcinoma
+MONDO:0010108	MONDO:0003787	childhood testicular mixed germ cell cancer
+MONDO:0010108	MONDO:0003788	childhood embryonal testis carcinoma
+MONDO:0010108	MONDO:0003888	childhood testicular mixed embryonal carcinoma and teratoma
+MONDO:0010108	MONDO:0003966	testicular monophasic choriocarcinoma
+MONDO:0010108	MONDO:0003973	tubular variant testicular seminoma
+MONDO:0010108	MONDO:0004106	testicular yolk sac tumor, macrocystic pattern
+MONDO:0010108	MONDO:0004168	cribriform variant testicular seminoma
+MONDO:0010108	MONDO:0004178	testicular yolk sac tumor, endodermal sinus pattern
+MONDO:0010108	MONDO:0004198	testicular yolk sac tumor, solid pattern
+MONDO:0010108	MONDO:0004219	polyvesicular vitelline pattern testicular yolk sac tumor
+MONDO:0010108	MONDO:0004401	testis refractory cancer
+MONDO:0010108	MONDO:0004402	testicular yolk sac tumor, glandular-alveolar pattern
+MONDO:0010108	MONDO:0004442	testis polyembryoma
+MONDO:0010108	MONDO:0004453	testicular yolk sac tumor, myxomatous pattern
+MONDO:0010108	MONDO:0004493	testicular yolk sac tumor, papillary pattern
+MONDO:0010108	MONDO:0004494	testicular yolk sac tumor, hepatoid pattern
+MONDO:0010108	MONDO:0004520	intratubular embryonal carcinoma
+MONDO:0010108	MONDO:0004541	pseudoglandular variant testicular seminoma
+MONDO:0010108	MONDO:0004543	enteric pattern testicular yolk sac tumor
+MONDO:0010108	MONDO:0004547	reticular pattern testicular yolk sac tumor
+MONDO:0010108	MONDO:0006446	testicular embryonal carcinoma
+MONDO:0010108	MONDO:0006447	testicular non-seminomatous germ cell tumor
+MONDO:0010108	MONDO:0010274	testicular germ cell tumor 1
+MONDO:0010108	MONDO:0018193	testicular teratoma
+MONDO:0010108	MONDO:0020513	spermatocytic seminoma
+MONDO:0010108	MONDO:0021282	malignant teratoma of testis
+MONDO:0006456	MONDO:0002587	encapsulated thymoma
+MONDO:0006456	MONDO:0002588	thymoma type A
+MONDO:0006456	MONDO:0002590	combined thymoma
+MONDO:0006456	MONDO:0002592	invasive malignant thymoma
+MONDO:0006456	MONDO:0003915	cortical thymoma
+MONDO:0006456	MONDO:0003976	malignant type AB thymoma
+MONDO:0006456	MONDO:0004147	noninvasive malignant thymoma
+MONDO:0006456	MONDO:0004400	malignant type A thymoma
+MONDO:0006456	MONDO:0006458	thymoma type B3
+MONDO:0006456	MONDO:0006459	thymoma type B1
+MONDO:0006456	MONDO:0010127	thymoma, familial
+MONDO:0006456	MONDO:0016974	thymoma type B
+MONDO:0006456	MONDO:0016975	thymoma type AB
+MONDO:0005075	MONDO:0003701	thyroid gland diffuse sclerosing papillary carcinoma
+MONDO:0005075	MONDO:0004101	multicentric papillary thyroid carcinoma
+MONDO:0005075	MONDO:0004102	columnar cell variant thyroid gland papillary carcinoma
+MONDO:0005075	MONDO:0004103	tall cell variant thyroid gland papillary carcinoma
+MONDO:0005075	MONDO:0006886	thyroid gland papillary and follicular carcinoma
+MONDO:0005075	MONDO:0008567	thyroid cancer, nonmedullary, 1
+MONDO:0006485	MONDO:0002877	cervical carcinosarcoma
+MONDO:0006485	MONDO:0016259	carcinosarcoma of the corpus uteri
+MONDO:0002447	MONDO:0000553	uterine corpus endometrial carcinoma
+MONDO:0002447	MONDO:0002747	endometrial mucinous adenocarcinoma
+MONDO:0002447	MONDO:0002832	endometrial transitional cell carcinoma
+MONDO:0002447	MONDO:0003315	endometrium carcinoma in situ
+MONDO:0002447	MONDO:0003556	endometrial adenosquamous carcinoma
+MONDO:0002447	MONDO:0003991	villoglandular endometrial endometrioid adenocarcinoma
+MONDO:0002447	MONDO:0004019	oxyphilic endometrial endometrioid adenocarcinoma
+MONDO:0002447	MONDO:0004174	secretory uterine corpus endometrioid adenocarcinoma
+MONDO:0002447	MONDO:0004175	mucin-rich endometrial endometrioid adenocarcinoma
+MONDO:0002447	MONDO:0004220	endometrial endometrioid adenocarcinoma with spindled epithelial cells
+MONDO:0002447	MONDO:0004321	endometrial mixed adenocarcinoma
+MONDO:0002447	MONDO:0005461	endometrium adenocarcinoma
+MONDO:0002447	MONDO:0006191	endometrial clear cell adenocarcinoma
+MONDO:0002447	MONDO:0006197	endometrial small cell carcinoma
+MONDO:0002447	MONDO:0006198	endometrial squamous cell carcinoma
+MONDO:0002447	MONDO:0006199	endometrial undifferentiated carcinoma
+MONDO:0002447	MONDO:0006335	ovarian endometrioid adenocarcinoma
+MONDO:0002447	MONDO:0006336	ovarian endometrioid adenocarcinoma with squamous differentiation
+MONDO:0006486	MONDO:0003744	spindle cell intraocular melanoma
+MONDO:0006486	MONDO:0003745	choroid spindle cell melanoma
+MONDO:0006486	MONDO:0003746	ciliary body spindle cell melanoma
+MONDO:0006486	MONDO:0003878	malignant choroid melanoma
+MONDO:0006486	MONDO:0003910	mixed cell uveal melanoma
+MONDO:0006486	MONDO:0003911	ciliary body mixed cell melanoma
+MONDO:0006486	MONDO:0003912	malignant ciliary body melanoma
+MONDO:0006486	MONDO:0003913	choroid mixed cell melanoma
+MONDO:0006486	MONDO:0003927	posterior uveal melanoma
+MONDO:0006486	MONDO:0004062	intermediate cell type uveal melanoma
+MONDO:0006486	MONDO:0004063	intermediate cell type iris melanoma
+MONDO:0006486	MONDO:0004064	iris melanoma
+MONDO:0006486	MONDO:0004065	intermediate cell type choroid melanoma
+MONDO:0006486	MONDO:0004066	intermediate cell type ciliary body melanoma
+MONDO:0006486	MONDO:0004085	choroid epithelioid cell melanoma
+MONDO:0006486	MONDO:0004086	ciliary body epithelioid cell melanoma
+MONDO:0006486	MONDO:0004188	iris spindle cell melanoma
+MONDO:0006486	MONDO:0004364	choroid necrotic melanoma
+MONDO:0006486	MONDO:0004365	necrotic uveal melanoma
+MONDO:0006486	MONDO:0006200	epithelioid cell uveal melanoma
+MONDO:0006486	MONDO:0024863	small size posterior uveal melanoma
+MONDO:0006486	MONDO:0024864	medium/large size posterior uveal melanoma
+MONDO:0018874	MONDO:0000875	adult acute monocytic leukemia
+MONDO:0018874	MONDO:0004051	aleukemic monocytic leukemia cutis
+MONDO:0018874	MONDO:0004644	subacute monocytic leukemia
+MONDO:0018874	MONDO:0004996	childhood acute myeloid leukemia
+MONDO:0018874	MONDO:0005223	acute myeloid leukemia with minimal differentiation
+MONDO:0018874	MONDO:0005224	acute myeloblastic leukemia without maturation
+MONDO:0018874	MONDO:0006237	granulocytic sarcoma
+MONDO:0018874	MONDO:0006861	myeloid sarcoma
+MONDO:0018874	MONDO:0007896	acute monocytic leukemia
+MONDO:0018874	MONDO:0011118	bilineal acute myeloid leukemia
+MONDO:0018874	MONDO:0012883	acute promyelocytic leukemia
+MONDO:0018874	MONDO:0015164	acute myeloid leukemia and myelodysplastic syndromes related to alkylating agent
+MONDO:0018874	MONDO:0015165	acute myeloid leukemia and myelodysplastic syndromes related to topoisomerase type 2 inhibitor
+MONDO:0018874	MONDO:0015166	acute myeloid leukemia with t(8;21)(q22;q22) translocation
+MONDO:0018874	MONDO:0015608	acute myeloid leukemia and myelodysplastic syndromes related to radiation
+MONDO:0018874	MONDO:0015667	acute myeloid leukemia by FAB classification
+MONDO:0018874	MONDO:0017858	acute erythroid leukemia
+MONDO:0018874	MONDO:0017893	inherited acute myeloid leukemia
+MONDO:0018874	MONDO:0017894	acute myeloid leukemia with CEBPA somatic mutations
+MONDO:0018874	MONDO:0018004	acute megakaryoblastic leukemia without down syndrome
+MONDO:0018874	MONDO:0018256	acute myeloid leukemia with t(8;16)(p11;p13) translocation
+MONDO:0018874	MONDO:0018433	acute myeloid leukemia with t(6;9)(p23;q34)
+MONDO:0018874	MONDO:0018434	acute myeloid leukemia with t(9;11)(p22;q23)
+MONDO:0018874	MONDO:0018435	acute myeloid leukemia with inv3(p21;q26.2) or t(3;3)(p21;q26.2)
+MONDO:0018874	MONDO:0018436	megakaryoblastic acute myeloid leukemia with t(1;22)(p13;q13)
+MONDO:0018874	MONDO:0018437	acute myeloid leukemia with NPM1 somatic mutations
+MONDO:0018874	MONDO:0018871	acute myelomonocytic leukemia M4
+MONDO:0018874	MONDO:0018872	acute megakaryoblastic leukemia
+MONDO:0018874	MONDO:0019455	acute panmyelosis with myelofibrosis
+MONDO:0018874	MONDO:0019456	acute myeloid leukemia with multilineage dysplasia
+MONDO:0018874	MONDO:0019457	therapy related acute myeloid leukemia and myelodysplastic syndrome
+MONDO:0018874	MONDO:0019458	acute basophilic leukemia
+MONDO:0018874	MONDO:0019460	acute leukemia of ambiguous lineage
+MONDO:0018874	MONDO:0020316	acute myeloid leukemia with abnormal bone marrow eosinophils inv(16)(p13q22) or t(16;16)(p13;q22)
+MONDO:0018874	MONDO:0020317	acute myeloid leukemia with 11q23 abnormalities
+MONDO:0018874	MONDO:0020320	acute myeloblastic leukemia with maturation
+MONDO:0018874	MONDO:0020321	acute undifferentiated leukemia
+MONDO:0018874	MONDO:0020322	acute biphenotypic leukemia
+MONDO:0018874	MONDO:0020526	acute megakaryoblastic leukemia in down syndrome
+MONDO:0018874	MONDO:0020743	mixed phenotype acute leukemia
+MONDO:0018874	MONDO:0035112	acute myeloid leukemia with BCR-ABL1
+MONDO:0018874	MONDO:0035639	mixed phenotype acute leukemia with t(9;22)(q34.1;q11.2)
+MONDO:0018874	MONDO:0035642	mixed phenotype acute leukemia with t(v;11q23.3)
+MONDO:0018874	MONDO:0044923	acute myeloid leukemia with mutated NPM1
+MONDO:0018874	MONDO:0100373	acute myeloid leukemia, inv(16)(p13.1;q22)
+MONDO:0018874	MONDO:0100374	acute myeloid leukemia, t(16;16)(p13.1;q22)
+MONDO:0018874	MONDO:0100375	acute myeloid leukemia, t(15;17)(q24;q21)
+MONDO:0018874	MONDO:0100376	acute myeloid leukemia, t(9;11)(p21.3;q23.3)
+MONDO:0018874	MONDO:0100377	acute myeloid leukemia, t(10;11)(p12;q23)
+MONDO:0018874	MONDO:0100378	acute myeloid leukemia, t(10;11)(p11.2;q23)
+MONDO:0018874	MONDO:0100379	acute myeloid leukemia, t(1;11)(q21;q23)
+MONDO:0018874	MONDO:0100380	acute myeloid leukemia, t(4;11)(q21;q23)
+MONDO:0018874	MONDO:0100381	acute myeloid leukemia, t(6;11)(q27;q23)
+MONDO:0018874	MONDO:0100382	acute myeloid leukemia, t(6;9)(p23;q34.1)
+MONDO:0018874	MONDO:0100383	acute myeloid leukemia, t(11;19)(q23;p13)
+MONDO:0018874	MONDO:0100384	acute myeloid leukemia, t(11;19)(q23;p13.1)
+MONDO:0018874	MONDO:0100385	acute myeloid leukemia, t(11;19)(q23.3;p13.3)
+MONDO:0018874	MONDO:0100386	acute myeloid leukemia, t(v;11q23.3)
+MONDO:0018874	MONDO:0100387	acute myeloid leukemia, Monosomy 7
+MONDO:0018874	MONDO:0100388	acute myeloid leukemia, Monosomy 5
+MONDO:0018874	MONDO:0100389	acute myeloid leukemia, Trisomy 8
+MONDO:0018874	MONDO:0100390	acute myeloid leukemia, der12p
+MONDO:0018874	MONDO:0100391	acute myeloid leukemia, t(2;12)
+MONDO:0018874	MONDO:0100392	acute myeloid leukemia, t(11;17)
+MONDO:0018874	MONDO:0100393	acute myeloid leukemia, t(8;16)
+MONDO:0018874	MONDO:0100394	acute myeloid leukemia, t(1;22)
+MONDO:0018874	MONDO:0100395	acute myeloid leukemia, t(5;11)(q35;p15)
+MONDO:0018874	MONDO:0100396	acute myeloid leukemia, t(7;12)(q36;p13)
+MONDO:0018874	MONDO:0100397	acute myeloid leukemia, t(9;22)(q34.1;q11.2)
+MONDO:0018874	MONDO:0100398	acute myeloid leukemia, inv(3)(q21.3;q26.2)
+MONDO:0018874	MONDO:0100399	acute myeloid leukemia, t(3;3)(q21.3;q26.2)
+MONDO:0018874	MONDO:0100400	acute myeloid leukemia, t(3;12)(q23;p12.3)
+MONDO:0018874	MONDO:0100401	acute myeloid leukemia, del(5q31-q32)
+MONDO:0018874	MONDO:0100402	acute myeloid leukemia, del(13q14-q21)
+MONDO:0018874	MONDO:0100403	acute myeloid leukemia, loss of chromosome 17p
+MONDO:0018874	MONDO:0100404	acute myeloid leukemia, MLL gene rearrangement
+MONDO:0018874	MONDO:0100405	acute myeloid leukemia, Non-KMT2A MLLT10 rearrangement positive
+MONDO:0018874	MONDO:0100406	acute myeloid leukemia, inv(16)(p13.3;q24.3)
+MONDO:0018874	MONDO:0100407	acute myeloid leukemia, t(11;15)(p15;q35)
+MONDO:0018874	MONDO:0100408	acute myeloid leukemia, t(16;21)(q24;q22)
+MONDO:0018874	MONDO:0100409	acute myeloid leukemia, t(3;5)(q25;q34)
+MONDO:0018874	MONDO:0100410	acute myeloid leukemia, t(16;21)(p11;q22)
+MONDO:0018874	MONDO:0100412	acute myeloid leukemia, monoallelic CEBPA gene mutation
+MONDO:0018874	MONDO:0100413	acute myeloid leukemia, biallelic CEBPA gene mutation
+MONDO:0018874	MONDO:0100414	acute myeloid leukemia, CEBPA gene mutation
+MONDO:0018874	MONDO:0100415	acute myeloid leukemia, FLT3 internal tandem duplication
+MONDO:0018874	MONDO:0100416	acute myeloid leukemia, FLT3 tyrosine kinase domain point mutation
+MONDO:0018874	MONDO:0100417	acute myeloid leukemia, WT1 gene mutation
+MONDO:0018874	MONDO:0100418	acute myeloid leukemia, KIT exon 17 mutation
+MONDO:0018874	MONDO:0100419	acute myeloid leukemia, KIT exon 8 mutation
+MONDO:0018874	MONDO:0100420	acute myeloid leukemia, KIT gene mutation
+MONDO:0018874	MONDO:0100421	acute myeloid leukemia, GATA1 gene mutation
+MONDO:0018874	MONDO:0100422	acute myeloid leukemia, RUNX1 gene mutation
+MONDO:0018874	MONDO:0100423	acute myeloid leukemia, PTPN11 gene mutation
+MONDO:0018874	MONDO:0100424	acute myeloid leukemia, NRAS gene mutation
+MONDO:0018874	MONDO:0100425	acute myeloid leukemia, KRAS gene mutation
+MONDO:0018874	MONDO:0850267	childhood acute megakaryoblastic leukemia
+MONDO:0018874	MONDO:0850269	core binding factor acute myeloid leukemia
+MONDO:0018874	MONDO:0850271	myeloid leukemia associated with down syndrome
+MONDO:0018874	MONDO:0850449	mixed phenotype acute leukemia with BCR-ABL1
+MONDO:0018874	MONDO:0850450	mixed phenotype acute leukemia with MLL rearranged
+MONDO:0018874	MONDO:0850451	mixed phenotype acute leukemia, B/myeloid
+MONDO:0018874	MONDO:0850452	mixed phenotype acute leukemia,T/myeloid
+MONDO:0018874	MONDO:0850492	acute myeloid leukemia, t(8;21)(q22; q22.1)
+MONDO:0018874	MONDO:0850495	acute myeloid leukemia, t(1;22)(p13;q13)
+MONDO:0018874	MONDO:0859598	erythroleukemia
+MONDO:0018874	MONDO:0971091	acute megakaryoblastic leukemia in adult
+MONDO:0018874	MONDO:0975868	acute myeloid leukemia with CBFA2T3-GLIS2 fusion
+MONDO:0018874	MONDO:0975870	acute myeloid leukemia with FUS-ERG fusion
+MONDO:0018874	MONDO:0975871	acute myeloid leukemia with MNX1-ETV6 fusion
+MONDO:0018874	MONDO:0975872	acute myeloid leukemia with NPM1-MLF1 fusion
+MONDO:0000870	MONDO:0000871	T-cell childhood acute lymphocytic leukemia
+MONDO:0000870	MONDO:0000872	B-cell childhood acute lymphoblastic leukemia
+MONDO:0005072	MONDO:0000549	cervical neuroblastoma
+MONDO:0005072	MONDO:0000551	retroperitoneal neuroblastoma
+MONDO:0005072	MONDO:0001095	mediastinum neuroblastoma
+MONDO:0005072	MONDO:0001096	mediastinum ganglioneuroblastoma
+MONDO:0005072	MONDO:0001129	nasal cavity olfactory neuroblastoma
+MONDO:0005072	MONDO:0002749	extracranial neuroblastoma
+MONDO:0005072	MONDO:0002899	differentiating neuroblastoma
+MONDO:0005072	MONDO:0002900	cerebral neuroblastoma
+MONDO:0005072	MONDO:0004024	spinal cord neuroblastoma
+MONDO:0005072	MONDO:0004477	adrenal gland ganglioneuroblastoma
+MONDO:0005072	MONDO:0005598	dopaminergic neuroblastoma
+MONDO:0005072	MONDO:0006076	adrenal gland neuroblastoma
+MONDO:0005072	MONDO:0006329	olfactory neuroblastoma
+MONDO:0005072	MONDO:0024340	retinal neuroblastoma
+MONDO:0005072	MONDO:0859597	cns neuroblastoma with FOXR2 activation
+MONDO:0006058	MONDO:0002230	ovarian Wilms tumor
+MONDO:0006058	MONDO:0003316	nonanaplastic kidney Wilms tumor
+MONDO:0006058	MONDO:0003317	metachronous kidney Wilms' tumor
+MONDO:0006058	MONDO:0003318	mixed cell type kidney Wilms' tumor
+MONDO:0006058	MONDO:0003320	blastema predominant kidney Wilms tumor
+MONDO:0006058	MONDO:0003321	hereditary Wilms tumor
+MONDO:0006058	MONDO:0003322	epithelial predominant Wilms' tumor
+MONDO:0006058	MONDO:0006144	cervical Wilms tumor
+MONDO:0006058	MONDO:0006432	stromal predominant kidney Wilms tumor
+MONDO:0006058	MONDO:0008679	Wilms tumor 1
+MONDO:0006058	MONDO:0008680	Wilms tumor 2
+MONDO:0006058	MONDO:0008683	Wilms tumor 3
+MONDO:0006058	MONDO:0011056	Wilms tumor 4
+MONDO:0006058	MONDO:0011112	Wilms tumor 5
+MONDO:0006058	MONDO:0014779	Wilms tumor 6
+MONDO:0006058	MONDO:0019004	kidney Wilms tumor
+MONDO:0006058	MONDO:0024675	adult kidney Wilms tumor
+MONDO:0006058	MONDO:0024676	childhood kidney Wilms tumor
+MONDO:0006058	MONDO:0030604	cystic partially differentiated nephroblastoma
+MONDO:0006058	MONDO:0979876	Wilms tumor 7

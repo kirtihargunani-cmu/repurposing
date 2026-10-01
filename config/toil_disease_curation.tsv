@@ -1,0 +1,41 @@
+cohort	toil_study	toil_category	mondo_id	oncotree	uberon	gtex_tissues	gtex_match	arm	mixed_histology	notes
+TCGA-ACC	TCGA	Adrenocortical Cancer	MONDO:0006639	ACC	UBERON:0002369	Adrenal Gland	good	solid	no	
+TCGA-BLCA	TCGA	Bladder Urothelial Carcinoma	MONDO:0005611	BLCA	UBERON:0001255	Bladder	partial	solid	no	GTEx bladder n=9
+TCGA-LGG	TCGA	Brain Lower Grade Glioma	MONDO:0021637	LGGNOS	UBERON:0000955	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	yes	astrocytoma/oligodendroglioma mix; IDH subtype matters
+TCGA-BRCA	TCGA	Breast Invasive Carcinoma	MONDO:0006256	BRCA	UBERON:0000310	Breast - Mammary Tissue	good	solid	yes	PAM50 subtypes
+TCGA-CESC	TCGA	Cervical & Endocervical Cancer	MONDO:0005131	CESC	UBERON:0000002	Cervix - Ectocervix;Cervix - Endocervix	partial	solid	yes	squamous + adenocarcinoma; GTEx cervix n=10
+TCGA-CHOL	TCGA	Cholangiocarcinoma	MONDO:0019087	CHOL	UBERON:0002394		none	solid	no	no GTEx bile duct
+TCGA-COAD	TCGA	Colon Adenocarcinoma	MONDO:0002271	COAD	UBERON:0001155	Colon - Transverse	good	solid	no	transverse = mucosa; sigmoid is mostly muscularis
+TCGA-DLBC	TCGA	Diffuse Large B-Cell Lymphoma	MONDO:0018905	DLBCLNOS	UBERON:0000029		none	solid	no	hematologic; no GTEx lymph node
+TCGA-ESCA	TCGA	Esophageal Carcinoma	MONDO:0019086	ESCA;ESCC	UBERON:0001043	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial	solid	yes	adenocarcinoma + squamous; split by histology before Step 4
+TCGA-GBM	TCGA	Glioblastoma Multiforme	MONDO:0018177	GB	UBERON:0000955	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	no	
+TCGA-HNSC	TCGA	Head & Neck Squamous Cell Carcinoma	MONDO:0010150	HNSC	UBERON:0003343	Minor Salivary Gland	partial	solid	no	salivary gland only proxy for oral mucosa; HPV status matters
+TCGA-KICH	TCGA	Kidney Chromophobe	MONDO:0017885	CHRCC	UBERON:0002113	Kidney - Cortex	partial	solid	no	GTEx kidney n=28
+TCGA-KIRC	TCGA	Kidney Clear Cell Carcinoma	MONDO:0005005	CCRCC	UBERON:0002113	Kidney - Cortex	partial	solid	no	GTEx kidney n=28
+TCGA-KIRP	TCGA	Kidney Papillary Cell Carcinoma	MONDO:0017884	PRCC	UBERON:0002113	Kidney - Cortex	partial	solid	no	GTEx kidney n=28
+TCGA-LIHC	TCGA	Liver Hepatocellular Carcinoma	MONDO:0007256	HCC	UBERON:0002107	Liver	good	solid	no	
+TCGA-LUAD	TCGA	Lung Adenocarcinoma	MONDO:0005061	LUAD	UBERON:0002048	Lung	good	solid	no	
+TCGA-LUSC	TCGA	Lung Squamous Cell Carcinoma	MONDO:0005097	LUSC	UBERON:0002048	Lung	good	solid	no	
+TCGA-MESO	TCGA	Mesothelioma	MONDO:0003308	PLMESO	UBERON:0000977		none	solid	no	pleural; no GTEx mesothelium
+TCGA-OV	TCGA	Ovarian Serous Cystadenocarcinoma	MONDO:0006046	HGSOC	UBERON:0000992	Ovary	partial	solid	no	HGSOC mostly tubal origin; GTEx fallopian tube n=5
+TCGA-PAAD	TCGA	Pancreatic Adenocarcinoma	MONDO:0006047	PAAD	UBERON:0001264	Pancreas	partial	solid	no	GTEx pancreas is acinar-dominated; PAAD is ductal
+TCGA-PCPG	TCGA	Pheochromocytoma & Paraganglioma	MONDO:0035540	PHC;PGNG	UBERON:0001236	Adrenal Gland	partial	solid	yes	GTEx adrenal is cortex-dominated
+TCGA-PRAD	TCGA	Prostate Adenocarcinoma	MONDO:0005082	PRAD	UBERON:0002367	Prostate	good	solid	no	
+TCGA-READ	TCGA	Rectum Adenocarcinoma	MONDO:0002169	READ	UBERON:0001052	Colon - Transverse	partial	solid	no	no GTEx rectum; colon mucosa proxy
+TCGA-SARC	TCGA	Sarcoma	MONDO:0018078	SARCNOS	UBERON:0002384		none	solid	yes	LMS/DDLPS/UPS/MFS/SS/MPNST mix; split by histology
+TCGA-SKCM	TCGA	Skin Cutaneous Melanoma	MONDO:0005012	SKCM	UBERON:0002097	Skin - Not Sun Exposed (Suprapubic);Skin - Sun Exposed (Lower Leg)	partial	solid	no	mostly metastatic samples; melanocytes are a minor fraction of skin
+TCGA-STAD	TCGA	Stomach Adenocarcinoma	MONDO:0005036	STAD	UBERON:0000945	Stomach	good	solid	no	
+TCGA-TGCT	TCGA	Testicular Germ Cell Tumor	MONDO:0010108	SEM;NSGCT	UBERON:0000473	Testis	good	solid	yes	seminoma + non-seminoma
+TCGA-THYM	TCGA	Thymoma	MONDO:0006456	THYM	UBERON:0002370		none	solid	no	no GTEx thymus
+TCGA-THCA	TCGA	Thyroid Carcinoma	MONDO:0005075	THPA	UBERON:0002046	Thyroid	good	solid	no	
+TCGA-UCS	TCGA	Uterine Carcinosarcoma	MONDO:0006485	UCS	UBERON:0000995	Uterus	partial	solid	no	GTEx uterus is myometrium-dominated
+TCGA-UCEC	TCGA	Uterine Corpus Endometrioid Carcinoma	MONDO:0002447	UCEC	UBERON:0001295	Uterus	partial	solid	yes	endometrioid + serous; GTEx uterus is myometrium-dominated
+TCGA-UVM	TCGA	Uveal Melanoma	MONDO:0006486	UM	UBERON:0001768		none	solid	no	no GTEx eye
+TCGA-LAML	TCGA	Acute Myeloid Leukemia	MONDO:0018874	AML	UBERON:0002371		none	liquid	no	peripheral blood; GTEx whole blood is not a marrow reference
+TARGET-AML	TARGET	Acute Myeloid Leukemia	MONDO:0004996	AML	UBERON:0002371		none	liquid	no	pediatric
+TARGET-AML-IF	TARGET	Acute Myeloid Leukemia, Induction Failure Subproject	MONDO:0004996	AML	UBERON:0002371		none	liquid	no	pediatric; induction-failure subset of TARGET-AML
+TARGET-ALL	TARGET	Acute Lymphoblastic Leukemia	MONDO:0000870	BLL;TLL	UBERON:0002371		none	liquid	yes	pediatric; B + T lineage
+TARGET-CCSK	TARGET	Clear Cell Sarcoma Of The Kidney	MONDO:0005006	CCSK	UBERON:0002113	Kidney - Cortex	partial	solid	no	pediatric vs adult GTEx kidney; n=13 tumors
+TARGET-RT	TARGET	Kidney, Rhabdoid Tumor	MONDO:0002729	MRT	UBERON:0002113	Kidney - Cortex	partial	solid	no	no tumor samples in Toil (5 normals only)
+TARGET-NBL	TARGET	Neuroblastoma	MONDO:0005072	NBL	UBERON:0000013	Adrenal Gland	partial	solid	no	pediatric; GTEx adrenal is adult cortex
+TARGET-WT	TARGET	Wilms Tumor	MONDO:0006058	WT	UBERON:0002113	Kidney - Cortex	partial	solid	no	pediatric vs adult GTEx kidney
