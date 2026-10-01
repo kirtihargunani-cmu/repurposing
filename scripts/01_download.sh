@@ -26,6 +26,10 @@ get $R/mondo https://github.com/monarch-initiative/mondo/releases/download/v2026
 get $R/uberon http://purl.obolibrary.org/obo/uberon/basic.obo uberon-basic.obo
 get $R/gencode https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_23/gencode.v23.annotation.gtf.gz
 
+# TCGA Pan-Cancer Atlas clinical (TCGA-CDR, Liu 2018) + molecular subtypes, for subtype splits
+get $R/tcga_pancan https://tcga-pancan-atlas-hub.s3.us-east-1.amazonaws.com/download/Survival_SupplementalTable_S1_20171025_xena_sp
+get $R/tcga_pancan https://tcga-pancan-atlas-hub.s3.us-east-1.amazonaws.com/download/TCGASubtype.20170308.tsv.gz
+
 mkdir -p $R/oncotree
 curl -fs https://oncotree.mskcc.org/api/versions > $R/oncotree/versions.json
 get $R/oncotree "https://oncotree.mskcc.org/api/tumorTypes?version=oncotree_latest_stable" tumorTypes.json

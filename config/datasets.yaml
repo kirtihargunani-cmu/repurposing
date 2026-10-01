@@ -21,6 +21,13 @@ aml_beataml2:  # github.com/biodev/beataml2.0_data, CC-BY 4.0 ("dbgap" in names 
     clinical:       {url: https://github.com/biodev/beataml2.0_data/raw/6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8/beataml_wv1to4_clinical.xlsx, sha256: bc692f647f93945e1cf883271af5501bf75c8af3e681676241093c198ed167ad}
     drug_families:  {url: https://github.com/biodev/beataml2.0_data/raw/6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8/beataml_drug_families.xlsx, sha256: 636e27515bc868194686689c635657293b334741dd64b0253e3d1d0b4adc35a0}
 
+tcga_pancan:  # UCSC Xena PanCanAtlas hub; used for histology / molecular-subtype splits (Step 1)
+  release: pancanatlas-2017  # TCGA-CDR 2017-10-25; subtypes 2017-03-08
+  access: open
+  files:
+    clinical: {url: https://tcga-pancan-atlas-hub.s3.us-east-1.amazonaws.com/download/Survival_SupplementalTable_S1_20171025_xena_sp, bytes: 2419504, sha256: a5e704158bb5c51cded8a368accd999dfb259d428e88bbb0c4386078c5df9617}
+    subtypes: {url: https://tcga-pancan-atlas-hub.s3.us-east-1.amazonaws.com/download/TCGASubtype.20170308.tsv.gz, bytes: 45121, sha256: fa8f77e8b1075805befb6b39c0196b66c588c97fcb057d8ab1a2e321c6041975}
+
 recount3:  # R package only for now; projects chosen later. GENCODE v26 (differs from Toil)
   gencode: v26
   access: open
