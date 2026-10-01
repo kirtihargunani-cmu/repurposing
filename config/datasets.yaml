@@ -56,3 +56,44 @@ gencode_gtf:  # must match Toil
   access: open
   url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_23/gencode.v23.annotation.gtf.gz
   sha256: adfda26c291cfb68ae13b54b285f1c0023abc2dfc703b8871f43b9655ab64a56
+
+# ---- Step 3 covariate sources (scripts/02_download_covariates.sh) ----
+gtex_annotations:  # GTEx v8 open-access annotations (age in 10-year bins only)
+  release: v8
+  access: open
+  files:
+    subject_phenotypes: {url: https://storage.googleapis.com/adult-gtex/annotations/v8/metadata-files/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt, sha256: 821bdaff39e7a9a1d166919b3c786724c2b79c2861aeb936a2537a0f59b066f7}
+    sample_attributes:  {url: https://storage.googleapis.com/adult-gtex/annotations/v8/metadata-files/GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt, sha256: 74f6ab4c34ed2648d708a0ae6e6dff324f6c86ea723ae7d1c37d76f5221148f0}
+
+tcga_laml_clinical:  # Xena legacy TCGA hub; bone-marrow blast %
+  release: xena-tcga-hub
+  access: open
+  url: https://tcga.xenahubs.net/download/TCGA.LAML.sampleMap/LAML_clinicalMatrix
+  sha256: 0ead26574b7548b173959c3eda79881771bd7593c857133dd2a4d63156b04e96
+
+tcga_absolute_purity:  # PanCanAtlas ABSOLUTE master calls (GDC publication file)
+  release: pancanatlas-2018
+  access: open
+  url: https://api.gdc.cancer.gov/data/4f277128-f793-4354-a13d-30cc7fe9f6b5
+  sha256: f430a975433d82e0098d7405619d4f12a0c765fcd97e7d63cc9b1de7f2d763cd
+
+tcga_rnaseq_aliquots:  # GDC API snapshot: RNA-seq aliquot barcodes -> plate/center
+  release: gdc-api-2026-10-01
+  access: open
+  file: tcga_gdc/rnaseq_aliquots_20261001.tsv
+  sha256: edb03091f1fff5c70f4150ba122c960ac1eef6708e55c020213df4a1c0f969e6
+
+target_clinical:  # GDC open-access TARGET clinical spreadsheets (2023 releases)
+  access: open
+  files:
+    - {file: TARGET_ALL_Blast_Data_20230727.xlsx, sha256: f0f42733f31578fd34cf6fef6e335106a662b76361d426fd0c6c0517075085c3}
+    - {file: TARGET_ALL_ClinicalData_Phase_II_Discovery_20230727.xlsx, sha256: 316b9e3957046a4953614a4ca28048ffbc0ae4a0562e91bb8f33137b236af058}
+    - {file: TARGET_ALL_ClinicalData_Phase_II_Validation_20230727.xlsx, sha256: ed233920727b750c81ee2c8ebd6c8edc04bce058f4f7cde1d430eca465bbf7fa}
+    - {file: TARGET_ALL_ClinicalData_Phase_I_20230727.xlsx, sha256: a00cdb6a197848ede5e5ea85ff12e491c5b5f3ec280ec17c1a2b2a200299d986}
+    - {file: TARGET_AML_ClinicalData_Discovery_20230720.xlsx, sha256: 111565a79d43f5288883b6733e3c715bb8ea4ff7924849137bdde9daf7fb1636}
+    - {file: TARGET_AML_ClinicalData_Discovery_and_Validation_Tumor_Content_and_RIN_Supplement_20230720.xlsx, sha256: eed606632b58853e1f63c805b902f7413288df220801c41d65a7eb7fe24ca4e4}
+    - {file: TARGET_AML_ClinicalData_Validation_20230720.xlsx, sha256: aa5db6a98f9e1cf44d7ff337fa344d548c721e48dc9d3a25b284f60070404e5e}
+    - {file: TARGET_NBL_ClinicalData_Discovery_20230523.xlsx, sha256: 49cbcfdaa91dbc6ef04ba8e2425606990f02792378b2ae18dce68fafe7e82e3e}
+    - {file: TARGET_NBL_ClinicalData_Validation_20230322.xlsx, sha256: 10e258f67d1f4287978eadb5bd4bcc14c4489b0c7b0664a45639c318f528ee37}
+    - {file: TARGET_WT_ClinicalData_Discovery_20230322.xlsx, sha256: ff66cb010a5d802bbde857fe0f3cef1cc4ccb3aa5ecd3e1e3142d1af85c9a202}
+    - {file: TARGET_WT_ClinicalData_Validation_20230322.xlsx, sha256: bbbd2b3334f7a348ed3722d4fa417323038e76ce8243c755918610977a51c718}

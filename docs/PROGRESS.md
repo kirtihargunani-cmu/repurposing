@@ -18,8 +18,16 @@
   - Inclusion rule: >= 30 tumor *patients*. 49 groups included (10,383 tumors / 10,224 patients).
   - Excluded: BRCA normal-like (39, low tumor content), TARGET-AML-IF (32 samples but 24 patients), CCSK, RT, ALL-T, CESC adenosquamous, UCEC mixed, SARC MPNST/synovial/desmoid; 17 TGCT + 3 LGG tumors lack labels.
   - Step 4 note: TARGET cohorts have repeat samples per patient (relapse, blood + marrow); keep one primary sample per patient.
+- Step 3 (covariates): `scripts/02_download_covariates.sh` (GTEx v8 annotations, TCGA plates via GDC API, LAML blasts, PanCanAtlas ABSOLUTE, TARGET clinical) -> `scripts/21_estimate.R` + `scripts/20_covariates.py` -> `results/step3/`.
+  - `covariates_toil.tsv` (19,565 sample-group rows): source, sample type + class, `primary_per_patient`, `patient_has_untreated_tumor`, sex, age (GTEx = bin midpoint, `age_is_binned`), site (TCGA TSS / GTEx center / TARGET protocol), batch (TCGA plate / GTEx expression batch), RIN, ischemic time, ABSOLUTE purity, ESTIMATE stromal/immune/score, blast %, tumor content %.
+  - primary_per_patient: diagnosis (01/09) > PB at dx (03) > new primary (05) > metastatic (06) > recurrent (02/04/40) > post-treatment (41); GTEx donors keep the first-listed tissue of the group. 18,175 rows flagged; chosen tumors: 9,948 primary, 365 metastatic (364 SKCM), 47 recurrent/post-treatment only.
+  - ESTIMATE (illumina mode, scores only) on 15,324 samples; vs ABSOLUTE purity Spearman -0.59 overall, median -0.64 per cohort. ABSOLUTE covers 90% of TCGA primary tumors.
+  - Blast %: TCGA-LAML 173/173, TARGET-AML 148/162, TARGET-ALL 7/151 (TARGET blast file mostly covers other patients).
+  - `covariates_beataml.tsv`: 671 RNA samples / 613 subjects; one per subject (initial diagnosis > residual > relapse; marrow > blood); 472 flagged samples have drug response.
+  - `genes_protein_coding_v23.tsv`: 19,797 genes.
+  - The one ALL "T-lineage" relapse sample belongs to a clinically B-precursor patient (excluded anyway).
 
 ## Next
 - CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
 - Decide: subtype splits for mixed cohorts; whether to pull DepMap; recount3 non-cancer diseases.
-- Step 3 covariate table (purity/ESTIMATE, batch, sex, age).
+- Step 4: limma-voom signatures per included group using covariates_toil.tsv (primary_per_patient rows).
