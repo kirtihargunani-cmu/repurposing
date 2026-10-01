@@ -1,0 +1,51 @@
+# Pinned data sources. Fill sha256 (and release where blank) after the first pull.
+# access: open = no login/DUA needed.
+
+solid_toil:  # UCSC Xena "TCGA TARGET GTEx" (Toil recompute), GENCODE v23
+  release: toil-xena-hub
+  gencode: v23
+  access: open
+  files:
+    tpm:            {url: https://toil.xenahubs.net/download/TcgaTargetGtex_rsem_gene_tpm.gz, bytes: 1323254426, sha256: a8c36cb16ef82eccb0b6e1e62a2af3ab9d54c1f56735bc59dfac4cbbe2391d4d}  # log2(TPM+0.001)
+    expected_count: {url: https://toil.xenahubs.net/download/TcgaTargetGtex_gene_expected_count.gz, bytes: 1289124490, sha256: ee706cb15448417dc522f1efb2dbdd34ef342c0d5a038cb93ecbefa7990903db}  # for limma-voom
+    phenotype:      {url: https://toil.xenahubs.net/download/TcgaTargetGTEX_phenotype.txt.gz, bytes: 135753, sha256: ba4d4461cff0fe5e91cc3e58f793aa47ff3c5d6fbf77d65ccff5a07231aaf2db}
+    probemap:       {url: https://toil.xenahubs.net/download/probeMap/gencode.v23.annotation.gene.probemap, bytes: 3244244, sha256: 6783ea58791ae876efb697889a042cc7be8e32e40fc01191c622ef25d9416931}
+
+aml_beataml2:  # github.com/biodev/beataml2.0_data, CC-BY 4.0 ("dbgap" in names is not an access tier)
+  release: 6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8  # commit pinned 2026-10-01
+  access: open
+  split_key: dbgap_subject_id  # up to 4 RNA-seq samples per subject
+  files:
+    expression:     {url: https://github.com/biodev/beataml2.0_data/raw/6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8/beataml_waves1to4_norm_exp_dbgap.txt, sha256: d5745b9dbf46dba866a3c7370bb0ba73b363ecdd21e01cc1d916b4e3021e6f87}
+    drug_response:  {url: https://github.com/biodev/beataml2.0_data/raw/6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8/beataml_probit_curve_fits_v4_dbgap.txt, sha256: d4bc5f0d91f66314107411e0f2511adc987e29df5b83d9b03df56d3d12928314}
+    clinical:       {url: https://github.com/biodev/beataml2.0_data/raw/6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8/beataml_wv1to4_clinical.xlsx, sha256: bc692f647f93945e1cf883271af5501bf75c8af3e681676241093c198ed167ad}
+    drug_families:  {url: https://github.com/biodev/beataml2.0_data/raw/6e403e142469dfb8ab20af0a4e6bf0fdaaf474e8/beataml_drug_families.xlsx, sha256: 636e27515bc868194686689c635657293b334741dd64b0253e3d1d0b4adc35a0}
+
+recount3:  # R package only for now; projects chosen later. GENCODE v26 (differs from Toil)
+  gencode: v26
+  access: open
+  projects: []
+
+mondo:
+  release: v2026-09-01  # latest GitHub release as of 2026-10-01
+  access: open
+  files:
+    obo: {url: https://github.com/monarch-initiative/mondo/releases/download/v2026-09-01/mondo.obo, sha256: 50c8367f9bd9978321eedf84d4e2e79cb757efbed514c81effb00b9ad2e49994}
+
+oncotree:
+  release: oncotree_2025_10_03  # = oncotree_latest_stable on 2026-10-01
+  access: open
+  url: https://oncotree.mskcc.org/api/tumorTypes?version=oncotree_2025_10_03
+  sha256: 0c0d2c2d58124873cb9be38887b1f33c24866e966aa03a00b247ec783000aa78  # tumorTypes.json, 897 types
+
+uberon:
+  release: 2026-10-01
+  access: open
+  url: http://purl.obolibrary.org/obo/uberon/basic.obo
+  sha256: 5e1eff802a4d99f7a072f6cd239f50cffdb70aec2b11e33edf00e66746a0a75b
+
+gencode_gtf:  # must match Toil
+  release: v23
+  access: open
+  url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_23/gencode.v23.annotation.gtf.gz
+  sha256: adfda26c291cfb68ae13b54b285f1c0023abc2dfc703b8871f43b9655ab64a56

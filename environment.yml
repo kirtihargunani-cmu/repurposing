@@ -1,0 +1,21 @@
+name: repurposing
+channels: [conda-forge, bioconda]
+dependencies:
+  - r-base=4.4
+  - bioconductor-limma
+  - bioconductor-edger
+  - bioconductor-deseq2
+  - bioconductor-recount3
+  - bioconductor-biomart
+  - bioconductor-org.hs.eg.db
+  - r-readxl
+  - r-data.table
+  - r-yaml
+  - r-remotes
+  - python=3.12
+  - pandas
+  - pyarrow
+  - openpyxl
+  - pyyaml
+  - requests
+  - pronto

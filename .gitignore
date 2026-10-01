@@ -1,0 +1,10 @@
+# Data and logs stay on the server; checksums and versions are tracked in config/datasets.yaml
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/raw/checksums.sha256
+logs/
+*.gz
+.Rhistory
+.RData
+__pycache__/
