@@ -97,3 +97,45 @@ target_clinical:  # GDC open-access TARGET clinical spreadsheets (2023 releases)
     - {file: TARGET_NBL_ClinicalData_Validation_20230322.xlsx, sha256: 10e258f67d1f4287978eadb5bd4bcc14c4489b0c7b0664a45639c318f528ee37}
     - {file: TARGET_WT_ClinicalData_Discovery_20230322.xlsx, sha256: ff66cb010a5d802bbde857fe0f3cef1cc4ccb3aa5ecd3e1e3142d1af85c9a202}
     - {file: TARGET_WT_ClinicalData_Validation_20230322.xlsx, sha256: bbbd2b3334f7a348ed3722d4fa417323038e76ce8243c755918610977a51c718}
+
+# ---- Steps 5-7 sources (scripts/03_download_regulons.sh; regulon pulls by scripts/41_regulons.R) ----
+tf_lambert:  # Lambert et al. 2018, The Human Transcription Factors
+  release: v_1.01
+  access: open
+  url: https://humantfs.ccbr.utoronto.ca/download/v_1.01/DatabaseExtract_v_1.01.csv
+  sha256: 5438940ddef71b6fb8017af609e7599338159f47e2e03ca0439dc0711a8d4cc9
+
+hgnc:  # complete set; current symbols / Entrez / Ensembl for the ID map
+  release: 2026-10-01 snapshot
+  access: open
+  url: https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+  file: hgnc/hgnc_complete_set_20261001.txt
+  sha256: 91d0ad20c34f26fb12c8cce3f80a65a6fc694f3a508040b19f6bfa29ae0d889e
+
+collectri:  # OmniPath REST, datasets=collectri (pulled 2026-10-01)
+  access: open
+  url: https://omnipathdb.org/interactions?datasets=collectri&genesymbols=yes&organisms=9606&license=academic&format=tsv&fields=curation_effort,references
+  file: regulons/collectri_20261001.tsv
+  sha256: 59ebcecbce00cc39da3b176560687444ae490869d24b19ec1ec97a76b1356ed5
+
+dorothea:  # OmniPath REST, levels A-C (pulled 2026-10-01)
+  access: academic / non-commercial  # LICENSE: record for any commercial use
+  url: https://omnipathdb.org/interactions?datasets=dorothea&dorothea_levels=A,B,C&genesymbols=yes&organisms=9606&license=academic&format=tsv&fields=dorothea_level
+  file: regulons/dorothea_ABC_20261001.tsv
+  sha256: cec35bfc72aab62e545d6b5f34efe3fe05a57f7a22b795748fc283742792f013
+
+aracne_networks:  # Bioconductor data package; version pinned in environment.lock.yml
+  release: aracne.networks 1.36.0
+  access: open
+
+tcga_mc3_maf:  # PanCanAtlas MC3 public somatic mutations
+  release: mc3.v0.2.8.PUBLIC
+  access: open
+  url: https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc
+  sha256: cb0caa0e3a80a24cc4ccaaacc95c690a4032cc87c8ac78519a5b33f3aa3f6b81
+
+tcga_gistic2:  # GISTIC2 all_thresholded.by_genes (-2..2), Xena TCGA hub
+  release: xena-tcga-hub
+  access: open
+  url: https://tcga.xenahubs.net/download/TCGA.PANCAN.sampleMap/Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz
+  sha256: 818e3a5ed5a9c0b8e7d7da73cacba48d79a75e0fa515694e381f4ae7e58ae6ce
