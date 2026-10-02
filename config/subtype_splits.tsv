@@ -1,4 +1,4 @@
-cohort	group_id	group_label	split_on	match_regex	mondo_id	oncotree	gtex_tissues	gtex_match	notes	gtex_sex	min_normals
+cohort	group_id	group_label	split_on	match_regex	mondo_id	oncotree	gtex_tissues	gtex_match	notes	restrict_sex	min_normals
 TCGA-ESCA	ESCA-SCC	esophageal squamous cell carcinoma	histological_type	Esophagus Squamous Cell Carcinoma	MONDO:0005580	ESCC	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial			
 TCGA-ESCA	ESCA-AD	esophageal adenocarcinoma	histological_type	Esophagus Adenocarcinoma, NOS	MONDO:0005028	ESCA	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial			
 TCGA-CESC	CESC-SCC	cervical squamous cell carcinoma	histological_type	Cervical Squamous Cell Carcinoma	MONDO:0006143	CESC	Cervix - Ectocervix;Cervix - Endocervix;Vagina	partial	GTEx cervix has 7 donors after one-per-donor; vagina added (non-keratinized stratified squamous epithelium, same as ectocervix); cervix kept first so donors with both contribute cervix		

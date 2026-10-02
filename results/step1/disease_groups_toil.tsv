@@ -1,4 +1,4 @@
-group_id	cohort	group_label	split_on	mondo_id	mondo_label	oncotree	gtex_tissues	gtex_match	gtex_sex	min_normals	arm	n_tumor	n_tumor_patients	n_adjacent_normal	n_gtex_normal	status	exclude_reason	notes
+group_id	cohort	group_label	split_on	mondo_id	mondo_label	oncotree	gtex_tissues	gtex_match	restrict_sex	min_normals	arm	n_tumor	n_tumor_patients	n_adjacent_normal	n_gtex_normal	status	exclude_reason	notes
 ALL-B	TARGET-ALL	B-cell acute lymphoblastic leukemia	lineage	MONDO:0004947	B-cell acute lymphoblastic leukemia	BLL		none			liquid	192	149	0	0	include		lineage from CD19/CD79A/PAX5 vs CD3D/E/G expression
 TARGET-AML	TARGET-AML	childhood acute myeloid leukemia		MONDO:0004996	childhood acute myeloid leukemia	AML		none			liquid	196	162	0	0	include		pediatric
 TARGET-NBL	TARGET-NBL	neuroblastoma		MONDO:0005072	neuroblastoma	NBL	Adrenal Gland	partial			solid	162	155	0	128	include		pediatric; GTEx adrenal is adult cortex
@@ -7,8 +7,8 @@ TCGA-ACC	TCGA-ACC	adrenal cortex carcinoma		MONDO:0006639	adrenal cortex carcino
 TCGA-BLCA	TCGA-BLCA	bladder transitional cell carcinoma		MONDO:0005611	bladder transitional cell carcinoma	BLCA	Bladder	partial			solid	407	407	19	9	include		GTEx bladder n=9
 BRCA-Basal	TCGA-BRCA	breast carcinoma, PAM50 basal-like	Subtype_Selected	MONDO:0004984	basal-like breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	191	190	17	80	include		
 BRCA-Her2	TCGA-BRCA	breast carcinoma, PAM50 HER2-enriched	Subtype_Selected	MONDO:0006244	HER2 positive breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	81	81	9	80	include		PAM50 HER2-enriched is not identical to clinical HER2+
-BRCA-LumA	TCGA-BRCA	breast carcinoma, PAM50 luminal A	Subtype_Selected	MONDO:0021116	luminal A breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	569	565	62	80	include		
-BRCA-LumB	TCGA-BRCA	breast carcinoma, PAM50 luminal B	Subtype_Selected	MONDO:0021115	luminal B breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	219	217	23	80	include		
+BRCA-LumA	TCGA-BRCA	breast carcinoma, PAM50 luminal A	Subtype_Selected	MONDO:0021116	luminal A breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	564	560	62	80	include		
+BRCA-LumB	TCGA-BRCA	breast carcinoma, PAM50 luminal B	Subtype_Selected	MONDO:0021115	luminal B breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	211	209	22	80	include		
 CESC-AD	TCGA-CESC	cervical adenocarcinoma	histological_type	MONDO:0005153	cervical adenocarcinoma	CEAD	Cervix - Ectocervix;Cervix - Endocervix	partial		5	solid	47	47	1	10	include		cervix only (vagina lacks endocervical glandular epithelium); min normals lowered to 5 -> low-power signature (7 donors)
 CESC-SCC	TCGA-CESC	cervical squamous cell carcinoma	histological_type	MONDO:0006143	cervical squamous cell carcinoma	CESC	Cervix - Ectocervix;Cervix - Endocervix;Vagina	partial			solid	253	252	2	95	include		GTEx cervix has 7 donors after one-per-donor; vagina added (non-keratinized stratified squamous epithelium, same as ectocervix); cervix kept first so donors with both contribute cervix
 TCGA-CHOL	TCGA-CHOL	cholangiocarcinoma		MONDO:0019087	cholangiocarcinoma	CHOL		none			solid	36	36	9	0	include		no GTEx bile duct

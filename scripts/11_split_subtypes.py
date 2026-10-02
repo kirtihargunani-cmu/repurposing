@@ -117,17 +117,17 @@ def main():
     for r in splits.itertuples(index=False):
         groups.append(dict(group_id=r.group_id, cohort=r.cohort, group_label=r.group_label,
                            split_on=r.split_on, mondo_id=r.mondo_id, oncotree=r.oncotree,
-                           gtex_tissues=r.gtex_tissues, gtex_match=r.gtex_match, gtex_sex=r.gtex_sex,
+                           gtex_tissues=r.gtex_tissues, gtex_match=r.gtex_match, restrict_sex=r.restrict_sex,
                            min_normals=r.min_normals, arm=base.loc[r.cohort, "arm"], notes=r.notes))
     for c in base.index.difference(split_cohorts):
         b = base.loc[c]
         groups.append(dict(group_id=c, cohort=c, group_label=b.mondo_label, split_on="",
                            mondo_id=b.mondo_id, oncotree=b.oncotree, gtex_tissues=b.gtex_tissues,
-                           gtex_match=b.gtex_match, gtex_sex="", min_normals="", arm=b.arm, notes=b.notes))
+                           gtex_match=b.gtex_match, restrict_sex="", min_normals="", arm=b.arm, notes=b.notes))
     for c in sorted(split_cohorts):
         groups.append(dict(group_id=f"{c}-unassigned", cohort=c, group_label="no subtype label",
                            split_on="", mondo_id="", oncotree="", gtex_tissues="", gtex_match="",
-                           gtex_sex="", min_normals="", arm=base.loc[c, "arm"], notes=""))
+                           restrict_sex="", min_normals="", arm=base.loc[c, "arm"], notes=""))
     groups = pd.DataFrame(groups).fillna("")
 
     # validate identifiers
@@ -146,13 +146,21 @@ def main():
         print("VALIDATION FAILED:\n  " + "\n  ".join(errors), file=sys.stderr)
         sys.exit(1)
 
+    # restrict_sex: drop tumors / adjacent normals of the other sex (GTEx filtered below)
+    restrict = groups.set_index("group_id").restrict_sex
+    samples["sex"] = samples["sample"].map(pheno.set_index("sample").sex).str.lower()
+    wrong = samples.group_id.map(restrict).fillna("").ne("") & (samples.sex != samples.group_id.map(restrict))
+    print(f"restrict_sex: dropping {wrong.sum()} tumor/adjacent samples:",
+          samples[wrong].groupby(["group_id", "role"]).size().to_dict())
+    samples = samples[~wrong].drop(columns="sex")
+
     # GTEx normals per group
     gtex_rows = []
     for g in groups.itertuples(index=False):
         for t in filter(None, g.gtex_tissues.split(";")):
             pool = gtex[gtex.category == t]
-            if g.gtex_sex:  # e.g. female-only breast normals
-                pool = pool[pool.sex.str.lower() == g.gtex_sex]
+            if g.restrict_sex:  # e.g. female-only breast
+                pool = pool[pool.sex.str.lower() == g.restrict_sex]
             for s in pool["sample"]:
                 gtex_rows.append(dict(sample=s, patient=patient(s), cohort=g.cohort, role="gtex_normal",
                                       sample_type=f"GTEx {t}", group_id=g.group_id))
@@ -175,7 +183,7 @@ def main():
     groups["exclude_reason"] = reason
 
     cols = ["group_id", "cohort", "group_label", "split_on", "mondo_id", "mondo_label", "oncotree",
-            "gtex_tissues", "gtex_match", "gtex_sex", "min_normals", "arm", "n_tumor", "n_tumor_patients", "n_adjacent_normal",
+            "gtex_tissues", "gtex_match", "restrict_sex", "min_normals", "arm", "n_tumor", "n_tumor_patients", "n_adjacent_normal",
             "n_gtex_normal", "status", "exclude_reason", "notes"]
     groups = groups[cols].sort_values(["status", "cohort", "group_id"], ascending=[False, True, True])
     groups.to_csv(OUT / "disease_groups_toil.tsv", sep="\t", index=False)

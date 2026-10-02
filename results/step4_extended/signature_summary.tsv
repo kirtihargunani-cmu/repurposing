@@ -5,10 +5,10 @@ BRCA-Basal	adjacent	190	17	ok	""	0	0	age_z,estimate_z	22194	6802	2865	3937	0.792
 BRCA-Basal	gtex	190	79	ok	""	0	0	age_z,estimate_z	22124	9811	4171	5640	0.792
 BRCA-Her2	adjacent	81	9	skipped	< 10 normals								
 BRCA-Her2	gtex	81	79	ok	""	0	0	age_z,estimate_z	21098	9843	3974	5869	
-BRCA-LumA	adjacent	563	62	ok	""	2	0	age_z,estimate_z,sexmale	24919	5914	2307	3607	0.663
-BRCA-LumA	gtex	563	79	ok	""	2	0	age_z,estimate_z,sexmale	25138	9775	3295	6480	0.663
-BRCA-LumB	adjacent	217	23	ok	""	0	0	age_z,estimate_z,sexmale	22833	7501	3203	4298	0.776
-BRCA-LumB	gtex	217	79	ok	""	0	0	age_z,estimate_z,sexmale	23371	10791	4079	6712	0.776
+BRCA-LumA	adjacent	559	62	ok	""	1	0	age_z,estimate_z	21740	5547	2461	3086	0.682
+BRCA-LumA	gtex	559	79	ok	""	1	0	age_z,estimate_z	21964	8503	3370	5133	0.682
+BRCA-LumB	adjacent	209	22	ok	""	0	0	age_z,estimate_z	21842	7011	2749	4262	0.779
+BRCA-LumB	gtex	209	79	ok	""	0	0	age_z,estimate_z	22138	10163	3758	6405	0.779
 CESC-AD	adjacent	46	1	skipped	< 5 normals								
 CESC-AD	gtex	46	7	ok	""	0	0	age_z,estimate_z	21698	7184	2909	4275	
 CESC-SCC	adjacent	252	2	skipped	< 10 normals								

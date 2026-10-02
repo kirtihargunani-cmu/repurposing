@@ -33,7 +33,7 @@
   - No signature (no usable normal): TCGA-LAML, TARGET-AML, ALL-B, DLBC, MESO, THYM, UVM, CHOL (9 adjacent).
 - Step 4 revisions (PI decisions):
   - CESC-SCC normals = GTEx cervix + vagina (same non-keratinized squamous epithelium; 87 donors). CESC-AD = cervix only, min normals lowered to 5 (7 donors; low power). Config: `gtex_tissues`, `min_normals` in `config/subtype_splits.tsv`.
-  - BRCA GTEx normals female-only (`gtex_sex`; 79 donors). LumA/LumB still contain a few male tumors, so a sex term remains in those models.
+  - BRCA female-only throughout (`restrict_sex` in `config/subtype_splits.tsv`; PI: male breast cancer is biologically distinct): 79 female GTEx donors; 13 male tumors (5 LumA, 8 LumB) and 1 male adjacent normal dropped. No BRCA model has a sex term.
   - 40 groups now have a protein-coding signature (58 contrasts).
   - Extended signature (protein-coding + lincRNA + antisense; `GENESET=extended`) in `results/step4_extended/` for mechanism work only; drug matching uses protein-coding. Protein-coding z identical between runs (Spearman >= 0.997); ~5.9k lincRNA + 4.5k antisense genes pass filterByExpr.
 - Scope decision (PI, 2026-10-01): Steps 5-7 for all groups with a signature; Steps 8-10 for BRCA and COAD/READ. De-prioritize hematologic tumors (AML/ALL/DLBC): limited and more variable data. Steps 5-10 data requirements in `docs/PROJECT_PLAN_steps5-10.md`.
@@ -47,6 +47,6 @@
   - `regulons_core.rds` (CollecTRI + DoRothEA) in git; ARACNe tables and `.rds` in `data/processed/step5/` (1.2 GB). sha256 of both in `regulon_checksums.sha256`.
 
 ## Next
-- Step 6: VIPER per group (expressed-TF filter, minimum mapped regulon size; ARACNe arm restricted to Lambert TFs).
+- Step 6: VIPER per group (expressed-TF filter, minimum mapped regulon size; ARACNe arm restricted to Lambert TFs, i.e. sequence-specific DNA-binding TFs, so all three regulon sets measure TF activity).
 - CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
 - Decide: subtype splits for mixed cohorts; whether to pull DepMap; recount3 non-cancer diseases.
