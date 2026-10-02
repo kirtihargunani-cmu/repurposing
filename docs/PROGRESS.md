@@ -45,6 +45,28 @@
   - `scripts/41_regulons.R`: CollecTRI and DoRothEA A-C pulled from the OmniPath REST API (decoupleR/OmnipathR 4.0 wrappers fail against the current server; raw pulls saved in `data/raw/regulons/`), NF-kB / AP-1 complexes collapsed as in decoupleR; aracne.networks (25 TCGA cohorts, Entrez) mapped to Ensembl.
   - Coverage (`regulon_coverage.tsv`): CollecTRI 1,178 regulators / 42,601 edges (99.6% mapped; 614 with < 10 targets); DoRothEA A-C 429 / 32,286 (99.6%; 158 < 10); ARACNe ~6,050 regulators per cohort, ~1,500 of them Lambert TFs, median 95-97% targets mapped.
   - `regulons_core.rds` (CollecTRI + DoRothEA) in git; ARACNe tables and `.rds` in `data/processed/step5/` (1.2 GB). sha256 of both in `regulon_checksums.sha256`.
+- Step 5c/d (project ARACNe, PI decision 2026-10-02): own networks for all cohorts with a signature, full regulator set (Lambert TFs + every aracne.networks regulator: 6,201, incl. 1,633 TFs and 375 kinases) because drivers may be kinases / signaling proteins. `scripts/42_aracne_inputs.py` (per cohort, subtypes pooled, COAD+READ -> COADREAD; log2(TPM+1), protein-coding with TPM >= 1 in >= 10%) -> `scripts/43_run_aracne.sh` (ARACNe-AP commit 30967ea, OpenJDK 17 in conda env `aracne`; MI p 1e-8, 100 bootstraps, DPI, Bonferroni-consolidated). Benchmark on BRCA: AP 7.6 min / bootstrap (108k edges); ARACNe3 (commit 3d8791a) 5 min / subnetwork but only 34k edges. Running detached (`logs/aracne.log`), order: BRCA, COADREAD, small cohorts, then rest; ~2.5 days. Low-n cohorts: ACC 77, KICH 66, UCS 57.
+- Step 6 (VIPER, CollecTRI arm) `scripts/50_viper.R`: per-group regulon filters (regulator expressed: median logCPM >= 1; >= 10 targets and >= 50% present), msviper on the Step 4 z signature, per-patient VIPER vs the group's normals, patient-vs-group concordance, PCA axes of mechanism variation.
+  - Null model: label permutation leaked tumor signal into the null (large effect + unbalanced groups), so the null is now 1,000 random splits of the group's normals (keeps gene-gene correlation, no tumor signal). This null is conservative: |NES| peaks ~3-4.
+  - PI decision 2026-10-02: permutation (normal-split) null only. The analytic null (msviper without null; decoupleR default) assumes independent genes; regulon targets are co-expressed, so it overstates significance (test groups: |NES| ~7, 3-4x more calls, same ranking rho ~0.99). Available only as an opt-in internal check (`ANALYTIC=1` in `scripts/51_compare_mr.R`), never reported.
+  - Thresholds: exploratory selection FDR < 0.10 (PI); confirmatory claims FDR < 0.05 or agreement with the ARACNe arm. Patient concordance uses the group's top 50 regulators with p < 0.05.
+  - `scripts/51_compare_mr.R`: per-group counts at FDR < 0.10, regulator x group NES matrix, known-biology controls.
+
+## Assumptions register (review before reporting results)
+High impact
+1. ESTIMATE adjustment treats stroma/immune content as nuisance; may remove real mechanism (immune evasion, fibrosis). Sensitivity run without it: proposed.
+2. limma assumes equal variance in tumors and normals; tumors are more variable. Sensitivity with voomWithQualityWeights / group variances: proposed.
+3. Normal-split null assumes normal gene-gene correlation represents chance in tumors; null is unadjusted for covariates while the signature is adjusted; GTEx donor/batch structure widens it (conservative).
+4. Normal references: GTEx (post-mortem, collection differences; source collinear with condition) and adjacent normals (field effect, e.g. PRAD, KIRC).
+5. Partial GTEx matches (19 cohorts) put cell-type differences into signatures (pancreas acinar vs ductal; uterus myometrium; adult adrenal for NBL).
+Medium
+6. VIPER infers activity from targets' mRNA; misses non-transcriptional activation (kinase blind spot; PROGENy / CPTAC phospho proposed as complements).
+7. Expressed-regulator filter drops active-but-low-mRNA regulators.
+8. CollecTRI is context-free; unsigned edges (~1.5k of 64.5k) default to activation.
+9. ARACNe: co-expression = regulation; DPI removes indirect edges; one network per cohort assumes subtypes share wiring.
+10. Subtype labels (PanCanAtlas PAM50, IDH/codel; marker-based ALL lineage) taken as correct.
+Lower / handled
+11. RSEM expected counts treated as counts for voom. 12. Missing covariates dropped (< 2%; MAR). 13. GTEx age = bin midpoint. 14. One sample per patient (diagnosis sample representative; metastasis/recurrence via indicator). 15. BH FDR under positive dependence. 16. Filter thresholds (>= 10 targets, >= 50% present, logCPM >= 1, >= 30 patients, >= 10 normals) are judgment calls; sensitivity analyses advisable.
 
 ## Next
 - Step 6: VIPER per group (expressed-TF filter, minimum mapped regulon size; ARACNe arm restricted to Lambert TFs, i.e. sequence-specific DNA-binding TFs, so all three regulon sets measure TF activity).
