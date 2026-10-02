@@ -5,7 +5,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 R=data/raw
-get() { mkdir -p "$1"; curl -fsSL --retry 5 -o "$1/${3:-$(basename "$2")}" "$2"; }
+get() { mkdir -p "$1"; curl -fsSL --retry 5 -C - -o "$1/${3:-$(basename "$2")}" "$2"; }
 get $R/tf_lambert https://humantfs.ccbr.utoronto.ca/download/v_1.01/DatabaseExtract_v_1.01.csv
 get $R/hgnc https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt hgnc_complete_set_$(date +%Y%m%d).txt
 get $R/tcga_pancan https://api.gdc.cancer.gov/data/1c8cfe5f-e52d-41ba-94da-f15ea1337efc mc3.v0.2.8.PUBLIC.maf.gz

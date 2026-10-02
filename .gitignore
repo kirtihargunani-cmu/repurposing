@@ -8,3 +8,4 @@ logs/
 .Rhistory
 .RData
 __pycache__/
+omnipathr-log/

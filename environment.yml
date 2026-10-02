@@ -1,7 +1,7 @@
 name: repurposing
 channels: [conda-forge, bioconda]
 dependencies:
-  - r-base=4.4
+  - r-base=4.5
   - bioconductor-limma
   - bioconductor-edger
   - bioconductor-deseq2
@@ -12,6 +12,16 @@ dependencies:
   - r-data.table
   - r-yaml
   - r-remotes
+  # Steps 5-10
+  - bioconductor-viper
+  - bioconductor-decoupler
+  - bioconductor-omnipathr
+  - bioconductor-aracne.networks
+  - bioconductor-consensusclusterplus
+  - bioconductor-m3c
+  - bioconductor-genefu
+  - r-cluster
+  - r-mclust
   - python=3.12
   - pandas
   - pyarrow
