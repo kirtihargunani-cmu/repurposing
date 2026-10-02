@@ -1,69 +1,69 @@
-group_id	cohort	group_label	split_on	mondo_id	mondo_label	oncotree	gtex_tissues	gtex_match	arm	n_tumor	n_tumor_patients	n_adjacent_normal	n_gtex_normal	status	exclude_reason	notes
-ALL-B	TARGET-ALL	B-cell acute lymphoblastic leukemia	lineage	MONDO:0004947	B-cell acute lymphoblastic leukemia	BLL		none	liquid	192	149	0	0	include		lineage from CD19/CD79A/PAX5 vs CD3D/E/G expression
-TARGET-AML	TARGET-AML	childhood acute myeloid leukemia		MONDO:0004996	childhood acute myeloid leukemia	AML		none	liquid	196	162	0	0	include		pediatric
-TARGET-NBL	TARGET-NBL	neuroblastoma		MONDO:0005072	neuroblastoma	NBL	Adrenal Gland	partial	solid	162	155	0	128	include		pediatric; GTEx adrenal is adult cortex
-TARGET-WT	TARGET-WT	Wilms tumor		MONDO:0006058	Wilms tumor	WT	Kidney - Cortex	partial	solid	126	121	6	28	include		pediatric vs adult GTEx kidney
-TCGA-ACC	TCGA-ACC	adrenal cortex carcinoma		MONDO:0006639	adrenal cortex carcinoma	ACC	Adrenal Gland	good	solid	77	77	0	128	include		
-TCGA-BLCA	TCGA-BLCA	bladder transitional cell carcinoma		MONDO:0005611	bladder transitional cell carcinoma	BLCA	Bladder	partial	solid	407	407	19	9	include		GTEx bladder n=9
-BRCA-Basal	TCGA-BRCA	breast carcinoma, PAM50 basal-like	Subtype_Selected	MONDO:0004984	basal-like breast carcinoma	BRCA	Breast - Mammary Tissue	good	solid	191	190	17	179	include		
-BRCA-Her2	TCGA-BRCA	breast carcinoma, PAM50 HER2-enriched	Subtype_Selected	MONDO:0006244	HER2 positive breast carcinoma	BRCA	Breast - Mammary Tissue	good	solid	81	81	9	179	include		PAM50 HER2-enriched is not identical to clinical HER2+
-BRCA-LumA	TCGA-BRCA	breast carcinoma, PAM50 luminal A	Subtype_Selected	MONDO:0021116	luminal A breast carcinoma	BRCA	Breast - Mammary Tissue	good	solid	569	565	62	179	include		
-BRCA-LumB	TCGA-BRCA	breast carcinoma, PAM50 luminal B	Subtype_Selected	MONDO:0021115	luminal B breast carcinoma	BRCA	Breast - Mammary Tissue	good	solid	219	217	23	179	include		
-CESC-AD	TCGA-CESC	cervical adenocarcinoma	histological_type	MONDO:0005153	cervical adenocarcinoma	CEAD	Cervix - Ectocervix;Cervix - Endocervix	partial	solid	47	47	1	10	include		endocervical-type + mucinous + usual-type + endometrioid; GTEx cervix n=10
-CESC-SCC	TCGA-CESC	cervical squamous cell carcinoma	histological_type	MONDO:0006143	cervical squamous cell carcinoma	CESC	Cervix - Ectocervix;Cervix - Endocervix	partial	solid	253	252	2	10	include		GTEx cervix n=10
-TCGA-CHOL	TCGA-CHOL	cholangiocarcinoma		MONDO:0019087	cholangiocarcinoma	CHOL		none	solid	36	36	9	0	include		no GTEx bile duct
-TCGA-COAD	TCGA-COAD	colon adenocarcinoma		MONDO:0002271	colon adenocarcinoma	COAD	Colon - Transverse	good	solid	290	288	41	167	include		transverse = mucosa; sigmoid is mostly muscularis
-TCGA-DLBC	TCGA-DLBC	diffuse large B-cell lymphoma		MONDO:0018905	diffuse large B-cell lymphoma	DLBCLNOS		none	solid	47	47	0	0	include		hematologic; no GTEx lymph node
-ESCA-AD	TCGA-ESCA	esophageal adenocarcinoma	histological_type	MONDO:0005028	esophageal adenocarcinoma	ESCA	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial	solid	89	89	10	410	include		
-ESCA-SCC	TCGA-ESCA	esophageal squamous cell carcinoma	histological_type	MONDO:0005580	esophageal squamous cell carcinoma	ESCC	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial	solid	93	92	3	410	include		
-TCGA-GBM	TCGA-GBM	glioblastoma		MONDO:0018177	glioblastoma	GB	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	166	160	5	207	include		
-TCGA-HNSC	TCGA-HNSC	head and neck squamous cell carcinoma		MONDO:0010150	head and neck squamous cell carcinoma	HNSC	Esophagus - Mucosa	partial	solid	520	518	44	273	include		esophageal squamous mucosa as proxy for oral/pharyngeal mucosa (no GTEx oral tissue); HPV status matters; CPTAC-HNSCC (GDC, STAR/v36) is a candidate replication cohort, not pooled
-TCGA-KICH	TCGA-KICH	chromophobe renal cell carcinoma		MONDO:0017885	chromophobe renal cell carcinoma	CHRCC	Kidney - Cortex	partial	solid	66	66	25	28	include		GTEx kidney n=28
-TCGA-KIRC	TCGA-KIRC	clear cell renal carcinoma		MONDO:0005005	clear cell renal carcinoma	CCRCC	Kidney - Cortex	partial	solid	531	530	72	28	include		GTEx kidney n=28
-TCGA-KIRP	TCGA-KIRP	papillary renal cell carcinoma		MONDO:0017884	papillary renal cell carcinoma	PRCC	Kidney - Cortex	partial	solid	289	288	32	28	include		GTEx kidney n=28
-TCGA-LAML	TCGA-LAML	acute myeloid leukemia		MONDO:0018874	acute myeloid leukemia	AML		none	liquid	173	173	0	0	include		peripheral blood; GTEx whole blood is not a marrow reference
-LGG-IDHmut-codel	TCGA-LGG	oligodendroglioma, IDH-mutant and 1p/19q-codeleted	Subtype_Selected	MONDO:0859592	IDH-mutant and 1p/19q-codeleted oligodendroglioma	ODG	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	175	173	0	207	include		
-LGG-IDHmut-noncodel	TCGA-LGG	astrocytoma, IDH-mutant	Subtype_Selected	MONDO:0021637	low grade glioma	ASTR	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	249	241	0	207	include		MONDO has only graded IDH-mutant astrocytoma terms; parent used, OncoTree ASTR is exact
-LGG-IDHwt	TCGA-LGG	lower-grade glioma, IDH-wildtype	Subtype_Selected	MONDO:0021637	low grade glioma	LGGNOS	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	solid	96	94	0	207	include		heterogeneous: GBM-like (mesenchymal/classic) + PA-like
-TCGA-LIHC	TCGA-LIHC	hepatocellular carcinoma		MONDO:0007256	hepatocellular carcinoma	HCC	Liver	good	solid	371	369	50	110	include		
-TCGA-LUAD	TCGA-LUAD	lung adenocarcinoma		MONDO:0005061	lung adenocarcinoma	LUAD	Lung	good	solid	515	513	59	288	include		
-TCGA-LUSC	TCGA-LUSC	squamous cell lung carcinoma		MONDO:0005097	squamous cell lung carcinoma	LUSC	Lung	good	solid	498	498	50	288	include		
-TCGA-MESO	TCGA-MESO	pleural mesothelioma		MONDO:0003308	pleural mesothelioma	PLMESO		none	solid	87	87	0	0	include		pleural; no GTEx mesothelium
-TCGA-OV	TCGA-OV	ovarian serous cystadenocarcinoma		MONDO:0006046	ovarian serous cystadenocarcinoma	HGSOC	Ovary	partial	solid	427	422	0	88	include		HGSOC mostly tubal origin; GTEx fallopian tube n=5
-TCGA-PAAD	TCGA-PAAD	pancreatic adenocarcinoma		MONDO:0006047	pancreatic adenocarcinoma	PAAD	Pancreas	partial	solid	179	178	4	167	include		GTEx pancreas is acinar-dominated; PAAD is ductal
-PCPG-PGL	TCGA-PCPG	paraganglioma	histological_type	MONDO:0000448	paraganglioma	PGNG	Adrenal Gland	partial	solid	33	31	0	128	include		extra-adrenal; adrenal is a weak proxy; includes 'extra-adrenal pheochromocytoma'
-PCPG-PHEO	TCGA-PCPG	adrenal pheochromocytoma	histological_type	MONDO:0004974	adrenal gland pheochromocytoma	PHC	Adrenal Gland	partial	solid	149	146	3	128	include		GTEx adrenal is cortex-dominated
-TCGA-PRAD	TCGA-PRAD	prostate adenocarcinoma		MONDO:0005082	prostate adenocarcinoma	PRAD	Prostate	good	solid	496	495	52	100	include		
-TCGA-READ	TCGA-READ	rectum adenocarcinoma		MONDO:0002169	rectum adenocarcinoma	READ	Colon - Transverse	partial	solid	93	92	10	167	include		no GTEx rectum; colon mucosa proxy
-SARC-DDLPS	TCGA-SARC	dedifferentiated liposarcoma	histological_type	MONDO:0020563	dedifferentiated liposarcoma	DDLS	Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial	solid	57	57	1	515	include		
-SARC-LMS	TCGA-SARC	leiomyosarcoma	histological_type	MONDO:0005058	leiomyosarcoma	LMS	Muscle - Skeletal	partial	solid	106	104	1	396	include		smooth-muscle tumor vs skeletal muscle reference
-SARC-UPS	TCGA-SARC	undifferentiated pleomorphic sarcoma / myxofibrosarcoma	histological_type	MONDO:0002142	undifferentiated pleomorphic sarcoma	MFH;MFS	Muscle - Skeletal;Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial	solid	77	76	0	911	include		UPS (52) + MFS (25) merged; related spectrum
-TCGA-SKCM	TCGA-SKCM	cutaneous melanoma		MONDO:0005012	cutaneous melanoma	SKCM	Skin - Not Sun Exposed (Suprapubic);Skin - Sun Exposed (Lower Leg)	partial	solid	469	466	1	557	include		mostly metastatic samples; melanocytes are a minor fraction of skin
-TCGA-STAD	TCGA-STAD	gastric adenocarcinoma		MONDO:0005036	gastric adenocarcinoma	STAD	Stomach	good	solid	414	414	36	175	include		
-TGCT-NSGCT	TCGA-TGCT	testicular non-seminomatous germ cell tumor	histological_type	MONDO:0006447	testicular non-seminomatous germ cell tumor	NSGCT	Testis	good	solid	73	70	0	165	include		any non-seminoma component (clinical convention)
-TGCT-SEM	TCGA-TGCT	testicular seminoma	histological_type	MONDO:0003669	testicular seminoma	SEM	Testis	good	solid	64	62	0	165	include		pure seminoma only
-TCGA-THCA	TCGA-THCA	thyroid gland papillary carcinoma		MONDO:0005075	thyroid gland papillary carcinoma	THPA	Thyroid	good	solid	512	504	59	279	include		
-TCGA-THYM	TCGA-THYM	thymoma		MONDO:0006456	thymoma	THYM		none	solid	119	119	2	0	include		no GTEx thymus
-UCEC-EEC	TCGA-UCEC	endometrial endometrioid adenocarcinoma	histological_type	MONDO:0006192	endometrial endometrioid adenocarcinoma	UEC	Uterus	partial	solid	108	107	10	78	include		GTEx uterus is myometrium-dominated
-UCEC-SER	TCGA-UCEC	endometrial serous adenocarcinoma	histological_type	MONDO:0006196	endometrial serous adenocarcinoma	USC	Uterus	partial	solid	60	60	3	78	include		GTEx uterus is myometrium-dominated
-TCGA-UCS	TCGA-UCS	uterine carcinosarcoma		MONDO:0006485	uterine carcinosarcoma	UCS	Uterus	partial	solid	57	57	0	78	include		GTEx uterus is myometrium-dominated
-TCGA-UVM	TCGA-UVM	uveal melanoma		MONDO:0006486	uveal melanoma	UM		none	solid	79	79	0	0	include		no GTEx eye
-ALL-T	TARGET-ALL	T-cell acute lymphoblastic leukemia	lineage			TLL			liquid	1	1	0	0	exclude	< 30 tumor patients	
-TARGET-ALL-unassigned	TARGET-ALL	no subtype label							liquid	1	1	0	0	exclude	no subtype label	
-TARGET-AML-IF	TARGET-AML-IF	childhood acute myeloid leukemia		MONDO:0004996	childhood acute myeloid leukemia	AML		none	liquid	32	24	0	0	exclude	< 30 tumor patients	pediatric; induction-failure subset of TARGET-AML
-TARGET-CCSK	TARGET-CCSK	clear cell sarcoma of kidney		MONDO:0005006	clear cell sarcoma of kidney	CCSK	Kidney - Cortex	partial	solid	13	13	0	28	exclude	< 30 tumor patients	pediatric vs adult GTEx kidney; n=13 tumors
-TARGET-RT	TARGET-RT	rhabdoid tumor of the kidney		MONDO:0002729	rhabdoid tumor of the kidney	MRT	Kidney - Cortex	partial	solid	0	0	5	28	exclude	< 30 tumor patients	no tumor samples in Toil (5 normals only)
-BRCA-Normal	TCGA-BRCA	breast carcinoma, PAM50 normal-like	Subtype_Selected	MONDO:0006256	invasive breast carcinoma	BRCA	Breast - Mammary Tissue	good	solid	39	39	2	179	exclude	excluded by curation	EXCLUDE: normal-like call mostly reflects low tumor content
-TCGA-BRCA-unassigned	TCGA-BRCA	no subtype label							solid	0	0	0	0	exclude	no subtype label	
-CESC-ADSQ	TCGA-CESC	cervical adenosquamous carcinoma	histological_type			CEAS			solid	6	5	0	0	exclude	< 30 tumor patients	
-TCGA-CESC-unassigned	TCGA-CESC	no subtype label							solid	0	0	0	0	exclude	no subtype label	
-TCGA-ESCA-unassigned	TCGA-ESCA	no subtype label							solid	0	0	0	0	exclude	no subtype label	
-TCGA-LGG-unassigned	TCGA-LGG	no subtype label							solid	3	3	0	0	exclude	no subtype label	
-TCGA-PCPG-unassigned	TCGA-PCPG	no subtype label							solid	0	0	0	0	exclude	no subtype label	
-SARC-DES	TCGA-SARC	desmoid tumor	histological_type			DES			solid	2	2	0	0	exclude	< 30 tumor patients	
-SARC-MPNST	TCGA-SARC	malignant peripheral nerve sheath tumor	histological_type			MPNST			solid	10	9	0	0	exclude	< 30 tumor patients	
-SARC-SS	TCGA-SARC	synovial sarcoma	histological_type			SYNS			solid	10	10	0	0	exclude	< 30 tumor patients	
-TCGA-SARC-unassigned	TCGA-SARC	no subtype label							solid	0	0	0	0	exclude	no subtype label	
-TCGA-TGCT-unassigned	TCGA-TGCT	no subtype label							solid	17	16	0	0	exclude	no subtype label	
-TCGA-UCEC-unassigned	TCGA-UCEC	no subtype label							solid	0	0	10	0	exclude	no subtype label	
-UCEC-MIX	TCGA-UCEC	mixed serous and endometrioid	histological_type			UCEC			solid	13	13	0	0	exclude	< 30 tumor patients	
+group_id	cohort	group_label	split_on	mondo_id	mondo_label	oncotree	gtex_tissues	gtex_match	gtex_sex	min_normals	arm	n_tumor	n_tumor_patients	n_adjacent_normal	n_gtex_normal	status	exclude_reason	notes
+ALL-B	TARGET-ALL	B-cell acute lymphoblastic leukemia	lineage	MONDO:0004947	B-cell acute lymphoblastic leukemia	BLL		none			liquid	192	149	0	0	include		lineage from CD19/CD79A/PAX5 vs CD3D/E/G expression
+TARGET-AML	TARGET-AML	childhood acute myeloid leukemia		MONDO:0004996	childhood acute myeloid leukemia	AML		none			liquid	196	162	0	0	include		pediatric
+TARGET-NBL	TARGET-NBL	neuroblastoma		MONDO:0005072	neuroblastoma	NBL	Adrenal Gland	partial			solid	162	155	0	128	include		pediatric; GTEx adrenal is adult cortex
+TARGET-WT	TARGET-WT	Wilms tumor		MONDO:0006058	Wilms tumor	WT	Kidney - Cortex	partial			solid	126	121	6	28	include		pediatric vs adult GTEx kidney
+TCGA-ACC	TCGA-ACC	adrenal cortex carcinoma		MONDO:0006639	adrenal cortex carcinoma	ACC	Adrenal Gland	good			solid	77	77	0	128	include		
+TCGA-BLCA	TCGA-BLCA	bladder transitional cell carcinoma		MONDO:0005611	bladder transitional cell carcinoma	BLCA	Bladder	partial			solid	407	407	19	9	include		GTEx bladder n=9
+BRCA-Basal	TCGA-BRCA	breast carcinoma, PAM50 basal-like	Subtype_Selected	MONDO:0004984	basal-like breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	191	190	17	80	include		
+BRCA-Her2	TCGA-BRCA	breast carcinoma, PAM50 HER2-enriched	Subtype_Selected	MONDO:0006244	HER2 positive breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	81	81	9	80	include		PAM50 HER2-enriched is not identical to clinical HER2+
+BRCA-LumA	TCGA-BRCA	breast carcinoma, PAM50 luminal A	Subtype_Selected	MONDO:0021116	luminal A breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	569	565	62	80	include		
+BRCA-LumB	TCGA-BRCA	breast carcinoma, PAM50 luminal B	Subtype_Selected	MONDO:0021115	luminal B breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	219	217	23	80	include		
+CESC-AD	TCGA-CESC	cervical adenocarcinoma	histological_type	MONDO:0005153	cervical adenocarcinoma	CEAD	Cervix - Ectocervix;Cervix - Endocervix	partial		5	solid	47	47	1	10	include		cervix only (vagina lacks endocervical glandular epithelium); min normals lowered to 5 -> low-power signature (7 donors)
+CESC-SCC	TCGA-CESC	cervical squamous cell carcinoma	histological_type	MONDO:0006143	cervical squamous cell carcinoma	CESC	Cervix - Ectocervix;Cervix - Endocervix;Vagina	partial			solid	253	252	2	95	include		GTEx cervix has 7 donors after one-per-donor; vagina added (non-keratinized stratified squamous epithelium, same as ectocervix); cervix kept first so donors with both contribute cervix
+TCGA-CHOL	TCGA-CHOL	cholangiocarcinoma		MONDO:0019087	cholangiocarcinoma	CHOL		none			solid	36	36	9	0	include		no GTEx bile duct
+TCGA-COAD	TCGA-COAD	colon adenocarcinoma		MONDO:0002271	colon adenocarcinoma	COAD	Colon - Transverse	good			solid	290	288	41	167	include		transverse = mucosa; sigmoid is mostly muscularis
+TCGA-DLBC	TCGA-DLBC	diffuse large B-cell lymphoma		MONDO:0018905	diffuse large B-cell lymphoma	DLBCLNOS		none			solid	47	47	0	0	include		hematologic; no GTEx lymph node
+ESCA-AD	TCGA-ESCA	esophageal adenocarcinoma	histological_type	MONDO:0005028	esophageal adenocarcinoma	ESCA	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial			solid	89	89	10	410	include		
+ESCA-SCC	TCGA-ESCA	esophageal squamous cell carcinoma	histological_type	MONDO:0005580	esophageal squamous cell carcinoma	ESCC	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial			solid	93	92	3	410	include		
+TCGA-GBM	TCGA-GBM	glioblastoma		MONDO:0018177	glioblastoma	GB	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good			solid	166	160	5	207	include		
+TCGA-HNSC	TCGA-HNSC	head and neck squamous cell carcinoma		MONDO:0010150	head and neck squamous cell carcinoma	HNSC	Esophagus - Mucosa	partial			solid	520	518	44	273	include		esophageal squamous mucosa as proxy for oral/pharyngeal mucosa (no GTEx oral tissue); HPV status matters; CPTAC-HNSCC (GDC, STAR/v36) is a candidate replication cohort, not pooled
+TCGA-KICH	TCGA-KICH	chromophobe renal cell carcinoma		MONDO:0017885	chromophobe renal cell carcinoma	CHRCC	Kidney - Cortex	partial			solid	66	66	25	28	include		GTEx kidney n=28
+TCGA-KIRC	TCGA-KIRC	clear cell renal carcinoma		MONDO:0005005	clear cell renal carcinoma	CCRCC	Kidney - Cortex	partial			solid	531	530	72	28	include		GTEx kidney n=28
+TCGA-KIRP	TCGA-KIRP	papillary renal cell carcinoma		MONDO:0017884	papillary renal cell carcinoma	PRCC	Kidney - Cortex	partial			solid	289	288	32	28	include		GTEx kidney n=28
+TCGA-LAML	TCGA-LAML	acute myeloid leukemia		MONDO:0018874	acute myeloid leukemia	AML		none			liquid	173	173	0	0	include		peripheral blood; GTEx whole blood is not a marrow reference
+LGG-IDHmut-codel	TCGA-LGG	oligodendroglioma, IDH-mutant and 1p/19q-codeleted	Subtype_Selected	MONDO:0859592	IDH-mutant and 1p/19q-codeleted oligodendroglioma	ODG	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good			solid	175	173	0	207	include		
+LGG-IDHmut-noncodel	TCGA-LGG	astrocytoma, IDH-mutant	Subtype_Selected	MONDO:0021637	low grade glioma	ASTR	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good			solid	249	241	0	207	include		MONDO has only graded IDH-mutant astrocytoma terms; parent used, OncoTree ASTR is exact
+LGG-IDHwt	TCGA-LGG	lower-grade glioma, IDH-wildtype	Subtype_Selected	MONDO:0021637	low grade glioma	LGGNOS	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good			solid	96	94	0	207	include		heterogeneous: GBM-like (mesenchymal/classic) + PA-like
+TCGA-LIHC	TCGA-LIHC	hepatocellular carcinoma		MONDO:0007256	hepatocellular carcinoma	HCC	Liver	good			solid	371	369	50	110	include		
+TCGA-LUAD	TCGA-LUAD	lung adenocarcinoma		MONDO:0005061	lung adenocarcinoma	LUAD	Lung	good			solid	515	513	59	288	include		
+TCGA-LUSC	TCGA-LUSC	squamous cell lung carcinoma		MONDO:0005097	squamous cell lung carcinoma	LUSC	Lung	good			solid	498	498	50	288	include		
+TCGA-MESO	TCGA-MESO	pleural mesothelioma		MONDO:0003308	pleural mesothelioma	PLMESO		none			solid	87	87	0	0	include		pleural; no GTEx mesothelium
+TCGA-OV	TCGA-OV	ovarian serous cystadenocarcinoma		MONDO:0006046	ovarian serous cystadenocarcinoma	HGSOC	Ovary	partial			solid	427	422	0	88	include		HGSOC mostly tubal origin; GTEx fallopian tube n=5
+TCGA-PAAD	TCGA-PAAD	pancreatic adenocarcinoma		MONDO:0006047	pancreatic adenocarcinoma	PAAD	Pancreas	partial			solid	179	178	4	167	include		GTEx pancreas is acinar-dominated; PAAD is ductal
+PCPG-PGL	TCGA-PCPG	paraganglioma	histological_type	MONDO:0000448	paraganglioma	PGNG	Adrenal Gland	partial			solid	33	31	0	128	include		extra-adrenal; adrenal is a weak proxy; includes 'extra-adrenal pheochromocytoma'
+PCPG-PHEO	TCGA-PCPG	adrenal pheochromocytoma	histological_type	MONDO:0004974	adrenal gland pheochromocytoma	PHC	Adrenal Gland	partial			solid	149	146	3	128	include		GTEx adrenal is cortex-dominated
+TCGA-PRAD	TCGA-PRAD	prostate adenocarcinoma		MONDO:0005082	prostate adenocarcinoma	PRAD	Prostate	good			solid	496	495	52	100	include		
+TCGA-READ	TCGA-READ	rectum adenocarcinoma		MONDO:0002169	rectum adenocarcinoma	READ	Colon - Transverse	partial			solid	93	92	10	167	include		no GTEx rectum; colon mucosa proxy
+SARC-DDLPS	TCGA-SARC	dedifferentiated liposarcoma	histological_type	MONDO:0020563	dedifferentiated liposarcoma	DDLS	Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial			solid	57	57	1	515	include		
+SARC-LMS	TCGA-SARC	leiomyosarcoma	histological_type	MONDO:0005058	leiomyosarcoma	LMS	Muscle - Skeletal	partial			solid	106	104	1	396	include		smooth-muscle tumor vs skeletal muscle reference
+SARC-UPS	TCGA-SARC	undifferentiated pleomorphic sarcoma / myxofibrosarcoma	histological_type	MONDO:0002142	undifferentiated pleomorphic sarcoma	MFH;MFS	Muscle - Skeletal;Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial			solid	77	76	0	911	include		UPS (52) + MFS (25) merged; related spectrum
+TCGA-SKCM	TCGA-SKCM	cutaneous melanoma		MONDO:0005012	cutaneous melanoma	SKCM	Skin - Not Sun Exposed (Suprapubic);Skin - Sun Exposed (Lower Leg)	partial			solid	469	466	1	557	include		mostly metastatic samples; melanocytes are a minor fraction of skin
+TCGA-STAD	TCGA-STAD	gastric adenocarcinoma		MONDO:0005036	gastric adenocarcinoma	STAD	Stomach	good			solid	414	414	36	175	include		
+TGCT-NSGCT	TCGA-TGCT	testicular non-seminomatous germ cell tumor	histological_type	MONDO:0006447	testicular non-seminomatous germ cell tumor	NSGCT	Testis	good			solid	73	70	0	165	include		any non-seminoma component (clinical convention)
+TGCT-SEM	TCGA-TGCT	testicular seminoma	histological_type	MONDO:0003669	testicular seminoma	SEM	Testis	good			solid	64	62	0	165	include		pure seminoma only
+TCGA-THCA	TCGA-THCA	thyroid gland papillary carcinoma		MONDO:0005075	thyroid gland papillary carcinoma	THPA	Thyroid	good			solid	512	504	59	279	include		
+TCGA-THYM	TCGA-THYM	thymoma		MONDO:0006456	thymoma	THYM		none			solid	119	119	2	0	include		no GTEx thymus
+UCEC-EEC	TCGA-UCEC	endometrial endometrioid adenocarcinoma	histological_type	MONDO:0006192	endometrial endometrioid adenocarcinoma	UEC	Uterus	partial			solid	108	107	10	78	include		GTEx uterus is myometrium-dominated
+UCEC-SER	TCGA-UCEC	endometrial serous adenocarcinoma	histological_type	MONDO:0006196	endometrial serous adenocarcinoma	USC	Uterus	partial			solid	60	60	3	78	include		GTEx uterus is myometrium-dominated
+TCGA-UCS	TCGA-UCS	uterine carcinosarcoma		MONDO:0006485	uterine carcinosarcoma	UCS	Uterus	partial			solid	57	57	0	78	include		GTEx uterus is myometrium-dominated
+TCGA-UVM	TCGA-UVM	uveal melanoma		MONDO:0006486	uveal melanoma	UM		none			solid	79	79	0	0	include		no GTEx eye
+ALL-T	TARGET-ALL	T-cell acute lymphoblastic leukemia	lineage			TLL					liquid	1	1	0	0	exclude	< 30 tumor patients	
+TARGET-ALL-unassigned	TARGET-ALL	no subtype label									liquid	1	1	0	0	exclude	no subtype label	
+TARGET-AML-IF	TARGET-AML-IF	childhood acute myeloid leukemia		MONDO:0004996	childhood acute myeloid leukemia	AML		none			liquid	32	24	0	0	exclude	< 30 tumor patients	pediatric; induction-failure subset of TARGET-AML
+TARGET-CCSK	TARGET-CCSK	clear cell sarcoma of kidney		MONDO:0005006	clear cell sarcoma of kidney	CCSK	Kidney - Cortex	partial			solid	13	13	0	28	exclude	< 30 tumor patients	pediatric vs adult GTEx kidney; n=13 tumors
+TARGET-RT	TARGET-RT	rhabdoid tumor of the kidney		MONDO:0002729	rhabdoid tumor of the kidney	MRT	Kidney - Cortex	partial			solid	0	0	5	28	exclude	< 30 tumor patients	no tumor samples in Toil (5 normals only)
+BRCA-Normal	TCGA-BRCA	breast carcinoma, PAM50 normal-like	Subtype_Selected	MONDO:0006256	invasive breast carcinoma	BRCA	Breast - Mammary Tissue	good	female		solid	39	39	2	80	exclude	excluded by curation	EXCLUDE: normal-like call mostly reflects low tumor content
+TCGA-BRCA-unassigned	TCGA-BRCA	no subtype label									solid	0	0	0	0	exclude	no subtype label	
+CESC-ADSQ	TCGA-CESC	cervical adenosquamous carcinoma	histological_type			CEAS					solid	6	5	0	0	exclude	< 30 tumor patients	
+TCGA-CESC-unassigned	TCGA-CESC	no subtype label									solid	0	0	0	0	exclude	no subtype label	
+TCGA-ESCA-unassigned	TCGA-ESCA	no subtype label									solid	0	0	0	0	exclude	no subtype label	
+TCGA-LGG-unassigned	TCGA-LGG	no subtype label									solid	3	3	0	0	exclude	no subtype label	
+TCGA-PCPG-unassigned	TCGA-PCPG	no subtype label									solid	0	0	0	0	exclude	no subtype label	
+SARC-DES	TCGA-SARC	desmoid tumor	histological_type			DES					solid	2	2	0	0	exclude	< 30 tumor patients	
+SARC-MPNST	TCGA-SARC	malignant peripheral nerve sheath tumor	histological_type			MPNST					solid	10	9	0	0	exclude	< 30 tumor patients	
+SARC-SS	TCGA-SARC	synovial sarcoma	histological_type			SYNS					solid	10	10	0	0	exclude	< 30 tumor patients	
+TCGA-SARC-unassigned	TCGA-SARC	no subtype label									solid	0	0	0	0	exclude	no subtype label	
+TCGA-TGCT-unassigned	TCGA-TGCT	no subtype label									solid	17	16	0	0	exclude	no subtype label	
+TCGA-UCEC-unassigned	TCGA-UCEC	no subtype label									solid	0	0	10	0	exclude	no subtype label	
+UCEC-MIX	TCGA-UCEC	mixed serous and endometrioid	histological_type			UCEC					solid	13	13	0	0	exclude	< 30 tumor patients	

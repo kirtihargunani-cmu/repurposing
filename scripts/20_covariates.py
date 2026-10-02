@@ -5,6 +5,7 @@ Outputs (results/step3/):
   covariates_toil.tsv       one row per (sample, group) from results/step1/sample_groups_toil.tsv
   covariates_beataml.tsv    one row per BeatAML RNA-seq sample in the expression matrix
   genes_protein_coding_v23.tsv   protein-coding genes from the GENCODE v23 GTF (matches Toil)
+  genes_extended_v23.tsv         protein-coding + lincRNA + antisense (mechanism-oriented signature)
 
 primary_per_patient: within each (group, role, patient) exactly one sample is flagged, chosen by
 SAMPLE_PRIORITY (diagnosis before metastasis before recurrence/post-treatment). GTEx donors that
@@ -77,18 +78,25 @@ def tcga_plates():
     return df.drop_duplicates("sample").set_index("sample").join(n)
 
 
-def protein_coding():
+EXTENDED_BIOTYPES = {"protein_coding", "lincRNA", "antisense"}
+
+
+def gencode_genes():
     rows = []
     with gzip.open(RAW / "gencode/gencode.v23.annotation.gtf.gz", "rt") as fh:
         for line in fh:
             if line.startswith("#"):
                 continue
             f = line.split("\t", 8)
-            if f[2] != "gene" or 'gene_type "protein_coding"' not in f[8]:
+            if f[2] != "gene":
+                continue
+            biotype = re.search(r'gene_type "([^"]+)"', f[8]).group(1)
+            if biotype not in EXTENDED_BIOTYPES:
                 continue
             gid = re.search(r'gene_id "([^"]+)"', f[8]).group(1)
             rows.append(dict(gene_id=gid.split(".")[0], gene_id_versioned=gid,
-                             symbol=re.search(r'gene_name "([^"]+)"', f[8]).group(1), chrom=f[0]))
+                             symbol=re.search(r'gene_name "([^"]+)"', f[8]).group(1), chrom=f[0],
+                             biotype=biotype))
     return pd.DataFrame(rows)
 
 
@@ -219,8 +227,11 @@ def beataml_covariates():
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    pc = protein_coding()
+    genes = gencode_genes()
+    pc = genes[genes.biotype == "protein_coding"].drop(columns="biotype")
     pc.to_csv(OUT / "genes_protein_coding_v23.tsv", sep="\t", index=False)
+    genes.to_csv(OUT / "genes_extended_v23.tsv", sep="\t", index=False)
+    print("extended genes:", genes.biotype.value_counts().to_dict())
     toil = toil_covariates()
     toil.to_csv(OUT / "covariates_toil.tsv", sep="\t", index=False)
     beat = beataml_covariates()

@@ -11,7 +11,10 @@
 #     with >= MIN_CLASS tumors, so `condition` is primary tumor vs normal; tumors in rarer classes
 #     are dropped. new_primary counts as primary.
 #   - data source / plate are NOT in the model: in the gtex contrast they are collinear with condition.
-# Genes: GENCODE v23 protein-coding, then edgeR::filterByExpr per contrast; TMM; voom.
+# Genes: GENESET=protein_coding (default; used for drug matching) or GENESET=extended
+#   (protein-coding + lincRNA + antisense, for mechanism work), then edgeR::filterByExpr per
+#   contrast; TMM; voom. Extended outputs go to *_extended directories.
+# Normals: >= MIN_NORMAL per contrast, unless the group's min_normals (config/subtype_splits.tsv) is lower.
 # Signature value: moderated t -> signed z (limma::zscoreT, df.total).
 #
 # Outputs:
@@ -28,18 +31,20 @@ N_CORES <- 24
 
 cov <- fread("results/step3/covariates_toil.tsv")
 groups <- fread("results/step1/disease_groups_toil.tsv")[status == "include"]
-pc <- fread("results/step3/genes_protein_coding_v23.tsv")
+GENESET <- Sys.getenv("GENESET", "protein_coding")
+stopifnot(GENESET %in% c("protein_coding", "extended"))
+sfx <- if (GENESET == "extended") "_extended" else ""
+pc <- fread(sprintf("results/step3/genes_%s_v23.tsv", GENESET))
 cov <- cov[primary_per_patient == TRUE & group_id %in% groups$group_id]
 cov[sample_type_class == "new_primary", sample_type_class := "primary"]
 
 cnt_f <- "data/raw/solid_toil/TcgaTargetGtex_gene_expected_count.gz"
-cache <- "data/processed/step4/counts_protein_coding.rds"  # rebuilt when the sample set changes
+cache <- sprintf("data/processed/step4%s/counts_%s.rds", sfx, GENESET)  # rebuilt when the sample set changes
 dir.create(dirname(cache), recursive = TRUE, showWarnings = FALSE)
+hdr <- names(fread(cmd = paste("zcat", cnt_f, "| head -1")))
+use <- intersect(unique(cov$sample), hdr)
 counts <- if (file.exists(cache)) readRDS(cache) else NULL
-if (is.null(counts) || !all(intersect(unique(cov$sample), colnames(counts)) %in% colnames(counts)) ||
-    length(setdiff(unique(cov$sample), colnames(counts))) > 13) {
-  hdr <- names(fread(cmd = paste("zcat", cnt_f, "| head -1")))
-  use <- intersect(unique(cov$sample), hdr)
+if (is.null(counts) || !all(use %in% colnames(counts))) {
   message(length(use), " of ", uniqueN(cov$sample), " samples in count matrix; reading...")
   x <- fread(cmd = paste("zcat", cnt_f), select = c(hdr[1], use))
   ids <- sub("\\..*", "", x[[1]])
@@ -50,11 +55,13 @@ if (is.null(counts) || !all(intersect(unique(cov$sample), colnames(counts)) %in%
   counts <- round(pmax(2^counts - 1, 0))  # file is log2(expected_count + 1)
   saveRDS(counts, cache)
 }
-message(nrow(counts), " protein-coding genes x ", ncol(counts), " samples")
+message(nrow(counts), " ", GENESET, " genes x ", ncol(counts), " samples")
 symbol <- setNames(pc$symbol, pc$gene_id)
 
-dir.create("data/processed/step4", recursive = TRUE, showWarnings = FALSE)
-dir.create("results/step4", recursive = TRUE, showWarnings = FALSE)
+proc_dir <- paste0("data/processed/step4", sfx); res_dir <- paste0("results/step4", sfx)
+dir.create(proc_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
+min_normals <- setNames(suppressWarnings(as.integer(groups$min_normals)), groups$group_id)
 
 run <- function(gid, contrast) {
   normal_role <- if (contrast == "gtex") "gtex_normal" else "adjacent_normal"
@@ -62,8 +69,9 @@ run <- function(gid, contrast) {
   d[, condition := factor(ifelse(role == "tumor", "tumor", "normal"), levels = c("normal", "tumor"))]
   out <- list(group_id = gid, contrast = contrast, n_tumor = sum(d$role == "tumor"),
               n_normal = sum(d$role == normal_role), status = "ok", note = "")
-  if (out$n_normal < MIN_NORMAL) return(modifyList(out, list(status = "skipped",
-                                                            note = sprintf("< %d normals", MIN_NORMAL))))
+  min_n <- if (is.na(min_normals[gid])) MIN_NORMAL else min(min_normals[gid], MIN_NORMAL)
+  if (out$n_normal < min_n) return(modifyList(out, list(status = "skipped",
+                                                       note = sprintf("< %d normals", min_n))))
   # tumor sample-type classes
   cls <- d[role == "tumor", .N, by = sample_type_class]
   rare <- cls[sample_type_class != "primary" & N < MIN_CLASS, sample_type_class]
@@ -91,8 +99,9 @@ run <- function(gid, contrast) {
   fit <- eBayes(lmFit(v, design))
   tt <- topTable(fit, coef = "conditiontumor", number = Inf, sort.by = "none")
   tt <- data.table(gene_id = rownames(tt), symbol = symbol[rownames(tt)], tt)
+  if ("biotype" %in% names(pc)) tt[, biotype := pc$biotype[match(gene_id, pc$gene_id)]]
   tt[, z := zscoreT(t, df = fit$df.total)]
-  fwrite(tt, sprintf("data/processed/step4/%s__%s.tsv.gz", gid, contrast), sep = "\t")
+  fwrite(tt, sprintf("%s/%s__%s.tsv.gz", proc_dir, gid, contrast), sep = "\t")
   modifyList(out, list(
     n_tumor = sum(d$condition == "tumor"), n_normal = sum(d$condition == "normal"),
     n_dropped_missing_cov = n0 - nrow(d), n_dropped_rare_type = dropped,
@@ -119,7 +128,7 @@ for (ct in c("gtex", "adjacent")) {
   genes <- sort(unique(unlist(lapply(zs, function(r) names(r$z[[1]])))))
   zm <- data.table(gene_id = genes, symbol = symbol[genes])
   for (r in zs) zm[, (r$group_id) := round(r$z[[1]][genes], 3)]
-  fwrite(zm, sprintf("results/step4/z_tumor_vs_%s.tsv", ct), sep = "\t", na = "NA")
+  fwrite(zm, sprintf("%s/z_tumor_vs_%s.tsv", res_dir, ct), sep = "\t", na = "NA")
 }
 # agreement between the two contrasts, where both exist
 both <- Filter(function(r) identical(r$status, "ok"), res)
@@ -131,6 +140,6 @@ agree <- rbindlist(lapply(unique(sapply(both, `[[`, "group_id")), function(g) {
 }))
 if (nrow(agree)) summ <- merge(summ, agree, by = "group_id", all.x = TRUE)
 setorder(summ, group_id, contrast)
-fwrite(summ, "results/step4/signature_summary.tsv", sep = "\t")
+fwrite(summ, file.path(res_dir, "signature_summary.tsv"), sep = "\t")
 message("SIGNATURES DONE: ", summ[status == "ok", .N], " ok, ", summ[status == "skipped", .N],
         " skipped, ", summ[status == "error", .N], " errors")

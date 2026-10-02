@@ -1,29 +1,29 @@
-cohort	group_id	group_label	split_on	match_regex	mondo_id	oncotree	gtex_tissues	gtex_match	notes
-TCGA-ESCA	ESCA-SCC	esophageal squamous cell carcinoma	histological_type	Esophagus Squamous Cell Carcinoma	MONDO:0005580	ESCC	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial	
-TCGA-ESCA	ESCA-AD	esophageal adenocarcinoma	histological_type	Esophagus Adenocarcinoma, NOS	MONDO:0005028	ESCA	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial	
-TCGA-CESC	CESC-SCC	cervical squamous cell carcinoma	histological_type	Cervical Squamous Cell Carcinoma	MONDO:0006143	CESC	Cervix - Ectocervix;Cervix - Endocervix	partial	GTEx cervix n=10
-TCGA-CESC	CESC-AD	cervical adenocarcinoma	histological_type	.*Adenocarcinoma.*	MONDO:0005153	CEAD	Cervix - Ectocervix;Cervix - Endocervix	partial	endocervical-type + mucinous + usual-type + endometrioid; GTEx cervix n=10
-TCGA-CESC	CESC-ADSQ	cervical adenosquamous carcinoma	histological_type	Adenosquamous		CEAS			
-TCGA-UCEC	UCEC-EEC	endometrial endometrioid adenocarcinoma	histological_type	Endometrioid endometrial adenocarcinoma	MONDO:0006192	UEC	Uterus	partial	GTEx uterus is myometrium-dominated
-TCGA-UCEC	UCEC-SER	endometrial serous adenocarcinoma	histological_type	Serous endometrial adenocarcinoma	MONDO:0006196	USC	Uterus	partial	GTEx uterus is myometrium-dominated
-TCGA-UCEC	UCEC-MIX	mixed serous and endometrioid	histological_type	Mixed serous and endometrioid		UCEC			
-TCGA-PCPG	PCPG-PHEO	adrenal pheochromocytoma	histological_type	Pheochromocytoma	MONDO:0004974	PHC	Adrenal Gland	partial	GTEx adrenal is cortex-dominated
-TCGA-PCPG	PCPG-PGL	paraganglioma	histological_type	Paraganglioma.*	MONDO:0000448	PGNG	Adrenal Gland	partial	extra-adrenal; adrenal is a weak proxy; includes 'extra-adrenal pheochromocytoma'
-TCGA-TGCT	TGCT-SEM	testicular seminoma	histological_type	Seminoma; NOS	MONDO:0003669	SEM	Testis	good	pure seminoma only
-TCGA-TGCT	TGCT-NSGCT	testicular non-seminomatous germ cell tumor	histological_type	.*Non-Seminoma.*	MONDO:0006447	NSGCT	Testis	good	any non-seminoma component (clinical convention)
-TCGA-SARC	SARC-LMS	leiomyosarcoma	histological_type	Leiomyosarcoma \(LMS\)	MONDO:0005058	LMS	Muscle - Skeletal	partial	smooth-muscle tumor vs skeletal muscle reference
-TCGA-SARC	SARC-DDLPS	dedifferentiated liposarcoma	histological_type	Dedifferentiated liposarcoma	MONDO:0020563	DDLS	Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial	
-TCGA-SARC	SARC-UPS	undifferentiated pleomorphic sarcoma / myxofibrosarcoma	histological_type	.*(MFH|Undifferentiated Pleomorphic|Myxofibrosarcoma).*	MONDO:0002142	MFH;MFS	Muscle - Skeletal;Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial	UPS (52) + MFS (25) merged; related spectrum
-TCGA-SARC	SARC-MPNST	malignant peripheral nerve sheath tumor	histological_type	.*MPNST.*		MPNST			
-TCGA-SARC	SARC-SS	synovial sarcoma	histological_type	(?i).*synovial.*		SYNS			
-TCGA-SARC	SARC-DES	desmoid tumor	histological_type	Desmoid Tumor		DES			
-TCGA-LGG	LGG-IDHmut-noncodel	astrocytoma, IDH-mutant	Subtype_Selected	GBM_LGG\.G-CIMP-(high|low)	MONDO:0021637	ASTR	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	MONDO has only graded IDH-mutant astrocytoma terms; parent used, OncoTree ASTR is exact
-TCGA-LGG	LGG-IDHmut-codel	oligodendroglioma, IDH-mutant and 1p/19q-codeleted	Subtype_Selected	GBM_LGG\.Codel	MONDO:0859592	ODG	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	
-TCGA-LGG	LGG-IDHwt	lower-grade glioma, IDH-wildtype	Subtype_Selected	GBM_LGG\.(Mesenchymal-like|Classic-like|PA-like)	MONDO:0021637	LGGNOS	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	heterogeneous: GBM-like (mesenchymal/classic) + PA-like
-TCGA-BRCA	BRCA-LumA	breast carcinoma, PAM50 luminal A	Subtype_Selected	BRCA\.LumA	MONDO:0021116	BRCA	Breast - Mammary Tissue	good	
-TCGA-BRCA	BRCA-LumB	breast carcinoma, PAM50 luminal B	Subtype_Selected	BRCA\.LumB	MONDO:0021115	BRCA	Breast - Mammary Tissue	good	
-TCGA-BRCA	BRCA-Basal	breast carcinoma, PAM50 basal-like	Subtype_Selected	BRCA\.Basal	MONDO:0004984	BRCA	Breast - Mammary Tissue	good	
-TCGA-BRCA	BRCA-Her2	breast carcinoma, PAM50 HER2-enriched	Subtype_Selected	BRCA\.Her2	MONDO:0006244	BRCA	Breast - Mammary Tissue	good	PAM50 HER2-enriched is not identical to clinical HER2+
-TCGA-BRCA	BRCA-Normal	breast carcinoma, PAM50 normal-like	Subtype_Selected	BRCA\.Normal	MONDO:0006256	BRCA	Breast - Mammary Tissue	good	EXCLUDE: normal-like call mostly reflects low tumor content
-TARGET-ALL	ALL-B	B-cell acute lymphoblastic leukemia	lineage	B	MONDO:0004947	BLL		none	lineage from CD19/CD79A/PAX5 vs CD3D/E/G expression
-TARGET-ALL	ALL-T	T-cell acute lymphoblastic leukemia	lineage	T		TLL			
+cohort	group_id	group_label	split_on	match_regex	mondo_id	oncotree	gtex_tissues	gtex_match	notes	gtex_sex	min_normals
+TCGA-ESCA	ESCA-SCC	esophageal squamous cell carcinoma	histological_type	Esophagus Squamous Cell Carcinoma	MONDO:0005580	ESCC	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial			
+TCGA-ESCA	ESCA-AD	esophageal adenocarcinoma	histological_type	Esophagus Adenocarcinoma, NOS	MONDO:0005028	ESCA	Esophagus - Mucosa;Esophagus - Gastroesophageal Junction	partial			
+TCGA-CESC	CESC-SCC	cervical squamous cell carcinoma	histological_type	Cervical Squamous Cell Carcinoma	MONDO:0006143	CESC	Cervix - Ectocervix;Cervix - Endocervix;Vagina	partial	GTEx cervix has 7 donors after one-per-donor; vagina added (non-keratinized stratified squamous epithelium, same as ectocervix); cervix kept first so donors with both contribute cervix		
+TCGA-CESC	CESC-AD	cervical adenocarcinoma	histological_type	.*Adenocarcinoma.*	MONDO:0005153	CEAD	Cervix - Ectocervix;Cervix - Endocervix	partial	cervix only (vagina lacks endocervical glandular epithelium); min normals lowered to 5 -> low-power signature (7 donors)		5
+TCGA-CESC	CESC-ADSQ	cervical adenosquamous carcinoma	histological_type	Adenosquamous		CEAS					
+TCGA-UCEC	UCEC-EEC	endometrial endometrioid adenocarcinoma	histological_type	Endometrioid endometrial adenocarcinoma	MONDO:0006192	UEC	Uterus	partial	GTEx uterus is myometrium-dominated		
+TCGA-UCEC	UCEC-SER	endometrial serous adenocarcinoma	histological_type	Serous endometrial adenocarcinoma	MONDO:0006196	USC	Uterus	partial	GTEx uterus is myometrium-dominated		
+TCGA-UCEC	UCEC-MIX	mixed serous and endometrioid	histological_type	Mixed serous and endometrioid		UCEC					
+TCGA-PCPG	PCPG-PHEO	adrenal pheochromocytoma	histological_type	Pheochromocytoma	MONDO:0004974	PHC	Adrenal Gland	partial	GTEx adrenal is cortex-dominated		
+TCGA-PCPG	PCPG-PGL	paraganglioma	histological_type	Paraganglioma.*	MONDO:0000448	PGNG	Adrenal Gland	partial	extra-adrenal; adrenal is a weak proxy; includes 'extra-adrenal pheochromocytoma'		
+TCGA-TGCT	TGCT-SEM	testicular seminoma	histological_type	Seminoma; NOS	MONDO:0003669	SEM	Testis	good	pure seminoma only		
+TCGA-TGCT	TGCT-NSGCT	testicular non-seminomatous germ cell tumor	histological_type	.*Non-Seminoma.*	MONDO:0006447	NSGCT	Testis	good	any non-seminoma component (clinical convention)		
+TCGA-SARC	SARC-LMS	leiomyosarcoma	histological_type	Leiomyosarcoma \(LMS\)	MONDO:0005058	LMS	Muscle - Skeletal	partial	smooth-muscle tumor vs skeletal muscle reference		
+TCGA-SARC	SARC-DDLPS	dedifferentiated liposarcoma	histological_type	Dedifferentiated liposarcoma	MONDO:0020563	DDLS	Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial			
+TCGA-SARC	SARC-UPS	undifferentiated pleomorphic sarcoma / myxofibrosarcoma	histological_type	.*(MFH|Undifferentiated Pleomorphic|Myxofibrosarcoma).*	MONDO:0002142	MFH;MFS	Muscle - Skeletal;Adipose - Subcutaneous;Adipose - Visceral (Omentum)	partial	UPS (52) + MFS (25) merged; related spectrum		
+TCGA-SARC	SARC-MPNST	malignant peripheral nerve sheath tumor	histological_type	.*MPNST.*		MPNST					
+TCGA-SARC	SARC-SS	synovial sarcoma	histological_type	(?i).*synovial.*		SYNS					
+TCGA-SARC	SARC-DES	desmoid tumor	histological_type	Desmoid Tumor		DES					
+TCGA-LGG	LGG-IDHmut-noncodel	astrocytoma, IDH-mutant	Subtype_Selected	GBM_LGG\.G-CIMP-(high|low)	MONDO:0021637	ASTR	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	MONDO has only graded IDH-mutant astrocytoma terms; parent used, OncoTree ASTR is exact		
+TCGA-LGG	LGG-IDHmut-codel	oligodendroglioma, IDH-mutant and 1p/19q-codeleted	Subtype_Selected	GBM_LGG\.Codel	MONDO:0859592	ODG	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good			
+TCGA-LGG	LGG-IDHwt	lower-grade glioma, IDH-wildtype	Subtype_Selected	GBM_LGG\.(Mesenchymal-like|Classic-like|PA-like)	MONDO:0021637	LGGNOS	Brain - Cortex;Brain - Frontal Cortex (Ba9)	good	heterogeneous: GBM-like (mesenchymal/classic) + PA-like		
+TCGA-BRCA	BRCA-LumA	breast carcinoma, PAM50 luminal A	Subtype_Selected	BRCA\.LumA	MONDO:0021116	BRCA	Breast - Mammary Tissue	good		female	
+TCGA-BRCA	BRCA-LumB	breast carcinoma, PAM50 luminal B	Subtype_Selected	BRCA\.LumB	MONDO:0021115	BRCA	Breast - Mammary Tissue	good		female	
+TCGA-BRCA	BRCA-Basal	breast carcinoma, PAM50 basal-like	Subtype_Selected	BRCA\.Basal	MONDO:0004984	BRCA	Breast - Mammary Tissue	good		female	
+TCGA-BRCA	BRCA-Her2	breast carcinoma, PAM50 HER2-enriched	Subtype_Selected	BRCA\.Her2	MONDO:0006244	BRCA	Breast - Mammary Tissue	good	PAM50 HER2-enriched is not identical to clinical HER2+	female	
+TCGA-BRCA	BRCA-Normal	breast carcinoma, PAM50 normal-like	Subtype_Selected	BRCA\.Normal	MONDO:0006256	BRCA	Breast - Mammary Tissue	good	EXCLUDE: normal-like call mostly reflects low tumor content	female	
+TARGET-ALL	ALL-B	B-cell acute lymphoblastic leukemia	lineage	B	MONDO:0004947	BLL		none	lineage from CD19/CD79A/PAX5 vs CD3D/E/G expression		
+TARGET-ALL	ALL-T	T-cell acute lymphoblastic leukemia	lineage	T		TLL					

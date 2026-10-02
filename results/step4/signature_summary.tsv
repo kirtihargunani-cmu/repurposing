@@ -1,18 +1,18 @@
 group_id	contrast	n_tumor	n_normal	status	note	n_dropped_missing_cov	n_dropped_rare_type	covariates	n_genes	n_de_fdr05_lfc1	n_up	n_down	spearman_gtex_vs_adjacent
 ALL-B	adjacent	149	0	skipped	< 10 normals								
 ALL-B	gtex	149	0	skipped	< 10 normals								
-BRCA-Basal	adjacent	190	17	ok	""	0	0	age_z,estimate_z	17523	5202	2083	3119	0.802
-BRCA-Basal	gtex	190	178	ok	""	0	0	age_z,estimate_z,sexmale	17418	7238	3077	4161	0.802
+BRCA-Basal	adjacent	190	17	ok	""	0	0	age_z,estimate_z	17523	5202	2083	3119	0.803
+BRCA-Basal	gtex	190	79	ok	""	0	0	age_z,estimate_z	17461	7191	3063	4128	0.803
 BRCA-Her2	adjacent	81	9	skipped	< 10 normals								
-BRCA-Her2	gtex	81	178	ok	""	0	0	age_z,estimate_z,sexmale	17036	7321	2924	4397	
-BRCA-LumA	adjacent	563	62	ok	""	2	0	age_z,estimate_z,sexmale	18275	4461	1940	2521	0.693
-BRCA-LumA	gtex	563	178	ok	""	2	0	age_z,estimate_z,sexmale	17478	6302	2474	3828	0.693
-BRCA-LumB	adjacent	217	23	ok	""	0	0	age_z,estimate_z,sexmale	17668	5535	1945	3590	0.78
-BRCA-LumB	gtex	217	178	ok	""	0	0	age_z,estimate_z,sexmale	17386	7409	2996	4413	0.78
-CESC-AD	adjacent	46	1	skipped	< 10 normals								
-CESC-AD	gtex	46	7	skipped	< 10 normals								
+BRCA-Her2	gtex	81	79	ok	""	0	0	age_z,estimate_z	17069	7304	3011	4293	
+BRCA-LumA	adjacent	563	62	ok	""	2	0	age_z,estimate_z,sexmale	18275	4461	1940	2521	0.69
+BRCA-LumA	gtex	563	79	ok	""	2	0	age_z,estimate_z,sexmale	18345	6621	2374	4247	0.69
+BRCA-LumB	adjacent	217	23	ok	""	0	0	age_z,estimate_z,sexmale	17668	5535	1945	3590	0.772
+BRCA-LumB	gtex	217	79	ok	""	0	0	age_z,estimate_z,sexmale	17837	7555	2872	4683	0.772
+CESC-AD	adjacent	46	1	skipped	< 5 normals								
+CESC-AD	gtex	46	7	ok	""	0	0	age_z,estimate_z	17341	5411	2186	3225	
 CESC-SCC	adjacent	252	2	skipped	< 10 normals								
-CESC-SCC	gtex	252	7	skipped	< 10 normals								
+CESC-SCC	gtex	252	87	ok	""	0	0	age_z,estimate_z	17362	7461	3334	4127	
 ESCA-AD	adjacent	89	10	ok	""	0	0	age_z,estimate_z,sexmale	17951	3393	1178	2215	0.502
 ESCA-AD	gtex	89	317	ok	""	0	0	age_z,estimate_z,sexmale	17379	6641	3074	3567	0.502
 ESCA-SCC	adjacent	92	3	skipped	< 10 normals								
