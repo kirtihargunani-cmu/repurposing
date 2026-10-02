@@ -37,7 +37,16 @@
   - 40 groups now have a protein-coding signature (58 contrasts).
   - Extended signature (protein-coding + lincRNA + antisense; `GENESET=extended`) in `results/step4_extended/` for mechanism work only; drug matching uses protein-coding. Protein-coding z identical between runs (Spearman >= 0.997); ~5.9k lincRNA + 4.5k antisense genes pass filterByExpr.
 - Scope decision (PI, 2026-10-01): Steps 5-7 for all groups with a signature; Steps 8-10 for BRCA and COAD/READ. De-prioritize hematologic tumors (AML/ALL/DLBC): limited and more variable data. Steps 5-10 data requirements in `docs/PROJECT_PLAN_steps5-10.md`.
+- Environment moved to R 4.5.3 / Bioconductor 3.22 when the Steps 5-10 packages were installed; Steps 3-4 rerun (ESTIMATE identical; z Pearson >= 0.9998 vs R 4.4).
+- Hematologic normal references: recount3 / GDC search recorded in `docs/normal_reference_search.md`; parked per PI.
+- Step 5 (regulons):
+  - `scripts/40_id_map.py` -> `results/step5/id_map.tsv`: GENCODE v23 Ensembl -> current HGNC (Ensembl match, then symbol, unique previous symbol, unique alias). 97.4% of protein-coding genes mapped (522 unmapped, mostly retired clone names); 5,113 v23 symbols have since been renamed, so symbol joins would have lost them. `primary_for_hgnc` picks one v23 gene per HGNC record (176 duplicates dropped).
+  - `tf_universe.tsv`: Lambert 2018 'Is TF? = Yes' (1,639; 1,634 in v23).
+  - `scripts/41_regulons.R`: CollecTRI and DoRothEA A-C pulled from the OmniPath REST API (decoupleR/OmnipathR 4.0 wrappers fail against the current server; raw pulls saved in `data/raw/regulons/`), NF-kB / AP-1 complexes collapsed as in decoupleR; aracne.networks (25 TCGA cohorts, Entrez) mapped to Ensembl.
+  - Coverage (`regulon_coverage.tsv`): CollecTRI 1,178 regulators / 42,601 edges (99.6% mapped; 614 with < 10 targets); DoRothEA A-C 429 / 32,286 (99.6%; 158 < 10); ARACNe ~6,050 regulators per cohort, ~1,500 of them Lambert TFs, median 95-97% targets mapped.
+  - `regulons_core.rds` (CollecTRI + DoRothEA) in git; ARACNe tables and `.rds` in `data/processed/step5/` (1.2 GB). sha256 of both in `regulon_checksums.sha256`.
 
 ## Next
+- Step 6: VIPER per group (expressed-TF filter, minimum mapped regulon size; ARACNe arm restricted to Lambert TFs).
 - CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
 - Decide: subtype splits for mixed cohorts; whether to pull DepMap; recount3 non-cancer diseases.
