@@ -1,7 +1,10 @@
 #!/usr/bin/env Rscript
 # Step 6 (+ mechanism heterogeneity): regulator activity per group and per patient.
 #
-# REGULON=collectri (default) | dorothea_ABC   (aracne: added once the project networks finish)
+# REGULON=collectri (default) | dorothea_ABC | aracne_project
+#   aracne_project: project ARACNe regulons (scripts/44_aracne_regulons.R), one network per cohort - each group
+#   uses its cohort's network (subtypes share it; COAD/READ -> COADREAD). Full regulator set, no target cap.
+#   Run with ONLY_GROUPS limited to groups whose network is built.
 # For each group with a Step 4 signature (tumor vs GTEx; BLCA: tumor vs adjacent):
 #  1. Regulon filters (per group, recorded in regulator_filter.tsv):
 #       expressed   regulator gene median logCPM >= MIN_LOGCPM in the group's tumors
@@ -34,7 +37,15 @@ set.seed(1)
 res_dir <- file.path("results/step6", REGULON); proc_dir <- file.path("data/processed/step6", REGULON)
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE); dir.create(proc_dir, recursive = TRUE, showWarnings = FALSE)
 
-regs_all <- readRDS("results/step5/regulons_core.rds")[[REGULON]]
+if (REGULON == "aracne_project") {
+  arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+  grp <- fread("results/step1/disease_groups_toil.tsv")
+  net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
+  regs_for <- function(gid) { r <- arac[[net_of[[gid]]]]; if (is.null(r)) stop("no ARACNe network for ", net_of[[gid]]); r }
+} else {
+  regs_core <- readRDS("results/step5/regulons_core.rds")[[REGULON]]
+  regs_for <- function(gid) regs_core
+}
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 sym2ens <- setNames(idmap$gene_id, idmap$symbol)
 summ <- fread("results/step4/signature_summary.tsv")[status == "ok"]
@@ -44,6 +55,7 @@ cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
 
 run_group <- function(gid, contrast) {
+  regs_all <- regs_for(gid)
   normal_role <- if (contrast == "gtex") "gtex_normal" else "adjacent_normal"
   d <- cov[group_id == gid & role %in% c("tumor", normal_role) & sample %in% colnames(counts)]
   z <- zmat[[contrast]][, c("gene_id", gid), with = FALSE][!is.na(get(gid))]
@@ -56,7 +68,7 @@ run_group <- function(gid, contrast) {
   med <- apply(tum, 1, median)
   expressed <- function(src) {
     if (src %in% names(COMPLEXES)) { g <- sym2ens[COMPLEXES[[src]]]; return(any(med[g[!is.na(g)]] >= MIN_LOGCPM, na.rm = TRUE)) }
-    g <- sym2ens[src]; !is.na(g) && !is.na(med[g]) && med[g] >= MIN_LOGCPM
+    g <- if (startsWith(src, "ENSG")) src else sym2ens[src]; !is.na(g) && !is.na(med[g]) && med[g] >= MIN_LOGCPM
   }
   filt <- rbindlist(lapply(names(regs_all), function(src) {
     tg <- names(regs_all[[src]]$tfmode); n_in <- sum(tg %in% names(sig))

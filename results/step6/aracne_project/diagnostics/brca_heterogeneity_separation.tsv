@@ -1,0 +1,13 @@
+view	subtype	n	pam50_silhouette	overall_pam50_silhouette	within_effective_dim
+as_is	BRCA-Basal	190	0.245	0.064	5.86
+as_is	BRCA-Her2	81	0.118	0.064	6.07
+as_is	BRCA-LumA	560	-0.011	0.064	5.41
+as_is	BRCA-LumB	209	0.079	0.064	8.25
+estimate	BRCA-Basal	190	0.268	0.076	5.36
+estimate	BRCA-Her2	81	0.103	0.076	5.54
+estimate	BRCA-LumA	560	0.006	0.076	4.69
+estimate	BRCA-LumB	209	0.077	0.076	7.81
+estimate_plate	BRCA-Basal	190	0.321	0.118	10.1
+estimate_plate	BRCA-Her2	81	0.177	0.118	14.01
+estimate_plate	BRCA-LumA	560	0.072	0.118	10.25
+estimate_plate	BRCA-LumB	209	0.034	0.118	12.98

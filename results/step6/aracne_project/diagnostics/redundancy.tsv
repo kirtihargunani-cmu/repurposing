@@ -1,0 +1,7 @@
+group_id	n_regulators	n_modules	n_singletons	largest_module	prolif_module_size	n_track_prolif_07	frac_track_prolif_07	tf_in_prolif_module	kinase_in_prolif_module	modules_ge10	regs_in_modules_ge10
+BRCA-Basal	4204	741	348	618	7	40	0.01	3	1	82	2713
+BRCA-Her2	4190	715	300	564	9	47	0.011	3	1	80	2752
+BRCA-LumA	4217	597	252	561	15	65	0.015	3	2	71	2942
+BRCA-LumB	4141	736	329	306	12	90	0.022	3	1	92	2695
+TCGA-COAD	4136	670	256	230	78	182	0.044	19	5	91	2616
+TCGA-READ	4158	769	288	235	25	155	0.037	5	3	94	2402
