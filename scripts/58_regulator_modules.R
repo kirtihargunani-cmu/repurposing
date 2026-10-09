@@ -1,6 +1,7 @@
 #!/usr/bin/env Rscript
 # Diagnostic: what are the modules of co-varying regulators, and does each have a "master" regulator?
-# Input: purity-corrected ARACNe patient NES (data/processed/step6/aracne_project_purity). No pipeline outputs change.
+# Input: ARACNe patient NES from NES_DIR (default data/processed/step6/aracne_project_qc = gene-level purity + RNA-quality
+# corrected, the Step 8 input; data/processed/step6/aracne_project_purity = NES-level purity correction only).
 # Modules: average-linkage clustering of regulators on 1 - |r| of patient NES, cut at |r| >= 0.7 (as in script 54).
 # Per module (>= 10 regulators):
 #   hub                  member most correlated with the module score (first PC of the members): the regulator that
@@ -13,12 +14,13 @@
 #                        because they share targets, i.e. redundant regulons)
 #   r2_plate / r_length / r_proliferation  what the module score tracks: plate, RNA-quality length index,
 #                        proliferation (mean NES of E2F1, FOXM1, MYBL2)
-# Output: results/step6/aracne_project/diagnostics/regulator_modules.tsv
+# Output: results/step6/aracne_project/diagnostics/regulator_modules_<qc|purity>.tsv
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(Matrix); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root)
-NES_DIR <- "data/processed/step6/aracne_project_purity"; MOD_R <- 0.7; MIN_SIZE <- 10; PROLIF <- c("E2F1", "FOXM1", "MYBL2")
+NES_DIR <- Sys.getenv("NES_DIR", "data/processed/step6/aracne_project_map")
+TAG <- sub("^aracne_project_?", "", basename(NES_DIR)); MOD_R <- 0.7; MIN_SIZE <- 10; PROLIF <- c("E2F1", "FOXM1", "MYBL2")
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE & role == "tumor"]
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
@@ -72,5 +74,5 @@ run <- function(f) {
 files <- Sys.glob(file.path(NES_DIR, "*.patient_nes.tsv.gz"))
 res <- rbindlist(mclapply(files, function(f) tryCatch(run(f), error = function(e) { message(basename(f), ": ", conditionMessage(e)); NULL }),
                           mc.cores = 8, mc.preschedule = FALSE))
-fwrite(res[order(group_id, -size)], "results/step6/aracne_project/diagnostics/regulator_modules.tsv", sep = "\t")
+fwrite(res[order(group_id, -size)], sprintf("results/step6/aracne_project/diagnostics/regulator_modules_%s.tsv", TAG), sep = "\t")
 message("REGULATOR MODULES DONE: ", uniqueN(res$group_id), " groups, ", nrow(res), " modules")

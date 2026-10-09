@@ -1,0 +1,3 @@
+set	n	median_gc	median_tx_len	median_span	frac_tf	frac_chr16_17_19_22	frac_chr19
+core members	74	0.524	4236	24963	0.38	0.27	0.15
+all ARACNe regulators	6199	0.484	3515	29159	0.26	0.21	0.1

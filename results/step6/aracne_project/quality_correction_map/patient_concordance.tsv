@@ -1,0 +1,83 @@
+version	median_rho	median_frac_hit	group_id
+purity+quality, TMM (61)	0.683	1	BRCA-Basal
+purity+quality, TMM + mappability filter (61)	0.667	1	BRCA-Basal
+purity+quality, TMM (61)	0.796	1	BRCA-Her2
+purity+quality, TMM + mappability filter (61)	0.8	1	BRCA-Her2
+purity+quality, TMM (61)	0.828	1	BRCA-LumA
+purity+quality, TMM + mappability filter (61)	0.819	1	BRCA-LumA
+purity+quality, TMM (61)	0.818	1	BRCA-LumB
+purity+quality, TMM + mappability filter (61)	0.806	1	BRCA-LumB
+purity+quality, TMM (61)	0.724	0.679	CESC-AD
+purity+quality, TMM + mappability filter (61)	0.725	0.643	CESC-AD
+purity+quality, TMM (61)	0.614	0.932	CESC-SCC
+purity+quality, TMM + mappability filter (61)	0.583	0.932	CESC-SCC
+purity+quality, TMM (61)	0.708	1	ESCA-AD
+purity+quality, TMM + mappability filter (61)	0.703	1	ESCA-AD
+purity+quality, TMM (61)	0.664	0.896	ESCA-SCC
+purity+quality, TMM + mappability filter (61)	0.663	0.875	ESCA-SCC
+purity+quality, TMM (61)	0.71	1	LGG-IDHmut-codel
+purity+quality, TMM + mappability filter (61)	0.712	1	LGG-IDHmut-codel
+purity+quality, TMM (61)	0.806	1	LGG-IDHmut-noncodel
+purity+quality, TMM + mappability filter (61)	0.778	1	LGG-IDHmut-noncodel
+purity+quality, TMM (61)	0.212	1	LGG-IDHwt
+purity+quality, TMM + mappability filter (61)	0.252	1	LGG-IDHwt
+purity+quality, TMM (61)	0.831	1	PCPG-PGL
+purity+quality, TMM + mappability filter (61)	0.834	1	PCPG-PGL
+purity+quality, TMM (61)	0.61	1	PCPG-PHEO
+purity+quality, TMM + mappability filter (61)	0.612	1	PCPG-PHEO
+purity+quality, TMM (61)	0.667	0.978	SARC-DDLPS
+purity+quality, TMM + mappability filter (61)	0.631	0.978	SARC-DDLPS
+purity+quality, TMM (61)	0.5	1	SARC-LMS
+purity+quality, TMM + mappability filter (61)	0.474	1	SARC-LMS
+purity+quality, TMM (61)	0.647	1	SARC-UPS
+purity+quality, TMM + mappability filter (61)	0.65	1	SARC-UPS
+purity+quality, TMM (61)	0.518	1	TARGET-NBL
+purity+quality, TMM + mappability filter (61)	0.474	1	TARGET-NBL
+purity+quality, TMM (61)	0.874	0.978	TARGET-WT
+purity+quality, TMM + mappability filter (61)	0.852	0.956	TARGET-WT
+purity+quality, TMM (61)	0.419	0.75	TCGA-ACC
+purity+quality, TMM + mappability filter (61)	0.371	0.729	TCGA-ACC
+purity+quality, TMM (61)	0.719	0.673	TCGA-BLCA
+purity+quality, TMM + mappability filter (61)	0.711	0.633	TCGA-BLCA
+purity+quality, TMM (61)	0.733	0.932	TCGA-COAD
+purity+quality, TMM + mappability filter (61)	0.747	0.932	TCGA-COAD
+purity+quality, TMM (61)	0.521	1	TCGA-GBM
+purity+quality, TMM + mappability filter (61)	0.511	1	TCGA-GBM
+purity+quality, TMM (61)	0.534	0.844	TCGA-HNSC
+purity+quality, TMM + mappability filter (61)	0.538	0.822	TCGA-HNSC
+purity+quality, TMM (61)	0.656	1	TCGA-KICH
+purity+quality, TMM + mappability filter (61)	0.642	1	TCGA-KICH
+purity+quality, TMM (61)	0.366	0.578	TCGA-KIRC
+purity+quality, TMM + mappability filter (61)	0.387	0.578	TCGA-KIRC
+purity+quality, TMM (61)	0.72	0.719	TCGA-KIRP
+purity+quality, TMM + mappability filter (61)	0.704	0.729	TCGA-KIRP
+purity+quality, TMM (61)	0.539	0.756	TCGA-LIHC
+purity+quality, TMM + mappability filter (61)	0.517	0.732	TCGA-LIHC
+purity+quality, TMM (61)	0.629	0.939	TCGA-LUAD
+purity+quality, TMM + mappability filter (61)	0.629	0.939	TCGA-LUAD
+purity+quality, TMM (61)	0.859	1	TCGA-LUSC
+purity+quality, TMM + mappability filter (61)	0.853	1	TCGA-LUSC
+purity+quality, TMM (61)	0.715	1	TCGA-OV
+purity+quality, TMM + mappability filter (61)	0.659	0.979	TCGA-OV
+purity+quality, TMM (61)	0.803	0.918	TCGA-PAAD
+purity+quality, TMM + mappability filter (61)	0.795	0.939	TCGA-PAAD
+purity+quality, TMM (61)	0.823	0.979	TCGA-PRAD
+purity+quality, TMM + mappability filter (61)	0.799	0.979	TCGA-PRAD
+purity+quality, TMM (61)	0.773	0.978	TCGA-READ
+purity+quality, TMM + mappability filter (61)	0.777	0.956	TCGA-READ
+purity+quality, TMM (61)	0.851	0.979	TCGA-SKCM
+purity+quality, TMM + mappability filter (61)	0.847	0.979	TCGA-SKCM
+purity+quality, TMM (61)	0.724	0.568	TCGA-STAD
+purity+quality, TMM + mappability filter (61)	0.71	0.545	TCGA-STAD
+purity+quality, TMM (61)	0.833	0.955	TCGA-THCA
+purity+quality, TMM + mappability filter (61)	0.825	0.932	TCGA-THCA
+purity+quality, TMM (61)	0.763	0.787	TCGA-UCS
+purity+quality, TMM + mappability filter (61)	0.787	0.745	TCGA-UCS
+purity+quality, TMM (61)	0.744	1	TGCT-NSGCT
+purity+quality, TMM + mappability filter (61)	0.751	1	TGCT-NSGCT
+purity+quality, TMM (61)	0.831	1	TGCT-SEM
+purity+quality, TMM + mappability filter (61)	0.849	1	TGCT-SEM
+purity+quality, TMM (61)	0.513	1	UCEC-EEC
+purity+quality, TMM + mappability filter (61)	0.518	1	UCEC-EEC
+purity+quality, TMM (61)	0.733	1	UCEC-SER
+purity+quality, TMM + mappability filter (61)	0.741	1	UCEC-SER

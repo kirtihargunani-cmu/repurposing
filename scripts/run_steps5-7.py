@@ -160,11 +160,11 @@ def make_steps(args):
                           inputs=["results/step6/aracne_project/group_summary.tsv"], env={"REGULON": "aracne_project"},
                           desc="Step 6c purity correction (ARACNe patient scores)"))
         steps.append(Step("quality_correct", ["Rscript", "scripts/61_quality_correct.R"],
-                          ["results/step6/aracne_project/quality_correction/checks.tsv"],
+                          ["results/step6/aracne_project/quality_correction_map/checks.tsv"],
                           inputs=["results/step6/aracne_project/regulator_filter.tsv",
                                   "results/step6/aracne_project/purity_correction/summary.tsv"],
                           env={"N_CORES": str(args.cores)},
-                          desc="Step 6e gene-level purity + RNA-quality correction -> patient VIPER (Step 8 input)"))
+                          desc="Step 6e mappability filter + gene-level purity/RNA-quality correction -> patient VIPER (Step 8 input)"))
     steps += [
         Step("driver_classes", ["python", "scripts/60_driver_classes.py"], ["results/step7/driver_classes.tsv"],
              inputs=["results/step6/collectri/fdr10_group_summary.tsv", "data/raw/tcga_pancan/mc3.v0.2.8.PUBLIC.maf.gz"],

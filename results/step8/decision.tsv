@@ -1,0 +1,13 @@
+group_id	feature_set	n_patients	n_features	n_regulators_covered	best_K	RCSI	MONTECARLO_P	NORM_P	decision	cluster_sizes	silhouette	plate_p	purity_p	quality_p	minutes
+BRCA-Basal	modules10	190	68	1390	8	0.031	0.307	0.325	no significant structure	41/40/24/23/22/20/14/6	0.039	0.011	0.403	0.286	0.3
+BRCA-Her2	modules10	81	64	1437	2	0.038	0.356	0.372	no significant structure	63/18	0.085	0.099	0.733	0.725	0.1
+BRCA-LumA	modules10	560	74	1589	3	0.284	0.0495	0.0359	clusters	227/169/164	0.068	5e-04	0.71	0.74	3
+BRCA-LumB	modules10	209	71	1501	2	0.082	0.307	0.28	no significant structure	154/55	0.083	0.284	0.296	0.521	0.4
+TCGA-COAD	modules10	287	78	1811	2	0.653	0.0198	0.00636	clusters	195/92	0.186	0.405	0.415	0.413	0.8
+TCGA-READ	modules10	92	75	1669	3	0.349	0.0198	0.0183	clusters	40/27/25	0.092	0.031	0.559	0.369	0.1
+BRCA-Basal	all	190	1350	3795	2	0.598	0.0099	0.000745	clusters	96/94	0.058	0.901	0.558	0.869	0.3
+BRCA-Her2	all	81	1216	3780	2	0.003	0.545	0.461	no significant structure	56/25	0.036	0.71	0.728	0.567	0.1
+BRCA-LumA	all	560	1172	3805	3	0.107	0.198	0.176	no significant structure	245/176/139	0.055	5e-04	0.391	0.473	2.9
+BRCA-LumB	all	209	1201	3733	2	0.094	0.317	0.284	no significant structure	145/64	0.067	0.253	0.572	0.704	0.4
+TCGA-COAD	all	287	997	3847	2	0.183	0.119	0.116	no significant structure	190/97	0.116	0.905	0.753	0.404	0.7
+TCGA-READ	all	92	1051	3868	3	0.321	0.0198	0.00605	clusters	38/29/25	0.059	0.0015	0.96	0.753	0.1

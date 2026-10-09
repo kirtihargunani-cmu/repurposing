@@ -1,0 +1,83 @@
+version	median_rho	median_frac_hit	group_id
+purity+quality, TMM (61)	0.688	1	BRCA-Basal
+purity+quality, CQN + no readthrough (61)	0.596	1	BRCA-Basal
+purity+quality, TMM (61)	0.807	1	BRCA-Her2
+purity+quality, CQN + no readthrough (61)	0.834	1	BRCA-Her2
+purity+quality, TMM (61)	0.81	1	BRCA-LumA
+purity+quality, CQN + no readthrough (61)	0.826	0.98	BRCA-LumA
+purity+quality, TMM (61)	0.821	1	BRCA-LumB
+purity+quality, CQN + no readthrough (61)	0.847	1	BRCA-LumB
+purity+quality, TMM (61)	0.727	0.69	CESC-AD
+purity+quality, CQN + no readthrough (61)	0.738	0.62	CESC-AD
+purity+quality, TMM (61)	0.623	0.94	CESC-SCC
+purity+quality, CQN + no readthrough (61)	0.582	0.78	CESC-SCC
+purity+quality, TMM (61)	0.716	1	ESCA-AD
+purity+quality, CQN + no readthrough (61)	0.702	1	ESCA-AD
+purity+quality, TMM (61)	0.698	0.89	ESCA-SCC
+purity+quality, CQN + no readthrough (61)	0.647	0.8	ESCA-SCC
+purity+quality, TMM (61)	0.706	1	LGG-IDHmut-codel
+purity+quality, CQN + no readthrough (61)	0.685	1	LGG-IDHmut-codel
+purity+quality, TMM (61)	0.804	1	LGG-IDHmut-noncodel
+purity+quality, CQN + no readthrough (61)	0.762	1	LGG-IDHmut-noncodel
+purity+quality, TMM (61)	0.217	1	LGG-IDHwt
+purity+quality, CQN + no readthrough (61)	0.249	1	LGG-IDHwt
+purity+quality, TMM (61)	0.823	1	PCPG-PGL
+purity+quality, CQN + no readthrough (61)	0.755	1	PCPG-PGL
+purity+quality, TMM (61)	0.6	1	PCPG-PHEO
+purity+quality, CQN + no readthrough (61)	0.581	1	PCPG-PHEO
+purity+quality, TMM (61)	0.673	0.98	SARC-DDLPS
+purity+quality, CQN + no readthrough (61)	0.576	0.98	SARC-DDLPS
+purity+quality, TMM (61)	0.493	1	SARC-LMS
+purity+quality, CQN + no readthrough (61)	0.506	1	SARC-LMS
+purity+quality, TMM (61)	0.676	1	SARC-UPS
+purity+quality, CQN + no readthrough (61)	0.487	1	SARC-UPS
+purity+quality, TMM (61)	0.513	1	TARGET-NBL
+purity+quality, CQN + no readthrough (61)	0.447	1	TARGET-NBL
+purity+quality, TMM (61)	0.861	0.98	TARGET-WT
+purity+quality, CQN + no readthrough (61)	0.833	0.9	TARGET-WT
+purity+quality, TMM (61)	0.406	0.76	TCGA-ACC
+purity+quality, CQN + no readthrough (61)	0.423	0.72	TCGA-ACC
+purity+quality, TMM (61)	0.72	0.66	TCGA-BLCA
+purity+quality, CQN + no readthrough (61)	0.641	0.7	TCGA-BLCA
+purity+quality, TMM (61)	0.727	0.94	TCGA-COAD
+purity+quality, CQN + no readthrough (61)	0.722	0.86	TCGA-COAD
+purity+quality, TMM (61)	0.52	1	TCGA-GBM
+purity+quality, CQN + no readthrough (61)	0.324	1	TCGA-GBM
+purity+quality, TMM (61)	0.597	0.84	TCGA-HNSC
+purity+quality, CQN + no readthrough (61)	0.613	0.78	TCGA-HNSC
+purity+quality, TMM (61)	0.684	1	TCGA-KICH
+purity+quality, CQN + no readthrough (61)	0.53	1	TCGA-KICH
+purity+quality, TMM (61)	0.382	0.56	TCGA-KIRC
+purity+quality, CQN + no readthrough (61)	0.34	0.56	TCGA-KIRC
+purity+quality, TMM (61)	0.711	0.71	TCGA-KIRP
+purity+quality, CQN + no readthrough (61)	0.723	0.84	TCGA-KIRP
+purity+quality, TMM (61)	0.565	0.755	TCGA-LIHC
+purity+quality, CQN + no readthrough (61)	0.626	0.776	TCGA-LIHC
+purity+quality, TMM (61)	0.64	0.94	TCGA-LUAD
+purity+quality, CQN + no readthrough (61)	0.629	0.92	TCGA-LUAD
+purity+quality, TMM (61)	0.862	1	TCGA-LUSC
+purity+quality, CQN + no readthrough (61)	0.813	1	TCGA-LUSC
+purity+quality, TMM (61)	0.733	1	TCGA-OV
+purity+quality, CQN + no readthrough (61)	0.749	0.98	TCGA-OV
+purity+quality, TMM (61)	0.802	0.92	TCGA-PAAD
+purity+quality, CQN + no readthrough (61)	0.793	0.9	TCGA-PAAD
+purity+quality, TMM (61)	0.818	0.98	TCGA-PRAD
+purity+quality, CQN + no readthrough (61)	0.78	0.939	TCGA-PRAD
+purity+quality, TMM (61)	0.775	0.98	TCGA-READ
+purity+quality, CQN + no readthrough (61)	0.765	0.92	TCGA-READ
+purity+quality, TMM (61)	0.853	0.98	TCGA-SKCM
+purity+quality, CQN + no readthrough (61)	0.839	0.98	TCGA-SKCM
+purity+quality, TMM (61)	0.694	0.56	TCGA-STAD
+purity+quality, CQN + no readthrough (61)	0.656	0.24	TCGA-STAD
+purity+quality, TMM (61)	0.829	0.959	TCGA-THCA
+purity+quality, CQN + no readthrough (61)	0.85	0.918	TCGA-THCA
+purity+quality, TMM (61)	0.786	0.776	TCGA-UCS
+purity+quality, CQN + no readthrough (61)	0.805	0.633	TCGA-UCS
+purity+quality, TMM (61)	0.745	1	TGCT-NSGCT
+purity+quality, CQN + no readthrough (61)	0.752	1	TGCT-NSGCT
+purity+quality, TMM (61)	0.841	1	TGCT-SEM
+purity+quality, CQN + no readthrough (61)	0.796	1	TGCT-SEM
+purity+quality, TMM (61)	0.51	1	UCEC-EEC
+purity+quality, CQN + no readthrough (61)	0.507	1	UCEC-EEC
+purity+quality, TMM (61)	0.715	1	UCEC-SER
+purity+quality, CQN + no readthrough (61)	0.679	1	UCEC-SER

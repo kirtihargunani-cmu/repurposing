@@ -1,0 +1,411 @@
+group_id	version	pc	var_explained	effective_dim	r2_quality	r2_plate	plate_chance	r2_purity	r2_absolute	purity_covariate	n_tumor	n_normal	r_quality_vs_gtex_rin	rho_quality_vs_gtex_ischemic
+BRCA-Basal	purity+quality, TMM (61)	1	0.164	19.34	0.202	0.357	0.185	0.005	0.01	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, TMM (61)	2	0.089	19.34	0	0.275	0.185	0.008	0	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, TMM (61)	3	0.063	19.34	0	0.266	0.185	0.012	0.044	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, TMM (61)	4	0.053	19.34	0.013	0.243	0.185	0.006	0.023	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, TMM (61)	5	0.04	19.34	0.001	0.209	0.185	0.004	0.002	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, CQN + no readthrough (61)	1	0.114	27.06	0	0.3	0.185	0.01	0.005	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, CQN + no readthrough (61)	2	0.074	27.06	0	0.254	0.185	0.001	0.035	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, CQN + no readthrough (61)	3	0.062	27.06	0	0.306	0.185	0.001	0.006	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, CQN + no readthrough (61)	4	0.048	27.06	0	0.204	0.185	0	0.003	estimate_score	190	79	-0.273	0.561
+BRCA-Basal	purity+quality, CQN + no readthrough (61)	5	0.043	27.06	0	0.312	0.185	0	0.002	estimate_score	190	79	-0.273	0.561
+BRCA-Her2	purity+quality, TMM (61)	1	0.138	17.46	0.015	0.337	0.312	0.001	0.107	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, TMM (61)	2	0.12	17.46	0.239	0.408	0.312	0.001	0.026	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, TMM (61)	3	0.091	17.46	0.002	0.291	0.312	0	0.003	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, TMM (61)	4	0.059	17.46	0	0.371	0.312	0	0.002	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, TMM (61)	5	0.05	17.46	0.002	0.297	0.312	0.002	0.002	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, CQN + no readthrough (61)	1	0.13	20.28	0	0.272	0.312	0	0.106	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, CQN + no readthrough (61)	2	0.102	20.28	0	0.445	0.312	0.001	0.004	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, CQN + no readthrough (61)	3	0.074	20.28	0	0.236	0.312	0	0.002	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, CQN + no readthrough (61)	4	0.058	20.28	0	0.349	0.312	0	0.004	estimate_score	81	79	-0.287	0.57
+BRCA-Her2	purity+quality, CQN + no readthrough (61)	5	0.048	20.28	0	0.284	0.312	0	0.023	estimate_score	81	79	-0.287	0.57
+BRCA-LumA	purity+quality, TMM (61)	1	0.135	17.77	0.018	0.154	0.07	0.002	0.01	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, TMM (61)	2	0.119	17.77	0.028	0.056	0.07	0.01	0.021	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, TMM (61)	3	0.096	17.77	0.012	0.357	0.07	0	0.001	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, TMM (61)	4	0.063	17.77	0.044	0.086	0.07	0.001	0	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, TMM (61)	5	0.047	17.77	0.059	0.183	0.07	0.022	0.001	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, CQN + no readthrough (61)	1	0.142	20.54	0	0.091	0.07	0	0	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, CQN + no readthrough (61)	2	0.095	20.54	0.002	0.085	0.07	0.003	0.01	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, CQN + no readthrough (61)	3	0.071	20.54	0.002	0.152	0.07	0.003	0	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, CQN + no readthrough (61)	4	0.053	20.54	0.002	0.053	0.07	0.002	0.002	estimate_score	560	79	-0.274	0.563
+BRCA-LumA	purity+quality, CQN + no readthrough (61)	5	0.047	20.54	0.001	0.107	0.07	0.001	0.002	estimate_score	560	79	-0.274	0.563
+BRCA-LumB	purity+quality, TMM (61)	1	0.134	18.89	0.003	0.135	0.149	0.002	0.013	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, TMM (61)	2	0.108	18.89	0.002	0.13	0.149	0	0.03	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, TMM (61)	3	0.097	18.89	0.196	0.384	0.149	0	0.005	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, TMM (61)	4	0.059	18.89	0.027	0.196	0.149	0.001	0	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, TMM (61)	5	0.047	18.89	0.006	0.223	0.149	0.004	0.001	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, CQN + no readthrough (61)	1	0.123	21.55	0	0.13	0.149	0	0.02	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, CQN + no readthrough (61)	2	0.115	21.55	0	0.12	0.149	0	0.028	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, CQN + no readthrough (61)	3	0.057	21.55	0.001	0.234	0.149	0.001	0	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, CQN + no readthrough (61)	4	0.053	21.55	0	0.167	0.149	0	0.002	estimate_score	209	79	-0.272	0.567
+BRCA-LumB	purity+quality, CQN + no readthrough (61)	5	0.042	21.55	0	0.142	0.149	0	0.01	estimate_score	209	79	-0.272	0.567
+CESC-AD	purity+quality, TMM (61)	1	0.153	14.2	0.162	0.284	0.378	0	0.005	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	2	0.112	14.2	0.055	0.429	0.378	0	0.002	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	3	0.107	14.2	0.001	0.394	0.378	0	0.004	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	4	0.08	14.2	0	0.67	0.378	0	0.068	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	5	0.07	14.2	0.035	0.61	0.378	0	0	estimate_score	46	7		
+CESC-AD	purity+quality, CQN + no readthrough (61)	1	0.14	15.08	0	0.349	0.378	0	0.03	estimate_score	46	7		
+CESC-AD	purity+quality, CQN + no readthrough (61)	2	0.114	15.08	0.001	0.393	0.378	0.001	0.007	estimate_score	46	7		
+CESC-AD	purity+quality, CQN + no readthrough (61)	3	0.095	15.08	0	0.454	0.378	0	0.006	estimate_score	46	7		
+CESC-AD	purity+quality, CQN + no readthrough (61)	4	0.082	15.08	0	0.405	0.378	0	0.007	estimate_score	46	7		
+CESC-AD	purity+quality, CQN + no readthrough (61)	5	0.072	15.08	0	0.581	0.378	0	0.028	estimate_score	46	7		
+CESC-SCC	purity+quality, TMM (61)	1	0.192	11.17	0	0.071	0.08	0.001	0.02	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, TMM (61)	2	0.19	11.17	0	0.127	0.08	0.001	0.008	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, TMM (61)	3	0.079	11.17	0.089	0.098	0.08	0	0.001	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, TMM (61)	4	0.064	11.17	0.109	0.064	0.08	0	0.009	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, TMM (61)	5	0.035	11.17	0.003	0.126	0.08	0	0.013	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, CQN + no readthrough (61)	1	0.152	17.1	0	0.107	0.08	0	0.019	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, CQN + no readthrough (61)	2	0.125	17.1	0	0.103	0.08	0	0.01	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, CQN + no readthrough (61)	3	0.071	17.1	0.001	0.129	0.08	0	0.002	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, CQN + no readthrough (61)	4	0.057	17.1	0	0.088	0.08	0	0	estimate_score	252	87	-0.028	0.047
+CESC-SCC	purity+quality, CQN + no readthrough (61)	5	0.048	17.1	0	0.125	0.08	0.001	0.027	estimate_score	252	87	-0.028	0.047
+ESCA-AD	purity+quality, TMM (61)	1	0.171	13.86	0.026	0.114	0.102	0.024	0.02	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, TMM (61)	2	0.143	13.86	0.111	0.204	0.102	0.007	0.006	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, TMM (61)	3	0.094	13.86	0	0.109	0.102	0.001	0.016	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, TMM (61)	4	0.058	13.86	0.005	0.196	0.102	0	0.008	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, TMM (61)	5	0.044	13.86	0.032	0.105	0.102	0.001	0.036	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, CQN + no readthrough (61)	1	0.139	19.89	0.003	0.097	0.102	0.007	0.029	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, CQN + no readthrough (61)	2	0.093	19.89	0	0.272	0.102	0.002	0.056	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, CQN + no readthrough (61)	3	0.067	19.89	0.001	0.085	0.102	0.002	0.003	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, CQN + no readthrough (61)	4	0.061	19.89	0.004	0.11	0.102	0.008	0.001	estimate_score	89	317	0.192	-0.218
+ESCA-AD	purity+quality, CQN + no readthrough (61)	5	0.05	19.89	0.001	0.134	0.102	0	0.001	estimate_score	89	317	0.192	-0.218
+ESCA-SCC	purity+quality, TMM (61)	1	0.208	11.83	0.055	0.124	0.099	0	0.034	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, TMM (61)	2	0.151	11.83	0.088	0.171	0.099	0.001	0.034	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, TMM (61)	3	0.081	11.83	0.032	0.062	0.099	0.002	0.096	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, TMM (61)	4	0.056	11.83	0.038	0.092	0.099	0	0.071	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, TMM (61)	5	0.049	11.83	0.003	0.314	0.099	0	0.037	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, CQN + no readthrough (61)	1	0.18	15.52	0.001	0.193	0.099	0.001	0.057	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, CQN + no readthrough (61)	2	0.117	15.52	0.001	0.073	0.099	0	0.067	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, CQN + no readthrough (61)	3	0.069	15.52	0.002	0.147	0.099	0.001	0.008	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, CQN + no readthrough (61)	4	0.052	15.52	0	0.15	0.099	0	0	estimate_score	92	317	0.115	-0.171
+ESCA-SCC	purity+quality, CQN + no readthrough (61)	5	0.045	15.52	0	0.128	0.099	0	0.074	estimate_score	92	317	0.115	-0.171
+LGG-IDHmut-codel	purity+quality, TMM (61)	1	0.307	6.98	0.029	0.095	0.104	0.006	0.006	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, TMM (61)	2	0.15	6.98	0.013	0.208	0.104	0.001	0.001	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, TMM (61)	3	0.112	6.98	0.113	0.15	0.104	0.001	0.001	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, TMM (61)	4	0.074	6.98	0.055	0.148	0.104	0.003	0.003	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, TMM (61)	5	0.055	6.98	0.006	0.21	0.104	0	0	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, CQN + no readthrough (61)	1	0.325	6.66	0.014	0.125	0.104	0.005	0.005	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, CQN + no readthrough (61)	2	0.157	6.66	0.006	0.213	0.104	0.001	0.001	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, CQN + no readthrough (61)	3	0.09	6.66	0	0.122	0.104	0.001	0.001	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, CQN + no readthrough (61)	4	0.072	6.66	0.007	0.116	0.104	0	0	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-codel	purity+quality, CQN + no readthrough (61)	5	0.045	6.66	0.004	0.196	0.104	0	0	absolute_purity	164	151	0.141	0.033
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	1	0.292	6.8	0.135	0.114	0.072	0.001	0.001	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	2	0.171	6.8	0.002	0.111	0.072	0.003	0.003	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	3	0.15	6.8	0.106	0.097	0.072	0.002	0.002	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	4	0.058	6.8	0.035	0.22	0.072	0	0	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	5	0.042	6.8	0.037	0.115	0.072	0.001	0.001	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, CQN + no readthrough (61)	1	0.304	6.82	0.011	0.056	0.072	0.002	0.002	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, CQN + no readthrough (61)	2	0.182	6.82	0.001	0.105	0.072	0.002	0.002	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, CQN + no readthrough (61)	3	0.103	6.82	0.002	0.112	0.072	0	0	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, CQN + no readthrough (61)	4	0.06	6.82	0.001	0.254	0.072	0	0	absolute_purity	238	151	0.149	0.013
+LGG-IDHmut-noncodel	purity+quality, CQN + no readthrough (61)	5	0.044	6.82	0	0.073	0.072	0	0	absolute_purity	238	151	0.149	0.013
+LGG-IDHwt	purity+quality, TMM (61)	1	0.313	6.3	0.173	0.209	0.191	0.002	0.002	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, TMM (61)	2	0.193	6.3	0.089	0.167	0.191	0	0	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, TMM (61)	3	0.097	6.3	0.004	0.174	0.191	0	0	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, TMM (61)	4	0.079	6.3	0.024	0.193	0.191	0.003	0.003	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, TMM (61)	5	0.054	6.3	0.069	0.169	0.191	0	0	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, CQN + no readthrough (61)	1	0.312	7.03	0.003	0.235	0.191	0.002	0.002	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, CQN + no readthrough (61)	2	0.124	7.03	0.007	0.241	0.191	0.002	0.002	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, CQN + no readthrough (61)	3	0.122	7.03	0	0.146	0.191	0.001	0.001	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, CQN + no readthrough (61)	4	0.077	7.03	0.001	0.227	0.191	0	0	absolute_purity	90	151	0.151	0.018
+LGG-IDHwt	purity+quality, CQN + no readthrough (61)	5	0.056	7.03	0	0.283	0.191	0	0	absolute_purity	90	151	0.151	0.018
+PCPG-PGL	purity+quality, TMM (61)	1	0.276	8.01	0.004	0.046	0.033	0	0.006	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, TMM (61)	2	0.142	8.01	0.05	0.161	0.033	0	0.148	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, TMM (61)	3	0.088	8.01	0.028	0	0.033	0	0.012	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, TMM (61)	4	0.076	8.01	0.122	0.061	0.033	0	0.003	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, TMM (61)	5	0.068	8.01	0	0.005	0.033	0	0.001	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, CQN + no readthrough (61)	1	0.27	8.05	0	0.029	0.033	0	0.016	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, CQN + no readthrough (61)	2	0.154	8.05	0	0.235	0.033	0	0.203	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, CQN + no readthrough (61)	3	0.087	8.05	0	0.004	0.033	0	0.012	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, CQN + no readthrough (61)	4	0.076	8.05	0	0	0.033	0	0.125	estimate_score	31	125	0.376	-0.306
+PCPG-PGL	purity+quality, CQN + no readthrough (61)	5	0.069	8.05	0	0.001	0.033	0.001	0.1	estimate_score	31	125	0.376	-0.306
+PCPG-PHEO	purity+quality, TMM (61)	1	0.33	7.35	0.001	0.021	0.007	0	0.006	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, TMM (61)	2	0.093	7.35	0.003	0.001	0.007	0	0.002	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, TMM (61)	3	0.073	7.35	0.004	0.022	0.007	0	0.024	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, TMM (61)	4	0.062	7.35	0.005	0.004	0.007	0	0.001	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, TMM (61)	5	0.046	7.35	0.057	0.003	0.007	0	0.004	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, CQN + no readthrough (61)	1	0.332	7.3	0	0.023	0.007	0	0.007	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, CQN + no readthrough (61)	2	0.094	7.3	0	0	0.007	0	0.001	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, CQN + no readthrough (61)	3	0.066	7.3	0	0.033	0.007	0	0.017	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, CQN + no readthrough (61)	4	0.06	7.3	0	0.002	0.007	0	0.001	estimate_score	146	125	0.425	-0.324
+PCPG-PHEO	purity+quality, CQN + no readthrough (61)	5	0.048	7.3	0	0.029	0.007	0.001	0.001	estimate_score	146	125	0.425	-0.324
+SARC-DDLPS	purity+quality, TMM (61)	1	0.191	11.78	0.032	0.26	0.214	0	0.084	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, TMM (61)	2	0.139	11.78	0.101	0.246	0.214	0	0.008	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, TMM (61)	3	0.11	11.78	0.034	0.243	0.214	0.006	0.025	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, TMM (61)	4	0.081	11.78	0.075	0.162	0.214	0.016	0.039	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, TMM (61)	5	0.057	11.78	0.115	0.334	0.214	0.018	0.035	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, CQN + no readthrough (61)	1	0.175	13.8	0	0.27	0.214	0	0.084	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, CQN + no readthrough (61)	2	0.109	13.8	0	0.259	0.214	0.001	0.002	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, CQN + no readthrough (61)	3	0.099	13.8	0.001	0.163	0.214	0.005	0.039	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, CQN + no readthrough (61)	4	0.089	13.8	0.001	0.157	0.214	0.015	0.025	estimate_score	57	385	-0.114	0.241
+SARC-DDLPS	purity+quality, CQN + no readthrough (61)	5	0.057	13.8	0.002	0.225	0.214	0.014	0	estimate_score	57	385	-0.114	0.241
+SARC-LMS	purity+quality, TMM (61)	1	0.441	4.51	0.022	0.106	0.126	0	0.034	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, TMM (61)	2	0.135	4.51	0.012	0.134	0.126	0	0.001	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, TMM (61)	3	0.054	4.51	0.014	0.229	0.126	0.001	0.031	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, TMM (61)	4	0.045	4.51	0.055	0.116	0.126	0.003	0.068	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, TMM (61)	5	0.034	4.51	0.014	0.131	0.126	0	0	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, CQN + no readthrough (61)	1	0.415	5.1	0	0.147	0.126	0	0.058	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, CQN + no readthrough (61)	2	0.124	5.1	0	0.126	0.126	0.001	0.006	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, CQN + no readthrough (61)	3	0.052	5.1	0	0.243	0.126	0.001	0.009	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, CQN + no readthrough (61)	4	0.039	5.1	0.001	0.15	0.126	0	0.009	estimate_score	104	379	0.111	0.215
+SARC-LMS	purity+quality, CQN + no readthrough (61)	5	0.032	5.1	0	0.168	0.126	0	0	estimate_score	104	379	0.111	0.215
+SARC-UPS	purity+quality, TMM (61)	1	0.265	9.19	0.01	0.178	0.16	0.003	0.004	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, TMM (61)	2	0.139	9.19	0.016	0.198	0.16	0.001	0	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, TMM (61)	3	0.097	9.19	0.005	0.087	0.16	0	0.01	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, TMM (61)	4	0.053	9.19	0.006	0.192	0.16	0.007	0.005	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, TMM (61)	5	0.039	9.19	0	0.163	0.16	0.006	0.004	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, CQN + no readthrough (61)	1	0.21	12.47	0	0.227	0.16	0.002	0.002	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, CQN + no readthrough (61)	2	0.118	12.47	0	0.163	0.16	0.001	0	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, CQN + no readthrough (61)	3	0.097	12.47	0	0.031	0.16	0	0.017	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, CQN + no readthrough (61)	4	0.056	12.47	0	0.261	0.16	0.009	0.001	estimate_score	76	478	0.095	0.212
+SARC-UPS	purity+quality, CQN + no readthrough (61)	5	0.049	12.47	0	0.127	0.16	0.001	0	estimate_score	76	478	0.095	0.212
+TARGET-NBL	purity+quality, TMM (61)	1	0.298	6.11	0.029		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, TMM (61)	2	0.234	6.11	0.166		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, TMM (61)	3	0.095	6.11	0.023		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, TMM (61)	4	0.075	6.11	0.036		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, TMM (61)	5	0.045	6.11	0.013		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, CQN + no readthrough (61)	1	0.317	5.89	0		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, CQN + no readthrough (61)	2	0.23	5.89	0.001		0	0.001		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, CQN + no readthrough (61)	3	0.085	5.89	0		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, CQN + no readthrough (61)	4	0.06	5.89	0		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-NBL	purity+quality, CQN + no readthrough (61)	5	0.049	5.89	0		0	0		estimate_score	155	125	0.41	-0.318
+TARGET-WT	purity+quality, TMM (61)	1	0.246	9.47	0.025		0	0		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, TMM (61)	2	0.15	9.47	0.029		0	0.001		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, TMM (61)	3	0.092	9.47	0.018		0	0.004		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, TMM (61)	4	0.078	9.47	0.019		0	0		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, TMM (61)	5	0.053	9.47	0.003		0	0		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, CQN + no readthrough (61)	1	0.175	13.35	0		0	0		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, CQN + no readthrough (61)	2	0.114	13.35	0		0	0		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, CQN + no readthrough (61)	3	0.096	13.35	0		0	0		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, CQN + no readthrough (61)	4	0.087	13.35	0.001		0	0.001		estimate_score	121	28	0.304	-0.018
+TARGET-WT	purity+quality, CQN + no readthrough (61)	5	0.062	13.35	0.001		0	0		estimate_score	121	28	0.304	-0.018
+TCGA-ACC	purity+quality, TMM (61)	1	0.316	7.47	0.001		0	0	0.038	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, TMM (61)	2	0.131	7.47	0.02		0	0	0	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, TMM (61)	3	0.078	7.47	0.039		0	0	0.036	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, TMM (61)	4	0.055	7.47	0.003		0	0	0.004	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, TMM (61)	5	0.043	7.47	0.004		0	0	0.004	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, CQN + no readthrough (61)	1	0.319	7.37	0		0	0	0.037	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, CQN + no readthrough (61)	2	0.13	7.37	0		0	0	0	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, CQN + no readthrough (61)	3	0.072	7.37	0		0	0	0.021	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, CQN + no readthrough (61)	4	0.057	7.37	0.001		0	0	0.008	estimate_score	77	125	0.402	-0.305
+TCGA-ACC	purity+quality, CQN + no readthrough (61)	5	0.047	7.37	0.001		0	0	0.001	estimate_score	77	125	0.402	-0.305
+TCGA-BLCA	purity+quality, TMM (61)	1	0.276	9.55	0.002	0.085	0.069	0	0.008	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	2	0.108	9.55	0.004	0.075	0.069	0.002	0.033	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	3	0.079	9.55	0.15	0.098	0.069	0	0.013	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	4	0.058	9.55	0.036	0.089	0.069	0	0.016	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	5	0.041	9.55	0.005	0.132	0.069	0	0	estimate_score	407	19		
+TCGA-BLCA	purity+quality, CQN + no readthrough (61)	1	0.259	10.71	0	0.085	0.069	0	0.015	estimate_score	407	19		
+TCGA-BLCA	purity+quality, CQN + no readthrough (61)	2	0.111	10.71	0.002	0.077	0.069	0.003	0.036	estimate_score	407	19		
+TCGA-BLCA	purity+quality, CQN + no readthrough (61)	3	0.058	10.71	0.001	0.103	0.069	0.002	0	estimate_score	407	19		
+TCGA-BLCA	purity+quality, CQN + no readthrough (61)	4	0.05	10.71	0.001	0.095	0.069	0.002	0.02	estimate_score	407	19		
+TCGA-BLCA	purity+quality, CQN + no readthrough (61)	5	0.044	10.71	0.001	0.074	0.069	0.001	0.009	estimate_score	407	19		
+TCGA-COAD	purity+quality, TMM (61)	1	0.366	6.39	0.002	0.042	0.063	0	0.001	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, TMM (61)	2	0.093	6.39	0.068	0.427	0.063	0	0.017	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, TMM (61)	3	0.066	6.39	0.093	0.114	0.063	0.001	0.003	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, TMM (61)	4	0.055	6.39	0.064	0.108	0.063	0.005	0.072	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, TMM (61)	5	0.04	6.39	0.001	0.072	0.063	0.001	0	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, CQN + no readthrough (61)	1	0.373	6.42	0	0.042	0.063	0	0	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, CQN + no readthrough (61)	2	0.068	6.42	0	0.059	0.063	0	0.008	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, CQN + no readthrough (61)	3	0.053	6.42	0	0.316	0.063	0	0.014	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, CQN + no readthrough (61)	4	0.043	6.42	0	0.057	0.063	0	0.016	estimate_score	287	165	-0.167	0.206
+TCGA-COAD	purity+quality, CQN + no readthrough (61)	5	0.038	6.42	0	0.037	0.063	0	0.005	estimate_score	287	165	-0.167	0.206
+TCGA-GBM	purity+quality, TMM (61)	1	0.241	8.11	0.021	0.036	0.019	0	0.022	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, TMM (61)	2	0.193	8.11	0.001	0.021	0.019	0	0.034	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, TMM (61)	3	0.114	8.11	0.008	0.053	0.019	0.001	0.001	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, TMM (61)	4	0.075	8.11	0.148	0.028	0.019	0	0	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, TMM (61)	5	0.065	8.11	0.131	0.03	0.019	0	0.117	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, CQN + no readthrough (61)	1	0.217	8.94	0	0.036	0.019	0	0.028	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, CQN + no readthrough (61)	2	0.184	8.94	0	0.007	0.019	0	0.034	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, CQN + no readthrough (61)	3	0.131	8.94	0.001	0.027	0.019	0	0.001	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, CQN + no readthrough (61)	4	0.082	8.94	0.001	0.028	0.019	0	0.082	estimate_score	160	151	0.144	0.009
+TCGA-GBM	purity+quality, CQN + no readthrough (61)	5	0.047	8.94	0.003	0.023	0.019	0.001	0.005	estimate_score	160	151	0.144	0.009
+TCGA-HNSC	purity+quality, TMM (61)	1	0.375	6.04	0.035	0.06	0.035	0.001	0.122	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, TMM (61)	2	0.12	6.04	0.098	0.074	0.035	0.001	0.004	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, TMM (61)	3	0.068	6.04	0.014	0.046	0.035	0.002	0.023	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, TMM (61)	4	0.042	6.04	0.036	0.061	0.035	0.005	0.002	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, TMM (61)	5	0.033	6.04	0.01	0.275	0.035	0.003	0.005	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, CQN + no readthrough (61)	1	0.32	8.09	0	0.061	0.035	0	0.119	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, CQN + no readthrough (61)	2	0.098	8.09	0.003	0.086	0.035	0.001	0.002	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, CQN + no readthrough (61)	3	0.062	8.09	0	0.068	0.035	0	0.025	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, CQN + no readthrough (61)	4	0.048	8.09	0.001	0.136	0.035	0.003	0	estimate_score	518	269	0.324	-0.314
+TCGA-HNSC	purity+quality, CQN + no readthrough (61)	5	0.033	8.09	0	0.048	0.035	0	0.002	estimate_score	518	269	0.324	-0.314
+TCGA-KICH	purity+quality, TMM (61)	1	0.362	6	0.005	0.148	0.015	0.001	0.24	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, TMM (61)	2	0.139	6	0.015	0	0.015	0	0	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, TMM (61)	3	0.084	6	0.035	0.046	0.015	0	0.028	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, TMM (61)	4	0.052	6	0.001	0.016	0.015	0	0.008	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, TMM (61)	5	0.047	6	0	0.031	0.015	0	0.013	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, CQN + no readthrough (61)	1	0.371	5.63	0	0.124	0.015	0.002	0.227	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, CQN + no readthrough (61)	2	0.153	5.63	0	0.006	0.015	0	0.012	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, CQN + no readthrough (61)	3	0.077	5.63	0	0.047	0.015	0	0.032	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, CQN + no readthrough (61)	4	0.063	5.63	0	0	0.015	0	0.036	estimate_score	66	28	0.333	-0.029
+TCGA-KICH	purity+quality, CQN + no readthrough (61)	5	0.04	5.63	0.001	0.04	0.015	0	0	estimate_score	66	28	0.333	-0.029
+TCGA-KIRC	purity+quality, TMM (61)	1	0.282	7.01	0	0.078	0.032	0	0.021	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, TMM (61)	2	0.186	7.01	0.053	0.058	0.032	0	0.031	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, TMM (61)	3	0.123	7.01	0.07	0.143	0.032	0.004	0.012	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, TMM (61)	4	0.091	7.01	0.116	0.139	0.032	0.003	0.02	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, TMM (61)	5	0.041	7.01	0.026	0.205	0.032	0.039	0.002	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, CQN + no readthrough (61)	1	0.3	6.91	0	0.056	0.032	0	0.034	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, CQN + no readthrough (61)	2	0.168	6.91	0	0.054	0.032	0	0.014	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, CQN + no readthrough (61)	3	0.123	6.91	0	0.094	0.032	0	0.037	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, CQN + no readthrough (61)	4	0.075	6.91	0.014	0.142	0.032	0.02	0.017	estimate_score	530	28	0.312	-0.027
+TCGA-KIRC	purity+quality, CQN + no readthrough (61)	5	0.046	6.91	0.004	0.044	0.032	0.011	0.002	estimate_score	530	28	0.312	-0.027
+TCGA-KIRP	purity+quality, TMM (61)	1	0.353	6.04	0.013	0.106	0.059	0	0.037	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, TMM (61)	2	0.163	6.04	0.096	0.09	0.059	0.001	0.01	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, TMM (61)	3	0.079	6.04	0.153	0.198	0.059	0	0.001	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, TMM (61)	4	0.05	6.04	0.004	0.164	0.059	0.001	0.005	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, TMM (61)	5	0.038	6.04	0.004	0.048	0.059	0.003	0.005	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, CQN + no readthrough (61)	1	0.328	6.77	0	0.108	0.059	0	0.031	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, CQN + no readthrough (61)	2	0.158	6.77	0	0.125	0.059	0	0.013	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, CQN + no readthrough (61)	3	0.066	6.77	0.001	0.156	0.059	0	0.001	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, CQN + no readthrough (61)	4	0.05	6.77	0.004	0.092	0.059	0.003	0.001	estimate_score	288	28	0.325	-0.038
+TCGA-KIRP	purity+quality, CQN + no readthrough (61)	5	0.048	6.77	0.001	0.089	0.059	0	0.005	estimate_score	288	28	0.325	-0.038
+TCGA-LIHC	purity+quality, TMM (61)	1	0.243	10.62	0.113	0.047	0.049	0	0.014	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, TMM (61)	2	0.128	10.62	0.038	0.07	0.049	0	0	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, TMM (61)	3	0.077	10.62	0.048	0.04	0.049	0.002	0.026	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, TMM (61)	4	0.063	10.62	0.017	0.131	0.049	0	0.042	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, TMM (61)	5	0.051	10.62	0.01	0.056	0.049	0.006	0.011	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, CQN + no readthrough (61)	1	0.208	12.6	0	0.072	0.049	0	0.014	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, CQN + no readthrough (61)	2	0.114	12.6	0	0.047	0.049	0	0.006	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, CQN + no readthrough (61)	3	0.086	12.6	0.003	0.063	0.049	0.002	0.023	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, CQN + no readthrough (61)	4	0.071	12.6	0.002	0.087	0.049	0	0.038	estimate_score	369	109	0.139	-0.055
+TCGA-LIHC	purity+quality, CQN + no readthrough (61)	5	0.057	12.6	0.001	0.058	0.049	0.001	0	estimate_score	369	109	0.139	-0.055
+TCGA-LUAD	purity+quality, TMM (61)	1	0.194	10.51	0.039	0.065	0.041	0.003	0.031	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, TMM (61)	2	0.155	10.51	0.001	0.061	0.041	0	0	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, TMM (61)	3	0.125	10.51	0	0.494	0.041	0	0.013	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, TMM (61)	4	0.095	10.51	0.137	0.117	0.041	0	0.011	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, TMM (61)	5	0.059	10.51	0.035	0.072	0.041	0	0.008	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, CQN + no readthrough (61)	1	0.189	12.08	0	0.067	0.041	0.003	0.036	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, CQN + no readthrough (61)	2	0.157	12.08	0	0.051	0.041	0	0.011	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, CQN + no readthrough (61)	3	0.102	12.08	0	0.119	0.041	0.001	0	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, CQN + no readthrough (61)	4	0.063	12.08	0	0.244	0.041	0	0.004	estimate_score	513	266	-0.182	0.537
+TCGA-LUAD	purity+quality, CQN + no readthrough (61)	5	0.05	12.08	0.003	0.099	0.041	0.005	0.007	estimate_score	513	266	-0.182	0.537
+TCGA-LUSC	purity+quality, TMM (61)	1	0.21	10.08	0.01	0.06	0.046	0.002	0.003	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, TMM (61)	2	0.185	10.08	0.076	0.104	0.046	0.001	0.086	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, TMM (61)	3	0.091	10.08	0.001	0.52	0.046	0	0	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, TMM (61)	4	0.071	10.08	0.001	0.078	0.046	0.001	0.002	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, TMM (61)	5	0.058	10.08	0.056	0.047	0.046	0.004	0	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, CQN + no readthrough (61)	1	0.221	10.98	0.001	0.05	0.046	0.001	0.003	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, CQN + no readthrough (61)	2	0.164	10.98	0.001	0.05	0.046	0	0.066	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, CQN + no readthrough (61)	3	0.079	10.98	0.001	0.19	0.046	0.002	0	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, CQN + no readthrough (61)	4	0.052	10.98	0.001	0.279	0.046	0	0.006	estimate_score	498	266	-0.173	0.532
+TCGA-LUSC	purity+quality, CQN + no readthrough (61)	5	0.039	10.98	0	0.064	0.046	0	0	estimate_score	498	266	-0.173	0.532
+TCGA-OV	purity+quality, TMM (61)	1	0.141	20.8	0	0.014	0.017	0	0.007	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, TMM (61)	2	0.105	20.8	0.071	0.177	0.017	0	0.027	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, TMM (61)	3	0.072	20.8	0.034	0.032	0.017	0.001	0.018	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, TMM (61)	4	0.05	20.8	0.006	0.012	0.017	0	0	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, TMM (61)	5	0.04	20.8	0.004	0.035	0.017	0	0.002	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, CQN + no readthrough (61)	1	0.141	25.2	0	0.007	0.017	0	0.016	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, CQN + no readthrough (61)	2	0.067	25.2	0	0.054	0.017	0	0.015	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, CQN + no readthrough (61)	3	0.055	25.2	0	0.02	0.017	0	0	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, CQN + no readthrough (61)	4	0.046	25.2	0	0.046	0.017	0	0.002	estimate_score	422	88	0.348	-0.03
+TCGA-OV	purity+quality, CQN + no readthrough (61)	5	0.04	25.2	0	0.091	0.017	0	0.001	estimate_score	422	88	0.348	-0.03
+TCGA-PAAD	purity+quality, TMM (61)	1	0.471	3.94	0.051	0.136	0.062	0.003	0.054	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, TMM (61)	2	0.14	3.94	0.014	0.03	0.062	0.002	0.003	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, TMM (61)	3	0.078	3.94	0.122	0.063	0.062	0.012	0.126	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, TMM (61)	4	0.054	3.94	0.008	0.349	0.062	0.006	0.014	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, TMM (61)	5	0.031	3.94	0.06	0.075	0.062	0.095	0.011	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, CQN + no readthrough (61)	1	0.494	3.76	0.001	0.144	0.062	0.001	0.055	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, CQN + no readthrough (61)	2	0.116	3.76	0.003	0.074	0.062	0.005	0.032	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, CQN + no readthrough (61)	3	0.055	3.76	0.014	0.042	0.062	0.009	0.099	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, CQN + no readthrough (61)	4	0.037	3.76	0	0.117	0.062	0.001	0	estimate_score	178	165	0.229	-0.154
+TCGA-PAAD	purity+quality, CQN + no readthrough (61)	5	0.031	3.76	0.008	0.126	0.062	0.012	0.005	estimate_score	178	165	0.229	-0.154
+TCGA-PRAD	purity+quality, TMM (61)	1	0.281	7.62	0.128	0.057	0.037	0	0.111	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, TMM (61)	2	0.186	7.62	0.028	0.142	0.037	0	0.035	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, TMM (61)	3	0.076	7.62	0.013	0.26	0.037	0	0.007	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, TMM (61)	4	0.059	7.62	0.011	0.106	0.037	0.001	0	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, TMM (61)	5	0.058	7.62	0.012	0.111	0.037	0.003	0.005	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, CQN + no readthrough (61)	1	0.282	7.8	0	0.126	0.037	0	0.04	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, CQN + no readthrough (61)	2	0.178	7.8	0	0.219	0.037	0	0.036	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, CQN + no readthrough (61)	3	0.08	7.8	0.001	0.13	0.037	0	0.033	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, CQN + no readthrough (61)	4	0.062	7.8	0.006	0.123	0.037	0	0.004	estimate_score	494	100	0.027	0.002
+TCGA-PRAD	purity+quality, CQN + no readthrough (61)	5	0.044	7.8	0.007	0.049	0.037	0	0	estimate_score	494	100	0.027	0.002
+TCGA-READ	purity+quality, TMM (61)	1	0.231	11.22	0.007	0.125	0.077	0	0.018	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, TMM (61)	2	0.104	11.22	0.011	0.1	0.077	0.004	0.071	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, TMM (61)	3	0.095	11.22	0.022	0.291	0.077	0.001	0.012	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, TMM (61)	4	0.069	11.22	0.129	0.077	0.077	0.001	0.014	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, TMM (61)	5	0.052	11.22	0.014	0.026	0.077	0.001	0.017	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, CQN + no readthrough (61)	1	0.233	11.47	0	0.134	0.077	0	0.012	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, CQN + no readthrough (61)	2	0.109	11.47	0	0.122	0.077	0	0.063	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, CQN + no readthrough (61)	3	0.065	11.47	0.002	0.167	0.077	0	0.001	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, CQN + no readthrough (61)	4	0.056	11.47	0	0.1	0.077	0	0.025	estimate_score	92	165	-0.165	0.203
+TCGA-READ	purity+quality, CQN + no readthrough (61)	5	0.053	11.47	0	0.119	0.077	0	0.04	estimate_score	92	165	-0.165	0.203
+TCGA-SKCM	purity+quality, TMM (61)	1	0.22	10.55	0.044	0.03	0.032	0.002	0.001	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, TMM (61)	2	0.143	10.55	0.422	0.094	0.032	0	0	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, TMM (61)	3	0.118	10.55	0.004	0.038	0.032	0	0.042	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, TMM (61)	4	0.076	10.55	0.005	0.038	0.032	0	0	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, TMM (61)	5	0.041	10.55	0.024	0.077	0.032	0.002	0.013	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, CQN + no readthrough (61)	1	0.222	11.99	0	0.045	0.032	0	0.01	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, CQN + no readthrough (61)	2	0.131	11.99	0	0.023	0.032	0	0.037	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, CQN + no readthrough (61)	3	0.081	11.99	0	0.038	0.032	0	0.001	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, CQN + no readthrough (61)	4	0.052	11.99	0	0.054	0.032	0	0.003	estimate_score	466	394	0.182	0.269
+TCGA-SKCM	purity+quality, CQN + no readthrough (61)	5	0.04	11.99	0	0.041	0.032	0.001	0.006	estimate_score	466	394	0.182	0.269
+TCGA-STAD	purity+quality, TMM (61)	1	0.231	10.02	0.073	0.143	0.044	0.002	0.014	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, TMM (61)	2	0.132	10.02	0.132	0.364	0.044	0.001	0.02	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, TMM (61)	3	0.116	10.02	0.011	0.188	0.044	0.001	0.001	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, TMM (61)	4	0.079	10.02	0.006	0.082	0.044	0	0.01	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, TMM (61)	5	0.055	10.02	0.001	0.259	0.044	0.002	0.001	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, CQN + no readthrough (61)	1	0.169	14.55	0	0.04	0.044	0	0	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, CQN + no readthrough (61)	2	0.126	14.55	0	0.167	0.044	0.001	0.001	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, CQN + no readthrough (61)	3	0.084	14.55	0	0.072	0.044	0.001	0.015	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, CQN + no readthrough (61)	4	0.077	14.55	0	0.347	0.044	0.001	0.001	estimate_score	413	172	0.136	0.286
+TCGA-STAD	purity+quality, CQN + no readthrough (61)	5	0.061	14.55	0.001	0.118	0.044	0.002	0	estimate_score	413	172	0.136	0.286
+TCGA-THCA	purity+quality, TMM (61)	1	0.47	3.9	0.001	0.081	0.034	0.002	0.012	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, TMM (61)	2	0.151	3.9	0.001	0.047	0.034	0	0.006	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, TMM (61)	3	0.078	3.9	0.022	0.054	0.034	0.004	0.001	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, TMM (61)	4	0.047	3.9	0.078	0.161	0.034	0.002	0.023	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, TMM (61)	5	0.043	3.9	0.133	0.054	0.034	0.004	0.012	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, CQN + no readthrough (61)	1	0.462	3.96	0.001	0.08	0.034	0.002	0.012	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, CQN + no readthrough (61)	2	0.163	3.96	0	0.046	0.034	0	0.004	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, CQN + no readthrough (61)	3	0.078	3.96	0.001	0.052	0.034	0.002	0	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, CQN + no readthrough (61)	4	0.056	3.96	0.001	0.073	0.034	0	0	estimate_score	504	272	0.028	0.376
+TCGA-THCA	purity+quality, CQN + no readthrough (61)	5	0.043	3.96	0.003	0.066	0.034	0	0.02	estimate_score	504	272	0.028	0.376
+TCGA-UCS	purity+quality, TMM (61)	1	0.338	7.16	0.017		0	0	0.065	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, TMM (61)	2	0.101	7.16	0.024		0	0	0	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, TMM (61)	3	0.072	7.16	0.009		0	0	0.119	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, TMM (61)	4	0.047	7.16	0.034		0	0	0.01	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, TMM (61)	5	0.041	7.16	0.004		0	0	0.003	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, CQN + no readthrough (61)	1	0.338	7.35	0		0	0	0.057	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, CQN + no readthrough (61)	2	0.076	7.35	0		0	0	0.094	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, CQN + no readthrough (61)	3	0.071	7.35	0		0	0	0.034	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, CQN + no readthrough (61)	4	0.048	7.35	0		0	0	0.002	estimate_score	57	78	0.05	0.102
+TCGA-UCS	purity+quality, CQN + no readthrough (61)	5	0.044	7.35	0		0	0	0.006	estimate_score	57	78	0.05	0.102
+TGCT-NSGCT	purity+quality, TMM (61)	1	0.478	3.22	0.165	0.004	0.014	0.001	0.154	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, TMM (61)	2	0.275	3.22	0.022	0.057	0.014	0.002	0.012	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, TMM (61)	3	0.075	3.22	0.167	0.024	0.014	0	0.005	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, TMM (61)	4	0.022	3.22	0.016	0.002	0.014	0.002	0.014	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, TMM (61)	5	0.021	3.22	0.061	0.106	0.014	0	0.076	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, CQN + no readthrough (61)	1	0.445	3.31	0.001	0.086	0.014	0.001	0.098	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, CQN + no readthrough (61)	2	0.316	3.31	0	0.009	0.014	0	0.036	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, CQN + no readthrough (61)	3	0.045	3.31	0	0.002	0.014	0	0.066	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, CQN + no readthrough (61)	4	0.032	3.31	0.001	0.01	0.014	0.001	0.048	estimate_score	70	165	0.239	0.089
+TGCT-NSGCT	purity+quality, CQN + no readthrough (61)	5	0.021	3.31	0.001	0.034	0.014	0.001	0.001	estimate_score	70	165	0.239	0.089
+TGCT-SEM	purity+quality, TMM (61)	1	0.351	5.93	0.014	0.002	0.016	0	0	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, TMM (61)	2	0.171	5.93	0.019	0.077	0.016	0	0.007	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, TMM (61)	3	0.088	5.93	0.213	0.12	0.016	0.001	0.05	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, TMM (61)	4	0.053	5.93	0.058	0.003	0.016	0	0.016	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, TMM (61)	5	0.042	5.93	0.011	0.001	0.016	0	0.003	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, CQN + no readthrough (61)	1	0.347	6.01	0	0.007	0.016	0	0	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, CQN + no readthrough (61)	2	0.177	6.01	0	0.076	0.016	0	0.018	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, CQN + no readthrough (61)	3	0.076	6.01	0	0.059	0.016	0	0.051	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, CQN + no readthrough (61)	4	0.049	6.01	0	0.002	0.016	0	0.02	estimate_score	62	165	0.257	0.087
+TGCT-SEM	purity+quality, CQN + no readthrough (61)	5	0.044	6.01	0	0.007	0.016	0	0.003	estimate_score	62	165	0.257	0.087
+UCEC-EEC	purity+quality, TMM (61)	1	0.233	9.56	0.071	0.132	0.151	0	0.016	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, TMM (61)	2	0.142	9.56	0.001	0.186	0.151	0	0.008	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, TMM (61)	3	0.115	9.56	0.123	0.318	0.151	0.001	0.009	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, TMM (61)	4	0.087	9.56	0.007	0.064	0.151	0	0.006	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, TMM (61)	5	0.058	9.56	0.088	0.397	0.151	0.001	0.001	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, CQN + no readthrough (61)	1	0.23	9.74	0	0.114	0.151	0	0.003	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, CQN + no readthrough (61)	2	0.154	9.74	0	0.149	0.151	0	0.008	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, CQN + no readthrough (61)	3	0.092	9.74	0	0.12	0.151	0	0.004	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, CQN + no readthrough (61)	4	0.081	9.74	0	0.237	0.151	0.002	0.004	estimate_score	107	78	0.047	0.074
+UCEC-EEC	purity+quality, CQN + no readthrough (61)	5	0.067	9.74	0	0.282	0.151	0	0.003	estimate_score	107	78	0.047	0.074
+UCEC-SER	purity+quality, TMM (61)	1	0.2	11.64	0.009	0.264	0.22	0	0.002	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, TMM (61)	2	0.14	11.64	0.075	0.217	0.22	0	0	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, TMM (61)	3	0.102	11.64	0.003	0.173	0.22	0	0.024	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, TMM (61)	4	0.074	11.64	0.001	0.221	0.22	0	0.054	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, TMM (61)	5	0.053	11.64	0.039	0.272	0.22	0	0.004	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, CQN + no readthrough (61)	1	0.185	12.73	0	0.353	0.22	0	0	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, CQN + no readthrough (61)	2	0.143	12.73	0	0.077	0.22	0	0.024	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, CQN + no readthrough (61)	3	0.091	12.73	0	0.214	0.22	0	0.024	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, CQN + no readthrough (61)	4	0.068	12.73	0	0.175	0.22	0	0.034	estimate_score	60	78	0.043	0.085
+UCEC-SER	purity+quality, CQN + no readthrough (61)	5	0.05	12.73	0	0.263	0.22	0	0	estimate_score	60	78	0.043	0.085

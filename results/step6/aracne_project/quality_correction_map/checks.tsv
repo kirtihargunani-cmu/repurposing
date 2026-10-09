@@ -1,0 +1,411 @@
+group_id	version	pc	var_explained	effective_dim	r2_quality	r2_plate	plate_chance	r2_purity	r2_absolute	purity_covariate	n_tumor	n_normal	r_quality_vs_gtex_rin	rho_quality_vs_gtex_ischemic
+BRCA-Basal	purity+quality, TMM (61)	1	0.168	18.66	0	0.358	0.185	0.005	0.011	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM (61)	2	0.092	18.66	0	0.273	0.185	0.008	0	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM (61)	3	0.064	18.66	0	0.258	0.185	0.01	0.038	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM (61)	4	0.052	18.66	0	0.258	0.185	0.005	0.023	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM (61)	5	0.04	18.66	0	0.209	0.185	0.003	0.001	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM + mappability filter (61)	1	0.175	18.05	0	0.355	0.185	0.005	0.011	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM + mappability filter (61)	2	0.092	18.05	0	0.284	0.185	0.008	0	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM + mappability filter (61)	3	0.063	18.05	0	0.263	0.185	0.011	0.037	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM + mappability filter (61)	4	0.052	18.05	0	0.249	0.185	0.003	0.021	estimate_score	190	79	-0.015	0.326
+BRCA-Basal	purity+quality, TMM + mappability filter (61)	5	0.039	18.05	0	0.221	0.185	0.003	0.001	estimate_score	190	79	-0.015	0.326
+BRCA-Her2	purity+quality, TMM (61)	1	0.144	16.91	0	0.339	0.312	0.001	0.106	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM (61)	2	0.121	16.91	0	0.408	0.312	0.001	0.026	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM (61)	3	0.094	16.91	0	0.3	0.312	0	0.004	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM (61)	4	0.059	16.91	0	0.369	0.312	0	0.002	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM (61)	5	0.048	16.91	0	0.271	0.312	0.002	0.001	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM + mappability filter (61)	1	0.145	16.92	0	0.376	0.312	0.001	0.084	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM + mappability filter (61)	2	0.121	16.92	0	0.388	0.312	0	0.05	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM + mappability filter (61)	3	0.094	16.92	0	0.294	0.312	0	0.003	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM + mappability filter (61)	4	0.057	16.92	0	0.365	0.312	0	0.002	estimate_score	81	79	-0.014	0.324
+BRCA-Her2	purity+quality, TMM + mappability filter (61)	5	0.047	16.92	0	0.317	0.312	0.002	0.001	estimate_score	81	79	-0.014	0.324
+BRCA-LumA	purity+quality, TMM (61)	1	0.137	17.26	0.001	0.151	0.07	0.002	0.011	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM (61)	2	0.122	17.26	0.001	0.055	0.07	0.009	0.019	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM (61)	3	0.099	17.26	0	0.361	0.07	0	0.001	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM (61)	4	0.063	17.26	0	0.082	0.07	0.002	0	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM (61)	5	0.046	17.26	0.004	0.156	0.07	0.023	0.005	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM + mappability filter (61)	1	0.134	17.55	0	0.136	0.07	0.001	0.006	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM + mappability filter (61)	2	0.119	17.55	0.001	0.071	0.07	0.01	0.02	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM + mappability filter (61)	3	0.102	17.55	0	0.357	0.07	0	0	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM + mappability filter (61)	4	0.065	17.55	0	0.078	0.07	0.002	0	estimate_score	560	79	-0.016	0.325
+BRCA-LumA	purity+quality, TMM + mappability filter (61)	5	0.046	17.55	0.004	0.127	0.07	0.026	0.005	estimate_score	560	79	-0.016	0.325
+BRCA-LumB	purity+quality, TMM (61)	1	0.138	18.16	0	0.136	0.149	0.002	0.012	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM (61)	2	0.111	18.16	0	0.13	0.149	0	0.031	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM (61)	3	0.1	18.16	0	0.386	0.149	0	0.005	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM (61)	4	0.058	18.16	0	0.197	0.149	0.001	0	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM (61)	5	0.046	18.16	0.001	0.22	0.149	0.003	0.001	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM + mappability filter (61)	1	0.139	18.06	0	0.137	0.149	0.002	0.013	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM + mappability filter (61)	2	0.111	18.06	0	0.155	0.149	0	0.034	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM + mappability filter (61)	3	0.102	18.06	0	0.361	0.149	0	0.001	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM + mappability filter (61)	4	0.06	18.06	0.001	0.202	0.149	0.001	0	estimate_score	209	79	-0.016	0.326
+BRCA-LumB	purity+quality, TMM + mappability filter (61)	5	0.045	18.06	0.001	0.219	0.149	0.003	0	estimate_score	209	79	-0.016	0.326
+CESC-AD	purity+quality, TMM (61)	1	0.155	13.96	0	0.284	0.378	0	0.005	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	2	0.114	13.96	0	0.428	0.378	0	0.003	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	3	0.108	13.96	0	0.418	0.378	0	0.005	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	4	0.081	13.96	0.001	0.674	0.378	0	0.067	estimate_score	46	7		
+CESC-AD	purity+quality, TMM (61)	5	0.069	13.96	0	0.566	0.378	0	0.002	estimate_score	46	7		
+CESC-AD	purity+quality, TMM + mappability filter (61)	1	0.159	13.89	0	0.27	0.378	0	0.004	estimate_score	46	7		
+CESC-AD	purity+quality, TMM + mappability filter (61)	2	0.114	13.89	0	0.459	0.378	0	0.003	estimate_score	46	7		
+CESC-AD	purity+quality, TMM + mappability filter (61)	3	0.106	13.89	0	0.397	0.378	0	0.004	estimate_score	46	7		
+CESC-AD	purity+quality, TMM + mappability filter (61)	4	0.084	13.89	0	0.663	0.378	0	0.068	estimate_score	46	7		
+CESC-AD	purity+quality, TMM + mappability filter (61)	5	0.065	13.89	0	0.558	0.378	0	0.001	estimate_score	46	7		
+CESC-SCC	purity+quality, TMM (61)	1	0.197	10.83	0	0.067	0.08	0	0.027	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM (61)	2	0.193	10.83	0	0.13	0.08	0.001	0	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM (61)	3	0.079	10.83	0	0.088	0.08	0	0	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM (61)	4	0.062	10.83	0	0.069	0.08	0	0.008	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM (61)	5	0.035	10.83	0	0.163	0.08	0.001	0.018	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM + mappability filter (61)	1	0.198	10.84	0	0.066	0.08	0	0.024	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM + mappability filter (61)	2	0.192	10.84	0	0.131	0.08	0.001	0.004	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM + mappability filter (61)	3	0.078	10.84	0	0.083	0.08	0	0	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM + mappability filter (61)	4	0.061	10.84	0	0.07	0.08	0	0.007	estimate_score	252	87	-0.348	0.242
+CESC-SCC	purity+quality, TMM + mappability filter (61)	5	0.035	10.84	0	0.174	0.08	0.002	0.018	estimate_score	252	87	-0.348	0.242
+ESCA-AD	purity+quality, TMM (61)	1	0.173	13.76	0.009	0.117	0.102	0.025	0.019	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM (61)	2	0.143	13.76	0.001	0.201	0.102	0.006	0.008	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM (61)	3	0.093	13.76	0	0.112	0.102	0.001	0.016	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM (61)	4	0.059	13.76	0	0.193	0.102	0	0.007	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM (61)	5	0.045	13.76	0	0.105	0.102	0	0.035	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM + mappability filter (61)	1	0.171	14.06	0.009	0.118	0.102	0.026	0.019	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM + mappability filter (61)	2	0.142	14.06	0.002	0.203	0.102	0.006	0.007	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM + mappability filter (61)	3	0.091	14.06	0	0.109	0.102	0.001	0.017	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM + mappability filter (61)	4	0.059	14.06	0	0.189	0.102	0	0.006	estimate_score	89	317	0.083	-0.264
+ESCA-AD	purity+quality, TMM + mappability filter (61)	5	0.044	14.06	0	0.101	0.102	0	0.033	estimate_score	89	317	0.083	-0.264
+ESCA-SCC	purity+quality, TMM (61)	1	0.21	11.79	0	0.137	0.099	0	0.037	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM (61)	2	0.147	11.79	0.002	0.159	0.099	0.001	0.029	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM (61)	3	0.082	11.79	0.001	0.059	0.099	0.002	0.094	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM (61)	4	0.057	11.79	0.001	0.092	0.099	0	0.073	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM (61)	5	0.049	11.79	0.002	0.316	0.099	0	0.043	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM + mappability filter (61)	1	0.211	11.96	0	0.145	0.099	0	0.036	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM + mappability filter (61)	2	0.142	11.96	0.001	0.152	0.099	0.001	0.027	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM + mappability filter (61)	3	0.083	11.96	0.002	0.056	0.099	0.002	0.088	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM + mappability filter (61)	4	0.057	11.96	0.001	0.092	0.099	0	0.089	estimate_score	92	317	0.084	-0.264
+ESCA-SCC	purity+quality, TMM + mappability filter (61)	5	0.049	11.96	0.001	0.314	0.099	0	0.032	estimate_score	92	317	0.084	-0.264
+LGG-IDHmut-codel	purity+quality, TMM (61)	1	0.307	6.95	0.002	0.095	0.104	0.006	0.006	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM (61)	2	0.152	6.95	0.001	0.202	0.104	0.001	0.001	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM (61)	3	0.111	6.95	0	0.154	0.104	0.001	0.001	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM (61)	4	0.073	6.95	0.002	0.144	0.104	0.003	0.003	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM (61)	5	0.055	6.95	0.009	0.208	0.104	0	0	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM + mappability filter (61)	1	0.303	7.08	0.003	0.098	0.104	0.006	0.006	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM + mappability filter (61)	2	0.152	7.08	0.001	0.198	0.104	0.001	0.001	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM + mappability filter (61)	3	0.11	7.08	0	0.159	0.104	0.001	0.001	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM + mappability filter (61)	4	0.074	7.08	0.002	0.142	0.104	0.003	0.003	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-codel	purity+quality, TMM + mappability filter (61)	5	0.055	7.08	0.01	0.216	0.104	0	0	absolute_purity	164	151	0.33	-0.07
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	1	0.292	6.74	0.002	0.11	0.072	0.001	0.001	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	2	0.174	6.74	0	0.11	0.072	0.003	0.003	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	3	0.152	6.74	0.001	0.1	0.072	0.002	0.002	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	4	0.059	6.74	0.003	0.217	0.072	0	0	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM (61)	5	0.04	6.74	0.01	0.127	0.072	0.001	0.001	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM + mappability filter (61)	1	0.287	6.9	0.002	0.106	0.072	0.001	0.001	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM + mappability filter (61)	2	0.172	6.9	0	0.11	0.072	0.003	0.003	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM + mappability filter (61)	3	0.151	6.9	0.001	0.098	0.072	0.002	0.002	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM + mappability filter (61)	4	0.06	6.9	0.003	0.223	0.072	0	0	absolute_purity	238	151	0.328	-0.063
+LGG-IDHmut-noncodel	purity+quality, TMM + mappability filter (61)	5	0.04	6.9	0.01	0.127	0.072	0.001	0.001	absolute_purity	238	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM (61)	1	0.309	6.32	0	0.217	0.191	0.002	0.002	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM (61)	2	0.197	6.32	0.004	0.163	0.191	0	0	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM (61)	3	0.099	6.32	0.005	0.173	0.191	0	0	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM (61)	4	0.08	6.32	0.002	0.194	0.191	0.003	0.003	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM (61)	5	0.053	6.32	0.001	0.187	0.191	0	0	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM + mappability filter (61)	1	0.302	6.52	0	0.221	0.191	0.002	0.002	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM + mappability filter (61)	2	0.196	6.52	0.002	0.159	0.191	0	0	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM + mappability filter (61)	3	0.099	6.52	0.006	0.174	0.191	0	0	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM + mappability filter (61)	4	0.079	6.52	0.002	0.191	0.191	0.003	0.003	absolute_purity	90	151	0.328	-0.063
+LGG-IDHwt	purity+quality, TMM + mappability filter (61)	5	0.055	6.52	0.001	0.19	0.191	0	0	absolute_purity	90	151	0.328	-0.063
+PCPG-PGL	purity+quality, TMM (61)	1	0.281	7.86	0	0.052	0.033	0	0.005	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM (61)	2	0.141	7.86	0	0.156	0.033	0	0.149	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM (61)	3	0.088	7.86	0	0.001	0.033	0	0.012	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM (61)	4	0.076	7.86	0	0.056	0.033	0	0.006	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM (61)	5	0.068	7.86	0	0.01	0.033	0	0.003	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM + mappability filter (61)	1	0.281	7.94	0	0.058	0.033	0	0.003	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM + mappability filter (61)	2	0.137	7.94	0	0.153	0.033	0	0.141	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM + mappability filter (61)	3	0.088	7.94	0	0.001	0.033	0	0.01	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM + mappability filter (61)	4	0.075	7.94	0	0.055	0.033	0	0.004	estimate_score	31	125	0.482	-0.377
+PCPG-PGL	purity+quality, TMM + mappability filter (61)	5	0.067	7.94	0	0.011	0.033	0	0.009	estimate_score	31	125	0.482	-0.377
+PCPG-PHEO	purity+quality, TMM (61)	1	0.334	7.2	0	0.021	0.007	0	0.006	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM (61)	2	0.094	7.2	0.003	0	0.007	0	0.002	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM (61)	3	0.071	7.2	0	0.024	0.007	0	0.026	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM (61)	4	0.062	7.2	0.001	0.003	0.007	0	0	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM (61)	5	0.046	7.2	0	0.002	0.007	0	0.003	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM + mappability filter (61)	1	0.329	7.38	0	0.021	0.007	0	0.006	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM + mappability filter (61)	2	0.094	7.38	0.003	0	0.007	0	0.001	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM + mappability filter (61)	3	0.073	7.38	0	0.024	0.007	0	0.027	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM + mappability filter (61)	4	0.061	7.38	0.001	0.003	0.007	0	0	estimate_score	146	125	0.483	-0.376
+PCPG-PHEO	purity+quality, TMM + mappability filter (61)	5	0.045	7.38	0	0.003	0.007	0	0.002	estimate_score	146	125	0.483	-0.376
+SARC-DDLPS	purity+quality, TMM (61)	1	0.195	11.52	0	0.258	0.214	0	0.083	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM (61)	2	0.142	11.52	0	0.249	0.214	0	0.009	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM (61)	3	0.109	11.52	0.006	0.234	0.214	0.007	0.021	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM (61)	4	0.081	11.52	0.011	0.173	0.214	0.015	0.043	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM (61)	5	0.057	11.52	0.009	0.336	0.214	0.017	0.038	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM + mappability filter (61)	1	0.193	11.66	0	0.252	0.214	0.001	0.084	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM + mappability filter (61)	2	0.145	11.66	0	0.254	0.214	0.001	0.008	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM + mappability filter (61)	3	0.105	11.66	0.006	0.22	0.214	0.007	0.018	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM + mappability filter (61)	4	0.081	11.66	0.009	0.18	0.214	0.013	0.05	estimate_score	57	385	-0.144	0.233
+SARC-DDLPS	purity+quality, TMM + mappability filter (61)	5	0.055	11.66	0.01	0.339	0.214	0.019	0.037	estimate_score	57	385	-0.144	0.233
+SARC-LMS	purity+quality, TMM (61)	1	0.449	4.37	0	0.106	0.126	0	0.034	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM (61)	2	0.135	4.37	0	0.134	0.126	0	0.001	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM (61)	3	0.054	4.37	0	0.229	0.126	0.001	0.03	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM (61)	4	0.046	4.37	0.001	0.115	0.126	0.003	0.068	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM (61)	5	0.033	4.37	0.001	0.127	0.126	0	0	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM + mappability filter (61)	1	0.446	4.43	0	0.106	0.126	0	0.034	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM + mappability filter (61)	2	0.136	4.43	0	0.136	0.126	0	0.001	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM + mappability filter (61)	3	0.055	4.43	0	0.219	0.126	0	0.035	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM + mappability filter (61)	4	0.046	4.43	0.001	0.121	0.126	0.003	0.061	estimate_score	104	379	0.167	-0.052
+SARC-LMS	purity+quality, TMM + mappability filter (61)	5	0.033	4.43	0.001	0.121	0.126	0	0	estimate_score	104	379	0.167	-0.052
+SARC-UPS	purity+quality, TMM (61)	1	0.27	8.94	0	0.178	0.16	0.002	0.004	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM (61)	2	0.139	8.94	0	0.196	0.16	0.001	0	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM (61)	3	0.098	8.94	0	0.088	0.16	0	0.01	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM (61)	4	0.053	8.94	0	0.19	0.16	0.008	0.005	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM (61)	5	0.04	8.94	0	0.176	0.16	0.007	0.006	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM + mappability filter (61)	1	0.265	9.21	0	0.176	0.16	0.003	0.004	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM + mappability filter (61)	2	0.138	9.21	0	0.199	0.16	0.001	0	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM + mappability filter (61)	3	0.096	9.21	0	0.088	0.16	0	0.01	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM + mappability filter (61)	4	0.054	9.21	0	0.194	0.16	0.007	0.006	estimate_score	76	478	-0.039	-0.028
+SARC-UPS	purity+quality, TMM + mappability filter (61)	5	0.041	9.21	0	0.176	0.16	0.005	0.003	estimate_score	76	478	-0.039	-0.028
+TARGET-NBL	purity+quality, TMM (61)	1	0.298	6.09	0		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM (61)	2	0.236	6.09	0.001		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM (61)	3	0.095	6.09	0		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM (61)	4	0.074	6.09	0.001		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM (61)	5	0.045	6.09	0.001		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM + mappability filter (61)	1	0.295	6.24	0		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM + mappability filter (61)	2	0.231	6.24	0.001		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM + mappability filter (61)	3	0.097	6.24	0		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM + mappability filter (61)	4	0.072	6.24	0		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-NBL	purity+quality, TMM + mappability filter (61)	5	0.047	6.24	0		0	0		estimate_score	155	125	0.486	-0.381
+TARGET-WT	purity+quality, TMM (61)	1	0.251	9.23	0		0	0		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM (61)	2	0.151	9.23	0		0	0.001		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM (61)	3	0.092	9.23	0.007		0	0.004		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM (61)	4	0.078	9.23	0.002		0	0		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM (61)	5	0.052	9.23	0.001		0	0		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM + mappability filter (61)	1	0.247	9.38	0		0	0		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM + mappability filter (61)	2	0.152	9.38	0		0	0.001		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM + mappability filter (61)	3	0.092	9.38	0.005		0	0.004		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM + mappability filter (61)	4	0.076	9.38	0.001		0	0		estimate_score	121	28	0.346	-0.13
+TARGET-WT	purity+quality, TMM + mappability filter (61)	5	0.053	9.38	0.001		0	0		estimate_score	121	28	0.346	-0.13
+TCGA-ACC	purity+quality, TMM (61)	1	0.319	7.35	0		0	0	0.039	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM (61)	2	0.132	7.35	0		0	0	0	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM (61)	3	0.077	7.35	0		0	0	0.037	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM (61)	4	0.055	7.35	0.001		0	0	0.007	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM (61)	5	0.043	7.35	0		0	0	0.001	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM + mappability filter (61)	1	0.313	7.56	0		0	0	0.04	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM + mappability filter (61)	2	0.133	7.56	0		0	0	0	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM + mappability filter (61)	3	0.075	7.56	0		0	0	0.039	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM + mappability filter (61)	4	0.055	7.56	0.001		0	0	0.009	estimate_score	77	125	0.483	-0.377
+TCGA-ACC	purity+quality, TMM + mappability filter (61)	5	0.043	7.56	0		0	0	0.002	estimate_score	77	125	0.483	-0.377
+TCGA-BLCA	purity+quality, TMM (61)	1	0.277	9.47	0	0.084	0.069	0	0.008	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	2	0.108	9.47	0	0.075	0.069	0.002	0.034	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	3	0.079	9.47	0	0.097	0.069	0	0.012	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	4	0.06	9.47	0	0.089	0.069	0	0.015	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM (61)	5	0.041	9.47	0	0.131	0.069	0	0	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM + mappability filter (61)	1	0.27	9.86	0	0.082	0.069	0	0.008	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM + mappability filter (61)	2	0.106	9.86	0	0.076	0.069	0.002	0.032	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM + mappability filter (61)	3	0.079	9.86	0	0.093	0.069	0	0.016	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM + mappability filter (61)	4	0.058	9.86	0	0.088	0.069	0	0.013	estimate_score	407	19		
+TCGA-BLCA	purity+quality, TMM + mappability filter (61)	5	0.04	9.86	0	0.136	0.069	0	0	estimate_score	407	19		
+TCGA-COAD	purity+quality, TMM (61)	1	0.374	6.17	0	0.042	0.063	0	0.001	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM (61)	2	0.094	6.17	0	0.427	0.063	0	0.014	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM (61)	3	0.067	6.17	0	0.095	0.063	0.001	0.001	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM (61)	4	0.051	6.17	0.002	0.124	0.063	0.003	0.077	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM (61)	5	0.04	6.17	0	0.068	0.063	0.001	0.001	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM + mappability filter (61)	1	0.371	6.27	0	0.041	0.063	0	0.001	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM + mappability filter (61)	2	0.095	6.27	0	0.429	0.063	0	0.012	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM + mappability filter (61)	3	0.067	6.27	0	0.087	0.063	0.002	0.001	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM + mappability filter (61)	4	0.05	6.27	0.001	0.129	0.063	0.003	0.077	estimate_score	287	165	-0.096	0.301
+TCGA-COAD	purity+quality, TMM + mappability filter (61)	5	0.041	6.27	0	0.061	0.063	0.001	0.002	estimate_score	287	165	-0.096	0.301
+TCGA-GBM	purity+quality, TMM (61)	1	0.245	7.97	0.002	0.036	0.019	0	0.022	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM (61)	2	0.196	7.97	0	0.019	0.019	0	0.033	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM (61)	3	0.111	7.97	0.002	0.049	0.019	0.001	0.001	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM (61)	4	0.076	7.97	0	0.03	0.019	0	0	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM (61)	5	0.064	7.97	0	0.029	0.019	0	0.119	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM + mappability filter (61)	1	0.249	7.94	0.001	0.035	0.019	0	0.026	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM + mappability filter (61)	2	0.192	7.94	0.001	0.019	0.019	0	0.033	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM + mappability filter (61)	3	0.108	7.94	0.003	0.047	0.019	0.001	0	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM + mappability filter (61)	4	0.077	7.94	0	0.028	0.019	0	0.003	estimate_score	160	151	0.327	-0.067
+TCGA-GBM	purity+quality, TMM + mappability filter (61)	5	0.066	7.94	0	0.022	0.019	0	0.115	estimate_score	160	151	0.327	-0.067
+TCGA-HNSC	purity+quality, TMM (61)	1	0.381	5.85	0.001	0.059	0.035	0.001	0.12	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM (61)	2	0.122	5.85	0.001	0.075	0.035	0.001	0.004	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM (61)	3	0.068	5.85	0	0.046	0.035	0.002	0.025	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM (61)	4	0.042	5.85	0.002	0.059	0.035	0.005	0.002	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM (61)	5	0.033	5.85	0	0.269	0.035	0.002	0.004	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM + mappability filter (61)	1	0.381	5.87	0	0.058	0.035	0.001	0.12	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM + mappability filter (61)	2	0.123	5.87	0.001	0.076	0.035	0.001	0.004	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM + mappability filter (61)	3	0.067	5.87	0.001	0.046	0.035	0.002	0.025	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM + mappability filter (61)	4	0.042	5.87	0.002	0.058	0.035	0.006	0.002	estimate_score	518	269	0.342	-0.332
+TCGA-HNSC	purity+quality, TMM + mappability filter (61)	5	0.034	5.87	0	0.272	0.035	0.002	0.004	estimate_score	518	269	0.342	-0.332
+TCGA-KICH	purity+quality, TMM (61)	1	0.368	5.84	0	0.15	0.015	0.001	0.24	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM (61)	2	0.14	5.84	0	0	0.015	0	0.001	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM (61)	3	0.083	5.84	0	0.046	0.015	0	0.028	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM (61)	4	0.051	5.84	0	0.012	0.015	0	0.01	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM (61)	5	0.048	5.84	0	0.033	0.015	0	0.012	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM + mappability filter (61)	1	0.36	6.04	0	0.151	0.015	0.001	0.241	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM + mappability filter (61)	2	0.139	6.04	0	0	0.015	0	0.001	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM + mappability filter (61)	3	0.082	6.04	0	0.046	0.015	0	0.027	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM + mappability filter (61)	4	0.051	6.04	0	0.021	0.015	0	0.006	estimate_score	66	28	0.344	-0.13
+TCGA-KICH	purity+quality, TMM + mappability filter (61)	5	0.049	6.04	0	0.026	0.015	0	0.017	estimate_score	66	28	0.344	-0.13
+TCGA-KIRC	purity+quality, TMM (61)	1	0.288	6.82	0.001	0.078	0.032	0.001	0.021	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM (61)	2	0.192	6.82	0	0.058	0.032	0	0.031	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM (61)	3	0.12	6.82	0.004	0.125	0.032	0.003	0.015	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM (61)	4	0.088	6.82	0.003	0.154	0.032	0.005	0.017	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM (61)	5	0.041	6.82	0.001	0.207	0.032	0.038	0.002	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM + mappability filter (61)	1	0.286	6.92	0.001	0.076	0.032	0.001	0.023	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM + mappability filter (61)	2	0.192	6.92	0	0.059	0.032	0	0.03	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM + mappability filter (61)	3	0.117	6.92	0.003	0.114	0.032	0.003	0.015	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM + mappability filter (61)	4	0.087	6.92	0.003	0.164	0.032	0.006	0.015	estimate_score	530	28	0.342	-0.13
+TCGA-KIRC	purity+quality, TMM + mappability filter (61)	5	0.041	6.92	0.001	0.207	0.032	0.041	0.003	estimate_score	530	28	0.342	-0.13
+TCGA-KIRP	purity+quality, TMM (61)	1	0.359	5.89	0	0.106	0.059	0	0.036	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM (61)	2	0.164	5.89	0	0.089	0.059	0.001	0.011	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM (61)	3	0.077	5.89	0	0.196	0.059	0	0.001	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM (61)	4	0.049	5.89	0	0.167	0.059	0.001	0.005	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM (61)	5	0.039	5.89	0	0.039	0.059	0.002	0.006	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM + mappability filter (61)	1	0.355	6	0	0.105	0.059	0	0.036	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM + mappability filter (61)	2	0.164	6	0	0.088	0.059	0.001	0.012	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM + mappability filter (61)	3	0.076	6	0	0.19	0.059	0	0	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM + mappability filter (61)	4	0.048	6	0	0.165	0.059	0	0.005	estimate_score	288	28	0.34	-0.125
+TCGA-KIRP	purity+quality, TMM + mappability filter (61)	5	0.038	6	0	0.043	0.059	0.002	0.007	estimate_score	288	28	0.34	-0.125
+TCGA-LIHC	purity+quality, TMM (61)	1	0.247	10.26	0	0.046	0.049	0	0.015	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM (61)	2	0.132	10.26	0	0.068	0.049	0	0.001	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM (61)	3	0.076	10.26	0.001	0.04	0.049	0.003	0.027	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM (61)	4	0.063	10.26	0	0.136	0.049	0	0.035	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM (61)	5	0.051	10.26	0.002	0.057	0.049	0.006	0.015	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM + mappability filter (61)	1	0.251	10.03	0	0.047	0.049	0	0.015	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM + mappability filter (61)	2	0.135	10.03	0	0.069	0.049	0	0	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM + mappability filter (61)	3	0.075	10.03	0.001	0.039	0.049	0.003	0.032	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM + mappability filter (61)	4	0.064	10.03	0	0.135	0.049	0	0.034	estimate_score	369	109	0.127	-0.142
+TCGA-LIHC	purity+quality, TMM + mappability filter (61)	5	0.049	10.03	0.002	0.053	0.049	0.006	0.018	estimate_score	369	109	0.127	-0.142
+TCGA-LUAD	purity+quality, TMM (61)	1	0.195	10.33	0	0.062	0.041	0.003	0.031	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM (61)	2	0.158	10.33	0	0.06	0.041	0	0	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM (61)	3	0.126	10.33	0.002	0.492	0.041	0	0.012	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM (61)	4	0.093	10.33	0	0.113	0.041	0	0.01	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM (61)	5	0.06	10.33	0	0.072	0.041	0	0.008	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM + mappability filter (61)	1	0.197	10.33	0	0.062	0.041	0.003	0.031	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM + mappability filter (61)	2	0.158	10.33	0	0.071	0.041	0	0	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM + mappability filter (61)	3	0.126	10.33	0.002	0.495	0.041	0	0.013	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM + mappability filter (61)	4	0.091	10.33	0	0.091	0.041	0	0.009	estimate_score	513	266	-0.18	0.501
+TCGA-LUAD	purity+quality, TMM + mappability filter (61)	5	0.06	10.33	0	0.073	0.041	0	0.008	estimate_score	513	266	-0.18	0.501
+TCGA-LUSC	purity+quality, TMM (61)	1	0.214	9.8	0.001	0.064	0.046	0.001	0.005	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM (61)	2	0.187	9.8	0.001	0.1	0.046	0.001	0.083	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM (61)	3	0.091	9.8	0.001	0.518	0.046	0	0	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM (61)	4	0.072	9.8	0.001	0.077	0.046	0.001	0.002	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM (61)	5	0.059	9.8	0.001	0.047	0.046	0.004	0	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM + mappability filter (61)	1	0.214	9.8	0.001	0.065	0.046	0.001	0.006	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM + mappability filter (61)	2	0.186	9.8	0.001	0.1	0.046	0.001	0.082	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM + mappability filter (61)	3	0.093	9.8	0	0.517	0.046	0	0	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM + mappability filter (61)	4	0.072	9.8	0.001	0.073	0.046	0.001	0.002	estimate_score	498	266	-0.18	0.5
+TCGA-LUSC	purity+quality, TMM + mappability filter (61)	5	0.059	9.8	0.001	0.046	0.046	0.004	0	estimate_score	498	266	-0.18	0.5
+TCGA-OV	purity+quality, TMM (61)	1	0.144	20.21	0	0.015	0.017	0	0.008	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM (61)	2	0.107	20.21	0.001	0.174	0.017	0	0.027	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM (61)	3	0.074	20.21	0	0.033	0.017	0.001	0.017	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM (61)	4	0.05	20.21	0	0.013	0.017	0	0.001	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM (61)	5	0.04	20.21	0	0.033	0.017	0	0.003	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM + mappability filter (61)	1	0.145	20.01	0	0.015	0.017	0	0.007	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM + mappability filter (61)	2	0.109	20.01	0.001	0.173	0.017	0	0.026	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM + mappability filter (61)	3	0.073	20.01	0	0.032	0.017	0.001	0.016	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM + mappability filter (61)	4	0.05	20.01	0	0.014	0.017	0	0.001	estimate_score	422	88	0.279	-0.12
+TCGA-OV	purity+quality, TMM + mappability filter (61)	5	0.039	20.01	0	0.033	0.017	0	0.002	estimate_score	422	88	0.279	-0.12
+TCGA-PAAD	purity+quality, TMM (61)	1	0.474	3.9	0	0.137	0.062	0.003	0.053	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM (61)	2	0.142	3.9	0	0.03	0.062	0.002	0.003	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM (61)	3	0.078	3.9	0.002	0.064	0.062	0.011	0.125	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM (61)	4	0.053	3.9	0.002	0.342	0.062	0.004	0.013	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM (61)	5	0.032	3.9	0.014	0.082	0.062	0.096	0.012	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM + mappability filter (61)	1	0.469	3.96	0.001	0.137	0.062	0.003	0.053	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM + mappability filter (61)	2	0.143	3.96	0	0.029	0.062	0.002	0.003	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM + mappability filter (61)	3	0.078	3.96	0.002	0.067	0.062	0.01	0.123	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM + mappability filter (61)	4	0.054	3.96	0.002	0.338	0.062	0.005	0.016	estimate_score	178	165	0.259	-0.133
+TCGA-PAAD	purity+quality, TMM + mappability filter (61)	5	0.031	3.96	0.014	0.086	0.062	0.098	0.012	estimate_score	178	165	0.259	-0.133
+TCGA-PRAD	purity+quality, TMM (61)	1	0.285	7.43	0	0.057	0.037	0	0.11	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM (61)	2	0.188	7.43	0	0.143	0.037	0	0.037	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM (61)	3	0.077	7.43	0.001	0.26	0.037	0	0.006	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM (61)	4	0.06	7.43	0.005	0.121	0.037	0.002	0	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM (61)	5	0.058	7.43	0.003	0.095	0.037	0.002	0.005	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM + mappability filter (61)	1	0.288	7.44	0	0.065	0.037	0	0.122	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM + mappability filter (61)	2	0.184	7.44	0	0.141	0.037	0	0.031	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM + mappability filter (61)	3	0.077	7.44	0.001	0.261	0.037	0	0.005	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM + mappability filter (61)	4	0.06	7.44	0.003	0.111	0.037	0.001	0.001	estimate_score	494	100	0.086	-0.181
+TCGA-PRAD	purity+quality, TMM + mappability filter (61)	5	0.056	7.44	0.005	0.104	0.037	0.003	0.005	estimate_score	494	100	0.086	-0.181
+TCGA-READ	purity+quality, TMM (61)	1	0.237	10.92	0	0.124	0.077	0	0.016	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM (61)	2	0.104	10.92	0.002	0.091	0.077	0.004	0.065	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM (61)	3	0.096	10.92	0.005	0.279	0.077	0.001	0.014	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM (61)	4	0.064	10.92	0.001	0.101	0.077	0.001	0.027	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM (61)	5	0.051	10.92	0	0.024	0.077	0	0.01	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM + mappability filter (61)	1	0.237	11.03	0	0.124	0.077	0	0.015	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM + mappability filter (61)	2	0.103	11.03	0.002	0.088	0.077	0.003	0.063	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM + mappability filter (61)	3	0.096	11.03	0.004	0.265	0.077	0.001	0.013	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM + mappability filter (61)	4	0.062	11.03	0.002	0.12	0.077	0.002	0.038	estimate_score	92	165	-0.093	0.3
+TCGA-READ	purity+quality, TMM + mappability filter (61)	5	0.051	11.03	0	0.022	0.077	0	0.002	estimate_score	92	165	-0.093	0.3
+TCGA-SKCM	purity+quality, TMM (61)	1	0.227	10.17	0	0.027	0.032	0.002	0.001	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM (61)	2	0.141	10.17	0	0.097	0.032	0	0	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM (61)	3	0.122	10.17	0	0.038	0.032	0	0.042	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM (61)	4	0.076	10.17	0	0.038	0.032	0	0	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM (61)	5	0.042	10.17	0	0.076	0.032	0.002	0.013	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM + mappability filter (61)	1	0.228	10.19	0	0.027	0.032	0.002	0.001	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM + mappability filter (61)	2	0.139	10.19	0	0.098	0.032	0	0.001	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM + mappability filter (61)	3	0.122	10.19	0	0.039	0.032	0	0.04	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM + mappability filter (61)	4	0.076	10.19	0	0.035	0.032	0	0	estimate_score	466	394	0.271	0.128
+TCGA-SKCM	purity+quality, TMM + mappability filter (61)	5	0.043	10.19	0	0.071	0.032	0.002	0.014	estimate_score	466	394	0.271	0.128
+TCGA-STAD	purity+quality, TMM (61)	1	0.235	9.82	0	0.141	0.044	0.002	0.015	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM (61)	2	0.131	9.82	0	0.434	0.044	0.001	0.017	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM (61)	3	0.118	9.82	0	0.122	0.044	0	0.002	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM (61)	4	0.08	9.82	0	0.078	0.044	0	0.01	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM (61)	5	0.055	9.82	0.001	0.196	0.044	0	0	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM + mappability filter (61)	1	0.236	9.79	0	0.147	0.044	0.002	0.015	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM + mappability filter (61)	2	0.131	9.79	0	0.46	0.044	0.001	0.014	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM + mappability filter (61)	3	0.118	9.79	0	0.091	0.044	0	0.003	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM + mappability filter (61)	4	0.078	9.79	0	0.071	0.044	0	0.009	estimate_score	413	172	0.26	0.304
+TCGA-STAD	purity+quality, TMM + mappability filter (61)	5	0.055	9.79	0.002	0.13	0.044	0.002	0	estimate_score	413	172	0.26	0.304
+TCGA-THCA	purity+quality, TMM (61)	1	0.476	3.82	0	0.081	0.034	0.002	0.012	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM (61)	2	0.152	3.82	0	0.047	0.034	0	0.006	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM (61)	3	0.077	3.82	0.001	0.054	0.034	0.004	0.001	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM (61)	4	0.046	3.82	0.001	0.155	0.034	0.002	0.02	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM (61)	5	0.041	3.82	0.004	0.061	0.034	0.004	0.015	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM + mappability filter (61)	1	0.473	3.87	0	0.081	0.034	0.002	0.011	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM + mappability filter (61)	2	0.15	3.87	0	0.046	0.034	0	0.006	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM + mappability filter (61)	3	0.076	3.87	0.001	0.054	0.034	0.005	0.001	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM + mappability filter (61)	4	0.046	3.87	0.002	0.156	0.034	0.003	0.025	estimate_score	504	272	0.06	0.063
+TCGA-THCA	purity+quality, TMM + mappability filter (61)	5	0.041	3.87	0.003	0.061	0.034	0.003	0.01	estimate_score	504	272	0.06	0.063
+TCGA-UCS	purity+quality, TMM (61)	1	0.352	6.73	0		0	0	0.066	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM (61)	2	0.102	6.73	0		0	0	0	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM (61)	3	0.074	6.73	0		0	0	0.12	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM (61)	4	0.046	6.73	0		0	0	0.012	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM (61)	5	0.039	6.73	0		0	0.001	0.004	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM + mappability filter (61)	1	0.354	6.66	0		0	0	0.066	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM + mappability filter (61)	2	0.1	6.66	0		0	0	0	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM + mappability filter (61)	3	0.075	6.66	0		0	0	0.119	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM + mappability filter (61)	4	0.046	6.66	0		0	0.001	0.012	estimate_score	57	78	0.09	0.005
+TCGA-UCS	purity+quality, TMM + mappability filter (61)	5	0.037	6.66	0		0	0.001	0.005	estimate_score	57	78	0.09	0.005
+TGCT-NSGCT	purity+quality, TMM (61)	1	0.476	3.22	0.001	0.004	0.014	0.001	0.155	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM (61)	2	0.277	3.22	0	0.057	0.014	0.002	0.011	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM (61)	3	0.075	3.22	0	0.023	0.014	0	0.006	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM (61)	4	0.023	3.22	0.002	0.001	0.014	0.002	0.02	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM (61)	5	0.021	3.22	0	0.105	0.014	0	0.076	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM + mappability filter (61)	1	0.466	3.3	0.001	0.004	0.014	0.001	0.154	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM + mappability filter (61)	2	0.278	3.3	0	0.058	0.014	0.002	0.01	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM + mappability filter (61)	3	0.079	3.3	0	0.023	0.014	0	0.003	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM + mappability filter (61)	4	0.023	3.3	0.003	0.032	0.014	0.002	0.006	estimate_score	70	165	0.35	-0.186
+TGCT-NSGCT	purity+quality, TMM + mappability filter (61)	5	0.022	3.3	0	0.062	0.014	0.001	0.091	estimate_score	70	165	0.35	-0.186
+TGCT-SEM	purity+quality, TMM (61)	1	0.353	5.88	0	0.002	0.016	0	0	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM (61)	2	0.169	5.88	0.001	0.077	0.016	0	0.007	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM (61)	3	0.088	5.88	0.002	0.121	0.016	0.001	0.051	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM (61)	4	0.053	5.88	0	0.003	0.016	0	0.017	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM (61)	5	0.042	5.88	0.001	0	0.016	0	0.004	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM + mappability filter (61)	1	0.354	5.96	0	0.001	0.016	0	0	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM + mappability filter (61)	2	0.163	5.96	0.001	0.075	0.016	0	0.006	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM + mappability filter (61)	3	0.088	5.96	0.002	0.126	0.016	0.001	0.047	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM + mappability filter (61)	4	0.054	5.96	0	0.003	0.016	0	0.022	estimate_score	62	165	0.348	-0.186
+TGCT-SEM	purity+quality, TMM + mappability filter (61)	5	0.04	5.96	0	0.003	0.016	0	0.012	estimate_score	62	165	0.348	-0.186
+UCEC-EEC	purity+quality, TMM (61)	1	0.237	9.34	0.001	0.132	0.151	0	0.016	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM (61)	2	0.144	9.34	0	0.185	0.151	0	0.008	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM (61)	3	0.116	9.34	0	0.316	0.151	0.001	0.009	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM (61)	4	0.089	9.34	0	0.061	0.151	0	0.006	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM (61)	5	0.057	9.34	0.004	0.411	0.151	0.001	0.001	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM + mappability filter (61)	1	0.231	9.6	0	0.131	0.151	0	0.016	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM + mappability filter (61)	2	0.144	9.6	0	0.183	0.151	0	0.007	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM + mappability filter (61)	3	0.116	9.6	0	0.317	0.151	0.001	0.008	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM + mappability filter (61)	4	0.086	9.6	0	0.059	0.151	0	0.007	estimate_score	107	78	0.089	0.009
+UCEC-EEC	purity+quality, TMM + mappability filter (61)	5	0.057	9.6	0.004	0.415	0.151	0.001	0.001	estimate_score	107	78	0.089	0.009
+UCEC-SER	purity+quality, TMM (61)	1	0.205	11.29	0	0.27	0.22	0	0.002	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM (61)	2	0.141	11.29	0	0.207	0.22	0	0	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM (61)	3	0.105	11.29	0	0.174	0.22	0	0.024	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM (61)	4	0.075	11.29	0	0.22	0.22	0	0.055	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM (61)	5	0.053	11.29	0.001	0.274	0.22	0	0.004	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM + mappability filter (61)	1	0.206	11.31	0	0.261	0.22	0	0.002	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM + mappability filter (61)	2	0.141	11.31	0	0.236	0.22	0	0.001	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM + mappability filter (61)	3	0.102	11.31	0	0.165	0.22	0	0.024	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM + mappability filter (61)	4	0.075	11.31	0	0.216	0.22	0	0.053	estimate_score	60	78	0.09	0.004
+UCEC-SER	purity+quality, TMM + mappability filter (61)	5	0.053	11.31	0.001	0.281	0.22	0.001	0.005	estimate_score	60	78	0.09	0.004

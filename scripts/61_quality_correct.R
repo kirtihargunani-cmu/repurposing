@@ -13,6 +13,18 @@
 #      effective dimensionality; patient concordance with the group's master regulators.
 # Outputs: data/processed/step6/aracne_project_qc/<group>.patient_nes.tsv.gz
 #          results/step6/aracne_project/quality_correction/{checks,patient_concordance,quality_index}.tsv
+# NORM=tmm (default) | cqn. cqn (PI decision 2026-10-08): counts are normalized with conditional quantile normalization
+#   (Hansen, Irizarry & Wu 2012; per-sample smooth GC-content and transcript-length effects; GC and length of the longest
+#   GENCODE v23 transcript, data/interim/gene_gc_v23.tsv) instead of TMM logCPM, and readthrough genes
+#   (data/interim/readthrough_genes_v23.tsv, drop == TRUE: fused or clone-named loci whose transcripts are all tagged
+#   readthrough) are removed from the expression data and from the regulons (as regulators and targets). Purity +
+#   quality correction and patient VIPER then run as above. Outputs go to aracne_project_cqn / quality_correction_cqn
+#   and are compared with the TMM version (aracne_project_qc).
+# MAPPABILITY=1 (default with NORM=tmm since 2026-10-09; MAPPABILITY=0 reproduces aracne_project_qc): mappability filter of Saha & Battle 2018 (as used for GTEx v8
+#   trans-eQTLs; resources from figshare collection 4297352, GRCh38/GENCODE v26, in data/raw/crossmap/): genes with
+#   gene mappability < 0.8 are removed from the expression data and as regulators/targets, and regulon edges between
+#   cross-mappable gene pairs (symmetric cross-mappability > 0) are removed. Outputs: aracne_project_map /
+#   quality_correction_map, compared with aracne_project_qc.
 # ONLY_GROUPS=a,b (optional); N_CORES (default 16)
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(viper); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
@@ -20,7 +32,40 @@ root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", 
 setwd(root); set.seed(61)
 N_PERM_PATIENT <- 100; MIN_TARGETS <- 10; TOP_MR <- 50; N_PC <- 5; N_CORES <- as.integer(Sys.getenv("N_CORES", "16"))
 ABSOLUTE_GROUPS <- c("LGG-IDHmut-codel", "LGG-IDHmut-noncodel", "LGG-IDHwt")
-out_nes <- "data/processed/step6/aracne_project_qc"; res_dir <- "results/step6/aracne_project/quality_correction"
+NORM <- Sys.getenv("NORM", "tmm"); stopifnot(NORM %in% c("tmm", "cqn"))
+MAPF <- Sys.getenv("MAPPABILITY", if (NORM == "cqn") "0" else "1") == "1"; stopifnot(!(MAPF && NORM == "cqn"))  # default on (PI 2026-10-09)
+TAG <- if (NORM == "cqn") "cqn" else if (MAPF) "map" else "qc"
+out_nes <- paste0("data/processed/step6/aracne_project_", TAG)
+res_dir <- paste0("results/step6/aracne_project/quality_correction", if (TAG == "qc") "" else paste0("_", TAG))
+BASE <- if (TAG != "qc") c(dir = "aracne_project_qc", label = "purity+quality, TMM (61)") else
+  c(dir = "aracne_project_purity", label = "purity_only (56)")
+NEW_LABEL <- switch(TAG, cqn = "purity+quality, CQN + no readthrough (61)", map = "purity+quality, TMM + mappability filter (61)",
+                    qc = "purity+quality (61)")
+if (MAPF) {
+  gm <- fread("data/raw/crossmap/hg38_gene_mappability.txt.gz", header = FALSE, col.names = c("id", "map"))
+  lowmap <- sub("\\..*", "", gm[!is.na(map) & map < 0.8, id])
+  cm <- fread(cmd = "zcat data/raw/crossmap/hg38_cross_mappability_strength_symmetric_mean_sorted.txt.gz", header = FALSE,
+              col.names = c("a", "b", "s"))[s > 0]
+  cm[, `:=`(a = sub("\\..*", "", a), b = sub("\\..*", "", b), s = NULL)]
+  cm <- unique(rbind(cm, cm[, .(a = b, b = a)])); setkey(cm, a, b)
+  # filter each network's regulons once: drop edges between cross-mappable genes (one keyed join per network)
+  filter_net <- function(reg) {
+    ens <- vapply(names(reg), function(rn) if (startsWith(rn, "ENSG")) rn else { e <- sym2ens[rn]; if (is.na(e)) rn else e }, "")
+    n <- lengths(lapply(reg, `[[`, "tfmode"))
+    ed <- data.table(rn = rep(names(reg), n), a = rep(ens, n), b = unlist(lapply(reg, function(r) names(r$tfmode)), use.names = FALSE))
+    ed[, cross := !is.na(cm[ed, on = .(a, b), mult = "first", which = TRUE])]
+    message(sprintf("mappability filter: %d of %d edges cross-mappable", sum(ed$cross), nrow(ed)))
+    drop <- split(ed$b[ed$cross], ed$rn[ed$cross])
+    for (rn in names(drop)) { k <- !(names(reg[[rn]]$tfmode) %in% drop[[rn]])
+      reg[[rn]] <- list(tfmode = reg[[rn]]$tfmode[k], likelihood = reg[[rn]]$likelihood[k]) }
+    reg
+  }
+}
+if (NORM == "cqn") {
+  suppressPackageStartupMessages(library(cqn))
+  gcl <- fread("data/interim/gene_gc_v23.tsv"); gcv <- setNames(gcl$gc_longest_tx, gcl$gene_id); txl <- setNames(gcl$longest_tx_len, gcl$gene_id)
+  rt <- fread("data/interim/readthrough_genes_v23.tsv")[drop == TRUE, gene_id]
+}
 dir.create(out_nes, recursive = TRUE, showWarnings = FALSE); dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
 arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
@@ -33,6 +78,8 @@ cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
 filt_all <- fread("results/step6/aracne_project/regulator_filter.tsv")[keep == TRUE]
 mr_all <- fread("results/step6/aracne_project/group_mr.tsv")
+idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]; sym2ens <- setNames(idmap$gene_id, idmap$symbol)
+if (MAPF) { arac <- lapply(arac, filter_net); rm(cm); invisible(gc()) }
 pm <- fread("data/raw/solid_toil/gencode.v23.annotation.gene.probemap")
 span <- setNames(pm$chromEnd - pm$chromStart + 1, sub("\\..*", "", pm$id))
 
@@ -64,7 +111,15 @@ run <- function(gid, contrast) {
   pcol <- if (gid %in% ABSOLUTE_GROUPS) "absolute_purity" else "estimate_score"
   d <- d[role != "tumor" | !is.na(get(pcol))]
   z <- zmat[[contrast]][, c("gene_id", gid), with = FALSE][!is.na(get(gid))]; sig <- setNames(z[[gid]], z$gene_id)
-  lc <- cpm(calcNormFactors(DGEList(counts[names(sig), d$sample])), log = TRUE, prior.count = 1)
+  if (NORM == "cqn") {
+    genes <- names(sig)[!names(sig) %in% rt & names(sig) %in% names(gcv)]
+    cq <- cqn(counts[genes, d$sample], x = gcv[genes], lengths = txl[genes], sizeFactors = colSums(counts[, d$sample]),
+              verbose = FALSE)
+    lc <- cq$y + cq$offset  # log2 expression with per-sample GC and length effects removed
+  } else {
+    genes <- if (MAPF) setdiff(names(sig), lowmap) else names(sig)
+    lc <- cpm(calcNormFactors(DGEList(counts[genes, d$sample])), log = TRUE, prior.count = 1)
+  }
   tum <- lc[, d[role == "tumor", sample], drop = FALSE]; nor <- lc[, d[role == normal_role, sample], drop = FALSE]
   mt <- d[role == "tumor"][match(colnames(tum), sample)]; mn <- d[role == normal_role][match(colnames(nor), sample)]
   qt <- qindex(tum); qn <- qindex(nor); pur <- mt[[pcol]]
@@ -72,24 +127,29 @@ run <- function(gid, contrast) {
   norc <- correct(nor, cbind(1, qn - mean(qn)))
 
   regs_all <- arac[[net_of[[gid]]]]
-  reg <- lapply(regs_all[filt_all[group_id == gid, regulator]], function(r) {
-    k <- names(r$tfmode) %in% names(sig); list(tfmode = r$tfmode[k], likelihood = r$likelihood[k]) })
+  keep_regs <- filt_all[group_id == gid, regulator]
+  if (NORM == "cqn") keep_regs <- keep_regs[!(keep_regs %in% rt) & !(sym2ens[keep_regs] %in% rt)]
+  if (MAPF) keep_regs <- keep_regs[!(sym2ens[keep_regs] %in% lowmap)]
+  reg <- setNames(lapply(keep_regs, function(rn) { r <- regs_all[[rn]]
+    k <- names(r$tfmode) %in% rownames(lc)
+    list(tfmode = r$tfmode[k], likelihood = r$likelihood[k]) }), keep_regs)
+  reg <- reg[vapply(reg, function(r) length(r$tfmode) >= MIN_TARGETS, logical(1))]
   class(reg) <- "regulon"
   vs <- viperSignature(tumc, norc, per = N_PERM_PATIENT, method = "zscore", verbose = FALSE)
   pn <- viper(vs, reg, minsize = MIN_TARGETS, verbose = FALSE)
   fwrite(data.table(regulator = rownames(pn), round(pn, 3)), file.path(out_nes, paste0(gid, ".patient_nes.tsv.gz")), sep = "\t")
 
   # checks: new (gene-level purity + quality) vs previous (NES-level purity correction, script 56)
-  old <- fread(sprintf("data/processed/step6/aracne_project_purity/%s.patient_nes.tsv.gz", gid))
+  old <- fread(sprintf("data/processed/step6/%s/%s.patient_nes.tsv.gz", BASE[["dir"]], gid))
   O <- t(as.matrix(old[, -1])); colnames(O) <- old$regulator
   s <- intersect(rownames(O), colnames(pn)); r <- intersect(colnames(O), rownames(pn))
   meta <- mt[match(s, sample)]; qi <- qt[s]; pu <- meta[[pcol]]
-  chk <- rbind(pc_checks(O[s, r], meta, qi, pu, "purity_only (56)", gid),
-               pc_checks(t(pn[r, s]), meta, qi, pu, "purity+quality (61)", gid))
+  chk <- rbind(pc_checks(O[s, r], meta, qi, pu, BASE[["label"]], gid),
+               pc_checks(t(pn[r, s]), meta, qi, pu, NEW_LABEL, gid))
   chk[, purity_covariate := pcol]
   top <- head(mr_all[group_id == gid & p < 0.05][order(-abs(nes))], TOP_MR)[regulator %in% r]
-  conc <- if (nrow(top) >= 10) rbindlist(lapply(list(`purity_only (56)` = t(O[s, top$regulator]),
-                                                     `purity+quality (61)` = pn[top$regulator, s]), function(M)
+  conc <- if (nrow(top) >= 10) rbindlist(lapply(setNames(list(t(O[s, top$regulator]), pn[top$regulator, s]),
+                                                         c(BASE[["label"]], NEW_LABEL)), function(M)
     data.table(median_rho = round(median(apply(M, 2, cor, y = top$nes, method = "spearman")), 3),
                median_frac_hit = round(median(colMeans(sign(M) == sign(top$nes) & abs(M) > 1.96)), 3))), idcol = "version")[
     , group_id := gid] else NULL
