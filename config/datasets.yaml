@@ -139,3 +139,44 @@ tcga_gistic2:  # GISTIC2 all_thresholded.by_genes (-2..2), Xena TCGA hub
   access: open
   url: https://tcga.xenahubs.net/download/TCGA.PANCAN.sampleMap/Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz
   sha256: 818e3a5ed5a9c0b8e7d7da73cacba48d79a75e0fa515694e381f4ae7e58ae6ce
+
+# ---- Step 9 replication cohorts (scripts/04_download_replication.sh; PI decision 2026-10-08: two per cancer)
+metabric:  # cBioPortal datahub brca_metabric; Illumina HT-12 microarray, 1,980 tumors x 20,603 genes; PAM50/claudin-low labels
+  release: 18763f8eee86d4886d7210068f745f1e509498ee  # datahub commit pinned 2026-10-08
+  access: open
+  files:
+    expression:       {url: https://media.githubusercontent.com/media/cBioPortal/datahub/18763f8eee86d4886d7210068f745f1e509498ee/public/brca_metabric/data_mrna_illumina_microarray.txt, sha256: 4470069455a4ed38ffed5d12513e468bbf5b9a57d66fa1162e7bd9a64889ab7a}
+    clinical_patient: {sha256: 2a6bbadc6e4b2b07c0505559d438da959fc5c9aba55c7194abc394e2d6454995}
+    clinical_sample:  {sha256: 9a2291e065e2a0a5337b4eaeb09836e70b1bc3e1ed17714a013b53515697e6dc}
+
+gse39582:  # GEO series matrix (Marisa et al. 2013, CIT cohort); Affymetrix U133 Plus 2, 585 samples (566 tumors + 19 normals)
+  release: geo-series-matrix-2026-10-08
+  access: open
+  files:
+    series_matrix: {url: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE39nnn/GSE39582/matrix/GSE39582_series_matrix.txt.gz, sha256: 5b88fa71c5268fa1a6ac52b062ee6e676def6c997ab4a09c36ea7acd90ef3968}
+    gpl570_annot:  {url: https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL570/annot/GPL570.annot.gz, sha256: d7cd44352127b1e34f3a720ebea86093ef255a38f1612a85a2962b71bde8f394}
+
+cptac_brca:  # GDC CPTAC-2 STAR counts (GENCODE v36), 133 primary tumors; clinical/PAM50 + proteome/phospho from cBioPortal brca_cptac_2020 (datahub 18763f8e)
+  release: gdc-cptac-2-star-counts (file ids + md5 in data/raw/replication/cptac_brca/gdc_manifest.tsv)
+  access: open
+
+cptac_coad:  # GDC CPTAC-2 STAR counts (GENCODE v36), 105 colon + 1 rectum primary tumors; clinical/MSI + proteome/phospho from cBioPortal coad_cptac_2019
+  release: gdc-cptac-2-star-counts (file ids + md5 in data/raw/replication/cptac_coad/gdc_manifest.tsv)
+  access: open
+
+# ---- Celligner / drug-side sources (scripts/05_download_depmap.sh) ----
+depmap:  # DepMap Public 24Q4 via Figshare (newest full release there; portal download API is behind a browser challenge)
+  release: 24Q4
+  access: open  # CC BY 4.0
+  url: https://figshare.com/articles/dataset/DepMap_24Q4_Public/27993248
+  files:  # Figshare md5 in scripts/05_download_depmap.sh; sha256 in data/raw/checksums.sha256
+    - OmicsExpressionProteinCodingGenesTPMLogp1.csv  # log2(TPM+1), Celligner reference
+    - Model.csv
+    - OmicsProfiles.csv
+    - OmicsDefaultModelProfiles.csv
+    - OmicsSomaticMutations.csv
+    - OmicsSomaticMutationsMatrixHotspot.csv
+    - OmicsSomaticMutationsMatrixDamaging.csv
+    - OmicsFusionFiltered.csv
+    - OmicsCNGene.csv  # relative copy ratio (linear)
+    - README.txt

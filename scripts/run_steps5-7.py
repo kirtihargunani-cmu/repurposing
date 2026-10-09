@@ -19,7 +19,9 @@ Steps (run in this order; [x] = switch):
                                                                                          [edge diagnostics]
   viper_<regulon>           50_viper.R               group + patient VIPER, one step per --regulons entry
   compare_<regulon>         51_compare_mr.R          cross-group summary + known-biology controls
+  download_replication      04_download_replication.sh  METABRIC, GSE39582, CPTAC-BRCA/COAD (Step 9)
   purity_aracne_project     56_purity_correct.R      ESTIMATE regression of ARACNe patient scores
+  quality_correct           61_quality_correct.R     gene-level purity + RNA-quality correction, patient VIPER
   driver_classes            60_driver_classes.py     kinase vs TF driver alterations     [exploratory]
   subtype_test              52_subtype_test.R        subtype-split experiment (CollecTRI) [exploratory]
   aracne_precomputed_test   53_aracne_precomputed_test.R  aracne.networks VIPER test     [exploratory]
@@ -115,6 +117,12 @@ def make_steps(args):
               "data/raw/tcga_pancan/mc3.v0.2.8.PUBLIC.maf.gz",
               "data/raw/tcga_pancan/Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz"],
              desc="TF list, HGNC, mutations, copy number", download=True),
+        Step("download_replication", ["bash", "scripts/04_download_replication.sh"],
+             ["data/raw/replication/metabric/data_mrna_illumina_microarray.txt",
+              "data/raw/replication/gse39582/GSE39582_series_matrix.txt.gz",
+              "data/raw/replication/cptac_brca/gdc_manifest.tsv", "data/raw/replication/cptac_coad/gdc_manifest.tsv",
+              "data/raw/replication/cptac_coad/cbioportal/data_clinical_sample.txt"],
+             desc="Step 9 replication cohorts (METABRIC, GSE39582, CPTAC-BRCA/COAD)", download=True),
         Step("id_map", ["python", "scripts/40_id_map.py"], ["results/step5/id_map.tsv", "results/step5/tf_universe.tsv"],
              inputs=["data/raw/hgnc/hgnc_complete_set_*.txt", "data/raw/tf_lambert/DatabaseExtract_v_1.01.csv"],
              desc="Step 5a ID map"),
@@ -151,6 +159,12 @@ def make_steps(args):
                           ["results/step6/aracne_project/purity_correction/summary.tsv"],
                           inputs=["results/step6/aracne_project/group_summary.tsv"], env={"REGULON": "aracne_project"},
                           desc="Step 6c purity correction (ARACNe patient scores)"))
+        steps.append(Step("quality_correct", ["Rscript", "scripts/61_quality_correct.R"],
+                          ["results/step6/aracne_project/quality_correction/checks.tsv"],
+                          inputs=["results/step6/aracne_project/regulator_filter.tsv",
+                                  "results/step6/aracne_project/purity_correction/summary.tsv"],
+                          env={"N_CORES": str(args.cores)},
+                          desc="Step 6e gene-level purity + RNA-quality correction -> patient VIPER (Step 8 input)"))
     steps += [
         Step("driver_classes", ["python", "scripts/60_driver_classes.py"], ["results/step7/driver_classes.tsv"],
              inputs=["results/step6/collectri/fdr10_group_summary.tsv", "data/raw/tcga_pancan/mc3.v0.2.8.PUBLIC.maf.gz"],
