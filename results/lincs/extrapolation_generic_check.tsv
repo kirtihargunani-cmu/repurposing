@@ -1,0 +1,4 @@
+profiles	same_drug_diff_line_median_r	random_pair_median_r	gap
+raw	0.435	0.127	0.308
+specific	0.33	-0.007	0.337
+ceiling: same drug, same line, 2 single signatures (specific)	0.553		

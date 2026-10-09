@@ -1,0 +1,36 @@
+# Target-presence gate for disease x drug lists (scripts/79b_target_gate.py; user 2026-10-09).
+# Gene classes come from HGNC gene groups in the pinned HGNC snapshot (config/datasets.yaml: hgnc), not ad hoc lists.
+# Every disease x drug row records which rule decided it (gate_reason).
+
+expression:
+  tpm_min: 1.0          # a tumor expresses a gene at TPM >= tpm_min (Toil TPM, primary_per_patient tumors)
+  min_fraction: 0.20    # a gene is expressed in a disease if >= min_fraction of its tumors express it
+                        # (subset-level: a target present in a fifth of patients keeps the drug)
+
+adme:
+  # Drug-handling genes (metabolism, conjugation, transport) are never used as gate targets: their absence says
+  # nothing about whether the drug can act. A drug whose only annotated targets are ADME genes -> adme_only (passes).
+  hgnc_group_ids:
+    - 1000   # Cytochrome P450 family 1 (CYP1A1, CYP1A2, CYP1B1)
+    - 1001   # Cytochrome P450 family 2 (CYP2C9, CYP2C19, CYP2D6, ...)
+    - 1002   # Cytochrome P450 family 3 (CYP3A4, CYP3A5, ...)
+             # other CYP families are not ADME (CYP17A1, CYP19A1, CYP11 are drug targets)
+    - 363    # UDP glucuronosyltransferases
+    - 762    # Sulfotransferases, cytosolic
+    - 1133   # Arylamine N-acetyltransferases (NAT1, NAT2)
+    - 1667   # Flavin containing monooxygenases
+    - 567    # Soluble glutathione S-transferases
+    - 1469   # Microsomal glutathione S-transferases
+    - 461    # Carboxylesterases
+    - 2173   # Solute carrier family 22 (OCT / OAT drug transporters)
+    - 2216   # Solute carrier organic anion transporter family (OATPs)
+  genes: [ABCB1, ABCC1, ABCC2, ABCC3, ABCG2]   # drug efflux pumps (whole ABC subfamilies include non-ADME genes)
+
+family:
+  # A target that is not expressed is rescued if another member of one of its HGNC gene groups is expressed
+  # (annotations often name one isoform of a pan-isoform drug). Only specific groups count.
+  # Off (user 2026-10-09): drugs should be specific to their annotated receptor / target (limit off-target binding);
+  # HGNC groups also mix receptor subtypes with different pharmacology and include complexes.
+  enabled: false
+  max_group_size: 15
+  min_group_size: 2

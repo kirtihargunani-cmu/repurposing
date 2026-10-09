@@ -1,0 +1,1326 @@
+key	ModelID	n_patients_top10	n_rank1	groups	CellLineName	OncotreeLineage	OncotreePrimaryDisease	OncotreeCode
+Adrenal Gland	ACH-001401	77	6	TCGA-ACC	SW-13	Adrenal Gland	Adrenocortical Carcinoma	ACC
+Adrenal Gland	ACH-001598	77	71	TCGA-ACC	NCI-H295R	Adrenal Gland	Adrenocortical Carcinoma	ACC
+Biliary Tract	ACH-001839	31	8	TCGA-CHOL	ICC13-7	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001845	31	10	TCGA-CHOL	ICC5	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001847	31	7	TCGA-CHOL	ICC7	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001856	30	0	TCGA-CHOL	RBE	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001619	29	1	TCGA-CHOL	OCUG-1	Biliary Tract	Intracholecystic Papillary Neoplasm	GBAD
+Biliary Tract	ACH-001846	29	0	TCGA-CHOL	ICC6	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001961	27	0	TCGA-CHOL	GB2	Biliary Tract	Intracholecystic Papillary Neoplasm	GBAD
+Biliary Tract	ACH-001994	26	1	TCGA-CHOL	ICC16	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-000209	25	0	TCGA-CHOL	SNU-1079	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001835	21	0	TCGA-CHOL	ICC10-6	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001834	18	0	TCGA-CHOL	ICC10	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001857	11	4	TCGA-CHOL	SG231	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001844	7	0	TCGA-CHOL	ICC4	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001537	5	1	TCGA-CHOL	KKU-055	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001863	5	1	TCGA-CHOL	TKKK	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001838	4	1	TCGA-CHOL	ICC12	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-000461	3	0	TCGA-CHOL	SNU-1196	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	EHCH
+Biliary Tract	ACH-001855	3	0	TCGA-CHOL	OZ	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001996	3	0	TCGA-CHOL	ICC18	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001997	3	0	TCGA-CHOL	ECC2	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	EHCH
+Biliary Tract	ACH-002647	3	0	TCGA-CHOL	CCC-5	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	CHOL
+Biliary Tract	ACH-001848	2	1	TCGA-CHOL	ICC8	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001849	2	0	TCGA-CHOL	ICC9	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001959	2	0	TCGA-CHOL	CC-LP-1	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-000141	1	0	TCGA-CHOL	SNU-308	Biliary Tract	Intracholecystic Papillary Neoplasm	GBAD
+Biliary Tract	ACH-001494	1	0	TCGA-CHOL	EGI-1	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	EHCH
+Biliary Tract	ACH-001536	1	0	TCGA-CHOL	KKU-100	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	EHCH
+Biliary Tract	ACH-001538	1	0	TCGA-CHOL	KKU-213	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001607	1	0	TCGA-CHOL	NOZ	Biliary Tract	Intracholecystic Papillary Neoplasm	GBAD
+Biliary Tract	ACH-001673	1	1	TCGA-CHOL	TFK-1	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	EHCH
+Biliary Tract	ACH-001836	1	0	TCGA-CHOL	ICC10-8	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001843	1	0	TCGA-CHOL	ICC3	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Biliary Tract	ACH-001858	1	0	TCGA-CHOL	SSP-25	Biliary Tract	Intraductal Papillary Neoplasm of the Bile Duct	IHCH
+Bladder/Urinary Tract	ACH-000142	307	16	TCGA-BLCA	CAL-29	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001409	293	3	TCGA-BLCA	UM-UC-16	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001411	280	25	TCGA-BLCA	UM-UC-5	Bladder/Urinary Tract	Bladder Squamous Cell Carcinoma	BLSC
+Bladder/Urinary Tract	ACH-000486	265	29	TCGA-BLCA	KU-19-19	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001408	234	28	TCGA-BLCA	UM-UC-14	Bladder/Urinary Tract	Urethral Cancer	UCU
+Bladder/Urinary Tract	ACH-000834	229	7	TCGA-BLCA	UM-UC-1	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000473	208	31	TCGA-BLCA	RT-112	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001183	207	69	TCGA-BLCA	RT112/84	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000896	158	16	TCGA-BLCA	647-V	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000547	148	5	TCGA-BLCA	HT-1197	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000802	146	9	TCGA-BLCA	BFTC-905	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000384	145	11	TCGA-BLCA	SW 780	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001415	134	11	TCGA-BLCA	UM-UC7	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000242	123	8	TCGA-BLCA	RT4	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000839	122	73	TCGA-BLCA	SCaBER	Bladder/Urinary Tract	Bladder Squamous Cell Carcinoma	BLSC
+Bladder/Urinary Tract	ACH-001414	105	5	TCGA-BLCA	UM-UC-6	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000905	95	0	TCGA-BLCA	5637	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000545	91	1	TCGA-BLCA	VM-CUB1	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001412	89	2	TCGA-BLCA	UM-UC-10	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000593	82	6	TCGA-BLCA	BC-3C	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000741	73	4	TCGA-BLCA	U-BLC1	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001413	68	12	TCGA-BLCA	UM-UC-11	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000127	63	3	TCGA-BLCA	SLR 20	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000724	52	1	TCGA-BLCA	HT-1376	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000862	46	0	TCGA-BLCA	KMBC-2	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001407	45	0	TCGA-BLCA	UM-UC-13	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001416	44	19	TCGA-BLCA	UM-UC9	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000018	39	1	TCGA-BLCA	T24	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000720	38	0	TCGA-BLCA	TCCSUP	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000522	36	0	TCGA-BLCA	UM-UC-3	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000973	36	9	TCGA-BLCA	639-V	Bladder/Urinary Tract	Urethral Cancer	UCU
+Bladder/Urinary Tract	ACH-000753	34	1	TCGA-BLCA	JMSU-1	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000396	31	1	TCGA-BLCA	J82	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-000026	2	0	TCGA-BLCA	253J-BV	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Bladder/Urinary Tract	ACH-001410	2	1	TCGA-BLCA	UM-UC-4	Bladder/Urinary Tract	Bladder Urothelial Carcinoma	BLCA
+Blood	ACH-000263	156	30	ALL-B,TARGET-AML,TCGA-LAML	KASUMI-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-001647	149	18	ALL-B,TARGET-AML,TCGA-LAML	SHI-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Blood	ACH-000065	146	15	ALL-B,TARGET-AML,TCGA-LAML	OCI-AML5	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000321	144	18	TARGET-AML,TCGA-LAML	MOLM-6	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-000295	143	19	ALL-B,TARGET-AML,TCGA-LAML	EM-2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-000498	142	41	TARGET-AML,TCGA-LAML	KO52	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-002651	124	1	TARGET-AML,TCGA-LAML	FKH-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-001577	112	7	TARGET-AML,TCGA-LAML	MUTZ-8	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000045	105	18	TARGET-AML,TCGA-LAML	MV4-11	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000166	105	14	TARGET-AML,TCGA-LAML	Kasumi-6	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-002653	102	29	ALL-B,TARGET-AML	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
+Blood	ACH-000198	100	10	ALL-B,TARGET-AML,TCGA-LAML	EOL-1	Myeloid	Myeloproliferative Neoplasms	CELNOS
+Blood	ACH-000492	99	13	ALL-B	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1L
+Blood	ACH-000112	97	1	ALL-B,TARGET-AML,TCGA-LAML	SIG-M5	Myeloid	Acute Myeloid Leukemia	AMOL
+Blood	ACH-001209	92	5	ALL-B	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Blood	ACH-001656	88	10	TARGET-AML,TCGA-LAML	SKNO-1	Myeloid	Acute Myeloid Leukemia	AM
+Blood	ACH-000002	87	22	ALL-B,TARGET-AML,TCGA-LAML	HL-60	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000081	87	3	TARGET-AML,TCGA-LAML	GDM-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000728	87	8	ALL-B	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Blood	ACH-000874	86	12	ALL-B,TARGET-AML	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Blood	ACH-000070	84	3	ALL-B	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Blood	ACH-002060	82	10	ALL-B	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
+Blood	ACH-000034	78	10	ALL-B,TARGET-AML,TCGA-LAML	PLB-985	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000362	75	11	TARGET-AML,TCGA-LAML	MOLM-13	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000386	74	3	TARGET-AML,TCGA-LAML	KG-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-003101	74	18	ALL-B	Z-119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Blood	ACH-000124	69	5	ALL-B	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000113	68	4	TARGET-AML,TCGA-LAML	OCI-AML2	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000294	67	5	TARGET-AML,TCGA-LAML	NB-4	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-001613	67	0	TARGET-AML,TCGA-LAML	OCI-AML4	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-001684	64	0	TARGET-AML,TCGA-LAML	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000020	63	3	ALL-B	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLHYPO
+Blood	ACH-000439	62	15	TARGET-AML,TCGA-LAML	ME-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-003103	61	6	ALL-B	Z-181	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Blood	ACH-000218	59	1	ALL-B,TARGET-AML,TCGA-LAML	PL-21	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000557	59	3	TARGET-AML,TCGA-LAML	AML-193	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000084	58	0	TARGET-AML,TCGA-LAML	MUTZ-3	Myeloid	Acute Myeloid Leukemia	AMLGATA2MECOM
+Blood	ACH-000130	58	3	ALL-B	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-000299	57	0	TARGET-AML,TCGA-LAML	HNT-34	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000059	56	1	ALL-B	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Blood	ACH-002290	56	6	ALL-B,TARGET-AML,TCGA-LAML	NKM-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000168	52	0	TARGET-AML,TCGA-LAML	NOMO-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Blood	ACH-000462	50	4	ALL-B	NALM-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-001993	48	0	ALL-B	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLHYPO
+Blood	ACH-001573	47	2	TARGET-AML,TCGA-LAML	MOLM-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-000938	43	6	ALL-B	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-001129	41	4	TARGET-AML,TCGA-LAML	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Blood	ACH-001574	40	2	TARGET-AML,TCGA-LAML	MOLM-14	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000080	39	17	TCGA-DLBC	BDCM	Myeloid	Acute Myeloid Leukemia	AMOL
+Blood	ACH-000076	38	4	TARGET-AML,TCGA-LAML	NCO2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-001484	37	16	TCGA-DLBC	CI	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Blood	ACH-000006	36	6	TARGET-AML,TCGA-LAML	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	AMOL
+Blood	ACH-000406	34	0	TARGET-AML,TCGA-LAML	U-937	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000602	33	4	TARGET-AML,TCGA-LAML	M-07e	Myeloid	Acute Myeloid Leukemia	AMKL
+Blood	ACH-000074	32	8	TARGET-AML,TCGA-LAML	KU812	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-000922	32	5	ALL-B	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Blood	ACH-000156	31	2	ALL-B	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1L
+Blood	ACH-001036	31	6	TARGET-AML,TCGA-LAML	CMK-11-5	Myeloid	Acute Myeloid Leukemia	MLADS
+Blood	ACH-000146	30	0	TARGET-AML,TCGA-LAML	THP-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000158	30	0	TCGA-DLBC	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	ABC
+Blood	ACH-001485	30	2	TCGA-DLBC	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-002059	30	0	ALL-B	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-000301	29	5	TARGET-AML,TCGA-LAML	LAMA-84	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-001679	27	6	ALL-B	U-2973	Lymphoid	Mature B-Cell Neoplasms	HGBCLMYCBCL2
+Blood	ACH-000167	26	0	TCGA-DLBC	KE-97	Lymphoid	Mature B-Cell Neoplasms	PCM
+Blood	ACH-000069	25	2	TCGA-DLBC	Hs 611.T	Lymphoid	Hodgkin Lymphoma	HL
+Blood	ACH-000073	24	0	TCGA-DLBC	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-000405	24	0	TCGA-DLBC	MEC-1	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Blood	ACH-000032	23	1	ALL-B	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Blood	ACH-000387	22	0	TARGET-AML,TCGA-LAML	TF-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000641	21	3	TARGET-AML,TCGA-LAML	CMK	Myeloid	Acute Myeloid Leukemia	MLADS
+Blood	ACH-000960	21	1	ALL-B,TARGET-AML	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLETV6RUNX1
+Blood	ACH-002485	21	0	ALL-B,TCGA-DLBC	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-003108	21	1	ALL-B	HF	Lymphoid	Mature B-Cell Neoplasms	GCB
+Blood	ACH-003273	21	0	TARGET-AML,TCGA-LAML	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	AMKL
+Blood	ACH-000369	20	0	TARGET-AML,TCGA-LAML	MOLM-16	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000432	20	0	ALL-B	BV-173	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-002668	20	0	TARGET-AML,TCGA-LAML	KASUMI-3	Myeloid	Acute Myeloid Leukemia	AMLMD
+Blood	ACH-000487	19	1	TARGET-AML,TCGA-LAML	F-36P	Myeloid	Myelodysplastic Syndromes	MDS
+Blood	ACH-001735	19	0	ALL-B,TARGET-AML	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Blood	ACH-002994	19	1	TARGET-AML,TCGA-LAML	WSU-AML	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000068	18	0	TCGA-DLBC	REC-1	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-000220	17	2	ALL-B,TCGA-DLBC	Mino	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-001736	17	0	ALL-B	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLETV6RUNX1
+Blood	ACH-000373	15	0	TCGA-LAML	SKM-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-001493	15	0	TCGA-DLBC	DOGUM	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-000072	14	2	TARGET-AML	MEG-01	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-002946	14	0	TARGET-AML,TCGA-LAML	UKE-1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000038	13	0	TCGA-DLBC	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-000336	13	1	TARGET-AML,TCGA-LAML	OCI-AML3	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000004	12	0	TARGET-AML,TCGA-LAML	HEL	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000241	12	0	TARGET-AML	JK-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-002716	12	0	TARGET-AML,TCGA-LAML	MO-91	Myeloid	Acute Myeloid Leukemia	AMLMD
+Blood	ACH-003106	12	4	ALL-B	RC	Lymphoid	Mature B-Cell Neoplasms	GCB
+Blood	ACH-000660	11	0	TCGA-DLBC	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000770	11	0	TARGET-AML,TCGA-LAML	P31/FUJ	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-002500	11	0	ALL-B	Z-138	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-000326	10	1	TARGET-AML	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-001539	10	0	TCGA-DLBC	KML-1	Lymphoid	Mature B-Cell Neoplasms	GCB
+Blood	ACH-001707	10	0	TCGA-DLBC	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Blood	ACH-000056	9	1	TCGA-DLBC	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000782	9	2	ALL-B,TARGET-AML	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Blood	ACH-002643	9	1	ALL-B	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-001492	8	0	ALL-B	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-003107	8	0	ALL-B,TCGA-DLBC	JMP-1	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-000687	7	1	TCGA-DLBC	CI-1	Lymphoid	Non-Hodgkin Lymphoma	MBN
+Blood	ACH-001498	7	2	TCGA-DLBC	Farage	Lymphoid	Mature B-Cell Neoplasms	GCB
+Blood	ACH-001571	7	1	TARGET-AML,TCGA-DLBC	Mo	Lymphoid	Mature B-Cell Neoplasms	HCL
+Blood	ACH-002675	7	0	TCGA-LAML	SH-2	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000140	6	0	TCGA-DLBC	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000195	6	0	TARGET-AML,TCGA-LAML	Set-2	Myeloid	Acute Myeloid Leukemia	AMKL
+Blood	ACH-001685	6	1	TCGA-DLBC	U-HO1	Lymphoid	Hodgkin Lymphoma	HL
+Blood	ACH-000534	5	0	TCGA-DLBC	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000654	5	0	TCGA-DLBC	Raji	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-001708	5	0	ALL-B	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	FL
+Blood	ACH-002678	5	0	ALL-B	WILL-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000287	4	0	ALL-B,TCGA-DLBC	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	ABC
+Blood	ACH-000583	4	0	TCGA-DLBC	MC116	Lymphoid	Non-Hodgkin Lymphoma	MBN
+Blood	ACH-001450	4	0	ALL-B,TCGA-DLBC	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-001503	4	0	ALL-B,TCGA-DLBC	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-001616	4	0	ALL-B,TCGA-DLBC	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-001686	4	2	ALL-B,TCGA-DLBC	ULA	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-001709	4	0	TCGA-DLBC	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-002677	4	0	ALL-B,TCGA-DLBC	U-2946	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000005	3	0	TARGET-AML,TCGA-LAML	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000106	3	0	TCGA-DLBC	JVM-2	Lymphoid	Mature B-Cell Neoplasms	MCL
+Blood	ACH-000612	3	0	TCGA-DLBC	HuT 102	Lymphoid	Mature T and NK Neoplasms	MYCF
+Blood	ACH-000656	3	0	ALL-B	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000751	3	0	TARGET-AML	OCI-M1	Myeloid	Acute Myeloid Leukemia	AML
+Blood	ACH-000815	3	0	TCGA-DLBC	KM-H2	Lymphoid	Hodgkin Lymphoma	HL
+Blood	ACH-000983	3	0	TARGET-AML,TCGA-LAML	KCL-22	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-001111	3	0	TCGA-DLBC	L82	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+Blood	ACH-001520	3	0	TCGA-DLBC	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-000077	2	0	TCGA-DLBC	MJ	Lymphoid	Non-Hodgkin Lymphoma	MTNN
+Blood	ACH-000206	2	0	TCGA-DLBC	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+Blood	ACH-000271	2	0	TCGA-DLBC	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000611	2	0	TCGA-DLBC	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000702	2	0	TCGA-DLBC	L-1236	Lymphoid	Hodgkin Lymphoma	HL
+Blood	ACH-000707	2	0	TCGA-DLBC	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-000786	2	0	TCGA-DLBC	Daudi	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-000944	2	0	TCGA-DLBC	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-001106	2	0	ALL-B	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Blood	ACH-001119	2	0	TCGA-DLBC	Mac-2A	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
+Blood	ACH-002055	2	0	ALL-B,TCGA-DLBC	TL-1	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-002061	2	0	TARGET-AML	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-003100	2	0	ALL-B	EJ-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000053	1	0	TCGA-DLBC	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+Blood	ACH-000104	1	0	TCGA-LAML	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	ETPLL
+Blood	ACH-000151	1	0	ALL-B	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-000162	1	0	TCGA-DLBC	GA-10	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-000233	1	0	TCGA-DLBC	DEL	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+Blood	ACH-000245	1	0	TCGA-DLBC	BL-41	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-000346	1	0	TCGA-DLBC	JVM-3	Lymphoid	Mature B-Cell Neoplasms	BPLL
+Blood	ACH-000365	1	0	TCGA-DLBC	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000371	1	0	TCGA-DLBC	RL	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000388	1	0	ALL-B	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-000402	1	0	TCGA-DLBC	BL-70	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-000604	1	0	TARGET-AML	KYO-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Blood	ACH-000754	1	0	TCGA-DLBC	L-428	Lymphoid	Hodgkin Lymphoma	HL
+Blood	ACH-000829	1	0	TCGA-DLBC	HuNS1	Lymphoid	Mature B-Cell Neoplasms	PCM
+Blood	ACH-001068	1	0	TCGA-DLBC	FE-PD	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
+Blood	ACH-001147	1	0	TARGET-AML	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	FTCL
+Blood	ACH-001148	1	0	TCGA-DLBC	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Blood	ACH-001449	1	0	TCGA-DLBC	BL-2	Lymphoid	Mature B-Cell Neoplasms	BL
+Blood	ACH-001634	1	0	TCGA-DLBC	PGA-1	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Blood	ACH-001680	1	0	TCGA-DLBC	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Blood	ACH-002062	1	0	TCGA-DLBC	SLVL	Lymphoid	Mature B-Cell Neoplasms	SMZL
+Bowel	ACH-000470	255	14	TCGA-COAD,TCGA-READ	SW1463	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-002662	243	15	TCGA-COAD,TCGA-READ	JVE-207	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000926	217	31	TCGA-COAD,TCGA-READ	HT-55	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001460	203	21	TCGA-COAD,TCGA-READ	C84	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000986	196	19	TCGA-COAD,TCGA-READ	HT115	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001456	192	43	TCGA-COAD,TCGA-READ	C125PM	Bowel	Colorectal Adenocarcinoma	COADREAD
+Bowel	ACH-002543	178	17	TCGA-COAD,TCGA-READ	SNU-1406	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000381	177	37	TCGA-COAD,TCGA-READ	T84	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002025	128	19	TCGA-COAD,TCGA-READ	TT1TKB	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-001458	127	9	TCGA-COAD,TCGA-READ	C75	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000963	121	7	TCGA-COAD,TCGA-READ	CCK-81	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000532	118	4	TCGA-COAD,TCGA-READ	SNU-61	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-001459	114	32	TCGA-COAD,TCGA-READ	C80	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-002886	105	27	TCGA-COAD,TCGA-READ	VACO 432	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000722	100	0	TCGA-COAD,TCGA-READ	SNU-C1	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001461	96	4	TCGA-COAD,TCGA-READ	C99	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-000252	89	6	TCGA-COAD,TCGA-READ	LS1034	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002932	75	10	TCGA-COAD,TCGA-READ	CCLF_NEURO_0001_T	Bowel	Colorectal Adenocarcinoma	COADREAD
+Bowel	ACH-000489	62	16	TCGA-COAD,TCGA-READ	SW1116	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000985	62	0	TCGA-COAD,TCGA-READ	LS411N	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000467	61	9	TCGA-COAD,TCGA-READ	HCC-56	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001786	60	1	TCGA-COAD,TCGA-READ	SNU-1544	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001061	58	1	TCGA-COAD,TCGA-READ	DLD-1	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000680	57	0	TCGA-COAD,TCGA-READ	SW948	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000950	51	5	TCGA-COAD,TCGA-READ	LoVo	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000957	46	1	TCGA-COAD,TCGA-READ	LS 180	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000007	43	0	TCGA-COAD,TCGA-READ	LS513	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002660	43	0	TCGA-COAD,TCGA-READ	JVE-187	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002667	41	1	TCGA-COAD,TCGA-READ	JVE-528	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000236	32	4	TCGA-COAD,TCGA-READ	SW1417	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001345	32	0	TCGA-COAD,TCGA-READ	GP5d	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002654	31	0	TCGA-COAD,TCGA-READ	JVE-015	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000286	26	0	TCGA-COAD,TCGA-READ	SNU-1033	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-000360	25	3	TCGA-COAD,TCGA-READ	NCI-H508	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000959	25	2	TCGA-COAD,TCGA-READ	SNU-C4	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002659	22	0	TCGA-COAD,TCGA-READ	JVE-127	Bowel	Colorectal Adenocarcinoma	MACR
+Bowel	ACH-000895	21	0	TCGA-COAD,TCGA-READ	CL-34	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000969	20	1	TCGA-COAD,TCGA-READ	KM12	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002539	20	1	TCGA-COAD,TCGA-READ	SNU-1460	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002532	16	0	TCGA-COAD,TCGA-READ	SNU-1411	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-000708	15	2	TCGA-COAD,TCGA-READ	SNU-283	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-000970	15	2	TCGA-COAD,TCGA-READ	SNU-C5	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000565	14	0	TCGA-COAD,TCGA-READ	RCM-1	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-002669	13	3	TCGA-COAD,TCGA-READ	KP-363T	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000249	11	1	TCGA-COAD,TCGA-READ	CL-11	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000552	11	0	TCGA-COAD	HT-29	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000651	11	0	TCGA-COAD,TCGA-READ	SW 620	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000958	11	2	TCGA-COAD,TCGA-READ	SW48	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000400	10	0	TCGA-COAD,TCGA-READ	SK-CO-1	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000820	10	0	TCGA-COAD,TCGA-READ	SW403	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000989	10	1	TCGA-COAD	SNU-175	Bowel	Colorectal Adenocarcinoma	MACR
+Bowel	ACH-000842	8	0	TCGA-COAD,TCGA-READ	SW 480	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000997	7	0	TCGA-COAD	HCT-15	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000943	6	5	TCGA-COAD	RKO	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000971	6	0	TCGA-COAD,TCGA-READ	HCT 116	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-001399	6	0	TCGA-COAD,TCGA-READ	SW 626	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000403	5	0	TCGA-COAD	NCI-H747	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000982	5	1	TCGA-COAD	GP2d	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002538	5	0	TCGA-COAD,TCGA-READ	SNU-1235	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000421	4	0	TCGA-COAD,TCGA-READ	SW837	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-000998	4	0	TCGA-COAD	CW-2	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002535	4	0	TCGA-COAD	SNU-254	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-000412	3	1	TCGA-COAD	SNU-1197	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000501	3	0	TCGA-COAD	LS123	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000202	2	0	TCGA-COAD	COLO-320	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000798	2	1	TCGA-COAD	CL-40	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000999	2	0	TCGA-COAD	SNU-1040	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000089	1	0	TCGA-COAD	NCI-H684	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000253	1	0	TCGA-COAD	COLO 201	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000342	1	0	TCGA-COAD	CL-14	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000491	1	1	TCGA-COAD	NCI-H716	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-000538	1	0	TCGA-COAD	HUTU80	Bowel	Small Bowel Cancer	DA
+Bowel	ACH-000955	1	0	TCGA-COAD	SNU-407	Bowel	Colorectal Adenocarcinoma	COAD
+Bowel	ACH-002024	1	0	TCGA-COAD	ECC4	Bowel	Colorectal Adenocarcinoma	READ
+Bowel	ACH-002664	1	0	TCGA-COAD	JVE-253	Bowel	Colorectal Adenocarcinoma	MACR
+Bowel	ACH-002665	1	0	TCGA-COAD	JVE-367	Bowel	Gastrointestinal Neuroendocrine Tumors	HGNEC
+Breast	ACH-001819	803	197	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	MFM-223	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000910	744	67	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-453	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000117	698	53	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	EFM-192A	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000352	677	41	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC1428	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000927	578	3	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	BT-474	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000783	561	67	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	CAMA-1	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000147	507	28	BRCA-Her2,BRCA-LumA,BRCA-LumB	T-47D	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000017	385	6	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	SK-BR-3	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000277	347	0	BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC1419	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-001396	328	63	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	SUM-52PE	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000028	324	101	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	KPL-1	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000097	301	9	BRCA-Her2,BRCA-LumA,BRCA-LumB	ZR-75-1	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000554	242	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	UACC-893	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000699	224	10	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC1395	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000019	193	22	BRCA-Her2,BRCA-LumA,BRCA-LumB	MCF7	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000930	168	4	BRCA-Basal,BRCA-LumA	HCC1569	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000276	167	35	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC38	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000111	161	2	BRCA-Basal,BRCA-LumA	HCC1187	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000196	156	7	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC1599	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-002499	156	75	BRCA-Basal	UACC-3199	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000725	155	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC202	Breast	Breast Ductal Carcinoma In Situ	DCIS
+Breast	ACH-000349	151	8	BRCA-LumA,BRCA-LumB	HCC1500	Breast	Breast Ductal Carcinoma In Situ	DCIS
+Breast	ACH-000374	151	11	BRCA-Basal,BRCA-Her2,BRCA-LumB	HCC1143	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000849	149	2	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-468	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000934	145	74	BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-361	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-001820	127	21	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	COLO 824	Breast	Breast Neoplasm, NOS	BNNOS
+Breast	ACH-000828	126	0	BRCA-Her2,BRCA-LumA,BRCA-LumB	ZR-75-30	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-001683	126	18	BRCA-Her2,BRCA-LumA,BRCA-LumB	UACC-3133	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000330	119	16	BRCA-LumA,BRCA-LumB	EFM-19	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000536	119	12	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	BT-20	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000691	96	2	BRCA-Basal,BRCA-LumA	HCC2157	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000212	81	10	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	CAL-120	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-001395	78	10	BRCA-Her2,BRCA-LumA,BRCA-LumB	SUM-44PE	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000711	71	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	JIMT-1	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-002399	67	6	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	21NT	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000573	66	4	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-436	Breast	Invasive Breast Carcinoma	BRCNOS
+Breast	ACH-001390	65	9	BRCA-Basal,BRCA-Her2,BRCA-LumA	SUM-149PT	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-001391	61	7	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	SUM-159PT	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000568	55	5	BRCA-LumA,BRCA-LumB	UACC-812	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000818	52	0	BRCA-LumA,BRCA-LumB	BT-483	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-001394	45	8	BRCA-Basal,BRCA-Her2,BRCA-LumA	SUM-229PE	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-001389	43	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	SUM-1315MO2	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-001393	41	2	BRCA-Her2,BRCA-LumA,BRCA-LumB	SUM-190PT	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000288	39	2	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	BT-549	Breast	Invasive Breast Carcinoma	BRCNOS
+Breast	ACH-000721	35	2	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HMC-1-8	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000621	34	1	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-157	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000755	34	0	BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC2218	Breast	Breast Ductal Carcinoma In Situ	DCIS
+Breast	ACH-002921	34	0	BRCA-LumA,BRCA-LumB	BCK4	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000876	33	0	BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-415	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000859	31	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	HCC1954	Breast	Breast Ductal Carcinoma In Situ	DCIS
+Breast	ACH-000857	30	1	BRCA-Basal,BRCA-Her2,BRCA-LumA	CAL-85-1	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-001392	30	1	BRCA-Her2,BRCA-LumA,BRCA-LumB	SUM-185PE	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000044	28	15	BRCA-LumA,BRCA-LumB	MDA-MB-134-VI	Breast	Invasive Breast Carcinoma	ILC
+Breast	ACH-000248	26	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	AU565	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000223	24	0	BRCA-Basal	HCC1937	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000768	24	1	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	MDA-MB-231	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-001705	23	1	BRCA-Basal,BRCA-Her2,BRCA-LumA	VP267	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-001419	17	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	VP229	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000902	13	0	BRCA-Basal,BRCA-Her2,BRCA-LumA,BRCA-LumB	CAL-148	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-002401	10	0	BRCA-Basal	21MT2	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000643	8	0	BRCA-Basal	HDQ-P1	Breast	Invasive Breast Carcinoma	IDC
+Breast	ACH-000624	7	0	BRCA-Basal	HCC1806	Breast	Breast Ductal Carcinoma In Situ	DCIS
+Breast	ACH-000258	4	1	BRCA-Basal,BRCA-LumA,BRCA-LumB	Du4475	Breast	Invasive Breast Carcinoma	BRCA
+Breast	ACH-000148	3	0	BRCA-Basal	Hs 578T	Breast	Invasive Breast Carcinoma	BRCNOS
+Breast	ACH-001662	3	0	BRCA-Basal,BRCA-LumA	SNU-2372	Breast	Invasive Breast Carcinoma	BRCANOS
+Breast	ACH-001388	1	0	BRCA-Basal	SUM-102PT	Breast	Invasive Breast Carcinoma	IDC
+CNS/Brain	ACH-000232	661	2	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	U-251 MG	CNS/Brain	Diffuse Glioma	ASTR
+CNS/Brain	ACH-000027	658	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	GOS-3	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000128	658	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	LN-319	CNS/Brain	Diffuse Glioma	ASTR
+CNS/Brain	ACH-002806	658	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	TB096	CNS/Brain	Diffuse Glioma	AASTR
+CNS/Brain	ACH-000370	657	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	SNU-626	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000622	657	653	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	KNS-42	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001624	651	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	Onda 9	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000592	609	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	TM-31	CNS/Brain	Diffuse Glioma	ASTR
+CNS/Brain	ACH-001289	453	5	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	COG-AR-359	CNS/Brain	Embryonal Tumor	ATRT
+CNS/Brain	ACH-000738	353	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	GB-1	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000479	262	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	KNS-81	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000623	170	4	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	SNU-201	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001031	123	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	CHLA-266	CNS/Brain	Embryonal Tumor	ATRT
+CNS/Brain	ACH-000570	18	0	LGG-IDHwt,TCGA-GBM	YKG1	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001201	10	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	SU-MB-002	CNS/Brain	Embryonal Tumor	MBL
+CNS/Brain	ACH-001053	7	0	LGG-IDHmut-codel,LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	D425	CNS/Brain	Embryonal Tumor	MBL
+CNS/Brain	ACH-001054	7	0	LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	D458	CNS/Brain	Embryonal Tumor	MBL
+CNS/Brain	ACH-001033	6	0	LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	CHLA-57	CNS/Brain	Embryonal Tumor	PNET
+CNS/Brain	ACH-000055	5	0	LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	D283 Med	CNS/Brain	Embryonal Tumor	MBL
+CNS/Brain	ACH-000634	5	0	TCGA-GBM	LN-340	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001711	5	1	LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	PFSK-1	CNS/Brain	Embryonal Tumor	PNET
+CNS/Brain	ACH-000095	4	0	LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	D341 Med	CNS/Brain	Embryonal Tumor	MBL
+CNS/Brain	ACH-000455	4	0	LGG-IDHmut-noncodel,LGG-IDHwt,TCGA-GBM	LN-428	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000591	4	0	TCGA-GBM	LN-235	CNS/Brain	Diffuse Glioma	ASTR
+CNS/Brain	ACH-000863	4	0	TCGA-GBM	DBTRG-05MG	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000464	3	0	LGG-IDHwt,TCGA-GBM	CAS-1	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000756	3	1	LGG-IDHwt,TCGA-GBM	GI-1	CNS/Brain	Diffuse Glioma	GSARC
+CNS/Brain	ACH-001067	3	0	TCGA-GBM	F5	CNS/Brain	Meningothelial Tumor	MNG
+CNS/Brain	ACH-001670	3	1	LGG-IDHmut-noncodel,TCGA-GBM	TASK1	CNS/Brain	Embryonal Tumor	PNET
+CNS/Brain	ACH-000571	2	0	TCGA-GBM	T98G	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-002409	2	0	LGG-IDHwt,TCGA-GBM	CCLF_NEURO_0006_T	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-003438	2	0	TCGA-GBM	CCLF_NEURO_0005_T	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000067	1	0	TCGA-GBM	Hs 683	CNS/Brain	Diffuse Glioma	ODG
+CNS/Brain	ACH-000160	1	1	LGG-IDHwt	BT-12	CNS/Brain	Embryonal Tumor	ATRT
+CNS/Brain	ACH-000200	1	0	TCGA-GBM	NMC-G1	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000215	1	0	TCGA-GBM	LN382	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000437	1	0	TCGA-GBM	SW 1088	CNS/Brain	Diffuse Glioma	ASTR
+CNS/Brain	ACH-000629	1	0	LGG-IDHwt	IOMM-Lee	CNS/Brain	Meningothelial Tumor	MNG
+CNS/Brain	ACH-000631	1	0	TCGA-GBM	KS-1	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-000760	1	0	LGG-IDHwt	LNZ308	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001028	1	0	LGG-IDHwt	CHLA-06	CNS/Brain	Embryonal Tumor	ATRT
+CNS/Brain	ACH-001329	1	0	TCGA-GBM	ANGM-CSS	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001608	1	0	LGG-IDHwt	NP 2	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-001610	1	0	TCGA-GBM	NP 5	CNS/Brain	Diffuse Glioma	GB
+CNS/Brain	ACH-002680	1	0	TCGA-GBM	170-MG-BA	CNS/Brain	Diffuse Glioma	GB
+Cervix	ACH-002019	293	26	CESC-AD,CESC-SCC	HOKUG	Cervix	Glassy Cell Carcinoma of the Cervix	CEGCC
+Cervix	ACH-001652	280	1	CESC-AD,CESC-SCC	SKG-II	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001334	274	50	CESC-AD,CESC-SCC	C-4 I	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001515	260	3	CESC-AD,CESC-SCC	HCS-2	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001336	241	75	CESC-AD,CESC-SCC	Ca Ski	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001651	241	9	CESC-AD,CESC-SCC	SKG-I	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001360	233	3	CESC-AD,CESC-SCC	MS751	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001525	223	73	CESC-AD,CESC-SCC	HT-3	Cervix	Cervical Adenocarcinoma	CEAD
+Cervix	ACH-001341	189	0	CESC-AD,CESC-SCC	DoTc2 4510	Cervix	Mixed Cervical Carcinoma	MCCE
+Cervix	ACH-000490	173	30	CESC-SCC	SF767	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-002020	143	2	CESC-AD,CESC-SCC	SKG-IIIa	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001335	127	4	CESC-AD,CESC-SCC	C-4 II	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001513	85	5	CESC-AD,CESC-SCC	HCA-1	Cervix	Cervical Adenocarcinoma	ECAD
+Cervix	ACH-001086	67	5	CESC-AD,CESC-SCC	HeLa	Cervix	Cervical Adenocarcinoma	ECAD
+Cervix	ACH-001650	61	5	CESC-AD,CESC-SCC	SISO	Cervix	Cervical Adenocarcinoma	CEAD
+Cervix	ACH-000556	40	0	CESC-AD,CESC-SCC	SIHA	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001402	34	5	CESC-AD,CESC-SCC	SW756	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001451	17	1	CESC-AD,CESC-SCC	BOKU	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001333	5	1	CESC-AD,CESC-SCC	C-33 A	Cervix	Cervical Squamous Cell Carcinoma	CESC
+Cervix	ACH-001516	4	1	CESC-SCC	HCSC-1	Cervix	Cervical Adenocarcinoma	ECAD
+Esophagus/Stomach	ACH-000356	416	107	ESCA-AD,TCGA-STAD	MKN-45	Esophagus/Stomach	Esophagogastric Adenocarcinoma	DSTAD
+Esophagus/Stomach	ACH-001497	365	63	ESCA-AD,ESCA-SCC,TCGA-STAD	ESO51	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000303	325	19	ESCA-AD,TCGA-STAD	SNU-5	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000736	294	35	ESCA-AD,TCGA-STAD	SNU-601	Esophagus/Stomach	Esophagogastric Adenocarcinoma	SSRCC
+Esophagus/Stomach	ACH-000507	275	5	ESCA-AD,TCGA-STAD	KE-39	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-001664	239	22	ESCA-AD,ESCA-SCC,TCGA-STAD	SNU-638	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000880	223	17	ESCA-AD,TCGA-STAD	AGS	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-001653	223	11	ESCA-AD,ESCA-SCC,TCGA-STAD	SK-GT-2	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000898	187	18	ESCA-AD,TCGA-STAD	SNU-719	Esophagus/Stomach	Esophagogastric Adenocarcinoma	TSTAD
+Esophagus/Stomach	ACH-000239	174	25	ESCA-AD,TCGA-STAD	HuG1-N	Esophagus/Stomach	Esophagogastric Adenocarcinoma	TSTAD
+Esophagus/Stomach	ACH-000793	154	5	ESCA-AD,TCGA-STAD	KATO III	Esophagus/Stomach	Esophagogastric Adenocarcinoma	SSRCC
+Esophagus/Stomach	ACH-000247	131	2	ESCA-AD,TCGA-STAD	OCUM-1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	DSTAD
+Esophagus/Stomach	ACH-000581	124	0	ESCA-AD,TCGA-STAD	SNU-16	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000383	119	25	ESCA-AD,TCGA-STAD	OE33	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000911	119	6	ESCA-AD,ESCA-SCC,TCGA-STAD	NUGC-3	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000325	117	0	ESCA-AD,TCGA-STAD	SNU-620	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-002446	114	70	ESCA-AD,TCGA-STAD	CCLF_UPGI_0005_T	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000637	101	25	ESCA-AD,ESCA-SCC,TCGA-STAD	KYSE-520	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000216	97	5	ESCA-AD,TCGA-STAD	JH-EsoAd1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000488	93	28	ESCA-AD,ESCA-SCC,TCGA-STAD	TE-11	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000318	89	1	ESCA-AD,ESCA-SCC,TCGA-STAD	TE-10	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000824	88	1	ESCA-AD,ESCA-SCC,TCGA-STAD	KYSE-510	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000427	87	5	ESCA-AD,TCGA-STAD	NCI-N87	Esophagus/Stomach	Esophagogastric Adenocarcinoma	TSTAD
+Esophagus/Stomach	ACH-003437	86	15	ESCA-AD,TCGA-STAD	CCLF_UPGI_0078_T	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000949	85	1	ESCA-AD,TCGA-STAD	TGBC11TKB	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000353	79	5	ESCA-AD,ESCA-SCC,TCGA-STAD	TE-15	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-001496	77	5	ESCA-AD,TCGA-STAD	ESO26	Esophagus/Stomach	Esophagogastric Adenocarcinoma	GEJ
+Esophagus/Stomach	ACH-000544	74	19	ESCA-AD,ESCA-SCC,TCGA-STAD	OE21	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000344	73	1	ESCA-AD,ESCA-SCC,TCGA-STAD	SNU-668	Esophagus/Stomach	Esophagogastric Adenocarcinoma	DSTAD
+Esophagus/Stomach	ACH-000908	69	0	ESCA-AD,TCGA-STAD	SNU-520	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000693	66	6	ESCA-AD,ESCA-SCC	KYSE-180	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-002705	65	3	ESCA-AD,ESCA-SCC,TCGA-STAD	IS076P	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000855	63	0	ESCA-AD,ESCA-SCC,TCGA-STAD	KYSE-150	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000919	63	1	ESCA-AD,TCGA-STAD	IM95	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-001368	62	7	ESCA-AD,ESCA-SCC,TCGA-STAD	OAC-M5.1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-001654	61	1	ESCA-AD,ESCA-SCC,TCGA-STAD	SK-GT-4	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-002706	59	2	ESCA-AD,ESCA-SCC,TCGA-STAD	IS076A	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000823	52	3	ESCA-SCC,TCGA-STAD	KYSE-140	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000764	51	2	ESCA-AD,ESCA-SCC,TCGA-STAD	SH-10-TC	Esophagus/Stomach	Esophagogastric Adenocarcinoma	MSTAD
+Esophagus/Stomach	ACH-000694	44	2	ESCA-AD,ESCA-SCC,TCGA-STAD	TE-9	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000678	43	0	ESCA-AD,ESCA-SCC,TCGA-STAD	MKN7	Esophagus/Stomach	Esophagogastric Adenocarcinoma	TSTAD
+Esophagus/Stomach	ACH-000746	43	3	ESCA-AD,ESCA-SCC,TCGA-STAD	GSS	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000305	42	1	ESCA-AD,ESCA-SCC,TCGA-STAD	EC-GI-10	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000351	42	1	ESCA-AD,ESCA-SCC,TCGA-STAD	MKN1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAS
+Esophagus/Stomach	ACH-000932	37	2	ESCA-AD,ESCA-SCC,TCGA-STAD	SNU-1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-001500	34	0	ESCA-AD,ESCA-SCC,TCGA-STAD	FLO-1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000679	30	0	ESCA-AD,TCGA-STAD	OE-19	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000873	30	1	ESCA-SCC	KYSE-270	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000485	28	1	ESCA-AD,TCGA-STAD	GSU	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000647	28	0	ESCA-AD,ESCA-SCC,TCGA-STAD	TE-1	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000726	28	0	ESCA-SCC	TE-14	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-002703	25	2	ESCA-AD,TCGA-STAD	OANC1	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Esophagus/Stomach	ACH-000144	22	1	ESCA-AD,TCGA-STAD	RERF-GC-1B	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000865	21	1	ESCA-SCC,TCGA-STAD	KYSE-450	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000466	19	0	ESCA-AD,TCGA-STAD	SNU-216	Esophagus/Stomach	Esophagogastric Adenocarcinoma	TSTAD
+Esophagus/Stomach	ACH-000633	19	6	ESCA-AD,TCGA-STAD	FU97	Esophagus/Stomach	Esophagogastric Adenocarcinoma	DSTAD
+Esophagus/Stomach	ACH-000809	18	0	ESCA-AD,ESCA-SCC,TCGA-STAD	KYSE-410	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-002544	18	0	ESCA-AD,TCGA-STAD	SNU-1750	Esophagus/Stomach	Esophagogastric Adenocarcinoma	TSTAD
+Esophagus/Stomach	ACH-000784	17	0	ESCA-SCC,TCGA-STAD	KYSE-70	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000948	16	0	TCGA-STAD	23132/87	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000847	15	0	ESCA-SCC,TCGA-STAD	HGC-27	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000452	14	0	ESCA-SCC,TCGA-STAD	TE-8	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000761	14	0	ESCA-SCC	NUGC-2	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000917	12	0	ESCA-AD,TCGA-STAD	TE-4	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000561	11	4	ESCA-SCC	T.T	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000605	8	0	ESCA-SCC	TE-6	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000674	8	0	ESCA-AD,TCGA-STAD	NUGC-4	Esophagus/Stomach	Esophagogastric Adenocarcinoma	DSTAD
+Esophagus/Stomach	ACH-000225	5	4	ESCA-AD,TCGA-STAD	ECC12	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STSC
+Esophagus/Stomach	ACH-000560	5	0	ESCA-AD,TCGA-STAD	ECC10	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STSC
+Esophagus/Stomach	ACH-000777	5	0	ESCA-AD,ESCA-SCC,TCGA-STAD	KYSE-30	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000255	3	0	ESCA-SCC,TCGA-STAD	LMSU	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-000408	3	0	ESCA-SCC	TE-5	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000717	2	0	ESCA-SCC,TCGA-STAD	COLO-680N	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	ESCC
+Esophagus/Stomach	ACH-000616	1	0	TCGA-STAD	Hs 746T	Esophagus/Stomach	Esophagogastric Adenocarcinoma	STAD
+Esophagus/Stomach	ACH-003426	1	0	TCGA-STAD	CCLF_NEURO_0046_T	Esophagus/Stomach	Esophagogastric Adenocarcinoma	ESCA
+Eye	ACH-001554	79	6	TCGA-UVM	mel-202	Eye	Ocular Melanoma	UM
+Eye	ACH-002010	79	2	TCGA-UVM	MP41	Eye	Ocular Melanoma	UM
+Eye	ACH-002925	79	10	TCGA-UVM	UPMM3	Eye	Ocular Melanoma	UM
+Eye	ACH-002927	79	21	TCGA-UVM	UPMD2	Eye	Ocular Melanoma	UM
+Eye	ACH-002014	78	1	TCGA-UVM	Mel270	Eye	Ocular Melanoma	UM
+Eye	ACH-002687	78	22	TCGA-UVM	WM3772F	Eye	Ocular Melanoma	UM
+Eye	ACH-002011	77	0	TCGA-UVM	MP46	Eye	Ocular Melanoma	UM
+Eye	ACH-001441	70	16	TCGA-UVM	92-1	Eye	Ocular Melanoma	UM
+Eye	ACH-002924	70	1	TCGA-UVM	UPMM2	Eye	Ocular Melanoma	UM
+Eye	ACH-002013	63	0	TCGA-UVM	MM28	Eye	Ocular Melanoma	UM
+Eye	ACH-002926	27	0	TCGA-UVM	UPMD1	Eye	Ocular Melanoma	UM
+Eye	ACH-002017	10	0	TCGA-UVM	Omm1	Eye	Ocular Melanoma	UM
+Eye	ACH-002018	1	0	TCGA-UVM	Omm2.5	Eye	Ocular Melanoma	UM
+Head and Neck	ACH-000606	308	37	TCGA-HNSC	PE/CA-PJ34 (clone C12)	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000723	284	39	TCGA-HNSC	YD-10B	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000188	276	63	TCGA-HNSC	SCC-25	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000740	254	45	TCGA-HNSC	A-253	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000735	251	10	TCGA-HNSC	PE/CA-PJ49	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000503	248	60	TCGA-HNSC	BICR 16	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000472	203	11	TCGA-HNSC	HSC-2	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001625	182	1	TCGA-HNSC	OSC-19	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001699	175	0	TCGA-HNSC	UPCI-SCC-131	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000238	173	4	TCGA-HNSC	SCC-4	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000732	172	2	TCGA-HNSC	PE/CA-PJ41 (clone D2)	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001542	169	8	TCGA-HNSC	KON	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000254	161	15	TCGA-HNSC	SCC-15	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001692	156	68	TCGA-HNSC	UPCI-SCC-040	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001543	155	1	TCGA-HNSC	KOSC-2	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000715	151	21	TCGA-HNSC	SNU-1214	Head and Neck	Head and Neck Squamous Cell Carcinoma	LXSC
+Head and Neck	ACH-001641	149	8	TCGA-HNSC	SAT	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-001690	149	3	TCGA-HNSC	UPCI-SCC-026	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001332	143	22	TCGA-HNSC	BICR 78	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000836	108	2	TCGA-HNSC	YD-15	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001346	106	1	TCGA-HNSC	H103	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000762	104	5	TCGA-HNSC	YD-38	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-001626	93	0	TCGA-HNSC	OSC-20	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000832	74	0	TCGA-HNSC	CAL 27	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-002045	68	17	TCGA-HNSC	HO-1-u-1	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001229	62	3	TCGA-HNSC	UPCI-SCC-154	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001510	52	6	TCGA-HNSC	H376	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-003474	51	12	TCGA-HNSC	CCLF_HNSC_0001_T	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-002043	49	6	TCGA-HNSC	Ca9-22	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000618	48	1	TCGA-HNSC	SNU-1041	Head and Neck	Head and Neck Squamous Cell Carcinoma	HPHSC
+Head and Neck	ACH-000846	46	1	TCGA-HNSC	FaDu	Head and Neck	Head and Neck Squamous Cell Carcinoma	HPHSC
+Head and Neck	ACH-001445	45	11	TCGA-HNSC	BICR 3	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-002029	44	0	TCGA-HNSC	SAS	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001347	42	0	TCGA-HNSC	H157	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000181	41	7	TCGA-HNSC	SCC-9	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001698	41	10	TCGA-HNSC	UPCI-SCC-116	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000778	36	0	TCGA-HNSC	HSC-3	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001228	36	5	TCGA-HNSC	UPCI-SCC-152	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000415	32	0	TCGA-HNSC	BICR 6	Head and Neck	Head and Neck Squamous Cell Carcinoma	HPHSC
+Head and Neck	ACH-003476	25	0	TCGA-HNSC	CCLF_HNSC_0002_T	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-000207	23	0	TCGA-HNSC	Detroit 562	Head and Neck	Head and Neck Squamous Cell Carcinoma	OPHSC
+Head and Neck	ACH-001695	23	1	TCGA-HNSC	UPCI-SCC-099	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000228	21	1	TCGA-HNSC	BICR 31	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000619	17	0	TCGA-HNSC	PE/CA-PJ15	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001509	14	0	TCGA-HNSC	H357	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000500	10	2	TCGA-HNSC	SNU-46	Head and Neck	Head and Neck Squamous Cell Carcinoma	LXSC
+Head and Neck	ACH-001697	10	1	TCGA-HNSC	UPCI-SCC-114	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000546	8	0	TCGA-HNSC	HSC-4	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000771	7	0	TCGA-HNSC	BICR 56	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-002042	7	0	TCGA-HNSC	T3M-5	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-001227	6	1	TCGA-HNSC	UPCI-SCC-090	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001511	6	0	TCGA-HNSC	H413	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001691	6	1	TCGA-HNSC	UPCI-SCC-029A	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001693	6	0	TCGA-HNSC	UPCI-SCC-072	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000163	5	0	TCGA-HNSC	SW579	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-000794	5	1	TCGA-HNSC	BICR 22	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-003099	5	0	TCGA-HNSC	UCSF-OT-1109	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-003465	5	1	TCGA-HNSC	CCLF_HNSC_0004_T	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-000630	4	0	TCGA-HNSC	YD-8	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001508	4	0	TCGA-HNSC	H314	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-002711	4	1	TCGA-HNSC	UM-HACC-2A	Head and Neck	Salivary Carcinoma	ACYC
+Head and Neck	ACH-003475	4	0	TCGA-HNSC	CCLF_HNSC_0003_T	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Head and Neck	ACH-001385	3	0	TCGA-HNSC	RPMI 2650	Head and Neck	Head and Neck Carcinoma, Other	NMCHN
+Head and Neck	ACH-001701	3	0	TCGA-HNSC	UPCI-SCC-200	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000692	2	0	TCGA-HNSC	SNU-899	Head and Neck	Head and Neck Squamous Cell Carcinoma	LXSC
+Head and Neck	ACH-001676	2	0	TCGA-HNSC	Ty-82	Head and Neck	Head and Neck Carcinoma, Other	NMCHN
+Head and Neck	ACH-001694	2	0	TCGA-HNSC	UPCI-SCC-074	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-001700	2	1	TCGA-HNSC	UPCI-SCC-172	Head and Neck	Head and Neck Squamous Cell Carcinoma	OPHSC
+Head and Neck	ACH-002044	2	2	TCGA-HNSC	HSQ-89	Head and Neck	Head and Neck Squamous Cell Carcinoma	SNSC
+Head and Neck	ACH-000548	1	0	TCGA-HNSC	BHY	Head and Neck	Head and Neck Squamous Cell Carcinoma	OCSC
+Head and Neck	ACH-000682	1	0	TCGA-HNSC	SNU-1066	Head and Neck	Head and Neck Squamous Cell Carcinoma	LXSC
+Kidney	ACH-001398	763	30	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	SW 156	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000171	618	24	TCGA-KIRC,TCGA-KIRP	VMRC-RCZ	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000600	508	20	TCGA-KIRC,TCGA-KIRP	SLR 26	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000513	485	8	TCGA-KIRC,TCGA-KIRP	SNU-1272	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000709	484	43	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	KMRC-2	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000495	483	8	TCGA-KIRC,TCGA-KIRP	TUHR4TKB	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000484	455	31	TCGA-KIRC,TCGA-KIRP	VMRC-RCW	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-001194	441	27	TCGA-KIRC,TCGA-KIRP	SK-RC-31	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000262	430	25	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	UOK101	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000429	350	297	TCGA-KIRC,TCGA-KIRP	A-704	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000317	333	1	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	TUHR14TKB	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000272	314	12	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	SLR 24	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000046	268	18	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	ACHN	Kidney	Renal Cell Carcinoma	PRCC
+Kidney	ACH-000234	266	6	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	Caki-2	Kidney	Renal Cell Carcinoma	PRCC
+Kidney	ACH-000428	257	3	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	UO-31	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000433	205	3	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	Caki-1	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-002435	204	9	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	CCLF_PEDS_0022_T	Kidney	Wilms' Tumor	WT
+Kidney	ACH-002533	191	2	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	SNU-482	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000457	190	137	TCGA-KIRC,TCGA-KIRP	CAL-54	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000016	188	24	TCGA-KIRC,TCGA-KIRP	SLR 21	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000533	170	1	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	NCI-H2004 RT	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-000375	144	0	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	G-402	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-001532	137	0	TARGET-WT,TCGA-KICH,TCGA-KIRC	JMU-RTK-2	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-003451	136	82	TARGET-WT,TCGA-KICH,TCGA-KIRC	CCLF_PEDS_0048_T	Kidney	Wilms' Tumor	WT
+Kidney	ACH-000201	132	1	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	A-204	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-001210	127	0	TARGET-WT,TCGA-KICH,TCGA-KIRC	TTC-1240	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-000313	126	0	TCGA-KIRC,TCGA-KIRP	KMRC-3	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000096	123	37	TARGET-WT,TCGA-KICH,TCGA-KIRC	G-401	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-000159	121	4	TCGA-KIRC,TCGA-KIRP	OS-RC-2	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-001109	120	0	TARGET-WT	KP-MRT-RY	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-001200	120	1	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	STM91-01	Kidney	Rhabdoid Cancer	MRT
+Kidney	ACH-002937	118	77	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	CCLF_PEDS_0020_T	Kidney	Wilms' Tumor	WT
+Kidney	ACH-002438	117	4	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	CCLF_PEDS_0026_T	Kidney	Wilms' Tumor	WT
+Kidney	ACH-001423	108	9	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	CCLF_PEDS_0002_T	Kidney	Wilms' Tumor	WT
+Kidney	ACH-000189	107	1	TCGA-KIRC,TCGA-KIRP	RCC10RGB	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000411	107	20	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	769-P	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000555	104	0	TCGA-KIRC,TCGA-KIRP	A-498	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000250	99	9	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	KMRC-20	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-001688	95	21	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	UM-RC-7	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000300	72	4	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	SLR 25	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-001163	49	2	TARGET-WT,TCGA-KICH,TCGA-KIRC,TCGA-KIRP	CCLF_PEDS_0001_T	Kidney	Renal Cell Carcinoma	MRC
+Kidney	ACH-000907	37	0	TCGA-KIRC	SNU-349	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-001687	36	3	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	UM-RC-3	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000385	30	0	TCGA-KIRC,TCGA-KIRP	SK-RC-52	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-000684	26	0	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	KMRC-1	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000792	26	1	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	BFTC-909	Kidney	Renal Cell Carcinoma	RCC
+Kidney	ACH-002528	15	0	TCGA-KIRC,TCGA-KIRP	SNU-267	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000649	13	0	TCGA-KICH,TCGA-KIRC,TCGA-KIRP	786-O	Kidney	Renal Cell Carcinoma	CCRCC
+Kidney	ACH-000459	2	0	TCGA-KIRC,TCGA-KIRP	TUHR10TKB	Kidney	Renal Cell Carcinoma	CCRCC
+Liver	ACH-001318	365	1	TCGA-LIHC	PLC/PRF/5	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000475	360	10	TCGA-LIHC	huH-1	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000480	357	30	TCGA-LIHC	HuH-7	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000848	357	15	TCGA-LIHC	JHH-7	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000625	356	7	TCGA-LIHC	Hep 3B2.1-7	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000734	356	2	TCGA-LIHC	JHH-5	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000671	347	0	TCGA-LIHC	HuH-6	Liver	Hepatoblastoma	LIHB
+Liver	ACH-000739	335	292	TCGA-LIHC	Hep G2	Liver	Hepatoblastoma	LIHB
+Liver	ACH-000471	291	1	TCGA-LIHC	Li-7	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000316	233	0	TCGA-LIHC	SNU-886	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000686	196	1	TCGA-LIHC	SNU-878	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000537	45	6	TCGA-LIHC	SNU-761	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000217	21	0	TCGA-LIHC	JHH-6	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000476	17	0	TCGA-LIHC	JHH-4	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000420	14	0	TCGA-LIHC	SNU-449	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000422	12	3	TCGA-LIHC	SNU-475	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000483	5	0	TCGA-LIHC	SNU-182	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000577	5	0	TCGA-LIHC	JHH-2	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000361	4	1	TCGA-LIHC	SK-HEP-1	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000478	4	0	TCGA-LIHC	SNU-387	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000493	4	0	TCGA-LIHC	SNU-423	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000393	3	0	TCGA-LIHC	HLF	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-000221	2	0	TCGA-LIHC	SNU-398	Liver	Hepatocellular Carcinoma	HCC
+Liver	ACH-002523	1	0	TCGA-LIHC	SNU-739	Liver	Hepatocellular Carcinoma	HCC
+Lung	ACH-000585	399	128	TCGA-LUAD,TCGA-LUSC	EPLC-272H	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000843	394	93	TCGA-LUAD,TCGA-LUSC	HARA	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000858	374	68	TCGA-LUAD,TCGA-LUSC	KNS-62	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000669	332	70	TCGA-LUAD,TCGA-LUSC	SW 900	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000454	314	52	TCGA-LUAD,TCGA-LUSC	HCC-95	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000886	289	21	TCGA-LUAD,TCGA-LUSC	NCI-H2009	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000845	273	35	TCGA-LUAD,TCGA-LUSC	NCI-H1373	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000733	263	14	TCGA-LUAD,TCGA-LUSC	NCI-H1838	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000390	262	2	TCGA-LUAD,TCGA-LUSC	LUDLU-1	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-001075	241	6	TCGA-LUAD,TCGA-LUSC	NCI-H292	Lung	Non-Small Cell Lung Cancer	LUMEC
+Lung	ACH-000690	236	66	TCGA-LUAD,TCGA-LUSC	HCC-2814	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000841	223	15	TCGA-LUAD,TCGA-LUSC	NCI-H2087	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-001113	213	19	TCGA-LUAD,TCGA-LUSC	LC-1/sq-SF	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000448	208	1	TCGA-LUAD,TCGA-LUSC	NCI-H1666	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000705	205	1	TCGA-LUAD,TCGA-LUSC	LC-1F	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000860	205	7	TCGA-LUAD,TCGA-LUSC	NCI-H358	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000875	190	9	TCGA-LUAD,TCGA-LUSC	NCI-H2347	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000837	187	2	TCGA-LUAD,TCGA-LUSC	NCI-H322	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000596	173	24	TCGA-LUAD,TCGA-LUSC	LCLC-97TM1	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000012	170	11	TCGA-LUAD,TCGA-LUSC	HCC-827	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000562	167	22	TCGA-LUAD,TCGA-LUSC	HCC-78	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000638	166	16	TCGA-LUAD,TCGA-LUSC	NCI-H441	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000826	161	1	TCGA-LUAD,TCGA-LUSC	CAL-12T	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000667	157	26	TCGA-LUAD,TCGA-LUSC	HCC-44	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000590	155	7	TCGA-LUAD,TCGA-LUSC	NCI-H2073	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000774	151	0	TCGA-LUAD,TCGA-LUSC	RERF-LC-Ad2	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000718	147	4	TCGA-LUAD,TCGA-LUSC	NCI-H2291	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000878	147	12	TCGA-LUAD,TCGA-LUSC	HCC-15	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000872	130	5	TCGA-LUAD,TCGA-LUSC	HCC515	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000378	127	21	TCGA-LUAD,TCGA-LUSC	NCI-H647	Lung	Non-Small Cell Lung Cancer	LUAS
+Lung	ACH-000791	127	14	TCGA-LUAD,TCGA-LUSC	RERF-LC-Ad1	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000888	122	0	TCGA-LUAD,TCGA-LUSC	NCI-H1793	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000900	105	5	TCGA-LUAD,TCGA-LUSC	NCI-H23	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000030	101	2	TCGA-LUAD,TCGA-LUSC	PC-14	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000578	100	2	TCGA-LUAD,TCGA-LUSC	HCC-1171	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000337	97	49	TCGA-LUAD,TCGA-LUSC	NCI-H3122	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000029	95	0	TCGA-LUAD,TCGA-LUSC	HCC-827-GR5	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000438	91	4	TCGA-LUAD,TCGA-LUSC	Lu-65	Lung	Non-Small Cell Lung Cancer	GCLC
+Lung	ACH-000675	90	18	TCGA-LUAD,TCGA-LUSC	NCI-H1734	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000264	83	2	TCGA-LUAD,TCGA-LUSC	Calu-6	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000587	79	2	TCGA-LUAD,TCGA-LUSC	NCI-H1975	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000929	79	22	TCGA-LUAD,TCGA-LUSC	NCI-H2110	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000442	77	1	TCGA-LUSC	RERF-LC-Sq1	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000186	76	0	TCGA-LUAD,TCGA-LUSC	NCI-H2444	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000066	71	6	TCGA-LUAD	HCC4006	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000813	71	1	TCGA-LUAD,TCGA-LUSC	T3M-10	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000766	69	0	TCGA-LUAD,TCGA-LUSC	NCI-H1648	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000451	68	1	TCGA-LUAD,TCGA-LUSC	NCI-H2085	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000143	67	0	TCGA-LUAD,TCGA-LUSC	HCC2429	Lung	Non-Small Cell Lung Cancer	NUTCL
+Lung	ACH-000553	67	0	TCGA-LUAD,TCGA-LUSC	Sq-1	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000575	67	2	TCGA-LUAD,TCGA-LUSC	HCC-364	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000035	65	1	TCGA-LUAD,TCGA-LUSC	NCI-H1650	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000672	53	0	TCGA-LUAD,TCGA-LUSC	IA-LM	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000481	51	4	TCGA-LUAD,TCGA-LUSC	NCI-H2170	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000311	44	4	TCGA-LUAD,TCGA-LUSC	NCI-H2122	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000563	44	0	TCGA-LUAD,TCGA-LUSC	EBC-1	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000779	44	3	TCGA-LUAD,TCGA-LUSC	PC-9	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000395	43	2	TCGA-LUAD,TCGA-LUSC	NCI-H520	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000589	42	15	TCGA-LUAD,TCGA-LUSC	NCI-H1437	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000666	41	2	TCGA-LUAD,TCGA-LUSC	NCI-H1355	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000339	39	1	TCGA-LUAD,TCGA-LUSC	HCC-461	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000261	36	3	TCGA-LUAD,TCGA-LUSC	RERF-LC-AI	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000868	36	1	TCGA-LUAD	HCC-1195	Lung	Non-Small Cell Lung Cancer	LUAS
+Lung	ACH-000463	34	0	TCGA-LUAD,TCGA-LUSC	NCI-H460	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000851	34	0	TCGA-LUAD,TCGA-LUSC	MOR/CPR	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000282	33	17	TCGA-LUAD,TCGA-LUSC	NCI-H1755	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000781	32	6	TCGA-LUAD,TCGA-LUSC	NCI-H2023	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000744	31	0	TCGA-LUAD,TCGA-LUSC	NCI-H1623	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000416	30	3	TCGA-LUAD,TCGA-LUSC	NCI-H838	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000706	26	1	TCGA-LUAD,TCGA-LUSC	EKVX	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000867	25	0	TCGA-LUAD,TCGA-LUSC	ChaGo-K-1	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000894	25	1	TCGA-LUAD	NCI-H1869	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000496	24	0	TCGA-LUAD,TCGA-LUSC	NCI-H1792	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000869	24	0	TCGA-LUAD,TCGA-LUSC	NCI-H1568	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000521	23	0	TCGA-LUAD,TCGA-LUSC	NCI-H2030	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000251	22	0	TCGA-LUAD	NCI-H2887	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000785	22	0	TCGA-LUAD	NCI-H2126	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000129	21	0	TCGA-LUSC	NCI-H1341	Lung	SMARCA4-deficient undifferentiated tumor	
+Lung	ACH-000893	21	0	TCGA-LUAD,TCGA-LUSC	NCI-H1651	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000161	20	0	TCGA-LUAD	COR-L105	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000628	20	0	TCGA-LUSC	NCI-H596	Lung	Non-Small Cell Lung Cancer	LUAS
+Lung	ACH-000662	20	0	TCGA-LUAD,TCGA-LUSC	COR-L23	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000379	19	2	TCGA-LUAD	NCI-H1781	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000757	19	1	TCGA-LUAD,TCGA-LUSC	A427	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000021	18	4	TCGA-LUAD,TCGA-LUSC	NCI-H1693	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000062	18	0	TCGA-LUAD,TCGA-LUSC	RERF-LC-MS	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000769	18	3	TCGA-LUAD,TCGA-LUSC	LK-2	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000392	17	14	TCGA-LUAD	Calu-3	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000414	17	1	TCGA-LUAD	NCI-H1944	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000444	17	1	TCGA-LUAD,TCGA-LUSC	LU99	Lung	Non-Small Cell Lung Cancer	GCLC
+Lung	ACH-000681	17	1	TCGA-LUAD,TCGA-LUSC	A549	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000912	17	0	TCGA-LUAD,TCGA-LUSC	NCI-H2286	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000916	17	0	TCGA-LUAD	NCI-H1573	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000639	16	1	TCGA-LUAD,TCGA-LUSC	NCI-H211	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-002531	16	2	TCGA-LUAD	SNU-2535	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000866	15	4	TCGA-LUAD,TCGA-LUSC	NCI-H1048	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000121	13	1	TCGA-LUAD	NCI-H2405	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000840	13	0	TCGA-LUAD,TCGA-LUSC	HCC-366	Lung	Non-Small Cell Lung Cancer	LUAS
+Lung	ACH-000861	13	0	TCGA-LUAD,TCGA-LUSC	HOP-62	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-002034	13	0	TCGA-LUAD,TCGA-LUSC	T3M-11	Lung	Non-Small Cell Lung Cancer	NUTCL
+Lung	ACH-003119	13	1	TCGA-LUAD,TCGA-LUSC	NCI-H1450	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-003120	13	7	TCGA-LUAD,TCGA-LUSC	NCI-H1607	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000109	12	0	TCGA-LUAD	NCI-H3255	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000434	12	0	TCGA-LUAD,TCGA-LUSC	NCI-H1915	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000510	12	0	TCGA-LUAD,TCGA-LUSC	NCI-H1299	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000852	12	0	TCGA-LUAD	NCI-H1435	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-002650	12	0	TCGA-LUSC	ETCC-016	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000700	11	0	TCGA-LUAD,TCGA-LUSC	NCI-H2882	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000698	10	5	TCGA-LUAD,TCGA-LUSC	DMS 53	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000787	10	0	TCGA-LUAD,TCGA-LUSC	LXF-289	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000790	10	0	TCGA-LUAD,TCGA-LUSC	SHP-77	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000871	9	3	TCGA-LUAD,TCGA-LUSC	NCI-H510	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000712	8	0	TCGA-LUAD,TCGA-LUSC	HCC-1833	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000825	8	0	TCGA-LUAD,TCGA-LUSC	HOP-92	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000844	8	1	TCGA-LUAD,TCGA-LUSC	DMS 454	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000775	7	1	TCGA-LUAD,TCGA-LUSC	NCI-H727	Lung	Lung Neuroendocrine Tumor	LUCA
+Lung	ACH-000853	7	1	TCGA-LUAD,TCGA-LUSC	NCI-H661	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000921	7	0	TCGA-LUAD,TCGA-LUSC	NCI-H157-DM	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-002490	7	0	TCGA-LUAD,TCGA-LUSC	NCI-H1882	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000447	6	0	TCGA-LUAD	NCI-H2228	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000603	6	1	TCGA-LUAD,TCGA-LUSC	BEN	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000731	6	0	TCGA-LUAD	HCC-2279	Lung	Non-Small Cell Lung Cancer	LUAS
+Lung	ACH-000789	6	0	TCGA-LUAD,TCGA-LUSC	NCI-H810	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000803	6	0	TCGA-LUAD,TCGA-LUSC	COLO 668	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000033	5	1	TCGA-LUAD,TCGA-LUSC	NCI-H1819	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000528	5	0	TCGA-LUAD,TCGA-LUSC	ABC-1	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-002526	5	0	TCGA-LUSC	SNU-1327	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-003061	5	0	TCGA-LUAD,TCGA-LUSC	NCI-H774	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000292	4	0	TCGA-LUAD,TCGA-LUSC	NCI-H841	Lung	SMARCA4-deficient undifferentiated tumor	
+Lung	ACH-000508	4	0	TCGA-LUAD,TCGA-LUSC	COR-L88	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000665	4	0	TCGA-LUAD	SK-MES-1	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000677	4	0	TCGA-LUAD,TCGA-LUSC	SW 1573	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000747	4	0	TCGA-LUAD,TCGA-LUSC	NCI-H1703	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000749	4	0	TCGA-LUAD,TCGA-LUSC	DMS 273	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-002035	4	0	TCGA-LUAD,TCGA-LUSC	LCAM1	Lung	Non-Small Cell Lung Cancer	NSCLCPD
+Lung	ACH-002497	4	0	TCGA-LUAD	NCI-H920	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000150	3	0	TCGA-LUAD	HCC2935	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000482	3	0	TCGA-LUAD	RERF-LC-KJ	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000594	3	0	TCGA-LUAD	DMS 153	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000901	3	0	TCGA-LUAD,TCGA-LUSC	HCC-1359	Lung	Non-Small Cell Lung Cancer	GCLC
+Lung	ACH-000975	3	0	TCGA-LUAD,TCGA-LUSC	HCC2450	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-002170	3	0	TCGA-LUAD,TCGA-LUSC	NCI-H1688	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-002996	3	0	TCGA-LUAD	CI34601	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-000298	2	0	TCGA-LUAD	NCI-H2029	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000399	2	0	TCGA-LUAD	NCI-H2196	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000767	2	0	TCGA-LUAD,TCGA-LUSC	NCI-H526	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000830	2	0	TCGA-LUAD,TCGA-LUSC	NCI-H1436	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000890	2	0	TCGA-LUAD,TCGA-LUSC	SW 1271	Lung	SMARCA4-deficient undifferentiated tumor	
+Lung	ACH-000980	2	0	TCGA-LUAD,TCGA-LUSC	NCI-H1155	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-002051	2	1	TCGA-LUAD,TCGA-LUSC	Lu-134-A	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-002077	2	0	TCGA-LUAD,TCGA-LUSC	Lu-165	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-002522	2	0	TCGA-LUAD	SNU-2292	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-003121	2	0	TCGA-LUAD,TCGA-LUSC	NCI-H2679	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000176	1	0	TCGA-LUAD	LOU-NH91	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000257	1	0	TCGA-LUAD	COR-L279	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000290	1	0	TCGA-LUSC	NCI-H209	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000297	1	0	TCGA-LUSC	NCI-H889	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000343	1	0	TCGA-LUAD	NCI-H522	Lung	Non-Small Cell Lung Cancer	LUAD
+Lung	ACH-000394	1	0	TCGA-LUAD	NCI-H2081	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000511	1	0	TCGA-LUAD	Calu-1	Lung	Non-Small Cell Lung Cancer	LUSC
+Lung	ACH-000559	1	0	TCGA-LUAD	NCI-H1836	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000586	1	0	TCGA-LUSC	NCI-H1876	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000627	1	0	TCGA-LUSC	LCLC-103H	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000743	1	0	TCGA-LUAD	COR-L95	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000752	1	0	TCGA-LUAD	NCI-H196	Lung	SMARCA4-deficient undifferentiated tumor	
+Lung	ACH-000870	1	0	TCGA-LUSC	NCI-H1930	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-000891	1	0	TCGA-LUSC	HCC-1438	Lung	Non-Small Cell Lung Cancer	LCLC
+Lung	ACH-000924	1	0	TCGA-LUAD	NCI-H2172	Lung	Non-Small Cell Lung Cancer	NSCLC
+Lung	ACH-001046	1	1	TCGA-LUSC	COR-L26	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-001386	1	0	TCGA-LUSC	SCLC-22H	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-001591	1	0	TCGA-LUSC	NCI-H1417	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-002075	1	0	TCGA-LUSC	Lu-138	Lung	Lung Neuroendocrine Tumor	SCLC
+Lung	ACH-003012	1	0	TCGA-LUAD	A549_CRAF_KD	Lung	Non-Small Cell Lung Cancer	LUAD
+Neuroblastoma	ACH-000341	176	6	PCPG-PGL,PCPG-PHEO	SK-N-FI	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-002922	175	159	PCPG-PGL,PCPG-PHEO	SK-N-MM	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001354	170	0	PCPG-PGL,PCPG-PHEO	LAN-2	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-002080	168	9	PCPG-PGL,PCPG-PHEO	TN-2	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001301	163	0	PCPG-PGL,PCPG-PHEO	COG-N-278	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000260	157	1	PCPG-PGL,PCPG-PHEO	SK-N-AS	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-002283	146	0	PCPG-PGL,PCPG-PHEO	NB5	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000804	140	0	PCPG-PGL,PCPG-PHEO	NB-1	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001481	130	1	PCPG-PGL,PCPG-PHEO	CHLA-90	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001188	107	0	PCPG-PGL,PCPG-PHEO	SH-SY5Y	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000149	79	0	PCPG-PGL,PCPG-PHEO	SK-N-SH	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000259	45	0	PCPG-PGL,PCPG-PHEO	KELLY	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001465	29	0	PCPG-PGL,PCPG-PHEO	CHLA-136	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000099	27	0	PCPG-PGL,PCPG-PHEO	SIMA	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001302	27	0	PCPG-PGL,PCPG-PHEO	COG-N-305	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000446	10	0	PCPG-PHEO	KP-N-SI9s	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000120	7	0	PCPG-PHEO	CHP-212	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001366	5	0	PCPG-PGL,PCPG-PHEO	NGP	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000366	3	0	PCPG-PGL,PCPG-PHEO	SK-N-DZ	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-000078	1	0	PCPG-PGL	MHH-NB-11	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001338	1	1	PCPG-PHEO	CHP-134	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001367	1	0	PCPG-PHEO	NMB	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001548	1	0	PCPG-PHEO	LS	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001674	1	0	PCPG-PHEO	TGW	Peripheral Nervous System	Neuroblastoma	NBL
+Neuroblastoma	ACH-001716	1	0	PCPG-PHEO	GOTO	Peripheral Nervous System	Neuroblastoma	NBL
+Ovary/Fallopian Tube	ACH-000278	370	82	TCGA-OV	COV362	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000013	331	32	TCGA-OV	ONCO-DG-1	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000001	325	28	TCGA-OV	NIH:OVCAR-3	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000617	308	5	TCGA-OV	OVCAR-4	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000409	289	59	TCGA-OV	OVSAHO	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-001373	261	43	TCGA-OV	OV17R	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-002524	233	36	TCGA-OV	SNU-251	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	EOV
+Ovary/Fallopian Tube	ACH-001418	223	1	TCGA-OV	UWB1.289	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000524	219	34	TCGA-OV	KURAMOCHI	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000256	169	20	TCGA-OV	COV318	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-001403	163	6	TCGA-OV	TO14	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000132	135	5	TCGA-OV	JHOS-2	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000103	117	2	TCGA-OV	Caov-4	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-001340	114	31	TCGA-OV	COV413A	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000584	110	2	TCGA-OV	JHOS-4	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000574	109	5	TCGA-OV	FU-OV-1	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000460	102	4	TCGA-OV	SNU-8	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-001048	91	0	TCGA-OV	COV504	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-001630	77	16	TCGA-OV	PEO1	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000962	76	3	TCGA-OV	OC 314	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000635	73	0	TCGA-OV	SNU-119	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-001632	55	2	TCGA-OV	PEO4	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000713	46	0	TCGA-OV	Caov-3	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000116	41	1	TCGA-OV	OAW28	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000696	23	0	TCGA-OV	OVCAR-8	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000308	18	1	TCGA-OV	EFO-21	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000811	16	0	TCGA-OV	SK-OV-3	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-001145	16	0	TCGA-OV	OC 316	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000280	13	0	TCGA-OV	SNU-840	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	BTMOV
+Ovary/Fallopian Tube	ACH-000520	12	1	TCGA-OV	59M	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000936	12	0	TCGA-OV	EFO-27	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	MOV
+Ovary/Fallopian Tube	ACH-000443	9	0	TCGA-OV	OVKATE	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000966	9	1	TCGA-OV	IGROV1	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	EOV
+Ovary/Fallopian Tube	ACH-001719	8	0	TCGA-OV	OCI-C4P	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	CCOV
+Ovary/Fallopian Tube	ACH-000048	6	0	TCGA-OV	TOV-112D	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	EOV
+Ovary/Fallopian Tube	ACH-001374	6	0	TCGA-OV	PA-1 [PA1]	Ovary/Fallopian Tube	Ovarian Germ Cell Tumor	OMGCT
+Ovary/Fallopian Tube	ACH-000123	3	0	TCGA-OV	COV434	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SCCO
+Ovary/Fallopian Tube	ACH-000657	3	1	TCGA-OV	A2780	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	EOV
+Ovary/Fallopian Tube	ACH-002486	3	0	TCGA-OV	MES-OV	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000688	2	0	TCGA-OV	OV7	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	MXOV
+Ovary/Fallopian Tube	ACH-000704	2	0	TCGA-OV	OAW42	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000719	2	0	TCGA-OV	RMG-I	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	CCOV
+Ovary/Fallopian Tube	ACH-000796	2	0	TCGA-OV	MCAS	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	MOV
+Ovary/Fallopian Tube	ACH-000906	2	0	TCGA-OV	ES-2	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	CCOV
+Ovary/Fallopian Tube	ACH-001278	2	0	TCGA-OV	BIN-67	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SCCO
+Ovary/Fallopian Tube	ACH-001370	2	0	TCGA-OV	OCI-P5x	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000291	1	0	TCGA-OV	OV-90	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SOC
+Ovary/Fallopian Tube	ACH-000324	1	0	TCGA-OV	JHOC-5	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	CCOV
+Ovary/Fallopian Tube	ACH-000430	1	0	TCGA-OV	TYK-nu	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000542	1	0	TCGA-OV	Hey-A8	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-000608	1	0	TCGA-OV	COV644	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	MOV
+Ovary/Fallopian Tube	ACH-000646	1	1	TCGA-OV	OVMANA	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	CCOV
+Ovary/Fallopian Tube	ACH-000663	1	0	TCGA-OV	OVTOKO	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	CCOV
+Ovary/Fallopian Tube	ACH-000701	1	0	TCGA-OV	RMUG-S	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	MOV
+Ovary/Fallopian Tube	ACH-000947	1	0	TCGA-OV	OVK18	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	EOV
+Ovary/Fallopian Tube	ACH-001151	1	0	TCGA-OV	OVCAR-5	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	HGSOC
+Ovary/Fallopian Tube	ACH-001279	1	0	TCGA-OV	SCCOHT-1	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	SCCO
+Ovary/Fallopian Tube	ACH-001991	1	0	TCGA-OV	NZOV9	Ovary/Fallopian Tube	Ovarian Epithelial Tumor	EOV
+Pancreas	ACH-000118	141	39	TCGA-PAAD	HUP-T3	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001382	101	8	TCGA-PAAD	PACADD-188	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000138	92	36	TCGA-PAAD	CFPAC-1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000235	87	4	TCGA-PAAD	Panc 04.03	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000652	85	13	TCGA-PAAD	SUIT-2	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000502	79	6	TCGA-PAAD	TCC-PAN2	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000107	77	1	TCGA-PAAD	Capan-2	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000320	77	6	TCGA-PAAD	PSN1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000266	64	3	TCGA-PAAD	SNU-213	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000042	63	3	TCGA-PAAD	Panc 02.03	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000108	63	1	TCGA-PAAD	KP-3	Pancreas	Adenosquamous Carcinoma of the Pancreas	PAASC
+Pancreas	ACH-000094	55	3	TCGA-PAAD	HPAF-II	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001380	55	12	TCGA-PAAD	PACADD-165	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000155	54	0	TCGA-PAAD	SW 1990	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000354	51	6	TCGA-PAAD	Capan-1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000139	50	2	TCGA-PAAD	Panc 03.27	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001999	50	2	TCGA-PAAD	950-5-BIK	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000417	48	0	TCGA-PAAD	Panc 08.13	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000468	48	1	TCGA-PAAD	PK-45H	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000164	46	10	TCGA-PAAD	PANC-1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000517	43	1	TCGA-PAAD	SNU-410	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001353	41	0	TCGA-PAAD	JOPACA-1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000601	33	1	TCGA-PAAD	MIA PaCa-2	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001098	30	0	TCGA-PAAD	KCI-MOH1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-003433	26	9	TCGA-PAAD	CCLF_PANC_0019_T	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001377	24	0	TCGA-PAAD	PACADD-137	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000023	23	0	TCGA-PAAD	PA-TU-8988T	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000332	21	0	TCGA-PAAD	YAPC	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000060	19	0	TCGA-PAAD	Panc 10.05	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000265	19	0	TCGA-PAAD	KP-4	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001379	19	0	TCGA-PAAD	PACADD-161	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000178	17	0	TCGA-PAAD	Hs 766T	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-002672	15	1	TCGA-PAAD	MAPAC-HS-77	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000243	12	0	TCGA-PAAD	DAN-G	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000222	11	0	TCGA-PAAD	AsPC-1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000347	8	8	TCGA-PAAD	QGP-1	Pancreas	Pancreatic Neuroendocrine Tumor	PANET
+Pancreas	ACH-000599	7	0	TCGA-PAAD	PA-TU-8902	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000022	5	2	TCGA-PAAD	PA-TU-8988S	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000685	5	0	TCGA-PAAD	L3.3	Pancreas	Adenosquamous Carcinoma of the Pancreas	PAASC
+Pancreas	ACH-000205	3	0	TCGA-PAAD	PK-59	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-001375	3	0	TCGA-PAAD	PACADD-119	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000085	2	0	TCGA-PAAD	T3M-4	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000270	2	0	TCGA-PAAD	HPAC	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000281	2	0	TCGA-PAAD	KP-2	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000307	2	0	TCGA-PAAD	PK-1	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000114	1	0	TCGA-PAAD	SU.86.86	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Pancreas	ACH-000535	1	0	TCGA-PAAD	BxPC-3	Pancreas	Pancreatic Adenocarcinoma	PAAD
+Peripheral Nervous System	ACH-000312	133	9	TARGET-NBL	SK-N-BE(2)	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001302	127	1	TARGET-NBL	COG-N-305	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000099	124	2	TARGET-NBL	SIMA	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000136	124	1	TARGET-NBL	CHP-126	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000227	109	25	TARGET-NBL	KP-N-YN	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001300	108	9	TARGET-NBL	CHLA-15	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000259	106	3	TARGET-NBL	KELLY	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001465	95	32	TARGET-NBL	CHLA-136	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000345	91	25	TARGET-NBL	KP-N-RT-BM-1	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000203	90	13	TARGET-NBL	NH-6	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001188	69	1	TARGET-NBL	SH-SY5Y	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001303	66	6	TARGET-NBL	NB-1643	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000078	45	1	TARGET-NBL	MHH-NB-11	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001603	36	6	TARGET-NBL	NH-12	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001301	25	1	TARGET-NBL	COG-N-278	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000149	19	8	TARGET-NBL	SK-N-SH	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000260	18	7	TARGET-NBL	SK-N-AS	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000310	17	0	TARGET-NBL	IMR-32	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000804	17	2	TARGET-NBL	NB-1	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000120	16	0	TARGET-NBL	CHP-212	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000341	16	2	TARGET-NBL	SK-N-FI	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001481	16	0	TARGET-NBL	CHLA-90	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-000446	15	0	TARGET-NBL	KP-N-SI9s	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-002283	14	0	TARGET-NBL	NB5	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-002922	11	1	TARGET-NBL	SK-N-MM	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001366	7	0	TARGET-NBL	NGP	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-002800	7	0	TARGET-NBL	NCC-MPNST2-C1	Peripheral Nervous System	Nerve Sheath Tumor	MPNST
+Peripheral Nervous System	ACH-000366	6	0	TARGET-NBL	SK-N-DZ	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001344	6	0	TARGET-NBL	GI-ME-N	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001354	3	0	TARGET-NBL	LAN-2	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001367	3	0	TARGET-NBL	NMB	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-002066	3	0	TARGET-NBL	HS-Sch-2	Peripheral Nervous System	Nerve Sheath Tumor	MPNST
+Peripheral Nervous System	ACH-002695	3	0	TARGET-NBL	STS26T	Peripheral Nervous System	Nerve Sheath Tumor	MPNST
+Peripheral Nervous System	ACH-002080	2	0	TARGET-NBL	TN-2	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-001548	1	0	TARGET-NBL	LS	Peripheral Nervous System	Neuroblastoma	NBL
+Peripheral Nervous System	ACH-002710	1	0	TARGET-NBL	MPNST-724	Peripheral Nervous System	Nerve Sheath Tumor	MPNST
+Peripheral Nervous System	ACH-002799	1	0	TARGET-NBL	NCC-MPNST1-C1	Peripheral Nervous System	Nerve Sheath Tumor	MPNST
+Pleura	ACH-001547	86	16	TCGA-MESO	LO68	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000569	82	6	TCGA-MESO	IST-MES1	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000331	73	22	TCGA-MESO	IST-MES2	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-001561	71	6	TCGA-MESO	Mero-84	Pleura	Pleural Mesothelioma	PLBMESO
+Pleura	ACH-001562	70	22	TCGA-MESO	Mero-95	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000367	65	4	TCGA-MESO	NCI-H226	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000092	63	0	TCGA-MESO	NCI-H2452	Pleura	Pleural Mesothelioma	PLBMESO
+Pleura	ACH-001557	60	0	TCGA-MESO	Mero-41	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-002033	53	3	TCGA-MESO	HMMME	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000645	43	0	TCGA-MESO	JL-1	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-001556	42	0	TCGA-MESO	Mero-25	Pleura	Pleural Mesothelioma	PLBMESO
+Pleura	ACH-001560	32	0	TCGA-MESO	Mero-83	Pleura	Pleural Mesothelioma	PLBMESO
+Pleura	ACH-000319	27	1	TCGA-MESO	MPP 89	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-001558	25	1	TCGA-MESO	Mero-48a	Pleura	Pleural Mesothelioma	PLBMESO
+Pleura	ACH-001559	24	3	TCGA-MESO	Mero-82	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000153	15	1	TCGA-MESO	NCI-H2052	Pleura	Pleural Mesothelioma	PLSMESO
+Pleura	ACH-000335	14	1	TCGA-MESO	MSTO-211H	Pleura	Pleural Mesothelioma	PLBMESO
+Pleura	ACH-001977	12	1	TCGA-MESO	NO36	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-001555	5	0	TCGA-MESO	Mero-14	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-001992	5	0	TCGA-MESO	ONE58	Pleura	Pleural Mesothelioma	PLEMESO
+Pleura	ACH-000086	3	0	TCGA-MESO	ACC-MESO-1	Pleura	Pleural Mesothelioma	PLEMESO
+Prostate	ACH-000090	495	0	TCGA-PRAD	PC-3	Prostate	Prostate Adenocarcinoma	PRAD
+Prostate	ACH-000115	495	85	TCGA-PRAD	VCaP	Prostate	Prostate Adenocarcinoma	PRAD
+Prostate	ACH-000177	495	0	TCGA-PRAD	NCI-H660	Prostate	Prostate Small Cell Carcinoma	PRSCC
+Prostate	ACH-000952	495	199	TCGA-PRAD	MDA PCa 2b	Prostate	Prostate Adenocarcinoma	PRAD
+Prostate	ACH-000956	495	74	TCGA-PRAD	22Rv1	Prostate	Prostate Adenocarcinoma	PRAD
+Prostate	ACH-000977	495	137	TCGA-PRAD	LNCaP clone FGC	Prostate	Prostate Adenocarcinoma	PRAD
+Prostate	ACH-000979	495	0	TCGA-PRAD	DU 145	Prostate	Prostate Adenocarcinoma	PRAD
+Skin	ACH-000404	227	18	TCGA-SKCM	K029AX	Skin	Melanoma	SKCM
+Skin	ACH-000730	213	14	TCGA-SKCM	SK-MEL-5	Skin	Melanoma	SKCM
+Skin	ACH-000987	207	23	TCGA-SKCM	MeWo	Skin	Melanoma	SKCM
+Skin	ACH-000450	185	33	TCGA-SKCM	MEL-HO	Skin	Melanoma	MEL
+Skin	ACH-000579	149	24	TCGA-SKCM	UACC-257	Skin	Melanoma	MEL
+Skin	ACH-000810	148	18	TCGA-SKCM	SK-MEL-30	Skin	Melanoma	SKCM
+Skin	ACH-000423	142	9	TCGA-SKCM	SK-MEL-3	Skin	Melanoma	SKCM
+Skin	ACH-000582	131	14	TCGA-SKCM	COLO 741	Skin	Melanoma	MEL
+Skin	ACH-001522	112	4	TCGA-SKCM	HMY-1	Skin	Melanoma	MEL
+Skin	ACH-001975	100	5	TCGA-SKCM	MM576	Skin	Melanoma	MEL
+Skin	ACH-000805	96	9	TCGA-SKCM	COLO-679	Skin	Melanoma	SKCM
+Skin	ACH-000465	92	2	TCGA-SKCM	SK-MEL-1	Skin	Melanoma	MEL
+Skin	ACH-000915	83	7	TCGA-SKCM	IPC-298	Skin	Melanoma	SKCM
+Skin	ACH-002005	81	4	TCGA-SKCM	SK-MEL-19	Skin	Melanoma	SKCM
+Skin	ACH-001988	75	8	TCGA-SKCM	NZM5	Skin	Melanoma	MEL
+Skin	ACH-000650	74	10	TCGA-SKCM	IGR-37	Skin	Melanoma	MEL
+Skin	ACH-000882	74	3	TCGA-SKCM	IGR-1	Skin	Melanoma	MEL
+Skin	ACH-001986	70	4	TCGA-SKCM	NZM42	Skin	Melanoma	MEL
+Skin	ACH-000614	69	5	TCGA-SKCM	RVH-421	Skin	Melanoma	MEL
+Skin	ACH-003458	65	4	TCGA-SKCM	CCLF_MELM_0010_T	Skin	Melanoma	MEL
+Skin	ACH-000899	63	5	TCGA-SKCM	WM88	Skin	Melanoma	MEL
+Skin	ACH-000425	61	8	TCGA-SKCM	UACC-62	Skin	Melanoma	MEL
+Skin	ACH-000615	60	4	TCGA-SKCM	SK-MEL-28	Skin	Melanoma	SKCM
+Skin	ACH-000788	60	8	TCGA-SKCM	A2058	Skin	Melanoma	MEL
+Skin	ACH-001990	60	9	TCGA-SKCM	NZM7	Skin	Melanoma	MEL
+Skin	ACH-001566	58	13	TCGA-SKCM	MM370	Skin	Melanoma	MEL
+Skin	ACH-000322	57	9	TCGA-SKCM	HT-144	Skin	Melanoma	MEL
+Skin	ACH-001971	55	4	TCGA-SKCM	MM466	Skin	Melanoma	MEL
+Skin	ACH-001982	53	3	TCGA-SKCM	NZM3	Skin	Melanoma	MEL
+Skin	ACH-000801	52	4	TCGA-SKCM	Hs 936.T	Skin	Melanoma	MEL
+Skin	ACH-000441	51	6	TCGA-SKCM	SH-4	Skin	Melanoma	MEL
+Skin	ACH-000812	48	4	TCGA-SKCM	COLO-783	Skin	Melanoma	MEL
+Skin	ACH-001569	48	6	TCGA-SKCM	MM415	Skin	Melanoma	MEL
+Skin	ACH-002510	48	2	TCGA-SKCM	M040416	Skin	Melanoma	ACRM
+Skin	ACH-003455	45	5	TCGA-SKCM	CCLF_MELM_0004_T	Skin	Melanoma	MEL
+Skin	ACH-000644	44	5	TCGA-SKCM	COLO 829	Skin	Melanoma	SKCM
+Skin	ACH-001972	44	5	TCGA-SKCM	MM473	Skin	Melanoma	MEL
+Skin	ACH-001976	44	6	TCGA-SKCM	MM603	Skin	Melanoma	MEL
+Skin	ACH-001981	42	5	TCGA-SKCM	NZM2	Skin	Melanoma	MEL
+Skin	ACH-000580	41	1	TCGA-SKCM	C32	Skin	Melanoma	MEL
+Skin	ACH-000572	40	2	TCGA-SKCM	G-361	Skin	Melanoma	MEL
+Skin	ACH-001983	40	11	TCGA-SKCM	NZM30	Skin	Melanoma	MEL
+Skin	ACH-000661	39	10	TCGA-SKCM	WM1799	Skin	Melanoma	MEL
+Skin	ACH-001239	39	2	TCGA-SKCM	WM-266-4	Skin	Melanoma	MEL
+Skin	ACH-001570	39	7	TCGA-SKCM	MM426	Skin	Melanoma	MEL
+Skin	ACH-002084	39	3	TCGA-SKCM	MMAc	Skin	Melanoma	MEL
+Skin	ACH-001980	34	0	TCGA-SKCM	NZM12	Skin	Melanoma	MEL
+Skin	ACH-000219	33	6	TCGA-SKCM	A-375	Skin	Melanoma	MEL
+Skin	ACH-000401	32	2	TCGA-SKCM	COLO-800	Skin	Melanoma	SKCM
+Skin	ACH-002512	32	2	TCGA-SKCM	MM160113	Skin	Melanoma	ACRM
+Skin	ACH-000968	30	8	TCGA-SKCM	COLO 792	Skin	Melanoma	MEL
+Skin	ACH-001041	30	6	TCGA-SKCM	CHL-1-DM	Skin	Melanoma	MEL
+Skin	ACH-001949	30	1	TCGA-SKCM	MA-MEL-46	Skin	Melanoma	MEL
+Skin	ACH-001970	30	5	TCGA-SKCM	MM253	Skin	Melanoma	MEL
+Skin	ACH-000765	29	3	TCGA-SKCM	WM983B	Skin	Melanoma	MEL
+Skin	ACH-002004	29	1	TCGA-SKCM	UACC62 SKIN CJ1	Skin	Melanoma	MEL
+Skin	ACH-001953	28	1	TCGA-SKCM	MA-MEL-27	Skin	Melanoma	MEL
+Skin	ACH-002846	27	2	TCGA-SKCM	YUSEEP-M 16-3517	Skin	Melanoma	ACRM
+Skin	ACH-000008	26	2	TCGA-SKCM	A101D	Skin	Melanoma	MEL
+Skin	ACH-001978	26	2	TCGA-SKCM	NZM1	Skin	Melanoma	MEL
+Skin	ACH-002001	26	4	TCGA-SKCM	A375 SKIN CJ1	Skin	Melanoma	MEL
+Skin	ACH-002003	26	6	TCGA-SKCM	A375 SKIN CJ3	Skin	Melanoma	MEL
+Skin	ACH-001984	25	5	TCGA-SKCM	NZM4	Skin	Melanoma	MEL
+Skin	ACH-000014	24	3	TCGA-SKCM	Hs 294T	Skin	Melanoma	MEL
+Skin	ACH-001339	24	2	TCGA-SKCM	Colo 794	Skin	Melanoma	SKCM
+Skin	ACH-001568	24	6	TCGA-SKCM	MM386	Skin	Melanoma	MEL
+Skin	ACH-001645	24	0	TCGA-SKCM	SEKI	Skin	Melanoma	MEL
+Skin	ACH-001974	24	1	TCGA-SKCM	MM537	Skin	Melanoma	MEL
+Skin	ACH-002458	23	1	TCGA-SKCM	HT144 SKIN FV1	Skin	Melanoma	MEL
+Skin	ACH-000881	18	1	TCGA-SKCM	MEL-JUSO	Skin	Melanoma	SKCM
+Skin	ACH-001989	18	0	TCGA-SKCM	NZM6	Skin	Melanoma	MEL
+Skin	ACH-002460	18	0	TCGA-SKCM	HT144 SKIN FV2	Skin	Melanoma	MEL
+Skin	ACH-002461	17	4	TCGA-SKCM	RVH421 SKIN FV1	Skin	Melanoma	MEL
+Skin	ACH-000799	14	0	TCGA-SKCM	Hs 695T	Skin	Melanoma	MEL
+Skin	ACH-000814	14	1	TCGA-SKCM	Hs 939.T	Skin	Melanoma	MEL
+Skin	ACH-000931	13	2	TCGA-SKCM	HMCB	Skin	Melanoma	MEL
+Skin	ACH-001567	13	0	TCGA-SKCM	MM383	Skin	Melanoma	MEL
+Skin	ACH-002508	13	1	TCGA-SKCM	WM3211	Skin	Melanoma	ACRM
+Skin	ACH-000477	12	0	TCGA-SKCM	Malme-3M	Skin	Melanoma	MEL
+Skin	ACH-002511	12	0	TCGA-SKCM	M140325	Skin	Melanoma	MEL
+Skin	ACH-000632	11	1	TCGA-SKCM	Hs 944.T	Skin	Melanoma	SKCM
+Skin	ACH-000750	11	0	TCGA-SKCM	LOX IMVI	Skin	Melanoma	MEL
+Skin	ACH-002509	11	5	TCGA-SKCM	WM4235	Skin	Melanoma	ACRM
+Skin	ACH-002847	11	2	TCGA-SKCM	YUHOIN	Skin	Melanoma	MEL
+Skin	ACH-001550	10	0	TCGA-SKCM	MCC13	Skin	Merkel Cell Carcinoma	MCC
+Skin	ACH-002403	10	3	TCGA-SKCM	CCLF_MELM_0001_T	Skin	Melanoma	MEL
+Skin	ACH-001563	9	1	TCGA-SKCM	MM127	Skin	Melanoma	MEL
+Skin	ACH-001973	9	1	TCGA-SKCM	MM485	Skin	Melanoma	MEL
+Skin	ACH-002405	9	2	TCGA-SKCM	CCLF_MELM_0003_T	Skin	Melanoma	MEL
+Skin	ACH-001551	8	1	TCGA-SKCM	MCC14/2	Skin	Merkel Cell Carcinoma	MCC
+Skin	ACH-001552	8	2	TCGA-SKCM	MCC26	Skin	Merkel Cell Carcinoma	MCC
+Skin	ACH-002459	8	2	TCGA-SKCM	HT144 SKIN FV3	Skin	Melanoma	MEL
+Skin	ACH-001190	7	0	TCGA-SKCM	SK-MEL-2	Skin	Melanoma	MEL
+Skin	ACH-002404	7	0	TCGA-SKCM	CCLF_MELM_0002_T	Skin	Melanoma	MEL
+Skin	ACH-000348	6	0	TCGA-SKCM	RPMI-7951	Skin	Melanoma	MEL
+Skin	ACH-001987	6	0	TCGA-SKCM	NZM43	Skin	Melanoma	MEL
+Skin	ACH-000304	5	0	TCGA-SKCM	WM-115	Skin	Melanoma	MEL
+Skin	ACH-000822	5	0	TCGA-SKCM	SK-MEL-24	Skin	Melanoma	MEL
+Skin	ACH-003105	5	1	TCGA-SKCM	VMM917	Skin	Melanoma	MEL
+Skin	ACH-000274	4	0	TCGA-SKCM	Hs 852.T	Skin	Melanoma	MEL
+Skin	ACH-002002	4	0	TCGA-SKCM	A375 SKIN CJ2	Skin	Melanoma	MEL
+Skin	ACH-002928	4	0	TCGA-SKCM	MM100511	Skin	Melanoma	ACRM
+Skin	ACH-003456	4	0	TCGA-SKCM	CCLF_MELM_0006_T	Skin	Melanoma	MEL
+Skin	ACH-001442	3	1	TCGA-SKCM	A388	Skin	Cutaneous Squamous Cell Carcinoma	CSCC
+Skin	ACH-001979	3	1	TCGA-SKCM	NZM11	Skin	Melanoma	MEL
+Skin	ACH-001985	3	0	TCGA-SKCM	NZM40	Skin	Melanoma	MEL
+Skin	ACH-003457	3	0	TCGA-SKCM	CCLF_MELM_0038_T	Skin	Melanoma	MEL
+Skin	ACH-003459	3	0	TCGA-SKCM	CCLF_MELM_0011_T	Skin	Melanoma	MEL
+Skin	ACH-000550	2	0	TCGA-SKCM	IGR-39	Skin	Melanoma	MEL
+Skin	ACH-000884	2	0	TCGA-SKCM	MDA-MB-435S	Skin	Melanoma	MEL
+Skin	ACH-001328	2	0	TCGA-SKCM	A-431	Skin	Cutaneous Squamous Cell Carcinoma	CSCC
+Skin	ACH-001523	2	0	TCGA-SKCM	HSC-1	Skin	Cutaneous Squamous Cell Carcinoma	CSCC
+Skin	ACH-001704	2	0	TCGA-SKCM	VMRC-MELG	Skin	Melanoma	MEL
+Skin	ACH-000640	1	0	TCGA-SKCM	SK-MEL-31	Skin	Melanoma	SKCM
+Skin	ACH-002798	1	0	TCGA-SKCM	NCC-DFSP2-C1	Skin	Dermatofibrosarcoma Protuberans	DFSP
+Soft Tissue	ACH-003180	149	2	SARC-DDLPS,SARC-LMS,SARC-UPS	NRH-UPS2	Soft Tissue	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	MFH
+Soft Tissue	ACH-002942	127	37	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0004_T	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-003265	122	0	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0010_T	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-003184	118	3	SARC-DDLPS,SARC-LMS,SARC-UPS	NRH-LMS2	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-001807	117	20	SARC-DDLPS,SARC-LMS,SARC-UPS	LPS067	Soft Tissue	Liposarcoma	DDLS
+Soft Tissue	ACH-003464	117	36	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_NPDX_0008_T	Soft Tissue	Liposarcoma	LIPO
+Soft Tissue	ACH-003183	107	1	SARC-DDLPS,SARC-LMS,SARC-UPS	NRH-MFS3	Soft Tissue	Myxofibrosarcoma	MFS
+Soft Tissue	ACH-003268	107	21	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0022_T	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-003267	105	7	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0009_T	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-001164	100	2	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_PEDS_0003_T	Soft Tissue	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	MFH
+Soft Tissue	ACH-003181	88	5	SARC-DDLPS,SARC-LMS,SARC-UPS	NRH-LMS1	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-001796	87	11	SARC-DDLPS,SARC-LMS,SARC-UPS	95T1000	Soft Tissue	Liposarcoma	WDLS
+Soft Tissue	ACH-003473	87	4	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_PEDS_0013_T	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-003177	86	17	SARC-DDLPS,SARC-LMS,SARC-UPS	NRH-UPS1	Soft Tissue	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	MFH
+Soft Tissue	ACH-003269	84	46	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0019_T	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-002785	83	0	SARC-LMS,SARC-UPS	NCC-LMS1-C1	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-002787	75	1	SARC-DDLPS,SARC-LMS,SARC-UPS	NCC-pRMS1-C1	Soft Tissue	Rhabdomyosarcoma	PLRMS
+Soft Tissue	ACH-003266	65	1	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0021_T	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-001804	60	0	SARC-DDLPS,SARC-LMS,SARC-UPS	LPS510	Soft Tissue	Liposarcoma	DDLS
+Soft Tissue	ACH-002844	46	1	SARC-DDLPS,SARC-LMS,SARC-UPS	CCLF_RARE_0025_T	Soft Tissue	Desmoid/Aggressive Fibromatosis	DES
+Soft Tissue	ACH-001791	35	0	SARC-DDLPS,SARC-LMS,SARC-UPS	LPS6	Soft Tissue	Liposarcoma	LIPO
+Soft Tissue	ACH-001540	33	0	SARC-DDLPS,SARC-LMS,SARC-UPS	KMLS-1	Soft Tissue	Liposarcoma	LIPO
+Soft Tissue	ACH-002794	31	6	SARC-DDLPS,SARC-UPS	NCC-MFS1-C1	Soft Tissue	Myxofibrosarcoma	MFS
+Soft Tissue	ACH-001799	27	0	SARC-DDLPS,SARC-LMS,SARC-UPS	LPS141	Soft Tissue	Liposarcoma	DDLS
+Soft Tissue	ACH-000145	25	1	SARC-DDLPS,SARC-LMS,SARC-UPS	SK-LMS-1	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-003111	25	1	SARC-DDLPS,SARC-LMS,SARC-UPS	Hs 856.T	Soft Tissue	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	MFH
+Soft Tissue	ACH-001750	22	2	SARC-DDLPS,SARC-LMS,SARC-UPS	TTC442	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-002796	22	2	SARC-DDLPS,SARC-LMS,SARC-UPS	NCC-CDS1-X3-C1	Soft Tissue	CIC-DUX4 Sarcoma	
+Soft Tissue	ACH-002782	20	0	SARC-DDLPS,SARC-UPS	NCC-UPS1-C1	Soft Tissue	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	MFH
+Soft Tissue	ACH-001802	19	2	SARC-DDLPS,SARC-LMS,SARC-UPS	LPS853	Soft Tissue	Liposarcoma	DDLS
+Soft Tissue	ACH-003125	17	0	SARC-DDLPS,SARC-LMS,SARC-UPS	ASPS-KY	Soft Tissue	Alveolar Soft Part Sarcoma	ASPS
+Soft Tissue	ACH-001794	13	0	SARC-DDLPS,SARC-LMS,SARC-UPS	93T449	Soft Tissue	Liposarcoma	WDLS
+Soft Tissue	ACH-001270	12	2	SARC-DDLPS,SARC-LMS,SARC-UPS	1273/99	Soft Tissue	Synovial Sarcoma	SYNS
+Soft Tissue	ACH-001280	12	0	SARC-DDLPS,SARC-LMS,SARC-UPS	SCS-214	Soft Tissue	Synovial Sarcoma	SYNS
+Soft Tissue	ACH-002790	11	2	SARC-DDLPS,SARC-LMS,SARC-UPS	NCC-SS2-C1	Soft Tissue	Synovial Sarcoma	SYNS
+Soft Tissue	ACH-002795	11	0	SARC-DDLPS,SARC-LMS,SARC-UPS	NCC-CDS1-X1-C1	Soft Tissue	CIC-DUX4 Sarcoma	
+Soft Tissue	ACH-001211	10	0	SARC-DDLPS,SARC-LMS,SARC-UPS	TTC-549	Soft Tissue	Rhabdoid Cancer	
+Soft Tissue	ACH-001277	8	3	SARC-DDLPS,SARC-LMS,SARC-UPS	Yamato	Soft Tissue	Synovial Sarcoma	SYNS
+Soft Tissue	ACH-002048	8	0	SARC-DDLPS,SARC-LMS,SARC-UPS	RMS-YM	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-000037	7	0	SARC-LMS,SARC-UPS	S-117	Soft Tissue	Sarcoma, NOS	SARCNOS
+Soft Tissue	ACH-001050	7	0	SARC-DDLPS,SARC-LMS,SARC-UPS	CW9019	Soft Tissue	Rhabdomyosarcoma	ARMS
+Soft Tissue	ACH-000772	6	0	SARC-DDLPS,SARC-LMS	TE 441.T	Soft Tissue	CIC-DUX4 Sarcoma	
+Soft Tissue	ACH-001322	6	0	SARC-DDLPS,SARC-LMS,SARC-UPS	CME-1	Soft Tissue	Synovial Sarcoma	SYNS
+Soft Tissue	ACH-002843	6	0	SARC-DDLPS,SARC-UPS	CCLF_RARE_0020_T	Soft Tissue	Desmoid/Aggressive Fibromatosis	DES
+Soft Tissue	ACH-002784	5	0	SARC-DDLPS,SARC-LMS,SARC-UPS	NCC-UPS2-C1	Soft Tissue	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	MFH
+Soft Tissue	ACH-000607	4	1	SARC-DDLPS,SARC-LMS	KYM-1	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-000689	4	0	SARC-DDLPS,SARC-LMS,SARC-UPS	RH-18	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-001099	4	0	SARC-DDLPS,SARC-LMS	KD	Soft Tissue	Rhabdoid Cancer	
+Soft Tissue	ACH-001128	4	0	SARC-DDLPS,SARC-LMS,SARC-UPS	MON	Soft Tissue	Rhabdoid Cancer	
+Soft Tissue	ACH-001274	4	0	SARC-LMS,SARC-UPS	SW982	Soft Tissue	Synovial Sarcoma	SYNS
+Soft Tissue	ACH-000172	3	0	SARC-DDLPS,SARC-LMS	TM-87	Soft Tissue	Rhabdoid Cancer	
+Soft Tissue	ACH-000597	3	0	SARC-DDLPS,SARC-LMS	TTC-709	Soft Tissue	Rhabdoid Cancer	
+Soft Tissue	ACH-001765	3	0	SARC-LMS,SARC-UPS	Rh4	Soft Tissue	Rhabdomyosarcoma	ARMS
+Soft Tissue	ACH-000169	2	0	SARC-UPS	RD	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-000505	2	0	SARC-LMS,SARC-UPS	RKN	Soft Tissue	Leiomyosarcoma	LMS
+Soft Tissue	ACH-000833	2	0	SARC-LMS,SARC-UPS	RH-30	Soft Tissue	Rhabdomyosarcoma	ARMS
+Soft Tissue	ACH-001096	2	0	SARC-LMS	JR	Soft Tissue	Rhabdomyosarcoma	ARMS
+Soft Tissue	ACH-000100	1	0	SARC-LMS	RH-41	Soft Tissue	Rhabdomyosarcoma	ARMS
+Soft Tissue	ACH-001196	1	0	SARC-UPS	SMS-CTR	Soft Tissue	Rhabdomyosarcoma	ERMS
+Soft Tissue	ACH-001743	1	0	SARC-LMS	RC2	Soft Tissue	Rhabdomyosarcoma	ARMS
+Soft Tissue	ACH-002792	1	0	SARC-LMS	NCC-CCS1B-C1	Soft Tissue	Clear Cell Sarcoma	CCS
+Soft Tissue	ACH-002936	1	0	SARC-LMS	CCLF_PEDS_0043_T	Soft Tissue	Rhabdomyosarcoma	ARMS
+T-cell	ACH-000636	107	3	TCGA-THYM	RPMI-8402	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000942	107	5	TCGA-THYM	HPB-ALL	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000981	107	34	TCGA-THYM	DND-41	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000101	106	3	TCGA-THYM	KE-37	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000964	106	46	TCGA-THYM	MOLT-3	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000372	105	1	TCGA-THYM	P12-ICHIKAWA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000197	98	10	TCGA-THYM	TALL-1	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000105	82	0	TCGA-THYM	ALL-SIL	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000953	78	1	TCGA-THYM	SUP-T1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000995	45	3	TCGA-THYM	JURKAT	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000937	41	0	TCGA-THYM	PF-382	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000519	35	0	TCGA-THYM	PEER	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-001737	24	0	TCGA-THYM	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000122	13	0	TCGA-THYM	SUP-T11	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000918	13	1	TCGA-THYM	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000773	12	0	TCGA-THYM	Ki-JK	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+T-cell	ACH-001068	12	0	TCGA-THYM	FE-PD	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
+T-cell	ACH-001111	12	6	TCGA-THYM	L82	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+T-cell	ACH-000664	11	0	TCGA-THYM	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+T-cell	ACH-001119	11	2	TCGA-THYM	Mac-2A	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
+T-cell	ACH-000233	10	4	TCGA-THYM	DEL	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+T-cell	ACH-000206	9	0	TCGA-THYM	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000226	9	0	TCGA-THYM	SUP-M2	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+T-cell	ACH-001134	9	0	TCGA-THYM	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+T-cell	ACH-000053	8	0	TCGA-THYM	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+T-cell	ACH-000612	5	0	TCGA-THYM	HuT 102	Lymphoid	Mature T and NK Neoplasms	MYCF
+T-cell	ACH-001097	5	0	TCGA-THYM	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	ATLL
+T-cell	ACH-000509	4	0	TCGA-THYM	HuT 78	Lymphoid	Mature T and NK Neoplasms	SS
+T-cell	ACH-001147	3	0	TCGA-THYM	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	FTCL
+T-cell	ACH-001100	2	0	TCGA-THYM	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	NKCLL
+T-cell	ACH-001057	1	0	TCGA-THYM	DERL-2	Lymphoid	Mature T and NK Neoplasms	HSTCL
+Testis	ACH-001435	132	2	TGCT-NSGCT,TGCT-SEM	1156QE/8	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-001437	132	17	TGCT-NSGCT,TGCT-SEM	1618-K	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-001438	132	8	TGCT-NSGCT,TGCT-SEM	1777N Rpmet	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-001440	132	20	TGCT-NSGCT,TGCT-SEM	833KE	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-001502	132	4	TGCT-NSGCT,TGCT-SEM	GCT-27	Testis	Non-Seminomatous Germ Cell Tumor	TT
+Testis	ACH-001578	132	14	TGCT-NSGCT,TGCT-SEM	NCCIT	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-001668	132	8	TGCT-NSGCT,TGCT-SEM	SUSA	Testis	Non-Seminomatous Germ Cell Tumor	TT
+Testis	ACH-001671	132	41	TGCT-NSGCT,TGCT-SEM	Tera-1	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-001672	132	11	TGCT-NSGCT,TGCT-SEM	Tera-2	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Testis	ACH-002291	132	7	TGCT-NSGCT,TGCT-SEM	NTERA-2 cl.D1	Testis	Non-Seminomatous Germ Cell Tumor	EMBCA
+Thyroid	ACH-000716	504	0	TCGA-THCA	TT2609-C02	Thyroid	Well-Differentiated Thyroid Cancer	THFO
+Thyroid	ACH-000174	503	2	TCGA-THCA	CAL-62	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-003472	503	95	TCGA-THCA	CCLF_THYR_0009_T	Thyroid	Medullary Thyroid Cancer	THME
+Thyroid	ACH-002041	499	0	TCGA-THCA	HOTHC	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-000903	471	0	TCGA-THCA	FTC-133	Thyroid	Well-Differentiated Thyroid Cancer	THFO
+Thyroid	ACH-000456	467	0	TCGA-THCA	B-CPAP	Thyroid	Poorly Differentiated Thyroid Cancer	THPD
+Thyroid	ACH-003469	393	0	TCGA-THCA	CCLF_THYR_0004_T	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-003471	320	208	TCGA-THCA	CCLF_THYR_0006_T	Thyroid	Well-Differentiated Thyroid Cancer	THPA
+Thyroid	ACH-000897	282	0	TCGA-THCA	FTC-238	Thyroid	Well-Differentiated Thyroid Cancer	THFO
+Thyroid	ACH-000058	266	195	TCGA-THCA	ML-1	Thyroid	Well-Differentiated Thyroid Cancer	THFO
+Thyroid	ACH-001350	257	0	TCGA-THCA	HTC-C3	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-001356	178	0	TCGA-THCA	MB-1	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-001384	155	0	TCGA-THCA	RO82-W-1	Thyroid	Well-Differentiated Thyroid Cancer	THFO
+Thyroid	ACH-000191	117	0	TCGA-THCA	BHT-101	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-003470	65	4	TCGA-THCA	CCLF_THYR_0005_T	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-001306	36	0	TCGA-THCA	8305C	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-002440	19	0	TCGA-THCA	CCLF_THYR_0008_T	Thyroid	Well-Differentiated Thyroid Cancer	THPA
+Thyroid	ACH-001307	2	0	TCGA-THCA	8505C	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-003468	2	0	TCGA-THCA	CCLF_THYR_0003_T	Thyroid	Anaplastic Thyroid Cancer	THAP
+Thyroid	ACH-001528	1	0	TCGA-THCA	IHH-4	Thyroid	Well-Differentiated Thyroid Cancer	THPA
+Uterus	ACH-001518	183	9	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-116	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000994	153	28	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-59	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000996	148	30	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-251	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000972	144	8	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-151	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000988	140	33	TCGA-UCS,UCEC-EEC,UCEC-SER	MFE-319	Uterus	Endometrial Carcinoma	UASC
+Uterus	ACH-000961	133	27	TCGA-UCS,UCEC-EEC,UCEC-SER	Ishikawa (Heraklio) 02 ER-	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000928	105	3	TCGA-UCS,UCEC-EEC,UCEC-SER	JHUEM-1	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000879	92	12	TCGA-UCS,UCEC-EEC,UCEC-SER	MFE-296	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000192	86	1	TCGA-UCS,UCEC-EEC,UCEC-SER	MFE-280	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000941	79	0	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-1-B	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000302	74	8	TCGA-UCS,UCEC-EEC,UCEC-SER	SNU-1077	Uterus	Endometrial Carcinoma	UCS
+Uterus	ACH-000939	70	3	TCGA-UCS,UCEC-EEC,UCEC-SER	SK-UT-1	Uterus	Uterine Sarcoma/Mesenchymal	ULMS
+Uterus	ACH-002026	65	1	TCGA-UCS,UCEC-EEC,UCEC-SER	HHUA	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000397	64	2	TCGA-UCS,UCEC-EEC,UCEC-SER	TEN	Uterus	Endometrial Carcinoma	UCCC
+Uterus	ACH-000909	61	4	TCGA-UCS,UCEC-EEC,UCEC-SER	JHUEM-2	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000978	60	3	TCGA-UCS,UCEC-EEC,UCEC-SER	EN	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000940	53	9	TCGA-UCS,UCEC-EEC,UCEC-SER	AN3 CA	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000954	52	1	UCEC-EEC,UCEC-SER	HEC-1-A	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000407	51	13	TCGA-UCS,UCEC-EEC,UCEC-SER	SNU-685	Uterus	Endometrial Carcinoma	UCS
+Uterus	ACH-000435	50	4	TCGA-UCS,UCEC-EEC,UCEC-SER	EFE-184	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000984	40	0	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-6	Uterus	Endometrial Carcinoma	UASC
+Uterus	ACH-000946	37	5	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-265	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000293	34	10	TCGA-UCS,UCEC-EEC,UCEC-SER	KLE	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000993	32	0	TCGA-UCS,UCEC-EEC,UCEC-SER	JHUEM-7	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000449	30	0	TCGA-UCS,UCEC-EEC,UCEC-SER	MES-SA	Uterus	Uterine Sarcoma/Mesenchymal	USARC
+Uterus	ACH-001517	30	3	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-1	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000831	28	1	TCGA-UCS,UCEC-EEC,UCEC-SER	HEC-50B	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-001495	27	6	TCGA-UCS,UCEC-EEC,UCEC-SER	EMTOKA	Uterus	Endometrial Carcinoma	UCS
+Uterus	ACH-002648	26	0	TCGA-UCS,UCEC-EEC,UCEC-SER	CX-03	Uterus	Endometrial Carcinoma	UCS
+Uterus	ACH-000974	20	0	TCGA-UCS,UCEC-EEC,UCEC-SER	SNG-M	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000913	16	0	TCGA-UCS,UCEC-EEC,UCEC-SER	ESS-1	Uterus	Uterine Sarcoma/Mesenchymal	ESS
+Uterus	ACH-001530	10	0	TCGA-UCS	JEG-3	Uterus	Gestational Trophoblastic Disease	UCCA
+Uterus	ACH-000173	8	0	TCGA-UCS,UCEC-EEC,UCEC-SER	JHUEM-3	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-001655	8	0	TCGA-UCS,UCEC-EEC	SKN	Uterus	Uterine Sarcoma/Mesenchymal	ULMS
+Uterus	ACH-001529	7	0	TCGA-UCS	JAR	Uterus	Gestational Trophoblastic Disease	UCCA
+Uterus	ACH-000864	5	0	TCGA-UCS,UCEC-EEC	COLO 684	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-000965	5	0	UCEC-EEC	RL95-2	Uterus	Endometrial Carcinoma	UASC
+Uterus	ACH-002046	5	0	TCGA-UCS,UCEC-EEC	HTMMT	Uterus	Endometrial Carcinoma	UCS
+Uterus	ACH-000990	3	0	UCEC-EEC	HEC-108	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-002021	2	0	TCGA-UCS,UCEC-EEC	T3M-3	Uterus	Gestational Trophoblastic Disease	UCCA
+Uterus	ACH-002419	2	0	TCGA-UCS	CCLF_OVPA_0001_T	Uterus	Endometrial Carcinoma	UCS
+Uterus	ACH-002027	1	0	UCEC-EEC	HOUA-I	Uterus	Endometrial Carcinoma	UCEC
+Uterus	ACH-002047	1	0	TCGA-UCS	HIRS-BM	Uterus	Endometrial Carcinoma	UCS

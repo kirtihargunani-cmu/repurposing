@@ -1,0 +1,241 @@
+cell_iname	cell_type	cell_lineage	primary_disease	subtype	ccle_name	ModelID	map_method	n_sig	n_cpd	n_sig_hiq	n_cpd_hiq	n_times	n_sig_genetic_other	CellLineName	OncotreeLineage	OncotreePrimaryDisease
+PC3	tumor	prostate	prostate cancer	adenocarcinoma	PC3_PROSTATE	ACH-000090	ccle_name	55253.0	13200.0	11236.0	3760.0	3.0	46610.0	PC-3	Prostate	Prostate Adenocarcinoma
+A375	tumor	skin	skin cancer	melanoma	A375_SKIN	ACH-000219	ccle_name	46226.0	13314.0	10241.0	3565.0	3.0	39524.0	A-375	Skin	Melanoma
+MCF7	tumor	breast	breast cancer	adenocarcinoma	MCF7_BREAST	ACH-000019	ccle_name	63523.0	13137.0	12680.0	3540.0	4.0	41333.0	MCF7	Breast	Invasive Breast Carcinoma
+VCAP	tumor	prostate	prostate cancer	adenocarcinoma	VCAP_PROSTATE	ACH-000115	ccle_name	35442.0	15872.0	4697.0	3377.0	3.0	34444.0	VCaP	Prostate	Prostate Adenocarcinoma
+HA1E	normal	kidney	normal kidney sample	normal kidney sample	HA1E_KIDNEY	ACH-001310	ccle_name	37669.0	6985.0	8089.0	3154.0	2.0	26615.0	HA1E	Kidney	Non-Cancerous
+U2OS	tumor	bone	bone cancer	osteosarcoma	U2OS_BONE	ACH-000364	ccle_name	25419.0	20913.0	4368.0	2955.0	3.0	659.0	U-2 OS	Bone	Osteosarcoma
+A549	tumor	lung	lung cancer	non small cell carcinoma	A549_LUNG	ACH-000681	ccle_name	53827.0	14397.0	8618.0	2900.0	5.0	42211.0	A549	Lung	Non-Small Cell Lung Cancer
+HT29	tumor	large_intestine	colon cancer	adenocarcinoma	HT29_LARGE_INTESTINE	ACH-000552	ccle_name	43095.0	12599.0	6490.0	2502.0	4.0	35709.0	HT-29	Bowel	Colorectal Adenocarcinoma
+HCC515	tumor	lung	lung cancer	carcinoma	HCC515_LUNG	ACH-000872	ccle_name	16133.0	6186.0	4269.0	2220.0	2.0	20847.0	HCC515	Lung	Non-Small Cell Lung Cancer
+HEPG2	tumor	liver	liver cancer	carcinoma	HEPG2_LIVER	ACH-000739	ccle_name	18157.0	5494.0	4192.0	1953.0	4.0	21541.0	Hep G2	Liver	Hepatoblastoma
+MCF10A	tumor	breast	breast cancer	carcinoma		ACH-001357	rrid	28420.0	1809.0	6418.0	1205.0	5.0	296.0	MCF 10A	Breast	Non-Cancerous
+HELA	tumor	cervix	cervical cancer	adenocarcinoma		ACH-001086	rrid	24771.0	1692.0	4627.0	1179.0	3.0	7.0	HeLa	Cervix	Cervical Adenocarcinoma
+YAPC	tumor	pancreas	pancreatic cancer	carcinoma	YAPC_PANCREAS	ACH-000332	ccle_name	21446.0	1787.0	2590.0	982.0	2.0	10643.0	YAPC	Pancreas	Pancreatic Adenocarcinoma
+THP1	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute myelogenous leukemia (aml)	THP1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000146	ccle_name	15814.0	1667.0	2056.0	790.0	4.0	6.0	THP-1	Myeloid	Acute Myeloid Leukemia
+MDAMB231	tumor	breast	breast cancer	adenocarcinoma	MDAMB231_BREAST	ACH-000768	ccle_name	18629.0	1383.0	2873.0	738.0	3.0	300.0	MDA-MB-231	Breast	Invasive Breast Carcinoma
+NPC	normal	central_nervous_system	normal stem cell sample	normal stem cell sample				11195.0	3755.0	3164.0	715.0	3.0	6786.0			
+XC.L10	pool	unknown	unknown	unknown				5674.0	1328.0	1501.0	627.0	1.0	0.0			
+HEK293	normal	kidney	normal kidney sample	normal embryonal kidney sample				15738.0	1402.0	1267.0	537.0	3.0	7.0			
+XC.R10	pool	unknown	unknown	unknown				3522.0	986.0	1089.0	489.0	1.0	0.0			
+JURKAT	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute lymphoblastic leukemia (all)	JURKAT_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000995	ccle_name	14079.0	1436.0	847.0	433.0	2.0	256.0	JURKAT	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma
+ASC	normal	soft_tissue	normal soft tissue sample	normal soft tissue sample				4650.0	2579.0	1117.0	417.0	1.0	5914.0			
+HUVEC	normal	unknown	unknown	normal umbilical vein sample				7696.0	823.0	784.0	267.0	1.0	0.0			
+NL20	normal	lung	normal lung sample	normal lung sample				347.0	322.0	227.0	213.0	1.0	0.0			
+HFL1	normal	lung	normal lung sample	normal lung sample				347.0	322.0	229.0	209.0	1.0	0.0			
+AGS	tumor	stomach	gastric cancer	adenocarcinoma	AGS_STOMACH	ACH-000880	ccle_name	708.0	448.0	208.0	207.0	2.0	10643.0	AGS	Esophagus/Stomach	Esophagogastric Adenocarcinoma
+SKM1	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute myeloid leukemia (aml)	SKM1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000373	ccle_name	364.0	360.0	196.0	196.0	1.0	0.0	SKM-1	Myeloid	Acute Myeloid Leukemia
+U937	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	b-cell lymphoma	U937_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000406	ccle_name	698.0	400.0	267.0	193.0	2.0	6.0	U-937	Myeloid	Acute Myeloid Leukemia
+1HAE	normal	unknown	unknown	normal fibroblast sample				348.0	323.0	201.0	185.0	1.0	0.0			
+A673	tumor	bone	bone cancer	ewing's sarcoma	A673_BONE	ACH-000052	ccle_name	363.0	362.0	183.0	182.0	1.0	0.0	A-673	Bone	Ewing Sarcoma
+MDST8	tumor	large_intestine	colon cancer	carcinoma	MDST8_LARGE_INTESTINE	ACH-000935	ccle_name	358.0	357.0	173.0	173.0	1.0	0.0	MDST8	Bowel	Colorectal Adenocarcinoma
+HCT116	tumor	large_intestine	colon cancer	carcinoma	HCT116_LARGE_INTESTINE	ACH-000971	ccle_name	1478.0	412.0	823.0	170.0	2.0	0.0	HCT 116	Bowel	Colorectal Adenocarcinoma
+IMR90	normal	lung	normal lung sample	normal lung sample				347.0	322.0	189.0	169.0	1.0	0.0			
+SW620	tumor	large_intestine	colon cancer	adenocarcinoma	SW620_LARGE_INTESTINE	ACH-000651	ccle_name	362.0	361.0	168.0	168.0	1.0	0.0	SW 620	Bowel	Colorectal Adenocarcinoma
+WI38	normal	lung	normal lung sample	normal lung sample				347.0	322.0	182.0	168.0	1.0	0.0			
+PL21	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute myelogenous leukemia (aml)	PL21_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000218	ccle_name	354.0	353.0	167.0	167.0	1.0	0.0	PL-21	Myeloid	Acute Myeloid Leukemia
+SKL	normal	soft_tissue	normal soft tissue sample	normal soft tissue sample				2104.0	169.0	783.0	158.0	1.0	3037.0			
+CD34	normal	unknown	unknown	normal stem cell sample				1371.0	210.0	408.0	157.0	2.0	0.0			
+SKBR3	tumor	breast	breast cancer	adenocarcinoma	SKBR3_BREAST	ACH-000017	ccle_name	2862.0	202.0	1028.0	149.0	3.0	348.0	SK-BR-3	Breast	Invasive Breast Carcinoma
+SKB	tumor	unknown	unknown	unknown				2517.0	2450.0	153.0	147.0	1.0	0.0			
+BT20	tumor	breast	breast cancer	carcinoma	BT20_BREAST	ACH-000536	ccle_name	2806.0	198.0	842.0	143.0	3.0	360.0	BT-20	Breast	Invasive Breast Carcinoma
+LOVO	tumor	large_intestine	colon cancer	adenocarcinoma	LOVO_LARGE_INTESTINE	ACH-000950	ccle_name	360.0	359.0	141.0	141.0	1.0	0.0	LoVo	Bowel	Colorectal Adenocarcinoma
+OCILY19	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	b-cell lymphoma	OCILY19_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000124	ccle_name	1490.0	136.0	518.0	130.0	2.0	0.0	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms
+NCIH596	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH596_LUNG	ACH-000628	ccle_name	421.0	368.0	144.0	126.0	3.0	48.0	NCI-H596	Lung	Non-Small Cell Lung Cancer
+KMS34	tumor	haematopoietic_and_lymphoid_tissue	myeloma	myeloma	KMS34_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000541	ccle_name	908.0	136.0	333.0	122.0	1.0	0.0	KMS-34	Lymphoid	Mature B-Cell Neoplasms
+K562	tumor	haematopoietic_and_lymphoid_tissue	leukemia	chronic myelogenous leukemia (cml)	K562_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000551	ccle_name	1512.0	136.0	390.0	122.0	2.0	6.0	K-562	Myeloid	Myeloproliferative Neoplasms
+TMD8	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	lymphoma				2167.0	136.0	588.0	122.0	4.0	0.0			
+HT115	tumor	large_intestine	colon cancer	carcinoma	HT115_LARGE_INTESTINE	ACH-000986	ccle_name	355.0	354.0	122.0	122.0	1.0	0.0	HT115	Bowel	Colorectal Adenocarcinoma
+OCILY3	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	b-cell lymphoma	OCILY3_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000158	ccle_name	1505.0	136.0	271.0	116.0	2.0	0.0	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms
+SKMEL5	tumor	skin	skin cancer	melanoma	SKMEL5_SKIN	ACH-000730	ccle_name	916.0	136.0	345.0	115.0	1.0	0.0	SK-MEL-5	Skin	Melanoma
+XC.P934	pool	unknown	unknown	unknown				366.0	120.0	269.0	115.0	1.0	0.0			
+XC.P092	pool	unknown	unknown	unknown				356.0	120.0	260.0	114.0	1.0	0.0			
+MINO	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	b-cell lymphoma	MINO_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000220	ccle_name	1569.0	136.0	341.0	114.0	3.0	0.0	Mino	Lymphoid	Mature B-Cell Neoplasms
+XC.P933	pool	unknown	unknown	unknown				366.0	120.0	263.0	113.0	1.0	0.0			
+HS578T	tumor	breast	breast cancer	carcinoma	HS578T_BREAST	ACH-000148	ccle_name	2800.0	198.0	728.0	113.0	3.0	300.0	Hs 578T	Breast	Invasive Breast Carcinoma
+XC.P935	pool	unknown	unknown	unknown				366.0	120.0	264.0	112.0	1.0	0.0			
+BJAB	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	lymphoma		ACH-001447	rrid	2170.0	136.0	327.0	111.0	4.0	0.0	BJAB	Lymphoid	Mature B-Cell Neoplasms
+XC.P091	pool	unknown	unknown	unknown				360.0	120.0	240.0	111.0	1.0	0.0			
+XC.P908	pool	unknown	unknown	unknown				364.0	120.0	240.0	111.0	1.0	0.0			
+XC.P026	pool	unknown	unknown	unknown				358.0	120.0	220.0	110.0	1.0	0.0			
+XC.P904	pool	unknown	unknown	unknown				361.0	120.0	235.0	109.0	1.0	0.0			
+XC.P915	pool	unknown	unknown	unknown				363.0	120.0	224.0	107.0	1.0	0.0			
+WA09	normal	unknown	unknown	normal stem cell sample				366.0	120.0	233.0	107.0	1.0	0.0			
+NALM6	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute lymphoblastic leukemia (all)	NALM6_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000938	ccle_name	916.0	136.0	280.0	107.0	1.0	0.0	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma
+XC.P031	pool	unknown	unknown	unknown				363.0	120.0	214.0	107.0	1.0	0.0			
+XC.P909	pool	unknown	unknown	unknown				363.0	120.0	218.0	106.0	1.0	0.0			
+NOMO1	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute myeloid leukemia (aml)	NOMO1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000168	ccle_name	668.0	365.0	168.0	106.0	2.0	0.0	NOMO-1	Myeloid	Acute Myeloid Leukemia
+HME1	tumor	breast	leukemia	acute myelogenous leukemia (aml)				2691.0	222.0	621.0	106.0	2.0	0.0			
+XC.P932	pool	unknown	unknown	unknown				362.0	120.0	207.0	106.0	1.0	0.0			
+XC.P914	pool	unknown	unknown	unknown				363.0	120.0	215.0	105.0	1.0	0.0			
+XC.P930	pool	unknown	unknown	unknown				363.0	120.0	232.0	105.0	1.0	0.0			
+XC.P910	pool	unknown	unknown	unknown				363.0	120.0	213.0	104.0	1.0	0.0			
+XC.P906	pool	unknown	unknown	unknown				358.0	120.0	205.0	104.0	1.0	0.0			
+HBL1	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	lymphoma				1511.0	136.0	258.0	104.0	2.0	0.0			
+XC.P912	pool	unknown	unknown	unknown				365.0	120.0	209.0	103.0	1.0	0.0			
+XC.P911	pool	unknown	unknown	unknown				361.0	120.0	210.0	103.0	1.0	0.0			
+XC.P905	pool	unknown	unknown	unknown				361.0	120.0	210.0	103.0	1.0	0.0			
+OCILY10	tumor	placenta	lymphoma	b-cell lymphoma	OCILY10_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-001146	ccle_name	1488.0	136.0	205.0	102.0	2.0	0.0	OCI-Ly10	Lymphoid	Mature B-Cell Neoplasms
+XC.P936	pool	unknown	unknown	unknown				364.0	120.0	201.0	102.0	1.0	0.0			
+XC.P033	pool	unknown	unknown	unknown				364.0	120.0	207.0	102.0	1.0	0.0			
+XC.P901	pool	unknown	unknown	unknown				361.0	120.0	194.0	99.0	1.0	0.0			
+XC.P931	pool	unknown	unknown	unknown				362.0	120.0	196.0	99.0	1.0	0.0			
+XC.P922	pool	unknown	unknown	unknown				362.0	120.0	175.0	96.0	1.0	0.0			
+NCIH508	tumor	large_intestine	colon cancer	adenocarcinoma	NCIH508_LARGE_INTESTINE	ACH-000360	ccle_name	420.0	367.0	118.0	92.0	3.0	48.0	NCI-H508	Bowel	Colorectal Adenocarcinoma
+XC.P907	pool	unknown	unknown	unknown				361.0	120.0	164.0	92.0	1.0	0.0			
+SKMEL28	tumor	skin	skin cancer	melanoma	SKMEL28_SKIN	ACH-000615	ccle_name	361.0	360.0	91.0	91.0	1.0	0.0	SK-MEL-28	Skin	Melanoma
+HAP1	tumor	unknown	unknown	chronic myeloid leukemia (cml)		ACH-002475	name	2136.0	90.0	1133.0	89.0	1.0	0.0	HAP1	Myeloid	Myeloproliferative Neoplasms
+SNUC5	tumor	large_intestine	colon cancer	adenocarcinoma	SNUC5_LARGE_INTESTINE	ACH-000970	ccle_name	351.0	350.0	81.0	81.0	1.0	0.0	SNU-C5	Bowel	Colorectal Adenocarcinoma
+HUH7	tumor	liver	liver cancer	carcinoma	HUH7_LIVER	ACH-000480	ccle_name	1206.0	771.0	126.0	79.0	3.0	14.0	HuH-7	Liver	Hepatocellular Carcinoma
+T3M10	tumor	lung	lung cancer	non small cell lung carcinoma	T3M10_LUNG	ACH-000813	ccle_name	353.0	352.0	73.0	73.0	1.0	0.0	T3M-10	Lung	Non-Small Cell Lung Cancer
+EFO27	tumor	ovary	ovarian cancer	carcinoma	EFO27_OVARY	ACH-000936	ccle_name	362.0	361.0	72.0	72.0	1.0	0.0	EFO-27	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+P1A82	tumor	unknown	unknown	unknown				527.0	83.0	246.0	71.0	1.0	0.0			
+RMGI	tumor	ovary	ovarian cancer	carcinoma	RMGI_OVARY	ACH-000719	ccle_name	356.0	355.0	70.0	70.0	1.0	0.0	RMG-I	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+SHSY5Y	tumor	autonomic_ganglia	neuroblastoma	neuroblastoma	SHSY5Y_AUTONOMIC_GANGLIA	ACH-001188	ccle_name	1425.0	224.0	127.0	69.0	1.0	442.0	SH-SY5Y	Peripheral Nervous System	Neuroblastoma
+NCIH2073	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH2073_LUNG	ACH-000590	ccle_name	421.0	368.0	80.0	68.0	3.0	47.0	NCI-H2073	Lung	Non-Small Cell Lung Cancer
+SNGM	tumor	endometrium	endometrial cancer	adenocarcinoma	SNGM_ENDOMETRIUM	ACH-000974	ccle_name	356.0	355.0	67.0	67.0	1.0	2514.0	SNG-M	Uterus	Endometrial Carcinoma
+PHH	normal	haematopoietic_and_lymphoid_tissue	normal blood sample	normal blood sample				2662.0	1935.0	87.0	64.0	2.0	0.0			
+LNCAP	tumor	prostate	prostate cancer	carcinoma				1094.0	165.0	373.0	59.0	2.0	20.0			
+HPTEC	normal	unknown	unknown	normal epithelium sample				668.0	56.0	501.0	56.0	2.0	0.0			
+OV7	tumor	ovary	ovarian cancer	carcinoma	OV7_OVARY	ACH-000688	ccle_name	359.0	358.0	56.0	56.0	1.0	0.0	OV7	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+HIMG001	tumor	unknown	unknown	unknown				354.0	60.0	160.0	55.0	1.0	0.0			
+HUES3	normal	unknown	unknown	normal stem cell sample				330.0	59.0	131.0	51.0	1.0	0.0			
+HEC108	tumor	endometrium	endometrial cancer	adenocarcinoma	HEC108_ENDOMETRIUM	ACH-000990	ccle_name	2494.0	1021.0	50.0	50.0	2.0	0.0	HEC-108	Uterus	Endometrial Carcinoma
+CL34	tumor	large_intestine	colon cancer	adenocarcinoma	CL34_LARGE_INTESTINE	ACH-000895	ccle_name	356.0	355.0	50.0	50.0	1.0	0.0	CL-34	Bowel	Colorectal Adenocarcinoma
+MNEU	tumor	unknown	unknown	unknown				355.0	63.0	95.0	49.0	1.0	0.0			
+SW480	tumor	large_intestine	colon cancer	adenocarcinoma	SW480_LARGE_INTESTINE	ACH-000842	ccle_name	363.0	362.0	46.0	46.0	1.0	1235.0	SW 480	Bowel	Colorectal Adenocarcinoma
+CORL23	tumor	lung	lung cancer	non small cell lung cancer	CORL23_LUNG	ACH-000662	ccle_name	364.0	363.0	45.0	45.0	1.0	0.0	COR-L23	Lung	Non-Small Cell Lung Cancer
+JHUEM2	tumor	endometrium	endometrial cancer	carcinoma	JHUEM2_ENDOMETRIUM	ACH-000909	ccle_name	361.0	360.0	44.0	44.0	1.0	0.0	JHUEM-2	Uterus	Endometrial Carcinoma
+HCC15	tumor	lung	lung cancer	non small cell lung carcinoma	HCC15_LUNG	ACH-000878	ccle_name	361.0	360.0	43.0	43.0	1.0	0.0	HCC-15	Lung	Non-Small Cell Lung Cancer
+RKO	tumor	large_intestine	colon cancer	adenocarcinoma	RKO_LARGE_INTESTINE	ACH-000943	ccle_name	362.0	361.0	43.0	43.0	1.0	0.0	RKO	Bowel	Colorectal Adenocarcinoma
+H1299	tumor	lung	lung cancer	non small cell carcinoma		ACH-000510	rrid	360.0	359.0	41.0	41.0	1.0	924.0	NCI-H1299	Lung	Non-Small Cell Lung Cancer
+NKDBA	tumor	unknown	unknown	unknown				983.0	235.0	61.0	39.0	1.0	0.0			
+HIMG002	tumor	unknown	unknown	unknown				354.0	60.0	115.0	38.0	1.0	0.0			
+SKNSH	tumor	central_nervous_system	neuroblastoma	neuroblastoma	SKNSH_AUTONOMIC_GANGLIA	ACH-000149	ccle_name	366.0	60.0	89.0	37.0	1.0	0.0	SK-N-SH	Peripheral Nervous System	Neuroblastoma
+NCIH1694	tumor	lung	lung cancer	small cell lung carcinoma	NCIH1694_LUNG	ACH-000431	ccle_name	355.0	354.0	35.0	35.0	1.0	0.0	NCI-H1694	Lung	Lung Neuroendocrine Tumor
+NCIH1836	tumor	lung	lung cancer	small cell lung carcinoma	NCIH1836_LUNG	ACH-000559	ccle_name	351.0	350.0	29.0	29.0	1.0	0.0	NCI-H1836	Lung	Lung Neuroendocrine Tumor
+HL60	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute myelogenous leukemia (aml)	HL60_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000002	ccle_name	511.0	64.0	85.0	28.0	3.0	120.0	HL-60	Myeloid	Acute Myeloid Leukemia
+NEU	normal	central_nervous_system	normal stem cell sample	normal stem cell sample				4452.0	2658.0	28.0	25.0	2.0	0.0			
+SW948	tumor	large_intestine	colon cancer	adenocarcinoma	SW948_LARGE_INTESTINE	ACH-000680	ccle_name	359.0	358.0	23.0	23.0	1.0	0.0	SW948	Bowel	Colorectal Adenocarcinoma
+XC.L100	pool	unknown	unknown	unknown				802.0	19.0	152.0	18.0	5.0	0.0			
+TYKNU	tumor	ovary	ovarian cancer	carcinoma	TYKNU_OVARY	ACH-000430	ccle_name	361.0	360.0	16.0	16.0	1.0	0.0	TYK-nu	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+SNUC4	tumor	large_intestine	colon cancer	adenocarcinoma	SNUC4_LARGE_INTESTINE	ACH-000959	ccle_name	362.0	361.0	13.0	13.0	1.0	0.0	SNU-C4	Bowel	Colorectal Adenocarcinoma
+HMELZ	tumor	unknown	unknown	unknown				185.0	90.0	9.0	9.0	2.0	0.0			
+HEK293T	normal	unknown	unknown	unknown				232.0	29.0	26.0	7.0	2.0	2351.0			
+NCIH1975	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH1975_LUNG	ACH-000587	ccle_name	60.0	10.0	15.0	7.0	2.0	48.0	NCI-H1975	Lung	Non-Small Cell Lung Cancer
+H1975	tumor	lung	lung cancer	carcinoma		ACH-000587	rrid	60.0	10.0	15.0	7.0	2.0	48.0	NCI-H1975	Lung	Non-Small Cell Lung Cancer
+HUH751	tumor	unknown	unknown	hepatoma				29.0	28.0	6.0	6.0	1.0	27.0			
+ND34732_7	tumor	unknown	unknown	unknown				13.0	11.0	5.0	5.0	1.0	0.0			
+AG06840_A	tumor	unknown	unknown	unknown				13.0	11.0	5.0	5.0	1.0	0.0			
+SUDHL4	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	b-cell lymphoma	SUDHL4_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000365	ccle_name	57.0	10.0	6.0	5.0	2.0	48.0	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms
+WSUDLCL2	tumor	haematopoietic_and_lymphoid_tissue	lymphoma	b-cell lymphoma	WSUDLCL2_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000534	ccle_name	354.0	353.0	4.0	4.0	1.0	0.0	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms
+OC314	tumor	ovary	ovarian cancer	carcinoma	OC314_OVARY	ACH-000962	ccle_name	24.0	3.0	4.0	3.0	1.0	0.0	OC 314	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+AN3CA	tumor	endometrium	endometrial cancer	adenocarcinoma	AN3CA_ENDOMETRIUM	ACH-000940	ccle_name	24.0	3.0	3.0	3.0	1.0	0.0	AN3 CA	Uterus	Endometrial Carcinoma
+SNU1040	tumor	large_intestine	colon cancer	carcinoma	SNU1040_LARGE_INTESTINE	ACH-000999	ccle_name	373.0	363.0	3.0	3.0	2.0	0.0	SNU-1040	Bowel	Colorectal Adenocarcinoma
+DV90	tumor	lung	lung cancer	adenocarcinoma	DV90_LUNG	ACH-000925	ccle_name	370.0	360.0	6.0	3.0	2.0	0.0	DV-90	Lung	Non-Small Cell Lung Cancer
+LN229	tumor	central_nervous_system	brain cancer	astrocytoma	LN229_CENTRAL_NERVOUS_SYSTEM	ACH-000595	ccle_name	12.0	3.0	4.0	3.0	1.0	0.0	LN-229	CNS/Brain	Diffuse Glioma
+OVCAR8	tumor	ovary	ovarian cancer	carcinoma	OVCAR8_OVARY	ACH-000696	ccle_name	12.0	3.0	2.0	2.0	1.0	0.0	OVCAR-8	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+BT474	tumor	breast	breast cancer	carcinoma	BT474_BREAST	ACH-000927	ccle_name	375.0	121.0	2.0	2.0	1.0	0.0	BT-474	Breast	Invasive Breast Carcinoma
+NCIH1563	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH1563_LUNG	ACH-000892	ccle_name	12.0	3.0	3.0	2.0	1.0	0.0	NCI-H1563	Lung	Non-Small Cell Lung Cancer
+J82	tumor	urinary_tract	bladder cancer	carcinoma	J82_URINARY_TRACT	ACH-000396	ccle_name	12.0	3.0	2.0	2.0	1.0	0.0	J82	Bladder/Urinary Tract	Bladder Urothelial Carcinoma
+COV644	tumor	ovary	ovarian cancer	carcinoma	COV644_OVARY	ACH-000608	ccle_name	358.0	358.0	2.0	2.0	1.0	0.0	COV644	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+VMCUB1	tumor	urinary_tract	bladder cancer	transitional cell carcinoma	VMCUB1_URINARY_TRACT	ACH-000545	ccle_name	12.0	3.0	3.0	2.0	1.0	0.0	VM-CUB1	Bladder/Urinary Tract	Bladder Urothelial Carcinoma
+CW2	tumor	large_intestine	colon cancer	carcinoma	CW2_LARGE_INTESTINE	ACH-000998	ccle_name	12.0	3.0	5.0	2.0	1.0	0.0	CW-2	Bowel	Colorectal Adenocarcinoma
+NCIH1781	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH1781_LUNG	ACH-000379	ccle_name	12.0	3.0	2.0	2.0	1.0	0.0	NCI-H1781	Lung	Non-Small Cell Lung Cancer
+NCIH2110	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH2110_LUNG	ACH-000929	ccle_name	1932.0	651.0	2.0	2.0	1.0	0.0	NCI-H2110	Lung	Non-Small Cell Lung Cancer
+NAMEC8	normal	unknown	unknown	normal stem cell sample				26.0	2.0	17.0	2.0	13.0	0.0			
+MICROGLIA-PSEN1	tumor	unknown	unknown	unknown				9.0	9.0	2.0	2.0	1.0	0.0			
+AG06263_2	tumor	unknown	unknown	unknown				13.0	11.0	2.0	2.0	1.0	0.0			
+AG078N1_1	tumor	unknown	unknown	unknown				12.0	10.0	2.0	2.0	1.0	0.0			
+MFE319	tumor	endometrium	endometrial cancer	adenocarcinoma	MFE319_ENDOMETRIUM	ACH-000988	ccle_name	12.0	3.0	2.0	2.0	1.0	0.0	MFE-319	Uterus	Endometrial Carcinoma
+HME	normal	unknown	unknown	normal epithelium sample				52.0	2.0	36.0	2.0	13.0	0.0			
+IPS-15-2	tumor	unknown	unknown	unknown				8.0	8.0	2.0	2.0	1.0	0.0			
+MCLF130CN	tumor	unknown	unknown	unknown				666.0	328.0	1.0	1.0	1.0	0.0			
+MCLF117SZ	tumor	unknown	unknown	unknown				663.0	328.0	1.0	1.0	1.0	0.0			
+MCLF076SZ	tumor	unknown	unknown	unknown				663.0	328.0	2.0	1.0	1.0	0.0			
+MCLF056CN	tumor	unknown	unknown	unknown				663.0	328.0	2.0	1.0	1.0	0.0			
+IPS-3	tumor	unknown	unknown	unknown				9.0	9.0	1.0	1.0	1.0	0.0			
+MCLF123SZ	tumor	unknown	unknown	unknown				655.0	328.0	1.0	1.0	1.0	0.0			
+HCC827	tumor	lung	lung cancer	non small cell lung carcinoma	HCC827_LUNG	ACH-000012	ccle_name	12.0	3.0	2.0	1.0	1.0	0.0	HCC-827	Lung	Non-Small Cell Lung Cancer
+SKLU1	tumor	lung	lung cancer	adenocarcinoma	SKLU1_LUNG	ACH-000309	ccle_name	355.0	354.0	1.0	1.0	1.0	0.0	SK-LU-1	Lung	Non-Small Cell Lung Cancer
+5637	tumor	urinary_tract	bladder cancer	carcinoma	5637_URINARY_TRACT	ACH-000905	ccle_name	12.0	3.0	2.0	1.0	1.0	0.0	5637	Bladder/Urinary Tract	Bladder Urothelial Carcinoma
+IPS-ND34732	tumor	unknown	unknown	unknown				10.0	10.0	1.0	1.0	1.0	0.0			
+MCLF0067SZ	tumor	unknown	unknown	unknown				661.0	328.0	1.0	1.0	1.0	0.0			
+MCLF027CN	tumor	unknown	unknown	unknown				661.0	327.0	1.0	1.0	1.0	0.0			
+MCLF037SZ	tumor	unknown	unknown	unknown				663.0	328.0	1.0	1.0	1.0	0.0			
+MCLF054CN	tumor	unknown	unknown	unknown				644.0	328.0	1.0	1.0	1.0	0.0			
+HS27A	tumor	unknown	unknown	unknown				14.0	12.0	0.0	0.0	1.0	0.0			
+MCLF035SZ	tumor	unknown	unknown	unknown				663.0	328.0	0.0	0.0	1.0	0.0			
+C42	tumor	unknown	unknown	unknown				24.0	5.0	0.0	0.0	1.0	0.0			
+MCLF051CN	tumor	unknown	unknown	unknown				664.0	328.0	0.0	0.0	1.0	0.0			
+MCLF040SZ	tumor	unknown	unknown	unknown				665.0	328.0	0.0	0.0	1.0	0.0			
+MCLF135CN	tumor	unknown	unknown	unknown				662.0	328.0	0.0	0.0	1.0	0.0			
+MCLF033SZ	tumor	unknown	unknown	unknown				661.0	327.0	0.0	0.0	1.0	0.0			
+MCLF015CN	tumor	unknown	unknown	unknown				661.0	327.0	0.0	0.0	1.0	0.0			
+MCLF022CN	tumor	unknown	unknown	unknown				662.0	328.0	0.0	0.0	1.0	0.0			
+LHSAR	normal	unknown	unknown	normal prostate sample				0.0	0.0	0.0	0.0	0.0	20.0			
+MCH58	tumor	unknown	unknown	unknown				1.0	1.0	0.0	0.0	1.0	4.0			
+SKES1	tumor	bone	bone cancer	ewing's sarcoma	SKES1_BONE	ACH-000087	ccle_name	2104.0	725.0	0.0	0.0	1.0	0.0	SK-ES-1	Bone	Ewing Sarcoma
+TF1	tumor	haematopoietic_and_lymphoid_tissue	leukemia	acute myelogenous leukemia (aml)	TF1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000387	ccle_name	0.0	0.0	0.0	0.0	0.0	6.0	TF-1	Myeloid	Acute Myeloid Leukemia
+HEKTE	normal	kidney	normal kidney sample	normal kidney sample	HEKTE_KIDNEY	ACH-000049	ccle_name	0.0	0.0	0.0	0.0	0.0	1275.0	HEK TE	Kidney	Non-Cancerous
+U266B1	tumor	haematopoietic_and_lymphoid_tissue	myeloma	plasmacytoma	U266B1_HAEMATOPOIETIC_AND_LYMPHOID_TISSUE	ACH-000626	ccle_name	241.0	31.0	0.0	0.0	2.0	0.0	U266B1	Lymphoid	Mature B-Cell Neoplasms
+TC32	tumor	bone	bone cancer	ewing's sarcoma	TC32_BONE	ACH-001205	ccle_name	331.0	118.0	0.0	0.0	1.0	0.0	TC-32	Bone	Ewing Sarcoma
+SALE	tumor	lung	lung cancer	lung cancer	SALE_LUNG	ACH-000064	ccle_name	0.0	0.0	0.0	0.0	0.0	923.0	SALE	Lung	Non-Cancerous
+22RV1	tumor	prostate	prostate cancer	carcinoma	22RV1_PROSTATE	ACH-000956	ccle_name	2145.0	728.0	0.0	0.0	1.0	0.0	22Rv1	Prostate	Prostate Adenocarcinoma
+HEC1A	tumor	endometrium	endometrial cancer	adenocarcinoma	HEC1A_ENDOMETRIUM	ACH-000954	ccle_name	2165.0	726.0	0.0	0.0	1.0	0.0	HEC-1-A	Uterus	Endometrial Carcinoma
+P2X2B2	tumor	unknown	unknown	medullary cystic kidney disease (MCKD) type 1				0.0	0.0	0.0	0.0	0.0	85.0			
+XC.500	pool	unknown	unknown	unknown				366.0	120.0	0.0	0.0	1.0	0.0			
+MCLF126CN	tumor	unknown	unknown	unknown				664.0	328.0	0.0	0.0	1.0	0.0			
+MCLF100SZ	tumor	unknown	unknown	unknown				664.0	328.0	0.0	0.0	1.0	0.0			
+MCLF162SZ	tumor	unknown	unknown	unknown				661.0	328.0	0.0	0.0	1.0	0.0			
+MCLF141SZ	tumor	unknown	unknown	unknown				652.0	327.0	0.0	0.0	1.0	0.0			
+MCLF137CN	tumor	unknown	unknown	unknown				330.0	326.0	0.0	0.0	1.0	0.0			
+AALE	normal	unknown	unknown	normal epithelium sample				0.0	0.0	0.0	0.0	0.0	1009.0			
+NCIH841	tumor	lung	lung cancer	small cell lung carcinoma	NCIH841_LUNG	ACH-000292	ccle_name	347.0	119.0	0.0	0.0	1.0	0.0	NCI-H841	Lung	SMARCA4-deficient undifferentiated tumor
+NCIH1573	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH1573_LUNG	ACH-000916	ccle_name	2164.0	726.0	0.0	0.0	1.0	0.0	NCI-H1573	Lung	Non-Small Cell Lung Cancer
+NCIH1437	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH1437_LUNG	ACH-000589	ccle_name	330.0	118.0	0.0	0.0	1.0	0.0	NCI-H1437	Lung	Non-Small Cell Lung Cancer
+RWPE1	tumor	prostate	prostate cancer	carcinoma				0.0	0.0	0.0	0.0	0.0	20.0			
+ES2	tumor	ovary	ovarian cancer	carcinoma	ES2_OVARY	ACH-000906	ccle_name	344.0	119.0	0.0	0.0	1.0	14567.0	ES-2	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+MDAMB468	tumor	breast	breast cancer	adenocarcinoma	MDAMB468_BREAST	ACH-000849	ccle_name	2115.0	725.0	0.0	0.0	1.0	0.0	MDA-MB-468	Breast	Invasive Breast Carcinoma
+G401	tumor	soft_tissue	kidney cancer	carcinoma	G401_SOFT_TISSUE	ACH-000096	ccle_name	352.0	120.0	0.0	0.0	1.0	0.0	G-401	Kidney	Rhabdoid Cancer
+ZR751	tumor	breast	breast cancer	carcinoma	ZR751_BREAST	ACH-000097	ccle_name	363.0	120.0	0.0	0.0	1.0	0.0	ZR-75-1	Breast	Invasive Breast Carcinoma
+T47D	tumor	breast	breast cancer	carcinoma	T47D_BREAST	ACH-000147	ccle_name	2121.0	725.0	0.0	0.0	1.0	0.0	T-47D	Breast	Invasive Breast Carcinoma
+NCIH838	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH838_LUNG	ACH-000416	ccle_name	1978.0	665.0	0.0	0.0	1.0	0.0	NCI-H838	Lung	Non-Small Cell Lung Cancer
+NCIH2172	tumor	lung	lung cancer	non small cell lung carcinoma	NCIH2172_LUNG	ACH-000924	ccle_name	356.0	120.0	0.0	0.0	1.0	0.0	NCI-H2172	Lung	Non-Small Cell Lung Cancer
+SH4	tumor	skin	skin cancer	melanoma	SH4_SKIN	ACH-000441	ccle_name	2120.0	725.0	0.0	0.0	1.0	0.0	SH-4	Skin	Melanoma
+SKMEL3	tumor	skin	skin cancer	melanoma	SKMEL3_SKIN	ACH-000423	ccle_name	360.0	119.0	0.0	0.0	1.0	0.0	SK-MEL-3	Skin	Melanoma
+SKMEL1	tumor	skin	skin cancer	melanoma	SKMEL1_SKIN	ACH-000465	ccle_name	364.0	363.0	0.0	0.0	1.0	0.0	SK-MEL-1	Skin	Melanoma
+DLD1	tumor	large_intestine	colon cancer	adenocarcinoma	DLD1_LARGE_INTESTINE	ACH-001061	ccle_name	0.0	0.0	0.0	0.0	0.0	1083.0	DLD-1	Bowel	Colorectal Adenocarcinoma
+NCIH716	tumor	large_intestine	colon cancer	adenocarcinoma	NCIH716_LARGE_INTESTINE	ACH-000491	ccle_name	0.0	0.0	0.0	0.0	0.0	8.0	NCI-H716	Bowel	Colorectal Adenocarcinoma
+A204	tumor	soft_tissue	embryonal cancer	rhabdomyosarcoma	A204_SOFT_TISSUE	ACH-000201	ccle_name	2097.0	725.0	0.0	0.0	1.0	0.0	A-204	Kidney	Rhabdoid Cancer
+TOV112D	tumor	ovary	endometrial cancer	adenocarcinoma	TOV112D_OVARY	ACH-000048	ccle_name	339.0	119.0	0.0	0.0	1.0	0.0	TOV-112D	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+DU145	tumor	prostate	prostate cancer	carcinoma	DU145_PROSTATE	ACH-000979	ccle_name	24.0	5.0	0.0	0.0	1.0	0.0	DU 145	Prostate	Prostate Adenocarcinoma
+SNU407	tumor	large_intestine	colon cancer	carcinoma	SNU407_LARGE_INTESTINE	ACH-000955	ccle_name	2161.0	725.0	0.0	0.0	1.0	0.0	SNU-407	Bowel	Colorectal Adenocarcinoma
+COV434	tumor	ovary	ovarian cancer	granulosa	COV434_OVARY	ACH-000123	ccle_name	354.0	120.0	0.0	0.0	1.0	0.0	COV434	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+GP2D	tumor	large_intestine	colon cancer	adenocarcinoma	GP2D_LARGE_INTESTINE	ACH-000982	ccle_name	347.0	120.0	0.0	0.0	1.0	0.0	GP2d	Bowel	Colorectal Adenocarcinoma
+HCC95	tumor	lung	lung cancer	non small cell lung carcinoma	HCC95_LUNG	ACH-000454	ccle_name	2132.0	726.0	0.0	0.0	1.0	0.0	HCC-95	Lung	Non-Small Cell Lung Cancer
+BC3C	tumor	urinary_tract	bladder cancer	transitional cell carcinoma	BC3C_URINARY_TRACT	ACH-000593	ccle_name	1936.0	665.0	0.0	0.0	1.0	0.0	BC-3C	Bladder/Urinary Tract	Bladder Urothelial Carcinoma
+MELHO	tumor	skin	skin cancer	melanoma	MELHO_SKIN	ACH-000450	ccle_name	2090.0	726.0	0.0	0.0	1.0	0.0	MEL-HO	Skin	Melanoma
+IGR37	tumor	skin	skin cancer	melanoma	IGR37_SKIN	ACH-000650	ccle_name	2151.0	725.0	0.0	0.0	1.0	0.0	IGR-37	Skin	Melanoma
+HCC44	tumor	lung	lung cancer	non small cell lung carcinoma	HCC44_LUNG	ACH-000667	ccle_name	0.0	0.0	0.0	0.0	0.0	319.0	HCC-44	Lung	Non-Small Cell Lung Cancer
+BEN	tumor	lung	lung cancer	non small cell lung cancer	BEN_LUNG	ACH-000603	ccle_name	2068.0	726.0	0.0	0.0	1.0	0.0	BEN	Lung	Non-Small Cell Lung Cancer
+OC316	tumor	ovary	ovarian cancer	adenocarcinoma	OC316_OVARY	ACH-001145	ccle_name	363.0	120.0	0.0	0.0	1.0	0.0	OC 316	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+HCC1588	tumor	lung	lung cancer	non small cell lung carcinoma	HCC1588_LUNG			338.0	119.0	0.0	0.0	1.0	0.0			
+CAL29	tumor	urinary_tract	bladder cancer	transitional cell carcinoma	CAL29_URINARY_TRACT	ACH-000142	ccle_name	2079.0	725.0	0.0	0.0	1.0	0.0	CAL-29	Bladder/Urinary Tract	Bladder Urothelial Carcinoma
+BICR6	tumor	upper_aerodigestive_tract	head and neck cancer	carcinoma	BICR6_UPPER_AERODIGESTIVE_TRACT	ACH-000415	ccle_name	350.0	119.0	0.0	0.0	1.0	10643.0	BICR 6	Head and Neck	Head and Neck Squamous Cell Carcinoma
+RMUGS	tumor	ovary	ovarian cancer	carcinoma	RMUGS_OVARY	ACH-000701	ccle_name	363.0	362.0	0.0	0.0	1.0	0.0	RMUG-S	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+OVTOKO	tumor	ovary	ovarian cancer	adenocarcinoma	OVTOKO_OVARY	ACH-000663	ccle_name	2157.0	725.0	0.0	0.0	1.0	0.0	OVTOKO	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+MKN45	tumor	stomach	gastric cancer	adenocarcinoma	MKN45_STOMACH	ACH-000356	ccle_name	361.0	120.0	0.0	0.0	1.0	0.0	MKN-45	Esophagus/Stomach	Esophagogastric Adenocarcinoma
+IM95	tumor	stomach	gastric cancer	adenocarcinoma	IM95_STOMACH	ACH-000919	ccle_name	361.0	120.0	0.0	0.0	1.0	0.0	IM95	Esophagus/Stomach	Esophagogastric Adenocarcinoma
+JHH5	tumor	liver	liver cancer	carcinoma	JHH5_LIVER	ACH-000734	ccle_name	2152.0	725.0	0.0	0.0	1.0	0.0	JHH-5	Liver	Hepatocellular Carcinoma
+JHH7	tumor	liver	liver cancer	carcinoma	JHH7_LIVER	ACH-000848	ccle_name	363.0	120.0	0.0	0.0	1.0	0.0	JHH-7	Liver	Hepatocellular Carcinoma
+U251MG	tumor	central_nervous_system	brain cancer	astrocytoma	U251MG_CENTRAL_NERVOUS_SYSTEM	ACH-000232	ccle_name	360.0	120.0	0.0	0.0	1.0	14246.0	U-251 MG	CNS/Brain	Diffuse Glioma
+YH13	tumor	central_nervous_system	brain cancer	astrocytoma	YH13_CENTRAL_NERVOUS_SYSTEM	ACH-000469	ccle_name	338.0	119.0	0.0	0.0	1.0	0.0	YH-13	CNS/Brain	Diffuse Glioma
+OAW28	tumor	ovary	ovarian cancer	cystadenocarcinoma	OAW28_OVARY	ACH-000116	ccle_name	341.0	120.0	0.0	0.0	1.0	0.0	OAW28	Ovary/Fallopian Tube	Ovarian Epithelial Tumor
+HEC265	tumor	endometrium	endometrial cancer	adenocarcinoma	HEC265_ENDOMETRIUM	ACH-000946	ccle_name	2110.0	726.0	0.0	0.0	1.0	0.0	HEC-265	Uterus	Endometrial Carcinoma
+HEC151	tumor	endometrium	endometrial cancer	adenocarcinoma	HEC151_ENDOMETRIUM	ACH-000972	ccle_name	360.0	120.0	0.0	0.0	1.0	0.0	HEC-151	Uterus	Endometrial Carcinoma
+HEC251	tumor	endometrium	endometrial cancer	adenocarcinoma	HEC251_ENDOMETRIUM	ACH-000996	ccle_name	2156.0	726.0	0.0	0.0	1.0	0.0	HEC-251	Uterus	Endometrial Carcinoma
+RCC10RGB	tumor	kidney	kidney cancer	carcinoma	RCC10RGB_KIDNEY	ACH-000189	ccle_name	351.0	120.0	0.0	0.0	1.0	0.0	RCC10RGB	Kidney	Renal Cell Carcinoma
+GI1	tumor	central_nervous_system	brain cancer	glioblastoma	GI1_CENTRAL_NERVOUS_SYSTEM	ACH-000756	ccle_name	2117.0	724.0	0.0	0.0	1.0	0.0	GI-1	CNS/Brain	Diffuse Glioma
+CJM	tumor	skin	skin cancer	melanoma	CJM_SKIN	ACH-000458	ccle_name	2115.0	723.0	0.0	0.0	1.0	0.0	CJM	Skin	Melanoma
+OVK18	tumor	ovary	ovarian cancer	carcinoma	OVK18_OVARY	ACH-000947	ccle_name	355.0	120.0	0.0	0.0	1.0	0.0	OVK18	Ovary/Fallopian Tube	Ovarian Epithelial Tumor

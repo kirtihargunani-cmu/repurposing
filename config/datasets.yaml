@@ -180,3 +180,24 @@ depmap:  # DepMap Public 24Q4 via Figshare (newest full release there; portal do
     - OmicsFusionFiltered.csv
     - OmicsCNGene.csv  # relative copy ratio (linear)
     - README.txt
+
+lincs2020:  # CMap LINCS 2020 "beta" release metadata (scripts/07_download_lincs.sh); signature matrices not pulled yet
+  release: LINCS2020 beta (siginfo 2021-12-07)
+  access: open
+  url: https://s3.amazonaws.com/macchiato.clue.io/builds/LINCS2020/
+  files:  # md5 (= S3 ETag) checked in the script except siginfo (multipart); sha256 in data/raw/checksums.sha256
+    - cellinfo_beta.txt
+    - siginfo_beta.txt
+    - compoundinfo_beta.txt
+    - geneinfo_beta.txt
+
+repurposing_hub:  # Broad Drug Repurposing Hub (scripts/09_download_drug_annotations.sh); md5 = S3 ETag
+  release: 2020-03-24
+  access: open
+  url: https://s3.amazonaws.com/data.clue.io/repurposing/downloads/
+  files: [repurposing_drugs_20200324.txt, repurposing_samples_20200324.txt]
+
+chembl:  # REST API (scripts/79a_drug_annotations.py); raw JSON cached in data/raw/chembl/<release>/
+  release: ChEMBL_37 (2026-05-01)
+  access: open  # CC BY-SA 3.0
+  url: https://www.ebi.ac.uk/chembl/api/data

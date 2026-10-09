@@ -1,0 +1,11 @@
+n_signatures	554650.0
+n_hiq	90988.0
+n_lines	135.0
+n_compounds	33603.0
+n_genes_landmark	978.0
+value_median_abs	0.55
+n_nan	0.0
+hiq_same_compound_diff_line_median_r	0.126
+hiq_random_pair_median_r	0.027
+n_pairs	5560.0
+minutes	355.1

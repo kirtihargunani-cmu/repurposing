@@ -1,0 +1,54 @@
+# Celligner tissue keys: which DepMap lines may represent each group (scripts/73_celligner_tissue_keys.py).
+# Default = organ: DepMap OncotreeLineage equal to the OncoTree tissue of the group's code (user 2026-10-08).
+# substitute = organ has no usable lines; blood = umbrella key for hematologic groups.
+# lineages: DepMap OncotreeLineage values (;-separated); diseases: optional OncotreePrimaryDisease restriction.
+group_id	key	key_type	lineages	diseases	note
+ALL-B	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Lymphoid
+BRCA-Basal	Breast	organ	Breast		
+BRCA-Her2	Breast	organ	Breast		
+BRCA-LumA	Breast	organ	Breast		
+BRCA-LumB	Breast	organ	Breast		
+CESC-AD	Cervix	organ	Cervix		
+CESC-SCC	Cervix	organ	Cervix		
+ESCA-AD	Esophagus/Stomach	organ	Esophagus/Stomach		
+ESCA-SCC	Esophagus/Stomach	organ	Esophagus/Stomach		
+LGG-IDHmut-codel	CNS/Brain	organ	CNS/Brain		
+LGG-IDHmut-noncodel	CNS/Brain	organ	CNS/Brain		
+LGG-IDHwt	CNS/Brain	organ	CNS/Brain		
+PCPG-PGL	Neuroblastoma	substitute	Peripheral Nervous System	Neuroblastoma	adrenal lines are adrenocortical carcinoma only; PCPG tumors match neuroblastoma (neural crest)
+PCPG-PHEO	Neuroblastoma	substitute	Peripheral Nervous System	Neuroblastoma	adrenal lines are adrenocortical carcinoma only; PCPG tumors match neuroblastoma (neural crest)
+SARC-DDLPS	Soft Tissue	organ	Soft Tissue		
+SARC-LMS	Soft Tissue	organ	Soft Tissue		
+SARC-UPS	Soft Tissue	organ	Soft Tissue		
+TARGET-AML	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Myeloid
+TARGET-NBL	Peripheral Nervous System	organ	Peripheral Nervous System		
+TARGET-WT	Kidney	organ	Kidney		
+TCGA-ACC	Adrenal Gland	organ	Adrenal Gland		
+TCGA-BLCA	Bladder/Urinary Tract	organ	Bladder/Urinary Tract		
+TCGA-CHOL	Biliary Tract	organ	Biliary Tract		
+TCGA-COAD	Bowel	organ	Bowel		
+TCGA-DLBC	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Lymphoid
+TCGA-GBM	CNS/Brain	organ	CNS/Brain		
+TCGA-HNSC	Head and Neck	organ	Head and Neck		
+TCGA-KICH	Kidney	organ	Kidney		
+TCGA-KIRC	Kidney	organ	Kidney		
+TCGA-KIRP	Kidney	organ	Kidney		
+TCGA-LAML	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Myeloid
+TCGA-LIHC	Liver	organ	Liver		
+TCGA-LUAD	Lung	organ	Lung		
+TCGA-LUSC	Lung	organ	Lung		
+TCGA-MESO	Pleura	organ	Pleura		
+TCGA-OV	Ovary/Fallopian Tube	organ	Ovary/Fallopian Tube		
+TCGA-PAAD	Pancreas	organ	Pancreas		
+TCGA-PRAD	Prostate	organ	Prostate		
+TCGA-READ	Bowel	organ	Bowel		
+TCGA-SKCM	Skin	organ	Skin		
+TCGA-STAD	Esophagus/Stomach	organ	Esophagus/Stomach		
+TCGA-THCA	Thyroid	organ	Thyroid		
+TCGA-THYM	T-cell	substitute	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma;Mature T and NK Neoplasms	no thymus lines; thymoma tumors match T-cell lines (thymocytes)
+TCGA-UCS	Uterus	organ	Uterus		
+TCGA-UVM	Eye	organ	Eye		
+TGCT-NSGCT	Testis	organ	Testis		
+TGCT-SEM	Testis	organ	Testis		
+UCEC-EEC	Uterus	organ	Uterus		
+UCEC-SER	Uterus	organ	Uterus		

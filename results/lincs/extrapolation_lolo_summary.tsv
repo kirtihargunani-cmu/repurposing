@@ -1,0 +1,7 @@
+method	median_r	frac_r_gt_0.3	n_pairs
+r_nearest	0.36	0.619	7687
+r_mean	0.485	0.796	7687
+r_weighted_tau10	0.425	0.725	7687
+r_weighted_tau25	0.467	0.775	7687
+r_weighted_tau50	0.483	0.793	7687
+r_null	-0.011	0.027	7687
