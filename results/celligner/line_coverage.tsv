@@ -1,0 +1,1589 @@
+ModelID	CellLineName	OncotreeLineage	OncotreeCode	OncotreePrimaryDisease	n_patients_top10	n_groups	n_rank1
+ACH-001819	MFM-223	Breast	IDC	Invasive Breast Carcinoma	1118.0	5.0	192.0
+ACH-000910	MDA-MB-453	Breast	BRCA	Invasive Breast Carcinoma	812.0	5.0	67.0
+ACH-000128	LN-319	CNS/Brain	ASTR	Diffuse Glioma	672.0	8.0	0.0
+ACH-000117	EFM-192A	Breast	BRCA	Invasive Breast Carcinoma	661.0	4.0	51.0
+ACH-000622	KNS-42	CNS/Brain	GB	Diffuse Glioma	655.0	4.0	653.0
+ACH-002806	TB096	CNS/Brain	AASTR	Diffuse Glioma	653.0	5.0	0.0
+ACH-000352	HCC1428	Breast	BRCA	Invasive Breast Carcinoma	647.0	4.0	40.0
+ACH-000370	SNU-626	CNS/Brain	GB	Diffuse Glioma	629.0	4.0	0.0
+ACH-000232	U-251 MG	CNS/Brain	ASTR	Diffuse Glioma	626.0	4.0	2.0
+ACH-000027	GOS-3	CNS/Brain	GB	Diffuse Glioma	617.0	4.0	0.0
+ACH-001442	A388	Skin	CSCC	Cutaneous Squamous Cell Carcinoma	602.0	7.0	110.0
+ACH-001398	SW 156	Kidney	RCC	Renal Cell Carcinoma	574.0	3.0	23.0
+ACH-000927	BT-474	Breast	IDC	Invasive Breast Carcinoma	559.0	5.0	3.0
+ACH-000171	VMRC-RCZ	Kidney	RCC	Renal Cell Carcinoma	552.0	2.0	20.0
+ACH-000783	CAMA-1	Breast	ILC	Invasive Breast Carcinoma	541.0	4.0	67.0
+ACH-001624	Onda 9	CNS/Brain	GB	Diffuse Glioma	537.0	5.0	0.0
+ACH-000932	SNU-1	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	521.0	10.0	0.0
+ACH-000977	LNCaP clone FGC	Prostate	PRAD	Prostate Adenocarcinoma	493.0	1.0	136.0
+ACH-000147	T-47D	Breast	IDC	Invasive Breast Carcinoma	485.0	3.0	28.0
+ACH-000637	KYSE-520	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	472.0	11.0	68.0
+ACH-000592	TM-31	CNS/Brain	ASTR	Diffuse Glioma	471.0	5.0	0.0
+ACH-000513	SNU-1272	Kidney	CCRCC	Renal Cell Carcinoma	470.0	2.0	8.0
+ACH-000839	SCaBER	Bladder/Urinary Tract	BLSC	Bladder Squamous Cell Carcinoma	463.0	9.0	37.0
+ACH-000495	TUHR4TKB	Kidney	RCC	Renal Cell Carcinoma	456.0	2.0	8.0
+ACH-001289	COG-AR-359	CNS/Brain	ATRT	Embryonal Tumor	452.0	9.0	0.0
+ACH-000709	KMRC-2	Kidney	CCRCC	Renal Cell Carcinoma	451.0	2.0	43.0
+ACH-000600	SLR 26	Kidney	CCRCC	Renal Cell Carcinoma	449.0	2.0	6.0
+ACH-003472	CCLF_THYR_0009_T	Thyroid	THME	Medullary Thyroid Cancer	444.0	1.0	93.0
+ACH-001194	SK-RC-31	Kidney	RCC	Renal Cell Carcinoma	434.0	2.0	27.0
+ACH-001336	Ca Ski	Cervix	CESC	Cervical Squamous Cell Carcinoma	420.0	16.0	49.0
+ACH-000484	VMRC-RCW	Kidney	RCC	Renal Cell Carcinoma	413.0	2.0	31.0
+ACH-000188	SCC-25	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	404.0	10.0	51.0
+ACH-000472	HSC-2	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	396.0	14.0	20.0
+ACH-000488	TE-11	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	390.0	7.0	38.0
+ACH-000174	CAL-62	Thyroid	THAP	Anaplastic Thyroid Cancer	386.0	20.0	5.0
+ACH-000740	A-253	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	383.0	6.0	56.0
+ACH-001318	PLC/PRF/5	Liver	HCC	Hepatocellular Carcinoma	380.0	7.0	2.0
+ACH-000606	PE/CA-PJ34 (clone C12)	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	378.0	5.0	35.0
+ACH-000956	22Rv1	Prostate	PRAD	Prostate Adenocarcinoma	377.0	1.0	74.0
+ACH-000952	MDA PCa 2b	Prostate	PRAD	Prostate Adenocarcinoma	375.0	1.0	199.0
+ACH-000735	PE/CA-PJ49	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	375.0	8.0	25.0
+ACH-000633	FU97	Esophagus/Stomach	DSTAD	Esophagogastric Adenocarcinoma	373.0	8.0	0.0
+ACH-000848	JHH-7	Liver	HCC	Hepatocellular Carcinoma	372.0	8.0	15.0
+ACH-000480	HuH-7	Liver	HCC	Hepatocellular Carcinoma	371.0	8.0	31.0
+ACH-000475	huH-1	Liver	HCC	Hepatocellular Carcinoma	371.0	7.0	11.0
+ACH-002034	T3M-11	Lung	NUTCL	Non-Small Cell Lung Cancer	368.0	6.0	0.0
+ACH-000734	JHH-5	Liver	HCC	Hepatocellular Carcinoma	364.0	6.0	2.0
+ACH-000671	HuH-6	Liver	LIHB	Hepatoblastoma	357.0	8.0	7.0
+ACH-000625	Hep 3B2.1-7	Liver	HCC	Hepatocellular Carcinoma	357.0	5.0	13.0
+ACH-000503	BICR 16	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	357.0	11.0	87.0
+ACH-000013	ONCO-DG-1	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	351.0	6.0	30.0
+ACH-000278	COV362	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	351.0	5.0	81.0
+ACH-000429	A-704	Kidney	RCC	Renal Cell Carcinoma	349.0	2.0	297.0
+ACH-000017	SK-BR-3	Breast	BRCA	Invasive Breast Carcinoma	345.0	5.0	3.0
+ACH-000202	COLO-320	Bowel	COAD	Colorectal Adenocarcinoma	343.0	11.0	0.0
+ACH-000277	HCC1419	Breast	IDC	Invasive Breast Carcinoma	342.0	4.0	0.0
+ACH-000723	YD-10B	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	338.0	8.0	47.0
+ACH-001368	OAC-M5.1	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	337.0	12.0	2.0
+ACH-000011	253J	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	337.0	3.0	8.0
+ACH-000001	NIH:OVCAR-3	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	332.0	7.0	36.0
+ACH-000739	Hep G2	Liver	LIHB	Hepatoblastoma	327.0	3.0	294.0
+ACH-001542	KON	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	321.0	8.0	21.0
+ACH-001543	KOSC-2	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	318.0	11.0	7.0
+ACH-000028	KPL-1	Breast	BRCA	Invasive Breast Carcinoma	317.0	4.0	97.0
+ACH-000716	TT2609-C02	Thyroid	THFO	Well-Differentiated Thyroid Cancer	315.0	13.0	0.0
+ACH-000118	HUP-T3	Pancreas	PAAD	Pancreatic Adenocarcinoma	313.0	12.0	78.0
+ACH-003473	CCLF_PEDS_0013_T	Soft Tissue	ERMS	Rhabdomyosarcoma	312.0	17.0	2.0
+ACH-001396	SUM-52PE	Breast	BRCA	Invasive Breast Carcinoma	303.0	4.0	56.0
+ACH-000669	SW 900	Lung	LUSC	Non-Small Cell Lung Cancer	303.0	6.0	70.0
+ACH-000732	PE/CA-PJ41 (clone D2)	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	298.0	11.0	13.0
+ACH-001991	NZOV9	Ovary/Fallopian Tube	EOV	Ovarian Epithelial Tumor	297.0	8.0	0.0
+ACH-001328	A-431	Skin	CSCC	Cutaneous Squamous Cell Carcinoma	296.0	5.0	14.0
+ACH-000097	ZR-75-1	Breast	IDC	Invasive Breast Carcinoma	296.0	3.0	9.0
+ACH-003471	CCLF_THYR_0006_T	Thyroid	THPA	Well-Differentiated Thyroid Cancer	292.0	1.0	208.0
+ACH-000238	SCC-4	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	291.0	10.0	24.0
+ACH-000293	KLE	Uterus	UCEC	Endometrial Carcinoma	290.0	4.0	4.0
+ACH-000409	OVSAHO	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	290.0	5.0	60.0
+ACH-000091	OV56	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	286.0	3.0	0.0
+ACH-000843	HARA	Lung	LUSC	Non-Small Cell Lung Cancer	280.0	9.0	13.0
+ACH-000617	OVCAR-4	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	278.0	5.0	6.0
+ACH-000470	SW1463	Bowel	READ	Colorectal Adenocarcinoma	274.0	5.0	17.0
+ACH-000738	GB-1	CNS/Brain	GB	Diffuse Glioma	272.0	4.0	0.0
+ACH-000254	SCC-15	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	270.0	10.0	36.0
+ACH-000566	SW-1710	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	268.0	2.0	19.0
+ACH-001690	UPCI-SCC-026	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	267.0	10.0	8.0
+ACH-000762	YD-38	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	265.0	11.0	12.0
+ACH-000962	OC 314	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	262.0	18.0	12.0
+ACH-000792	BFTC-909	Kidney	RCC	Renal Cell Carcinoma	261.0	1.0	0.0
+ACH-002662	JVE-207	Bowel	COAD	Colorectal Adenocarcinoma	259.0	6.0	15.0
+ACH-000693	KYSE-180	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	259.0	7.0	40.0
+ACH-000652	SUIT-2	Pancreas	PAAD	Pancreatic Adenocarcinoma	259.0	12.0	23.0
+ACH-000356	MKN-45	Esophagus/Stomach	DSTAD	Esophagogastric Adenocarcinoma	258.0	7.0	18.0
+ACH-002886	VACO 432	Bowel	COAD	Colorectal Adenocarcinoma	257.0	6.0	48.0
+ACH-000264	Calu-6	Lung	LUAD	Non-Small Cell Lung Cancer	256.0	22.0	25.0
+ACH-000479	KNS-81	CNS/Brain	GB	Diffuse Glioma	252.0	4.0	0.0
+ACH-000986	HT115	Bowel	COAD	Colorectal Adenocarcinoma	252.0	7.0	25.0
+ACH-000886	NCI-H2009	Lung	LUAD	Non-Small Cell Lung Cancer	249.0	7.0	17.0
+ACH-001373	OV17R	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	245.0	4.0	48.0
+ACH-000026	253J-BV	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	245.0	2.0	4.0
+ACH-001460	C84	Bowel	COAD	Colorectal Adenocarcinoma	244.0	7.0	21.0
+ACH-000090	PC-3	Prostate	PRAD	Prostate Adenocarcinoma	244.0	19.0	23.0
+ACH-000272	SLR 24	Kidney	CCRCC	Renal Cell Carcinoma	244.0	2.0	10.0
+ACH-000544	OE21	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	243.0	11.0	35.0
+ACH-000058	ML-1	Thyroid	THFO	Well-Differentiated Thyroid Cancer	242.0	1.0	195.0
+ACH-000291	OV-90	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	239.0	9.0	0.0
+ACH-001423	CCLF_PEDS_0002_T	Kidney	WT	Wilms' Tumor	237.0	7.0	1.0
+ACH-001699	UPCI-SCC-131	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	236.0	8.0	10.0
+ACH-000672	IA-LM	Lung	LCLC	Non-Small Cell Lung Cancer	235.0	4.0	0.0
+ACH-000381	T84	Bowel	COAD	Colorectal Adenocarcinoma	234.0	6.0	50.0
+ACH-001456	C125PM	Bowel	COADREAD	Colorectal Adenocarcinoma	233.0	5.0	56.0
+ACH-000823	KYSE-140	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	232.0	6.0	19.0
+ACH-000903	FTC-133	Thyroid	THFO	Well-Differentiated Thyroid Cancer	230.0	1.0	0.0
+ACH-000947	OVK18	Ovary/Fallopian Tube	EOV	Ovarian Epithelial Tumor	229.0	1.0	0.0
+ACH-002524	SNU-251	Ovary/Fallopian Tube	EOV	Ovarian Epithelial Tumor	228.0	6.0	34.0
+ACH-000926	HT-55	Bowel	COAD	Colorectal Adenocarcinoma	228.0	4.0	31.0
+ACH-000845	NCI-H1373	Lung	LUAD	Non-Small Cell Lung Cancer	226.0	5.0	28.0
+ACH-000733	NCI-H1838	Lung	LUAD	Non-Small Cell Lung Cancer	224.0	4.0	13.0
+ACH-000554	UACC-893	Breast	ILC	Invasive Breast Carcinoma	218.0	4.0	0.0
+ACH-000841	NCI-H2087	Lung	LUAD	Non-Small Cell Lung Cancer	216.0	2.0	13.0
+ACH-001537	KKU-055	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	216.0	21.0	6.0
+ACH-000404	K029AX	Skin	SKCM	Melanoma	215.0	1.0	14.0
+ACH-000046	ACHN	Kidney	PRCC	Renal Cell Carcinoma	211.0	2.0	14.0
+ACH-001418	UWB1.289	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	211.0	4.0	3.0
+ACH-000524	KURAMOCHI	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	211.0	4.0	34.0
+ACH-002025	TT1TKB	Bowel	READ	Colorectal Adenocarcinoma	210.0	6.0	29.0
+ACH-000262	UOK101	Kidney	CCRCC	Renal Cell Carcinoma	210.0	3.0	13.0
+ACH-000234	Caki-2	Kidney	PRCC	Renal Cell Carcinoma	209.0	2.0	5.0
+ACH-002045	HO-1-u-1	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	207.0	6.0	6.0
+ACH-003469	CCLF_THYR_0004_T	Thyroid	THAP	Anaplastic Thyroid Cancer	207.0	3.0	0.0
+ACH-000454	HCC-95	Lung	LUSC	Non-Small Cell Lung Cancer	207.0	6.0	27.0
+ACH-001497	ESO51	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	206.0	6.0	26.0
+ACH-002041	HOTHC	Thyroid	THAP	Anaplastic Thyroid Cancer	206.0	12.0	2.0
+ACH-000836	YD-15	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	203.0	11.0	8.0
+ACH-002543	SNU-1406	Bowel	COAD	Colorectal Adenocarcinoma	202.0	6.0	17.0
+ACH-000585	EPLC-272H	Lung	LUSC	Non-Small Cell Lung Cancer	202.0	10.0	5.0
+ACH-000690	HCC-2814	Lung	LUSC	Non-Small Cell Lung Cancer	199.0	4.0	66.0
+ACH-000730	SK-MEL-5	Skin	SKCM	Melanoma	198.0	1.0	12.0
+ACH-000486	KU-19-19	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	197.0	17.0	9.0
+ACH-000115	VCaP	Prostate	PRAD	Prostate Adenocarcinoma	194.0	1.0	85.0
+ACH-000987	MeWo	Skin	SKCM	Melanoma	193.0	1.0	23.0
+ACH-001151	OVCAR-5	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	193.0	10.0	8.0
+ACH-000532	SNU-61	Bowel	READ	Colorectal Adenocarcinoma	189.0	6.0	19.0
+ACH-000341	SK-N-FI	Peripheral Nervous System	NBL	Neuroblastoma	189.0	3.0	8.0
+ACH-000574	FU-OV-1	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	187.0	11.0	13.0
+ACH-002922	SK-N-MM	Peripheral Nervous System	NBL	Neuroblastoma	185.0	3.0	160.0
+ACH-001301	COG-N-278	Peripheral Nervous System	NBL	Neuroblastoma	185.0	3.0	1.0
+ACH-000019	MCF7	Breast	BRCA	Invasive Breast Carcinoma	184.0	3.0	21.0
+ACH-000450	MEL-HO	Skin	MEL	Melanoma	182.0	1.0	32.0
+ACH-000317	TUHR14TKB	Kidney	RCC	Renal Cell Carcinoma	182.0	2.0	1.0
+ACH-000016	SLR 21	Kidney	CCRCC	Renal Cell Carcinoma	181.0	2.0	24.0
+ACH-000457	CAL-54	Kidney	RCC	Renal Cell Carcinoma	181.0	2.0	134.0
+ACH-000860	NCI-H358	Lung	LUAD	Non-Small Cell Lung Cancer	181.0	4.0	7.0
+ACH-000809	KYSE-410	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	179.0	5.0	42.0
+ACH-001408	UM-UC-14	Bladder/Urinary Tract	UCU	Urethral Cancer	177.0	3.0	23.0
+ACH-001354	LAN-2	Peripheral Nervous System	NBL	Neuroblastoma	177.0	6.0	0.0
+ACH-000875	NCI-H2347	Lung	LUAD	Non-Small Cell Lung Cancer	176.0	4.0	9.0
+ACH-001188	SH-SY5Y	Peripheral Nervous System	NBL	Neuroblastoma	176.0	4.0	1.0
+ACH-000260	SK-N-AS	Peripheral Nervous System	NBL	Neuroblastoma	174.0	3.0	8.0
+ACH-000623	SNU-201	CNS/Brain	GB	Diffuse Glioma	172.0	5.0	4.0
+ACH-000456	B-CPAP	Thyroid	THPD	Poorly Differentiated Thyroid Cancer	172.0	1.0	0.0
+ACH-001641	SAT	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	172.0	5.0	7.0
+ACH-000800	NCI-H446	Lung	SCLC	Lung Neuroendocrine Tumor	170.0	5.0	5.0
+ACH-002080	TN-2	Peripheral Nervous System	NBL	Neuroblastoma	170.0	4.0	9.0
+ACH-001183	RT112/84	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	169.0	3.0	59.0
+ACH-001403	TO14	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	167.0	4.0	4.0
+ACH-000596	LCLC-97TM1	Lung	LCLC	Non-Small Cell Lung Cancer	167.0	3.0	19.0
+ACH-001481	CHLA-90	Peripheral Nervous System	NBL	Neuroblastoma	166.0	5.0	0.0
+ACH-000127	SLR 20	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	165.0	17.0	5.0
+ACH-000562	HCC-78	Lung	LUAD	Non-Small Cell Lung Cancer	164.0	2.0	21.0
+ACH-000997	HCT-15	Bowel	COAD	Colorectal Adenocarcinoma	164.0	9.0	2.0
+ACH-003120	NCI-H1607	Lung	SCLC	Lung Neuroendocrine Tumor	159.0	8.0	47.0
+ACH-001692	UPCI-SCC-040	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	159.0	5.0	57.0
+ACH-000256	COV318	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	159.0	4.0	21.0
+ACH-000804	NB-1	Peripheral Nervous System	NBL	Neuroblastoma	158.0	4.0	2.0
+ACH-002283	NB5	Peripheral Nervous System	NBL	Neuroblastoma	158.0	3.0	0.0
+ACH-000473	RT-112	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	158.0	3.0	32.0
+ACH-001061	DLD-1	Bowel	COAD	Colorectal Adenocarcinoma	157.0	9.0	6.0
+ACH-000143	HCC2429	Lung	NUTCL	Non-Small Cell Lung Cancer	157.0	9.0	1.0
+ACH-000263	KASUMI-1	Myeloid	AML	Acute Myeloid Leukemia	156.0	3.0	30.0
+ACH-002039	PK-8	Pancreas	PAAD	Pancreatic Adenocarcinoma	156.0	3.0	2.0
+ACH-001350	HTC-C3	Thyroid	THAP	Anaplastic Thyroid Cancer	156.0	1.0	0.0
+ACH-000638	NCI-H441	Lung	LUAD	Non-Small Cell Lung Cancer	156.0	2.0	15.0
+ACH-000796	MCAS	Ovary/Fallopian Tube	MOV	Ovarian Epithelial Tumor	154.0	12.0	9.0
+ACH-001332	BICR 78	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	154.0	7.0	26.0
+ACH-001302	COG-N-305	Peripheral Nervous System	NBL	Neuroblastoma	154.0	4.0	1.0
+ACH-001521	HKA-1	Skin	CSCC	Cutaneous Squamous Cell Carcinoma	151.0	6.0	1.0
+ACH-000438	Lu-65	Lung	GCLC	Non-Small Cell Lung Cancer	151.0	13.0	6.0
+ACH-000259	KELLY	Peripheral Nervous System	NBL	Neuroblastoma	150.0	3.0	3.0
+ACH-001510	H376	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	150.0	12.0	36.0
+ACH-000917	TE-4	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	149.0	12.0	11.0
+ACH-000349	HCC1500	Breast	DCIS	Breast Ductal Carcinoma In Situ	149.0	2.0	8.0
+ACH-001647	SHI-1	Myeloid	AMOL	Acute Myeloid Leukemia	149.0	3.0	18.0
+ACH-000099	SIMA	Peripheral Nervous System	NBL	Neuroblastoma	149.0	4.0	2.0
+ACH-002499	UACC-3199	Breast	IDC	Invasive Breast Carcinoma	148.0	4.0	50.0
+ACH-000725	HCC202	Breast	DCIS	Breast Ductal Carcinoma In Situ	147.0	3.0	0.0
+ACH-001765	Rh4	Soft Tissue	ARMS	Rhabdomyosarcoma	147.0	7.0	19.0
+ACH-000276	HCC38	Breast	IDC	Invasive Breast Carcinoma	147.0	5.0	33.0
+ACH-000502	TCC-PAN2	Pancreas	PAAD	Pancreatic Adenocarcinoma	147.0	7.0	11.0
+ACH-000824	KYSE-510	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	147.0	11.0	16.0
+ACH-000065	OCI-AML5	Myeloid	AML	Acute Myeloid Leukemia	146.0	3.0	15.0
+ACH-001374	PA-1 [PA1]	Ovary/Fallopian Tube	OMGCT	Ovarian Germ Cell Tumor	146.0	5.0	6.0
+ACH-001394	SUM-229PE	Breast	BRCA	Invasive Breast Carcinoma	146.0	12.0	21.0
+ACH-001458	C75	Bowel	COAD	Colorectal Adenocarcinoma	146.0	4.0	9.0
+ACH-000933	SNU-324	Pancreas	PAAD	Pancreatic Adenocarcinoma	146.0	3.0	14.0
+ACH-000985	LS411N	Bowel	COAD	Colorectal Adenocarcinoma	145.0	5.0	4.0
+ACH-000321	MOLM-6	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	144.0	2.0	18.0
+ACH-000295	EM-2	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	143.0	3.0	19.0
+ACH-000810	SK-MEL-30	Skin	SKCM	Melanoma	143.0	1.0	17.0
+ACH-000930	HCC1569	Breast	IDC	Invasive Breast Carcinoma	143.0	3.0	3.0
+ACH-000498	KO52	Myeloid	AML	Acute Myeloid Leukemia	142.0	2.0	41.0
+ACH-000834	UM-UC-1	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	141.0	3.0	2.0
+ACH-000607	KYM-1	Soft Tissue	ERMS	Rhabdomyosarcoma	141.0	9.0	0.0
+ACH-000012	HCC-827	Lung	LUAD	Non-Small Cell Lung Cancer	140.0	6.0	7.0
+ACH-000455	LN-428	CNS/Brain	GB	Diffuse Glioma	140.0	22.0	8.0
+ACH-000718	NCI-H2291	Lung	LUAD	Non-Small Cell Lung Cancer	139.0	2.0	4.0
+ACH-000902	CAL-148	Breast	IDC	Invasive Breast Carcinoma	139.0	4.0	0.0
+ACH-000593	BC-3C	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	139.0	6.0	2.0
+ACH-000579	UACC-257	Skin	MEL	Melanoma	139.0	1.0	24.0
+ACH-000353	TE-15	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	139.0	5.0	12.0
+ACH-000934	MDA-MB-361	Breast	BRCA	Invasive Breast Carcinoma	138.0	3.0	74.0
+ACH-002040	HMV-II	Vulva/Vagina	VMM	Mucosal Melanoma of the Vulva/Vagina	138.0	1.0	8.0
+ACH-000878	HCC-15	Lung	LUSC	Non-Small Cell Lung Cancer	138.0	6.0	10.0
+ACH-000893	NCI-H1651	Lung	LUAD	Non-Small Cell Lung Cancer	135.0	7.0	0.0
+ACH-000552	HT-29	Bowel	COAD	Colorectal Adenocarcinoma	133.0	4.0	4.0
+ACH-000111	HCC1187	Breast	IDC	Invasive Breast Carcinoma	133.0	4.0	0.0
+ACH-000312	SK-N-BE(2)	Peripheral Nervous System	NBL	Neuroblastoma	133.0	1.0	9.0
+ACH-000715	SNU-1214	Head and Neck	LXSC	Head and Neck Squamous Cell Carcinoma	132.0	4.0	25.0
+ACH-000966	IGROV1	Ovary/Fallopian Tube	EOV	Ovarian Epithelial Tumor	131.0	7.0	7.0
+ACH-001664	SNU-638	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	130.0	16.0	9.0
+ACH-000963	CCK-81	Bowel	COAD	Colorectal Adenocarcinoma	129.0	5.0	7.0
+ACH-000892	NCI-H1563	Lung	LUAD	Non-Small Cell Lung Cancer	129.0	5.0	9.0
+ACH-000160	BT-12	CNS/Brain	ATRT	Embryonal Tumor	128.0	21.0	16.0
+ACH-000142	CAL-29	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	128.0	3.0	10.0
+ACH-000846	FaDu	Head and Neck	HPHSC	Head and Neck Squamous Cell Carcinoma	127.0	8.0	13.0
+ACH-001409	UM-UC-16	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	127.0	3.0	0.0
+ACH-000996	HEC-251	Uterus	UCEC	Endometrial Carcinoma	127.0	7.0	21.0
+ACH-001465	CHLA-136	Peripheral Nervous System	NBL	Neuroblastoma	126.0	5.0	33.0
+ACH-002942	CCLF_RARE_0004_T	Soft Tissue	LMS	Leiomyosarcoma	126.0	5.0	37.0
+ACH-002048	RMS-YM	Soft Tissue	ERMS	Rhabdomyosarcoma	125.0	9.0	28.0
+ACH-000132	JHOS-2	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	125.0	3.0	5.0
+ACH-000950	LoVo	Bowel	COAD	Colorectal Adenocarcinoma	124.0	4.0	14.0
+ACH-002651	FKH-1	Myeloid	AML	Acute Myeloid Leukemia	124.0	2.0	1.0
+ACH-000676	LN-464	CNS/Brain	GB	Diffuse Glioma	124.0	1.0	14.0
+ACH-000136	CHP-126	Peripheral Nervous System	NBL	Neuroblastoma	124.0	1.0	1.0
+ACH-000791	RERF-LC-Ad1	Lung	LUAD	Non-Small Cell Lung Cancer	123.0	2.0	14.0
+ACH-000828	ZR-75-30	Breast	ILC	Invasive Breast Carcinoma	123.0	3.0	0.0
+ACH-001459	C80	Bowel	READ	Colorectal Adenocarcinoma	123.0	3.0	33.0
+ACH-001683	UACC-3133	Breast	ILC	Invasive Breast Carcinoma	122.0	3.0	18.0
+ACH-001672	Tera-2	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	122.0	3.0	11.0
+ACH-000988	MFE-319	Uterus	UASC	Endometrial Carcinoma	120.0	8.0	29.0
+ACH-001346	H103	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	119.0	6.0	0.0
+ACH-002291	NTERA-2 cl.D1	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	119.0	3.0	3.0
+ACH-000423	SK-MEL-3	Skin	SKCM	Melanoma	119.0	1.0	9.0
+ACH-001625	OSC-19	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	118.0	6.0	1.0
+ACH-000699	HCC1395	Breast	IDC	Invasive Breast Carcinoma	118.0	5.0	3.0
+ACH-000994	HEC-59	Uterus	UCEC	Endometrial Carcinoma	117.0	7.0	16.0
+ACH-000374	HCC1143	Breast	IDC	Invasive Breast Carcinoma	117.0	4.0	11.0
+ACH-000313	KMRC-3	Kidney	CCRCC	Renal Cell Carcinoma	117.0	2.0	0.0
+ACH-001578	NCCIT	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	117.0	3.0	11.0
+ACH-000100	RH-41	Soft Tissue	ARMS	Rhabdomyosarcoma	117.0	5.0	5.0
+ACH-002659	JVE-127	Bowel	MACR	Colorectal Adenocarcinoma	117.0	5.0	7.0
+ACH-000832	CAL 27	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	116.0	6.0	4.0
+ACH-000885	TOV-21G	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	116.0	5.0	1.0
+ACH-000330	EFM-19	Breast	IDC	Invasive Breast Carcinoma	116.0	2.0	16.0
+ACH-001096	JR	Soft Tissue	ARMS	Rhabdomyosarcoma	115.0	6.0	2.0
+ACH-000582	COLO 741	Skin	MEL	Melanoma	115.0	1.0	11.0
+ACH-000428	UO-31	Kidney	RCC	Renal Cell Carcinoma	115.0	2.0	1.0
+ACH-003265	CCLF_RARE_0010_T	Soft Tissue	LMS	Leiomyosarcoma	115.0	6.0	0.0
+ACH-000138	CFPAC-1	Pancreas	PAAD	Pancreatic Adenocarcinoma	114.0	7.0	40.0
+ACH-000318	TE-10	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	113.0	10.0	11.0
+ACH-000887	SF-172	CNS/Brain	GB	Diffuse Glioma	112.0	15.0	10.0
+ACH-000384	SW 780	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	112.0	3.0	10.0
+ACH-001577	MUTZ-8	Myeloid	AML	Acute Myeloid Leukemia	112.0	2.0	7.0
+ACH-001518	HEC-116	Uterus	UCEC	Endometrial Carcinoma	111.0	9.0	3.0
+ACH-001440	833KE	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	111.0	2.0	20.0
+ACH-001196	SMS-CTR	Soft Tissue	ERMS	Rhabdomyosarcoma	111.0	3.0	28.0
+ACH-001382	PACADD-188	Pancreas	PAAD	Pancreatic Adenocarcinoma	109.0	6.0	12.0
+ACH-000227	KP-N-YN	Peripheral Nervous System	NBL	Neuroblastoma	109.0	1.0	25.0
+ACH-000196	HCC1599	Breast	IDC	Invasive Breast Carcinoma	109.0	5.0	6.0
+ACH-000159	OS-RC-2	Kidney	CCRCC	Renal Cell Carcinoma	109.0	1.0	4.0
+ACH-001671	Tera-1	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	109.0	2.0	41.0
+ACH-000736	SNU-601	Esophagus/Stomach	SSRCC	Esophagogastric Adenocarcinoma	109.0	5.0	25.0
+ACH-002471	OS052	Bone	OS	Osteosarcoma	109.0	3.0	0.0
+ACH-001437	1618-K	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	108.0	2.0	17.0
+ACH-001340	COV413A	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	108.0	4.0	33.0
+ACH-001300	CHLA-15	Peripheral Nervous System	NBL	Neuroblastoma	108.0	1.0	9.0
+ACH-000961	Ishikawa (Heraklio) 02 ER-	Uterus	UCEC	Endometrial Carcinoma	108.0	7.0	27.0
+ACH-000636	RPMI-8402	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	107.0	1.0	3.0
+ACH-002932	CCLF_NEURO_0001_T	Bowel	COADREAD	Colorectal Adenocarcinoma	107.0	5.0	11.0
+ACH-000523	NCI-H1184	Lung	SCLC	Lung Neuroendocrine Tumor	107.0	6.0	0.0
+ACH-000942	HPB-ALL	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	107.0	1.0	5.0
+ACH-001751	Rh36	Soft Tissue	ERMS	Rhabdomyosarcoma	107.0	3.0	7.0
+ACH-001668	SUSA	Testis	TT	Non-Seminomatous Germ Cell Tumor	106.0	2.0	8.0
+ACH-000787	LXF-289	Lung	LUAD	Non-Small Cell Lung Cancer	106.0	2.0	0.0
+ACH-000981	DND-41	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	106.0	1.0	34.0
+ACH-000964	MOLT-3	Lymphoid	ATLL	Mature T and NK Neoplasms	106.0	1.0	46.0
+ACH-001502	GCT-27	Testis	TT	Non-Seminomatous Germ Cell Tumor	106.0	2.0	4.0
+ACH-003464	CCLF_NPDX_0008_T	Soft Tissue	LIPO	Liposarcoma	106.0	8.0	24.0
+ACH-000235	Panc 04.03	Pancreas	PAAD	Pancreatic Adenocarcinoma	106.0	7.0	2.0
+ACH-001411	UM-UC-5	Bladder/Urinary Tract	BLSC	Bladder Squamous Cell Carcinoma	106.0	3.0	3.0
+ACH-000101	KE-37	Lymphoid	ATLL	Mature T and NK Neoplasms	105.0	1.0	3.0
+ACH-000166	Kasumi-6	Myeloid	AML	Acute Myeloid Leukemia	105.0	2.0	14.0
+ACH-000045	MV4-11	Myeloid	AML	Acute Myeloid Leukemia	105.0	2.0	18.0
+ACH-001461	C99	Bowel	READ	Colorectal Adenocarcinoma	105.0	3.0	4.0
+ACH-000407	SNU-685	Uterus	UCS	Endometrial Carcinoma	104.0	16.0	6.0
+ACH-000307	PK-1	Pancreas	PAAD	Pancreatic Adenocarcinoma	103.0	4.0	3.0
+ACH-000722	SNU-C1	Bowel	COAD	Colorectal Adenocarcinoma	103.0	4.0	0.0
+ACH-003470	CCLF_THYR_0005_T	Thyroid	THAP	Anaplastic Thyroid Cancer	102.0	18.0	19.0
+ACH-002653	JIH-5	Myeloid	ALAL	Acute Leukemias of Ambiguous Lineage	102.0	2.0	29.0
+ACH-000584	JHOS-4	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	101.0	4.0	3.0
+ACH-003268	CCLF_RARE_0022_T	Soft Tissue	LMS	Leiomyosarcoma	101.0	3.0	21.0
+ACH-001412	UM-UC-10	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	101.0	8.0	3.0
+ACH-002446	CCLF_UPGI_0005_T	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	101.0	6.0	66.0
+ACH-000372	P12-ICHIKAWA	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	101.0	1.0	1.0
+ACH-000103	Caov-4	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	101.0	1.0	2.0
+ACH-000198	EOL-1	Myeloid	CELNOS	Myeloproliferative Neoplasms	100.0	3.0	10.0
+ACH-001113	LC-1/sq-SF	Lung	LUSC	Non-Small Cell Lung Cancer	100.0	4.0	17.0
+ACH-000972	HEC-151	Uterus	UCEC	Endometrial Carcinoma	100.0	8.0	4.0
+ACH-000471	Li-7	Liver	HCC	Hepatocellular Carcinoma	99.0	6.0	2.0
+ACH-000149	SK-N-SH	Peripheral Nervous System	NBL	Neuroblastoma	99.0	4.0	8.0
+ACH-000578	HCC-1171	Lung	LUAD	Non-Small Cell Lung Cancer	99.0	5.0	2.0
+ACH-001820	COLO 824	Breast	BNNOS	Breast Neoplasm, NOS	99.0	6.0	14.0
+ACH-000492	MUTZ-5	Lymphoid	BLLBCRABL1L	B-Lymphoblastic Leukemia/Lymphoma	99.0	1.0	13.0
+ACH-003267	CCLF_RARE_0009_T	Soft Tissue	LMS	Leiomyosarcoma	98.0	3.0	7.0
+ACH-000112	SIG-M5	Myeloid	AMOL	Acute Myeloid Leukemia	97.0	3.0	1.0
+ACH-000683	SNU-503	Bowel	READ	Colorectal Adenocarcinoma	97.0	4.0	4.0
+ACH-000772	TE 441.T	Soft Tissue		CIC-DUX4 Sarcoma	97.0	5.0	0.0
+ACH-000137	8-MG-BA	CNS/Brain	GB	Diffuse Glioma	96.0	1.0	0.0
+ACH-000197	TALL-1	Lymphoid	ATLL	Mature T and NK Neoplasms	96.0	1.0	10.0
+ACH-000251	NCI-H2887	Lung	NSCLC	Non-Small Cell Lung Cancer	95.0	8.0	2.0
+ACH-001522	HMY-1	Skin	MEL	Melanoma	95.0	1.0	4.0
+ACH-000354	Capan-1	Pancreas	PAAD	Pancreatic Adenocarcinoma	94.0	5.0	17.0
+ACH-000825	HOP-92	Lung	NSCLC	Non-Small Cell Lung Cancer	94.0	3.0	0.0
+ACH-000978	EN	Uterus	UCEC	Endometrial Carcinoma	93.0	10.0	2.0
+ACH-001209	TOM-1	Lymphoid	BLLBCRABL1	B-Lymphoblastic Leukemia/Lymphoma	92.0	1.0	5.0
+ACH-000507	KE-39	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	92.0	3.0	2.0
+ACH-000252	LS1034	Bowel	COAD	Colorectal Adenocarcinoma	91.0	3.0	6.0
+ACH-002014	Mel270	Eye	UM	Ocular Melanoma	91.0	2.0	3.0
+ACH-000344	SNU-668	Esophagus/Stomach	DSTAD	Esophagogastric Adenocarcinoma	91.0	9.0	9.0
+ACH-000345	KP-N-RT-BM-1	Peripheral Nervous System	NBL	Neuroblastoma	91.0	1.0	25.0
+ACH-001786	SNU-1544	Bowel	COAD	Colorectal Adenocarcinoma	90.0	5.0	0.0
+ACH-002010	MP41	Eye	UM	Ocular Melanoma	90.0	2.0	3.0
+ACH-003474	CCLF_HNSC_0001_T	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	90.0	11.0	21.0
+ACH-000203	NH-6	Peripheral Nervous System	NBL	Neuroblastoma	90.0	1.0	13.0
+ACH-002533	SNU-482	Kidney	RCC	Renal Cell Carcinoma	90.0	2.0	2.0
+ACH-000460	SNU-8	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	90.0	2.0	4.0
+ACH-001975	MM576	Skin	MEL	Melanoma	90.0	1.0	5.0
+ACH-000610	NCI-H2227	Lung	SCLC	Lung Neuroendocrine Tumor	89.0	7.0	0.0
+ACH-000210	CADO-ES1	Bone	ES	Ewing Sarcoma	89.0	6.0	0.0
+ACH-002409	CCLF_NEURO_0006_T	CNS/Brain	GB	Diffuse Glioma	89.0	9.0	4.0
+ACH-000973	639-V	Bladder/Urinary Tract	UCU	Urethral Cancer	89.0	16.0	1.0
+ACH-000489	SW1116	Bowel	COAD	Colorectal Adenocarcinoma	88.0	5.0	21.0
+ACH-000337	NCI-H3122	Lung	LUAD	Non-Small Cell Lung Cancer	88.0	1.0	48.0
+ACH-001656	SKNO-1	Myeloid	AM	Acute Myeloid Leukemia	88.0	2.0	10.0
+ACH-000675	NCI-H1734	Lung	LUAD	Non-Small Cell Lung Cancer	88.0	4.0	18.0
+ACH-000107	Capan-2	Pancreas	PAAD	Pancreatic Adenocarcinoma	88.0	7.0	2.0
+ACH-000805	COLO-679	Skin	SKCM	Melanoma	88.0	1.0	9.0
+ACH-001554	mel-202	Eye	UM	Ocular Melanoma	87.0	2.0	9.0
+ACH-000849	MDA-MB-468	Breast	BRCA	Invasive Breast Carcinoma	87.0	5.0	2.0
+ACH-000728	KASUMI-2	Lymphoid	BLLTCF3PBX1	B-Lymphoblastic Leukemia/Lymphoma	87.0	1.0	8.0
+ACH-000062	RERF-LC-MS	Lung	LUAD	Non-Small Cell Lung Cancer	87.0	7.0	0.0
+ACH-001740	RH28	Soft Tissue	ARMS	Rhabdomyosarcoma	87.0	3.0	0.0
+ACH-000002	HL-60	Myeloid	AML	Acute Myeloid Leukemia	87.0	3.0	22.0
+ACH-002011	MP46	Eye	UM	Ocular Melanoma	87.0	2.0	0.0
+ACH-000081	GDM-1	Myeloid	AML	Acute Myeloid Leukemia	87.0	2.0	3.0
+ACH-001229	UPCI-SCC-154	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	86.0	5.0	4.0
+ACH-000969	KM12	Bowel	COAD	Colorectal Adenocarcinoma	86.0	5.0	17.0
+ACH-000874	RS4;11	Lymphoid	BLLKMT2A	B-Lymphoblastic Leukemia/Lymphoma	86.0	2.0	12.0
+ACH-002925	UPMM3	Eye	UM	Ocular Melanoma	86.0	2.0	11.0
+ACH-000022	PA-TU-8988S	Pancreas	PAAD	Pancreatic Adenocarcinoma	86.0	3.0	17.0
+ACH-000303	SNU-5	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	86.0	6.0	1.0
+ACH-002927	UPMD2	Eye	UM	Ocular Melanoma	84.0	2.0	21.0
+ACH-000070	697	Lymphoid	BLLTCF3PBX1	B-Lymphoblastic Leukemia/Lymphoma	84.0	1.0	3.0
+ACH-000872	HCC515	Lung	LUAD	Non-Small Cell Lung Cancer	84.0	7.0	6.0
+ACH-000900	NCI-H23	Lung	LUAD	Non-Small Cell Lung Cancer	84.0	20.0	11.0
+ACH-000383	OE33	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	84.0	7.0	3.0
+ACH-000464	CAS-1	CNS/Brain	GB	Diffuse Glioma	83.0	13.0	5.0
+ACH-001745	RhJT	Soft Tissue	ARMS	Rhabdomyosarcoma	83.0	2.0	22.0
+ACH-001676	Ty-82	Head and Neck	NMCHN	Head and Neck Carcinoma, Other	82.0	3.0	0.0
+ACH-002060	MY	Myeloid	ALAL	Acute Leukemias of Ambiguous Lineage	82.0	1.0	10.0
+ACH-001277	Yamato	Soft Tissue	SYNS	Synovial Sarcoma	82.0	9.0	21.0
+ACH-000239	HuG1-N	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	82.0	3.0	17.0
+ACH-002687	WM3772F	Eye	UM	Ocular Melanoma	82.0	2.0	23.0
+ACH-001547	LO68	Pleura	PLEMESO	Pleural Mesothelioma	81.0	3.0	7.0
+ACH-000590	NCI-H2073	Lung	LUAD	Non-Small Cell Lung Cancer	81.0	10.0	10.0
+ACH-001228	UPCI-SCC-152	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	81.0	4.0	4.0
+ACH-001048	COV504	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	81.0	4.0	0.0
+ACH-000378	NCI-H647	Lung	LUAS	Non-Small Cell Lung Cancer	81.0	7.0	18.0
+ACH-003269	CCLF_RARE_0019_T	Soft Tissue	LMS	Leiomyosarcoma	81.0	3.0	46.0
+ACH-002419	CCLF_OVPA_0001_T	Uterus	UCS	Endometrial Carcinoma	81.0	12.0	17.0
+ACH-002438	CCLF_PEDS_0026_T	Kidney	WT	Wilms' Tumor	81.0	13.0	8.0
+ACH-000619	PE/CA-PJ15	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	80.0	8.0	12.0
+ACH-001688	UM-RC-7	Kidney	RCC	Renal Cell Carcinoma	80.0	2.0	20.0
+ACH-002433	CCLF_PEDS_0019_T	Bone	OS	Osteosarcoma	78.0	11.0	15.0
+ACH-003437	CCLF_UPGI_0078_T	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	78.0	6.0	16.0
+ACH-000034	PLB-985	Myeloid	AML	Acute Myeloid Leukemia	78.0	3.0	10.0
+ACH-000465	SK-MEL-1	Skin	MEL	Melanoma	78.0	1.0	2.0
+ACH-002005	SK-MEL-19	Skin	SKCM	Melanoma	78.0	1.0	4.0
+ACH-001651	SKG-I	Cervix	CESC	Cervical Squamous Cell Carcinoma	77.0	13.0	3.0
+ACH-000620	JHH-1	Liver	HCC	Hepatocellular Carcinoma	77.0	7.0	1.0
+ACH-000970	SNU-C5	Bowel	COAD	Colorectal Adenocarcinoma	76.0	7.0	8.0
+ACH-000929	NCI-H2110	Lung	NSCLC	Non-Small Cell Lung Cancer	76.0	2.0	17.0
+ACH-001441	92-1	Eye	UM	Ocular Melanoma	76.0	2.0	16.0
+ACH-001385	RPMI 2650	Head and Neck	NMCHN	Head and Neck Carcinoma, Other	76.0	20.0	6.0
+ACH-000362	MOLM-13	Myeloid	AML	Acute Myeloid Leukemia	75.0	2.0	11.0
+ACH-000705	LC-1F	Lung	LUSC	Non-Small Cell Lung Cancer	75.0	4.0	1.0
+ACH-000911	NUGC-3	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	75.0	14.0	0.0
+ACH-000694	TE-9	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	75.0	5.0	12.0
+ACH-001653	SK-GT-2	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	75.0	9.0	5.0
+ACH-001838	ICC12	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	75.0	11.0	1.0
+ACH-002937	CCLF_PEDS_0020_T	Kidney	WT	Wilms' Tumor	74.0	5.0	24.0
+ACH-001626	OSC-20	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	74.0	5.0	0.0
+ACH-000536	BT-20	Breast	IDC	Invasive Breast Carcinoma	74.0	5.0	9.0
+ACH-003101	Z-119	Lymphoid	BLLBCRABL1	B-Lymphoblastic Leukemia/Lymphoma	74.0	1.0	18.0
+ACH-000212	CAL-120	Breast	BRCA	Invasive Breast Carcinoma	74.0	13.0	1.0
+ACH-000980	NCI-H1155	Lung	LCLC	Non-Small Cell Lung Cancer	74.0	10.0	1.0
+ACH-000386	KG-1	Myeloid	AML	Acute Myeloid Leukemia	74.0	2.0	3.0
+ACH-000320	PSN1	Pancreas	PAAD	Pancreatic Adenocarcinoma	73.0	7.0	0.0
+ACH-000411	769-P	Kidney	CCRCC	Renal Cell Carcinoma	73.0	2.0	5.0
+ACH-001053	D425	CNS/Brain	MBL	Embryonal Tumor	73.0	3.0	0.0
+ACH-000242	RT4	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	73.0	2.0	8.0
+ACH-002924	UPMM2	Eye	UM	Ocular Melanoma	73.0	2.0	1.0
+ACH-000105	ALL-SIL	Lymphoid	ATLL	Mature T and NK Neoplasms	73.0	1.0	0.0
+ACH-002647	CCC-5	Biliary Tract	CHOL	Intraductal Papillary Neoplasm of the Bile Duct	72.0	5.0	1.0
+ACH-001395	SUM-44PE	Breast	ILC	Invasive Breast Carcinoma	72.0	3.0	10.0
+ACH-000866	NCI-H1048	Lung	SCLC	Lung Neuroendocrine Tumor	72.0	10.0	6.0
+ACH-000392	Calu-3	Lung	LUAD	Non-Small Cell Lung Cancer	71.0	8.0	15.0
+ACH-001698	UPCI-SCC-116	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	71.0	11.0	17.0
+ACH-000029	HCC-827-GR5	Lung	LUAD	Non-Small Cell Lung Cancer	71.0	2.0	0.0
+ACH-002669	KP-363T	Bowel	COAD	Colorectal Adenocarcinoma	71.0	12.0	3.0
+ACH-000266	SNU-213	Pancreas	PAAD	Pancreatic Adenocarcinoma	71.0	8.0	4.0
+ACH-000953	SUP-T1	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	70.0	1.0	1.0
+ACH-000066	HCC4006	Lung	LUAD	Non-Small Cell Lung Cancer	70.0	3.0	6.0
+ACH-000915	IPC-298	Skin	SKCM	Melanoma	70.0	1.0	4.0
+ACH-001513	HCA-1	Cervix	ECAD	Cervical Adenocarcinoma	69.0	14.0	4.0
+ACH-000793	KATO III	Esophagus/Stomach	SSRCC	Esophagogastric Adenocarcinoma	69.0	4.0	1.0
+ACH-001598	NCI-H295R	Adrenal Gland	ACC	Adrenocortical Carcinoma	69.0	2.0	68.0
+ACH-000726	TE-14	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	69.0	5.0	4.0
+ACH-000124	OCI-LY-19	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	69.0	1.0	5.0
+ACH-000869	NCI-H1568	Lung	LUAD	Non-Small Cell Lung Cancer	69.0	8.0	2.0
+ACH-000569	IST-MES1	Pleura	PLEMESO	Pleural Mesothelioma	69.0	1.0	6.0
+ACH-001630	PEO1	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	69.0	2.0	15.0
+ACH-000650	IGR-37	Skin	MEL	Melanoma	68.0	1.0	10.0
+ACH-000587	NCI-H1975	Lung	LUAD	Non-Small Cell Lung Cancer	68.0	6.0	2.0
+ACH-002475	HAP1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	68.0	11.0	1.0
+ACH-000192	MFE-280	Uterus	UCEC	Endometrial Carcinoma	68.0	8.0	0.0
+ACH-000113	OCI-AML2	Myeloid	AML	Acute Myeloid Leukemia	68.0	2.0	4.0
+ACH-000931	HMCB	Skin	MEL	Melanoma	68.0	9.0	0.0
+ACH-000989	SNU-175	Bowel	MACR	Colorectal Adenocarcinoma	67.0	5.0	2.0
+ACH-001613	OCI-AML4	Myeloid	AML	Acute Myeloid Leukemia	67.0	2.0	0.0
+ACH-000207	Detroit 562	Head and Neck	OPHSC	Head and Neck Squamous Cell Carcinoma	67.0	5.0	5.0
+ACH-000094	HPAF-II	Pancreas	PAAD	Pancreatic Adenocarcinoma	67.0	5.0	3.0
+ACH-001303	NB-1643	Peripheral Nervous System	NBL	Neuroblastoma	67.0	2.0	6.0
+ACH-000294	NB-4	Myeloid	AML	Acute Myeloid Leukemia	67.0	2.0	5.0
+ACH-001415	UM-UC7	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	67.0	1.0	9.0
+ACH-000746	GSS	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	66.0	9.0	1.0
+ACH-000364	U-2 OS	Bone	OS	Osteosarcoma	66.0	17.0	5.0
+ACH-000331	IST-MES2	Pleura	PLEMESO	Pleural Mesothelioma	66.0	1.0	22.0
+ACH-002013	MM28	Eye	UM	Ocular Melanoma	66.0	2.0	0.0
+ACH-001702	VA-ES-BJ	Soft Tissue	EPIS	Epithelioid Sarcoma	66.0	3.0	0.0
+ACH-002544	SNU-1750	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	65.0	7.0	1.0
+ACH-000614	RVH-421	Skin	MEL	Melanoma	65.0	1.0	4.0
+ACH-000936	EFO-27	Ovary/Fallopian Tube	MOV	Ovarian Epithelial Tumor	65.0	17.0	1.0
+ACH-001561	Mero-84	Pleura	PLBMESO	Pleural Mesothelioma	65.0	1.0	4.0
+ACH-002654	JVE-015	Bowel	COAD	Colorectal Adenocarcinoma	65.0	5.0	1.0
+ACH-001996	ICC18	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	64.0	5.0	7.0
+ACH-001684	UCSD-AML1	Myeloid	AML	Acute Myeloid Leukemia	64.0	2.0	0.0
+ACH-000250	KMRC-20	Kidney	CCRCC	Renal Cell Carcinoma	64.0	2.0	6.0
+ACH-000635	SNU-119	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	64.0	4.0	0.0
+ACH-000261	RERF-LC-AI	Lung	LUSC	Non-Small Cell Lung Cancer	64.0	14.0	2.0
+ACH-001184	SCMC-RM2	Soft Tissue	ARMS	Rhabdomyosarcoma	64.0	4.0	0.0
+ACH-000020	MHH-CALL-2	Lymphoid	BLLHYPO	B-Lymphoblastic Leukemia/Lymphoma	63.0	1.0	3.0
+ACH-001562	Mero-95	Pleura	PLEMESO	Pleural Mesothelioma	63.0	1.0	22.0
+ACH-001719	OCI-C4P	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	63.0	7.0	4.0
+ACH-000680	SW948	Bowel	COAD	Colorectal Adenocarcinoma	63.0	4.0	0.0
+ACH-000467	HCC-56	Bowel	COAD	Colorectal Adenocarcinoma	63.0	3.0	9.0
+ACH-002050	HTST	Other	EGCT	Extra Gonadal Germ Cell Tumor	63.0	8.0	3.0
+ACH-000189	RCC10RGB	Kidney	RCC	Renal Cell Carcinoma	63.0	2.0	1.0
+ACH-000720	TCCSUP	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	62.0	5.0	1.0
+ACH-002785	NCC-LMS1-C1	Soft Tissue	LMS	Leiomyosarcoma	62.0	1.0	0.0
+ACH-002043	Ca9-22	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	62.0	10.0	10.0
+ACH-000042	Panc 02.03	Pancreas	PAAD	Pancreatic Adenocarcinoma	62.0	8.0	5.0
+ACH-000667	HCC-44	Lung	LUAD	Non-Small Cell Lung Cancer	62.0	11.0	13.0
+ACH-000367	NCI-H226	Pleura	PLEMESO	Pleural Mesothelioma	62.0	1.0	4.0
+ACH-000439	ME-1	Myeloid	AML	Acute Myeloid Leukemia	62.0	2.0	15.0
+ACH-003103	Z-181	Lymphoid	BLLBCRABL1	B-Lymphoblastic Leukemia/Lymphoma	61.0	1.0	6.0
+ACH-003451	CCLF_PEDS_0048_T	Kidney	WT	Wilms' Tumor	61.0	12.0	1.0
+ACH-001145	OC 316	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	61.0	14.0	0.0
+ACH-002029	SAS	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	61.0	6.0	0.0
+ACH-000425	UACC-62	Skin	MEL	Melanoma	61.0	1.0	8.0
+ACH-001988	NZM5	Skin	MEL	Melanoma	61.0	1.0	7.0
+ACH-001986	NZM42	Skin	MEL	Melanoma	61.0	1.0	4.0
+ACH-000899	WM88	Skin	MEL	Melanoma	60.0	1.0	5.0
+ACH-001650	SISO	Cervix	CEAD	Cervical Adenocarcinoma	59.0	5.0	0.0
+ACH-001848	ICC8	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	59.0	7.0	3.0
+ACH-000928	JHUEM-1	Uterus	UCEC	Endometrial Carcinoma	59.0	5.0	3.0
+ACH-001375	PACADD-119	Pancreas	PAAD	Pancreatic Adenocarcinoma	59.0	4.0	2.0
+ACH-000882	IGR-1	Skin	MEL	Melanoma	59.0	1.0	3.0
+ACH-000557	AML-193	Myeloid	AML	Acute Myeloid Leukemia	59.0	2.0	3.0
+ACH-001275	OSA 1777	Bone	OS	Osteosarcoma	59.0	10.0	3.0
+ACH-000218	PL-21	Myeloid	AML	Acute Myeloid Leukemia	59.0	3.0	1.0
+ACH-000415	BICR 6	Head and Neck	HPHSC	Head and Neck Squamous Cell Carcinoma	58.0	10.0	2.0
+ACH-000139	Panc 03.27	Pancreas	PAAD	Pancreatic Adenocarcinoma	58.0	9.0	2.0
+ACH-001525	HT-3	Cervix	CEAD	Cervical Adenocarcinoma	58.0	8.0	1.0
+ACH-000084	MUTZ-3	Myeloid	AMLGATA2MECOM	Acute Myeloid Leukemia	58.0	2.0	0.0
+ACH-000130	NALM-19	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	58.0	1.0	3.0
+ACH-003125	ASPS-KY	Soft Tissue	ASPS	Alveolar Soft Part Sarcoma	58.0	8.0	16.0
+ACH-001164	CCLF_PEDS_0003_T	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	58.0	13.0	1.0
+ACH-001086	HeLa	Cervix	ECAD	Cervical Adenocarcinoma	58.0	12.0	4.0
+ACH-001807	LPS067	Soft Tissue	DDLS	Liposarcoma	58.0	6.0	6.0
+ACH-001711	PFSK-1	CNS/Brain	PNET	Embryonal Tumor	57.0	11.0	1.0
+ACH-001551	MCC14/2	Skin	MCC	Merkel Cell Carcinoma	57.0	14.0	12.0
+ACH-001517	HEC-1	Uterus	UCEC	Endometrial Carcinoma	57.0	6.0	5.0
+ACH-000979	DU 145	Prostate	PRAD	Prostate Adenocarcinoma	57.0	11.0	17.0
+ACH-000302	SNU-1077	Uterus	UCS	Endometrial Carcinoma	57.0	6.0	3.0
+ACH-001445	BICR 3	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	57.0	7.0	9.0
+ACH-000299	HNT-34	Myeloid	AML	Acute Myeloid Leukemia	57.0	2.0	0.0
+ACH-000322	HT-144	Skin	MEL	Melanoma	57.0	1.0	9.0
+ACH-000605	TE-6	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	57.0	3.0	7.0
+ACH-000788	A2058	Skin	MEL	Melanoma	57.0	1.0	8.0
+ACH-000865	KYSE-450	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	56.0	4.0	0.0
+ACH-000621	MDA-MB-157	Breast	IDC	Invasive Breast Carcinoma	56.0	9.0	0.0
+ACH-000880	AGS	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	56.0	3.0	0.0
+ACH-000059	SUP-B15	Lymphoid	BLLBCRABL1	B-Lymphoblastic Leukemia/Lymphoma	56.0	1.0	1.0
+ACH-000713	Caov-3	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	56.0	6.0	0.0
+ACH-002290	NKM-1	Myeloid	AML	Acute Myeloid Leukemia	56.0	3.0	6.0
+ACH-003458	CCLF_MELM_0010_T	Skin	MEL	Melanoma	56.0	1.0	4.0
+ACH-002703	OANC1	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	56.0	4.0	3.0
+ACH-001566	MM370	Skin	MEL	Melanoma	55.0	1.0	13.0
+ACH-000092	NCI-H2452	Pleura	PLBMESO	Pleural Mesothelioma	55.0	1.0	0.0
+ACH-000417	Panc 08.13	Pancreas	PAAD	Pancreatic Adenocarcinoma	55.0	6.0	1.0
+ACH-000359	MG-63	Bone	OS	Osteosarcoma	55.0	8.0	1.0
+ACH-001526	HuO9	Bone	OS	Osteosarcoma	55.0	3.0	0.0
+ACH-000181	SCC-9	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	54.0	7.0	12.0
+ACH-001391	SUM-159PT	Breast	BRCA	Invasive Breast Carcinoma	54.0	15.0	1.0
+ACH-000281	KP-2	Pancreas	PAAD	Pancreatic Adenocarcinoma	54.0	2.0	1.0
+ACH-001999	950-5-BIK	Pancreas	PAAD	Pancreatic Adenocarcinoma	54.0	4.0	3.0
+ACH-001743	RC2	Soft Tissue	ARMS	Rhabdomyosarcoma	54.0	4.0	0.0
+ACH-001380	PACADD-165	Pancreas	PAAD	Pancreatic Adenocarcinoma	53.0	8.0	0.0
+ACH-003266	CCLF_RARE_0021_T	Soft Tissue	LMS	Leiomyosarcoma	53.0	9.0	18.0
+ACH-000568	UACC-812	Breast	ILC	Invasive Breast Carcinoma	53.0	2.0	5.0
+ACH-002926	UPMD1	Eye	UM	Ocular Melanoma	53.0	2.0	3.0
+ACH-000943	RKO	Bowel	COAD	Colorectal Adenocarcinoma	53.0	14.0	8.0
+ACH-000756	GI-1	CNS/Brain	GSARC	Diffuse Glioma	53.0	13.0	2.0
+ACH-000164	PANC-1	Pancreas	PAAD	Pancreatic Adenocarcinoma	53.0	11.0	5.0
+ACH-000282	NCI-H1755	Lung	LUAD	Non-Small Cell Lung Cancer	52.0	4.0	34.0
+ACH-000168	NOMO-1	Myeloid	AMOL	Acute Myeloid Leukemia	52.0	2.0	0.0
+ACH-000858	KNS-62	Lung	LUSC	Non-Small Cell Lung Cancer	52.0	9.0	0.0
+ACH-001971	MM466	Skin	MEL	Melanoma	52.0	1.0	4.0
+ACH-001712	Hs 860.T	Bone	OS	Osteosarcoma	51.0	6.0	5.0
+ACH-000691	HCC2157	Breast	IDC	Invasive Breast Carcinoma	51.0	2.0	2.0
+ACH-000615	SK-MEL-28	Skin	SKCM	Melanoma	51.0	1.0	2.0
+ACH-000236	SW1417	Bowel	COAD	Colorectal Adenocarcinoma	51.0	4.0	6.0
+ACH-003180	NRH-UPS2	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	51.0	3.0	1.0
+ACH-000618	SNU-1041	Head and Neck	HPHSC	Head and Neck Squamous Cell Carcinoma	50.0	5.0	1.0
+ACH-000818	BT-483	Breast	IDC	Invasive Breast Carcinoma	50.0	2.0	0.0
+ACH-002660	JVE-187	Bowel	COAD	Colorectal Adenocarcinoma	50.0	5.0	0.0
+ACH-000462	NALM-1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	50.0	1.0	4.0
+ACH-002016	Mel290	Eye	UM	Ocular Melanoma	50.0	10.0	1.0
+ACH-001791	LPS6	Soft Tissue	LIPO	Liposarcoma	50.0	18.0	0.0
+ACH-001334	C-4 I	Cervix	CESC	Cervical Squamous Cell Carcinoma	49.0	9.0	5.0
+ACH-001484	CI	Lymphoid	CLLSLL	Mature B-Cell Neoplasms	49.0	10.0	9.0
+ACH-000856	CAL-51	Breast	BRCA	Invasive Breast Carcinoma	49.0	4.0	11.0
+ACH-000663	OVTOKO	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	49.0	6.0	2.0
+ACH-001632	PEO4	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	49.0	2.0	2.0
+ACH-002033	HMMME	Pleura	PLEMESO	Pleural Mesothelioma	49.0	1.0	2.0
+ACH-001982	NZM3	Skin	MEL	Melanoma	49.0	1.0	3.0
+ACH-000601	MIA PaCa-2	Pancreas	PAAD	Pancreatic Adenocarcinoma	49.0	11.0	1.0
+ACH-000228	BICR 31	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	49.0	8.0	1.0
+ACH-000080	BDCM	Myeloid	AMOL	Acute Myeloid Leukemia	49.0	9.0	19.0
+ACH-001993	NALM-16	Lymphoid	BLLHYPO	B-Lymphoblastic Leukemia/Lymphoma	48.0	1.0	0.0
+ACH-003184	NRH-LMS2	Soft Tissue	LMS	Leiomyosarcoma	48.0	11.0	0.0
+ACH-001438	1777N Rpmet	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	48.0	14.0	2.0
+ACH-000481	NCI-H2170	Lung	LUSC	Non-Small Cell Lung Cancer	48.0	6.0	4.0
+ACH-000802	BFTC-905	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	48.0	8.0	4.0
+ACH-002664	JVE-253	Bowel	MACR	Colorectal Adenocarcinoma	47.0	4.0	5.0
+ACH-000613	HOS	Bone	OS	Osteosarcoma	47.0	17.0	6.0
+ACH-000639	NCI-H211	Lung	SCLC	Lung Neuroendocrine Tumor	47.0	8.0	2.0
+ACH-000861	HOP-62	Lung	LUAD	Non-Small Cell Lung Cancer	47.0	15.0	11.0
+ACH-001960	CC-SW-1	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	47.0	6.0	1.0
+ACH-000286	SNU-1033	Bowel	READ	Colorectal Adenocarcinoma	47.0	4.0	1.0
+ACH-000085	T3M-4	Pancreas	PAAD	Pancreatic Adenocarcinoma	47.0	7.0	4.0
+ACH-001573	MOLM-1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	47.0	2.0	2.0
+ACH-003183	NRH-MFS3	Soft Tissue	MFS	Myxofibrosarcoma	47.0	7.0	1.0
+ACH-001390	SUM-149PT	Breast	IDC	Invasive Breast Carcinoma	46.0	7.0	8.0
+ACH-000435	EFE-184	Uterus	UCEC	Endometrial Carcinoma	46.0	6.0	4.0
+ACH-000801	Hs 936.T	Skin	MEL	Melanoma	46.0	1.0	4.0
+ACH-001172	U-251 MG DM	CNS/Brain	ASTR	Diffuse Glioma	46.0	11.0	0.0
+ACH-000078	MHH-NB-11	Peripheral Nervous System	NBL	Neuroblastoma	46.0	2.0	1.0
+ACH-000941	HEC-1-B	Uterus	UCEC	Endometrial Carcinoma	46.0	7.0	0.0
+ACH-002435	CCLF_PEDS_0022_T	Kidney	WT	Wilms' Tumor	46.0	6.0	4.0
+ACH-000812	COLO-783	Skin	MEL	Melanoma	45.0	1.0	3.0
+ACH-000575	HCC-364	Lung	LUAD	Non-Small Cell Lung Cancer	45.0	2.0	0.0
+ACH-000265	KP-4	Pancreas	PAAD	Pancreatic Adenocarcinoma	45.0	14.0	3.0
+ACH-000957	LS 180	Bowel	COAD	Colorectal Adenocarcinoma	45.0	4.0	1.0
+ACH-001098	KCI-MOH1	Pancreas	PAAD	Pancreatic Adenocarcinoma	45.0	6.0	2.0
+ACH-001990	NZM7	Skin	MEL	Melanoma	45.0	1.0	9.0
+ACH-003476	CCLF_HNSC_0002_T	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	45.0	8.0	0.0
+ACH-001557	Mero-41	Pleura	PLEMESO	Pleural Mesothelioma	44.0	2.0	0.0
+ACH-002796	NCC-CDS1-X3-C1	Soft Tissue		CIC-DUX4 Sarcoma	44.0	13.0	3.0
+ACH-000938	NALM-6	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	43.0	1.0	6.0
+ACH-001652	SKG-II	Cervix	CESC	Cervical Squamous Cell Carcinoma	43.0	7.0	4.0
+ACH-000007	LS513	Bowel	COAD	Colorectal Adenocarcinoma	43.0	2.0	0.0
+ACH-000441	SH-4	Skin	MEL	Melanoma	43.0	1.0	6.0
+ACH-001857	SG231	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	43.0	6.0	0.0
+ACH-001700	UPCI-SCC-172	Head and Neck	OPHSC	Head and Neck Squamous Cell Carcinoma	43.0	7.0	1.0
+ACH-000995	JURKAT	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	43.0	1.0	1.0
+ACH-000116	OAW28	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	43.0	5.0	0.0
+ACH-000686	SNU-878	Liver	HCC	Hepatocellular Carcinoma	43.0	2.0	0.0
+ACH-001347	H157	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	42.0	5.0	0.0
+ACH-003177	NRH-UPS1	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	42.0	11.0	8.0
+ACH-000490	SF767	Cervix	CESC	Cervical Squamous Cell Carcinoma	42.0	4.0	1.0
+ACH-000898	SNU-719	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	42.0	4.0	0.0
+ACH-002667	JVE-528	Bowel	COAD	Colorectal Adenocarcinoma	42.0	3.0	1.0
+ACH-000433	Caki-1	Kidney	CCRCC	Renal Cell Carcinoma	42.0	2.0	0.0
+ACH-002015	Mel285	Eye	UM	Ocular Melanoma	41.0	3.0	0.0
+ACH-000864	COLO 684	Uterus	UCEC	Endometrial Carcinoma	41.0	6.0	0.0
+ACH-000645	JL-1	Pleura	PLEMESO	Pleural Mesothelioma	41.0	1.0	0.0
+ACH-003119	NCI-H1450	Lung	SCLC	Lung Neuroendocrine Tumor	41.0	8.0	2.0
+ACH-001972	MM473	Skin	MEL	Melanoma	41.0	1.0	5.0
+ACH-001129	MONO-MAC-1	Myeloid	AMOL	Acute Myeloid Leukemia	41.0	2.0	4.0
+ACH-000779	PC-9	Lung	LUAD	Non-Small Cell Lung Cancer	41.0	8.0	1.0
+ACH-000446	KP-N-SI9s	Peripheral Nervous System	NBL	Neuroblastoma	41.0	10.0	0.0
+ACH-000389	H4	CNS/Brain	ASTR	Diffuse Glioma	40.0	2.0	0.0
+ACH-001485	CII	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	40.0	10.0	3.0
+ACH-000837	NCI-H322	Lung	LUAD	Non-Small Cell Lung Cancer	40.0	9.0	1.0
+ACH-001495	EMTOKA	Uterus	UCS	Endometrial Carcinoma	40.0	5.0	6.0
+ACH-000216	JH-EsoAd1	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	40.0	5.0	0.0
+ACH-001574	MOLM-14	Myeloid	AML	Acute Myeloid Leukemia	40.0	2.0	2.0
+ACH-002693	S462	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	40.0	11.0	1.0
+ACH-002510	M040416	Skin	ACRM	Melanoma	40.0	1.0	2.0
+ACH-000644	COLO 829	Skin	SKCM	Melanoma	40.0	1.0	5.0
+ACH-000648	NCI-H28	Pleura	PLEMESO	Pleural Mesothelioma	40.0	2.0	20.0
+ACH-000937	PF-382	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	40.0	1.0	0.0
+ACH-000311	NCI-H2122	Lung	LUAD	Non-Small Cell Lung Cancer	40.0	4.0	3.0
+ACH-000661	WM1799	Skin	MEL	Melanoma	39.0	1.0	10.0
+ACH-001983	NZM30	Skin	MEL	Melanoma	39.0	1.0	10.0
+ACH-001569	MM415	Skin	MEL	Melanoma	39.0	1.0	5.0
+ACH-000316	SNU-886	Liver	HCC	Hepatocellular Carcinoma	39.0	2.0	1.0
+ACH-000280	SNU-840	Ovary/Fallopian Tube	BTMOV	Ovarian Epithelial Tumor	39.0	9.0	1.0
+ACH-000888	NCI-H1793	Lung	LUAD	Non-Small Cell Lung Cancer	39.0	7.0	0.0
+ACH-000461	SNU-1196	Biliary Tract	EHCH	Intraductal Papillary Neoplasm of the Bile Duct	39.0	3.0	1.0
+ACH-000774	RERF-LC-Ad2	Lung	LUAD	Non-Small Cell Lung Cancer	39.0	7.0	5.0
+ACH-001193	SK-PN-DW	Bone	ES	Ewing Sarcoma	39.0	1.0	0.0
+ACH-001239	WM-266-4	Skin	MEL	Melanoma	38.0	1.0	2.0
+ACH-003455	CCLF_MELM_0004_T	Skin	MEL	Melanoma	38.0	1.0	5.0
+ACH-000076	NCO2	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	38.0	2.0	4.0
+ACH-000553	Sq-1	Lung	LUSC	Non-Small Cell Lung Cancer	38.0	4.0	0.0
+ACH-000169	RD	Soft Tissue	ERMS	Rhabdomyosarcoma	38.0	3.0	1.0
+ACH-000778	HSC-3	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	38.0	5.0	1.0
+ACH-000831	HEC-50B	Uterus	UCEC	Endometrial Carcinoma	38.0	4.0	0.0
+ACH-000422	SNU-475	Liver	HCC	Hepatocellular Carcinoma	38.0	4.0	0.0
+ACH-002019	HOKUG	Cervix	CEGCC	Glassy Cell Carcinoma of the Cervix	37.0	6.0	7.0
+ACH-000879	MFE-296	Uterus	UCEC	Endometrial Carcinoma	37.0	9.0	2.0
+ACH-001556	Mero-25	Pleura	PLBMESO	Pleural Mesothelioma	37.0	1.0	0.0
+ACH-001981	NZM2	Skin	MEL	Melanoma	37.0	1.0	5.0
+ACH-000580	C32	Skin	MEL	Melanoma	37.0	1.0	1.0
+ACH-003426	CCLF_NEURO_0046_T	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	37.0	7.0	0.0
+ACH-000984	HEC-6	Uterus	UASC	Endometrial Carcinoma	37.0	7.0	0.0
+ACH-001413	UM-UC-11	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	36.0	14.0	2.0
+ACH-001603	NH-12	Peripheral Nervous System	NBL	Neuroblastoma	36.0	1.0	6.0
+ACH-000006	MONO-MAC-6	Myeloid	AMOL	Acute Myeloid Leukemia	36.0	2.0	6.0
+ACH-000589	NCI-H1437	Lung	LUAD	Non-Small Cell Lung Cancer	36.0	1.0	15.0
+ACH-003181	NRH-LMS1	Soft Tissue	LMS	Leiomyosarcoma	36.0	7.0	1.0
+ACH-000528	ABC-1	Lung	LUAD	Non-Small Cell Lung Cancer	36.0	6.0	1.0
+ACH-000496	NCI-H1792	Lung	LUAD	Non-Small Cell Lung Cancer	36.0	5.0	0.0
+ACH-000023	PA-TU-8988T	Pancreas	PAAD	Pancreatic Adenocarcinoma	36.0	10.0	1.0
+ACH-000108	KP-3	Pancreas	PAASC	Adenosquamous Carcinoma of the Pancreas	35.0	6.0	1.0
+ACH-000555	A-498	Kidney	RCC	Renal Cell Carcinoma	35.0	2.0	0.0
+ACH-002084	MMAc	Skin	MEL	Melanoma	35.0	1.0	3.0
+ACH-000920	CML-T1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	35.0	1.0	3.0
+ACH-001976	MM603	Skin	MEL	Melanoma	35.0	1.0	4.0
+ACH-001345	GP5d	Bowel	COAD	Colorectal Adenocarcinoma	35.0	3.0	0.0
+ACH-000520	59M	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	35.0	9.0	0.0
+ACH-001796	95T1000	Soft Tissue	WDLS	Liposarcoma	34.0	10.0	7.0
+ACH-000967	SNU-C2A	Bowel	COAD	Colorectal Adenocarcinoma	34.0	4.0	0.0
+ACH-000651	SW 620	Bowel	COAD	Colorectal Adenocarcinoma	34.0	10.0	7.0
+ACH-000731	HCC-2279	Lung	LUAS	Non-Small Cell Lung Cancer	34.0	5.0	0.0
+ACH-001570	MM426	Skin	MEL	Melanoma	34.0	1.0	6.0
+ACH-000406	U-937	Myeloid	AML	Acute Myeloid Leukemia	34.0	2.0	0.0
+ACH-000431	NCI-H1694	Lung	SCLC	Lung Neuroendocrine Tumor	34.0	5.0	0.0
+ACH-000572	G-361	Skin	MEL	Melanoma	34.0	1.0	2.0
+ACH-002526	SNU-1327	Lung	LUAD	Non-Small Cell Lung Cancer	34.0	7.0	1.0
+ACH-002680	170-MG-BA	CNS/Brain	GB	Diffuse Glioma	34.0	7.0	2.0
+ACH-001416	UM-UC9	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	34.0	1.0	17.0
+ACH-001523	HSC-1	Skin	CSCC	Cutaneous Squamous Cell Carcinoma	33.0	5.0	0.0
+ACH-000794	BICR 22	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	33.0	7.0	9.0
+ACH-001270	1273/99	Soft Tissue	SYNS	Synovial Sarcoma	33.0	11.0	0.0
+ACH-000030	PC-14	Lung	LUAD	Non-Small Cell Lung Cancer	33.0	7.0	2.0
+ACH-001863	TKKK	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	33.0	4.0	1.0
+ACH-002921	BCK4	Breast	ILC	Invasive Breast Carcinoma	33.0	2.0	0.0
+ACH-000420	SNU-449	Liver	HCC	Hepatocellular Carcinoma	33.0	8.0	0.0
+ACH-000602	M-07e	Myeloid	AMKL	Acute Myeloid Leukemia	33.0	2.0	4.0
+ACH-000325	SNU-620	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	33.0	2.0	0.0
+ACH-000781	NCI-H2023	Lung	LUAD	Non-Small Cell Lung Cancer	32.0	4.0	6.0
+ACH-000922	RCH-ACV	Lymphoid	BLLTCF3PBX1	B-Lymphoblastic Leukemia/Lymphoma	32.0	1.0	5.0
+ACH-000868	HCC-1195	Lung	LUAS	Non-Small Cell Lung Cancer	32.0	1.0	1.0
+ACH-000757	A427	Lung	LUAD	Non-Small Cell Lung Cancer	32.0	16.0	1.0
+ACH-000813	T3M-10	Lung	LCLC	Non-Small Cell Lung Cancer	32.0	5.0	0.0
+ACH-000074	KU812	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	32.0	2.0	8.0
+ACH-002501	RMZ	Soft Tissue	ARMS	Rhabdomyosarcoma	32.0	2.0	0.0
+ACH-000161	COR-L105	Lung	LUAD	Non-Small Cell Lung Cancer	32.0	3.0	0.0
+ACH-000760	LNZ308	CNS/Brain	GB	Diffuse Glioma	32.0	10.0	2.0
+ACH-000519	PEER	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	31.0	1.0	0.0
+ACH-002532	SNU-1411	Bowel	READ	Colorectal Adenocarcinoma	31.0	4.0	0.0
+ACH-002431	CCLF_PEDS_0014_T1	Peripheral Nervous System	NBL	Neuroblastoma	31.0	7.0	0.0
+ACH-000156	MHH-CALL-4	Lymphoid	BLLBCRABL1L	B-Lymphoblastic Leukemia/Lymphoma	31.0	1.0	2.0
+ACH-001036	CMK-11-5	Myeloid	MLADS	Acute Myeloid Leukemia	31.0	2.0	6.0
+ACH-000219	A-375	Skin	MEL	Melanoma	31.0	1.0	6.0
+ACH-001280	SCS-214	Soft Tissue	SYNS	Synovial Sarcoma	31.0	8.0	1.0
+ACH-001393	SUM-190PT	Breast	BRCA	Invasive Breast Carcinoma	31.0	3.0	2.0
+ACH-001353	JOPACA-1	Pancreas	PAAD	Pancreatic Adenocarcinoma	31.0	5.0	0.0
+ACH-000959	SNU-C4	Bowel	COAD	Colorectal Adenocarcinoma	31.0	5.0	2.0
+ACH-002648	CX-03	Uterus	UCS	Endometrial Carcinoma	30.0	5.0	0.0
+ACH-003433	CCLF_PANC_0019_T	Pancreas	PAAD	Pancreatic Adenocarcinoma	30.0	2.0	11.0
+ACH-000510	NCI-H1299	Lung	LCLC	Non-Small Cell Lung Cancer	30.0	13.0	0.0
+ACH-000146	THP-1	Myeloid	AML	Acute Myeloid Leukemia	30.0	2.0	0.0
+ACH-000912	NCI-H2286	Lung	SCLC	Lung Neuroendocrine Tumor	30.0	6.0	0.0
+ACH-002778	NCC-OS1-X2-C1	Bone	OS	Osteosarcoma	30.0	7.0	0.0
+ACH-002059	P30/OHK	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	30.0	1.0	0.0
+ACH-002399	21NT	Breast	IDC	Invasive Breast Carcinoma	30.0	6.0	2.0
+ACH-000401	COLO-800	Skin	SKCM	Melanoma	30.0	1.0	2.0
+ACH-000167	KE-97	Lymphoid	PCM	Mature B-Cell Neoplasms	30.0	4.0	0.0
+ACH-000500	SNU-46	Head and Neck	LXSC	Head and Neck Squamous Cell Carcinoma	29.0	11.0	1.0
+ACH-000301	LAMA-84	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	29.0	2.0	5.0
+ACH-001200	STM91-01	Kidney	MRT	Rhabdoid Cancer	29.0	4.0	1.0
+ACH-000765	WM983B	Skin	MEL	Melanoma	29.0	1.0	3.0
+ACH-001845	ICC5	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	29.0	3.0	9.0
+ACH-001654	SK-GT-4	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	29.0	8.0	1.0
+ACH-000971	HCT 116	Bowel	COAD	Colorectal Adenocarcinoma	29.0	11.0	1.0
+ACH-001046	COR-L26	Lung	SCLC	Lung Neuroendocrine Tumor	28.0	9.0	0.0
+ACH-002004	UACC62 SKIN CJ1	Skin	MEL	Melanoma	28.0	1.0	1.0
+ACH-000009	C2BBe1	Bowel	COAD	Colorectal Adenocarcinoma	28.0	3.0	16.0
+ACH-000968	COLO 792	Skin	MEL	Melanoma	28.0	1.0	7.0
+ACH-000685	L3.3	Pancreas	PAASC	Adenosquamous Carcinoma of the Pancreas	28.0	4.0	4.0
+ACH-000755	HCC2218	Breast	DCIS	Breast Ductal Carcinoma In Situ	28.0	3.0	0.0
+ACH-000561	T.T	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	28.0	3.0	9.0
+ACH-001679	U-2973	Lymphoid	HGBCLMYCBCL2	Mature B-Cell Neoplasms	27.0	1.0	6.0
+ACH-000913	ESS-1	Uterus	ESS	Uterine Sarcoma/Mesenchymal	27.0	10.0	3.0
+ACH-001847	ICC7	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	27.0	2.0	4.0
+ACH-001949	MA-MEL-46	Skin	MEL	Melanoma	27.0	1.0	1.0
+ACH-000035	NCI-H1650	Lung	NSCLC	Non-Small Cell Lung Cancer	27.0	8.0	0.0
+ACH-000876	MDA-MB-415	Breast	BRCA	Invasive Breast Carcinoma	27.0	3.0	0.0
+ACH-000044	MDA-MB-134-VI	Breast	ILC	Invasive Breast Carcinoma	27.0	2.0	15.0
+ACH-000896	647-V	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	27.0	4.0	0.0
+ACH-000421	SW837	Bowel	READ	Colorectal Adenocarcinoma	27.0	7.0	2.0
+ACH-002512	MM160113	Skin	ACRM	Melanoma	27.0	1.0	2.0
+ACH-001031	CHLA-266	CNS/Brain	ATRT	Embryonal Tumor	27.0	9.0	0.0
+ACH-000158	OCI-LY3	Lymphoid	ABC	Mature B-Cell Neoplasms	27.0	3.0	0.0
+ACH-000570	YKG1	CNS/Brain	GB	Diffuse Glioma	27.0	4.0	0.0
+ACH-000003	CACO2	Bowel	COAD	Colorectal Adenocarcinoma	27.0	3.0	6.0
+ACH-000826	CAL-12T	Lung	NSCLC	Non-Small Cell Lung Cancer	26.0	8.0	0.0
+ACH-000721	HMC-1-8	Breast	IDC	Invasive Breast Carcinoma	26.0	13.0	1.0
+ACH-003465	CCLF_HNSC_0004_T	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	26.0	5.0	0.0
+ACH-000537	SNU-761	Liver	HCC	Hepatocellular Carcinoma	26.0	2.0	9.0
+ACH-001529	JAR	Uterus	UCCA	Gestational Trophoblastic Disease	26.0	4.0	0.0
+ACH-000008	A101D	Skin	MEL	Melanoma	26.0	1.0	2.0
+ACH-000819	LN-18	CNS/Brain	GB	Diffuse Glioma	26.0	6.0	2.0
+ACH-000360	NCI-H508	Bowel	COAD	Colorectal Adenocarcinoma	26.0	3.0	3.0
+ACH-000069	Hs 611.T	Lymphoid	HL	Hodgkin Lymphoma	26.0	4.0	2.0
+ACH-000867	ChaGo-K-1	Lung	NSCLC	Non-Small Cell Lung Cancer	26.0	6.0	1.0
+ACH-000155	SW 1990	Pancreas	PAAD	Pancreatic Adenocarcinoma	26.0	8.0	1.0
+ACH-002001	A375 SKIN CJ1	Skin	MEL	Melanoma	26.0	1.0	4.0
+ACH-000073	GRANTA-519	Lymphoid	MCL	Mature B-Cell Neoplasms	26.0	4.0	0.0
+ACH-000696	OVCAR-8	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	26.0	10.0	0.0
+ACH-001075	NCI-H292	Lung	LUMEC	Non-Small Cell Lung Cancer	25.0	4.0	0.0
+ACH-000547	HT-1197	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	25.0	3.0	1.0
+ACH-002003	A375 SKIN CJ3	Skin	MEL	Melanoma	25.0	1.0	6.0
+ACH-001673	TFK-1	Biliary Tract	EHCH	Intraductal Papillary Neoplasm of the Bile Duct	25.0	3.0	0.0
+ACH-000452	TE-8	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	25.0	9.0	5.0
+ACH-001980	NZM12	Skin	MEL	Melanoma	25.0	1.0	0.0
+ACH-000550	IGR-39	Skin	MEL	Melanoma	25.0	1.0	0.0
+ACH-001856	RBE	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	25.0	2.0	12.0
+ACH-001431	TC-205	Bone	ES	Ewing Sarcoma	25.0	1.0	0.0
+ACH-001978	NZM1	Skin	MEL	Melanoma	25.0	1.0	2.0
+ACH-001410	UM-UC-4	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	25.0	2.0	0.0
+ACH-000873	KYSE-270	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	24.0	8.0	0.0
+ACH-001841	ICC15	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	24.0	7.0	1.0
+ACH-000907	SNU-349	Kidney	CCRCC	Renal Cell Carcinoma	24.0	1.0	0.0
+ACH-000491	NCI-H716	Bowel	COAD	Colorectal Adenocarcinoma	24.0	4.0	0.0
+ACH-000405	MEC-1	Lymphoid	CLLSLL	Mature B-Cell Neoplasms	24.0	3.0	0.0
+ACH-000483	SNU-182	Liver	HCC	Hepatocellular Carcinoma	24.0	7.0	5.0
+ACH-001645	SEKI	Skin	MEL	Melanoma	24.0	1.0	0.0
+ACH-000014	Hs 294T	Skin	MEL	Melanoma	24.0	1.0	3.0
+ACH-000123	COV434	Ovary/Fallopian Tube	SCCO	Ovarian Epithelial Tumor	24.0	1.0	0.0
+ACH-001687	UM-RC-3	Kidney	CCRCC	Renal Cell Carcinoma	23.0	6.0	1.0
+ACH-002018	Omm2.5	Eye	UM	Ocular Melanoma	23.0	2.0	1.0
+ACH-001339	Colo 794	Skin	SKCM	Melanoma	23.0	1.0	2.0
+ACH-000857	CAL-85-1	Breast	IDC	Invasive Breast Carcinoma	23.0	5.0	1.0
+ACH-003456	CCLF_MELM_0006_T	Skin	MEL	Melanoma	23.0	5.0	0.0
+ACH-000048	TOV-112D	Ovary/Fallopian Tube	EOV	Ovarian Epithelial Tumor	23.0	6.0	0.0
+ACH-002485	MAVER-1	Lymphoid	MCL	Mature B-Cell Neoplasms	23.0	4.0	0.0
+ACH-000032	MHH-CALL-3	Lymphoid	BLLTCF3PBX1	B-Lymphoblastic Leukemia/Lymphoma	23.0	1.0	1.0
+ACH-001628	PEA1	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	23.0	4.0	1.0
+ACH-000332	YAPC	Pancreas	PAAD	Pancreatic Adenocarcinoma	23.0	7.0	1.0
+ACH-000624	HCC1806	Breast	DCIS	Breast Ductal Carcinoma In Situ	23.0	6.0	1.0
+ACH-001750	TTC442	Soft Tissue	ERMS	Rhabdomyosarcoma	23.0	8.0	2.0
+ACH-000894	NCI-H1869	Lung	LUSC	Non-Small Cell Lung Cancer	22.0	1.0	1.0
+ACH-000847	HGC-27	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	22.0	9.0	1.0
+ACH-001839	ICC13-7	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	22.0	3.0	2.0
+ACH-000522	UM-UC-3	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	22.0	4.0	0.0
+ACH-000387	TF-1	Myeloid	AML	Acute Myeloid Leukemia	22.0	2.0	0.0
+ACH-001392	SUM-185PE	Breast	BRCA	Invasive Breast Carcinoma	22.0	3.0	0.0
+ACH-001814	OS252	Bone	OS	Osteosarcoma	22.0	4.0	3.0
+ACH-000666	NCI-H1355	Lung	LUAD	Non-Small Cell Lung Cancer	22.0	2.0	2.0
+ACH-001538	KKU-213	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	21.0	6.0	0.0
+ACH-001705	VP267	Breast	IDC	Invasive Breast Carcinoma	21.0	7.0	0.0
+ACH-001737	CTV-1-DM	Lymphoid	ATLL	Mature T and NK Neoplasms	21.0	1.0	0.0
+ACH-000960	Reh	Lymphoid	BLLETV6RUNX1	B-Lymphoblastic Leukemia/Lymphoma	21.0	2.0	1.0
+ACH-001509	H357	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	21.0	6.0	0.0
+ACH-000641	CMK	Myeloid	MLADS	Acute Myeloid Leukemia	21.0	2.0	3.0
+ACH-000863	DBTRG-05MG	CNS/Brain	GB	Diffuse Glioma	21.0	4.0	1.0
+ACH-000752	NCI-H196	Lung		SMARCA4-deficient undifferentiated tumor	21.0	1.0	0.0
+ACH-001697	UPCI-SCC-114	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	21.0	6.0	3.0
+ACH-000412	SNU-1197	Bowel	COAD	Colorectal Adenocarcinoma	21.0	4.0	0.0
+ACH-001552	MCC26	Skin	MCC	Merkel Cell Carcinoma	21.0	9.0	1.0
+ACH-003108	HF	Lymphoid	GCB	Mature B-Cell Neoplasms	21.0	1.0	1.0
+ACH-000771	BICR 56	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	21.0	6.0	1.0
+ACH-000120	CHP-212	Peripheral Nervous System	NBL	Neuroblastoma	21.0	2.0	0.0
+ACH-000249	CL-11	Bowel	COAD	Colorectal Adenocarcinoma	21.0	4.0	2.0
+ACH-001022	CB-AGPN	Bone	ES	Ewing Sarcoma	21.0	6.0	0.0
+ACH-000895	CL-34	Bowel	COAD	Colorectal Adenocarcinoma	21.0	4.0	0.0
+ACH-000681	A549	Lung	LUAD	Non-Small Cell Lung Cancer	21.0	4.0	1.0
+ACH-000563	EBC-1	Lung	LUSC	Non-Small Cell Lung Cancer	21.0	3.0	0.0
+ACH-003273	CHRF-288-11	Myeloid	AMKL	Acute Myeloid Leukemia	21.0	2.0	0.0
+ACH-002690	OS526	Bone	OS	Osteosarcoma	21.0	6.0	0.0
+ACH-000095	D341 Med	CNS/Brain	MBL	Embryonal Tumor	20.0	2.0	0.0
+ACH-000395	NCI-H520	Lung	LUSC	Non-Small Cell Lung Cancer	20.0	8.0	4.0
+ACH-002539	SNU-1460	Bowel	COAD	Colorectal Adenocarcinoma	20.0	2.0	1.0
+ACH-000678	MKN7	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	20.0	5.0	2.0
+ACH-000946	HEC-265	Uterus	UCEC	Endometrial Carcinoma	20.0	5.0	3.0
+ACH-001970	MM253	Skin	MEL	Melanoma	20.0	1.0	3.0
+ACH-000706	EKVX	Lung	LUAD	Non-Small Cell Lung Cancer	20.0	4.0	1.0
+ACH-002458	HT144 SKIN FV1	Skin	MEL	Melanoma	20.0	1.0	1.0
+ACH-002668	KASUMI-3	Myeloid	AMLMD	Acute Myeloid Leukemia	20.0	2.0	0.0
+ACH-001994	ICC16	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	20.0	2.0	1.0
+ACH-000237	JHOM-1	Ovary/Fallopian Tube	MOV	Ovarian Epithelial Tumor	20.0	1.0	0.0
+ACH-000432	BV-173	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	20.0	1.0	0.0
+ACH-000369	MOLM-16	Myeloid	AML	Acute Myeloid Leukemia	20.0	2.0	0.0
+ACH-001735	SEMK2	Lymphoid	BLLKMT2A	B-Lymphoblastic Leukemia/Lymphoma	19.0	2.0	0.0
+ACH-002710	MPNST-724	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	19.0	7.0	0.0
+ACH-002795	NCC-CDS1-X1-C1	Soft Tissue		CIC-DUX4 Sarcoma	19.0	13.0	1.0
+ACH-000487	F-36P	Myeloid	MDS	Myelodysplastic Syndromes	19.0	2.0	1.0
+ACH-000811	SK-OV-3	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	19.0	5.0	0.0
+ACH-000248	AU565	Breast	BRCA	Invasive Breast Carcinoma	19.0	4.0	0.0
+ACH-002787	NCC-pRMS1-C1	Soft Tissue	PLRMS	Rhabdomyosarcoma	19.0	4.0	1.0
+ACH-002846	YUSEEP-M 16-3517	Skin	ACRM	Melanoma	19.0	1.0	2.0
+ACH-000060	Panc 10.05	Pancreas	PAAD	Pancreatic Adenocarcinoma	19.0	7.0	1.0
+ACH-002994	WSU-AML	Myeloid	AML	Acute Myeloid Leukemia	19.0	2.0	1.0
+ACH-000342	CL-14	Bowel	COAD	Colorectal Adenocarcinoma	19.0	3.0	1.0
+ACH-000565	RCM-1	Bowel	READ	Colorectal Adenocarcinoma	19.0	4.0	2.0
+ACH-000958	SW48	Bowel	COAD	Colorectal Adenocarcinoma	19.0	4.0	1.0
+ACH-000468	PK-45H	Pancreas	PAAD	Pancreatic Adenocarcinoma	19.0	7.0	0.0
+ACH-001054	D458	CNS/Brain	MBL	Embryonal Tumor	19.0	4.0	0.0
+ACH-001984	NZM4	Skin	MEL	Melanoma	19.0	1.0	3.0
+ACH-001568	MM386	Skin	MEL	Melanoma	18.0	1.0	6.0
+ACH-000385	SK-RC-52	Kidney	RCC	Renal Cell Carcinoma	18.0	2.0	0.0
+ACH-000220	Mino	Lymphoid	MCL	Mature B-Cell Neoplasms	18.0	3.0	2.0
+ACH-002706	IS076A	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	18.0	9.0	0.0
+ACH-000403	NCI-H747	Bowel	COAD	Colorectal Adenocarcinoma	18.0	6.0	0.0
+ACH-000785	NCI-H2126	Lung	LUAD	Non-Small Cell Lung Cancer	18.0	1.0	0.0
+ACH-001846	ICC6	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	18.0	3.0	1.0
+ACH-000038	EHEB	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	18.0	4.0	0.0
+ACH-000347	QGP-1	Pancreas	PANET	Pancreatic Neuroendocrine Tumor	18.0	6.0	1.0
+ACH-000025	CH-157MN	CNS/Brain	MNG	Meningothelial Tumor	18.0	9.0	5.0
+ACH-001515	HCS-2	Cervix	CESC	Cervical Squamous Cell Carcinoma	18.0	7.0	0.0
+ACH-002689	OS525	Bone	OS	Osteosarcoma	18.0	9.0	0.0
+ACH-000908	SNU-520	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	18.0	3.0	0.0
+ACH-002067	NOS-1	Bone	OS	Osteosarcoma	17.0	5.0	0.0
+ACH-000940	AN3 CA	Uterus	UCEC	Endometrial Carcinoma	17.0	4.0	0.0
+ACH-000769	LK-2	Lung	LUSC	Non-Small Cell Lung Cancer	17.0	6.0	4.0
+ACH-000859	HCC1954	Breast	DCIS	Breast Ductal Carcinoma In Situ	17.0	3.0	0.0
+ACH-000213	HUP-T4	Pancreas	PAAD	Pancreatic Adenocarcinoma	17.0	1.0	1.0
+ACH-000310	IMR-32	Peripheral Nervous System	NBL	Neuroblastoma	17.0	1.0	0.0
+ACH-001701	UPCI-SCC-200	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	17.0	6.0	2.0
+ACH-001493	DOGUM	Lymphoid	BL	Mature B-Cell Neoplasms	17.0	4.0	0.0
+ACH-000379	NCI-H1781	Lung	LUAD	Non-Small Cell Lung Cancer	17.0	1.0	2.0
+ACH-000784	KYSE-70	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	17.0	4.0	0.0
+ACH-000377	SNU-478	Ampulla of Vater	AMPCA	Ampullary Carcinoma	17.0	6.0	1.0
+ACH-000851	MOR/CPR	Lung	LUAD	Non-Small Cell Lung Cancer	17.0	5.0	0.0
+ACH-001560	Mero-83	Pleura	PLBMESO	Pleural Mesothelioma	17.0	1.0	0.0
+ACH-001642	SCC-3	Lymphoid	MBN	Non-Hodgkin Lymphoma	17.0	11.0	0.0
+ACH-000068	REC-1	Lymphoid	MCL	Mature B-Cell Neoplasms	17.0	2.0	0.0
+ACH-000790	SHP-77	Lung	SCLC	Lung Neuroendocrine Tumor	17.0	4.0	0.0
+ACH-001953	MA-MEL-27	Skin	MEL	Melanoma	17.0	1.0	0.0
+ACH-002017	Omm1	Eye	UM	Ocular Melanoma	17.0	2.0	0.0
+ACH-001736	HB1119	Lymphoid	BLLETV6RUNX1	B-Lymphoblastic Leukemia/Lymphoma	17.0	1.0	0.0
+ACH-000397	TEN	Uterus	UCCC	Endometrial Carcinoma	17.0	5.0	1.0
+ACH-001989	NZM6	Skin	MEL	Melanoma	17.0	1.0	0.0
+ACH-001609	NP 3	CNS/Brain	GB	Diffuse Glioma	17.0	4.0	0.0
+ACH-001399	SW 626	Bowel	COAD	Colorectal Adenocarcinoma	17.0	5.0	3.0
+ACH-002794	NCC-MFS1-C1	Soft Tissue	MFS	Myxofibrosarcoma	17.0	2.0	5.0
+ACH-000217	JHH-6	Liver	HCC	Hepatocellular Carcinoma	16.0	6.0	0.0
+ACH-000209	SNU-1079	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	16.0	4.0	0.0
+ACH-001384	RO82-W-1	Thyroid	THFO	Well-Differentiated Thyroid Cancer	16.0	2.0	0.0
+ACH-001835	ICC10-6	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	16.0	4.0	2.0
+ACH-001041	CHL-1-DM	Skin	MEL	Melanoma	16.0	2.0	0.0
+ACH-002705	IS076P	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	16.0	6.0	1.0
+ACH-000842	SW 480	Bowel	COAD	Colorectal Adenocarcinoma	16.0	7.0	1.0
+ACH-002044	HSQ-89	Head and Neck	SNSC	Head and Neck Squamous Cell Carcinoma	16.0	7.0	3.0
+ACH-000466	SNU-216	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	16.0	3.0	3.0
+ACH-002460	HT144 SKIN FV2	Skin	MEL	Melanoma	16.0	1.0	0.0
+ACH-002523	SNU-739	Liver	HCC	Hepatocellular Carcinoma	16.0	9.0	3.0
+ACH-002936	CCLF_PEDS_0043_T	Soft Tissue	ARMS	Rhabdomyosarcoma	16.0	5.0	3.0
+ACH-000021	NCI-H1693	Lung	LUAD	Non-Small Cell Lung Cancer	16.0	6.0	4.0
+ACH-000855	KYSE-150	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	16.0	5.0	0.0
+ACH-000954	HEC-1-A	Uterus	UCEC	Endometrial Carcinoma	16.0	4.0	0.0
+ACH-000351	MKN1	Esophagus/Stomach	STAS	Esophagogastric Adenocarcinoma	15.0	6.0	0.0
+ACH-000708	SNU-283	Bowel	READ	Colorectal Adenocarcinoma	15.0	2.0	2.0
+ACH-002020	SKG-IIIa	Cervix	CESC	Cervical Squamous Cell Carcinoma	15.0	4.0	0.0
+ACH-000373	SKM-1	Myeloid	AML	Acute Myeloid Leukemia	15.0	1.0	0.0
+ACH-000647	TE-1	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	15.0	5.0	0.0
+ACH-003191	NRH-GCT2	Bone	GCTB	Giant Cell Tumor of Bone	15.0	6.0	1.0
+ACH-000949	TGBC11TKB	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	15.0	2.0	0.0
+ACH-001707	WA-OSEL	Lymphoid	CLLSLL	Mature B-Cell Neoplasms	15.0	6.0	2.0
+ACH-001855	OZ	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	15.0	2.0	0.0
+ACH-000517	SNU-410	Pancreas	PAAD	Pancreatic Adenocarcinoma	15.0	5.0	0.0
+ACH-000881	MEL-JUSO	Skin	SKCM	Melanoma	15.0	1.0	0.0
+ACH-001360	MS751	Cervix	CESC	Cervical Squamous Cell Carcinoma	15.0	5.0	0.0
+ACH-000916	NCI-H1573	Lung	LUAD	Non-Small Cell Lung Cancer	15.0	1.0	0.0
+ACH-000573	MDA-MB-436	Breast	BRCNOS	Invasive Breast Carcinoma	15.0	8.0	1.0
+ACH-001454	C10	Bowel	COAD	Colorectal Adenocarcinoma	15.0	1.0	0.0
+ACH-000776	ONS-76	CNS/Brain	MBL	Embryonal Tumor	15.0	7.0	1.0
+ACH-000556	SIHA	Cervix	CESC	Cervical Squamous Cell Carcinoma	14.0	6.0	1.0
+ACH-000339	HCC-461	Lung	LUAD	Non-Small Cell Lung Cancer	14.0	5.0	0.0
+ACH-002672	MAPAC-HS-77	Pancreas	PAAD	Pancreatic Adenocarcinoma	14.0	3.0	1.0
+ACH-002023	TGBC18TKB	Ampulla of Vater	AMPCA	Ampullary Carcinoma	14.0	5.0	0.0
+ACH-000205	PK-59	Pancreas	PAAD	Pancreatic Adenocarcinoma	14.0	4.0	6.0
+ACH-002946	UKE-1	Myeloid	AML	Acute Myeloid Leukemia	14.0	2.0	0.0
+ACH-000072	MEG-01	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	14.0	1.0	2.0
+ACH-002531	SNU-2535	Lung	LUAD	Non-Small Cell Lung Cancer	14.0	1.0	1.0
+ACH-000222	AsPC-1	Pancreas	PAAD	Pancreatic Adenocarcinoma	14.0	4.0	0.0
+ACH-000871	NCI-H510	Lung	SCLC	Lung Neuroendocrine Tumor	14.0	4.0	2.0
+ACH-000521	NCI-H2030	Lung	LUAD	Non-Small Cell Lung Cancer	14.0	4.0	0.0
+ACH-001974	MM537	Skin	MEL	Melanoma	14.0	1.0	0.0
+ACH-001111	L82	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	14.0	8.0	1.0
+ACH-001550	MCC13	Skin	MCC	Merkel Cell Carcinoma	13.0	7.0	0.0
+ACH-000336	OCI-AML3	Myeloid	AML	Acute Myeloid Leukemia	13.0	2.0	1.0
+ACH-000712	HCC-1833	Lung	LUAD	Non-Small Cell Lung Cancer	13.0	4.0	1.0
+ACH-002024	ECC4	Bowel	READ	Colorectal Adenocarcinoma	13.0	4.0	2.0
+ACH-003106	RC	Lymphoid	GCB	Mature B-Cell Neoplasms	13.0	2.0	4.0
+ACH-000814	Hs 939.T	Skin	MEL	Melanoma	13.0	1.0	1.0
+ACH-002042	T3M-5	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	13.0	6.0	0.0
+ACH-000660	SU-DHL-5	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	13.0	3.0	1.0
+ACH-001540	KMLS-1	Soft Tissue	LIPO	Liposarcoma	13.0	6.0	0.0
+ACH-000853	NCI-H661	Lung	LCLC	Non-Small Cell Lung Cancer	13.0	7.0	2.0
+ACH-001685	U-HO1	Lymphoid	HL	Hodgkin Lymphoma	13.0	6.0	0.0
+ACH-000451	NCI-H2085	Lung	LUAD	Non-Small Cell Lung Cancer	13.0	3.0	3.0
+ACH-000925	DV-90	Lung	LUAD	Non-Small Cell Lung Cancer	13.0	3.0	0.0
+ACH-000599	PA-TU-8902	Pancreas	PAAD	Pancreatic Adenocarcinoma	13.0	4.0	0.0
+ACH-001028	CHLA-06	CNS/Brain	ATRT	Embryonal Tumor	13.0	8.0	1.0
+ACH-001619	OCUG-1	Biliary Tract	GBAD	Intracholecystic Papillary Neoplasm	13.0	4.0	0.0
+ACH-000324	JHOC-5	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	13.0	4.0	1.0
+ACH-000308	EFO-21	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	13.0	4.0	0.0
+ACH-002490	NCI-H1882	Lung	SCLC	Lung Neuroendocrine Tumor	12.0	6.0	2.0
+ACH-000400	SK-CO-1	Bowel	COAD	Colorectal Adenocarcinoma	12.0	4.0	0.0
+ACH-001693	UPCI-SCC-072	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	12.0	4.0	0.0
+ACH-000711	JIMT-1	Breast	IDC	Invasive Breast Carcinoma	12.0	5.0	0.0
+ACH-000993	JHUEM-7	Uterus	UCEC	Endometrial Carcinoma	12.0	5.0	0.0
+ACH-000767	NCI-H526	Lung	SCLC	Lung Neuroendocrine Tumor	12.0	5.0	0.0
+ACH-002069	HS-Os-1	Bone	OS	Osteosarcoma	12.0	6.0	0.0
+ACH-001802	LPS853	Soft Tissue	DDLS	Liposarcoma	12.0	7.0	2.0
+ACH-000463	NCI-H460	Lung	LCLC	Non-Small Cell Lung Cancer	12.0	5.0	0.0
+ACH-002716	MO-91	Myeloid	AMLMD	Acute Myeloid Leukemia	12.0	2.0	0.0
+ACH-000241	JK-1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	12.0	1.0	0.0
+ACH-000416	NCI-H838	Lung	LUAD	Non-Small Cell Lung Cancer	12.0	6.0	2.0
+ACH-000055	D283 Med	CNS/Brain	MBL	Embryonal Tumor	12.0	4.0	0.0
+ACH-000004	HEL	Myeloid	AML	Acute Myeloid Leukemia	12.0	2.0	0.0
+ACH-000255	LMSU	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	12.0	6.0	0.0
+ACH-000297	NCI-H889	Lung	SCLC	Lung Neuroendocrine Tumor	12.0	5.0	0.0
+ACH-001695	UPCI-SCC-099	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	12.0	3.0	0.0
+ACH-001567	MM383	Skin	MEL	Melanoma	12.0	1.0	0.0
+ACH-000296	OUMS-23	Bowel	COAD	Colorectal Adenocarcinoma	12.0	3.0	0.0
+ACH-000789	NCI-H810	Lung	LCLC	Non-Small Cell Lung Cancer	12.0	5.0	5.0
+ACH-002781	NCC-dCS1-C1	Bone	DDCHS	Chondrosarcoma	11.0	6.0	0.0
+ACH-002051	Lu-134-A	Lung	SCLC	Lung Neuroendocrine Tumor	11.0	6.0	2.0
+ACH-000477	Malme-3M	Skin	MEL	Melanoma	11.0	1.0	0.0
+ACH-001558	Mero-48a	Pleura	PLBMESO	Pleural Mesothelioma	11.0	2.0	0.0
+ACH-000764	SH-10-TC	Esophagus/Stomach	MSTAD	Esophagogastric Adenocarcinoma	11.0	5.0	0.0
+ACH-000770	P31/FUJ	Myeloid	AML	Acute Myeloid Leukemia	11.0	2.0	0.0
+ACH-000909	JHUEM-2	Uterus	UCEC	Endometrial Carcinoma	11.0	7.0	0.0
+ACH-002528	SNU-267	Kidney	CCRCC	Renal Cell Carcinoma	11.0	2.0	0.0
+ACH-001001	143B	Bone	OS	Osteosarcoma	11.0	7.0	1.0
+ACH-002026	HHUA	Uterus	UCEC	Endometrial Carcinoma	11.0	3.0	1.0
+ACH-000692	SNU-899	Head and Neck	LXSC	Head and Neck Squamous Cell Carcinoma	11.0	4.0	0.0
+ACH-001366	NGP	Peripheral Nervous System	NBL	Neuroblastoma	11.0	3.0	0.0
+ACH-000840	HCC-366	Lung	LUAS	Non-Small Cell Lung Cancer	11.0	4.0	0.0
+ACH-000799	Hs 695T	Skin	MEL	Melanoma	11.0	1.0	0.0
+ACH-000109	NCI-H3255	Lung	LUAD	Non-Small Cell Lung Cancer	11.0	1.0	0.0
+ACH-001435	1156QE/8	Testis	EMBCA	Non-Seminomatous Germ Cell Tumor	11.0	6.0	0.0
+ACH-002500	Z-138	Lymphoid	MCL	Mature B-Cell Neoplasms	11.0	1.0	0.0
+ACH-002800	NCC-MPNST2-C1	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	11.0	8.0	0.0
+ACH-000122	SUP-T11	Lymphoid	ATLL	Mature T and NK Neoplasms	11.0	1.0	0.0
+ACH-000396	J82	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	11.0	2.0	0.0
+ACH-000817	RPMI 8226	Lymphoid	PCM	Mature B-Cell Neoplasms	11.0	3.0	0.0
+ACH-003438	CCLF_NEURO_0005_T	CNS/Brain	GB	Diffuse Glioma	11.0	7.0	1.0
+ACH-000414	NCI-H1944	Lung	LUAD	Non-Small Cell Lung Cancer	11.0	2.0	0.0
+ACH-002065	HS-PSS	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	11.0	5.0	1.0
+ACH-001559	Mero-82	Pleura	PLEMESO	Pleural Mesothelioma	11.0	2.0	0.0
+ACH-000775	NCI-H727	Lung	LUCA	Lung Neuroendocrine Tumor	11.0	4.0	2.0
+ACH-002844	CCLF_RARE_0025_T	Soft Tissue	DES	Desmoid/Aggressive Fibromatosis	10.0	2.0	0.0
+ACH-001691	UPCI-SCC-029A	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	10.0	5.0	0.0
+ACH-000820	SW403	Bowel	COAD	Colorectal Adenocarcinoma	10.0	2.0	0.0
+ACH-000688	OV7	Ovary/Fallopian Tube	MXOV	Ovarian Epithelial Tumor	10.0	6.0	0.0
+ACH-000581	SNU-16	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	10.0	3.0	0.0
+ACH-002470	OS186	Bone	OS	Osteosarcoma	10.0	8.0	0.0
+ACH-000243	DAN-G	Pancreas	PAAD	Pancreatic Adenocarcinoma	10.0	3.0	0.0
+ACH-000591	LN-235	CNS/Brain	ASTR	Diffuse Glioma	10.0	6.0	0.0
+ACH-001414	UM-UC-6	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	10.0	3.0	0.0
+ACH-001400	SW 954	Vulva/Vagina	VSC	Squamous Cell Carcinoma of the Vulva/Vagina	10.0	6.0	2.0
+ACH-000939	SK-UT-1	Uterus	ULMS	Uterine Sarcoma/Mesenchymal	10.0	4.0	0.0
+ACH-000056	DOHH-2	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	10.0	2.0	1.0
+ACH-001370	OCI-P5x	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	10.0	5.0	0.0
+ACH-002021	T3M-3	Uterus	UCCA	Gestational Trophoblastic Disease	10.0	3.0	1.0
+ACH-001571	Mo	Lymphoid	HCL	Mature B-Cell Neoplasms	10.0	6.0	0.0
+ACH-000632	Hs 944.T	Skin	SKCM	Melanoma	10.0	1.0	1.0
+ACH-000698	DMS 53	Lung	SCLC	Lung Neuroendocrine Tumor	10.0	4.0	4.0
+ACH-001511	H413	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	10.0	4.0	1.0
+ACH-000326	JURL-MK1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	10.0	1.0	1.0
+ACH-001379	PACADD-161	Pancreas	PAAD	Pancreatic Adenocarcinoma	10.0	4.0	0.0
+ACH-003107	JMP-1	Lymphoid	MCL	Mature B-Cell Neoplasms	10.0	5.0	0.0
+ACH-001539	KML-1	Lymphoid	GCB	Mature B-Cell Neoplasms	10.0	3.0	0.0
+ACH-001858	SSP-25	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	10.0	7.0	3.0
+ACH-001997	ECC2	Biliary Tract	EHCH	Intraductal Papillary Neoplasm of the Bile Duct	9.0	4.0	1.0
+ACH-000782	SEM	Lymphoid	BLLKMT2A	B-Lymphoblastic Leukemia/Lymphoma	9.0	2.0	2.0
+ACH-000270	HPAC	Pancreas	PAAD	Pancreatic Adenocarcinoma	9.0	4.0	0.0
+ACH-001548	LS	Peripheral Nervous System	NBL	Neuroblastoma	9.0	1.0	0.0
+ACH-001322	CME-1	Soft Tissue	SYNS	Synovial Sarcoma	9.0	4.0	0.0
+ACH-000535	BxPC-3	Pancreas	PAAD	Pancreatic Adenocarcinoma	9.0	2.0	0.0
+ACH-000603	BEN	Lung	NSCLC	Non-Small Cell Lung Cancer	9.0	4.0	1.0
+ACH-000852	NCI-H1435	Lung	LUAD	Non-Small Cell Lung Cancer	9.0	4.0	1.0
+ACH-001694	UPCI-SCC-074	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	9.0	5.0	0.0
+ACH-000918	MOLT-16	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	9.0	1.0	0.0
+ACH-001549	Lu-135	Lung	SCLC	Lung Neuroendocrine Tumor	9.0	3.0	0.0
+ACH-002643	GRANTA-452	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	9.0	1.0	1.0
+ACH-002711	UM-HACC-2A	Head and Neck	ACYC	Salivary Carcinoma	9.0	5.0	0.0
+ACH-000443	OVKATE	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	9.0	1.0	0.0
+ACH-000444	LU99	Lung	GCLC	Non-Small Cell Lung Cancer	9.0	8.0	1.0
+ACH-001977	NO36	Pleura	PLEMESO	Pleural Mesothelioma	9.0	2.0	0.0
+ACH-000768	MDA-MB-231	Breast	BRCA	Invasive Breast Carcinoma	9.0	5.0	1.0
+ACH-000449	MES-SA	Uterus	USARC	Uterine Sarcoma/Mesenchymal	9.0	1.0	0.0
+ACH-000862	KMBC-2	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	9.0	1.0	0.0
+ACH-000744	NCI-H1623	Lung	LUAD	Non-Small Cell Lung Cancer	9.0	2.0	0.0
+ACH-000700	NCI-H2882	Lung	LUSC	Non-Small Cell Lung Cancer	9.0	5.0	1.0
+ACH-000684	KMRC-1	Kidney	CCRCC	Renal Cell Carcinoma	9.0	1.0	0.0
+ACH-000319	MPP 89	Pleura	PLEMESO	Pleural Mesothelioma	8.0	1.0	0.0
+ACH-001307	8505C	Thyroid	THAP	Anaplastic Thyroid Cancer	8.0	5.0	0.0
+ACH-000844	DMS 454	Lung	SCLC	Lung Neuroendocrine Tumor	8.0	2.0	1.0
+ACH-000329	CCF-STTG1	CNS/Brain	ASTR	Diffuse Glioma	8.0	3.0	0.0
+ACH-001516	HCSC-1	Cervix	ECAD	Cervical Adenocarcinoma	8.0	5.0	0.0
+ACH-002509	WM4235	Skin	ACRM	Melanoma	8.0	1.0	5.0
+ACH-001492	DOGKIT	Lymphoid	BL	Mature B-Cell Neoplasms	8.0	1.0	0.0
+ACH-000546	HSC-4	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	8.0	2.0	0.0
+ACH-001973	MM485	Skin	MEL	Melanoma	8.0	1.0	1.0
+ACH-000366	SK-N-DZ	Peripheral Nervous System	NBL	Neuroblastoma	8.0	2.0	0.0
+ACH-000211	Daoy	CNS/Brain	MBL	Embryonal Tumor	8.0	6.0	1.0
+ACH-002790	NCC-SS2-C1	Soft Tissue	SYNS	Synovial Sarcoma	8.0	6.0	1.0
+ACH-002075	Lu-138	Lung	SCLC	Lung Neuroendocrine Tumor	8.0	2.0	1.0
+ACH-000427	NCI-N87	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	8.0	2.0	0.0
+ACH-000182	SNU-869	Ampulla of Vater	AMPCA	Ampullary Carcinoma	8.0	3.0	0.0
+ACH-000830	NCI-H1436	Lung	SCLC	Lung Neuroendocrine Tumor	8.0	6.0	1.0
+ACH-000687	CI-1	Lymphoid	MBN	Non-Hodgkin Lymphoma	8.0	2.0	1.0
+ACH-002535	SNU-254	Bowel	READ	Colorectal Adenocarcinoma	8.0	4.0	0.0
+ACH-001498	Farage	Lymphoid	GCB	Mature B-Cell Neoplasms	8.0	3.0	2.0
+ACH-000803	COLO 668	Lung	SCLC	Lung Neuroendocrine Tumor	7.0	4.0	1.0
+ACH-000571	T98G	CNS/Brain	GB	Diffuse Glioma	7.0	3.0	0.0
+ACH-000458	CJM	Skin	MEL	Melanoma	7.0	4.0	0.0
+ACH-000447	NCI-H2228	Lung	LUAD	Non-Small Cell Lung Cancer	7.0	2.0	0.0
+ACH-001530	JEG-3	Uterus	UCCA	Gestational Trophoblastic Disease	7.0	2.0	1.0
+ACH-000508	COR-L88	Lung	SCLC	Lung Neuroendocrine Tumor	7.0	3.0	0.0
+ACH-002695	STS26T	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	7.0	7.0	1.0
+ACH-002522	SNU-2292	Lung	LUAD	Non-Small Cell Lung Cancer	7.0	4.0	1.0
+ACH-001369	OCI-C5x	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	7.0	2.0	0.0
+ACH-000145	SK-LMS-1	Soft Tissue	LMS	Leiomyosarcoma	7.0	3.0	1.0
+ACH-001804	LPS510	Soft Tissue	DDLS	Liposarcoma	7.0	2.0	0.0
+ACH-000434	NCI-H1915	Lung	LCLC	Non-Small Cell Lung Cancer	7.0	3.0	0.0
+ACH-000815	KM-H2	Lymphoid	HL	Hodgkin Lymphoma	7.0	4.0	0.0
+ACH-002675	SH-2	Myeloid	AML	Acute Myeloid Leukemia	7.0	1.0	0.0
+ACH-000542	Hey-A8	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	7.0	6.0	0.0
+ACH-001520	HG-3	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	7.0	5.0	0.0
+ACH-000749	DMS 273	Lung	SCLC	Lung Neuroendocrine Tumor	7.0	6.0	0.0
+ACH-001150	OUMS-27	Bone	CHS	Chondrosarcoma	7.0	3.0	0.0
+ACH-000086	ACC-MESO-1	Pleura	PLEMESO	Pleural Mesothelioma	7.0	3.0	0.0
+ACH-000741	U-BLC1	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	7.0	2.0	1.0
+ACH-001421	WERI-Rb-1	Eye	RBL	Retinoblastoma	6.0	3.0	0.0
+ACH-001508	H314	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	6.0	2.0	0.0
+ACH-000549	SNU-1076	Head and Neck	LXSC	Head and Neck Squamous Cell Carcinoma	6.0	2.0	0.0
+ACH-001190	SK-MEL-2	Skin	MEL	Melanoma	6.0	1.0	0.0
+ACH-001500	FLO-1	Esophagus/Stomach	ESCA	Esophagogastric Adenocarcinoma	6.0	4.0	0.0
+ACH-000747	NCI-H1703	Lung	LUSC	Non-Small Cell Lung Cancer	6.0	4.0	0.0
+ACH-002676	TK-6	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	6.0	1.0	0.0
+ACH-002508	WM3211	Skin	ACRM	Melanoma	6.0	4.0	0.0
+ACH-001163	CCLF_PEDS_0001_T	Kidney	MRC	Renal Cell Carcinoma	6.0	4.0	0.0
+ACH-001610	NP 5	CNS/Brain	GB	Diffuse Glioma	6.0	4.0	0.0
+ACH-000748	SJSA-1	Bone	OS	Osteosarcoma	6.0	5.0	0.0
+ACH-000195	Set-2	Myeloid	AMKL	Acute Myeloid Leukemia	6.0	2.0	0.0
+ACH-000665	SK-MES-1	Lung	LUSC	Non-Small Cell Lung Cancer	6.0	3.0	0.0
+ACH-001211	TTC-549	Soft Tissue		Rhabdoid Cancer	6.0	4.0	0.0
+ACH-000394	NCI-H2081	Lung	SCLC	Lung Neuroendocrine Tumor	6.0	2.0	0.0
+ACH-002440	CCLF_THYR_0008_T	Thyroid	THPA	Well-Differentiated Thyroid Cancer	6.0	4.0	0.0
+ACH-000300	SLR 25	Kidney	CCRCC	Renal Cell Carcinoma	6.0	4.0	0.0
+ACH-000033	NCI-H1819	Lung	LUAD	Non-Small Cell Lung Cancer	6.0	4.0	0.0
+ACH-002782	NCC-UPS1-C1	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	6.0	2.0	0.0
+ACH-002799	NCC-MPNST1-C1	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	6.0	5.0	0.0
+ACH-000121	NCI-H2405	Lung	LUAD	Non-Small Cell Lung Cancer	6.0	2.0	0.0
+ACH-001068	FE-PD	Lymphoid	ALCLALKN	Mature T and NK Neoplasms	6.0	5.0	0.0
+ACH-000951	NCI-H2342	Lung	LUAD	Non-Small Cell Lung Cancer	6.0	2.0	0.0
+ACH-001834	ICC10	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	6.0	2.0	0.0
+ACH-000140	Pfeiffer	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	6.0	1.0	0.0
+ACH-003111	Hs 856.T	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	6.0	2.0	0.0
+ACH-002405	CCLF_MELM_0003_T	Skin	MEL	Melanoma	6.0	2.0	2.0
+ACH-000290	NCI-H209	Lung	SCLC	Lung Neuroendocrine Tumor	6.0	2.0	0.0
+ACH-002511	M140325	Skin	MEL	Melanoma	6.0	2.0	0.0
+ACH-001119	Mac-2A	Lymphoid	ALCLALKN	Mature T and NK Neoplasms	6.0	4.0	0.0
+ACH-000629	IOMM-Lee	CNS/Brain	MNG	Meningothelial Tumor	6.0	5.0	1.0
+ACH-000559	NCI-H1836	Lung	SCLC	Lung Neuroendocrine Tumor	5.0	3.0	0.0
+ACH-000608	COV644	Ovary/Fallopian Tube	MOV	Ovarian Epithelial Tumor	5.0	3.0	0.0
+ACH-001201	SU-MB-002	CNS/Brain	MBL	Embryonal Tumor	5.0	3.0	0.0
+ACH-001686	ULA	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	5.0	3.0	2.0
+ACH-000679	OE-19	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	5.0	1.0	0.0
+ACH-000677	SW 1573	Lung	LUAD	Non-Small Cell Lung Cancer	5.0	4.0	0.0
+ACH-002404	CCLF_MELM_0002_T	Skin	MEL	Melanoma	5.0	2.0	0.0
+ACH-001708	WSU-FSCCL	Lymphoid	FL	Mature B-Cell Neoplasms	5.0	1.0	0.0
+ACH-000335	MSTO-211H	Pleura	PLBMESO	Pleural Mesothelioma	5.0	3.0	0.0
+ACH-002538	SNU-1235	Bowel	COAD	Colorectal Adenocarcinoma	5.0	1.0	0.0
+ACH-001844	ICC4	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	5.0	2.0	0.0
+ACH-001377	PACADD-137	Pancreas	PAAD	Pancreatic Adenocarcinoma	5.0	2.0	0.0
+ACH-001050	CW9019	Soft Tissue	ARMS	Rhabdomyosarcoma	5.0	4.0	1.0
+ACH-000442	RERF-LC-Sq1	Lung	LUSC	Non-Small Cell Lung Cancer	5.0	4.0	1.0
+ACH-000390	LUDLU-1	Lung	LUSC	Non-Small Cell Lung Cancer	5.0	2.0	0.0
+ACH-000822	SK-MEL-24	Skin	MEL	Melanoma	5.0	1.0	0.0
+ACH-000654	Raji	Lymphoid	BL	Mature B-Cell Neoplasms	5.0	1.0	0.0
+ACH-000657	A2780	Ovary/Fallopian Tube	EOV	Ovarian Epithelial Tumor	5.0	5.0	0.0
+ACH-001329	ANGM-CSS	CNS/Brain	GB	Diffuse Glioma	5.0	5.0	0.0
+ACH-000096	G-401	Kidney	MRT	Rhabdoid Cancer	5.0	2.0	0.0
+ACH-000054	HT-1080	Soft Tissue	FIBS	Fibrosarcoma	5.0	3.0	0.0
+ACH-000560	ECC10	Esophagus/Stomach	STSC	Esophagogastric Adenocarcinoma	5.0	4.0	0.0
+ACH-001709	WSU-NHL	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	5.0	2.0	0.0
+ACH-000729	NCI-H1963	Lung	SCLC	Lung Neuroendocrine Tumor	5.0	4.0	1.0
+ACH-000501	LS123	Bowel	COAD	Colorectal Adenocarcinoma	5.0	3.0	0.0
+ACH-002403	CCLF_MELM_0001_T	Skin	MEL	Melanoma	5.0	3.0	0.0
+ACH-000223	HCC1937	Breast	IDC	Invasive Breast Carcinoma	5.0	3.0	0.0
+ACH-002677	U-2946	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	5.0	3.0	0.0
+ACH-000724	HT-1376	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	5.0	1.0	0.0
+ACH-000534	WSU-DLCL2	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	5.0	1.0	0.0
+ACH-000816	NCI-H524	Lung	SCLC	Lung Neuroendocrine Tumor	5.0	4.0	0.0
+ACH-002038	HSKTC	Ovary/Fallopian Tube	OOVC	Ovarian Cancer, Other	5.0	1.0	0.0
+ACH-000998	CW-2	Bowel	COAD	Colorectal Adenocarcinoma	5.0	2.0	0.0
+ACH-000361	SK-HEP-1	Liver	HCC	Hepatocellular Carcinoma	5.0	4.0	0.0
+ACH-001961	GB2	Biliary Tract	GBAD	Intracholecystic Papillary Neoplasm	5.0	3.0	0.0
+ACH-003105	VMM917	Skin	MEL	Melanoma	5.0	1.0	1.0
+ACH-000870	NCI-H1930	Lung	SCLC	Lung Neuroendocrine Tumor	5.0	4.0	0.0
+ACH-000634	LN-340	CNS/Brain	GB	Diffuse Glioma	5.0	1.0	0.0
+ACH-000533	NCI-H2004 RT	Kidney	MRT	Rhabdoid Cancer	5.0	4.0	0.0
+ACH-000506	NCI-H146	Lung	SCLC	Lung Neuroendocrine Tumor	5.0	1.0	0.0
+ACH-002678	WILL-1	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	5.0	1.0	0.0
+ACH-001591	NCI-H1417	Lung	SCLC	Lung Neuroendocrine Tumor	4.0	4.0	0.0
+ACH-000304	WM-115	Skin	MEL	Melanoma	4.0	1.0	0.0
+ACH-001616	OCI-LY18	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	4.0	2.0	0.0
+ACH-001402	SW756	Cervix	CESC	Cervical Squamous Cell Carcinoma	4.0	4.0	0.0
+ACH-002996	CI34601	Lung	NSCLC	Non-Small Cell Lung Cancer	4.0	3.0	0.0
+ACH-000612	HuT 102	Lymphoid	MYCF	Mature T and NK Neoplasms	4.0	2.0	0.0
+ACH-000288	BT-549	Breast	BRCNOS	Invasive Breast Carcinoma	4.0	4.0	0.0
+ACH-000955	SNU-407	Bowel	COAD	Colorectal Adenocarcinoma	4.0	3.0	0.0
+ACH-001148	OCILY-132	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	4.0	3.0	0.0
+ACH-000172	TM-87	Soft Tissue		Rhabdoid Cancer	4.0	1.0	0.0
+ACH-002681	538-MG-BA	CNS/Brain	GB	Diffuse Glioma	4.0	4.0	0.0
+ACH-002665	JVE-367	Bowel	HGNEC	Gastrointestinal Neuroendocrine Tumors	4.0	2.0	1.0
+ACH-000179	NCI-H1618	Lung	SCLC	Lung Neuroendocrine Tumor	4.0	3.0	1.0
+ACH-001450	BLUE-1	Lymphoid	BL	Mature B-Cell Neoplasms	4.0	2.0	0.0
+ACH-001716	GOTO	Peripheral Nervous System	NBL	Neuroblastoma	4.0	2.0	1.0
+ACH-000221	SNU-398	Liver	HCC	Hepatocellular Carcinoma	4.0	3.0	0.0
+ACH-001227	UPCI-SCC-090	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	4.0	4.0	0.0
+ACH-001433	CCLF_PEDS_0008_T	Soft Tissue	EPIS	Epithelioid Sarcoma	4.0	2.0	0.0
+ACH-003071	NCI-H748	Lung	SCLC	Lung Neuroendocrine Tumor	4.0	3.0	0.0
+ACH-000982	GP2d	Bowel	COAD	Colorectal Adenocarcinoma	4.0	1.0	1.0
+ACH-000469	YH-13	CNS/Brain	GB	Diffuse Glioma	4.0	3.0	0.0
+ACH-000067	Hs 683	CNS/Brain	ODG	Diffuse Glioma	4.0	4.0	0.0
+ACH-000178	Hs 766T	Pancreas	PAAD	Pancreatic Adenocarcinoma	4.0	3.0	0.0
+ACH-001496	ESO26	Esophagus/Stomach	GEJ	Esophagogastric Adenocarcinoma	4.0	4.0	0.0
+ACH-000173	JHUEM-3	Uterus	UCEC	Endometrial Carcinoma	4.0	3.0	0.0
+ACH-000408	TE-5	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	4.0	2.0	0.0
+ACH-000287	NU-DUL-1	Lymphoid	ABC	Mature B-Cell Neoplasms	4.0	2.0	0.0
+ACH-000186	NCI-H2444	Lung	NSCLC	Non-Small Cell Lung Cancer	4.0	3.0	0.0
+ACH-001388	SUM-102PT	Breast	IDC	Invasive Breast Carcinoma	4.0	4.0	2.0
+ACH-002077	Lu-165	Lung	SCLC	Lung Neuroendocrine Tumor	4.0	4.0	0.0
+ACH-001147	OCI-Ly12	Lymphoid	FTCL	Mature T and NK Neoplasms	4.0	4.0	0.0
+ACH-001852	HKGZ-CC	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	4.0	3.0	1.0
+ACH-000253	COLO 201	Bowel	COAD	Colorectal Adenocarcinoma	4.0	2.0	0.0
+ACH-000268	SNU-245	Biliary Tract	EHCH	Intraductal Papillary Neoplasm of the Bile Duct	4.0	2.0	0.0
+ACH-000583	MC116	Lymphoid	MBN	Non-Hodgkin Lymphoma	4.0	1.0	0.0
+ACH-001503	GUMBUS	Lymphoid	BL	Mature B-Cell Neoplasms	4.0	2.0	0.0
+ACH-000274	Hs 852.T	Skin	MEL	Melanoma	4.0	1.0	0.0
+ACH-000833	RH-30	Soft Tissue	ARMS	Rhabdomyosarcoma	4.0	2.0	0.0
+ACH-000751	OCI-M1	Myeloid	AML	Acute Myeloid Leukemia	3.0	1.0	0.0
+ACH-001278	BIN-67	Ovary/Fallopian Tube	SCCO	Ovarian Epithelial Tumor	3.0	3.0	0.0
+ACH-000766	NCI-H1648	Lung	LUAD	Non-Small Cell Lung Cancer	3.0	3.0	0.0
+ACH-000656	SU-DHL-8	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	3.0	1.0	0.0
+ACH-000983	KCL-22	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	3.0	2.0	0.0
+ACH-000999	SNU-1040	Bowel	COAD	Colorectal Adenocarcinoma	3.0	2.0	0.0
+ACH-000201	A-204	Kidney	MRT	Rhabdoid Cancer	3.0	3.0	0.0
+ACH-000897	FTC-238	Thyroid	THFO	Well-Differentiated Thyroid Cancer	3.0	2.0	0.0
+ACH-001555	Mero-14	Pleura	PLEMESO	Pleural Mesothelioma	3.0	1.0	0.0
+ACH-000247	OCUM-1	Esophagus/Stomach	DSTAD	Esophagogastric Adenocarcinoma	3.0	3.0	0.0
+ACH-000005	HEL 92.1.7	Myeloid	AML	Acute Myeloid Leukemia	3.0	2.0	0.0
+ACH-001019	BroLi	Skin	MCC	Merkel Cell Carcinoma	3.0	3.0	0.0
+ACH-001979	NZM11	Skin	MEL	Melanoma	3.0	1.0	1.0
+ACH-000269	AM-38	CNS/Brain	GB	Diffuse Glioma	3.0	3.0	0.0
+ACH-001338	CHP-134	Peripheral Nervous System	NBL	Neuroblastoma	3.0	3.0	0.0
+ACH-000509	HuT 78	Lymphoid	SS	Mature T and NK Neoplasms	3.0	1.0	0.0
+ACH-000754	L-428	Lymphoid	HL	Hodgkin Lymphoma	3.0	3.0	0.0
+ACH-000176	LOU-NH91	Lung	LUSC	Non-Small Cell Lung Cancer	3.0	2.0	0.0
+ACH-001367	NMB	Peripheral Nervous System	NBL	Neuroblastoma	3.0	1.0	0.0
+ACH-001386	SCLC-22H	Lung	SCLC	Lung Neuroendocrine Tumor	3.0	3.0	0.0
+ACH-001836	ICC10-8	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	3.0	1.0	0.0
+ACH-000144	RERF-GC-1B	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	3.0	3.0	0.0
+ACH-000292	NCI-H841	Lung		SMARCA4-deficient undifferentiated tumor	3.0	1.0	1.0
+ACH-002215	BC-3	Lymphoid	PEL	Mature B-Cell Neoplasms	3.0	1.0	0.0
+ACH-000906	ES-2	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	3.0	2.0	1.0
+ACH-001430	TC-138	Bone	ES	Ewing Sarcoma	3.0	2.0	0.0
+ACH-001344	GI-ME-N	Peripheral Nervous System	NBL	Neuroblastoma	3.0	3.0	0.0
+ACH-000225	ECC12	Esophagus/Stomach	STSC	Esophagogastric Adenocarcinoma	3.0	3.0	0.0
+ACH-001849	ICC9	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	3.0	1.0	0.0
+ACH-000595	LN-229	CNS/Brain	GB	Diffuse Glioma	3.0	1.0	0.0
+ACH-000586	NCI-H1876	Lung	SCLC	Lung Neuroendocrine Tumor	3.0	2.0	0.0
+ACH-002074	Lu-143	Lung	SCLC	Lung Neuroendocrine Tumor	3.0	2.0	0.0
+ACH-002486	MES-OV	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	3.0	3.0	0.0
+ACH-000499	EW8	Bone	ES	Ewing Sarcoma	3.0	3.0	0.0
+ACH-001283	TC-106	Bone	ES	Ewing Sarcoma	3.0	2.0	0.0
+ACH-001623	Onda 8	CNS/Brain	GB	Diffuse Glioma	3.0	3.0	0.0
+ACH-000702	L-1236	Lymphoid	HL	Hodgkin Lymphoma	3.0	3.0	0.0
+ACH-002834	OS384	Bone	OS	Osteosarcoma	3.0	3.0	0.0
+ACH-001715	CAL-72	Bone	OS	Osteosarcoma	3.0	2.0	0.0
+ACH-002055	TL-1	Lymphoid	BL	Mature B-Cell Neoplasms	3.0	3.0	0.0
+ACH-000437	SW 1088	CNS/Brain	ASTR	Diffuse Glioma	3.0	3.0	0.0
+ACH-003100	EJ-1	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	3.0	2.0	0.0
+ACH-001818	C396	Bone	OS	Osteosarcoma	3.0	2.0	0.0
+ACH-002461	RVH421 SKIN FV1	Skin	MEL	Melanoma	3.0	1.0	0.0
+ACH-000975	HCC2450	Lung	LUSC	Non-Small Cell Lung Cancer	3.0	2.0	0.0
+ACH-000328	LN-215	CNS/Brain	GB	Diffuse Glioma	3.0	1.0	0.0
+ACH-000018	T24	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	3.0	3.0	0.0
+ACH-000710	NCI-H854	Bowel	COAD	Colorectal Adenocarcinoma	3.0	2.0	0.0
+ACH-000037	S-117	Soft Tissue	SARCNOS	Sarcoma, NOS	3.0	3.0	0.0
+ACH-000545	VM-CUB1	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	3.0	2.0	0.0
+ACH-000921	NCI-H157-DM	Lung	LUSC	Non-Small Cell Lung Cancer	3.0	2.0	0.0
+ACH-000505	RKN	Soft Tissue	LMS	Leiomyosarcoma	3.0	3.0	0.0
+ACH-000233	DEL	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	2.0	2.0	0.0
+ACH-000476	JHH-4	Liver	HCC	Hepatocellular Carcinoma	2.0	2.0	0.0
+ACH-000701	RMUG-S	Ovary/Fallopian Tube	MOV	Ovarian Epithelial Tumor	2.0	1.0	0.0
+ACH-000206	C8166	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	2.0	2.0	0.0
+ACH-001608	NP 2	CNS/Brain	GB	Diffuse Glioma	2.0	2.0	0.0
+ACH-000649	786-O	Kidney	CCRCC	Renal Cell Carcinoma	2.0	1.0	0.0
+ACH-000646	OVMANA	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	2.0	2.0	1.0
+ACH-001407	UM-UC-13	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	2.0	2.0	0.0
+ACH-001655	SKN	Uterus	ULMS	Uterine Sarcoma/Mesenchymal	2.0	2.0	0.0
+ACH-001519	H-EMC-SS	Bone	EMCHS	Chondrosarcoma	2.0	2.0	0.0
+ACH-003475	CCLF_HNSC_0003_T	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	2.0	2.0	0.0
+ACH-000707	P3HR-1	Lymphoid	BL	Mature B-Cell Neoplasms	2.0	1.0	0.0
+ACH-000399	NCI-H2196	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	2.0	0.0
+ACH-002928	MM100511	Skin	ACRM	Melanoma	2.0	2.0	0.0
+ACH-000695	COR-L47	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	2.0	0.0
+ACH-001532	JMU-RTK-2	Kidney	MRT	Rhabdoid Cancer	2.0	1.0	0.0
+ACH-000704	OAW42	Ovary/Fallopian Tube	SOC	Ovarian Epithelial Tumor	2.0	2.0	0.0
+ACH-001563	MM127	Skin	MEL	Melanoma	2.0	2.0	0.0
+ACH-000358	NCI-H69	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	1.0	0.0
+ACH-002688	OS457	Bone	OS	Osteosarcoma	2.0	1.0	0.0
+ACH-000991	SNU-81	Bowel	COAD	Colorectal Adenocarcinoma	2.0	1.0	0.0
+ACH-001704	VMRC-MELG	Skin	MEL	Melanoma	2.0	1.0	0.0
+ACH-000664	SU-DHL-1	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	2.0	2.0	0.0
+ACH-000631	KS-1	CNS/Brain	GB	Diffuse Glioma	2.0	2.0	0.0
+ACH-000177	NCI-H660	Prostate	PRSCC	Prostate Small Cell Carcinoma	2.0	2.0	0.0
+ACH-000798	CL-40	Bowel	COAD	Colorectal Adenocarcinoma	2.0	1.0	1.0
+ACH-001335	C-4 II	Cervix	CESC	Cervical Squamous Cell Carcinoma	2.0	1.0	0.0
+ACH-001861	TGBC1TKB	Biliary Tract	GBC	Intracholecystic Papillary Neoplasm	2.0	2.0	0.0
+ACH-000215	LN382	CNS/Brain	GB	Diffuse Glioma	2.0	2.0	0.0
+ACH-002062	SLVL	Lymphoid	SMZL	Mature B-Cell Neoplasms	2.0	2.0	0.0
+ACH-000611	SU-DHL-6	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	2.0	1.0	0.0
+ACH-003459	CCLF_MELM_0011_T	Skin	MEL	Melanoma	2.0	1.0	0.0
+ACH-000786	Daudi	Lymphoid	BL	Mature B-Cell Neoplasms	2.0	1.0	0.0
+ACH-001799	LPS141	Soft Tissue	DDLS	Liposarcoma	2.0	2.0	0.0
+ACH-000355	NCI-H82	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	2.0	0.0
+ACH-001843	ICC3	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	2.0	2.0	0.0
+ACH-000835	GCT	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	2.0	2.0	1.0
+ACH-000530	DMS 114	Lung		SMARCA4-deficient undifferentiated tumor	2.0	1.0	0.0
+ACH-002061	P2UR/K-562	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	2.0	1.0	0.0
+ACH-000077	MJ	Lymphoid	MTNN	Non-Hodgkin Lymphoma	2.0	2.0	0.0
+ACH-001106	KOPN-8	Lymphoid	BLLKMT2A	B-Lymphoblastic Leukemia/Lymphoma	2.0	1.0	0.0
+ACH-002459	HT144 SKIN FV3	Skin	MEL	Melanoma	2.0	1.0	1.0
+ACH-000597	TTC-709	Soft Tissue		Rhabdoid Cancer	2.0	2.0	0.0
+ACH-002497	NCI-H920	Lung	LUAD	Non-Small Cell Lung Cancer	2.0	1.0	0.0
+ACH-000919	IM95	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	2.0	2.0	0.0
+ACH-001378	PACADD-159	Pancreas	PAAD	Pancreatic Adenocarcinoma	2.0	1.0	0.0
+ACH-000854	OCI-MY5	Lymphoid	PCM	Mature B-Cell Neoplasms	2.0	2.0	0.0
+ACH-000258	Du4475	Breast	BRCA	Invasive Breast Carcinoma	2.0	2.0	0.0
+ACH-000515	HCC-33	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	1.0	0.0
+ACH-000106	JVM-2	Lymphoid	MCL	Mature B-Cell Neoplasms	2.0	1.0	0.0
+ACH-001696	UPCI-SCC-111	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	2.0	2.0	0.0
+ACH-001097	KARPAS-384	Lymphoid	ATLL	Mature T and NK Neoplasms	2.0	2.0	1.0
+ACH-000298	NCI-H2029	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	2.0	0.0
+ACH-000271	SU-DHL-10	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	2.0	1.0	0.0
+ACH-000719	RMG-I	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	2.0	2.0	0.0
+ACH-003099	UCSF-OT-1109	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	2.0	2.0	0.0
+ACH-001419	VP229	Breast	IDC	Invasive Breast Carcinoma	2.0	2.0	0.0
+ACH-003061	NCI-H774	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	2.0	0.0
+ACH-000279	EWS502	Bone	ES	Ewing Sarcoma	2.0	1.0	0.0
+ACH-001067	F5	CNS/Brain	MNG	Meningothelial Tumor	2.0	2.0	1.0
+ACH-000283	A1207	CNS/Brain	GB	Diffuse Glioma	2.0	2.0	0.0
+ACH-000670	SBC-5	Lung	SCLC	Lung Neuroendocrine Tumor	2.0	2.0	0.0
+ACH-000944	NAMALWA	Lymphoid	BL	Mature B-Cell Neoplasms	2.0	1.0	0.0
+ACH-001634	PGA-1	Lymphoid	CLLSLL	Mature B-Cell Neoplasms	2.0	2.0	0.0
+ACH-000150	HCC2935	Lung	LUAD	Non-Small Cell Lung Cancer	2.0	1.0	0.0
+ACH-000482	RERF-LC-KJ	Lung	LUAD	Non-Small Cell Lung Cancer	2.0	1.0	0.0
+ACH-000883	SW 1783	CNS/Brain	AASTR	Diffuse Glioma	2.0	2.0	0.0
+ACH-000114	SU.86.86	Pancreas	PAAD	Pancreatic Adenocarcinoma	1.0	1.0	0.0
+ACH-000200	NMC-G1	CNS/Brain	GB	Diffuse Glioma	1.0	1.0	0.0
+ACH-001678	U-2940	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-000052	A-673	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-000525	NCI-H2171	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-000015	NCI-H1581	Lung	LCLC	Non-Small Cell Lung Cancer	1.0	1.0	0.0
+ACH-000110	NCC-StC-K140	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	1.0	1.0	0.0
+ACH-000343	NCI-H522	Lung	LUAD	Non-Small Cell Lung Cancer	1.0	1.0	0.0
+ACH-000990	HEC-108	Uterus	UCEC	Endometrial Carcinoma	1.0	1.0	1.0
+ACH-000040	U-118 MG	CNS/Brain	ASTR	Diffuse Glioma	1.0	1.0	0.0
+ACH-001794	93T449	Soft Tissue	WDLS	Liposarcoma	1.0	1.0	0.0
+ACH-000965	RL95-2	Uterus	UASC	Endometrial Carcinoma	1.0	1.0	0.0
+ACH-001795	94T778	Soft Tissue	WDLS	Liposarcoma	1.0	1.0	0.0
+ACH-002035	LCAM1	Lung	NSCLCPD	Non-Small Cell Lung Cancer	1.0	1.0	1.0
+ACH-001295	Y-79	Eye	RBL	Retinoblastoma	1.0	1.0	0.0
+ACH-000628	NCI-H596	Lung	LUAS	Non-Small Cell Lung Cancer	1.0	1.0	0.0
+ACH-000616	Hs 746T	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	1.0	1.0	0.0
+ACH-001842	ICC2	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	1.0	1.0	0.0
+ACH-000594	DMS 153	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-000773	Ki-JK	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	1.0	1.0	0.0
+ACH-000305	EC-GI-10	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	1.0	1.0	0.0
+ACH-000102	GMS-10	CNS/Brain	GB	Diffuse Glioma	1.0	1.0	0.0
+ACH-000604	KYO-1	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	1.0	1.0	0.0
+ACH-000346	JVM-3	Lymphoid	BPLL	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-001680	U-698-M	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	1.0	1.0	0.0
+ACH-000163	SW579	Head and Neck	HNSC	Head and Neck Squamous Cell Carcinoma	1.0	1.0	0.0
+ACH-000226	SUP-M2	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	1.0	1.0	0.0
+ACH-001109	KP-MRT-RY	Kidney	MRT	Rhabdoid Cancer	1.0	1.0	0.0
+ACH-000448	NCI-H1666	Lung	LUAD	Non-Small Cell Lung Cancer	1.0	1.0	0.0
+ACH-001134	MYLA	Lymphoid	TLL	T-Lymphoblastic Leukemia/Lymphoma	1.0	1.0	0.0
+ACH-000430	TYK-nu	Ovary/Fallopian Tube	HGSOC	Ovarian Epithelial Tumor	1.0	1.0	0.0
+ACH-000577	JHH-2	Liver	HCC	Hepatocellular Carcinoma	1.0	1.0	0.0
+ACH-002798	NCC-DFSP2-C1	Skin	DFSP	Dermatofibrosarcoma Protuberans	1.0	1.0	0.0
+ACH-000371	RL	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-001035	CHLA-99	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-001059	DL	Soft Tissue		Rhabdoid Cancer	1.0	1.0	0.0
+ACH-001670	TASK1	CNS/Brain	PNET	Embryonal Tumor	1.0	1.0	0.0
+ACH-001389	SUM-1315MO2	Breast	IDC	Invasive Breast Carcinoma	1.0	1.0	0.0
+ACH-001528	IHH-4	Thyroid	THPA	Well-Differentiated Thyroid Cancer	1.0	1.0	0.0
+ACH-000162	GA-10	Lymphoid	BL	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-000424	TC-71	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-000948	23132/87	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	1.0	1.0	0.0
+ACH-000410	Saos-2	Bone	OS	Osteosarcoma	1.0	1.0	0.0
+ACH-000974	SNG-M	Uterus	UCEC	Endometrial Carcinoma	1.0	1.0	0.0
+ACH-002052	Lu-139	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-000643	HDQ-P1	Breast	IDC	Invasive Breast Carcinoma	1.0	1.0	0.0
+ACH-000376	SF-295	CNS/Brain	GB	Diffuse Glioma	1.0	1.0	0.0
+ACH-001862	TGBC52TKB	Ampulla of Vater	AMPCA	Ampullary Carcinoma	1.0	1.0	0.0
+ACH-001032	CHLA-32	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-000640	SK-MEL-31	Skin	SKCM	Melanoma	1.0	1.0	0.0
+ACH-000382	COR-L24	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-002002	A375 SKIN CJ2	Skin	MEL	Melanoma	1.0	1.0	0.0
+ACH-002847	YUHOIN	Skin	MEL	Melanoma	1.0	1.0	0.0
+ACH-001020	BT-16	CNS/Brain	ATRT	Embryonal Tumor	1.0	1.0	0.0
+ACH-001449	BL-2	Lymphoid	BL	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-000548	BHY	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	1.0	1.0	0.0
+ACH-000388	NU-DHL-1	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-000459	TUHR10TKB	Kidney	CCRCC	Renal Cell Carcinoma	1.0	1.0	0.0
+ACH-000245	BL-41	Lymphoid	BL	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-001667	SU-CCS-1	Soft Tissue	CCS	Clear Cell Sarcoma	1.0	1.0	0.0
+ACH-000257	COR-L279	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-001376	PACADD-135	Pancreas	PAAD	Pancreatic Adenocarcinoma	1.0	1.0	0.0
+ACH-002170	NCI-H1688	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-001100	KHYG-1	Lymphoid	NKCLL	T-Lymphoblastic Leukemia/Lymphoma	1.0	1.0	0.0
+ACH-000104	Loucy	Lymphoid	ETPLL	T-Lymphoblastic Leukemia/Lymphoma	1.0	1.0	0.0
+ACH-000348	RPMI-7951	Skin	MEL	Melanoma	1.0	1.0	0.0
+ACH-000514	NCI-H1092	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-001030	CHLA-218	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-001034	CHLA-9	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-000673	LN-443	CNS/Brain	GB	Diffuse Glioma	1.0	1.0	0.0
+ACH-000924	NCI-H2172	Lung	NSCLC	Non-Small Cell Lung Cancer	1.0	1.0	0.0
+ACH-000884	MDA-MB-435S	Skin	MEL	Melanoma	1.0	1.0	0.0
+ACH-000151	JM1	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	1.0	1.0	0.0
+ACH-003468	CCLF_THYR_0003_T	Thyroid	THAP	Anaplastic Thyroid Cancer	1.0	1.0	0.0
+ACH-000714	KMS-11	Lymphoid	PCM	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-003121	NCI-H2679	Lung	SCLC	Lung Neuroendocrine Tumor	1.0	1.0	0.0
+ACH-000402	BL-70	Lymphoid	BL	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-001541	KMS-28PE	Lymphoid	PCM	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-000365	SU-DHL-4	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-001428	CCLF_PEDS_0010_T	Bone	ES	Ewing Sarcoma	1.0	1.0	0.0
+ACH-002066	HS-Sch-2	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	1.0	1.0	0.0
+ACH-000829	HuNS1	Lymphoid	PCM	Mature B-Cell Neoplasms	1.0	1.0	0.0
+ACH-000141	SNU-308	Biliary Tract	GBAD	Intracholecystic Papillary Neoplasm	1.0	1.0	0.0
+ACH-000717	COLO-680N	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	1.0	1.0	0.0
+ACH-000153	NCI-H2052	Pleura	PLSMESO	Pleural Mesothelioma	1.0	1.0	0.0
+ACH-001128	MON	Soft Tissue		Rhabdoid Cancer	1.0	1.0	0.0
+ACH-000036	U343	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000082	G-292, clone A141B1	Bone	OS	Osteosarcoma	0.0	0.0	0.0
+ACH-000759	MDA-MB-175-VII	Breast	IDC	Invasive Breast Carcinoma	0.0	0.0	0.0
+ACH-000780	NCI-H1105	Lung	SCLC	Lung Neuroendocrine Tumor	0.0	0.0	0.0
+ACH-000808	HuH28	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	0.0	0.0	0.0
+ACH-000807	SNU-738	CNS/Brain	ODG	Diffuse Glioma	0.0	0.0	0.0
+ACH-000126	KG-1-C	CNS/Brain	ODG	Diffuse Glioma	0.0	0.0	0.0
+ACH-000315	KARPAS-422	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-003012	A549_CRAF_KD	Lung	LUAD	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-002801	NCC-MPNST3-C1	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	0.0	0.0	0.0
+ACH-001401	SW-13	Adrenal Gland	ACC	Adrenocortical Carcinoma	0.0	0.0	0.0
+ACH-000935	MDST8	Bowel	COAD	Colorectal Adenocarcinoma	0.0	0.0	0.0
+ACH-001853	KMCH-1	Liver	HCCIHCH	Hepatocellular Carcinoma plus Intrahepatic Cholangiocarcinoma	0.0	0.0	0.0
+ACH-000327	NCI-H1395	Lung	LUAD	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-001356	MB-1	Thyroid	THAP	Anaplastic Thyroid Cancer	0.0	0.0	0.0
+ACH-000567	ST486	Lymphoid	BL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001536	KKU-100	Biliary Tract	EHCH	Intraductal Papillary Neoplasm of the Bile Duct	0.0	0.0	0.0
+ACH-000538	HUTU80	Bowel	DA	Small Bowel Cancer	0.0	0.0	0.0
+ACH-002843	CCLF_RARE_0020_T	Soft Tissue	DES	Desmoid/Aggressive Fibromatosis	0.0	0.0	0.0
+ACH-000682	SNU-1066	Head and Neck	LXSC	Head and Neck Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-000889	KMM-1	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-002046	HTMMT	Uterus	UCS	Endometrial Carcinoma	0.0	0.0	0.0
+ACH-000777	KYSE-30	Esophagus/Stomach	ESCC	Esophageal Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-001274	SW982	Soft Tissue	SYNS	Synovial Sarcoma	0.0	0.0	0.0
+ACH-001611	NP 8	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000368	SNU-1105	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000588	KMS-26	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000398	RI-1	Lymphoid	ABC	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000576	KMS-27	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000668	HCC70	Breast	IDC	Invasive Breast Carcinoma	0.0	0.0	0.0
+ACH-000543	SNU-489	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000187	COR-L311	Lung	SCLC	Lung Neuroendocrine Tumor	0.0	0.0	0.0
+ACH-000436	OCI-My7	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000041	RD-ES	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-002070	HKBMM	CNS/Brain	MNG	Meningothelial Tumor	0.0	0.0	0.0
+ACH-000901	HCC-1359	Lung	GCLC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-001451	BOKU	Cervix	CESC	Cervical Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-000289	SNU-466	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000662	COR-L23	Lung	LCLC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-000945	NCI-H650	Lung	LUAD	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-000419	KMS-28BM	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001605	no.10	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000518	CAL-33	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-000031	Panc 02.13	Pancreas	PAAD	Pancreatic Adenocarcinoma	0.0	0.0	0.0
+ACH-001850	G415	Biliary Tract	GBAD	Intracholecystic Papillary Neoplasm	0.0	0.0	0.0
+ACH-000504	SNB75	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000609	SF126	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-001321	TT	Thyroid	THME	Medullary Thyroid Cancer	0.0	0.0	0.0
+ACH-001489	COR-L32	Lung	LUSC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-000152	M059K	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000244	DK-MG	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000763	MM1-S	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001341	DoTc2 4510	Cervix	MCCE	Mixed Cervical Carcinoma	0.0	0.0	0.0
+ACH-001662	SNU-2372	Breast	BRCANOS	Invasive Breast Carcinoma	0.0	0.0	0.0
+ACH-000516	CAL-78	Bone	DDCHS	Chondrosarcoma	0.0	0.0	0.0
+ACH-000527	OVISE	Ovary/Fallopian Tube	CCOV	Ovarian Epithelial Tumor	0.0	0.0	0.0
+ACH-000877	EB1	Lymphoid	BL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-002047	HIRS-BM	Uterus	UCS	Endometrial Carcinoma	0.0	0.0	0.0
+ACH-000630	YD-8	Head and Neck	OCSC	Head and Neck Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-000737	NCI-H1385	Lung	LUSC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-000098	GAMG	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000267	HDLM-2	Lymphoid	HL	Hodgkin Lymphoma	0.0	0.0	0.0
+ACH-000231	KALS-1	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-000208	U-178	CNS/Brain	ASTR	Diffuse Glioma	0.0	0.0	0.0
+ACH-000418	SW 1353	Bone	CHS	Chondrosarcoma	0.0	0.0	0.0
+ACH-001992	ONE58	Pleura	PLEMESO	Pleural Mesothelioma	0.0	0.0	0.0
+ACH-000204	LP-1	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000391	MHH-ES-1	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-000653	JJN-3	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000674	NUGC-4	Esophagus/Stomach	DSTAD	Esophagogastric Adenocarcinoma	0.0	0.0	0.0
+ACH-000024	OPM-2	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000057	OPM-1	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000157	A4/Fuk	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000753	JMSU-1	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	0.0	0.0	0.0
+ACH-000375	G-402	Kidney	RCC	Renal Cell Carcinoma	0.0	0.0	0.0
+ACH-001617	OCI-LY7	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000273	SF539	CNS/Brain	GSARC	Diffuse Glioma	0.0	0.0	0.0
+ACH-002401	21MT2	Breast	IDC	Invasive Breast Carcinoma	0.0	0.0	0.0
+ACH-001279	SCCOHT-1	Ovary/Fallopian Tube	SCCO	Ovarian Epithelial Tumor	0.0	0.0	0.0
+ACH-001447	BJAB	Lymphoid	BL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001959	CC-LP-1	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	0.0	0.0	0.0
+ACH-001987	NZM43	Skin	MEL	Melanoma	0.0	0.0	0.0
+ACH-000598	KMS-21BM	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000703	DMS 79	Lung	SCLC	Lung Neuroendocrine Tumor	0.0	0.0	0.0
+ACH-000350	COLO-678	Bowel	COAD	Colorectal Adenocarcinoma	0.0	0.0	0.0
+ACH-000445	KNS-60	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-001016	Becker	CNS/Brain	ASTR	Diffuse Glioma	0.0	0.0	0.0
+ACH-000323	42-MG-BA	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-001524	HSC-5	Skin	CSCC	Cutaneous Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-000363	SK-MM-2	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000051	TE 617.T	Soft Tissue	RMS	Rhabdomyosarcoma	0.0	0.0	0.0
+ACH-002214	BC-1	Lymphoid	PEL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000478	SNU-387	Liver	HCC	Hepatocellular Carcinoma	0.0	0.0	0.0
+ACH-001132	MTA	Lymphoid	NKCLL	T-Lymphoblastic Leukemia/Lymphoma	0.0	0.0	0.0
+ACH-002027	HOUA-I	Uterus	UCEC	Endometrial Carcinoma	0.0	0.0	0.0
+ACH-000393	HLF	Liver	HCC	Hepatocellular Carcinoma	0.0	0.0	0.0
+ACH-000659	SCLC-21H	Lung	SCLC	Lung Neuroendocrine Tumor	0.0	0.0	0.0
+ACH-000039	SK-N-MC	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-001333	C-33 A	Cervix	CESC	Cervical Squamous Cell Carcinoma	0.0	0.0	0.0
+ACH-001494	EGI-1	Biliary Tract	EHCH	Intraductal Papillary Neoplasm of the Bile Duct	0.0	0.0	0.0
+ACH-000905	5637	Bladder/Urinary Tract	BLCA	Bladder Urothelial Carcinoma	0.0	0.0	0.0
+ACH-001813	C242	Bone	OS	Osteosarcoma	0.0	0.0	0.0
+ACH-000904	NCI-H2106	Lung	LCLC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-000493	SNU-423	Liver	HCC	Hepatocellular Carcinoma	0.0	0.0	0.0
+ACH-000923	BCP-1	Lymphoid	PEL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000689	RH-18	Soft Tissue	ERMS	Rhabdomyosarcoma	0.0	0.0	0.0
+ACH-002650	ETCC-016	Lung	LUAD	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-001618	OCI-M2	Myeloid	AML	Acute Myeloid Leukemia	0.0	0.0	0.0
+ACH-001232	UW228	CNS/Brain	MBL	Embryonal Tumor	0.0	0.0	0.0
+ACH-000338	SR-786	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	0.0	0.0	0.0
+ACH-000053	KARPAS-299	Lymphoid	ALCLALKP	Mature T and NK Neoplasms	0.0	0.0	0.0
+ACH-001817	C393	Bone	OS	Osteosarcoma	0.0	0.0	0.0
+ACH-001029	CHLA-10	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-000745	MOLP-8	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001197	SMZ-1	Lymphoid	MTNN	Non-Hodgkin Lymphoma	0.0	0.0	0.0
+ACH-001636	Ramos	Lymphoid	BL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000758	MKN74	Esophagus/Stomach	TSTAD	Esophagogastric Adenocarcinoma	0.0	0.0	0.0
+ACH-000087	SK-ES-1	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-000089	NCI-H684	Bowel	COAD	Colorectal Adenocarcinoma	0.0	0.0	0.0
+ACH-000148	Hs 578T	Breast	BRCNOS	Invasive Breast Carcinoma	0.0	0.0	0.0
+ACH-000334	DB	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000190	HD-MY-Z	Myeloid	AML	Acute Myeloid Leukemia	0.0	0.0	0.0
+ACH-000743	COR-L95	Lung	SCLC	Lung Neuroendocrine Tumor	0.0	0.0	0.0
+ACH-000827	WM793	Skin	MEL	Melanoma	0.0	0.0	0.0
+ACH-001533	KARPAS 1718	Lymphoid	SMZL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000914	HT	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001033	CHLA-57	CNS/Brain	PNET	Embryonal Tumor	0.0	0.0	0.0
+ACH-002792	NCC-CCS1B-C1	Soft Tissue	CCS	Clear Cell Sarcoma	0.0	0.0	0.0
+ACH-001677	U-2904	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000821	EJM	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000838	AMO-1	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000129	NCI-H1341	Lung		SMARCA4-deficient undifferentiated tumor	0.0	0.0	0.0
+ACH-000976	HuCCT1	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	0.0	0.0	0.0
+ACH-000551	K-562	Myeloid	CMLBCRABL1	Myeloproliferative Neoplasms	0.0	0.0	0.0
+ACH-000075	U-87 MG	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-003457	CCLF_MELM_0038_T	Skin	MEL	Melanoma	0.0	0.0	0.0
+ACH-000564	KHM-1B	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001192	SK-NEP-1	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-000440	CA46	Lymphoid	BL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000380	KMS-12-BM	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000485	GSU	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	0.0	0.0	0.0
+ACH-001443	ASH-3	Thyroid	THAP	Anaplastic Thyroid Cancer	0.0	0.0	0.0
+ACH-000050	NCI-H929	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001099	KD	Soft Tissue		Rhabdoid Cancer	0.0	0.0	0.0
+ACH-002478	BC-2	Lymphoid	PEL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-003460	CCLF_HEME_0001_T	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000627	LCLC-103H	Lung	LCLC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-001674	TGW	Peripheral Nervous System	NBL	Neuroblastoma	0.0	0.0	0.0
+ACH-001060	DL-40	Lymphoid	ALCLALKN	Mature T and NK Neoplasms	0.0	0.0	0.0
+ACH-000697	A3/KAW	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000806	L-540	Lymphoid	HL	Hodgkin Lymphoma	0.0	0.0	0.0
+ACH-000626	U266B1	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001038	COG-E-352	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-001703	VAL	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000511	Calu-1	Lung	LUSC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-000761	NUGC-2	Esophagus/Stomach	STAD	Esophagogastric Adenocarcinoma	0.0	0.0	0.0
+ACH-000512	INA6	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001210	TTC-1240	Kidney	MRT	Rhabdoid Cancer	0.0	0.0	0.0
+ACH-000333	JHOM-2B	Ovary/Fallopian Tube	MOV	Ovarian Epithelial Tumor	0.0	0.0	0.0
+ACH-003463	CCLF_HEME_0004_T	Lymphoid	TPLL	Mature T and NK Neoplasms	0.0	0.0	0.0
+ACH-000558	A-172	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-001669	TANOUE	Lymphoid	BLL	B-Lymphoblastic Leukemia/Lymphoma	0.0	0.0	0.0
+ACH-000890	SW 1271	Lung		SMARCA4-deficient undifferentiated tumor	0.0	0.0	0.0
+ACH-000093	Panc 05.04	Pancreas	PAAD	Pancreatic Adenocarcinoma	0.0	0.0	0.0
+ACH-000541	KMS-34	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-001793	LPS27	Soft Tissue	LIPO	Liposarcoma	0.0	0.0	0.0
+ACH-001306	8305C	Thyroid	THAP	Anaplastic Thyroid Cancer	0.0	0.0	0.0
+ACH-000061	HH	Lymphoid	MTNN	Non-Hodgkin Lymphoma	0.0	0.0	0.0
+ACH-001427	CCLF_PEDS_0007_T	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-001985	NZM40	Skin	MEL	Melanoma	0.0	0.0	0.0
+ACH-000891	HCC-1438	Lung	LCLC	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-001622	Onda 7	CNS/Brain	GB	Diffuse Glioma	0.0	0.0	0.0
+ACH-002784	NCC-UPS2-C1	Soft Tissue	MFH	Undifferentiated Pleomorphic Sarcoma/Malignant Fibrous Histiocytoma/High-Grade Spindle Cell Sarcoma	0.0	0.0	0.0
+ACH-000191	BHT-101	Thyroid	THAP	Anaplastic Thyroid Cancer	0.0	0.0	0.0
+ACH-002780	NCC-ES1-C1	Bone	ES	Ewing Sarcoma	0.0	0.0	0.0
+ACH-001607	NOZ	Biliary Tract	GBAD	Intracholecystic Papillary Neoplasm	0.0	0.0	0.0
+ACH-001057	DERL-2	Lymphoid	HSTCL	Mature T and NK Neoplasms	0.0	0.0	0.0
+ACH-000314	HCC-2108	Lung	LUAD	Non-Small Cell Lung Cancer	0.0	0.0	0.0
+ACH-001864	YSCCC	Biliary Tract	IHCH	Intraductal Papillary Neoplasm of the Bile Duct	0.0	0.0	0.0
+ACH-000183	L-363	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000750	LOX IMVI	Skin	MEL	Melanoma	0.0	0.0	0.0
+ACH-000193	KARPAS-620	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000453	MOLP-2	Lymphoid	PCM	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-002802	NCC-MPNST3-X2-C1	Peripheral Nervous System	MPNST	Nerve Sheath Tumor	0.0	0.0	0.0
+ACH-001064	EB-2	Lymphoid	BL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000357	JeKo-1	Lymphoid	MCL	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000655	SF268	CNS/Brain	ASTR	Diffuse Glioma	0.0	0.0	0.0
+ACH-001638	RC-K8	Lymphoid	GCB	Mature B-Cell Neoplasms	0.0	0.0	0.0
+ACH-000285	Toledo	Lymphoid	DLBCLNOS	Mature B-Cell Neoplasms	0.0	0.0	0.0

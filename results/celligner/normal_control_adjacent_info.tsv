@@ -1,0 +1,11 @@
+tumor_d1_spearman_vs_main	0.9785
+tumor_same_nearest_line_vs_main	0.832
+arm	adjacent
+n_normals_projected	737
+n_normals_analysed	683
+n_groups_analysed	18
+median_auc	0.775
+minutes	4.6
+all_pct_normal_farther	73.1
+all_wilcoxon_p	4.5809164868149336e-33
+all_pct_same_nearest_line	13.0

@@ -1,0 +1,19 @@
+celligner_commit	d9c9246
+mnnpy_commit	bf1dd73
+depmap_release	24Q4 (Figshare 27993248)
+n_models	1673
+n_tumors	10211
+depmap_genes	19193
+depmap_genes_mapped_v23	18946
+common_genes	18946
+de_genes_union	1698
+ref_clusters	37
+target_clusters	51
+cpca_explained_var	12.35;5.615;5.26;1.611
+mnn_k1	5
+mnn_k2	50
+pca_ncomp	70
+cpca_ncomp	4
+top_k_genes	1000
+seed	0
+minutes	12.2
