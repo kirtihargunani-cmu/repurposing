@@ -1,6 +1,6 @@
 # Results and data guide
 
-One- to two-line descriptions of every results table and data folder on the disease side (Steps 1-9).
+One- to two-line descriptions of every results table and data folder on the disease side (Steps 1-10).
 Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-79b) are maintained in the
 `~/projects/repurposing-celligner` worktree. Decisions and numbers: [`PROGRESS.md`](PROGRESS.md).
 
@@ -114,6 +114,14 @@ Additional step6 files:
 | `crc_cms.tsv` | CMS1-4 calls (CMScaller) crossed with clusters and MSI status in all cohorts, incl. TCGA-READ clusters. |
 | `crc_summary.tsv` | One-line summary per cohort of the replication tests. |
 
+### step10: signatures for the strata
+| File | What it is |
+|---|---|
+| `signature_summary.tsv` | One row per stratum signature (COAD/READ subgroups, breast axis high / low ends): sample counts, changed genes, similarity to the parent group's Step 4 signature and between axis ends. |
+| `z_strata_vs_gtex.tsv` | Gene x stratum: how much each gene is up/down in that stratum's tumors vs healthy GTEx tissue (signed z); the drug-matching input. |
+| `z_axis_drivers.tsv` | Gene x breast axis: how strongly each gene rises toward the high end of the axis (explanation only). |
+| `axis_driver_top.tsv` | The 25 genes most tied to each end of each breast axis. |
+
 ## `data/` (local only, not in git)
 
 | Location | What it is |
@@ -136,4 +144,5 @@ Additional step6 files:
 | `processed/step6/<regulon>/` | Per-patient regulator scores per group (CollecTRI, DoRothEA, ARACNe). |
 | `processed/step6/aracne_project_{purity,qc,cqn,map}/` | ARACNe patient scores after each correction; `_map` = current Step 8 input. |
 | `processed/step8/features/` | Clustering inputs: module scores per patient (main and check sets). |
+| `processed/step10/` | Full limma tables for each Step 10 stratum signature. |
 | `processed/step9/<cohort>/` | Corrected expression and patient regulator scores for the replication cohorts. |
