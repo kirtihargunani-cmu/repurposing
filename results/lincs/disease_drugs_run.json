@@ -1,6 +1,6 @@
 {
  "config": "config/drug_gate.yaml",
- "config_sha256_16": "14ea42ae59511130",
+ "config_sha256_16": "1d0a2f8719a51a48",
  "rules": {
   "expression": {
    "tpm_min": 1.0,

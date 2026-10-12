@@ -1,9 +1,9 @@
 # Celligner tissue keys: which DepMap lines may represent each group (scripts/73_celligner_tissue_keys.py).
 # Default = organ: DepMap OncotreeLineage equal to the OncoTree tissue of the group's code (user 2026-10-08).
-# substitute = organ has no usable lines; blood = umbrella key for hematologic groups.
+# substitute = organ has no usable lines; blood = hematologic groups, split into Myeloid and Lymphoid lines (user 2026-10-12; was one Blood key).
 # lineages: DepMap OncotreeLineage values (;-separated); diseases: optional OncotreePrimaryDisease restriction.
 group_id	key	key_type	lineages	diseases	note
-ALL-B	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Lymphoid
+ALL-B	Lymphoid	blood	Lymphoid		lymphoid lines only (user 2026-10-12: myeloid and lymphoid kept separate)
 BRCA-Basal	Breast	organ	Breast		
 BRCA-Her2	Breast	organ	Breast		
 BRCA-LumA	Breast	organ	Breast		
@@ -20,20 +20,20 @@ PCPG-PHEO	Neuroblastoma	substitute	Peripheral Nervous System	Neuroblastoma	adren
 SARC-DDLPS	Soft Tissue	organ	Soft Tissue		
 SARC-LMS	Soft Tissue	organ	Soft Tissue		
 SARC-UPS	Soft Tissue	organ	Soft Tissue		
-TARGET-AML	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Myeloid
+TARGET-AML	Myeloid	blood	Myeloid		myeloid lines only (user 2026-10-12: myeloid and lymphoid kept separate)
 TARGET-NBL	Peripheral Nervous System	organ	Peripheral Nervous System		
 TARGET-WT	Kidney	organ	Kidney		
 TCGA-ACC	Adrenal Gland	organ	Adrenal Gland		
 TCGA-BLCA	Bladder/Urinary Tract	organ	Bladder/Urinary Tract		
 TCGA-CHOL	Biliary Tract	organ	Biliary Tract		
 TCGA-COAD	Bowel	organ	Bowel		
-TCGA-DLBC	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Lymphoid
+TCGA-DLBC	Lymphoid	blood	Lymphoid		lymphoid lines only (user 2026-10-12: myeloid and lymphoid kept separate)
 TCGA-GBM	CNS/Brain	organ	CNS/Brain		
 TCGA-HNSC	Head and Neck	organ	Head and Neck		
 TCGA-KICH	Kidney	organ	Kidney		
 TCGA-KIRC	Kidney	organ	Kidney		
 TCGA-KIRP	Kidney	organ	Kidney		
-TCGA-LAML	Blood	blood	Myeloid;Lymphoid		blood umbrella (user 2026-10-08); sub-lineage Myeloid
+TCGA-LAML	Myeloid	blood	Myeloid		myeloid lines only (user 2026-10-12: myeloid and lymphoid kept separate)
 TCGA-LIHC	Liver	organ	Liver		
 TCGA-LUAD	Lung	organ	Lung		
 TCGA-LUSC	Lung	organ	Lung		
