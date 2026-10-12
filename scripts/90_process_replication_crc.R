@@ -14,7 +14,7 @@
 #             between cross-mappable genes removed) and the regulators kept for TCGA-COAD (50_viper.R filter)
 #   reference PI decision 2026-10-09: each patient vs the cohort's average tumor (viper method = "scale"); clustering
 #             compares patients with each other, so this matches the TCGA module scores after standardization
-# Outputs: data/processed/step9/<cohort>/{expression,patient_nes}.tsv.gz; results/step9/<cohort>_samples.tsv;
+# Outputs: data/processed/step9/<cohort>/{expression,patient_nes}.tsv.gz (+ expression_raw / counts_raw for CMS); results/step9/<cohort>_samples.tsv;
 #          results/step9/processing_summary.tsv
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(viper); library(estimate)})
 args <- commandArgs(trailingOnly = FALSE)
@@ -97,6 +97,8 @@ tum <- cl[dataset != "Non Tumoral", sample]
 es <- estimate_scores(G, "affymetrix"); cl <- merge(cl, es, by = "sample")
 Gt <- G[, tum]; pur <- cl[match(tum, sample), estimate_score]
 Gc <- correct(Gt, cbind(1, pur - mean(pur)))
+dir.create("data/processed/step9/gse39582", recursive = TRUE, showWarnings = FALSE)
+fwrite(data.table(gene_id = rownames(G), round(G, 4)), "data/processed/step9/gse39582/expression_raw.tsv.gz", sep = "\t")  # uncorrected, all samples (CMS)
 s1 <- score("gse39582", Gc, cl[, role := fifelse(dataset == "Non Tumoral", "normal", "tumor")])
 
 # ---- CPTAC-COAD
@@ -105,6 +107,8 @@ cnt <- sapply(man$file_name, function(f) { x <- fread(file.path(RAW, "cptac_coad
   setNames(x$unstranded, sub("\\..*", "", x$gene_id)) })
 colnames(cnt) <- man$case; cnt <- cnt[rownames(cnt) %in% pc, ]
 cnt <- cnt[!duplicated(rownames(cnt)), ]
+dir.create("data/processed/step9/cptac_coad", recursive = TRUE, showWarnings = FALSE)
+fwrite(data.table(gene_id = rownames(cnt), cnt), "data/processed/step9/cptac_coad/counts_raw.tsv.gz", sep = "\t")  # unfiltered counts (CMS)
 y <- DGEList(cnt); y <- y[filterByExpr(y), , keep.lib.sizes = FALSE]; y <- calcNormFactors(y)
 L <- cpm(y, log = TRUE, prior.count = 1)
 cs <- fread(cmd = paste("grep -v '^#'", file.path(RAW, "cptac_coad/cbioportal/data_clinical_sample.txt")))
