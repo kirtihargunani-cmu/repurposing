@@ -94,6 +94,11 @@ Additional step6 files:
 | `agreement.tsv` | Agreement between the main and check feature sets (ARI). |
 | `known_subtypes.tsv` | Clusters vs TCGA molecular subtypes (COAD split = MSI vs CIN). |
 | `defining_modules.tsv` | Modules that most distinguish each cluster, with top regulators. |
+| `breast_axes_pca.tsv` | Breast: the first 5 principal components of the module scores per subtype, with null, stability and plate/quality/purity checks; `keep` = used as an axis. |
+| `breast_axes_annotation.tsv` | What each breast axis is: top-loading modules and the Hallmark programs, immune and proliferation scores it tracks. |
+| `breast_axes_loadings.tsv` / `breast_axes_scores.tsv` | Module weights of each axis (to project other cohorts) and each patient's axis scores. |
+| `step10_strata.tsv` | The strata that get their own signature and drug matching: COAD CMS1/3-like and CMS2/4-like, READ-C1/C2/C3, 13 breast axes. |
+| `step10_patient_strata.tsv` | Which COAD / READ patient is in which stratum. |
 
 ### step9: replication
 | File | What it is |
@@ -101,7 +106,13 @@ Additional step6 files:
 | `gse39582_samples.tsv` | GSE39582 sample info: MMR/MSI, stage, KRAS/BRAF/TP53, CIMP, survival, ESTIMATE. |
 | `cptac_coad_samples.tsv` | CPTAC-COAD sample info: MSI, stage, survival, ESTIMATE, RNA-quality score. |
 | `processing_summary.tsv` | Per cohort: tumors, genes, regulators scored, MSI counts. |
-| `crc_*.tsv` | Colorectal replication tests (cluster transfer, independent clustering, defining modules, CMS); see PROGRESS.md. |
+| `crc_features_check.tsv` | Module scores rebuilt as member averages vs the Step 8 scores (agreement check). |
+| `crc_transfer.tsv` / `crc_assignments.tsv` | TCGA-COAD clusters transferred to GSE39582 / CPTAC (nearest centroid): MSI association; each patient's label. |
+| `crc_igp.tsv` | In-group proportion: do transferred clusters hold together in the new cohort. |
+| `crc_independent.tsv` / `crc_independent_scores.tsv` | Fresh M3C clustering in each new cohort: best K, p-values, agreement with transferred labels, MSI link. |
+| `crc_module_effects.tsv` | Per module: MSI-vs-stable difference in each cohort vs the TCGA cluster difference. |
+| `crc_cms.tsv` | CMS1-4 calls (CMScaller) crossed with clusters and MSI status in all cohorts, incl. TCGA-READ clusters. |
+| `crc_summary.tsv` | One-line summary per cohort of the replication tests. |
 
 ## `data/` (local only, not in git)
 
