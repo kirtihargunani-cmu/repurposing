@@ -106,6 +106,10 @@ Additional step6 files:
 | `gse39582_samples.tsv` | GSE39582 sample info: MMR/MSI, stage, KRAS/BRAF/TP53, CIMP, survival, ESTIMATE. |
 | `cptac_coad_samples.tsv` | CPTAC-COAD sample info: MSI, stage, survival, ESTIMATE, RNA-quality score. |
 | `processing_summary.tsv` | Per cohort: tumors, genes, regulators scored, MSI counts. |
+| `metabric_samples.tsv` / `cptac_brca_samples.tsv` | Breast replication sample info: subtype, ER/HER2, survival (METABRIC), ESTIMATE, RNA-quality score (CPTAC). |
+| `processing_summary_brca.tsv` | Per breast cohort and subtype: tumors, genes, regulators scored. |
+| `brca_axes_replication.tsv` | Each breast axis in METABRIC and CPTAC-BRCA: does it emerge on its own, how much variation it captures, do the same genes follow it; verdict. |
+| `brca_axes_features_check.tsv` | Module scores rebuilt as member averages vs the Step 8 scores, and projected vs original axis scores (agreement check). |
 | `crc_features_check.tsv` | Module scores rebuilt as member averages vs the Step 8 scores (agreement check). |
 | `crc_transfer.tsv` / `crc_assignments.tsv` | TCGA-COAD clusters transferred to GSE39582 / CPTAC (nearest centroid): MSI association; each patient's label. |
 | `crc_igp.tsv` | In-group proportion: do transferred clusters hold together in the new cohort. |
