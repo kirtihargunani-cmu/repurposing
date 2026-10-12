@@ -1,0 +1,3 @@
+cohort	n_tumors	n_genes	n_regulators_scored	frac_tcga_regulators	msi_like
+gse39582	566	16212	3839	0.98	dMMR 75 / pMMR 444
+cptac_coad	105	13131	3835	0.979	MSI-H 24 / MSS 80

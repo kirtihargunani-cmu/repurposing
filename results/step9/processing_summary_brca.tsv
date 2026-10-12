@@ -1,0 +1,9 @@
+cohort	group_id	n_tumors	n_genes	n_regulators_scored	frac_tcga_regulators
+metabric	BRCA-Basal	209	16983	3789	0.949
+metabric	BRCA-Her2	224	16983	3774	0.949
+metabric	BRCA-LumA	700	16983	3799	0.948
+metabric	BRCA-LumB	475	16983	3727	0.948
+cptac_brca	BRCA-Basal	27	12896	3770	0.944
+cptac_brca	BRCA-Her2	14	12668	3756	0.944
+cptac_brca	BRCA-LumA	56	13300	3789	0.946
+cptac_brca	BRCA-LumB	17	12682	3710	0.944

@@ -1,0 +1,32 @@
+stratum	group_id	end	n_tumor	n_normal	n_dropped_missing_cov	covariates	n_genes	n_up	n_down	rho_vs_parent_step4	rho_high_vs_low	rho_diff_vs_axis_drivers
+COAD-CMS1/3-like	TCGA-COAD	""	92	165	0	age_z,estimate_z,sexmale	16961	3179	3922	0.967		
+COAD-CMS2/4-like	TCGA-COAD	""	193	165	2	age_z,estimate_z,sexmale	17161	3111	3547	0.991		
+READ-C1	TCGA-READ	""	25	165	0	age_z,estimate_z,sexmale	16918	2906	3792	0.978		
+READ-C2	TCGA-READ	""	39	165	1	age_z,estimate_z,sexmale	16946	3075	3713	0.989		
+READ-C3	TCGA-READ	""	27	165	0	age_z,estimate_z,sexmale	16828	3324	3828	0.979		
+BRCA-Basal-PC1-high	BRCA-Basal	high	64	79	0	age_z,estimate_z	17172	3383	4418	0.984	0.931	0.927
+BRCA-Basal-PC1-low	BRCA-Basal	low	64	79	0	age_z,estimate_z	17235	2690	3744	0.977	0.931	0.927
+BRCA-Basal-PC3-high	BRCA-Basal	high	64	79	0	age_z,estimate_z	17115	3170	4010	0.986	0.952	0.831
+BRCA-Basal-PC3-low	BRCA-Basal	low	64	79	0	age_z,estimate_z	17315	2975	4244	0.985	0.952	0.831
+BRCA-Basal-PC4-high	BRCA-Basal	high	64	79	0	age_z,estimate_z	17108	3170	4091	0.988	0.962	0.875
+BRCA-Basal-PC4-low	BRCA-Basal	low	64	79	0	age_z,estimate_z	17207	3084	3847	0.989	0.962	0.875
+BRCA-Her2-PC2-high	BRCA-Her2	high	27	79	0	age_z,estimate_z	16925	3173	4266	0.982	0.936	0.904
+BRCA-Her2-PC2-low	BRCA-Her2	low	27	79	0	age_z,estimate_z	16989	3047	4240	0.977	0.936	0.904
+BRCA-Her2-PC3-high	BRCA-Her2	high	27	79	0	age_z,estimate_z	16960	3036	4041	0.98	0.941	0.856
+BRCA-Her2-PC3-low	BRCA-Her2	low	27	79	0	age_z,estimate_z	17048	3176	4407	0.984	0.941	0.856
+BRCA-Her2-PC4-high	BRCA-Her2	high	27	79	0	age_z,estimate_z	17006	3050	4157	0.987	0.963	0.834
+BRCA-Her2-PC4-low	BRCA-Her2	low	27	79	0	age_z,estimate_z	16968	3020	4422	0.986	0.963	0.834
+BRCA-LumA-PC2-high	BRCA-LumA	high	186	79	1	age_z,estimate_z	17230	2331	3986	0.987	0.953	0.925
+BRCA-LumA-PC2-low	BRCA-LumA	low	187	79	0	age_z,estimate_z	17274	2311	3750	0.988	0.953	0.925
+BRCA-LumA-PC3-high	BRCA-LumA	high	187	79	0	age_z,estimate_z	17218	2597	3702	0.989	0.952	0.897
+BRCA-LumA-PC3-low	BRCA-LumA	low	187	79	0	age_z,estimate_z	17252	2432	3928	0.985	0.952	0.897
+BRCA-LumA-PC4-high	BRCA-LumA	high	187	79	0	age_z,estimate_z	17305	2643	3840	0.992	0.97	0.889
+BRCA-LumA-PC4-low	BRCA-LumA	low	186	79	1	age_z,estimate_z	17119	2259	3692	0.99	0.97	0.889
+BRCA-LumA-PC5-high	BRCA-LumA	high	186	79	1	age_z,estimate_z	17273	2511	3852	0.991	0.97	0.892
+BRCA-LumA-PC5-low	BRCA-LumA	low	187	79	0	age_z,estimate_z	17242	2480	3527	0.992	0.97	0.892
+BRCA-LumB-PC1-high	BRCA-LumB	high	70	79	0	age_z,estimate_z	17277	3035	4454	0.985	0.943	0.882
+BRCA-LumB-PC1-low	BRCA-LumB	low	70	79	0	age_z,estimate_z	17021	2858	4266	0.983	0.943	0.882
+BRCA-LumB-PC3-high	BRCA-LumB	high	70	79	0	age_z,estimate_z	17090	2825	4315	0.985	0.954	0.863
+BRCA-LumB-PC3-low	BRCA-LumB	low	70	79	0	age_z,estimate_z	17094	3108	4387	0.988	0.954	0.863
+BRCA-LumB-PC4-high	BRCA-LumB	high	70	79	0	age_z,estimate_z	17000	2982	4324	0.987	0.956	0.823
+BRCA-LumB-PC4-low	BRCA-LumB	low	70	79	0	age_z,estimate_z	17219	2976	4380	0.987	0.956	0.823

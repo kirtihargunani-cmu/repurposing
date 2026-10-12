@@ -1,0 +1,71 @@
+cohort	grouping	CMS	N
+"TCGA-COAD"	"MSI status: MSI"	"CMS1"	32
+"TCGA-COAD"	"MSI status: MSI"	"CMS3"	9
+"TCGA-COAD"	"MSI status: MSI"	"CMS4"	6
+"TCGA-COAD"	"MSI status: MSI"	unassigned	1
+"TCGA-COAD"	"MSI status: MSS"	"CMS1"	14
+"TCGA-COAD"	"MSI status: MSS"	"CMS2"	74
+"TCGA-COAD"	"MSI status: MSS"	"CMS3"	32
+"TCGA-COAD"	"MSI status: MSS"	"CMS4"	68
+"TCGA-COAD"	"MSI status: MSS"	unassigned	20
+"TCGA-COAD"	"MSI-like cluster"	"CMS1"	45
+"TCGA-COAD"	"MSI-like cluster"	"CMS2"	2
+"TCGA-COAD"	"MSI-like cluster"	"CMS3"	34
+"TCGA-COAD"	"MSI-like cluster"	"CMS4"	9
+"TCGA-COAD"	"MSI-like cluster"	unassigned	2
+"TCGA-COAD"	"other cluster"	"CMS1"	5
+"TCGA-COAD"	"other cluster"	"CMS2"	82
+"TCGA-COAD"	"other cluster"	"CMS3"	10
+"TCGA-COAD"	"other cluster"	"CMS4"	77
+"TCGA-COAD"	"other cluster"	unassigned	21
+"TCGA-READ"	"READ cluster 1"	"CMS1"	5
+"TCGA-READ"	"READ cluster 1"	"CMS2"	2
+"TCGA-READ"	"READ cluster 1"	"CMS3"	3
+"TCGA-READ"	"READ cluster 1"	"CMS4"	7
+"TCGA-READ"	"READ cluster 1"	unassigned	8
+"TCGA-READ"	"READ cluster 2"	"CMS1"	2
+"TCGA-READ"	"READ cluster 2"	"CMS2"	10
+"TCGA-READ"	"READ cluster 2"	"CMS3"	2
+"TCGA-READ"	"READ cluster 2"	"CMS4"	18
+"TCGA-READ"	"READ cluster 2"	unassigned	8
+"TCGA-READ"	"READ cluster 3"	"CMS1"	2
+"TCGA-READ"	"READ cluster 3"	"CMS2"	4
+"TCGA-READ"	"READ cluster 3"	"CMS3"	12
+"TCGA-READ"	"READ cluster 3"	"CMS4"	6
+"TCGA-READ"	"READ cluster 3"	unassigned	3
+"cptac_coad"	"MSI status: MSI"	"CMS1"	17
+"cptac_coad"	"MSI status: MSI"	"CMS3"	3
+"cptac_coad"	"MSI status: MSI"	"CMS4"	3
+"cptac_coad"	"MSI status: MSI"	unassigned	1
+"cptac_coad"	"MSI status: MSS"	"CMS1"	1
+"cptac_coad"	"MSI status: MSS"	"CMS2"	33
+"cptac_coad"	"MSI status: MSS"	"CMS3"	13
+"cptac_coad"	"MSI status: MSS"	"CMS4"	27
+"cptac_coad"	"MSI status: MSS"	unassigned	6
+"cptac_coad"	"MSI-like cluster"	"CMS1"	18
+"cptac_coad"	"MSI-like cluster"	"CMS2"	3
+"cptac_coad"	"MSI-like cluster"	"CMS3"	16
+"cptac_coad"	"MSI-like cluster"	"CMS4"	8
+"cptac_coad"	"MSI-like cluster"	unassigned	2
+"cptac_coad"	"other cluster"	"CMS2"	30
+"cptac_coad"	"other cluster"	"CMS4"	23
+"cptac_coad"	"other cluster"	unassigned	5
+"gse39582"	"MSI status: MSI"	"CMS1"	53
+"gse39582"	"MSI status: MSI"	"CMS3"	5
+"gse39582"	"MSI status: MSI"	"CMS4"	10
+"gse39582"	"MSI status: MSI"	unassigned	7
+"gse39582"	"MSI status: MSS"	"CMS1"	22
+"gse39582"	"MSI status: MSS"	"CMS2"	163
+"gse39582"	"MSI status: MSS"	"CMS3"	82
+"gse39582"	"MSI status: MSS"	"CMS4"	132
+"gse39582"	"MSI status: MSS"	unassigned	45
+"gse39582"	"MSI-like cluster"	"CMS1"	83
+"gse39582"	"MSI-like cluster"	"CMS2"	17
+"gse39582"	"MSI-like cluster"	"CMS3"	80
+"gse39582"	"MSI-like cluster"	"CMS4"	52
+"gse39582"	"MSI-like cluster"	unassigned	29
+"gse39582"	"other cluster"	"CMS1"	4
+"gse39582"	"other cluster"	"CMS2"	159
+"gse39582"	"other cluster"	"CMS3"	9
+"gse39582"	"other cluster"	"CMS4"	107
+"gse39582"	"other cluster"	unassigned	26
