@@ -1,0 +1,11 @@
+{
+  // data/ is ~39 GB of raw downloads and large intermediates: don't watch or search it
+  "files.watcherExclude": { "**/data/**": true, "**/.ARACNe3_cached/**": true, "**/.git/objects/**": true },
+  "search.exclude": { "**/data/**": true, "**/.ARACNe3_cached/**": true },
+  "files.associations": { "*.tsv": "tsv", "*.log": "log" },
+  // use the project's conda env for Python and R
+  "python.defaultInterpreterPath": "~/miniforge3/envs/repurposing/bin/python",
+  "r.rterm.linux": "~/miniforge3/envs/repurposing/bin/R",
+  "r.rpath.linux": "~/miniforge3/envs/repurposing/bin/R",
+  "terminal.integrated.cwd": "${workspaceFolder}"
+}

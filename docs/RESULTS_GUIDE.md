@@ -1,0 +1,128 @@
+# Results and data guide
+
+One- to two-line descriptions of every results table and data folder on the disease side (Steps 1-9).
+Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-79b) are maintained in the
+`~/projects/repurposing-celligner` worktree. Decisions and numbers: [`PROGRESS.md`](PROGRESS.md).
+
+## `results/` (small tables, in git)
+
+### step1: disease groups
+| File | What it is |
+|---|---|
+| `disease_grounding_toil.tsv` | Each of the 40 TCGA/TARGET cohorts mapped to standard disease, tissue and tumor-type IDs (MONDO, OncoTree, UBERON) and its matched GTEx normal tissue. |
+| `mondo_descendants.tsv` | For each cohort's disease ID, all narrower disease terms under it. |
+| `disease_groups_toil.tsv` | The 49 disease groups after subtype splits (e.g. BRCA -> LumA/LumB/Basal/Her2), with counts and inclusion/exclusion reasons. |
+| `sample_groups_toil.tsv` | Every sample assigned to its group and role (tumor, adjacent normal, GTEx normal). |
+| `target_all_lineage.tsv` | B- vs T-cell lineage calls for childhood leukemia (TARGET-ALL) samples from marker genes. |
+
+### step3: covariates
+| File | What it is |
+|---|---|
+| `covariates_toil.tsv` | One row per sample: sex, age, hospital, plate, RNA quality, ABSOLUTE purity, ESTIMATE scores, and the one-sample-per-patient flag. |
+| `covariates_beataml.tsv` | The same for BeatAML (one sample per patient; drug-response flag). |
+| `estimate_toil.tsv` | ESTIMATE stromal / immune / combined scores (non-tumor tissue mixed into each sample). |
+| `genes_protein_coding_v23.tsv` | The 19,797 protein-coding genes used for signatures and drug matching. |
+| `genes_extended_v23.tsv` | Protein-coding + lincRNA + antisense genes (mechanism work only). |
+
+### step4: tumor-vs-normal signatures (`step4_extended/` = same files, extended gene set)
+| File | What it is |
+|---|---|
+| `signature_summary.tsv` | One row per group x comparison: sample counts, status, number of changed genes. |
+| `z_tumor_vs_gtex.tsv` | Gene x group: how much each gene is up/down in tumor vs healthy GTEx tissue (signed z). |
+| `z_tumor_vs_adjacent.tsv` | The same vs normal tissue next to the tumor (18 groups). |
+
+### step5: ID mapping, regulator networks, edge checks
+| File | What it is |
+|---|---|
+| `id_map.tsv` | Our gene IDs -> current official names, Entrez and other IDs. |
+| `tf_universe.tsv` | The 1,639 human transcription factors (Lambert 2018). |
+| `regulons_collectri.tsv` / `regulons_dorothea_ABC.tsv` | CollecTRI / DoRothEA regulator -> target links in our gene IDs. |
+| `regulons_core.rds` | CollecTRI + DoRothEA packaged for VIPER. |
+| `regulon_coverage.tsv` | Per regulator and resource: number of targets and how many mapped. |
+| `regulon_checksums.sha256` | Fingerprints of the regulon files used downstream. |
+| `aracne_cohorts.tsv` | The 28 cancer types with our own ARACNe networks (patients, genes, regulators). |
+| `aracne_regulators.tsv` | The ~6,200 regulators given to ARACNe, flagged as TF / kinase. |
+| `aracne_edge_support.tsv` | Per network: how often links reappear across the 100 bootstraps. |
+| `aracne_edge_confounding.tsv` | Per network: how much link strength survives removing purity, plate, subtype and RNA quality (almost all). |
+
+### step6: regulator activity (VIPER)
+`collectri/`, `dorothea_ABC/` and `aracne_project/` each contain the same core tables:
+
+| File | What it is |
+|---|---|
+| `group_mr.tsv` | Every regulator's activity score (NES), p and FDR in every group: the main result. |
+| `group_summary.tsv` | Per group: regulators tested, hits, patient match to group profile, number of independent patterns. |
+| `regulator_filter.tsv` | Which regulators were kept/dropped per group and why. |
+| `fdr10_group_summary.tsv` | Hits per group at FDR < 0.10 (up / down). |
+| `fdr10_nes_matrix.tsv` / `fdr10_fdr_matrix.tsv` | Regulator x group grids of scores and FDRs for regulators that are hits somewhere. |
+| `controls.tsv` | Known-biology checks (expected vs observed direction, pass/fail). |
+| `patient_concordance.tsv` | Per patient: how well their regulator profile matches their group's. |
+| `axes.tsv` / `axes_covariates.tsv` | Main patterns of variation between patients and how much purity, age, plate or hospital explain them. |
+
+Additional step6 files:
+
+| File | What it is |
+|---|---|
+| `collectri/subtype_test*.tsv` | Experiment: splitting groups by published subtype did not add CollecTRI hits. |
+| `aracne_precomputed/summary.tsv`, `group_mr.tsv` | Results with the published precomputed ARACNe networks (0 biology checks passed). |
+| `comparison/per_group.tsv` | Per group: hits in each of the three regulon methods, agreement and score similarity. |
+| `comparison/consensus.tsv` | Regulators that are hits in >= 2 methods in the same direction. |
+| `comparison/confirmatory.tsv` | Regulators meeting the confirmatory rule (ARACNe FDR < 0.05, or < 0.10 with curated support). |
+| `comparison/controls.tsv` | Known-biology checks for all three methods side by side. |
+| `aracne_project/purity_correction/` | Patient-score purity correction (ESTIMATE; ABSOLUTE for LGG): what was removed, per group and regulator. |
+| `aracne_project/quality_correction{,_cqn,_map}/` | Gene-level purity + RNA-quality correction (plain / CQN test / mappability-filtered = adopted): before-after checks, patient concordance, per-sample quality score. |
+| `aracne_project/diagnostics/pc_plate.tsv`, `feat_plate.tsv` | Plate signal in raw expression vs regulator scores, vs chance. |
+| `aracne_project/diagnostics/estimate_pca.tsv`, `estimate_regulators.tsv` | First exploratory look at purity correction. |
+| `aracne_project/diagnostics/redundancy.tsv` | How ~4,200 regulators collapse into ~600-770 co-varying groups. |
+| `aracne_project/diagnostics/brca_heterogeneity_*.tsv` | Pooled BRCA: subtype vs plate vs purity variation and tests for hidden subgroups (none found). |
+| `aracne_project/diagnostics/plate_quality.tsv` | Per group: does the main pattern track plate, hospital or RNA quality (answer: RNA quality differing between plates). |
+| `aracne_project/diagnostics/regulator_modules_{purity,qc,map}.tsv` | Modules of co-varying regulators, hubs and what each tracks, per correction version. |
+| `aracne_project/diagnostics/recurring_module_*_{qc,cqn,map}.tsv` | The module seen in almost every group: members, links to 50 biological programs and technical factors, member and target features. |
+
+### step7
+| File | What it is |
+|---|---|
+| `driver_classes.tsv` | Per group: share of patients with kinase-pathway vs TF-driver alterations (mutation / copy number). |
+
+### step8: clustering
+| File | What it is |
+|---|---|
+| `decision.tsv` | Per group and feature set: best number of clusters, p-values, verdict, early plate/purity/quality checks. |
+| `m3c_scores.tsv` | M3C stability scores and p-values for 2-10 clusters. |
+| `assignments.tsv` | Each patient's cluster for every number of clusters tried. |
+| `module_features.tsv` | Which regulators make up each clustering feature (module). |
+| `agreement.tsv` | Agreement between the main and check feature sets (ARI). |
+| `known_subtypes.tsv` | Clusters vs TCGA molecular subtypes (COAD split = MSI vs CIN). |
+| `defining_modules.tsv` | Modules that most distinguish each cluster, with top regulators. |
+
+### step9: replication
+| File | What it is |
+|---|---|
+| `gse39582_samples.tsv` | GSE39582 sample info: MMR/MSI, stage, KRAS/BRAF/TP53, CIMP, survival, ESTIMATE. |
+| `cptac_coad_samples.tsv` | CPTAC-COAD sample info: MSI, stage, survival, ESTIMATE, RNA-quality score. |
+| `processing_summary.tsv` | Per cohort: tumors, genes, regulators scored, MSI counts. |
+| `crc_*.tsv` | Colorectal replication tests (cluster transfer, independent clustering, defining modules, CMS); see PROGRESS.md. |
+
+## `data/` (local only, not in git)
+
+| Location | What it is |
+|---|---|
+| `raw/solid_toil/` | Main expression data: counts and TPM for ~19,000 TCGA, TARGET and GTEx samples plus labels. |
+| `raw/aml_beataml2/` | BeatAML expression, clinical and drug response (pinned commit). |
+| `raw/tcga_pancan/` | TCGA pan-cancer clinical, subtypes, ABSOLUTE purity, MC3 mutations, GISTIC copy number. |
+| `raw/gtex/`, `raw/target_clinical/`, `raw/tcga_gdc/` | GTEx donor/sample info; TARGET clinical; TCGA aliquot list (plates). |
+| `raw/gencode/` | GENCODE v23 annotation and transcript sequences. |
+| `raw/hgnc/`, `raw/mondo/`, `raw/uberon/`, `raw/oncotree/`, `raw/tf_lambert/` | Gene names, ontologies, TF list. |
+| `raw/regulons/` | Saved CollecTRI / DoRothEA pulls (reused so results don't change). |
+| `raw/msigdb/` | MSigDB Hallmark gene sets (50 programs). |
+| `raw/crossmap/` | Saha & Battle gene mappability and cross-mappability (GRCh38). |
+| `raw/replication/` | METABRIC, GSE39582, CPTAC-BRCA, CPTAC-COAD as downloaded. |
+| `raw/checksums.sha256` | Fingerprints of every download. |
+| `interim/gene_gc_v23.tsv`, `readthrough_genes_v23.tsv` | Per-gene GC / transcript length; readthrough genes dropped and why. |
+| `processed/step4*/` | Full per-gene tumor-vs-normal tables and count matrices. |
+| `processed/step5/aracne/`, `aracne_inputs/` | Per cancer type: ARACNe networks, bootstraps, edge support/confounding; network inputs. |
+| `processed/step5/regulons_aracne_project.rds`, `regulons_aracne*.{rds,tsv}` | Our 28 networks as VIPER regulons; the published precomputed networks. |
+| `processed/step6/<regulon>/` | Per-patient regulator scores per group (CollecTRI, DoRothEA, ARACNe). |
+| `processed/step6/aracne_project_{purity,qc,cqn,map}/` | ARACNe patient scores after each correction; `_map` = current Step 8 input. |
+| `processed/step8/features/` | Clustering inputs: module scores per patient (main and check sets). |
+| `processed/step9/<cohort>/` | Corrected expression and patient regulator scores for the replication cohorts. |

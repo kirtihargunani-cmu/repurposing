@@ -1,0 +1,27 @@
+{
+  // Terminal > Run Task... (or Ctrl+Shift+P "Run Task"). Output streams into the terminal panel;
+  // each step also writes logs/pipeline/<phase>_<step>.log
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Pipeline: list step status", "type": "shell", "problemMatcher": [],
+      "command": "echo '== Steps 1-4'; python3 scripts/run_steps1-4.py --list; echo; echo '== Steps 5-7'; python3 scripts/run_steps5-7.py --list" },
+    { "label": "Pipeline: dry run (both phases)", "type": "shell", "problemMatcher": [],
+      "command": "python3 scripts/run_steps1-4.py --dry-run && python3 scripts/run_steps5-7.py --dry-run" },
+    { "label": "Pipeline: run Steps 1-4", "type": "shell", "problemMatcher": [],
+      "command": "python3 scripts/run_steps1-4.py --verbose" },
+    { "label": "Pipeline: run Steps 5-7", "type": "shell", "problemMatcher": [],
+      "command": "python3 scripts/run_steps5-7.py --verbose ${input:regulons}" },
+    { "label": "Pipeline: run one step (forced)", "type": "shell", "problemMatcher": [],
+      "command": "python3 scripts/${input:phase} --only ${input:step} --force --verbose" },
+    { "label": "Pipeline: follow latest step log", "type": "shell", "problemMatcher": [],
+      "command": "tail -n 40 -f $(ls -t logs/pipeline/*.log | head -1)" },
+    { "label": "Pipeline: run history", "type": "shell", "problemMatcher": [],
+      "command": "column -t -s $'\\t' logs/pipeline/*_runs.tsv" }
+  ],
+  "inputs": [
+    { "id": "regulons", "type": "pickString", "description": "Regulon sets for VIPER",
+      "options": ["--regulons collectri dorothea_ABC aracne_project", "--regulons collectri aracne_project", "--regulons aracne_project"], "default": "--regulons collectri aracne_project" },
+    { "id": "phase", "type": "pickString", "description": "Phase", "options": ["run_steps1-4.py", "run_steps5-7.py"] },
+    { "id": "step", "type": "promptString", "description": "Step name (see 'Pipeline: list step status')" }
+  ]
+}
