@@ -20,9 +20,20 @@ weights (results/celligner/disease_line_weights_long.tsv).
    drugs (sd 1.0-1.3 vs 3.1-4.8 in ACC / BLCA; MRs move together in co-regulated modules, random sets do not), so
    ~38% of drugs reached p < 0.05. Drugs are ranked instead: rev_pct = percent of the disease's drugs with a lower rev.
    null_sd_regset in the summary records that set-permutation spread (N_PERM sets) for reference.
-4. Tiers (user 2026-10-12: approved drugs are the top-tier output; the list should not be narrowed by much):
-   reversing = rev > 0 and in the top TOP_PCT percent of the disease's drugs by rev. Tier 1 approved + passes target gate + reversing; tier 2 not approved +
-   passes gate + reversing; tier 3 everything else. Drugs with > MULTI_TARGET annotated targets are flagged, not removed.
+4. Disease specificity (user 2026-10-12, option A): tumor-vs-normal MRs are dominated by what all tumors share
+   (proliferation), so growth-signaling inhibitors reverse almost every disease and anti-estrogens rank higher in basal
+   than in luminal A breast cancer. rev_z = robust z of rev within the disease ((rev - median) / (1.4826 MAD));
+   The same drug activity (this disease's network and lines) is also scored against the MRs of each reference disease
+   (other tissue keys, so sibling subtypes are not counted against each other, with >= MIN_MRS_REF MRs; MRs
+   restricted to regulators of this network), each robust-z-scored over the disease's drugs.
+   spec = rev_z minus the mean over the reference diseases: reverses this disease more than diseases in general.
+   Works for drugs measured only in this disease's tissue (no need for the drug to be scored in other diseases).
+   spec_pct = percentile of spec within the disease.
+5. Tiers (user 2026-10-12: approved drugs are the top-tier output; the list should not be narrowed by much), both
+   kept for comparison. tier_rev: reversing = rev > 0 and top TOP_PCT percent by rev. tier_spec: rev > 0 and top
+   TOP_PCT percent by spec. Tier 1 approved + passes target gate + reversing; tier 2 not approved + passes gate +
+   reversing; tier 3 everything else. Drugs with > MULTI_TARGET annotated targets are flagged, not removed.
+   low_mrs: diseases with < MIN_MRS_REF MRs (scores rest on very few regulators).
 ONLY_GROUPS (comma-separated) limits the run, for testing.
 Outputs: results/lincs/drug_reversal.tsv (disease x drug), drug_reversal_summary.tsv (per disease),
          drug_reversal_controls.tsv (known-mechanism drugs, sanity check)
@@ -37,12 +48,15 @@ ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data/processed/lincs"
 RES = ROOT / "results/lincs"
 MR_FDR, TOP_PCT, N_PERM, MULTI_TARGET, SEED = 0.10, 10, 200, 5, 0
+MIN_MRS_REF, MIN_REF = 20, 10
 # known mechanism -> expected to reverse the disease (sanity check, not used for scoring)
 CONTROLS = [("BRCA-LumA", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("TCGA-PRAD", ["bicalutamide", "enzalutamide", "flutamide", "nilutamide"]),
             ("TCGA-COAD", ["fluorouracil", "irinotecan", "oxaliplatin"]),
             ("TCGA-LUAD", ["erlotinib", "gefitinib", "afatinib", "osimertinib"])]
+# ER-negative: anti-estrogens should not be specific here
+NEG_CONTROLS = [("BRCA-Basal", ["fulvestrant", "tamoxifen", "raloxifene"])]
 
 
 def net_of(cohort):
@@ -76,6 +90,9 @@ def main():
             nets[net] = (regs, A, R.T[rr.get_indexer(regs)].T if R is not None else None)
         return nets[net]
 
+    ok_ref = set(mr[mr.fdr < MR_FDR].groupby("group_id").size().loc[lambda x: x >= MIN_MRS_REF].index)
+    gkey = keys.key
+    rz = lambda v: (v - np.median(v)) / (1.4826 * np.median(np.abs(v - np.median(v))))
     rows, summ = [], []
     only = [x for x in os.environ.get("ONLY_GROUPS", "").split(",") if x]
     if only:
@@ -133,35 +150,64 @@ def main():
         o["approved"] = (o.chembl_max_phase == 4) | (o.hub_clinical_phase == "Launched")
         o["multi_target"] = o.n_targets > MULTI_TARGET
         reversing = (o.rev > 0) & (o.rev_pct >= 100 - TOP_PCT)
-        o["tier"] = np.where(reversing & o.passes_gate & o.approved, 1, np.where(reversing & o.passes_gate, 2, 3))
-        o = o.sort_values(["tier", "rev"], ascending=[True, False])
-        o["rank_in_disease"] = np.arange(1, len(o) + 1)
+        o["tier_rev"] = np.where(reversing & o.passes_gate & o.approved, 1, np.where(reversing & o.passes_gate, 2, 3))
+        mad = 1.4826 * np.median(np.abs(rev - np.median(rev)))
+        o["rev_z"] = ((rev - np.median(rev)) / mad).round(3)
+        refz = []
+        for g2 in sorted(ok_ref):
+            if g2 == g or gkey[g2] == gkey[g]:
+                continue
+            m2 = mr[(mr.group_id == g2) & (mr.fdr < MR_FDR) & mr.regulator.isin(regs)]
+            if len(m2) < MIN_MRS_REF:
+                continue
+            c2 = regs.get_indexer(m2.regulator)
+            refz.append(rz(-(D[:, c2] * np.sign(m2.nes.values)).sum(1) / np.sqrt(len(c2))))
+        o["n_ref_diseases"] = len(refz)
+        o["spec"] = (o.rev_z.values - np.mean(refz, axis=0)).round(3) if len(refz) >= MIN_REF else np.nan
+        o["spec_pct"] = (o.spec.rank(method="max", pct=True) * 100).round(1)
         rows.append(o)
-        t1 = o[o.tier == 1]
+        t1 = o[o.tier_rev == 1].sort_values("rev", ascending=False)
         summ.append(dict(group_id=g, net=net_of(grp.loc[g, "cohort"]), n_mrs=n, n_tested=len(tested),
-                         n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1=len(t1),
-                         n_tier2=int((o.tier == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),
+                         n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1_rev=len(t1),
+                         n_tier2_rev=int((o.tier_rev == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),
                          null_sd_regset=round(float(null.std()), 3), rev_sd=round(float(rev.std()), 3),
-                         top_tier1=", ".join(f"{a} {b:.1f}" for a, b in zip(t1.cmap_name.head(8), t1.rev.head(8)))))
+                         top_tier1_rev=", ".join(f"{a} {b:.1f}" for a, b in zip(t1.cmap_name.head(8), t1.rev.head(8)))))
         print(f"{g:<20} MRs {n:>4}  drugs {len(o):>5}  reversing {int(reversing.sum()):>4}  tier1 {len(t1):>3}  "
-              f"{summ[-1]['top_tier1'][:90]}", flush=True)
+              f"{summ[-1]['top_tier1_rev'][:90]}", flush=True)
 
-    out = pd.concat(rows)
-    out.to_csv(RES / "drug_reversal.tsv", sep="\t", index=False)
+    out = pd.concat(rows, ignore_index=True)
     summ = pd.DataFrame(summ)
+
+    ok_ref = set(summ.loc[summ.n_mrs >= MIN_MRS_REF, "group_id"])
+    sp = (out.rev > 0) & (out.spec_pct >= 100 - TOP_PCT)
+    out["tier_spec"] = np.where(sp & out.passes_gate & out.approved, 1, np.where(sp & out.passes_gate, 2, 3))
+    out["low_mrs"] = ~out.group_id.isin(ok_ref)
+    out = out.sort_values(["group_id", "tier_spec", "spec"], ascending=[True, True, False])
+    out["rank_spec"] = out.groupby("group_id").cumcount() + 1
+    out["rank_rev"] = out.groupby("group_id").rev.rank(ascending=False, method="first").astype(int)
+    out.to_csv(RES / "drug_reversal.tsv", sep="\t", index=False)
+    s2 = []
+    for g, o in out.groupby("group_id"):
+        t1 = o[o.tier_spec == 1]
+        s2.append(dict(group_id=g, n_tier1_spec=len(t1), n_tier2_spec=int((o.tier_spec == 2).sum()),
+                       n_tier1_both=int(((o.tier_spec == 1) & (o.tier_rev == 1)).sum()),
+                       low_mrs=bool(o.low_mrs.iloc[0]),
+                       top_tier1_spec=", ".join(f"{a} {b:.1f}" for a, b in zip(t1.cmap_name.head(8), t1.spec.head(8)))))
+    summ = summ.merge(pd.DataFrame(s2), on="group_id")
     summ.to_csv(RES / "drug_reversal_summary.tsv", sep="\t", index=False)
 
     ctl = []
-    for g, names in CONTROLS:
-        x = out[out.group_id == g]
-        for nm in names:
-            r = x[x.cmap_name == nm]
-            if len(r):
-                r = r.iloc[0]
-                ctl.append(dict(group_id=g, drug=nm, source=r.source, rev=r.rev, rev_raw=r.rev_raw, r_rev=r.r_rev,
-                                rev_pct=r.rev_pct, tier=r.tier))
-            else:
-                ctl.append(dict(group_id=g, drug=nm, source="not in list"))
+    for expected, cl in [("high", CONTROLS), ("low", NEG_CONTROLS)]:
+        for g, names in cl:
+            x = out[out.group_id == g]
+            for nm in names:
+                r = x[x.cmap_name == nm]
+                if len(r):   # several LINCS IDs per drug: best one
+                    ctl.append(dict(group_id=g, drug=nm, expected=expected, source=r.source.iloc[0],
+                                    n_ids=len(r), rev_pct=r.rev_pct.max(), spec_pct=r.spec_pct.max(),
+                                    tier_rev=r.tier_rev.min(), tier_spec=r.tier_spec.min()))
+                else:
+                    ctl.append(dict(group_id=g, drug=nm, expected=expected, source="not in list"))
     ctl = pd.DataFrame(ctl)
     ctl.to_csv(RES / "drug_reversal_controls.tsv", sep="\t", index=False)
     print(ctl.to_string(index=False))
