@@ -1,0 +1,171 @@
+#!/usr/bin/env python
+"""Rank each disease's drugs by how strongly they reverse the disease's master regulators (runs in `celligner`).
+
+Inputs: drug x line regulator activity (scripts/79d_drug_viper.R, project ARACNe network of the disease's cohort),
+disease master regulators (results/step6/aracne_project/group_mr.tsv: msviper NES of tumor vs normal, BH FDR),
+per-disease drug lists with the target gate (results/lincs/disease_drugs.tsv, scripts/79b), Celligner disease x line
+weights (results/celligner/disease_line_weights_long.tsv).
+0. Drug-specific activity: regulator activity of the line-specific profiles (generic drug response removed at the
+   gene level, scripts/79c, VIPER in scripts/79d, PROFILE=specific). rev_raw = the same score on raw profiles where
+   data/processed/lincs/drug_viper_raw/ has the network (for comparison only).
+1. Drug activity per disease (same direct / borrowed split as scripts/79b):
+     direct    mean over the drug's lines in the disease's strict tissue key, weighted by the disease's Celligner
+               line weights (equal weights if all are 0)
+     borrowed  unweighted mean over all the drug's (>= 3) cancer lines (distance weighting adds nothing, scripts/77)
+2. Disease master regulators (MRs): FDR < MR_FDR in the disease and scored on the LINCS genes; s_i = sign of NES.
+   Reversal score  rev = -sum_i s_i * a_i / sqrt(n)   (a_i = drug activity of MR i, n = number of MRs)
+   positive = the drug lowers the activity of MRs that are up in the tumor and raises those that are down.
+   Also r_rev = -Pearson(disease NES, drug activity) over the MRs (pattern only, ignores effect size).
+3. No p-values: a null of random regulator sets (same size, MR signs) was 3-5x narrower than the spread of rev across
+   drugs (sd 1.0-1.3 vs 3.1-4.8 in ACC / BLCA; MRs move together in co-regulated modules, random sets do not), so
+   ~38% of drugs reached p < 0.05. Drugs are ranked instead: rev_pct = percent of the disease's drugs with a lower rev.
+   null_sd_regset in the summary records that set-permutation spread (N_PERM sets) for reference.
+4. Tiers (user 2026-10-12: approved drugs are the top-tier output; the list should not be narrowed by much):
+   reversing = rev > 0 and in the top TOP_PCT percent of the disease's drugs by rev. Tier 1 approved + passes target gate + reversing; tier 2 not approved +
+   passes gate + reversing; tier 3 everything else. Drugs with > MULTI_TARGET annotated targets are flagged, not removed.
+ONLY_GROUPS (comma-separated) limits the run, for testing.
+Outputs: results/lincs/drug_reversal.tsv (disease x drug), drug_reversal_summary.tsv (per disease),
+         drug_reversal_controls.tsv (known-mechanism drugs, sanity check)
+"""
+import os
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+PROC = ROOT / "data/processed/lincs"
+RES = ROOT / "results/lincs"
+MR_FDR, TOP_PCT, N_PERM, MULTI_TARGET, SEED = 0.10, 10, 200, 5, 0
+# known mechanism -> expected to reverse the disease (sanity check, not used for scoring)
+CONTROLS = [("BRCA-LumA", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
+            ("BRCA-LumB", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
+            ("TCGA-PRAD", ["bicalutamide", "enzalutamide", "flutamide", "nilutamide"]),
+            ("TCGA-COAD", ["fluorouracil", "irinotecan", "oxaliplatin"]),
+            ("TCGA-LUAD", ["erlotinib", "gefitinib", "afatinib", "osimertinib"])]
+
+
+def net_of(cohort):
+    return "COADREAD" if cohort in ("TCGA-COAD", "TCGA-READ") else cohort.split("-", 1)[1]
+
+
+def main():
+    rng = np.random.default_rng(SEED)
+    idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
+    idx["col"] = np.arange(len(idx))
+    grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
+    mr = pd.read_csv(ROOT / "results/step6/aracne_project/group_mr.tsv", sep="\t")
+    dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
+    w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
+    keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
+    models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
+    models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
+
+    nets = {}
+    def read(kind, net):
+        f = PROC / f"drug_viper_{kind}" / f"{net}.f32"
+        if not f.exists():
+            return None, None
+        regs = pd.Index((PROC / f"drug_viper_{kind}" / f"{net}.regulators.txt").read_text().split())
+        return regs, np.fromfile(f, dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
+
+    def load(net):
+        if net not in nets:
+            regs, A = read("specific", net)                                   # profiles x regulators
+            rr, R = read("raw", net)
+            nets[net] = (regs, A, R.T[rr.get_indexer(regs)].T if R is not None else None)
+        return nets[net]
+
+    rows, summ = [], []
+    only = [x for x in os.environ.get("ONLY_GROUPS", "").split(",") if x]
+    if only:
+        dd = dd[dd.group_id.isin(only)]
+    for g, gd in dd.groupby("group_id"):
+        regs, A, A_raw = load(net_of(grp.loc[g, "cohort"]))
+        k = keys.loc[g]
+        km = models[models.OncotreeLineage.isin(str(k.lineages).split(";"))]
+        if isinstance(k.diseases, str) and k.diseases:
+            km = km[km.OncotreePrimaryDisease.isin(k.diseases.split(";"))]
+        wg = w[w.group_id == g].set_index("ModelID").weight
+
+        # drug activity per disease (drugs x scored regulators)
+        D = np.empty((len(gd), len(regs)), dtype=np.float64)
+        D_raw = np.empty_like(D)
+        n_lines = np.zeros(len(gd), int)
+        by_drug = idx.groupby("pert_id")
+        for i, (d, src) in enumerate(zip(gd.pert_id, gd.source)):
+            p = by_drug.get_group(d)
+            if src == "direct":
+                p = p[p.ModelID.isin(km.index)]
+                ww = wg.reindex(p.ModelID).fillna(0).values
+            else:
+                p = p[~p.ModelID.isin(km.index)]
+                ww = np.zeros(len(p))
+            ww = ww if ww.sum() > 0 else np.ones(len(p))
+            D[i] = (ww[:, None] * A[p.col.values]).sum(0) / ww.sum()
+            if A_raw is not None:
+                D_raw[i] = (ww[:, None] * A_raw[p.col.values]).sum(0) / ww.sum()
+            n_lines[i] = len(p)
+
+        m = mr[(mr.group_id == g) & mr.regulator.isin(regs)]
+        mrs = m[m.fdr < MR_FDR]
+        tested = regs.get_indexer(m.regulator)
+        ci = regs.get_indexer(mrs.regulator)
+        s = np.sign(mrs.nes.values)
+        n = len(ci)
+        rev = -(D[:, ci] * s).sum(1) / np.sqrt(n)
+        dn = mrs.nes.values
+        Dc = D[:, ci] - D[:, ci].mean(1, keepdims=True)
+        r_rev = -(Dc @ (dn - dn.mean())) / (np.sqrt((Dc ** 2).sum(1)) * np.linalg.norm(dn - dn.mean()) + 1e-12)
+        null = np.empty((len(gd), N_PERM))
+        for j in range(N_PERM):
+            null[:, j] = -(D[:, rng.choice(tested, n, replace=False)] * rng.permutation(s)).sum(1) / np.sqrt(n)
+
+        o = gd[["group_id", "pert_id", "cmap_name", "source", "passes_gate", "gate_reason", "n_targets",
+                "hub_moa", "hub_clinical_phase", "chembl_max_phase", "pharmacology_flag"]].copy()
+        o["n_lines_used"] = n_lines
+        o["n_mrs"] = n
+        o["rev"] = rev.round(3)
+        o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / np.sqrt(n)).round(3) if A_raw is not None else np.nan
+        o["r_rev"] = r_rev.round(3)
+        o["rev_pct"] = (pd.Series(rev).rank(method="max").values - 1) / len(rev) * 100
+        o["rev_pct"] = o.rev_pct.round(1)
+        o["approved"] = (o.chembl_max_phase == 4) | (o.hub_clinical_phase == "Launched")
+        o["multi_target"] = o.n_targets > MULTI_TARGET
+        reversing = (o.rev > 0) & (o.rev_pct >= 100 - TOP_PCT)
+        o["tier"] = np.where(reversing & o.passes_gate & o.approved, 1, np.where(reversing & o.passes_gate, 2, 3))
+        o = o.sort_values(["tier", "rev"], ascending=[True, False])
+        o["rank_in_disease"] = np.arange(1, len(o) + 1)
+        rows.append(o)
+        t1 = o[o.tier == 1]
+        summ.append(dict(group_id=g, net=net_of(grp.loc[g, "cohort"]), n_mrs=n, n_tested=len(tested),
+                         n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1=len(t1),
+                         n_tier2=int((o.tier == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),
+                         null_sd_regset=round(float(null.std()), 3), rev_sd=round(float(rev.std()), 3),
+                         top_tier1=", ".join(f"{a} {b:.1f}" for a, b in zip(t1.cmap_name.head(8), t1.rev.head(8)))))
+        print(f"{g:<20} MRs {n:>4}  drugs {len(o):>5}  reversing {int(reversing.sum()):>4}  tier1 {len(t1):>3}  "
+              f"{summ[-1]['top_tier1'][:90]}", flush=True)
+
+    out = pd.concat(rows)
+    out.to_csv(RES / "drug_reversal.tsv", sep="\t", index=False)
+    summ = pd.DataFrame(summ)
+    summ.to_csv(RES / "drug_reversal_summary.tsv", sep="\t", index=False)
+
+    ctl = []
+    for g, names in CONTROLS:
+        x = out[out.group_id == g]
+        for nm in names:
+            r = x[x.cmap_name == nm]
+            if len(r):
+                r = r.iloc[0]
+                ctl.append(dict(group_id=g, drug=nm, source=r.source, rev=r.rev, rev_raw=r.rev_raw, r_rev=r.r_rev,
+                                rev_pct=r.rev_pct, tier=r.tier))
+            else:
+                ctl.append(dict(group_id=g, drug=nm, source="not in list"))
+    ctl = pd.DataFrame(ctl)
+    ctl.to_csv(RES / "drug_reversal_controls.tsv", sep="\t", index=False)
+    print(ctl.to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
