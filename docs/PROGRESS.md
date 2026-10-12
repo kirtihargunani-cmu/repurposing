@@ -151,6 +151,6 @@ Lower / handled
 11. RSEM expected counts treated as counts for voom. 12. Missing covariates dropped (< 2%; MAR). 13. GTEx age = bin midpoint. 14. One sample per patient (diagnosis sample representative; metastasis/recurrence via indicator). 15. BH FDR under positive dependence. 16. Filter thresholds (>= 10 targets, >= 50% present, logCPM >= 1, >= 30 patients, >= 10 normals) are judgment calls; sensitivity analyses advisable.
 
 ## Next
-- Step 6: VIPER per group (expressed-TF filter, minimum mapped regulon size; ARACNe arm restricted to Lambert TFs, i.e. sequence-specific DNA-binding TFs, so all three regulon sets measure TF activity).
+- Drug side: score LINCS drug signatures with the project ARACNe regulons, the same full regulator set the disease side uses (TFs, kinases, signaling proteins; no Lambert-TF restriction), on landmark + best-inferred genes (`scripts/76b_lincs_level5_bing.py`, user 2026-10-12).
 - CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
 - Decide: subtype splits for mixed cohorts; recount3 non-cancer diseases (DepMap 24Q4 pulled for Celligner).
