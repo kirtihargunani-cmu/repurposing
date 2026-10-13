@@ -1,0 +1,17 @@
+stratum	expected	drug	n_ids	rev_pct	sibling_rev_pct	spec_sib	spec_sib_pct	tier_sib	source
+BRCA-LumA-PC3-low	ER end of the proliferation axis	fulvestrant	3.0	16.6	89.4	-2.175	0.7	3.0	
+BRCA-LumA-PC3-low	ER end of the proliferation axis	tamoxifen	3.0	57.8	97.4	-1.606	4.2	3.0	
+BRCA-LumA-PC3-low	ER end of the proliferation axis	raloxifene	1.0	3.8	55.7	-1.938	1.8	3.0	
+BRCA-LumA-PC3-low	ER end of the proliferation axis	toremifene	2.0	8.6	70.6	-1.938	1.8	3.0	
+BRCA-LumA-PC3-low	ER end of the proliferation axis	bazedoxifene	1.0	7.9	53.3	-1.557	4.6	3.0	
+BRCA-Her2-PC3-low	ESR1 / XBP1 end	fulvestrant	3.0	97.6	99.3	-0.39	26.1	3.0	
+BRCA-Her2-PC3-low	ESR1 / XBP1 end	tamoxifen	3.0	98.5	99.0	-0.038	55.7	3.0	
+BRCA-Her2-PC3-low	ESR1 / XBP1 end	raloxifene	1.0	80.9	95.2	-0.886	3.4	3.0	
+BRCA-Her2-PC3-low	ESR1 / XBP1 end	toremifene	2.0	87.7	96.0	-0.558	15.4	3.0	
+BRCA-Her2-PC3-low	ESR1 / XBP1 end	bazedoxifene	1.0	83.8	94.0	-0.648	10.6	3.0	
+BRCA-LumA-PC3-high	proliferation end	palbociclib	1.0	95.4	26.1	2.814	100.0	1.0	
+BRCA-LumA-PC3-high	proliferation end	abemaciclib							not in list
+BRCA-LumA-PC3-high	proliferation end	ribociclib							not in list
+BRCA-LumA-PC3-high	proliferation end	paclitaxel	3.0	92.6	96.0	0.459	69.9	3.0	
+BRCA-LumA-PC3-high	proliferation end	docetaxel	3.0	64.0	85.9	-0.411	33.4	3.0	
+BRCA-LumA-PC3-high	proliferation end	vinorelbine							not in list
