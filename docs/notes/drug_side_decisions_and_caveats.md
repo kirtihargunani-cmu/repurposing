@@ -30,8 +30,9 @@ messages; this file is the short list.
 | 2026-10-12 | Multi-target drugs are flagged (> 5 annotated targets), not removed | `scripts/79e` (`multi_target`) |
 | 2026-10-12 | Disease-specificity score (option A) added next to the reversal score, both kept for comparison | `scripts/79e` (`spec`, `tier_spec`) |
 | 2026-10-12 | Strata: Celligner line weights from each stratum's own patients | `scripts/74b` |
-| 2026-10-12 | Strata: the target check stays as computed on the parent group's tumors | `scripts/79b` |
-| 2026-10-12 | Strata ranked by reversal and specificity, including specificity against sibling strata (`spec_sib`, to build) | `main:docs/notes/subgrouping_for_drug_side.md` |
+| 2026-10-12 | Strata: the target check is judged on each stratum's own tumors (same rule: TPM >= 1 in >= 20%); tissue key and direct / borrowed split are the parent's | `scripts/79b` (STRATA=1) |
+| 2026-10-12 | Strata ranked by reversal and specificity, including specificity against sibling strata (`spec_sib`) | `scripts/79g` |
+| 2026-10-12 | Her2 PC4 kept but flagged weak; flag carried into the drug outputs | `scripts/79g` (`weak`) |
 | 2026-10-12 | LumA PC3 cell-line issue (C1 below): noted, revisit only if it distorts rankings | this file |
 
 ## 2. Method choices made while building (for your review)
@@ -157,6 +158,21 @@ breast cancer, so anti-estrogens stay on the basal list (and rank at the top the
 A Celligner weight means "share of the cancer's patients that resemble this line", not the share of tumor cells
 like it. Substitute keys (thymoma -> T-cell lines, PCPG -> neuroblastoma) are approximations.
 
+### C14. Sibling specificity separates only some strata, and the ER check fails (2026-10-12)
+
+- Most stratum rankings are near their parent's: median rho 0.97 by reversal (top-10% overlap 0.75); siblings 0.92
+  (0.55). Basal strata are essentially the parent (rho 0.99-1.00; `spec_sib` spread only 0.2-0.5).
+- The most distinct strata: READ-C2 (rho vs parent 0.76), LumA PC2 / PC3 (0.84-0.89), COAD CMS1/3-like (0.91),
+  Her2 PC3, LumB PC1.
+- Check on the LumA proliferation axis (PC3): palbociclib is most specific to the proliferation end (100th
+  percentile), as expected. But anti-estrogens are also more specific to the proliferation end than to the ER end
+  (`spec_sib` 1st-5th percentile at the ER end), the opposite of the biology. Same pattern for the Her2 PC3 ESR1 end.
+  Likely the same cause as C2 / C3: in MCF7 the anti-estrogen effect is mostly growth arrest, which the scoring
+  reads as reversing proliferation, not ER signaling.
+- Tier overlap between two siblings is ~0 by construction: with two siblings, `spec_sib` of one is roughly minus
+  that of the other.
+Numbers: `results/lincs/stratum_reversal_summary.tsv`, `stratum_reversal_controls.tsv`.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ
@@ -170,6 +186,8 @@ may be technical (see the disease-side note).
 - If C1 distorts breast results: restrict ER-driven strata to ER-positive drug-tested lines?
 - Should the target check be stricter (C10), e.g. a higher TPM or fraction for hormone receptors?
 - Should subunit-type targets (C9) be collapsed before counting `n_targets` for the multi-target flag?
+- The sibling-specificity formula (`spec_sib`, note section 4) was "to confirm with the user"; it is implemented as proposed.
+- How to fix the growth-arrest confound (C2, C3, C14) before ranking is trusted: e.g. score against non-proliferation regulators only, or validate against drug-sensitivity data (PRISM / GDSC)?
 
 ## 5. Likely questions and current answers
 
