@@ -1,0 +1,40 @@
+#!/usr/bin/env Rscript
+# Proliferation-linked regulators of the project ARACNe networks, for the split reversal score (scripts/79i).
+# Why (user 2026-10-12, caveat C3 / C4 of docs/notes/drug_side_decisions_and_caveats.md): every tumor has proliferation
+# regulators up vs normal and every cytostatic drug turns them down, so proliferation reversal ranks the same drugs
+# high in every disease; in tumor-derived networks lineage regulators (FOXA1 / GATA3 in breast) also carry
+# proliferation genes as (negative) targets, so growth arrest is read as their activation. Both kinds are marked here.
+# Rule (fixed before looking at drug results): proliferation genes = HALLMARK_E2F_TARGETS + HALLMARK_G2M_CHECKPOINT
+# (MSigDB 2025.1, symbols -> GENCODE v23 IDs via results/step5/id_map.tsv). Per network x regulator: one-sided
+# hypergeometric test of proliferation genes among its targets (either sign; universe = all targets of the network),
+# BH over the network's regulators. prolif_linked = FDR < FDR_MAX and fold enrichment >= MIN_FOLD.
+# Output: results/lincs/prolif_regulators.tsv (net, regulator (symbol), n_targets, n_prolif, n_prolif_pos,
+#         n_prolif_neg, fold, p, fdr, prolif_linked)
+suppressPackageStartupMessages(library(data.table))
+FDR_MAX <- 0.05; MIN_FOLD <- 2
+arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+idm <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
+gmt <- strsplit(readLines("data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"), "\t")
+names(gmt) <- vapply(gmt, `[`, "", 1)
+psym <- unique(unlist(lapply(gmt[c("HALLMARK_E2F_TARGETS", "HALLMARK_G2M_CHECKPOINT")], `[`, -(1:2))))
+pgen <- unique(idm[symbol %in% psym, gene_id])
+message(sprintf("proliferation genes: %d symbols, %d mapped", length(psym), length(pgen)))
+
+out <- rbindlist(lapply(names(arac), function(net) {
+  r <- arac[[net]]
+  univ <- unique(unlist(lapply(r, function(x) names(x$tfmode))))
+  K <- sum(univ %in% pgen); N <- length(univ)
+  d <- rbindlist(lapply(names(r), function(g) {
+    tm <- r[[g]]$tfmode; ip <- names(tm) %in% pgen
+    data.table(regulator = g, n_targets = length(tm), n_prolif = sum(ip),
+               n_prolif_pos = sum(ip & tm > 0.5), n_prolif_neg = sum(ip & tm <= 0.5))
+  }))
+  d[, `:=`(net = net, fold = round((n_prolif / n_targets) / (K / N), 3),
+           p = phyper(n_prolif - 1, K, N - K, n_targets, lower.tail = FALSE))]
+  d[, fdr := p.adjust(p, "BH")]
+  d
+}))
+out[, `:=`(prolif_linked = fdr < FDR_MAX & fold >= MIN_FOLD)]
+setcolorder(out, c("net", "regulator"))
+fwrite(out, "results/lincs/prolif_regulators.tsv", sep = "\t")
+print(out[, .(regulators = .N, prolif_linked = sum(prolif_linked)), by = net])

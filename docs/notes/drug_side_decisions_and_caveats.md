@@ -48,6 +48,7 @@ These were chosen to make the scoring work. None was a decision of yours; each i
 | Tested in the cancer's own tissue: average over those lines, weighted by Celligner; borrowed: plain average over all lines | The borrowing test found distance weighting adds nothing | `scripts/79e` |
 | Specificity compares against cancers of other tissues only, each with >= 20 master regulators | Sibling subtypes would otherwise count against each other | `MIN_MRS_REF` in `scripts/79e` |
 | Tier 1 = approved + passes target check + reversing; tier 2 = not approved + passes + reversing; tier 3 = rest | Follows "approved drugs first" | `scripts/79e` |
+| Proliferation-linked regulators: targets enriched for Hallmark E2F + G2M (hypergeometric FDR < 0.05, fold >= 2) or drug-induced activity tracking the drug's proliferation effect (abs r >= 0.5) | Fixed before looking at drug results; diagnostic split (C15) | `scripts/79h`, `R_MIN` in `scripts/79i` |
 
 ## 3. Caveats in the data and results
 
@@ -94,14 +95,21 @@ tumor-vs-normal comparison is dominated by what all tumors share (mainly prolife
 drugs "reverse" almost any cancer. Treat both current rankings as exploratory. Strata (subgroup contrasts) are the
 planned fix. Numbers: `results/lincs/drug_reversal_controls.tsv`, `results/lincs/reversal_baseline/`.
 
-### C3. Tumor-derived regulons misread growth-arresting drugs (2026-10-12)
+### C3. Tumor-derived regulons misread growth-arresting drugs (2026-10-12; cause corrected 2026-10-12)
 
-The ARACNe networks are built from tumors, where lineage regulators are anti-correlated with proliferation (e.g.
-luminal breast tumors grow slowly). Their target lists therefore include proliferation genes with a negative sign.
-When a drug stops proliferation, VIPER reads it as switching those lineage regulators on: fulvestrant in MCF7 scores
-FOXA1 +6 and GATA3 +5, although at the gene level it lowers the classic estrogen-response genes (GREB1, MYB, XBP1).
-Removing each line's average drug response (part 2) reduces this but does not remove it; dropping Hallmark
-proliferation genes did not help either.
+The ARACNe networks are built from tumors, so a regulator's target list is the genes that co-vary with it across
+tumors, not the genes it switches on and off in a few hours. Fulvestrant in MCF7 scores FOXA1 +6 and GATA3 +5,
+although at the gene level it lowers the classic estrogen-response genes (GREB1, MYB, XBP1).
+- First explanation (proliferation genes as negative targets) is not the main cause: FOXA1, GATA3, ESR1 and XBP1
+  in the breast network have almost no Hallmark proliferation genes among their targets (6, 3, 1, 5 of 483, 354,
+  201, 290), and their drug-induced activity correlates only -0.2 to -0.4 with the drug's proliferation effect.
+- Actual cause: the breast ESR1 regulon is a luminal-identity module (positive targets CA12, FOXA1, XBP1, SCUBE2,
+  SLC39A6; negative targets basal / stress genes S100A8, KRT7, PHGDH, PSAT1). GREB1, PGR, TFF1 and MYB are largely
+  not in it. In MCF7, fulvestrant leaves the luminal genes about flat (GATA3 even rises) and lowers the negative
+  targets, so VIPER reads "ER program up".
+- Consequence: anti-estrogens look anti-reversing in luminal tumors (ER program up in the tumor) and reversing in
+  basal tumors (ER program down). Removing proliferation does not change this (C15).
+Removing each line's average drug response (part 2) reduces this but does not remove it.
 
 ### C4. General growth inhibitors dominate the reversal score (2026-10-12)
 
@@ -173,6 +181,29 @@ like it. Substitute keys (thymoma -> T-cell lines, PCPG -> neuroblastoma) are ap
   that of the other.
 Numbers: `results/lincs/stratum_reversal_summary.tsv`, `stratum_reversal_controls.tsv`.
 
+### C15. Splitting off proliferation does not fix the anti-estrogen result (2026-10-12)
+
+Test (`scripts/79h`, `79i`): each cancer's master regulators split into proliferation-linked (targets enriched for
+Hallmark E2F / G2M genes, or drug-induced activity tracking the drug's proliferation effect, |r| >= 0.5; median 17%
+of a cancer's MRs) and the rest. New columns, all kept: `rev_prolif` (reversal of the proliferation MRs), `rev_mech`
+(the other MRs, after removing the proliferation-explained part of every regulator's activity), `rev_nonprolif`
+(the other MRs, no adjustment), `prolif_effect` (how much the drug lowers proliferation genes), `spec_mech`,
+strata `spec_sib_mech`, `prolif_share`, and a `prolif_driven` flag.
+- Generic drugs: top 10% in >= 20 cancers: 36 by `rev` -> 29 by `rev_mech`; 75 by `rev_prolif`; 0 by either
+  specificity score. Only a modest reduction.
+- Known drugs (mean percentile, expected-high controls): `rev` 73, `rev_prolif` 85, `rev_mech` 55, `spec` 53,
+  `spec_mech` 41. Erlotinib (96), gefitinib (87), flutamide (87) keep their ranks on the mechanism part;
+  irinotecan rises (41 -> 72); anti-estrogens and palbociclib drop in luminal A (fulvestrant 58 -> 22).
+- Anti-estrogens in basal stay at the 91st-98th percentile by `rev_mech`; at the LumA PC3 ER end `spec_sib_mech` is
+  3rd-11th percentile (was 1st-5th). Not fixed.
+- Reason: the ER misreading is a regulon-content problem, not a proliferation one (C3, corrected).
+- What it does show: proliferation reversal carries most of the known-drug signal (`rev_prolif` 85) and of the
+  anti-estrogen and palbociclib signal in luminal tumors, in line with your point that effective drugs often work by
+  stopping proliferation. Lineage-specific drugs whose signal is not proliferation (erlotinib, flutamide) are
+  carried by the mechanism part.
+Numbers: `results/lincs/split_overview.tsv`, `split_controls.tsv`, `drug_reversal_split.tsv`,
+`stratum_reversal_split.tsv`, `prolif_regulators.tsv`, `prolif_regulators_p2.tsv`.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ
@@ -187,7 +218,7 @@ may be technical (see the disease-side note).
 - Should the target check be stricter (C10), e.g. a higher TPM or fraction for hormone receptors?
 - Should subunit-type targets (C9) be collapsed before counting `n_targets` for the multi-target flag?
 - The sibling-specificity formula (`spec_sib`, note section 4) was "to confirm with the user"; it is implemented as proposed.
-- How to fix the growth-arrest confound (C2, C3, C14) before ranking is trusted: e.g. score against non-proliferation regulators only, or validate against drug-sensitivity data (PRISM / GDSC)?
+- How to fix the ER misreading (C3, C14, C15) before ranking is trusted. Splitting off proliferation did not (C15). Options: score drug-side TF activity with consensus / perturbation regulons (CollecTRI or DoRothEA are already in `data/raw/regulons`) as a sensitivity check next to the ARACNe regulons; or let drug-sensitivity data (PRISM / GDSC, in progress) decide which score to rank by.
 
 ## 5. Likely questions and current answers
 
@@ -235,7 +266,12 @@ work moves on.
 - **Does it recover known drugs?** Partly: 73rd percentile on average; erlotinib, 5-FU, flutamide high; afatinib,
   irinotecan not; anti-estrogens wrongly high in basal breast cancer (C2). Expect this to be the main question.
 - **Isn't it just finding anti-proliferative drugs?** Largely yes for the reversal score: 44 growth inhibitors are
-  top 10% in >= 20 cancers. Specificity removes them but does not recover known drugs better (C4).
+  top 10% in >= 20 cancers. Specificity removes them but does not recover known drugs better (C4). The score is
+  now also split into a proliferation part and a mechanism part (C15): proliferation carries most of the
+  known-drug signal; EGFR and androgen-receptor drugs are carried by the mechanism part.
+- **Why do anti-estrogens rank high in basal breast cancer?** The tumor-derived ESR1 regulon is a luminal-identity
+  module that lacks the acute estrogen-response genes, so fulvestrant reads as raising the ER program (C3). It is
+  not a proliferation effect (C15).
 
 ### Strata
 - **Do subgroups get different drug lists?** Still to be shown: stratum signatures correlate 0.97-0.99 with the
