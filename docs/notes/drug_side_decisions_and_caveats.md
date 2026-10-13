@@ -170,3 +170,64 @@ may be technical (see the disease-side note).
 - If C1 distorts breast results: restrict ER-driven strata to ER-positive drug-tested lines?
 - Should the target check be stricter (C10), e.g. a higher TPM or fraction for hormone receptors?
 - Should subunit-type targets (C9) be collapsed before counting `n_targets` for the multi-target flag?
+
+## 5. Likely questions and current answers
+
+Questions a PI, reviewer or audience is likely to ask, with the answer as of 2026-10-12. Update the answers as the
+work moves on.
+
+### Cell-line matching
+- **Why cell lines, and why Celligner?** Drug response data (LINCS) exists only for cell lines. Lines differ
+  systematically from tumors (no immune cells or stroma, culture effects), so Celligner aligns the two first.
+- **Why restrict matches to the same organ?** The question is whether a drug can act in that tissue, not which line
+  is closest anywhere (decision, part 1). Hybrid matching also admits a closer non-organ line.
+- **How well do the lines represent the tumors?** Partly. A weight means "share of patients that resemble this line"
+  (C12). Only 8-18% of a stratum's matching weight falls on lines with drug data (C6).
+- **Cancers without matching lines?** Substitutes: thymoma -> T-cell lines, PCPG -> neuroblastoma. Blood cancers
+  match myeloid or lymphoid lines separately.
+
+### Drug data (LINCS)
+- **Which signatures count?** High quality with a clear effect (TAS >= 0.4): 29,812 of 90,988, 3,058 drugs in
+  73 lines.
+- **Doses and time points?** Averaged into one profile per drug x line; dose-response is lost.
+- **Most genes are inferred.** Less independent information, but needed: with the 978 measured genes only 11-20% of
+  regulators can be scored, 89-92% with inferred genes (C8).
+- **Drugs never tested in the tissue?** Borrowed if tested in >= 3 other lines; predicted vs real effect r 0.46,
+  best possible ~0.55 (C7). Weighting by line similarity added nothing.
+- **Do dish effects reflect patients?** Not fully: no immune system, stroma or drug metabolism, and doses may exceed
+  achievable levels. Standard limitation.
+
+### Target check
+- **Why 20% of tumors at TPM >= 1?** A low bar so a target present in a subset of patients keeps the drug; trade-off:
+  low-level expression passes, e.g. ESR1 in basal breast cancer (C10).
+- **Why no family rescue?** Target-specific drugs, to limit off-target binding (decision).
+- **Drugs without an annotated target?** 466-945 per cancer pass by default; a missing annotation is not evidence of
+  no target (C9).
+- **Multi-target drugs?** Flagged, not removed; 90 of the 152 are approved; some just list every subunit of one
+  target (C9).
+
+### Reversal scoring
+- **Why regulators, not genes?** Same mechanism-level view as the disease side; regulators summarize many genes.
+- **Tumor networks applied to cell lines?** A known risk; it causes the growth-arrest misreading (C3).
+- **Why remove each line's average drug response?** Almost every active drug slows proliferation; without the
+  correction 87% of drugs "reverse" bladder cancer (part 2).
+- **Where are the p-values?** The permutation null was 3-5x too narrow, so drugs are ranked by percentile instead.
+  A calibrated null is unsolved.
+- **Why the top 10%?** A transparent cutoff and one setting, not a statistical threshold.
+- **Does it recover known drugs?** Partly: 73rd percentile on average; erlotinib, 5-FU, flutamide high; afatinib,
+  irinotecan not; anti-estrogens wrongly high in basal breast cancer (C2). Expect this to be the main question.
+- **Isn't it just finding anti-proliferative drugs?** Largely yes for the reversal score: 44 growth inhibitors are
+  top 10% in >= 20 cancers. Specificity removes them but does not recover known drugs better (C4).
+
+### Strata
+- **Do subgroups get different drug lists?** Still to be shown: stratum signatures correlate 0.97-0.99 with the
+  parent's, so sibling specificity is the test (C13).
+- **Why line weights from the stratum's own patients?** Subgroups may resemble different lines, e.g. CMS1/3-like vs
+  CMS2/4-like colon tumors lean on different colon lines.
+
+### Overall
+- **Better than CMap / LINCS connectivity?** Regulator level, tumor-matched cell lines, a tumor-expressed target
+  check, subgroup focus, and a disease-specificity score.
+- **How would you validate it?** Known-drug controls (current); drug sensitivity in the matched lines (DepMap PRISM,
+  GDSC); clinical trial / approval concordance; eventually experiments. PRISM / GDSC is the obvious next check.
+- **Why prioritize approved drugs?** Faster translation: an approved drug has known safety.
