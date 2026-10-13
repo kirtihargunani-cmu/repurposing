@@ -197,6 +197,18 @@ repurposing_hub:  # Broad Drug Repurposing Hub (scripts/09_download_drug_annotat
   url: https://s3.amazonaws.com/data.clue.io/repurposing/downloads/
   files: [repurposing_drugs_20200324.txt, repurposing_samples_20200324.txt]
 
+prism_20q2:  # PRISM Repurposing 20Q2 (scripts/09b_download_drug_sensitivity.sh); md5 = Figshare supplied_md5
+  release: 20Q2 (Figshare 20564034, 2022-08-23)
+  access: open  # CC BY 4.0
+  url: https://figshare.com/articles/dataset/PRISM_Repurposing_20Q2_Dataset/20564034
+  files: [secondary-screen dose-response curve parameters, cell-line info, treatment info, readme; primary-screen replicate-collapsed log fold change, cell-line info, treatment info, readme]
+
+gdsc_8.5:  # GDSC release 8.5 (scripts/09b_download_drug_sensitivity.sh); md5 = S3 ETag
+  release: 8.5 (fitted dose response 27Oct23)
+  access: open
+  url: https://cog.sanger.ac.uk/cancerrxgene/GDSC_release8.5/
+  files: [GDSC1_fitted_dose_response_27Oct23.xlsx, GDSC2_fitted_dose_response_27Oct23.xlsx, screened_compounds_rel_8.5.csv]
+
 chembl:  # REST API (scripts/79a_drug_annotations.py); raw JSON cached in data/raw/chembl/<release>/
   release: ChEMBL_37 (2026-05-01)
   access: open  # CC BY-SA 3.0
