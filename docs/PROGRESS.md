@@ -158,6 +158,11 @@
   - Reading: the axes are real and their gene programs carry over to an independent array cohort; most do not come out as a single clean PC in the new cohort (congruence 0.55-0.80; they mix with neighboring PCs of similar size), so they are best used as projected directions (fixed TCGA loadings), not re-derived per cohort.
 - Drug ranking for strata (user 2026-10-12): score by reversal and specificity. Note for the drug-side session: `docs/notes/subgrouping_for_drug_side.md`.
 
+- Step 10b stratum master regulators (`scripts/95_stratum_mr.R` -> `results/step10/stratum_mr.tsv` + `stratum_mr_summary`, `stratum_regulator_filter`, `stratum_patients`, `stratum_mr_parent_check`; user 2026-10-12). Method as 50_viper.R (aracne_project, the version behind group_mr.tsv): msviper on each Step 10 stratum signature, parent's network, 1,000 normal-split null from the parent's GTEx normals; regulator-expressed filter on the stratum's own tumors (user). Check: the same code on each parent's Step 4 signature reproduces group_mr.tsv (NES Spearman 0.9996-0.9997; FDR < 0.10 sets Jaccard 0.85-0.94, differences from the random null).
+  - MRs at FDR < 0.10: COAD-CMS1/3-like 216 (0 at FDR < 0.05; parent 339), CMS2/4-like 347; READ-C1/C2/C3 292 / 292 / 231; breast strata 617-1,015. NES Spearman with the parent 0.91 (CMS1/3-like) and 0.97-0.99 elsewhere. MRs not called in the sibling stratum: 18 (READ-C3) to 311 (LumA PC2 high).
+  - Regulators that most separate siblings read as expected biology: CMS2/4-like ASCL2, PLAGL2 (WNT/stem), EREG up vs CMS1/3-like; CMS1/3-like DUSP4 up; Basal PC1 low (stroma end) ITGA11, INHBA, ANTXR1 up and high (immune end) PDGFRB down; LumA PC3 high MYBL2, AURKB up.
+- Running decisions/assumptions list started: `docs/DECISIONS.md` (user 2026-10-12: ongoing list; update with every new decision).
+
 ## Assumptions register (review before reporting results)
 High impact
 1. ESTIMATE adjustment treats stroma/immune content as nuisance; may remove real mechanism (immune evasion, fibrosis). Sensitivity run without it: proposed.

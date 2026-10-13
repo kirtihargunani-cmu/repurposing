@@ -25,14 +25,14 @@ For drug matching each axis is cut into thirds: the **high end** (top third, pos
 |---|---|---|---|
 | Basal PC1 | T cells, IFN-gamma, proliferation | Fibroblast stroma, EMT | partial / **replicated** |
 | Basal PC3 | Myogenesis, junctions (FOXC1/SOX8) | Mitochondrial/housekeeping genes (possible technical) | partial / partial |
-| Basal PC4 | Myeloid, complement, glycolysis | Ribosomal | partial / partial (weak) |
+| Basal PC4 | Myeloid, complement, glycolysis | Ribosomal | partial / partial (low congruence) |
 | Her2 PC2 | Glycolysis, hypoxia, EMT (FAT1/CAV1) | Lymphocyte genes | partial / partial |
 | Her2 PC3 | Proliferation + immune | ESR1/XBP1 | partial / partial |
-| Her2 PC4 | Interferon (STAT1) | MYC targets, ribosomal (possible technical) | **not replicated** / partial (n = 14) |
+| Her2 PC4 | Interferon (STAT1) | MYC targets, ribosomal (possible technical) | **not replicated** / partial (n = 14); kept, flagged **weak** |
 | LumA PC2 | Immune (IL10RA, CD74) | Myofibroblast stroma | partial / partial |
 | LumA PC3 | Proliferation (AURKA, MYBL2) | ESR1/GATA3, cilia genes | **replicated** / partial |
 | LumA PC4 | Cancer-associated fibroblasts (COL11A1, MMP11) | Endothelial / lymphocyte | **replicated** / partial |
-| LumA PC5 | Glycolysis | Adipose (PPARG/FABP4), lymphocytes | partial / partial (weak) |
+| LumA PC5 | Glycolysis | Adipose (PPARG/FABP4), lymphocytes | partial / partial (low congruence) |
 | LumB PC1 | EMT, glycolysis, hypoxia | Immune | partial / partial |
 | LumB PC3 | Stroma, ESR1/GATA3 | T cells, checkpoints (LAG3, CTLA4) | partial / partial |
 | LumB PC4 | Endothelial (CDH5, ERG, CD34) | Inflammatory / epithelial | **replicated** / partial |
@@ -79,24 +79,41 @@ The user wants strata ranked by both:
   - A drug ranks well for a stratum if it reverses it (`rev` > 0, top tier) and is more specific to it than to its
     siblings (`spec_sib` high).
 
-## 5. What you need from the disease side (not yet produced)
+## 5. Inputs from the disease side and user decisions for the drug side (2026-10-12)
 
-Your reversal score uses master regulators (`results/step6/aracne_project/group_mr.tsv`: msviper NES + FDR, tumor vs
-normal), not gene z. **Stratum master regulators do not exist yet.** The disease side's next step is to produce them
-in the same format, `group_id` = stratum name, with the same method as Step 6:
-- msviper on each Step 10 signature
-- the parent's ARACNe network (COADREAD / BRCA) and regulator filter
-- the 1,000 normal-vs-normal split null
+**Stratum master regulators (done, on `main`):** `results/step10/stratum_mr.tsv` is in the same columns as `group_mr.tsv`, plus
+`parent_group`, with `group_id` = stratum name. Method as Step 6 / `50_viper.R` (aracne_project, the version your
+`group_mr.tsv` comes from):
+- msviper on the Step 10 stratum signature
+- the parent's ARACNe network (BRCA / COADREAD)
+- the 1,000 normal-vs-normal split null from the parent's GTEx normals
+- regulator-expressed filter judged on the stratum's own tumors
 
-Proposed path: `results/step10/stratum_mr.tsv`. This is pending user go-ahead; you'll be told when it is on `main`.
+Supporting files:
+- `stratum_mr_summary.tsv`: MRs per stratum, similarity to the parent, MRs differing from the siblings
+- `stratum_regulator_filter.tsv`
+- `stratum_mr_parent_check.tsv`: the same code reproduces each parent's `group_mr.tsv`
 
-Other inputs to settle on your side:
-- **Network:** the parent's (BRCA for breast strata, COADREAD for colon/rectum). Unchanged.
-- **Tissue key and Celligner weights:** a stratum could use its parent group's line weights, or the mean of
-  its own patients' Celligner weights (`data/processed/celligner/weights_keyed.tsv.gz` is per patient). That is a user
-  decision. The CMS1/3 vs CMS2/4 split may well match different colon lines.
-- **Target gate:** `expressed` is currently judged on the parent group's tumors. It could be recomputed on the
-  stratum's patients (TPM per patient is available); this is also a user decision.
+Script: `scripts/95_stratum_mr.R`.
+- Parent check: NES Spearman 0.9997 with `group_mr.tsv`, FDR < 0.10 sets Jaccard 0.85-0.94 (random null)
+- MRs at FDR < 0.10: COAD-CMS1/3-like 216 (none at 0.05), CMS2/4-like 347, READ 231-292, breast 617-1,015
+- NES Spearman with the parent: 0.91 for CMS1/3-like, 0.97-0.99 for the others
+
+**Stratum membership:** `results/step10/stratum_patients.tsv` (`group_id` = parent, `stratum`, `sample`, `weak`) lists
+every stratum, including the breast axis ends: exactly the tumors in each stratum signature. Sample IDs match
+`weights_keyed.tsv.gz` (e.g. `TCGA-XX-XXXX-01`).
+
+**User decisions for the drug side:**
+1. **Cell-line matching per stratum = the mean of the stratum's own patients' Celligner weights** (per-patient hybrid
+   weights, as `disease_line_weights` does for whole diseases). Not the parent group's weights.
+2. **Target gate per stratum = judged on the stratum's own patients** (`expressed` = TPM >= 1 in >= 20% of the
+   stratum's tumors, the same config rule).
+3. **Scoring = reversal + specificity**, with within-parent sibling specificity as proposed in section 4 (formula to
+   confirm with the user).
+4. **Her2 PC4 is kept but flagged weak** (`weak = TRUE` in `stratum_patients.tsv` and `stratum_mr_summary.tsv`); carry
+   the flag into drug outputs.
+
+Network: unchanged, the parent's (BRCA for breast strata, COADREAD for colon/rectum).
 
 ## 6. Caveats to carry into the drug results
 

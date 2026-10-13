@@ -125,6 +125,11 @@ Additional step6 files:
 | `z_strata_vs_gtex.tsv` | Gene x stratum: how much each gene is up/down in that stratum's tumors vs healthy GTEx tissue (signed z); the drug-matching input. |
 | `z_axis_drivers.tsv` | Gene x breast axis: how strongly each gene rises toward the high end of the axis (explanation only). |
 | `axis_driver_top.tsv` | The 25 genes most tied to each end of each breast axis. |
+| `stratum_patients.tsv` | Which patients are in each of the 31 strata (incl. breast axis ends); `weak` flags Her2 PC4. |
+| `stratum_mr.tsv` | Master regulators of each stratum (activity score, p, FDR), same format as Step 6 `group_mr.tsv`: the drug-side input. |
+| `stratum_mr_summary.tsv` | Per stratum: number of master regulators, similarity to the parent group, regulators that differ most from the sibling strata. |
+| `stratum_regulator_filter.tsv` | Which regulators were scored per stratum and why others were dropped. |
+| `stratum_mr_parent_check.tsv` | Check that the same code reproduces the Step 6 parent-group results. |
 
 ## `data/` (local only, not in git)
 
