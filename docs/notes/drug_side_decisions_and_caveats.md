@@ -204,6 +204,29 @@ strata `spec_sib_mech`, `prolif_share`, and a `prolif_driven` flag.
 Numbers: `results/lincs/split_overview.tsv`, `split_controls.tsv`, `drug_reversal_split.tsv`,
 `stratum_reversal_split.tsv`, `prolif_regulators.tsv`, `prolif_regulators_p2.tsv`.
 
+### C16. The scores do not predict measured drug sensitivity (PRISM / GDSC, 2026-10-12)
+
+Test (`scripts/09b`, `79j`, `79k`; protocol fixed before results): for each cancer and stratum, the drug's selective
+killing of the cancer's own cell lines (Celligner-weighted, z-scored per drug across all lines so general toxicity
+is removed) in PRISM Repurposing 20Q2 (secondary 8-dose, 681 scored drugs; primary 1-dose, 1,135) and GDSC1 / GDSC2
+release 8.5 (271 / 184 scored drugs).
+- The data works as a yardstick: known drugs are selective where expected (BRAF / MEK inhibitors in melanoma
+  97th-100th percentile, HER2 drugs in Her2 breast 86-98, fulvestrant in luminal breast 96-99 and in basal 4-84,
+  EGFR inhibitors in lung adenocarcinoma mostly 80-99).
+- Our scores do not predict it. Median within-cancer Spearman with selective killing: -0.04 to +0.04 for every score
+  (rev, rev_prolif, rev_nonprolif, rev_mech, prolif_effect, spec, spec_mech) in every dataset; the range across
+  cancers is about -0.3 to +0.3. Top-10% enrichment is about 1x (chance). The few nominal p < 0.05 (PRISM primary
+  spec 0.03, rev_nonprolif 0.02) are tiny effects and do not repeat across datasets.
+- Across cancers per drug (does a drug score highest where it kills most): median rho 0.00-0.06; same picture.
+- Strata: `spec_sib` does not predict which sibling's lines are more sensitive (median rho 0.00-0.03; sibling line
+  weights overlap ~0.72, so the contrast is weak anyway).
+- Target expression alone (fraction of targets expressed in the tumors) does no better within cancers.
+- Anti-estrogens: PRISM / GDSC show the biology our scores invert (C3): selective in luminal, not in basal.
+Caveats of the test: viability in 3-5 day assays is not reversal; LINCS signatures are 6-24 h; most drugs have
+LINCS data in few lines (borrowed), while PRISM / GDSC measure many lines.
+Numbers: `results/lincs/sensitivity_validation/` (`t1_summary.tsv`, `t1_per_unit.tsv`, `t2_across_units.tsv`,
+`t3_siblings.tsv`, `controls.tsv`, `overlap.tsv`).
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ
@@ -218,7 +241,7 @@ may be technical (see the disease-side note).
 - Should the target check be stricter (C10), e.g. a higher TPM or fraction for hormone receptors?
 - Should subunit-type targets (C9) be collapsed before counting `n_targets` for the multi-target flag?
 - The sibling-specificity formula (`spec_sib`, note section 4) was "to confirm with the user"; it is implemented as proposed.
-- How to fix the ER misreading (C3, C14, C15) before ranking is trusted. Splitting off proliferation did not (C15). Options: score drug-side TF activity with consensus / perturbation regulons (CollecTRI or DoRothEA are already in `data/raw/regulons`) as a sensitivity check next to the ARACNe regulons; or let drug-sensitivity data (PRISM / GDSC, in progress) decide which score to rank by.
+- How to fix the ER misreading (C3, C14, C15) before ranking is trusted. Splitting off proliferation did not (C15). Options: score drug-side TF activity with consensus / perturbation regulons (CollecTRI or DoRothEA are already in `data/raw/regulons`) as a sensitivity check next to the ARACNe regulons; or let drug-sensitivity data decide. PRISM / GDSC (C16) support none of the current scores, so the next step is choosing what to change (regulons, gene-level scoring, or using sensitivity data directly).
 
 ## 5. Likely questions and current answers
 
@@ -263,6 +286,9 @@ work moves on.
 - **Where are the p-values?** The permutation null was 3-5x too narrow, so drugs are ranked by percentile instead.
   A calibrated null is unsolved.
 - **Why the top 10%?** A transparent cutoff and one setting, not a statistical threshold.
+- **Is it validated against drug-sensitivity data?** Tested on PRISM and GDSC: none of the scores predicts which
+  drugs selectively kill a cancer's cell lines (median rho about 0), although that data clearly recovers known
+  drugs (C16). This is the main open problem.
 - **Does it recover known drugs?** Partly: 73rd percentile on average; erlotinib, 5-FU, flutamide high; afatinib,
   irinotecan not; anti-estrogens wrongly high in basal breast cancer (C2). Expect this to be the main question.
 - **Isn't it just finding anti-proliferative drugs?** Largely yes for the reversal score: 44 growth inhibitors are
