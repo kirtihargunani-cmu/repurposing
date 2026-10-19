@@ -121,6 +121,14 @@ group, written to `results/step4_v2/gtex_reference.tsv`:
   of edges in v1), then `aracne2regulon` on the network + the v2 input matrix; no target cap (as v1).
 - **Ordering:** the network inputs do not depend on Step 4, so the networks can be built while Step 4 is run and
   checked.
+- **Two regulator sets (D64):** the full set (5,789 candidates; `<NET>.regulators.txt`, networks in `aracne_v2/`) and a
+  TF-only set (Lambert TFs; `<NET>.regulators_tf.txt`, networks in `aracne_v2_tf/`, `REGSET=tf`). Same expression
+  inputs and settings.
+- **Extra network BRCA_LUM (D65):** LumA + LumB tumors only (769 tumors, 14,011 genes, 4,643 candidate regulators,
+  1,241 TFs), built in both sets; luminal strata and groups can be scored with it next to the pooled BRCA network.
+- **No proliferation regression of the input (D66).**
+- Inputs built 2026-10-18 (`VERSION=v2 scripts/42_aracne_inputs.py`; `results/step5/aracne_cohorts_v2.tsv`): 29 networks,
+  12,911-14,783 genes and 4,286-4,890 candidate regulators per network (v1: 13,838-15,925 and 4,522-5,163).
 - Diagnostics rerun: bootstrap edge support (`45`), edge confounding (`46`).
 - Outputs: `data/processed/step5/aracne_inputs_v2/`, `data/processed/step5/aracne_v2/<NET>/`,
   `data/processed/step5/regulons_aracne_project_v2.rds`, `results/step5/aracne_*_v2.tsv`.
@@ -195,7 +203,7 @@ v1 values in brackets. Reported whatever they show.
 | Order | Step | Script(s) | Runtime |
 |---|---|---|---|
 | 1 | GTEx collection columns; v2 gene list (**done 10-18**) | `20_covariates.py`, `22_gene_set_v2.py` | minutes |
-| 2 | ARACNe inputs v2, start network build | `42`, `43` | ~2.5 days (background) |
+| 2 | ARACNe inputs v2 (done 10-18); network build: full set then TF-only, 29 networks each | `42`, `43` (`VERSION=v2`, then `REGSET=tf`) | ~2.5 + ~0.7 days (background) |
 | 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates | `32_gtex_reference.R` | minutes |
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11 | `30_signatures.R` (v2) | < 1 h |
 | 5 | Regulons v2 (+ cross-mappable edge removal); edge diagnostics | `44`, `45`, `46` | hours |
