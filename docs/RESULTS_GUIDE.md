@@ -50,6 +50,12 @@ Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-
 | `gtex_collection_anchor.tsv` (+ `_anchor_folds`) | Which GTEx reference (average donor, model-shifted to best-preserved, plain best-preserved average) is closest to hidden best-preserved donors. |
 | `gtex_collection_toward_adjacent.tsv` | Check only: whether shifting GTEx toward best-preserved donors moves it toward TCGA adjacent normals. |
 
+### step4_v2: v2 rebuild (SPEC_rebuild_v2.md)
+| File | What it is |
+|---|---|
+| `gtex_reference.tsv` | Every GTEx sample considered as healthy reference: groups using it, collection data, colon/kidney sub-region score, whether it is used (and why not), best-preserved flag, and the collection covariates Step 4 v2 adjusts for. |
+| `gtex_reference_tissues.tsv` | Per GTEx tissue: samples used, best-preserved donors, how the reference is anchored (observed / model / average) and the anchor values. |
+
 ### step5: ID mapping, regulator networks, edge checks
 | File | What it is |
 |---|---|

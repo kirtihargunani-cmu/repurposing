@@ -204,7 +204,7 @@ v1 values in brackets. Reported whatever they show.
 |---|---|---|---|
 | 1 | GTEx collection columns; v2 gene list (**done 10-18**) | `20_covariates.py`, `22_gene_set_v2.py` | minutes |
 | 2 | ARACNe inputs v2 (done 10-18); network build: full set then TF-only, 29 networks each | `42`, `43` (`VERSION=v2`, then `REGSET=tf`) | ~2.5 + ~0.7 days (background) |
-| 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates | `32_gtex_reference.R` | minutes |
+| 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates (**done 10-18**) | `32_gtex_reference.R` | minutes |
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11 | `30_signatures.R` (v2) | < 1 h |
 | 5 | Regulons v2 (+ cross-mappable edge removal); edge diagnostics | `44`, `45`, `46` | hours |
 | 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 | `50`, `51`, `59` | hours |
