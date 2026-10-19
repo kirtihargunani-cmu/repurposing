@@ -6,7 +6,9 @@
 #   VERSION=v2: inputs from aracne_inputs_v2/ (v2 gene set, rebuild spec D51), networks to aracne_v2/; the queue
 #     adds BRCA_LUM (luminal-only breast network, D65).
 #   REGSET=tf (with VERSION=v2): Lambert TFs only as regulators (<NET>.regulators_tf.txt), networks to aracne_v2_tf/ (D64).
-# Tools: ARACNe-AP commit 30967ea built with OpenJDK 17 (conda env "aracne"); see docs/PROGRESS.md.
+# Tools: ARACNe-AP commit 30967ea built with OpenJDK 17 (conda env "aracne"; set up by scripts/07_setup_aracne.sh).
+#   Overrides for another machine: ARACNE_JAVA, ARACNE_JAR, THREADS (per network, default 28), PARALLEL (networks at
+#   once, default 2). THREADS / PARALLEL change speed only; bootstrap outputs depend on the seed, not the thread count.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 SFX=$([ "${VERSION:-v1}" = v2 ] && echo _v2 || echo "")
@@ -17,9 +19,9 @@ if [ "${REGSET:-full}" = tf ]; then
   [ "$SFX" = _v2 ] || { echo "REGSET=tf needs VERSION=v2" >&2; exit 1; }
   REGF=regulators_tf; OUT=${OUT}_tf
 fi
-JAVA=~/miniforge3/envs/aracne/bin/java
-JAR=~/tools/ARACNe-AP/dist/aracne.jar
-N_BOOT=100; THREADS=28; PARALLEL=2
+JAVA=${ARACNE_JAVA:-~/miniforge3/envs/aracne/bin/java}
+JAR=${ARACNE_JAR:-~/tools/ARACNe-AP/dist/aracne.jar}
+N_BOOT=100; THREADS=${THREADS:-28}; PARALLEL=${PARALLEL:-2}
 # option (c): Steps 8-10 cohorts first, then small cohorts, then the rest (largest last)
 QUEUE="BRCA COADREAD $([ "$SFX" = _v2 ] && echo BRCA_LUM) UCS KICH ACC WT TGCT NBL GBM PCPG PAAD ESCA UCEC SARC KIRP CESC LIHC OV BLCA \
 STAD SKCM PRAD LUSC THCA LGG LUAD HNSC KIRC"
