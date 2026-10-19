@@ -45,6 +45,9 @@ Same 49 groups, 10,211 patients, Toil GENCODE v23 data.
     `gtex_death` = ventilator (0) / fast (1-2) / slow (3-4);
   - `gtex_autolysis` (`SMATSSCR`, sample attributes; used only to define best-preserved donors);
   - `gtex_ischemic_min` is already present (missing for 21 of 6,662 GTEx normals; those donors are dropped).
+  - **Done 2026-10-18** (`scripts/20_covariates.py`): over the 3,542 GTEx samples flagged one-per-donor, death
+    circumstance ventilator 2,181 / fast 869 / slow 451 / missing 41; autolysis 0: 815, 1: 2,236, 2: 384, 3: 49,
+    missing 58. All existing columns unchanged (checked).
 - **Purity: ESTIMATE score everywhere (D45).** Step 4 already uses ESTIMATE; the patient-level corrections (Step 6)
   switch LGG back from ABSOLUTE to ESTIMATE.
 - The RNA-quality index stays a within-role measure for patient-level correction only (D50).
@@ -55,7 +58,11 @@ Same 49 groups, 10,211 patients, Toil GENCODE v23 data.
   `data/raw/crossmap/`): 1,511.
 - Drop **readthrough loci** marked `drop == TRUE` in `data/interim/readthrough_genes_v23.tsv`: 344.
 - Together 1,824 genes dropped. The 71 genes without a mappability value are **kept** and flagged (D54).
-- The gene list is written once (`results/step3/genes_protein_coding_v23_v2.tsv`) and every v2 step reads it.
+- Counted over all 19,797 protein-coding genes (not only those in a Step 4 signature): 2,013 dropped (1,664
+  mappability < 0.8, 384 readthrough, 35 both), **17,784 kept**, 211 of them without a mappability value.
+- The gene list is written once (`results/step3/genes_protein_coding_v23_v2.tsv`, dropped genes with reasons in
+  `genes_v2_dropped.tsv`; `scripts/22_gene_set_v2.py`, runner step `gene_set_v2`) and every v2 step reads it.
+  **Done 2026-10-18.**
 
 ### Step 4 (tumor-vs-normal signatures): prepared GTEx reference
 
@@ -187,7 +194,7 @@ v1 values in brackets. Reported whatever they show.
 
 | Order | Step | Script(s) | Runtime |
 |---|---|---|---|
-| 1 | GTEx collection columns; v2 gene list | `20_covariates.py`, new gene-list step | minutes |
+| 1 | GTEx collection columns; v2 gene list (**done 10-18**) | `20_covariates.py`, `22_gene_set_v2.py` | minutes |
 | 2 | ARACNe inputs v2, start network build | `42`, `43` | ~2.5 days (background) |
 | 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates | `32_gtex_reference.R` | minutes |
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11 | `30_signatures.R` (v2) | < 1 h |

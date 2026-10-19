@@ -18,11 +18,13 @@ Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-
 ### step3: covariates
 | File | What it is |
 |---|---|
-| `covariates_toil.tsv` | One row per sample: sex, age, hospital, plate, RNA quality, ABSOLUTE purity, ESTIMATE scores, and the one-sample-per-patient flag. |
+| `covariates_toil.tsv` | One row per sample: sex, age, hospital, plate, RNA quality, ABSOLUTE purity, ESTIMATE scores, the one-sample-per-patient flag, and for GTEx the collection details (ischemic time, death circumstance, autolysis score). |
 | `covariates_beataml.tsv` | The same for BeatAML (one sample per patient; drug-response flag). |
 | `estimate_toil.tsv` | ESTIMATE stromal / immune / combined scores (non-tumor tissue mixed into each sample). |
 | `genes_protein_coding_v23.tsv` | The 19,797 protein-coding genes used for signatures and drug matching. |
 | `genes_extended_v23.tsv` | Protein-coding + lincRNA + antisense genes (mechanism work only). |
+| `genes_protein_coding_v23_v2.tsv` | v2 gene set (rebuild spec): protein-coding genes minus hard-to-map (mappability < 0.8) and readthrough genes; 17,784 genes. |
+| `genes_v2_dropped.tsv` | The 2,013 genes dropped from the v2 set, with the reason. |
 
 ### step4: tumor-vs-normal signatures (`step4_extended/` = same files, extended gene set)
 | File | What it is |
