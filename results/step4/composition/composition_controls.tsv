@@ -1,19 +1,19 @@
 group_id	cell_type	comparison	expect	n1	n2	median_1	median_2	median_diff	cliff_delta	p	fdr	delta_unfiltered	pass
-BRCA-Basal	HPA: Adipocytes	tumor_vs_gtex	lower	190	79	0.5198	5.6382	-5.1184	-0.9952	8.44243225103514e-38	6.99755827374355e-37		TRUE
-BRCA-Her2	HPA: Adipocytes	tumor_vs_gtex	lower	81	79	0.4638	5.6512	-5.1874	-0.9978	1.23208517895405e-27	5.82726446596861e-27		TRUE
-BRCA-LumA	HPA: Adipocytes	tumor_vs_gtex	lower	560	79	1.5245	5.6103	-4.0858	-0.9726	1.42586466043747e-44	1.80645667246299e-43		TRUE
-BRCA-LumB	HPA: Adipocytes	tumor_vs_gtex	lower	209	79	0.5393	5.6262	-5.0869	-0.9965	6.78667650492255e-39	6.15325336446312e-38		TRUE
-TCGA-COAD	HPA: Distal enterocytes	tumor_vs_gtex	similar										
-TCGA-COAD	HPA: Smooth muscle cells	tumor_vs_gtex	smaller gap than unfiltered										
-TCGA-KIRC	HPA: Proximal tubular cells	tumor_vs_gtex	lower	530	21	3.5312	5.707	-2.1758	-0.696	6.2293718245236e-08	1.12165722341598e-07	-0.5743	TRUE
-TCGA-KIRP	HPA: Proximal tubular cells	tumor_vs_gtex	lower	288	21	2.0099	5.6981	-3.6882	-0.9352	8.47155766584472e-13	2.01407278933961e-12	-0.8056	TRUE
-TCGA-LUAD	HPA: Alveolar cells type 1	tumor_vs_gtex	lower										
-TCGA-READ	HPA: Distal enterocytes	tumor_vs_gtex	similar										
-TCGA-READ	HPA: Smooth muscle cells	tumor_vs_gtex	smaller gap than unfiltered										
-TCGA-SKCM	HPA: Basal keratinocytes	tumor_vs_gtex	lower										
-TCGA-SKCM	HPA: Melanocytes	tumor_vs_gtex	higher	466	385	4.3915	2.8536	1.5379	0.5717	7.97449300870341e-47	1.14283917010752e-45		TRUE
-TCGA-UCS	HPA: Smooth muscle cells	tumor_vs_gtex	lower										
-TGCT-SEM	MCP: B lineage	tumor_vs_gtex	higher	62	164	3.2752	1.256	2.0192	0.9681	3.19192517484724e-29	1.64636140597384e-28		TRUE
-TGCT-SEM	MCP: T cells	tumor_vs_gtex	higher	62	164	3.4553	0.5588	2.8965	0.9965	7.3814472718145e-31	4.24051419132516e-30		TRUE
-UCEC-EEC	HPA: Smooth muscle cells	tumor_vs_gtex	lower										
-UCEC-SER	HPA: Smooth muscle cells	tumor_vs_gtex	lower										
+BRCA-Basal	HPA: Adipocytes	tumor_vs_gtex	lower	190	79	0.5198	5.6382	-5.1184	-0.9952	8.44243225103514e-38	7.40140286355846e-37		TRUE
+BRCA-Her2	HPA: Adipocytes	tumor_vs_gtex	lower	81	79	0.4638	5.6512	-5.1874	-0.9978	1.23208517895405e-27	6.06764336094126e-27		TRUE
+BRCA-LumA	HPA: Adipocytes	tumor_vs_gtex	lower	560	79	1.5245	5.6103	-4.0858	-0.9726	1.42586466043747e-44	1.90965896127595e-43		TRUE
+BRCA-LumB	HPA: Adipocytes	tumor_vs_gtex	lower	209	79	0.5393	5.6262	-5.0869	-0.9965	6.78667650492255e-39	6.47365108399906e-38		TRUE
+TCGA-COAD	HPA: Enterocytes and Paneth cells	tumor_vs_gtex	similar	287	109	-0.2596	3.3656	-3.6252	-0.9635	1.20032829199e-49	2.1674584755113e-48	-0.4829	FALSE
+TCGA-COAD	HPA: Smooth muscle and myoid cells	tumor_vs_gtex	smaller gap than unfiltered										
+TCGA-KIRC	HPA: Proximal tubular cells	tumor_vs_gtex	lower	530	21	3.5312	5.707	-2.1758	-0.696	6.2293718245236e-08	1.13132374466392e-07	-0.5743	TRUE
+TCGA-KIRP	HPA: Proximal tubular cells	tumor_vs_gtex	lower	288	21	2.0099	5.6981	-3.6882	-0.9352	8.47155766584472e-13	2.03020921414219e-12	-0.8056	TRUE
+TCGA-LUAD	HPA: Alveolar cells	tumor_vs_gtex	lower	513	264	6.5977	7.4033	-0.8056	-0.3224	1.75101832536636e-13	4.4195556411107e-13		TRUE
+TCGA-READ	HPA: Enterocytes and Paneth cells	tumor_vs_gtex	similar	92	109	-0.0673	3.4463	-3.5136	-0.9517	3.51956362593916e-31	2.17619355712882e-30	-0.443	FALSE
+TCGA-READ	HPA: Smooth muscle and myoid cells	tumor_vs_gtex	smaller gap than unfiltered										
+TCGA-SKCM	HPA: Melanocytes	tumor_vs_gtex	higher	466	385	4.3915	2.8536	1.5379	0.5717	7.97449300870341e-47	1.21356068658654e-45		TRUE
+TCGA-SKCM	HPA: Squamous epithelium and keratinocytes	tumor_vs_gtex	lower	466	385	-2.483	6.6218	-9.1048	-0.9761	6.70464860638425e-133	5.40767158152703e-130		TRUE
+TCGA-UCS	HPA: Smooth muscle and myoid cells	tumor_vs_gtex	lower										
+TGCT-SEM	MCP: B lineage	tumor_vs_gtex	higher	62	164	3.2752	1.256	2.0192	0.9681	3.19192517484724e-29	1.71503958876507e-28		TRUE
+TGCT-SEM	MCP: T cells	tumor_vs_gtex	higher	62	164	3.4553	0.5588	2.8965	0.9965	7.3814472718145e-31	4.43926476769689e-30		TRUE
+UCEC-EEC	HPA: Smooth muscle and myoid cells	tumor_vs_gtex	lower										
+UCEC-SER	HPA: Smooth muscle and myoid cells	tumor_vs_gtex	lower										

@@ -5,8 +5,9 @@
 # normals (one per patient). Genes: v2 gene set. Expression: TMM log-CPM (prior 2) per group over all its samples.
 #  1. Scores per sample
 #     1a MCP-counter (Becht 2016; package + gene lists pinned, scripts/04b) on gene symbols: 10 immune / stromal populations
-#     1b HPA v24 single-cell types: marker = nTPM in type k >= 4x the highest other type and >= 10, gene in the v2 set;
-#        panel = up to 20 markers with the largest fold over the next type (>= 8 needed); score = mean log-CPM
+#     1b HPA v24 single-cell types, closely related types grouped into families (D67): marker of a unit = max nTPM over
+#        its member types >= 10 and >= 4x the highest type outside the unit, gene in the v2 set; panel = up to 20
+#        markers with the largest fold (>= 8 needed); score = mean log-CPM
 #     + proliferation (Hallmark G2M mean log-CPM; not a cell type)
 #  2. Differences per group x cell type: tumor vs GTEx, tumor vs adjacent, adjacent vs GTEx (adjacent arms need >= 10
 #     samples). Age and sex removed within each arm first (linear; arm mean kept). Median difference, Cliff's delta,
@@ -37,13 +38,38 @@ gids <- summ$group_id
 hpa <- fread("data/raw/composition/rna_single_cell_type.tsv", col.names = c("gene_id", "symbol", "cell_type", "ntpm"))
 H <- dcast(hpa[gene_id %in% genes$gene_id], gene_id ~ cell_type, value.var = "ntpm", fun.aggregate = max, fill = 0)
 Hm <- as.matrix(H[, -1]); rownames(Hm) <- H$gene_id
-top2 <- t(apply(Hm, 1, function(v) { o <- order(v, decreasing = TRUE)[1:2]; c(o[1], v[o[1]], v[o[2]]) }))
-cand <- data.table(gene_id = rownames(Hm), cell_type = colnames(Hm)[top2[, 1]], ntpm = top2[, 2], next_ntpm = top2[, 3])
+# Cell-type families (user 2026-10-18, D67): closely related HPA types share markers, so a single type rarely has
+# genes >= 4x every other type. Each family is scored as one unit; its markers are compared with types OUTSIDE it.
+FAMILIES <- list(
+  "Enterocytes and Paneth cells" = c("Proximal enterocytes", "Distal enterocytes", "Paneth cells"),
+  "Squamous epithelium and keratinocytes" = c("Basal keratinocytes", "Suprabasal keratinocytes", "Basal squamous epithelial cells", "Squamous epithelial cells"),
+  "Alveolar cells" = c("Alveolar cells type 1", "Alveolar cells type 2"),
+  "Airway basal, club and ionocytes" = c("Basal respiratory cells", "Club cells", "Ionocytes"),
+  "Breast epithelium" = c("Breast glandular cells", "Breast myoepithelial cells"),
+  "Distal nephron" = c("Distal tubular cells", "Collecting duct cells"),
+  "Trophoblasts" = c("Cytotrophoblasts", "Syncytiotrophoblasts", "Extravillous trophoblasts"),
+  "Endothelial cells (blood + lymphatic)" = c("Endothelial cells", "Lymphatic endothelial cells"),
+  "Tissue macrophages" = c("Macrophages", "Kupffer cells", "Hofbauer cells", "Microglial cells"),
+  "Smooth muscle and myoid cells" = c("Smooth muscle cells", "Peritubular cells"),
+  "Fibroblasts and stromal cells" = c("Fibroblasts", "Endometrial stromal cells", "Ovarian stromal cells"),
+  "Gonadal somatic cells" = c("Leydig cells", "Sertoli cells", "Granulosa cells"),
+  "Gland secretory cells" = c("Mucus glandular cells", "Serous glandular cells", "Salivary duct cells"),
+  "Endocrine cells (pancreatic + enteroendocrine)" = c("Pancreatic endocrine cells", "Enteroendocrine cells"),
+  "Ductal cells and cholangiocytes" = c("Ductal cells", "Cholangiocytes"))
+stopifnot(all(unlist(FAMILIES) %in% colnames(Hm)))
+units <- c(FAMILIES, setNames(as.list(setdiff(colnames(Hm), unlist(FAMILIES))), setdiff(colnames(Hm), unlist(FAMILIES))))
+cand <- rbindlist(lapply(names(units), function(u) { m <- units[[u]]
+  inside <- apply(Hm[, m, drop = FALSE], 1, max); outside <- apply(Hm[, setdiff(colnames(Hm), m), drop = FALSE], 1, max)
+  k <- inside >= 10 & inside >= 4 * outside
+  data.table(gene_id = rownames(Hm)[k], cell_type = u, ntpm = inside[k], next_ntpm = outside[k], n_members = length(m)) }))
 cand[, fold := ntpm / pmax(next_ntpm, 0.1)]
-cand <- cand[ntpm >= 10 & ntpm >= 4 * next_ntpm][order(cell_type, -fold)]
+cand <- cand[order(cell_type, -fold)]
 panels <- cand[, head(.SD, 20), by = cell_type][, if (.N >= 8) .SD, by = cell_type]
-fwrite(panels[, .(n_markers = .N, markers = paste(sym[gene_id], collapse = ","), min_fold = round(min(fold), 1)), by = cell_type][
-  , hpa_release := "HPA v24"], file.path(OUT, "composition_panels.tsv"), sep = "\t")
+unit_tab <- data.table(cell_type = names(units), members = sapply(units, paste, collapse = "; "),
+                       n_candidate_markers = sapply(names(units), function(u) cand[cell_type == u, .N]))
+fwrite(merge(unit_tab, panels[, .(n_markers = .N, markers = paste(sym[gene_id], collapse = ","), min_fold = round(min(fold), 1)), by = cell_type],
+             by = "cell_type", all.x = TRUE)[, `:=`(scored = !is.na(n_markers), hpa_release = "HPA v24")],
+       file.path(OUT, "composition_panels.tsv"), sep = "\t")
 spec_mat <- Hm / pmax(rowSums(Hm), 1e-9)  # gene x cell type specificity (share of total nTPM)
 hm <- strsplit(readLines("data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"), "\t")
 g2m <- hm[[which(sapply(hm, `[`, 1) == "HALLMARK_G2M_CHECKPOINT")]][-(1:2)]
@@ -141,14 +167,14 @@ fwrite(SH, file.path(OUT, "composition_share.tsv"), sep = "\t")
 # ---- 4. positive controls (fixed in the spec)
 ctrl <- rbindlist(list(
   data.table(group_id = c("BRCA-Basal", "BRCA-Her2", "BRCA-LumA", "BRCA-LumB"), cell_type = "HPA: Adipocytes", comparison = "tumor_vs_gtex", expect = "lower"),
-  data.table(group_id = c("UCEC-EEC", "UCEC-SER", "TCGA-UCS"), cell_type = "HPA: Smooth muscle cells", comparison = "tumor_vs_gtex", expect = "lower"),
-  data.table(group_id = "TCGA-LUAD", cell_type = "HPA: Alveolar cells type 1", comparison = "tumor_vs_gtex", expect = "lower"),
-  data.table(group_id = c("TCGA-COAD", "TCGA-READ"), cell_type = "HPA: Distal enterocytes", comparison = "tumor_vs_gtex", expect = "similar"),
-  data.table(group_id = c("TCGA-COAD", "TCGA-READ"), cell_type = "HPA: Smooth muscle cells", comparison = "tumor_vs_gtex", expect = "smaller gap than unfiltered"),
+  data.table(group_id = c("UCEC-EEC", "UCEC-SER", "TCGA-UCS"), cell_type = "HPA: Smooth muscle and myoid cells", comparison = "tumor_vs_gtex", expect = "lower"),
+  data.table(group_id = "TCGA-LUAD", cell_type = "HPA: Alveolar cells", comparison = "tumor_vs_gtex", expect = "lower"),
+  data.table(group_id = c("TCGA-COAD", "TCGA-READ"), cell_type = "HPA: Enterocytes and Paneth cells", comparison = "tumor_vs_gtex", expect = "similar"),
+  data.table(group_id = c("TCGA-COAD", "TCGA-READ"), cell_type = "HPA: Smooth muscle and myoid cells", comparison = "tumor_vs_gtex", expect = "smaller gap than unfiltered"),
   data.table(group_id = c("TCGA-KIRC", "TCGA-KIRP"), cell_type = "HPA: Proximal tubular cells", comparison = "tumor_vs_gtex", expect = "lower"),
   data.table(group_id = "TGCT-SEM", cell_type = c("MCP: T cells", "MCP: B lineage"), comparison = "tumor_vs_gtex", expect = "higher"),
   data.table(group_id = "TCGA-SKCM", cell_type = "HPA: Melanocytes", comparison = "tumor_vs_gtex", expect = "higher"),
-  data.table(group_id = "TCGA-SKCM", cell_type = "HPA: Basal keratinocytes", comparison = "tumor_vs_gtex", expect = "lower")))
+  data.table(group_id = "TCGA-SKCM", cell_type = "HPA: Squamous epithelium and keratinocytes", comparison = "tumor_vs_gtex", expect = "lower")))
 C <- merge(ctrl, D, by = c("group_id", "cell_type", "comparison"), all.x = TRUE)
 unf <- D[comparison == "tumor_vs_gtex_unfiltered", .(group_id, cell_type, delta_unfiltered = cliff_delta)]
 C <- merge(C, unf, by = c("group_id", "cell_type"), all.x = TRUE)
