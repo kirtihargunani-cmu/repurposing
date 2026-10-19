@@ -2,7 +2,7 @@
 
 Drug-repurposing project, fresh start 2026-10-01. Plan: `docs/PROJECT_PLAN_steps1-4.md`; handoff and decisions: `docs/PROJECT_SETUP_NOTES.md`.
 
-**Current status:** [`docs/PIPELINE_SUMMARY.md`](docs/PIPELINE_SUMMARY.md) (flow chart and per-group numbers) · progress log [`docs/PROGRESS.md`](docs/PROGRESS.md).
+**Current status:** [`docs/PIPELINE_SUMMARY.md`](docs/PIPELINE_SUMMARY.md) (flow chart and per-group numbers) · progress log [`docs/PROGRESS.md`](docs/PROGRESS.md) · decisions [`docs/DECISIONS.md`](docs/DECISIONS.md) · **v2 rebuild spec (agreed 2026-10-18, not yet run): [`docs/SPEC_rebuild_v2.md`](docs/SPEC_rebuild_v2.md)**.
 
 - `config/datasets.yaml`: pinned sources (release, URL, access, checksum)
 - `data/raw`: untouched downloads · `data/interim` · `data/processed`

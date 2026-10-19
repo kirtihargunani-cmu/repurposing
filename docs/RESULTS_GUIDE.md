@@ -31,6 +31,23 @@ Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-
 | `z_tumor_vs_gtex.tsv` | Gene x group: how much each gene is up/down in tumor vs healthy GTEx tissue (signed z). |
 | `z_tumor_vs_adjacent.tsv` | The same vs normal tissue next to the tumor (18 groups). |
 
+`step4/reference_diagnostics/` (2026-10-18, `scripts/31_reference_diagnostics.R`; measurements behind the v2 rebuild spec, [`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md))
+| File | What it is |
+|---|---|
+| `overview.tsv` | One-line headline numbers for everything below. |
+| `source_effect_summary.tsv` | Per group with both kinds of normal: how much TCGA normal tissue differs from GTEx normal tissue (the lab difference), its GC/length tilt, and how much it overlaps the tumor signature (incl. a split-half control). |
+| `z_source.tsv` | Gene x group: TCGA adjacent normal vs GTEx normal (signed z). |
+| `source_consensus_vs_signatures.tsv` | How strongly the lab difference shared across organs shows up in every group's tumor-vs-GTEx signature. |
+| `source_consensus_hallmarks.tsv`, `source_consensus_top_genes.tsv` | What the shared lab difference consists of (pathways; top genes each way). |
+| `postmortem_summary.tsv` | Within GTEx: genes changed by ischemic time and by ventilator death, and their overlap with the tumor signature and the lab difference. |
+| `z_ischemic.tsv`, `z_ventilator.tsv` | Gene x group z for those two post-mortem effects. |
+| `quality_index_joint.tsv`, `quality_by_role.tsv` | RNA-quality index computed on tumors and normals together; differences by role and agreement with GTEx RIN. |
+| `mappability_genes.tsv` | How many Step 4 genes are hard to map or readthrough loci (dropped in v2). |
+| `normal_variance_summary.tsv` (+ `_spread_reps`, `_splithalf_reps`, `_adjacent_drivers`, `_adjacent_samples`) | `scripts/33_normal_variance.R`: per organ, is TCGA adjacent normal tissue more variable than GTEx (equal n), what drives the extra spread (tumor-likeness, purity, plate), and which reference gives tumor signatures that reproduce across disjoint patient halves. |
+| `gtex_collection_variance.tsv` | `scripts/34_gtex_collection_correction.R`: per GTEx tissue, how much each collection model (ischemic time, death circumstance, autolysis, fixative time, RIN, batch) lowers variance in held-out donors. |
+| `gtex_collection_anchor.tsv` (+ `_anchor_folds`) | Which GTEx reference (average donor, model-shifted to best-preserved, plain best-preserved average) is closest to hidden best-preserved donors. |
+| `gtex_collection_toward_adjacent.tsv` | Check only: whether shifting GTEx toward best-preserved donors moves it toward TCGA adjacent normals. |
+
 ### step5: ID mapping, regulator networks, edge checks
 | File | What it is |
 |---|---|
