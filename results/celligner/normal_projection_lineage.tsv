@@ -1,0 +1,1219 @@
+group_id	arm	lineage	tumor_weight	normal_weight
+BRCA-Basal	gtex	Biliary Tract	0.0007	0.0053
+BRCA-Basal	gtex	Bladder/Urinary Tract	0.005	0.1025
+BRCA-Basal	gtex	Bone	0.0039	0.0178
+BRCA-Basal	gtex	Bowel	0.0	0.0029
+BRCA-Basal	gtex	Breast	0.8247	0.2825
+BRCA-Basal	gtex	CNS/Brain	0.0059	0.0737
+BRCA-Basal	gtex	Cervix	0.0052	0.0683
+BRCA-Basal	gtex	Esophagus/Stomach	0.0033	0.0139
+BRCA-Basal	gtex	Eye	0.0002	0.0
+BRCA-Basal	gtex	Head and Neck	0.0185	0.0205
+BRCA-Basal	gtex	Kidney	0.0004	0.0008
+BRCA-Basal	gtex	Liver	0.0002	0.0
+BRCA-Basal	gtex	Lung	0.1105	0.0932
+BRCA-Basal	gtex	Myeloid	0.0003	0.0
+BRCA-Basal	gtex	Other	0.0002	0.0
+BRCA-Basal	gtex	Ovary/Fallopian Tube	0.0019	0.0233
+BRCA-Basal	gtex	Pancreas	0.0016	0.0549
+BRCA-Basal	gtex	Peripheral Nervous System	0.0016	0.0
+BRCA-Basal	gtex	Pleura	0.0	0.0018
+BRCA-Basal	gtex	Prostate	0.002	0.0
+BRCA-Basal	gtex	Skin	0.0016	0.0002
+BRCA-Basal	gtex	Soft Tissue	0.006	0.1354
+BRCA-Basal	gtex	Testis	0.0001	0.0
+BRCA-Basal	gtex	Thyroid	0.0027	0.0674
+BRCA-Basal	gtex	Uterus	0.0034	0.0355
+BRCA-Basal	gtex	Vulva/Vagina	0.0001	0.0
+BRCA-Basal	adjacent	Biliary Tract	0.0007	0.0038
+BRCA-Basal	adjacent	Bladder/Urinary Tract	0.005	0.0597
+BRCA-Basal	adjacent	Bone	0.0039	0.0061
+BRCA-Basal	adjacent	Breast	0.8247	0.1568
+BRCA-Basal	adjacent	CNS/Brain	0.0059	0.012
+BRCA-Basal	adjacent	Cervix	0.0052	0.0898
+BRCA-Basal	adjacent	Esophagus/Stomach	0.0033	0.0075
+BRCA-Basal	adjacent	Eye	0.0002	0.0
+BRCA-Basal	adjacent	Head and Neck	0.0185	0.0009
+BRCA-Basal	adjacent	Kidney	0.0004	0.0
+BRCA-Basal	adjacent	Liver	0.0002	0.0
+BRCA-Basal	adjacent	Lung	0.1105	0.56
+BRCA-Basal	adjacent	Myeloid	0.0003	0.0
+BRCA-Basal	adjacent	Other	0.0002	0.0
+BRCA-Basal	adjacent	Ovary/Fallopian Tube	0.0019	0.0097
+BRCA-Basal	adjacent	Pancreas	0.0016	0.0286
+BRCA-Basal	adjacent	Peripheral Nervous System	0.0016	0.0
+BRCA-Basal	adjacent	Pleura	0.0	0.0089
+BRCA-Basal	adjacent	Prostate	0.002	0.0
+BRCA-Basal	adjacent	Skin	0.0016	0.0
+BRCA-Basal	adjacent	Soft Tissue	0.006	0.0011
+BRCA-Basal	adjacent	Testis	0.0001	0.0
+BRCA-Basal	adjacent	Thyroid	0.0027	0.021
+BRCA-Basal	adjacent	Uterus	0.0034	0.034
+BRCA-Basal	adjacent	Vulva/Vagina	0.0001	0.0
+BRCA-Her2	gtex	Biliary Tract	0.002	0.0053
+BRCA-Her2	gtex	Bladder/Urinary Tract	0.0018	0.1025
+BRCA-Her2	gtex	Bone	0.0	0.0178
+BRCA-Her2	gtex	Bowel	0.0	0.0029
+BRCA-Her2	gtex	Breast	0.945	0.2825
+BRCA-Her2	gtex	CNS/Brain	0.0064	0.0737
+BRCA-Her2	gtex	Cervix	0.0082	0.0683
+BRCA-Her2	gtex	Esophagus/Stomach	0.0028	0.0139
+BRCA-Her2	gtex	Head and Neck	0.0	0.0205
+BRCA-Her2	gtex	Kidney	0.0	0.0008
+BRCA-Her2	gtex	Liver	0.0014	0.0
+BRCA-Her2	gtex	Lung	0.0172	0.0932
+BRCA-Her2	gtex	Ovary/Fallopian Tube	0.0024	0.0233
+BRCA-Her2	gtex	Pancreas	0.0006	0.0549
+BRCA-Her2	gtex	Pleura	0.0	0.0018
+BRCA-Her2	gtex	Prostate	0.0104	0.0
+BRCA-Her2	gtex	Skin	0.0	0.0002
+BRCA-Her2	gtex	Soft Tissue	0.0	0.1354
+BRCA-Her2	gtex	Thyroid	0.0017	0.0674
+BRCA-Her2	gtex	Uterus	0.0	0.0355
+BRCA-Her2	adjacent	Biliary Tract	0.002	0.0056
+BRCA-Her2	adjacent	Bladder/Urinary Tract	0.0018	0.1137
+BRCA-Her2	adjacent	Bone	0.0	0.0287
+BRCA-Her2	adjacent	Breast	0.945	0.108
+BRCA-Her2	adjacent	CNS/Brain	0.0064	0.0301
+BRCA-Her2	adjacent	Cervix	0.0082	0.1302
+BRCA-Her2	adjacent	Esophagus/Stomach	0.0028	0.0234
+BRCA-Her2	adjacent	Head and Neck	0.0	0.0019
+BRCA-Her2	adjacent	Liver	0.0014	0.0
+BRCA-Her2	adjacent	Lung	0.0172	0.3438
+BRCA-Her2	adjacent	Ovary/Fallopian Tube	0.0024	0.0144
+BRCA-Her2	adjacent	Pancreas	0.0006	0.069
+BRCA-Her2	adjacent	Pleura	0.0	0.0287
+BRCA-Her2	adjacent	Prostate	0.0104	0.0
+BRCA-Her2	adjacent	Skin	0.0	0.002
+BRCA-Her2	adjacent	Thyroid	0.0017	0.0496
+BRCA-Her2	adjacent	Uterus	0.0	0.0508
+BRCA-LumA	gtex	Biliary Tract	0.0002	0.0053
+BRCA-LumA	gtex	Bladder/Urinary Tract	0.0025	0.1025
+BRCA-LumA	gtex	Bone	0.0003	0.0178
+BRCA-LumA	gtex	Bowel	0.0003	0.0029
+BRCA-LumA	gtex	Breast	0.97	0.2825
+BRCA-LumA	gtex	CNS/Brain	0.0042	0.0737
+BRCA-LumA	gtex	Cervix	0.0033	0.0683
+BRCA-LumA	gtex	Esophagus/Stomach	0.0034	0.0139
+BRCA-LumA	gtex	Head and Neck	0.0008	0.0205
+BRCA-LumA	gtex	Kidney	0.0002	0.0008
+BRCA-LumA	gtex	Liver	0.0003	0.0
+BRCA-LumA	gtex	Lung	0.0034	0.0932
+BRCA-LumA	gtex	Lymphoid	0.0017	0.0
+BRCA-LumA	gtex	Myeloid	0.0001	0.0
+BRCA-LumA	gtex	Ovary/Fallopian Tube	0.0009	0.0233
+BRCA-LumA	gtex	Pancreas	0.0016	0.0549
+BRCA-LumA	gtex	Peripheral Nervous System	0.0002	0.0
+BRCA-LumA	gtex	Pleura	0.0	0.0018
+BRCA-LumA	gtex	Prostate	0.002	0.0
+BRCA-LumA	gtex	Skin	0.0	0.0002
+BRCA-LumA	gtex	Soft Tissue	0.0025	0.1354
+BRCA-LumA	gtex	Thyroid	0.002	0.0674
+BRCA-LumA	gtex	Uterus	0.0004	0.0355
+BRCA-LumA	adjacent	Biliary Tract	0.0002	0.0025
+BRCA-LumA	adjacent	Bladder/Urinary Tract	0.0025	0.0458
+BRCA-LumA	adjacent	Bone	0.0003	0.0073
+BRCA-LumA	adjacent	Bowel	0.0003	0.0
+BRCA-LumA	adjacent	Breast	0.97	0.2167
+BRCA-LumA	adjacent	CNS/Brain	0.0042	0.0134
+BRCA-LumA	adjacent	Cervix	0.0033	0.0553
+BRCA-LumA	adjacent	Esophagus/Stomach	0.0034	0.0103
+BRCA-LumA	adjacent	Head and Neck	0.0008	0.0016
+BRCA-LumA	adjacent	Kidney	0.0002	0.0
+BRCA-LumA	adjacent	Liver	0.0003	0.0
+BRCA-LumA	adjacent	Lung	0.0034	0.5507
+BRCA-LumA	adjacent	Lymphoid	0.0017	0.0
+BRCA-LumA	adjacent	Myeloid	0.0001	0.0
+BRCA-LumA	adjacent	Ovary/Fallopian Tube	0.0009	0.0048
+BRCA-LumA	adjacent	Pancreas	0.0016	0.0263
+BRCA-LumA	adjacent	Peripheral Nervous System	0.0002	0.0
+BRCA-LumA	adjacent	Pleura	0.0	0.0065
+BRCA-LumA	adjacent	Prostate	0.002	0.0
+BRCA-LumA	adjacent	Skin	0.0	0.0004
+BRCA-LumA	adjacent	Soft Tissue	0.0025	0.0169
+BRCA-LumA	adjacent	Thyroid	0.002	0.0195
+BRCA-LumA	adjacent	Uterus	0.0004	0.0219
+BRCA-LumB	gtex	Biliary Tract	0.0	0.0053
+BRCA-LumB	gtex	Bladder/Urinary Tract	0.004	0.1025
+BRCA-LumB	gtex	Bone	0.0015	0.0178
+BRCA-LumB	gtex	Bowel	0.0	0.0029
+BRCA-LumB	gtex	Breast	0.9656	0.2825
+BRCA-LumB	gtex	CNS/Brain	0.0026	0.0737
+BRCA-LumB	gtex	Cervix	0.004	0.0683
+BRCA-LumB	gtex	Esophagus/Stomach	0.0046	0.0139
+BRCA-LumB	gtex	Eye	0.0001	0.0
+BRCA-LumB	gtex	Head and Neck	0.0012	0.0205
+BRCA-LumB	gtex	Kidney	0.0	0.0008
+BRCA-LumB	gtex	Liver	0.0003	0.0
+BRCA-LumB	gtex	Lung	0.009	0.0932
+BRCA-LumB	gtex	Ovary/Fallopian Tube	0.0012	0.0233
+BRCA-LumB	gtex	Pancreas	0.0041	0.0549
+BRCA-LumB	gtex	Pleura	0.0	0.0018
+BRCA-LumB	gtex	Prostate	0.0006	0.0
+BRCA-LumB	gtex	Skin	0.0	0.0002
+BRCA-LumB	gtex	Soft Tissue	0.0008	0.1354
+BRCA-LumB	gtex	Thyroid	0.0	0.0674
+BRCA-LumB	gtex	Uterus	0.0004	0.0355
+BRCA-LumB	adjacent	Biliary Tract	0.0	0.0088
+BRCA-LumB	adjacent	Bladder/Urinary Tract	0.004	0.1086
+BRCA-LumB	adjacent	Bone	0.0015	0.0197
+BRCA-LumB	adjacent	Breast	0.9656	0.1094
+BRCA-LumB	adjacent	CNS/Brain	0.0026	0.0275
+BRCA-LumB	adjacent	Cervix	0.004	0.1381
+BRCA-LumB	adjacent	Esophagus/Stomach	0.0046	0.0223
+BRCA-LumB	adjacent	Eye	0.0001	0.0
+BRCA-LumB	adjacent	Head and Neck	0.0012	0.004
+BRCA-LumB	adjacent	Liver	0.0003	0.0
+BRCA-LumB	adjacent	Lung	0.009	0.3516
+BRCA-LumB	adjacent	Ovary/Fallopian Tube	0.0012	0.0158
+BRCA-LumB	adjacent	Pancreas	0.0041	0.0566
+BRCA-LumB	adjacent	Pleura	0.0	0.0215
+BRCA-LumB	adjacent	Prostate	0.0006	0.0
+BRCA-LumB	adjacent	Skin	0.0	0.0015
+BRCA-LumB	adjacent	Soft Tissue	0.0008	0.0023
+BRCA-LumB	adjacent	Thyroid	0.0	0.0462
+BRCA-LumB	adjacent	Uterus	0.0004	0.0659
+CESC-SCC	gtex	Ampulla of Vater	0.001	0.0
+CESC-SCC	gtex	Biliary Tract	0.0065	0.0017
+CESC-SCC	gtex	Bladder/Urinary Tract	0.028	0.0031
+CESC-SCC	gtex	Bone	0.0002	0.0068
+CESC-SCC	gtex	Bowel	0.0017	0.0011
+CESC-SCC	gtex	Breast	0.0136	0.0096
+CESC-SCC	gtex	CNS/Brain	0.0009	0.0092
+CESC-SCC	gtex	Cervix	0.2321	0.1215
+CESC-SCC	gtex	Esophagus/Stomach	0.0993	0.0636
+CESC-SCC	gtex	Head and Neck	0.4666	0.5185
+CESC-SCC	gtex	Kidney	0.0	0.0048
+CESC-SCC	gtex	Liver	0.0002	0.0
+CESC-SCC	gtex	Lung	0.0335	0.0027
+CESC-SCC	gtex	Lymphoid	0.0	0.0158
+CESC-SCC	gtex	Myeloid	0.0	0.0002
+CESC-SCC	gtex	Ovary/Fallopian Tube	0.0087	0.0077
+CESC-SCC	gtex	Pancreas	0.0116	0.0017
+CESC-SCC	gtex	Peripheral Nervous System	0.0	0.0031
+CESC-SCC	gtex	Prostate	0.0009	0.0
+CESC-SCC	gtex	Skin	0.0891	0.0016
+CESC-SCC	gtex	Soft Tissue	0.0001	0.2101
+CESC-SCC	gtex	Testis	0.0	0.0002
+CESC-SCC	gtex	Thyroid	0.0004	0.0102
+CESC-SCC	gtex	Uterus	0.004	0.004
+CESC-SCC	gtex	Vulva/Vagina	0.0017	0.0027
+ESCA-AD	gtex	Ampulla of Vater	0.0016	0.0
+ESCA-AD	gtex	Biliary Tract	0.014	0.0032
+ESCA-AD	gtex	Bladder/Urinary Tract	0.0018	0.0059
+ESCA-AD	gtex	Bone	0.0	0.0021
+ESCA-AD	gtex	Bowel	0.2128	0.0013
+ESCA-AD	gtex	Breast	0.0	0.0061
+ESCA-AD	gtex	CNS/Brain	0.0	0.0026
+ESCA-AD	gtex	Cervix	0.0041	0.0321
+ESCA-AD	gtex	Esophagus/Stomach	0.6021	0.1202
+ESCA-AD	gtex	Head and Neck	0.0271	0.6628
+ESCA-AD	gtex	Kidney	0.0	0.0001
+ESCA-AD	gtex	Liver	0.0086	0.0
+ESCA-AD	gtex	Lung	0.0213	0.0061
+ESCA-AD	gtex	Lymphoid	0.0	0.0002
+ESCA-AD	gtex	Ovary/Fallopian Tube	0.0183	0.0011
+ESCA-AD	gtex	Pancreas	0.0861	0.0063
+ESCA-AD	gtex	Peripheral Nervous System	0.0	0.0002
+ESCA-AD	gtex	Prostate	0.0006	0.0
+ESCA-AD	gtex	Skin	0.0015	0.0166
+ESCA-AD	gtex	Soft Tissue	0.0	0.1311
+ESCA-AD	gtex	Testis	0.0001	0.0001
+ESCA-AD	gtex	Thyroid	0.0	0.0014
+ESCA-AD	gtex	Uterus	0.0	0.0006
+ESCA-AD	adjacent	Ampulla of Vater	0.0016	0.0
+ESCA-AD	adjacent	Biliary Tract	0.014	0.0
+ESCA-AD	adjacent	Bladder/Urinary Tract	0.0018	0.0009
+ESCA-AD	adjacent	Bone	0.0	0.004
+ESCA-AD	adjacent	Bowel	0.2128	0.0865
+ESCA-AD	adjacent	Breast	0.0	0.0221
+ESCA-AD	adjacent	CNS/Brain	0.0	0.021
+ESCA-AD	adjacent	Cervix	0.0041	0.0063
+ESCA-AD	adjacent	Esophagus/Stomach	0.6021	0.562
+ESCA-AD	adjacent	Head and Neck	0.0271	0.1102
+ESCA-AD	adjacent	Kidney	0.0	0.0237
+ESCA-AD	adjacent	Liver	0.0086	0.0042
+ESCA-AD	adjacent	Lung	0.0213	0.0534
+ESCA-AD	adjacent	Lymphoid	0.0	0.0058
+ESCA-AD	adjacent	Ovary/Fallopian Tube	0.0183	0.0221
+ESCA-AD	adjacent	Pancreas	0.0861	0.0298
+ESCA-AD	adjacent	Prostate	0.0006	0.0061
+ESCA-AD	adjacent	Skin	0.0015	0.0015
+ESCA-AD	adjacent	Soft Tissue	0.0	0.0235
+ESCA-AD	adjacent	Testis	0.0001	0.0
+ESCA-AD	adjacent	Thyroid	0.0	0.0092
+ESCA-AD	adjacent	Uterus	0.0	0.0077
+ESCA-SCC	gtex	Biliary Tract	0.001	0.0032
+ESCA-SCC	gtex	Bladder/Urinary Tract	0.0262	0.0059
+ESCA-SCC	gtex	Bone	0.0	0.0021
+ESCA-SCC	gtex	Bowel	0.0	0.0013
+ESCA-SCC	gtex	Breast	0.0109	0.0061
+ESCA-SCC	gtex	CNS/Brain	0.001	0.0026
+ESCA-SCC	gtex	Cervix	0.0231	0.0321
+ESCA-SCC	gtex	Esophagus/Stomach	0.4454	0.1202
+ESCA-SCC	gtex	Eye	0.0001	0.0
+ESCA-SCC	gtex	Head and Neck	0.3996	0.6628
+ESCA-SCC	gtex	Kidney	0.0001	0.0001
+ESCA-SCC	gtex	Liver	0.0004	0.0
+ESCA-SCC	gtex	Lung	0.0411	0.0061
+ESCA-SCC	gtex	Lymphoid	0.0094	0.0002
+ESCA-SCC	gtex	Myeloid	0.0004	0.0
+ESCA-SCC	gtex	Ovary/Fallopian Tube	0.0008	0.0011
+ESCA-SCC	gtex	Pancreas	0.0025	0.0063
+ESCA-SCC	gtex	Peripheral Nervous System	0.0002	0.0002
+ESCA-SCC	gtex	Pleura	0.0004	0.0
+ESCA-SCC	gtex	Prostate	0.0003	0.0
+ESCA-SCC	gtex	Skin	0.0355	0.0166
+ESCA-SCC	gtex	Soft Tissue	0.0001	0.1311
+ESCA-SCC	gtex	Testis	0.0	0.0001
+ESCA-SCC	gtex	Thyroid	0.0011	0.0014
+ESCA-SCC	gtex	Uterus	0.0004	0.0006
+LGG-IDHmut-codel	gtex	Bone	0.0	0.0607
+LGG-IDHmut-codel	gtex	CNS/Brain	1.0	0.5338
+LGG-IDHmut-codel	gtex	Eye	0.0	0.0112
+LGG-IDHmut-codel	gtex	Lung	0.0	0.1046
+LGG-IDHmut-codel	gtex	Peripheral Nervous System	0.0	0.2492
+LGG-IDHmut-codel	gtex	Skin	0.0	0.0046
+LGG-IDHmut-codel	gtex	Uterus	0.0	0.0358
+LGG-IDHmut-noncodel	gtex	Bone	0.0002	0.0607
+LGG-IDHmut-noncodel	gtex	CNS/Brain	0.9959	0.5338
+LGG-IDHmut-noncodel	gtex	Eye	0.0001	0.0112
+LGG-IDHmut-noncodel	gtex	Lung	0.0008	0.1046
+LGG-IDHmut-noncodel	gtex	Peripheral Nervous System	0.0027	0.2492
+LGG-IDHmut-noncodel	gtex	Skin	0.0001	0.0046
+LGG-IDHmut-noncodel	gtex	Uterus	0.0002	0.0358
+LGG-IDHwt	gtex	Bone	0.005	0.0607
+LGG-IDHwt	gtex	CNS/Brain	0.9677	0.5338
+LGG-IDHwt	gtex	Eye	0.0003	0.0112
+LGG-IDHwt	gtex	Lung	0.0167	0.1046
+LGG-IDHwt	gtex	Peripheral Nervous System	0.0044	0.2492
+LGG-IDHwt	gtex	Skin	0.001	0.0046
+LGG-IDHwt	gtex	Uterus	0.0049	0.0358
+PCPG-PGL	gtex	Adrenal Gland	0.0	0.673
+PCPG-PGL	gtex	Biliary Tract	0.0	0.0007
+PCPG-PGL	gtex	Bladder/Urinary Tract	0.0	0.0007
+PCPG-PGL	gtex	Bone	0.0	0.0135
+PCPG-PGL	gtex	Bowel	0.0	0.0131
+PCPG-PGL	gtex	Breast	0.0	0.0013
+PCPG-PGL	gtex	CNS/Brain	0.0	0.0437
+PCPG-PGL	gtex	Cervix	0.0	0.0001
+PCPG-PGL	gtex	Esophagus/Stomach	0.0	0.0024
+PCPG-PGL	gtex	Eye	0.0	0.0002
+PCPG-PGL	gtex	Head and Neck	0.0	0.0083
+PCPG-PGL	gtex	Kidney	0.0	0.0019
+PCPG-PGL	gtex	Liver	0.0	0.0009
+PCPG-PGL	gtex	Lung	0.0	0.0044
+PCPG-PGL	gtex	Lymphoid	0.0	0.0017
+PCPG-PGL	gtex	Myeloid	0.0	0.0003
+PCPG-PGL	gtex	Ovary/Fallopian Tube	0.0	0.0018
+PCPG-PGL	gtex	Pancreas	0.0	0.0002
+PCPG-PGL	gtex	Peripheral Nervous System	1.0	0.1846
+PCPG-PGL	gtex	Pleura	0.0	0.0002
+PCPG-PGL	gtex	Skin	0.0	0.0056
+PCPG-PGL	gtex	Soft Tissue	0.0	0.0387
+PCPG-PGL	gtex	Thyroid	0.0	0.0006
+PCPG-PGL	gtex	Uterus	0.0	0.0022
+PCPG-PHEO	gtex	Adrenal Gland	0.002	0.673
+PCPG-PHEO	gtex	Biliary Tract	0.0	0.0007
+PCPG-PHEO	gtex	Bladder/Urinary Tract	0.0	0.0007
+PCPG-PHEO	gtex	Bone	0.0009	0.0135
+PCPG-PHEO	gtex	Bowel	0.0005	0.0131
+PCPG-PHEO	gtex	Breast	0.0	0.0013
+PCPG-PHEO	gtex	CNS/Brain	0.0014	0.0437
+PCPG-PHEO	gtex	Cervix	0.0	0.0001
+PCPG-PHEO	gtex	Esophagus/Stomach	0.0002	0.0024
+PCPG-PHEO	gtex	Eye	0.0	0.0002
+PCPG-PHEO	gtex	Head and Neck	0.0001	0.0083
+PCPG-PHEO	gtex	Kidney	0.0001	0.0019
+PCPG-PHEO	gtex	Liver	0.0001	0.0009
+PCPG-PHEO	gtex	Lung	0.0066	0.0044
+PCPG-PHEO	gtex	Lymphoid	0.0	0.0017
+PCPG-PHEO	gtex	Myeloid	0.0001	0.0003
+PCPG-PHEO	gtex	Ovary/Fallopian Tube	0.0002	0.0018
+PCPG-PHEO	gtex	Pancreas	0.0	0.0002
+PCPG-PHEO	gtex	Peripheral Nervous System	0.9866	0.1846
+PCPG-PHEO	gtex	Pleura	0.0	0.0002
+PCPG-PHEO	gtex	Skin	0.0002	0.0056
+PCPG-PHEO	gtex	Soft Tissue	0.0008	0.0387
+PCPG-PHEO	gtex	Thyroid	0.0	0.0006
+PCPG-PHEO	gtex	Uterus	0.0001	0.0022
+SARC-DDLPS	gtex	Biliary Tract	0.0	0.0003
+SARC-DDLPS	gtex	Bladder/Urinary Tract	0.0	0.0038
+SARC-DDLPS	gtex	Bone	0.0244	0.0021
+SARC-DDLPS	gtex	Bowel	0.0	0.0003
+SARC-DDLPS	gtex	Breast	0.0014	0.0024
+SARC-DDLPS	gtex	CNS/Brain	0.0171	0.0053
+SARC-DDLPS	gtex	Cervix	0.0	0.0011
+SARC-DDLPS	gtex	Esophagus/Stomach	0.0029	0.001
+SARC-DDLPS	gtex	Head and Neck	0.0022	0.0055
+SARC-DDLPS	gtex	Kidney	0.0086	0.0
+SARC-DDLPS	gtex	Lung	0.0	0.0043
+SARC-DDLPS	gtex	Other	0.0157	0.0
+SARC-DDLPS	gtex	Ovary/Fallopian Tube	0.0	0.0003
+SARC-DDLPS	gtex	Pancreas	0.0	0.0004
+SARC-DDLPS	gtex	Peripheral Nervous System	0.0022	0.0003
+SARC-DDLPS	gtex	Pleura	0.0	0.0007
+SARC-DDLPS	gtex	Prostate	0.0	0.0001
+SARC-DDLPS	gtex	Skin	0.0058	0.0002
+SARC-DDLPS	gtex	Soft Tissue	0.867	0.9671
+SARC-DDLPS	gtex	Thyroid	0.0123	0.0041
+SARC-DDLPS	gtex	Uterus	0.0403	0.0007
+SARC-LMS	gtex	Bladder/Urinary Tract	0.0008	0.0
+SARC-LMS	gtex	Bone	0.0273	0.0
+SARC-LMS	gtex	Breast	0.0005	0.0
+SARC-LMS	gtex	CNS/Brain	0.014	0.0
+SARC-LMS	gtex	Esophagus/Stomach	0.0095	0.0
+SARC-LMS	gtex	Kidney	0.0092	0.0
+SARC-LMS	gtex	Liver	0.0007	0.0
+SARC-LMS	gtex	Lung	0.0026	0.0
+SARC-LMS	gtex	Other	0.0016	0.0
+SARC-LMS	gtex	Ovary/Fallopian Tube	0.0004	0.0
+SARC-LMS	gtex	Pancreas	0.0009	0.0
+SARC-LMS	gtex	Peripheral Nervous System	0.0012	0.0
+SARC-LMS	gtex	Skin	0.0018	0.0
+SARC-LMS	gtex	Soft Tissue	0.9226	1.0
+SARC-LMS	gtex	Testis	0.0012	0.0
+SARC-LMS	gtex	Thyroid	0.0003	0.0
+SARC-LMS	gtex	Uterus	0.0053	0.0
+SARC-UPS	gtex	Biliary Tract	0.0	0.0001
+SARC-UPS	gtex	Bladder/Urinary Tract	0.0	0.001
+SARC-UPS	gtex	Bone	0.0378	0.0005
+SARC-UPS	gtex	Bowel	0.0	0.0001
+SARC-UPS	gtex	Breast	0.0	0.0006
+SARC-UPS	gtex	CNS/Brain	0.0198	0.0014
+SARC-UPS	gtex	Cervix	0.0	0.0005
+SARC-UPS	gtex	Esophagus/Stomach	0.0036	0.0004
+SARC-UPS	gtex	Head and Neck	0.0021	0.0014
+SARC-UPS	gtex	Kidney	0.0157	0.0
+SARC-UPS	gtex	Lung	0.0	0.0008
+SARC-UPS	gtex	Other	0.0077	0.0
+SARC-UPS	gtex	Ovary/Fallopian Tube	0.0	0.0001
+SARC-UPS	gtex	Pancreas	0.0	0.0001
+SARC-UPS	gtex	Peripheral Nervous System	0.0013	0.0
+SARC-UPS	gtex	Pleura	0.0	0.0002
+SARC-UPS	gtex	Skin	0.0012	0.0
+SARC-UPS	gtex	Soft Tissue	0.8744	0.9919
+SARC-UPS	gtex	Testis	0.0012	0.0
+SARC-UPS	gtex	Thyroid	0.0115	0.0009
+SARC-UPS	gtex	Uterus	0.0236	0.0
+TARGET-NBL	gtex	Adrenal Gland	0.0	0.673
+TARGET-NBL	gtex	Biliary Tract	0.0	0.0006
+TARGET-NBL	gtex	Bladder/Urinary Tract	0.0	0.001
+TARGET-NBL	gtex	Bone	0.0	0.0127
+TARGET-NBL	gtex	Bowel	0.0	0.0127
+TARGET-NBL	gtex	Breast	0.0	0.0015
+TARGET-NBL	gtex	CNS/Brain	0.0	0.044
+TARGET-NBL	gtex	Esophagus/Stomach	0.0	0.002
+TARGET-NBL	gtex	Eye	0.0	0.0002
+TARGET-NBL	gtex	Head and Neck	0.0	0.0084
+TARGET-NBL	gtex	Kidney	0.0	0.0015
+TARGET-NBL	gtex	Liver	0.0	0.0008
+TARGET-NBL	gtex	Lung	0.0	0.0038
+TARGET-NBL	gtex	Lymphoid	0.0	0.0011
+TARGET-NBL	gtex	Myeloid	0.0	0.0002
+TARGET-NBL	gtex	Ovary/Fallopian Tube	0.0	0.0016
+TARGET-NBL	gtex	Peripheral Nervous System	1.0	0.1879
+TARGET-NBL	gtex	Pleura	0.0	0.0002
+TARGET-NBL	gtex	Skin	0.0	0.0052
+TARGET-NBL	gtex	Soft Tissue	0.0	0.0387
+TARGET-NBL	gtex	Thyroid	0.0	0.001
+TARGET-NBL	gtex	Uterus	0.0	0.0018
+TARGET-WT	gtex	Biliary Tract	0.0027	0.0
+TARGET-WT	gtex	Bladder/Urinary Tract	0.0	0.0253
+TARGET-WT	gtex	Bone	0.0453	0.0004
+TARGET-WT	gtex	Bowel	0.0008	0.0
+TARGET-WT	gtex	Breast	0.0	0.0005
+TARGET-WT	gtex	CNS/Brain	0.0188	0.0019
+TARGET-WT	gtex	Cervix	0.0001	0.0
+TARGET-WT	gtex	Esophagus/Stomach	0.0051	0.0
+TARGET-WT	gtex	Eye	0.0002	0.0
+TARGET-WT	gtex	Head and Neck	0.0004	0.0059
+TARGET-WT	gtex	Kidney	0.0308	0.9006
+TARGET-WT	gtex	Liver	0.0031	0.0
+TARGET-WT	gtex	Lung	0.0008	0.0
+TARGET-WT	gtex	Lymphoid	0.0	0.0018
+TARGET-WT	gtex	Myeloid	0.0081	0.0
+TARGET-WT	gtex	Ovary/Fallopian Tube	0.021	0.0235
+TARGET-WT	gtex	Peripheral Nervous System	0.0183	0.0
+TARGET-WT	gtex	Prostate	0.0	0.0004
+TARGET-WT	gtex	Skin	0.0001	0.0
+TARGET-WT	gtex	Soft Tissue	0.8424	0.0356
+TARGET-WT	gtex	Testis	0.0014	0.0
+TARGET-WT	gtex	Thyroid	0.0	0.0004
+TARGET-WT	gtex	Uterus	0.0006	0.0038
+TCGA-ACC	gtex	Adrenal Gland	0.8725	0.7417
+TCGA-ACC	gtex	Biliary Tract	0.0013	0.0013
+TCGA-ACC	gtex	Bladder/Urinary Tract	0.0029	0.001
+TCGA-ACC	gtex	Bone	0.0106	0.0119
+TCGA-ACC	gtex	Bowel	0.0018	0.0073
+TCGA-ACC	gtex	Breast	0.0027	0.0018
+TCGA-ACC	gtex	CNS/Brain	0.0237	0.0364
+TCGA-ACC	gtex	Cervix	0.0013	0.0003
+TCGA-ACC	gtex	Esophagus/Stomach	0.0032	0.003
+TCGA-ACC	gtex	Eye	0.0004	0.0002
+TCGA-ACC	gtex	Head and Neck	0.0067	0.0037
+TCGA-ACC	gtex	Kidney	0.0047	0.0038
+TCGA-ACC	gtex	Liver	0.0021	0.0012
+TCGA-ACC	gtex	Lung	0.0108	0.0069
+TCGA-ACC	gtex	Lymphoid	0.0014	0.0018
+TCGA-ACC	gtex	Myeloid	0.0004	0.0006
+TCGA-ACC	gtex	Other	0.0004	0.0
+TCGA-ACC	gtex	Ovary/Fallopian Tube	0.0046	0.0031
+TCGA-ACC	gtex	Pancreas	0.0019	0.0007
+TCGA-ACC	gtex	Peripheral Nervous System	0.0035	0.1353
+TCGA-ACC	gtex	Pleura	0.0013	0.0005
+TCGA-ACC	gtex	Prostate	0.0002	0.0
+TCGA-ACC	gtex	Skin	0.003	0.0039
+TCGA-ACC	gtex	Soft Tissue	0.0303	0.0285
+TCGA-ACC	gtex	Testis	0.0003	0.0003
+TCGA-ACC	gtex	Thyroid	0.0042	0.001
+TCGA-ACC	gtex	Uterus	0.004	0.0035
+TCGA-BLCA	gtex	Ampulla of Vater	0.0001	0.0
+TCGA-BLCA	gtex	Biliary Tract	0.0053	0.0038
+TCGA-BLCA	gtex	Bladder/Urinary Tract	0.6351	0.5718
+TCGA-BLCA	gtex	Bone	0.0025	0.0227
+TCGA-BLCA	gtex	Bowel	0.0105	0.0065
+TCGA-BLCA	gtex	Breast	0.0081	0.0108
+TCGA-BLCA	gtex	CNS/Brain	0.0142	0.0721
+TCGA-BLCA	gtex	Cervix	0.0349	0.0
+TCGA-BLCA	gtex	Esophagus/Stomach	0.0792	0.0175
+TCGA-BLCA	gtex	Eye	0.0004	0.0
+TCGA-BLCA	gtex	Head and Neck	0.1129	0.0056
+TCGA-BLCA	gtex	Kidney	0.0007	0.0086
+TCGA-BLCA	gtex	Liver	0.0003	0.0
+TCGA-BLCA	gtex	Lung	0.0361	0.004
+TCGA-BLCA	gtex	Lymphoid	0.0036	0.0
+TCGA-BLCA	gtex	Myeloid	0.0002	0.0
+TCGA-BLCA	gtex	Other	0.0001	0.0
+TCGA-BLCA	gtex	Ovary/Fallopian Tube	0.003	0.0059
+TCGA-BLCA	gtex	Pancreas	0.0171	0.0322
+TCGA-BLCA	gtex	Peripheral Nervous System	0.0017	0.0015
+TCGA-BLCA	gtex	Prostate	0.0039	0.0
+TCGA-BLCA	gtex	Skin	0.0125	0.0
+TCGA-BLCA	gtex	Soft Tissue	0.0047	0.2067
+TCGA-BLCA	gtex	Thyroid	0.004	0.029
+TCGA-BLCA	gtex	Uterus	0.0076	0.0013
+TCGA-BLCA	gtex	Vulva/Vagina	0.0012	0.0
+TCGA-BLCA	adjacent	Adrenal Gland	0.0	0.0019
+TCGA-BLCA	adjacent	Ampulla of Vater	0.0001	0.0
+TCGA-BLCA	adjacent	Biliary Tract	0.0053	0.0095
+TCGA-BLCA	adjacent	Bladder/Urinary Tract	0.6351	0.464
+TCGA-BLCA	adjacent	Bone	0.0025	0.0128
+TCGA-BLCA	adjacent	Bowel	0.0105	0.0039
+TCGA-BLCA	adjacent	Breast	0.0081	0.032
+TCGA-BLCA	adjacent	CNS/Brain	0.0142	0.0293
+TCGA-BLCA	adjacent	Cervix	0.0349	0.0215
+TCGA-BLCA	adjacent	Esophagus/Stomach	0.0792	0.0878
+TCGA-BLCA	adjacent	Eye	0.0004	0.0
+TCGA-BLCA	adjacent	Head and Neck	0.1129	0.0643
+TCGA-BLCA	adjacent	Kidney	0.0007	0.0457
+TCGA-BLCA	adjacent	Liver	0.0003	0.003
+TCGA-BLCA	adjacent	Lung	0.0361	0.0221
+TCGA-BLCA	adjacent	Lymphoid	0.0036	0.0
+TCGA-BLCA	adjacent	Myeloid	0.0002	0.0
+TCGA-BLCA	adjacent	Other	0.0001	0.0
+TCGA-BLCA	adjacent	Ovary/Fallopian Tube	0.003	0.0306
+TCGA-BLCA	adjacent	Pancreas	0.0171	0.0963
+TCGA-BLCA	adjacent	Peripheral Nervous System	0.0017	0.001
+TCGA-BLCA	adjacent	Prostate	0.0039	0.0109
+TCGA-BLCA	adjacent	Skin	0.0125	0.0071
+TCGA-BLCA	adjacent	Soft Tissue	0.0047	0.0479
+TCGA-BLCA	adjacent	Testis	0.0	0.0007
+TCGA-BLCA	adjacent	Thyroid	0.004	0.0
+TCGA-BLCA	adjacent	Uterus	0.0076	0.0076
+TCGA-BLCA	adjacent	Vulva/Vagina	0.0012	0.0
+TCGA-COAD	gtex	Ampulla of Vater	0.0001	0.0
+TCGA-COAD	gtex	Biliary Tract	0.0001	0.0
+TCGA-COAD	gtex	Bladder/Urinary Tract	0.0002	0.0
+TCGA-COAD	gtex	Bowel	0.9861	0.988
+TCGA-COAD	gtex	Breast	0.0004	0.0
+TCGA-COAD	gtex	CNS/Brain	0.0001	0.0
+TCGA-COAD	gtex	Cervix	0.0004	0.0
+TCGA-COAD	gtex	Esophagus/Stomach	0.003	0.0
+TCGA-COAD	gtex	Head and Neck	0.0009	0.0
+TCGA-COAD	gtex	Liver	0.0001	0.0
+TCGA-COAD	gtex	Lung	0.0039	0.0043
+TCGA-COAD	gtex	Ovary/Fallopian Tube	0.0018	0.0
+TCGA-COAD	gtex	Pancreas	0.0024	0.0078
+TCGA-COAD	gtex	Prostate	0.0003	0.0
+TCGA-COAD	gtex	Skin	0.0001	0.0
+TCGA-COAD	adjacent	Ampulla of Vater	0.0001	0.0
+TCGA-COAD	adjacent	Biliary Tract	0.0001	0.0009
+TCGA-COAD	adjacent	Bladder/Urinary Tract	0.0002	0.0015
+TCGA-COAD	adjacent	Bone	0.0	0.0022
+TCGA-COAD	adjacent	Bowel	0.9861	0.9761
+TCGA-COAD	adjacent	Breast	0.0004	0.0008
+TCGA-COAD	adjacent	CNS/Brain	0.0001	0.0024
+TCGA-COAD	adjacent	Cervix	0.0004	0.0002
+TCGA-COAD	adjacent	Esophagus/Stomach	0.003	0.0016
+TCGA-COAD	adjacent	Eye	0.0	0.0001
+TCGA-COAD	adjacent	Head and Neck	0.0009	0.0
+TCGA-COAD	adjacent	Kidney	0.0	0.0009
+TCGA-COAD	adjacent	Liver	0.0001	0.0003
+TCGA-COAD	adjacent	Lung	0.0039	0.0048
+TCGA-COAD	adjacent	Myeloid	0.0	0.0002
+TCGA-COAD	adjacent	Ovary/Fallopian Tube	0.0018	0.0017
+TCGA-COAD	adjacent	Pancreas	0.0024	0.002
+TCGA-COAD	adjacent	Peripheral Nervous System	0.0	0.0002
+TCGA-COAD	adjacent	Pleura	0.0	0.0003
+TCGA-COAD	adjacent	Prostate	0.0003	0.0
+TCGA-COAD	adjacent	Skin	0.0001	0.0002
+TCGA-COAD	adjacent	Soft Tissue	0.0	0.0016
+TCGA-COAD	adjacent	Testis	0.0	0.0003
+TCGA-COAD	adjacent	Thyroid	0.0	0.0005
+TCGA-COAD	adjacent	Uterus	0.0	0.001
+TCGA-GBM	gtex	Bone	0.0016	0.0607
+TCGA-GBM	gtex	CNS/Brain	0.9871	0.5338
+TCGA-GBM	gtex	Esophagus/Stomach	0.0003	0.0
+TCGA-GBM	gtex	Eye	0.0	0.0112
+TCGA-GBM	gtex	Kidney	0.0002	0.0
+TCGA-GBM	gtex	Lung	0.0	0.1046
+TCGA-GBM	gtex	Ovary/Fallopian Tube	0.0003	0.0
+TCGA-GBM	gtex	Peripheral Nervous System	0.0006	0.2492
+TCGA-GBM	gtex	Skin	0.0	0.0046
+TCGA-GBM	gtex	Soft Tissue	0.0098	0.0
+TCGA-GBM	gtex	Uterus	0.0	0.0358
+TCGA-HNSC	gtex	Biliary Tract	0.0003	0.0004
+TCGA-HNSC	gtex	Bladder/Urinary Tract	0.0096	0.0018
+TCGA-HNSC	gtex	Bone	0.0014	0.0003
+TCGA-HNSC	gtex	Bowel	0.0004	0.0018
+TCGA-HNSC	gtex	Breast	0.0005	0.0008
+TCGA-HNSC	gtex	CNS/Brain	0.0016	0.0006
+TCGA-HNSC	gtex	Cervix	0.0025	0.0011
+TCGA-HNSC	gtex	Esophagus/Stomach	0.0398	0.0054
+TCGA-HNSC	gtex	Head and Neck	0.8865	0.9736
+TCGA-HNSC	gtex	Kidney	0.0003	0.0001
+TCGA-HNSC	gtex	Liver	0.0002	0.0
+TCGA-HNSC	gtex	Lung	0.0205	0.0015
+TCGA-HNSC	gtex	Myeloid	0.0001	0.0
+TCGA-HNSC	gtex	Other	0.0003	0.0
+TCGA-HNSC	gtex	Ovary/Fallopian Tube	0.0005	0.0007
+TCGA-HNSC	gtex	Pancreas	0.001	0.0029
+TCGA-HNSC	gtex	Peripheral Nervous System	0.0006	0.0
+TCGA-HNSC	gtex	Pleura	0.0001	0.0
+TCGA-HNSC	gtex	Prostate	0.0002	0.0
+TCGA-HNSC	gtex	Skin	0.0314	0.0004
+TCGA-HNSC	gtex	Soft Tissue	0.0011	0.0069
+TCGA-HNSC	gtex	Testis	0.0001	0.0
+TCGA-HNSC	gtex	Thyroid	0.0008	0.001
+TCGA-HNSC	gtex	Uterus	0.0002	0.0005
+TCGA-HNSC	adjacent	Biliary Tract	0.0003	0.0429
+TCGA-HNSC	adjacent	Bladder/Urinary Tract	0.0096	0.0104
+TCGA-HNSC	adjacent	Bone	0.0014	0.002
+TCGA-HNSC	adjacent	Bowel	0.0004	0.0004
+TCGA-HNSC	adjacent	Breast	0.0005	0.0253
+TCGA-HNSC	adjacent	CNS/Brain	0.0016	0.0026
+TCGA-HNSC	adjacent	Cervix	0.0025	0.0082
+TCGA-HNSC	adjacent	Esophagus/Stomach	0.0398	0.007
+TCGA-HNSC	adjacent	Head and Neck	0.8865	0.7817
+TCGA-HNSC	adjacent	Kidney	0.0003	0.0
+TCGA-HNSC	adjacent	Liver	0.0002	0.0
+TCGA-HNSC	adjacent	Lung	0.0205	0.0545
+TCGA-HNSC	adjacent	Myeloid	0.0001	0.0
+TCGA-HNSC	adjacent	Other	0.0003	0.0
+TCGA-HNSC	adjacent	Ovary/Fallopian Tube	0.0005	0.0024
+TCGA-HNSC	adjacent	Pancreas	0.001	0.0144
+TCGA-HNSC	adjacent	Peripheral Nervous System	0.0006	0.0
+TCGA-HNSC	adjacent	Pleura	0.0001	0.0
+TCGA-HNSC	adjacent	Prostate	0.0002	0.0009
+TCGA-HNSC	adjacent	Skin	0.0314	0.0058
+TCGA-HNSC	adjacent	Soft Tissue	0.0011	0.0399
+TCGA-HNSC	adjacent	Testis	0.0001	0.0
+TCGA-HNSC	adjacent	Thyroid	0.0008	0.0
+TCGA-HNSC	adjacent	Uterus	0.0002	0.0015
+TCGA-KICH	gtex	Biliary Tract	0.0028	0.0
+TCGA-KICH	gtex	Bladder/Urinary Tract	0.0466	0.0253
+TCGA-KICH	gtex	Bone	0.0114	0.0004
+TCGA-KICH	gtex	Bowel	0.0025	0.0
+TCGA-KICH	gtex	Breast	0.0271	0.0005
+TCGA-KICH	gtex	CNS/Brain	0.0916	0.0019
+TCGA-KICH	gtex	Cervix	0.0003	0.0
+TCGA-KICH	gtex	Esophagus/Stomach	0.004	0.0
+TCGA-KICH	gtex	Eye	0.0056	0.0
+TCGA-KICH	gtex	Head and Neck	0.0024	0.0059
+TCGA-KICH	gtex	Kidney	0.4711	0.9006
+TCGA-KICH	gtex	Liver	0.0018	0.0
+TCGA-KICH	gtex	Lung	0.1069	0.0
+TCGA-KICH	gtex	Lymphoid	0.0166	0.0018
+TCGA-KICH	gtex	Myeloid	0.0009	0.0
+TCGA-KICH	gtex	Other	0.0002	0.0
+TCGA-KICH	gtex	Ovary/Fallopian Tube	0.0482	0.0235
+TCGA-KICH	gtex	Pancreas	0.0108	0.0
+TCGA-KICH	gtex	Peripheral Nervous System	0.0032	0.0
+TCGA-KICH	gtex	Pleura	0.0069	0.0
+TCGA-KICH	gtex	Prostate	0.0017	0.0004
+TCGA-KICH	gtex	Skin	0.0039	0.0
+TCGA-KICH	gtex	Soft Tissue	0.0549	0.0356
+TCGA-KICH	gtex	Testis	0.0001	0.0
+TCGA-KICH	gtex	Thyroid	0.0526	0.0004
+TCGA-KICH	gtex	Uterus	0.0261	0.0038
+TCGA-KICH	adjacent	Biliary Tract	0.0028	0.0
+TCGA-KICH	adjacent	Bladder/Urinary Tract	0.0466	0.0
+TCGA-KICH	adjacent	Bone	0.0114	0.0
+TCGA-KICH	adjacent	Bowel	0.0025	0.0
+TCGA-KICH	adjacent	Breast	0.0271	0.0
+TCGA-KICH	adjacent	CNS/Brain	0.0916	0.0
+TCGA-KICH	adjacent	Cervix	0.0003	0.0
+TCGA-KICH	adjacent	Esophagus/Stomach	0.004	0.0
+TCGA-KICH	adjacent	Eye	0.0056	0.0
+TCGA-KICH	adjacent	Head and Neck	0.0024	0.0
+TCGA-KICH	adjacent	Kidney	0.4711	0.7196
+TCGA-KICH	adjacent	Liver	0.0018	0.0
+TCGA-KICH	adjacent	Lung	0.1069	0.0
+TCGA-KICH	adjacent	Lymphoid	0.0166	0.0
+TCGA-KICH	adjacent	Myeloid	0.0009	0.0
+TCGA-KICH	adjacent	Other	0.0002	0.0
+TCGA-KICH	adjacent	Ovary/Fallopian Tube	0.0482	0.0817
+TCGA-KICH	adjacent	Pancreas	0.0108	0.0
+TCGA-KICH	adjacent	Peripheral Nervous System	0.0032	0.0
+TCGA-KICH	adjacent	Pleura	0.0069	0.0
+TCGA-KICH	adjacent	Prostate	0.0017	0.0
+TCGA-KICH	adjacent	Skin	0.0039	0.0
+TCGA-KICH	adjacent	Soft Tissue	0.0549	0.0
+TCGA-KICH	adjacent	Testis	0.0001	0.0
+TCGA-KICH	adjacent	Thyroid	0.0526	0.0
+TCGA-KICH	adjacent	Uterus	0.0261	0.1987
+TCGA-KIRC	gtex	Biliary Tract	0.0001	0.0
+TCGA-KIRC	gtex	Bladder/Urinary Tract	0.0024	0.0253
+TCGA-KIRC	gtex	Bone	0.0025	0.0004
+TCGA-KIRC	gtex	Bowel	0.0002	0.0
+TCGA-KIRC	gtex	Breast	0.0011	0.0005
+TCGA-KIRC	gtex	CNS/Brain	0.0035	0.0019
+TCGA-KIRC	gtex	Esophagus/Stomach	0.0007	0.0
+TCGA-KIRC	gtex	Eye	0.0002	0.0
+TCGA-KIRC	gtex	Head and Neck	0.0002	0.0059
+TCGA-KIRC	gtex	Kidney	0.968	0.9006
+TCGA-KIRC	gtex	Liver	0.0013	0.0
+TCGA-KIRC	gtex	Lung	0.0027	0.0
+TCGA-KIRC	gtex	Lymphoid	0.0009	0.0018
+TCGA-KIRC	gtex	Other	0.0002	0.0
+TCGA-KIRC	gtex	Ovary/Fallopian Tube	0.0039	0.0235
+TCGA-KIRC	gtex	Pancreas	0.0006	0.0
+TCGA-KIRC	gtex	Peripheral Nervous System	0.0003	0.0
+TCGA-KIRC	gtex	Pleura	0.0017	0.0
+TCGA-KIRC	gtex	Prostate	0.0	0.0004
+TCGA-KIRC	gtex	Skin	0.0004	0.0
+TCGA-KIRC	gtex	Soft Tissue	0.0027	0.0356
+TCGA-KIRC	gtex	Thyroid	0.0028	0.0004
+TCGA-KIRC	gtex	Uterus	0.0034	0.0038
+TCGA-KIRC	adjacent	Biliary Tract	0.0001	0.0
+TCGA-KIRC	adjacent	Bladder/Urinary Tract	0.0024	0.0
+TCGA-KIRC	adjacent	Bone	0.0025	0.0
+TCGA-KIRC	adjacent	Bowel	0.0002	0.0
+TCGA-KIRC	adjacent	Breast	0.0011	0.0
+TCGA-KIRC	adjacent	CNS/Brain	0.0035	0.0
+TCGA-KIRC	adjacent	Esophagus/Stomach	0.0007	0.0
+TCGA-KIRC	adjacent	Eye	0.0002	0.0
+TCGA-KIRC	adjacent	Head and Neck	0.0002	0.0
+TCGA-KIRC	adjacent	Kidney	0.968	0.9026
+TCGA-KIRC	adjacent	Liver	0.0013	0.0
+TCGA-KIRC	adjacent	Lung	0.0027	0.0
+TCGA-KIRC	adjacent	Lymphoid	0.0009	0.0
+TCGA-KIRC	adjacent	Other	0.0002	0.0
+TCGA-KIRC	adjacent	Ovary/Fallopian Tube	0.0039	0.0278
+TCGA-KIRC	adjacent	Pancreas	0.0006	0.0
+TCGA-KIRC	adjacent	Peripheral Nervous System	0.0003	0.0
+TCGA-KIRC	adjacent	Pleura	0.0017	0.0
+TCGA-KIRC	adjacent	Skin	0.0004	0.0
+TCGA-KIRC	adjacent	Soft Tissue	0.0027	0.0
+TCGA-KIRC	adjacent	Thyroid	0.0028	0.0
+TCGA-KIRC	adjacent	Uterus	0.0034	0.0696
+TCGA-KIRP	gtex	Biliary Tract	0.0003	0.0
+TCGA-KIRP	gtex	Bladder/Urinary Tract	0.0327	0.0253
+TCGA-KIRP	gtex	Bone	0.0	0.0004
+TCGA-KIRP	gtex	Bowel	0.0001	0.0
+TCGA-KIRP	gtex	Breast	0.0004	0.0005
+TCGA-KIRP	gtex	CNS/Brain	0.0005	0.0019
+TCGA-KIRP	gtex	Cervix	0.0005	0.0
+TCGA-KIRP	gtex	Esophagus/Stomach	0.0017	0.0
+TCGA-KIRP	gtex	Head and Neck	0.002	0.0059
+TCGA-KIRP	gtex	Kidney	0.8945	0.9006
+TCGA-KIRP	gtex	Liver	0.0003	0.0
+TCGA-KIRP	gtex	Lung	0.0012	0.0
+TCGA-KIRP	gtex	Lymphoid	0.0002	0.0018
+TCGA-KIRP	gtex	Ovary/Fallopian Tube	0.0114	0.0235
+TCGA-KIRP	gtex	Pancreas	0.0014	0.0
+TCGA-KIRP	gtex	Pleura	0.0404	0.0
+TCGA-KIRP	gtex	Prostate	0.0	0.0004
+TCGA-KIRP	gtex	Skin	0.0001	0.0
+TCGA-KIRP	gtex	Soft Tissue	0.0007	0.0356
+TCGA-KIRP	gtex	Thyroid	0.0003	0.0004
+TCGA-KIRP	gtex	Uterus	0.011	0.0038
+TCGA-KIRP	gtex	Vulva/Vagina	0.0003	0.0
+TCGA-KIRP	adjacent	Biliary Tract	0.0003	0.0
+TCGA-KIRP	adjacent	Bladder/Urinary Tract	0.0327	0.0
+TCGA-KIRP	adjacent	Bowel	0.0001	0.0
+TCGA-KIRP	adjacent	Breast	0.0004	0.0
+TCGA-KIRP	adjacent	CNS/Brain	0.0005	0.0
+TCGA-KIRP	adjacent	Cervix	0.0005	0.0
+TCGA-KIRP	adjacent	Esophagus/Stomach	0.0017	0.0
+TCGA-KIRP	adjacent	Head and Neck	0.002	0.0
+TCGA-KIRP	adjacent	Kidney	0.8945	0.7581
+TCGA-KIRP	adjacent	Liver	0.0003	0.0
+TCGA-KIRP	adjacent	Lung	0.0012	0.0
+TCGA-KIRP	adjacent	Lymphoid	0.0002	0.0
+TCGA-KIRP	adjacent	Ovary/Fallopian Tube	0.0114	0.064
+TCGA-KIRP	adjacent	Pancreas	0.0014	0.0
+TCGA-KIRP	adjacent	Pleura	0.0404	0.0
+TCGA-KIRP	adjacent	Skin	0.0001	0.0
+TCGA-KIRP	adjacent	Soft Tissue	0.0007	0.0
+TCGA-KIRP	adjacent	Thyroid	0.0003	0.0
+TCGA-KIRP	adjacent	Uterus	0.011	0.1779
+TCGA-KIRP	adjacent	Vulva/Vagina	0.0003	0.0
+TCGA-LIHC	gtex	Biliary Tract	0.0033	0.0
+TCGA-LIHC	gtex	Bladder/Urinary Tract	0.0001	0.0
+TCGA-LIHC	gtex	Bone	0.0009	0.0
+TCGA-LIHC	gtex	Breast	0.0002	0.0
+TCGA-LIHC	gtex	CNS/Brain	0.0032	0.0
+TCGA-LIHC	gtex	Esophagus/Stomach	0.001	0.0
+TCGA-LIHC	gtex	Eye	0.0001	0.0
+TCGA-LIHC	gtex	Head and Neck	0.0001	0.0
+TCGA-LIHC	gtex	Kidney	0.0002	0.0
+TCGA-LIHC	gtex	Liver	0.9835	1.0
+TCGA-LIHC	gtex	Lung	0.0005	0.0
+TCGA-LIHC	gtex	Ovary/Fallopian Tube	0.0006	0.0
+TCGA-LIHC	gtex	Pancreas	0.0005	0.0
+TCGA-LIHC	gtex	Peripheral Nervous System	0.0006	0.0
+TCGA-LIHC	gtex	Skin	0.0002	0.0
+TCGA-LIHC	gtex	Soft Tissue	0.0029	0.0
+TCGA-LIHC	gtex	Thyroid	0.0017	0.0
+TCGA-LIHC	gtex	Uterus	0.0002	0.0
+TCGA-LIHC	adjacent	Biliary Tract	0.0033	0.0
+TCGA-LIHC	adjacent	Bladder/Urinary Tract	0.0001	0.0
+TCGA-LIHC	adjacent	Bone	0.0009	0.0
+TCGA-LIHC	adjacent	Breast	0.0002	0.0
+TCGA-LIHC	adjacent	CNS/Brain	0.0032	0.0
+TCGA-LIHC	adjacent	Esophagus/Stomach	0.001	0.0
+TCGA-LIHC	adjacent	Eye	0.0001	0.0
+TCGA-LIHC	adjacent	Head and Neck	0.0001	0.0
+TCGA-LIHC	adjacent	Kidney	0.0002	0.0
+TCGA-LIHC	adjacent	Liver	0.9835	1.0
+TCGA-LIHC	adjacent	Lung	0.0005	0.0
+TCGA-LIHC	adjacent	Ovary/Fallopian Tube	0.0006	0.0
+TCGA-LIHC	adjacent	Pancreas	0.0005	0.0
+TCGA-LIHC	adjacent	Peripheral Nervous System	0.0006	0.0
+TCGA-LIHC	adjacent	Skin	0.0002	0.0
+TCGA-LIHC	adjacent	Soft Tissue	0.0029	0.0
+TCGA-LIHC	adjacent	Thyroid	0.0017	0.0
+TCGA-LIHC	adjacent	Uterus	0.0002	0.0
+TCGA-LUAD	gtex	Ampulla of Vater	0.0003	0.0
+TCGA-LUAD	gtex	Biliary Tract	0.0034	0.0
+TCGA-LUAD	gtex	Bladder/Urinary Tract	0.0013	0.0095
+TCGA-LUAD	gtex	Bone	0.0004	0.0002
+TCGA-LUAD	gtex	Bowel	0.0013	0.0034
+TCGA-LUAD	gtex	Breast	0.0009	0.0
+TCGA-LUAD	gtex	CNS/Brain	0.0013	0.009
+TCGA-LUAD	gtex	Cervix	0.0026	0.0
+TCGA-LUAD	gtex	Esophagus/Stomach	0.0059	0.0001
+TCGA-LUAD	gtex	Head and Neck	0.0066	0.0002
+TCGA-LUAD	gtex	Liver	0.0019	0.0
+TCGA-LUAD	gtex	Lung	0.9244	0.9085
+TCGA-LUAD	gtex	Lymphoid	0.0	0.0012
+TCGA-LUAD	gtex	Ovary/Fallopian Tube	0.0034	0.0035
+TCGA-LUAD	gtex	Pancreas	0.0259	0.0181
+TCGA-LUAD	gtex	Peripheral Nervous System	0.0001	0.0001
+TCGA-LUAD	gtex	Pleura	0.0008	0.0
+TCGA-LUAD	gtex	Prostate	0.0172	0.0065
+TCGA-LUAD	gtex	Skin	0.0007	0.0
+TCGA-LUAD	gtex	Soft Tissue	0.0005	0.0159
+TCGA-LUAD	gtex	Testis	0.0001	0.0
+TCGA-LUAD	gtex	Thyroid	0.0001	0.0238
+TCGA-LUAD	gtex	Uterus	0.001	0.0
+TCGA-LUAD	adjacent	Ampulla of Vater	0.0003	0.0
+TCGA-LUAD	adjacent	Biliary Tract	0.0034	0.0
+TCGA-LUAD	adjacent	Bladder/Urinary Tract	0.0013	0.0
+TCGA-LUAD	adjacent	Bone	0.0004	0.0
+TCGA-LUAD	adjacent	Bowel	0.0013	0.0
+TCGA-LUAD	adjacent	Breast	0.0009	0.0
+TCGA-LUAD	adjacent	CNS/Brain	0.0013	0.0138
+TCGA-LUAD	adjacent	Cervix	0.0026	0.1158
+TCGA-LUAD	adjacent	Esophagus/Stomach	0.0059	0.0
+TCGA-LUAD	adjacent	Head and Neck	0.0066	0.0
+TCGA-LUAD	adjacent	Liver	0.0019	0.0
+TCGA-LUAD	adjacent	Lung	0.9244	0.8693
+TCGA-LUAD	adjacent	Ovary/Fallopian Tube	0.0034	0.0
+TCGA-LUAD	adjacent	Pancreas	0.0259	0.0
+TCGA-LUAD	adjacent	Peripheral Nervous System	0.0001	0.0
+TCGA-LUAD	adjacent	Pleura	0.0008	0.0
+TCGA-LUAD	adjacent	Prostate	0.0172	0.001
+TCGA-LUAD	adjacent	Skin	0.0007	0.0
+TCGA-LUAD	adjacent	Soft Tissue	0.0005	0.0
+TCGA-LUAD	adjacent	Testis	0.0001	0.0
+TCGA-LUAD	adjacent	Thyroid	0.0001	0.0
+TCGA-LUAD	adjacent	Uterus	0.001	0.0
+TCGA-LUSC	gtex	Biliary Tract	0.0021	0.0
+TCGA-LUSC	gtex	Bladder/Urinary Tract	0.0256	0.0095
+TCGA-LUSC	gtex	Bone	0.0009	0.0002
+TCGA-LUSC	gtex	Bowel	0.0026	0.0034
+TCGA-LUSC	gtex	Breast	0.0133	0.0
+TCGA-LUSC	gtex	CNS/Brain	0.0021	0.009
+TCGA-LUSC	gtex	Cervix	0.0299	0.0
+TCGA-LUSC	gtex	Esophagus/Stomach	0.1553	0.0001
+TCGA-LUSC	gtex	Head and Neck	0.2519	0.0002
+TCGA-LUSC	gtex	Liver	0.0014	0.0
+TCGA-LUSC	gtex	Lung	0.4851	0.9085
+TCGA-LUSC	gtex	Lymphoid	0.0018	0.0012
+TCGA-LUSC	gtex	Myeloid	0.0004	0.0
+TCGA-LUSC	gtex	Ovary/Fallopian Tube	0.0011	0.0035
+TCGA-LUSC	gtex	Pancreas	0.0062	0.0181
+TCGA-LUSC	gtex	Peripheral Nervous System	0.0	0.0001
+TCGA-LUSC	gtex	Prostate	0.0012	0.0065
+TCGA-LUSC	gtex	Skin	0.0174	0.0
+TCGA-LUSC	gtex	Soft Tissue	0.0006	0.0159
+TCGA-LUSC	gtex	Thyroid	0.0006	0.0238
+TCGA-LUSC	gtex	Uterus	0.0001	0.0
+TCGA-LUSC	gtex	Vulva/Vagina	0.0003	0.0
+TCGA-LUSC	adjacent	Biliary Tract	0.0021	0.0
+TCGA-LUSC	adjacent	Bladder/Urinary Tract	0.0256	0.0
+TCGA-LUSC	adjacent	Bone	0.0009	0.0
+TCGA-LUSC	adjacent	Bowel	0.0026	0.0
+TCGA-LUSC	adjacent	Breast	0.0133	0.0
+TCGA-LUSC	adjacent	CNS/Brain	0.0021	0.021
+TCGA-LUSC	adjacent	Cervix	0.0299	0.117
+TCGA-LUSC	adjacent	Esophagus/Stomach	0.1553	0.0
+TCGA-LUSC	adjacent	Head and Neck	0.2519	0.0
+TCGA-LUSC	adjacent	Liver	0.0014	0.0
+TCGA-LUSC	adjacent	Lung	0.4851	0.8343
+TCGA-LUSC	adjacent	Lymphoid	0.0018	0.0
+TCGA-LUSC	adjacent	Myeloid	0.0004	0.0
+TCGA-LUSC	adjacent	Ovary/Fallopian Tube	0.0011	0.0
+TCGA-LUSC	adjacent	Pancreas	0.0062	0.0
+TCGA-LUSC	adjacent	Prostate	0.0012	0.0276
+TCGA-LUSC	adjacent	Skin	0.0174	0.0
+TCGA-LUSC	adjacent	Soft Tissue	0.0006	0.0
+TCGA-LUSC	adjacent	Thyroid	0.0006	0.0
+TCGA-LUSC	adjacent	Uterus	0.0001	0.0
+TCGA-LUSC	adjacent	Vulva/Vagina	0.0003	0.0
+TCGA-OV	gtex	Biliary Tract	0.0001	0.0122
+TCGA-OV	gtex	Bladder/Urinary Tract	0.0001	0.0052
+TCGA-OV	gtex	Bone	0.0009	0.0549
+TCGA-OV	gtex	Bowel	0.0004	0.0159
+TCGA-OV	gtex	Breast	0.0028	0.011
+TCGA-OV	gtex	CNS/Brain	0.0007	0.0887
+TCGA-OV	gtex	Cervix	0.0002	0.0007
+TCGA-OV	gtex	Esophagus/Stomach	0.0005	0.0121
+TCGA-OV	gtex	Head and Neck	0.0001	0.0442
+TCGA-OV	gtex	Kidney	0.0009	0.0344
+TCGA-OV	gtex	Liver	0.0023	0.0004
+TCGA-OV	gtex	Lung	0.0024	0.0026
+TCGA-OV	gtex	Lymphoid	0.0	0.0001
+TCGA-OV	gtex	Myeloid	0.0	0.0016
+TCGA-OV	gtex	Ovary/Fallopian Tube	0.9774	0.047
+TCGA-OV	gtex	Pancreas	0.0006	0.0009
+TCGA-OV	gtex	Peripheral Nervous System	0.0005	0.0328
+TCGA-OV	gtex	Prostate	0.0004	0.0
+TCGA-OV	gtex	Skin	0.0004	0.0085
+TCGA-OV	gtex	Soft Tissue	0.0021	0.6027
+TCGA-OV	gtex	Testis	0.0008	0.0006
+TCGA-OV	gtex	Thyroid	0.0009	0.0037
+TCGA-OV	gtex	Uterus	0.0055	0.0195
+TCGA-PAAD	gtex	Biliary Tract	0.0306	0.0011
+TCGA-PAAD	gtex	Bladder/Urinary Tract	0.0009	0.0076
+TCGA-PAAD	gtex	Bone	0.0007	0.0005
+TCGA-PAAD	gtex	Bowel	0.0138	0.1151
+TCGA-PAAD	gtex	Breast	0.0074	0.1671
+TCGA-PAAD	gtex	CNS/Brain	0.0034	0.0657
+TCGA-PAAD	gtex	Cervix	0.0036	0.0026
+TCGA-PAAD	gtex	Esophagus/Stomach	0.014	0.0857
+TCGA-PAAD	gtex	Eye	0.0001	0.0002
+TCGA-PAAD	gtex	Head and Neck	0.0045	0.006
+TCGA-PAAD	gtex	Kidney	0.0001	0.0037
+TCGA-PAAD	gtex	Liver	0.0024	0.0227
+TCGA-PAAD	gtex	Lung	0.1238	0.2249
+TCGA-PAAD	gtex	Lymphoid	0.0	0.036
+TCGA-PAAD	gtex	Myeloid	0.0	0.0001
+TCGA-PAAD	gtex	Other	0.0001	0.0
+TCGA-PAAD	gtex	Ovary/Fallopian Tube	0.0097	0.0128
+TCGA-PAAD	gtex	Pancreas	0.776	0.19
+TCGA-PAAD	gtex	Peripheral Nervous System	0.0003	0.0001
+TCGA-PAAD	gtex	Pleura	0.0001	0.0
+TCGA-PAAD	gtex	Prostate	0.0048	0.0018
+TCGA-PAAD	gtex	Skin	0.0004	0.0022
+TCGA-PAAD	gtex	Soft Tissue	0.0014	0.0117
+TCGA-PAAD	gtex	Thyroid	0.0018	0.0385
+TCGA-PAAD	gtex	Uterus	0.0003	0.0041
+TCGA-PRAD	gtex	Biliary Tract	0.0	0.0021
+TCGA-PRAD	gtex	Bladder/Urinary Tract	0.0	0.0088
+TCGA-PRAD	gtex	Bone	0.0	0.0054
+TCGA-PRAD	gtex	Bowel	0.0	0.0017
+TCGA-PRAD	gtex	Breast	0.0	0.0056
+TCGA-PRAD	gtex	CNS/Brain	0.0	0.0084
+TCGA-PRAD	gtex	Cervix	0.0	0.0037
+TCGA-PRAD	gtex	Esophagus/Stomach	0.0004	0.0095
+TCGA-PRAD	gtex	Eye	0.0	0.0001
+TCGA-PRAD	gtex	Head and Neck	0.0	0.0087
+TCGA-PRAD	gtex	Kidney	0.0004	0.0022
+TCGA-PRAD	gtex	Liver	0.0	0.0007
+TCGA-PRAD	gtex	Lung	0.0003	0.0111
+TCGA-PRAD	gtex	Lymphoid	0.0	0.0011
+TCGA-PRAD	gtex	Myeloid	0.0	0.0005
+TCGA-PRAD	gtex	Ovary/Fallopian Tube	0.0003	0.0045
+TCGA-PRAD	gtex	Pancreas	0.0	0.0065
+TCGA-PRAD	gtex	Peripheral Nervous System	0.0	0.0014
+TCGA-PRAD	gtex	Pleura	0.0	0.0003
+TCGA-PRAD	gtex	Prostate	0.9984	0.8402
+TCGA-PRAD	gtex	Skin	0.0	0.0023
+TCGA-PRAD	gtex	Soft Tissue	0.0003	0.0691
+TCGA-PRAD	gtex	Testis	0.0	0.0003
+TCGA-PRAD	gtex	Thyroid	0.0	0.002
+TCGA-PRAD	gtex	Uterus	0.0	0.0035
+TCGA-PRAD	adjacent	Biliary Tract	0.0	0.0052
+TCGA-PRAD	adjacent	Bladder/Urinary Tract	0.0	0.013
+TCGA-PRAD	adjacent	Bone	0.0	0.0029
+TCGA-PRAD	adjacent	Bowel	0.0	0.0003
+TCGA-PRAD	adjacent	Breast	0.0	0.0101
+TCGA-PRAD	adjacent	CNS/Brain	0.0	0.0193
+TCGA-PRAD	adjacent	Cervix	0.0	0.0025
+TCGA-PRAD	adjacent	Esophagus/Stomach	0.0004	0.0181
+TCGA-PRAD	adjacent	Eye	0.0	0.0006
+TCGA-PRAD	adjacent	Kidney	0.0004	0.0021
+TCGA-PRAD	adjacent	Liver	0.0	0.0012
+TCGA-PRAD	adjacent	Lung	0.0003	0.0334
+TCGA-PRAD	adjacent	Ovary/Fallopian Tube	0.0003	0.0093
+TCGA-PRAD	adjacent	Pancreas	0.0	0.011
+TCGA-PRAD	adjacent	Peripheral Nervous System	0.0	0.0002
+TCGA-PRAD	adjacent	Prostate	0.9984	0.8524
+TCGA-PRAD	adjacent	Soft Tissue	0.0003	0.0046
+TCGA-PRAD	adjacent	Thyroid	0.0	0.0118
+TCGA-PRAD	adjacent	Uterus	0.0	0.0018
+TCGA-READ	gtex	Bowel	1.0	0.988
+TCGA-READ	gtex	Lung	0.0	0.0043
+TCGA-READ	gtex	Pancreas	0.0	0.0078
+TCGA-READ	adjacent	Bowel	1.0	0.9815
+TCGA-READ	adjacent	Esophagus/Stomach	0.0	0.0075
+TCGA-READ	adjacent	Pancreas	0.0	0.011
+TCGA-SKCM	gtex	Biliary Tract	0.0	0.0023
+TCGA-SKCM	gtex	Bladder/Urinary Tract	0.0007	0.0206
+TCGA-SKCM	gtex	Bone	0.0016	0.0009
+TCGA-SKCM	gtex	Bowel	0.0	0.001
+TCGA-SKCM	gtex	Breast	0.0002	0.0173
+TCGA-SKCM	gtex	CNS/Brain	0.0065	0.0041
+TCGA-SKCM	gtex	Cervix	0.0006	0.056
+TCGA-SKCM	gtex	Esophagus/Stomach	0.0014	0.0477
+TCGA-SKCM	gtex	Eye	0.0154	0.0
+TCGA-SKCM	gtex	Head and Neck	0.0081	0.7916
+TCGA-SKCM	gtex	Kidney	0.0011	0.0008
+TCGA-SKCM	gtex	Liver	0.0001	0.0003
+TCGA-SKCM	gtex	Lung	0.0011	0.0101
+TCGA-SKCM	gtex	Lymphoid	0.0051	0.0024
+TCGA-SKCM	gtex	Myeloid	0.0007	0.0
+TCGA-SKCM	gtex	Other	0.0002	0.0
+TCGA-SKCM	gtex	Ovary/Fallopian Tube	0.0009	0.0016
+TCGA-SKCM	gtex	Pancreas	0.0	0.0021
+TCGA-SKCM	gtex	Peripheral Nervous System	0.0016	0.0019
+TCGA-SKCM	gtex	Pleura	0.0	0.0001
+TCGA-SKCM	gtex	Prostate	0.0003	0.0009
+TCGA-SKCM	gtex	Skin	0.9444	0.0274
+TCGA-SKCM	gtex	Soft Tissue	0.0055	0.0058
+TCGA-SKCM	gtex	Thyroid	0.0019	0.0035
+TCGA-SKCM	gtex	Uterus	0.0008	0.0007
+TCGA-SKCM	gtex	Vulva/Vagina	0.0018	0.0008
+TCGA-STAD	gtex	Ampulla of Vater	0.0015	0.0
+TCGA-STAD	gtex	Biliary Tract	0.0078	0.0057
+TCGA-STAD	gtex	Bladder/Urinary Tract	0.0029	0.0017
+TCGA-STAD	gtex	Bone	0.0002	0.0043
+TCGA-STAD	gtex	Bowel	0.2276	0.0086
+TCGA-STAD	gtex	Breast	0.0014	0.0048
+TCGA-STAD	gtex	CNS/Brain	0.0012	0.006
+TCGA-STAD	gtex	Cervix	0.0015	0.0
+TCGA-STAD	gtex	Esophagus/Stomach	0.6157	0.7743
+TCGA-STAD	gtex	Head and Neck	0.0083	0.0035
+TCGA-STAD	gtex	Kidney	0.0	0.0011
+TCGA-STAD	gtex	Liver	0.0054	0.0
+TCGA-STAD	gtex	Lung	0.038	0.0163
+TCGA-STAD	gtex	Lymphoid	0.0022	0.0
+TCGA-STAD	gtex	Myeloid	0.0001	0.0
+TCGA-STAD	gtex	Ovary/Fallopian Tube	0.0126	0.0007
+TCGA-STAD	gtex	Pancreas	0.0714	0.006
+TCGA-STAD	gtex	Peripheral Nervous System	0.0	0.0009
+TCGA-STAD	gtex	Pleura	0.0001	0.0
+TCGA-STAD	gtex	Prostate	0.0007	0.0
+TCGA-STAD	gtex	Skin	0.0004	0.0
+TCGA-STAD	gtex	Soft Tissue	0.0	0.1641
+TCGA-STAD	gtex	Thyroid	0.0007	0.0008
+TCGA-STAD	gtex	Uterus	0.0003	0.0012
+TCGA-STAD	adjacent	Adrenal Gland	0.0	0.0085
+TCGA-STAD	adjacent	Ampulla of Vater	0.0015	0.0
+TCGA-STAD	adjacent	Biliary Tract	0.0078	0.0038
+TCGA-STAD	adjacent	Bladder/Urinary Tract	0.0029	0.0003
+TCGA-STAD	adjacent	Bone	0.0002	0.0059
+TCGA-STAD	adjacent	Bowel	0.2276	0.0559
+TCGA-STAD	adjacent	Breast	0.0014	0.001
+TCGA-STAD	adjacent	CNS/Brain	0.0012	0.0211
+TCGA-STAD	adjacent	Cervix	0.0015	0.0635
+TCGA-STAD	adjacent	Esophagus/Stomach	0.6157	0.5918
+TCGA-STAD	adjacent	Head and Neck	0.0083	0.1245
+TCGA-STAD	adjacent	Kidney	0.0	0.0225
+TCGA-STAD	adjacent	Liver	0.0054	0.006
+TCGA-STAD	adjacent	Lung	0.038	0.0205
+TCGA-STAD	adjacent	Lymphoid	0.0022	0.0
+TCGA-STAD	adjacent	Myeloid	0.0001	0.0
+TCGA-STAD	adjacent	Ovary/Fallopian Tube	0.0126	0.0545
+TCGA-STAD	adjacent	Pancreas	0.0714	0.004
+TCGA-STAD	adjacent	Pleura	0.0001	0.0
+TCGA-STAD	adjacent	Prostate	0.0007	0.0
+TCGA-STAD	adjacent	Skin	0.0004	0.0043
+TCGA-STAD	adjacent	Soft Tissue	0.0	0.0118
+TCGA-STAD	adjacent	Thyroid	0.0007	0.0
+TCGA-STAD	adjacent	Uterus	0.0003	0.0
+TCGA-THCA	gtex	Biliary Tract	0.0003	0.0002
+TCGA-THCA	gtex	Bladder/Urinary Tract	0.0003	0.0009
+TCGA-THCA	gtex	Bone	0.0	0.0003
+TCGA-THCA	gtex	Bowel	0.0	0.0004
+TCGA-THCA	gtex	Breast	0.0	0.001
+TCGA-THCA	gtex	CNS/Brain	0.0005	0.071
+TCGA-THCA	gtex	Esophagus/Stomach	0.0	0.0003
+TCGA-THCA	gtex	Head and Neck	0.0001	0.0005
+TCGA-THCA	gtex	Kidney	0.0	0.0003
+TCGA-THCA	gtex	Lung	0.0003	0.0005
+TCGA-THCA	gtex	Lymphoid	0.0003	0.011
+TCGA-THCA	gtex	Myeloid	0.0	0.0001
+TCGA-THCA	gtex	Ovary/Fallopian Tube	0.0011	0.0121
+TCGA-THCA	gtex	Pancreas	0.0	0.0001
+TCGA-THCA	gtex	Peripheral Nervous System	0.0	0.0062
+TCGA-THCA	gtex	Soft Tissue	0.001	0.0091
+TCGA-THCA	gtex	Thyroid	0.996	0.8856
+TCGA-THCA	gtex	Uterus	0.0002	0.0004
+TCGA-THCA	adjacent	Biliary Tract	0.0003	0.0044
+TCGA-THCA	adjacent	Bladder/Urinary Tract	0.0003	0.0091
+TCGA-THCA	adjacent	CNS/Brain	0.0005	0.0018
+TCGA-THCA	adjacent	Head and Neck	0.0001	0.0
+TCGA-THCA	adjacent	Lung	0.0003	0.0
+TCGA-THCA	adjacent	Lymphoid	0.0003	0.0007
+TCGA-THCA	adjacent	Ovary/Fallopian Tube	0.0011	0.0087
+TCGA-THCA	adjacent	Soft Tissue	0.001	0.0318
+TCGA-THCA	adjacent	Thyroid	0.996	0.9434
+TCGA-THCA	adjacent	Uterus	0.0002	0.0
+TCGA-UCS	gtex	Biliary Tract	0.0192	0.0008
+TCGA-UCS	gtex	Bladder/Urinary Tract	0.0051	0.0001
+TCGA-UCS	gtex	Bone	0.0687	0.0067
+TCGA-UCS	gtex	Bowel	0.0003	0.0012
+TCGA-UCS	gtex	Breast	0.0129	0.0004
+TCGA-UCS	gtex	CNS/Brain	0.0124	0.0055
+TCGA-UCS	gtex	Cervix	0.0014	0.0
+TCGA-UCS	gtex	Esophagus/Stomach	0.0202	0.002
+TCGA-UCS	gtex	Head and Neck	0.0016	0.0014
+TCGA-UCS	gtex	Kidney	0.0295	0.0026
+TCGA-UCS	gtex	Liver	0.0203	0.0
+TCGA-UCS	gtex	Lung	0.016	0.0004
+TCGA-UCS	gtex	Lymphoid	0.0	0.0003
+TCGA-UCS	gtex	Myeloid	0.0004	0.0002
+TCGA-UCS	gtex	Ovary/Fallopian Tube	0.1262	0.0
+TCGA-UCS	gtex	Peripheral Nervous System	0.0089	0.0011
+TCGA-UCS	gtex	Prostate	0.0004	0.0
+TCGA-UCS	gtex	Skin	0.0484	0.0005
+TCGA-UCS	gtex	Soft Tissue	0.22	0.9594
+TCGA-UCS	gtex	Testis	0.0195	0.0
+TCGA-UCS	gtex	Thyroid	0.0013	0.0001
+TCGA-UCS	gtex	Uterus	0.3672	0.0172
+TGCT-NSGCT	gtex	Biliary Tract	0.0003	0.0002
+TGCT-NSGCT	gtex	Bladder/Urinary Tract	0.0014	0.0003
+TGCT-NSGCT	gtex	Bone	0.0049	0.0013
+TGCT-NSGCT	gtex	Bowel	0.0002	0.0001
+TGCT-NSGCT	gtex	Breast	0.001	0.0006
+TGCT-NSGCT	gtex	CNS/Brain	0.0036	0.0526
+TGCT-NSGCT	gtex	Cervix	0.0018	0.0
+TGCT-NSGCT	gtex	Esophagus/Stomach	0.0083	0.0002
+TGCT-NSGCT	gtex	Eye	0.0018	0.0839
+TGCT-NSGCT	gtex	Head and Neck	0.0099	0.0061
+TGCT-NSGCT	gtex	Kidney	0.0003	0.001
+TGCT-NSGCT	gtex	Liver	0.0494	0.0004
+TGCT-NSGCT	gtex	Lung	0.0068	0.1672
+TGCT-NSGCT	gtex	Lymphoid	0.0002	0.0062
+TGCT-NSGCT	gtex	Myeloid	0.0008	0.0024
+TGCT-NSGCT	gtex	Ovary/Fallopian Tube	0.0211	0.0014
+TGCT-NSGCT	gtex	Pancreas	0.0005	0.0002
+TGCT-NSGCT	gtex	Peripheral Nervous System	0.0022	0.0007
+TGCT-NSGCT	gtex	Prostate	0.0003	0.0
+TGCT-NSGCT	gtex	Skin	0.0003	0.0005
+TGCT-NSGCT	gtex	Soft Tissue	0.0028	0.0332
+TGCT-NSGCT	gtex	Testis	0.8741	0.5376
+TGCT-NSGCT	gtex	Thyroid	0.0007	0.0002
+TGCT-NSGCT	gtex	Uterus	0.0072	0.1037
+TGCT-SEM	gtex	Biliary Tract	0.0012	0.0002
+TGCT-SEM	gtex	Bladder/Urinary Tract	0.0	0.0003
+TGCT-SEM	gtex	Bone	0.001	0.0013
+TGCT-SEM	gtex	Bowel	0.0005	0.0001
+TGCT-SEM	gtex	Breast	0.0004	0.0006
+TGCT-SEM	gtex	CNS/Brain	0.0081	0.0526
+TGCT-SEM	gtex	Esophagus/Stomach	0.0013	0.0002
+TGCT-SEM	gtex	Eye	0.0	0.0839
+TGCT-SEM	gtex	Head and Neck	0.0073	0.0061
+TGCT-SEM	gtex	Kidney	0.0039	0.001
+TGCT-SEM	gtex	Liver	0.0001	0.0004
+TGCT-SEM	gtex	Lung	0.0008	0.1672
+TGCT-SEM	gtex	Lymphoid	0.0028	0.0062
+TGCT-SEM	gtex	Myeloid	0.0	0.0024
+TGCT-SEM	gtex	Ovary/Fallopian Tube	0.015	0.0014
+TGCT-SEM	gtex	Pancreas	0.0003	0.0002
+TGCT-SEM	gtex	Peripheral Nervous System	0.0011	0.0007
+TGCT-SEM	gtex	Skin	0.0144	0.0005
+TGCT-SEM	gtex	Soft Tissue	0.0121	0.0332
+TGCT-SEM	gtex	Testis	0.9269	0.5376
+TGCT-SEM	gtex	Thyroid	0.0004	0.0002
+TGCT-SEM	gtex	Uterus	0.0023	0.1037
+UCEC-EEC	gtex	Biliary Tract	0.0072	0.0008
+UCEC-EEC	gtex	Bladder/Urinary Tract	0.0038	0.0001
+UCEC-EEC	gtex	Bone	0.004	0.0067
+UCEC-EEC	gtex	Bowel	0.0037	0.0012
+UCEC-EEC	gtex	Breast	0.0464	0.0004
+UCEC-EEC	gtex	CNS/Brain	0.0053	0.0055
+UCEC-EEC	gtex	Cervix	0.0023	0.0
+UCEC-EEC	gtex	Esophagus/Stomach	0.0049	0.002
+UCEC-EEC	gtex	Head and Neck	0.003	0.0014
+UCEC-EEC	gtex	Kidney	0.0023	0.0026
+UCEC-EEC	gtex	Lung	0.0189	0.0004
+UCEC-EEC	gtex	Lymphoid	0.0	0.0003
+UCEC-EEC	gtex	Myeloid	0.0013	0.0002
+UCEC-EEC	gtex	Ovary/Fallopian Tube	0.0605	0.0
+UCEC-EEC	gtex	Pancreas	0.0054	0.0
+UCEC-EEC	gtex	Peripheral Nervous System	0.0007	0.0011
+UCEC-EEC	gtex	Prostate	0.0004	0.0
+UCEC-EEC	gtex	Skin	0.0026	0.0005
+UCEC-EEC	gtex	Soft Tissue	0.0046	0.9594
+UCEC-EEC	gtex	Thyroid	0.003	0.0001
+UCEC-EEC	gtex	Uterus	0.8197	0.0172
+UCEC-EEC	adjacent	Biliary Tract	0.0072	0.036
+UCEC-EEC	adjacent	Bladder/Urinary Tract	0.0038	0.0799
+UCEC-EEC	adjacent	Bone	0.004	0.0495
+UCEC-EEC	adjacent	Bowel	0.0037	0.0005
+UCEC-EEC	adjacent	Breast	0.0464	0.0522
+UCEC-EEC	adjacent	CNS/Brain	0.0053	0.0367
+UCEC-EEC	adjacent	Cervix	0.0023	0.0018
+UCEC-EEC	adjacent	Esophagus/Stomach	0.0049	0.0112
+UCEC-EEC	adjacent	Head and Neck	0.003	0.0
+UCEC-EEC	adjacent	Kidney	0.0023	0.0042
+UCEC-EEC	adjacent	Liver	0.0	0.0005
+UCEC-EEC	adjacent	Lung	0.0189	0.124
+UCEC-EEC	adjacent	Myeloid	0.0013	0.0
+UCEC-EEC	adjacent	Ovary/Fallopian Tube	0.0605	0.0358
+UCEC-EEC	adjacent	Pancreas	0.0054	0.0196
+UCEC-EEC	adjacent	Peripheral Nervous System	0.0007	0.002
+UCEC-EEC	adjacent	Prostate	0.0004	0.0
+UCEC-EEC	adjacent	Skin	0.0026	0.0008
+UCEC-EEC	adjacent	Soft Tissue	0.0046	0.2884
+UCEC-EEC	adjacent	Thyroid	0.003	0.0578
+UCEC-EEC	adjacent	Uterus	0.8197	0.1991
+UCEC-SER	gtex	Ampulla of Vater	0.0004	0.0
+UCEC-SER	gtex	Biliary Tract	0.0058	0.0008
+UCEC-SER	gtex	Bladder/Urinary Tract	0.0039	0.0001
+UCEC-SER	gtex	Bone	0.0041	0.0067
+UCEC-SER	gtex	Bowel	0.0027	0.0012
+UCEC-SER	gtex	Breast	0.0013	0.0004
+UCEC-SER	gtex	CNS/Brain	0.0006	0.0055
+UCEC-SER	gtex	Esophagus/Stomach	0.0015	0.002
+UCEC-SER	gtex	Head and Neck	0.0022	0.0014
+UCEC-SER	gtex	Kidney	0.0004	0.0026
+UCEC-SER	gtex	Liver	0.0079	0.0
+UCEC-SER	gtex	Lung	0.0319	0.0004
+UCEC-SER	gtex	Lymphoid	0.0	0.0003
+UCEC-SER	gtex	Myeloid	0.0	0.0002
+UCEC-SER	gtex	Ovary/Fallopian Tube	0.1886	0.0
+UCEC-SER	gtex	Pancreas	0.0125	0.0
+UCEC-SER	gtex	Peripheral Nervous System	0.0008	0.0011
+UCEC-SER	gtex	Prostate	0.0002	0.0
+UCEC-SER	gtex	Skin	0.0024	0.0005
+UCEC-SER	gtex	Soft Tissue	0.0011	0.9594
+UCEC-SER	gtex	Testis	0.0009	0.0
+UCEC-SER	gtex	Thyroid	0.0009	0.0001
+UCEC-SER	gtex	Uterus	0.7299	0.0172
