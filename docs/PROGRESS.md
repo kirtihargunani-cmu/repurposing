@@ -203,6 +203,7 @@
   - Split-half reproducibility (10 random halves of tumors and normals): z rho vbg - voom +0.0000 to +0.0061 in 12 of 13 (PCPG-PGL -0.0008), median +0.0013; NES rho (3 halves) higher in 10 of 13, median +0.0013 (PCPG-PGL +0.012, STAD +0.0065). vqw similar, slightly smaller gains.
   - Known-biology controls unchanged (10 pass, 42 right direction below FDR 0.05, 1 wrong: LIHC HNF1A, under all three methods).
   - Size of the change: whole-signature z rho with voom 0.996-0.999 and NES rho 0.996-0.9996, i.e. "no practical effect" under the pre-set rule (>= 0.99 / >= 0.98). The tops move more: 500 largest-|z| genes overlap 69-93% (median 85%); FDR < 0.05 master-regulator sets Jaccard 0.68-0.92 (READ 157 -> 230 regulators, THCA 1 -> 55).
+- Decision (user, D69): adopt voomByGroup for the v2 Step 4 signatures; the top-of-list shifts are judged significant. voom signatures are kept alongside as check C12; the test results stay in `results/step4/voom_group_variance/`. A2 resolved. Not yet implemented in `30_signatures.R` (v2 Step 4 not run).
 
 ## Assumptions register (review before reporting results)
 High impact

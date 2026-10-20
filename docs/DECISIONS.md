@@ -103,6 +103,7 @@ Details and numbers: [`PROGRESS.md`](PROGRESS.md). Drug-side decisions are kept 
 | D66 | 10-18 | No proliferation regression of the network input; keep the v2 gene filter (D46) although it removes 28 of 978 L1000 landmark genes (e.g. FOXO3, TFDP1, CHEK2, HSPA1A) and 412 candidate regulators (100 TFs; none of the known-biology controls) | E2F / FOXM1 regulons are real biology and pass controls; proliferation is handled at drug scoring (79i). The lost regulators are mostly artefacts (AGAP4/5/6, readthrough) or proliferation genes (CKS1B, CKS2, UHRF1) | PI |
 | D67 | 10-18 | Composition marker panels from cell-type families: 15 fixed families of closely related HPA types (e.g. enterocytes + Paneth, keratinocytes + squamous epithelium, alveolar type 1 + 2, blood + lymphatic endothelium, fibroblasts + endometrial / ovarian stroma) scored as one unit, markers >= 4x every type outside the family; positive controls renamed to the families | Under the single-type rule 9 of 18 controls had no panel; with families 51 of 56 units get a panel. Smooth muscle still has none (its genes are shared with HPA Sertoli, skeletal muscle and myoepithelial cells) | User |
 | D68 | 10-20 | Subtype networks: only the breast luminal test (BRCA_LUM vs pooled BRCA master regulators, cutoff for a material change fixed before the comparison); other subtypes stay on the shared cohort network. If luminal regulators change materially, build networks for the other subtypes with >= 100 tumors (BRCA LumA / LumB / Basal, CESC-SCC, LGG IDHmut-codel / -noncodel, PCPG-PHEO, UCEC-EEC, SARC-LMS). Strata found with the networks (COAD / READ) tested only after v2 Steps 8-10, against size- and split-matched control networks. No synthetic patients to reach the ARACNe sample size | Subtypes are assumed to share wiring and differ in regulator use, which VIPER measures on a shared network (the colon strata were found from activity differences on the shared network). A network built on part of a cohort differs even with identical wiring (less variation, fewer patients), so a difference alone is not rewiring. Resampled or generated patients repeat the real ones and inflate mutual information | User |
+| D69 | 10-20 | Step 4 v2 uses voomByGroup (separate mean-variance trends for tumors and normals) instead of voom; the voom version is kept as check C12 and the 13-group test results are kept (`results/step4/voom_group_variance/`) | Tumors are 1.2-1.8x more variable than normals (A2 wrong in 12 of 13 groups); split-half reproducibility of z and NES slightly higher (median +0.001), controls unchanged. Whole rankings barely move (rho >= 0.996, below the pre-set threshold for a practical effect), but the top-500 genes and the FDR-cut regulator lists that the drug side uses shift 10-30% (READ 157 -> 230, THCA 1 -> 55), which the user judged significant | User |
 
 Full rebuild spec: [`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md).
 
@@ -114,7 +115,7 @@ did or could do about it.
 | # | Assumption | Impact | Check |
 |---|---|---|---|
 | A1 | Purity (stroma/immune content) is a nuisance to remove, but it may carry real mechanism (immune evasion, fibrosis) | High | Sensitivity run without ESTIMATE adjustment: proposed, not run |
-| A2 | limma treats tumors and normals as equally variable; tumors are more variable | High | voomWithQualityWeights / group variances: proposed, not run |
+| ~~A2~~ | ~~limma treats tumors and normals as equally variable; tumors are more variable~~ | Resolved (D69) | Tested 2026-10-20: tumors 1.2-1.8x more variable; v2 models the arms separately (voomByGroup) |
 | A3 | Gene-gene correlation in healthy tissue represents "chance" for tumors (normal-split null); the null is unadjusted for covariates while the signature is adjusted | High | Conservative in practice (GTEx donor structure widens it) |
 | A4 | GTEx is a fair healthy reference despite post-mortem collection and source being collinear with tumor vs normal; adjacent normals carry field effects | High | GTEx vs adjacent agreement median ~0.6 (18 groups) |
 | A5 | Partial GTEx tissue matches add cell-type differences to signatures (pancreas acinar vs ductal, uterus myometrium, adult adrenal for NBL) | High | Flagged per group |
@@ -152,7 +153,7 @@ did or could do about it.
 ## 3. Open / parked
 | Item | Status |
 |---|---|
-| Sensitivity checks: no ESTIMATE adjustment (A1), voomWithQualityWeights (A2), PROGENy (A6) | Proposed |
+| Sensitivity checks: no ESTIMATE adjustment (A1), PROGENy (A6) | Proposed (A2 tested 2026-10-20, D69) |
 | Residual plate in BRCA-Basal and STAD | Noted |
 | Blood cancers' healthy references; recount3 non-cancer diseases | Parked (PI) |
 | Exact formula for sibling specificity | Proposed in `docs/notes/subgrouping_for_drug_side.md`; to confirm |

@@ -29,7 +29,7 @@ colon). TCGA adjacent normals are used as a check, and are being considered as a
 ## Principles
 
 - **New version, old one kept.** Every v2 output goes to a `_v2` path; v1 stays reproducible for comparison.
-- **Same methods, except where listed below.** limma-voom, ARACNe-AP settings, VIPER filters, nulls and thresholds
+- **Same methods, except where listed below.** limma (voomByGroup replaces voom, D69), ARACNe-AP settings, VIPER filters, nulls and thresholds
   are unchanged unless a step says otherwise.
 - **Checks are fixed before running** (section "Acceptance checks"). They are reported whatever they show; nothing
   is tuned to make checks pass (D19).
@@ -94,7 +94,12 @@ group, written to `results/step4_v2/gtex_reference.tsv`:
 
 **4b. Signature model (changes to `30_signatures.R`, run as v2; D57).**
 - Samples: as v1 (one primary tumor per patient; GTEx samples from 4a; contrasts need >= 10 normals, CESC-AD 5).
-- Genes: the v2 gene set, then `filterByExpr` + TMM + voom as v1.
+- Genes: the v2 gene set, then `filterByExpr` + TMM as v1.
+- **voomByGroup instead of voom (D69):** tumors and normals each get their own mean-variance trend, so each
+  arm's values are weighted by that arm's own noise (`scripts/vendor/voomByGroup.R`, YOU-k/voomByGroup 38c8abf,
+  `group = condition`). Tested on 13 groups (`scripts/36_voom_group_variance_test.R`): tumors 1.2-1.8x more variable
+  than normals; slightly more reproducible signatures and regulators; controls unchanged; top-500 genes and FDR-cut
+  regulator lists shift 10-30%. voom signatures are also written (`*_voom` columns) for check C12.
 - **Model:** `~ condition + age + sex + ESTIMATE + tumor sample-type indicators + coll_isch + coll_fast + coll_slow
   (+ coll_nonbp)`.
   - Because the collection covariates are 0 at the anchor, the condition coefficient = tumor vs a GTEx donor at the
@@ -186,6 +191,7 @@ v1 values in brackets. Reported whatever they show.
 | C9 | Network stability: median bootstrap support, edges per network [10-12 / 100; 157k-416k edges] | Similar |
 | C10 | Mappability: no gene with mappability < 0.8 among regulators or targets; no cross-mappable edges | Exactly 0 |
 | C11 | Colon / kidney: split-half reproducibility with the filtered GTEx set vs TCGA adjacent [colon 0.956 vs 0.968; kidney 0.871 vs 0.920] | GTEx closer to or above adjacent |
+| C12 | voomByGroup vs voom on the v2 signatures, all groups: whole-signature z rho, top-500 overlap, FDR < 0.05 / < 0.10 regulator-set Jaccard [test, 13 groups: rho 0.996-0.999, top-500 69-93%, Jaccard 0.68-0.92] | Reported; groups whose drug-side lists change most flagged |
 
 ## Assumptions carried by v2 (also in DECISIONS.md)
 
@@ -205,7 +211,7 @@ v1 values in brackets. Reported whatever they show.
 | 1 | GTEx collection columns; v2 gene list (**done 10-18**) | `20_covariates.py`, `22_gene_set_v2.py` | minutes |
 | 2 | ARACNe inputs v2 (done 10-18); network build: full set then TF-only, 29 networks each | `42`, `43` (`VERSION=v2`, then `REGSET=tf`) | ~2.5 + ~0.7 days (background) |
 | 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates (**done 10-18**) | `32_gtex_reference.R` | minutes |
-| 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11 | `30_signatures.R` (v2) | < 1 h |
+| 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11, C12 | `30_signatures.R` (v2) | < 1 h |
 | 5 | Regulons v2 (+ cross-mappable edge removal); edge diagnostics | `44`, `45`, `46` | hours |
 | 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 | `50`, `51`, `59` | hours |
 | 7 | Patient VIPER v2, modules, recurring module; check C8 | `61`, `58`, `62` | hours |
