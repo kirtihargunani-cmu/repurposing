@@ -99,7 +99,8 @@ group, written to `results/step4_v2/gtex_reference.tsv`:
   arm's values are weighted by that arm's own noise (`scripts/vendor/voomByGroup.R`, YOU-k/voomByGroup 38c8abf,
   `group = condition`). Tested on 13 groups (`scripts/36_voom_group_variance_test.R`): tumors 1.2-1.8x more variable
   than normals; slightly more reproducible signatures and regulators; controls unchanged; top-500 genes and FDR-cut
-  regulator lists shift 10-30%. voom signatures are also written (`*_voom` columns) for check C12.
+  regulator lists shift 10-30%. voom signatures are also written for check C12 (`logFC_voom` / `t_voom` / `z_voom`
+  columns in the per-group files; `z_tumor_vs_<contrast>_voom.tsv`).
 - **Model:** `~ condition + age + sex + ESTIMATE + tumor sample-type indicators + coll_isch + coll_fast + coll_slow
   (+ coll_nonbp)`.
   - Because the collection covariates are 0 at the anchor, the condition coefficient = tumor vs a GTEx donor at the
@@ -110,7 +111,8 @@ group, written to `results/step4_v2/gtex_reference.tsv`:
     shared across the group's tissues.
   - No RNA-quality index (D50); no plate (collinear with condition, as v1). No TCGA-adjacent-based correction (D57).
 - Signature value: moderated t -> signed z, as v1.
-- **Adjacent contrast** (18 groups) rebuilt with the v2 gene set and the v1 model. It is a check (D58).
+- **Adjacent contrast** (18 groups) rebuilt with the v2 gene set and the v1 model (voomByGroup as the GTEx contrast). It is a check (D58).
+- **Done 2026-10-20** (`VERSION=v2 scripts/30_signatures.R`; checks `scripts/37_step4_v2_checks.R` -> `results/step4_v2/checks/`).
 - Outputs: `results/step4_v2/{z_tumor_vs_gtex,z_tumor_vs_adjacent,signature_summary,gtex_reference}.tsv`,
   `data/processed/step4_v2/<group>__<contrast>.tsv.gz`.
 

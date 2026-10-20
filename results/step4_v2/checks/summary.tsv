@@ -1,0 +1,8 @@
+check	value
+C1 GC tilt, median (v1 -> v2)	-0.239 -> -0.298 (17 groups)
+C3 GTEx vs adjacent agreement, median (v1 -> v2)	0.593 -> 0.653 (17 groups)
+C4 ischemic-time signal, median (v1 -> v2)	-0.176 -> -0.098 (39 groups)
+C6 E2F / G2M up at FDR < 0.05, groups (v1 -> v2)	38 / 38 -> 38 / 38
+C11 split-half GTEx vs adjacent, medians	COAD 0.953 vs 0.966; READ 0.887 vs 0.856; KIRC 0.927 vs 0.911; KIRP 0.922 vs 0.96; KICH 0.93 vs 0.938
+C12 z rho with voom, median (range)	0.998 (0.9575-0.9996)
+C12 top-500 overlap with voom, median (range)	0.834 (0.512-0.952)
