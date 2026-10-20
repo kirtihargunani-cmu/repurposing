@@ -195,6 +195,19 @@ v1 values in brackets. Reported whatever they show.
 | C11 | Colon / kidney: split-half reproducibility with the filtered GTEx set vs TCGA adjacent [colon 0.956 vs 0.968; kidney 0.871 vs 0.920] | GTEx closer to or above adjacent |
 | C12 | voomByGroup vs voom on the v2 signatures, all groups: whole-signature z rho, top-500 overlap, FDR < 0.05 / < 0.10 regulator-set Jaccard [test, 13 groups: rho 0.996-0.999, top-500 69-93%, Jaccard 0.68-0.92] | Reported; groups whose drug-side lists change most flagged |
 
+Step 4 v2 results (2026-10-20; `results/step4_v2/checks/`):
+
+| Check | v1 -> v2 | Verdict |
+|---|---|---|
+| C3 Agreement with tumor-vs-adjacent signatures | median 0.59 -> 0.65 (colon 0.56 -> 0.70, lung up) | Better |
+| C4 Post-mortem signal left in signatures | median -0.18 -> -0.10; closer to 0 in 28 of 39 groups (lung -0.48 -> -0.30, colon -0.36 -> -0.16) | Better; brain unchanged (average-donor anchor, no shift) |
+| C6 Proliferation retained | E2F / G2M up in 38 of 40 groups (v1 38) | Kept |
+| C12 voomByGroup vs voom | top-500 genes shared: median 83%, lowest SKCM 51% | As in the test |
+| C1 GC tilt (GTEx minus adjacent z) | median -0.24 -> -0.30 | Larger; accepted (D70) |
+| C11 Split-half reproducibility, GTEx vs adjacent | READ, KIRC: GTEx ahead; COAD, KIRP: adjacent ahead; KICH similar | Mixed |
+
+C1 larger GC tilt accepted (D70). Pediatric groups (TARGET-WT, NBL) flagged as unstable (A36), no action.
+
 ## Assumptions carried by v2 (also in DECISIONS.md)
 
 - A32: the 71 genes without a mappability value behave like normally mappable genes.

@@ -213,6 +213,18 @@
   - C11 split-half, GTEx (v2) vs adjacent, equal normal n per half: COAD 0.953 vs 0.966 (GTEx better in 3 of 10 splits), READ 0.887 vs 0.856, KIRC 0.927 vs 0.911, KIRP 0.922 vs 0.960, KICH 0.930 vs 0.938. Target (GTEx closer to or above adjacent) met for READ and KIRC, not for COAD and KIRP; halves are small (10 normals; READ 5).
   - C12 voomByGroup vs voom: z rho median 0.998 (TGCT-NSGCT 0.958 to 0.9996), top-500 overlap median 0.83 (SKCM 0.51, TGCT-NSGCT 0.64, UCEC-EEC 0.65, PAAD 0.68 to 0.95).
   - Flag: TARGET-WT genes changed 2,801 -> 6,916 (v1 -> v2; 28 -> 21 kidney normals). Pediatric tumors vs adult donors: age is almost collinear with tumor / normal, so the WT (and NBL) condition estimate is unstable to small changes in the normal set.
+- Step 4 v2 result summary (recorded in the spec doc):
+
+| Check | v1 -> v2 | Verdict |
+|---|---|---|
+| C3 Agreement with tumor-vs-adjacent signatures | median 0.59 -> 0.65 (colon 0.56 -> 0.70, lung up) | Better |
+| C4 Post-mortem signal left in signatures | median -0.18 -> -0.10; closer to 0 in 28 of 39 groups (lung -0.48 -> -0.30, colon -0.36 -> -0.16) | Better; brain unchanged (average-donor anchor, no shift) |
+| C6 Proliferation retained | E2F / G2M up in 38 of 40 groups (v1 38) | Kept |
+| C12 voomByGroup vs voom | top-500 genes shared: median 83%, lowest SKCM 51% | As in the test |
+| C1 GC tilt (GTEx minus adjacent z) | median -0.24 -> -0.30 | Larger; accepted (D70) |
+| C11 Split-half reproducibility, GTEx vs adjacent | READ, KIRC: GTEx ahead; COAD, KIRP: adjacent ahead; KICH similar | Mixed |
+
+- Decision (user, D70): C1 accepted. A GC difference between healthy donors and tumors may be partly real and is not by itself a problem; the aim is an accurate, reproducible workflow, not removing every edge-case signal. C2 at Step 6 is still reported. Pediatric groups (TARGET-WT, NBL) recorded as more variable (children's tumors vs adult donors; A36); no action unless a correction is needed for all cohorts.
 
 ## Assumptions register (review before reporting results)
 High impact
