@@ -196,6 +196,14 @@
   `nohup setsid bash -c 'VERSION=v2 scripts/43_run_aracne.sh >> logs/aracne_v2.log 2>&1; VERSION=v2 REGSET=tf scripts/43_run_aracne.sh > logs/aracne_v2_tf.log 2>&1' > /dev/null 2>&1 < /dev/null &`
   To pause again, stop the whole process group (`kill -TERM -- -<pgid of the setsid bash>`); killing only the java processes would let the loop log the bootstrap as finished and start the TF-only build.
 
+## 2026-10-20
+- Subtype networks (D68): only the breast luminal test (BRCA_LUM vs BRCA); other subtypes stay on the shared cohort network.
+- Test of A2, tumors and normals equally variable in limma (`scripts/36_voom_group_variance_test.R` -> `results/step4/voom_group_variance/`; v2 Step 4 model, 13 groups, voom vs voomByGroup (vbg, vendored `scripts/vendor/voomByGroup.R`, YOU-k/voomByGroup 38c8abf) vs voomWithQualityWeights by arm (vqw); master regulators with the v1 project ARACNe regulons). Decision rule fixed before running (script header).
+  - The assumption is wrong: tumor BCV / normal BCV 1.19-1.77 (>= 1.2 in 12 of 13; COAD 1.77, Basal 1.74, LIHC 1.70; PRAD 1.19).
+  - Split-half reproducibility (10 random halves of tumors and normals): z rho vbg - voom +0.0000 to +0.0061 in 12 of 13 (PCPG-PGL -0.0008), median +0.0013; NES rho (3 halves) higher in 10 of 13, median +0.0013 (PCPG-PGL +0.012, STAD +0.0065). vqw similar, slightly smaller gains.
+  - Known-biology controls unchanged (10 pass, 42 right direction below FDR 0.05, 1 wrong: LIHC HNF1A, under all three methods).
+  - Size of the change: whole-signature z rho with voom 0.996-0.999 and NES rho 0.996-0.9996, i.e. "no practical effect" under the pre-set rule (>= 0.99 / >= 0.98). The tops move more: 500 largest-|z| genes overlap 69-93% (median 85%); FDR < 0.05 master-regulator sets Jaccard 0.68-0.92 (READ 157 -> 230 regulators, THCA 1 -> 55).
+
 ## Assumptions register (review before reporting results)
 High impact
 1. ESTIMATE adjustment treats stroma/immune content as nuisance; may remove real mechanism (immune evasion, fibrosis). Sensitivity run without it: proposed.
