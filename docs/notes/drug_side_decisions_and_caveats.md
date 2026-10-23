@@ -34,6 +34,7 @@ messages; this file is the short list.
 | 2026-10-12 | Strata ranked by reversal and specificity, including specificity against sibling strata (`spec_sib`) | `scripts/79g` |
 | 2026-10-12 | Her2 PC4 kept but flagged weak; flag carried into the drug outputs | `scripts/79g` (`weak`) |
 | 2026-10-12 | LumA PC3 cell-line issue (C1 below): noted, revisit only if it distorts rankings | this file |
+| 2026-10-20 | Borrowing stays; no same-organ or same-body-area restriction. Instead, a confidence for each borrowed drug (predicted transfer accuracy), first version diagnostic only (C17) | `scripts/79l` |
 
 ## 2. Method choices made while building (for your review)
 
@@ -227,6 +228,34 @@ LINCS data in few lines (borrowed), while PRISM / GDSC measure many lines.
 Numbers: `results/lincs/sensitivity_validation/` (`t1_summary.tsv`, `t1_per_unit.tsv`, `t2_across_units.tsv`,
 `t3_siblings.tsv`, `controls.tsv`, `overlap.tsv`).
 
+### C17. Confidence for borrowed drugs (2026-10-20; first version, diagnostic)
+
+Borrowed drugs are 73% of scored disease x drug rows (37,017 of 50,760), 67% of tier 1 and a median 9 of each
+cancer's top 10 by `rev`. 12 cancers have no drug tested in their own organ (kidney x3, Wilms, thyroid, head and neck,
+adrenal, testis x2, sarcoma x3); the organ's tumor lines in LINCS have no high-quality signature, and thyroid, testis,
+adrenal and soft tissue have no LINCS line at all. Restricting to the same body area was considered and not taken
+(user 2026-10-20): drugs cross organs through shared targets / pathways (guselkumab: psoriasis -> ulcerative colitis
+and Crohn's), and the target check already asks whether the target is there.
+Test (`scripts/79l`): predict a borrowed effect's accuracy from the leave-one-line-out data (`scripts/77`, 7,661
+held-out pairs). Predictors: the drug's consistency across its other held-out lines, how many lines that rests on,
+and how many lines are averaged. OLS, cross-validated R² 0.60 (Spearman 0.76) by drug and by held-out line alike,
+0.63 where the nearest tested line is in another lineage; lines only 0.17; distance to the nearest tested line adds
+0.006 (not used: the committed Celligner tables keep only 10 neighbors per line). Calibrated within 0.03 in every
+decile. `conf` = predicted r / replicate level (0.553), capped at 1; direct drugs set to 1 (assumed). `rev_conf` =
+`rev` x `conf`, with percentile and tier as in 79e.
+- Borrowed `conf`: 11.5% below 0.5 (4,256 pairs), 9,810 at 1.
+- Rankings move modestly: 752 of 877 tier-1 rows stay, 333 of 410 top-10 places; most change in the borrowed-heavy
+  cancers (PCPG, pancreas, adrenal, head and neck, sarcoma UPS, bladder 5-6 of 10 kept). 45 tier-1 borrowed rows had
+  `conf` < 0.5.
+- Caveat: consistency favors drugs that act the same everywhere (top: dactinomycin, panobinostat, epirubicin,
+  emetine, vorinostat) and penalizes target-dependent drugs (tamoxifen 0.11, bazedoxifene 0.15, idelalisib 0.19,
+  gefitinib 0.33), whose effect varies with the target, not only with noise. Using `rev_conf` as is would add to the
+  generic-drug problem (C4). Proposed v2: fit transfer accuracy on lines that express the drug's targets (needs
+  DepMap expression per line).
+- Run with system Python (pandas 1.3.5); the `celligner` env is not on MAIL-15.
+Numbers: `results/lincs/transfer_confidence_model.tsv`, `transfer_confidence_calibration.tsv`,
+`drug_transfer_confidence.tsv`, `transfer_confidence_summary.tsv`.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ
@@ -245,6 +274,7 @@ may be technical (see the disease-side note).
 - **TCGA adjacent normal tissue in drug ranking (user 2026-10-18: the two most interesting uses; not designed yet).** On the disease side GTEx stays the reference (D57-D58 on `main`); adjacent normals can still serve the drug side:
   - *Safety filter.* The tumor's own surrounding tissue is what a drug also hits. Candidate components: (a) target window: a drug's targets higher in the tumor than in the same patients' adjacent normal tissue (paired where TCGA has pairs, ~10% of patients) and than in GTEx; (b) normal-tissue impact: penalize drugs whose LINCS effect suppresses the organ's normal-function genes (genes high in both GTEx and adjacent normal tissue of that organ); (c) lines resembling healthy tissue (`SPEC_celligner_normals.md`) as stand-ins for normal-tissue drug response. Open: thresholds, and whether it filters or down-weights.
   - *Inflammation around the tumor as a target.* Tissue next to tumors carries a shared pro-inflammatory state (Aran et al. 2017, Nat Commun 8:1077). Candidate: score drugs on reversing the inflammation part of adjacent-vs-GTEx (Hallmark inflammatory response, TNFA/NF-kB, IL6/JAK/STAT3, interferon; Aran's NAT genes), using only the most normal-looking adjacent samples (low same-lab tumor-likeness score, `scripts/33_normal_variance.R` on `main`). Main caveat: surgery itself induces stress / immediate-early genes (FOS, JUN, EGR1, ATF3) and the adjacent-vs-GTEx gap also holds lab, surgery-vs-death and donor-population differences; those genes must be separated (e.g. drop genes that respond to ischemia within GTEx, and immediate-early genes) before the inflammation part is a target.
+- Borrowed-drug confidence (C17): use `conf` as a shrink factor, a tier-1 cutoff (e.g. >= 0.5), or only as a column? Condition it on target expression first (v2)?
 - How to fix the ER misreading (C3, C14, C15) before ranking is trusted. Splitting off proliferation did not (C15). Options: score drug-side TF activity with consensus / perturbation regulons (CollecTRI or DoRothEA are already in `data/raw/regulons`) as a sensitivity check next to the ARACNe regulons; or let drug-sensitivity data decide. PRISM / GDSC (C16) support none of the current scores, so the next step is choosing what to change (regulons, gene-level scoring, or using sensitivity data directly).
 
 ## 5. Likely questions and current answers
@@ -269,7 +299,8 @@ work moves on.
 - **Most genes are inferred.** Less independent information, but needed: with the 978 measured genes only 11-20% of
   regulators can be scored, 89-92% with inferred genes (C8).
 - **Drugs never tested in the tissue?** Borrowed if tested in >= 3 other lines; predicted vs real effect r 0.46,
-  best possible ~0.55 (C7). Weighting by line similarity added nothing.
+  best possible ~0.55 (C7). Weighting by line similarity added nothing. Per-drug confidence: `conf` in
+  `drug_transfer_confidence.tsv` (C17).
 - **Do dish effects reflect patients?** Not fully: no immune system, stroma or drug metabolism, and doses may exceed
   achievable levels. Standard limitation.
 

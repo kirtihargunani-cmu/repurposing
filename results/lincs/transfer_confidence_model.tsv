@@ -1,0 +1,12 @@
+model	cv	n_pairs	r2	spearman	r2_other_lineage	spearman_other_lineage
+full	by_drug	7661.0	0.6023	0.7623	0.6289	0.7804
+full	by_heldout_line	7661.0	0.5961	0.757	0.622	0.7748
+n_lines_only	by_drug	7661.0	0.1691	0.3908	0.1808	0.4164
+n_lines_only	by_heldout_line	7661.0	0.1652	0.385	0.1757	0.4121
+full_plus_distance	by_drug	7661.0	0.6079	0.7674	0.6335	0.7851
+full_plus_distance	by_heldout_line	7661.0	0.6042	0.7643	0.6297	0.7822
+coefficients	intercept		0.0123			
+coefficients	cons		0.9447			
+coefficients	log_k		0.0169			
+coefficients	cons_x_log_k		-0.0396			
+coefficients	log_n		0.0089			
