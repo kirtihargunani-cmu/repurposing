@@ -208,6 +208,16 @@ Step 4 v2 results (2026-10-20; `results/step4_v2/checks/`):
 
 C1 larger GC tilt accepted (D70). Pediatric groups (TARGET-WT, NBL) flagged as unstable (A36), no action.
 
+Step 6 v2 results (2026-10-25; `results/step6/checks_v2/`, `checks_v2_tf/`; regulons with cross-mappable edges removed):
+
+| Check | v1 | v2 full | v2 TF-only | Verdict |
+|---|---|---|---|---|
+| C10 low-mappability genes / cross-mappable edges left | - | 0 / 0 | 0 / 0 | Met |
+| C9 edges per network, median; bootstrap support, median | 342k; 11 | 266k (13% removed by the filter); 11 | 157k; 14 | Similar |
+| C2 GC-only signature vs MR NES, median rho | 0.15 | 0.17 | 0.10 | Not lower in v2 full (KIRC 0.69, WT 0.65); fits C1 / D70 |
+| C5 controls: proliferation pass, tissue-specific pass, wrong direction | 64, 6, 2 | 60, 6, 2 | 70, 8, 4 | Tissue-specific kept; 4 proliferation passes lost (direction kept) |
+| C7 MRs FDR < 0.10 per group, median; v1-v2 Jaccard; NES rho | 587 | 567; 0.67; 0.977 | 172 | Reported |
+
 ## Assumptions carried by v2 (also in DECISIONS.md)
 
 - A32: the 71 genes without a mappability value behave like normally mappable genes.
@@ -224,11 +234,11 @@ C1 larger GC tilt accepted (D70). Pediatric groups (TARGET-WT, NBL) flagged as u
 | Order | Step | Script(s) | Runtime |
 |---|---|---|---|
 | 1 | GTEx collection columns; v2 gene list (**done 10-18**) | `20_covariates.py`, `22_gene_set_v2.py` | minutes |
-| 2 | ARACNe inputs v2 (done 10-18); network build: full set then TF-only, 29 networks each | `42`, `43` (`VERSION=v2`, then `REGSET=tf`) | ~2.5 + ~0.7 days (background) |
+| 2 | ARACNe inputs v2 (done 10-18); network build: full set then TF-only, 29 networks each (**done 10-24**, MAIL-15) | `42`, `43` (`VERSION=v2`, then `REGSET=tf`) | ~2.5 + ~0.7 days (background) |
 | 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates (**done 10-18**) | `32_gtex_reference.R` | minutes |
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11, C12 | `30_signatures.R` (v2) | < 1 h |
-| 5 | Regulons v2 (+ cross-mappable edge removal); edge diagnostics | `44`, `45`, `46` | hours |
-| 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 | `50`, `51`, `59` | hours |
-| 7 | Patient VIPER v2, modules, recurring module; check C8 | `61`, `58`, `62` | hours |
+| 5 | Regulons v2 (+ cross-mappable edge removal; **done 10-25**); edge diagnostics (support done; confounding `46` not yet) | `44`, `45`, `46` | hours |
+| 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 (**ARACNe full + TF-only and checks done 10-25**; CollecTRI / DoRothEA arms not yet) | `50`, `51`, `59` | hours |
+| 7 | Patient VIPER v2 (**started 10-25**), modules, recurring module; check C8 | `61`, `58`, `62` | hours |
 | 8 | Report; PI decisions on the recurring module (D26) and the kidney reference (D60) | | |
 | 9 | Steps 8-10 and drug side on v2 | `80`-`95`; celligner branch `79*` | ~1 day |

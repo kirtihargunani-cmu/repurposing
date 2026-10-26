@@ -34,11 +34,15 @@ COMPLEXES <- list(AP1 = c("JUN", "JUNB", "JUND", "FOS", "FOSB", "FOSL1", "FOSL2"
                   NFKB = c("NFKB1", "NFKB2", "RELA", "RELB", "REL"))
 set.seed(1)
 
-res_dir <- file.path("results/step6", REGULON); proc_dir <- file.path("data/processed/step6", REGULON)
+SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"))
+TFX <- if (REGSET == "tf") "_tf" else ""
+stopifnot(TFX == "" || (SFX == "_v2" && REGULON == "aracne_project"))  # TF-only set is v2 aracne_project
+res_dir <- file.path("results/step6", paste0(REGULON, SFX, TFX)); proc_dir <- file.path("data/processed/step6", paste0(REGULON, SFX, TFX))
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE); dir.create(proc_dir, recursive = TRUE, showWarnings = FALSE)
 
 if (REGULON == "aracne_project") {
-  arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+  arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds"))
   grp <- fread("results/step1/disease_groups_toil.tsv")
   net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
   regs_for <- function(gid) { r <- arac[[net_of[[gid]]]]; if (is.null(r)) stop("no ARACNe network for ", net_of[[gid]]); r }
@@ -48,9 +52,9 @@ if (REGULON == "aracne_project") {
 }
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 sym2ens <- setNames(idmap$gene_id, idmap$symbol)
-summ <- fread("results/step4/signature_summary.tsv")[status == "ok"]
+summ <- fread(paste0("results/step4", SFX, "/signature_summary.tsv"))[status == "ok"]
 contrast_for <- summ[, .(contrast = if ("gtex" %in% contrast) "gtex" else "adjacent"), by = group_id]
-zmat <- list(gtex = fread("results/step4/z_tumor_vs_gtex.tsv"), adjacent = fread("results/step4/z_tumor_vs_adjacent.tsv"))
+zmat <- list(gtex = fread(paste0("results/step4", SFX, "/z_tumor_vs_gtex.tsv")), adjacent = fread(paste0("results/step4", SFX, "/z_tumor_vs_adjacent.tsv")))
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
 

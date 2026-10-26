@@ -1,0 +1,8 @@
+kind	verdict	ref	test
+proliferation	correct direction, below cutoff	59	47
+proliferation	correct, passes	60	70
+proliferation	not tested (filtered)	3	3
+proliferation	wrong direction	1	3
+tissue-specific	correct direction, below cutoff	9	7
+tissue-specific	correct, passes	6	8
+tissue-specific	wrong direction	1	1

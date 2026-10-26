@@ -226,6 +226,28 @@
 
 - Decision (user, D70): C1 accepted. A GC difference between healthy donors and tumors may be partly real and is not by itself a problem; the aim is an accurate, reproducible workflow, not removing every edge-case signal. C2 at Step 6 is still reported. Pediatric groups (TARGET-WT, NBL) recorded as more variable (children's tumors vs adult donors; A36); no action unless a correction is needed for all cohorts.
 
+## 2026-10-25
+- ARACNe v2 build finished on MAIL-15 (resumed 2026-10-20 from the MAIL-10 state; last full-set network KIRC 2026-10-24 02:51), then the TF-only set; networks + all 100 bootstraps per network copied back to MAIL-10 (`data/processed/step5/aracne_v2/`, `aracne_v2_tf/`).
+- Fix: the v2 regulons built on 2026-10-24 (and the group VIPER run on them) still contained the cross-mappable edges (~13%); `44_aracne_regulons.R` never had the filter (v1 applied it only at patient level in 61). Both are kept as `*_unfiltered` (regulons, `results/step6/aracne_project_v2{,_tf}_unfiltered/`), not used.
+  - `44_aracne_regulons.R` (VERSION=v2, REGSET=tf): edges between cross-mappable pairs (symmetric cross-mappability > 0) removed from `network.txt` before `aracne2regulon`, as the spec says (edge likelihood is scaled by the network's largest MI, and paralog edges are among the strongest). Removed per network: full set 11.8-14.6% (median 13.1%; v1 12.7-14.2%), TF-only 10.7-14.9% (median 11.6%); counts in `results/step5/crossmap_edges_removed_v2{,_tf}.tsv`. Networks after the filter: full 128k-342k edges, 4,266-4,889 regulators; TF-only 64k-190k edges, 1,105-1,360 regulators.
+  - Pseudoautosomal genes: the mappability file lists each PAR gene twice (X copy ~1.0, `_PAR_Y` copy 0). The v2 gene set (22) keeps the X copy; the edge filter gives the same edges with or without the `_PAR_Y` rows (0 differences over 58 networks). `61_quality_correct.R` and the checks now skip `_PAR_Y` rows (61 would have dropped the 13 PAR genes).
+- Group VIPER v2 rerun on the filtered regulons (`50_viper.R`, VERSION=v2, full and REGSET=tf; 41 groups each); controls (`51_compare_mr.R`, REGULON=aracne_project_v2{,_tf}); bootstrap support (`45_edge_support.R`, VERSION=v2 [REGSET=tf] -> `results/step5/aracne_edge_support_v2{,_tf}.tsv`).
+- Step 6 v2 checks (`scripts/63_step6_v2_checks.R`; SET=full: v1 vs v2 full -> `results/step6/checks_v2/`; SET=tf: v2 full vs v2 TF-only -> `checks_v2_tf/`):
+
+| Check | v1 | v2 full | v2 TF-only |
+|---|---|---|---|
+| C10 low-mappability genes / cross-mappable edges left | - | 0 / 0 | 0 / 0 |
+| C9 edges per network, median | 342k | 266k | 157k |
+| C9 bootstrap support, median of network medians (range) | 11 (10-12) | 11 (10-12) | 14 (13-16) |
+| C2 GC-only signature vs MR NES, median rho (groups > 0.4) | 0.15 (2) | 0.17 (2) | 0.10 (3) |
+| C5 controls pass (proliferation + tissue-specific) / wrong direction | 70 (64 + 6) / 2 | 66 (60 + 6) / 2 | 78 (70 + 8) / 4 |
+| C7 MRs FDR < 0.10 per group, median | 587 | 567 | 172 |
+
+  - C2: computed the same way for every column (aREA of each group's kept regulons on minus z-scored gene GC; rho > 0 = MR ranking follows GC). Not lower in v2 (expected "lower"), in line with the larger C1 tilt accepted in D70; concentrated in KIRC (0.65 -> 0.69) and TARGET-WT (0.63 -> 0.65; ~90% of their FDR < 0.10 MRs have the GC-predicted sign). TF-only third group: UCS -0.48 (opposite sign).
+  - C5 full set: tissue-specific passes unchanged (6); proliferation passes 64 -> 60 (spec: not lost): TARGET-WT E2F1 / MYBL2, BLCA MYBL2, COAD FOXM1, STAD FOXM1 drop below the cutoff (direction still correct); TGCT-NSGCT E2F1 now passes; KIRC EPAS1 wrong -> correct direction; LIHC HNF1A correct -> wrong direction. TF-only (vs v2 full): newly passing PRAD AR, LumB FOXA1, proliferation in BLCA, LUAD, READ, SKCM, UCS, LIHC MYBL2; wrong direction PCPG-PGL / PHEO E2F1, KIRC MYBL2 (and LIHC HNF1A).
+  - C7 v1 vs v2 full: NES rho median 0.977, FDR < 0.10 Jaccard median 0.67 (voomByGroup, GTEx 4a reference and the edge filter together). v2 full vs TF-only: 90% of full-set TF MRs are also TF-only MRs, 72% of TF-only MRs are full-set MRs (median per group), sign agreement 100%, NES rho on shared regulators 0.97 (Jaccard 0.19 is low by construction: ~1,000 vs ~4,000 regulators scored).
+- Patient VIPER v2 (`61_quality_correct.R` VERSION=v2; spec Step 6b): ESTIMATE purity in every group (LGG included); GTEx normals = Step 4a reference, regressed on quality index + collection covariates and set to the anchor (residual + intercept); filtered v2 regulons; checks vs v1 `aracne_project_map`. Outputs `data/processed/step6/aracne_project_v2_patient/`, `results/step6/aracne_project_v2/quality_correction/`. Started 2026-10-25.
+
 ## Assumptions register (review before reporting results)
 High impact
 1. ESTIMATE adjustment treats stroma/immune content as nuisance; may remove real mechanism (immune evasion, fibrosis). Sensitivity run without it: proposed.
