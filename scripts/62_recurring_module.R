@@ -15,6 +15,8 @@
 #   3. Member features vs all regulators: transcript GC, length, expression, chromosome.
 #   4. Targets: ARACNe targets of the core members vs all targets in each network: GC, length and Hallmark enrichment.
 # Outputs: results/step6/aracne_project/diagnostics/recurring_module_{members,associations,features,targets}.tsv
+# NES_DIR=data/processed/step6/aracne_project_v2_patient (v2, check C8): v2 regulons / regulator list / gene set,
+#   ESTIMATE purity in every group; outputs results/step6/aracne_project_v2/diagnostics/recurring_module_*_v2.tsv
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -23,9 +25,13 @@ SEED <- c("PILRB", "HSF4", "CCNL2", "AKAP8L", "ANKZF1", "MAPK8IP3", "ZNF692", "C
 MOD_R <- 0.7; ABSOLUTE_GROUPS <- c("LGG-IDHmut-codel", "LGG-IDHmut-noncodel", "LGG-IDHwt")
 NES_DIR <- Sys.getenv("NES_DIR", "data/processed/step6/aracne_project_map"); out <- "results/step6/aracne_project/diagnostics"
 TAG <- sub("^aracne_project_?", "", basename(NES_DIR)); SFX <- paste0("_", TAG)
+V2 <- TAG == "v2_patient"
+if (V2) { SFX <- "_v2"; out <- "results/step6/aracne_project_v2/diagnostics"; ABSOLUTE_GROUPS <- character(0) }
+dir.create(out, recursive = TRUE, showWarnings = FALSE)
 
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE & role == "tumor"]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
+if (V2) counts <- counts[rownames(counts) %in% fread("results/step3/genes_protein_coding_v23_v2.tsv")$gene_id, ]
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 sym2ens <- setNames(idmap$gene_id, idmap$symbol); ens2sym <- setNames(idmap$symbol, idmap$gene_id)
 gcl <- fread("data/interim/gene_gc_v23.tsv"); gc <- setNames(gcl$gc_longest_tx, gcl$gene_id); txl <- setNames(gcl$longest_tx_len, gcl$gene_id)
@@ -33,10 +39,10 @@ pm <- fread("data/raw/solid_toil/gencode.v23.annotation.gene.probemap")
 span <- setNames(pm$chromEnd - pm$chromStart + 1, sub("\\..*", "", pm$id)); chrom <- setNames(pm$chrom, sub("\\..*", "", pm$id))
 hm <- lapply(strsplit(readLines("data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"), "\t"), function(l) list(name = sub("^HALLMARK_", "", l[1]), genes = l[-(1:2)]))
 hm <- setNames(lapply(hm, function(h) na.omit(unname(sym2ens[h$genes]))), sapply(hm, `[[`, "name"))
-regs_meta <- fread("results/step5/aracne_regulators.tsv")
+regs_meta <- fread(if (V2) "results/step5/aracne_regulators_v2.tsv" else "results/step5/aracne_regulators.tsv")
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
-arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+arac <- readRDS(if (V2) "data/processed/step5/regulons_aracne_project_v2.rds" else "data/processed/step5/regulons_aracne_project.rds")
 
 zrow <- function(m) (m - rowMeans(m)) / pmax(apply(m, 1, sd), 1e-6)
 index <- function(z, val) { v <- val[rownames(z)]; ok <- !is.na(v); q <- quantile(v[ok], c(0.2, 0.8))

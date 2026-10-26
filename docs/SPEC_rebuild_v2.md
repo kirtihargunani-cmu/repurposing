@@ -239,6 +239,6 @@ Step 6 v2 results (2026-10-25; `results/step6/checks_v2/`, `checks_v2_tf/`; regu
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11, C12 | `30_signatures.R` (v2) | < 1 h |
 | 5 | Regulons v2 (+ cross-mappable edge removal; **done 10-25**); edge diagnostics (support done; confounding `46` not yet) | `44`, `45`, `46` | hours |
 | 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 (**ARACNe full + TF-only and checks done 10-25**; CollecTRI / DoRothEA arms not yet) | `50`, `51`, `59` | hours |
-| 7 | Patient VIPER v2 (**started 10-25**), modules, recurring module; check C8 | `61`, `58`, `62` | hours |
+| 7 | Patient VIPER v2, recurring module, check C8 (**done 10-25**: module still present in 36 of 41 groups, plate-linked; D26 open); modules (58) not yet | `61`, `58`, `62` | hours |
 | 8 | Report; PI decisions on the recurring module (D26) and the kidney reference (D60) | | |
 | 9 | Steps 8-10 and drug side on v2 | `80`-`95`; celligner branch `79*` | ~1 day |
