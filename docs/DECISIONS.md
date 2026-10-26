@@ -151,6 +151,7 @@ did or could do about it.
 | A34 | (v2) Best-preserved GTEx donors (ventilator, short ischemia) are the closest available stand-in for living tissue; they are still post-mortem, and surgical tissue has its own warm-ischemia changes that TCGA did not record | High | Moving GTEx toward them closes only 0-10% of the TCGA-adjacent vs GTEx gap; remaining gap = lab + surgery vs death + donor population + tumor-adjacent biology, not separable with available data |
 | A35 | (v2) Marker-score thresholds pick the right part of the organ in GTEx colon (epithelium >= 7) and kidney (proximal tubule >= 5) | Low | Thresholds sit at the valley of a bimodal distribution; variability after removal matches TCGA adjacent |
 | A36 | (v2) Pediatric tumors (TARGET-WT, NBL) can be compared with adult GTEx donors; age is nearly collinear with tumor vs normal, so the age adjustment and the condition estimate trade off | Medium (for WT / NBL) | Recorded 10-20 (D70): WT genes changed 2,801 -> 6,916 between v1 and v2; no cohort-wide correction needed, so no action |
+| A37 | (v2, D45) ESTIMATE is an adequate purity covariate in LGG. In glioma it mostly reflects immune / microglia content, while ABSOLUTE measures copy-number tumor fraction; correcting for one leaves the other on patient PC1 | Medium (LGG patient-level, Step 8) | Found 10-25: v1 (ABSOLUTE-corrected) left ESTIMATE on PC1 (R^2 0.31 codel); v2 (ESTIMATE-corrected) leaves ABSOLUTE (R^2 0.46 codel, 0.24 IDHwt, 0.11 noncodel). Option: both covariates in LGG. Open (user / PI) |
 
 ## 3. Open / parked
 | Item | Status |
@@ -160,7 +161,8 @@ did or could do about it.
 | Blood cancers' healthy references; recount3 non-cancer diseases | Parked (PI) |
 | Exact formula for sibling specificity | Proposed in `docs/notes/subgrouping_for_drug_side.md`; to confirm |
 | ~~Step 4 rebuild: how to remove the TCGA-vs-GTEx lab component, whether to adjust GTEx normals for ischemic time / ventilator death, RNA-quality index in Step 4~~ | Decided 10-18: D48-D55; spec in SPEC_rebuild_v2.md; not yet executed |
-| Recurring module in clustering (D26) given its link to the lab axis | Open (PI), before Step 8 v2 |
+| Recurring module in clustering (D26) given its link to the lab axis | Open (PI), before Step 8 v2. C8 (10-25): still present after all v2 corrections (36 of 41 groups, core 77, plate excess > 0.2 in 12 of 34) |
+| LGG purity covariate in patient-level scores (A37): ESTIMATE only (D45), or ESTIMATE + ABSOLUTE | Open (user / PI), before Step 8 v2 |
 | ~~Composition marker rule: 9 of 18 positive controls not evaluable; proposed: families~~ | Decided 10-18 (D67). Remaining: smooth muscle has no panel (5 controls); curated panel proposed | Open (user) |
 | Using TCGA adjacent normals in drug ranking | User 10-18: develop (1) a safety filter (target higher in tumor than in the patients' own adjacent normal tissue; normal-tissue impact) and (2) the inflammation around tumors as a secondary target (with surgery / immediate-early genes separated out). Sketch in the drug-side notes (`celligner` branch); not designed yet |
 | ~~D48 premise under review (user 10-18): the adjacent-vs-GTEx difference is not only lab. It mixes lab/protocol, collection (surgery vs post-mortem), donor population (cancer patients, ~12 years older) and tissue state next to a tumor (field effect, inflammation, tumor cells). Removing it removes all four. Reference choice pending the variance / split-half test (`scripts/33_normal_variance.R`) ~~ | Resolved 10-18: D57-D60 |
