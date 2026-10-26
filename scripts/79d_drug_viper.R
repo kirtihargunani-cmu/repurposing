@@ -18,8 +18,11 @@ root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", 
 setwd(root)
 MIN_TARGETS <- 10; MIN_FRAC <- 0.5
 PROFILE <- Sys.getenv("PROFILE", "specific"); N_CORES <- as.integer(Sys.getenv("N_CORES", "8"))
+SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"), REGSET == "full" || SFX == "_v2")
+TFX <- if (REGSET == "tf") "_tf" else ""
 ONLY_NETS <- Filter(nzchar, strsplit(Sys.getenv("ONLY_NETS", ""), ",")[[1]])
-proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_", PROFILE))
+proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_", PROFILE, SFX, TFX))
 dir.create(out_dir, showWarnings = FALSE)
 
 genes <- fread(file.path(proc, "drug_line_profiles_genes.tsv"))
@@ -30,11 +33,11 @@ P <- matrix(readBin(file.path(proc, pfile), "numeric", size = 4,
 dimnames(P) <- list(genes$gene_id, paste(idx$pert_id, idx$ModelID, sep = "|"))
 cat(sprintf("profiles (%s): %d genes x %d drug-line profiles\n", PROFILE, nrow(P), ncol(P)))
 
-arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds"))
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
-groups <- fread("results/step4/signature_summary.tsv")[status == "ok", unique(group_id)]
-filt <- fread("results/step6/aracne_project/regulator_filter.tsv")[keep == TRUE & group_id %in% groups]
+groups <- fread(paste0("results/step4", SFX, "/signature_summary.tsv"))[status == "ok", unique(group_id)]
+filt <- fread(paste0("results/step6/aracne_project", SFX, TFX, "/regulator_filter.tsv"))[keep == TRUE & group_id %in% groups]
 filt[, net := net_of[group_id]]
 
 nets <- sort(unique(filt$net)); if (length(ONLY_NETS)) nets <- intersect(nets, ONLY_NETS)
@@ -61,4 +64,4 @@ reg_tab <- mclapply(nets, function(nt) {
   st
 }, mc.cores = N_CORES, mc.preschedule = FALSE)
 bad <- vapply(reg_tab, inherits, logical(1), "try-error"); if (any(bad)) stop("failed: ", paste(nets[bad], collapse = ", "))
-if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), "results/lincs/drug_viper_regulators.tsv", sep = "\t")
+if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), paste0("results/lincs/drug_viper_regulators", SFX, TFX, ".tsv"), sep = "\t")

@@ -10,3 +10,6 @@ logs/
 __pycache__/
 omnipathr-log/
 .ARACNe3_cached/
+
+# editing backups: git history is the record
+*.bak-pre-*
