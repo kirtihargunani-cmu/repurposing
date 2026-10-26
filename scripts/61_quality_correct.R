@@ -40,12 +40,15 @@ setwd(root); set.seed(61)
 N_PERM_PATIENT <- 100; MIN_TARGETS <- 10; TOP_MR <- 50; N_PC <- 5; N_CORES <- as.integer(Sys.getenv("N_CORES", "16"))
 ABSOLUTE_GROUPS <- c("LGG-IDHmut-codel", "LGG-IDHmut-noncodel", "LGG-IDHwt")
 V2 <- identical(Sys.getenv("VERSION", "v1"), "v2")
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"), REGSET == "full" || V2)
+TFX <- if (REGSET == "tf") "_tf" else ""
+RS <- paste0(if (V2) "_v2" else "", TFX)  # regulon-set paths; VS alone still selects the Step 4 signatures
 NORM <- Sys.getenv("NORM", "tmm"); stopifnot(NORM %in% c("tmm", "cqn"), !V2 || NORM == "tmm")
 MAPF <- !V2 && Sys.getenv("MAPPABILITY", if (NORM == "cqn") "0" else "1") == "1"; stopifnot(!(MAPF && NORM == "cqn"))  # default on (PI 2026-10-09); v2: in the regulons
 if (V2) ABSOLUTE_GROUPS <- character(0)  # ESTIMATE everywhere (D45)
 TAG <- if (V2) "v2" else if (NORM == "cqn") "cqn" else if (MAPF) "map" else "qc"
-out_nes <- if (V2) "data/processed/step6/aracne_project_v2_patient" else paste0("data/processed/step6/aracne_project_", TAG)
-res_dir <- if (V2) "results/step6/aracne_project_v2/quality_correction" else
+out_nes <- if (V2) paste0("data/processed/step6/aracne_project", RS, "_patient") else paste0("data/processed/step6/aracne_project_", TAG)
+res_dir <- if (V2) paste0("results/step6/aracne_project", RS, "/quality_correction") else
   paste0("results/step6/aracne_project/quality_correction", if (TAG == "qc") "" else paste0("_", TAG))
 BASE <- if (V2) c(dir = "aracne_project_map", label = "v1: purity+quality, TMM + mappability filter (61)") else
   if (TAG != "qc") c(dir = "aracne_project_qc", label = "purity+quality, TMM (61)") else
@@ -81,7 +84,7 @@ if (NORM == "cqn") {
 }
 dir.create(out_nes, recursive = TRUE, showWarnings = FALSE); dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
-arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", VS, ".rds"))
+arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", RS, ".rds"))
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
 summ <- fread(paste0("results/step4", VS, "/signature_summary.tsv"))[status == "ok"]
@@ -89,8 +92,8 @@ contrast_for <- summ[, .(contrast = if ("gtex" %in% contrast) "gtex" else "adjac
 zmat <- list(gtex = fread(paste0("results/step4", VS, "/z_tumor_vs_gtex.tsv")), adjacent = fread(paste0("results/step4", VS, "/z_tumor_vs_adjacent.tsv")))
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
-filt_all <- fread(paste0("results/step6/aracne_project", VS, "/regulator_filter.tsv"))[keep == TRUE]
-mr_all <- fread(paste0("results/step6/aracne_project", VS, "/group_mr.tsv"))
+filt_all <- fread(paste0("results/step6/aracne_project", RS, "/regulator_filter.tsv"))[keep == TRUE]
+mr_all <- fread(paste0("results/step6/aracne_project", RS, "/group_mr.tsv"))
 COLL <- c("coll_isch", "coll_fast", "coll_slow", "coll_nonbp")
 ref4a <- if (V2) fread("results/step4_v2/gtex_reference.tsv")[use == TRUE, c("sample", COLL), with = FALSE] else NULL
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]; sym2ens <- setNames(idmap$gene_id, idmap$symbol)
