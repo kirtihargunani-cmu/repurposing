@@ -53,6 +53,15 @@ MR_FDR, TOP_PCT, N_PERM, MULTI_TARGET, SEED = 0.10, 10, 200, 5, 0
 MIN_MRS_REF, MIN_REF = 20, 10
 SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
+# REGULON=collectri | dorothea_ABC (VERSION=v2; user 2026-10-28): disease MRs from results/step6/<REGULON>_v2, drug activity
+# from drug_viper_specific_<REGULON>/ALL (79d; one context-free regulon for all diseases); outputs suffixed _v2_<REGULON>
+REGULON = os.environ.get("REGULON", "aracne_project")
+CURATED = REGULON != "aracne_project"
+assert not CURATED or SFX == "_v2", "curated regulons: VERSION=v2 (REGSET not used)"
+MR_DIR = f"results/step6/{REGULON}_v2" if CURATED else f"results/step6/aracne_project{SFX}"
+DTAG = f"_{REGULON}" if CURATED else SFX
+if CURATED:
+    SFX = f"_v2_{REGULON}"
 # known mechanism -> expected to reverse the disease (sanity check, not used for scoring)
 CONTROLS = [("BRCA-LumA", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
@@ -72,7 +81,7 @@ def main():
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
     idx["col"] = np.arange(len(idx))
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
-    mr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
+    mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
@@ -81,10 +90,10 @@ def main():
 
     nets = {}
     def read(kind, net):
-        f = PROC / f"drug_viper_{kind}{SFX}" / f"{net}.f32"
+        f = PROC / f"drug_viper_{kind}{DTAG}" / f"{net}.f32"
         if not f.exists():
             return None, None
-        regs = pd.Index((PROC / f"drug_viper_{kind}{SFX}" / f"{net}.regulators.txt").read_text().split())
+        regs = pd.Index((PROC / f"drug_viper_{kind}{DTAG}" / f"{net}.regulators.txt").read_text().split())
         return regs, np.fromfile(f, dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
 
     def load(net):
@@ -102,7 +111,7 @@ def main():
     if only:
         dd = dd[dd.group_id.isin(only)]
     for g, gd in dd.groupby("group_id"):
-        regs, A, A_raw = load(net_of(grp.loc[g, "cohort"]))
+        regs, A, A_raw = load("ALL" if CURATED else net_of(grp.loc[g, "cohort"]))
         k = keys.loc[g]
         km = models[models.OncotreeLineage.isin(str(k.lineages).split(";"))]
         if isinstance(k.diseases, str) and k.diseases:
@@ -134,6 +143,9 @@ def main():
         ci = regs.get_indexer(mrs.regulator)
         s = np.sign(mrs.nes.values)
         n = len(ci)
+        if n < 2:   # nothing to reverse (e.g. no MR at MR_FDR): group left out, reported
+            print(f"{g:<20} MRs {n:>4}  skipped (< 2 MRs at FDR < {MR_FDR})", flush=True)
+            continue
         rev = -(D[:, ci] * s).sum(1) / np.sqrt(n)
         dn = mrs.nes.values
         Dc = D[:, ci] - D[:, ci].mean(1, keepdims=True)

@@ -12,6 +12,10 @@
 # Outputs: data/processed/lincs/drug_viper_<PROFILE>/<net>.f32 (float32, regulators x profiles, column-major = profile-major)
 #          + <net>.regulators.txt; results/lincs/drug_viper_regulators.tsv (per network x regulator: targets in
 #          ARACNe, in LINCS, kept)
+# REGULON=collectri | dorothea_ABC (user 2026-10-28, ESR1 finding): curated, context-free regulons (results/step5/
+#   regulons_core.rds, as the disease side) scored once for all diseases: network "ALL", every regulator with >= MIN_TARGETS
+#   and >= MIN_FRAC targets on LINCS genes (disease-side expression filters act in 79e through the tested MRs).
+#   Outputs data/processed/lincs/drug_viper_<PROFILE>_<REGULON>/ALL.f32, results/lincs/drug_viper_regulators_<REGULON>.tsv
 suppressPackageStartupMessages({library(data.table); library(viper); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -21,8 +25,10 @@ PROFILE <- Sys.getenv("PROFILE", "specific"); N_CORES <- as.integer(Sys.getenv("
 SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
 REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"), REGSET == "full" || SFX == "_v2")
 TFX <- if (REGSET == "tf") "_tf" else ""
+REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri", "dorothea_ABC"))
+TAG <- if (REGULON == "aracne_project") paste0(SFX, TFX) else paste0("_", REGULON)  # curated: not versioned
 ONLY_NETS <- Filter(nzchar, strsplit(Sys.getenv("ONLY_NETS", ""), ",")[[1]])
-proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_", PROFILE, SFX, TFX))
+proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_", PROFILE, TAG))
 dir.create(out_dir, showWarnings = FALSE)
 
 genes <- fread(file.path(proc, "drug_line_profiles_genes.tsv"))
@@ -33,12 +39,17 @@ P <- matrix(readBin(file.path(proc, pfile), "numeric", size = 4,
 dimnames(P) <- list(genes$gene_id, paste(idx$pert_id, idx$ModelID, sep = "|"))
 cat(sprintf("profiles (%s): %d genes x %d drug-line profiles\n", PROFILE, nrow(P), ncol(P)))
 
-arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds"))
-grp <- fread("results/step1/disease_groups_toil.tsv")
-net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
-groups <- fread(paste0("results/step4", SFX, "/signature_summary.tsv"))[status == "ok", unique(group_id)]
-filt <- fread(paste0("results/step6/aracne_project", SFX, TFX, "/regulator_filter.tsv"))[keep == TRUE & group_id %in% groups]
-filt[, net := net_of[group_id]]
+if (REGULON == "aracne_project") {
+  arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds"))
+  grp <- fread("results/step1/disease_groups_toil.tsv")
+  net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
+  groups <- fread(paste0("results/step4", SFX, "/signature_summary.tsv"))[status == "ok", unique(group_id)]
+  filt <- fread(paste0("results/step6/aracne_project", SFX, TFX, "/regulator_filter.tsv"))[keep == TRUE & group_id %in% groups]
+  filt[, net := net_of[group_id]]
+} else {
+  arac <- list(ALL = readRDS("results/step5/regulons_core.rds")[[REGULON]])
+  filt <- data.table(net = "ALL", regulator = names(arac$ALL))
+}
 
 nets <- sort(unique(filt$net)); if (length(ONLY_NETS)) nets <- intersect(nets, ONLY_NETS)
 reg_tab <- mclapply(nets, function(nt) {
@@ -64,4 +75,4 @@ reg_tab <- mclapply(nets, function(nt) {
   st
 }, mc.cores = N_CORES, mc.preschedule = FALSE)
 bad <- vapply(reg_tab, inherits, logical(1), "try-error"); if (any(bad)) stop("failed: ", paste(nets[bad], collapse = ", "))
-if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), paste0("results/lincs/drug_viper_regulators", SFX, TFX, ".tsv"), sep = "\t")
+if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), paste0("results/lincs/drug_viper_regulators", TAG, ".tsv"), sep = "\t")
