@@ -11,11 +11,16 @@
 # Output: results/lincs/prolif_regulators.tsv (net, regulator (symbol), n_targets, n_prolif, n_prolif_pos,
 #         n_prolif_neg, fold, p, fdr, prolif_linked)
 # VERSION=v2 [REGSET=tf]: v2 regulons (cross-mappable edges removed) -> prolif_regulators_v2[_tf].tsv
+# REGULON=collectri (D75 consensus, 2026-10-28): the CollecTRI regulon as one network "ALL" (universe = all its targets)
+#   -> prolif_regulators_collectri.tsv
 suppressPackageStartupMessages(library(data.table))
 FDR_MAX <- 0.05; MIN_FOLD <- 2
 SFX <- paste0(if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else "", if (identical(Sys.getenv("REGSET", "full"), "tf")) "_tf" else "")
 stopifnot(SFX != "_tf")
-arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, ".rds"))
+REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri"))
+if (REGULON == "collectri") SFX <- "_collectri"
+arac <- if (REGULON == "collectri") list(ALL = readRDS("results/step5/regulons_core.rds")$collectri) else
+  readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, ".rds"))
 idm <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 gmt <- strsplit(readLines("data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"), "\t")
 names(gmt) <- vapply(gmt, `[`, "", 1)

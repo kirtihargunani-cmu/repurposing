@@ -32,6 +32,12 @@ Outputs: results/lincs/prolif_regulators_p2.tsv (P2 correlations), drug_reversal
          split_overview.tsv (generic-drug counts, MR counts, control means per score)
 VERSION=v2 [REGSET=tf]: v2 MRs, activity, P1 list and 79e scores (suffix _v2[_tf] on inputs and outputs); the strata
 part is skipped (no v2 Step 10 strata yet).
+SCORE=weighted (default for v2, D74): every regulator tested in the disease, weight = disease NES (no MR_FDR cutoff), in
+  every score (rev_prolif / rev_nonprolif / rev_mech: the weighted sum over the proliferation-linked / other regulators).
+REGULON=consensus (VERSION=v2, D75): ARACNe v2 TF (disease network) and CollecTRI side by side; per set: P1 from its own
+  79h list (prolif_regulators_v2_tf / _collectri), P2 and the proliferation adjustment on its own activity; then, per
+  disease, the per-regulator mean over the sets scored on both sides (as 79e). A regulator is proliferation-linked if it
+  is linked in any of its sets (fixed 2026-10-28). Inputs: 79e drug_reversal_v2_consensus.tsv; outputs suffix _v2_consensus.
 """
 import os
 from pathlib import Path
@@ -46,6 +52,13 @@ MR_FDR, TOP_PCT, MIN_MRS_REF, MIN_REF, R_MIN = 0.10, 10, 20, 10, 0.5
 SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 STRATA = SFX == ""
+REGULON = os.environ.get("REGULON", "aracne_project"); CONS = REGULON == "consensus"
+assert not CONS or SFX == "_v2", "consensus: VERSION=v2"
+SCORE = os.environ.get("SCORE", "weighted" if SFX.startswith("_v2") else "fdr"); assert SCORE in ("weighted", "fdr")
+OUT = "_v2_consensus" if CONS else SFX
+if SCORE == "fdr" and OUT.startswith("_v2"):
+    OUT += "_fdr"
+CONS_SETS = {"aracne": ("aracne_project_v2_tf", "_v2_tf"), "collectri": ("collectri_v2", "_collectri")}
 CONTROLS = [("BRCA-LumA", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("TCGA-PRAD", "high", ["bicalutamide", "enzalutamide", "flutamide", "nilutamide"]),
@@ -73,7 +86,23 @@ def pct(v):
 
 def mr_rev(D, regs, m):
     c = regs.get_indexer(m.regulator)
-    return -(D[:, c] * np.sign(m.nes.values)).sum(1) / np.sqrt(max(len(c), 1))
+    w = m.nes.values if SCORE == "weighted" else np.sign(m.nes.values)
+    return -(D[:, c] * w).sum(1) / max(np.sqrt((w ** 2).sum()), 1e-12)
+
+
+def consensus(Ds, regs, m, linked):
+    """Set-tagged ("aracne|X") activity matrices / disease NES -> per-regulator means over the sets in m."""
+    base = m.regulator.str.split("|", n=1).str[1].values
+    cols = regs.get_indexer(m.regulator)
+    ub, inv = np.unique(base, return_inverse=True); cnt = np.bincount(inv, minlength=len(ub))
+    out = []
+    for D in Ds:
+        Dc = np.zeros((D.shape[0], len(ub))); np.add.at(Dc.T, inv, D[:, cols].T); out.append(Dc / cnt)
+    mc = pd.DataFrame({"group_id": m.group_id.iloc[0] if len(m) else "", "regulator": ub,
+                       "nes": np.bincount(inv, weights=m.nes.values, minlength=len(ub)) / cnt,
+                       "fdr": m.groupby(base).fdr.min().reindex(ub).values})
+    lk = set(pd.Series(base)[m.regulator.isin(linked).values])
+    return out, pd.Index(ub), mc, lk
 
 
 def main():
@@ -93,30 +122,48 @@ def main():
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
     models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
-    gmr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
+    if CONS:
+        gmr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}/group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
+                         for k, (d, _) in CONS_SETS.items()], ignore_index=True)
+    else:
+        gmr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
     smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
-    p1 = pd.read_csv(RES / f"prolif_regulators{SFX}.tsv", sep="\t")
-    p1 = p1[p1.prolif_linked].groupby("net").regulator.apply(set)
-    gmr = gmr[gmr.fdr < MR_FDR]
+    def p1_of(tag):
+        x = pd.read_csv(RES / f"prolif_regulators{tag}.tsv", sep="\t")
+        return x[x.prolif_linked].groupby("net").regulator.apply(set)
+    p1 = {k: p1_of(t) for k, (_, t) in CONS_SETS.items()} if CONS else p1_of(SFX)
+    if SCORE == "fdr":
+        gmr = gmr[gmr.fdr < MR_FDR]
     smr = smr[smr.fdr < MR_FDR] if STRATA else None
 
     nets, p2_rows = {}, []
     def load(net):
-        if net not in nets:
-            regs = pd.Index((PROC / f"drug_viper_specific{SFX}" / f"{net}.regulators.txt").read_text().split())
-            A = np.fromfile(PROC / f"drug_viper_specific{SFX}" / f"{net}.f32",
+        if net not in nets and CONS:
+            parts = [load_one(net, "_v2_tf", p1["aracne"], "aracne|"), load_one("ALL", "_collectri", p1["collectri"], "collectri|")]
+            nets[net] = (pd.Index(np.concatenate([x[0] for x in parts])), np.hstack([x[1] for x in parts]),
+                         np.hstack([x[2] for x in parts]), set().union(*(x[3] for x in parts)))
+        elif net not in nets:
+            nets[net] = load_one(net, SFX, p1, "")
+        return nets[net]
+
+    def load_one(net, tag, p1s, prefix):
+        key = (net, tag)
+        if key not in nets:
+            regs = pd.Index((PROC / f"drug_viper_specific{tag}" / f"{net}.regulators.txt").read_text().split())
+            A = np.fromfile(PROC / f"drug_viper_specific{tag}" / f"{net}.f32",
                             dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
             pc = pi_spec - pi_spec.mean()
             Ac = A - A.mean(0)
             beta = Ac.T @ pc / (pc @ pc)
             r = beta * pc.std() / Ac.std(0)
             A_adj = A - np.outer(pi_spec, beta)
-            linked = pd.Index(regs).isin(p1.get(net, set())) | (np.abs(r) >= R_MIN)
-            p2_rows.append(pd.DataFrame({"net": net, "regulator": regs, "r_prolif": r.round(3),
-                                         "p1": pd.Index(regs).isin(p1.get(net, set())),
+            linked = pd.Index(regs).isin(p1s.get(net, set())) | (np.abs(r) >= R_MIN)
+            p2_rows.append(pd.DataFrame({"set": prefix.rstrip("|") or "aracne", "net": net, "regulator": regs, "r_prolif": r.round(3),
+                                         "p1": pd.Index(regs).isin(p1s.get(net, set())),
                                          "p2": np.abs(r) >= R_MIN, "prolif_linked": linked}))
-            nets[net] = (regs, A, A_adj, set(regs[linked]))
-        return nets[net]
+            regs = pd.Index(prefix + regs)
+            nets[key] = (regs, A, A_adj, set(regs[linked]))
+        return nets[key]
 
     def activity(drugs, sources, key_row, wg, A, A_adj):
         km = models[models.OncotreeLineage.isin(str(key_row.lineages).split(";"))]
@@ -146,6 +193,12 @@ def main():
         for g2, m2 in gmr.groupby("group_id"):
             if g2 not in keys.index or keys.loc[g2, "key"] == own_key:
                 continue
+            if CONS:   # Da / regs / linked are the set-tagged ones here; average over g2's own sets
+                (Da2,), regs2, m2, lk2 = consensus([Da], regs, m2[m2.regulator.isin(regs)], linked)
+                m2 = m2[~m2.regulator.isin(lk2)]
+                if len(m2) >= MIN_MRS_REF:
+                    out.append(rz(mr_rev(Da2, regs2, m2)))
+                continue
             m2 = m2[m2.regulator.isin(regs) & ~m2.regulator.isin(linked)]
             if len(m2) >= MIN_MRS_REF:
                 out.append(rz(mr_rev(Da, regs, m2)))
@@ -162,7 +215,7 @@ def main():
         return o
 
     # 41 groups
-    par = pd.read_csv(RES / f"drug_reversal{SFX}.tsv", sep="\t", low_memory=False)
+    par = pd.read_csv(RES / f"drug_reversal{OUT}.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keep = ["group_id", "pert_id", "cmap_name", "source", "passes_gate", "approved", "multi_target", "hub_moa",
             "n_mrs", "low_mrs", "rev", "rev_pct", "spec", "spec_pct", "tier_rev", "tier_spec"]
@@ -172,12 +225,15 @@ def main():
         D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[g], w[w.group_id == g].set_index("ModelID").weight,
                              A, A_adj)
         m = gmr[(gmr.group_id == g) & gmr.regulator.isin(regs)]
+        regs0, Da0, linked0 = regs, Da, linked
+        if CONS:
+            (D, Da), regs, m, linked = consensus([D, Da], regs, m, linked)
         sc, mn = split_scores(D, Da, regs, linked, m)
         o = gd[keep].copy()
         for k, v in sc.items():
             o[k] = np.round(v, 3) if isinstance(v, np.ndarray) else v
         o["prolif_effect"] = pe.round(3)
-        ref = refs_mech(Da, regs, linked, keys.loc[g, "key"])
+        ref = refs_mech(Da0, regs0, linked0, keys.loc[g, "key"])
         o["n_ref_mech"] = len(ref)
         o["spec_mech"] = (rz(sc["rev_mech"]) - np.mean(ref, axis=0)).round(3) \
             if len(ref) >= MIN_REF and len(mn) >= 2 else np.nan
@@ -185,8 +241,8 @@ def main():
         print(f"{g:<20} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})  "
               f"rho(rev, rev_mech) {o.rev.corr(o.rev_mech, method='spearman'):.2f}", flush=True)
     out = pd.concat(rows, ignore_index=True)
-    out.to_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", index=False)
-    pd.concat(p2_rows).to_csv(RES / f"prolif_regulators_p2{SFX}.tsv", sep="\t", index=False)
+    out.to_csv(RES / f"drug_reversal_split{OUT}.tsv", sep="\t", index=False)
+    pd.concat(p2_rows).to_csv(RES / f"prolif_regulators_p2{OUT}.tsv", sep="\t", index=False)
 
     # strata
     if STRATA:
@@ -218,7 +274,7 @@ def main():
             srows.append(finish(o, ["spec_sib_mech"]))
             print(f"{s:<22} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})", flush=True)
         sout = pd.concat(srows, ignore_index=True)
-        sout.to_csv(RES / f"stratum_reversal_split{SFX}.tsv", sep="\t", index=False)
+        sout.to_csv(RES / f"stratum_reversal_split{OUT}.tsv", sep="\t", index=False)
 
     # controls: best LINCS ID per drug, percentile under every score
     ctl = []
@@ -238,7 +294,7 @@ def main():
                                 spec_sib=r.spec_sib_pct.max(), spec_sib_mech=r.spec_sib_mech_pct.max(),
                                 prolif_share=r.prolif_share.max()))
     ctl = pd.DataFrame(ctl)
-    ctl.to_csv(RES / f"split_controls{SFX}.tsv", sep="\t", index=False)
+    ctl.to_csv(RES / f"split_controls{OUT}.tsv", sep="\t", index=False)
 
     # overview
     ok = out[~out.low_mrs]
@@ -258,7 +314,7 @@ def main():
     ov.append(("prolif_driven_rows_frac_of_top10_rev",
                round(ok.prolif_driven.sum() / (ok.rev_pct >= 100 - TOP_PCT).sum(), 3)))
     ov = pd.DataFrame(ov, columns=["metric", "value"])
-    ov.to_csv(RES / f"split_overview{SFX}.tsv", sep="\t", index=False)
+    ov.to_csv(RES / f"split_overview{OUT}.tsv", sep="\t", index=False)
     pd.set_option("display.width", 250)
     print(ov.to_string(index=False))
     print(ctl.to_string(index=False))
