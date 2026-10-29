@@ -1,0 +1,11 @@
+group_id	contrast	n_tumor	n_normal	n_normal_null	null_adjusted	n_regulators_kept	n_mr_fdr05	n_mr_p05	effective_dim	pc1_var	n_pc_80pct	median_rho	median_frac_hit	frac_patients_rho_gt_0.5
+ACC-low-proliferation	gtex	45	125	125	FALSE	366	0	17	11.17	0.247	18	0.767	0.294	1
+ACC-proliferative	gtex	32	125	125	FALSE	366	0	28	10.15	0.244	14	0.688	0.214	0.938
+BLCA-basal-squamous-like	adjacent	172	19	19	FALSE	376	0	39	16.88	0.196	37	0.791	0.205	1
+BLCA-luminal-like	adjacent	235	19	19	FALSE	382	1	37	17.56	0.197	40	0.751	0.162	0.987
+COAD-CIN-like	gtex	194	109	109	FALSE	391	0	26	11.85	0.264	34	0.828	0.231	1
+COAD-MSI-like	gtex	93	109	109	FALSE	386	0	34	12.69	0.239	26	0.808	0.265	1
+HNSC-atypical-classical-like	gtex	155	265	265	FALSE	394	0	32	17.18	0.166	32	0.799	0.219	0.994
+HNSC-basal-mesenchymal-like	gtex	363	265	265	FALSE	384	0	33	17.7	0.171	41	0.835	0.273	1
+LGG-noncodel-LGr2	gtex	92	151	151	FALSE	365	4	29	13.21	0.195	21	0.811	0.379	1
+LGG-noncodel-LGr3	gtex	149	151	151	FALSE	369	6	36	16.27	0.176	29	0.877	0.444	0.993
