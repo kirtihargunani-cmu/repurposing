@@ -13,7 +13,12 @@ A hit means the pair has been studied, not that it worked; counts are a pointer 
 ClinicalTrials.gov's relevance search matches loosely (related drugs, e.g. daunorubicin -> anthracycline-regimen trials;
 'Wilms tumor' -> WT1 trials), so trial_count is an upper bound; read the linked trials. PubMed (title / abstract) is stricter.
 Output: results/lincs/literature_v2_consensus.tsv (one row per pair, links as URLs), literature_v2_summary.tsv
+MODE=fda (user 2026-10-29): the top FDA_N FDA-approved drugs of every disease and subgroup (79p rankings), searched by
+  their FDA ingredient name (salt removed) OR their LINCS name when it is a real name (not BRD-... or a code); subgroups
+  use their parent disease's terms. Also drug_review_url: PubMed reviews about the drug itself. Output
+  results/lincs/literature_fda_top_v2.tsv (unit, level, parent, fda_rank, drug, ...).
 """
+import os
 import json
 import re
 import time
@@ -25,7 +30,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
-TOP_N, RETMAX = 10, 3
+TOP_N, RETMAX, FDA_N = 10, 3, 3
+MODE = os.environ.get("MODE", "pairs")
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 # disease -> (PubMed title/abstract terms, ClinicalTrials.gov condition)
 DISEASE = {
@@ -91,8 +97,8 @@ def names(drug):
     return sorted(v)
 
 
-def pubmed(drug, terms):
-    q = "(" + " OR ".join(f'"{n}"[tiab]' for n in names(drug)) + ") AND (" + " OR ".join(f'"{t}"[tiab]' for t in terms) + ")"
+def pubmed(drug, terms, extra=()):
+    q = "(" + " OR ".join(f'"{n}"[tiab]' for n in sorted(set(names(drug)) | set(extra))) + ") AND (" + " OR ".join(f'"{t}"[tiab]' for t in terms) + ")"
     r = get(f"{EUTILS}/esearch.fcgi?db=pubmed&retmode=json&sort=relevance&retmax={RETMAX}&term=" + urllib.parse.quote(q))
     time.sleep(0.35)
     if not r:
@@ -167,5 +173,58 @@ def main():
     print(sm.to_string()); print(f"pairs {len(out)}; with PubMed hits {int((out.pubmed_count > 0).sum())}; with trials {int((out.trial_count > 0).sum())}")
 
 
+def is_code(n):
+    return n.startswith("BRD-") or bool(re.match(r"^[A-Za-z]{1,5}-?\d", n))
+
+
+def main_fda():
+    g = pd.read_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t").rename(columns={"group_id": "unit"}).assign(level="disease", parent_group=None)
+    s = pd.read_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t").rename(columns={"stratum": "unit"}).assign(level="subgroup")
+    sel = pd.concat([g, s], ignore_index=True)
+    sel = sel[sel.fda_rank <= FDA_N].copy()
+    sel["disease_key"] = sel.parent_group.fillna(sel.unit)
+    rows, pmids = [], set()
+    for r in sel.itertuples(index=False):
+        terms, cond = DISEASE[r.disease_key]
+        extra = () if is_code(r.cmap_name) else tuple(names(r.cmap_name))
+        q, n_pm, ids = pubmed(r.drug, terms, extra)
+        n_ct, st = trials(r.drug, cond)
+        pmids.update(ids)
+        rows.append(dict(unit=r.unit, level=r.level, parent_group=r.parent_group, fda_rank=r.fda_rank, drug=r.drug,
+                         cmap_name=r.cmap_name, pubmed_count=n_pm, pmids=ids, trial_count=n_ct, trials=st, pubmed_query=q,
+                         trial_cond=cond))
+    titles = {}
+    ids = sorted(pmids)
+    for k in range(0, len(ids), 150):
+        r = get(f"{EUTILS}/esummary.fcgi?db=pubmed&retmode=json&id=" + ",".join(ids[k:k + 150]))
+        time.sleep(0.35)
+        if r:
+            for pid in r["result"].get("uids", []):
+                d = r["result"][pid]
+                titles[pid] = f'{d.get("title", "").rstrip(".")} ({d.get("source", "")} {d.get("pubdate", "")[:4]})'
+    out = []
+    for r in rows:
+        d = {k: v for k, v in r.items() if k not in ("pmids", "trials", "trial_cond")}
+        d["pubmed_search_url"] = "https://pubmed.ncbi.nlm.nih.gov/?term=" + urllib.parse.quote(r["pubmed_query"])
+        d["drug_review_url"] = ("https://pubmed.ncbi.nlm.nih.gov/?sort=relevance&term="
+                                + urllib.parse.quote(f'"{r["drug"]}"[tiab] AND review[pt]'))
+        for j in range(RETMAX):
+            pid = r["pmids"][j] if j < len(r["pmids"]) else ""
+            d[f"paper{j + 1}"] = f"https://pubmed.ncbi.nlm.nih.gov/{pid}/" if pid else ""
+            d[f"paper{j + 1}_title"] = titles.get(pid, "")
+        d["trials_search_url"] = ("https://clinicaltrials.gov/search?intr=" + urllib.parse.quote(r["drug"])
+                                  + "&cond=" + urllib.parse.quote(r["trial_cond"]))
+        for j in range(RETMAX):
+            t = r["trials"][j] if j < len(r["trials"]) else None
+            d[f"trial{j + 1}"] = f"https://clinicaltrials.gov/study/{t[0]}" if t else ""
+            d[f"trial{j + 1}_info"] = f"{t[1]}, {t[2]}: {t[3]}" if t else ""
+        out.append(d)
+    out = pd.DataFrame(out)
+    out.to_csv(RES / "literature_fda_top_v2.tsv", sep="\t", index=False)
+    print(f"{len(out)} cohort x drug rows ({out.unit.nunique()} cohorts); PubMed hits {int((out.pubmed_count > 0).sum())}; "
+          f"trials {int((out.trial_count > 0).sum())}")
+    print(out[["unit", "fda_rank", "drug", "pubmed_count", "trial_count"]].head(30).to_string(index=False))
+
+
 if __name__ == "__main__":
-    main()
+    main_fda() if MODE == "fda" else main()
