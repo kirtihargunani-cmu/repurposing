@@ -20,14 +20,15 @@
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(M3C); library(cluster)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
-setwd(root)
-GROUPS <- c("BRCA-Basal", "BRCA-Her2", "BRCA-LumA", "BRCA-LumB", "TCGA-COAD", "TCGA-READ")
+setwd(root); source("R/paths.R")
+b <- build(); require_build(b, c("signatures", "patient_nes"))
+GROUPS <- p_groups(b)   # every group with an ok Step 4 signature for this build
 only <- Sys.getenv("ONLY_GROUPS"); if (nzchar(only)) GROUPS <- intersect(GROUPS, strsplit(only, ",")[[1]])
 SETS <- strsplit(Sys.getenv("FEATURE_SETS", "modules10,all"), ",")[[1]]
 N_CORES <- as.integer(Sys.getenv("N_CORES", "16")); ITERS <- as.integer(Sys.getenv("ITERS", "100"))
 MOD_R <- 0.7; MIN_MOD <- 10; MAXK <- 10; ALPHA <- 0.05
-NES_DIR <- "data/processed/step6/aracne_project_map"
-res_dir <- "results/step8"; feat_dir <- "data/processed/step8/features"
+NES_DIR <- p_patient_nes(b)
+res_dir <- p_step8(b); feat_dir <- p_step8_features(b)
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE); dir.create(feat_dir, recursive = TRUE, showWarnings = FALSE)
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE & role == "tumor"]
 qidx <- fread("results/step6/aracne_project/quality_correction_map/checks.tsv", nrows = 0)  # existence check only
