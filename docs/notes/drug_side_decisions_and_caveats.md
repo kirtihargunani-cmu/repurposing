@@ -365,6 +365,11 @@ reaches tiers 1-2.
   Src / MEK inhibitors. LGG and TGCT-SEM subgroups barely differ in drug response (`spec_sib` <= 0.6 and <= 0.2), so
   they should be reported as one drug list.
 - Not yet validated against measured drug sensitivity (PRISM / GDSC on hold).
+- Subgroups with proliferation removed (2026-10-29, user; `79i` STRATA=1 -> `stratum_reversal_split_v2_consensus.tsv`:
+  `spec_mech`, `spec_sib_mech`): sibling rankings barely change in most subgroups (Spearman 0.98-0.99 with `spec_sib`),
+  so their sibling differences are not about proliferation. They change in HNSC (0.72-0.80): AMG-232 drops out of the
+  atypical-classical top 5 (now vinca alkaloids and rigosertib lead), and basal-mesenchymal is led by topoisomerase I
+  (topotecan, SN-38) and HSP90 inhibitors. Subgroup reports lead with `spec_sib_mech` / `spec_mech` (D80).
 
 ### C13. Strata are close to their parents
 

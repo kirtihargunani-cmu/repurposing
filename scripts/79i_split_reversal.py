@@ -38,6 +38,10 @@ REGULON=consensus (VERSION=v2, D75): ARACNe v2 TF (disease network) and CollecTR
   79h list (prolif_regulators_v2_tf / _collectri), P2 and the proliferation adjustment on its own activity; then, per
   disease, the per-regulator mean over the sets scored on both sides (as 79e). A regulator is proliferation-linked if it
   is linked in any of its sets (fixed 2026-10-28). Inputs: 79e drug_reversal_v2_consensus.tsv; outputs suffix _v2_consensus.
+STRATA=1 (v2; user 2026-10-29): also the D79 subgroups, same rules: MRs from the <set>_strata directories, line
+  weights stratum_line_weights_long_v2, 79e STRATA=1 output stratum_reversal<OUT>.tsv; spec_mech vs the 41-group
+  diseases of other tissue keys, spec_sib_mech vs the sibling subgroup (proliferation-linked regulators removed, adjusted
+  activity). Output stratum_reversal_split<OUT>.tsv.
 """
 import os
 from pathlib import Path
@@ -51,7 +55,9 @@ RES = ROOT / "results/lincs"
 MR_FDR, TOP_PCT, MIN_MRS_REF, MIN_REF, R_MIN = 0.10, 10, 20, 10, 0.5
 SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
-STRATA = SFX == ""
+STRATA_V2 = os.environ.get("STRATA", "0") == "1"
+STRATA = SFX == "" or STRATA_V2
+assert not STRATA_V2 or SFX.startswith("_v2"), "STRATA=1 needs VERSION=v2"
 REGULON = os.environ.get("REGULON", "aracne_project"); CONS = REGULON == "consensus"
 assert not CONS or SFX == "_v2", "consensus: VERSION=v2"
 SCORE = os.environ.get("SCORE", "weighted" if SFX.startswith("_v2") else "fdr"); assert SCORE in ("weighted", "fdr")
@@ -127,14 +133,19 @@ def main():
                          for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
         gmr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
-    smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
+    if STRATA_V2:
+        sets = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", f"aracne_project{SFX}")]
+        smr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}_strata/group_mr.tsv", sep="\t")
+                         .assign(regulator=lambda x, k=k: (k + "|" if k else "") + x.regulator) for k, d in sets], ignore_index=True)
+    else:
+        smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
     def p1_of(tag):
         x = pd.read_csv(RES / f"prolif_regulators{tag}.tsv", sep="\t")
         return x[x.prolif_linked].groupby("net").regulator.apply(set)
     p1 = {k: p1_of(t) for k, (_, t) in CONS_SETS.items()} if CONS else p1_of(SFX)
     if SCORE == "fdr":
         gmr = gmr[gmr.fdr < MR_FDR]
-    smr = smr[smr.fdr < MR_FDR] if STRATA else None
+    smr = smr[smr.fdr < MR_FDR] if STRATA and SCORE == "fdr" else smr
 
     nets, p2_rows = {}, []
     def load(net):
@@ -248,8 +259,12 @@ def main():
 
     # strata
     if STRATA:
-        st = pd.read_csv(RES / "stratum_reversal.tsv", sep="\t", low_memory=False)
-        sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long.tsv", sep="\t")
+        if STRATA_V2:
+            st = pd.read_csv(RES / f"stratum_reversal{OUT}.tsv", sep="\t", low_memory=False).rename(columns={"group_id": "stratum"})
+            sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long_v2.tsv", sep="\t")
+        else:
+            st = pd.read_csv(RES / "stratum_reversal.tsv", sep="\t", low_memory=False)
+            sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long.tsv", sep="\t")
         srows = []
         for s, gd in st.groupby("stratum"):
             p = gd.parent_group.iloc[0]
@@ -257,21 +272,30 @@ def main():
             D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[p], sw[sw.stratum == s].set_index("ModelID").weight,
                                  A, A_adj)
             m = smr[(smr.group_id == s) & smr.regulator.isin(regs)]
+            regs0, Da0, linked0 = regs, Da, linked
+            if CONS:
+                (D, Da), regs, m, linked = consensus([D, Da], regs, m, linked)
             sc, mn = split_scores(D, Da, regs, linked, m)
-            o = gd[["stratum", "parent_group", "weak", "tentative", "possible_technical", "pert_id", "cmap_name", "source",
-                    "passes_gate", "approved", "multi_target", "hub_moa", "n_mrs", "rev", "rev_pct", "spec", "spec_pct",
-                    "spec_sib", "spec_sib_pct", "tier_rev", "tier_spec", "tier_sib", "siblings"]].copy()
+            o = gd[[c for c in ["stratum", "parent_group", "weak", "tentative", "possible_technical", "pert_id", "cmap_name",
+                    "source", "passes_gate", "approved", "multi_target", "hub_moa", "line_match", "unmatched_lines",
+                    "transfer_conf", "low_transfer", "n_mrs", "rev", "rev_pct", "spec", "spec_pct", "spec_sib",
+                    "spec_sib_pct", "tier_rev", "tier_spec", "tier_sib", "siblings"] if c in gd]].copy()
             for k, v in sc.items():
                 o[k] = np.round(v, 3) if isinstance(v, np.ndarray) else v
             o["prolif_effect"] = pe.round(3)
-            ref = refs_mech(Da, regs, linked, keys.loc[p, "key"])
+            ref = refs_mech(Da0, regs0, linked0, keys.loc[p, "key"])
             z = rz(sc["rev_mech"])
             o["spec_mech"] = (z - np.mean(ref, axis=0)).round(3) if len(ref) >= MIN_REF and len(mn) >= 2 else np.nan
             sibz = []
             for t in gd.siblings.iloc[0].split(";"):
-                mt = smr[(smr.group_id == t) & smr.regulator.isin(regs) & ~smr.regulator.isin(linked)]
+                if CONS:   # sibling's own sets, averaged on this subgroup's drug activity
+                    (Da2,), regs2, mt, lk2 = consensus([Da0], regs0, smr[(smr.group_id == t) & smr.regulator.isin(regs0)], linked0)
+                    mt = mt[~mt.regulator.isin(lk2)]
+                else:
+                    Da2, regs2 = Da, regs
+                    mt = smr[(smr.group_id == t) & smr.regulator.isin(regs) & ~smr.regulator.isin(linked)]
                 if len(mt) >= 2:
-                    sibz.append(rz(mr_rev(Da, regs, mt)))
+                    sibz.append(rz(mr_rev(Da2, regs2, mt)))
             o["spec_sib_mech"] = (z - np.mean(sibz, axis=0)).round(3) if sibz and len(mn) >= 2 else np.nan
             srows.append(finish(o, ["spec_sib_mech"]))
             print(f"{s:<22} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})", flush=True)
@@ -287,7 +311,7 @@ def main():
             if len(r):
                 ctl.append(dict(unit=g, expected=exp, drug=nm, **{c: r[c + "_pct"].max() for c in SCORES},
                                 prolif_share=r.prolif_share.max()))
-    for s, exp, names in (STRATUM_CONTROLS if STRATA else []):
+    for s, exp, names in (STRATUM_CONTROLS if STRATA and not STRATA_V2 else []):
         x = sout[sout.stratum == s]
         for nm in names:
             r = x[x.cmap_name == nm]
