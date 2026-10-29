@@ -1,0 +1,15 @@
+group_id	tested	pass	up	down	nes_needed	max_abs_nes	pass_analytic	rho_perm_vs_analytic	contrast	n_tumor	n_normal
+BLCA-basal-squamous-like	213	17	2	15	2.8	4.04			adjacent	172	19
+BLCA-luminal-like	214	15	1	14	2.82	3.02			adjacent	235	19
+LGG-noncodel-LGr3	201	4	4	0	3.17	4.06			gtex	152	151
+COAD-CIN-like	219	0	0	0		2.64			gtex	194	109
+COAD-MSI-like	221	0	0	0		3.08			gtex	93	109
+HNSC-atypical-classical-like	217	0	0	0		3.27			gtex	155	265
+HNSC-basal-mesenchymal-like	213	0	0	0		3.27			gtex	363	265
+LGG-noncodel-LGr2	199	0	0	0		3.27			gtex	89	151
+PHEO-kinase-signaling	196	0	0	0		2.64			gtex	77	125
+PHEO-pseudohypoxia-Wnt	198	0	0	0		2.85			gtex	69	125
+TGCT-SEM-C1	221	0	0	0		3.16			gtex	32	164
+TGCT-SEM-C2	223	0	0	0		3.22			gtex	30	164
+THCA-BRAF-like-classical	209	0	0	0		2.86			gtex	296	272
+THCA-RAS-like-follicular	211	0	0	0		2.95			gtex	208	272

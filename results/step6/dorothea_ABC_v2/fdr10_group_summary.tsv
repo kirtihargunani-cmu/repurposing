@@ -1,0 +1,42 @@
+group_id	tested	pass	up	down	nes_needed	max_abs_nes	pass_analytic	rho_perm_vs_analytic	contrast	n_tumor	n_normal
+CESC-SCC	217	23	8	15	2.57	4.02			gtex	252	84
+TCGA-BLCA	215	18	1	17	2.68	3.51			adjacent	407	19
+TCGA-GBM	211	17	5	12	2.66	5.26			gtex	160	151
+TARGET-WT	208	11	5	6	2.86	3.61			gtex	121	21
+UCEC-EEC	221	11	5	6	2.81	3.62			gtex	107	77
+UCEC-SER	218	11	5	6	2.84	3.72			gtex	60	77
+SARC-UPS	202	10	3	7	2.88	4.11			gtex	76	463
+TCGA-KIRC	213	7	6	1	2.94	3.66			gtex	530	21
+TGCT-NSGCT	236	7	5	2	3.01	3.8			gtex	70	164
+LGG-IDHwt	209	5	5	0	3.22	4.45			gtex	94	151
+SARC-LMS	203	4	3	1	3.18	3.92			gtex	104	369
+TCGA-OV	214	4	4	0	3.24	3.42			gtex	422	86
+BRCA-Basal	222	3	3	0	3.28	4.26			gtex	190	79
+BRCA-Her2	217	3	3	0	3.26	3.93			gtex	81	79
+BRCA-LumB	215	3	3	0	3.31	4.06			gtex	209	79
+TCGA-KICH	204	3	2	1	3.21	3.71			gtex	66	21
+LGG-IDHmut-codel	198	2	2	0	3.53	3.59			gtex	173	151
+LGG-IDHmut-noncodel	200	2	2	0	3.48	3.99			gtex	241	151
+SARC-DDLPS	211	2	2	0	3.67	3.93			gtex	57	375
+TCGA-LUSC	222	2	2	0	3.4	3.78			gtex	498	264
+TCGA-UCS	221	1	1	0	3.63	3.63			gtex	57	77
+BRCA-LumA	218	0	0	0		3.23			gtex	560	79
+CESC-AD	226	0	0	0		3.24			gtex	46	7
+ESCA-AD	226	0	0	0		2.86			gtex	89	313
+ESCA-SCC	215	0	0	0		3.22			gtex	92	313
+PCPG-PGL	204	0	0	0		2.85			gtex	31	125
+PCPG-PHEO	196	0	0	0		2.85			gtex	146	125
+TARGET-NBL	205	0	0	0		3.07			gtex	155	125
+TCGA-ACC	203	0	0	0		2.97			gtex	77	125
+TCGA-COAD	221	0	0	0		2.62			gtex	287	109
+TCGA-HNSC	215	0	0	0		2.97			gtex	518	265
+TCGA-KIRP	199	0	0	0		3.15			gtex	288	21
+TCGA-LIHC	204	0	0	0		2.99			gtex	369	108
+TCGA-LUAD	227	0	0	0		2.74			gtex	513	264
+TCGA-PAAD	226	0	0	0		2.98			gtex	178	164
+TCGA-PRAD	215	0	0	0		2.7			gtex	494	100
+TCGA-READ	219	0	0	0		2.28			gtex	92	109
+TCGA-SKCM	209	0	0	0		2.98			gtex	466	385
+TCGA-STAD	230	0	0	0		3.15			gtex	413	170
+TCGA-THCA	208	0	0	0		3			gtex	504	272
+TGCT-SEM	223	0	0	0		3.15			gtex	62	164

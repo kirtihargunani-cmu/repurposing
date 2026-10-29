@@ -1,0 +1,15 @@
+group_id	tested_ct	tested_do	tested_ar	pass_ct	pass_do	pass_ar	consensus	consensus_all3	n_confirmed	top_consensus	n_shared_ct_do	rho_ct_do	n_shared_ct_ar	rho_ct_ar	n_shared_do_ar	rho_do_ar
+TGCT-SEM-C2	405	223	1154	20	0	583	10	0	532	GATA6,SOX9,MYCN,GATA3,RARG,TRERF1,E2F1,MEF2C	188	0.48	333	0.12	221	0.19
+TGCT-SEM-C1	406	221	1160	14	0	582	6	0	530	MYCN,GATA3,TRERF1,RARG,MEF2C,TGIF1	185	0.5	333	0.15	219	0.25
+LGG-noncodel-LGr3	369	201	1053	9	4	344	5	1	279	SOX4,MYC,E2F2,E2F1,E2F4	168	0.31	298	0.11	201	0.25
+BLCA-basal-squamous-like	376	213	1015	11	17	70	3	1	16	MEIS2,E2F2,GATA3	178	0.46	307	0.28	212	0.42
+LGG-noncodel-LGr2	365	199	1049	6	0	198	1	0	165	MYC	166	0.38	295	0.12	199	0.25
+BLCA-luminal-like	382	214	1041	1	15	9	0	0	0	""	177	0.38	314	0.18	213	0.38
+COAD-CIN-like	391	219	1035	0	0	109	0	0	89	""	185	0.36	321	0.25	219	0.24
+COAD-MSI-like	386	221	1016	0	0	66	0	0	0	""	185	0.42	317	0.25	221	0.3
+HNSC-atypical-classical-like	394	217	1000	0	0	27	0	0	9	""	182	0.31	322	0.17	214	0.25
+HNSC-basal-mesenchymal-like	384	213	960	0	0	100	0	0	71	""	177	0.29	315	0.19	211	0.32
+PHEO-kinase-signaling	365	196	1046	0	0	191	0	0	165	""	163	0.33	296	0.22	195	0.19
+PHEO-pseudohypoxia-Wnt	369	198	1043	0	0	107	0	0	71	""	165	0.39	299	0.24	197	0.24
+THCA-BRAF-like-classical	374	209	1013	0	0	208	0	0	168	""	176	0.29	302	0.22	208	0.22
+THCA-RAS-like-follicular	376	211	1021	0	0	61	0	0	0	""	177	0.23	305	0.12	211	0.22
