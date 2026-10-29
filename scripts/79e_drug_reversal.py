@@ -61,14 +61,21 @@ SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 # REGULON=collectri | dorothea_ABC (VERSION=v2; user 2026-10-28): disease MRs from results/step6/<REGULON>_v2, drug activity
 # from drug_viper_specific_<REGULON>/ALL (79d; one context-free regulon for all diseases); outputs suffixed _v2_<REGULON>
+# REGULON=consensus (VERSION=v2; user 2026-10-28, D75): per regulator, the mean over ARACNe v2 TF (the disease's network)
+# and CollecTRI of the drug activity, and the mean of the disease NES over the same sets; a regulator's sets = those
+# where it is tested in the disease and scored on the drug side, so drug and disease values average the same regulons.
+# Inputs results/step6/aracne_project_v2_tf + collectri_v2 and drug_viper_specific_v2_tf + _collectri; outputs _v2_consensus
 REGULON = os.environ.get("REGULON", "aracne_project")
-CURATED = REGULON != "aracne_project"
+CONS = REGULON == "consensus"
+CONS_SETS = {"aracne": ("results/step6/aracne_project_v2_tf", "_v2_tf"), "collectri": ("results/step6/collectri_v2", "_collectri")}
+CURATED = REGULON not in ("aracne_project", "consensus")
+assert not CONS or SFX == "_v2", "consensus: VERSION=v2 (REGSET not used)"
 assert not CURATED or SFX == "_v2", "curated regulons: VERSION=v2 (REGSET not used)"
 MR_DIR = f"results/step6/{REGULON}_v2" if CURATED else f"results/step6/aracne_project{SFX}"
 DTAG = f"_{REGULON}" if CURATED else SFX
-if CURATED:
+if CURATED or CONS:
     SFX = f"_v2_{REGULON}"
-SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf")) or CURATED else "fdr")
+SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf")) or CURATED or CONS else "fdr")
 assert SCORE in ("weighted", "fdr")
 if SCORE == "fdr" and SFX.startswith("_v2"):
     SFX += "_fdr"
@@ -91,7 +98,11 @@ def main():
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
     idx["col"] = np.arange(len(idx))
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
-    mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
+    if CONS:   # set-tagged regulators ("aracne|ESR1"), combined per group below
+        mr = pd.concat([pd.read_csv(ROOT / d / "group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
+                        for k, (d, _) in CONS_SETS.items()], ignore_index=True)
+    else:
+        mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
@@ -99,12 +110,28 @@ def main():
     models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
 
     nets = {}
-    def read(kind, net):
-        f = PROC / f"drug_viper_{kind}{DTAG}" / f"{net}.f32"
+    def read(kind, net, dtag=DTAG):
+        if CONS and dtag == DTAG:   # both sets side by side, set-tagged columns
+            ra, Aa = read(kind, net, CONS_SETS["aracne"][1]); rc, Ac = read(kind, "ALL", CONS_SETS["collectri"][1])
+            if Aa is None or Ac is None:
+                return None, None
+            return pd.Index(["aracne|" + r for r in ra] + ["collectri|" + r for r in rc]), np.hstack([Aa, Ac])
+        f = PROC / f"drug_viper_{kind}{dtag}" / f"{net}.f32"
         if not f.exists():
             return None, None
-        regs = pd.Index((PROC / f"drug_viper_{kind}{DTAG}" / f"{net}.regulators.txt").read_text().split())
+        regs = pd.Index((PROC / f"drug_viper_{kind}{dtag}" / f"{net}.regulators.txt").read_text().split())
         return regs, np.fromfile(f, dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
+
+    def consensus(D, regs, m):
+        """Set-tagged drug activity / disease NES -> per-regulator means over the sets present on both sides."""
+        base = m.regulator.str.split("|", n=1).str[1].values
+        cols = regs.get_indexer(m.regulator)
+        ub, inv = np.unique(base, return_inverse=True)
+        Dc = np.zeros((D.shape[0], len(ub))); cnt = np.bincount(inv, minlength=len(ub))
+        np.add.at(Dc.T, inv, D[:, cols].T)
+        mc = pd.DataFrame({"regulator": ub, "nes": np.bincount(inv, weights=m.nes.values) / cnt, "n_sets": cnt,
+                           "fdr": m.groupby(base).fdr.min().reindex(ub).values, "group_id": m.group_id.iloc[0]})
+        return Dc / cnt, pd.Index(ub), mc
 
     def load(net):
         if net not in nets:
@@ -150,6 +177,10 @@ def main():
             n_lines[i] = len(p)
 
         m = mr[(mr.group_id == g) & mr.regulator.isin(regs)]
+        if CONS:
+            regs0, D0 = regs, D
+            D, regs, m = consensus(D0, regs0, m)
+            D_raw = None
         mrs = sel(m)
         tested = regs.get_indexer(m.regulator)
         ci = regs.get_indexer(mrs.regulator)
@@ -187,7 +218,9 @@ def main():
         for g2 in sorted(ok_ref):
             if g2 == g or gkey[g2] == gkey[g]:
                 continue
-            m2 = sel(mr[(mr.group_id == g2) & mr.regulator.isin(regs)])
+            m2 = sel(consensus(D0, regs0, mr[(mr.group_id == g2) & mr.regulator.isin(regs0)])[2] if CONS
+                     else mr[(mr.group_id == g2) & mr.regulator.isin(regs)])
+            m2 = m2[m2.regulator.isin(regs)]
             if len(m2) < MIN_MRS_REF:
                 continue
             c2 = regs.get_indexer(m2.regulator)
