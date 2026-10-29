@@ -150,6 +150,12 @@ group, written to `results/step4_v2/gtex_reference.tsv`:
   halves, Welch t on logCPM -> z, as v1 (v2 gene set). As in v1 the null is not covariate-adjusted while the signature
   is (assumption A3, kept to change one thing at a time; D55).
 - CollecTRI and DoRothEA arms rerun on the v2 signatures (supporting evidence, D17).
+- **Executed 2026-10-28 (D73).** The first v2 run built the null from all of a group's GTEx samples, not the 4a set;
+  fixed in `50_viper.R` (the null now uses exactly the normals the signature used). A covariate-adjusted null (assumption
+  A3) was tested (`64_null_adjust_test.R`): no false calls, more master regulators, but it lost one known-biology
+  control, so by the pre-set rule it was not adopted. The test showed FDR-cut master-regulator lists are unstable
+  between nulls while the NES ranking is not (rho >= 0.98); the drug side therefore weights every regulator by its NES
+  instead of using an FDR list (D74).
 
 **6b. Patient level (`61_quality_correct.R` with v2 inputs; D45, D57).**
 - Tumors: gene-level regression on purity (**ESTIMATE in every group, including LGG**) + RNA-quality index, as v1.
@@ -166,6 +172,14 @@ group, written to `results/step4_v2/gtex_reference.tsv`:
   driver classes.
 
 ### Steps 8-10 and the drug side: rerun on v2 after the checks
+**Status 2026-10-29 (TF arm, build `v2_tf_xmap`):** Step 8 clustering done with and without the recurring module; Step 10
+subgroups chosen by a fixed keep rule (D71) on the clustering without the module, plus COAD as an exception (D79, 14
+subgroups); subgroup signatures and group / patient VIPER done; drug ranking done for 41 groups and 14 subgroups with
+consensus regulons (D75), NES weighting (D74), cell-line match and transfer-confidence flags (D76, D77), an evidence
+status per disease (D78), specificity first in reports (D80). Step 9 replication and PRISM / GDSC validation not yet
+(validation on hold, user). Details: PROGRESS 2026-10-28 / 29.
+
+Original plan:
 - **Step 8** clustering and breast axes on v2 patient scores; same pre-fixed rules (D30, D37).
 - **Step 9** replication with v2 regulons (cohort-average reference; no GTEx, so no GTEx correction).
 - **Step 10** stratum signatures with the v2 Step 4 model (4a GTEx reference, collection covariates, v2 gene set);
@@ -238,7 +252,7 @@ Step 6 v2 results (2026-10-25; `results/step6/checks_v2/`, `checks_v2_tf/`; regu
 | 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates (**done 10-18**) | `32_gtex_reference.R` | minutes |
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11, C12 | `30_signatures.R` (v2) | < 1 h |
 | 5 | Regulons v2 (+ cross-mappable edge removal; **done 10-25**); edge diagnostics (support done; confounding `46` done 10-24 for the full set, TF-only not run) | `44`, `45`, `46` | hours |
-| 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 (**ARACNe full + TF-only and checks done 10-25**; CollecTRI / DoRothEA arms not yet) | `50`, `51`, `59` | hours |
-| 7 | Patient VIPER v2, recurring module, check C8 (**done 10-25**: module still present in 36 of 41 groups, plate-linked; D26 open); modules (58) not yet | `61`, `58`, `62` | hours |
-| 8 | Report; PI decisions on the recurring module (D26) and the kidney reference (D60) | | |
-| 9 | Steps 8-10 and drug side on v2 | `80`-`95`; celligner branch `79*` | ~1 day |
+| 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 (**ARACNe full + TF-only and checks done 10-25; null fixed and all arms rerun 10-28 (D73)**: TF, CollecTRI, full done; DoRothEA subgroups running; `51` / `59` comparison not rerun) | `50`, `51`, `59`, `64` | hours |
+| 7 | Patient VIPER v2, recurring module, check C8 (**done 10-25**: module still present in 36 of 41 groups, plate-linked; TF arm 61 done 10-26 on MAIL-15); modules (58) not yet | `61`, `58`, `62` | hours |
+| 8 | Report; PI decisions on the recurring module (D26: subgroups now defined without it, D79; PI to confirm) and the kidney reference (D60, open) | | |
+| 9 | Steps 8-10 and drug side on v2 (**10-28 / 29, TF arm**: Step 8 + no-module run, keep rule, 14 subgroups, subgroup signatures / VIPER / characterization, drug ranking 41 groups + 14 subgroups; Step 9 replication and PRISM / GDSC validation not yet) | `80`, `84`-`87`, `30` / `50` STRATA=; celligner `74b`, `79b`, `79d`-`79n` | ~1 day |
