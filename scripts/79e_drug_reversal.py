@@ -35,6 +35,10 @@ weights (results/celligner/disease_line_weights_long.tsv).
    reversing; tier 3 everything else. Drugs with > MULTI_TARGET annotated targets are flagged, not removed.
    low_mrs: diseases with < MIN_MRS_REF MRs (scores rest on very few regulators).
 ONLY_GROUPS (comma-separated) limits the run, for testing.
+Line match (user 2026-10-28, D76): line_match = Celligner weight of the drug's best measured line in the tissue key / the
+disease's top in-key line weight (direct drugs; NaN for borrowed). unmatched_lines = direct and line_match < LINE_MATCH_MIN
+(0.1, fixed from the distribution before any ranking was looked at: bimodal, 25% of direct pairs < 0.01, 50% > 0.19).
+E.g. BRCA-Basal drugs measured only in MCF7 (0.0004). Flagged drugs stay ranked but are kept out of tiers 1-2.
 SCORE=weighted (default for VERSION=v2; user 2026-10-28, D73) | fdr (v1 default): weighted uses every regulator tested in
 the disease, weight w_i = disease NES, no FDR cutoff: rev = -sum_i w_i * a_i / sqrt(sum_i w_i^2) (with w_i = sign of an
 FDR < MR_FDR MR this is the formula above). Why: FDR < 0.05 / 0.10 lists jumped between null versions (COAD 425 -> 0)
@@ -57,6 +61,7 @@ PROC = ROOT / "data/processed/lincs"
 RES = ROOT / "results/lincs"
 MR_FDR, TOP_PCT, N_PERM, MULTI_TARGET, SEED = 0.10, 10, 200, 5, 0
 MIN_MRS_REF, MIN_REF = 20, 10
+LINE_MATCH_MIN = 0.1
 SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 # REGULON=collectri | dorothea_ABC (VERSION=v2; user 2026-10-28): disease MRs from results/step6/<REGULON>_v2, drug activity
@@ -161,12 +166,15 @@ def main():
         D = np.empty((len(gd), len(regs)), dtype=np.float64)
         D_raw = np.empty_like(D)
         n_lines = np.zeros(len(gd), int)
+        lmatch = np.full(len(gd), np.nan)
+        top_w = wg.reindex(km.index).fillna(0).max()
         by_drug = idx.groupby("pert_id")
         for i, (d, src) in enumerate(zip(gd.pert_id, gd.source)):
             p = by_drug.get_group(d)
             if src == "direct":
                 p = p[p.ModelID.isin(km.index)]
                 ww = wg.reindex(p.ModelID).fillna(0).values
+                lmatch[i] = ww.max() / top_w if top_w > 0 and len(ww) else 0.0
             else:
                 p = p[~p.ModelID.isin(km.index)]
                 ww = np.zeros(len(p))
@@ -202,6 +210,8 @@ def main():
         o = gd[["group_id", "pert_id", "cmap_name", "source", "passes_gate", "gate_reason", "n_targets",
                 "hub_moa", "hub_clinical_phase", "chembl_max_phase", "pharmacology_flag"]].copy()
         o["n_lines_used"] = n_lines
+        o["line_match"] = np.round(lmatch, 4)
+        o["unmatched_lines"] = o.line_match < LINE_MATCH_MIN
         o["n_mrs"] = n
         o["rev"] = rev.round(3)
         o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / norm).round(3) if A_raw is not None else np.nan
@@ -211,7 +221,8 @@ def main():
         o["approved"] = (o.chembl_max_phase == 4) | (o.hub_clinical_phase == "Launched")
         o["multi_target"] = o.n_targets > MULTI_TARGET
         reversing = (o.rev > 0) & (o.rev_pct >= 100 - TOP_PCT)
-        o["tier_rev"] = np.where(reversing & o.passes_gate & o.approved, 1, np.where(reversing & o.passes_gate, 2, 3))
+        ok_t = o.passes_gate & ~o.unmatched_lines
+        o["tier_rev"] = np.where(reversing & ok_t & o.approved, 1, np.where(reversing & ok_t, 2, 3))
         mad = 1.4826 * np.median(np.abs(rev - np.median(rev)))
         o["rev_z"] = ((rev - np.median(rev)) / mad).round(3)
         refz = []
@@ -244,7 +255,8 @@ def main():
 
     ok_ref = set(summ.loc[summ.n_mrs >= MIN_MRS_REF, "group_id"])
     sp = (out.rev > 0) & (out.spec_pct >= 100 - TOP_PCT)
-    out["tier_spec"] = np.where(sp & out.passes_gate & out.approved, 1, np.where(sp & out.passes_gate, 2, 3))
+    ok_t = out.passes_gate & ~out.unmatched_lines
+    out["tier_spec"] = np.where(sp & ok_t & out.approved, 1, np.where(sp & ok_t, 2, 3))
     out["low_mrs"] = ~out.group_id.isin(ok_ref)
     out = out.sort_values(["group_id", "tier_spec", "spec"], ascending=[True, True, False])
     out["rank_spec"] = out.groupby("group_id").cumcount() + 1
