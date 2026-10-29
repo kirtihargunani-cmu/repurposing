@@ -28,6 +28,14 @@ Every disease (and subgroup) result must state its evidence status, taken from `
   transfer confidence < 0.5; D77). Flagged drugs stay in the ranking but never in tiers 1-2; if the layer shows them,
   it must show the flag.
 
+### R2. Lead with disease specificity (user 2026-10-28; D80)
+Drug lists are ordered and presented by disease specificity first: `spec_mech` (reversal of this disease relative to
+other diseases, proliferation part removed; `79i` `drug_reversal_split*.tsv`), then `spec`. The overall reversal
+score `rev` is shown as context, not as the ranking. Reason: by `rev` the same generic drugs top most diseases (32
+drugs in the top 10% of >= 20 of 41 groups: statins, palbociclib, MEK inhibitors, anthracyclines); by `spec_mech` none.
+A drug that ranks high on `rev` but not on specificity should be described as a broadly acting / growth-inhibiting
+candidate, not as specific to the disease.
+
 ## Related rules the layer should respect
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
   reports them and does not tune them.

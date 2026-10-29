@@ -1,8 +1,4 @@
 group_id	contrast	n_tumor	n_normal	status	note	n_dropped_missing_cov	n_dropped_rare_type	covariates	n_genes	n_de_fdr05_lfc1	n_up	n_down	normals_by_anchor	rho_vs_voom	top500_vs_voom	spearman_gtex_vs_adjacent
-ACC-low-proliferation	adjacent	45	0	skipped	< 10 normals											
-ACC-low-proliferation	gtex	45	125	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15545	4487	1913	2574	model:125	0.9957	0.814	
-ACC-proliferative	adjacent	32	0	skipped	< 10 normals											
-ACC-proliferative	gtex	32	125	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15564	4063	1535	2528	model:125	0.9904	0.688	
 BLCA-basal-squamous-like	adjacent	172	19	ok	""	0	0	age_z,estimate_z,sexmale	15950	4741	1891	2850		0.9984	0.898	
 BLCA-basal-squamous-like	gtex	172	9	skipped	< 10 normals											
 BLCA-luminal-like	adjacent	235	19	ok	""	0	0	age_z,estimate_z,sexmale	15919	3428	1282	2146		0.9972	0.906	
@@ -15,7 +11,19 @@ HNSC-atypical-classical-like	adjacent	155	44	ok	""	0	0	age_z,estimate_z,sexmale	
 HNSC-atypical-classical-like	gtex	155	265	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp,sexmale	16158	4696	1847	2849	observed:265	0.9963	0.708	0.612
 HNSC-basal-mesenchymal-like	adjacent	362	44	ok	""	1	0	age_z,estimate_z,sexmale	15971	4279	1437	2842		0.9992	0.958	0.708
 HNSC-basal-mesenchymal-like	gtex	362	265	ok	""	1	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp,sexmale	16280	5510	1900	3610	observed:265	0.9974	0.842	0.708
-LGG-noncodel-LGr2	adjacent	92	0	skipped	< 10 normals											
-LGG-noncodel-LGr2	gtex	92	151	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15975	4159	1107	3052	average:151	0.9975	0.888	
-LGG-noncodel-LGr3	adjacent	149	0	skipped	< 10 normals											
-LGG-noncodel-LGr3	gtex	147	151	ok	""	1	1	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	16148	6038	1915	4123	average:151	0.9983	0.888	
+LGG-noncodel-LGr2	adjacent	89	0	skipped	< 10 normals											
+LGG-noncodel-LGr2	gtex	89	151	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15969	4228	1131	3097	average:151	0.9976	0.888	
+LGG-noncodel-LGr3	adjacent	152	0	skipped	< 10 normals											
+LGG-noncodel-LGr3	gtex	150	151	ok	""	1	1	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	16168	5978	1886	4092	average:151	0.9983	0.89	
+PHEO-kinase-signaling	adjacent	77	3	skipped	< 10 normals											
+PHEO-kinase-signaling	gtex	77	125	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15677	5815	2956	2859	model:125	0.9987	0.812	
+PHEO-pseudohypoxia-Wnt	adjacent	69	3	skipped	< 10 normals											
+PHEO-pseudohypoxia-Wnt	gtex	69	125	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15746	5809	2956	2853	model:125	0.9968	0.71	
+TGCT-SEM-C1	adjacent	32	0	skipped	< 10 normals											
+TGCT-SEM-C1	gtex	32	164	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp	16930	9204	4115	5089	observed:164	0.9896	0.848	
+TGCT-SEM-C2	adjacent	30	0	skipped	< 10 normals											
+TGCT-SEM-C2	gtex	30	164	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp	16926	9001	4235	4766	observed:164	0.9872	0.838	
+THCA-BRAF-like-classical	adjacent	296	59	ok	""	0	0	age_z,estimate_z,sexmale	15605	3404	1629	1775		0.9997	0.942	0.606
+THCA-BRAF-like-classical	gtex	296	272	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp,sexmale	16109	5452	1944	3508	observed:272	0.9995	0.912	0.606
+THCA-RAS-like-follicular	adjacent	208	59	ok	""	0	0	age_z,estimate_z,sexmale	15544	1924	805	1119		0.9995	0.938	0.386
+THCA-RAS-like-follicular	gtex	208	272	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp,sexmale	15982	3988	1314	2674	observed:272	0.9991	0.85	0.386

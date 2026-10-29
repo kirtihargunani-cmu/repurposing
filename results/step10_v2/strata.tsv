@@ -3,9 +3,13 @@ TCGA-BLCA	results/step8_v2_tf_no_c8	1	BLCA-basal-squamous-like	all 31 TCGA mRNA 
 TCGA-BLCA	results/step8_v2_tf_no_c8	2	BLCA-luminal-like	TCGA mRNA clusters I / II (luminal-papillary)	235
 TCGA-HNSC	results/step8_v2_tf_no_c8	1	HNSC-basal-mesenchymal-like	86 of 87 Basal, 67 of 75 Mesenchymal	363
 TCGA-HNSC	results/step8_v2_tf_no_c8	2	HNSC-atypical-classical-like	46 of 67 Atypical (HPV-enriched), Classical mixed	155
-TCGA-COAD	results/step8_v2_tf	1	COAD-CIN-like	148 of 171 GI.CIN	194
-TCGA-COAD	results/step8_v2_tf	2	COAD-MSI-like	45 of 48 GI.HM-indel (MSI); as v1 COAD-CMS1/3-like	93
-TCGA-ACC	results/step8_v2_tf	1	ACC-proliferative	all 25 steroid-phenotype + proliferation (+ 4 of 4 low + proliferation)	32
-TCGA-ACC	results/step8_v2_tf	2	ACC-low-proliferation	steroid-phenotype high / low without proliferation	45
-LGG-IDHmut-noncodel	results/step8_v2_tf	1	LGG-noncodel-LGr3	LGr3-dominant (140 of 208 LGr3)	149
-LGG-IDHmut-noncodel	results/step8_v2_tf	2	LGG-noncodel-LGr2	21 of 22 LGr2	92
+LGG-IDHmut-noncodel	results/step8_v2_tf_no_c8	1	LGG-noncodel-LGr2	19 of 22 LGr2; = v2 LGG-noncodel-LGr2 of D72 (88 of 89)	89
+LGG-IDHmut-noncodel	results/step8_v2_tf_no_c8	2	LGG-noncodel-LGr3	LGr3-dominant (141 of 208 LGr3)	152
+PCPG-PHEO	results/step8_v2_tf_no_c8	1	PHEO-pseudohypoxia-Wnt	all 36 Pseudohypoxia, 16 of 22 Wnt-altered	69
+PCPG-PHEO	results/step8_v2_tf_no_c8	2	PHEO-kinase-signaling	54 of 64 Kinase signaling, Cortical admixture	77
+TCGA-THCA	results/step8_v2_tf_no_c8	1	THCA-BRAF-like-classical	THCA mRNA 3-5, classical methylation, 30 of 34 tall cell (BRAF-like)	296
+TCGA-THCA	results/step8_v2_tf_no_c8	2	THCA-RAS-like-follicular	129 of 133 THCA mRNA 1, 110 of 114 follicular methylation (RAS-like)	208
+TGCT-SEM	results/step8_v2_tf_no_c8	1	TGCT-SEM-C1	no TCGA subtype labels	32
+TGCT-SEM	results/step8_v2_tf_no_c8	2	TGCT-SEM-C2	no TCGA subtype labels	30
+TCGA-COAD	results/step8_v2_tf	1	COAD-CIN-like	148 of 171 GI.CIN (exception, D79)	194
+TCGA-COAD	results/step8_v2_tf	2	COAD-MSI-like	45 of 48 GI.HM-indel (MSI); exception, D79	93
