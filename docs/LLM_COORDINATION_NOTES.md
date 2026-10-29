@@ -35,6 +35,9 @@ score `rev` is shown as context, not as the ranking. Reason: by `rev` the same g
 drugs in the top 10% of >= 20 of 41 groups: statins, palbociclib, MEK inhibitors, anthracyclines); by `spec_mech` none.
 A drug that ranks high on `rev` but not on specificity should be described as a broadly acting / growth-inhibiting
 candidate, not as specific to the disease.
+For subgroups, lead with `spec_sib_mech` (this subgroup vs its sibling, proliferation removed), then `spec_mech`
+(`stratum_reversal_split_v2_consensus.tsv`). When siblings barely differ (LGG-noncodel, TGCT-SEM: `spec_sib` <= 0.6),
+report one drug list for the parent and say the subgroups do not differ in predicted drug response.
 
 ## Related rules the layer should respect
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
