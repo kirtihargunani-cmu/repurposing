@@ -41,6 +41,10 @@ disease's top in-key line weight (direct drugs; NaN for borrowed). unmatched_lin
 E.g. BRCA-Basal drugs measured only in MCF7 (0.0004). Flagged drugs stay ranked but are kept out of tiers 1-2.
 Borrowed drugs (v2, D77): conf and low_transfer from 79l VERSION=v2 (results/lincs/drug_transfer_confidence_v2.tsv; run
 79l first); low_transfer (conf < 0.5) is kept out of tiers 1-2 the same way.
+Evidence status per disease (user 2026-10-28, D78; summary columns): best_line_match = best line_match any drug could
+reach (the disease's best in-key line with LINCS compound data); n_t12_matched / n_t12_borrowed = drugs in tier 1-2 (by
+rev or spec) that are direct in a matched line / borrowed with transfer conf >= 0.5; evidence_status = "matched" (>= 1
+matched direct drug in tiers 1-2), "borrowed only", or "no adequate compound"; evidence_note = the sentence for reports.
 SCORE=weighted (default for VERSION=v2; user 2026-10-28, D73) | fdr (v1 default): weighted uses every regulator tested in
 the disease, weight w_i = disease NES, no FDR cutoff: rev = -sum_i w_i * a_i / sqrt(sum_i w_i^2) (with w_i = sign of an
 FDR < MR_FDR MR this is the formula above). Why: FDR < 0.05 / 0.10 lists jumped between null versions (COAD 425 -> 0)
@@ -173,6 +177,9 @@ def main():
         n_lines = np.zeros(len(gd), int)
         lmatch = np.full(len(gd), np.nan)
         top_w = wg.reindex(km.index).fillna(0).max()
+        lincs_key = sorted(set(idx.ModelID) & set(km.index))
+        best_lm = float(wg.reindex(lincs_key).fillna(0).max() / top_w) if top_w > 0 and lincs_key else 0.0
+        best_line = models.CellLineName.get(wg.reindex(lincs_key).fillna(0).idxmax()) if lincs_key else ""
         by_drug = idx.groupby("pert_id")
         for i, (d, src) in enumerate(zip(gd.pert_id, gd.source)):
             p = by_drug.get_group(d)
@@ -254,6 +261,7 @@ def main():
         rows.append(o)
         t1 = o[o.tier_rev == 1].sort_values("rev", ascending=False)
         summ.append(dict(group_id=g, net=net_of(grp.loc[g, "cohort"]), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
+                         best_line_match=round(best_lm, 4), best_line=best_line, n_key_lines_lincs=len(lincs_key),
                          n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1_rev=len(t1),
                          n_tier2_rev=int((o.tier_rev == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),
                          null_sd_regset=round(float(null.std()), 3), rev_sd=round(float(rev.std()), 3),
@@ -276,11 +284,26 @@ def main():
     s2 = []
     for g, o in out.groupby("group_id"):
         t1 = o[o.tier_spec == 1]
-        s2.append(dict(group_id=g, n_tier1_spec=len(t1), n_tier2_spec=int((o.tier_spec == 2).sum()),
+        t12 = (o.tier_rev <= 2) | (o.tier_spec <= 2)
+        n_m = int((t12 & (o.source == "direct")).sum()); n_b = int((t12 & (o.source == "borrowed")).sum())
+        status = "matched" if n_m else ("borrowed only" if n_b else "no adequate compound")
+        s2.append(dict(group_id=g, n_t12_matched=n_m, n_t12_borrowed=n_b, evidence_status=status,
+                       n_tier1_spec=len(t1), n_tier2_spec=int((o.tier_spec == 2).sum()),
                        n_tier1_both=int(((o.tier_spec == 1) & (o.tier_rev == 1)).sum()),
                        low_mrs=bool(o.low_mrs.iloc[0]),
                        top_tier1_spec=", ".join(f"{a} {b:.1f}" for a, b in zip(t1.cmap_name.head(8), t1.spec.head(8)))))
     summ = summ.merge(pd.DataFrame(s2), on="group_id")
+    def note(r):
+        lm = (f"No compound was tested in a line resembling this disease (best line match {r.best_line_match:.4f}, "
+              f"{r.best_line or 'no line'}; cutoff {LINE_MATCH_MIN})") if r.best_line_match < LINE_MATCH_MIN else \
+             f"Compounds tested in matched lines (best {r.best_line}, line match {r.best_line_match:.2f})"
+        if r.evidence_status == "matched":
+            return f"{lm}; {r.n_t12_matched} tier 1-2 drug(s) rest on matched-line data."
+        if r.evidence_status == "borrowed only":
+            return (f"{lm}. The {r.n_t12_borrowed} candidate(s) are borrowed from other tissues and rest on the drug acting "
+                    f"consistently across cell lines (transfer confidence >= 0.5), not on data from this disease's lines.")
+        return f"{lm}, and no borrowed drug passes; an adequate compound cannot be reported."
+    summ["evidence_note"] = summ.apply(note, axis=1)
     summ.to_csv(RES / f"drug_reversal_summary{SFX}.tsv", sep="\t", index=False)
 
     ctl = []
