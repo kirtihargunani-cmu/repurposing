@@ -19,6 +19,9 @@ Pharmacology flag (locally acting: topical-only route or local ATC group) carrie
 STRATA=1 (user 2026-10-12): the same lists for the Step 10 strata (results/step10/stratum_patients.tsv): tissue key,
 direct / borrowed split and rules of the parent group; "expressed" judged on the stratum's own tumors. Outputs get the
 prefix stratum_ instead of disease_ (target expression: target_expression_strata.tsv.gz); adds parent_group and weak.
+STRATA=1 VERSION=v2 (D72, 2026-10-28): the v2 subgroups (results/step10_v2/stratum_patients.tsv; weak = False);
+outputs suffixed _v2 (stratum_drugs_v2.tsv, ..., target_expression_strata_v2.tsv.gz). The 41-group lists need no v2
+version (same groups and tumors).
 Outputs: results/lincs/disease_drugs.tsv (one row per disease x drug), disease_drugs_summary.tsv,
          data/processed/lincs/target_expression.tsv.gz (target gene x group: median TPM, fraction of tumors TPM >= 1)
 """
@@ -99,9 +102,12 @@ def main():
     sig = pd.read_csv(ROOT / "results/step4/signature_summary.tsv", sep="\t")
     groups = sorted(set(sig.loc[sig.status == "ok", "group_id"]))
     strata = os.environ.get("STRATA", "0") == "1"
+    vs = "_v2" if strata and os.environ.get("VERSION", "v1") == "v2" else ""
     parent, weak, tum, pfx = {g: g for g in groups}, {}, None, "disease"
     if strata:
-        sp = pd.read_csv(ROOT / "results/step10/stratum_patients.tsv", sep="\t")
+        sp = pd.read_csv(ROOT / f"results/step10{vs}/stratum_patients.tsv", sep="\t")
+        if "weak" not in sp:
+            sp["weak"] = False
         groups = sorted(sp.stratum.unique())
         parent = sp.drop_duplicates("stratum").set_index("stratum").group_id.to_dict()
         weak = sp.drop_duplicates("stratum").set_index("stratum").weak.to_dict()
@@ -133,7 +139,7 @@ def main():
     targets = set(tg.gene_id.dropna()) - adme
     family = {t: set().union(*(fam_ok[g] for g in gene_grps.get(t, set()) if g in fam_ok)) - {t} for t in targets}
     expr = group_expression(targets | set().union(*family.values()), groups, tpm_min, tum)
-    expr.round(4).to_csv(PROC / ("target_expression_strata.tsv.gz" if strata else "target_expression.tsv.gz"),
+    expr.round(4).to_csv(PROC / (f"target_expression_strata{vs}.tsv.gz" if strata else "target_expression.tsv.gz"),
                          sep="\t", index=False)
     expressed = expr[expr.frac_expressed >= min_frac].groupby("group_id").gene_id.apply(set).to_dict()
     gid2sym = tg.dropna(subset=["gene_id"]).drop_duplicates("gene_id").set_index("gene_id").symbols
@@ -180,7 +186,7 @@ def main():
     if strata:
         out.insert(1, "parent_group", out.group_id.map(parent))
         out.insert(2, "weak", out.group_id.map(weak))
-    out.to_csv(RES / f"{pfx}_drugs.tsv", sep="\t", index=False)
+    out.to_csv(RES / f"{pfx}_drugs{vs}.tsv", sep="\t", index=False)
 
     for g, d in out.groupby("group_id"):
         summ.append(dict(group_id=g, key=d.key.iloc[0], n_direct=int((d.source == "direct").sum()),
@@ -191,12 +197,12 @@ def main():
                          n_pass_flagged_local=int((d.passes_gate & d.pharmacology_flag.eq(True)).sum()),
                          n_pass_approved=int((d.passes_gate & (pd.to_numeric(d.chembl_max_phase, errors="coerce") >= 4)).sum())))
     sm = pd.DataFrame(summ).sort_values("n_pass", ascending=False)
-    sm.to_csv(RES / f"{pfx}_drugs_summary.tsv", sep="\t", index=False)
+    sm.to_csv(RES / f"{pfx}_drugs_summary{vs}.tsv", sep="\t", index=False)
     sha = lambda f: hashlib.sha256(open(f, "rb").read()).hexdigest()[:16]
     run = {"config": str(CONFIG.relative_to(ROOT)), "config_sha256_16": sha(CONFIG), "rules": cfg,
            "hgnc_file": hgnc_file().name, "hgnc_sha256_16": sha(hgnc_file()), "tas_min": TAS_MIN,
            "min_lines_borrowed": MIN_LINES, "n_adme_genes": len(adme), "n_rows": len(out)}
-    json.dump(run, open(RES / f"{pfx}_drugs_run.json", "w"), indent=1)
+    json.dump(run, open(RES / f"{pfx}_drugs_run{vs}.json", "w"), indent=1)
     if strata:
         print(sm.to_string(index=False))
         return

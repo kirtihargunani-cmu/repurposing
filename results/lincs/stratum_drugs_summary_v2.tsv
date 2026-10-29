@@ -1,0 +1,11 @@
+group_id	key	n_direct	n_borrowed	n_total	n_target_expressed	n_family_member_expressed	n_adme_only	n_no_target	n_target_not_expressed	n_pass	n_pass_flagged_local	n_pass_approved
+COAD-CIN-like	Bowel	933	405	1338	697	0	8	574	59	1279	17	182
+COAD-MSI-like	Bowel	933	405	1338	689	0	8	574	67	1271	16	177
+LGG-noncodel-LGr2	CNS/Brain	1	1143	1144	643	0	8	466	27	1117	15	163
+HNSC-atypical-classical-like	Head and Neck	0	1144	1144	638	0	8	466	32	1112	15	161
+LGG-noncodel-LGr3	CNS/Brain	1	1143	1144	636	0	8	466	34	1110	14	162
+BLCA-luminal-like	Bladder/Urinary Tract	1	1143	1144	635	0	8	466	35	1109	14	161
+BLCA-basal-squamous-like	Bladder/Urinary Tract	1	1143	1144	634	0	8	466	36	1108	14	158
+HNSC-basal-mesenchymal-like	Head and Neck	0	1144	1144	623	0	8	466	47	1097	14	156
+ACC-low-proliferation	Adrenal Gland	0	1144	1144	621	0	8	466	49	1095	15	158
+ACC-proliferative	Adrenal Gland	0	1144	1144	621	0	8	466	49	1095	15	156

@@ -10,7 +10,10 @@ Siblings: subgroups of the same parent; the two ends of the same breast axis.
 Outputs: results/celligner/stratum_line_weights_long.tsv (stratum, parent, ModelID, weight, in_key, line info,
          cum_weight), stratum_line_summary.tsv (per stratum: patients, effective lines, top lines, overlap with the
          parent's weights and with the sibling strata's)
+VERSION=v2 (D72, 2026-10-28): the v2 subgroups (results/step10_v2/stratum_patients.tsv, copied from main: 10 subgroups
+of BLCA, HNSC, COAD, ACC, LGG-IDHmut-noncodel; siblings = the other subgroup of the same parent); outputs suffixed _v2.
 """
+import os
 from pathlib import Path
 
 import numpy as np
@@ -19,10 +22,14 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data/processed/celligner"
 RES = ROOT / "results/celligner"
+V2 = os.environ.get("VERSION", "v1") == "v2"
+SFX = "_v2" if V2 else ""
 
 
 def strata_members():
-    sp = pd.read_csv(ROOT / "results/step10/stratum_patients.tsv", sep="\t")
+    sp = pd.read_csv(ROOT / f"results/step10{SFX}/stratum_patients.tsv", sep="\t")
+    if "weak" not in sp:
+        sp["weak"] = False
     sp = sp.rename(columns={"group_id": "parent"})
     # siblings: subgroups of the same parent; the two ends of the same breast axis
     sp["sibling_set"] = np.where(sp.stratum.str.endswith(("-high", "-low")), sp.stratum.str.rsplit("-", n=1).str[0],
@@ -54,7 +61,7 @@ def main():
     out["in_key"] = [bool(pk.get((p, mid), False)) for p, mid in zip(out.parent, out.ModelID)]
     out = out.join(line_info, on="ModelID").sort_values(["stratum", "weight"], ascending=[True, False])
     out["cum_weight"] = out.groupby("stratum").weight.cumsum()
-    out.round(6).to_csv(RES / "stratum_line_weights_long.tsv", sep="\t", index=False)
+    out.round(6).to_csv(RES / f"stratum_line_weights_long{SFX}.tsv", sep="\t", index=False)
 
     # summary: concentration, top lines, similarity to parent and to siblings (1 - total variation distance)
     W = out.pivot_table(index="ModelID", columns="stratum", values="weight", fill_value=0)
@@ -71,7 +78,7 @@ def main():
                          overlap_siblings=round(np.mean([sim(W[s], W[t]) for t in sibs]), 3) if sibs else np.nan,
                          top_lines=", ".join(f"{a} {b:.3f}" for a, b in zip(d.CellLineName.head(5), d.weight.head(5)))))
     summ = pd.DataFrame(summ)
-    summ.to_csv(RES / "stratum_line_summary.tsv", sep="\t", index=False)
+    summ.to_csv(RES / f"stratum_line_summary{SFX}.tsv", sep="\t", index=False)
     pd.set_option("display.width", 250)
     pd.set_option("display.max_colwidth", 90)
     print(summ.to_string(index=False))

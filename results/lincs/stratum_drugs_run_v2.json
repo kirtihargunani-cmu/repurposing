@@ -1,0 +1,44 @@
+{
+ "config": "config/drug_gate.yaml",
+ "config_sha256_16": "1d0a2f8719a51a48",
+ "rules": {
+  "expression": {
+   "tpm_min": 1.0,
+   "min_fraction": 0.2
+  },
+  "adme": {
+   "hgnc_group_ids": [
+    1000,
+    1001,
+    1002,
+    363,
+    762,
+    1133,
+    1667,
+    567,
+    1469,
+    461,
+    2173,
+    2216
+   ],
+   "genes": [
+    "ABCB1",
+    "ABCC1",
+    "ABCC2",
+    "ABCC3",
+    "ABCG2"
+   ]
+  },
+  "family": {
+   "enabled": false,
+   "max_group_size": 15,
+   "min_group_size": 2
+  }
+ },
+ "hgnc_file": "hgnc_complete_set_20261001.txt",
+ "hgnc_sha256_16": "91d0ad20c34f26fb",
+ "tas_min": 0.4,
+ "min_lines_borrowed": 3,
+ "n_adme_genes": 133,
+ "n_rows": 11828
+}
