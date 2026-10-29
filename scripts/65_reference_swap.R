@@ -1,4 +1,15 @@
 
+#!/usr/bin/env Rscript
+# Reference-swap test (written and run 2026-10-27 on the TF arm; header added 2026-10-29): how much do the group
+# master regulators depend on which normal reference is used? For every group with both a GTEx and an adjacent-normal
+# Step 4 v2 signature, msviper (TF-only v2 regulons, 50_viper.R filters) three ways:
+#   A  GTEx signature,     null from GTEx normals      (the v2 setup)
+#   B  adjacent signature, null from adjacent normals
+#   C  adjacent signature, null from GTEx normals      (separates the signature's effect from the null's)
+# Reported per group and variant: NES spread, FDR < 0.05 count and direction, Spearman of NES between A and B / A and C,
+# and of the two gene signatures. Caveat: the GTEx null here uses all of the group's GTEx normals, as 50_viper.R did
+# before the 2026-10-28 fix (D73); a rerun should use the Step 4a reference set.
+# Outputs: results/step6/reference_swap/reference_swap_stats.tsv, reference_swap_nes.tsv.gz (not in git)
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(limma); library(viper); library(parallel)})
 setwd("/home/kirti/projects/repurposing")
 MIN_LOGCPM <- 1; MIN_TARGETS <- 10; MIN_FRAC <- 0.5; N_PERM <- 1000

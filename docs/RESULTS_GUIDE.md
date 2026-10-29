@@ -1,3 +1,5 @@
+> **v2 (2026-10-29):** this guide describes the v1 result files. For v2 outputs and where they are, see [`PIPELINE_V2.md`](PIPELINE_V2.md) ("Where the main outputs are").
+
 # Results and data guide
 
 One- to two-line descriptions of every results table and data folder on the disease side (Steps 1-10).

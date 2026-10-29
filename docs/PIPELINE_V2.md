@@ -1,0 +1,286 @@
+# Pipeline v2: steps, decisions and outputs
+
+Last updated 2026-10-29. This is the reference for how the v2 pipeline runs, step by step: what each step does and
+why, the exact command, what it reads and writes, which decisions shape it, the checks it reports, and where it
+stands. The full reasoning behind each decision is in [`DECISIONS.md`](DECISIONS.md) (D-numbers below); the run
+history with all numbers is in [`PROGRESS.md`](PROGRESS.md); the agreed rebuild plan is
+[`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md). The drug side lives on the `celligner` branch and is documented in
+`celligner:docs/PIPELINE_DRUG_SIDE_V2.md`.
+
+To run the steps in order: [`scripts/run_v2.sh`](../scripts/run_v2.sh) (`scripts/run_v2.sh list` shows the steps;
+`scripts/run_v2.sh <step>` runs one). To see which outputs exist for the active build: `Rscript scripts/00_status.R`.
+
+## What the pipeline does
+
+The goal is to find drugs that push a cancer's regulator activity back toward healthy tissue.
+
+```mermaid
+flowchart TD
+  S1["1-3. Cohorts, expression, covariates<br/>49 disease groups, 10,211 patients (TCGA / TARGET + GTEx)"]
+  G["Gene set v2<br/>17,784 protein-coding genes (hard-to-map genes removed)"]
+  S4["4. Tumor-vs-healthy signatures<br/>41 groups; GTEx reference prepared and corrected (4a)"]
+  S5["5. Regulator networks<br/>29 ARACNe networks, TF-only set; cross-mappable edges removed"]
+  S6["6. Regulator activity (VIPER)<br/>group level (master regulators) and patient level"]
+  S8["8. Patient clustering<br/>with and without the recurring module"]
+  S10["10. Subgroups<br/>14 subgroups from 7 diseases; own signatures and VIPER"]
+  D["Drug side (celligner branch)<br/>cell-line matching, LINCS drug activity, ranking, flags, evidence status"]
+  S1 --> G --> S4 --> S6
+  G --> S5 --> S6 --> S8 --> S10
+  S6 --> D
+  S10 --> D
+```
+
+## Conventions that apply to every step
+
+- **Rules are fixed before results are looked at** and recorded in `DECISIONS.md`, then reported whatever they show
+  (D19, D53). When a rule turns out to be wrong it is corrected openly (e.g. the COAD rounding in D71).
+- **Builds are named, never mixed.** `config/builds.yaml` lists each build with all its paths; `R/paths.R` resolves
+  them. Active build: `v2_tf_xmap` (v2 gene set, cross-mappable edges removed, TF-only regulators, D64). v1 outputs
+  are kept for comparison; v2 writes to `_v2` paths (D53).
+- **Script switches.** Most scripts take environment variables: `VERSION=v2` (v2 inputs and outputs),
+  `REGSET=tf` (TF-only regulator set), `REGULON=aracne_project | collectri | dorothea_ABC` (regulon set),
+  `STRATA=<file>` (subgroups instead of groups), `ONLY_GROUPS`, `N_CORES`. Each script's header lists its own.
+- **Machines.** ARACNe builds ran on MAIL-15; everything else runs on MAIL-10. Large intermediate files
+  (`data/processed`, `*.tsv.gz`) are not in git.
+
+## Step overview
+
+| Step | What | Main scripts | Status (2026-10-29) |
+|---|---|---|---|
+| 1-2 | Disease groups, expression data | `10_ground_toil.py`, `11_split_subtypes.py` | unchanged from v1 |
+| 3 | Covariates; v2 gene set | `20_covariates.py`, `21_estimate.R`, `22_gene_set_v2.py` | done 10-18 |
+| 4 | Tumor-vs-healthy signatures (GTEx reference prepared in 4a) | `32_gtex_reference.R`, `30_signatures.R`, `37_step4_v2_checks.R` | done 10-20 |
+| 5 | ARACNe networks and regulons | `42`, `43`, `44`, `45`, `46` | done 10-25 (TF-only edge confounding not run) |
+| 6 | VIPER: master regulators (group) and patient scores | `50_viper.R`, `56`, `61`, `63`, `64`, `65` | done; null fixed and rerun 10-28 |
+| 7 | Master-regulator rules, diagnostics | `51`, `59`, `62`, `58` | `62` done; `51` / `59` not rerun after the null fix; `58` not run |
+| 8 | Patient clustering, subgroup keep rule | `80`, `84` | done 10-28 |
+| 9 | Replication in external cohorts | `90`-`94` | not run on v2 |
+| 10 | Subgroups: signatures, VIPER, variability, what defines them | `85`, `30` / `50` STRATA=, `86`, `87` | done 10-29 |
+| Drug | Cell lines, drug activity, ranking, flags, literature, FDA | celligner `74b`, `79b`, `79d`-`79p` | done 10-29; PRISM / GDSC validation on hold |
+
+---
+
+## Steps 1-2. Disease groups and expression data (unchanged from v1)
+
+- **What:** the Toil recompute of TCGA, TARGET and GTEx (RSEM, GENCODE v23); cancer cohorts mapped to disease
+  ontologies; mixed cohorts split into subtypes (PAM50 breast, IDH / 1p19q glioma, etc.); groups with < 30 patients
+  dropped. One sample per patient.
+- **Outputs:** `results/step1/disease_groups_toil.tsv` (49 groups, 10,211 patients), counts cached in
+  `data/processed/step4/counts_protein_coding.rds`.
+- **Decisions:** see `PROJECT_SETUP_NOTES.md` and the early D-numbers. Snapshot of the funnel:
+  [`PIPELINE_SUMMARY.md`](PIPELINE_SUMMARY.md) (v1 numbers, still valid for these steps).
+
+## Step 3. Covariates and the v2 gene set
+
+**Covariates** (`scripts/20_covariates.py`, `21_estimate.R` -> `results/step3/covariates_toil.tsv`):
+sex, age, site, plate, sample type, ESTIMATE purity, and for GTEx the collection variables (ischemic time, death
+circumstance ventilator / fast / slow, autolysis).
+- **ESTIMATE purity everywhere, including LGG (D45).** Why: it exists for tumors and normals alike, so it is the only
+  purity measure usable in tumor-vs-normal models. (Open: whether LGG also needs ABSOLUTE, A37, tabled.)
+- **RNA-quality index is not used in signatures (D50)**, only for patient-level correction. Why: computed across
+  tumors and normals together it mixes RNA quality with tissue type.
+
+**Gene set v2** (`scripts/22_gene_set_v2.py` -> `results/step3/genes_protein_coding_v23_v2.tsv`, dropped genes and
+reasons in `genes_v2_dropped.tsv`):
+- **Drop genes that cannot be measured reliably (D46):** mappability < 0.8 (reads also map elsewhere in the genome)
+  and readthrough loci (transcripts that run across two genes). 2,013 of 19,797 protein-coding genes dropped,
+  **17,784 kept**. Why: these genes produced artifacts (the AGAP4/5/6/9 paralogs in the recurring module, multi-mapping
+  noise) in signatures and networks.
+- Genes without a mappability value are kept and flagged (D54).
+- Mappability file note: `_PAR_Y` rows (Y copies of pseudoautosomal genes) have mappability 0 and are skipped.
+
+## Step 4. Tumor-vs-healthy signatures
+
+**4a. Prepare the GTEx healthy reference** (`scripts/32_gtex_reference.R` -> `results/step4_v2/gtex_reference.tsv`):
+- **Remove samples from the wrong part of the organ (D59).** Colon: keep transverse-colon samples with an epithelial
+  marker score >= 7 (drops muscle-wall samples, 165 -> 109). Kidney: keep cortex samples with a proximal-tubule
+  score >= 5 (28 -> 21). Why: the tumor arises from epithelium, so muscle or medulla samples would put tissue
+  composition differences into the signature.
+- **Correct GTEx for how the body was collected (D57).** Post-mortem samples differ by ischemic time and how the donor
+  died. Each tissue gets an "anchor": the best-preserved donors (ventilator cases, short ischemic time, low autolysis).
+  Collection covariates are centered at that anchor, so the signature compares tumors with a well-preserved donor.
+  Why: removes post-mortem decay from the signature without using TCGA normals, which differ from GTEx in more than
+  lab handling (surgery vs death, cancer patients vs donors, tissue next to a tumor).
+- **GTEx stays the healthy reference; TCGA adjacent normals are a check only (D57, D58).**
+- Kidney has only 21 reference donors after the filter (D60, open for the PI).
+
+**4b. Signatures** (`VERSION=v2 Rscript scripts/30_signatures.R`):
+- limma model `~ condition + age + sex + ESTIMATE + sample-type indicators + collection covariates`; moderated t
+  converted to a signed z per gene. Two contrasts per group where possible: vs GTEx (primary) and vs adjacent normals
+  (check).
+- **voomByGroup instead of voom (D69).** Tumors are 1.2-1.8x more variable than normals; separate noise models give
+  each arm its own weights. Why the user chose it: top-of-list genes and regulator lists shift 10-30%, which matters
+  for the drug side even though whole rankings barely move.
+- **Outputs:** `results/step4_v2/{z_tumor_vs_gtex,z_tumor_vs_adjacent,signature_summary}.tsv`;
+  full tables `data/processed/step4_v2/<group>__<contrast>.tsv.gz`. 41 groups have a usable signature.
+- **Checks** (`scripts/37_step4_v2_checks.R` -> `results/step4_v2/checks/`): agreement with adjacent-normal
+  signatures up (median 0.59 -> 0.65); post-mortem signal closer to 0 in 28 of 39 groups; proliferation kept in 38 of
+  40; GC tilt larger (median -0.24 -> -0.30) and accepted (D70: partly real, corrected only if it applied to all
+  cohorts).
+
+## Step 5. Regulator networks (ARACNe)
+
+- **Inputs** (`VERSION=v2 python scripts/42_aracne_inputs.py` -> `data/processed/step5/aracne_inputs_v2/`): per cohort,
+  tumors only, v2 gene set, genes expressed in >= 10% of tumors. COAD + READ pooled. Plus a luminal-only breast
+  network BRCA_LUM (D65). 29 networks.
+- **Build** (`VERSION=v2 [REGSET=tf] scripts/43_run_aracne.sh`, MAIL-15, ~2.5 days + ~0.7 days): ARACNe-AP, 100
+  bootstraps, DPI, as v1 (D51). Two regulator sets (D64): full (5,789 candidates) and **TF-only** (Lambert TFs,
+  ~1,100-1,360 per network). Why TF-only: comparable with CollecTRI / DoRothEA, and drops non-TF "regulators" that only
+  mark proliferation (MKI67, TOP2A).
+- **Regulons** (`VERSION=v2 [REGSET=tf] Rscript scripts/44_aracne_regulons.R` ->
+  `data/processed/step5/regulons_aracne_project_v2[_tf].rds`): **edges between cross-mappable genes are removed
+  before the regulons are made** (11-15% of edges; counts in `results/step5/crossmap_edges_removed_v2[_tf].tsv`).
+  Why: paralog pairs share reads, so their correlation is partly a mapping artifact, and they are among the strongest
+  edges.
+- **Diagnostics:** bootstrap support (`45_edge_support.R` -> `results/step5/aracne_edge_support_v2[_tf].tsv`); edge
+  confounding (`46_edge_confounding.R` -> `aracne_edge_confounding_v2.tsv`: < 2% of edges lose half their strength
+  after purity, quality and plate; TF-only set not run).
+- No proliferation regression of the network input (D66).
+
+## Step 6. Regulator activity (VIPER)
+
+**6a. Group level: master regulators** (`REGULON=aracne_project VERSION=v2 REGSET=tf Rscript scripts/50_viper.R`; also
+`REGULON=collectri` and `REGULON=dorothea_ABC` with `VERSION=v2`, and the full set without `REGSET`):
+- msviper on each group's signature. Regulators kept if expressed in the tumors (median logCPM >= 1) with >= 10 targets
+  and >= 50% of targets measured.
+- **Null (what counts as chance):** 1,000 random splits of the group's healthy samples into two halves.
+  **Fixed 2026-10-28 (D73):** the null now uses exactly the GTEx samples the signature used (Step 4a set); before,
+  it used all of a group's GTEx samples.
+- **Covariate-adjusted null tested, not adopted (D73;** `scripts/64_null_adjust_test.R` ->
+  `results/step6/null_adjust_test/`). It made no false calls and found more master regulators, but lost one
+  known-biology control, so by the rule set before running it was not adopted. Available as `NULL_ADJUST=1`.
+- **Key finding:** FDR-cut master-regulator lists are unstable (colon 425 / 0 / 1 between nulls) while the regulator
+  ranking is stable (Spearman >= 0.98). This is why the drug side weights every regulator by its NES (D74).
+- **Outputs** (per regulon set, e.g. `results/step6/aracne_project_v2_tf/`): `group_mr.tsv` (regulator, NES, p, FDR per
+  group), `regulator_filter.tsv`, `group_summary.tsv`, `patient_concordance.tsv`, `axes.tsv`; uncorrected patient NES in
+  `data/processed/step6/<set>/`.
+- **Roles of the regulon sets:** ARACNe is primary; CollecTRI and DoRothEA are supporting evidence (D17); confirmed
+  regulator rule D18. CollecTRI reaches FDR < 0.10 in few groups on the corrected null, which no longer matters for
+  ranking (D74).
+
+**6b. Patient level** (`VERSION=v2 REGSET=tf Rscript scripts/61_quality_correct.R`; purity part `56_purity_correct.R`):
+- Each tumor's expression is corrected for ESTIMATE purity and RNA quality; the healthy samples are corrected for
+  quality and collection covariates and set to the anchor; VIPER per patient against them.
+- **Outputs:** `data/processed/step6/aracne_project_v2_tf_patient/<group>.patient_nes.tsv.gz`;
+  checks `results/step6/aracne_project_v2_tf/quality_correction/` (patient concordance with the group profile,
+  effective dimensionality, PC associations with purity / quality / plate).
+
+**Checks** (`scripts/63_step6_v2_checks.R`, SET=full / tf -> `results/step6/checks_v2[_tf]/`): GC-only signature vs
+master regulators (C2), known-biology controls (C5), master-regulator agreement v1 vs v2 (C7), network size (C9),
+no cross-mappable edges or low-mappability genes left (C10 = 0). Results in `PROGRESS.md` 2026-10-25.
+
+**Reference swap** (`scripts/65_reference_swap.R` -> `results/step6/reference_swap/`): master regulators with GTEx vs
+adjacent-normal references for the 15 groups that have both (run 10-27, before the null fix).
+
+## Step 7. Master-regulator diagnostics
+
+- **Recurring module (C8,** `NES_DIR=data/processed/step6/aracne_project_v2_patient Rscript scripts/62_recurring_module.R`
+  -> `results/step6/aracne_project_v2/diagnostics/`): a group of ~50-80 regulators (PILRB, ZNF692, CCNL2, ...) that
+  co-varies across patients in 36 of 41 groups, tracks plate (excess over chance median 0.17) and not immune, purity or
+  quality. Tested and rejected as its cause: RNA quality, GC bias, multi-mapping. Treated as a technical nuisance for
+  subgrouping (D79; D26 awaits PI confirmation).
+- Known-biology controls and three-way regulon comparison (`51_compare_mr.R`, `59_compare_regulon_sets.R`): not yet
+  rerun on the corrected-null outputs. Regulator modules (`58`): not run on v2.
+
+## Step 8. Patient clustering and the subgroup keep rule
+
+**Clustering** (`Rscript scripts/80_consensus_clustering.R`, build `v2_tf_xmap` -> `results/step8_v2_tf/`;
+`EXCLUDE_MODULE=recurring` -> `results/step8_v2_tf_no_c8/`):
+- **Features:** each group's corrected patient NES; regulators whose activities move together (|r| >= 0.7) form
+  modules; each module becomes one score per patient. `modules10` (main) uses modules of >= 10 regulators;
+  `all` (sensitivity) uses every module and single regulator. Why modules: a large correlated block (like the
+  recurring module) would otherwise dominate the distances.
+- **Method:** M3C consensus clustering (PAM, K = 2-10) against reference data without clusters; clusters accepted
+  only if both p-values < 0.05 (D30). "No clusters" is an accepted answer.
+- **Without the recurring module:** the module is removed before building features. The decision changed in only 5 of
+  41 groups, mostly borderline ones.
+
+**Keep rule (D71)** (`Rscript scripts/84_subgroup_consistency.R`; `STEP8_SUFFIX=_no_c8` for the no-module run ->
+`results/step8_v2_tf[_no_c8]/consistency.tsv`). A clustering becomes subgroups only if all hold:
+
+| Criterion | Threshold | Why |
+|---|---|---|
+| M3C significant (main feature set) | both p < 0.05 | real structure, not continuous variation |
+| Prediction strength (clusters reproduce in held-out halves of the patients) | >= 0.75 | any 2-way split of unstructured data scores ~0.5-0.65 here |
+| Smallest cluster | >= 30 patients | a subgroup needs its own signature |
+| Agreement between the two feature sets | ARI >= 0.3 | not an artifact of how features were built |
+| Plate (Cramer's V above chance) | < 0.1 | not a batch effect |
+| Purity and RNA quality (R^2) | < 0.1 | not a sample-quality effect |
+
+Correction: COAD (prediction strength 0.748) was first passed by rounding; strictly it fails (recorded in D71).
+
+## Step 9. Replication (not run on v2)
+
+v1 replicated the COAD split in GSE39582 and CPTAC-COAD (`90_process_replication_crc.R`, `91_replicate_crc.R`) and the
+breast axes in METABRIC / CPTAC-BRCA (`93`, `94`). Planned for v2: the new subgroups in CPTAC-HNSCC, a bladder cohort,
+and COAD again.
+
+## Step 10. Subgroups
+
+**Which subgroups (D79,** `Rscript scripts/85_step10_strata_v2.R` -> `results/step10_v2/strata.tsv`,
+`stratum_patients.tsv`): every group passing D71 on the clustering without the recurring module, plus COAD as an
+explicit exception (its MSI-like vs CIN-like split matches TCGA subtypes and was replicated in v1). 14 subgroups,
+named from the TCGA subtypes of their members:
+
+| Disease | Subgroups (patients) |
+|---|---|
+| TCGA-BLCA | basal-squamous-like (172) / luminal-like (235) |
+| TCGA-HNSC | basal-mesenchymal-like (363) / atypical-classical-like (155) |
+| LGG-IDHmut-noncodel | LGr2 (89) / LGr3 (152) |
+| PCPG-PHEO | pseudohypoxia-Wnt (69) / kinase-signaling (77) |
+| TCGA-THCA | BRAF-like-classical (296) / RAS-like-follicular (208) |
+| TGCT-SEM | C1 (32) / C2 (30) |
+| TCGA-COAD (exception) | CIN-like (194) / MSI-like (93) |
+
+- **Signatures** (`VERSION=v2 STRATA=results/step10_v2/stratum_patients.tsv Rscript scripts/30_signatures.R` ->
+  `results/step10_v2/{z_tumor_vs_gtex,z_tumor_vs_adjacent,signature_summary}.tsv`): each subgroup's tumors vs its
+  parent's healthy samples, same v2 model.
+- **VIPER at group and patient level** (`... STRATA=results/step10_v2/stratum_patients.tsv Rscript scripts/50_viper.R`,
+  for the TF arm, CollecTRI and DoRothEA -> `results/step6/<set>_strata/`). Group level gives each subgroup's master
+  regulators; patient level lets us measure how much patients vary inside a subgroup.
+- **Variability inside subgroups** (`scripts/86_subgroup_variability.R` -> `results/step10_v2/variability*.tsv`):
+  coherence of patients with their subgroup's profile, effective dimensionality, PC associations with plate, purity,
+  quality. (Run on the earlier D72 subgroups; rerun for D79 pending.)
+- **What defines each subgroup** (`scripts/87_subgroup_characterize.R` -> `results/step10_v2/defining_features.tsv`,
+  `defining_top.tsv`): feature differences vs the sibling, with small programs (modules < 10 regulators, single
+  regulators) marked. Many small programs are chromosome-19 zinc-finger groups; check before reporting.
+
+## Drug side (celligner branch)
+
+Summary; full detail in `celligner:docs/PIPELINE_DRUG_SIDE_V2.md` and caveats in
+`celligner:docs/notes/drug_side_decisions_and_caveats.md` (C18-C23).
+
+1. **Cell-line matching** (Celligner): each patient is matched to DepMap lines of the same tissue; disease and subgroup
+   line weights (`74`, `74b`).
+2. **Drug activity:** LINCS drug signatures in cancer lines, each line's average drug response removed, scored with
+   VIPER on the ARACNe TF regulons and on CollecTRI (`79c`, `79d`).
+3. **Target check** (`79b`): a drug stays on a disease's list if one of its targets is expressed.
+4. **Ranking** (`79l` -> `79e` -> `79i`): every regulator weighted by its disease NES (D74); consensus of ARACNe TF and
+   CollecTRI (D75); flags for drugs tested only in unlike cell lines (D76) and for borrowed drugs with low transfer
+   confidence (D77); evidence status per disease (D78); proliferation split; reports lead with specificity (D80).
+5. **Literature and FDA** (`79o`, `79p`): PubMed / ClinicalTrials.gov links for top pairs; FDA-approved rankings from
+   Drugs@FDA; browsable page `celligner:results/lincs/fda_rankings_v2.html`.
+
+## Where the main outputs are
+
+| Question | File |
+|---|---|
+| Which groups and patients? | `results/step1/disease_groups_toil.tsv`, `results/step3/covariates_toil.tsv` |
+| Tumor-vs-healthy signature of a group | `results/step4_v2/z_tumor_vs_gtex.tsv` (z per gene) |
+| A group's master regulators | `results/step6/aracne_project_v2_tf/group_mr.tsv` (+ `collectri_v2`, `dorothea_ABC_v2`) |
+| A patient's regulator activity | `data/processed/step6/aracne_project_v2_tf_patient/<group>.patient_nes.tsv.gz` |
+| Does a group have subgroups? | `results/step8_v2_tf_no_c8/consistency.tsv`, `decision.tsv` |
+| Subgroups and their patients | `results/step10_v2/strata.tsv`, `stratum_patients.tsv` |
+| A subgroup's master regulators | `results/step6/aracne_project_v2_tf_strata/group_mr.tsv` |
+| Drug ranking per disease / subgroup | celligner `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv` |
+| Evidence status per disease | celligner `results/lincs/drug_reversal_summary_v2_consensus.tsv` |
+| FDA-approved drugs per cohort | celligner `results/lincs/fda_ranking_v2_consensus.tsv`, `fda_rankings_v2.html` |
+
+## Open items
+
+- D26 recurring module: subgroups are defined without it (D79); PI to confirm.
+- D60 kidney reference; A37 LGG purity covariate (tabled); D68 BRCA_LUM material-change cutoff.
+- Step 7 reruns on the corrected null (`51`, `59`), modules (`58`), TF-only edge confounding (`46`).
+- Step 9 replication of the new subgroups; `86` variability rerun for the D79 subgroups.
+- Drug side: PRISM / GDSC validation on hold; confirm or drop the oddities in specificity lists (cardiac glycosides,
+  pentobarbital, metronidazole).
