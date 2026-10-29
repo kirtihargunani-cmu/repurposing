@@ -4,6 +4,8 @@ An ongoing list for the drug side (branch `celligner`, worktree `~/projects/repu
 decisions are made and caveats come up. Detailed numbers and run history are in `docs/PROGRESS.md` and the commit
 messages; this file is the short list.
 
+How the steps run (v2): [`../PIPELINE_DRUG_SIDE_V2.md`](../PIPELINE_DRUG_SIDE_V2.md) and `scripts/run_v2_drug.sh`.
+
 - **Part 1:** your decisions.
 - **Part 2:** method choices made while building, not yet reviewed by you.
 - **Part 3:** caveats in the data and results.

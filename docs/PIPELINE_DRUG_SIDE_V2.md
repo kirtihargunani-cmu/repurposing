@@ -1,0 +1,169 @@
+# Drug side v2: steps, decisions and outputs
+
+Last updated 2026-10-29. Branch `celligner` (worktree `~/projects/repurposing-celligner`). This page explains how drugs
+are matched to diseases, step by step: what each step does and why, the exact command, inputs, outputs and the
+decisions behind it. The disease side (signatures, master regulators, subgroups) is documented on `main` in
+`docs/PIPELINE_V2.md`; decisions with full reasoning are in `main:docs/DECISIONS.md` (D-numbers) and in
+[`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md) (drug-side decisions, method
+choices and caveats C1-C23). Requirements for how results are reported live in `main:docs/LLM_COORDINATION_NOTES.md`.
+
+To run: [`scripts/run_v2_drug.sh`](../scripts/run_v2_drug.sh) (`list`, `show <step>`, or step names in order). Run the
+disease side first (`main:scripts/run_v2.sh`), then `sync_disease`.
+
+## The idea in one paragraph
+
+A cancer changes the activity of many regulators (transcription factors) compared with healthy tissue. A drug also
+changes regulator activity in the cell lines it was tested on (LINCS). A drug is a candidate if it pushes the disease's
+regulators back toward healthy (reversal), more so for this disease than for cancers in general (specificity), and
+not only by stopping cell division (proliferation split). Every candidate list says how good the underlying cell-line
+evidence is (evidence status).
+
+```mermaid
+flowchart LR
+  DS["Disease side (main)<br/>regulator NES per disease and subgroup"]
+  CL["Celligner<br/>which cell lines resemble each disease"]
+  L["LINCS drug profiles<br/>per drug x cell line"]
+  A["Drug regulator activity<br/>ARACNe TF + CollecTRI"]
+  T["Target check<br/>drug target expressed"]
+  S["Scores<br/>rev, spec, spec_mech, spec_sib_mech"]
+  F["Flags + evidence status<br/>unmatched_lines, low_transfer"]
+  O["Outputs<br/>rankings, FDA list, literature, page"]
+  L --> A --> S
+  DS --> S
+  CL --> S
+  T --> S --> F --> O
+```
+
+## Steps
+
+### 1. Cell-line matching (Celligner; v1, unchanged)
+- `70_celligner.py` -> `74_celligner_matrices.py`: tumors and DepMap cell lines are aligned so their expression is
+  comparable; each patient gets weights over the lines most like them.
+- **Lines from the same tissue only** (tissue key, `config/celligner_tissue_keys.tsv`), because the match is about
+  whether a drug's effect applies, not about the closest line anywhere (2026-10-08). Substitutes where a tissue has no
+  usable lines (thymoma -> T-cell lines; PCPG -> neuroblastoma lines). Blood split into myeloid / lymphoid (2026-10-12).
+- **Subgroups** (`subgroup_line_weights`, `74b_stratum_line_weights.py` VERSION=v2): a subgroup's weights are the mean
+  of its own patients' weights.
+- Outputs: `results/celligner/disease_line_weights_long.tsv`, `stratum_line_weights_long_v2.tsv`,
+  `stratum_line_summary_v2.tsv`.
+
+### 2. Drug data (LINCS; v1, unchanged)
+- `76`, `76b`, `79a`, `79c`: LINCS 2020 level-5 signatures, high quality and active (TAS >= 0.4), in cancer lines; genes
+  = measured + best-inferred (~10,000). Per drug and line one consensus profile.
+- **Each line's average drug response is removed** ("specific" profiles), because almost every active drug slows
+  growth; without this, most drugs looked like they reversed every cancer.
+- A drug not tested in the disease's own tissue is **borrowed** if tested in >= 3 other cancer lines (2026-10-09).
+- Annotations (`79a`): targets, mechanism, approval (ChEMBL phase 4 or Repurposing Hub "Launched": approved anywhere).
+
+### 3. Target check (`79b`; `subgroup_target_gate` for subgroups)
+- A drug stays on a disease's list if one of its own annotated targets is expressed (TPM >= 1 in >= 20% of the
+  disease's tumors). Drug-handling genes never count; no family rescue (a paralog cannot stand in for the target).
+  Subgroups: judged on the subgroup's own tumors.
+- Outputs: `results/lincs/disease_drugs.tsv`, `stratum_drugs_v2.tsv`.
+
+### 4. Drug regulator activity (`drug_viper_*`, `79d_drug_viper.R`)
+- VIPER on every drug x line profile with: the ARACNe TF-only regulons of each cancer's network (VERSION=v2 REGSET=tf)
+  and CollecTRI (REGULON=collectri, one context-free regulon). DoRothEA is also scored (not used in the ranking).
+- **Why two regulon sets (D75):** the tumor network learns which genes rise and fall together across patients. For
+  ESR1 this includes lineage genes (GATA3, FOXA1) that anti-estrogens raise in MCF7, so ER blockade read as ER
+  activation. CollecTRI's ESR1 targets are direct targets and read the drugs correctly. Shadow correction and the
+  luminal-only network did not fix it (caveat C18).
+- **Knockdown benchmark** (`knockdown_subset`, `knockdown_benchmark`, `79m` / `79n`): LINCS shRNA and CRISPR knockdowns
+  of 336 TFs. All regulon sets detect knockdowns weakly and about equally, with too little data to pick a set per TF
+  (C19), so both sets are averaged instead. Reported, not used.
+- Outputs: `data/processed/lincs/drug_viper_specific_v2_tf/<NET>.f32`, `drug_viper_specific_collectri/ALL.f32` (not in
+  git); regulator tables `results/lincs/drug_viper_regulators_*.tsv`.
+
+### 5. Proliferation-linked regulators (`prolif_regulators_*`, `79h`)
+- Per regulon set: regulators whose targets are enriched for proliferation genes (Hallmark E2F + G2M, FDR < 0.05,
+  fold >= 2). Used by the split in step 9. Outputs: `results/lincs/prolif_regulators_v2_tf.tsv`,
+  `prolif_regulators_collectri.tsv`.
+
+### 6. Borrowed-drug transfer confidence (`transfer_confidence`, `79l` VERSION=v2; run before ranking)
+- Predicts how well a drug's average profile in other lines matches its profile in an unseen line, from the drug's
+  consistency across lines (leave-one-line-out data, `77`). Well calibrated.
+- A distance term (how far the disease is from the drug's tested lines) was added as agreed and **adds nothing** once
+  consistency is known: how well a borrowed drug carries over is a property of the drug (C21).
+- **Flag `low_transfer` (D77):** borrowed and confidence < 0.5 (fixed from the distribution before rankings; 11.5% of
+  borrowed pairs). Output `results/lincs/drug_transfer_confidence_v2.tsv`.
+
+### 7. Ranking per disease (`ranking`, `79e` VERSION=v2 REGULON=consensus)
+- **Drug activity per disease:** tested in the disease's tissue -> average over those lines, weighted by the disease's
+  Celligner weights; borrowed -> plain average over all its other cancer lines.
+- **Consensus (D75):** per regulator, the mean of the ARACNe TF and CollecTRI values, over the sets where the regulator
+  is scored on both the disease and the drug side.
+- **Reversal (`rev`, D74):** `rev = - sum_i NES_i * a_i / sqrt(sum_i NES_i^2)` over every regulator tested in the
+  disease (NES_i = disease activity change, a_i = drug activity). Positive = the drug pushes regulators back toward
+  healthy. **No master-regulator cutoff:** FDR-cut lists changed a lot with small changes to the null while the
+  ranking did not (D73).
+- **Specificity (`spec`):** `rev` robust-z-scored within the disease, minus the mean of the same drug activity scored
+  against every disease from other tissues (each robust-z-scored). Positive = reverses this disease more than cancers
+  in general. Same-tissue diseases are excluded so subtypes do not count against each other.
+- **Flag `unmatched_lines` (D76):** a direct drug whose best tested line has < 0.1 of the Celligner weight of the
+  disease's best line in the tissue (cutoff fixed from the bimodal distribution). Example: basal breast anti-estrogens,
+  tested only in MCF7 (luminal), ranked 97-100th for the wrong reason (C20).
+- **Tiers:** 1 = approved anywhere + passes target check + top 10% + not flagged; 2 = same but not approved; 3 = rest.
+  Flagged drugs stay in the ranking but never in tiers 1-2.
+- **Evidence status per disease (D78):** `matched` (a tier 1-2 drug was tested in a matching line), `borrowed only`, or
+  `no adequate compound`, with a sentence for reports (`evidence_note`). v2: 14 of 41 diseases matched.
+- Outputs: `results/lincs/drug_reversal_v2_consensus.tsv`, `drug_reversal_summary_v2_consensus.tsv`,
+  `drug_reversal_controls_v2_consensus.tsv`.
+
+### 8. Ranking per subgroup (`ranking_subgroups`, `79e` STRATA=1)
+- Same as step 7 for the 14 subgroups (main D79), using each subgroup's master regulators and line weights and its
+  parent's tissue key, network and transfer confidence. Adds **sibling specificity (`spec_sib`)**: this subgroup vs its
+  sibling subgroup. Replaces `79g` for v2.
+- Outputs: `results/lincs/stratum_reversal_v2_consensus.tsv`, `stratum_reversal_summary_v2_consensus.tsv`.
+
+### 9. Proliferation split (`split`, `79i`)
+- Proliferation-linked regulators (step 5, or whose drug activity tracks the drug's effect on proliferation genes,
+  |r| >= 0.5) are separated; the remaining activity is adjusted for each drug's proliferation effect.
+- Scores: `rev_prolif` (reversal through proliferation), `rev_mech` (the rest), **`spec_mech`** (specificity of the
+  mechanism part), for subgroups **`spec_sib_mech`**; `prolif_share` = share of the reversal from proliferation.
+  A regulator counts as proliferation-linked if linked in either regulon set.
+- **Reports lead with `spec_mech` / `spec_sib_mech` (D80):** by `rev` the same drugs top most cancers (statins,
+  palbociclib, MEK inhibitors, anthracyclines; 32 drugs in the top 10% of >= 20 groups); by `spec_mech` none.
+- Outputs: `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv`,
+  `split_overview_v2_consensus.tsv`, `split_controls_v2_consensus.tsv`.
+
+### 10. Literature, FDA, page (`literature`, `fda_ranking`, `literature_fda`, `fda_page`)
+- **Literature (`79o`):** per disease, the top 10 by `spec_mech` and by `rev` (eligible, named drugs): PubMed (drug and
+  disease in title / abstract) and ClinicalTrials.gov, with the 3 most relevant papers and trials. `MODE=fda`: the top 3
+  FDA drugs of every disease and subgroup by FDA ingredient name. ClinicalTrials.gov matches loosely; counts are an
+  upper bound. Outputs `results/lincs/literature_v2_consensus.tsv`, `literature_fda_top_v2.tsv`.
+- **FDA rankings (`79p`):** Drugs@FDA (downloaded 2026-10-29 to `main:data/raw/drugsatfda`, not in git) matched by
+  ingredient name with salts removed (527 of 3,058 LINCS drugs; 458 marketed). Per disease the eligible FDA drugs
+  ranked by `spec_mech`, per subgroup by `spec_sib_mech`. Outputs `results/lincs/fda_ranking_v2_consensus.tsv`,
+  `fda_ranking_strata_v2_consensus.tsv`, `fda_matches.tsv`.
+- **Page (`79q`):** `results/lincs/fda_rankings_v2.html`, self-contained (template `scripts/templates/fda_rankings.html`);
+  published copy https://claude.ai/artifact/4UVF5F6SxD639VKKJEZenw (private).
+
+## Column guide for the main outputs
+
+| Column | Meaning |
+|---|---|
+| `group_id` / `stratum`, `parent_group` | disease (41 groups) or subgroup (14) and its parent |
+| `source` | `direct` (tested in the disease's tissue) or `borrowed` |
+| `line_match`, `unmatched_lines` | direct drugs: best tested line's Celligner weight relative to the disease's best line; flag if < 0.1 |
+| `transfer_conf`, `low_transfer` | borrowed drugs: predicted transfer accuracy relative to a replicate; flag if < 0.5 |
+| `passes_gate`, `gate_reason` | target check result |
+| `approved` | approved anywhere (ChEMBL phase 4 or Hub "Launched"); FDA status is in the `fda_*` files |
+| `rev`, `rev_pct` | reversal score and its percentile within the disease |
+| `spec`, `spec_pct` | specificity vs other-tissue cancers |
+| `rev_mech`, `spec_mech` (+ `_pct`) | the same with the proliferation part removed (lead with `spec_mech`) |
+| `spec_sib`, `spec_sib_mech` | subgroups: vs the sibling subgroup |
+| `prolif_share` | share of the reversal that comes from proliferation-linked regulators |
+| `tier_rev`, `tier_spec`, `tier_mech`, `tier_spec_mech`, `tier_sib` | 1 approved + gate + top 10% + unflagged; 2 not approved; 3 rest |
+| `evidence_status`, `evidence_note` (summary files) | matched / borrowed only / no adequate compound, and the report sentence |
+| `fda_rank`, `fda_status`, `first_fda_approval`, `drugsatfda_url` (FDA files) | rank among the cohort's eligible FDA drugs; marketed or discontinued |
+
+## Results and caveats (short)
+
+- Known drugs: lung adenocarcinoma erlotinib 96th percentile (osimertinib #1), prostate flutamide 85th, colon irinotecan
+  98.5th on specificity. COAD MSI-like: BRAF / MEK inhibitors top, HSP90 inhibitors most MSI-specific. THCA BRAF-like:
+  HDAC inhibitors.
+- Not yet validated against measured drug sensitivity (PRISM / GDSC, on hold).
+- Specificity lists still recur on a few classes (anthracyclines, topotecan) and include oddities (cardiac glycosides,
+  pentobarbital, metronidazole) that need checking.
+- LGG and TGCT-SEM subgroups barely differ in drug response: report one list per parent.
+- Full caveats: [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md).
