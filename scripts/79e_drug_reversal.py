@@ -35,6 +35,12 @@ weights (results/celligner/disease_line_weights_long.tsv).
    reversing; tier 3 everything else. Drugs with > MULTI_TARGET annotated targets are flagged, not removed.
    low_mrs: diseases with < MIN_MRS_REF MRs (scores rest on very few regulators).
 ONLY_GROUPS (comma-separated) limits the run, for testing.
+SCORE=weighted (default for VERSION=v2; user 2026-10-28, D73) | fdr (v1 default): weighted uses every regulator tested in
+the disease, weight w_i = disease NES, no FDR cutoff: rev = -sum_i w_i * a_i / sqrt(sum_i w_i^2) (with w_i = sign of an
+FDR < MR_FDR MR this is the formula above). Why: FDR < 0.05 / 0.10 lists jumped between null versions (COAD 425 -> 0)
+while the NES ranking stayed put (rho >= 0.98; results/step6/null_adjust_test). Reference diseases for spec: every other
+tissue key, scored the same way. n_mrs = regulators weighted; n_eff = (sum w^2)^2 / sum w^4 (how many carry the score);
+the set-permutation null permutes the weights over the tested regulators.
 VERSION=v2 [REGSET=tf]: v2 disease MRs (results/step6/aracne_project_v2[_tf]) and drug activity on the same regulons
 (data/processed/lincs/drug_viper_specific_v2[_tf]); outputs get the same suffix. No raw-profile activity for v2 (rev_raw NaN).
 Outputs: results/lincs/drug_reversal{SFX}.tsv (disease x drug), drug_reversal_summary{SFX}.tsv (per disease),
@@ -62,6 +68,10 @@ MR_DIR = f"results/step6/{REGULON}_v2" if CURATED else f"results/step6/aracne_pr
 DTAG = f"_{REGULON}" if CURATED else SFX
 if CURATED:
     SFX = f"_v2_{REGULON}"
+SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf")) or CURATED else "fdr")
+assert SCORE in ("weighted", "fdr")
+if SCORE == "fdr" and SFX.startswith("_v2"):
+    SFX += "_fdr"
 # known mechanism -> expected to reverse the disease (sanity check, not used for scoring)
 CONTROLS = [("BRCA-LumA", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
@@ -103,7 +113,9 @@ def main():
             nets[net] = (regs, A, R.T[rr.get_indexer(regs)].T if R is not None else None)
         return nets[net]
 
-    ok_ref = set(mr[mr.fdr < MR_FDR].groupby("group_id").size().loc[lambda x: x >= MIN_MRS_REF].index)
+    sel = (lambda d: d) if SCORE == "weighted" else (lambda d: d[d.fdr < MR_FDR])
+    wt = (lambda d: d.nes.values) if SCORE == "weighted" else (lambda d: np.sign(d.nes.values))
+    ok_ref = set(sel(mr).groupby("group_id").size().loc[lambda x: x >= MIN_MRS_REF].index)
     gkey = keys.key
     rz = lambda v: (v - np.median(v)) / (1.4826 * np.median(np.abs(v - np.median(v))))
     rows, summ = [], []
@@ -138,28 +150,30 @@ def main():
             n_lines[i] = len(p)
 
         m = mr[(mr.group_id == g) & mr.regulator.isin(regs)]
-        mrs = m[m.fdr < MR_FDR]
+        mrs = sel(m)
         tested = regs.get_indexer(m.regulator)
         ci = regs.get_indexer(mrs.regulator)
-        s = np.sign(mrs.nes.values)
+        s = wt(mrs)
         n = len(ci)
+        norm = np.sqrt((s ** 2).sum())
+        n_eff = (s ** 2).sum() ** 2 / ((s ** 4).sum() + 1e-12)
         if n < 2:   # nothing to reverse (e.g. no MR at MR_FDR): group left out, reported
             print(f"{g:<20} MRs {n:>4}  skipped (< 2 MRs at FDR < {MR_FDR})", flush=True)
             continue
-        rev = -(D[:, ci] * s).sum(1) / np.sqrt(n)
+        rev = -(D[:, ci] * s).sum(1) / norm
         dn = mrs.nes.values
         Dc = D[:, ci] - D[:, ci].mean(1, keepdims=True)
         r_rev = -(Dc @ (dn - dn.mean())) / (np.sqrt((Dc ** 2).sum(1)) * np.linalg.norm(dn - dn.mean()) + 1e-12)
         null = np.empty((len(gd), N_PERM))
         for j in range(N_PERM):
-            null[:, j] = -(D[:, rng.choice(tested, n, replace=False)] * rng.permutation(s)).sum(1) / np.sqrt(n)
+            null[:, j] = -(D[:, rng.choice(tested, n, replace=False)] * rng.permutation(s)).sum(1) / norm
 
         o = gd[["group_id", "pert_id", "cmap_name", "source", "passes_gate", "gate_reason", "n_targets",
                 "hub_moa", "hub_clinical_phase", "chembl_max_phase", "pharmacology_flag"]].copy()
         o["n_lines_used"] = n_lines
         o["n_mrs"] = n
         o["rev"] = rev.round(3)
-        o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / np.sqrt(n)).round(3) if A_raw is not None else np.nan
+        o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / norm).round(3) if A_raw is not None else np.nan
         o["r_rev"] = r_rev.round(3)
         o["rev_pct"] = (pd.Series(rev).rank(method="max").values - 1) / len(rev) * 100
         o["rev_pct"] = o.rev_pct.round(1)
@@ -173,17 +187,18 @@ def main():
         for g2 in sorted(ok_ref):
             if g2 == g or gkey[g2] == gkey[g]:
                 continue
-            m2 = mr[(mr.group_id == g2) & (mr.fdr < MR_FDR) & mr.regulator.isin(regs)]
+            m2 = sel(mr[(mr.group_id == g2) & mr.regulator.isin(regs)])
             if len(m2) < MIN_MRS_REF:
                 continue
             c2 = regs.get_indexer(m2.regulator)
-            refz.append(rz(-(D[:, c2] * np.sign(m2.nes.values)).sum(1) / np.sqrt(len(c2))))
+            w2 = wt(m2)
+            refz.append(rz(-(D[:, c2] * w2).sum(1) / np.sqrt((w2 ** 2).sum())))
         o["n_ref_diseases"] = len(refz)
         o["spec"] = (o.rev_z.values - np.mean(refz, axis=0)).round(3) if len(refz) >= MIN_REF else np.nan
         o["spec_pct"] = (o.spec.rank(method="max", pct=True) * 100).round(1)
         rows.append(o)
         t1 = o[o.tier_rev == 1].sort_values("rev", ascending=False)
-        summ.append(dict(group_id=g, net=net_of(grp.loc[g, "cohort"]), n_mrs=n, n_tested=len(tested),
+        summ.append(dict(group_id=g, net=net_of(grp.loc[g, "cohort"]), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
                          n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1_rev=len(t1),
                          n_tier2_rev=int((o.tier_rev == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),
                          null_sd_regset=round(float(null.std()), 3), rev_sd=round(float(rev.std()), 3),
