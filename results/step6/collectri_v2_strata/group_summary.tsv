@@ -1,0 +1,15 @@
+group_id	contrast	n_tumor	n_normal	n_normal_null	null_adjusted	n_regulators_kept	n_mr_fdr05	n_mr_p05	effective_dim	pc1_var	n_pc_80pct	median_rho	median_frac_hit	frac_patients_rho_gt_0.5
+BLCA-basal-squamous-like	adjacent	172	19	19	FALSE	376	0	42	16.88	0.196	37	0.785	0.19	1
+BLCA-luminal-like	adjacent	235	19	19	FALSE	382	1	37	17.56	0.197	40	0.739	0.162	0.987
+COAD-CIN-like	gtex	194	109	109	FALSE	391	0	26	11.85	0.264	34	0.83	0.231	1
+COAD-MSI-like	gtex	93	109	109	FALSE	386	0	31	12.69	0.239	26	0.82	0.258	1
+HNSC-atypical-classical-like	gtex	155	265	265	FALSE	394	0	30	17.18	0.166	32	0.807	0.233	0.994
+HNSC-basal-mesenchymal-like	gtex	363	265	265	FALSE	384	0	30	17.7	0.171	41	0.797	0.3	1
+LGG-noncodel-LGr2	gtex	89	151	151	FALSE	365	0	28	13.04	0.192	21	0.78	0.357	0.989
+LGG-noncodel-LGr3	gtex	152	151	151	FALSE	369	5	37	16.43	0.175	30	0.865	0.432	0.993
+PHEO-kinase-signaling	gtex	77	125	125	FALSE	365	0	14	9.94	0.277	20	0.82	0.429	1
+PHEO-pseudohypoxia-Wnt	gtex	69	125	125	FALSE	369	0	25	9.4	0.291	19	0.808	0.28	0.986
+TGCT-SEM-C1	gtex	32	164	164	FALSE	406	3	55	6.85	0.337	11	0.854	0.35	1
+TGCT-SEM-C2	gtex	30	164	164	FALSE	405	3	52	5.88	0.363	9	0.764	0.37	1
+THCA-BRAF-like-classical	gtex	296	272	272	FALSE	374	0	21	13.02	0.204	27	0.869	0.381	1
+THCA-RAS-like-follicular	gtex	208	272	272	FALSE	376	0	18	8.58	0.309	23	0.763	0.278	0.995

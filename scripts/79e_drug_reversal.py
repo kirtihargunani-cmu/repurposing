@@ -45,6 +45,11 @@ Evidence status per disease (user 2026-10-28, D78; summary columns): best_line_m
 reach (the disease's best in-key line with LINCS compound data); n_t12_matched / n_t12_borrowed = drugs in tier 1-2 (by
 rev or spec) that are direct in a matched line / borrowed with transfer conf >= 0.5; evidence_status = "matched" (>= 1
 matched direct drug in tiers 1-2), "borrowed only", or "no adequate compound"; evidence_note = the sentence for reports.
+STRATA=1 (VERSION=v2; D79 subgroups, 2026-10-29; replaces 79g for v2): units = the Step 10 v2 subgroups. MRs from the
+<set>_strata directories (50_viper.R STRATA=), drug lists results/lincs/stratum_drugs_v2.tsv (79b), line weights
+results/celligner/stratum_line_weights_long_v2.tsv (74b); tissue key, network and borrowed-drug transfer confidence of the
+parent group. spec: vs the 41-group diseases of other tissue keys, as for groups. spec_sib = rev_z minus the mean rev_z
+of the same drug activity scored against the sibling subgroups' MRs; tier_sib as tier_spec. Outputs stratum_reversal*.
 SCORE=weighted (default for VERSION=v2; user 2026-10-28, D73) | fdr (v1 default): weighted uses every regulator tested in
 the disease, weight w_i = disease NES, no FDR cutoff: rev = -sum_i w_i * a_i / sqrt(sum_i w_i^2) (with w_i = sign of an
 FDR < MR_FDR MR this is the formula above). Why: FDR < 0.05 / 0.10 lists jumped between null versions (COAD 425 -> 0)
@@ -90,6 +95,9 @@ SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf"))
 assert SCORE in ("weighted", "fdr")
 if SCORE == "fdr" and SFX.startswith("_v2"):
     SFX += "_fdr"
+STRATA = os.environ.get("STRATA", "0") == "1"
+assert not STRATA or SFX.startswith("_v2"), "STRATA=1 needs VERSION=v2"
+PFX = "stratum_reversal" if STRATA else "drug_reversal"
 # known mechanism -> expected to reverse the disease (sanity check, not used for scoring)
 CONTROLS = [("BRCA-LumA", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
@@ -115,10 +123,19 @@ def main():
     else:
         mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
+    mr_ref, par = mr, {}                      # reference diseases for spec: always the 41 groups
+    if STRATA:
+        dirs = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", MR_DIR)]
+        mr = pd.concat([pd.read_csv(ROOT / f"{d}_strata" / "group_mr.tsv", sep="\t")
+                        .assign(regulator=lambda x, k=k: (k + "|" if k else "") + x.regulator) for k, d in dirs], ignore_index=True)
+        dd = pd.read_csv(RES / "stratum_drugs_v2.tsv", sep="\t", low_memory=False)
+        par = dd.drop_duplicates("group_id").set_index("group_id").parent_group.to_dict()
+    P = lambda g: par.get(g, g)
     tcf = RES / "drug_transfer_confidence_v2.tsv"
     tc = pd.read_csv(tcf, sep="\t") if SFX.startswith("_v2") else None
     assert tc is not None or not SFX.startswith("_v2"), "run 79l VERSION=v2 first"
-    w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
+    w = (pd.read_csv(RES.parent / "celligner/stratum_line_weights_long_v2.tsv", sep="\t").rename(columns={"stratum": "group_id"})
+         if STRATA else pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t"))
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
     models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
@@ -156,7 +173,7 @@ def main():
 
     sel = (lambda d: d) if SCORE == "weighted" else (lambda d: d[d.fdr < MR_FDR])
     wt = (lambda d: d.nes.values) if SCORE == "weighted" else (lambda d: np.sign(d.nes.values))
-    ok_ref = set(sel(mr).groupby("group_id").size().loc[lambda x: x >= MIN_MRS_REF].index)
+    ok_ref = set(sel(mr_ref).groupby("group_id").size().loc[lambda x: x >= MIN_MRS_REF].index)
     gkey = keys.key
     rz = lambda v: (v - np.median(v)) / (1.4826 * np.median(np.abs(v - np.median(v))))
     rows, summ = [], []
@@ -164,8 +181,8 @@ def main():
     if only:
         dd = dd[dd.group_id.isin(only)]
     for g, gd in dd.groupby("group_id"):
-        regs, A, A_raw = load("ALL" if CURATED else net_of(grp.loc[g, "cohort"]))
-        k = keys.loc[g]
+        regs, A, A_raw = load("ALL" if CURATED else net_of(grp.loc[P(g), "cohort"]))
+        k = keys.loc[P(g)]
         km = models[models.OncotreeLineage.isin(str(k.lineages).split(";"))]
         if isinstance(k.diseases, str) and k.diseases:
             km = km[km.OncotreePrimaryDisease.isin(k.diseases.split(";"))]
@@ -225,7 +242,7 @@ def main():
         o["line_match"] = np.round(lmatch, 4)
         o["unmatched_lines"] = o.line_match < LINE_MATCH_MIN
         if tc is not None:
-            t_ = tc[tc.group_id == g].set_index("pert_id")
+            t_ = tc[tc.group_id == P(g)].set_index("pert_id")
             o["transfer_conf"] = o.pert_id.map(t_.conf).values
             o["low_transfer"] = o.pert_id.map(t_.low_transfer).fillna(False).astype(bool).values
         else:
@@ -245,10 +262,10 @@ def main():
         o["rev_z"] = ((rev - np.median(rev)) / mad).round(3)
         refz = []
         for g2 in sorted(ok_ref):
-            if g2 == g or gkey[g2] == gkey[g]:
+            if g2 == g or gkey[g2] == gkey[P(g)]:
                 continue
-            m2 = sel(consensus(D0, regs0, mr[(mr.group_id == g2) & mr.regulator.isin(regs0)])[2] if CONS
-                     else mr[(mr.group_id == g2) & mr.regulator.isin(regs)])
+            m2 = sel(consensus(D0, regs0, mr_ref[(mr_ref.group_id == g2) & mr_ref.regulator.isin(regs0)])[2] if CONS
+                     else mr_ref[(mr_ref.group_id == g2) & mr_ref.regulator.isin(regs)])
             m2 = m2[m2.regulator.isin(regs)]
             if len(m2) < MIN_MRS_REF:
                 continue
@@ -258,9 +275,25 @@ def main():
         o["n_ref_diseases"] = len(refz)
         o["spec"] = (o.rev_z.values - np.mean(refz, axis=0)).round(3) if len(refz) >= MIN_REF else np.nan
         o["spec_pct"] = (o.spec.rank(method="max", pct=True) * 100).round(1)
+        if STRATA:   # vs the sibling subgroups of the same parent
+            sibz = []
+            for g2 in sorted(set(mr.group_id) - {g}):
+                if P(g2) != P(g):
+                    continue
+                m2 = sel(consensus(D0, regs0, mr[(mr.group_id == g2) & mr.regulator.isin(regs0)])[2] if CONS
+                         else mr[(mr.group_id == g2) & mr.regulator.isin(regs)])
+                m2 = m2[m2.regulator.isin(regs)]
+                if len(m2) >= 2:
+                    w2 = wt(m2); sibz.append(rz(-(D[:, regs.get_indexer(m2.regulator)] * w2).sum(1) / np.sqrt((w2 ** 2).sum())))
+            o.insert(1, "parent_group", P(g))
+            o["siblings"] = ";".join(sorted({x for x in mr.group_id if P(x) == P(g)} - {g}))
+            o["spec_sib"] = (o.rev_z.values - np.mean(sibz, axis=0)).round(3) if sibz else np.nan
+            o["spec_sib_pct"] = (o.spec_sib.rank(method="max", pct=True) * 100).round(1)
+            sp_ = (o.rev > 0) & (o.spec_sib_pct >= 100 - TOP_PCT)
+            o["tier_sib"] = np.where(sp_ & ok_t & o.approved, 1, np.where(sp_ & ok_t, 2, 3))
         rows.append(o)
         t1 = o[o.tier_rev == 1].sort_values("rev", ascending=False)
-        summ.append(dict(group_id=g, net=net_of(grp.loc[g, "cohort"]), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
+        summ.append(dict(group_id=g, parent_group=P(g), net=net_of(grp.loc[P(g), "cohort"]), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
                          best_line_match=round(best_lm, 4), best_line=best_line, n_key_lines_lincs=len(lincs_key),
                          n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1_rev=len(t1),
                          n_tier2_rev=int((o.tier_rev == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),
@@ -280,7 +313,7 @@ def main():
     out = out.sort_values(["group_id", "tier_spec", "spec"], ascending=[True, True, False])
     out["rank_spec"] = out.groupby("group_id").cumcount() + 1
     out["rank_rev"] = out.groupby("group_id").rev.rank(ascending=False, method="first").astype(int)
-    out.to_csv(RES / f"drug_reversal{SFX}.tsv", sep="\t", index=False)
+    out.to_csv(RES / f"{PFX}{SFX}.tsv", sep="\t", index=False)
     s2 = []
     for g, o in out.groupby("group_id"):
         t1 = o[o.tier_spec == 1]
@@ -304,7 +337,7 @@ def main():
                     f"consistently across cell lines (transfer confidence >= 0.5), not on data from this disease's lines.")
         return f"{lm}, and no borrowed drug passes; an adequate compound cannot be reported."
     summ["evidence_note"] = summ.apply(note, axis=1)
-    summ.to_csv(RES / f"drug_reversal_summary{SFX}.tsv", sep="\t", index=False)
+    summ.to_csv(RES / f"{PFX}_summary{SFX}.tsv", sep="\t", index=False)
 
     ctl = []
     for expected, cl in [("high", CONTROLS), ("low", NEG_CONTROLS)]:
@@ -319,7 +352,7 @@ def main():
                 else:
                     ctl.append(dict(group_id=g, drug=nm, expected=expected, source="not in list"))
     ctl = pd.DataFrame(ctl)
-    ctl.to_csv(RES / f"drug_reversal_controls{SFX}.tsv", sep="\t", index=False)
+    ctl.to_csv(RES / f"{PFX}_controls{SFX}.tsv", sep="\t", index=False)
     print(ctl.to_string(index=False))
 
 

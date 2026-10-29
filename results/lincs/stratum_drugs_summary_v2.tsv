@@ -3,9 +3,13 @@ COAD-CIN-like	Bowel	933	405	1338	697	0	8	574	59	1279	17	182
 COAD-MSI-like	Bowel	933	405	1338	689	0	8	574	67	1271	16	177
 LGG-noncodel-LGr2	CNS/Brain	1	1143	1144	643	0	8	466	27	1117	15	163
 HNSC-atypical-classical-like	Head and Neck	0	1144	1144	638	0	8	466	32	1112	15	161
+PHEO-pseudohypoxia-Wnt	Neuroblastoma	21	1128	1149	636	0	8	468	37	1112	15	162
 LGG-noncodel-LGr3	CNS/Brain	1	1143	1144	636	0	8	466	34	1110	14	162
 BLCA-luminal-like	Bladder/Urinary Tract	1	1143	1144	635	0	8	466	35	1109	14	161
+TGCT-SEM-C1	Testis	0	1144	1144	635	0	8	466	35	1109	14	157
 BLCA-basal-squamous-like	Bladder/Urinary Tract	1	1143	1144	634	0	8	466	36	1108	14	158
+THCA-RAS-like-follicular	Thyroid	0	1144	1144	633	0	8	466	37	1107	15	162
+PHEO-kinase-signaling	Neuroblastoma	21	1128	1149	629	0	8	468	44	1105	15	162
+TGCT-SEM-C2	Testis	0	1144	1144	630	0	8	466	40	1104	14	157
+THCA-BRAF-like-classical	Thyroid	0	1144	1144	626	0	8	466	44	1100	15	160
 HNSC-basal-mesenchymal-like	Head and Neck	0	1144	1144	623	0	8	466	47	1097	14	156
-ACC-low-proliferation	Adrenal Gland	0	1144	1144	621	0	8	466	49	1095	15	158
-ACC-proliferative	Adrenal Gland	0	1144	1144	621	0	8	466	49	1095	15	156
