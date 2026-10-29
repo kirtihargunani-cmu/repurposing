@@ -50,9 +50,9 @@ flowchart TD
 | 1-2 | Disease groups, expression data | `10_ground_toil.py`, `11_split_subtypes.py` | unchanged from v1 |
 | 3 | Covariates; v2 gene set | `20_covariates.py`, `21_estimate.R`, `22_gene_set_v2.py` | done 10-18 |
 | 4 | Tumor-vs-healthy signatures (GTEx reference prepared in 4a) | `32_gtex_reference.R`, `30_signatures.R`, `37_step4_v2_checks.R` | done 10-20 |
-| 5 | ARACNe networks and regulons | `42`, `43`, `44`, `45`, `46` | done 10-25 (TF-only edge confounding not run) |
+| 5 | ARACNe networks and regulons | `42`, `43`, `44`, `45`, `46` | done 10-25 (TF-only edge confounding 10-29) |
 | 6 | VIPER: master regulators (group) and patient scores | `50_viper.R`, `56`, `61`, `63`, `64`, `65` | done; null fixed and rerun 10-28 |
-| 7 | Master-regulator rules, diagnostics | `51`, `59`, `62`, `58` | `62` done; `51` / `59` not rerun after the null fix; `58` not run |
+| 7 | Master-regulator rules, diagnostics | `51`, `59`, `62`, `58`, `46` | done 10-29 on the corrected null |
 | 8 | Patient clustering, subgroup keep rule | `80`, `84` | done 10-28 |
 | 9 | Replication in external cohorts | `90`-`94` | not run on v2 |
 | 10 | Subgroups: signatures, VIPER, variability, what defines them | `85`, `30` / `50` STRATA=, `86`, `87` | done 10-29 |
@@ -133,8 +133,8 @@ reasons in `genes_v2_dropped.tsv`):
   Why: paralog pairs share reads, so their correlation is partly a mapping artifact, and they are among the strongest
   edges.
 - **Diagnostics:** bootstrap support (`45_edge_support.R` -> `results/step5/aracne_edge_support_v2[_tf].tsv`); edge
-  confounding (`46_edge_confounding.R` -> `aracne_edge_confounding_v2.tsv`: < 2% of edges lose half their strength
-  after purity, quality and plate; TF-only set not run).
+  confounding (`46_edge_confounding.R` [REGSET=tf] -> `aracne_edge_confounding_v2[_tf].tsv`): edges that lose half
+  their strength after purity, quality and plate adjustment, median 1.9% (full set) and 4.0% (TF-only; max UCS 12%).
 - No proliferation regression of the network input (D66).
 
 ## Step 6. Regulator activity (VIPER)
@@ -172,15 +172,39 @@ no cross-mappable edges or low-mappability genes left (C10 = 0). Results in `PRO
 **Reference swap** (`scripts/65_reference_swap.R` -> `results/step6/reference_swap/`): master regulators with GTEx vs
 adjacent-normal references for the 15 groups that have both (run 10-27, before the null fix).
 
-## Step 7. Master-regulator diagnostics
+## Step 7. Master-regulator diagnostics (rerun 2026-10-29 on the corrected null)
 
-- **Recurring module (C8,** `NES_DIR=data/processed/step6/aracne_project_v2_patient Rscript scripts/62_recurring_module.R`
-  -> `results/step6/aracne_project_v2/diagnostics/`): a group of ~50-80 regulators (PILRB, ZNF692, CCNL2, ...) that
-  co-varies across patients in 36 of 41 groups, tracks plate (excess over chance median 0.17) and not immune, purity or
-  quality. Tested and rejected as its cause: RNA quality, GC bias, multi-mapping. Treated as a technical nuisance for
-  subgrouping (D79; D26 awaits PI confirmation).
-- Known-biology controls and three-way regulon comparison (`51_compare_mr.R`, `59_compare_regulon_sets.R`): not yet
-  rerun on the corrected-null outputs. Regulator modules (`58`): not run on v2.
+**Summaries and known-biology controls** (`REGULON=<set dir> Rscript scripts/51_compare_mr.R`, e.g.
+`REGULON=aracne_project_v2_tf`; run for every v2 set and `_strata` dir -> `results/step6/<set>/fdr10_*.tsv`,
+`controls.tsv`):
+- Controls are regulators with known direction: E2F1 / FOXM1 / MYBL2 up in tumors; ESR1 / FOXA1 / GATA3 up in luminal
+  breast; EPAS1 / HIF1A up in clear-cell kidney; HNF4A / HNF1A down in liver; AR / ERG up in prostate; MYC up in colon.
+- TF arm: 77 pass, 55 correct direction below the cutoff, 4 wrong direction; every wrong-direction call has NES near 0
+  and FDR >= 0.83 (no real contradiction). The null fix moved 5 of 139 verdicts across FDR 0.10, none changed
+  direction.
+
+**Three regulon sets compared; confirmed regulators** (`VERSION=v2 [REGSET=tf] [STRATA=1] Rscript
+scripts/59_compare_regulon_sets.R` -> `results/step6/comparison_v2[_tf][_strata]/`):
+- `confirmed.tsv` applies D18: ARACNe FDR < 0.05, or ARACNe FDR < 0.10 with a same-direction FDR < 0.10 call in
+  CollecTRI or DoRothEA. TF arm: median 117 confirmed regulators per group (5,215 in total); subgroups median 80.
+- **The curated sets rarely reach significance** (CollecTRI median 0 per group, DoRothEA 1), so in practice the
+  confirmed list is ARACNe FDR < 0.05; the second part of D18 adds almost nothing. Few confirmed regulators in CESC-AD
+  (0), BLCA, UCS, STAD (1 each), HNSC (4).
+- **The sets disagree on ranking:** NES Spearman ARACNe vs CollecTRI median 0.18, vs DoRothEA 0.27, CollecTRI vs
+  DoRothEA 0.37. Relevant to the drug-side consensus (D75), which averages ARACNe and CollecTRI.
+
+**Regulator modules** (`NES_DIR=data/processed/step6/aracne_project_v2_tf_patient Rscript scripts/58_regulator_modules.R`
+-> `results/step6/aracne_project_v2_tf/diagnostics/regulator_modules_v2_tf.tsv`): groups of regulators whose activity
+moves together across patients, with the member that best represents each (hub), what share are TFs, whether the hub's
+targets include the other members, and what the module tracks (plate, RNA-quality length index, proliferation).
+714 modules (median 18 per group, 15 regulators each); 59 track proliferation (|r| >= 0.7), 62 track plate (R^2 >= 0.3).
+The largest modules are often groups of KRAB zinc-finger TFs (ZNF333, ZNF224, ZNF141, ...), like the recurring module.
+
+**Recurring module (C8,** `NES_DIR=data/processed/step6/aracne_project_v2_patient Rscript scripts/62_recurring_module.R`
+-> `results/step6/aracne_project_v2/diagnostics/`): a group of ~50-80 regulators (PILRB, ZNF692, CCNL2, ...) that
+co-varies across patients in 36 of 41 groups, tracks plate (excess over chance median 0.17) and not immune, purity or
+quality. Tested and rejected as its cause: RNA quality, GC bias, multi-mapping. Treated as a technical nuisance for
+subgrouping (D79; D26 awaits PI confirmation).
 
 ## Step 8. Patient clustering and the subgroup keep rule
 
@@ -280,7 +304,9 @@ Summary; full detail in `celligner:docs/PIPELINE_DRUG_SIDE_V2.md` and caveats in
 
 - D26 recurring module: subgroups are defined without it (D79); PI to confirm.
 - D60 kidney reference; A37 LGG purity covariate (tabled); D68 BRCA_LUM material-change cutoff.
-- Step 7 reruns on the corrected null (`51`, `59`), modules (`58`), TF-only edge confounding (`46`).
+- Step 7 questions (2026-10-29): keep the D18 confirmed rule as is (its curated part adds almost nothing)? Does the low
+  ARACNe vs CollecTRI agreement change the drug-side consensus (D75)? TF-only networks lose more edges to technical
+  adjustment (4.0% vs 1.9%; UCS 12%).
 - Step 9 replication of the new subgroups; `86` variability rerun for the D79 subgroups.
 - Drug side: PRISM / GDSC validation on hold; confirm or drop the oddities in specificity lists (cardiac glycosides,
   pentobarbital, metronidazole).

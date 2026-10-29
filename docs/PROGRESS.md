@@ -298,6 +298,25 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Replication of the new subgroups in external cohorts (CPTAC-HNSCC, a bladder cohort; COAD GSE39582 / CPTAC-COAD as in v1).
 - Small chromosome-19 zinc-finger programs in the subgroup characterization: check before reporting.
 
+## 2026-10-29: Step 7 diagnostics on the corrected null
+- **Known-biology controls** (`51`, every v2 set): TF arm 77 pass / 55 correct direction below FDR 0.10 / 4 wrong
+  direction (PCPG E2F1, KIRC MYBL2, LIHC HNF1A; all NES near 0, FDR >= 0.83, so non-calls rather than contradictions).
+  The null fix (D73) moved 5 of 139 verdicts across the cutoff (COAD / READ E2F1 and PRAD AR now just below; STAD
+  FOXM1 / MYBL2 now pass); none changed direction. Full set: 67 / 67 / 2. CollecTRI and DoRothEA pass few controls
+  (13 and 20), and their wrong-direction calls are also non-significant.
+- **Three regulon sets and the D18 confirmed rule** (`59`, now with v2 switches and `confirmed.tsv`): median 117
+  confirmed regulators per group on the TF arm (5,215 total; subgroups median 80). CollecTRI (median 0 per group) and
+  DoRothEA (1) rarely reach FDR < 0.10, so the confirmed list is in practice ARACNe FDR < 0.05. Regulator rankings agree
+  weakly between sets: NES Spearman ARACNe vs CollecTRI 0.18, vs DoRothEA 0.27, CollecTRI vs DoRothEA 0.37 (median per
+  group). Groups with few confirmed regulators: CESC-AD 0, BLCA / UCS / STAD 1, HNSC 4.
+- **Regulator modules** (`58`, v2 mode): 714 modules of co-varying regulators (median 18 per group, 15 members); 59 track
+  proliferation (|r| >= 0.7), 62 plate (R^2 >= 0.3). The largest modules are often KRAB zinc-finger groups (ZNF333,
+  ZNF224, ZNF141, DMTF1, CREBZF), overlapping the recurring module.
+- **TF-only edge confounding** (`46` REGSET=tf): edges that lose half their strength after ESTIMATE + quality + plate,
+  median 4.0% per network (full set 1.9%), max UCS 12%; plate alone 0.01%, ESTIMATE alone 0.9%.
+- Questions raised for the user: keep D18 as is; implications of the weak ARACNe-CollecTRI agreement for the
+  drug-side consensus (D75); whether 4% (UCS 12%) TF-edge confounding needs action.
+
 ## Assumptions register (review before reporting results)
 High impact
 1. ESTIMATE adjustment treats stroma/immune content as nuisance; may remove real mechanism (immune evasion, fibrosis). Sensitivity run without it: proposed.
