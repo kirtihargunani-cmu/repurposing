@@ -35,8 +35,10 @@ weights (results/celligner/disease_line_weights_long.tsv).
    reversing; tier 3 everything else. Drugs with > MULTI_TARGET annotated targets are flagged, not removed.
    low_mrs: diseases with < MIN_MRS_REF MRs (scores rest on very few regulators).
 ONLY_GROUPS (comma-separated) limits the run, for testing.
-Outputs: results/lincs/drug_reversal.tsv (disease x drug), drug_reversal_summary.tsv (per disease),
-         drug_reversal_controls.tsv (known-mechanism drugs, sanity check)
+VERSION=v2 [REGSET=tf]: v2 disease MRs (results/step6/aracne_project_v2[_tf]) and drug activity on the same regulons
+(data/processed/lincs/drug_viper_specific_v2[_tf]); outputs get the same suffix. No raw-profile activity for v2 (rev_raw NaN).
+Outputs: results/lincs/drug_reversal{SFX}.tsv (disease x drug), drug_reversal_summary{SFX}.tsv (per disease),
+         drug_reversal_controls{SFX}.tsv (known-mechanism drugs, sanity check)
 """
 import os
 from pathlib import Path
@@ -49,6 +51,8 @@ PROC = ROOT / "data/processed/lincs"
 RES = ROOT / "results/lincs"
 MR_FDR, TOP_PCT, N_PERM, MULTI_TARGET, SEED = 0.10, 10, 200, 5, 0
 MIN_MRS_REF, MIN_REF = 20, 10
+SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
+assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 # known mechanism -> expected to reverse the disease (sanity check, not used for scoring)
 CONTROLS = [("BRCA-LumA", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
@@ -68,7 +72,7 @@ def main():
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
     idx["col"] = np.arange(len(idx))
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
-    mr = pd.read_csv(ROOT / "results/step6/aracne_project/group_mr.tsv", sep="\t")
+    mr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
@@ -77,10 +81,10 @@ def main():
 
     nets = {}
     def read(kind, net):
-        f = PROC / f"drug_viper_{kind}" / f"{net}.f32"
+        f = PROC / f"drug_viper_{kind}{SFX}" / f"{net}.f32"
         if not f.exists():
             return None, None
-        regs = pd.Index((PROC / f"drug_viper_{kind}" / f"{net}.regulators.txt").read_text().split())
+        regs = pd.Index((PROC / f"drug_viper_{kind}{SFX}" / f"{net}.regulators.txt").read_text().split())
         return regs, np.fromfile(f, dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
 
     def load(net):
@@ -185,7 +189,7 @@ def main():
     out = out.sort_values(["group_id", "tier_spec", "spec"], ascending=[True, True, False])
     out["rank_spec"] = out.groupby("group_id").cumcount() + 1
     out["rank_rev"] = out.groupby("group_id").rev.rank(ascending=False, method="first").astype(int)
-    out.to_csv(RES / "drug_reversal.tsv", sep="\t", index=False)
+    out.to_csv(RES / f"drug_reversal{SFX}.tsv", sep="\t", index=False)
     s2 = []
     for g, o in out.groupby("group_id"):
         t1 = o[o.tier_spec == 1]
@@ -194,7 +198,7 @@ def main():
                        low_mrs=bool(o.low_mrs.iloc[0]),
                        top_tier1_spec=", ".join(f"{a} {b:.1f}" for a, b in zip(t1.cmap_name.head(8), t1.spec.head(8)))))
     summ = summ.merge(pd.DataFrame(s2), on="group_id")
-    summ.to_csv(RES / "drug_reversal_summary.tsv", sep="\t", index=False)
+    summ.to_csv(RES / f"drug_reversal_summary{SFX}.tsv", sep="\t", index=False)
 
     ctl = []
     for expected, cl in [("high", CONTROLS), ("low", NEG_CONTROLS)]:
@@ -209,7 +213,7 @@ def main():
                 else:
                     ctl.append(dict(group_id=g, drug=nm, expected=expected, source="not in list"))
     ctl = pd.DataFrame(ctl)
-    ctl.to_csv(RES / "drug_reversal_controls.tsv", sep="\t", index=False)
+    ctl.to_csv(RES / f"drug_reversal_controls{SFX}.tsv", sep="\t", index=False)
     print(ctl.to_string(index=False))
 
 

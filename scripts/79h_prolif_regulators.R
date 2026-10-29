@@ -10,9 +10,12 @@
 # BH over the network's regulators. prolif_linked = FDR < FDR_MAX and fold enrichment >= MIN_FOLD.
 # Output: results/lincs/prolif_regulators.tsv (net, regulator (symbol), n_targets, n_prolif, n_prolif_pos,
 #         n_prolif_neg, fold, p, fdr, prolif_linked)
+# VERSION=v2 [REGSET=tf]: v2 regulons (cross-mappable edges removed) -> prolif_regulators_v2[_tf].tsv
 suppressPackageStartupMessages(library(data.table))
 FDR_MAX <- 0.05; MIN_FOLD <- 2
-arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+SFX <- paste0(if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else "", if (identical(Sys.getenv("REGSET", "full"), "tf")) "_tf" else "")
+stopifnot(SFX != "_tf")
+arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, ".rds"))
 idm <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 gmt <- strsplit(readLines("data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"), "\t")
 names(gmt) <- vapply(gmt, `[`, "", 1)
@@ -36,5 +39,5 @@ out <- rbindlist(lapply(names(arac), function(net) {
 }))
 out[, `:=`(prolif_linked = fdr < FDR_MAX & fold >= MIN_FOLD)]
 setcolorder(out, c("net", "regulator"))
-fwrite(out, "results/lincs/prolif_regulators.tsv", sep = "\t")
+fwrite(out, paste0("results/lincs/prolif_regulators", SFX, ".tsv"), sep = "\t")
 print(out[, .(regulators = .N, prolif_linked = sum(prolif_linked)), by = net])

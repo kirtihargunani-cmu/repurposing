@@ -30,7 +30,10 @@ Scores per disease (41 groups) and per Step 10 stratum, same weights / direct-bo
 Outputs: results/lincs/prolif_regulators_p2.tsv (P2 correlations), drug_reversal_split.tsv,
          stratum_reversal_split.tsv, split_controls.tsv (known-drug percentiles under every score),
          split_overview.tsv (generic-drug counts, MR counts, control means per score)
+VERSION=v2 [REGSET=tf]: v2 MRs, activity, P1 list and 79e scores (suffix _v2[_tf] on inputs and outputs); the strata
+part is skipped (no v2 Step 10 strata yet).
 """
+import os
 from pathlib import Path
 
 import numpy as np
@@ -40,6 +43,9 @@ ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data/processed/lincs"
 RES = ROOT / "results/lincs"
 MR_FDR, TOP_PCT, MIN_MRS_REF, MIN_REF, R_MIN = 0.10, 10, 20, 10, 0.5
+SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
+assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
+STRATA = SFX == ""
 CONTROLS = [("BRCA-LumA", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("TCGA-PRAD", "high", ["bicalutamide", "enzalutamide", "flutamide", "nilutamide"]),
@@ -87,18 +93,18 @@ def main():
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
     models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
-    gmr = pd.read_csv(ROOT / "results/step6/aracne_project/group_mr.tsv", sep="\t")
-    smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t")
-    p1 = pd.read_csv(RES / "prolif_regulators.tsv", sep="\t")
+    gmr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
+    smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
+    p1 = pd.read_csv(RES / f"prolif_regulators{SFX}.tsv", sep="\t")
     p1 = p1[p1.prolif_linked].groupby("net").regulator.apply(set)
     gmr = gmr[gmr.fdr < MR_FDR]
-    smr = smr[smr.fdr < MR_FDR]
+    smr = smr[smr.fdr < MR_FDR] if STRATA else None
 
     nets, p2_rows = {}, []
     def load(net):
         if net not in nets:
-            regs = pd.Index((PROC / "drug_viper_specific" / f"{net}.regulators.txt").read_text().split())
-            A = np.fromfile(PROC / "drug_viper_specific" / f"{net}.f32",
+            regs = pd.Index((PROC / f"drug_viper_specific{SFX}" / f"{net}.regulators.txt").read_text().split())
+            A = np.fromfile(PROC / f"drug_viper_specific{SFX}" / f"{net}.f32",
                             dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
             pc = pi_spec - pi_spec.mean()
             Ac = A - A.mean(0)
@@ -156,7 +162,7 @@ def main():
         return o
 
     # 41 groups
-    par = pd.read_csv(RES / "drug_reversal.tsv", sep="\t", low_memory=False)
+    par = pd.read_csv(RES / f"drug_reversal{SFX}.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keep = ["group_id", "pert_id", "cmap_name", "source", "passes_gate", "approved", "multi_target", "hub_moa",
             "n_mrs", "low_mrs", "rev", "rev_pct", "spec", "spec_pct", "tier_rev", "tier_spec"]
@@ -179,39 +185,40 @@ def main():
         print(f"{g:<20} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})  "
               f"rho(rev, rev_mech) {o.rev.corr(o.rev_mech, method='spearman'):.2f}", flush=True)
     out = pd.concat(rows, ignore_index=True)
-    out.to_csv(RES / "drug_reversal_split.tsv", sep="\t", index=False)
-    pd.concat(p2_rows).to_csv(RES / "prolif_regulators_p2.tsv", sep="\t", index=False)
+    out.to_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", index=False)
+    pd.concat(p2_rows).to_csv(RES / f"prolif_regulators_p2{SFX}.tsv", sep="\t", index=False)
 
     # strata
-    st = pd.read_csv(RES / "stratum_reversal.tsv", sep="\t", low_memory=False)
-    sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long.tsv", sep="\t")
-    srows = []
-    for s, gd in st.groupby("stratum"):
-        p = gd.parent_group.iloc[0]
-        regs, A, A_adj, linked = load(net_of(grp.loc[p, "cohort"]))
-        D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[p], sw[sw.stratum == s].set_index("ModelID").weight,
-                             A, A_adj)
-        m = smr[(smr.group_id == s) & smr.regulator.isin(regs)]
-        sc, mn = split_scores(D, Da, regs, linked, m)
-        o = gd[["stratum", "parent_group", "weak", "tentative", "possible_technical", "pert_id", "cmap_name", "source",
-                "passes_gate", "approved", "multi_target", "hub_moa", "n_mrs", "rev", "rev_pct", "spec", "spec_pct",
-                "spec_sib", "spec_sib_pct", "tier_rev", "tier_spec", "tier_sib", "siblings"]].copy()
-        for k, v in sc.items():
-            o[k] = np.round(v, 3) if isinstance(v, np.ndarray) else v
-        o["prolif_effect"] = pe.round(3)
-        ref = refs_mech(Da, regs, linked, keys.loc[p, "key"])
-        z = rz(sc["rev_mech"])
-        o["spec_mech"] = (z - np.mean(ref, axis=0)).round(3) if len(ref) >= MIN_REF and len(mn) >= 2 else np.nan
-        sibz = []
-        for t in gd.siblings.iloc[0].split(";"):
-            mt = smr[(smr.group_id == t) & smr.regulator.isin(regs) & ~smr.regulator.isin(linked)]
-            if len(mt) >= 2:
-                sibz.append(rz(mr_rev(Da, regs, mt)))
-        o["spec_sib_mech"] = (z - np.mean(sibz, axis=0)).round(3) if sibz and len(mn) >= 2 else np.nan
-        srows.append(finish(o, ["spec_sib_mech"]))
-        print(f"{s:<22} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})", flush=True)
-    sout = pd.concat(srows, ignore_index=True)
-    sout.to_csv(RES / "stratum_reversal_split.tsv", sep="\t", index=False)
+    if STRATA:
+        st = pd.read_csv(RES / "stratum_reversal.tsv", sep="\t", low_memory=False)
+        sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long.tsv", sep="\t")
+        srows = []
+        for s, gd in st.groupby("stratum"):
+            p = gd.parent_group.iloc[0]
+            regs, A, A_adj, linked = load(net_of(grp.loc[p, "cohort"]))
+            D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[p], sw[sw.stratum == s].set_index("ModelID").weight,
+                                 A, A_adj)
+            m = smr[(smr.group_id == s) & smr.regulator.isin(regs)]
+            sc, mn = split_scores(D, Da, regs, linked, m)
+            o = gd[["stratum", "parent_group", "weak", "tentative", "possible_technical", "pert_id", "cmap_name", "source",
+                    "passes_gate", "approved", "multi_target", "hub_moa", "n_mrs", "rev", "rev_pct", "spec", "spec_pct",
+                    "spec_sib", "spec_sib_pct", "tier_rev", "tier_spec", "tier_sib", "siblings"]].copy()
+            for k, v in sc.items():
+                o[k] = np.round(v, 3) if isinstance(v, np.ndarray) else v
+            o["prolif_effect"] = pe.round(3)
+            ref = refs_mech(Da, regs, linked, keys.loc[p, "key"])
+            z = rz(sc["rev_mech"])
+            o["spec_mech"] = (z - np.mean(ref, axis=0)).round(3) if len(ref) >= MIN_REF and len(mn) >= 2 else np.nan
+            sibz = []
+            for t in gd.siblings.iloc[0].split(";"):
+                mt = smr[(smr.group_id == t) & smr.regulator.isin(regs) & ~smr.regulator.isin(linked)]
+                if len(mt) >= 2:
+                    sibz.append(rz(mr_rev(Da, regs, mt)))
+            o["spec_sib_mech"] = (z - np.mean(sibz, axis=0)).round(3) if sibz and len(mn) >= 2 else np.nan
+            srows.append(finish(o, ["spec_sib_mech"]))
+            print(f"{s:<22} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})", flush=True)
+        sout = pd.concat(srows, ignore_index=True)
+        sout.to_csv(RES / f"stratum_reversal_split{SFX}.tsv", sep="\t", index=False)
 
     # controls: best LINCS ID per drug, percentile under every score
     ctl = []
@@ -222,7 +229,7 @@ def main():
             if len(r):
                 ctl.append(dict(unit=g, expected=exp, drug=nm, **{c: r[c + "_pct"].max() for c in SCORES},
                                 prolif_share=r.prolif_share.max()))
-    for s, exp, names in STRATUM_CONTROLS:
+    for s, exp, names in (STRATUM_CONTROLS if STRATA else []):
         x = sout[sout.stratum == s]
         for nm in names:
             r = x[x.cmap_name == nm]
@@ -231,7 +238,7 @@ def main():
                                 spec_sib=r.spec_sib_pct.max(), spec_sib_mech=r.spec_sib_mech_pct.max(),
                                 prolif_share=r.prolif_share.max()))
     ctl = pd.DataFrame(ctl)
-    ctl.to_csv(RES / "split_controls.tsv", sep="\t", index=False)
+    ctl.to_csv(RES / f"split_controls{SFX}.tsv", sep="\t", index=False)
 
     # overview
     ok = out[~out.low_mrs]
@@ -251,7 +258,7 @@ def main():
     ov.append(("prolif_driven_rows_frac_of_top10_rev",
                round(ok.prolif_driven.sum() / (ok.rev_pct >= 100 - TOP_PCT).sum(), 3)))
     ov = pd.DataFrame(ov, columns=["metric", "value"])
-    ov.to_csv(RES / "split_overview.tsv", sep="\t", index=False)
+    ov.to_csv(RES / f"split_overview{SFX}.tsv", sep="\t", index=False)
     pd.set_option("display.width", 250)
     print(ov.to_string(index=False))
     print(ctl.to_string(index=False))
