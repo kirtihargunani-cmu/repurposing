@@ -13,15 +13,19 @@
 #   ari_subtype      ARI with PanCanAtlas Subtype_Selected (patients with a label; >= 2 labels)
 #   ari_v1           ARI with the v1 modules10 clusters at v1's best K (the 6 groups clustered in v1)
 #   concordance      median patient-vs-group MR rho (61), effective_dim (PCs for 80% variance, 61): intra-group spread
-# Output: <step8>/consistency.tsv
+# STEP8_SUFFIX=_no_c8: score the clustering without the recurring module (80 EXCLUDE_MODULE=recurring); adds
+#   ari_with_c8 = ARI with the original modules10 clusters at the same K
+# Output: <step8><STEP8_SUFFIX>/consistency.tsv
 suppressPackageStartupMessages({library(data.table); library(cluster); library(mclust); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root); source("R/paths.R")
 b <- build(); require_build(b, c("step8", "step8_features", "patient_nes"))
+SUF <- Sys.getenv("STEP8_SUFFIX"); S8 <- paste0(p_step8(b), SUF); S8F <- paste0(p_step8_features(b), SUF)
+orig <- if (nzchar(SUF)) fread(file.path(p_step8(b), "assignments.tsv"))[feature_set == "modules10"] else NULL
 N_PS <- 20; N_PERM <- 200; N_CORES <- as.integer(Sys.getenv("N_CORES", "16")); set.seed(84)
-dec <- fread(file.path(p_step8(b), "decision.tsv"))
-asg <- fread(file.path(p_step8(b), "assignments.tsv"))
+dec <- fread(file.path(S8, "decision.tsv"))
+asg <- fread(file.path(S8, "assignments.tsv"))
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE & role == "tumor"]
 qtab <- fread(file.path(p_step6(b), "quality_correction/quality_index.tsv"))[role == "tumor"]
 conc <- fread(file.path(p_step6(b), "quality_correction/patient_concordance.tsv"))[startsWith(version, "v2")]
@@ -46,7 +50,7 @@ r2 <- function(y, cl) { ok <- !is.na(y); if (sum(ok) < 10) return(NA_real_); sum
 
 run <- function(gid) {
   dm <- dec[group_id == gid & feature_set == "modules10"]; k <- dm$best_K
-  F <- fread(file.path(p_step8_features(b), paste0(gid, "_modules10.tsv.gz"))); s <- F$sample; F <- as.matrix(F[, -1])
+  F <- fread(file.path(S8F, paste0(gid, "_modules10.tsv.gz"))); s <- F$sample; F <- as.matrix(F[, -1])
   cl <- asg[group_id == gid & feature_set == "modules10" & K == k][match(s, sample), cluster]
   ca <- asg[group_id == gid & feature_set == "all" & K == k][match(s, sample), cluster]
   meta <- cov[match(s, sample)]; qi <- qtab[group_id == gid][match(s, sample), quality_index]
@@ -66,12 +70,13 @@ run <- function(gid) {
     n_subtype = sum(okst), n_subtype_labels = uniqueN(st[okst]),
     ari_subtype = if (uniqueN(st[okst]) >= 2) round(adjustedRandIndex(cl[okst], st[okst]), 3) else NA_real_,
     ari_v1 = if (any(!is.na(w1))) round(adjustedRandIndex(cl[!is.na(w1)], w1[!is.na(w1)]), 3) else NA_real_,
+    ari_with_c8 = if (!is.null(orig)) round(adjustedRandIndex(cl, orig[group_id == gid & K == k][match(s, sample), cluster]), 3) else NA_real_,
     concordance = conc[group_id == gid, median_rho], effective_dim = edim[group_id == gid, effective_dim])
 }
 groups <- unique(dec$group_id)
 out <- rbindlist(mclapply(groups, function(g) tryCatch(run(g), error = function(e) { message(g, ": ", conditionMessage(e)); NULL }),
                           mc.cores = N_CORES, mc.preschedule = FALSE))
-fwrite(out[order(group_id)], file.path(p_step8(b), "consistency.tsv"), sep = "\t", na = "NA")
+fwrite(out[order(group_id)], file.path(S8, "consistency.tsv"), sep = "\t", na = "NA")
 print(out[order(-sig_modules10, -ps_median), .(group_id, n_patients, best_K, sig_modules10, sig_all, min_cluster, ari_all,
           ps_median, ps_k2, plate_v_excess, r2_purity, r2_quality, r2_module, ari_subtype, ari_v1)], nrows = 100)
 message("SUBGROUP CONSISTENCY DONE: ", nrow(out), " groups")

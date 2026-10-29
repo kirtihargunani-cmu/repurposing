@@ -1,0 +1,5 @@
+group_id	feature_set	n_patients	n_features	n_regulators_covered	n_removed_c8	best_K	RCSI	MONTECARLO_P	NORM_P	decision	cluster_sizes	silhouette	plate_p	purity_p	quality_p	minutes
+TCGA-BLCA	modules10	407	12	305	67	2	1.17	0.0099	0.0252	clusters	235/172	0.288	0.516	0.0227	0.256	1.8
+TCGA-HNSC	modules10	518	16	363	35	2	0.873	0.0099	0.0377	clusters	363/155	0.339	5e-04	0.0215	0.867	3
+TCGA-BLCA	all	407	355	965	67	2	0.581	0.0099	0.00664	clusters	233/174	0.108	0.839	0.031	0.846	1.7
+TCGA-HNSC	all	518	289	942	35	2	0.648	0.0198	0.0111	clusters	418/100	0.185	0.009	0.65	0.608	2.7

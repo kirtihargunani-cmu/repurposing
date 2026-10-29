@@ -1,0 +1,3 @@
+group_id	n_patients	n_modules	best_K	sig_modules10	sig_all	RCSI	min_cluster	cluster_sizes	ari_all	ps_median	ps_k2	plate_v	plate_v_excess	r2_purity	r2_quality	module_members	r2_module	n_subtype	n_subtype_labels	ari_subtype	ari_v1	ari_with_c8	concordance	effective_dim
+"TCGA-BLCA"	407	12	2	TRUE	TRUE	1.17	172	"235/172"	0.568	0.899	0.883	0.259	0.001	0.01	0.002	30	0.322	129	4	0.247	NA	0.867	0.838	7.98
+"TCGA-HNSC"	518	16	2	TRUE	TRUE	0.873	155	"363/155"	0.582	0.807	0.747	0.284	0.099	0.013	0	28	0.267	278	4	0.16	NA	0.907	0.823	5.83
