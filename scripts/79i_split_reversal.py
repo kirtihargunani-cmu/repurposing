@@ -210,7 +210,7 @@ def main():
         for t, s, c in [("tier_mech", "rev_mech", "rev_mech_pct"), ("tier_spec_mech", "rev_mech", "spec_mech_pct")] + \
                        [(f"tier_{x}", "rev_mech", f"{x}_pct") for x in cols]:
             hit = (o[s] > 0) & (o[c] >= 100 - TOP_PCT)
-            ok_t = o.passes_gate & ~o.unmatched_lines if "unmatched_lines" in o else o.passes_gate   # D76
+            ok_t = o.passes_gate & ~o.unmatched_lines & ~o.low_transfer if "unmatched_lines" in o else o.passes_gate   # D76, D77
             o[t] = np.where(hit & ok_t & o.approved, 1, np.where(hit & ok_t, 2, 3))
         o["prolif_driven"] = (o.prolif_share > 0.5) & (o.rev_pct >= 100 - TOP_PCT) & (o.rev_mech_pct < 100 - TOP_PCT)
         return o
@@ -219,7 +219,7 @@ def main():
     par = pd.read_csv(RES / f"drug_reversal{OUT}.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keep = ["group_id", "pert_id", "cmap_name", "source", "passes_gate", "approved", "multi_target", "hub_moa",
-            *(["line_match", "unmatched_lines"] if CONS or SFX.startswith("_v2") else []),
+            *(["line_match", "unmatched_lines", "transfer_conf", "low_transfer"] if CONS or SFX.startswith("_v2") else []),
             "n_mrs", "low_mrs", "rev", "rev_pct", "spec", "spec_pct", "tier_rev", "tier_spec"]
     rows = []
     for g, gd in par.groupby("group_id"):

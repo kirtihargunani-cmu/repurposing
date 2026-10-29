@@ -39,6 +39,8 @@ Line match (user 2026-10-28, D76): line_match = Celligner weight of the drug's b
 disease's top in-key line weight (direct drugs; NaN for borrowed). unmatched_lines = direct and line_match < LINE_MATCH_MIN
 (0.1, fixed from the distribution before any ranking was looked at: bimodal, 25% of direct pairs < 0.01, 50% > 0.19).
 E.g. BRCA-Basal drugs measured only in MCF7 (0.0004). Flagged drugs stay ranked but are kept out of tiers 1-2.
+Borrowed drugs (v2, D77): conf and low_transfer from 79l VERSION=v2 (results/lincs/drug_transfer_confidence_v2.tsv; run
+79l first); low_transfer (conf < 0.5) is kept out of tiers 1-2 the same way.
 SCORE=weighted (default for VERSION=v2; user 2026-10-28, D73) | fdr (v1 default): weighted uses every regulator tested in
 the disease, weight w_i = disease NES, no FDR cutoff: rev = -sum_i w_i * a_i / sqrt(sum_i w_i^2) (with w_i = sign of an
 FDR < MR_FDR MR this is the formula above). Why: FDR < 0.05 / 0.10 lists jumped between null versions (COAD 425 -> 0)
@@ -109,6 +111,9 @@ def main():
     else:
         mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
+    tcf = RES / "drug_transfer_confidence_v2.tsv"
+    tc = pd.read_csv(tcf, sep="\t") if SFX.startswith("_v2") else None
+    assert tc is not None or not SFX.startswith("_v2"), "run 79l VERSION=v2 first"
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
@@ -212,6 +217,12 @@ def main():
         o["n_lines_used"] = n_lines
         o["line_match"] = np.round(lmatch, 4)
         o["unmatched_lines"] = o.line_match < LINE_MATCH_MIN
+        if tc is not None:
+            t_ = tc[tc.group_id == g].set_index("pert_id")
+            o["transfer_conf"] = o.pert_id.map(t_.conf).values
+            o["low_transfer"] = o.pert_id.map(t_.low_transfer).fillna(False).astype(bool).values
+        else:
+            o["low_transfer"] = False
         o["n_mrs"] = n
         o["rev"] = rev.round(3)
         o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / norm).round(3) if A_raw is not None else np.nan
@@ -221,7 +232,7 @@ def main():
         o["approved"] = (o.chembl_max_phase == 4) | (o.hub_clinical_phase == "Launched")
         o["multi_target"] = o.n_targets > MULTI_TARGET
         reversing = (o.rev > 0) & (o.rev_pct >= 100 - TOP_PCT)
-        ok_t = o.passes_gate & ~o.unmatched_lines
+        ok_t = o.passes_gate & ~o.unmatched_lines & ~o.low_transfer
         o["tier_rev"] = np.where(reversing & ok_t & o.approved, 1, np.where(reversing & ok_t, 2, 3))
         mad = 1.4826 * np.median(np.abs(rev - np.median(rev)))
         o["rev_z"] = ((rev - np.median(rev)) / mad).round(3)
@@ -255,7 +266,7 @@ def main():
 
     ok_ref = set(summ.loc[summ.n_mrs >= MIN_MRS_REF, "group_id"])
     sp = (out.rev > 0) & (out.spec_pct >= 100 - TOP_PCT)
-    ok_t = out.passes_gate & ~out.unmatched_lines
+    ok_t = out.passes_gate & ~out.unmatched_lines & ~out.low_transfer
     out["tier_spec"] = np.where(sp & ok_t & out.approved, 1, np.where(sp & ok_t, 2, 3))
     out["low_mrs"] = ~out.group_id.isin(ok_ref)
     out = out.sort_values(["group_id", "tier_spec", "spec"], ascending=[True, True, False])

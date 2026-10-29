@@ -1,0 +1,11 @@
+model	cv	n_pairs	r2	spearman
+full	by_drug	7661.0	0.6023	0.7623
+full	by_heldout_line	7661.0	0.5961	0.757
+full_plus_excess_distance	by_drug	7661.0	0.6029	0.763
+full_plus_excess_distance	by_heldout_line	7661.0	0.5862	0.7495
+coefficients	intercept		0.0248	
+coefficients	cons		0.9437	
+coefficients	log_k		0.0159	
+coefficients	cons_x_log_k		-0.0394	
+coefficients	log_n		0.0083	
+coefficients	excess_per_100		-0.0161	

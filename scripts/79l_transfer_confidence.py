@@ -24,17 +24,34 @@ conf = min(predicted r / CEILING, 1): 1 = transfers as well as a replicate signa
 conf = 1 (assumed, not modelled).
 rev_conf = rev * conf: a borrowed score shrunk toward 0 by its expected transfer accuracy. rev_conf_pct and
 tier_rev_conf as rev_pct / tier_rev in 79e (approved + passes gate + rev_conf > 0 + top TOP_PCT percent).
+VERSION=v2 (user 2026-10-28, D77; hybrid): run BEFORE 79e, which reads the result.
+  excess distance (Celligner 70-PC space, data/processed/celligner/pcs_70.npy): how much further the drug's tested lines
+    are than the best available line. Training pair (held-out line L, drug d): dist(L, nearest of d's other lines) -
+    dist(L, nearest other DepMap cancer line). Disease x drug: per patient, dist(patient, nearest line the 79e estimate
+    uses) - dist(patient, nearest DepMap cancer line); median over the disease's patients (weights_hybrid.tsv.gz).
+  model: cons, log_k, cons * log_k, log_n, excess / 100 (CV with and without excess reported); conf as above, applied
+    to borrowed drugs (lines = the drug's cancer lines outside the tissue key, as 79e); direct drugs conf = 1.
+  low_transfer = borrowed and conf < CONF_MIN (fixed from the conf distribution before any ranking was looked at);
+    79e keeps flagged drugs out of tiers 1-2 (as unmatched_lines, D76).
+  Outputs: results/lincs/transfer_confidence_model_v2.tsv, transfer_confidence_calibration_v2.tsv,
+    drug_transfer_confidence_v2.tsv (group_id, pert_id, source, n_lines, excess_dist, pred_r, conf, low_transfer)
 Outputs: results/lincs/transfer_confidence_model.tsv (coefficients and CV), transfer_confidence_calibration.tsv,
          drug_transfer_confidence.tsv (disease x drug), transfer_confidence_summary.tsv (per disease)
 """
 from pathlib import Path
+
+import os
 
 import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
+PROC = ROOT / "data/processed/lincs"
 TOP_PCT, N_FOLDS, SEED, TOP_N = 10, 5, 0, 10
+V2 = os.environ.get("VERSION", "v1") == "v2"
+CONF_MIN = float(os.environ.get("CONF_MIN", "0.5"))   # v2 flag cutoff (D77): fixed 2026-10-28 from the conf distribution (no break; 11.5% of borrowed pairs < 0.5) before any ranking
+CEL = ROOT / "data/processed/celligner"
 
 
 def design(cons, log_k, log_n, dist=None):
@@ -159,5 +176,94 @@ def main():
     print(f"ceiling {CEILING}; borrowed conf:", r.loc[b, "conf"].describe().round(3).to_dict())
 
 
+def pcs():
+    X = np.load(CEL / "pcs_70.npy"); rows = pd.Index(open(CEL / "pcs_70_rows.txt").read().split())
+    return X, rows
+
+
+def nearest(Xa, Xb, chunk=2000):
+    """Euclidean distance matrix rows of Xa vs Xb (float32)."""
+    nb = (Xb ** 2).sum(1)
+    out = np.empty((len(Xa), len(Xb)), dtype=np.float32)
+    for i in range(0, len(Xa), chunk):
+        a = Xa[i:i + chunk]
+        out[i:i + chunk] = np.sqrt(np.maximum((a ** 2).sum(1)[:, None] + nb[None] - 2 * a @ Xb.T, 0))
+    return out
+
+
+def main_v2():
+    rng = np.random.default_rng(SEED)
+    CEILING = float(pd.read_csv(RES / "extrapolation_generic_check.tsv", sep="\t").set_index("profiles")
+                    .filter(like="ceiling", axis=0).iloc[0, 0])
+    X, rows = pcs()
+    models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
+    cancer = models.index[models.OncotreePrimaryDisease != "Non-Cancerous"]
+    lines = rows[rows.isin(cancer)]; Xl = X[rows.get_indexer(lines)]
+    lpos = pd.Series(np.arange(len(lines)), index=lines)
+    idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
+    lines_of = idx.groupby("pert_id").ModelID.apply(lambda v: sorted(set(v) & set(lines)))
+
+    # training pairs
+    p = pd.read_csv(RES / "extrapolation_lolo_pairs.tsv", sep="\t")
+    p = p[p.ModelID.isin(lines)].reset_index(drop=True)
+    Dll = nearest(Xl, Xl); np.fill_diagonal(Dll, np.inf)
+    best = Dll.min(1)
+    ex = np.full(len(p), np.nan)
+    for i, (m, d) in enumerate(zip(p.ModelID, p.pert_id)):
+        o = [lpos[x] for x in lines_of.get(d, []) if x != m]
+        if o:
+            ex[i] = Dll[lpos[m], o].min() - best[lpos[m]]
+    p["excess"] = ex
+    g = p.groupby("pert_id").r_mean
+    k = g.transform("count")
+    p["cons"] = (g.transform("sum") - p.r_mean) / (k - 1)
+    p["log_k"] = np.log2((k - 1).clip(lower=1)); p["log_n"] = np.log2(p.n_other_lines)
+    t = p[(k > 1) & p.excess.notna()].reset_index(drop=True); y = t.r_mean.values
+    X0 = design(t.cons.values, t.log_k.values, t.log_n.values)
+    Xd = design(t.cons.values, t.log_k.values, t.log_n.values, t.excess.values / 100)
+    res = []
+    for name, XX in [("full", X0), ("full_plus_excess_distance", Xd)]:
+        for split, grp in [("by_drug", t.pert_id.values), ("by_heldout_line", t.ModelID.values)]:
+            res.append({"model": name, "cv": split, "n_pairs": len(t), **metrics(y, np.clip(cv(t, XX, grp, rng), 0, 1))})
+    beta = fit(Xd, y)
+    t["pred"] = np.clip(cv(t, Xd, t.pert_id.values, rng), 0, 1)
+    t["bin"] = pd.qcut(t.pred, 10, duplicates="drop")
+    cal = t.groupby("bin", observed=True).agg(n=("r_mean", "size"), pred_mean=("pred", "mean"), obs_mean=("r_mean", "mean")).reset_index()
+    cal["bin"] = cal.bin.astype(str); cal.round(3).to_csv(RES / "transfer_confidence_calibration_v2.tsv", sep="\t", index=False)
+    coef = pd.DataFrame({"model": "coefficients", "cv": ["intercept", "cons", "log_k", "cons_x_log_k", "log_n", "excess_per_100"], "r2": beta})
+    mdl = pd.DataFrame(res); pd.concat([mdl, coef]).round(4).to_csv(RES / "transfer_confidence_model_v2.tsv", sep="\t", index=False)
+
+    # disease x drug
+    dc = p.groupby("pert_id").r_mean.agg(cons="mean", k="count")
+    dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
+    keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
+    wh = pd.read_csv(CEL / "weights_hybrid.tsv.gz", sep="\t", usecols=["sample", "group_id"]).drop_duplicates()
+    out = []
+    for gid, gd in dd.groupby("group_id"):
+        k_ = keys.loc[gid]; km = models[models.index.isin(cancer) & models.OncotreeLineage.isin(str(k_.lineages).split(";"))]
+        if isinstance(k_.diseases, str) and k_.diseases:
+            km = km[km.OncotreePrimaryDisease.isin(k_.diseases.split(";"))]
+        pts = rows[rows.isin(wh[wh.group_id == gid]["sample"])]
+        Dp = nearest(X[rows.get_indexer(pts)], Xl); bp = Dp.min(1)
+        for d, src in zip(gd.pert_id, gd.source):
+            L = [x for x in lines_of.get(d, []) if (x in km.index) == (src == "direct")]
+            e = float(np.median(Dp[:, [lpos[x] for x in L]].min(1) - bp)) if L and len(pts) else np.nan
+            out.append((gid, d, src, len(L), e))
+    r = pd.DataFrame(out, columns=["group_id", "pert_id", "source", "n_lines", "excess_dist"]).join(dc, on="pert_id")
+    b = (r.source == "borrowed") & r.cons.notna() & r.excess_dist.notna()
+    r["pred_r"] = np.nan
+    r.loc[b, "pred_r"] = np.clip(design(r.cons[b].values, np.log2(r.k[b].values), np.log2(r.n_lines[b].clip(lower=1).values),
+                                        r.excess_dist[b].values / 100) @ beta, 0, 1)
+    r["conf"] = np.where(r.source == "borrowed", np.minimum(r.pred_r / CEILING, 1), 1.0)
+    r["low_transfer"] = (r.source == "borrowed") & ~(r.conf >= CONF_MIN) if not np.isnan(CONF_MIN) else False
+    r.round(4).to_csv(RES / "drug_transfer_confidence_v2.tsv", sep="\t", index=False)
+    print(mdl.round(4).to_string(index=False))
+    print("coefficients:", dict(zip(["intercept", "cons", "log_k", "cons_x_log_k", "log_n", "excess_per_100"], beta.round(4))))
+    print("excess distance, training pairs:", t.excess.describe().round(1).to_dict())
+    print("excess distance, borrowed disease x drug:", r.excess_dist[r.source == "borrowed"].describe().round(1).to_dict())
+    print("borrowed conf:", r.conf[r.source == "borrowed"].describe(percentiles=[.05, .1, .25, .5]).round(3).to_dict())
+    print("borrowed without leave-one-line-out data (conf NaN):", int(((r.source == "borrowed") & r.cons.isna()).sum()))
+
+
 if __name__ == "__main__":
-    main()
+    main_v2() if V2 else main()
