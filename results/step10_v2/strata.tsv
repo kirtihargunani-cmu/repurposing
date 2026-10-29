@@ -1,0 +1,11 @@
+group_id	source	cluster	stratum	description	n_patients
+TCGA-BLCA	results/step8_v2_tf_no_c8	1	BLCA-basal-squamous-like	all 31 TCGA mRNA cluster III (basal-squamous) tumors	172
+TCGA-BLCA	results/step8_v2_tf_no_c8	2	BLCA-luminal-like	TCGA mRNA clusters I / II (luminal-papillary)	235
+TCGA-HNSC	results/step8_v2_tf_no_c8	1	HNSC-basal-mesenchymal-like	86 of 87 Basal, 67 of 75 Mesenchymal	363
+TCGA-HNSC	results/step8_v2_tf_no_c8	2	HNSC-atypical-classical-like	46 of 67 Atypical (HPV-enriched), Classical mixed	155
+TCGA-COAD	results/step8_v2_tf	1	COAD-CIN-like	148 of 171 GI.CIN	194
+TCGA-COAD	results/step8_v2_tf	2	COAD-MSI-like	45 of 48 GI.HM-indel (MSI); as v1 COAD-CMS1/3-like	93
+TCGA-ACC	results/step8_v2_tf	1	ACC-proliferative	all 25 steroid-phenotype + proliferation (+ 4 of 4 low + proliferation)	32
+TCGA-ACC	results/step8_v2_tf	2	ACC-low-proliferation	steroid-phenotype high / low without proliferation	45
+LGG-IDHmut-noncodel	results/step8_v2_tf	1	LGG-noncodel-LGr3	LGr3-dominant (140 of 208 LGr3)	149
+LGG-IDHmut-noncodel	results/step8_v2_tf	2	LGG-noncodel-LGr2	21 of 22 LGr2	92

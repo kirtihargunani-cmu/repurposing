@@ -1,0 +1,21 @@
+group_id	contrast	n_tumor	n_normal	status	note	n_dropped_missing_cov	n_dropped_rare_type	covariates	n_genes	n_de_fdr05_lfc1	n_up	n_down	normals_by_anchor	rho_vs_voom	top500_vs_voom	spearman_gtex_vs_adjacent
+ACC-low-proliferation	adjacent	45	0	skipped	< 10 normals											
+ACC-low-proliferation	gtex	45	125	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15545	4487	1913	2574	model:125	0.9957	0.814	
+ACC-proliferative	adjacent	32	0	skipped	< 10 normals											
+ACC-proliferative	gtex	32	125	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15564	4063	1535	2528	model:125	0.9904	0.688	
+BLCA-basal-squamous-like	adjacent	172	19	ok	""	0	0	age_z,estimate_z,sexmale	15950	4741	1891	2850		0.9984	0.898	
+BLCA-basal-squamous-like	gtex	172	9	skipped	< 10 normals											
+BLCA-luminal-like	adjacent	235	19	ok	""	0	0	age_z,estimate_z,sexmale	15919	3428	1282	2146		0.9972	0.906	
+BLCA-luminal-like	gtex	235	9	skipped	< 10 normals											
+COAD-CIN-like	adjacent	192	41	ok	""	2	0	age_z,estimate_z,sexmale	15693	4042	1665	2377		0.9996	0.866	0.708
+COAD-CIN-like	gtex	192	109	ok	""	2	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	16599	5687	2135	3552	model:109	0.9988	0.836	0.708
+COAD-MSI-like	adjacent	93	41	ok	""	0	0	age_z,estimate_z,sexmale	15619	4320	1610	2710		0.9993	0.806	0.709
+COAD-MSI-like	gtex	93	109	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	16247	5774	1958	3816	model:109	0.9982	0.79	0.709
+HNSC-atypical-classical-like	adjacent	155	44	ok	""	0	0	age_z,estimate_z,sexmale	16183	3777	1547	2230		0.9987	0.91	0.612
+HNSC-atypical-classical-like	gtex	155	265	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp,sexmale	16158	4696	1847	2849	observed:265	0.9963	0.708	0.612
+HNSC-basal-mesenchymal-like	adjacent	362	44	ok	""	1	0	age_z,estimate_z,sexmale	15971	4279	1437	2842		0.9992	0.958	0.708
+HNSC-basal-mesenchymal-like	gtex	362	265	ok	""	1	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,coll_nonbp,sexmale	16280	5510	1900	3610	observed:265	0.9974	0.842	0.708
+LGG-noncodel-LGr2	adjacent	92	0	skipped	< 10 normals											
+LGG-noncodel-LGr2	gtex	92	151	ok	""	0	0	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	15975	4159	1107	3052	average:151	0.9975	0.888	
+LGG-noncodel-LGr3	adjacent	149	0	skipped	< 10 normals											
+LGG-noncodel-LGr3	gtex	147	151	ok	""	1	1	age_z,estimate_z,coll_isch,coll_fast,coll_slow,sexmale	16148	6038	1915	4123	average:151	0.9983	0.888	

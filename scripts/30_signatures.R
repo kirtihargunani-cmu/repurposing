@@ -33,6 +33,9 @@
 #              is also fitted and kept for check C12 (columns logFC_voom / t_voom / z_voom per group file;
 #              z_tumor_vs_<contrast>_voom.tsv; agreement columns in the summary)
 #   outputs    data/processed/step4_v2/, results/step4_v2/
+# STRATA=<file> (VERSION=v2 only; Step 10 v2, D72): one signature per subgroup in the file (columns stratum, group_id,
+#   sample; results/step10_v2/stratum_patients.tsv): the subgroup's tumors vs the parent group's normals, same model
+#   and normals as the parent; outputs data/processed/step10_v2/, results/step10_v2/ (group_id column = stratum)
 suppressPackageStartupMessages({library(data.table); library(limma); library(edgeR); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -48,6 +51,8 @@ stopifnot(GENESET %in% c("protein_coding", "extended"))
 VERSION <- Sys.getenv("VERSION", "v1")
 stopifnot(VERSION %in% c("v1", "v2"), VERSION == "v1" || GENESET == "protein_coding")
 V2 <- VERSION == "v2"
+STRATA <- Sys.getenv("STRATA"); ST <- nzchar(STRATA); stopifnot(!ST || V2)
+if (ST) { sp <- fread(STRATA); parent_of <- setNames(unique(sp[, .(stratum, group_id)])$group_id, unique(sp[, .(stratum, group_id)])$stratum) }
 sfx <- if (GENESET == "extended") "_extended" else ""
 pc <- fread(sprintf("results/step3/genes_%s_v23.tsv", GENESET))
 if (V2) {
@@ -82,13 +87,16 @@ symbol <- setNames(pc$symbol, pc$gene_id)
 
 vsfx <- if (V2) "_v2" else ""
 proc_dir <- paste0("data/processed/step4", sfx, vsfx); res_dir <- paste0("results/step4", sfx, vsfx)
+if (ST) { proc_dir <- "data/processed/step10_v2"; res_dir <- "results/step10_v2" }
 dir.create(proc_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 min_normals <- setNames(suppressWarnings(as.integer(groups$min_normals)), groups$group_id)
 
 run <- function(gid, contrast) {
   normal_role <- if (contrast == "gtex") "gtex_normal" else "adjacent_normal"
-  d <- cov[group_id == gid & role %in% c("tumor", normal_role) & sample %in% colnames(counts)]
+  par <- if (ST) parent_of[[gid]] else gid
+  d <- cov[group_id == par & role %in% c("tumor", normal_role) & sample %in% colnames(counts)]
+  if (ST) d <- d[role != "tumor" | sample %in% sp[stratum == gid, sample]]
   if (V2 && contrast == "gtex") {  # Step 4a reference samples + collection covariates (0 for tumors)
     d <- merge(d[role == "tumor" | sample %in% ref$sample], ref, by = "sample", all.x = TRUE)
     for (k in COLL) d[role == "tumor", (k) := 0]
@@ -96,7 +104,7 @@ run <- function(gid, contrast) {
   d[, condition := factor(ifelse(role == "tumor", "tumor", "normal"), levels = c("normal", "tumor"))]
   out <- list(group_id = gid, contrast = contrast, n_tumor = sum(d$role == "tumor"),
               n_normal = sum(d$role == normal_role), status = "ok", note = "")
-  min_n <- if (is.na(min_normals[gid])) MIN_NORMAL else min(min_normals[gid], MIN_NORMAL)
+  min_n <- if (is.na(min_normals[par])) MIN_NORMAL else min(min_normals[par], MIN_NORMAL)
   if (out$n_normal < min_n) return(modifyList(out, list(status = "skipped",
                                                        note = sprintf("< %d normals", min_n))))
   # tumor sample-type classes
@@ -148,7 +156,7 @@ run <- function(gid, contrast) {
     z_voom = if (V2) list(setNames(tt$z_voom, tt$gene_id)) else NULL))
 }
 
-jobs <- CJ(group_id = groups$group_id, contrast = c("gtex", "adjacent"))
+jobs <- CJ(group_id = if (ST) unique(sp$stratum) else groups$group_id, contrast = c("gtex", "adjacent"))
 only <- Sys.getenv("ONLY_GROUPS")  # e.g. ONLY_GROUPS=TCGA-LUAD,BRCA-Basal for a quick test
 if (nzchar(only)) jobs <- jobs[group_id %in% strsplit(only, ",")[[1]]]
 res <- mclapply(seq_len(nrow(jobs)), function(i) {
