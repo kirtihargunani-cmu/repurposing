@@ -19,11 +19,14 @@
 # Outputs: data/processed/step5/aracne/<NET>/edge_confounding.tsv.gz
 #          results/step5/aracne_edge_confounding.tsv (per network summary; 'collapse' = retains < 50% of |r_raw|,
 #          an illustrative cut, not a filter)
+# VERSION=v2: networks in aracne_v2/, summary results/step5/aracne_edge_confounding_v2.tsv (all consolidated edges,
+#   before the cross-mappable filter of scripts/44)
 suppressPackageStartupMessages({library(data.table); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root); set.seed(46)
-IN <- "data/processed/step5/aracne_inputs"; NETDIR <- "data/processed/step5/aracne"
+SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
+IN <- paste0("data/processed/step5/aracne_inputs", SFX); NETDIR <- paste0("data/processed/step5/aracne", SFX)
 nets <- commandArgs(trailingOnly = TRUE)
 if (!length(nets)) nets <- basename(dirname(Sys.glob(file.path(NETDIR, "*", "edge_support.tsv.gz"))))
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE & role == "tumor"]
@@ -82,5 +85,5 @@ run <- function(net) {
 }
 res <- rbindlist(mclapply(nets, function(n) tryCatch(run(n), error = function(e) { message(n, ": ", conditionMessage(e)); NULL }),
                           mc.cores = 8, mc.preschedule = FALSE), fill = TRUE)
-fwrite(res[order(net)], "results/step5/aracne_edge_confounding.tsv", sep = "\t")
+fwrite(res[order(net)], paste0("results/step5/aracne_edge_confounding", SFX, ".tsv"), sep = "\t")
 message("EDGE CONFOUNDING DONE: ", nrow(res), " networks")

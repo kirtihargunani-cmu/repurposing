@@ -237,7 +237,7 @@ Step 6 v2 results (2026-10-25; `results/step6/checks_v2/`, `checks_v2_tf/`; regu
 | 2 | ARACNe inputs v2 (done 10-18); network build: full set then TF-only, 29 networks each (**done 10-24**, MAIL-15) | `42`, `43` (`VERSION=v2`, then `REGSET=tf`) | ~2.5 + ~0.7 days (background) |
 | 3 | GTEx reference: sub-region filter, best-preserved donors, anchor classes, covariates (**done 10-18**) | `32_gtex_reference.R` | minutes |
 | 4 | Step 4 v2 signatures; checks C1, C3, C4, C6, C11, C12 | `30_signatures.R` (v2) | < 1 h |
-| 5 | Regulons v2 (+ cross-mappable edge removal; **done 10-25**); edge diagnostics (support done; confounding `46` not yet) | `44`, `45`, `46` | hours |
+| 5 | Regulons v2 (+ cross-mappable edge removal; **done 10-25**); edge diagnostics (support done; confounding `46` done 10-24 for the full set, TF-only not run) | `44`, `45`, `46` | hours |
 | 6 | Group VIPER v2 (3 regulon sets), MR comparison; checks C2, C5, C7, C9, C10 (**ARACNe full + TF-only and checks done 10-25**; CollecTRI / DoRothEA arms not yet) | `50`, `51`, `59` | hours |
 | 7 | Patient VIPER v2, recurring module, check C8 (**done 10-25**: module still present in 36 of 41 groups, plate-linked; D26 open); modules (58) not yet | `61`, `58`, `62` | hours |
 | 8 | Report; PI decisions on the recurring module (D26) and the kidney reference (D60) | | |
