@@ -319,6 +319,11 @@ knockdowns are read correctly by ARACNe (C18). With 1-5 signatures per TF, choos
 **Decision (user, D75):** consensus of ARACNe TF and CollecTRI for every regulator. Result on breast controls: luminal A
 fulvestrant 57th -> 72nd percentile, luminal B anti-estrogens 66-93 -> 75-95.
 Numbers: `results/lincs/knockdown_benchmark_{summary,tf}.tsv`, `knockdown_regulon_choice.tsv` (not used).
+**Sensitivity (2026-10-29):** ARACNe and CollecTRI disagree on disease regulator rankings (NES Spearman median 0.18,
+main Step 7), yet the consensus ranking of drugs is nearly the ARACNe-only one (`drug_reversal_v2_tf.tsv`): Spearman >= 0.97
+for `rev` and >= 0.98 for `spec` in every group, median 18 of the top 20 shared. ARACNe scores ~1,000 regulators per
+disease and CollecTRI averages in only for the shared TFs, so the consensus changes specific TFs (ESR1) rather than
+the whole ranking.
 
 ### C20. Drugs tested only in cell lines unlike the disease (line-match flag, 2026-10-28)
 
