@@ -40,7 +40,9 @@ def net_name(cohort):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    summ = pd.read_csv(ROOT / "results/step4/signature_summary.tsv", sep="\t")
+    # cohorts = those with an ok Step 4 signature of the same version (v2 used to read the v1 summary; same group set,
+    # so the 2026-10-18 v2 inputs are unaffected; fixed 2026-10-31 so the v2 build is self-contained)
+    summ = pd.read_csv(ROOT / f"results/step4{SFX}/signature_summary.tsv", sep="\t")
     groups = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t")
     cov = pd.read_csv(ROOT / "results/step3/covariates_toil.tsv", sep="\t", low_memory=False)
     signed = set(summ.loc[summ.status == "ok", "group_id"])

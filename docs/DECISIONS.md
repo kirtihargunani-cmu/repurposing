@@ -175,7 +175,7 @@ did or could do about it.
 | Step 7 (10-29): keep the D18 confirmed rule as is? Its curated-support part adds almost nothing (CollecTRI / DoRothEA rarely significant), so confirmed = ARACNe FDR < 0.05 in practice; option: report NES-ranked lists | Open (user) |
 | Step 7 (10-29): TF-only networks lose more edges to technical adjustment (4.0% vs 1.9%; UCS 12%): accept and flag UCS? | Open (user) |
 | Kidney healthy reference (D60): 21 GTEx donors after the sub-region filter | Open (PI) |
-| BRCA_LUM vs pooled BRCA: cutoff for a material change in master regulators (D68) | Open (user) |
+| BRCA_LUM vs pooled BRCA (D68): not implemented. Networks built (D65), but no comparison script and no cutoff for a material change; LumA / LumB use the pooled BRCA network (50_viper.R maps by cohort). Found by the advisor's code review 2026-10-31 | Open (user: set the cutoff first) |
 | Step 9 replication of the D79 subgroups (COAD: GSE39582 / CPTAC-COAD; HNSC: CPTAC-HNSCC; BLCA, LGG, THCA cohorts to choose) | Open (user to choose cohorts) |
 | Variability inside the D79 subgroups (`86` ran on the D72 list) | To rerun |
 | PRISM / GDSC validation of the v2 drug scores | On hold (user 10-29) |

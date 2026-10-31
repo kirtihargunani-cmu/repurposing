@@ -317,6 +317,21 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Questions raised for the user: keep D18 as is; implications of the weak ARACNe-CollecTRI agreement for the
   drug-side consensus (D75); whether 4% (UCS 12%) TF-edge confounding needs action.
 
+## 2026-10-31: advisor code review (5 points), all confirmed
+- **BRCA_LUM test not implemented (D65, D68).** The luminal-only networks exist, but nothing compares them with the
+  pooled BRCA network, no cutoff for a "material change" was ever recorded, and `50_viper.R` maps LumA / LumB to the
+  pooled BRCA network by cohort. Open: the user sets the cutoff, then the comparison is written and run.
+- **Hidden v1 dependency in `42_aracne_inputs.py`:** chose cohorts from the v1 `results/step4/signature_summary.tsv`
+  even with VERSION=v2. Fixed (reads `results/step4_v2/`); the v1 and v2 ok-group sets are identical (41), so the v2
+  inputs of 2026-10-18 are unaffected.
+- **Sex term:** `30_signatures.R` also drops sex when the smaller sex has < 3 samples, while the docs said only "when one
+  sex". Documented (script header, PIPELINE_V2); checked that in v2 this second case never occurs, so no result changes.
+- **Count cache:** `30_signatures.R` rebuilt its cached count matrix only when samples were missing. It now also checks
+  the gene set (the current cache holds all 19,797 protein-coding genes, so nothing is rebuilt).
+- **Uncorrected patient NES:** `50_viper.R` writes uncorrected patient NES to `data/processed/step6/<set>/`, used only for
+  its own diagnostics; downstream steps use the corrected NES of `61` in `<set>_patient/`. Labelled in the script header
+  and PIPELINE_V2.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

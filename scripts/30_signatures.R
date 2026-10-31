@@ -6,7 +6,9 @@
 #   adjacent  tumor vs TCGA/TARGET adjacent normal (>= MIN_NORMAL) - check on the GTEx contrast
 # Samples: primary_per_patient rows only (one tumor per patient, one normal per donor).
 # Model:   ~ condition + sex + age + ESTIMATE score + tumor sample-type indicators
-#   - sex dropped when a group has one sex; age and ESTIMATE score standardized
+#   - sex dropped when a group has one sex or its smaller sex has < MIN_CLASS (3) samples (a 1-2 sample level cannot be
+#     estimated reliably; in v2 the second case never occurs: every group has one sex or >= 3 of each, checked
+#     2026-10-31); age and ESTIMATE score standardized
 #   - sample type: indicator per non-primary tumor class (metastatic / recurrent / post_treatment)
 #     with >= MIN_CLASS tumors, so `condition` is primary tumor vs normal; tumors in rarer classes
 #     are dropped. new_primary counts as primary.
@@ -65,12 +67,12 @@ cov <- cov[primary_per_patient == TRUE & group_id %in% groups$group_id]
 cov[sample_type_class == "new_primary", sample_type_class := "primary"]
 
 cnt_f <- "data/raw/solid_toil/TcgaTargetGtex_gene_expected_count.gz"
-cache <- sprintf("data/processed/step4%s/counts_%s.rds", sfx, GENESET)  # rebuilt when the sample set changes
+cache <- sprintf("data/processed/step4%s/counts_%s.rds", sfx, GENESET)  # rebuilt when samples or genes are missing
 dir.create(dirname(cache), recursive = TRUE, showWarnings = FALSE)
 hdr <- names(fread(cmd = paste("zcat", cnt_f, "| head -1")))
 use <- intersect(unique(cov$sample), hdr)
 counts <- if (file.exists(cache)) readRDS(cache) else NULL
-if (is.null(counts) || !all(use %in% colnames(counts))) {
+if (is.null(counts) || !all(use %in% colnames(counts)) || !all(pc$gene_id %in% rownames(counts))) {
   message(length(use), " of ", uniqueN(cov$sample), " samples in count matrix; reading...")
   x <- fread(cmd = paste("zcat", cnt_f), select = c(hdr[1], use))
   ids <- sub("\\..*", "", x[[1]])

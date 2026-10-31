@@ -22,6 +22,9 @@
 #     ((sum lambda)^2 / sum lambda^2), top-loading regulators, and R^2 of PCs 1-5 on Step 3 covariates.
 # Outputs: results/step6/<REGULON>/{group_mr,regulator_filter,patient_concordance,axes,
 #          axes_covariates,group_summary}.tsv; patient NES matrices in data/processed/step6/<REGULON>/
+#   NOTE: these patient NES are UNCORRECTED (no purity / RNA-quality correction). They feed only this script's own
+#   concordance and axes diagnostics. Every downstream step (clustering, subgroups, variability) uses the corrected
+#   patient NES of 61_quality_correct.R, in data/processed/step6/<set>_patient/ (config/builds.yaml patient_nes).
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(limma); library(viper);
                                 library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)

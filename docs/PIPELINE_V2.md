@@ -106,7 +106,8 @@ reasons in `genes_v2_dropped.tsv`):
 
 **4b. Signatures** (`VERSION=v2 Rscript scripts/30_signatures.R`):
 - limma model `~ condition + age + sex + ESTIMATE + sample-type indicators + collection covariates`; moderated t
-  converted to a signed z per gene. Two contrasts per group where possible: vs GTEx (primary) and vs adjacent normals
+  converted to a signed z per gene. Sex is left out when a group has one sex or its smaller sex has < 3 samples (the
+  second case does not occur in v2). Two contrasts per group where possible: vs GTEx (primary) and vs adjacent normals
   (check).
 - **voomByGroup instead of voom (D69).** Tumors are 1.2-1.8x more variable than normals; separate noise models give
   each arm its own weights. Why the user chose it: top-of-list genes and regulator lists shift 10-30%, which matters
@@ -152,8 +153,9 @@ reasons in `genes_v2_dropped.tsv`):
 - **Key finding:** FDR-cut master-regulator lists are unstable (colon 425 / 0 / 1 between nulls) while the regulator
   ranking is stable (Spearman >= 0.98). This is why the drug side weights every regulator by its NES (D74).
 - **Outputs** (per regulon set, e.g. `results/step6/aracne_project_v2_tf/`): `group_mr.tsv` (regulator, NES, p, FDR per
-  group), `regulator_filter.tsv`, `group_summary.tsv`, `patient_concordance.tsv`, `axes.tsv`; uncorrected patient NES in
-  `data/processed/step6/<set>/`.
+  group), `regulator_filter.tsv`, `group_summary.tsv`, `patient_concordance.tsv`, `axes.tsv`. `50` also writes
+  **uncorrected** patient NES to `data/processed/step6/<set>/`; they are used only for its own diagnostics. Every
+  downstream step uses the corrected patient NES from 6b (`data/processed/step6/<set>_patient/`).
 - **Roles of the regulon sets:** ARACNe is primary; CollecTRI and DoRothEA are supporting evidence (D17); confirmed
   regulator rule D18. CollecTRI reaches FDR < 0.10 in few groups on the corrected null, which no longer matters for
   ranking (D74).
@@ -303,7 +305,10 @@ Summary; full detail in `celligner:docs/PIPELINE_DRUG_SIDE_V2.md` and caveats in
 ## Open items
 
 - D26 recurring module: subgroups are defined without it (D79); PI to confirm.
-- D60 kidney reference; A37 LGG purity covariate (tabled); D68 BRCA_LUM material-change cutoff.
+- D60 kidney reference; A37 LGG purity covariate (tabled).
+- **BRCA_LUM test (D65, D68) not implemented:** the luminal-only networks are built, but no script compares their master
+  regulators with the pooled BRCA network, and the cutoff for a material change was never set. `50_viper.R` maps groups
+  by cohort, so LumA and LumB use the pooled BRCA network.
 - Step 7 questions (2026-10-29): keep the D18 confirmed rule as is (its curated part adds almost nothing)? Does the low
   ARACNe vs CollecTRI agreement change the drug-side consensus (D75)? TF-only networks lose more edges to technical
   adjustment (4.0% vs 1.9%; UCS 12%).
