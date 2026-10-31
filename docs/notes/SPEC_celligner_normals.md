@@ -1,6 +1,10 @@
 # Spec: where healthy tissue lands among cell lines (Celligner), per disease cohort
 
-Status: **spec written 2026-10-18, not executed.** Companion to the disease-side composition spec
+Status: **spec written 2026-10-18; first part run provisionally 2026-10-19** (`scripts/72b_celligner_gtex_full.py`,
+commit e091894): all v2 GTEx reference normals projected with the tumors in chunks of 100 ->
+`results/celligner/normal_projection_{gtex_v2_samples,group,lineage,drift}.tsv`. Anchor drift check: same nearest line
+in 82-98% of samples (median 92%); 17 of 33 chunks pass the pre-set rule, so acceptance (weight level vs chunks of 50)
+is still open and the analysis questions below are not answered yet (status 2026-10-31). Companion to the disease-side composition spec
 (`docs/SPEC_tissue_composition.md` on `main`). Builds on `scripts/72_celligner_normal_control.py` (normal-tissue
 negative controls, 2026-10-08).
 

@@ -401,8 +401,8 @@ may be technical (see the disease-side note).
 
 ## 5. Likely questions and current answers
 
-Questions a PI, reviewer or audience is likely to ask, with the answer as of 2026-10-12 (v2 changes: C18-C23). Update the answers as the
-work moves on.
+Questions a PI, reviewer or audience is likely to ask. Answers were written 2026-10-12 (v1); lines marked **v2** give
+the current answer (2026-10-31; details C18-C23 and `../PIPELINE_DRUG_SIDE_V2.md`).
 
 ### Cell-line matching
 - **Why cell lines, and why Celligner?** Drug response data (LINCS) exists only for cell lines. Lines differ
@@ -423,6 +423,8 @@ work moves on.
 - **Drugs never tested in the tissue?** Borrowed if tested in >= 3 other lines; predicted vs real effect r 0.46,
   best possible ~0.55 (C7). Weighting by line similarity added nothing. Per-drug confidence: `conf` in
   `drug_transfer_confidence.tsv` (C17).
+  **v2:** borrowed drugs with transfer confidence < 0.5 are flagged `low_transfer` and kept out of tiers 1-2 (C21);
+  how far the disease is from the tested lines adds nothing to the prediction.
 - **Do dish effects reflect patients?** Not fully: no immune system, stroma or drug metabolism, and doses may exceed
   achievable levels. Standard limitation.
 
@@ -438,6 +440,10 @@ work moves on.
 ### Reversal scoring
 - **Why regulators, not genes?** Same mechanism-level view as the disease side; regulators summarize many genes.
 - **Tumor networks applied to cell lines?** A known risk; it causes the growth-arrest misreading (C3).
+  **v2:** drugs are scored with a consensus of the tumor network (ARACNe TF-only) and CollecTRI, whose targets are
+  direct; it corrects ESR1 in luminal breast and barely changes the rest of the ranking (C18, C19).
+- **v2: which regulators count?** All regulators tested in the disease, each weighted by its disease NES; no
+  master-regulator cutoff, because FDR lists were unstable (main D73, D74).
 - **Why remove each line's average drug response?** Almost every active drug slows proliferation; without the
   correction 87% of drugs "reverse" bladder cancer (part 2).
 - **Where are the p-values?** The permutation null was 3-5x too narrow, so drugs are ranked by percentile instead.
@@ -446,19 +452,33 @@ work moves on.
 - **Is it validated against drug-sensitivity data?** Tested on PRISM and GDSC: none of the scores predicts which
   drugs selectively kill a cancer's cell lines (median rho about 0), although that data clearly recovers known
   drugs (C16). This is the main open problem.
+  **v2:** not yet rerun on the v2 scores (on hold, user 2026-10-29).
 - **Does it recover known drugs?** Partly: 73rd percentile on average; erlotinib, 5-FU, flutamide high; afatinib,
   irinotecan not; anti-estrogens wrongly high in basal breast cancer (C2). Expect this to be the main question.
+  **v2:** erlotinib 96th in lung adenocarcinoma (osimertinib first), flutamide 85th in prostate, irinotecan 98.5th on
+  specificity in colon; basal-breast anti-estrogens are flagged and out of the tiers (C20, C23).
 - **Isn't it just finding anti-proliferative drugs?** Largely yes for the reversal score: 44 growth inhibitors are
   top 10% in >= 20 cancers. Specificity removes them but does not recover known drugs better (C4). The score is
   now also split into a proliferation part and a mechanism part (C15): proliferation carries most of the
   known-drug signal; EGFR and androgen-receptor drugs are carried by the mechanism part.
+  **v2:** reports lead with specificity with proliferation removed (`spec_mech`, D80); by it no drug is top 10% in
+  >= 20 cancers. A few classes still recur (anthracyclines, topotecan) and some picks look implausible (cardiac
+  glycosides, pentobarbital, metronidazole) (C23).
 - **Why do anti-estrogens rank high in basal breast cancer?** The tumor-derived ESR1 regulon is a luminal-identity
   module that lacks the acute estrogen-response genes, so fulvestrant reads as raising the ER program (C3). It is
   not a proliferation effect (C15).
+  **v2:** two causes. The tumor ESR1 regulon misreads the drugs (fixed for luminal breast by the CollecTRI consensus,
+  C18-C19), and basal breast has no basal-like line with LINCS compound data, so it was scored on MCF7; such drugs are
+  now flagged `unmatched_lines` (C20).
+- **v2: how do you say there is no good drug for a cancer?** Every disease and subgroup carries an evidence status:
+  matched, borrowed only, or no adequate compound, with a sentence for reports (C22). 14 of 41 diseases are matched.
 
 ### Strata
 - **Do subgroups get different drug lists?** Still to be shown: stratum signatures correlate 0.97-0.99 with the
   parent's, so sibling specificity is the test (C13).
+  **v2:** 14 subgroups (main D79). Some differ clearly (COAD MSI-like: BRAF / MEK inhibitors, HSP90 inhibitors most
+  MSI-specific; THCA BRAF-like: HDAC inhibitors); LGG-noncodel and TGCT-SEM subgroups barely differ and are reported
+  as one list per parent (C23).
 - **Why line weights from the stratum's own patients?** Subgroups may resemble different lines, e.g. CMS1/3-like vs
   CMS2/4-like colon tumors lean on different colon lines.
 
@@ -467,4 +487,6 @@ work moves on.
   check, subgroup focus, and a disease-specificity score.
 - **How would you validate it?** Known-drug controls (current); drug sensitivity in the matched lines (DepMap PRISM,
   GDSC); clinical trial / approval concordance; eventually experiments. PRISM / GDSC is the obvious next check.
+  **v2:** PubMed / ClinicalTrials.gov links for the top pairs and FDA-approved rankings exist (`79o`, `79p`); PRISM /
+  GDSC on hold.
 - **Why prioritize approved drugs?** Faster translation: an approved drug has known safety.
