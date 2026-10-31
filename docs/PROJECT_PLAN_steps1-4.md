@@ -1,3 +1,5 @@
+> **Status 2026-10-31: original plan** received 2026-10-01, kept for reference. How the pipeline actually runs: [`PIPELINE_V2.md`](PIPELINE_V2.md).
+
 Step 1 — disease grounding
 - MONDO (Monarch): mondo.obo/.owl or OLS4 REST. Per term: ID, label, synonyms, is_a parents/descendants, xrefs (EFO, DOID, NCIt, UMLS, ICD-O-3). Open, CC-BY.
 - OncoTree (MSK): flat code list + tissue/lineage mapping (DepMap and Celligner key on OncoTree). Open REST API.

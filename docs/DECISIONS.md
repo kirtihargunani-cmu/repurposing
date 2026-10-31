@@ -127,13 +127,13 @@ did or could do about it.
 |---|---|---|---|
 | A1 | Purity (stroma/immune content) is a nuisance to remove, but it may carry real mechanism (immune evasion, fibrosis) | High | Sensitivity run without ESTIMATE adjustment: proposed, not run |
 | ~~A2~~ | ~~limma treats tumors and normals as equally variable; tumors are more variable~~ | Resolved (D69) | Tested 2026-10-20: tumors 1.2-1.8x more variable; v2 models the arms separately (voomByGroup) |
-| A3 | Gene-gene correlation in healthy tissue represents "chance" for tumors (normal-split null); the null is unadjusted for covariates while the signature is adjusted | High | Conservative in practice (GTEx donor structure widens it) |
+| A3 | Gene-gene correlation in healthy tissue represents "chance" for tumors (normal-split null); the null is unadjusted for covariates while the signature is adjusted | High | v2 (D73): the null uses exactly the Step 4a normals the signature used (bug fixed 10-28); a covariate-adjusted null was tested (no false calls, more master regulators) and not adopted under the pre-set rule. FDR-cut lists are unstable between nulls while NES rankings agree (rho >= 0.98), so the drug side uses NES weights (D74) |
 | A4 | GTEx is a fair healthy reference despite post-mortem collection and source being collinear with tumor vs normal; adjacent normals carry field effects | High | GTEx vs adjacent agreement median ~0.6 (18 groups) |
 | A5 | Partial GTEx tissue matches add cell-type differences to signatures (pancreas acinar vs ductal, uterus myometrium, adult adrenal for NBL) | High | Flagged per group |
 | A6 | Regulator activity can be read from its targets' mRNA; misses non-transcriptional activation (kinases) | Medium | PROGENy / CPTAC phospho proposed |
 | A7 | The expressed-regulator filter drops active but low-mRNA regulators | Medium | None yet |
-| A8 | CollecTRI is context-free; unsigned edges (~1.5k of 64.5k) are treated as activation | Medium | CollecTRI is supporting only |
-| A9 | ARACNe: co-expression = regulation; one network per cancer, shared by its subtypes and strata | Medium | Edge confounding check: < 3% of edges lose > 50% strength after purity/quality/plate; BRCA_LUM vs BRCA tests the subtype part (D68) |
+| A8 | CollecTRI is context-free; unsigned edges (~1.5k of 64.5k) are treated as activation | Medium | Supporting on the disease side (rarely significant: median 0 FDR < 0.10 regulators per group, Step 7 10-29); part of the drug-side consensus (D75) |
+| A9 | ARACNe: co-expression = regulation; one network per cancer, shared by its subtypes and strata | Medium | Edges losing > 50% strength after purity / quality / plate: median 1.9% per network (full set), 4.0% (TF-only; max UCS 12%); BRCA_LUM vs BRCA tests the subtype part (D68, cutoff open) |
 | A10 | Subtype labels (PanCanAtlas PAM50, IDH/codel, marker-based ALL lineage; METABRIC CLAUDIN_SUBTYPE; CPTAC PAM50) are correct | Medium | Taken as given |
 | A11 | RSEM expected counts behave like counts for voom | Low | Standard practice |
 | A12 | Patients with missing covariates (< 2%) are missing at random | Low | Dropped |
@@ -142,16 +142,16 @@ did or could do about it.
 | A15 | BH FDR is valid under positive dependence between regulators | Low | |
 | A16 | Filter thresholds (>= 10 targets, >= 50% present, logCPM >= 1, >= 30 patients, >= 10 normals) are judgment calls | Low | Sensitivity analyses advisable |
 | A17 | The long-minus-short gene index measures RNA quality | Medium | Agrees only partly with GTEx RIN / ischemic time; treated as a plate-linked technical axis. 10-18: computed jointly, TCGA normals score higher than GTEx and tumors lower; not used in Step 4 (D50) |
-| A18 | The recurring module is biology (PI reading), not a technical axis | Medium | Plate-linked above chance in 39 groups; RNA quality, GC bias and multi-mapping ruled out as causes; cause unknown. 10-18: 89% of its 555 members (all 17 core) are higher in GTEx than in TCGA normals, i.e. it matches the TCGA-vs-GTEx lab axis; revisit before Step 8 v2 (D56) |
+| A18 | The recurring module is biology (PI reading), not a technical axis | Medium | Plate-linked above chance; RNA quality, GC bias and multi-mapping ruled out; cause unknown. v2 (D79): subgroups are defined from the clustering without it (decision changed in 5 of 41 groups); treated as a nuisance axis pending PI confirmation of D26 |
 | A19 | Regulator modules (correlation >= 0.7) are meaningful units, and module scores capture patient differences | Medium | Mean-member and PC1 scores agree (r 0.998) |
 | A20 | Comparing replication patients with their cohort's average tumor is equivalent to the TCGA comparison with healthy tissue once scores are standardized | Medium | Colon: TCGA modules replicate (rho 0.89-0.94); breast axes replicate in gene content |
 | A21 | Array (GSE39582, METABRIC) and RNA-seq scores are comparable after standardizing within each cohort | Medium | Same patterns found on both platforms |
 | A22 | CMScaller calls on TCGA/replication data are correct, and the CMS1/3 vs 2/4 naming describes the colon split | Low | Consistent across three cohorts |
-| A23 | READ clusters reflect biology despite their plate association | High (for READ) | Not testable without a rectal cohort; flagged tentative |
-| A24 | Breast axes are continuous biology, not technical; principal-component signs are arbitrary (high/low are labels only) | Medium | Technical screen (D37); replication (D40); low ends of Basal PC3 and Her2 PC4 look like housekeeping genes |
-| A25 | Cutting axes into thirds captures the axis ends; the cut point is arbitrary and patients appear in several axis strata | Low | Ends agree with the companion gene list (rho 0.82-0.93) |
+| A23 | READ clusters reflect biology despite their plate association | High (for READ) | v1 only: READ clusters did not reproduce in v2 and are not carried over (D79) |
+| A24 | Breast axes are continuous biology, not technical; principal-component signs are arbitrary (high/low are labels only) | Medium | v1 only: breast axes are not carried into the v2 subgroups (D79); technical screen (D37), replication (D40) |
+| A25 | Cutting axes into thirds captures the axis ends; the cut point is arbitrary and patients appear in several axis strata | Low | v1 only (breast axes not used in v2, D79) |
 | A26 | One healthy reference (the parent's GTEx tissue) suits every stratum of a cancer | Low | Same as A4 |
-| A27 | Stratum signatures are dominated by the shared cancer-vs-normal signal (0.97-0.99 similar to the parent); stratum differences are a thin layer | High (for drug ranking) | Addressed by specificity scoring (D43) |
+| A27 | Stratum signatures are dominated by the shared cancer-vs-normal signal (0.97-0.99 similar to the parent); stratum differences are a thin layer | High (for drug ranking) | Addressed by specificity (D43) and, in v2, sibling specificity with proliferation removed (`spec_sib_mech`); LGG-noncodel and TGCT-SEM subgroups barely differ in drug response (reported as one list) |
 | A28 | ~~(v2) The part of the adjacent-vs-GTEx difference shared across organs is lab/protocol + average post-mortem effect; some may be real biology of tumor-adjacent tissue (field effect, tumor cells, wound response) and is removed with it~~ (lab subtraction dropped, D57) | High | Acceptance checks C5 (known biology), C6 (proliferation retained) |
 | A29 | ~~(v2) One lab correction per gene (median of 10 organ units) fits organs without adjacent normals; organ-specific lab effects remain~~ (lab subtraction dropped, D57) | Medium | C4 (held-out unit) |
 | A30 | ~~(v2) Uncertainty of the lab correction is not carried into the moderated t, so z is slightly over-confident~~ (lab subtraction dropped, D57) | Low | z used as ranks |
@@ -162,17 +162,30 @@ did or could do about it.
 | A35 | (v2) Marker-score thresholds pick the right part of the organ in GTEx colon (epithelium >= 7) and kidney (proximal tubule >= 5) | Low | Thresholds sit at the valley of a bimodal distribution; variability after removal matches TCGA adjacent |
 | A36 | (v2) Pediatric tumors (TARGET-WT, NBL) can be compared with adult GTEx donors; age is nearly collinear with tumor vs normal, so the age adjustment and the condition estimate trade off | Medium (for WT / NBL) | Recorded 10-20 (D70): WT genes changed 2,801 -> 6,916 between v1 and v2; no cohort-wide correction needed, so no action |
 | A37 | (v2, D45) ESTIMATE is an adequate purity covariate in LGG. In glioma it mostly reflects immune / microglia content, while ABSOLUTE measures copy-number tumor fraction; correcting for one leaves the other on patient PC1 | Medium (LGG patient-level, Step 8) | Found 10-25: v1 (ABSOLUTE-corrected) left ESTIMATE on PC1 (R^2 0.31 codel); v2 (ESTIMATE-corrected) leaves ABSOLUTE (R^2 0.46 codel, 0.24 IDHwt, 0.11 noncodel). Option: both covariates in LGG. Open (user / PI) |
+| A38 | (v2, D75) Averaging ARACNe TF and CollecTRI activity per regulator is a fair consensus although the two rank a disease's regulators differently (NES rho median 0.18) | Medium (drug side) | Drug rankings: consensus vs ARACNe-only rho >= 0.97, median 18 of top 20 shared (10-29); the consensus mainly changes TFs with direct-target regulons (ESR1) |
+| A39 | (v2, D71) Prediction strength >= 0.75 separates real patient subgroups from splits of continuous variation | Medium | Unstructured groups score ~0.5-0.65 here; COAD (0.748) kept as an explicit exception (D79) |
+| A40 | (v2, D76) The Celligner weight of a drug's best tested line, relative to the disease's best line, says whether the drug's data apply to the disease | Medium (drug side) | Cutoff 0.1 at the valley of a bimodal distribution; flagged pairs stay ranked, out of tiers |
+| A41 | (v2, D77) Transfer accuracy measured on gene-level profiles (leave-one-line-out) also describes how well regulator scores transfer | Medium (drug side) | Calibrated within 0.03 per decile at gene level; not re-fitted on regulator scores |
+| A42 | (v2) Drugs@FDA ingredient-name matching (salts removed) identifies FDA-approved LINCS drugs | Low | 527 of 3,058 drugs matched; spot-checked code-named compounds (fedratinib, selinexor, temsirolimus, gedatolisib) |
+| A43 | (v2, D80) Specificity with proliferation removed (`spec_mech`) is the best available ordering of candidate drugs | High (drug side) | Not yet validated against measured drug sensitivity (PRISM / GDSC on hold); known-drug controls mostly recovered (erlotinib, flutamide, irinotecan) |
 
 ## 3. Open / parked
 | Item | Status |
 |---|---|
+| Step 7 (10-29): keep the D18 confirmed rule as is? Its curated-support part adds almost nothing (CollecTRI / DoRothEA rarely significant), so confirmed = ARACNe FDR < 0.05 in practice; option: report NES-ranked lists | Open (user) |
+| Step 7 (10-29): TF-only networks lose more edges to technical adjustment (4.0% vs 1.9%; UCS 12%): accept and flag UCS? | Open (user) |
+| Kidney healthy reference (D60): 21 GTEx donors after the sub-region filter | Open (PI) |
+| BRCA_LUM vs pooled BRCA: cutoff for a material change in master regulators (D68) | Open (user) |
+| Step 9 replication of the D79 subgroups (COAD: GSE39582 / CPTAC-COAD; HNSC: CPTAC-HNSCC; BLCA, LGG, THCA cohorts to choose) | Open (user to choose cohorts) |
+| Variability inside the D79 subgroups (`86` ran on the D72 list) | To rerun |
+| PRISM / GDSC validation of the v2 drug scores | On hold (user 10-29) |
 | Sensitivity checks: no ESTIMATE adjustment (A1), PROGENy (A6) | Proposed (A2 tested 2026-10-20, D69) |
 | Residual plate in BRCA-Basal and STAD | Noted |
 | Blood cancers' healthy references; recount3 non-cancer diseases | Parked (PI) |
-| Exact formula for sibling specificity | Proposed in `docs/notes/subgrouping_for_drug_side.md`; to confirm |
-| ~~Step 4 rebuild: how to remove the TCGA-vs-GTEx lab component, whether to adjust GTEx normals for ischemic time / ventilator death, RNA-quality index in Step 4~~ | Decided 10-18: D48-D55; spec in SPEC_rebuild_v2.md; not yet executed |
-| Recurring module in clustering (D26) given its link to the lab axis | Open (PI), before Step 8 v2. C8 (10-25): still present after all v2 corrections (36 of 41 groups, core 77, plate excess > 0.2 in 12 of 34) |
-| LGG purity covariate in patient-level scores (A37): ESTIMATE only (D45), or ESTIMATE + ABSOLUTE | Open (user / PI), before Step 8 v2 |
+| Exact formula for sibling specificity | Implemented as proposed (v1 `79g`; v2 `79e` STRATA=1 `spec_sib`, `79i` `spec_sib_mech`); to confirm |
+| ~~Step 4 rebuild: how to remove the TCGA-vs-GTEx lab component, whether to adjust GTEx normals for ischemic time / ventilator death, RNA-quality index in Step 4~~ | Decided 10-18 (D48-D60); executed 10-18 to 10-29 (`PIPELINE_V2.md`) |
+| Recurring module in clustering (D26) given its link to the lab axis | PI to confirm. C8 (10-25): still present after all v2 corrections (36 of 41 groups, core 77, plate excess > 0.2 in 12 of 34). 10-28: clustering without it changes the decision in 5 of 41 groups; subgroups defined without it (D79) |
+| LGG purity covariate in patient-level scores (A37): ESTIMATE only (D45), or ESTIMATE + ABSOLUTE | Tabled (user 10-25); LGG-noncodel subgroups (D79) rest on ESTIMATE only |
 | ~~Composition marker rule: 9 of 18 positive controls not evaluable; proposed: families~~ | Decided 10-18 (D67). Remaining: smooth muscle has no panel (5 controls); curated panel proposed | Open (user) |
 | Using TCGA adjacent normals in drug ranking | User 10-18: develop (1) a safety filter (target higher in tumor than in the patients' own adjacent normal tissue; normal-tissue impact) and (2) the inflammation around tumors as a secondary target (with surgery / immediate-early genes separated out). Sketch in the drug-side notes (`celligner` branch); not designed yet |
 | ~~D48 premise under review (user 10-18): the adjacent-vs-GTEx difference is not only lab. It mixes lab/protocol, collection (surgery vs post-mortem), donor population (cancer patients, ~12 years older) and tissue state next to a tumor (field effect, inflammation, tumor cells). Removing it removes all four. Reference choice pending the variance / split-half test (`scripts/33_normal_variance.R`) ~~ | Resolved 10-18: D57-D60 |

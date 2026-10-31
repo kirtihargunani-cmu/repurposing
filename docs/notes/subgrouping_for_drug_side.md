@@ -1,5 +1,7 @@
 # Subgrouping status: note for the drug-side session
 
+> **Status 2026-10-31: v1 strata.** v2 subgroups are the 14 of D79 (`results/step10_v2/strata.tsv`); drug ranking for them: celligner `79e` STRATA=1 / `79i` (see `celligner:docs/PIPELINE_DRUG_SIDE_V2.md`). The sibling-specificity formula proposed here is what v2 implements.
+
 From the disease-side session, 2026-10-12. Everything referenced is on branch `main` in `~/projects/repurposing`;
 from the `celligner` worktree, read it with `git show main:<path>` (do not check out `main` there).
 Background and numbers: `docs/PROGRESS.md` (Step 8, 9 and 10 entries).

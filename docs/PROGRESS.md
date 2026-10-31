@@ -317,23 +317,15 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Questions raised for the user: keep D18 as is; implications of the weak ARACNe-CollecTRI agreement for the
   drug-side consensus (D75); whether 4% (UCS 12%) TF-edge confounding needs action.
 
-## Assumptions register (review before reporting results)
-High impact
-1. ESTIMATE adjustment treats stroma/immune content as nuisance; may remove real mechanism (immune evasion, fibrosis). Sensitivity run without it: proposed.
-2. limma assumes equal variance in tumors and normals; tumors are more variable. Sensitivity with voomWithQualityWeights / group variances: proposed.
-3. Normal-split null assumes normal gene-gene correlation represents chance in tumors; null is unadjusted for covariates while the signature is adjusted; GTEx donor/batch structure widens it (conservative).
-4. Normal references: GTEx (post-mortem, collection differences; source collinear with condition) and adjacent normals (field effect, e.g. PRAD, KIRC).
-5. Partial GTEx matches (19 cohorts) put cell-type differences into signatures (pancreas acinar vs ductal; uterus myometrium; adult adrenal for NBL).
-Medium
-6. VIPER infers activity from targets' mRNA; misses non-transcriptional activation (kinase blind spot; PROGENy / CPTAC phospho proposed as complements).
-7. Expressed-regulator filter drops active-but-low-mRNA regulators.
-8. CollecTRI is context-free; unsigned edges (~1.5k of 64.5k) default to activation.
-9. ARACNe: co-expression = regulation; DPI removes indirect edges; one network per cohort assumes subtypes share wiring.
-10. Subtype labels (PanCanAtlas PAM50, IDH/codel; marker-based ALL lineage) taken as correct.
-Lower / handled
-11. RSEM expected counts treated as counts for voom. 12. Missing covariates dropped (< 2%; MAR). 13. GTEx age = bin midpoint. 14. One sample per patient (diagnosis sample representative; metastasis/recurrence via indicator). 15. BH FDR under positive dependence. 16. Filter thresholds (>= 10 targets, >= 50% present, logCPM >= 1, >= 30 patients, >= 10 normals) are judgment calls; sensitivity analyses advisable.
+## Assumptions register
+Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
+(numbered 1-16) is in this file's git history.
 
 ## Next
-- (2026-10-29) See "Open" in the 2026-10-28 / 29 entry above. PRISM / GDSC validation of the v2 drug scores is on hold (user).
-- CPTAC-HNSCC (GDC CPTAC-3, open STAR counts, GENCODE v36; ~173 tumor / ~59 adjacent-normal RNA-seq files) as a separate HNSC replication cohort. Do not pool with Toil (different pipeline; normals are adjacent, not healthy).
-- Decide: subtype splits for mixed cohorts; recount3 non-cancer diseases (DepMap 24Q4 pulled for Celligner).
+Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section 3; step status: [`PIPELINE_V2.md`](PIPELINE_V2.md).
+- Answer the Step 7 questions (D18 confirmed rule; TF-only edge confounding), then rerun `86` (variability) for the D79
+  subgroups, then Step 9 replication (cohorts to choose; COAD can start with GSE39582 / CPTAC-COAD).
+- PI: D26 (recurring module), D60 (kidney reference). User: D68 cutoff, A37 (LGG, tabled).
+- Drug side: PRISM / GDSC validation on hold; check the recurring oddities in specificity lists.
+- Later: CPTAC-HNSCC as an HNSC replication cohort (GDC CPTAC-3, open STAR counts, GENCODE v36; do not pool with Toil);
+  subtype splits for mixed cohorts; recount3 non-cancer diseases.

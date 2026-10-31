@@ -1,5 +1,7 @@
 # Driver mechanisms of groups with no CollecTRI regulator at FDR < 0.10
 
+> **Status 2026-10-31: v1 context** (written for the v1 CollecTRI run, 2026-10-03). The literature summary still holds; the 'no regulator at FDR < 0.10' framing refers to v1.
+
 Compiled 2026-10-03 from the literature (background research agent; PMIDs checked against PubMed titles, journals and years). Frequencies are approximate (about ±5 points) and quoted from the TCGA marker papers and Sanchez-Vega et al., Cell 2018 (PMID 29625050). Lines marked **[Inference]** are interpretation, not cited fact. Our own patients' alteration frequencies are in `results/step7/driver_classes.tsv` (`scripts/60_driver_classes.py`).
 
 Driver classes: (a) kinase / RTK / RAS-MAPK / PI3K; (b) transcription factor; (c) tumor suppressor / chromatin; (d) viral. "mRNA-visible" asks whether the driving event shows up in target-gene mRNA, which is what VIPER reads.

@@ -1,6 +1,7 @@
 # Rebuild spec v2: corrected signatures, networks and master regulators
 
-Status: **agreed 2026-10-18, not yet executed.** Decisions D45-D47, D50-D51, D53-D60 in [`DECISIONS.md`](DECISIONS.md)
+Status: **agreed 2026-10-18; executed 2026-10-18 to 2026-10-29** (TF-only arm through subgroups and drug ranking; how it
+ran, step by step: [`PIPELINE_V2.md`](PIPELINE_V2.md); decisions taken during execution: D61-D80). Original plan below. Decisions D45-D47, D50-D51, D53-D60 in [`DECISIONS.md`](DECISIONS.md)
 (D48, D49 and the lab-shift part of D52 were replaced by D57 on 10-18). The measurements behind them are in
 [`PROGRESS.md`](PROGRESS.md) (2026-10-18) and `results/step4/reference_diagnostics/` (scripts `31`, `33`, `34`).
 
@@ -233,6 +234,10 @@ Step 6 v2 results (2026-10-25; `results/step6/checks_v2/`, `checks_v2_tf/`; regu
 | C7 MRs FDR < 0.10 per group, median; v1-v2 Jaccard; NES rho | 587 | 567; 0.67; 0.977 | 172 | Reported |
 
 ## Assumptions carried by v2 (also in DECISIONS.md)
+
+Assumptions added while executing v2 (A36-A43: pediatric groups, LGG purity, consensus regulons, the subgroup keep rule,
+cell-line match, transfer confidence, FDA matching, specificity ordering) are in `DECISIONS.md` section 2.
+
 
 - A32: the 71 genes without a mappability value behave like normally mappable genes.
 - A33: GTEx collection effects are additive per gene in log ischemic time and death circumstance; other agonal and

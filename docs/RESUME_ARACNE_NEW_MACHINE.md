@@ -1,5 +1,7 @@
 # Resume the v2 ARACNe build on a new machine (MAIL-15)
 
+> **Status 2026-10-31: done.** The v2 ARACNe build finished on MAIL-15 on 2026-10-24 and was copied back to MAIL-10 (`PROGRESS.md` 2026-10-25). Kept as instructions for a future rebuild.
+
 Written 2026-10-20. The v2 network build (`scripts/43_run_aracne.sh`) was paused on MAIL-10 (128.2.112.20) on
 2026-10-19 and moves to MAIL-15 (128.2.112.22, Lambda #6). See `docs/PROGRESS.md` (2026-10-19) for the pause.
 

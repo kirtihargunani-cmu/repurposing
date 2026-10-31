@@ -1,5 +1,7 @@
 # Repurposing pipeline: results through Step 10
 
+> **Status 2026-10-31: v1 results.** v2 has replaced Steps 4-10 and the drug side; for v2 see [`PIPELINE_V2.md`](PIPELINE_V2.md) and `PROGRESS.md` 2026-10-25 to 10-29. Kept as the v1 record.
+
 > **Update 2026-10-18:** Steps 4-10 are being rebuilt (v2) after a large TCGA-vs-GTEx lab difference was measured
 > (it overlaps the tumor signatures at median rho 0.62 and matches the recurring PILRB/CCNL2 module). Numbers below
 > are v1. Spec: [`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md); decisions D45-D56 in [`DECISIONS.md`](DECISIONS.md).

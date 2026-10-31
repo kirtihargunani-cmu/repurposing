@@ -1,11 +1,11 @@
 # Pipeline v2: steps, decisions and outputs
 
-Last updated 2026-10-29. This is the reference for how the v2 pipeline runs, step by step: what each step does and
+Last updated 2026-10-31. This is the reference for how the v2 pipeline runs, step by step: what each step does and
 why, the exact command, what it reads and writes, which decisions shape it, the checks it reports, and where it
 stands. The full reasoning behind each decision is in [`DECISIONS.md`](DECISIONS.md) (D-numbers below); the run
 history with all numbers is in [`PROGRESS.md`](PROGRESS.md); the agreed rebuild plan is
 [`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md). The drug side lives on the `celligner` branch and is documented in
-`celligner:docs/PIPELINE_DRUG_SIDE_V2.md`.
+`celligner:docs/PIPELINE_DRUG_SIDE_V2.md`. Terms new in v2: [`GLOSSARY_V2.md`](GLOSSARY_V2.md).
 
 To run the steps in order: [`scripts/run_v2.sh`](../scripts/run_v2.sh) (`scripts/run_v2.sh list` shows the steps;
 `scripts/run_v2.sh <step>` runs one). To see which outputs exist for the active build: `Rscript scripts/00_status.R`.

@@ -1,5 +1,7 @@
 # Disease Cohort Funnel
 
+> **Status 2026-10-31: v1 snapshot (2026-10-02).** Steps 1-3 (cohorts, patients) are unchanged in v2; for everything after, see [`PIPELINE_V2.md`](PIPELINE_V2.md).
+
 Snapshot 2026-10-02. Every number is read from the pipeline's result files (`results/step1`–`step5`). A styled version of this page is in [`pipeline_summary.html`](pipeline_summary.html) (open it in a browser).
 
 ```mermaid
