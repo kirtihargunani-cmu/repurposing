@@ -1,0 +1,3 @@
+group_id	rho_w_lum	rho_w_ctrl_min	rho_w_ctrl_median	a_fires	c_fires	c_genes	material
+BRCA-LumA	0.9845	0.9938	0.9942	FALSE	FALSE	""	FALSE
+BRCA-LumB	0.9893	0.9889	0.9893	FALSE	FALSE	""	FALSE

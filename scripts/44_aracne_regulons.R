@@ -12,6 +12,8 @@
 #   regulons_aracne_project_v2_tf.rds). v2 drops edges between cross-mappable gene pairs (symmetric cross-mappability
 #   > 0, Saha & Battle 2018; data/raw/crossmap/) BEFORE aracne2regulon (D46/D51, check C10), as the edge likelihood is
 #   scaled by the network's largest MI; counts per network in results/step5/crossmap_edges_removed<sfx>.tsv.
+# OUT_TAG=<tag>: write regulons_aracne_project<sfx><tag>.rds instead, e.g. OUT_TAG=_brca_controls for the BRCA_LUM
+#   size-matched controls (D81), which stay out of the production regulon file.
 suppressPackageStartupMessages({library(data.table); library(viper)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -20,7 +22,7 @@ SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
 REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"), REGSET == "full" || SFX == "_v2")
 TFX <- if (REGSET == "tf") "_tf" else ""
 IN <- paste0("data/processed/step5/aracne_inputs", SFX); NETDIR <- paste0("data/processed/step5/aracne", SFX, TFX)
-OUT <- paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds")
+OUT <- paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, Sys.getenv("OUT_TAG"), ".rds")
 CROSSMAP <- SFX == "_v2"
 if (CROSSMAP) {
   cm <- fread(cmd = "zcat data/raw/crossmap/hg38_cross_mappability_strength_symmetric_mean_sorted.txt.gz", header = FALSE,
@@ -60,7 +62,7 @@ for (net in nets) {
 }
 saveRDS(old, OUT)
 if (CROSSMAP) {
-  lf <- paste0("results/step5/crossmap_edges_removed", SFX, TFX, ".tsv")
+  lf <- paste0("results/step5/crossmap_edges_removed", SFX, TFX, Sys.getenv("OUT_TAG"), ".tsv")
   prev <- if (file.exists(lf)) fread(lf)[!network %in% names(rm_log)] else NULL
   fwrite(rbind(prev, rbindlist(rm_log))[order(network)], lf, sep = "\t")
 }

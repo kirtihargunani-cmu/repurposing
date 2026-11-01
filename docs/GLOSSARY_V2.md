@@ -36,6 +36,10 @@ How each step runs: [`PIPELINE_V2.md`](PIPELINE_V2.md); decisions: [`DECISIONS.m
 | Term | Meaning |
 |---|---|
 | TF-only set | ARACNe networks built with Lambert TFs as the only candidate regulators (D64); the active arm |
+| Identity / signaling edge (D82) | Identity: an edge that exists only because both genes differ between subtypes (keeps < 50% of its correlation once subtype is removed); signaling: it remains within subtypes (`48`) |
+| Subtype-specific edge | Strong in one subtype (absolute rho >= 0.3) and absent or reversed in another: evidence that wiring differs (A9) |
+| Lineage-matched line (C24) | A cell line of the disease's cell type (squamous, glandular, ...), any organ (`config/group_lineages.tsv`, celligner) |
+| Data gap (R3) | The first step where good-quality lineage-matched data run out; reported instead of a drug list (`79r`) |
 | Cross-mappable edge filter | Edges between genes that share reads (cross-mappability > 0) removed before building regulons, 11-15% of edges |
 | Fix B / adjusted null (C) | The two null variants tested in `64`: B uses the Step 4a normals (adopted), C also removes covariates (not adopted) (D73) |
 | Prediction strength | How well clusters found in one half of the patients predict those found in the other half (Tibshirani & Walther 2005); keep threshold 0.75 (D71) |

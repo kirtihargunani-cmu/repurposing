@@ -332,6 +332,46 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   its own diagnostics; downstream steps use the corrected NES of `61` in `<set>_patient/`. Labelled in the script header
   and PIPELINE_V2.
 
+## 2026-11-01: BRCA_LUM test set up (D81)
+- **Cutoff fixed before any comparison (D81).** Material if, in LumA or LumB, (a) the weighted Spearman of NES on BRCA_LUM
+  vs pooled BRCA is below that of every size-matched control and at least 0.10 below their median, or (c) ESR1, FOXA1,
+  GATA3 or XBP1 flips sign (|NES| >= 1.96 on one side) in a way no control does. Top-list overlap was rejected as a
+  rule (cut lists are unstable).
+- **Why controls:** BRCA_LUM has fewer tumors (769 vs 1,040) and only luminal ones. Pooled BRCA can't separate the two;
+  three networks of 769 random BRCA tumors (`47_brca_size_controls.py`) change only the size.
+- Controls BRCA_SUB1-3 built on MAIL-10 (11:22-13:51); comparison script `66_brca_lum_test.R` written and dry-run
+  checked (every network replaced by pooled BRCA). `44_aracne_regulons.R` gained `OUT_TAG` so the controls stay out of
+  the production regulon file.
+- Added `67_esr1_regulon_content.R` (descriptive, not in the rule): do the luminal regulons contain more
+  estrogen-response genes on BRCA_LUM than on pooled BRCA and the controls? A test run on pooled BRCA and BRCA_LUM
+  showed regulon sizes (ESR1: 450 targets pooled, 154 on BRCA_LUM) before the controls exist.
+- Known before the test (pooled BRCA, already reported): ESR1, FOXA1, GATA3, XBP1 all positive in LumA and LumB.
+
+- **BRCA_LUM result (D81): not material.** (a) weighted Spearman LumA 0.985 vs controls 0.994 (lower than all three,
+  but by 0.01; the rule needs 0.10); LumB 0.989 vs 0.989-0.995; (c) no sign flips. LumA / LumB stay on the pooled
+  network and no other subtype networks are built (D68). Pooled-BRCA sanity vs `50`: r = 0.999.
+- Context, not in the rule: on BRCA_LUM, ESR1 and GATA3 read stronger in LumB (1.76 -> 3.06, 1.48 -> 3.13; controls
+  1.5-1.8). Regulon content (`67`): BRCA_LUM regulons are a third the size (ESR1 450 -> 154) and not more
+  estrogen-specific (9.1% vs 11.1%; controls 10.4-11.9%). Cross-check with D82: the ESR1 targets BRCA_LUM drops are 59%
+  identity-only, the ones it keeps 85% signaling.
+
+## 2026-11-01: identity vs signaling edges (D82); lineage-matched data (C24, R3)
+- **Why:** a network built from mixed subtypes can call a gene a target only because both genes mark one subtype
+  ("identity"). Drugs change signaling within hours, not identity, so identity targets can make drugs misread.
+- **Rule (D82, fixed before running):** per edge, pooled Spearman vs the correlation left after removing subtype
+  averages; identity-only < 50% kept (the `46` cutoff). Labels: histology (our subtype groups) and established
+  molecular subtypes (PanCanAtlas mRNA, else selected), reported separately.
+- **Result (`48_identity_edges.R`):** 0-7% of edges per network are identity-only (ESCA 6-7%, LGG / TGCT 4%, SARC 3.5%,
+  BRCA 3.3%, COADREAD 0%), but they concentrate in lineage regulators: BRCA ESR1 51%, XBP1 46%, GATA3 45%, FOXA1 35%;
+  ESCA HNF1A / B, FOXA2 / 3, PDX1 82-89%, HNF4A 73%, GATA6 58%, TP63 47%; BLCA (molecular) GATA3 75%, PPARG 74%.
+  Proliferation regulators are signaling (BRCA MYC 1%, E2F1 7%). Subtype-specific edges (rewiring evidence, A9): up to
+  17% (SARC), 15% LGG molecular; BRCA GATA3 59% of its targets.
+- **Open:** whether drugs are scored with signaling-only regulons (separate decision, rule first).
+- **Lineage-matched cell lines (C24, celligner):** the cell type must match, not only the organ. Squamous groups have
+  no lineage-matched LINCS data (only HCC-15, 3 compounds, resembling none). New reporting rule R3: report "no
+  good-quality data at <step>" instead of a list (`79r_data_gaps.py`; minimum 10 compounds on matched lines, user):
+  14 of 41 groups and 2 of 14 subgroups have good-quality lineage-matched data.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
@@ -340,7 +380,8 @@ Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status)
 Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section 3; step status: [`PIPELINE_V2.md`](PIPELINE_V2.md).
 - Answer the Step 7 questions (D18 confirmed rule; TF-only edge confounding), then rerun `86` (variability) for the D79
   subgroups, then Step 9 replication (cohorts to choose; COAD can start with GSE39582 / CPTAC-COAD).
-- PI: D26 (recurring module), D60 (kidney reference). User: D68 cutoff, A37 (LGG, tabled).
+- PI: D26 (recurring module), D60 (kidney reference). User: A37 (LGG, tabled). BRCA_LUM test (D81) running.
+- Decide on signaling-only regulons (D82 follow-up); implement lineage-matched scoring (C24).
 - Drug side: PRISM / GDSC validation on hold; check the recurring oddities in specificity lists.
 - Later: CPTAC-HNSCC as an HNSC replication cohort (GDC CPTAC-3, open STAR counts, GENCODE v36; do not pool with Toil);
   subtype splits for mixed cohorts; recount3 non-cancer diseases.

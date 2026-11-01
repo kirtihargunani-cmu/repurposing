@@ -39,6 +39,23 @@ For subgroups, lead with `spec_sib_mech` (this subgroup vs its sibling, prolifer
 (`stratum_reversal_split_v2_consensus.tsv`). When siblings barely differ (LGG-noncodel, TGCT-SEM: `spec_sib` <= 0.6),
 report one drug list for the parent and say the subgroups do not differ in predicted drug response.
 
+### R3. Say where good-quality data run out (user 2026-11-01; C24)
+If a step has no good-quality data for a disease, the report says so and names the step ("no good-quality data at
+<step>: <reason>"), instead of showing results built on poor data. The rule applies at every step; where a step has a
+data-quality check, its output gives the step and the reason.
+- **Drug side (implemented):** `results/lincs/data_gaps_v2.tsv` and `data_gaps_strata_v2.tsv` (`79r_data_gaps.py`,
+  celligner branch). When `good_quality_data` is False, the layer shows `data_gap_note` and no drug list. Steps:
+  D1 no DepMap line of the disease's cell type; D2 no such line has good-quality LINCS compound data; D1b the lines with
+  data do not resemble the disease (line match < 0.1); D2b the matched lines carry fewer than 10 compounds. Example:
+  ESCA-SCC: "No good-quality data at drug-side Step 1, cell-line matching (Celligner resemblance): the squamous cell
+  carcinoma lines with LINCS data do not resemble this disease (best HCC-15, line match 0.005 < 0.1)."
+- Lineage-matched means the cell type matches (squamous, glandular, ...), whatever the organ
+  (`config/group_lineages.tsv`); a line of the same organ but another cell type does not count.
+- This sits above R1: with good-quality data, report the evidence status (R1) and the list (R2); without, only the gap.
+- **Existing checks the layer should map to this rule** (step names to be given in each output as they are revisited):
+  Step 4 signature `status` (not ok = no signature); Step 6/7 `low_mrs` (too few master regulators to rank drugs);
+  Step 8 keep rule D71 (subgroup not kept); drug side `unmatched_lines` / `low_transfer` per drug.
+
 ## Related rules the layer should respect
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
   reports them and does not tune them.

@@ -124,6 +124,26 @@ reasons in `genes_v2_dropped.tsv`):
 - **Inputs** (`VERSION=v2 python scripts/42_aracne_inputs.py` -> `data/processed/step5/aracne_inputs_v2/`): per cohort,
   tumors only, v2 gene set, genes expressed in >= 10% of tumors. COAD + READ pooled. Plus a luminal-only breast
   network BRCA_LUM (D65). 29 networks.
+- **Identity vs signaling edges** (`48_identity_edges.R`, D82; diagnostic, regulons unchanged): every edge of the TF-only
+  networks is tested against subtype labels: histology / cell type (our subtype groups: BRCA PAM50, CESC, ESCA, LGG,
+  PCPG, SARC, TGCT, UCEC, COAD vs READ) and established molecular subtypes (TCGA PanCanAtlas `Subtype_mRNA`, else
+  `Subtype_Selected`). Per edge: pooled Spearman vs the correlation left after removing each subtype's average.
+  **Identity-only** = keeps < 50% (or flips sign); **signaling** = keeps >= 50%; **weak** = pooled |rho| < 0.1. Flag
+  **subtype-specific** = |rho| >= 0.3 in one subtype of >= 50 tumors and < 0.1 or opposite in another (rewiring, A9).
+  Outputs `results/step5/identity_edges_v2_tf/` (per edge, per regulon, per network).
+  *Result (2026-11-01):* identity-only edges are 0-7% of each network, but concentrate in lineage regulators, the
+  ones drugs are read through: BRCA ESR1 51% of targets, XBP1 46%, GATA3 45%, FOXA1 35% (MYC 1%, E2F1 7%); ESCA
+  HNF1A / HNF1B / FOXA2 / FOXA3 / PDX1 82-89%, HNF4A 73%, GATA6 58%, TP63 47%; BLCA molecular GATA3 75%, PPARG 74%.
+  Highest per network: ESCA 6-7%, LGG / TGCT 4%, SARC 3.5%, BRCA 3.3%; COADREAD 0%.
+  *In plain language:* a network built from mixed tumor types can list a gene as a regulator's target only because
+  both genes are high in one tumor type and low in another. Those "identity" links describe what a cell is; a drug,
+  which acts within hours, cannot change them. The step checks every link: if it disappears once tumor type is taken
+  into account, it is identity; if it remains inside each tumor type, it is signaling. Most links are signaling, but
+  for the regulators that define a tumor type (ESR1 in breast, HNF4A or TP63 in esophagus) about half are identity,
+  so drugs acting on them may be misread. Whether to score drugs with signaling-only lists is a separate decision.
+- **BRCA_LUM size-matched controls** (`python scripts/47_brca_size_controls.py`, D81): BRCA_SUB1-3, 769 tumors each drawn
+  at random from all 1,040 BRCA tumors (seeds 1-3), built like BRCA_LUM; TF-only build on MAIL-10; regulons with
+  `OUT_TAG=_brca_controls` into a separate file, so they never enter the production regulon set.
 - **Build** (`VERSION=v2 [REGSET=tf] scripts/43_run_aracne.sh`, MAIL-15, ~2.5 days + ~0.7 days): ARACNe-AP, 100
   bootstraps, DPI, as v1 (D51). Two regulator sets (D64): full (5,789 candidates) and **TF-only** (Lambert TFs,
   ~1,100-1,360 per network). Why TF-only: comparable with CollecTRI / DoRothEA, and drops non-TF "regulators" that only
@@ -207,6 +227,35 @@ The largest modules are often groups of KRAB zinc-finger TFs (ZNF333, ZNF224, ZN
 co-varies across patients in 36 of 41 groups, tracks plate (excess over chance median 0.17) and not immune, purity or
 quality. Tested and rejected as its cause: RNA quality, GC bias, multi-mapping. Treated as a technical nuisance for
 subgrouping (D79; D26 awaits PI confirmation).
+
+- **BRCA_LUM test** (`66_brca_lum_test.R`, D68 / D81): LumA and LumB group NES on pooled BRCA, BRCA_LUM and the three
+  size-matched controls, with one shared null per group. Material if (a) the weighted Spearman of BRCA_LUM vs pooled is
+  below every control's and >= 0.10 below their median, or (c) ESR1 / FOXA1 / GATA3 / XBP1 flips sign (|NES| >= 1.96 on
+  one side) and no control shows that flip. Why the controls: BRCA_LUM differs from pooled BRCA both in size (769 vs
+  1,040 tumors) and in subtype mix; the controls change only the size, so only the extra change is luminal rewiring.
+  Outputs `results/step7/brca_lum_test/`. **Result (2026-11-01): not material.** (a) LumA 0.985 vs controls 0.994
+  (below all, but by 0.01, not 0.10); LumB 0.989 vs 0.989-0.995. (c) no flips. LumA / LumB stay on the pooled network.
+  Context: ESR1 and GATA3 read stronger on BRCA_LUM in LumB (1.76 -> 3.06, 1.48 -> 3.13).
+- **Luminal regulon content** (`67_esr1_regulon_content.R`, descriptive, not in the D81 rule): for ESR1, FOXA1, GATA3 and
+  XBP1 on each network, target overlap with the pooled regulon and the share of Hallmark estrogen-response genes (early +
+  late). Why: D81 tests whether scores change, but a regulon can shift from luminal-identity genes to estrogen-responsive
+  genes while its score keeps the same sign; that shift matters for how anti-estrogens read on the drug side.
+
+  *In plain language:* when ESR1 looks "on" in a luminal tumor, is that because estrogen signaling is on, or only
+  because the tumor is luminal-type? ARACNe calls a gene an ESR1 target when it rises and falls with ESR1 across tumors.
+  In the pooled network (luminal + basal tumors), many "luminal genes" do that just because they are luminal, so they
+  get counted as targets. In the luminal-only network those genes no longer stand out, so the list should be closer to
+  what estrogen really controls. The check asks two things for ESR1 (and FOXA1, GATA3, XBP1): how much did the target
+  list change, and does the new list contain more genes from a standard list of ~300 known estrogen-response genes,
+  switched on by ESR1 as expected? A network built from fewer tumors changes its lists a bit anyway, so the same check
+  runs on the three control networks; only a change bigger than theirs counts. It matters because drugs are scored with
+  these lists: if ESR1's list is mostly luminal genes, an anti-estrogen may barely register (it switches off estrogen
+  signaling but does not make a cell less luminal). The check decides nothing by itself; the D81 test does. It helps
+  explain that result.
+  *Result:* BRCA_LUM regulons are a third the size (ESR1 450 -> 154 targets; half shared with pooled vs ~70% for the
+  controls) but not more estrogen-specific (9.1% estrogen-response genes vs 11.1% pooled, 10.4-11.9% controls). The
+  ESR1 targets BRCA_LUM drops are mostly identity-only by D82 (59%), the ones it keeps mostly signaling (85%): two
+  independent checks agree that the luminal network removes identity links, but it also loses many signaling ones.
 
 ## Step 8. Patient clustering and the subgroup keep rule
 
@@ -306,9 +355,9 @@ Summary; full detail in `celligner:docs/PIPELINE_DRUG_SIDE_V2.md` and caveats in
 
 - D26 recurring module: subgroups are defined without it (D79); PI to confirm.
 - D60 kidney reference; A37 LGG purity covariate (tabled).
-- **BRCA_LUM test (D65, D68) not implemented:** the luminal-only networks are built, but no script compares their master
-  regulators with the pooled BRCA network, and the cutoff for a material change was never set. `50_viper.R` maps groups
-  by cohort, so LumA and LumB use the pooled BRCA network.
+- **BRCA_LUM test (D65, D68, D81): done, not material** (2026-11-01). LumA / LumB stay on the pooled network.
+- **Signaling-only regulons (D82 follow-up):** decide whether drugs are scored on regulons without identity-only edges,
+  and the validation rule (knockdown benchmark, controls, anti-estrogens) before looking.
 - Step 7 questions (2026-10-29): keep the D18 confirmed rule as is (its curated part adds almost nothing)? Does the low
   ARACNe vs CollecTRI agreement change the drug-side consensus (D75)? TF-only networks lose more edges to technical
   adjustment (4.0% vs 1.9%; UCS 12%).
