@@ -378,6 +378,25 @@ reaches tiers 1-2.
   atypical-classical top 5 (now vinca alkaloids and rigosertib lead), and basal-mesenchymal is led by topoisomerase I
   (topotecan, SN-38) and HSP90 inhibitors. Subgroup reports lead with `spec_sib_mech` / `spec_mech` (D80).
 
+### C24. Lineage-matched cell lines (user, 2026-11-01)
+
+**What we saw.** Squamous groups are scored on glandular lines of the same organ: ESCA-SCC on AGS (stomach
+adenocarcinoma, line match 0.0009), CESC-SCC on HeLa (cervical adenocarcinoma, 0.049). Their drug lists separate weakly
+from their adenocarcinoma siblings (drug ranking correlation 0.48 and 0.55), the adenocarcinoma-favored drugs look like
+noise, and squamous-specific biology (EGFR, PI3K) shows only weakly.
+**Rule (user):** always choose lineage-matched lines: the cell type (squamous, glandular, neural, ...) must match, not
+only the organ. A line of the same organ but another lineage does not count as matched.
+**Data limit.** LINCS has one squamous line with usable compound profiles, HCC-15 (lung squamous, 3 compounds), and it
+resembles none of the squamous groups (line match 0.002-0.097; cutoff 0.1). So no squamous group (ESCA-SCC, CESC-SCC,
+HNSC, LUSC, both HNSC subgroups) has a lineage-matched drug list from LINCS today.
+**Reporting rule (user, 2026-11-01):** where good-quality lineage-matched data are missing, report "no good-quality data
+at <step>" instead of a drug list. Implemented as `79r_data_gaps.py` (lineage table `config/group_lineages.tsv`; outputs
+`data_gaps_v2.tsv`, `data_gaps_strata_v2.tsv`): 14 of 41 groups and 2 of 14 subgroups have such data (minimum 10
+compounds on the matched lines, user 2026-11-01). Requirement R3 in `docs/LLM_COORDINATION_NOTES.md` (main).
+**Not yet implemented:** scoring itself on lineage-matched lines only (tissue keys, `unmatched_lines` and evidence
+status judged against the lineage table). Corrections (2026-11-01, chat): HNSC has no matched squamous line in LINCS; and HCC-15 (lung squamous) does have usable
+profiles (3 compounds), which an earlier search missed.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ

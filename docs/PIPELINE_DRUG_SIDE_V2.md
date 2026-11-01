@@ -126,6 +126,23 @@ flowchart LR
 - Outputs: `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv`,
   `split_overview_v2_consensus.tsv`, `split_controls_v2_consensus.tsv`.
 
+### 9b. Data gaps: is there good-quality, lineage-matched data? (`data_gaps`, `79r`; C24)
+- **Rule (user, 2026-11-01):** a drug list needs cell lines of the disease's own cell type (lineage), not just its organ.
+  If there is no good-quality lineage-matched data, the report says "no good-quality data at <step>" instead of a list.
+- **Lineage table:** `config/group_lineages.tsv` lists, per group, the DepMap subtype codes that count as the same cell
+  type (any organ; e.g. all squamous carcinomas for ESCA-SCC). Subgroups use their parent's row.
+- **Checks, in order** (the first failure is the gap): D1 a lineage-matched DepMap line exists; D2 one has good-quality
+  LINCS compound profiles; D1b one of those resembles the disease (Celligner line match >= 0.1, weights over the lineage
+  lines only); D2b the matched lines carry >= 10 compounds (`MIN_COMPOUNDS`; user 2026-11-01).
+- **Outputs:** `results/lincs/data_gaps_v2.tsv`, `data_gaps_strata_v2.tsv`: `data_gap_step`, `good_quality_data`,
+  `data_gap_note` (the sentence for reports), and the lineage lines with their compounds and line match.
+- **Result (2026-11-01, minimum 10 compounds):** 14 of 41 groups and 2 of 14 subgroups have good-quality lineage-matched
+  data. Gaps: D1 (no line of the cell type): PCPG, KICH, TGCT-SEM; D2 (lines but no LINCS data): LGG-IDHmut, SARC,
+  Wilms, ACC, KIRC, KIRP, THCA, UCS, TGCT-NSGCT; D1b (data only in dissimilar lines): BRCA-Basal, all squamous groups
+  (only HCC-15, lung squamous, 3 compounds), GBM / LGG-IDHwt, UCEC-SER; D2b (fewer than 10 compounds): BLCA (1), OV (3),
+  UCEC-EEC (7), BLCA basal-squamous-like (1). Passing groups with few compounds: NBL 21, LIHC 25, ESCA-AD / STAD 35.
+- This step reports; it does not change the rankings (scoring on lineage-matched lines only is not yet implemented).
+
 ### 10. Literature, FDA, page (`literature`, `fda_ranking`, `literature_fda`, `fda_page`)
 - **Literature (`79o`):** per disease, the top 10 by `spec_mech` and by `rev` (eligible, named drugs): PubMed (drug and
   disease in title / abstract) and ClinicalTrials.gov, with the 3 most relevant papers and trials. `MODE=fda`: the top 3

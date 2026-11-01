@@ -31,6 +31,7 @@ STEPS=(
   "ranking|Drug ranking per disease: consensus, NES-weighted, flags, evidence status (D74-D78)|VERSION=v2 REGULON=consensus $PY scripts/79e_drug_reversal.py"
   "ranking_subgroups|Drug ranking per subgroup, with sibling specificity|VERSION=v2 REGULON=consensus STRATA=1 $PY scripts/79e_drug_reversal.py"
   "split|Proliferation vs mechanism split, diseases and subgroups (spec_mech, spec_sib_mech)|VERSION=v2 REGULON=consensus STRATA=1 $PY scripts/79i_split_reversal.py"
+  "data_gaps|Where good-quality lineage-matched data run out, per group and subgroup (C24)|$PY scripts/79r_data_gaps.py"
   "literature|PubMed / trial links for each disease's top 10 by specificity and by reversal|$PY scripts/79o_literature.py"
   "fda_ranking|FDA-approved drug rankings per disease and subgroup (Drugs@FDA)|$PY scripts/79p_fda_ranking.py"
   "literature_fda|PubMed / trial links for each cohort's top 3 FDA drugs, by FDA name|MODE=fda $PY scripts/79o_literature.py"
