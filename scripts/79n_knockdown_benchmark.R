@@ -17,6 +17,9 @@
 #               (left out of the drug-side reversal score); no usable knockdown -> ARACNe, flagged "untested"
 # Outputs: results/lincs/knockdown_benchmark_signatures.tsv.gz (signature x set), knockdown_benchmark_tf.tsv (TF x set),
 #          knockdown_regulon_choice.tsv (TF -> set), knockdown_benchmark_summary.tsv
+# COMPARE_SETS=tf_base,tf_sig1,tf_sig2 (D83): score only these ARACNe target lists (same rules, same signatures) and write
+#   knockdown_benchmark_compare_d83.tsv (per set: signatures, TFs, share read as lower activity, AUC, TFs passing);
+#   the production outputs above are not touched.
 suppressPackageStartupMessages({library(data.table); library(viper); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -61,7 +64,9 @@ score <- function(reg, cols) {  # TF NES and percentile in each signature
 core <- readRDS("results/step5/regulons_core.rds")
 cur <- rbindlist(lapply(c("collectri", "dorothea_ABC"), function(s) cbind(set = s, score(prep(core[[s]]), meta$sig_id))))
 
-arac <- readRDS("data/processed/step5/regulons_aracne_project_v2_tf.rds")
+CMP <- Filter(nzchar, strsplit(Sys.getenv("COMPARE_SETS", ""), ",")[[1]])
+arac_for <- function(set) readRDS(sprintf("data/processed/step5/regulons_aracne_project_v2_%s.rds", set))
+arac <- arac_for(if (length(CMP)) CMP[1] else "tf")
 keys <- fread(cmd = "grep -v '^#' config/celligner_tissue_keys.tsv")
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
@@ -74,6 +79,21 @@ ar <- merge(ar, meta[, .(sig_id, lineage)], by = "sig_id")
 ar[, matched := paste(lineage, net) %in% ln[, paste(lineage, net)]]
 ar <- ar[, if (any(matched)) .(nes = mean(nes[matched]), pct = mean(pct[matched]), n_reg = round(mean(n_reg[matched])), aracne_matched = TRUE, nets = paste(net[matched], collapse = ";"))
            else .(nes = mean(nes), pct = mean(pct), n_reg = round(mean(n_reg)), aracne_matched = FALSE, nets = paste(net, collapse = ";")), by = sig_id]
+if (length(CMP)) {   # D83 comparison: every listed ARACNe set, same signatures and rules
+  score_set <- function(set) {
+    A <- arac_for(set)
+    x <- rbindlist(mclapply(names(A), function(n) cbind(net = n, score(prep(A[[n]]), meta$sig_id)), mc.cores = N_CORES))
+    x <- merge(x, meta[, .(sig_id, lineage, cmap_name, technology)], by = "sig_id")
+    x[, matched := paste(lineage, net) %in% ln[, paste(lineage, net)]]
+    x <- x[, if (any(matched)) .(nes = mean(nes[matched]), pct = mean(pct[matched])) else .(nes = mean(nes), pct = mean(pct)),
+           by = .(sig_id, cmap_name, technology)]
+    t <- x[, .(n = .N, median_pct = median(pct), frac_neg = mean(nes < 0)), by = cmap_name][, pass := n >= MIN_SIGS & median_pct <= MAX_PCT & frac_neg >= MIN_NEG]
+    data.table(set = set, signatures = nrow(x), tfs = uniqueN(x$cmap_name), frac_neg = round(mean(x$nes < 0), 4),
+               auc = round(1 - mean(x$pct), 4), tfs_tested = t[n >= MIN_SIGS, .N], tfs_pass = t[n >= MIN_SIGS, sum(pass)])
+  }
+  cmp <- rbindlist(lapply(CMP, score_set))
+  fwrite(cmp, file.path(res, "knockdown_benchmark_compare_d83.tsv"), sep = "\t"); print(cmp); quit(save = "no")
+}
 sg <- rbind(cbind(set = "aracne_v2_tf", ar), cur, fill = TRUE)
 sg <- merge(meta[, .(sig_id, technology, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")
 fwrite(sg, file.path(res, "knockdown_benchmark_signatures.tsv.gz"), sep = "\t")

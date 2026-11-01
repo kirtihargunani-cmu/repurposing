@@ -15,7 +15,9 @@
 #   -> prolif_regulators_collectri.tsv
 suppressPackageStartupMessages(library(data.table))
 FDR_MAX <- 0.05; MIN_FOLD <- 2
-SFX <- paste0(if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else "", if (identical(Sys.getenv("REGSET", "full"), "tf")) "_tf" else "")
+# REGSET=tf_base | tf_sig1 | tf_sig2 (D83): the comparison target lists -> prolif_regulators_v2_<REGSET>.tsv
+RS <- Sys.getenv("REGSET", "full"); stopifnot(RS %in% c("full", "tf", "tf_base", "tf_sig1", "tf_sig2"))
+SFX <- paste0(if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else "", if (RS != "full") paste0("_", RS) else "")
 stopifnot(SFX != "_tf")
 REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri"))
 if (REGULON == "collectri") SFX <- "_collectri"

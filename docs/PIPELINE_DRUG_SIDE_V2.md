@@ -143,6 +143,17 @@ flowchart LR
   UCEC-EEC (7), BLCA basal-squamous-like (1). Passing groups with few compounds: NBL 21, LIHC 25, ESCA-AD / STAD 35.
 - This step reports; it does not change the rankings (scoring on lineage-matched lines only is not yet implemented).
 
+### 9c. Signaling-only target lists, comparison (`scripts/d83_run.sh`, `79s`; D83)
+- Runs the drug side on three ARACNe target lists from the main branch (`49_signaling_regulons.R`): **base** (current),
+  **sig1** (identity-only edges under histology labels removed) and **sig2** (also molecular labels). Switches:
+  `REGSET=tf_<arm>` for `79d` / `79h`, `ARACNE_SET=tf_<arm>` for `79e` / `79i` (consensus; outputs suffixed
+  `_tf_<arm>`), `COMPARE_SETS` for `79n`. Production outputs are not touched.
+- Checks and adoption rule (D83, fixed before running): anti-estrogen median `spec_mech` percentile must rise in LumA and
+  LumB; the knockdown share read as lower activity must not drop by more than 2 points; known-biology controls must not
+  get worse. Outputs `results/lincs/d83_compare_{antier,agreement,checks}.tsv`.
+- **Result (2026-11-01):** rule met, effect small (anti-estrogens LumA 9.7 -> 12.3, LumB 23.4 -> 26.0); the ARACNe ESR1
+  list still reads anti-estrogens in MCF7 as activation (C25).
+
 ### 10. Literature, FDA, page (`literature`, `fda_ranking`, `literature_fda`, `fda_page`)
 - **Literature (`79o`):** per disease, the top 10 by `spec_mech` and by `rev` (eligible, named drugs): PubMed (drug and
   disease in title / abstract) and ClinicalTrials.gov, with the 3 most relevant papers and trials. `MODE=fda`: the top 3

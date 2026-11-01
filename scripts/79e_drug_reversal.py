@@ -83,14 +83,18 @@ assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 # Inputs results/step6/aracne_project_v2_tf + collectri_v2 and drug_viper_specific_v2_tf + _collectri; outputs _v2_consensus
 REGULON = os.environ.get("REGULON", "aracne_project")
 CONS = REGULON == "consensus"
-CONS_SETS = {"aracne": ("results/step6/aracne_project_v2_tf", "_v2_tf"), "collectri": ("results/step6/collectri_v2", "_collectri")}
+# ARACNE_SET=tf (default) | tf_base | tf_sig1 | tf_sig2 (D83): which ARACNe TF-only target lists the consensus uses;
+#   other than tf, outputs get the suffix _<ARACNE_SET> (e.g. drug_reversal_v2_consensus_tf_sig1.tsv).
+ARACNE_SET = os.environ.get("ARACNE_SET", "tf"); assert ARACNE_SET in ("tf", "tf_base", "tf_sig1", "tf_sig2")
+XS = "" if ARACNE_SET == "tf" else f"_{ARACNE_SET}"
+CONS_SETS = {"aracne": (f"results/step6/aracne_project_v2_{ARACNE_SET}", f"_v2_{ARACNE_SET}"), "collectri": ("results/step6/collectri_v2", "_collectri")}
 CURATED = REGULON not in ("aracne_project", "consensus")
 assert not CONS or SFX == "_v2", "consensus: VERSION=v2 (REGSET not used)"
 assert not CURATED or SFX == "_v2", "curated regulons: VERSION=v2 (REGSET not used)"
 MR_DIR = f"results/step6/{REGULON}_v2" if CURATED else f"results/step6/aracne_project{SFX}"
 DTAG = f"_{REGULON}" if CURATED else SFX
 if CURATED or CONS:
-    SFX = f"_v2_{REGULON}"
+    SFX = f"_v2_{REGULON}" + (XS if CONS else "")
 SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf")) or CURATED or CONS else "fdr")
 assert SCORE in ("weighted", "fdr")
 if SCORE == "fdr" and SFX.startswith("_v2"):

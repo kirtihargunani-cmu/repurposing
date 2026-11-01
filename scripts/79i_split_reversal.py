@@ -61,10 +61,15 @@ assert not STRATA_V2 or SFX.startswith("_v2"), "STRATA=1 needs VERSION=v2"
 REGULON = os.environ.get("REGULON", "aracne_project"); CONS = REGULON == "consensus"
 assert not CONS or SFX == "_v2", "consensus: VERSION=v2"
 SCORE = os.environ.get("SCORE", "weighted" if SFX.startswith("_v2") else "fdr"); assert SCORE in ("weighted", "fdr")
-OUT = "_v2_consensus" if CONS else SFX
+OUT = ("_v2_consensus" if CONS else SFX)
 if SCORE == "fdr" and OUT.startswith("_v2"):
     OUT += "_fdr"
-CONS_SETS = {"aracne": ("aracne_project_v2_tf", "_v2_tf"), "collectri": ("collectri_v2", "_collectri")}
+# ARACNE_SET=tf (default) | tf_base | tf_sig1 | tf_sig2 (D83): which ARACNe TF-only target lists the consensus uses;
+#   other than tf, outputs get the suffix _<ARACNE_SET> (e.g. drug_reversal_v2_consensus_tf_sig1.tsv).
+ARACNE_SET = os.environ.get("ARACNE_SET", "tf"); assert ARACNE_SET in ("tf", "tf_base", "tf_sig1", "tf_sig2")
+XS = "" if ARACNE_SET == "tf" else f"_{ARACNE_SET}"
+if CONS: OUT += XS
+CONS_SETS = {"aracne": (f"aracne_project_v2_{ARACNE_SET}", f"_v2_{ARACNE_SET}"), "collectri": ("collectri_v2", "_collectri")}
 CONTROLS = [("BRCA-LumA", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("TCGA-PRAD", "high", ["bicalutamide", "enzalutamide", "flutamide", "nilutamide"]),
@@ -150,7 +155,7 @@ def main():
     nets, p2_rows = {}, []
     def load(net):
         if net not in nets and CONS:
-            parts = [load_one(net, "_v2_tf", p1["aracne"], "aracne|"), load_one("ALL", "_collectri", p1["collectri"], "collectri|")]
+            parts = [load_one(net, f"_v2_{ARACNE_SET}", p1["aracne"], "aracne|"), load_one("ALL", "_collectri", p1["collectri"], "collectri|")]
             nets[net] = (pd.Index(np.concatenate([x[0] for x in parts])), np.hstack([x[1] for x in parts]),
                          np.hstack([x[2] for x in parts]), set().union(*(x[3] for x in parts)))
         elif net not in nets:

@@ -1,0 +1,4 @@
+set	signatures	tfs	frac_neg	auc	tfs_tested	tfs_pass
+tf_base	1269	261	0.5965	0.5742	175	38
+tf_sig1	1269	261	0.5989	0.5749	175	37
+tf_sig2	1269	261	0.5989	0.5749	175	37

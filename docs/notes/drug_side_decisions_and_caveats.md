@@ -397,6 +397,18 @@ compounds on the matched lines, user 2026-11-01). Requirement R3 in `docs/LLM_CO
 status judged against the lineage table). Corrections (2026-11-01, chat): HNSC has no matched squamous line in LINCS; and HCC-15 (lung squamous) does have usable
 profiles (3 compounds), which an earlier search missed.
 
+### C25. Tumor networks misread anti-estrogens even without identity links (D83, 2026-11-01)
+
+**What we saw.** Removing identity-only links (D83 sig1) moves anti-estrogens only slightly in luminal breast (median
+`spec_mech` percentile LumA 9.7 -> 12.3, LumB 23.4 -> 26.0). In MCF7, the ARACNe ESR1 list reads all 10 anti-estrogen
+profiles as ESR1 activation (+2.7 current, +2.2 sig1); CollecTRI reads them as inhibition (-2.4). The consensus (D75)
+averages the two to about zero, so anti-estrogens get no credit for hitting ESR1.
+**Why.** Under anti-estrogens the true estrogen genes fall (GREB1 z -1.3; Hallmark estrogen genes -0.2), but the genes
+ARACNe calls ESR1's activated targets rise (mean z +0.36). Genes that co-vary with ESR1 across tumors are not the genes
+estrogen switches on in cells. Proliferation is not the cause (1 of 122 negative targets is a proliferation gene).
+**Open (user).** Whether to choose the regulon per regulator where the tumor network misreads a known perturbation
+(e.g. CollecTRI for ESR1, as the knockdown benchmark C19 already allows), and whether to roll sig1 out to production.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ

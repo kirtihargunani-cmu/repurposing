@@ -23,8 +23,9 @@ setwd(root)
 MIN_TARGETS <- 10; MIN_FRAC <- 0.5
 PROFILE <- Sys.getenv("PROFILE", "specific"); N_CORES <- as.integer(Sys.getenv("N_CORES", "8"))
 SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
-REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"), REGSET == "full" || SFX == "_v2")
-TFX <- if (REGSET == "tf") "_tf" else ""
+# REGSET=tf_base | tf_sig1 | tf_sig2 (D83): the comparison target lists (main 49_signaling_regulons.R); outputs drug_viper_specific_v2_<REGSET>
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf", "tf_base", "tf_sig1", "tf_sig2"), REGSET == "full" || SFX == "_v2")
+TFX <- if (REGSET == "full") "" else paste0("_", REGSET)
 REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri", "dorothea_ABC"))
 TAG <- if (REGULON == "aracne_project") paste0(SFX, TFX) else paste0("_", REGULON)  # curated: not versioned
 ONLY_NETS <- Filter(nzchar, strsplit(Sys.getenv("ONLY_NETS", ""), ",")[[1]])
