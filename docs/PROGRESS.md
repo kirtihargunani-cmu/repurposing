@@ -372,6 +372,20 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   good-quality data at <step>" instead of a list (`79r_data_gaps.py`; minimum 10 compounds on matched lines, user):
   14 of 41 groups and 2 of 14 subgroups have good-quality lineage-matched data.
 
+## 2026-11-01: signaling-only target lists, comparison (D83)
+- Three arms with a shared null (one seed per group): base (current lists), sig1 (identity-only edges under histology
+  labels removed: 0.8% of all edges, 12 regulators fall below 10 targets), sig2 (histology + molecular: 2.3%, 34).
+- **Rule met for both, effect small.** Anti-estrogen median `spec_mech` percentile LumA 9.7 -> 12.3, LumB 23.4 -> 26.0,
+  Basal 95.6 -> 94.6; knockdown share read as lower activity 0.597 -> 0.599; controls 77 pass / 4 wrong in all arms;
+  drug ranking agreement with base median 1.00 (lowest ESCA-AD 0.986 / 0.978). Base vs production: rho >= 0.999.
+- Disease side moves in the expected direction: ESR1 NES LumA 2.71 -> 3.01, LumB 1.73 -> 2.11, Basal -2.43 -> -1.53.
+- **Why the drug side barely moves:** the ARACNe ESR1 list (also sig1) reads anti-estrogens in MCF7 as ESR1 activation
+  (+2.7 / +2.2, all 10 profiles; CollecTRI -2.4). Under anti-estrogens GREB1 falls (z -1.3) and the Hallmark estrogen
+  genes fall (-0.2), but the genes ARACNe calls ESR1's activated targets rise (+0.36): co-expression across tumors is
+  not the estrogen response of cells. The consensus averages +2.2 and -2.4 to about zero. A proliferation explanation
+  was checked and ruled out (1 of 122 negative targets is a proliferation gene).
+- Script fix during the run: `79s` first counted controls with the wrong label (0 passing); corrected before reading.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

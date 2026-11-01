@@ -35,6 +35,10 @@ setwd(root)
 #   the excluded colon muscle wall / kidney medulla / no-collection-data samples), which widened the null.
 # NULL_ADJUST=1 (v2): before the random splits, each gene's normal logCPM is regressed on the Step 4 model's normal-side
 #   covariates (age, ESTIMATE, sex if both >= 3, coll_* for GTEx) and the gene mean added back (64_null_adjust_test.R arm C)
+# REGSET=tf_base | tf_sig1 | tf_sig2 (D83): signaling-only target lists (49_signaling_regulons.R) and the current lists
+#   under a separate name, for the side-by-side comparison; outputs aracne_project_v2_<REGSET>.
+# SEED_GROUP=1 (D83): one fixed seed per group before the normal splits, so runs on different target lists share the null.
+# GROUP_ONLY=1 (D83): group mechanism only (steps 1-2); no patient VIPER, concordance or axes.
 # STRATA=<file> (v2; Step 10 subgroups, D72): one run per subgroup (columns stratum, group_id, sample): signature from
 #   results/step10_v2, the subgroup's tumors, the parent group's normals and network; outputs <res_dir>_strata
 REGULON <- Sys.getenv("REGULON", "collectri")
@@ -45,8 +49,8 @@ COMPLEXES <- list(AP1 = c("JUN", "JUNB", "JUND", "FOS", "FOSB", "FOSL1", "FOSL2"
 set.seed(1)
 
 SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
-REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"))
-TFX <- if (REGSET == "tf") "_tf" else ""
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf", "tf_base", "tf_sig1", "tf_sig2"))
+TFX <- if (REGSET == "full") "" else paste0("_", REGSET)
 stopifnot(TFX == "" || (SFX == "_v2" && REGULON == "aracne_project"))  # TF-only set is v2 aracne_project
 NULL_ADJUST <- identical(Sys.getenv("NULL_ADJUST"), "1"); STRATA <- Sys.getenv("STRATA"); ST <- nzchar(STRATA)
 stopifnot(SFX == "_v2" || (!NULL_ADJUST && !ST))
@@ -116,6 +120,7 @@ run_group <- function(gid, contrast) {
   # null = random halves of the normals compared with each other: keeps gene-gene correlation but carries
   # no tumor signal (tumor/normal label permutation leaks a scaled copy of the real signature into the null
   # when the effect is large and groups are unbalanced)
+  if (identical(Sys.getenv("SEED_GROUP"), "1")) set.seed(sum(utf8ToInt(gid)) * 7919L)
   nul <- if (NULL_ADJUST) adjust_normals(nor, d[match(colnames(nor), sample)], contrast) else nor
   perm_z <- sapply(seq_len(N_PERM_GROUP), function(i) {
     lab <- sample(rep(c(TRUE, FALSE), length.out = ncol(nul)))
@@ -128,6 +133,10 @@ run_group <- function(gid, contrast) {
   mrt <- data.table(group_id = gid, regulator = names(mr$es$nes), nes = mr$es$nes, p = mr$es$p.value,
                     size = mr$es$size)[, fdr := p.adjust(p, "BH")][order(-abs(nes))]
 
+  if (identical(Sys.getenv("GROUP_ONLY"), "1"))
+    return(list(filt = filt[, group_id := gid], mr = mrt,
+                summary = data.table(group_id = gid, contrast = contrast, n_tumor = ncol(tum), n_normal = ncol(nor),
+                                     n_regulators_kept = nrow(filt[keep == TRUE]), n_mr_fdr05 = mrt[fdr < 0.05, .N], n_mr_p05 = mrt[p < 0.05, .N])))
   # 3. patient mechanism
   vs <- viperSignature(tum, nor, per = N_PERM_PATIENT, method = "zscore", verbose = FALSE)
   pn <- viper(vs, reg, minsize = MIN_TARGETS, verbose = FALSE)  # regulators x patients

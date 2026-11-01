@@ -141,6 +141,19 @@ reasons in `genes_v2_dropped.tsv`):
   into account, it is identity; if it remains inside each tumor type, it is signaling. Most links are signaling, but
   for the regulators that define a tumor type (ESR1 in breast, HNF4A or TP63 in esophagus) about half are identity,
   so drugs acting on them may be misread. Whether to score drugs with signaling-only lists is a separate decision.
+- **Signaling-only target lists** (`49_signaling_regulons.R`, D83; comparison, production lists unchanged): from the
+  TF-only lists, drop the D82 identity-only edges, keep signaling and weak ones as they are. **sig1** (main): identity
+  under the histology labels; **sig2**: histology or molecular labels; **base**: the current lists under a separate name.
+  sig1 removes 0.2-5.8% of edges in the 8 networks with histology labels (COADREAD none) and puts 12 regulators below
+  10 targets; sig2 changes 25 networks. All three arms run group VIPER with one fixed seed per group (`50_viper.R`
+  `SEED_GROUP=1 GROUP_ONLY=1`), so they share the null; then the drug side (celligner `scripts/d83_run.sh`).
+  *In plain language:* we remove the links that only reflect tumor type, rerun everything with the cleaner lists and
+  the current ones side by side, and keep the cleaner lists only if anti-estrogens move up in luminal breast cancer
+  without the knockdown test or the known-biology checks getting worse (D83).
+  *Result (2026-11-01):* the rule is met for both arms but the effect is small: anti-estrogens LumA 9.7 -> 12.3, LumB
+  23.4 -> 26.0 (percentile of `spec_mech`); knockdown 0.597 -> 0.599; controls unchanged (77 / 4); drug rankings almost
+  unchanged (median rho 1.00, lowest 0.986). The remaining problem is on the drug side: ARACNe's ESR1 list reads
+  anti-estrogens in MCF7 as ESR1 activation even without identity links (CollecTRI reads inhibition); see C25.
 - **BRCA_LUM size-matched controls** (`python scripts/47_brca_size_controls.py`, D81): BRCA_SUB1-3, 769 tumors each drawn
   at random from all 1,040 BRCA tumors (seeds 1-3), built like BRCA_LUM; TF-only build on MAIL-10; regulons with
   `OUT_TAG=_brca_controls` into a separate file, so they never enter the production regulon set.

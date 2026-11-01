@@ -30,6 +30,8 @@ STEPS=(
   "regulons|Step 5: regulons, cross-mappable edges removed (full set)|VERSION=v2 $R scripts/44_aracne_regulons.R"
   "regulons_tf|Step 5: regulons, cross-mappable edges removed (TF-only)|VERSION=v2 REGSET=tf $R scripts/44_aracne_regulons.R"
   "identity_edges|Step 5: identity vs signaling edges per network (histology + molecular subtypes; D82)|N_CORES=$N_CORES $R scripts/48_identity_edges.R"
+  "signaling_lists|Step 5: signaling-only target lists sig1 / sig2 and base, for the D83 comparison|$R scripts/49_signaling_regulons.R"
+  "viper_d83|Step 6a: group VIPER on base / sig1 / sig2, shared seed per group (D83)|for a in base sig1 sig2; do REGULON=aracne_project VERSION=v2 REGSET=tf_$a SEED_GROUP=1 GROUP_ONLY=1 N_CORES=16 $R scripts/50_viper.R || exit 1; done"
   "edge_support|Step 5: bootstrap support per edge (full set)|VERSION=v2 $R scripts/45_edge_support.R"
   "edge_support_tf|Step 5: bootstrap support per edge (TF-only)|VERSION=v2 REGSET=tf $R scripts/45_edge_support.R"
   "edge_confounding|Step 5: edge strength after purity / quality / plate (full set)|VERSION=v2 $R scripts/46_edge_confounding.R"
