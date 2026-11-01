@@ -1,6 +1,6 @@
 # Spec: tissue composition of tumors vs normal tissue, per disease cohort
 
-Status: **spec written 2026-10-18, not executed.** Companion to the Celligner normal-tissue spec on the `celligner`
+Status: **run 2026-10-18 (D61, panels by cell-type family D67); measured only, no correction applied** (see PROGRESS 2026-10-18 and the open item in DECISIONS). Companion to the Celligner normal-tissue spec on the `celligner`
 branch (`docs/notes/SPEC_celligner_normals.md`). Decision D61 in [`DECISIONS.md`](DECISIONS.md).
 
 ## Question
