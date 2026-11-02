@@ -8,8 +8,7 @@
 | `scenes_template.py` | Two finished, test-rendered scenes (`Opening`, `ReversalScore`) showing the pattern |
 | `export_scene_data.py` -> `scene_data.json` | Every on-screen number, exported from the results files |
 
-`scene_data.json` is committed, so scenes render on any branch. Refreshing it (`export_scene_data.py`) needs the
-drug-side v2 results, which are on the `celligner` branch (worktree `~/projects/repurposing-celligner`).
+`scene_data.json` is committed, so scenes render without the results; `export_scene_data.py` refreshes it from them.
 
 Quick test (after installing Manim, see PROMPT.md):
 

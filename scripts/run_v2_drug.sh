@@ -5,8 +5,9 @@
 #   scripts/run_v2_drug.sh list            list the steps
 #   scripts/run_v2_drug.sh <step> [...]    run steps in the order given; stops at the first failure
 #   scripts/run_v2_drug.sh show <step>     print the command without running it
-# Logs: logs/v2_drug_<step>.log in this worktree. Env overrides: PY (celligner python), R (Rscript), MAIN (main checkout).
-# The disease side (main branch, scripts/run_v2.sh) must have run first; sync_disease copies its outputs here.
+# Runs from main or from the celligner worktree. Logs: logs/v2_drug_<step>.log in this checkout. Env overrides: PY (celligner python), R (Rscript), MAIN (main checkout).
+# The disease side (main branch, scripts/run_v2.sh) must have run first; in the celligner worktree, sync_disease copies its outputs
+# there (on main it does nothing).
 # Celligner itself (70-74) and the LINCS profiles (76, 76b, 79a, 79c) do not change with v2 and are not repeated here.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -14,7 +15,7 @@ PY=${PY:-$HOME/miniforge3/envs/celligner/bin/python}
 R=${R:-$HOME/miniforge3/envs/repurposing/bin/Rscript}
 MAIN=${MAIN:-$HOME/projects/repurposing}
 
-SYNC="set -e; for d in aracne_project_v2_tf collectri_v2 aracne_project_v2_tf_strata collectri_v2_strata; do mkdir -p results/step6/\$d; cp $MAIN/results/step6/\$d/{group_mr,regulator_filter,group_summary}.tsv results/step6/\$d/; done; mkdir -p results/step4_v2 results/step10_v2; cp $MAIN/results/step4_v2/signature_summary.tsv results/step4_v2/; cp $MAIN/results/step10_v2/{strata,stratum_patients}.tsv results/step10_v2/"
+SYNC="set -e; if [ \"$(realpath $MAIN)\" = \"$(pwd -P)\" ]; then echo 'on main: disease-side outputs already here, nothing to copy'; exit 0; fi; for d in aracne_project_v2_tf collectri_v2 aracne_project_v2_tf_strata collectri_v2_strata; do mkdir -p results/step6/\$d; cp $MAIN/results/step6/\$d/{group_mr,regulator_filter,group_summary}.tsv results/step6/\$d/; done; mkdir -p results/step4_v2 results/step10_v2; cp $MAIN/results/step4_v2/signature_summary.tsv results/step4_v2/; cp $MAIN/results/step10_v2/{strata,stratum_patients}.tsv results/step10_v2/"
 
 STEPS=(
   "sync_disease|Copy the disease-side inputs (master regulators, filters, subgroups) from the main checkout|$SYNC"

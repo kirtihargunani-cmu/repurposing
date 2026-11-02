@@ -1,0 +1,4 @@
+net	seed	n_samples	n_genes	n_regulators_tf	n_LumA	n_LumB	n_Basal	n_Her2
+BRCA_SUB1	1	769	14121	1258	422	142	146	59
+BRCA_SUB2	2	769	14124	1260	407	153	148	61
+BRCA_SUB3	3	769	14109	1260	405	156	145	63

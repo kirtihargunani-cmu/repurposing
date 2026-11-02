@@ -14,6 +14,7 @@ Steps (run in this order):
   split                  11_split_subtypes.py   Step 1b: subtype splits, sample -> group
   estimate               21_estimate.R          Step 3: ESTIMATE stromal/immune scores (48 cores)
   covariates             20_covariates.py       Step 3: covariate tables (merges ESTIMATE)
+  gene_set_v2            22_gene_set_v2.py      Step 3: v2 gene set (drop mappability < 0.8 and readthrough loci)
   signatures             30_signatures.R        Step 4: protein-coding signatures (drug matching)
   signatures_extended    30_signatures.R        Step 4: + lincRNA/antisense (GENESET=extended; mechanism only)
 
@@ -85,6 +86,10 @@ STEPS = [
          ["results/step3/covariates_toil.tsv", "results/step3/covariates_beataml.tsv",
           "results/step3/genes_protein_coding_v23.tsv", "results/step3/genes_extended_v23.tsv"],
          inputs=["results/step3/estimate_toil.tsv", "results/step1/sample_groups_toil.tsv"], desc="Step 3 covariates"),
+    Step("gene_set_v2", ["python", "scripts/22_gene_set_v2.py"],
+         ["results/step3/genes_protein_coding_v23_v2.tsv", "results/step3/genes_v2_dropped.tsv"],
+         inputs=["results/step3/genes_protein_coding_v23.tsv", "data/raw/crossmap/hg38_gene_mappability.txt.gz",
+                 "data/interim/readthrough_genes_v23.tsv"], desc="Step 3 v2 gene set (rebuild spec D46)"),
     Step("signatures", ["Rscript", "scripts/30_signatures.R"],
          ["results/step4/signature_summary.tsv", "results/step4/z_tumor_vs_gtex.tsv", "results/step4/z_tumor_vs_adjacent.tsv",
           "data/processed/step4/counts_protein_coding.rds"],

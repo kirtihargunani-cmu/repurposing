@@ -15,6 +15,9 @@
 #   r2_plate / r_length / r_proliferation  what the module score tracks: plate, RNA-quality length index,
 #                        proliferation (mean NES of E2F1, FOXM1, MYBL2)
 # Output: results/step6/aracne_project/diagnostics/regulator_modules_<qc|purity>.tsv
+# v2 (2026-10-29): NES_DIR=data/processed/step6/aracne_project_v2[_tf]_patient uses the matching v2 regulons and writes
+#   results/step6/aracne_project_v2[_tf]/diagnostics/regulator_modules_v2[_tf].tsv. The plate / proliferation /
+#   length associations are computed as in v1 (v2 patient NES are already purity + quality corrected).
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(Matrix); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -26,7 +29,11 @@ grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
 regs_meta <- fread("results/step5/aracne_regulators.tsv")
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]; sym2ens <- setNames(idmap$gene_id, idmap$symbol)
-arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+V2SET <- regmatches(basename(NES_DIR), regexpr("^aracne_project_v2(_tf)?", basename(NES_DIR)))
+arac <- readRDS(paste0("data/processed/step5/regulons_", if (length(V2SET)) V2SET else "aracne_project", ".rds"))
+OUT <- if (length(V2SET)) file.path("results/step6", V2SET, "diagnostics") else "results/step6/aracne_project/diagnostics"
+if (length(V2SET)) TAG <- sub("^aracne_project_", "", V2SET)
+dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
 pm <- fread("data/raw/solid_toil/gencode.v23.annotation.gene.probemap")
 span <- setNames(pm$chromEnd - pm$chromStart + 1, sub("\\..*", "", pm$id))
@@ -74,5 +81,5 @@ run <- function(f) {
 files <- Sys.glob(file.path(NES_DIR, "*.patient_nes.tsv.gz"))
 res <- rbindlist(mclapply(files, function(f) tryCatch(run(f), error = function(e) { message(basename(f), ": ", conditionMessage(e)); NULL }),
                           mc.cores = 8, mc.preschedule = FALSE))
-fwrite(res[order(group_id, -size)], sprintf("results/step6/aracne_project/diagnostics/regulator_modules_%s.tsv", TAG), sep = "\t")
+fwrite(res[order(group_id, -size)], file.path(OUT, sprintf("regulator_modules_%s.tsv", TAG)), sep = "\t")
 message("REGULATOR MODULES DONE: ", uniqueN(res$group_id), " groups, ", nrow(res), " modules")

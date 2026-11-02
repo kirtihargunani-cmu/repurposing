@@ -25,6 +25,13 @@
 #   gene mappability < 0.8 are removed from the expression data and as regulators/targets, and regulon edges between
 #   cross-mappable gene pairs (symmetric cross-mappability > 0) are removed. Outputs: aracne_project_map /
 #   quality_correction_map, compared with aracne_project_qc.
+# VERSION=v2 (SPEC_rebuild_v2.md, Step 6b; D45, D57): v2 Step 4 signatures (results/step4_v2), v2 regulons (already
+#   without cross-mappable edges and low-mappability genes, scripts/44), v2 group filters / MRs (results/step6/aracne_project_v2).
+#   Tumors: purity = ESTIMATE in every group (LGG included). GTEx normals: the Step 4a reference samples only, regressed
+#   on quality index + the 4a collection covariates (coll_*, centered at each tissue's anchor) and set to their value
+#   at the anchor (residual + intercept: coll_* = 0, quality index at its mean), as in Step 4. Adjacent normals as v1.
+#   Outputs: data/processed/step6/aracne_project_v2_patient/, results/step6/aracne_project_v2/quality_correction/
+#   (checks compare with v1 aracne_project_map).
 # ONLY_GROUPS=a,b (optional); N_CORES (default 16)
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(viper); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
@@ -32,18 +39,27 @@ root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", 
 setwd(root); set.seed(61)
 N_PERM_PATIENT <- 100; MIN_TARGETS <- 10; TOP_MR <- 50; N_PC <- 5; N_CORES <- as.integer(Sys.getenv("N_CORES", "16"))
 ABSOLUTE_GROUPS <- c("LGG-IDHmut-codel", "LGG-IDHmut-noncodel", "LGG-IDHwt")
-NORM <- Sys.getenv("NORM", "tmm"); stopifnot(NORM %in% c("tmm", "cqn"))
-MAPF <- Sys.getenv("MAPPABILITY", if (NORM == "cqn") "0" else "1") == "1"; stopifnot(!(MAPF && NORM == "cqn"))  # default on (PI 2026-10-09)
-TAG <- if (NORM == "cqn") "cqn" else if (MAPF) "map" else "qc"
-out_nes <- paste0("data/processed/step6/aracne_project_", TAG)
-res_dir <- paste0("results/step6/aracne_project/quality_correction", if (TAG == "qc") "" else paste0("_", TAG))
-BASE <- if (TAG != "qc") c(dir = "aracne_project_qc", label = "purity+quality, TMM (61)") else
+V2 <- identical(Sys.getenv("VERSION", "v1"), "v2")
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf"), REGSET == "full" || V2)
+TFX <- if (REGSET == "tf") "_tf" else ""
+RS <- paste0(if (V2) "_v2" else "", TFX)  # regulon-set paths; VS alone still selects the Step 4 signatures
+NORM <- Sys.getenv("NORM", "tmm"); stopifnot(NORM %in% c("tmm", "cqn"), !V2 || NORM == "tmm")
+MAPF <- !V2 && Sys.getenv("MAPPABILITY", if (NORM == "cqn") "0" else "1") == "1"; stopifnot(!(MAPF && NORM == "cqn"))  # default on (PI 2026-10-09); v2: in the regulons
+if (V2) ABSOLUTE_GROUPS <- character(0)  # ESTIMATE everywhere (D45)
+TAG <- if (V2) "v2" else if (NORM == "cqn") "cqn" else if (MAPF) "map" else "qc"
+out_nes <- if (V2) paste0("data/processed/step6/aracne_project", RS, "_patient") else paste0("data/processed/step6/aracne_project_", TAG)
+res_dir <- if (V2) paste0("results/step6/aracne_project", RS, "/quality_correction") else
+  paste0("results/step6/aracne_project/quality_correction", if (TAG == "qc") "" else paste0("_", TAG))
+BASE <- if (V2) c(dir = "aracne_project_map", label = "v1: purity+quality, TMM + mappability filter (61)") else
+  if (TAG != "qc") c(dir = "aracne_project_qc", label = "purity+quality, TMM (61)") else
   c(dir = "aracne_project_purity", label = "purity_only (56)")
-NEW_LABEL <- switch(TAG, cqn = "purity+quality, CQN + no readthrough (61)", map = "purity+quality, TMM + mappability filter (61)",
+NEW_LABEL <- switch(TAG, v2 = "v2: purity (ESTIMATE) + quality, GTEx at anchor (61)",
+                    cqn = "purity+quality, CQN + no readthrough (61)", map = "purity+quality, TMM + mappability filter (61)",
                     qc = "purity+quality (61)")
+VS <- if (V2) "_v2" else ""
 if (MAPF) {
   gm <- fread("data/raw/crossmap/hg38_gene_mappability.txt.gz", header = FALSE, col.names = c("id", "map"))
-  lowmap <- sub("\\..*", "", gm[!is.na(map) & map < 0.8, id])
+  lowmap <- sub("\\..*", "", gm[!is.na(map) & map < 0.8 & !grepl("_PAR_Y", id), id])  # Y copies of PAR genes (map 0) skipped
   cm <- fread(cmd = "zcat data/raw/crossmap/hg38_cross_mappability_strength_symmetric_mean_sorted.txt.gz", header = FALSE,
               col.names = c("a", "b", "s"))[s > 0]
   cm[, `:=`(a = sub("\\..*", "", a), b = sub("\\..*", "", b), s = NULL)]
@@ -68,16 +84,18 @@ if (NORM == "cqn") {
 }
 dir.create(out_nes, recursive = TRUE, showWarnings = FALSE); dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
-arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", RS, ".rds"))
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
-summ <- fread("results/step4/signature_summary.tsv")[status == "ok"]
+summ <- fread(paste0("results/step4", VS, "/signature_summary.tsv"))[status == "ok"]
 contrast_for <- summ[, .(contrast = if ("gtex" %in% contrast) "gtex" else "adjacent"), by = group_id]
-zmat <- list(gtex = fread("results/step4/z_tumor_vs_gtex.tsv"), adjacent = fread("results/step4/z_tumor_vs_adjacent.tsv"))
+zmat <- list(gtex = fread(paste0("results/step4", VS, "/z_tumor_vs_gtex.tsv")), adjacent = fread(paste0("results/step4", VS, "/z_tumor_vs_adjacent.tsv")))
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
-filt_all <- fread("results/step6/aracne_project/regulator_filter.tsv")[keep == TRUE]
-mr_all <- fread("results/step6/aracne_project/group_mr.tsv")
+filt_all <- fread(paste0("results/step6/aracne_project", RS, "/regulator_filter.tsv"))[keep == TRUE]
+mr_all <- fread(paste0("results/step6/aracne_project", RS, "/group_mr.tsv"))
+COLL <- c("coll_isch", "coll_fast", "coll_slow", "coll_nonbp")
+ref4a <- if (V2) fread("results/step4_v2/gtex_reference.tsv")[use == TRUE, c("sample", COLL), with = FALSE] else NULL
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]; sym2ens <- setNames(idmap$gene_id, idmap$symbol)
 if (MAPF) { arac <- lapply(arac, filter_net); rm(cm); invisible(gc()) }
 pm <- fread("data/raw/solid_toil/gencode.v23.annotation.gene.probemap")
@@ -90,6 +108,9 @@ qindex <- function(m) {  # genes x samples logCPM -> long-minus-short index per 
 }
 correct <- function(m, X) {  # regress each gene (row) on design X (samples x k, with intercept); keep residual + mean
   t(qr.resid(qr(X), t(m))) + rowMeans(m)
+}
+correct_at0 <- function(m, X) {  # as correct(), but keep residual + intercept = value where the centered covariates are 0
+  q <- qr(X); t(qr.resid(q, t(m))) + qr.coef(q, t(m))[1, ]
 }
 r2f <- function(y, f) { f <- droplevels(factor(f)); if (nlevels(f) < 2) return(NA_real_)
   1 - sum(qr.resid(qr(model.matrix(~ f)), y)^2) / sum((y - mean(y))^2) }
@@ -108,6 +129,7 @@ pc_checks <- function(N, meta, qi, purity, label, gid) {  # N: patients x regula
 run <- function(gid, contrast) {
   normal_role <- if (contrast == "gtex") "gtex_normal" else "adjacent_normal"
   d <- cov[group_id == gid & role %in% c("tumor", normal_role) & sample %in% colnames(counts)]
+  if (V2 && contrast == "gtex") d <- merge(d[role == "tumor" | sample %in% ref4a$sample], ref4a, by = "sample", all.x = TRUE)
   pcol <- if (gid %in% ABSOLUTE_GROUPS) "absolute_purity" else "estimate_score"
   d <- d[role != "tumor" | !is.na(get(pcol))]
   z <- zmat[[contrast]][, c("gene_id", gid), with = FALSE][!is.na(get(gid))]; sig <- setNames(z[[gid]], z$gene_id)
@@ -124,7 +146,10 @@ run <- function(gid, contrast) {
   mt <- d[role == "tumor"][match(colnames(tum), sample)]; mn <- d[role == normal_role][match(colnames(nor), sample)]
   qt <- qindex(tum); qn <- qindex(nor); pur <- mt[[pcol]]
   tumc <- correct(tum, cbind(1, pur - mean(pur), qt - mean(qt)))
-  norc <- correct(nor, cbind(1, qn - mean(qn)))
+  if (V2 && contrast == "gtex") {  # GTEx normals at the anchor (Step 4a collection covariates)
+    C <- as.matrix(mn[, COLL, with = FALSE]); C <- C[, apply(C, 2, var) > 0, drop = FALSE]
+    norc <- correct_at0(nor, cbind(1, qn - mean(qn), C))
+  } else norc <- correct(nor, cbind(1, qn - mean(qn)))
 
   regs_all <- arac[[net_of[[gid]]]]
   keep_regs <- filt_all[group_id == gid, regulator]

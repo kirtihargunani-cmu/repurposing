@@ -1,0 +1,35 @@
+# Named, immutable builds. A build is named for what it IS, never assembled from
+# suffixes at call sites. Never rename or rebuild a directory in place: add a new
+# build instead. See REFACTOR_PLAN.md.
+active_build: v2_tf_xmap
+
+builds:
+  v1:
+    description: original build, no mappability or cross-mappability filtering
+    signatures:      results/step4
+    regulons:        data/processed/step5/regulons_aracne_project.rds
+    step6:           results/step6/aracne_project
+    patient_nes:     data/processed/step6/aracne_project_map
+    step8:           results/step8
+    step8_features:  data/processed/step8/features
+    crossmap_filtered: false
+
+  v2_full_xmap:
+    description: v2 gene set, cross-mappable edges pruned, full regulator set
+    signatures:      results/step4_v2
+    regulons:        data/processed/step5/regulons_aracne_project_v2.rds
+    step6:           results/step6/aracne_project_v2
+    patient_nes:     data/processed/step6/aracne_project_v2_patient
+    step8:           results/step8_v2_full
+    step8_features:  data/processed/step8_v2_full/features
+    crossmap_filtered: true
+
+  v2_tf_xmap:
+    description: v2 gene set, cross-mappable edges pruned, Lambert TFs only (D64)
+    signatures:      results/step4_v2
+    regulons:        data/processed/step5/regulons_aracne_project_v2_tf.rds
+    step6:           results/step6/aracne_project_v2_tf
+    patient_nes:     data/processed/step6/aracne_project_v2_tf_patient
+    step8:           results/step8_v2_tf
+    step8_features:  data/processed/step8_v2_tf/features
+    crossmap_filtered: true

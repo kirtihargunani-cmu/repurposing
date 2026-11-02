@@ -1,0 +1,124 @@
+group_id	regulator	expected	why	arm	nes	fdr	verdict
+BRCA-LumA	E2F1	1	proliferation	A	2.16	0.16	correct direction, below cutoff
+BRCA-LumA	E2F1	1	proliferation	B	2.13	0.17	correct direction, below cutoff
+BRCA-LumA	E2F1	1	proliferation	C	2	0.19	correct direction, below cutoff
+BRCA-LumA	ESR1	1	luminal breast identity	A	2.63	0.069	correct, passes
+BRCA-LumA	ESR1	1	luminal breast identity	B	2.89	0.044	correct, passes
+BRCA-LumA	ESR1	1	luminal breast identity	C	2.87	0.039	correct, passes
+BRCA-LumA	FOXA1	1	luminal breast identity	A	3.22	0.029	correct, passes
+BRCA-LumA	FOXA1	1	luminal breast identity	B	3.33	0.024	correct, passes
+BRCA-LumA	FOXA1	1	luminal breast identity	C	3.46	0.016	correct, passes
+BRCA-LumA	FOXM1	1	proliferation	A	2.61	0.073	correct, passes
+BRCA-LumA	FOXM1	1	proliferation	B	2.65	0.068	correct, passes
+BRCA-LumA	FOXM1	1	proliferation	C	2.45	0.09	correct, passes
+BRCA-LumA	GATA3	1	luminal breast identity	A	3.05	0.034	correct, passes
+BRCA-LumA	GATA3	1	luminal breast identity	B	3.22	0.029	correct, passes
+BRCA-LumA	GATA3	1	luminal breast identity	C	2.94	0.035	correct, passes
+BRCA-LumA	MYBL2	1	proliferation	A	2.61	0.073	correct, passes
+BRCA-LumA	MYBL2	1	proliferation	B	2.49	0.094	correct, passes
+BRCA-LumA	MYBL2	1	proliferation	C	2.31	0.11	correct direction, below cutoff
+ESCA-SCC	E2F1	1	proliferation	A	1.83	0.42	correct direction, below cutoff
+ESCA-SCC	E2F1	1	proliferation	B	1.88	0.44	correct direction, below cutoff
+ESCA-SCC	E2F1	1	proliferation	C	1.77	0.44	correct direction, below cutoff
+ESCA-SCC	FOXM1	1	proliferation	A	1.72	0.47	correct direction, below cutoff
+ESCA-SCC	FOXM1	1	proliferation	B	1.69	0.51	correct direction, below cutoff
+ESCA-SCC	FOXM1	1	proliferation	C	1.63	0.48	correct direction, below cutoff
+ESCA-SCC	MYBL2	1	proliferation	A	1.97	0.37	correct direction, below cutoff
+ESCA-SCC	MYBL2	1	proliferation	B	1.91	0.43	correct direction, below cutoff
+ESCA-SCC	MYBL2	1	proliferation	C	1.8	0.43	correct direction, below cutoff
+SARC-UPS	E2F1	1	proliferation	A	4.7	0.00069	correct, passes
+SARC-UPS	E2F1	1	proliferation	B	4.58	0.001	correct, passes
+SARC-UPS	E2F1	1	proliferation	C	4.53	0.001	correct, passes
+SARC-UPS	FOXM1	1	proliferation	A	4.23	0.0012	correct, passes
+SARC-UPS	FOXM1	1	proliferation	B	3.9	0.0027	correct, passes
+SARC-UPS	FOXM1	1	proliferation	C	4.13	0.0018	correct, passes
+SARC-UPS	MYBL2	1	proliferation	A	4.24	0.0012	correct, passes
+SARC-UPS	MYBL2	1	proliferation	B	4.15	0.0018	correct, passes
+SARC-UPS	MYBL2	1	proliferation	C	3.91	0.0028	correct, passes
+TCGA-ACC	E2F1	1	proliferation	A	3.13	0.093	correct, passes
+TCGA-ACC	E2F1	1	proliferation	B	3.18	0.078	correct, passes
+TCGA-ACC	E2F1	1	proliferation	C	3.36	0.076	correct, passes
+TCGA-ACC	FOXM1	1	proliferation	A	1.84	0.48	correct direction, below cutoff
+TCGA-ACC	FOXM1	1	proliferation	B	1.74	0.52	correct direction, below cutoff
+TCGA-ACC	FOXM1	1	proliferation	C	1.71	0.51	correct direction, below cutoff
+TCGA-ACC	MYBL2	1	proliferation	A	1.71	0.53	correct direction, below cutoff
+TCGA-ACC	MYBL2	1	proliferation	B	1.62	0.57	correct direction, below cutoff
+TCGA-ACC	MYBL2	1	proliferation	C	1.59	0.55	correct direction, below cutoff
+TCGA-BLCA	E2F1	1	proliferation	A	2.8	0.1	correct direction, below cutoff
+TCGA-BLCA	E2F1	1	proliferation	B	2.82	0.097	correct, passes
+TCGA-BLCA	E2F1	1	proliferation	C	2.85	0.071	correct, passes
+TCGA-BLCA	FOXM1	1	proliferation	A	2.59	0.16	correct direction, below cutoff
+TCGA-BLCA	FOXM1	1	proliferation	B	2.63	0.14	correct direction, below cutoff
+TCGA-BLCA	FOXM1	1	proliferation	C	2.83	0.072	correct, passes
+TCGA-BLCA	MYBL2	1	proliferation	A	2.57	0.16	correct direction, below cutoff
+TCGA-BLCA	MYBL2	1	proliferation	B	2.65	0.13	correct direction, below cutoff
+TCGA-BLCA	MYBL2	1	proliferation	C	2.85	0.071	correct, passes
+TCGA-COAD	E2F1	1	proliferation	A	2.61	0.073	correct, passes
+TCGA-COAD	E2F1	1	proliferation	B	1.95	0.31	correct direction, below cutoff
+TCGA-COAD	E2F1	1	proliferation	C	1.94	0.3	correct direction, below cutoff
+TCGA-COAD	FOXM1	1	proliferation	A	1.94	0.24	correct direction, below cutoff
+TCGA-COAD	FOXM1	1	proliferation	B	1.9	0.33	correct direction, below cutoff
+TCGA-COAD	FOXM1	1	proliferation	C	1.97	0.29	correct direction, below cutoff
+TCGA-COAD	MYBL2	1	proliferation	A	3.02	0.035	correct, passes
+TCGA-COAD	MYBL2	1	proliferation	B	2.73	0.094	correct, passes
+TCGA-COAD	MYBL2	1	proliferation	C	2.74	0.087	correct, passes
+TCGA-COAD	MYC	1	WNT-MYC	A	3.84	0.019	correct, passes
+TCGA-COAD	MYC	1	WNT-MYC	B	3.41	0.07	correct, passes
+TCGA-COAD	MYC	1	WNT-MYC	C	3.4	0.057	correct, passes
+TCGA-KIRC	E2F1	1	proliferation	A	0.52	0.88	correct direction, below cutoff
+TCGA-KIRC	E2F1	1	proliferation	B	0.69	0.79	correct direction, below cutoff
+TCGA-KIRC	E2F1	1	proliferation	C	0.82	0.7	correct direction, below cutoff
+TCGA-KIRC	EPAS1	1	VHL loss / hypoxia	A	0.3	0.97	correct direction, below cutoff
+TCGA-KIRC	EPAS1	1	VHL loss / hypoxia	B	0.27	0.95	correct direction, below cutoff
+TCGA-KIRC	EPAS1	1	VHL loss / hypoxia	C	0.29	0.92	correct direction, below cutoff
+TCGA-KIRC	FOXM1	1	proliferation	A	0.25	0.99	correct direction, below cutoff
+TCGA-KIRC	FOXM1	1	proliferation	B	0.46	0.88	correct direction, below cutoff
+TCGA-KIRC	FOXM1	1	proliferation	C	0.53	0.82	correct direction, below cutoff
+TCGA-KIRC	HIF1A	1	VHL loss / hypoxia	A	0.99	0.61	correct direction, below cutoff
+TCGA-KIRC	HIF1A	1	VHL loss / hypoxia	B	0.83	0.73	correct direction, below cutoff
+TCGA-KIRC	HIF1A	1	VHL loss / hypoxia	C	0.76	0.72	correct direction, below cutoff
+TCGA-KIRC	MYBL2	1	proliferation	A	0.07	1	correct direction, below cutoff
+TCGA-KIRC	MYBL2	1	proliferation	B	0.16	0.97	correct direction, below cutoff
+TCGA-KIRC	MYBL2	1	proliferation	C	0.2	0.95	correct direction, below cutoff
+TCGA-LIHC	E2F1	1	proliferation	A	2.09	0.29	correct direction, below cutoff
+TCGA-LIHC	E2F1	1	proliferation	B	1.99	0.33	correct direction, below cutoff
+TCGA-LIHC	E2F1	1	proliferation	C	2.14	0.24	correct direction, below cutoff
+TCGA-LIHC	FOXM1	1	proliferation	A	2.05	0.3	correct direction, below cutoff
+TCGA-LIHC	FOXM1	1	proliferation	B	1.97	0.33	correct direction, below cutoff
+TCGA-LIHC	FOXM1	1	proliferation	C	2.11	0.25	correct direction, below cutoff
+TCGA-LIHC	HNF1A	-1	loss of hepatocyte identity	A	0.54	0.89	wrong direction
+TCGA-LIHC	HNF1A	-1	loss of hepatocyte identity	B	0.59	0.87	wrong direction
+TCGA-LIHC	HNF1A	-1	loss of hepatocyte identity	C	0.66	0.81	wrong direction
+TCGA-LIHC	HNF4A	-1	loss of hepatocyte identity	A	-0.23	0.97	correct direction, below cutoff
+TCGA-LIHC	HNF4A	-1	loss of hepatocyte identity	B	-0.25	0.96	correct direction, below cutoff
+TCGA-LIHC	HNF4A	-1	loss of hepatocyte identity	C	-0.29	0.93	correct direction, below cutoff
+TCGA-LIHC	MYBL2	1	proliferation	A	2.74	0.11	correct direction, below cutoff
+TCGA-LIHC	MYBL2	1	proliferation	B	2.6	0.14	correct direction, below cutoff
+TCGA-LIHC	MYBL2	1	proliferation	C	3	0.064	correct, passes
+TCGA-LUAD	E2F1	1	proliferation	A	1.52	0.36	correct direction, below cutoff
+TCGA-LUAD	E2F1	1	proliferation	B	1.77	0.29	correct direction, below cutoff
+TCGA-LUAD	E2F1	1	proliferation	C	1.72	0.29	correct direction, below cutoff
+TCGA-LUAD	FOXM1	1	proliferation	A	1.79	0.26	correct direction, below cutoff
+TCGA-LUAD	FOXM1	1	proliferation	B	2.17	0.18	correct direction, below cutoff
+TCGA-LUAD	FOXM1	1	proliferation	C	2.2	0.16	correct direction, below cutoff
+TCGA-LUAD	MYBL2	1	proliferation	A	1.86	0.25	correct direction, below cutoff
+TCGA-LUAD	MYBL2	1	proliferation	B	2.39	0.13	correct direction, below cutoff
+TCGA-LUAD	MYBL2	1	proliferation	C	2.52	0.093	correct, passes
+TCGA-STAD	E2F1	1	proliferation	A	2.33	0.22	correct direction, below cutoff
+TCGA-STAD	E2F1	1	proliferation	B	2.52	0.18	correct direction, below cutoff
+TCGA-STAD	E2F1	1	proliferation	C	2.39	0.19	correct direction, below cutoff
+TCGA-STAD	FOXM1	1	proliferation	A	2.14	0.29	correct direction, below cutoff
+TCGA-STAD	FOXM1	1	proliferation	B	2.61	0.16	correct direction, below cutoff
+TCGA-STAD	FOXM1	1	proliferation	C	2.57	0.15	correct direction, below cutoff
+TCGA-STAD	MYBL2	1	proliferation	A	2.48	0.18	correct direction, below cutoff
+TCGA-STAD	MYBL2	1	proliferation	B	2.47	0.2	correct direction, below cutoff
+TCGA-STAD	MYBL2	1	proliferation	C	2.49	0.16	correct direction, below cutoff
+TCGA-UCS	E2F1	1	proliferation	A	-0.16	0.97	wrong direction
+TCGA-UCS	E2F1	1	proliferation	B	-0.18	0.96	wrong direction
+TCGA-UCS	E2F1	1	proliferation	C	-0.17	0.96	wrong direction
+TCGA-UCS	FOXM1	1	proliferation	A	3.31	0.11	correct direction, below cutoff
+TCGA-UCS	FOXM1	1	proliferation	B	3.51	0.12	correct direction, below cutoff
+TCGA-UCS	FOXM1	1	proliferation	C	3.37	0.13	correct direction, below cutoff
+TCGA-UCS	MYBL2	1	proliferation	A	3.22	0.11	correct direction, below cutoff
+TCGA-UCS	MYBL2	1	proliferation	B	3.05	0.12	correct direction, below cutoff
+TCGA-UCS	MYBL2	1	proliferation	C	3.28	0.13	correct direction, below cutoff

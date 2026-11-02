@@ -17,17 +17,24 @@
 # Outputs: results/step8/{m3c_scores,decision,assignments,module_features}.tsv;
 #          data/processed/step8/features/<group>_<set>.tsv.gz
 # FEATURE_SETS=modules10,all (default both); ONLY_GROUPS; N_CORES (default 16); ITERS (default 100)
+# EXCLUDE_MODULE=recurring: before building features, drop the group's recurring module (C8 / D26): the |r| >= 0.7
+#   module (as in features()) holding the most C8 core members (>= 30% of groups, 62 v2 full set; >= 3 present),
+#   plus any other core member; outputs to <step8>_no_c8 and <step8_features>_no_c8 (user 2026-10-28)
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(M3C); library(cluster)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
-setwd(root)
-GROUPS <- c("BRCA-Basal", "BRCA-Her2", "BRCA-LumA", "BRCA-LumB", "TCGA-COAD", "TCGA-READ")
+setwd(root); source("R/paths.R")
+b <- build(); require_build(b, c("signatures", "patient_nes"))
+GROUPS <- p_groups(b)   # every group with an ok Step 4 signature for this build
 only <- Sys.getenv("ONLY_GROUPS"); if (nzchar(only)) GROUPS <- intersect(GROUPS, strsplit(only, ",")[[1]])
 SETS <- strsplit(Sys.getenv("FEATURE_SETS", "modules10,all"), ",")[[1]]
 N_CORES <- as.integer(Sys.getenv("N_CORES", "16")); ITERS <- as.integer(Sys.getenv("ITERS", "100"))
 MOD_R <- 0.7; MIN_MOD <- 10; MAXK <- 10; ALPHA <- 0.05
-NES_DIR <- "data/processed/step6/aracne_project_map"
-res_dir <- "results/step8"; feat_dir <- "data/processed/step8/features"
+NES_DIR <- p_patient_nes(b)
+res_dir <- p_step8(b); feat_dir <- p_step8_features(b)
+EXCL <- identical(Sys.getenv("EXCLUDE_MODULE"), "recurring")
+if (EXCL) { core <- fread("results/step6/aracne_project_v2/diagnostics/recurring_module_members_v2.tsv")[frac_groups >= 0.3, regulator]
+            res_dir <- paste0(res_dir, "_no_c8"); feat_dir <- paste0(feat_dir, "_no_c8") }
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE); dir.create(feat_dir, recursive = TRUE, showWarnings = FALSE)
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE & role == "tumor"]
 qidx <- fread("results/step6/aracne_project/quality_correction_map/checks.tsv", nrows = 0)  # existence check only
@@ -48,6 +55,15 @@ features <- function(A, set) {
 
 run <- function(gid, set) {
   x <- fread(file.path(NES_DIR, paste0(gid, ".patient_nes.tsv.gz"))); A <- t(as.matrix(x[, -1])); colnames(A) <- x$regulator
+  n_drop <- 0L
+  if (EXCL) {
+    mod <- cutree(hclust(as.dist(1 - abs(cor(A))), method = "average"), h = 1 - MOD_R)
+    hit <- table(mod[colnames(A) %in% core])
+    m <- if (length(hit) && max(hit) >= 3) as.integer(names(hit)[which.max(hit)]) else NA_integer_
+    drop <- colnames(A) %in% core | (!is.na(m) & mod == m)
+    n_drop <- sum(drop); A <- A[, !drop, drop = FALSE]
+    message(sprintf("%s: recurring module removed: %d regulators (%d core members present)", gid, n_drop, sum(x$regulator %in% core)))
+  }
   fe <- features(A, set); F <- fe$F
   fwrite(data.table(sample = rownames(F), round(F, 4)), file.path(feat_dir, sprintf("%s_%s.tsv.gz", gid, set)), sep = "\t")
   t0 <- Sys.time()
@@ -68,7 +84,7 @@ run <- function(gid, set) {
   pcol <- if (startsWith(gid, "LGG")) "absolute_purity" else "estimate_score"
   sil <- mean(silhouette(b, dist(F))[, 3])
   dec <- data.table(group_id = gid, feature_set = set, n_patients = nrow(F), n_features = ncol(F),
-    n_regulators_covered = nrow(fe$members), best_K = best$K, RCSI = round(best$RCSI, 3), MONTECARLO_P = signif(best$MONTECARLO_P, 3),
+    n_regulators_covered = nrow(fe$members), n_removed_c8 = n_drop, best_K = best$K, RCSI = round(best$RCSI, 3), MONTECARLO_P = signif(best$MONTECARLO_P, 3),
     NORM_P = signif(best$NORM_P, 3), decision = if (ok) "clusters" else "no significant structure",
     cluster_sizes = paste(sort(table(b), decreasing = TRUE), collapse = "/"), silhouette = round(sil, 3),
     plate_p = signif(suppressWarnings(chisq.test(table(b, meta$batch), simulate.p.value = TRUE, B = 2000)$p.value), 3),

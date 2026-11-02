@@ -1,0 +1,30 @@
+network	label_set	source	n_tumors	labels
+ACC	molecular	Subtype_mRNA	72	steroid-phenotype-high:25, steroid-phenotype-high+proliferation:21, steroid-phenotype-low:26
+BLCA	molecular	Subtype_mRNA	129	1:41, 2:42, 3:31, 4:15
+BRCA	histology	group_id	1040	BRCA-Basal:190, BRCA-Her2:81, BRCA-LumA:560, BRCA-LumB:209
+CESC	histology	group_id	299	CESC-AD:47, CESC-SCC:252
+COADREAD	histology	group_id	380	TCGA-COAD:288, TCGA-READ:92
+COADREAD	molecular	Subtype_Selected	335	GI.CIN:245, GI.GS:40, GI.HM-indel:50
+ESCA	histology	group_id	181	ESCA-AD:89, ESCA-SCC:92
+ESCA	molecular	Subtype_Selected	161	GI.CIN:74, GI.ESCC:87
+GBM	molecular	Subtype_mRNA	149	LGr1:20, LGr3:10, LGr4:119
+HNSC	molecular	Subtype_mRNA	278	Atypical:67, Basal:87, Classical:49, Mesenchymal:75
+KICH	molecular	Subtype_Selected	66	KICH.Eosin.0:47, KICH.Eosin.1:19
+KIRC	molecular	Subtype_mRNA	415	1:147, 2:89, 3:93, 4:86
+KIRP	molecular	Subtype_mRNA	159	mRNA.Cluster 1:76, mRNA.Cluster 2:60, mRNA.Cluster 3:23
+LGG	histology	group_id	508	LGG-IDHmut-codel:173, LGG-IDHmut-noncodel:241, LGG-IDHwt:94
+LGG	molecular	Subtype_mRNA	504	LGr1:121, LGr2:85, LGr3:222, LGr4:76
+LIHC	molecular	Subtype_mRNA	185	1:61, 3:33, 4:53, 5:38
+LUAD	molecular	Subtype_Selected	229	LUAD.1:22, LUAD.2:32, LUAD.3:51, LUAD.4:32, LUAD.5:51, LUAD.6:41
+LUSC	molecular	Subtype_mRNA	176	basal:42, classical:64, primitive:27, secretory:43
+OV	molecular	Subtype_mRNA	411	Differentiated:108, Immunoreactive:89, Mesenchymal:98, Proliferative:116
+PCPG	histology	group_id	177	PCPG-PGL:31, PCPG-PHEO:146
+PCPG	molecular	Subtype_mRNA	171	Cortical admixture:21, Kinase signaling:67, Pseudohypoxia:61, Wnt-altered:22
+PRAD	molecular	Subtype_mRNA	332	1:112, 2:104, 3:116
+SARC	histology	group_id	237	SARC-DDLPS:57, SARC-LMS:104, SARC-UPS:76
+SKCM	molecular	Subtype_mRNA	325	immune:165, keratin:102, MITF-low:58
+STAD	molecular	Subtype_Selected	374	GI.CIN:221, GI.EBV:30, GI.GS:50, GI.HM-indel:73
+TGCT	histology	group_id	132	TGCT-NSGCT:70, TGCT-SEM:62
+THCA	molecular	Subtype_mRNA	481	1:133, 2:67, 3:82, 4:106, 5:93
+UCEC	histology	group_id	167	UCEC-EEC:107, UCEC-SER:60
+UCS	molecular	Subtype_mRNA	57	1:17, 2:40

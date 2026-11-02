@@ -1,0 +1,10 @@
+check	ref	test
+"C2 GC-only vs MR NES, median rho"	0.153	0.172
+"C2 groups with |rho| > 0.4"	2	2
+"C7 MRs FDR < 0.10, median per group"	587	567
+"C7 Jaccard ref-test FDR < 0.10, median"	NA	0.671
+"C7 NES rho ref-test, median"	NA	0.977
+"C9 edges per network, median"	342226.5	266118
+"C9 cross-mappable edges removed, median fraction"	NA	0.131
+"C10 low-mappability regulators + targets"	NA	0
+"C10 cross-mappable edges left"	NA	0

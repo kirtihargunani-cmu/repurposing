@@ -213,3 +213,9 @@ chembl:  # REST API (scripts/79a_drug_annotations.py); raw JSON cached in data/r
   release: ChEMBL_37 (2026-05-01)
   access: open  # CC BY-SA 3.0
   url: https://www.ebi.ac.uk/chembl/api/data
+
+composition:  # tissue-composition references (scripts/04b_download_composition_refs.sh; SPEC_tissue_composition.md, D61)
+  access: open
+  files:
+    hpa_single_cell_type: {url: "https://v24.proteinatlas.org/download/tsv/rna_single_cell_type.tsv.zip", release: HPA v24, sha256: 9079bece686dd98e012e6a633887c54b2d04231d2c1bf24fcd2df5464abc6285}  # nTPM per gene per single-cell type
+    mcpcounter_genes: {url: "https://raw.githubusercontent.com/ebecht/MCPcounter/b6eac73e91c246fcff0bb1a5c68a816cd588fc48/Signatures/genes.txt", sha256: 408f6c5d02c8f9bd2f1599c598367881853520934f8ce398a4886a8b296922bb}  # R package MCPcounter 1.2.0 installed from the same commit

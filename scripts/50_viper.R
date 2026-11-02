@@ -22,11 +22,25 @@
 #     ((sum lambda)^2 / sum lambda^2), top-loading regulators, and R^2 of PCs 1-5 on Step 3 covariates.
 # Outputs: results/step6/<REGULON>/{group_mr,regulator_filter,patient_concordance,axes,
 #          axes_covariates,group_summary}.tsv; patient NES matrices in data/processed/step6/<REGULON>/
+#   NOTE: these patient NES are UNCORRECTED (no purity / RNA-quality correction). They feed only this script's own
+#   concordance and axes diagnostics. Every downstream step (clustering, subgroups, variability) uses the corrected
+#   patient NES of 61_quality_correct.R, in data/processed/step6/<set>_patient/ (config/builds.yaml patient_nes).
 suppressPackageStartupMessages({library(data.table); library(edgeR); library(limma); library(viper);
                                 library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root)
+# v2 (fix 2026-10-28): the GTEx normals for the null (and the logCPM) are the Step 4a reference samples the signature
+#   used (results/step4_v2/gtex_reference.tsv, use == TRUE); before, all of the group's GTEx normals were used (incl.
+#   the excluded colon muscle wall / kidney medulla / no-collection-data samples), which widened the null.
+# NULL_ADJUST=1 (v2): before the random splits, each gene's normal logCPM is regressed on the Step 4 model's normal-side
+#   covariates (age, ESTIMATE, sex if both >= 3, coll_* for GTEx) and the gene mean added back (64_null_adjust_test.R arm C)
+# REGSET=tf_base | tf_sig1 | tf_sig2 (D83): signaling-only target lists (49_signaling_regulons.R) and the current lists
+#   under a separate name, for the side-by-side comparison; outputs aracne_project_v2_<REGSET>.
+# SEED_GROUP=1 (D83): one fixed seed per group before the normal splits, so runs on different target lists share the null.
+# GROUP_ONLY=1 (D83): group mechanism only (steps 1-2); no patient VIPER, concordance or axes.
+# STRATA=<file> (v2; Step 10 subgroups, D72): one run per subgroup (columns stratum, group_id, sample): signature from
+#   results/step10_v2, the subgroup's tumors, the parent group's normals and network; outputs <res_dir>_strata
 REGULON <- Sys.getenv("REGULON", "collectri")
 MIN_LOGCPM <- 1; MIN_TARGETS <- 10; MIN_FRAC <- 0.5; TOP_MR <- 50
 N_PERM_GROUP <- 1000; N_PERM_PATIENT <- 100; N_CORES <- as.integer(Sys.getenv("N_CORES", "6"))
@@ -34,11 +48,17 @@ COMPLEXES <- list(AP1 = c("JUN", "JUNB", "JUND", "FOS", "FOSB", "FOSL1", "FOSL2"
                   NFKB = c("NFKB1", "NFKB2", "RELA", "RELB", "REL"))
 set.seed(1)
 
-res_dir <- file.path("results/step6", REGULON); proc_dir <- file.path("data/processed/step6", REGULON)
+SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
+REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf", "tf_base", "tf_sig1", "tf_sig2"))
+TFX <- if (REGSET == "full") "" else paste0("_", REGSET)
+stopifnot(TFX == "" || (SFX == "_v2" && REGULON == "aracne_project"))  # TF-only set is v2 aracne_project
+NULL_ADJUST <- identical(Sys.getenv("NULL_ADJUST"), "1"); STRATA <- Sys.getenv("STRATA"); ST <- nzchar(STRATA)
+stopifnot(SFX == "_v2" || (!NULL_ADJUST && !ST))
+res_dir <- file.path("results/step6", paste0(REGULON, SFX, TFX, if (ST) "_strata")); proc_dir <- file.path("data/processed/step6", paste0(REGULON, SFX, TFX, if (ST) "_strata"))
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE); dir.create(proc_dir, recursive = TRUE, showWarnings = FALSE)
 
 if (REGULON == "aracne_project") {
-  arac <- readRDS("data/processed/step5/regulons_aracne_project.rds")
+  arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds"))
   grp <- fread("results/step1/disease_groups_toil.tsv")
   net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
   regs_for <- function(gid) { r <- arac[[net_of[[gid]]]]; if (is.null(r)) stop("no ARACNe network for ", net_of[[gid]]); r }
@@ -48,16 +68,30 @@ if (REGULON == "aracne_project") {
 }
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 sym2ens <- setNames(idmap$gene_id, idmap$symbol)
-summ <- fread("results/step4/signature_summary.tsv")[status == "ok"]
+sig_dir <- if (ST) "results/step10_v2" else paste0("results/step4", SFX)
+summ <- fread(file.path(sig_dir, "signature_summary.tsv"))[status == "ok"]
 contrast_for <- summ[, .(contrast = if ("gtex" %in% contrast) "gtex" else "adjacent"), by = group_id]
-zmat <- list(gtex = fread("results/step4/z_tumor_vs_gtex.tsv"), adjacent = fread("results/step4/z_tumor_vs_adjacent.tsv"))
+zmat <- list(gtex = fread(file.path(sig_dir, "z_tumor_vs_gtex.tsv")), adjacent = fread(file.path(sig_dir, "z_tumor_vs_adjacent.tsv")))
+COLL <- c("coll_isch", "coll_fast", "coll_slow", "coll_nonbp")
+if (SFX == "_v2") ref <- fread("results/step4_v2/gtex_reference.tsv")[use == TRUE, c("sample", COLL), with = FALSE]
+if (ST) { sp <- fread(STRATA); parent_of <- setNames(unique(sp[, .(stratum, group_id)])$group_id, unique(sp[, .(stratum, group_id)])$stratum) }
+adjust_normals <- function(m, meta, contrast) {  # residual + gene mean on the Step 4 normal-side covariates
+  ok <- !is.na(meta$age) & !is.na(meta$estimate_score) & !is.na(meta$sex); m <- m[, ok, drop = FALSE]; meta <- meta[ok]
+  X <- cbind(age = meta$age - mean(meta$age), est = meta$estimate_score - mean(meta$estimate_score))
+  if (uniqueN(meta$sex) > 1 && min(table(meta$sex)) >= 3) X <- cbind(X, male = as.numeric(meta$sex == "male"))
+  if (contrast == "gtex") { C <- as.matrix(meta[, COLL, with = FALSE]); X <- cbind(X, C[, apply(C, 2, var) > 0, drop = FALSE]) }
+  t(qr.resid(qr(cbind(1, X)), t(m))) + rowMeans(m)
+}
 cov <- fread("results/step3/covariates_toil.tsv")[primary_per_patient == TRUE]
 counts <- readRDS("data/processed/step4/counts_protein_coding.rds")
 
 run_group <- function(gid, contrast) {
-  regs_all <- regs_for(gid)
+  par <- if (ST) parent_of[[gid]] else gid
+  regs_all <- regs_for(par)
   normal_role <- if (contrast == "gtex") "gtex_normal" else "adjacent_normal"
-  d <- cov[group_id == gid & role %in% c("tumor", normal_role) & sample %in% colnames(counts)]
+  d <- cov[group_id == par & role %in% c("tumor", normal_role) & sample %in% colnames(counts)]
+  if (ST) d <- d[role != "tumor" | sample %in% sp[stratum == gid, sample]]
+  if (SFX == "_v2" && contrast == "gtex") d <- merge(d[role == "tumor" | sample %in% ref$sample], ref, by = "sample", all.x = TRUE)
   z <- zmat[[contrast]][, c("gene_id", gid), with = FALSE][!is.na(get(gid))]
   sig <- setNames(z[[gid]], z$gene_id)
   y <- calcNormFactors(DGEList(counts[names(sig), d$sample]))
@@ -86,9 +120,11 @@ run_group <- function(gid, contrast) {
   # null = random halves of the normals compared with each other: keeps gene-gene correlation but carries
   # no tumor signal (tumor/normal label permutation leaks a scaled copy of the real signature into the null
   # when the effect is large and groups are unbalanced)
+  if (identical(Sys.getenv("SEED_GROUP"), "1")) set.seed(sum(utf8ToInt(gid)) * 7919L)
+  nul <- if (NULL_ADJUST) adjust_normals(nor, d[match(colnames(nor), sample)], contrast) else nor
   perm_z <- sapply(seq_len(N_PERM_GROUP), function(i) {
-    lab <- sample(rep(c(TRUE, FALSE), length.out = ncol(nor)))
-    a <- nor[, lab, drop = FALSE]; b <- nor[, !lab, drop = FALSE]
+    lab <- sample(rep(c(TRUE, FALSE), length.out = ncol(nul)))
+    a <- nul[, lab, drop = FALSE]; b <- nul[, !lab, drop = FALSE]
     t <- (rowMeans(a) - rowMeans(b)) / sqrt(apply(a, 1, var) / ncol(a) + apply(b, 1, var) / ncol(b) + 1e-6)
     zscoreT(pmin(pmax(t, -50), 50), df = ncol(a) + ncol(b) - 2)
   })
@@ -97,6 +133,10 @@ run_group <- function(gid, contrast) {
   mrt <- data.table(group_id = gid, regulator = names(mr$es$nes), nes = mr$es$nes, p = mr$es$p.value,
                     size = mr$es$size)[, fdr := p.adjust(p, "BH")][order(-abs(nes))]
 
+  if (identical(Sys.getenv("GROUP_ONLY"), "1"))
+    return(list(filt = filt[, group_id := gid], mr = mrt,
+                summary = data.table(group_id = gid, contrast = contrast, n_tumor = ncol(tum), n_normal = ncol(nor),
+                                     n_regulators_kept = nrow(filt[keep == TRUE]), n_mr_fdr05 = mrt[fdr < 0.05, .N], n_mr_p05 = mrt[p < 0.05, .N])))
   # 3. patient mechanism
   vs <- viperSignature(tum, nor, per = N_PERM_PATIENT, method = "zscore", verbose = FALSE)
   pn <- viper(vs, reg, minsize = MIN_TARGETS, verbose = FALSE)  # regulators x patients
@@ -123,7 +163,7 @@ run_group <- function(gid, contrast) {
     if (sum(ok) < 10 || (is.factor(v) && nlevels(droplevels(v[ok])) < 2)) return(NULL)
     data.table(group_id = gid, pc = k, covariate = cn, r2 = round(summary(lm(pc$x[ok, k] ~ v[ok]))$r.squared, 3))
   }))))
-  gs <- data.table(group_id = gid, contrast = contrast, n_tumor = ncol(tum), n_normal = ncol(nor),
+  gs <- data.table(group_id = gid, contrast = contrast, n_tumor = ncol(tum), n_normal = ncol(nor), n_normal_null = ncol(nul), null_adjusted = NULL_ADJUST,
                    n_regulators_kept = nrow(filt[keep == TRUE]), n_mr_fdr05 = mrt[fdr < 0.05, .N], n_mr_p05 = mrt[p < 0.05, .N],
                    effective_dim = round(sum(lam)^2 / sum(lam^2), 2), pc1_var = round(ve[1], 3),
                    n_pc_80pct = which(cumsum(ve) >= 0.8)[1],

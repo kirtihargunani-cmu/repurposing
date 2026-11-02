@@ -1,6 +1,6 @@
 # Drug side: decisions and caveats
 
-An ongoing list for the drug side (branch `celligner`, worktree `~/projects/repurposing-celligner`). Add to it as
+An ongoing list for the drug side (kept on `main`; code also runs from the `celligner` worktree). Add to it as
 decisions are made and caveats come up. Detailed numbers and run history are in `docs/PROGRESS.md` and the commit
 messages; this file is the short list.
 

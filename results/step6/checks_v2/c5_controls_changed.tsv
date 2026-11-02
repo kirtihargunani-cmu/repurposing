@@ -1,0 +1,10 @@
+group_id	regulator	why	ref	test
+"TARGET-WT"	"E2F1"	"proliferation"	"correct, passes"	"correct direction, below cutoff"
+"TARGET-WT"	"MYBL2"	"proliferation"	"correct, passes"	"correct direction, below cutoff"
+"TCGA-BLCA"	"MYBL2"	"proliferation"	"correct, passes"	"correct direction, below cutoff"
+"TCGA-COAD"	"FOXM1"	"proliferation"	"correct, passes"	"correct direction, below cutoff"
+"TCGA-KIRC"	"EPAS1"	"VHL loss / hypoxia"	"wrong direction"	"correct direction, below cutoff"
+"TCGA-LIHC"	"HNF1A"	"loss of hepatocyte identity"	"correct direction, below cutoff"	"wrong direction"
+"TCGA-STAD"	"FOXM1"	"proliferation"	"correct, passes"	"correct direction, below cutoff"
+"TCGA-THCA"	"MYBL2"	"proliferation"	"not tested (filtered)"	"correct direction, below cutoff"
+"TGCT-NSGCT"	"E2F1"	"proliferation"	"correct direction, below cutoff"	"correct, passes"

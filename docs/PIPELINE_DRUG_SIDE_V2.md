@@ -1,16 +1,16 @@
 # Drug side v2: steps, decisions and outputs
 
-Last updated 2026-11-02. Branch `celligner` (worktree `~/projects/repurposing-celligner`). This page explains how drugs
-are matched to diseases, step by step: what each step does and why, the exact command, inputs, outputs and the
-decisions behind it. The disease side (signatures, master regulators, subgroups) is documented on `main` in
-`docs/PIPELINE_V2.md`; decisions with full reasoning are in `main:docs/DECISIONS.md` (D-numbers) and in
-[`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md) (drug-side decisions, method
-choices and caveats C1-C25). Requirements for how results are reported live in `main:docs/LLM_COORDINATION_NOTES.md`.
+Last updated 2026-11-02 (checked against the code and results). How drugs are matched to diseases, step by step: what
+each step does and why, the command, inputs, outputs and decisions. Docs live on `main`; drug-side code can also be
+run from the `celligner` worktree (`~/projects/repurposing-celligner`). The disease side (signatures, master
+regulators, subgroups) is in [`PIPELINE_V2.md`](PIPELINE_V2.md); decisions in [`DECISIONS.md`](DECISIONS.md)
+(D-numbers) and [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md) (drug-side
+choices and caveats C1-C25); reporting requirements in [`LLM_COORDINATION_NOTES.md`](LLM_COORDINATION_NOTES.md).
 
 Plain-language version with results: [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md).
 
 To run: [`scripts/run_v2_drug.sh`](../scripts/run_v2_drug.sh) (`list`, `show <step>`, or step names in order). Run the
-disease side first (`main:scripts/run_v2.sh`), then `sync_disease`.
+disease side first (`scripts/run_v2.sh`); in the `celligner` worktree, then `sync_disease` (a no-op on `main`).
 
 ## The idea in one paragraph
 
@@ -146,7 +146,7 @@ flowchart LR
 - This step reports; it does not change the rankings (scoring on lineage-matched lines only is not yet implemented).
 
 ### 9c. Signaling-only target lists, comparison (`scripts/d83_run.sh`, `79s`; D83)
-- Runs the drug side on three ARACNe target lists from the main branch (`49_signaling_regulons.R`): **base** (current),
+- Runs the drug side on three ARACNe target lists from the disease side (`49_signaling_regulons.R`): **base** (current),
   **sig1** (identity-only edges under histology labels removed) and **sig2** (also molecular labels). Switches:
   `REGSET=tf_<arm>` for `79d` / `79h`, `ARACNE_SET=tf_<arm>` for `79e` / `79i` (consensus; outputs suffixed
   `_tf_<arm>`), `COMPARE_SETS` for `79n`. Production outputs are not touched.
@@ -161,7 +161,7 @@ flowchart LR
   disease in title / abstract) and ClinicalTrials.gov, with the 3 most relevant papers and trials. `MODE=fda`: the top 3
   FDA drugs of every disease and subgroup by FDA ingredient name. ClinicalTrials.gov matches loosely; counts are an
   upper bound. Outputs `results/lincs/literature_v2_consensus.tsv`, `literature_fda_top_v2.tsv`.
-- **FDA rankings (`79p`):** Drugs@FDA (downloaded 2026-10-29 to `main:data/raw/drugsatfda`, not in git) matched by
+- **FDA rankings (`79p`):** Drugs@FDA (downloaded 2026-10-29 to `data/raw/drugsatfda`, not in git) matched by
   ingredient name with salts removed (527 of 3,058 LINCS drugs; 458 marketed). Per disease the eligible FDA drugs
   ranked by `spec_mech`, per subgroup by `spec_sib_mech`. Outputs `results/lincs/fda_ranking_v2_consensus.tsv`,
   `fda_ranking_strata_v2_consensus.tsv`, `fda_matches.tsv`.

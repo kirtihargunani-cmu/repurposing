@@ -1,0 +1,18 @@
+item	value
+source effect: groups	17
+source: median genes FDR<0.05 & |lfc|>1	3844
+source: median GC tilt	-0.279
+source: median length (span) tilt	0.038
+source: median cross-tissue agreement (rho)	0.609
+source: median rho with tumor-vs-GTEx	0.619
+source: median R2 of tumor-vs-GTEx on source	0.382
+shared source component vs tumor-vs-GTEx (all groups): median rho	0.463
+ischemic time: median genes FDR<0.05	68
+ischemic: median cross-tissue agreement	0.132
+ischemic: median rho with tumor-vs-GTEx	-0.176
+ischemic: median rho with source effect	-0.248
+ventilator death: median rho with tumor-vs-GTEx	0.168
+quality index: median d tumor vs GTEx	-0.7
+quality index: median d adjacent vs GTEx	0.22
+quality index: median rho with GTEx RIN	0.13
+genes mappability < 0.8 or readthrough	1824

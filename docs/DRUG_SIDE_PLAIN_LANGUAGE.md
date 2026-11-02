@@ -1,15 +1,14 @@
 # Drug side in plain language, with results
 
-Written 2026-11-02 from the v2 results on branch `celligner`. This is the non-technical version of
-[`PIPELINE_DRUG_SIDE_V2.md`](PIPELINE_DRUG_SIDE_V2.md), which has the exact commands, files and formulas. Decision and
-caveat numbers (D.., C..) point to [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md)
-and `main:docs/DECISIONS.md`.
+Written 2026-11-02 from the v2 results. This is the non-technical version of
+[`PIPELINE_DRUG_SIDE_V2.md`](PIPELINE_DRUG_SIDE_V2.md), which has the commands, files and formulas. It starts where
+[`DISEASE_SIDE_PLAIN_LANGUAGE.md`](DISEASE_SIDE_PLAIN_LANGUAGE.md) ends. Decision and caveat numbers (D.., C..) point
+to [`DECISIONS.md`](DECISIONS.md) and [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md).
 
 ## What we are trying to do
 
-Every cancer switches some of the cell's "control switches" (transcription factors: proteins that turn groups of genes
-on or off) up or down compared with healthy tissue. The disease side of the project measures which switches are
-changed in each of 41 cancer types and 14 subgroups.
+The disease side measured which control switches (transcription factors) are stuck on or off in each of 41 cancers
+and 14 subgroups.
 
 Drugs also flip these switches. A public database (LINCS) measured what about 3,000 drugs do to gene activity in
 cancer cell lines grown in the lab. From that we can read which switches each drug flips.
@@ -101,7 +100,7 @@ score. Table: `results/lincs/worked_example_regulators.tsv`.
 - **Stricter check (same cell type, at least 10 drugs; C24): 14 of 41 cancers and 2 of 14 subgroups pass.** The ones
   that fail:
   - **No lab line of that cell type exists (4):** pheochromocytoma / paraganglioma, chromophobe kidney, seminoma.
-  - **Lines exist but LINCS never tested drugs on them (12):** for example sarcomas, kidney clear-cell and papillary,
+  - **Lines exist but have no good-quality LINCS drug data (12):** for example sarcomas, kidney clear-cell and papillary,
     thyroid, adrenal, Wilms, IDH-mutant glioma.
   - **Data only in lines that don't resemble the tumors (8):** basal breast, all squamous cancers (only one lung
     squamous line, 3 drugs), glioblastoma, serous endometrial.

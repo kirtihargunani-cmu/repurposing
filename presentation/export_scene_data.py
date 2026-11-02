@@ -3,8 +3,7 @@
 
 Every number shown on screen should come from this file, never typed by hand. Run from anywhere:
     python3 presentation/export_scene_data.py
-Reads only git-tracked results on the celligner branch (standard library only). On main, where the drug-side v2
-results are not present, use the committed scene_data.json or run this from the celligner worktree.
+Reads only git-tracked drug-side results (main or the celligner worktree; standard library only).
 """
 import csv
 import json
@@ -33,8 +32,8 @@ NEEDED = [CELL / "disease_line_weights_long.tsv"] + [LINCS / n for n in (
     "data_gaps_v2.tsv", "fda_ranking_v2_consensus.tsv", "fda_ranking_strata_v2_consensus.tsv")]
 missing = [str(p.relative_to(REPO)) for p in NEEDED if not p.exists()]
 if missing:
-    raise SystemExit("Missing drug-side results (they live on the celligner branch):\n  " + "\n  ".join(missing)
-                     + "\nKeep the committed scene_data.json, or run this script from ~/projects/repurposing-celligner.")
+    raise SystemExit("Missing drug-side results (run the drug side first, scripts/run_v2_drug.sh):\n  " + "\n  ".join(missing)
+                     + "\nUntil then, keep the committed scene_data.json.")
 
 out = {}
 

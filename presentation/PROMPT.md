@@ -1,6 +1,6 @@
 # Prompt: build the animated pipeline deck
 
-Paste everything below the line into Claude Code (recommended, run from `~/projects/repurposing-celligner`) or Claude
+Paste everything below the line into Claude Code (recommended, run from `~/projects/repurposing`) or Claude
 Cowork (share the `presentation/` folder with it first). Fill in the three `<...>` fields at the top.
 
 ---
@@ -45,7 +45,7 @@ honestly, including where the method fails.
    results file and re-run the export. If you are in Cowork without the repo, tell me which number is missing and
    where you would expect it.
 5. Background, if available: `DRUG_SIDE_PLAIN_LANGUAGE.md` (plain-language steps + results), `PIPELINE_DRUG_SIDE_V2.md`
-   (technical), and on the main branch `docs/PIPELINE_V2.md` (disease side, Steps 1-10).
+   (technical), `DISEASE_SIDE_PLAIN_LANGUAGE.md` and `PIPELINE_V2.md` (disease side, Steps 1-10), all in `docs/`.
 
 ## How to work (in this order)
 

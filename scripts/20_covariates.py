@@ -146,7 +146,7 @@ def toil_covariates():
     # site / batch / RNA quality
     plates = tcga_plates()
     sa = pd.read_csv(RAW / "gtex/GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt", sep="\t", dtype=str,
-                     usecols=["SAMPID", "SMCENTER", "SMRIN", "SMTSISCH", "SMGEBTCH", "SMNABTCH"])
+                     usecols=["SAMPID", "SMCENTER", "SMRIN", "SMTSISCH", "SMGEBTCH", "SMNABTCH", "SMATSSCR"])
     sa = sa.set_index("SAMPID")
     d["site"] = np.select([d.source == "TCGA", is_gtex, d.source == "TARGET"],
                           ["TSS-" + d["sample"].str.split("-").str[1], d["sample"].map(sa.SMCENTER),
@@ -156,6 +156,11 @@ def toil_covariates():
     d["tcga_n_plates"] = d["sample"].map(plates.n_plates)
     d["gtex_rin"] = num(d["sample"].map(sa.SMRIN))
     d["gtex_ischemic_min"] = num(d["sample"].map(sa.SMTSISCH))
+    # GTEx collection (v2 rebuild, D57): death circumstance (Hardy scale 0 = ventilator case, 1-2 = fast, 3-4 = slow)
+    # and the pathologist's autolysis score (0-3; used only to define best-preserved donors)
+    d["gtex_hardy"] = num(d.patient.map(gs.DTHHRDY).where(is_gtex))
+    d["gtex_death"] = pd.cut(d.gtex_hardy, [-0.5, 0.5, 2.5, 4.5], labels=["ventilator", "fast", "slow"]).astype(object)
+    d["gtex_autolysis"] = num(d["sample"].map(sa.SMATSSCR))
 
     # purity-related
     ab = pd.read_csv(RAW / "tcga_pancan/TCGA_mastercalls.abs_tables_JSedit.fixed.txt", sep="\t", dtype=str)
@@ -190,7 +195,8 @@ def toil_covariates():
 
     cols = ["sample", "patient", "group_id", "cohort", "role", "source", "sample_type", "sample_type_code",
             "sample_type_class", "primary_per_patient", "patient_has_untreated_tumor", "sex", "age",
-            "age_is_binned", "site", "batch", "tcga_n_plates", "gtex_rin", "gtex_ischemic_min", "target_rin",
+            "age_is_binned", "site", "batch", "tcga_n_plates", "gtex_rin", "gtex_ischemic_min", "gtex_hardy",
+            "gtex_death", "gtex_autolysis", "target_rin",
             "absolute_purity", "estimate_stromal", "estimate_immune", "estimate_score", "blast_pct",
             "blast_pct_raw", "tumor_content_pct"]
     return d[[c for c in cols if c in d]].sort_values(["group_id", "role", "sample"])

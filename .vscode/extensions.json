@@ -3,7 +3,7 @@
     "mechatroner.rainbow-csv",       // colored, aligned columns for .tsv results; query them with RBQL
     "ms-python.python",
     "REditorSupport.r",
-    "bierner.markdown-mermaid",      // renders the flow chart in docs/PIPELINE_SUMMARY.md
+    "bierner.markdown-mermaid",      // renders the flow charts in docs/PIPELINE_V2.md
     "emilast.LogFileHighlighter"     // readable logs/pipeline/*.log
   ]
 }
