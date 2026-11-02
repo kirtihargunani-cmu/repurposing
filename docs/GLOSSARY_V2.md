@@ -1,6 +1,6 @@
 # Glossary: terms added or changed in v2
 
-Status 2026-10-31. The full glossary (every term and acronym of Steps 1-7, grouped by topic) is the Glossary tab of the
+Status 2026-11-02. The full glossary (every term and acronym of Steps 1-7, grouped by topic) is the Glossary tab of the
 Steps 1-7 specification doc. This file lists what v2 changed: entries that are now out of date, and terms v2 introduced.
 How each step runs: [`PIPELINE_V2.md`](PIPELINE_V2.md); decisions: [`DECISIONS.md`](DECISIONS.md).
 
@@ -38,6 +38,7 @@ How each step runs: [`PIPELINE_V2.md`](PIPELINE_V2.md); decisions: [`DECISIONS.m
 | TF-only set | ARACNe networks built with Lambert TFs as the only candidate regulators (D64); the active arm |
 | Identity / signaling edge (D82) | Identity: an edge that exists only because both genes differ between subtypes (keeps < 50% of its correlation once subtype is removed); signaling: it remains within subtypes (`48`) |
 | Subtype-specific edge | Strong in one subtype (absolute rho >= 0.3) and absent or reversed in another: evidence that wiring differs (A9) |
+| Signaling-only lists: base / sig1 / sig2 (D83) | TF-only target lists for a comparison: base = current; sig1 drops identity-only edges under histology labels; sig2 also under molecular subtypes. Rule met, effect small; not adopted (open) |
 | Lineage-matched line (C24) | A cell line of the disease's cell type (squamous, glandular, ...), any organ (`config/group_lineages.tsv`, celligner) |
 | Data gap (R3) | The first step where good-quality lineage-matched data run out; reported instead of a drug list (`79r`) |
 | Cross-mappable edge filter | Edges between genes that share reads (cross-mappability > 0) removed before building regulons, 11-15% of edges |

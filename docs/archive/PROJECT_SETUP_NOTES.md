@@ -1,6 +1,6 @@
 # New drug-repurposing project: setup handoff (2026-10-01)
 
-> **Status 2026-10-31: historical** (setup handoff of 2026-10-01). Current state: [`PIPELINE_V2.md`](PIPELINE_V2.md), [`PROGRESS.md`](PROGRESS.md).
+> **Status 2026-10-31: historical** (setup handoff of 2026-10-01). Current state: [`PIPELINE_V2.md`](../PIPELINE_V2.md), [`PROGRESS.md`](../PROGRESS.md).
 
 Written from a laptop Claude session so the server session can pick up the work. Read this first.
 

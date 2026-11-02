@@ -1,10 +1,10 @@
-> **v2 (2026-10-29):** this guide describes the v1 result files. For v2 outputs and where they are, see [`PIPELINE_V2.md`](PIPELINE_V2.md) ("Where the main outputs are").
+> **v2 (2026-10-29):** this guide describes the v1 result files. For v2 outputs and where they are, see [`PIPELINE_V2.md`](../PIPELINE_V2.md) ("Where the main outputs are").
 
 # Results and data guide
 
 One- to two-line descriptions of every results table and data folder on the disease side (Steps 1-10).
 Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-79b) are maintained in the
-`~/projects/repurposing-celligner` worktree. Decisions and numbers: [`PROGRESS.md`](PROGRESS.md).
+`~/projects/repurposing-celligner` worktree. Decisions and numbers: [`PROGRESS.md`](../PROGRESS.md).
 
 ## `results/` (small tables, in git)
 
@@ -35,7 +35,7 @@ Drug-side outputs (`results/celligner/`, `results/lincs/`, scripts 05-09 and 70-
 | `z_tumor_vs_gtex.tsv` | Gene x group: how much each gene is up/down in tumor vs healthy GTEx tissue (signed z). |
 | `z_tumor_vs_adjacent.tsv` | The same vs normal tissue next to the tumor (18 groups). |
 
-`step4/reference_diagnostics/` (2026-10-18, `scripts/31_reference_diagnostics.R`; measurements behind the v2 rebuild spec, [`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md))
+`step4/reference_diagnostics/` (2026-10-18, `scripts/31_reference_diagnostics.R`; measurements behind the v2 rebuild spec, [`SPEC_rebuild_v2.md`](../SPEC_rebuild_v2.md))
 | File | What it is |
 |---|---|
 | `overview.tsv` | One-line headline numbers for everything below. |

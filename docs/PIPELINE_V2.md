@@ -1,11 +1,11 @@
 # Pipeline v2: steps, decisions and outputs
 
-Last updated 2026-10-31. This is the reference for how the v2 pipeline runs, step by step: what each step does and
+Last updated 2026-11-02 (checked against the code and results). This is the reference for how the v2 pipeline runs, step by step: what each step does and
 why, the exact command, what it reads and writes, which decisions shape it, the checks it reports, and where it
 stands. The full reasoning behind each decision is in [`DECISIONS.md`](DECISIONS.md) (D-numbers below); the run
 history with all numbers is in [`PROGRESS.md`](PROGRESS.md); the agreed rebuild plan is
-[`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md). The drug side lives on the `celligner` branch and is documented in
-`celligner:docs/PIPELINE_DRUG_SIDE_V2.md`. Terms new in v2: [`GLOSSARY_V2.md`](GLOSSARY_V2.md).
+[`SPEC_rebuild_v2.md`](SPEC_rebuild_v2.md). The drug side is documented in [`PIPELINE_DRUG_SIDE_V2.md`](PIPELINE_DRUG_SIDE_V2.md). Plain-language versions with
+results: [`DISEASE_SIDE_PLAIN_LANGUAGE.md`](DISEASE_SIDE_PLAIN_LANGUAGE.md), [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md). Terms new in v2: [`GLOSSARY_V2.md`](GLOSSARY_V2.md).
 
 To run the steps in order: [`scripts/run_v2.sh`](../scripts/run_v2.sh) (`scripts/run_v2.sh list` shows the steps;
 `scripts/run_v2.sh <step>` runs one). To see which outputs exist for the active build: `Rscript scripts/00_status.R`.
@@ -23,7 +23,7 @@ flowchart TD
   S6["6. Regulator activity (VIPER)<br/>group level (master regulators) and patient level"]
   S8["8. Patient clustering<br/>with and without the recurring module"]
   S10["10. Subgroups<br/>14 subgroups from 7 diseases; own signatures and VIPER"]
-  D["Drug side (celligner branch)<br/>cell-line matching, LINCS drug activity, ranking, flags, evidence status"]
+  D["Drug side (PIPELINE_DRUG_SIDE_V2.md)<br/>cell-line matching, LINCS drug activity, ranking, flags, evidence status"]
   S1 --> G --> S4 --> S6
   G --> S5 --> S6 --> S8 --> S10
   S6 --> D
@@ -45,18 +45,18 @@ flowchart TD
 
 ## Step overview
 
-| Step | What | Main scripts | Status (2026-10-29) |
+| Step | What | Main scripts | Status (2026-11-02) |
 |---|---|---|---|
 | 1-2 | Disease groups, expression data | `10_ground_toil.py`, `11_split_subtypes.py` | unchanged from v1 |
 | 3 | Covariates; v2 gene set | `20_covariates.py`, `21_estimate.R`, `22_gene_set_v2.py` | done 10-18 |
 | 4 | Tumor-vs-healthy signatures (GTEx reference prepared in 4a) | `32_gtex_reference.R`, `30_signatures.R`, `37_step4_v2_checks.R` | done 10-20 |
-| 5 | ARACNe networks and regulons | `42`, `43`, `44`, `45`, `46` | done 10-25 (TF-only edge confounding 10-29) |
+| 5 | ARACNe networks, regulons, edge diagnostics | `42`-`49` | done 10-25; identity edges (D82) and signaling-only lists (D83) 11-01 |
 | 6 | VIPER: master regulators (group) and patient scores | `50_viper.R`, `56`, `61`, `63`, `64`, `65` | done; null fixed and rerun 10-28 |
-| 7 | Master-regulator rules, diagnostics | `51`, `59`, `62`, `58`, `46` | done 10-29 on the corrected null |
+| 7 | Master-regulator rules, diagnostics | `51`, `58`, `59`, `62`, `66`, `67` | done 10-29 on the corrected null; BRCA_LUM test (D81) 11-01 |
 | 8 | Patient clustering, subgroup keep rule | `80`, `84` | done 10-28 |
 | 9 | Replication in external cohorts | `90`-`94` | not run on v2 |
-| 10 | Subgroups: signatures, VIPER, variability, what defines them | `85`, `30` / `50` STRATA=, `86`, `87` | done 10-29 |
-| Drug | Cell lines, drug activity, ranking, flags, literature, FDA | celligner `74b`, `79b`, `79d`-`79p` | done 10-29; PRISM / GDSC validation on hold |
+| 10 | Subgroups: signatures, VIPER, variability, what defines them | `85`, `30` / `50` STRATA=, `86`, `87` | done 10-29; `86` still on the D72 list |
+| Drug | Cell lines, drug activity, ranking, flags, data gaps, literature, FDA | `70`-`79s` (`scripts/run_v2_drug.sh`) | done 11-01; PRISM / GDSC validation on hold |
 
 ---
 
@@ -67,8 +67,8 @@ flowchart TD
   dropped. One sample per patient.
 - **Outputs:** `results/step1/disease_groups_toil.tsv` (49 groups, 10,211 patients), counts cached in
   `data/processed/step4/counts_protein_coding.rds`.
-- **Decisions:** see `PROJECT_SETUP_NOTES.md` and the early D-numbers. Snapshot of the funnel:
-  [`PIPELINE_SUMMARY.md`](PIPELINE_SUMMARY.md) (v1 numbers, still valid for these steps).
+- **Decisions:** D1-D6 in `DECISIONS.md` (scope and disease groups); cohort funnel with v1 numbers, still valid for these steps:
+  [`archive/PIPELINE_SUMMARY.md`](archive/PIPELINE_SUMMARY.md).
 
 ## Step 3. Covariates and the v2 gene set
 
@@ -122,7 +122,7 @@ reasons in `genes_v2_dropped.tsv`):
 ## Step 5. Regulator networks (ARACNe)
 
 - **Inputs** (`VERSION=v2 python scripts/42_aracne_inputs.py` -> `data/processed/step5/aracne_inputs_v2/`): per cohort,
-  tumors only, v2 gene set, genes expressed in >= 10% of tumors. COAD + READ pooled. Plus a luminal-only breast
+  tumors only, v2 gene set, genes with TPM >= 1 in >= 10% of tumors. COAD + READ pooled. Plus a luminal-only breast
   network BRCA_LUM (D65). 29 networks.
 - **Identity vs signaling edges** (`48_identity_edges.R`, D82; diagnostic, regulons unchanged): every edge of the TF-only
   networks is tested against subtype labels: histology / cell type (our subtype groups: BRCA PAM50, CESC, ESCA, LGG,
@@ -135,21 +135,12 @@ reasons in `genes_v2_dropped.tsv`):
   ones drugs are read through: BRCA ESR1 51% of targets, XBP1 46%, GATA3 45%, FOXA1 35% (MYC 1%, E2F1 7%); ESCA
   HNF1A / HNF1B / FOXA2 / FOXA3 / PDX1 82-89%, HNF4A 73%, GATA6 58%, TP63 47%; BLCA molecular GATA3 75%, PPARG 74%.
   Highest per network: ESCA 6-7%, LGG / TGCT 4%, SARC 3.5%, BRCA 3.3%; COADREAD 0%.
-  *In plain language:* a network built from mixed tumor types can list a gene as a regulator's target only because
-  both genes are high in one tumor type and low in another. Those "identity" links describe what a cell is; a drug,
-  which acts within hours, cannot change them. The step checks every link: if it disappears once tumor type is taken
-  into account, it is identity; if it remains inside each tumor type, it is signaling. Most links are signaling, but
-  for the regulators that define a tumor type (ESR1 in breast, HNF4A or TP63 in esophagus) about half are identity,
-  so drugs acting on them may be misread. Whether to score drugs with signaling-only lists is a separate decision.
 - **Signaling-only target lists** (`49_signaling_regulons.R`, D83; comparison, production lists unchanged): from the
   TF-only lists, drop the D82 identity-only edges, keep signaling and weak ones as they are. **sig1** (main): identity
   under the histology labels; **sig2**: histology or molecular labels; **base**: the current lists under a separate name.
   sig1 removes 0.2-5.8% of edges in the 8 networks with histology labels (COADREAD none) and puts 12 regulators below
   10 targets; sig2 changes 25 networks. All three arms run group VIPER with one fixed seed per group (`50_viper.R`
-  `SEED_GROUP=1 GROUP_ONLY=1`), so they share the null; then the drug side (celligner `scripts/d83_run.sh`).
-  *In plain language:* we remove the links that only reflect tumor type, rerun everything with the cleaner lists and
-  the current ones side by side, and keep the cleaner lists only if anti-estrogens move up in luminal breast cancer
-  without the knockdown test or the known-biology checks getting worse (D83).
+  `SEED_GROUP=1 GROUP_ONLY=1`), so they share the null; then the drug side (`scripts/d83_run.sh`).
   *Result (2026-11-01):* the rule is met for both arms but the effect is small: anti-estrogens LumA 9.7 -> 12.3, LumB
   23.4 -> 26.0 (percentile of `spec_mech`); knockdown 0.597 -> 0.599; controls unchanged (77 / 4); drug rankings almost
   unchanged (median rho 1.00, lowest 0.986). The remaining problem is on the drug side: ARACNe's ESR1 list reads
@@ -253,18 +244,6 @@ subgrouping (D79; D26 awaits PI confirmation).
   XBP1 on each network, target overlap with the pooled regulon and the share of Hallmark estrogen-response genes (early +
   late). Why: D81 tests whether scores change, but a regulon can shift from luminal-identity genes to estrogen-responsive
   genes while its score keeps the same sign; that shift matters for how anti-estrogens read on the drug side.
-
-  *In plain language:* when ESR1 looks "on" in a luminal tumor, is that because estrogen signaling is on, or only
-  because the tumor is luminal-type? ARACNe calls a gene an ESR1 target when it rises and falls with ESR1 across tumors.
-  In the pooled network (luminal + basal tumors), many "luminal genes" do that just because they are luminal, so they
-  get counted as targets. In the luminal-only network those genes no longer stand out, so the list should be closer to
-  what estrogen really controls. The check asks two things for ESR1 (and FOXA1, GATA3, XBP1): how much did the target
-  list change, and does the new list contain more genes from a standard list of ~300 known estrogen-response genes,
-  switched on by ESR1 as expected? A network built from fewer tumors changes its lists a bit anyway, so the same check
-  runs on the three control networks; only a change bigger than theirs counts. It matters because drugs are scored with
-  these lists: if ESR1's list is mostly luminal genes, an anti-estrogen may barely register (it switches off estrogen
-  signaling but does not make a cell less luminal). The check decides nothing by itself; the D81 test does. It helps
-  explain that result.
   *Result:* BRCA_LUM regulons are a third the size (ESR1 450 -> 154 targets; half shared with pooled vs ~70% for the
   controls) but not more estrogen-specific (9.1% estrogen-response genes vs 11.1% pooled, 10.4-11.9% controls). The
   ESR1 targets BRCA_LUM drops are mostly identity-only by D82 (59%), the ones it keeps mostly signaling (85%): two
@@ -333,21 +312,14 @@ named from the TCGA subtypes of their members:
   `defining_top.tsv`): feature differences vs the sibling, with small programs (modules < 10 regulators, single
   regulators) marked. Many small programs are chromosome-19 zinc-finger groups; check before reporting.
 
-## Drug side (celligner branch)
+## Drug side
 
-Summary; full detail in `celligner:docs/PIPELINE_DRUG_SIDE_V2.md` and caveats in
-`celligner:docs/notes/drug_side_decisions_and_caveats.md` (C18-C23).
-
-1. **Cell-line matching** (Celligner): each patient is matched to DepMap lines of the same tissue; disease and subgroup
-   line weights (`74`, `74b`).
-2. **Drug activity:** LINCS drug signatures in cancer lines, each line's average drug response removed, scored with
-   VIPER on the ARACNe TF regulons and on CollecTRI (`79c`, `79d`).
-3. **Target check** (`79b`): a drug stays on a disease's list if one of its targets is expressed.
-4. **Ranking** (`79l` -> `79e` -> `79i`): every regulator weighted by its disease NES (D74); consensus of ARACNe TF and
-   CollecTRI (D75); flags for drugs tested only in unlike cell lines (D76) and for borrowed drugs with low transfer
-   confidence (D77); evidence status per disease (D78); proliferation split; reports lead with specificity (D80).
-5. **Literature and FDA** (`79o`, `79p`): PubMed / ClinicalTrials.gov links for top pairs; FDA-approved rankings from
-   Drugs@FDA; browsable page `celligner:results/lincs/fda_rankings_v2.html`.
+Full detail: [`PIPELINE_DRUG_SIDE_V2.md`](PIPELINE_DRUG_SIDE_V2.md); caveats C1-C25 in
+[`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md). In short: Celligner matches
+patients to same-tissue DepMap lines; LINCS drug profiles (each line's average drug response removed) are read through
+the ARACNe TF and CollecTRI regulons; drugs are ranked by NES-weighted reversal of each disease's regulators (D74,
+consensus D75), specificity and its proliferation-removed form `spec_mech` (D80), with flags (D76, D77), evidence
+status (D78) and data gaps (C24). Runbook `scripts/run_v2_drug.sh`, after `scripts/run_v2.sh`.
 
 ## Where the main outputs are
 
@@ -360,20 +332,18 @@ Summary; full detail in `celligner:docs/PIPELINE_DRUG_SIDE_V2.md` and caveats in
 | Does a group have subgroups? | `results/step8_v2_tf_no_c8/consistency.tsv`, `decision.tsv` |
 | Subgroups and their patients | `results/step10_v2/strata.tsv`, `stratum_patients.tsv` |
 | A subgroup's master regulators | `results/step6/aracne_project_v2_tf_strata/group_mr.tsv` |
-| Drug ranking per disease / subgroup | celligner `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv` |
-| Evidence status per disease | celligner `results/lincs/drug_reversal_summary_v2_consensus.tsv` |
-| FDA-approved drugs per cohort | celligner `results/lincs/fda_ranking_v2_consensus.tsv`, `fda_rankings_v2.html` |
+| Drug ranking per disease / subgroup | `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv` |
+| Evidence status, data gaps per disease | `results/lincs/drug_reversal_summary_v2_consensus.tsv`, `data_gaps_v2.tsv` |
+| FDA-approved drugs per cohort | `results/lincs/fda_ranking_v2_consensus.tsv`, `fda_rankings_v2.html` |
 
 ## Open items
 
-- D26 recurring module: subgroups are defined without it (D79); PI to confirm.
-- D60 kidney reference; A37 LGG purity covariate (tabled).
-- **BRCA_LUM test (D65, D68, D81): done, not material** (2026-11-01). LumA / LumB stay on the pooled network.
-- **Signaling-only regulons (D82 follow-up):** decide whether drugs are scored on regulons without identity-only edges,
-  and the validation rule (knockdown benchmark, controls, anti-estrogens) before looking.
-- Step 7 questions (2026-10-29): keep the D18 confirmed rule as is (its curated part adds almost nothing)? Does the low
-  ARACNe vs CollecTRI agreement change the drug-side consensus (D75)? TF-only networks lose more edges to technical
-  adjustment (4.0% vs 1.9%; UCS 12%).
-- Step 9 replication of the new subgroups; `86` variability rerun for the D79 subgroups.
-- Drug side: PRISM / GDSC validation on hold; confirm or drop the oddities in specificity lists (cardiac glycosides,
-  pentobarbital, metronidazole).
+Full list with owners: `DECISIONS.md` section 3.
+- PI: D26 recurring module (subgroups are defined without it, D79); D60 kidney reference (21 donors). User: A37 LGG
+  purity covariate (tabled).
+- Signaling-only lists (D83): the rule was met but the effect is small; roll sig1 out to production or not (user).
+- Step 7: keep the D18 confirmed rule as is (its curated part adds almost nothing)? Accept the TF-only networks' higher
+  loss to technical adjustment (4.0% vs 1.9%; UCS 12%)?
+- Rerun `86` (variability) for the D79 subgroups; Step 9 replication of the new subgroups (cohorts to choose).
+- Drug side: PRISM / GDSC validation (on hold); lineage-matched scoring (C24, reported only); check the recurring
+  oddities in specificity lists (cardiac glycosides, pentobarbital, metronidazole).

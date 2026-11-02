@@ -7,7 +7,7 @@
 #   scripts/run_v2.sh show <step>      print the command without running it
 # Logs: logs/v2_<step>.log. Env overrides: R (Rscript), PY (python), N_CORES.
 # Long steps: aracne_build / aracne_build_tf take days (run on a large machine; resumable).
-# Drug side: celligner branch, scripts/run_v2_drug.sh.
+# Drug side: scripts/run_v2_drug.sh (after this runbook).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 R=${R:-$HOME/miniforge3/envs/repurposing/bin/Rscript}

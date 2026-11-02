@@ -36,9 +36,9 @@
   - BRCA female-only throughout (`restrict_sex` in `config/subtype_splits.tsv`; PI: male breast cancer is biologically distinct): 79 female GTEx donors; 13 male tumors (5 LumA, 8 LumB) and 1 male adjacent normal dropped. No BRCA model has a sex term.
   - 40 groups now have a protein-coding signature (58 contrasts).
   - Extended signature (protein-coding + lincRNA + antisense; `GENESET=extended`) in `results/step4_extended/` for mechanism work only; drug matching uses protein-coding. Protein-coding z identical between runs (Spearman >= 0.997); ~5.9k lincRNA + 4.5k antisense genes pass filterByExpr.
-- Scope decision (PI, 2026-10-01): Steps 5-7 for all groups with a signature; Steps 8-10 for BRCA and COAD/READ. De-prioritize hematologic tumors (AML/ALL/DLBC): limited and more variable data. Steps 5-10 data requirements in `docs/PROJECT_PLAN_steps5-10.md`.
+- Scope decision (PI, 2026-10-01): Steps 5-7 for all groups with a signature; Steps 8-10 for BRCA and COAD/READ. De-prioritize hematologic tumors (AML/ALL/DLBC): limited and more variable data. Steps 5-10 data requirements in `docs/archive/PROJECT_PLAN_steps5-10.md`.
 - Environment moved to R 4.5.3 / Bioconductor 3.22 when the Steps 5-10 packages were installed; Steps 3-4 rerun (ESTIMATE identical; z Pearson >= 0.9998 vs R 4.4).
-- Hematologic normal references: recount3 / GDC search recorded in `docs/normal_reference_search.md`; parked per PI.
+- Hematologic normal references: recount3 / GDC search recorded in `docs/archive/normal_reference_search.md`; parked per PI.
 - Step 5 (regulons):
   - `scripts/40_id_map.py` -> `results/step5/id_map.tsv`: GENCODE v23 Ensembl -> current HGNC (Ensembl match, then symbol, unique previous symbol, unique alias). 97.4% of protein-coding genes mapped (522 unmapped, mostly retired clone names); 5,113 v23 symbols have since been renamed, so symbol joins would have lost them. `primary_for_hgnc` picks one v23 gene per HGNC record (176 duplicates dropped).
   - `tf_universe.tsv`: Lambert 2018 'Is TF? = Yes' (1,639; 1,634 in v23).
@@ -53,7 +53,7 @@
   - `scripts/51_compare_mr.R`: per-group counts at FDR < 0.10, regulator x group NES matrix, known-biology controls.
 - Step 6 CollecTRI results (all 41 groups): at FDR < 0.05 / 0.10 / 0.25, 12 / 17 / 33 groups have >= 1 regulator (64 distinct regulators at 0.10, 176 at 0.25). Passing count unrelated to group size (Spearman with n_tumor -0.25). Known-biology checks ~90% correct direction; 13 pass at 0.10, 26 at 0.25 (gain mostly E2F1 proliferation). Groups with nothing even at 0.25: THCA, SKCM, PAAD, LUAD, PRAD, READ, ACC, ESCA-AD.
 - Mechanism heterogeneity (large groups): patients correlate with their group's MR profile (median rho 0.6-0.9) but show only 15-36% of the group's top MRs as clearly altered; PC1 of patient NES is largely tumor purity (ESTIMATE R^2 0.6-0.92 in most large groups) -> adjust patient NES for purity before Step 8 clustering. Effective dimensionality 10-25.
-- Driver classes in our patients (`scripts/60_driver_classes.py` -> `results/step7/driver_classes.tsv`; MC3 PASS + GISTIC, functional events only): kinase-pathway alteration is similar in groups with and without regulators (median 68% vs 60%); kinase-driven null groups: THCA (BRAF 60%), SKCM (BRAF 48%, NRAS 30%), PAAD (KRAS 66%), LUAD, LumA (PIK3CA 36%). Literature summary: `docs/driver_mechanisms_null_groups.md`.
+- Driver classes in our patients (`scripts/60_driver_classes.py` -> `results/step7/driver_classes.tsv`; MC3 PASS + GISTIC, functional events only): kinase-pathway alteration is similar in groups with and without regulators (median 68% vs 60%); kinase-driven null groups: THCA (BRAF 60%), SKCM (BRAF 48%, NRAS 30%), PAAD (KRAS 66%), LUAD, LumA (PIK3CA 36%). Literature summary: `docs/archive/driver_mechanisms_null_groups.md`.
 - Subtype-split experiment (`scripts/52_subtype_test.R`; PanCanAtlas subtypes in 9 large groups, size-matched random controls): no gain (2 of 33 subtypes with any FDR < 0.10 regulator; median 0 for subtypes, random subsets and whole groups). Not pursued with CollecTRI.
 - Diagnosis: CollecTRI regulons do not match tissue context. Regulators with large own-mRNA increases have flat or wrongly signed CollecTRI targets (ESR1 in LumA z +22 but activated targets flat; SOX2 in LUSC +15 with 'repressed' targets up; ERG in PRAD with 'repressed' targets up). Testing tissue-specific ARACNe regulons (`scripts/53_aracne_precomputed_test.R`).
 - Step 6 (VIPER, project ARACNe arm; BRCA + COADREAD networks, 2026-10-04). `scripts/44_aracne_regulons.R` (aracne2regulon on network.txt + the cohort's ARACNe input matrix; full regulator set, no target cap - PI decision 2026-10-04) -> `data/processed/step5/regulons_aracne_project.rds` (BRCA 4,936 regulators / 284,818 edges; COADREAD 4,728 / 343,603). `scripts/50_viper.R` with `REGULON=aracne_project` (each group uses its cohort's network) -> `results/step6/aracne_project/`.
@@ -385,6 +385,14 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   not the estrogen response of cells. The consensus averages +2.2 and -2.4 to about zero. A proliferation explanation
   was checked and ruled out (1 of 122 negative targets is a proliferation gene).
 - Script fix during the run: `79s` first counted controls with the wrong label (0 passing); corrected before reading.
+
+## 2026-11-02: docs audit, celligner merged into main, plain-language versions
+- `celligner` merged into `main` (1e7d31b): drug-side code, results and docs are now on `main`, which holds all docs
+  from here on (user). Main kept its own versions of the docs it maintains.
+- Both technical docs checked against the code and results (paths, scripts, thresholds, counts): correct apart from
+  status lines, branch pointers and open items, now updated. `run_v2_drug.sh sync_disease` is a no-op on `main`.
+- New `DISEASE_SIDE_PLAIN_LANGUAGE.md` beside `DRUG_SIDE_PLAIN_LANGUAGE.md`; v1-era and finished docs moved to
+  `docs/archive/` (index there); README rewritten as the entry point.
 
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here

@@ -1,6 +1,6 @@
 # Data Requirements: Steps 5–10
 
-> **Status 2026-10-31: original plan** received 2026-10-01, kept for reference. How the pipeline actually runs: [`PIPELINE_V2.md`](PIPELINE_V2.md).
+> **Status 2026-10-31: original plan** received 2026-10-01, kept for reference. How the pipeline actually runs: [`PIPELINE_V2.md`](../PIPELINE_V2.md).
 
 Mechanism-grounded Subset-Level Drug Repurposing — Phase B (regulons, VIPER, master regulators) and Phase C (stratification). Received 2026-10-01; condensed copy. Project-specific notes marked **[NOTE]**.
 

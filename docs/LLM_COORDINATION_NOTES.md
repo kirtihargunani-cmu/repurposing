@@ -8,7 +8,7 @@ collects requirements as they come up, so the design starts from them. Add an en
 
 ### R1. Say what evidence each disease's drug list rests on (user 2026-10-28; D76-D78)
 Every disease (and subgroup) result must state its evidence status, taken from `drug_reversal_summary*.tsv`
-(`scripts/79e_drug_reversal.py`, celligner branch):
+(`scripts/79e_drug_reversal.py`):
 
 | Column | Meaning |
 |---|---|
@@ -43,8 +43,7 @@ report one drug list for the parent and say the subgroups do not differ in predi
 If a step has no good-quality data for a disease, the report says so and names the step ("no good-quality data at
 <step>: <reason>"), instead of showing results built on poor data. The rule applies at every step; where a step has a
 data-quality check, its output gives the step and the reason.
-- **Drug side (implemented):** `results/lincs/data_gaps_v2.tsv` and `data_gaps_strata_v2.tsv` (`79r_data_gaps.py`,
-  celligner branch). When `good_quality_data` is False, the layer shows `data_gap_note` and no drug list. Steps:
+- **Drug side (implemented):** `results/lincs/data_gaps_v2.tsv` and `data_gaps_strata_v2.tsv` (`79r_data_gaps.py`). When `good_quality_data` is False, the layer shows `data_gap_note` and no drug list. Steps:
   D1 no DepMap line of the disease's cell type; D2 no such line has good-quality LINCS compound data; D1b the lines with
   data do not resemble the disease (line match < 0.1); D2b the matched lines carry fewer than 10 compounds. Example:
   ESCA-SCC: "No good-quality data at drug-side Step 1, cell-line matching (Celligner resemblance): the squamous cell
@@ -59,5 +58,4 @@ data-quality check, its output gives the step and the reason.
 ## Related rules the layer should respect
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
   reports them and does not tune them.
-- Caveats per result live in `docs/DECISIONS.md` (disease side) and `docs/notes/drug_side_decisions_and_caveats.md`
-  (celligner branch); a report about a disease should carry the caveats that apply to it.
+- Caveats per result live in `docs/DECISIONS.md` (disease side) and `docs/notes/drug_side_decisions_and_caveats.md`; a report about a disease should carry the caveats that apply to it.
