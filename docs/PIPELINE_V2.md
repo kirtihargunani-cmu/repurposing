@@ -55,7 +55,7 @@ flowchart TD
 | 7 | Master-regulator rules, diagnostics | `51`, `58`, `59`, `62`, `66`, `67` | done 10-29 on the corrected null; BRCA_LUM test (D81) 11-01 |
 | 8 | Patient clustering, subgroup keep rule | `80`, `84` | done 10-28 |
 | 9 | Replication in external cohorts | `90`-`94` | not run on v2 |
-| 10 | Subgroups: signatures, VIPER, variability, what defines them | `85`, `30` / `50` STRATA=, `86`, `87` | done 10-29; `86` still on the D72 list |
+| 10 | Subgroups: signatures, VIPER, variability, what defines them | `85`, `30` / `50` STRATA=, `86`, `87` | done 10-29; variability vs cohorts (`86`) 11-02 |
 | Drug | Cell lines, drug activity, ranking, flags, data gaps, literature, FDA | `70`-`79s` (`scripts/run_v2_drug.sh`) | done 11-01; PRISM / GDSC validation on hold |
 
 ---
@@ -305,9 +305,16 @@ named from the TCGA subtypes of their members:
 - **VIPER at group and patient level** (`... STRATA=results/step10_v2/stratum_patients.tsv Rscript scripts/50_viper.R`,
   for the TF arm, CollecTRI and DoRothEA -> `results/step6/<set>_strata/`). Group level gives each subgroup's master
   regulators; patient level lets us measure how much patients vary inside a subgroup.
-- **Variability inside subgroups** (`scripts/86_subgroup_variability.R` -> `results/step10_v2/variability*.tsv`):
-  coherence of patients with their subgroup's profile, effective dimensionality, PC associations with plate, purity,
-  quality. (Run on the earlier D72 subgroups; rerun for D79 pending.)
+- **Variability inside subgroups, vs all 41 cohorts** (`scripts/86_subgroup_variability.R` ->
+  `results/step10_v2/variability.tsv`, `variability_pcs.tsv`, `variability_vs_cohorts.tsv`): per subgroup, parent and
+  cohort, total spread (summed regulator NES variance), coherence (patient vs leave-one-out mean, Spearman), effective
+  dimension, and PC1 vs plate / purity / quality; coherence and dimension also at a fixed 30 patients (20 subsamples),
+  as both depend on size. *Result (2026-11-02):* 13 of 14 subgroups have less spread than their cohort (0.53-0.94 of
+  it; LGG LGr2 1.07) and 11 sit in the lowest quarter of the 41 cohorts; coherence rises in 10 of 14 (falls in
+  HNSC-atypical, LGr2, PHEO-pseudohypoxia, THCA-RAS); patients are closer to their own subgroup than to the sibling in
+  85-100% of cases. Effective dimension rises in 13 of 14, so the pre-set rule (coherence up and dimension down) passes
+  none; splitting removes the parent's main axis, which raises dimension by itself, so total spread (added after the
+  first run) is the better measure. PC1 tracks plate above chance in TGCT-SEM C1 / C2 (0.20, 0.23) and COAD-CIN (0.23).
 - **What defines each subgroup** (`scripts/87_subgroup_characterize.R` -> `results/step10_v2/defining_features.tsv`,
   `defining_top.tsv`): feature differences vs the sibling, with small programs (modules < 10 regulators, single
   regulators) marked. Many small programs are chromosome-19 zinc-finger groups; check before reporting.
@@ -344,6 +351,6 @@ Full list with owners: `DECISIONS.md` section 3.
 - Signaling-only lists (D83): the rule was met but the effect is small; roll sig1 out to production or not (user).
 - Step 7: keep the D18 confirmed rule as is (its curated part adds almost nothing)? Accept the TF-only networks' higher
   loss to technical adjustment (4.0% vs 1.9%; UCS 12%)?
-- Rerun `86` (variability) for the D79 subgroups; Step 9 replication of the new subgroups (cohorts to choose).
+- Step 9 replication of the new subgroups (cohorts to choose); residual plate along PC1 in TGCT-SEM C1 / C2 and COAD-CIN.
 - Drug side: PRISM / GDSC validation (on hold); lineage-matched scoring (C24, reported only); check the recurring
   oddities in specificity lists (cardiac glycosides, pentobarbital, metronidazole).

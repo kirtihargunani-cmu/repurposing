@@ -1,0 +1,15 @@
+subgroup	parent	n_patients	eff_dim_n30	coherence_n30	eff_dim_pct_among_cohorts	coherence_pct_among_cohorts	total_var	total_var_pct_among_cohorts	total_var_ratio_to_parent	parent_eff_dim_n30	parent_coherence_n30	own_vs_sibling	pc1_plate_excess	tighter_than_parent	less_spread_than_parent
+BLCA-basal-squamous-like	TCGA-BLCA	172	9.39	0.82	82.9	26.8	526.2	14.6	0.77	6.4	0.782	0.895	0.055	FALSE	TRUE
+BLCA-luminal-like	TCGA-BLCA	235	9.56	0.844	82.9	31.7	548.9	17.1	0.81	6.4	0.782	0.962	0.016	FALSE	TRUE
+HNSC-basal-mesenchymal-like	TCGA-HNSC	363	8.85	0.85	78	34.1	590.7	22	0.67	5.39	0.787	0.983	0.032	FALSE	TRUE
+HNSC-atypical-classical-like	TCGA-HNSC	155	7.5	0.737	68.3	9.8	755.1	53.7	0.86	5.39	0.787	0.955	0.095	FALSE	TRUE
+LGG-noncodel-LGr2	LGG-IDHmut-noncodel	89	3.7	0.945	9.8	92.7	484.4	12.2	1.07	4.16	0.954	0.854	0.002	FALSE	FALSE
+LGG-noncodel-LGr3	LGG-IDHmut-noncodel	152	6.57	0.966	51.2	97.6	267.7	0	0.59	4.16	0.954	0.947	0.012	FALSE	TRUE
+PHEO-pseudohypoxia-Wnt	PCPG-PHEO	69	8.45	0.827	70.7	26.8	773.4	58.5	0.94	5.11	0.852	0.87	0.001	FALSE	TRUE
+PHEO-kinase-signaling	PCPG-PHEO	77	9.23	0.921	80.5	75.6	478.9	12.2	0.58	5.11	0.852	0.987	0.079	FALSE	TRUE
+THCA-BRAF-like-classical	TCGA-THCA	296	6.46	0.957	48.8	95.1	352.5	0	0.53	3.47	0.916	1	0.008	FALSE	TRUE
+THCA-RAS-like-follicular	TCGA-THCA	208	4.46	0.868	17.1	39	569.8	19.5	0.85	3.47	0.916	0.846	0.11	FALSE	TRUE
+TGCT-SEM-C1	TGCT-SEM	32	7.89	0.977	70.7	100	308.7	0	0.66	4.59	0.963	0.969	0.2	FALSE	TRUE
+TGCT-SEM-C2	TGCT-SEM	30	4.92	0.974	26.8	100	360.4	0	0.78	4.59	0.963	0.967	0.228	FALSE	TRUE
+COAD-CIN-like	TCGA-COAD	194	9.36	0.884	82.9	43.9	624.7	26.8	0.74	4.83	0.84	0.964	0.23	FALSE	TRUE
+COAD-MSI-like	TCGA-COAD	93	8.02	0.881	70.7	43.9	541.4	17.1	0.65	4.83	0.84	0.978	0.055	FALSE	TRUE
