@@ -1,0 +1,6 @@
+media/
+slides/
+__pycache__/
+*.mp4
+deck.html
+manim-env/

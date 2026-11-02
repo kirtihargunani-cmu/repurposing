@@ -1,0 +1,1184 @@
+{
+ "celligner_luad_top_lines": [
+  {
+   "line": "SW 900",
+   "weight": 0.0589,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "NCI-H2009",
+   "weight": 0.0352,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "NCI-H1373",
+   "weight": 0.0343,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "LCLC-97TM1",
+   "weight": 0.0332,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "HCC-78",
+   "weight": 0.0329,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "NCI-H2087",
+   "weight": 0.0326,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "NCI-H1838",
+   "weight": 0.032,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  },
+  {
+   "line": "NCI-H3122",
+   "weight": 0.0307,
+   "lineage": "Lung",
+   "in_tissue_key": true
+  }
+ ],
+ "worked_examples": {
+  "BRCA-LumB|palbociclib": {
+   "rev": 11.867,
+   "n_regulators": 997,
+   "n_positive": 501,
+   "top_positive": [
+    {
+     "regulator": "ZNF367",
+     "disease_nes": 4.371,
+     "drug_activity": -15.966,
+     "contribution": 1.425,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "E2F7",
+     "disease_nes": 4.078,
+     "drug_activity": -15.521,
+     "contribution": 1.292,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "E2F8",
+     "disease_nes": 4.288,
+     "drug_activity": -13.747,
+     "contribution": 1.204,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "MYBL1",
+     "disease_nes": 4.373,
+     "drug_activity": -9.943,
+     "contribution": 0.888,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "CENPA",
+     "disease_nes": 3.934,
+     "drug_activity": -10.889,
+     "contribution": 0.875,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "ZNF726",
+     "disease_nes": 3.976,
+     "drug_activity": -8.701,
+     "contribution": 0.706,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "E2F1",
+     "disease_nes": 3.422,
+     "drug_activity": -8.05,
+     "contribution": 0.562,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "YBX2",
+     "disease_nes": 3.734,
+     "drug_activity": -6.972,
+     "contribution": 0.532,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "CHCHD3",
+     "disease_nes": 3.606,
+     "drug_activity": -6.649,
+     "contribution": 0.49,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "E2F2",
+     "disease_nes": 3.541,
+     "drug_activity": -6.451,
+     "contribution": 0.466,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "TGIF2",
+     "disease_nes": 3.508,
+     "drug_activity": -5.619,
+     "contribution": 0.402,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "ZNF530",
+     "disease_nes": 3.041,
+     "drug_activity": -6.095,
+     "contribution": 0.378,
+     "prolif_linked": true
+    }
+   ],
+   "top_negative": [
+    {
+     "regulator": "ZNF462",
+     "disease_nes": -2.558,
+     "drug_activity": -3.658,
+     "contribution": -0.191
+    },
+    {
+     "regulator": "ZNF90",
+     "disease_nes": -2.516,
+     "drug_activity": -3.984,
+     "contribution": -0.205
+    },
+    {
+     "regulator": "TBX19",
+     "disease_nes": -3.426,
+     "drug_activity": -3.036,
+     "contribution": -0.212
+    },
+    {
+     "regulator": "ZNF300",
+     "disease_nes": -3.348,
+     "drug_activity": -3.249,
+     "contribution": -0.222
+    },
+    {
+     "regulator": "ZNF689",
+     "disease_nes": 2.526,
+     "drug_activity": 4.45,
+     "contribution": -0.23
+    },
+    {
+     "regulator": "CXXC5",
+     "disease_nes": 2.149,
+     "drug_activity": 5.252,
+     "contribution": -0.23
+    }
+   ]
+  },
+  "TCGA-LUAD|erlotinib": {
+   "rev": 22.69,
+   "n_regulators": 1061,
+   "n_positive": 647,
+   "top_positive": [
+    {
+     "regulator": "CHCHD3",
+     "disease_nes": 2.968,
+     "drug_activity": -6.52,
+     "contribution": 0.408,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "ZNF219",
+     "disease_nes": -2.755,
+     "drug_activity": 5.37,
+     "contribution": 0.312,
+     "prolif_linked": false
+    },
+    {
+     "regulator": "MSANTD3",
+     "disease_nes": 2.642,
+     "drug_activity": -5.319,
+     "contribution": 0.296,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "ATOH8",
+     "disease_nes": -3.143,
+     "drug_activity": 4.284,
+     "contribution": 0.284,
+     "prolif_linked": false
+    },
+    {
+     "regulator": "DNTTIP1",
+     "disease_nes": 3.564,
+     "drug_activity": -3.766,
+     "contribution": 0.283,
+     "prolif_linked": false
+    },
+    {
+     "regulator": "PA2G4",
+     "disease_nes": 2.158,
+     "drug_activity": -5.296,
+     "contribution": 0.241,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "SGSM2",
+     "disease_nes": -2.696,
+     "drug_activity": 4.164,
+     "contribution": 0.237,
+     "prolif_linked": false
+    },
+    {
+     "regulator": "TCF7L1",
+     "disease_nes": -3.348,
+     "drug_activity": 3.352,
+     "contribution": 0.237,
+     "prolif_linked": false
+    },
+    {
+     "regulator": "ZNF367",
+     "disease_nes": 2.567,
+     "drug_activity": -4.288,
+     "contribution": 0.232,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "EBF4",
+     "disease_nes": -2.311,
+     "drug_activity": 4.667,
+     "contribution": 0.228,
+     "prolif_linked": false
+    },
+    {
+     "regulator": "PRMT3",
+     "disease_nes": 2.158,
+     "drug_activity": -4.706,
+     "contribution": 0.214,
+     "prolif_linked": true
+    },
+    {
+     "regulator": "TFEB",
+     "disease_nes": -2.929,
+     "drug_activity": 3.38,
+     "contribution": 0.209,
+     "prolif_linked": false
+    }
+   ],
+   "top_negative": [
+    {
+     "regulator": "UBP1",
+     "disease_nes": -0.973,
+     "drug_activity": -4.075,
+     "contribution": -0.084
+    },
+    {
+     "regulator": "TGFB1I1",
+     "disease_nes": -1.94,
+     "drug_activity": -2.115,
+     "contribution": -0.087
+    },
+    {
+     "regulator": "ZBTB34",
+     "disease_nes": -1.649,
+     "drug_activity": -2.495,
+     "contribution": -0.087
+    },
+    {
+     "regulator": "KLF6",
+     "disease_nes": -1.569,
+     "drug_activity": -2.742,
+     "contribution": -0.091
+    },
+    {
+     "regulator": "NR2F6",
+     "disease_nes": 1.047,
+     "drug_activity": 4.143,
+     "contribution": -0.092
+    },
+    {
+     "regulator": "CREB3L4",
+     "disease_nes": 1.583,
+     "drug_activity": 5.339,
+     "contribution": -0.178
+    }
+   ]
+  }
+ },
+ "controls": [
+  {
+   "unit": "BRCA-LumA",
+   "expected": "high",
+   "drug": "fulvestrant",
+   "rev": 72.0,
+   "spec": 17.8,
+   "spec_mech": 14.5,
+   "prolif_share": 0.6
+  },
+  {
+   "unit": "BRCA-LumA",
+   "expected": "high",
+   "drug": "tamoxifen",
+   "rev": 85.1,
+   "spec": 45.9,
+   "spec_mech": 49.1,
+   "prolif_share": 0.8
+  },
+  {
+   "unit": "BRCA-LumA",
+   "expected": "high",
+   "drug": "raloxifene",
+   "rev": 36.2,
+   "spec": 6.2,
+   "spec_mech": 5.3,
+   "prolif_share": 0.4
+  },
+  {
+   "unit": "BRCA-LumA",
+   "expected": "high",
+   "drug": "palbociclib",
+   "rev": 59.0,
+   "spec": 17.3,
+   "spec_mech": 22.1,
+   "prolif_share": 0.5
+  },
+  {
+   "unit": "BRCA-LumB",
+   "expected": "high",
+   "drug": "fulvestrant",
+   "rev": 91.9,
+   "spec": 50.9,
+   "spec_mech": 28.9,
+   "prolif_share": 1.0
+  },
+  {
+   "unit": "BRCA-LumB",
+   "expected": "high",
+   "drug": "tamoxifen",
+   "rev": 95.0,
+   "spec": 72.6,
+   "spec_mech": 61.8,
+   "prolif_share": 0.6
+  },
+  {
+   "unit": "BRCA-LumB",
+   "expected": "high",
+   "drug": "raloxifene",
+   "rev": 74.7,
+   "spec": 31.2,
+   "spec_mech": 15.2,
+   "prolif_share": 0.6
+  },
+  {
+   "unit": "BRCA-LumB",
+   "expected": "high",
+   "drug": "palbociclib",
+   "rev": 88.7,
+   "spec": 55.1,
+   "spec_mech": 30.1,
+   "prolif_share": 0.7
+  },
+  {
+   "unit": "TCGA-PRAD",
+   "expected": "high",
+   "drug": "flutamide",
+   "rev": 85.4,
+   "spec": 84.4,
+   "spec_mech": 86.7,
+   "prolif_share": 0.1
+  },
+  {
+   "unit": "TCGA-COAD",
+   "expected": "high",
+   "drug": "fluorouracil",
+   "rev": 80.6,
+   "spec": 56.6,
+   "spec_mech": 59.0,
+   "prolif_share": 0.5
+  },
+  {
+   "unit": "TCGA-COAD",
+   "expected": "high",
+   "drug": "irinotecan",
+   "rev": 62.6,
+   "spec": 98.5,
+   "spec_mech": 97.3,
+   "prolif_share": 0.1
+  },
+  {
+   "unit": "TCGA-LUAD",
+   "expected": "high",
+   "drug": "erlotinib",
+   "rev": 96.2,
+   "spec": 96.1,
+   "spec_mech": 93.9,
+   "prolif_share": 0.4
+  },
+  {
+   "unit": "TCGA-LUAD",
+   "expected": "high",
+   "drug": "gefitinib",
+   "rev": 86.6,
+   "spec": 87.5,
+   "spec_mech": 82.7,
+   "prolif_share": 0.4
+  },
+  {
+   "unit": "TCGA-LUAD",
+   "expected": "high",
+   "drug": "afatinib",
+   "rev": 17.1,
+   "spec": 39.8,
+   "spec_mech": 50.7,
+   "prolif_share": 0.7
+  },
+  {
+   "unit": "BRCA-Basal",
+   "expected": "low",
+   "drug": "fulvestrant",
+   "rev": 99.9,
+   "spec": 99.7,
+   "spec_mech": 98.7,
+   "prolif_share": 0.4
+  },
+  {
+   "unit": "BRCA-Basal",
+   "expected": "low",
+   "drug": "tamoxifen",
+   "rev": 98.7,
+   "spec": 97.0,
+   "spec_mech": 96.7,
+   "prolif_share": 0.5
+  },
+  {
+   "unit": "BRCA-Basal",
+   "expected": "low",
+   "drug": "raloxifene",
+   "rev": 97.2,
+   "spec": 95.8,
+   "spec_mech": 92.1,
+   "prolif_share": 0.5
+  }
+ ],
+ "evidence_status_counts": {
+  "borrowed only": 27,
+  "matched": 14
+ },
+ "evidence_status": [
+  {
+   "group": "BRCA-Basal",
+   "status": "borrowed only",
+   "best_line": "BT-20",
+   "best_line_match": 0.0181
+  },
+  {
+   "group": "BRCA-Her2",
+   "status": "matched",
+   "best_line": "SK-BR-3",
+   "best_line_match": 0.223
+  },
+  {
+   "group": "BRCA-LumA",
+   "status": "matched",
+   "best_line": "BT-474",
+   "best_line_match": 0.3543
+  },
+  {
+   "group": "BRCA-LumB",
+   "status": "matched",
+   "best_line": "MCF7",
+   "best_line_match": 0.6297
+  },
+  {
+   "group": "CESC-AD",
+   "status": "matched",
+   "best_line": "HeLa",
+   "best_line_match": 0.2114
+  },
+  {
+   "group": "CESC-SCC",
+   "status": "borrowed only",
+   "best_line": "HeLa",
+   "best_line_match": 0.0494
+  },
+  {
+   "group": "ESCA-AD",
+   "status": "matched",
+   "best_line": "AGS",
+   "best_line_match": 0.2456
+  },
+  {
+   "group": "ESCA-SCC",
+   "status": "borrowed only",
+   "best_line": "AGS",
+   "best_line_match": 0.0009
+  },
+  {
+   "group": "LGG-IDHmut-codel",
+   "status": "borrowed only",
+   "best_line": "LN-229",
+   "best_line_match": 0.0001
+  },
+  {
+   "group": "LGG-IDHmut-noncodel",
+   "status": "borrowed only",
+   "best_line": "LN-229",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "LGG-IDHwt",
+   "status": "borrowed only",
+   "best_line": "LN-229",
+   "best_line_match": 0.0001
+  },
+  {
+   "group": "PCPG-PGL",
+   "status": "borrowed only",
+   "best_line": "SH-SY5Y",
+   "best_line_match": 0.0222
+  },
+  {
+   "group": "PCPG-PHEO",
+   "status": "borrowed only",
+   "best_line": "SK-N-SH",
+   "best_line_match": 0.0038
+  },
+  {
+   "group": "SARC-DDLPS",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "SARC-LMS",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "SARC-UPS",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TARGET-NBL",
+   "status": "matched",
+   "best_line": "SH-SY5Y",
+   "best_line_match": 0.2974
+  },
+  {
+   "group": "TARGET-WT",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-ACC",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-BLCA",
+   "status": "borrowed only",
+   "best_line": "VM-CUB1",
+   "best_line_match": 0.0422
+  },
+  {
+   "group": "TCGA-COAD",
+   "status": "matched",
+   "best_line": "HT115",
+   "best_line_match": 1.0
+  },
+  {
+   "group": "TCGA-GBM",
+   "status": "borrowed only",
+   "best_line": "LN-229",
+   "best_line_match": 0.0001
+  },
+  {
+   "group": "TCGA-HNSC",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-KICH",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-KIRC",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-KIRP",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-LIHC",
+   "status": "matched",
+   "best_line": "Hep G2",
+   "best_line_match": 1.0
+  },
+  {
+   "group": "TCGA-LUAD",
+   "status": "matched",
+   "best_line": "HCC-15",
+   "best_line_match": 0.2788
+  },
+  {
+   "group": "TCGA-LUSC",
+   "status": "borrowed only",
+   "best_line": "NCI-H2073",
+   "best_line_match": 0.0295
+  },
+  {
+   "group": "TCGA-OV",
+   "status": "borrowed only",
+   "best_line": "OC 314",
+   "best_line_match": 0.1393
+  },
+  {
+   "group": "TCGA-PAAD",
+   "status": "matched",
+   "best_line": "YAPC",
+   "best_line_match": 0.148
+  },
+  {
+   "group": "TCGA-PRAD",
+   "status": "matched",
+   "best_line": "VCaP",
+   "best_line_match": 0.4279
+  },
+  {
+   "group": "TCGA-READ",
+   "status": "matched",
+   "best_line": "HT115",
+   "best_line_match": 0.5415
+  },
+  {
+   "group": "TCGA-SKCM",
+   "status": "matched",
+   "best_line": "SK-MEL-5",
+   "best_line_match": 0.879
+  },
+  {
+   "group": "TCGA-STAD",
+   "status": "matched",
+   "best_line": "AGS",
+   "best_line_match": 0.1384
+  },
+  {
+   "group": "TCGA-THCA",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TCGA-UCS",
+   "status": "borrowed only",
+   "best_line": "MFE-319",
+   "best_line_match": 0.5451
+  },
+  {
+   "group": "TGCT-NSGCT",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "TGCT-SEM",
+   "status": "borrowed only",
+   "best_line": "",
+   "best_line_match": 0.0
+  },
+  {
+   "group": "UCEC-EEC",
+   "status": "borrowed only",
+   "best_line": "MFE-319",
+   "best_line_match": 1.0
+  },
+  {
+   "group": "UCEC-SER",
+   "status": "borrowed only",
+   "best_line": "MFE-319",
+   "best_line_match": 0.4865
+  }
+ ],
+ "data_gap_counts": {
+  "D1b": 8,
+  "pass": 14,
+  "D2": 12,
+  "D1": 4,
+  "D2b": 3
+ },
+ "data_gaps": [
+  {
+   "group": "BRCA-Basal",
+   "step": "D1b"
+  },
+  {
+   "group": "BRCA-Her2",
+   "step": "pass"
+  },
+  {
+   "group": "BRCA-LumA",
+   "step": "pass"
+  },
+  {
+   "group": "BRCA-LumB",
+   "step": "pass"
+  },
+  {
+   "group": "CESC-AD",
+   "step": "pass"
+  },
+  {
+   "group": "CESC-SCC",
+   "step": "D1b"
+  },
+  {
+   "group": "ESCA-AD",
+   "step": "pass"
+  },
+  {
+   "group": "ESCA-SCC",
+   "step": "D1b"
+  },
+  {
+   "group": "LGG-IDHmut-codel",
+   "step": "D2"
+  },
+  {
+   "group": "LGG-IDHmut-noncodel",
+   "step": "D2"
+  },
+  {
+   "group": "LGG-IDHwt",
+   "step": "D1b"
+  },
+  {
+   "group": "PCPG-PGL",
+   "step": "D1"
+  },
+  {
+   "group": "PCPG-PHEO",
+   "step": "D1"
+  },
+  {
+   "group": "SARC-DDLPS",
+   "step": "D2"
+  },
+  {
+   "group": "SARC-LMS",
+   "step": "D2"
+  },
+  {
+   "group": "SARC-UPS",
+   "step": "D2"
+  },
+  {
+   "group": "TARGET-NBL",
+   "step": "pass"
+  },
+  {
+   "group": "TARGET-WT",
+   "step": "D2"
+  },
+  {
+   "group": "TCGA-ACC",
+   "step": "D2"
+  },
+  {
+   "group": "TCGA-BLCA",
+   "step": "D2b"
+  },
+  {
+   "group": "TCGA-COAD",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-GBM",
+   "step": "D1b"
+  },
+  {
+   "group": "TCGA-HNSC",
+   "step": "D1b"
+  },
+  {
+   "group": "TCGA-KICH",
+   "step": "D1"
+  },
+  {
+   "group": "TCGA-KIRC",
+   "step": "D2"
+  },
+  {
+   "group": "TCGA-KIRP",
+   "step": "D2"
+  },
+  {
+   "group": "TCGA-LIHC",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-LUAD",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-LUSC",
+   "step": "D1b"
+  },
+  {
+   "group": "TCGA-OV",
+   "step": "D2b"
+  },
+  {
+   "group": "TCGA-PAAD",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-PRAD",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-READ",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-SKCM",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-STAD",
+   "step": "pass"
+  },
+  {
+   "group": "TCGA-THCA",
+   "step": "D2"
+  },
+  {
+   "group": "TCGA-UCS",
+   "step": "D2"
+  },
+  {
+   "group": "TGCT-NSGCT",
+   "step": "D2"
+  },
+  {
+   "group": "TGCT-SEM",
+   "step": "D1"
+  },
+  {
+   "group": "UCEC-EEC",
+   "step": "D2b"
+  },
+  {
+   "group": "UCEC-SER",
+   "step": "D1b"
+  }
+ ],
+ "fda_top3": {
+  "BRCA-Basal": [
+   "Temsirolimus",
+   "Pyrimethamine",
+   "Gedatolisib"
+  ],
+  "BRCA-Her2": [
+   "Temsirolimus",
+   "Osimertinib Mesylate",
+   "Gedatolisib"
+  ],
+  "BRCA-LumA": [
+   "Epirubicin Hydrochloride",
+   "Daunorubicin Hydrochloride",
+   "Idarubicin Hydrochloride"
+  ],
+  "BRCA-LumB": [
+   "Epirubicin Hydrochloride",
+   "Daunorubicin Hydrochloride",
+   "Idarubicin Hydrochloride"
+  ],
+  "CESC-AD": [
+   "Mercaptopurine",
+   "Defactinib Hydrochloride",
+   "Selinexor"
+  ],
+  "CESC-SCC": [
+   "Sirolimus",
+   "Fedratinib Hydrochloride",
+   "Lovastatin"
+  ],
+  "ESCA-AD": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Topotecan Hydrochloride"
+  ],
+  "ESCA-SCC": [
+   "Daunorubicin Hydrochloride",
+   "Epirubicin Hydrochloride",
+   "Doxorubicin Hydrochloride"
+  ],
+  "LGG-IDHmut-codel": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Epirubicin Hydrochloride"
+  ],
+  "LGG-IDHmut-noncodel": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Epirubicin Hydrochloride"
+  ],
+  "LGG-IDHwt": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Epirubicin Hydrochloride"
+  ],
+  "PCPG-PGL": [
+   "Metronidazole",
+   "Pioglitazone Hydrochloride",
+   "Belumosudil Mesylate"
+  ],
+  "PCPG-PHEO": [
+   "Metronidazole",
+   "Perampanel",
+   "Digitoxin"
+  ],
+  "SARC-DDLPS": [
+   "Selinexor",
+   "Gedatolisib",
+   "Defactinib Hydrochloride"
+  ],
+  "SARC-LMS": [
+   "Pioglitazone Hydrochloride",
+   "Belumosudil Mesylate",
+   "Eptifibatide"
+  ],
+  "SARC-UPS": [
+   "Selinexor",
+   "Defactinib Hydrochloride",
+   "Trametinib"
+  ],
+  "TARGET-NBL": [
+   "Floxuridine",
+   "Trifluridine",
+   "Vinblastine Sulfate"
+  ],
+  "TARGET-WT": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Topotecan Hydrochloride"
+  ],
+  "TCGA-ACC": [
+   "Metronidazole",
+   "Artesunate",
+   "Azacitidine"
+  ],
+  "TCGA-BLCA": [
+   "Defactinib Hydrochloride",
+   "Nelfinavir Mesylate",
+   "Phenytoin Sodium"
+  ],
+  "TCGA-COAD": [
+   "Cytarabine",
+   "Tofacitinib Citrate",
+   "Doxorubicin Hydrochloride"
+  ],
+  "TCGA-GBM": [
+   "Givinostat Hydrochloride",
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride"
+  ],
+  "TCGA-HNSC": [
+   "Fostamatinib Disodium",
+   "Ibrutinib",
+   "Sunitinib Malate"
+  ],
+  "TCGA-KICH": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Sonidegib Phosphate"
+  ],
+  "TCGA-KIRC": [
+   "Doxorubicin Hydrochloride",
+   "Daunorubicin Hydrochloride",
+   "Topotecan Hydrochloride"
+  ],
+  "TCGA-KIRP": [
+   "Topotecan Hydrochloride",
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride"
+  ],
+  "TCGA-LIHC": [
+   "Digitoxin",
+   "Niclosamide",
+   "Omacetaxine Mepesuccinate"
+  ],
+  "TCGA-LUAD": [
+   "Tofacitinib Citrate",
+   "Temsirolimus",
+   "Dasatinib"
+  ],
+  "TCGA-LUSC": [
+   "Temsirolimus",
+   "Gedatolisib",
+   "Tofacitinib Citrate"
+  ],
+  "TCGA-OV": [
+   "Azacitidine",
+   "Fedratinib Hydrochloride",
+   "Pentobarbital Sodium"
+  ],
+  "TCGA-PAAD": [
+   "Fedratinib Hydrochloride",
+   "Omacetaxine Mepesuccinate",
+   "Metronidazole"
+  ],
+  "TCGA-PRAD": [
+   "Panobinostat Lactate",
+   "Azacitidine",
+   "Belinostat"
+  ],
+  "TCGA-READ": [
+   "Cytarabine",
+   "Doxorubicin Hydrochloride",
+   "Calcitriol"
+  ],
+  "TCGA-SKCM": [
+   "Clofarabine",
+   "Artesunate",
+   "Ciclopirox"
+  ],
+  "TCGA-STAD": [
+   "Doxorubicin Hydrochloride",
+   "Daunorubicin Hydrochloride",
+   "Epirubicin Hydrochloride"
+  ],
+  "TCGA-THCA": [
+   "Azacitidine",
+   "Omacetaxine Mepesuccinate",
+   "Selinexor"
+  ],
+  "TCGA-UCS": [
+   "Omacetaxine Mepesuccinate",
+   "Azacitidine",
+   "Metronidazole"
+  ],
+  "TGCT-NSGCT": [
+   "Mirdametinib",
+   "Fostamatinib Disodium",
+   "Selumetinib Sulfate"
+  ],
+  "TGCT-SEM": [
+   "Daunorubicin Hydrochloride",
+   "Doxorubicin Hydrochloride",
+   "Epirubicin Hydrochloride"
+  ],
+  "UCEC-EEC": [
+   "Azacitidine",
+   "Omacetaxine Mepesuccinate",
+   "Defactinib Hydrochloride"
+  ],
+  "UCEC-SER": [
+   "Omacetaxine Mepesuccinate",
+   "Azacitidine",
+   "Artesunate"
+  ]
+ },
+ "fda_top3_subgroups": {
+  "BLCA-basal-squamous-like": [
+   "Cabozantinib",
+   "Fostamatinib Disodium",
+   "Valdecoxib"
+  ],
+  "BLCA-luminal-like": [
+   "Belumosudil Mesylate",
+   "Vincristine Sulfate",
+   "Ingenol Mebutate"
+  ],
+  "COAD-CIN-like": [
+   "Cytarabine",
+   "Gemcitabine Hydrochloride",
+   "Cladribine"
+  ],
+  "COAD-MSI-like": [
+   "Trametinib",
+   "Binimetinib",
+   "Mirdametinib"
+  ],
+  "HNSC-atypical-classical-like": [
+   "Vincristine Sulfate",
+   "Vinblastine Sulfate",
+   "Ciclopirox"
+  ],
+  "HNSC-basal-mesenchymal-like": [
+   "Topotecan Hydrochloride",
+   "Azathioprine",
+   "Regorafenib"
+  ],
+  "LGG-noncodel-LGr2": [
+   "Vincristine Sulfate",
+   "Lovastatin",
+   "Quizartinib Dihydrochloride"
+  ],
+  "LGG-noncodel-LGr3": [
+   "Daunorubicin Hydrochloride",
+   "Binimetinib",
+   "Epirubicin Hydrochloride"
+  ],
+  "PHEO-kinase-signaling": [
+   "Ciclopirox",
+   "Everolimus",
+   "Vinblastine Sulfate"
+  ],
+  "PHEO-pseudohypoxia-Wnt": [
+   "Omacetaxine Mepesuccinate",
+   "Dacomitinib",
+   "Artesunate"
+  ],
+  "TGCT-SEM-C1": [
+   "Vorinostat",
+   "Fedratinib Hydrochloride",
+   "Givinostat Hydrochloride"
+  ],
+  "TGCT-SEM-C2": [
+   "Sonidegib Phosphate",
+   "Thioridazine Hydrochloride",
+   "Pacritinib Citrate"
+  ],
+  "THCA-BRAF-like-classical": [
+   "Panobinostat Lactate",
+   "Romidepsin",
+   "Teniposide"
+  ],
+  "THCA-RAS-like-follicular": [
+   "Ciclopirox",
+   "Trifluridine",
+   "Pitavastatin Calcium"
+  ]
+ },
+ "pipeline_facts": {
+  "disease_groups": 49,
+  "patients": 10211,
+  "genes_v2": 17784,
+  "signature_groups": 41,
+  "aracne_networks": 29,
+  "subgroups": 14,
+  "lincs_drugs": 3058,
+  "fda_matched_drugs": 527,
+  "generic_drugs_by_rev": 32,
+  "low_transfer_share_pct": 11.5,
+  "knockdown_tfs": 336
+ }
+}
