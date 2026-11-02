@@ -90,13 +90,18 @@ That gives **14 subgroups in 7 cancers**:
 | Seminoma | C1 (32) / C2 (30) |
 | Colon (exception) | CIN-like (194) / MSI-like (93) |
 
+**Subgroups are more uniform than whole cancers.** 13 of 14 subgroups vary less from patient to patient than their
+parent cancer (53-94% of its spread; the exception is glioma LGr2, 107%). 11 of 14 are as uniform as the most
+uniform quarter of all 41 cancers. Patients resemble their own subgroup more than the sibling one in 85-100% of
+cases. In the two seminoma subgroups and colon CIN-like, the main remaining difference between patients partly
+follows lab batch.
+
 The names come from the known TCGA subtypes of their patients. The glioma and seminoma pairs barely differ in drug
 response, so the drug side reports one list for each of them.
 
 ## What is not done yet
 
 - **Replication of the new subgroups** in other patient cohorts (cohorts to choose).
-- The **within-subgroup variability check** still runs on an older subgroup list and needs a rerun.
 - **For the PI:** the recurring block (D26) and the kidney reference, which has only 21 donors (D60).
 - **For the user:**
   - whether to adopt the identity-free target lists (D83);

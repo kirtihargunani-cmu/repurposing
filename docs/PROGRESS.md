@@ -394,6 +394,17 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - New `DISEASE_SIDE_PLAIN_LANGUAGE.md` beside `DRUG_SIDE_PLAIN_LANGUAGE.md`; v1-era and finished docs moved to
   `docs/archive/` (index there); README rewritten as the entry point.
 
+## 2026-11-02: variability inside the D79 subgroups, compared with the 41 cohorts
+- `86` rerun on the 14 D79 subgroups, plus every cohort with all its patients (user). Size-matched measures (30
+  patients, 20 subsamples) fixed before looking; seeding made reproducible across workers (L'Ecuyer).
+- Total spread (summed NES variance): 13 of 14 subgroups below their cohort (ratio 0.53-0.94; LGG LGr2 1.07); 11 of 14
+  in the lowest quarter of cohorts (cohort median 738, range 377-1,933). Coherence at n = 30 up in 10 of 14; own vs
+  sibling 0.85-1.00 (median 0.96).
+- Pre-set rule (coherence up and effective dimension down): 0 of 14, because effective dimension rises in 13 of 14:
+  removing the parent's main axis (the split) spreads the rest over more axes. Total spread was added after the first
+  run and is labelled so in the script.
+- PC1 plate excess > 0.15 in TGCT-SEM C1 / C2 and COAD-CIN.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

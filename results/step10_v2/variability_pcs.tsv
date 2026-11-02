@@ -1,80 +1,80 @@
 unit	pc	var_explained	covariate	r2	chance
-TCGA-BLCA	1	0.305	plate	0.09	0.069
+TCGA-BLCA	1	0.305	plate	0.09	0.067
 TCGA-BLCA	1	0.305	estimate	0	
 TCGA-BLCA	1	0.305	quality	0	
 TCGA-BLCA	1	0.305	age	0	
 TCGA-BLCA	1	0.305	sex	0.003	
-TCGA-BLCA	2	0.115	plate	0.075	0.068
+TCGA-BLCA	2	0.115	plate	0.075	0.069
 TCGA-BLCA	2	0.115	estimate	0.003	
 TCGA-BLCA	2	0.115	quality	0	
 TCGA-BLCA	2	0.115	age	0.029	
 TCGA-BLCA	2	0.115	sex	0.002	
-TCGA-BLCA	3	0.087	plate	0.082	0.068
+TCGA-BLCA	3	0.087	plate	0.082	0.07
 TCGA-BLCA	3	0.087	estimate	0	
 TCGA-BLCA	3	0.087	quality	0	
 TCGA-BLCA	3	0.087	age	0.029	
 TCGA-BLCA	3	0.087	sex	0	
-TCGA-BLCA	4	0.058	plate	0.115	0.068
+TCGA-BLCA	4	0.058	plate	0.115	0.071
 TCGA-BLCA	4	0.058	estimate	0.001	
 TCGA-BLCA	4	0.058	quality	0	
 TCGA-BLCA	4	0.058	age	0.001	
 TCGA-BLCA	4	0.058	sex	0	
-TCGA-BLCA	5	0.039	plate	0.107	0.07
+TCGA-BLCA	5	0.039	plate	0.107	0.066
 TCGA-BLCA	5	0.039	estimate	0.007	
 TCGA-BLCA	5	0.039	quality	0	
 TCGA-BLCA	5	0.039	age	0.022	
 TCGA-BLCA	5	0.039	sex	0.005	
-BLCA-basal-squamous-like	1	0.207	plate	0.21	0.153
+BLCA-basal-squamous-like	1	0.207	plate	0.21	0.155
 BLCA-basal-squamous-like	1	0.207	estimate	0	
 BLCA-basal-squamous-like	1	0.207	quality	0	
 BLCA-basal-squamous-like	1	0.207	age	0	
 BLCA-basal-squamous-like	1	0.207	sex	0.029	
-BLCA-basal-squamous-like	2	0.111	plate	0.113	0.149
+BLCA-basal-squamous-like	2	0.111	plate	0.113	0.152
 BLCA-basal-squamous-like	2	0.111	estimate	0.02	
 BLCA-basal-squamous-like	2	0.111	quality	0.004	
 BLCA-basal-squamous-like	2	0.111	age	0	
 BLCA-basal-squamous-like	2	0.111	sex	0.008	
-BLCA-basal-squamous-like	3	0.089	plate	0.22	0.157
+BLCA-basal-squamous-like	3	0.089	plate	0.22	0.151
 BLCA-basal-squamous-like	3	0.089	estimate	0.03	
 BLCA-basal-squamous-like	3	0.089	quality	0	
 BLCA-basal-squamous-like	3	0.089	age	0.005	
 BLCA-basal-squamous-like	3	0.089	sex	0	
-BLCA-basal-squamous-like	4	0.075	plate	0.14	0.141
+BLCA-basal-squamous-like	4	0.075	plate	0.14	0.155
 BLCA-basal-squamous-like	4	0.075	estimate	0.012	
 BLCA-basal-squamous-like	4	0.075	quality	0.064	
 BLCA-basal-squamous-like	4	0.075	age	0	
 BLCA-basal-squamous-like	4	0.075	sex	0.039	
-BLCA-basal-squamous-like	5	0.05	plate	0.137	0.147
+BLCA-basal-squamous-like	5	0.05	plate	0.137	0.153
 BLCA-basal-squamous-like	5	0.05	estimate	0.031	
 BLCA-basal-squamous-like	5	0.05	quality	0.002	
 BLCA-basal-squamous-like	5	0.05	age	0.011	
 BLCA-basal-squamous-like	5	0.05	sex	0.001	
-BLCA-luminal-like	1	0.184	plate	0.121	0.103
+BLCA-luminal-like	1	0.184	plate	0.121	0.105
 BLCA-luminal-like	1	0.184	estimate	0.006	
 BLCA-luminal-like	1	0.184	quality	0.003	
 BLCA-luminal-like	1	0.184	age	0.1	
 BLCA-luminal-like	1	0.184	sex	0.005	
-BLCA-luminal-like	2	0.126	plate	0.148	0.103
+BLCA-luminal-like	2	0.126	plate	0.148	0.109
 BLCA-luminal-like	2	0.126	estimate	0.06	
 BLCA-luminal-like	2	0.126	quality	0.005	
 BLCA-luminal-like	2	0.126	age	0	
 BLCA-luminal-like	2	0.126	sex	0.002	
-BLCA-luminal-like	3	0.115	plate	0.1	0.104
+BLCA-luminal-like	3	0.115	plate	0.1	0.109
 BLCA-luminal-like	3	0.115	estimate	0.053	
 BLCA-luminal-like	3	0.115	quality	0.012	
 BLCA-luminal-like	3	0.115	age	0.029	
 BLCA-luminal-like	3	0.115	sex	0	
-BLCA-luminal-like	4	0.061	plate	0.198	0.101
+BLCA-luminal-like	4	0.061	plate	0.198	0.104
 BLCA-luminal-like	4	0.061	estimate	0	
 BLCA-luminal-like	4	0.061	quality	0.015	
 BLCA-luminal-like	4	0.061	age	0	
 BLCA-luminal-like	4	0.061	sex	0	
-BLCA-luminal-like	5	0.05	plate	0.097	0.105
+BLCA-luminal-like	5	0.05	plate	0.097	0.107
 BLCA-luminal-like	5	0.05	estimate	0.068	
 BLCA-luminal-like	5	0.05	quality	0.001	
 BLCA-luminal-like	5	0.05	age	0.023	
 BLCA-luminal-like	5	0.05	sex	0.009	
-TCGA-HNSC	1	0.372	plate	0.067	0.035
+TCGA-HNSC	1	0.372	plate	0.067	0.037
 TCGA-HNSC	1	0.372	estimate	0.001	
 TCGA-HNSC	1	0.372	quality	0	
 TCGA-HNSC	1	0.372	age	0	
@@ -84,7 +84,7 @@ TCGA-HNSC	2	0.127	estimate	0.001
 TCGA-HNSC	2	0.127	quality	0.001	
 TCGA-HNSC	2	0.127	age	0	
 TCGA-HNSC	2	0.127	sex	0.005	
-TCGA-HNSC	3	0.061	plate	0.06	0.035
+TCGA-HNSC	3	0.061	plate	0.06	0.031
 TCGA-HNSC	3	0.061	estimate	0.004	
 TCGA-HNSC	3	0.061	quality	0.001	
 TCGA-HNSC	3	0.061	age	0.001	
@@ -94,22 +94,22 @@ TCGA-HNSC	4	0.049	estimate	0.001
 TCGA-HNSC	4	0.049	quality	0	
 TCGA-HNSC	4	0.049	age	0.015	
 TCGA-HNSC	4	0.049	sex	0	
-TCGA-HNSC	5	0.044	plate	0.134	0.035
+TCGA-HNSC	5	0.044	plate	0.134	0.034
 TCGA-HNSC	5	0.044	estimate	0.002	
 TCGA-HNSC	5	0.044	quality	0	
 TCGA-HNSC	5	0.044	age	0.002	
 TCGA-HNSC	5	0.044	sex	0	
-HNSC-basal-mesenchymal-like	1	0.222	plate	0.082	0.051
+HNSC-basal-mesenchymal-like	1	0.222	plate	0.082	0.05
 HNSC-basal-mesenchymal-like	1	0.222	estimate	0.013	
 HNSC-basal-mesenchymal-like	1	0.222	quality	0.003	
 HNSC-basal-mesenchymal-like	1	0.222	age	0.003	
 HNSC-basal-mesenchymal-like	1	0.222	sex	0.06	
-HNSC-basal-mesenchymal-like	2	0.108	plate	0.048	0.047
+HNSC-basal-mesenchymal-like	2	0.108	plate	0.048	0.053
 HNSC-basal-mesenchymal-like	2	0.108	estimate	0	
 HNSC-basal-mesenchymal-like	2	0.108	quality	0.002	
 HNSC-basal-mesenchymal-like	2	0.108	age	0.03	
 HNSC-basal-mesenchymal-like	2	0.108	sex	0.004	
-HNSC-basal-mesenchymal-like	3	0.098	plate	0.071	0.05
+HNSC-basal-mesenchymal-like	3	0.098	plate	0.071	0.049
 HNSC-basal-mesenchymal-like	3	0.098	estimate	0	
 HNSC-basal-mesenchymal-like	3	0.098	quality	0.005	
 HNSC-basal-mesenchymal-like	3	0.098	age	0.018	
@@ -119,52 +119,352 @@ HNSC-basal-mesenchymal-like	4	0.071	estimate	0
 HNSC-basal-mesenchymal-like	4	0.071	quality	0	
 HNSC-basal-mesenchymal-like	4	0.071	age	0.005	
 HNSC-basal-mesenchymal-like	4	0.071	sex	0	
-HNSC-basal-mesenchymal-like	5	0.043	plate	0.13	0.05
+HNSC-basal-mesenchymal-like	5	0.043	plate	0.13	0.048
 HNSC-basal-mesenchymal-like	5	0.043	estimate	0.019	
 HNSC-basal-mesenchymal-like	5	0.043	quality	0.005	
 HNSC-basal-mesenchymal-like	5	0.043	age	0.001	
 HNSC-basal-mesenchymal-like	5	0.043	sex	0	
-HNSC-atypical-classical-like	1	0.275	plate	0.212	0.111
+HNSC-atypical-classical-like	1	0.275	plate	0.212	0.117
 HNSC-atypical-classical-like	1	0.275	estimate	0.047	
 HNSC-atypical-classical-like	1	0.275	quality	0	
 HNSC-atypical-classical-like	1	0.275	age	0.143	
 HNSC-atypical-classical-like	1	0.275	sex	0.042	
-HNSC-atypical-classical-like	2	0.107	plate	0.1	0.118
+HNSC-atypical-classical-like	2	0.107	plate	0.1	0.113
 HNSC-atypical-classical-like	2	0.107	estimate	0.01	
 HNSC-atypical-classical-like	2	0.107	quality	0.006	
 HNSC-atypical-classical-like	2	0.107	age	0.005	
 HNSC-atypical-classical-like	2	0.107	sex	0.009	
-HNSC-atypical-classical-like	3	0.077	plate	0.112	0.111
+HNSC-atypical-classical-like	3	0.077	plate	0.112	0.107
 HNSC-atypical-classical-like	3	0.077	estimate	0.025	
 HNSC-atypical-classical-like	3	0.077	quality	0.001	
 HNSC-atypical-classical-like	3	0.077	age	0.004	
 HNSC-atypical-classical-like	3	0.077	sex	0.003	
-HNSC-atypical-classical-like	4	0.062	plate	0.481	0.101
+HNSC-atypical-classical-like	4	0.062	plate	0.481	0.109
 HNSC-atypical-classical-like	4	0.062	estimate	0.025	
 HNSC-atypical-classical-like	4	0.062	quality	0.004	
 HNSC-atypical-classical-like	4	0.062	age	0.006	
 HNSC-atypical-classical-like	4	0.062	sex	0.005	
-HNSC-atypical-classical-like	5	0.05	plate	0.077	0.115
+HNSC-atypical-classical-like	5	0.05	plate	0.077	0.109
 HNSC-atypical-classical-like	5	0.05	estimate	0.008	
 HNSC-atypical-classical-like	5	0.05	quality	0.01	
 HNSC-atypical-classical-like	5	0.05	age	0.034	
 HNSC-atypical-classical-like	5	0.05	sex	0.001	
-TCGA-COAD	1	0.403	plate	0.043	0.066
+LGG-IDHmut-noncodel	1	0.431	plate	0.099	0.067
+LGG-IDHmut-noncodel	1	0.431	estimate	0.01	
+LGG-IDHmut-noncodel	1	0.431	quality	0	
+LGG-IDHmut-noncodel	1	0.431	age	0.001	
+LGG-IDHmut-noncodel	1	0.431	sex	0.019	
+LGG-IDHmut-noncodel	2	0.158	plate	0.089	0.065
+LGG-IDHmut-noncodel	2	0.158	estimate	0	
+LGG-IDHmut-noncodel	2	0.158	quality	0.001	
+LGG-IDHmut-noncodel	2	0.158	age	0	
+LGG-IDHmut-noncodel	2	0.158	sex	0.008	
+LGG-IDHmut-noncodel	3	0.083	plate	0.281	0.072
+LGG-IDHmut-noncodel	3	0.083	estimate	0.001	
+LGG-IDHmut-noncodel	3	0.083	quality	0.006	
+LGG-IDHmut-noncodel	3	0.083	age	0.002	
+LGG-IDHmut-noncodel	3	0.083	sex	0.002	
+LGG-IDHmut-noncodel	4	0.052	plate	0.194	0.068
+LGG-IDHmut-noncodel	4	0.052	estimate	0.001	
+LGG-IDHmut-noncodel	4	0.052	quality	0.001	
+LGG-IDHmut-noncodel	4	0.052	age	0.033	
+LGG-IDHmut-noncodel	4	0.052	sex	0.001	
+LGG-IDHmut-noncodel	5	0.044	plate	0.122	0.072
+LGG-IDHmut-noncodel	5	0.044	estimate	0.002	
+LGG-IDHmut-noncodel	5	0.044	quality	0.002	
+LGG-IDHmut-noncodel	5	0.044	age	0.004	
+LGG-IDHmut-noncodel	5	0.044	sex	0.02	
+LGG-noncodel-LGr2	1	0.512	plate	0.181	0.179
+LGG-noncodel-LGr2	1	0.512	estimate	0.073	
+LGG-noncodel-LGr2	1	0.512	quality	0.025	
+LGG-noncodel-LGr2	1	0.512	age	0.002	
+LGG-noncodel-LGr2	1	0.512	sex	0.064	
+LGG-noncodel-LGr2	2	0.114	plate	0.206	0.189
+LGG-noncodel-LGr2	2	0.114	estimate	0	
+LGG-noncodel-LGr2	2	0.114	quality	0.002	
+LGG-noncodel-LGr2	2	0.114	age	0.001	
+LGG-noncodel-LGr2	2	0.114	sex	0.004	
+LGG-noncodel-LGr2	3	0.077	plate	0.499	0.187
+LGG-noncodel-LGr2	3	0.077	estimate	0.002	
+LGG-noncodel-LGr2	3	0.077	quality	0	
+LGG-noncodel-LGr2	3	0.077	age	0.01	
+LGG-noncodel-LGr2	3	0.077	sex	0.016	
+LGG-noncodel-LGr2	4	0.05	plate	0.272	0.167
+LGG-noncodel-LGr2	4	0.05	estimate	0	
+LGG-noncodel-LGr2	4	0.05	quality	0	
+LGG-noncodel-LGr2	4	0.05	age	0.004	
+LGG-noncodel-LGr2	4	0.05	sex	0.003	
+LGG-noncodel-LGr2	5	0.038	plate	0.074	0.177
+LGG-noncodel-LGr2	5	0.038	estimate	0.019	
+LGG-noncodel-LGr2	5	0.038	quality	0.014	
+LGG-noncodel-LGr2	5	0.038	age	0.012	
+LGG-noncodel-LGr2	5	0.038	sex	0.01	
+LGG-noncodel-LGr3	1	0.259	plate	0.131	0.119
+LGG-noncodel-LGr3	1	0.259	estimate	0.004	
+LGG-noncodel-LGr3	1	0.259	quality	0.009	
+LGG-noncodel-LGr3	1	0.259	age	0.003	
+LGG-noncodel-LGr3	1	0.259	sex	0.005	
+LGG-noncodel-LGr3	2	0.172	plate	0.39	0.111
+LGG-noncodel-LGr3	2	0.172	estimate	0.006	
+LGG-noncodel-LGr3	2	0.172	quality	0.002	
+LGG-noncodel-LGr3	2	0.172	age	0.015	
+LGG-noncodel-LGr3	2	0.172	sex	0.02	
+LGG-noncodel-LGr3	3	0.106	plate	0.089	0.111
+LGG-noncodel-LGr3	3	0.106	estimate	0.001	
+LGG-noncodel-LGr3	3	0.106	quality	0.003	
+LGG-noncodel-LGr3	3	0.106	age	0	
+LGG-noncodel-LGr3	3	0.106	sex	0.006	
+LGG-noncodel-LGr3	4	0.076	plate	0.243	0.109
+LGG-noncodel-LGr3	4	0.076	estimate	0.002	
+LGG-noncodel-LGr3	4	0.076	quality	0.006	
+LGG-noncodel-LGr3	4	0.076	age	0.01	
+LGG-noncodel-LGr3	4	0.076	sex	0.013	
+LGG-noncodel-LGr3	5	0.071	plate	0.088	0.102
+LGG-noncodel-LGr3	5	0.071	estimate	0	
+LGG-noncodel-LGr3	5	0.071	quality	0	
+LGG-noncodel-LGr3	5	0.071	age	0.024	
+LGG-noncodel-LGr3	5	0.071	sex	0.002	
+PCPG-PHEO	1	0.367	plate	0.02	0.008
+PCPG-PHEO	1	0.367	estimate	0	
+PCPG-PHEO	1	0.367	quality	0	
+PCPG-PHEO	1	0.367	age	0.058	
+PCPG-PHEO	1	0.367	sex	0	
+PCPG-PHEO	2	0.105	plate	0	0.006
+PCPG-PHEO	2	0.105	estimate	0	
+PCPG-PHEO	2	0.105	quality	0.003	
+PCPG-PHEO	2	0.105	age	0.042	
+PCPG-PHEO	2	0.105	sex	0.001	
+PCPG-PHEO	3	0.079	plate	0.023	0.007
+PCPG-PHEO	3	0.079	estimate	0	
+PCPG-PHEO	3	0.079	quality	0	
+PCPG-PHEO	3	0.079	age	0.001	
+PCPG-PHEO	3	0.079	sex	0.009	
+PCPG-PHEO	4	0.063	plate	0.004	0.007
+PCPG-PHEO	4	0.063	estimate	0	
+PCPG-PHEO	4	0.063	quality	0.001	
+PCPG-PHEO	4	0.063	age	0.063	
+PCPG-PHEO	4	0.063	sex	0.001	
+PCPG-PHEO	5	0.045	plate	0.009	0.008
+PCPG-PHEO	5	0.045	estimate	0	
+PCPG-PHEO	5	0.045	quality	0	
+PCPG-PHEO	5	0.045	age	0.007	
+PCPG-PHEO	5	0.045	sex	0.01	
+PHEO-pseudohypoxia-Wnt	1	0.212	plate	0.019	0.018
+PHEO-pseudohypoxia-Wnt	1	0.212	estimate	0.043	
+PHEO-pseudohypoxia-Wnt	1	0.212	quality	0.001	
+PHEO-pseudohypoxia-Wnt	1	0.212	age	0.212	
+PHEO-pseudohypoxia-Wnt	1	0.212	sex	0.001	
+PHEO-pseudohypoxia-Wnt	2	0.133	plate	0.019	0.016
+PHEO-pseudohypoxia-Wnt	2	0.133	estimate	0.008	
+PHEO-pseudohypoxia-Wnt	2	0.133	quality	0.007	
+PHEO-pseudohypoxia-Wnt	2	0.133	age	0	
+PHEO-pseudohypoxia-Wnt	2	0.133	sex	0.036	
+PHEO-pseudohypoxia-Wnt	3	0.109	plate	0.021	0.019
+PHEO-pseudohypoxia-Wnt	3	0.109	estimate	0.017	
+PHEO-pseudohypoxia-Wnt	3	0.109	quality	0	
+PHEO-pseudohypoxia-Wnt	3	0.109	age	0.028	
+PHEO-pseudohypoxia-Wnt	3	0.109	sex	0.002	
+PHEO-pseudohypoxia-Wnt	4	0.087	plate	0.004	0.011
+PHEO-pseudohypoxia-Wnt	4	0.087	estimate	0.003	
+PHEO-pseudohypoxia-Wnt	4	0.087	quality	0.005	
+PHEO-pseudohypoxia-Wnt	4	0.087	age	0.002	
+PHEO-pseudohypoxia-Wnt	4	0.087	sex	0.014	
+PHEO-pseudohypoxia-Wnt	5	0.068	plate	0.001	0.017
+PHEO-pseudohypoxia-Wnt	5	0.068	estimate	0.054	
+PHEO-pseudohypoxia-Wnt	5	0.068	quality	0.014	
+PHEO-pseudohypoxia-Wnt	5	0.068	age	0.045	
+PHEO-pseudohypoxia-Wnt	5	0.068	sex	0	
+PHEO-kinase-signaling	1	0.188	plate	0.09	0.011
+PHEO-kinase-signaling	1	0.188	estimate	0.007	
+PHEO-kinase-signaling	1	0.188	quality	0.008	
+PHEO-kinase-signaling	1	0.188	age	0.012	
+PHEO-kinase-signaling	1	0.188	sex	0	
+PHEO-kinase-signaling	2	0.119	plate	0.002	0.012
+PHEO-kinase-signaling	2	0.119	estimate	0.021	
+PHEO-kinase-signaling	2	0.119	quality	0.011	
+PHEO-kinase-signaling	2	0.119	age	0.007	
+PHEO-kinase-signaling	2	0.119	sex	0.001	
+PHEO-kinase-signaling	3	0.111	plate	0.005	0.009
+PHEO-kinase-signaling	3	0.111	estimate	0.031	
+PHEO-kinase-signaling	3	0.111	quality	0	
+PHEO-kinase-signaling	3	0.111	age	0.006	
+PHEO-kinase-signaling	3	0.111	sex	0	
+PHEO-kinase-signaling	4	0.077	plate	0.007	0.012
+PHEO-kinase-signaling	4	0.077	estimate	0.236	
+PHEO-kinase-signaling	4	0.077	quality	0.003	
+PHEO-kinase-signaling	4	0.077	age	0.098	
+PHEO-kinase-signaling	4	0.077	sex	0.005	
+PHEO-kinase-signaling	5	0.069	plate	0.022	0.011
+PHEO-kinase-signaling	5	0.069	estimate	0.009	
+PHEO-kinase-signaling	5	0.069	quality	0.004	
+PHEO-kinase-signaling	5	0.069	age	0.003	
+PHEO-kinase-signaling	5	0.069	sex	0.002	
+TCGA-THCA	1	0.473	plate	0.082	0.033
+TCGA-THCA	1	0.473	estimate	0.002	
+TCGA-THCA	1	0.473	quality	0	
+TCGA-THCA	1	0.473	age	0.011	
+TCGA-THCA	1	0.473	sex	0	
+TCGA-THCA	2	0.138	plate	0.051	0.035
+TCGA-THCA	2	0.138	estimate	0.001	
+TCGA-THCA	2	0.138	quality	0	
+TCGA-THCA	2	0.138	age	0.021	
+TCGA-THCA	2	0.138	sex	0.005	
+TCGA-THCA	3	0.074	plate	0.059	0.036
+TCGA-THCA	3	0.074	estimate	0.002	
+TCGA-THCA	3	0.074	quality	0	
+TCGA-THCA	3	0.074	age	0.002	
+TCGA-THCA	3	0.074	sex	0.007	
+TCGA-THCA	4	0.054	plate	0.085	0.035
+TCGA-THCA	4	0.054	estimate	0.007	
+TCGA-THCA	4	0.054	quality	0.006	
+TCGA-THCA	4	0.054	age	0.001	
+TCGA-THCA	4	0.054	sex	0.007	
+TCGA-THCA	5	0.044	plate	0.155	0.035
+TCGA-THCA	5	0.044	estimate	0.001	
+TCGA-THCA	5	0.044	quality	0	
+TCGA-THCA	5	0.044	age	0.005	
+TCGA-THCA	5	0.044	sex	0	
+THCA-BRAF-like-classical	1	0.251	plate	0.064	0.056
+THCA-BRAF-like-classical	1	0.251	estimate	0.034	
+THCA-BRAF-like-classical	1	0.251	quality	0.003	
+THCA-BRAF-like-classical	1	0.251	age	0.012	
+THCA-BRAF-like-classical	1	0.251	sex	0	
+THCA-BRAF-like-classical	2	0.157	plate	0.068	0.059
+THCA-BRAF-like-classical	2	0.157	estimate	0.041	
+THCA-BRAF-like-classical	2	0.157	quality	0	
+THCA-BRAF-like-classical	2	0.157	age	0.01	
+THCA-BRAF-like-classical	2	0.157	sex	0.003	
+THCA-BRAF-like-classical	3	0.111	plate	0.094	0.06
+THCA-BRAF-like-classical	3	0.111	estimate	0.126	
+THCA-BRAF-like-classical	3	0.111	quality	0.017	
+THCA-BRAF-like-classical	3	0.111	age	0.012	
+THCA-BRAF-like-classical	3	0.111	sex	0	
+THCA-BRAF-like-classical	4	0.1	plate	0.05	0.055
+THCA-BRAF-like-classical	4	0.1	estimate	0.057	
+THCA-BRAF-like-classical	4	0.1	quality	0.002	
+THCA-BRAF-like-classical	4	0.1	age	0	
+THCA-BRAF-like-classical	4	0.1	sex	0.007	
+THCA-BRAF-like-classical	5	0.078	plate	0.319	0.06
+THCA-BRAF-like-classical	5	0.078	estimate	0.002	
+THCA-BRAF-like-classical	5	0.078	quality	0.012	
+THCA-BRAF-like-classical	5	0.078	age	0.002	
+THCA-BRAF-like-classical	5	0.078	sex	0.001	
+THCA-RAS-like-follicular	1	0.399	plate	0.196	0.086
+THCA-RAS-like-follicular	1	0.399	estimate	0.026	
+THCA-RAS-like-follicular	1	0.399	quality	0.001	
+THCA-RAS-like-follicular	1	0.399	age	0.058	
+THCA-RAS-like-follicular	1	0.399	sex	0.008	
+THCA-RAS-like-follicular	2	0.11	plate	0.179	0.078
+THCA-RAS-like-follicular	2	0.11	estimate	0.037	
+THCA-RAS-like-follicular	2	0.11	quality	0.015	
+THCA-RAS-like-follicular	2	0.11	age	0.006	
+THCA-RAS-like-follicular	2	0.11	sex	0.033	
+THCA-RAS-like-follicular	3	0.09	plate	0.072	0.088
+THCA-RAS-like-follicular	3	0.09	estimate	0.005	
+THCA-RAS-like-follicular	3	0.09	quality	0.006	
+THCA-RAS-like-follicular	3	0.09	age	0	
+THCA-RAS-like-follicular	3	0.09	sex	0.009	
+THCA-RAS-like-follicular	4	0.076	plate	0.113	0.079
+THCA-RAS-like-follicular	4	0.076	estimate	0.002	
+THCA-RAS-like-follicular	4	0.076	quality	0	
+THCA-RAS-like-follicular	4	0.076	age	0.011	
+THCA-RAS-like-follicular	4	0.076	sex	0.012	
+THCA-RAS-like-follicular	5	0.06	plate	0.138	0.086
+THCA-RAS-like-follicular	5	0.06	estimate	0.023	
+THCA-RAS-like-follicular	5	0.06	quality	0.007	
+THCA-RAS-like-follicular	5	0.06	age	0.001	
+THCA-RAS-like-follicular	5	0.06	sex	0.003	
+TGCT-SEM	1	0.394	plate	0.003	0.016
+TGCT-SEM	1	0.394	estimate	0	
+TGCT-SEM	1	0.394	quality	0	
+TGCT-SEM	1	0.394	age	0.032	
+TGCT-SEM	1	0.394	sex		
+TGCT-SEM	2	0.189	plate	0.045	0.016
+TGCT-SEM	2	0.189	estimate	0.001	
+TGCT-SEM	2	0.189	quality	0.002	
+TGCT-SEM	2	0.189	age	0.001	
+TGCT-SEM	2	0.189	sex		
+TGCT-SEM	3	0.095	plate	0.152	0.02
+TGCT-SEM	3	0.095	estimate	0	
+TGCT-SEM	3	0.095	quality	0.001	
+TGCT-SEM	3	0.095	age	0.102	
+TGCT-SEM	3	0.095	sex		
+TGCT-SEM	4	0.052	plate	0.004	0.019
+TGCT-SEM	4	0.052	estimate	0.001	
+TGCT-SEM	4	0.052	quality	0	
+TGCT-SEM	4	0.052	age	0	
+TGCT-SEM	4	0.052	sex		
+TGCT-SEM	5	0.037	plate	0.001	0.01
+TGCT-SEM	5	0.037	estimate	0	
+TGCT-SEM	5	0.037	quality	0.001	
+TGCT-SEM	5	0.037	age	0.011	
+TGCT-SEM	5	0.037	sex		
+TGCT-SEM-C1	1	0.243	plate	0.23	0.03
+TGCT-SEM-C1	1	0.243	estimate	0.001	
+TGCT-SEM-C1	1	0.243	quality	0.001	
+TGCT-SEM-C1	1	0.243	age	0.006	
+TGCT-SEM-C1	1	0.243	sex		
+TGCT-SEM-C1	2	0.193	plate	0.006	0.023
+TGCT-SEM-C1	2	0.193	estimate	0.001	
+TGCT-SEM-C1	2	0.193	quality	0.027	
+TGCT-SEM-C1	2	0.193	age	0.095	
+TGCT-SEM-C1	2	0.193	sex		
+TGCT-SEM-C1	3	0.101	plate	0.007	0.041
+TGCT-SEM-C1	3	0.101	estimate	0.019	
+TGCT-SEM-C1	3	0.101	quality	0.018	
+TGCT-SEM-C1	3	0.101	age	0.019	
+TGCT-SEM-C1	3	0.101	sex		
+TGCT-SEM-C1	4	0.079	plate	0.04	0.042
+TGCT-SEM-C1	4	0.079	estimate	0.012	
+TGCT-SEM-C1	4	0.079	quality	0.005	
+TGCT-SEM-C1	4	0.079	age	0.057	
+TGCT-SEM-C1	4	0.079	sex		
+TGCT-SEM-C1	5	0.07	plate	0.018	0.03
+TGCT-SEM-C1	5	0.07	estimate	0.002	
+TGCT-SEM-C1	5	0.07	quality	0.006	
+TGCT-SEM-C1	5	0.07	age	0	
+TGCT-SEM-C1	5	0.07	sex		
+TGCT-SEM-C2	1	0.402	plate	0.269	0.041
+TGCT-SEM-C2	1	0.402	estimate	0.001	
+TGCT-SEM-C2	1	0.402	quality	0.014	
+TGCT-SEM-C2	1	0.402	age	0.01	
+TGCT-SEM-C2	1	0.402	sex		
+TGCT-SEM-C2	2	0.149	plate	0.068	0.024
+TGCT-SEM-C2	2	0.149	estimate	0.032	
+TGCT-SEM-C2	2	0.149	quality	0.006	
+TGCT-SEM-C2	2	0.149	age	0.052	
+TGCT-SEM-C2	2	0.149	sex		
+TGCT-SEM-C2	3	0.095	plate	0.004	0.031
+TGCT-SEM-C2	3	0.095	estimate	0	
+TGCT-SEM-C2	3	0.095	quality	0.056	
+TGCT-SEM-C2	3	0.095	age	0.159	
+TGCT-SEM-C2	3	0.095	sex		
+TGCT-SEM-C2	4	0.065	plate	0.023	0.03
+TGCT-SEM-C2	4	0.065	estimate	0.002	
+TGCT-SEM-C2	4	0.065	quality	0.001	
+TGCT-SEM-C2	4	0.065	age	0.006	
+TGCT-SEM-C2	4	0.065	sex		
+TGCT-SEM-C2	5	0.045	plate	0.03	0.045
+TGCT-SEM-C2	5	0.045	estimate	0.015	
+TGCT-SEM-C2	5	0.045	quality	0.003	
+TGCT-SEM-C2	5	0.045	age	0	
+TGCT-SEM-C2	5	0.045	sex		
+TCGA-COAD	1	0.403	plate	0.043	0.063
 TCGA-COAD	1	0.403	estimate	0.001	
 TCGA-COAD	1	0.403	quality	0	
 TCGA-COAD	1	0.403	age	0	
 TCGA-COAD	1	0.403	sex	0.011	
-TCGA-COAD	2	0.108	plate	0.455	0.062
+TCGA-COAD	2	0.108	plate	0.455	0.058
 TCGA-COAD	2	0.108	estimate	0	
 TCGA-COAD	2	0.108	quality	0	
 TCGA-COAD	2	0.108	age	0.001	
 TCGA-COAD	2	0.108	sex	0.003	
-TCGA-COAD	3	0.061	plate	0.143	0.06
+TCGA-COAD	3	0.061	plate	0.143	0.065
 TCGA-COAD	3	0.061	estimate	0.001	
 TCGA-COAD	3	0.061	quality	0.001	
 TCGA-COAD	3	0.061	age	0.011	
 TCGA-COAD	3	0.061	sex	0.006	
-TCGA-COAD	4	0.059	plate	0.04	0.061
+TCGA-COAD	4	0.059	plate	0.04	0.059
 TCGA-COAD	4	0.059	estimate	0.003	
 TCGA-COAD	4	0.059	quality	0	
 TCGA-COAD	4	0.059	age	0.003	
@@ -174,22 +474,22 @@ TCGA-COAD	5	0.038	estimate	0
 TCGA-COAD	5	0.038	quality	0	
 TCGA-COAD	5	0.038	age	0.004	
 TCGA-COAD	5	0.038	sex	0.002	
-COAD-CIN-like	1	0.18	plate	0.309	0.074
+COAD-CIN-like	1	0.18	plate	0.309	0.079
 COAD-CIN-like	1	0.18	estimate	0.002	
 COAD-CIN-like	1	0.18	quality	0.001	
 COAD-CIN-like	1	0.18	age	0.003	
 COAD-CIN-like	1	0.18	sex	0.003	
-COAD-CIN-like	2	0.141	plate	0.312	0.082
+COAD-CIN-like	2	0.141	plate	0.312	0.083
 COAD-CIN-like	2	0.141	estimate	0.002	
 COAD-CIN-like	2	0.141	quality	0	
 COAD-CIN-like	2	0.141	age	0.001	
 COAD-CIN-like	2	0.141	sex	0.003	
-COAD-CIN-like	3	0.086	plate	0.103	0.082
+COAD-CIN-like	3	0.086	plate	0.103	0.085
 COAD-CIN-like	3	0.086	estimate	0	
 COAD-CIN-like	3	0.086	quality	0.001	
 COAD-CIN-like	3	0.086	age	0.004	
 COAD-CIN-like	3	0.086	sex	0.001	
-COAD-CIN-like	4	0.07	plate	0.123	0.082
+COAD-CIN-like	4	0.07	plate	0.123	0.085
 COAD-CIN-like	4	0.07	estimate	0.031	
 COAD-CIN-like	4	0.07	quality	0.004	
 COAD-CIN-like	4	0.07	age	0	
@@ -199,31 +499,481 @@ COAD-CIN-like	5	0.057	estimate	0.001
 COAD-CIN-like	5	0.057	quality	0	
 COAD-CIN-like	5	0.057	age	0.004	
 COAD-CIN-like	5	0.057	sex	0.002	
-COAD-MSI-like	1	0.201	plate	0.214	0.176
+COAD-MSI-like	1	0.201	plate	0.214	0.159
 COAD-MSI-like	1	0.201	estimate	0.08	
 COAD-MSI-like	1	0.201	quality	0	
 COAD-MSI-like	1	0.201	age	0.001	
 COAD-MSI-like	1	0.201	sex	0.001	
-COAD-MSI-like	2	0.148	plate	0.439	0.165
+COAD-MSI-like	2	0.148	plate	0.439	0.17
 COAD-MSI-like	2	0.148	estimate	0.004	
 COAD-MSI-like	2	0.148	quality	0.004	
 COAD-MSI-like	2	0.148	age	0.009	
 COAD-MSI-like	2	0.148	sex	0.002	
-COAD-MSI-like	3	0.132	plate	0.156	0.178
+COAD-MSI-like	3	0.132	plate	0.156	0.183
 COAD-MSI-like	3	0.132	estimate	0.079	
 COAD-MSI-like	3	0.132	quality	0.001	
 COAD-MSI-like	3	0.132	age	0.054	
 COAD-MSI-like	3	0.132	sex	0	
-COAD-MSI-like	4	0.08	plate	0.183	0.177
+COAD-MSI-like	4	0.08	plate	0.183	0.175
 COAD-MSI-like	4	0.08	estimate	0.008	
 COAD-MSI-like	4	0.08	quality	0.007	
 COAD-MSI-like	4	0.08	age	0.006	
 COAD-MSI-like	4	0.08	sex	0.02	
-COAD-MSI-like	5	0.061	plate	0.146	0.171
+COAD-MSI-like	5	0.061	plate	0.146	0.182
 COAD-MSI-like	5	0.061	estimate	0.001	
 COAD-MSI-like	5	0.061	quality	0.003	
 COAD-MSI-like	5	0.061	age	0	
 COAD-MSI-like	5	0.061	sex	0	
+BRCA-Basal	1	0.202	plate	0.33	0.188
+BRCA-Basal	1	0.202	estimate	0.005	
+BRCA-Basal	1	0.202	quality	0	
+BRCA-Basal	1	0.202	age	0.002	
+BRCA-Basal	1	0.202	sex		
+BRCA-Basal	2	0.096	plate	0.235	0.18
+BRCA-Basal	2	0.096	estimate	0.017	
+BRCA-Basal	2	0.096	quality	0	
+BRCA-Basal	2	0.096	age	0.051	
+BRCA-Basal	2	0.096	sex		
+BRCA-Basal	3	0.075	plate	0.317	0.183
+BRCA-Basal	3	0.075	estimate	0.012	
+BRCA-Basal	3	0.075	quality	0	
+BRCA-Basal	3	0.075	age	0	
+BRCA-Basal	3	0.075	sex		
+BRCA-Basal	4	0.056	plate	0.246	0.182
+BRCA-Basal	4	0.056	estimate	0.009	
+BRCA-Basal	4	0.056	quality	0.001	
+BRCA-Basal	4	0.056	age	0.042	
+BRCA-Basal	4	0.056	sex		
+BRCA-Basal	5	0.042	plate	0.217	0.18
+BRCA-Basal	5	0.042	estimate	0.015	
+BRCA-Basal	5	0.042	quality	0	
+BRCA-Basal	5	0.042	age	0.001	
+BRCA-Basal	5	0.042	sex		
+BRCA-Her2	1	0.16	plate	0.358	0.33
+BRCA-Her2	1	0.16	estimate	0.001	
+BRCA-Her2	1	0.16	quality	0	
+BRCA-Her2	1	0.16	age	0	
+BRCA-Her2	1	0.16	sex		
+BRCA-Her2	2	0.15	plate	0.426	0.323
+BRCA-Her2	2	0.15	estimate	0	
+BRCA-Her2	2	0.15	quality	0	
+BRCA-Her2	2	0.15	age	0.006	
+BRCA-Her2	2	0.15	sex		
+BRCA-Her2	3	0.099	plate	0.302	0.332
+BRCA-Her2	3	0.099	estimate	0	
+BRCA-Her2	3	0.099	quality	0	
+BRCA-Her2	3	0.099	age	0.012	
+BRCA-Her2	3	0.099	sex		
+BRCA-Her2	4	0.06	plate	0.334	0.316
+BRCA-Her2	4	0.06	estimate	0.002	
+BRCA-Her2	4	0.06	quality	0	
+BRCA-Her2	4	0.06	age	0.061	
+BRCA-Her2	4	0.06	sex		
+BRCA-Her2	5	0.049	plate	0.268	0.314
+BRCA-Her2	5	0.049	estimate	0.004	
+BRCA-Her2	5	0.049	quality	0	
+BRCA-Her2	5	0.049	age	0.014	
+BRCA-Her2	5	0.049	sex		
+BRCA-LumA	1	0.167	plate	0.154	0.07
+BRCA-LumA	1	0.167	estimate	0.006	
+BRCA-LumA	1	0.167	quality	0.001	
+BRCA-LumA	1	0.167	age	0.005	
+BRCA-LumA	1	0.167	sex		
+BRCA-LumA	2	0.14	plate	0.052	0.073
+BRCA-LumA	2	0.14	estimate	0.006	
+BRCA-LumA	2	0.14	quality	0.001	
+BRCA-LumA	2	0.14	age	0.076	
+BRCA-LumA	2	0.14	sex		
+BRCA-LumA	3	0.102	plate	0.348	0.067
+BRCA-LumA	3	0.102	estimate	0	
+BRCA-LumA	3	0.102	quality	0	
+BRCA-LumA	3	0.102	age	0	
+BRCA-LumA	3	0.102	sex		
+BRCA-LumA	4	0.072	plate	0.076	0.068
+BRCA-LumA	4	0.072	estimate	0.004	
+BRCA-LumA	4	0.072	quality	0	
+BRCA-LumA	4	0.072	age	0.003	
+BRCA-LumA	4	0.072	sex		
+BRCA-LumA	5	0.046	plate	0.15	0.069
+BRCA-LumA	5	0.046	estimate	0.026	
+BRCA-LumA	5	0.046	quality	0.005	
+BRCA-LumA	5	0.046	age	0	
+BRCA-LumA	5	0.046	sex		
+BRCA-LumB	1	0.16	plate	0.14	0.146
+BRCA-LumB	1	0.16	estimate	0.002	
+BRCA-LumB	1	0.16	quality	0	
+BRCA-LumB	1	0.16	age	0.013	
+BRCA-LumB	1	0.16	sex		
+BRCA-LumB	2	0.13	plate	0.127	0.152
+BRCA-LumB	2	0.13	estimate	0.001	
+BRCA-LumB	2	0.13	quality	0	
+BRCA-LumB	2	0.13	age	0	
+BRCA-LumB	2	0.13	sex		
+BRCA-LumB	3	0.104	plate	0.38	0.146
+BRCA-LumB	3	0.104	estimate	0	
+BRCA-LumB	3	0.104	quality	0	
+BRCA-LumB	3	0.104	age	0.007	
+BRCA-LumB	3	0.104	sex		
+BRCA-LumB	4	0.065	plate	0.206	0.144
+BRCA-LumB	4	0.065	estimate	0.003	
+BRCA-LumB	4	0.065	quality	0.001	
+BRCA-LumB	4	0.065	age	0	
+BRCA-LumB	4	0.065	sex		
+BRCA-LumB	5	0.054	plate	0.224	0.15
+BRCA-LumB	5	0.054	estimate	0.009	
+BRCA-LumB	5	0.054	quality	0.002	
+BRCA-LumB	5	0.054	age	0.017	
+BRCA-LumB	5	0.054	sex		
+CESC-AD	1	0.168	plate	0.321	0.395
+CESC-AD	1	0.168	estimate	0	
+CESC-AD	1	0.168	quality	0	
+CESC-AD	1	0.168	age	0.07	
+CESC-AD	1	0.168	sex		
+CESC-AD	2	0.147	plate	0.49	0.387
+CESC-AD	2	0.147	estimate	0	
+CESC-AD	2	0.147	quality	0	
+CESC-AD	2	0.147	age	0.01	
+CESC-AD	2	0.147	sex		
+CESC-AD	3	0.104	plate	0.438	0.372
+CESC-AD	3	0.104	estimate	0	
+CESC-AD	3	0.104	quality	0	
+CESC-AD	3	0.104	age	0.008	
+CESC-AD	3	0.104	sex		
+CESC-AD	4	0.086	plate	0.58	0.392
+CESC-AD	4	0.086	estimate	0.001	
+CESC-AD	4	0.086	quality	0.001	
+CESC-AD	4	0.086	age	0.062	
+CESC-AD	4	0.086	sex		
+CESC-AD	5	0.071	plate	0.541	0.374
+CESC-AD	5	0.071	estimate	0	
+CESC-AD	5	0.071	quality	0	
+CESC-AD	5	0.071	age	0.288	
+CESC-AD	5	0.071	sex		
+CESC-SCC	1	0.166	plate	0.136	0.087
+CESC-SCC	1	0.166	estimate	0.003	
+CESC-SCC	1	0.166	quality	0	
+CESC-SCC	1	0.166	age	0	
+CESC-SCC	1	0.166	sex		
+CESC-SCC	2	0.154	plate	0.062	0.079
+CESC-SCC	2	0.154	estimate	0	
+CESC-SCC	2	0.154	quality	0	
+CESC-SCC	2	0.154	age	0.091	
+CESC-SCC	2	0.154	sex		
+CESC-SCC	3	0.09	plate	0.098	0.078
+CESC-SCC	3	0.09	estimate	0.001	
+CESC-SCC	3	0.09	quality	0.001	
+CESC-SCC	3	0.09	age	0.016	
+CESC-SCC	3	0.09	sex		
+CESC-SCC	4	0.061	plate	0.04	0.083
+CESC-SCC	4	0.061	estimate	0	
+CESC-SCC	4	0.061	quality	0.001	
+CESC-SCC	4	0.061	age	0.004	
+CESC-SCC	4	0.061	sex		
+CESC-SCC	5	0.047	plate	0.149	0.08
+CESC-SCC	5	0.047	estimate	0.004	
+CESC-SCC	5	0.047	quality	0.001	
+CESC-SCC	5	0.047	age	0.013	
+CESC-SCC	5	0.047	sex		
+ESCA-AD	1	0.171	plate	0.122	0.109
+ESCA-AD	1	0.171	estimate	0.031	
+ESCA-AD	1	0.171	quality	0.012	
+ESCA-AD	1	0.171	age	0.014	
+ESCA-AD	1	0.171	sex	0.029	
+ESCA-AD	2	0.146	plate	0.206	0.105
+ESCA-AD	2	0.146	estimate	0.003	
+ESCA-AD	2	0.146	quality	0.001	
+ESCA-AD	2	0.146	age	0	
+ESCA-AD	2	0.146	sex	0	
+ESCA-AD	3	0.102	plate	0.125	0.104
+ESCA-AD	3	0.102	estimate	0	
+ESCA-AD	3	0.102	quality	0	
+ESCA-AD	3	0.102	age	0.001	
+ESCA-AD	3	0.102	sex	0.003	
+ESCA-AD	4	0.065	plate	0.087	0.107
+ESCA-AD	4	0.065	estimate	0	
+ESCA-AD	4	0.065	quality	0	
+ESCA-AD	4	0.065	age	0	
+ESCA-AD	4	0.065	sex	0.013	
+ESCA-AD	5	0.05	plate	0.143	0.104
+ESCA-AD	5	0.05	estimate	0.001	
+ESCA-AD	5	0.05	quality	0	
+ESCA-AD	5	0.05	age	0.001	
+ESCA-AD	5	0.05	sex	0.005	
+ESCA-SCC	1	0.204	plate	0.113	0.097
+ESCA-SCC	1	0.204	estimate	0	
+ESCA-SCC	1	0.204	quality	0	
+ESCA-SCC	1	0.204	age	0.032	
+ESCA-SCC	1	0.204	sex	0	
+ESCA-SCC	2	0.165	plate	0.195	0.108
+ESCA-SCC	2	0.165	estimate	0.001	
+ESCA-SCC	2	0.165	quality	0.001	
+ESCA-SCC	2	0.165	age	0.025	
+ESCA-SCC	2	0.165	sex	0.013	
+ESCA-SCC	3	0.086	plate	0.041	0.097
+ESCA-SCC	3	0.086	estimate	0.002	
+ESCA-SCC	3	0.086	quality	0.001	
+ESCA-SCC	3	0.086	age	0.065	
+ESCA-SCC	3	0.086	sex	0.002	
+ESCA-SCC	4	0.056	plate	0.325	0.093
+ESCA-SCC	4	0.056	estimate	0	
+ESCA-SCC	4	0.056	quality	0.001	
+ESCA-SCC	4	0.056	age	0.035	
+ESCA-SCC	4	0.056	sex	0.001	
+ESCA-SCC	5	0.051	plate	0.101	0.092
+ESCA-SCC	5	0.051	estimate	0	
+ESCA-SCC	5	0.051	quality	0	
+ESCA-SCC	5	0.051	age	0.01	
+ESCA-SCC	5	0.051	sex	0.01	
+LGG-IDHmut-codel	1	0.447	plate	0.124	0.106
+LGG-IDHmut-codel	1	0.447	estimate	0.001	
+LGG-IDHmut-codel	1	0.447	quality	0	
+LGG-IDHmut-codel	1	0.447	age	0	
+LGG-IDHmut-codel	1	0.447	sex	0.002	
+LGG-IDHmut-codel	2	0.132	plate	0.15	0.101
+LGG-IDHmut-codel	2	0.132	estimate	0	
+LGG-IDHmut-codel	2	0.132	quality	0	
+LGG-IDHmut-codel	2	0.132	age	0.129	
+LGG-IDHmut-codel	2	0.132	sex	0.01	
+LGG-IDHmut-codel	3	0.094	plate	0.152	0.111
+LGG-IDHmut-codel	3	0.094	estimate	0	
+LGG-IDHmut-codel	3	0.094	quality	0	
+LGG-IDHmut-codel	3	0.094	age	0.001	
+LGG-IDHmut-codel	3	0.094	sex	0.009	
+LGG-IDHmut-codel	4	0.049	plate	0.163	0.104
+LGG-IDHmut-codel	4	0.049	estimate	0	
+LGG-IDHmut-codel	4	0.049	quality	0.007	
+LGG-IDHmut-codel	4	0.049	age	0.005	
+LGG-IDHmut-codel	4	0.049	sex	0.005	
+LGG-IDHmut-codel	5	0.044	plate	0.195	0.101
+LGG-IDHmut-codel	5	0.044	estimate	0	
+LGG-IDHmut-codel	5	0.044	quality	0.003	
+LGG-IDHmut-codel	5	0.044	age	0.018	
+LGG-IDHmut-codel	5	0.044	sex	0.022	
+LGG-IDHmut-noncodel	1	0.431	plate	0.099	0.072
+LGG-IDHmut-noncodel	1	0.431	estimate	0.01	
+LGG-IDHmut-noncodel	1	0.431	quality	0	
+LGG-IDHmut-noncodel	1	0.431	age	0.001	
+LGG-IDHmut-noncodel	1	0.431	sex	0.019	
+LGG-IDHmut-noncodel	2	0.158	plate	0.089	0.068
+LGG-IDHmut-noncodel	2	0.158	estimate	0	
+LGG-IDHmut-noncodel	2	0.158	quality	0.001	
+LGG-IDHmut-noncodel	2	0.158	age	0	
+LGG-IDHmut-noncodel	2	0.158	sex	0.008	
+LGG-IDHmut-noncodel	3	0.083	plate	0.281	0.066
+LGG-IDHmut-noncodel	3	0.083	estimate	0.001	
+LGG-IDHmut-noncodel	3	0.083	quality	0.006	
+LGG-IDHmut-noncodel	3	0.083	age	0.002	
+LGG-IDHmut-noncodel	3	0.083	sex	0.002	
+LGG-IDHmut-noncodel	4	0.052	plate	0.194	0.075
+LGG-IDHmut-noncodel	4	0.052	estimate	0.001	
+LGG-IDHmut-noncodel	4	0.052	quality	0.001	
+LGG-IDHmut-noncodel	4	0.052	age	0.033	
+LGG-IDHmut-noncodel	4	0.052	sex	0.001	
+LGG-IDHmut-noncodel	5	0.044	plate	0.122	0.067
+LGG-IDHmut-noncodel	5	0.044	estimate	0.002	
+LGG-IDHmut-noncodel	5	0.044	quality	0.002	
+LGG-IDHmut-noncodel	5	0.044	age	0.004	
+LGG-IDHmut-noncodel	5	0.044	sex	0.02	
+LGG-IDHwt	1	0.467	plate	0.247	0.171
+LGG-IDHwt	1	0.467	estimate	0.018	
+LGG-IDHwt	1	0.467	quality	0.002	
+LGG-IDHwt	1	0.467	age	0.059	
+LGG-IDHwt	1	0.467	sex	0.002	
+LGG-IDHwt	2	0.152	plate	0.234	0.183
+LGG-IDHwt	2	0.152	estimate	0	
+LGG-IDHwt	2	0.152	quality	0	
+LGG-IDHwt	2	0.152	age	0.152	
+LGG-IDHwt	2	0.152	sex	0	
+LGG-IDHwt	3	0.094	plate	0.234	0.174
+LGG-IDHwt	3	0.094	estimate	0.01	
+LGG-IDHwt	3	0.094	quality	0.01	
+LGG-IDHwt	3	0.094	age	0.001	
+LGG-IDHwt	3	0.094	sex	0.007	
+LGG-IDHwt	4	0.059	plate	0.164	0.176
+LGG-IDHwt	4	0.059	estimate	0.001	
+LGG-IDHwt	4	0.059	quality	0.001	
+LGG-IDHwt	4	0.059	age	0.037	
+LGG-IDHwt	4	0.059	sex	0	
+LGG-IDHwt	5	0.036	plate	0.154	0.194
+LGG-IDHwt	5	0.036	estimate	0.001	
+LGG-IDHwt	5	0.036	quality	0	
+LGG-IDHwt	5	0.036	age	0.001	
+LGG-IDHwt	5	0.036	sex	0.001	
+PCPG-PGL	1	0.302	plate	0.053	0.027
+PCPG-PGL	1	0.302	estimate	0	
+PCPG-PGL	1	0.302	quality	0	
+PCPG-PGL	1	0.302	age	0.075	
+PCPG-PGL	1	0.302	sex	0.044	
+PCPG-PGL	2	0.15	plate	0.184	0.032
+PCPG-PGL	2	0.15	estimate	0	
+PCPG-PGL	2	0.15	quality	0	
+PCPG-PGL	2	0.15	age	0.032	
+PCPG-PGL	2	0.15	sex	0.035	
+PCPG-PGL	3	0.096	plate	0.001	0.032
+PCPG-PGL	3	0.096	estimate	0	
+PCPG-PGL	3	0.096	quality	0	
+PCPG-PGL	3	0.096	age	0.003	
+PCPG-PGL	3	0.096	sex	0	
+PCPG-PGL	4	0.077	plate	0.032	0.031
+PCPG-PGL	4	0.077	estimate	0.001	
+PCPG-PGL	4	0.077	quality	0	
+PCPG-PGL	4	0.077	age	0.006	
+PCPG-PGL	4	0.077	sex	0.002	
+PCPG-PGL	5	0.068	plate	0.018	0.04
+PCPG-PGL	5	0.068	estimate	0.001	
+PCPG-PGL	5	0.068	quality	0.001	
+PCPG-PGL	5	0.068	age	0.068	
+PCPG-PGL	5	0.068	sex	0.058	
+PCPG-PHEO	1	0.367	plate	0.02	0.007
+PCPG-PHEO	1	0.367	estimate	0	
+PCPG-PHEO	1	0.367	quality	0	
+PCPG-PHEO	1	0.367	age	0.058	
+PCPG-PHEO	1	0.367	sex	0	
+PCPG-PHEO	2	0.105	plate	0	0.005
+PCPG-PHEO	2	0.105	estimate	0	
+PCPG-PHEO	2	0.105	quality	0.003	
+PCPG-PHEO	2	0.105	age	0.042	
+PCPG-PHEO	2	0.105	sex	0.001	
+PCPG-PHEO	3	0.079	plate	0.023	0.01
+PCPG-PHEO	3	0.079	estimate	0	
+PCPG-PHEO	3	0.079	quality	0	
+PCPG-PHEO	3	0.079	age	0.001	
+PCPG-PHEO	3	0.079	sex	0.009	
+PCPG-PHEO	4	0.063	plate	0.004	0.007
+PCPG-PHEO	4	0.063	estimate	0	
+PCPG-PHEO	4	0.063	quality	0.001	
+PCPG-PHEO	4	0.063	age	0.063	
+PCPG-PHEO	4	0.063	sex	0.001	
+PCPG-PHEO	5	0.045	plate	0.009	0.008
+PCPG-PHEO	5	0.045	estimate	0	
+PCPG-PHEO	5	0.045	quality	0	
+PCPG-PHEO	5	0.045	age	0.007	
+PCPG-PHEO	5	0.045	sex	0.01	
+SARC-DDLPS	1	0.197	plate	0.225	0.205
+SARC-DDLPS	1	0.197	estimate	0	
+SARC-DDLPS	1	0.197	quality	0	
+SARC-DDLPS	1	0.197	age	0.003	
+SARC-DDLPS	1	0.197	sex	0.008	
+SARC-DDLPS	2	0.165	plate	0.229	0.224
+SARC-DDLPS	2	0.165	estimate	0	
+SARC-DDLPS	2	0.165	quality	0	
+SARC-DDLPS	2	0.165	age	0.024	
+SARC-DDLPS	2	0.165	sex	0.005	
+SARC-DDLPS	3	0.116	plate	0.264	0.214
+SARC-DDLPS	3	0.116	estimate	0.008	
+SARC-DDLPS	3	0.116	quality	0.006	
+SARC-DDLPS	3	0.116	age	0.015	
+SARC-DDLPS	3	0.116	sex	0.047	
+SARC-DDLPS	4	0.097	plate	0.217	0.212
+SARC-DDLPS	4	0.097	estimate	0.009	
+SARC-DDLPS	4	0.097	quality	0.006	
+SARC-DDLPS	4	0.097	age	0.022	
+SARC-DDLPS	4	0.097	sex	0.006	
+SARC-DDLPS	5	0.054	plate	0.332	0.206
+SARC-DDLPS	5	0.054	estimate	0.027	
+SARC-DDLPS	5	0.054	quality	0.015	
+SARC-DDLPS	5	0.054	age	0.039	
+SARC-DDLPS	5	0.054	sex	0	
+SARC-LMS	1	0.519	plate	0.111	0.116
+SARC-LMS	1	0.519	estimate	0	
+SARC-LMS	1	0.519	quality	0	
+SARC-LMS	1	0.519	age	0.011	
+SARC-LMS	1	0.519	sex	0.011	
+SARC-LMS	2	0.139	plate	0.144	0.12
+SARC-LMS	2	0.139	estimate	0	
+SARC-LMS	2	0.139	quality	0	
+SARC-LMS	2	0.139	age	0.021	
+SARC-LMS	2	0.139	sex	0.015	
+SARC-LMS	3	0.055	plate	0.216	0.133
+SARC-LMS	3	0.055	estimate	0.001	
+SARC-LMS	3	0.055	quality	0	
+SARC-LMS	3	0.055	age	0.037	
+SARC-LMS	3	0.055	sex	0.025	
+SARC-LMS	4	0.041	plate	0.102	0.12
+SARC-LMS	4	0.041	estimate	0.004	
+SARC-LMS	4	0.041	quality	0.001	
+SARC-LMS	4	0.041	age	0.006	
+SARC-LMS	4	0.041	sex	0.057	
+SARC-LMS	5	0.032	plate	0.123	0.133
+SARC-LMS	5	0.032	estimate	0.001	
+SARC-LMS	5	0.032	quality	0	
+SARC-LMS	5	0.032	age	0	
+SARC-LMS	5	0.032	sex	0.002	
+SARC-UPS	1	0.26	plate	0.139	0.155
+SARC-UPS	1	0.26	estimate	0.004	
+SARC-UPS	1	0.26	quality	0	
+SARC-UPS	1	0.26	age	0.028	
+SARC-UPS	1	0.26	sex	0.03	
+SARC-UPS	2	0.156	plate	0.225	0.155
+SARC-UPS	2	0.156	estimate	0	
+SARC-UPS	2	0.156	quality	0	
+SARC-UPS	2	0.156	age	0.045	
+SARC-UPS	2	0.156	sex	0.017	
+SARC-UPS	3	0.108	plate	0.101	0.151
+SARC-UPS	3	0.108	estimate	0	
+SARC-UPS	3	0.108	quality	0	
+SARC-UPS	3	0.108	age	0.015	
+SARC-UPS	3	0.108	sex	0.005	
+SARC-UPS	4	0.055	plate	0.316	0.154
+SARC-UPS	4	0.055	estimate	0.008	
+SARC-UPS	4	0.055	quality	0	
+SARC-UPS	4	0.055	age	0.001	
+SARC-UPS	4	0.055	sex	0	
+SARC-UPS	5	0.049	plate	0.062	0.167
+SARC-UPS	5	0.049	estimate	0.007	
+SARC-UPS	5	0.049	quality	0	
+SARC-UPS	5	0.049	age	0.008	
+SARC-UPS	5	0.049	sex	0.026	
+TARGET-NBL	1	0.311	plate		
+TARGET-NBL	1	0.311	estimate	0	
+TARGET-NBL	1	0.311	quality	0	
+TARGET-NBL	1	0.311	age	0.013	
+TARGET-NBL	1	0.311	sex	0.003	
+TARGET-NBL	2	0.267	plate		
+TARGET-NBL	2	0.267	estimate	0	
+TARGET-NBL	2	0.267	quality	0.001	
+TARGET-NBL	2	0.267	age	0.001	
+TARGET-NBL	2	0.267	sex	0.001	
+TARGET-NBL	3	0.086	plate		
+TARGET-NBL	3	0.086	estimate	0	
+TARGET-NBL	3	0.086	quality	0	
+TARGET-NBL	3	0.086	age	0.025	
+TARGET-NBL	3	0.086	sex	0.002	
+TARGET-NBL	4	0.074	plate		
+TARGET-NBL	4	0.074	estimate	0	
+TARGET-NBL	4	0.074	quality	0	
+TARGET-NBL	4	0.074	age	0.046	
+TARGET-NBL	4	0.074	sex	0.007	
+TARGET-NBL	5	0.043	plate		
+TARGET-NBL	5	0.043	estimate	0	
+TARGET-NBL	5	0.043	quality	0	
+TARGET-NBL	5	0.043	age	0.009	
+TARGET-NBL	5	0.043	sex	0.004	
+TARGET-WT	1	0.26	plate		
+TARGET-WT	1	0.26	estimate	0.001	
+TARGET-WT	1	0.26	quality	0	
+TARGET-WT	1	0.26	age	0	
+TARGET-WT	1	0.26	sex	0.005	
+TARGET-WT	2	0.176	plate		
+TARGET-WT	2	0.176	estimate	0.002	
+TARGET-WT	2	0.176	quality	0.002	
+TARGET-WT	2	0.176	age	0.001	
+TARGET-WT	2	0.176	sex	0	
+TARGET-WT	3	0.077	plate		
+TARGET-WT	3	0.077	estimate	0	
+TARGET-WT	3	0.077	quality	0	
+TARGET-WT	3	0.077	age	0.029	
+TARGET-WT	3	0.077	sex	0.003	
+TARGET-WT	4	0.067	plate		
+TARGET-WT	4	0.067	estimate	0.002	
+TARGET-WT	4	0.067	quality	0.003	
+TARGET-WT	4	0.067	age	0.001	
+TARGET-WT	4	0.067	sex	0.005	
+TARGET-WT	5	0.065	plate		
+TARGET-WT	5	0.065	estimate	0.002	
+TARGET-WT	5	0.065	quality	0.005	
+TARGET-WT	5	0.065	age	0	
+TARGET-WT	5	0.065	sex	0	
 TCGA-ACC	1	0.346	plate		
 TCGA-ACC	1	0.346	estimate	0	
 TCGA-ACC	1	0.346	quality	0	
@@ -249,128 +999,553 @@ TCGA-ACC	5	0.042	estimate	0
 TCGA-ACC	5	0.042	quality	0	
 TCGA-ACC	5	0.042	age	0.004	
 TCGA-ACC	5	0.042	sex	0.001	
-ACC-proliferative	1	0.184	plate		
-ACC-proliferative	1	0.184	estimate	0.052	
-ACC-proliferative	1	0.184	quality	0.046	
-ACC-proliferative	1	0.184	age	0.03	
-ACC-proliferative	1	0.184	sex	0.087	
-ACC-proliferative	2	0.143	plate		
-ACC-proliferative	2	0.143	estimate	0.006	
-ACC-proliferative	2	0.143	quality	0.002	
-ACC-proliferative	2	0.143	age	0.004	
-ACC-proliferative	2	0.143	sex	0.012	
-ACC-proliferative	3	0.095	plate		
-ACC-proliferative	3	0.095	estimate	0.007	
-ACC-proliferative	3	0.095	quality	0.001	
-ACC-proliferative	3	0.095	age	0.273	
-ACC-proliferative	3	0.095	sex	0.003	
-ACC-proliferative	4	0.094	plate		
-ACC-proliferative	4	0.094	estimate	0.021	
-ACC-proliferative	4	0.094	quality	0.021	
-ACC-proliferative	4	0.094	age	0.063	
-ACC-proliferative	4	0.094	sex	0.076	
-ACC-proliferative	5	0.064	plate		
-ACC-proliferative	5	0.064	estimate	0.121	
-ACC-proliferative	5	0.064	quality	0.001	
-ACC-proliferative	5	0.064	age	0.004	
-ACC-proliferative	5	0.064	sex	0.033	
-ACC-low-proliferation	1	0.316	plate		
-ACC-low-proliferation	1	0.316	estimate	0.041	
-ACC-low-proliferation	1	0.316	quality	0	
-ACC-low-proliferation	1	0.316	age	0.037	
-ACC-low-proliferation	1	0.316	sex	0.005	
-ACC-low-proliferation	2	0.116	plate		
-ACC-low-proliferation	2	0.116	estimate	0.01	
-ACC-low-proliferation	2	0.116	quality	0.031	
-ACC-low-proliferation	2	0.116	age	0	
-ACC-low-proliferation	2	0.116	sex	0.037	
-ACC-low-proliferation	3	0.079	plate		
-ACC-low-proliferation	3	0.079	estimate	0.021	
-ACC-low-proliferation	3	0.079	quality	0.014	
-ACC-low-proliferation	3	0.079	age	0.001	
-ACC-low-proliferation	3	0.079	sex	0.04	
-ACC-low-proliferation	4	0.072	plate		
-ACC-low-proliferation	4	0.072	estimate	0.03	
-ACC-low-proliferation	4	0.072	quality	0.183	
-ACC-low-proliferation	4	0.072	age	0.057	
-ACC-low-proliferation	4	0.072	sex	0.052	
-ACC-low-proliferation	5	0.067	plate		
-ACC-low-proliferation	5	0.067	estimate	0.005	
-ACC-low-proliferation	5	0.067	quality	0	
-ACC-low-proliferation	5	0.067	age	0.011	
-ACC-low-proliferation	5	0.067	sex	0.006	
-LGG-IDHmut-noncodel	1	0.431	plate	0.099	0.071
-LGG-IDHmut-noncodel	1	0.431	estimate	0.01	
-LGG-IDHmut-noncodel	1	0.431	quality	0	
-LGG-IDHmut-noncodel	1	0.431	age	0.001	
-LGG-IDHmut-noncodel	1	0.431	sex	0.019	
-LGG-IDHmut-noncodel	2	0.158	plate	0.089	0.068
-LGG-IDHmut-noncodel	2	0.158	estimate	0	
-LGG-IDHmut-noncodel	2	0.158	quality	0.001	
-LGG-IDHmut-noncodel	2	0.158	age	0	
-LGG-IDHmut-noncodel	2	0.158	sex	0.008	
-LGG-IDHmut-noncodel	3	0.083	plate	0.281	0.077
-LGG-IDHmut-noncodel	3	0.083	estimate	0.001	
-LGG-IDHmut-noncodel	3	0.083	quality	0.006	
-LGG-IDHmut-noncodel	3	0.083	age	0.002	
-LGG-IDHmut-noncodel	3	0.083	sex	0.002	
-LGG-IDHmut-noncodel	4	0.052	plate	0.194	0.072
-LGG-IDHmut-noncodel	4	0.052	estimate	0.001	
-LGG-IDHmut-noncodel	4	0.052	quality	0.001	
-LGG-IDHmut-noncodel	4	0.052	age	0.033	
-LGG-IDHmut-noncodel	4	0.052	sex	0.001	
-LGG-IDHmut-noncodel	5	0.044	plate	0.122	0.07
-LGG-IDHmut-noncodel	5	0.044	estimate	0.002	
-LGG-IDHmut-noncodel	5	0.044	quality	0.002	
-LGG-IDHmut-noncodel	5	0.044	age	0.004	
-LGG-IDHmut-noncodel	5	0.044	sex	0.02	
-LGG-noncodel-LGr3	1	0.27	plate	0.116	0.12
-LGG-noncodel-LGr3	1	0.27	estimate	0.004	
-LGG-noncodel-LGr3	1	0.27	quality	0.01	
-LGG-noncodel-LGr3	1	0.27	age	0.001	
-LGG-noncodel-LGr3	1	0.27	sex	0.007	
-LGG-noncodel-LGr3	2	0.155	plate	0.409	0.105
-LGG-noncodel-LGr3	2	0.155	estimate	0.016	
-LGG-noncodel-LGr3	2	0.155	quality	0.001	
-LGG-noncodel-LGr3	2	0.155	age	0.01	
-LGG-noncodel-LGr3	2	0.155	sex	0.023	
-LGG-noncodel-LGr3	3	0.109	plate	0.086	0.115
-LGG-noncodel-LGr3	3	0.109	estimate	0	
-LGG-noncodel-LGr3	3	0.109	quality	0.003	
-LGG-noncodel-LGr3	3	0.109	age	0	
-LGG-noncodel-LGr3	3	0.109	sex	0.007	
-LGG-noncodel-LGr3	4	0.08	plate	0.235	0.12
-LGG-noncodel-LGr3	4	0.08	estimate	0.003	
-LGG-noncodel-LGr3	4	0.08	quality	0.007	
-LGG-noncodel-LGr3	4	0.08	age	0.005	
-LGG-noncodel-LGr3	4	0.08	sex	0.013	
-LGG-noncodel-LGr3	5	0.071	plate	0.092	0.115
-LGG-noncodel-LGr3	5	0.071	estimate	0	
-LGG-noncodel-LGr3	5	0.071	quality	0	
-LGG-noncodel-LGr3	5	0.071	age	0.023	
-LGG-noncodel-LGr3	5	0.071	sex	0.003	
-LGG-noncodel-LGr2	1	0.494	plate	0.166	0.163
-LGG-noncodel-LGr2	1	0.494	estimate	0.069	
-LGG-noncodel-LGr2	1	0.494	quality	0.024	
-LGG-noncodel-LGr2	1	0.494	age	0.001	
-LGG-noncodel-LGr2	1	0.494	sex	0.052	
-LGG-noncodel-LGr2	2	0.124	plate	0.201	0.167
-LGG-noncodel-LGr2	2	0.124	estimate	0.001	
-LGG-noncodel-LGr2	2	0.124	quality	0.004	
-LGG-noncodel-LGr2	2	0.124	age	0	
-LGG-noncodel-LGr2	2	0.124	sex	0.013	
-LGG-noncodel-LGr2	3	0.08	plate	0.492	0.175
-LGG-noncodel-LGr2	3	0.08	estimate	0.004	
-LGG-noncodel-LGr2	3	0.08	quality	0	
-LGG-noncodel-LGr2	3	0.08	age	0.02	
-LGG-noncodel-LGr2	3	0.08	sex	0.021	
-LGG-noncodel-LGr2	4	0.051	plate	0.299	0.158
-LGG-noncodel-LGr2	4	0.051	estimate	0	
-LGG-noncodel-LGr2	4	0.051	quality	0	
-LGG-noncodel-LGr2	4	0.051	age	0.011	
-LGG-noncodel-LGr2	4	0.051	sex	0.001	
-LGG-noncodel-LGr2	5	0.039	plate	0.094	0.176
-LGG-noncodel-LGr2	5	0.039	estimate	0.001	
-LGG-noncodel-LGr2	5	0.039	quality	0.004	
-LGG-noncodel-LGr2	5	0.039	age	0.03	
-LGG-noncodel-LGr2	5	0.039	sex	0.006	
+TCGA-BLCA	1	0.305	plate	0.09	0.069
+TCGA-BLCA	1	0.305	estimate	0	
+TCGA-BLCA	1	0.305	quality	0	
+TCGA-BLCA	1	0.305	age	0	
+TCGA-BLCA	1	0.305	sex	0.003	
+TCGA-BLCA	2	0.115	plate	0.075	0.07
+TCGA-BLCA	2	0.115	estimate	0.003	
+TCGA-BLCA	2	0.115	quality	0	
+TCGA-BLCA	2	0.115	age	0.029	
+TCGA-BLCA	2	0.115	sex	0.002	
+TCGA-BLCA	3	0.087	plate	0.082	0.069
+TCGA-BLCA	3	0.087	estimate	0	
+TCGA-BLCA	3	0.087	quality	0	
+TCGA-BLCA	3	0.087	age	0.029	
+TCGA-BLCA	3	0.087	sex	0	
+TCGA-BLCA	4	0.058	plate	0.115	0.067
+TCGA-BLCA	4	0.058	estimate	0.001	
+TCGA-BLCA	4	0.058	quality	0	
+TCGA-BLCA	4	0.058	age	0.001	
+TCGA-BLCA	4	0.058	sex	0	
+TCGA-BLCA	5	0.039	plate	0.107	0.069
+TCGA-BLCA	5	0.039	estimate	0.007	
+TCGA-BLCA	5	0.039	quality	0	
+TCGA-BLCA	5	0.039	age	0.022	
+TCGA-BLCA	5	0.039	sex	0.005	
+TCGA-COAD	1	0.403	plate	0.043	0.065
+TCGA-COAD	1	0.403	estimate	0.001	
+TCGA-COAD	1	0.403	quality	0	
+TCGA-COAD	1	0.403	age	0	
+TCGA-COAD	1	0.403	sex	0.011	
+TCGA-COAD	2	0.108	plate	0.455	0.064
+TCGA-COAD	2	0.108	estimate	0	
+TCGA-COAD	2	0.108	quality	0	
+TCGA-COAD	2	0.108	age	0.001	
+TCGA-COAD	2	0.108	sex	0.003	
+TCGA-COAD	3	0.061	plate	0.143	0.068
+TCGA-COAD	3	0.061	estimate	0.001	
+TCGA-COAD	3	0.061	quality	0.001	
+TCGA-COAD	3	0.061	age	0.011	
+TCGA-COAD	3	0.061	sex	0.006	
+TCGA-COAD	4	0.059	plate	0.04	0.063
+TCGA-COAD	4	0.059	estimate	0.003	
+TCGA-COAD	4	0.059	quality	0	
+TCGA-COAD	4	0.059	age	0.003	
+TCGA-COAD	4	0.059	sex	0.002	
+TCGA-COAD	5	0.038	plate	0.055	0.063
+TCGA-COAD	5	0.038	estimate	0	
+TCGA-COAD	5	0.038	quality	0	
+TCGA-COAD	5	0.038	age	0.004	
+TCGA-COAD	5	0.038	sex	0.002	
+TCGA-GBM	1	0.257	plate	0.039	0.021
+TCGA-GBM	1	0.257	estimate	0	
+TCGA-GBM	1	0.257	quality	0.001	
+TCGA-GBM	1	0.257	age	0.059	
+TCGA-GBM	1	0.257	sex	0.043	
+TCGA-GBM	2	0.208	plate	0.022	0.017
+TCGA-GBM	2	0.208	estimate	0	
+TCGA-GBM	2	0.208	quality	0.001	
+TCGA-GBM	2	0.208	age	0.033	
+TCGA-GBM	2	0.208	sex	0.022	
+TCGA-GBM	3	0.113	plate	0.05	0.019
+TCGA-GBM	3	0.113	estimate	0	
+TCGA-GBM	3	0.113	quality	0.003	
+TCGA-GBM	3	0.113	age	0.005	
+TCGA-GBM	3	0.113	sex	0.004	
+TCGA-GBM	4	0.073	plate	0.032	0.019
+TCGA-GBM	4	0.073	estimate	0	
+TCGA-GBM	4	0.073	quality	0	
+TCGA-GBM	4	0.073	age	0.007	
+TCGA-GBM	4	0.073	sex	0.041	
+TCGA-GBM	5	0.063	plate	0.031	0.016
+TCGA-GBM	5	0.063	estimate	0	
+TCGA-GBM	5	0.063	quality	0	
+TCGA-GBM	5	0.063	age	0.017	
+TCGA-GBM	5	0.063	sex	0.056	
+TCGA-HNSC	1	0.372	plate	0.067	0.036
+TCGA-HNSC	1	0.372	estimate	0.001	
+TCGA-HNSC	1	0.372	quality	0	
+TCGA-HNSC	1	0.372	age	0	
+TCGA-HNSC	1	0.372	sex	0.056	
+TCGA-HNSC	2	0.127	plate	0.071	0.033
+TCGA-HNSC	2	0.127	estimate	0.001	
+TCGA-HNSC	2	0.127	quality	0.001	
+TCGA-HNSC	2	0.127	age	0	
+TCGA-HNSC	2	0.127	sex	0.005	
+TCGA-HNSC	3	0.061	plate	0.06	0.035
+TCGA-HNSC	3	0.061	estimate	0.004	
+TCGA-HNSC	3	0.061	quality	0.001	
+TCGA-HNSC	3	0.061	age	0.001	
+TCGA-HNSC	3	0.061	sex	0.011	
+TCGA-HNSC	4	0.049	plate	0.226	0.036
+TCGA-HNSC	4	0.049	estimate	0.001	
+TCGA-HNSC	4	0.049	quality	0	
+TCGA-HNSC	4	0.049	age	0.015	
+TCGA-HNSC	4	0.049	sex	0	
+TCGA-HNSC	5	0.044	plate	0.134	0.035
+TCGA-HNSC	5	0.044	estimate	0.002	
+TCGA-HNSC	5	0.044	quality	0	
+TCGA-HNSC	5	0.044	age	0.002	
+TCGA-HNSC	5	0.044	sex	0	
+TCGA-KICH	1	0.41	plate	0.127	0.011
+TCGA-KICH	1	0.41	estimate	0	
+TCGA-KICH	1	0.41	quality	0	
+TCGA-KICH	1	0.41	age	0.025	
+TCGA-KICH	1	0.41	sex	0.007	
+TCGA-KICH	2	0.144	plate	0.005	0.01
+TCGA-KICH	2	0.144	estimate	0	
+TCGA-KICH	2	0.144	quality	0	
+TCGA-KICH	2	0.144	age	0.002	
+TCGA-KICH	2	0.144	sex	0.006	
+TCGA-KICH	3	0.079	plate	0.004	0.025
+TCGA-KICH	3	0.079	estimate	0.001	
+TCGA-KICH	3	0.079	quality	0	
+TCGA-KICH	3	0.079	age	0.045	
+TCGA-KICH	3	0.079	sex	0.004	
+TCGA-KICH	4	0.051	plate	0.064	0.011
+TCGA-KICH	4	0.051	estimate	0	
+TCGA-KICH	4	0.051	quality	0	
+TCGA-KICH	4	0.051	age	0.008	
+TCGA-KICH	4	0.051	sex	0.054	
+TCGA-KICH	5	0.043	plate	0.053	0.018
+TCGA-KICH	5	0.043	estimate	0	
+TCGA-KICH	5	0.043	quality	0	
+TCGA-KICH	5	0.043	age	0	
+TCGA-KICH	5	0.043	sex	0.002	
+TCGA-KIRC	1	0.284	plate	0.085	0.033
+TCGA-KIRC	1	0.284	estimate	0	
+TCGA-KIRC	1	0.284	quality	0.002	
+TCGA-KIRC	1	0.284	age	0.002	
+TCGA-KIRC	1	0.284	sex	0.008	
+TCGA-KIRC	2	0.175	plate	0.099	0.031
+TCGA-KIRC	2	0.175	estimate	0	
+TCGA-KIRC	2	0.175	quality	0.002	
+TCGA-KIRC	2	0.175	age	0.006	
+TCGA-KIRC	2	0.175	sex	0.003	
+TCGA-KIRC	3	0.13	plate	0.126	0.029
+TCGA-KIRC	3	0.13	estimate	0.015	
+TCGA-KIRC	3	0.13	quality	0.006	
+TCGA-KIRC	3	0.13	age	0.002	
+TCGA-KIRC	3	0.13	sex	0.002	
+TCGA-KIRC	4	0.1	plate	0.177	0.031
+TCGA-KIRC	4	0.1	estimate	0.013	
+TCGA-KIRC	4	0.1	quality	0	
+TCGA-KIRC	4	0.1	age	0.001	
+TCGA-KIRC	4	0.1	sex	0	
+TCGA-KIRC	5	0.066	plate	0.103	0.03
+TCGA-KIRC	5	0.066	estimate	0	
+TCGA-KIRC	5	0.066	quality	0.005	
+TCGA-KIRC	5	0.066	age	0.002	
+TCGA-KIRC	5	0.066	sex	0.034	
+TCGA-KIRP	1	0.366	plate	0.111	0.055
+TCGA-KIRP	1	0.366	estimate	0	
+TCGA-KIRP	1	0.366	quality	0	
+TCGA-KIRP	1	0.366	age	0.005	
+TCGA-KIRP	1	0.366	sex	0.067	
+TCGA-KIRP	2	0.161	plate	0.142	0.057
+TCGA-KIRP	2	0.161	estimate	0.001	
+TCGA-KIRP	2	0.161	quality	0	
+TCGA-KIRP	2	0.161	age	0.026	
+TCGA-KIRP	2	0.161	sex	0.022	
+TCGA-KIRP	3	0.087	plate	0.233	0.066
+TCGA-KIRP	3	0.087	estimate	0	
+TCGA-KIRP	3	0.087	quality	0	
+TCGA-KIRP	3	0.087	age	0.004	
+TCGA-KIRP	3	0.087	sex	0.01	
+TCGA-KIRP	4	0.06	plate	0.213	0.061
+TCGA-KIRP	4	0.06	estimate	0.001	
+TCGA-KIRP	4	0.06	quality	0	
+TCGA-KIRP	4	0.06	age	0.007	
+TCGA-KIRP	4	0.06	sex	0.014	
+TCGA-KIRP	5	0.044	plate	0.072	0.064
+TCGA-KIRP	5	0.044	estimate	0.007	
+TCGA-KIRP	5	0.044	quality	0	
+TCGA-KIRP	5	0.044	age	0.022	
+TCGA-KIRP	5	0.044	sex	0	
+TCGA-LIHC	1	0.292	plate	0.048	0.05
+TCGA-LIHC	1	0.292	estimate	0	
+TCGA-LIHC	1	0.292	quality	0	
+TCGA-LIHC	1	0.292	age	0.044	
+TCGA-LIHC	1	0.292	sex	0.053	
+TCGA-LIHC	2	0.143	plate	0.07	0.047
+TCGA-LIHC	2	0.143	estimate	0	
+TCGA-LIHC	2	0.143	quality	0	
+TCGA-LIHC	2	0.143	age	0	
+TCGA-LIHC	2	0.143	sex	0.028	
+TCGA-LIHC	3	0.08	plate	0.037	0.049
+TCGA-LIHC	3	0.08	estimate	0.005	
+TCGA-LIHC	3	0.08	quality	0.002	
+TCGA-LIHC	3	0.08	age	0.013	
+TCGA-LIHC	3	0.08	sex	0.001	
+TCGA-LIHC	4	0.067	plate	0.112	0.053
+TCGA-LIHC	4	0.067	estimate	0	
+TCGA-LIHC	4	0.067	quality	0	
+TCGA-LIHC	4	0.067	age	0	
+TCGA-LIHC	4	0.067	sex	0.03	
+TCGA-LIHC	5	0.053	plate	0.069	0.047
+TCGA-LIHC	5	0.053	estimate	0.004	
+TCGA-LIHC	5	0.053	quality	0.001	
+TCGA-LIHC	5	0.053	age	0.012	
+TCGA-LIHC	5	0.053	sex	0.065	
+TCGA-LUAD	1	0.199	plate	0.047	0.04
+TCGA-LUAD	1	0.199	estimate	0.006	
+TCGA-LUAD	1	0.199	quality	0	
+TCGA-LUAD	1	0.199	age	0.02	
+TCGA-LUAD	1	0.199	sex	0.011	
+TCGA-LUAD	2	0.161	plate	0.526	0.042
+TCGA-LUAD	2	0.161	estimate	0	
+TCGA-LUAD	2	0.161	quality	0.002	
+TCGA-LUAD	2	0.161	age	0.002	
+TCGA-LUAD	2	0.161	sex	0.001	
+TCGA-LUAD	3	0.123	plate	0.06	0.041
+TCGA-LUAD	3	0.123	estimate	0	
+TCGA-LUAD	3	0.123	quality	0	
+TCGA-LUAD	3	0.123	age	0.001	
+TCGA-LUAD	3	0.123	sex	0.026	
+TCGA-LUAD	4	0.097	plate	0.121	0.04
+TCGA-LUAD	4	0.097	estimate	0	
+TCGA-LUAD	4	0.097	quality	0	
+TCGA-LUAD	4	0.097	age	0.005	
+TCGA-LUAD	4	0.097	sex	0.005	
+TCGA-LUAD	5	0.064	plate	0.102	0.042
+TCGA-LUAD	5	0.064	estimate	0	
+TCGA-LUAD	5	0.064	quality	0	
+TCGA-LUAD	5	0.064	age	0.003	
+TCGA-LUAD	5	0.064	sex	0.011	
+TCGA-LUSC	1	0.234	plate	0.043	0.051
+TCGA-LUSC	1	0.234	estimate	0.004	
+TCGA-LUSC	1	0.234	quality	0.002	
+TCGA-LUSC	1	0.234	age	0.005	
+TCGA-LUSC	1	0.234	sex	0.002	
+TCGA-LUSC	2	0.173	plate	0.163	0.051
+TCGA-LUSC	2	0.173	estimate	0	
+TCGA-LUSC	2	0.173	quality	0	
+TCGA-LUSC	2	0.173	age	0.019	
+TCGA-LUSC	2	0.173	sex	0.003	
+TCGA-LUSC	3	0.113	plate	0.466	0.044
+TCGA-LUSC	3	0.113	estimate	0.001	
+TCGA-LUSC	3	0.113	quality	0	
+TCGA-LUSC	3	0.113	age	0.001	
+TCGA-LUSC	3	0.113	sex	0.002	
+TCGA-LUSC	4	0.065	plate	0.05	0.044
+TCGA-LUSC	4	0.065	estimate	0	
+TCGA-LUSC	4	0.065	quality	0	
+TCGA-LUSC	4	0.065	age	0.025	
+TCGA-LUSC	4	0.065	sex	0.002	
+TCGA-LUSC	5	0.057	plate	0.07	0.047
+TCGA-LUSC	5	0.057	estimate	0.006	
+TCGA-LUSC	5	0.057	quality	0.002	
+TCGA-LUSC	5	0.057	age	0	
+TCGA-LUSC	5	0.057	sex	0.003	
+TCGA-OV	1	0.154	plate	0.017	0.017
+TCGA-OV	1	0.154	estimate	0	
+TCGA-OV	1	0.154	quality	0	
+TCGA-OV	1	0.154	age	0.112	
+TCGA-OV	1	0.154	sex		
+TCGA-OV	2	0.118	plate	0.157	0.016
+TCGA-OV	2	0.118	estimate	0	
+TCGA-OV	2	0.118	quality	0	
+TCGA-OV	2	0.118	age	0.012	
+TCGA-OV	2	0.118	sex		
+TCGA-OV	3	0.083	plate	0.042	0.015
+TCGA-OV	3	0.083	estimate	0.001	
+TCGA-OV	3	0.083	quality	0	
+TCGA-OV	3	0.083	age	0.028	
+TCGA-OV	3	0.083	sex		
+TCGA-OV	4	0.059	plate	0.02	0.016
+TCGA-OV	4	0.059	estimate	0	
+TCGA-OV	4	0.059	quality	0	
+TCGA-OV	4	0.059	age	0.009	
+TCGA-OV	4	0.059	sex		
+TCGA-OV	5	0.047	plate	0.027	0.014
+TCGA-OV	5	0.047	estimate	0	
+TCGA-OV	5	0.047	quality	0	
+TCGA-OV	5	0.047	age	0.001	
+TCGA-OV	5	0.047	sex		
+TCGA-PAAD	1	0.476	plate	0.135	0.061
+TCGA-PAAD	1	0.476	estimate	0.004	
+TCGA-PAAD	1	0.476	quality	0.001	
+TCGA-PAAD	1	0.476	age	0.011	
+TCGA-PAAD	1	0.476	sex	0.003	
+TCGA-PAAD	2	0.147	plate	0.022	0.064
+TCGA-PAAD	2	0.147	estimate	0.001	
+TCGA-PAAD	2	0.147	quality	0	
+TCGA-PAAD	2	0.147	age	0.003	
+TCGA-PAAD	2	0.147	sex	0.001	
+TCGA-PAAD	3	0.081	plate	0.067	0.065
+TCGA-PAAD	3	0.081	estimate	0.016	
+TCGA-PAAD	3	0.081	quality	0.004	
+TCGA-PAAD	3	0.081	age	0.011	
+TCGA-PAAD	3	0.081	sex	0	
+TCGA-PAAD	4	0.059	plate	0.351	0.065
+TCGA-PAAD	4	0.059	estimate	0.008	
+TCGA-PAAD	4	0.059	quality	0.003	
+TCGA-PAAD	4	0.059	age	0.002	
+TCGA-PAAD	4	0.059	sex	0.003	
+TCGA-PAAD	5	0.028	plate	0.116	0.063
+TCGA-PAAD	5	0.028	estimate	0.079	
+TCGA-PAAD	5	0.028	quality	0.012	
+TCGA-PAAD	5	0.028	age	0.005	
+TCGA-PAAD	5	0.028	sex	0.001	
+TCGA-PRAD	1	0.334	plate	0.071	0.036
+TCGA-PRAD	1	0.334	estimate	0	
+TCGA-PRAD	1	0.334	quality	0	
+TCGA-PRAD	1	0.334	age	0.013	
+TCGA-PRAD	1	0.334	sex		
+TCGA-PRAD	2	0.188	plate	0.144	0.039
+TCGA-PRAD	2	0.188	estimate	0	
+TCGA-PRAD	2	0.188	quality	0	
+TCGA-PRAD	2	0.188	age	0.019	
+TCGA-PRAD	2	0.188	sex		
+TCGA-PRAD	3	0.077	plate	0.273	0.037
+TCGA-PRAD	3	0.077	estimate	0	
+TCGA-PRAD	3	0.077	quality	0	
+TCGA-PRAD	3	0.077	age	0.008	
+TCGA-PRAD	3	0.077	sex		
+TCGA-PRAD	4	0.057	plate	0.095	0.037
+TCGA-PRAD	4	0.057	estimate	0.002	
+TCGA-PRAD	4	0.057	quality	0.007	
+TCGA-PRAD	4	0.057	age	0.001	
+TCGA-PRAD	4	0.057	sex		
+TCGA-PRAD	5	0.053	plate	0.164	0.037
+TCGA-PRAD	5	0.053	estimate	0.006	
+TCGA-PRAD	5	0.053	quality	0.008	
+TCGA-PRAD	5	0.053	age	0.002	
+TCGA-PRAD	5	0.053	sex		
+TCGA-READ	1	0.251	plate	0.118	0.073
+TCGA-READ	1	0.251	estimate	0.001	
+TCGA-READ	1	0.251	quality	0.001	
+TCGA-READ	1	0.251	age	0.011	
+TCGA-READ	1	0.251	sex	0.014	
+TCGA-READ	2	0.104	plate	0.245	0.082
+TCGA-READ	2	0.104	estimate	0.001	
+TCGA-READ	2	0.104	quality	0.003	
+TCGA-READ	2	0.104	age	0.017	
+TCGA-READ	2	0.104	sex	0.011	
+TCGA-READ	3	0.1	plate	0.129	0.079
+TCGA-READ	3	0.1	estimate	0.004	
+TCGA-READ	3	0.1	quality	0.004	
+TCGA-READ	3	0.1	age	0.038	
+TCGA-READ	3	0.1	sex	0.016	
+TCGA-READ	4	0.072	plate	0.06	0.073
+TCGA-READ	4	0.072	estimate	0	
+TCGA-READ	4	0.072	quality	0	
+TCGA-READ	4	0.072	age	0	
+TCGA-READ	4	0.072	sex	0.001	
+TCGA-READ	5	0.059	plate	0.119	0.068
+TCGA-READ	5	0.059	estimate	0	
+TCGA-READ	5	0.059	quality	0.001	
+TCGA-READ	5	0.059	age	0.001	
+TCGA-READ	5	0.059	sex	0.006	
+TCGA-SKCM	1	0.237	plate	0.029	0.033
+TCGA-SKCM	1	0.237	estimate	0.001	
+TCGA-SKCM	1	0.237	quality	0	
+TCGA-SKCM	1	0.237	age	0.019	
+TCGA-SKCM	1	0.237	sex	0.003	
+TCGA-SKCM	2	0.152	plate	0.087	0.033
+TCGA-SKCM	2	0.152	estimate	0	
+TCGA-SKCM	2	0.152	quality	0.001	
+TCGA-SKCM	2	0.152	age	0.007	
+TCGA-SKCM	2	0.152	sex	0.002	
+TCGA-SKCM	3	0.136	plate	0.053	0.033
+TCGA-SKCM	3	0.136	estimate	0	
+TCGA-SKCM	3	0.136	quality	0	
+TCGA-SKCM	3	0.136	age	0.001	
+TCGA-SKCM	3	0.136	sex	0.009	
+TCGA-SKCM	4	0.079	plate	0.037	0.033
+TCGA-SKCM	4	0.079	estimate	0.001	
+TCGA-SKCM	4	0.079	quality	0	
+TCGA-SKCM	4	0.079	age	0.025	
+TCGA-SKCM	4	0.079	sex	0.008	
+TCGA-SKCM	5	0.042	plate	0.074	0.032
+TCGA-SKCM	5	0.042	estimate	0.003	
+TCGA-SKCM	5	0.042	quality	0	
+TCGA-SKCM	5	0.042	age	0.008	
+TCGA-SKCM	5	0.042	sex	0.001	
+TCGA-STAD	1	0.249	plate	0.174	0.048
+TCGA-STAD	1	0.249	estimate	0.002	
+TCGA-STAD	1	0.249	quality	0	
+TCGA-STAD	1	0.249	age	0.028	
+TCGA-STAD	1	0.249	sex	0.012	
+TCGA-STAD	2	0.167	plate	0.503	0.041
+TCGA-STAD	2	0.167	estimate	0.002	
+TCGA-STAD	2	0.167	quality	0	
+TCGA-STAD	2	0.167	age	0.002	
+TCGA-STAD	2	0.167	sex	0.009	
+TCGA-STAD	3	0.144	plate	0.05	0.045
+TCGA-STAD	3	0.144	estimate	0	
+TCGA-STAD	3	0.144	quality	0.001	
+TCGA-STAD	3	0.144	age	0.004	
+TCGA-STAD	3	0.144	sex	0	
+TCGA-STAD	4	0.07	plate	0.08	0.043
+TCGA-STAD	4	0.07	estimate	0.011	
+TCGA-STAD	4	0.07	quality	0.001	
+TCGA-STAD	4	0.07	age	0.04	
+TCGA-STAD	4	0.07	sex	0.005	
+TCGA-STAD	5	0.05	plate	0.208	0.042
+TCGA-STAD	5	0.05	estimate	0.001	
+TCGA-STAD	5	0.05	quality	0.001	
+TCGA-STAD	5	0.05	age	0	
+TCGA-STAD	5	0.05	sex	0	
+TCGA-THCA	1	0.473	plate	0.082	0.035
+TCGA-THCA	1	0.473	estimate	0.002	
+TCGA-THCA	1	0.473	quality	0	
+TCGA-THCA	1	0.473	age	0.011	
+TCGA-THCA	1	0.473	sex	0	
+TCGA-THCA	2	0.138	plate	0.051	0.034
+TCGA-THCA	2	0.138	estimate	0.001	
+TCGA-THCA	2	0.138	quality	0	
+TCGA-THCA	2	0.138	age	0.021	
+TCGA-THCA	2	0.138	sex	0.005	
+TCGA-THCA	3	0.074	plate	0.059	0.032
+TCGA-THCA	3	0.074	estimate	0.002	
+TCGA-THCA	3	0.074	quality	0	
+TCGA-THCA	3	0.074	age	0.002	
+TCGA-THCA	3	0.074	sex	0.007	
+TCGA-THCA	4	0.054	plate	0.085	0.033
+TCGA-THCA	4	0.054	estimate	0.007	
+TCGA-THCA	4	0.054	quality	0.006	
+TCGA-THCA	4	0.054	age	0.001	
+TCGA-THCA	4	0.054	sex	0.007	
+TCGA-THCA	5	0.044	plate	0.155	0.035
+TCGA-THCA	5	0.044	estimate	0.001	
+TCGA-THCA	5	0.044	quality	0	
+TCGA-THCA	5	0.044	age	0.005	
+TCGA-THCA	5	0.044	sex	0	
+TCGA-UCS	1	0.391	plate		
+TCGA-UCS	1	0.391	estimate	0	
+TCGA-UCS	1	0.391	quality	0	
+TCGA-UCS	1	0.391	age	0.039	
+TCGA-UCS	1	0.391	sex		
+TCGA-UCS	2	0.1	plate		
+TCGA-UCS	2	0.1	estimate	0.001	
+TCGA-UCS	2	0.1	quality	0	
+TCGA-UCS	2	0.1	age	0.005	
+TCGA-UCS	2	0.1	sex		
+TCGA-UCS	3	0.08	plate		
+TCGA-UCS	3	0.08	estimate	0	
+TCGA-UCS	3	0.08	quality	0	
+TCGA-UCS	3	0.08	age	0.02	
+TCGA-UCS	3	0.08	sex		
+TCGA-UCS	4	0.051	plate		
+TCGA-UCS	4	0.051	estimate	0.001	
+TCGA-UCS	4	0.051	quality	0	
+TCGA-UCS	4	0.051	age	0.007	
+TCGA-UCS	4	0.051	sex		
+TCGA-UCS	5	0.038	plate		
+TCGA-UCS	5	0.038	estimate	0	
+TCGA-UCS	5	0.038	quality	0	
+TCGA-UCS	5	0.038	age	0	
+TCGA-UCS	5	0.038	sex		
+TGCT-NSGCT	1	0.476	plate	0.002	0.018
+TGCT-NSGCT	1	0.476	estimate	0.001	
+TGCT-NSGCT	1	0.476	quality	0.001	
+TGCT-NSGCT	1	0.476	age	0.002	
+TGCT-NSGCT	1	0.476	sex		
+TGCT-NSGCT	2	0.319	plate	0.062	0.014
+TGCT-NSGCT	2	0.319	estimate	0.003	
+TGCT-NSGCT	2	0.319	quality	0	
+TGCT-NSGCT	2	0.319	age	0.003	
+TGCT-NSGCT	2	0.319	sex		
+TGCT-NSGCT	3	0.073	plate	0.029	0.014
+TGCT-NSGCT	3	0.073	estimate	0	
+TGCT-NSGCT	3	0.073	quality	0	
+TGCT-NSGCT	3	0.073	age	0.018	
+TGCT-NSGCT	3	0.073	sex		
+TGCT-NSGCT	4	0.022	plate	0	0.008
+TGCT-NSGCT	4	0.022	estimate	0.003	
+TGCT-NSGCT	4	0.022	quality	0.001	
+TGCT-NSGCT	4	0.022	age	0	
+TGCT-NSGCT	4	0.022	sex		
+TGCT-NSGCT	5	0.02	plate	0.086	0.016
+TGCT-NSGCT	5	0.02	estimate	0	
+TGCT-NSGCT	5	0.02	quality	0.001	
+TGCT-NSGCT	5	0.02	age	0.015	
+TGCT-NSGCT	5	0.02	sex		
+TGCT-SEM	1	0.394	plate	0.003	0.02
+TGCT-SEM	1	0.394	estimate	0	
+TGCT-SEM	1	0.394	quality	0	
+TGCT-SEM	1	0.394	age	0.032	
+TGCT-SEM	1	0.394	sex		
+TGCT-SEM	2	0.189	plate	0.045	0.022
+TGCT-SEM	2	0.189	estimate	0.001	
+TGCT-SEM	2	0.189	quality	0.002	
+TGCT-SEM	2	0.189	age	0.001	
+TGCT-SEM	2	0.189	sex		
+TGCT-SEM	3	0.095	plate	0.152	0.012
+TGCT-SEM	3	0.095	estimate	0	
+TGCT-SEM	3	0.095	quality	0.001	
+TGCT-SEM	3	0.095	age	0.102	
+TGCT-SEM	3	0.095	sex		
+TGCT-SEM	4	0.052	plate	0.004	0.022
+TGCT-SEM	4	0.052	estimate	0.001	
+TGCT-SEM	4	0.052	quality	0	
+TGCT-SEM	4	0.052	age	0	
+TGCT-SEM	4	0.052	sex		
+TGCT-SEM	5	0.037	plate	0.001	0.017
+TGCT-SEM	5	0.037	estimate	0	
+TGCT-SEM	5	0.037	quality	0.001	
+TGCT-SEM	5	0.037	age	0.011	
+TGCT-SEM	5	0.037	sex		
+UCEC-EEC	1	0.261	plate	0.138	0.154
+UCEC-EEC	1	0.261	estimate	0	
+UCEC-EEC	1	0.261	quality	0	
+UCEC-EEC	1	0.261	age	0	
+UCEC-EEC	1	0.261	sex		
+UCEC-EEC	2	0.144	plate	0.164	0.162
+UCEC-EEC	2	0.144	estimate	0.001	
+UCEC-EEC	2	0.144	quality	0	
+UCEC-EEC	2	0.144	age	0.015	
+UCEC-EEC	2	0.144	sex		
+UCEC-EEC	3	0.113	plate	0.274	0.152
+UCEC-EEC	3	0.113	estimate	0	
+UCEC-EEC	3	0.113	quality	0.001	
+UCEC-EEC	3	0.113	age	0.018	
+UCEC-EEC	3	0.113	sex		
+UCEC-EEC	4	0.084	plate	0.066	0.15
+UCEC-EEC	4	0.084	estimate	0.001	
+UCEC-EEC	4	0.084	quality	0	
+UCEC-EEC	4	0.084	age	0.103	
+UCEC-EEC	4	0.084	sex		
+UCEC-EEC	5	0.057	plate	0.419	0.134
+UCEC-EEC	5	0.057	estimate	0.002	
+UCEC-EEC	5	0.057	quality	0.006	
+UCEC-EEC	5	0.057	age	0.002	
+UCEC-EEC	5	0.057	sex		
+UCEC-SER	1	0.224	plate	0.224	0.223
+UCEC-SER	1	0.224	estimate	0	
+UCEC-SER	1	0.224	quality	0	
+UCEC-SER	1	0.224	age	0.037	
+UCEC-SER	1	0.224	sex		
+UCEC-SER	2	0.151	plate	0.238	0.235
+UCEC-SER	2	0.151	estimate	0	
+UCEC-SER	2	0.151	quality	0	
+UCEC-SER	2	0.151	age	0.01	
+UCEC-SER	2	0.151	sex		
+UCEC-SER	3	0.112	plate	0.173	0.216
+UCEC-SER	3	0.112	estimate	0	
+UCEC-SER	3	0.112	quality	0	
+UCEC-SER	3	0.112	age	0	
+UCEC-SER	3	0.112	sex		
+UCEC-SER	4	0.078	plate	0.221	0.227
+UCEC-SER	4	0.078	estimate	0	
+UCEC-SER	4	0.078	quality	0	
+UCEC-SER	4	0.078	age	0.096	
+UCEC-SER	4	0.078	sex		
+UCEC-SER	5	0.054	plate	0.26	0.223
+UCEC-SER	5	0.054	estimate	0.001	
+UCEC-SER	5	0.054	quality	0.001	
+UCEC-SER	5	0.054	age	0.01	
+UCEC-SER	5	0.054	sex		
