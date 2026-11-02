@@ -393,172 +393,6 @@ Bladder/Urinary Tract	ACH-003266	1	1	TCGA-BLCA	CCLF_RARE_0021_T	Soft Tissue	Leio
 Bladder/Urinary Tract	ACH-003438	1	0	TCGA-BLCA	CCLF_NEURO_0005_T	CNS/Brain	Diffuse Glioma	GB
 Bladder/Urinary Tract	ACH-003464	1	0	TCGA-BLCA	CCLF_NPDX_0008_T	Soft Tissue	Liposarcoma	LIPO
 Bladder/Urinary Tract	ACH-003465	1	0	TCGA-BLCA	CCLF_HNSC_0004_T	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
-Blood	ACH-000263	156	30	ALL-B,TARGET-AML,TCGA-LAML	KASUMI-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-001647	149	18	ALL-B,TARGET-AML,TCGA-LAML	SHI-1	Myeloid	Acute Myeloid Leukemia	AMOL
-Blood	ACH-000065	146	15	ALL-B,TARGET-AML,TCGA-LAML	OCI-AML5	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000321	144	18	TARGET-AML,TCGA-LAML	MOLM-6	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000295	143	19	ALL-B,TARGET-AML,TCGA-LAML	EM-2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000498	142	41	TARGET-AML,TCGA-LAML	KO52	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-002651	124	1	TARGET-AML,TCGA-LAML	FKH-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-001577	112	7	TARGET-AML,TCGA-LAML	MUTZ-8	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000045	105	18	TARGET-AML,TCGA-LAML	MV4-11	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000166	105	14	TARGET-AML,TCGA-LAML	Kasumi-6	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-002653	102	29	ALL-B,TARGET-AML	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
-Blood	ACH-000198	100	10	ALL-B,TARGET-AML,TCGA-LAML	EOL-1	Myeloid	Myeloproliferative Neoplasms	CELNOS
-Blood	ACH-000492	99	13	ALL-B	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1L
-Blood	ACH-000112	97	1	ALL-B,TARGET-AML,TCGA-LAML	SIG-M5	Myeloid	Acute Myeloid Leukemia	AMOL
-Blood	ACH-001209	92	5	ALL-B	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
-Blood	ACH-001656	88	10	TARGET-AML,TCGA-LAML	SKNO-1	Myeloid	Acute Myeloid Leukemia	AM
-Blood	ACH-000002	87	22	ALL-B,TARGET-AML,TCGA-LAML	HL-60	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000081	87	3	TARGET-AML,TCGA-LAML	GDM-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000728	87	8	ALL-B	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
-Blood	ACH-000874	86	12	ALL-B,TARGET-AML	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
-Blood	ACH-000070	84	3	ALL-B	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
-Blood	ACH-002060	82	10	ALL-B	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
-Blood	ACH-000034	78	10	ALL-B,TARGET-AML,TCGA-LAML	PLB-985	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000362	75	11	TARGET-AML,TCGA-LAML	MOLM-13	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000386	74	3	TARGET-AML,TCGA-LAML	KG-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-003101	74	18	ALL-B	Z-119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
-Blood	ACH-000124	69	5	ALL-B	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000113	68	4	TARGET-AML,TCGA-LAML	OCI-AML2	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000294	67	5	TARGET-AML,TCGA-LAML	NB-4	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-001613	67	0	TARGET-AML,TCGA-LAML	OCI-AML4	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-001684	64	0	TARGET-AML,TCGA-LAML	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000020	63	3	ALL-B	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLHYPO
-Blood	ACH-000439	62	15	TARGET-AML,TCGA-LAML	ME-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-003103	61	6	ALL-B	Z-181	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
-Blood	ACH-000218	59	1	ALL-B,TARGET-AML,TCGA-LAML	PL-21	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000557	59	3	TARGET-AML,TCGA-LAML	AML-193	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000084	58	0	TARGET-AML,TCGA-LAML	MUTZ-3	Myeloid	Acute Myeloid Leukemia	AMLGATA2MECOM
-Blood	ACH-000130	58	3	ALL-B	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-000299	57	0	TARGET-AML,TCGA-LAML	HNT-34	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000059	56	1	ALL-B	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
-Blood	ACH-002290	56	6	ALL-B,TARGET-AML,TCGA-LAML	NKM-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000168	52	0	TARGET-AML,TCGA-LAML	NOMO-1	Myeloid	Acute Myeloid Leukemia	AMOL
-Blood	ACH-000462	50	4	ALL-B	NALM-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-001993	48	0	ALL-B	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLHYPO
-Blood	ACH-001573	47	2	TARGET-AML,TCGA-LAML	MOLM-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000938	43	6	ALL-B	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-001129	41	4	TARGET-AML,TCGA-LAML	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	AMOL
-Blood	ACH-001574	40	2	TARGET-AML,TCGA-LAML	MOLM-14	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000076	38	4	TARGET-AML,TCGA-LAML	NCO2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000080	38	17	TCGA-DLBC	BDCM	Myeloid	Acute Myeloid Leukemia	AMOL
-Blood	ACH-001484	37	7	TCGA-DLBC	CI	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
-Blood	ACH-000006	36	6	TARGET-AML,TCGA-LAML	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	AMOL
-Blood	ACH-000406	34	0	TARGET-AML,TCGA-LAML	U-937	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000602	33	4	TARGET-AML,TCGA-LAML	M-07e	Myeloid	Acute Myeloid Leukemia	AMKL
-Blood	ACH-000074	32	8	TARGET-AML,TCGA-LAML	KU812	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000922	32	5	ALL-B	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
-Blood	ACH-000156	31	2	ALL-B	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1L
-Blood	ACH-001036	31	6	TARGET-AML,TCGA-LAML	CMK-11-5	Myeloid	Acute Myeloid Leukemia	MLADS
-Blood	ACH-000146	30	0	TARGET-AML,TCGA-LAML	THP-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-001485	30	2	TCGA-DLBC	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-002059	30	0	ALL-B	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-000301	29	5	TARGET-AML,TCGA-LAML	LAMA-84	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000158	28	0	TCGA-DLBC	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	ABC
-Blood	ACH-001679	27	6	ALL-B	U-2973	Lymphoid	Mature B-Cell Neoplasms	HGBCLMYCBCL2
-Blood	ACH-000167	26	0	TCGA-DLBC	KE-97	Lymphoid	Mature B-Cell Neoplasms	PCM
-Blood	ACH-000069	24	2	TCGA-DLBC	Hs 611.T	Lymphoid	Hodgkin Lymphoma	HL
-Blood	ACH-000073	24	0	TCGA-DLBC	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-000032	23	1	ALL-B	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
-Blood	ACH-000405	23	0	TCGA-DLBC	MEC-1	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
-Blood	ACH-000387	22	0	TARGET-AML,TCGA-LAML	TF-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000641	21	3	TARGET-AML,TCGA-LAML	CMK	Myeloid	Acute Myeloid Leukemia	MLADS
-Blood	ACH-000960	21	1	ALL-B,TARGET-AML	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLETV6RUNX1
-Blood	ACH-002485	21	0	ALL-B,TCGA-DLBC	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-003108	21	1	ALL-B	HF	Lymphoid	Mature B-Cell Neoplasms	GCB
-Blood	ACH-003273	21	0	TARGET-AML,TCGA-LAML	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	AMKL
-Blood	ACH-000369	20	0	TARGET-AML,TCGA-LAML	MOLM-16	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000432	20	0	ALL-B	BV-173	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-002668	20	0	TARGET-AML,TCGA-LAML	KASUMI-3	Myeloid	Acute Myeloid Leukemia	AMLMD
-Blood	ACH-000487	19	1	TARGET-AML,TCGA-LAML	F-36P	Myeloid	Myelodysplastic Syndromes	MDS
-Blood	ACH-001735	19	0	ALL-B,TARGET-AML	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
-Blood	ACH-002994	19	1	TARGET-AML,TCGA-LAML	WSU-AML	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000068	18	0	TCGA-DLBC	REC-1	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-000220	17	2	ALL-B,TCGA-DLBC	Mino	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-001736	17	0	ALL-B	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLETV6RUNX1
-Blood	ACH-000373	15	0	TCGA-LAML	SKM-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-001493	15	0	TCGA-DLBC	DOGUM	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-000072	14	2	TARGET-AML	MEG-01	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-002946	14	0	TARGET-AML,TCGA-LAML	UKE-1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000038	13	0	TCGA-DLBC	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-000336	13	1	TARGET-AML,TCGA-LAML	OCI-AML3	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000004	12	0	TARGET-AML,TCGA-LAML	HEL	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000241	12	0	TARGET-AML	JK-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-002716	12	0	TARGET-AML,TCGA-LAML	MO-91	Myeloid	Acute Myeloid Leukemia	AMLMD
-Blood	ACH-003106	12	4	ALL-B	RC	Lymphoid	Mature B-Cell Neoplasms	GCB
-Blood	ACH-000660	11	0	TCGA-DLBC	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000770	11	0	TARGET-AML,TCGA-LAML	P31/FUJ	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-002500	11	0	ALL-B	Z-138	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-003266	11	11	TCGA-DLBC	CCLF_RARE_0021_T	Soft Tissue	Leiomyosarcoma	LMS
-Blood	ACH-000326	10	1	TARGET-AML	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-001539	10	0	TCGA-DLBC	KML-1	Lymphoid	Mature B-Cell Neoplasms	GCB
-Blood	ACH-000056	9	1	TCGA-DLBC	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000782	9	2	ALL-B,TARGET-AML	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
-Blood	ACH-001707	9	0	TCGA-DLBC	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
-Blood	ACH-002643	9	1	ALL-B	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-001492	8	0	ALL-B	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-003107	8	0	ALL-B,TCGA-DLBC	JMP-1	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-000687	7	1	TCGA-DLBC	CI-1	Lymphoid	Non-Hodgkin Lymphoma	MBN
-Blood	ACH-001498	7	2	TCGA-DLBC	Farage	Lymphoid	Mature B-Cell Neoplasms	GCB
-Blood	ACH-002675	7	0	TCGA-LAML	SH-2	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000140	6	0	TCGA-DLBC	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000195	6	0	TARGET-AML,TCGA-LAML	Set-2	Myeloid	Acute Myeloid Leukemia	AMKL
-Blood	ACH-001571	6	0	TARGET-AML,TCGA-DLBC	Mo	Lymphoid	Mature B-Cell Neoplasms	HCL
-Blood	ACH-001685	6	0	TCGA-DLBC	U-HO1	Lymphoid	Hodgkin Lymphoma	HL
-Blood	ACH-000534	5	0	TCGA-DLBC	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000654	5	0	TCGA-DLBC	Raji	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-001708	5	0	ALL-B	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	FL
-Blood	ACH-002678	5	0	ALL-B	WILL-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000287	4	0	ALL-B,TCGA-DLBC	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	ABC
-Blood	ACH-000583	4	0	TCGA-DLBC	MC116	Lymphoid	Non-Hodgkin Lymphoma	MBN
-Blood	ACH-001450	4	0	ALL-B,TCGA-DLBC	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-001503	4	0	ALL-B,TCGA-DLBC	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-001616	4	0	ALL-B,TCGA-DLBC	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-001686	4	2	ALL-B,TCGA-DLBC	ULA	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-001709	4	0	TCGA-DLBC	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-002677	4	0	ALL-B,TCGA-DLBC	U-2946	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000005	3	0	TARGET-AML,TCGA-LAML	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000612	3	0	TCGA-DLBC	HuT 102	Lymphoid	Mature T and NK Neoplasms	MYCF
-Blood	ACH-000656	3	0	ALL-B	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000751	3	0	TARGET-AML	OCI-M1	Myeloid	Acute Myeloid Leukemia	AML
-Blood	ACH-000815	3	0	TCGA-DLBC	KM-H2	Lymphoid	Hodgkin Lymphoma	HL
-Blood	ACH-000983	3	0	TARGET-AML,TCGA-LAML	KCL-22	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-001111	3	0	TCGA-DLBC	L82	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
-Blood	ACH-001520	3	0	TCGA-DLBC	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-000077	2	0	TCGA-DLBC	MJ	Lymphoid	Non-Hodgkin Lymphoma	MTNN
-Blood	ACH-000106	2	0	TCGA-DLBC	JVM-2	Lymphoid	Mature B-Cell Neoplasms	MCL
-Blood	ACH-000206	2	0	TCGA-DLBC	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
-Blood	ACH-000271	2	0	TCGA-DLBC	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000611	2	0	TCGA-DLBC	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000707	2	0	TCGA-DLBC	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-000786	2	0	TCGA-DLBC	Daudi	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-000944	2	0	TCGA-DLBC	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-001106	2	0	ALL-B	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
-Blood	ACH-001119	2	0	TCGA-DLBC	Mac-2A	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
-Blood	ACH-002055	2	0	ALL-B,TCGA-DLBC	TL-1	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-002061	2	0	TARGET-AML	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-003100	2	0	ALL-B	EJ-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000053	1	0	TCGA-DLBC	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
-Blood	ACH-000104	1	0	TCGA-LAML	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	ETPLL
-Blood	ACH-000151	1	0	ALL-B	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-000162	1	0	TCGA-DLBC	GA-10	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-000233	1	0	TCGA-DLBC	DEL	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
-Blood	ACH-000245	1	0	TCGA-DLBC	BL-41	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-000346	1	0	TCGA-DLBC	JVM-3	Lymphoid	Mature B-Cell Neoplasms	BPLL
-Blood	ACH-000365	1	0	TCGA-DLBC	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000371	1	0	TCGA-DLBC	RL	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000388	1	0	ALL-B	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
-Blood	ACH-000402	1	0	TCGA-DLBC	BL-70	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-000604	1	0	TARGET-AML	KYO-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
-Blood	ACH-000702	1	0	TCGA-DLBC	L-1236	Lymphoid	Hodgkin Lymphoma	HL
-Blood	ACH-000829	1	0	TCGA-DLBC	HuNS1	Lymphoid	Mature B-Cell Neoplasms	PCM
-Blood	ACH-001068	1	0	TCGA-DLBC	FE-PD	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
-Blood	ACH-001147	1	0	TARGET-AML	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	FTCL
-Blood	ACH-001449	1	0	TCGA-DLBC	BL-2	Lymphoid	Mature B-Cell Neoplasms	BL
-Blood	ACH-001634	1	0	TCGA-DLBC	PGA-1	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
-Blood	ACH-001680	1	0	TCGA-DLBC	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
-Blood	ACH-002062	1	0	TCGA-DLBC	SLVL	Lymphoid	Mature B-Cell Neoplasms	SMZL
 Bowel	ACH-000470	255	14	TCGA-COAD,TCGA-READ	SW1463	Bowel	Colorectal Adenocarcinoma	READ
 Bowel	ACH-002662	243	15	TCGA-COAD,TCGA-READ	JVE-207	Bowel	Colorectal Adenocarcinoma	COAD
 Bowel	ACH-000926	217	31	TCGA-COAD,TCGA-READ	HT-55	Bowel	Colorectal Adenocarcinoma	COAD
@@ -2490,6 +2324,185 @@ Lung	ACH-002523	1	0	TCGA-LUAD	SNU-739	Liver	Hepatocellular Carcinoma	HCC
 Lung	ACH-002781	1	0	TCGA-LUSC	NCC-dCS1-C1	Bone	Chondrosarcoma	DDCHS
 Lung	ACH-003121	1	0	TCGA-LUAD	NCI-H2679	Lung	Lung Neuroendocrine Tumor	SCLC
 Lung	ACH-003475	1	0	TCGA-LUSC	CCLF_HNSC_0003_T	Head and Neck	Head and Neck Squamous Cell Carcinoma	HNSC
+Lymphoid	ACH-000492	113	13	ALL-B	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1L
+Lymphoid	ACH-000728	101	8	ALL-B	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Lymphoid	ACH-001209	99	5	ALL-B	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Lymphoid	ACH-000070	93	3	ALL-B	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Lymphoid	ACH-000874	90	12	ALL-B	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Lymphoid	ACH-000124	78	5	ALL-B	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000130	77	3	ALL-B	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-003101	75	18	ALL-B	Z-119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Lymphoid	ACH-001993	72	0	ALL-B	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLHYPO
+Lymphoid	ACH-000020	68	3	ALL-B	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLHYPO
+Lymphoid	ACH-003103	64	6	ALL-B	Z-181	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Lymphoid	ACH-000059	62	1	ALL-B	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1
+Lymphoid	ACH-000938	53	6	ALL-B	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-002059	41	0	ALL-B	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-001484	38	7	TCGA-DLBC	CI	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Lymphoid	ACH-000156	37	2	ALL-B	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLBCRABL1L
+Lymphoid	ACH-000922	37	5	ALL-B	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Lymphoid	ACH-000158	31	0	TCGA-DLBC	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	ABC
+Lymphoid	ACH-001736	31	0	ALL-B	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLETV6RUNX1
+Lymphoid	ACH-001485	30	2	TCGA-DLBC	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-001679	30	6	ALL-B	U-2973	Lymphoid	Mature B-Cell Neoplasms	HGBCLMYCBCL2
+Lymphoid	ACH-002653	30	29	ALL-B	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
+Lymphoid	ACH-000032	29	1	ALL-B	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLTCF3PBX1
+Lymphoid	ACH-000960	28	1	ALL-B	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLETV6RUNX1
+Lymphoid	ACH-001735	28	0	ALL-B	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Lymphoid	ACH-000069	26	2	TCGA-DLBC	Hs 611.T	Lymphoid	Hodgkin Lymphoma	HL
+Lymphoid	ACH-000167	26	0	TCGA-DLBC	KE-97	Lymphoid	Mature B-Cell Neoplasms	PCM
+Lymphoid	ACH-000073	25	0	TCGA-DLBC	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-000405	25	0	TCGA-DLBC	MEC-1	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Lymphoid	ACH-002485	21	0	ALL-B,TCGA-DLBC	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-003108	21	1	ALL-B	HF	Lymphoid	Mature B-Cell Neoplasms	GCB
+Lymphoid	ACH-000068	19	0	TCGA-DLBC	REC-1	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-000080	17	17	TCGA-DLBC	BDCM	Myeloid	Acute Myeloid Leukemia	AMOL
+Lymphoid	ACH-000220	17	2	ALL-B,TCGA-DLBC	Mino	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-002060	17	10	ALL-B	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
+Lymphoid	ACH-001493	15	0	TCGA-DLBC	DOGUM	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-002643	14	1	ALL-B	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-000038	13	0	TCGA-DLBC	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-003106	13	4	ALL-B	RC	Lymphoid	Mature B-Cell Neoplasms	GCB
+Lymphoid	ACH-000782	12	1	ALL-B	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Lymphoid	ACH-000660	11	0	TCGA-DLBC	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-001707	11	0	TCGA-DLBC	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Lymphoid	ACH-002500	11	0	ALL-B	Z-138	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-003266	11	11	TCGA-DLBC	CCLF_RARE_0021_T	Soft Tissue	Leiomyosarcoma	LMS
+Lymphoid	ACH-001492	10	0	ALL-B	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-001539	10	0	TCGA-DLBC	KML-1	Lymphoid	Mature B-Cell Neoplasms	GCB
+Lymphoid	ACH-000056	9	1	TCGA-DLBC	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-001498	8	2	TCGA-DLBC	Farage	Lymphoid	Mature B-Cell Neoplasms	GCB
+Lymphoid	ACH-003107	8	0	ALL-B,TCGA-DLBC	JMP-1	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-000687	7	1	TCGA-DLBC	CI-1	Lymphoid	Non-Hodgkin Lymphoma	MBN
+Lymphoid	ACH-000140	6	0	TCGA-DLBC	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-001571	6	0	TCGA-DLBC	Mo	Lymphoid	Mature B-Cell Neoplasms	HCL
+Lymphoid	ACH-001685	6	0	TCGA-DLBC	U-HO1	Lymphoid	Hodgkin Lymphoma	HL
+Lymphoid	ACH-000534	5	0	TCGA-DLBC	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000654	5	0	TCGA-DLBC	Raji	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-001686	5	2	ALL-B,TCGA-DLBC	ULA	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-001708	5	0	ALL-B	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	FL
+Lymphoid	ACH-002678	5	0	ALL-B	WILL-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000287	4	0	ALL-B,TCGA-DLBC	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	ABC
+Lymphoid	ACH-000462	4	4	ALL-B	NALM-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Lymphoid	ACH-000583	4	0	TCGA-DLBC	MC116	Lymphoid	Non-Hodgkin Lymphoma	MBN
+Lymphoid	ACH-001450	4	0	ALL-B,TCGA-DLBC	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-001503	4	0	ALL-B,TCGA-DLBC	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-001616	4	0	ALL-B,TCGA-DLBC	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-001709	4	0	TCGA-DLBC	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-002677	4	0	ALL-B,TCGA-DLBC	U-2946	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000106	3	0	TCGA-DLBC	JVM-2	Lymphoid	Mature B-Cell Neoplasms	MCL
+Lymphoid	ACH-000206	3	0	TCGA-DLBC	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	TLL
+Lymphoid	ACH-000612	3	0	TCGA-DLBC	HuT 102	Lymphoid	Mature T and NK Neoplasms	MYCF
+Lymphoid	ACH-000656	3	0	ALL-B	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000815	3	0	TCGA-DLBC	KM-H2	Lymphoid	Hodgkin Lymphoma	HL
+Lymphoid	ACH-001106	3	0	ALL-B	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Lymphoid	ACH-001111	3	0	TCGA-DLBC	L82	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+Lymphoid	ACH-001520	3	0	TCGA-DLBC	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-000077	2	0	TCGA-DLBC	MJ	Lymphoid	Non-Hodgkin Lymphoma	MTNN
+Lymphoid	ACH-000271	2	0	TCGA-DLBC	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000611	2	0	TCGA-DLBC	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000707	2	0	TCGA-DLBC	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-000786	2	0	TCGA-DLBC	Daudi	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-000829	2	0	TCGA-DLBC	HuNS1	Lymphoid	Mature B-Cell Neoplasms	PCM
+Lymphoid	ACH-000944	2	0	TCGA-DLBC	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-001119	2	0	TCGA-DLBC	Mac-2A	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
+Lymphoid	ACH-002055	2	0	ALL-B,TCGA-DLBC	TL-1	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-003100	2	0	ALL-B	EJ-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000002	1	0	ALL-B	HL-60	Myeloid	Acute Myeloid Leukemia	AML
+Lymphoid	ACH-000034	1	1	ALL-B	PLB-985	Myeloid	Acute Myeloid Leukemia	AML
+Lymphoid	ACH-000053	1	0	TCGA-DLBC	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+Lymphoid	ACH-000065	1	0	ALL-B	OCI-AML5	Myeloid	Acute Myeloid Leukemia	AML
+Lymphoid	ACH-000112	1	0	ALL-B	SIG-M5	Myeloid	Acute Myeloid Leukemia	AMOL
+Lymphoid	ACH-000151	1	0	ALL-B	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-000162	1	0	TCGA-DLBC	GA-10	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-000198	1	0	ALL-B	EOL-1	Myeloid	Myeloproliferative Neoplasms	CELNOS
+Lymphoid	ACH-000218	1	0	ALL-B	PL-21	Myeloid	Acute Myeloid Leukemia	AML
+Lymphoid	ACH-000233	1	0	TCGA-DLBC	DEL	Lymphoid	Mature T and NK Neoplasms	ALCLALKP
+Lymphoid	ACH-000245	1	0	TCGA-DLBC	BL-41	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-000263	1	0	ALL-B	KASUMI-1	Myeloid	Acute Myeloid Leukemia	AML
+Lymphoid	ACH-000295	1	0	ALL-B	EM-2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Lymphoid	ACH-000346	1	0	TCGA-DLBC	JVM-3	Lymphoid	Mature B-Cell Neoplasms	BPLL
+Lymphoid	ACH-000365	1	0	TCGA-DLBC	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000371	1	0	TCGA-DLBC	RL	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000388	1	0	ALL-B	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-000402	1	0	TCGA-DLBC	BL-70	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-000702	1	0	TCGA-DLBC	L-1236	Lymphoid	Hodgkin Lymphoma	HL
+Lymphoid	ACH-000754	1	0	TCGA-DLBC	L-428	Lymphoid	Hodgkin Lymphoma	HL
+Lymphoid	ACH-001068	1	0	TCGA-DLBC	FE-PD	Lymphoid	Mature T and NK Neoplasms	ALCLALKN
+Lymphoid	ACH-001147	1	0	TCGA-DLBC	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	FTCL
+Lymphoid	ACH-001148	1	0	TCGA-DLBC	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	DLBCLNOS
+Lymphoid	ACH-001449	1	0	TCGA-DLBC	BL-2	Lymphoid	Mature B-Cell Neoplasms	BL
+Lymphoid	ACH-001634	1	0	TCGA-DLBC	PGA-1	Lymphoid	Mature B-Cell Neoplasms	CLLSLL
+Lymphoid	ACH-001647	1	0	ALL-B	SHI-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Lymphoid	ACH-001680	1	0	TCGA-DLBC	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLL
+Lymphoid	ACH-002062	1	0	TCGA-DLBC	SLVL	Lymphoid	Mature B-Cell Neoplasms	SMZL
+Lymphoid	ACH-002290	1	0	ALL-B	NKM-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000263	156	30	TARGET-AML,TCGA-LAML	KASUMI-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-001647	148	18	TARGET-AML,TCGA-LAML	SHI-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Myeloid	ACH-000065	146	15	TARGET-AML,TCGA-LAML	OCI-AML5	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000321	145	18	TARGET-AML,TCGA-LAML	MOLM-6	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000295	142	19	TARGET-AML,TCGA-LAML	EM-2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000498	142	41	TARGET-AML,TCGA-LAML	KO52	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-002651	124	1	TARGET-AML,TCGA-LAML	FKH-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-001577	112	7	TARGET-AML,TCGA-LAML	MUTZ-8	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000045	105	18	TARGET-AML,TCGA-LAML	MV4-11	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000166	105	14	TARGET-AML,TCGA-LAML	Kasumi-6	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000198	99	10	TARGET-AML,TCGA-LAML	EOL-1	Myeloid	Myeloproliferative Neoplasms	CELNOS
+Myeloid	ACH-000112	96	1	TARGET-AML,TCGA-LAML	SIG-M5	Myeloid	Acute Myeloid Leukemia	AMOL
+Myeloid	ACH-001656	88	10	TARGET-AML,TCGA-LAML	SKNO-1	Myeloid	Acute Myeloid Leukemia	AM
+Myeloid	ACH-000081	87	3	TARGET-AML,TCGA-LAML	GDM-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000002	86	22	TARGET-AML,TCGA-LAML	HL-60	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000034	77	9	TARGET-AML,TCGA-LAML	PLB-985	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000362	75	11	TARGET-AML,TCGA-LAML	MOLM-13	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000386	74	3	TARGET-AML,TCGA-LAML	KG-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000113	68	4	TARGET-AML,TCGA-LAML	OCI-AML2	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000294	67	5	TARGET-AML,TCGA-LAML	NB-4	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-001613	67	0	TARGET-AML,TCGA-LAML	OCI-AML4	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-001684	64	0	TARGET-AML,TCGA-LAML	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000439	62	15	TARGET-AML,TCGA-LAML	ME-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000557	59	3	TARGET-AML,TCGA-LAML	AML-193	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000084	58	0	TARGET-AML,TCGA-LAML	MUTZ-3	Myeloid	Acute Myeloid Leukemia	AMLGATA2MECOM
+Myeloid	ACH-000218	58	1	TARGET-AML,TCGA-LAML	PL-21	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000299	57	0	TARGET-AML,TCGA-LAML	HNT-34	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-002290	55	6	TARGET-AML,TCGA-LAML	NKM-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000168	52	0	TARGET-AML,TCGA-LAML	NOMO-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Myeloid	ACH-001573	47	2	TARGET-AML,TCGA-LAML	MOLM-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-001129	41	4	TARGET-AML,TCGA-LAML	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	AMOL
+Myeloid	ACH-001574	40	2	TARGET-AML,TCGA-LAML	MOLM-14	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000076	38	4	TARGET-AML,TCGA-LAML	NCO2	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000006	36	6	TARGET-AML,TCGA-LAML	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	AMOL
+Myeloid	ACH-000406	34	0	TARGET-AML,TCGA-LAML	U-937	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000602	33	4	TARGET-AML,TCGA-LAML	M-07e	Myeloid	Acute Myeloid Leukemia	AMKL
+Myeloid	ACH-000074	32	8	TARGET-AML,TCGA-LAML	KU812	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-001036	31	6	TARGET-AML,TCGA-LAML	CMK-11-5	Myeloid	Acute Myeloid Leukemia	MLADS
+Myeloid	ACH-000146	30	0	TARGET-AML,TCGA-LAML	THP-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000301	29	5	TARGET-AML,TCGA-LAML	LAMA-84	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000387	22	0	TARGET-AML,TCGA-LAML	TF-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000641	21	3	TARGET-AML,TCGA-LAML	CMK	Myeloid	Acute Myeloid Leukemia	MLADS
+Myeloid	ACH-002668	21	0	TARGET-AML,TCGA-LAML	KASUMI-3	Myeloid	Acute Myeloid Leukemia	AMLMD
+Myeloid	ACH-003273	21	0	TARGET-AML,TCGA-LAML	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	AMKL
+Myeloid	ACH-000369	20	0	TARGET-AML,TCGA-LAML	MOLM-16	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000487	19	1	TARGET-AML,TCGA-LAML	F-36P	Myeloid	Myelodysplastic Syndromes	MDS
+Myeloid	ACH-002994	19	1	TARGET-AML,TCGA-LAML	WSU-AML	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000373	15	0	TCGA-LAML	SKM-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000072	14	2	TARGET-AML	MEG-01	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-002946	14	0	TARGET-AML,TCGA-LAML	UKE-1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000336	13	1	TARGET-AML,TCGA-LAML	OCI-AML3	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-002716	13	0	TARGET-AML,TCGA-LAML	MO-91	Myeloid	Acute Myeloid Leukemia	AMLMD
+Myeloid	ACH-000004	12	0	TARGET-AML,TCGA-LAML	HEL	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000241	12	0	TARGET-AML	JK-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000770	11	0	TARGET-AML,TCGA-LAML	P31/FUJ	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000326	10	1	TARGET-AML	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-002675	7	0	TCGA-LAML	SH-2	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000195	6	0	TARGET-AML,TCGA-LAML	Set-2	Myeloid	Acute Myeloid Leukemia	AMKL
+Myeloid	ACH-000005	3	0	TARGET-AML,TCGA-LAML	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000751	3	0	TARGET-AML	OCI-M1	Myeloid	Acute Myeloid Leukemia	AML
+Myeloid	ACH-000983	3	0	TARGET-AML,TCGA-LAML	KCL-22	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-002061	2	0	TARGET-AML	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000604	1	0	TARGET-AML	KYO-1	Myeloid	Myeloproliferative Neoplasms	CMLBCRABL1
+Myeloid	ACH-000782	1	1	TARGET-AML	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Myeloid	ACH-001735	1	0	TARGET-AML	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	BLLKMT2A
+Myeloid	ACH-002653	1	0	TARGET-AML	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	ALAL
 Neuroblastoma	ACH-000341	175	6	PCPG-PGL,PCPG-PHEO	SK-N-FI	Peripheral Nervous System	Neuroblastoma	NBL
 Neuroblastoma	ACH-002922	175	159	PCPG-PGL,PCPG-PHEO	SK-N-MM	Peripheral Nervous System	Neuroblastoma	NBL
 Neuroblastoma	ACH-001354	168	0	PCPG-PGL,PCPG-PHEO	LAN-2	Peripheral Nervous System	Neuroblastoma	NBL

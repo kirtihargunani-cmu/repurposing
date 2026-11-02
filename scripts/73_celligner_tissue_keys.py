@@ -3,7 +3,8 @@
 
 Goal (user, 2026-10-08): matching is for drug applicability to the disease, so each patient is matched only to
 DepMap lines of the group's key: by default the organ (DepMap OncotreeLineage = OncoTree tissue of the group's
-code); a substitute where the organ has no usable lines; "Blood" (myeloid + lymphoid) for hematologic groups.
+code); a substitute where the organ has no usable lines; Myeloid or Lymphoid lines for hematologic groups
+(user 2026-10-12; was one "Blood" key, myeloid + lymphoid).
 MODE=strict: only the key's lines. MODE=hybrid (user 2026-10-08): the key's lines plus, per patient, any other
 line closer than that patient's nearest in-key line; patients whose nearest line is already in the key are unchanged.
 Distances are the main run's (scripts/70_celligner.py), cancer models only; weights use the same softmax and tau

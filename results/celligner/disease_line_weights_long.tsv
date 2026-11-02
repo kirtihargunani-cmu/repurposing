@@ -1,224 +1,207 @@
 group_id	ModelID	weight	n_patients_top10	n_patients_nearest	key	in_key	CellLineName	OncotreeLineage	OncotreePrimaryDisease	cum_weight
-ALL-B	ACH-002653	0.109007	101.0	29.0	Blood	True	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.109007
-ALL-B	ACH-003101	0.075171	74.0	18.0	Blood	True	Z-119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.184178
-ALL-B	ACH-003103	0.063094	61.0	6.0	Blood	True	Z-181	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.247272
-ALL-B	ACH-002060	0.062176	82.0	10.0	Blood	True	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	0.309448
-ALL-B	ACH-001209	0.056825	92.0	5.0	Blood	True	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.366273
-ALL-B	ACH-000874	0.050857	85.0	12.0	Blood	True	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.41713
-ALL-B	ACH-000492	0.048144	99.0	13.0	Blood	True	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.465274
-ALL-B	ACH-000728	0.04579	87.0	8.0	Blood	True	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.511064
-ALL-B	ACH-000020	0.036221	63.0	3.0	Blood	True	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.547285
-ALL-B	ACH-000070	0.033655	84.0	3.0	Blood	True	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.58094
-ALL-B	ACH-000462	0.032606	50.0	4.0	Blood	True	NALM-1	Myeloid	Myeloproliferative Neoplasms	0.613546
-ALL-B	ACH-000130	0.030392	58.0	3.0	Blood	True	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.643938
-ALL-B	ACH-000124	0.029484	69.0	5.0	Blood	True	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	0.673422
-ALL-B	ACH-000938	0.026897	43.0	6.0	Blood	True	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.700318
-ALL-B	ACH-000059	0.026412	56.0	1.0	Blood	True	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.72673
-ALL-B	ACH-001993	0.022442	48.0	0.0	Blood	True	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.749172
-ALL-B	ACH-000156	0.021891	31.0	2.0	Blood	True	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.771063
-ALL-B	ACH-000922	0.019194	32.0	5.0	Blood	True	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.790257
-ALL-B	ACH-000032	0.016875	23.0	1.0	Blood	True	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.807132
-ALL-B	ACH-000960	0.016074	20.0	1.0	Blood	True	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.823206
-ALL-B	ACH-003106	0.015446	12.0	4.0	Blood	True	RC	Lymphoid	Mature B-Cell Neoplasms	0.838652
-ALL-B	ACH-001679	0.014558	27.0	6.0	Blood	True	U-2973	Lymphoid	Mature B-Cell Neoplasms	0.853211
-ALL-B	ACH-002059	0.013811	30.0	0.0	Blood	True	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.867022
-ALL-B	ACH-001735	0.012761	18.0	0.0	Blood	True	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.879782
-ALL-B	ACH-000782	0.012529	8.0	1.0	Blood	True	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.892311
-ALL-B	ACH-000432	0.011211	20.0	0.0	Blood	True	BV-173	Myeloid	Myeloproliferative Neoplasms	0.903522
-ALL-B	ACH-001736	0.010634	17.0	0.0	Blood	True	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.914157
-ALL-B	ACH-003108	0.010048	21.0	1.0	Blood	True	HF	Lymphoid	Mature B-Cell Neoplasms	0.924205
-ALL-B	ACH-002643	0.006991	9.0	1.0	Blood	True	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.931195
-ALL-B	ACH-001708	0.005966	5.0	0.0	Blood	True	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	0.937161
-ALL-B	ACH-001492	0.005501	8.0	0.0	Blood	True	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	0.942662
-ALL-B	ACH-001106	0.004026	2.0	0.0	Blood	True	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.946688
-ALL-B	ACH-002500	0.004025	11.0	0.0	Blood	True	Z-138	Lymphoid	Mature B-Cell Neoplasms	0.950712
-ALL-B	ACH-002485	0.002957	6.0	0.0	Blood	True	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	0.953669
-ALL-B	ACH-000287	0.002676	3.0	0.0	Blood	True	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	0.956345
-ALL-B	ACH-002678	0.002661	5.0	0.0	Blood	True	WILL-1	Lymphoid	Mature B-Cell Neoplasms	0.959006
-ALL-B	ACH-000656	0.002216	3.0	0.0	Blood	True	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	0.961223
-ALL-B	ACH-000151	0.002149	1.0	0.0	Blood	True	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.963371
-ALL-B	ACH-002290	0.001593	1.0	0.0	Blood	True	NKM-1	Myeloid	Acute Myeloid Leukemia	0.964964
-ALL-B	ACH-000285	0.001519	0.0	0.0	Blood	True	Toledo	Lymphoid	Mature B-Cell Neoplasms	0.966483
-ALL-B	ACH-000034	0.001494	1.0	1.0	Blood	True	PLB-985	Myeloid	Acute Myeloid Leukemia	0.967977
-ALL-B	ACH-001616	0.001492	2.0	0.0	Blood	True	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	0.969468
-ALL-B	ACH-001647	0.001225	1.0	0.0	Blood	True	SHI-1	Myeloid	Acute Myeloid Leukemia	0.970693
-ALL-B	ACH-000220	0.001219	2.0	0.0	Blood	True	Mino	Lymphoid	Mature B-Cell Neoplasms	0.971912
-ALL-B	ACH-002677	0.001094	2.0	0.0	Blood	True	U-2946	Lymphoid	Mature B-Cell Neoplasms	0.973006
-ALL-B	ACH-003100	0.001037	2.0	0.0	Blood	True	EJ-1	Lymphoid	Mature B-Cell Neoplasms	0.974043
-ALL-B	ACH-001677	0.001036	0.0	0.0	Blood	True	U-2904	Lymphoid	Mature B-Cell Neoplasms	0.97508
-ALL-B	ACH-003460	0.000976	0.0	0.0	Blood	True	CCLF_HEME_0001_T	Lymphoid	Mature B-Cell Neoplasms	0.976055
-ALL-B	ACH-001450	0.000973	2.0	0.0	Blood	True	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	0.977029
-ALL-B	ACH-000567	0.000881	0.0	0.0	Blood	True	ST486	Lymphoid	Mature B-Cell Neoplasms	0.97791
-ALL-B	ACH-003107	0.000874	2.0	0.0	Blood	True	JMP-1	Lymphoid	Mature B-Cell Neoplasms	0.978784
-ALL-B	ACH-000388	0.00083	1.0	0.0	Blood	True	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	0.979614
-ALL-B	ACH-000002	0.000748	1.0	0.0	Blood	True	HL-60	Myeloid	Acute Myeloid Leukemia	0.980362
-ALL-B	ACH-001503	0.000689	1.0	0.0	Blood	True	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	0.981051
-ALL-B	ACH-001493	0.000679	0.0	0.0	Blood	True	DOGUM	Lymphoid	Mature B-Cell Neoplasms	0.98173
-ALL-B	ACH-000357	0.000675	0.0	0.0	Blood	True	JeKo-1	Lymphoid	Mature B-Cell Neoplasms	0.982405
-ALL-B	ACH-001680	0.000661	0.0	0.0	Blood	True	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.983066
-ALL-B	ACH-000162	0.000625	0.0	0.0	Blood	True	GA-10	Lymphoid	Mature B-Cell Neoplasms	0.983691
-ALL-B	ACH-000056	0.000624	0.0	0.0	Blood	True	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	0.984315
-ALL-B	ACH-000944	0.000581	0.0	0.0	Blood	True	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	0.984896
-ALL-B	ACH-001686	0.000545	1.0	0.0	Blood	True	ULA	Lymphoid	Mature B-Cell Neoplasms	0.985441
-ALL-B	ACH-000245	0.000488	0.0	0.0	Blood	True	BL-41	Lymphoid	Mature B-Cell Neoplasms	0.985929
-ALL-B	ACH-002055	0.000473	1.0	0.0	Blood	True	TL-1	Lymphoid	Mature B-Cell Neoplasms	0.986402
-ALL-B	ACH-001449	0.000448	0.0	0.0	Blood	True	BL-2	Lymphoid	Mature B-Cell Neoplasms	0.98685
-ALL-B	ACH-000158	0.000411	0.0	0.0	Blood	True	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	0.987261
-ALL-B	ACH-000402	0.000406	0.0	0.0	Blood	True	BL-70	Lymphoid	Mature B-Cell Neoplasms	0.987667
-ALL-B	ACH-000112	0.000405	1.0	0.0	Blood	True	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.988072
-ALL-B	ACH-000193	0.000403	0.0	0.0	Blood	True	KARPAS-620	Lymphoid	Mature B-Cell Neoplasms	0.988474
-ALL-B	ACH-001485	0.000375	0.0	0.0	Blood	True	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.98885
-ALL-B	ACH-000583	0.000315	0.0	0.0	Blood	True	MC116	Lymphoid	Non-Hodgkin Lymphoma	0.989165
-ALL-B	ACH-001498	0.000306	0.0	0.0	Blood	True	Farage	Lymphoid	Mature B-Cell Neoplasms	0.98947
-ALL-B	ACH-000167	0.000295	0.0	0.0	Blood	True	KE-97	Lymphoid	Mature B-Cell Neoplasms	0.989765
-ALL-B	ACH-000707	0.000294	0.0	0.0	Blood	True	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	0.99006
-ALL-B	ACH-001709	0.00029	0.0	0.0	Blood	True	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	0.99035
-ALL-B	ACH-000065	0.000286	1.0	0.0	Blood	True	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.990636
-ALL-B	ACH-001636	0.000282	0.0	0.0	Blood	True	Ramos	Lymphoid	Mature B-Cell Neoplasms	0.990918
-ALL-B	ACH-000263	0.000275	1.0	0.0	Blood	True	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.991193
-ALL-B	ACH-000068	0.000273	0.0	0.0	Blood	True	REC-1	Lymphoid	Mature B-Cell Neoplasms	0.991466
-ALL-B	ACH-001539	0.000262	0.0	0.0	Blood	True	KML-1	Lymphoid	Mature B-Cell Neoplasms	0.991727
-ALL-B	ACH-000654	0.000252	0.0	0.0	Blood	True	Raji	Lymphoid	Mature B-Cell Neoplasms	0.991979
-ALL-B	ACH-000198	0.000243	1.0	0.0	Blood	True	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.992222
-ALL-B	ACH-000080	0.000234	0.0	0.0	Blood	True	BDCM	Myeloid	Acute Myeloid Leukemia	0.992456
-ALL-B	ACH-000271	0.000232	0.0	0.0	Blood	True	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	0.992688
-ALL-B	ACH-001484	0.000217	0.0	0.0	Blood	True	CI	Lymphoid	Mature B-Cell Neoplasms	0.992905
-ALL-B	ACH-000660	0.000216	0.0	0.0	Blood	True	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	0.993121
-ALL-B	ACH-000687	0.000212	0.0	0.0	Blood	True	CI-1	Lymphoid	Non-Hodgkin Lymphoma	0.993332
-ALL-B	ACH-001669	0.000206	0.0	0.0	Blood	True	TANOUE	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.993539
-ALL-B	ACH-000295	0.0002	1.0	0.0	Blood	True	EM-2	Myeloid	Myeloproliferative Neoplasms	0.993739
-ALL-B	ACH-000365	0.000192	0.0	0.0	Blood	True	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	0.993931
-ALL-B	ACH-000073	0.000174	0.0	0.0	Blood	True	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	0.994105
-ALL-B	ACH-000371	0.000165	0.0	0.0	Blood	True	RL	Lymphoid	Mature B-Cell Neoplasms	0.99427
-ALL-B	ACH-000294	0.000164	0.0	0.0	Blood	True	NB-4	Myeloid	Acute Myeloid Leukemia	0.994434
-ALL-B	ACH-001447	0.000161	0.0	0.0	Blood	True	BJAB	Lymphoid	Mature B-Cell Neoplasms	0.994594
-ALL-B	ACH-000218	0.000159	1.0	0.0	Blood	True	PL-21	Myeloid	Acute Myeloid Leukemia	0.994753
-ALL-B	ACH-000786	0.000158	0.0	0.0	Blood	True	Daudi	Lymphoid	Mature B-Cell Neoplasms	0.994911
-ALL-B	ACH-000914	0.000151	0.0	0.0	Blood	True	HT	Lymphoid	Mature B-Cell Neoplasms	0.995062
-ALL-B	ACH-000534	0.00015	0.0	0.0	Blood	True	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	0.995211
-ALL-B	ACH-001147	0.000148	0.0	0.0	Blood	True	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	0.995359
-ALL-B	ACH-000045	0.000141	0.0	0.0	Blood	True	MV4-11	Myeloid	Acute Myeloid Leukemia	0.995499
-ALL-B	ACH-000206	0.000123	0.0	0.0	Blood	True	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.995623
-ALL-B	ACH-000380	0.000123	0.0	0.0	Blood	True	KMS-12-BM	Lymphoid	Mature B-Cell Neoplasms	0.995745
-ALL-B	ACH-000405	0.000119	0.0	0.0	Blood	True	MEC-1	Lymphoid	Mature B-Cell Neoplasms	0.995865
-ALL-B	ACH-000398	0.000118	0.0	0.0	Blood	True	RI-1	Lymphoid	Mature B-Cell Neoplasms	0.995982
-ALL-B	ACH-001068	0.000115	0.0	0.0	Blood	True	FE-PD	Lymphoid	Mature T and NK Neoplasms	0.996098
-ALL-B	ACH-000838	0.000114	0.0	0.0	Blood	True	AMO-1	Lymphoid	Mature B-Cell Neoplasms	0.996211
-ALL-B	ACH-002478	0.000112	0.0	0.0	Blood	True	BC-2	Lymphoid	Mature B-Cell Neoplasms	0.996323
-ALL-B	ACH-002716	0.000111	0.0	0.0	Blood	True	MO-91	Myeloid	Acute Myeloid Leukemia	0.996434
-ALL-B	ACH-001574	0.000111	0.0	0.0	Blood	True	MOLM-14	Myeloid	Acute Myeloid Leukemia	0.996545
-ALL-B	ACH-000854	0.000111	0.0	0.0	Blood	True	OCI-MY5	Lymphoid	Mature B-Cell Neoplasms	0.996656
-ALL-B	ACH-001613	0.0001	0.0	0.0	Blood	True	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.996756
-ALL-B	ACH-000829	9.5e-05	0.0	0.0	Blood	True	HuNS1	Lymphoid	Mature B-Cell Neoplasms	0.996851
-ALL-B	ACH-000611	9.5e-05	0.0	0.0	Blood	True	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	0.996946
-ALL-B	ACH-001057	9.1e-05	0.0	0.0	Blood	True	DERL-2	Lymphoid	Mature T and NK Neoplasms	0.997037
-ALL-B	ACH-000406	8.9e-05	0.0	0.0	Blood	True	U-937	Myeloid	Acute Myeloid Leukemia	0.997125
-ALL-B	ACH-001678	8.7e-05	0.0	0.0	Blood	True	U-2940	Lymphoid	Mature B-Cell Neoplasms	0.997212
-ALL-B	ACH-002062	8.6e-05	0.0	0.0	Blood	True	SLVL	Lymphoid	Mature B-Cell Neoplasms	0.997298
-ALL-B	ACH-000140	8.5e-05	0.0	0.0	Blood	True	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	0.997383
-ALL-B	ACH-001533	8.5e-05	0.0	0.0	Blood	True	KARPAS 1718	Lymphoid	Mature B-Cell Neoplasms	0.997468
-ALL-B	ACH-000440	8.3e-05	0.0	0.0	Blood	True	CA46	Lymphoid	Mature B-Cell Neoplasms	0.997551
-ALL-B	ACH-001617	8.2e-05	0.0	0.0	Blood	True	OCI-LY7	Lymphoid	Mature B-Cell Neoplasms	0.997633
-ALL-B	ACH-000817	8.1e-05	0.0	0.0	Blood	True	RPMI 8226	Lymphoid	Mature B-Cell Neoplasms	0.997714
-ALL-B	ACH-000362	7.4e-05	0.0	0.0	Blood	True	MOLM-13	Myeloid	Acute Myeloid Leukemia	0.997788
-ALL-B	ACH-001148	6.9e-05	0.0	0.0	Blood	True	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	0.997857
-ALL-B	ACH-001707	6.7e-05	0.0	0.0	Blood	True	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	0.997924
-ALL-B	ACH-001097	6.6e-05	0.0	0.0	Blood	True	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	0.99799
-ALL-B	ACH-001571	6.5e-05	0.0	0.0	Blood	True	Mo	Lymphoid	Mature B-Cell Neoplasms	0.998054
-ALL-B	ACH-000113	6.4e-05	0.0	0.0	Blood	True	OCI-AML2	Myeloid	Acute Myeloid Leukemia	0.998118
-ALL-B	ACH-000069	6.4e-05	0.0	0.0	Blood	True	Hs 611.T	Lymphoid	Hodgkin Lymphoma	0.998182
-ALL-B	ACH-000061	6.2e-05	0.0	0.0	Blood	True	HH	Lymphoid	Non-Hodgkin Lymphoma	0.998244
-ALL-B	ACH-000334	6.1e-05	0.0	0.0	Blood	True	DB	Lymphoid	Mature B-Cell Neoplasms	0.998305
-ALL-B	ACH-002675	5.8e-05	0.0	0.0	Blood	True	SH-2	Myeloid	Acute Myeloid Leukemia	0.998364
-ALL-B	ACH-001520	5.7e-05	0.0	0.0	Blood	True	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998421
-ALL-B	ACH-002668	5.6e-05	0.0	0.0	Blood	True	KASUMI-3	Myeloid	Acute Myeloid Leukemia	0.998477
-ALL-B	ACH-000557	5.4e-05	0.0	0.0	Blood	True	AML-193	Myeloid	Acute Myeloid Leukemia	0.998532
-ALL-B	ACH-000763	5.3e-05	0.0	0.0	Blood	True	MM1-S	Lymphoid	Mature B-Cell Neoplasms	0.998585
-ALL-B	ACH-000754	5.3e-05	0.0	0.0	Blood	True	L-428	Lymphoid	Hodgkin Lymphoma	0.998638
-ALL-B	ACH-000576	4.7e-05	0.0	0.0	Blood	True	KMS-27	Lymphoid	Mature B-Cell Neoplasms	0.998685
-ALL-B	ACH-002651	4.7e-05	0.0	0.0	Blood	True	FKH-1	Myeloid	Acute Myeloid Leukemia	0.998732
-ALL-B	ACH-000373	4.6e-05	0.0	0.0	Blood	True	SKM-1	Myeloid	Acute Myeloid Leukemia	0.998777
-ALL-B	ACH-001685	4.5e-05	0.0	0.0	Blood	True	U-HO1	Lymphoid	Hodgkin Lymphoma	0.998822
-ALL-B	ACH-001119	4.4e-05	0.0	0.0	Blood	True	Mac-2A	Lymphoid	Mature T and NK Neoplasms	0.998866
-ALL-B	ACH-000168	4.1e-05	0.0	0.0	Blood	True	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.998907
-ALL-B	ACH-002214	4.1e-05	0.0	0.0	Blood	True	BC-1	Lymphoid	Mature B-Cell Neoplasms	0.998948
-ALL-B	ACH-000564	4e-05	0.0	0.0	Blood	True	KHM-1B	Lymphoid	Mature B-Cell Neoplasms	0.998988
-ALL-B	ACH-000815	3.9e-05	0.0	0.0	Blood	True	KM-H2	Lymphoid	Hodgkin Lymphoma	0.999027
-ALL-B	ACH-000336	3.9e-05	0.0	0.0	Blood	True	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.999066
-ALL-B	ACH-001197	3.7e-05	0.0	0.0	Blood	True	SMZ-1	Lymphoid	Non-Hodgkin Lymphoma	0.999103
-ALL-B	ACH-001656	3.6e-05	0.0	0.0	Blood	True	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.999139
-ALL-B	ACH-000077	3.2e-05	0.0	0.0	Blood	True	MJ	Lymphoid	Non-Hodgkin Lymphoma	0.999172
-ALL-B	ACH-000653	3.2e-05	0.0	0.0	Blood	True	JJN-3	Lymphoid	Mature B-Cell Neoplasms	0.999204
-ALL-B	ACH-000541	3.2e-05	0.0	0.0	Blood	True	KMS-34	Lymphoid	Mature B-Cell Neoplasms	0.999236
-ALL-B	ACH-000363	3.2e-05	0.0	0.0	Blood	True	SK-MM-2	Lymphoid	Mature B-Cell Neoplasms	0.999268
-ALL-B	ACH-001638	3.1e-05	0.0	0.0	Blood	True	RC-K8	Lymphoid	Mature B-Cell Neoplasms	0.999299
-ALL-B	ACH-000006	3e-05	0.0	0.0	Blood	True	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	0.999329
-ALL-B	ACH-001541	2.9e-05	0.0	0.0	Blood	True	KMS-28PE	Lymphoid	Mature B-Cell Neoplasms	0.999358
-ALL-B	ACH-001703	2.5e-05	0.0	0.0	Blood	True	VAL	Lymphoid	Mature B-Cell Neoplasms	0.999383
-ALL-B	ACH-001100	2.5e-05	0.0	0.0	Blood	True	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999407
-ALL-B	ACH-001634	2.4e-05	0.0	0.0	Blood	True	PGA-1	Lymphoid	Mature B-Cell Neoplasms	0.999432
-ALL-B	ACH-000877	2.4e-05	0.0	0.0	Blood	True	EB1	Lymphoid	Mature B-Cell Neoplasms	0.999456
-ALL-B	ACH-000519	2.3e-05	0.0	0.0	Blood	True	PEER	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999478
-ALL-B	ACH-001577	2.2e-05	0.0	0.0	Blood	True	MUTZ-8	Myeloid	Acute Myeloid Leukemia	0.9995
-ALL-B	ACH-001111	2.1e-05	0.0	0.0	Blood	True	L82	Lymphoid	Mature T and NK Neoplasms	0.999522
-ALL-B	ACH-001132	2.1e-05	0.0	0.0	Blood	True	MTA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999543
-ALL-B	ACH-000050	2e-05	0.0	0.0	Blood	True	NCI-H929	Lymphoid	Mature B-Cell Neoplasms	0.999563
-ALL-B	ACH-000436	2e-05	0.0	0.0	Blood	True	OCI-My7	Lymphoid	Mature B-Cell Neoplasms	0.999582
-ALL-B	ACH-000101	1.9e-05	0.0	0.0	Blood	True	KE-37	Lymphoid	Mature T and NK Neoplasms	0.999601
-ALL-B	ACH-000419	1.9e-05	0.0	0.0	Blood	True	KMS-28BM	Lymphoid	Mature B-Cell Neoplasms	0.99962
-ALL-B	ACH-000146	1.9e-05	0.0	0.0	Blood	True	THP-1	Myeloid	Acute Myeloid Leukemia	0.999638
-ALL-B	ACH-000923	1.6e-05	0.0	0.0	Blood	True	BCP-1	Lymphoid	Mature B-Cell Neoplasms	0.999654
-ALL-B	ACH-000057	1.5e-05	0.0	0.0	Blood	True	OPM-1	Lymphoid	Mature B-Cell Neoplasms	0.99967
-ALL-B	ACH-000299	1.5e-05	0.0	0.0	Blood	True	HNT-34	Myeloid	Acute Myeloid Leukemia	0.999685
-ALL-B	ACH-000664	1.5e-05	0.0	0.0	Blood	True	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	0.999699
-ALL-B	ACH-001129	1.5e-05	0.0	0.0	Blood	True	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	0.999714
-ALL-B	ACH-000321	1.4e-05	0.0	0.0	Blood	True	MOLM-6	Myeloid	Myeloproliferative Neoplasms	0.999728
-ALL-B	ACH-001060	1.4e-05	0.0	0.0	Blood	True	DL-40	Lymphoid	Mature T and NK Neoplasms	0.999742
-ALL-B	ACH-000512	1.3e-05	0.0	0.0	Blood	True	INA6	Lymphoid	Mature B-Cell Neoplasms	0.999755
-ALL-B	ACH-000773	1.2e-05	0.0	0.0	Blood	True	Ki-JK	Lymphoid	Mature T and NK Neoplasms	0.999768
-ALL-B	ACH-000104	1.2e-05	0.0	0.0	Blood	True	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99978
-ALL-B	ACH-000346	1.2e-05	0.0	0.0	Blood	True	JVM-3	Lymphoid	Mature B-Cell Neoplasms	0.999792
-ALL-B	ACH-002676	1.1e-05	0.0	0.0	Blood	True	TK-6	Myeloid	Myeloproliferative Neoplasms	0.999803
-ALL-B	ACH-001134	1.1e-05	0.0	0.0	Blood	True	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999815
-ALL-B	ACH-000714	1.1e-05	0.0	0.0	Blood	True	KMS-11	Lymphoid	Mature B-Cell Neoplasms	0.999826
-ALL-B	ACH-000498	1.1e-05	0.0	0.0	Blood	True	KO52	Myeloid	Acute Myeloid Leukemia	0.999837
-ALL-B	ACH-000588	1.1e-05	0.0	0.0	Blood	True	KMS-26	Lymphoid	Mature B-Cell Neoplasms	0.999847
-ALL-B	ACH-000509	1.1e-05	0.0	0.0	Blood	True	HuT 78	Lymphoid	Mature T and NK Neoplasms	0.999858
-ALL-B	ACH-000315	1e-05	0.0	0.0	Blood	True	KARPAS-422	Lymphoid	Mature B-Cell Neoplasms	0.999868
-ALL-B	ACH-000918	1e-05	0.0	0.0	Blood	True	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999877
-ALL-B	ACH-002946	8e-06	0.0	0.0	Blood	True	UKE-1	Myeloid	Acute Myeloid Leukemia	0.999886
-ALL-B	ACH-000770	8e-06	0.0	0.0	Blood	True	P31/FUJ	Myeloid	Acute Myeloid Leukemia	0.999894
-ALL-B	ACH-001573	8e-06	0.0	0.0	Blood	True	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.999902
-ALL-B	ACH-000806	6e-06	0.0	0.0	Blood	True	L-540	Lymphoid	Hodgkin Lymphoma	0.999908
-ALL-B	ACH-001684	6e-06	0.0	0.0	Blood	True	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	0.999914
-ALL-B	ACH-000038	6e-06	0.0	0.0	Blood	True	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99992
-ALL-B	ACH-001737	6e-06	0.0	0.0	Blood	True	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	0.999926
-ALL-B	ACH-000439	6e-06	0.0	0.0	Blood	True	ME-1	Myeloid	Acute Myeloid Leukemia	0.999932
-ALL-B	ACH-000084	5e-06	0.0	0.0	Blood	True	MUTZ-3	Myeloid	Acute Myeloid Leukemia	0.999937
-ALL-B	ACH-003463	5e-06	0.0	0.0	Blood	True	CCLF_HEME_0004_T	Lymphoid	Mature T and NK Neoplasms	0.999942
-ALL-B	ACH-000166	5e-06	0.0	0.0	Blood	True	Kasumi-6	Myeloid	Acute Myeloid Leukemia	0.999947
-ALL-B	ACH-000636	5e-06	0.0	0.0	Blood	True	RPMI-8402	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999951
-ALL-B	ACH-000612	5e-06	0.0	0.0	Blood	True	HuT 102	Lymphoid	Mature T and NK Neoplasms	0.999956
-ALL-B	ACH-000598	5e-06	0.0	0.0	Blood	True	KMS-21BM	Lymphoid	Mature B-Cell Neoplasms	0.999961
-ALL-B	ACH-000983	4e-06	0.0	0.0	Blood	True	KCL-22	Myeloid	Myeloproliferative Neoplasms	0.999965
-ALL-B	ACH-000081	3e-06	0.0	0.0	Blood	True	GDM-1	Myeloid	Acute Myeloid Leukemia	0.999968
-ALL-B	ACH-002994	3e-06	0.0	0.0	Blood	True	WSU-AML	Myeloid	Acute Myeloid Leukemia	0.999971
-ALL-B	ACH-000702	3e-06	0.0	0.0	Blood	True	L-1236	Lymphoid	Hodgkin Lymphoma	0.999974
-ALL-B	ACH-000106	3e-06	0.0	0.0	Blood	True	JVM-2	Lymphoid	Mature B-Cell Neoplasms	0.999978
-ALL-B	ACH-000024	3e-06	0.0	0.0	Blood	True	OPM-2	Lymphoid	Mature B-Cell Neoplasms	0.99998
-ALL-B	ACH-000453	3e-06	0.0	0.0	Blood	True	MOLP-2	Lymphoid	Mature B-Cell Neoplasms	0.999983
-ALL-B	ACH-000821	3e-06	0.0	0.0	Blood	True	EJM	Lymphoid	Mature B-Cell Neoplasms	0.999986
-ALL-B	ACH-001064	2e-06	0.0	0.0	Blood	True	EB-2	Lymphoid	Mature B-Cell Neoplasms	0.999988
-ALL-B	ACH-000122	2e-06	0.0	0.0	Blood	True	SUP-T11	Lymphoid	Mature T and NK Neoplasms	0.99999
-ALL-B	ACH-000183	2e-06	0.0	0.0	Blood	True	L-363	Lymphoid	Mature B-Cell Neoplasms	0.999992
-ALL-B	ACH-000745	2e-06	0.0	0.0	Blood	True	MOLP-8	Lymphoid	Mature B-Cell Neoplasms	0.999994
-ALL-B	ACH-003273	1e-06	0.0	0.0	Blood	True	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	0.999995
-ALL-B	ACH-000157	1e-06	0.0	0.0	Blood	True	A4/Fuk	Lymphoid	Mature B-Cell Neoplasms	0.999996
-ALL-B	ACH-002215	1e-06	0.0	0.0	Blood	True	BC-3	Lymphoid	Mature B-Cell Neoplasms	0.999997
-ALL-B	ACH-000326	1e-06	0.0	0.0	Blood	True	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	0.999998
-ALL-B	ACH-001642	1e-06	0.0	0.0	Blood	True	SCC-3	Lymphoid	Non-Hodgkin Lymphoma	0.999998
-ALL-B	ACH-000301	1e-06	0.0	0.0	Blood	True	LAMA-84	Myeloid	Myeloproliferative Neoplasms	0.999999
-ALL-B	ACH-000386	1e-06	0.0	0.0	Blood	True	KG-1	Myeloid	Acute Myeloid Leukemia	1.0
+ALL-B	ACH-003101	0.087628	75.0	18.0	Lymphoid	True	Z-119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.087628
+ALL-B	ACH-002653	0.077451	30.0	29.0	Lymphoid	False	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.16508
+ALL-B	ACH-003103	0.073404	64.0	6.0	Lymphoid	True	Z-181	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.238484
+ALL-B	ACH-001209	0.068421	99.0	5.0	Lymphoid	True	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.306905
+ALL-B	ACH-000874	0.057878	90.0	12.0	Lymphoid	True	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.364782
+ALL-B	ACH-000492	0.056781	113.0	13.0	Lymphoid	True	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.421563
+ALL-B	ACH-000728	0.052758	101.0	8.0	Lymphoid	True	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.474321
+ALL-B	ACH-000020	0.041797	68.0	3.0	Lymphoid	True	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.516118
+ALL-B	ACH-000070	0.037927	93.0	3.0	Lymphoid	True	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.554045
+ALL-B	ACH-000130	0.034826	77.0	3.0	Lymphoid	True	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.588871
+ALL-B	ACH-000124	0.033945	78.0	5.0	Lymphoid	True	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	0.622816
+ALL-B	ACH-000059	0.030814	62.0	1.0	Lymphoid	True	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.65363
+ALL-B	ACH-000938	0.030758	53.0	6.0	Lymphoid	True	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.684388
+ALL-B	ACH-001993	0.02585	72.0	0.0	Lymphoid	True	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.710238
+ALL-B	ACH-000156	0.025489	37.0	2.0	Lymphoid	True	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.735727
+ALL-B	ACH-002060	0.022215	17.0	10.0	Lymphoid	False	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	0.757942
+ALL-B	ACH-000922	0.02131	37.0	5.0	Lymphoid	True	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.779252
+ALL-B	ACH-000032	0.019027	29.0	1.0	Lymphoid	True	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.798279
+ALL-B	ACH-000960	0.018172	28.0	1.0	Lymphoid	True	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.816451
+ALL-B	ACH-003106	0.015808	13.0	4.0	Lymphoid	True	RC	Lymphoid	Mature B-Cell Neoplasms	0.832259
+ALL-B	ACH-001679	0.01568	30.0	6.0	Lymphoid	True	U-2973	Lymphoid	Mature B-Cell Neoplasms	0.847939
+ALL-B	ACH-002059	0.015594	41.0	0.0	Lymphoid	True	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.863533
+ALL-B	ACH-001735	0.014449	28.0	0.0	Lymphoid	True	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.877982
+ALL-B	ACH-000782	0.014166	12.0	1.0	Lymphoid	True	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.892148
+ALL-B	ACH-001736	0.012241	31.0	0.0	Lymphoid	True	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.904389
+ALL-B	ACH-003108	0.010821	21.0	1.0	Lymphoid	True	HF	Lymphoid	Mature B-Cell Neoplasms	0.91521
+ALL-B	ACH-002643	0.007671	14.0	1.0	Lymphoid	True	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.922881
+ALL-B	ACH-001708	0.006623	5.0	0.0	Lymphoid	True	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	0.929503
+ALL-B	ACH-001492	0.005924	10.0	0.0	Lymphoid	True	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	0.935427
+ALL-B	ACH-000462	0.005698	4.0	4.0	Lymphoid	False	NALM-1	Myeloid	Myeloproliferative Neoplasms	0.941125
+ALL-B	ACH-001106	0.004502	3.0	0.0	Lymphoid	True	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.945628
+ALL-B	ACH-002500	0.004282	11.0	0.0	Lymphoid	True	Z-138	Lymphoid	Mature B-Cell Neoplasms	0.94991
+ALL-B	ACH-002485	0.003109	6.0	0.0	Lymphoid	True	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	0.953019
+ALL-B	ACH-002678	0.002852	5.0	0.0	Lymphoid	True	WILL-1	Lymphoid	Mature B-Cell Neoplasms	0.955871
+ALL-B	ACH-000287	0.002846	3.0	0.0	Lymphoid	True	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	0.958717
+ALL-B	ACH-000656	0.002377	3.0	0.0	Lymphoid	True	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	0.961094
+ALL-B	ACH-000151	0.002296	1.0	0.0	Lymphoid	True	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.96339
+ALL-B	ACH-000285	0.001635	0.0	0.0	Lymphoid	True	Toledo	Lymphoid	Mature B-Cell Neoplasms	0.965025
+ALL-B	ACH-001616	0.001601	2.0	0.0	Lymphoid	True	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	0.966626
+ALL-B	ACH-000034	0.001501	1.0	1.0	Lymphoid	False	PLB-985	Myeloid	Acute Myeloid Leukemia	0.968126
+ALL-B	ACH-000220	0.001277	2.0	0.0	Lymphoid	True	Mino	Lymphoid	Mature B-Cell Neoplasms	0.969403
+ALL-B	ACH-001647	0.001229	1.0	0.0	Lymphoid	False	SHI-1	Myeloid	Acute Myeloid Leukemia	0.970632
+ALL-B	ACH-002677	0.001136	2.0	0.0	Lymphoid	True	U-2946	Lymphoid	Mature B-Cell Neoplasms	0.971768
+ALL-B	ACH-001677	0.001112	0.0	0.0	Lymphoid	True	U-2904	Lymphoid	Mature B-Cell Neoplasms	0.972881
+ALL-B	ACH-003100	0.001078	2.0	0.0	Lymphoid	True	EJ-1	Lymphoid	Mature B-Cell Neoplasms	0.973959
+ALL-B	ACH-003460	0.001059	0.0	0.0	Lymphoid	True	CCLF_HEME_0001_T	Lymphoid	Mature B-Cell Neoplasms	0.975018
+ALL-B	ACH-001450	0.001015	2.0	0.0	Lymphoid	True	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	0.976033
+ALL-B	ACH-000567	0.000942	0.0	0.0	Lymphoid	True	ST486	Lymphoid	Mature B-Cell Neoplasms	0.976974
+ALL-B	ACH-003107	0.000918	2.0	0.0	Lymphoid	True	JMP-1	Lymphoid	Mature B-Cell Neoplasms	0.977893
+ALL-B	ACH-000388	0.000882	1.0	0.0	Lymphoid	True	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	0.978775
+ALL-B	ACH-000002	0.00075	1.0	0.0	Lymphoid	False	HL-60	Myeloid	Acute Myeloid Leukemia	0.979525
+ALL-B	ACH-000357	0.000728	0.0	0.0	Lymphoid	True	JeKo-1	Lymphoid	Mature B-Cell Neoplasms	0.980253
+ALL-B	ACH-001493	0.000718	0.0	0.0	Lymphoid	True	DOGUM	Lymphoid	Mature B-Cell Neoplasms	0.980971
+ALL-B	ACH-001503	0.000713	1.0	0.0	Lymphoid	True	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	0.981684
+ALL-B	ACH-001680	0.000693	0.0	0.0	Lymphoid	True	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.982377
+ALL-B	ACH-000056	0.000652	0.0	0.0	Lymphoid	True	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	0.983029
+ALL-B	ACH-000162	0.000652	0.0	0.0	Lymphoid	True	GA-10	Lymphoid	Mature B-Cell Neoplasms	0.983681
+ALL-B	ACH-002290	0.000622	1.0	0.0	Lymphoid	False	NKM-1	Myeloid	Acute Myeloid Leukemia	0.984303
+ALL-B	ACH-000944	0.000615	0.0	0.0	Lymphoid	True	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	0.984918
+ALL-B	ACH-001686	0.000565	1.0	0.0	Lymphoid	True	ULA	Lymphoid	Mature B-Cell Neoplasms	0.985483
+ALL-B	ACH-000245	0.000508	0.0	0.0	Lymphoid	True	BL-41	Lymphoid	Mature B-Cell Neoplasms	0.985991
+ALL-B	ACH-002055	0.000489	1.0	0.0	Lymphoid	True	TL-1	Lymphoid	Mature B-Cell Neoplasms	0.986481
+ALL-B	ACH-001449	0.000468	0.0	0.0	Lymphoid	True	BL-2	Lymphoid	Mature B-Cell Neoplasms	0.986949
+ALL-B	ACH-000193	0.000432	0.0	0.0	Lymphoid	True	KARPAS-620	Lymphoid	Mature B-Cell Neoplasms	0.987381
+ALL-B	ACH-000158	0.000427	0.0	0.0	Lymphoid	True	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	0.987808
+ALL-B	ACH-000402	0.000423	0.0	0.0	Lymphoid	True	BL-70	Lymphoid	Mature B-Cell Neoplasms	0.988231
+ALL-B	ACH-000112	0.000402	1.0	0.0	Lymphoid	False	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.988634
+ALL-B	ACH-001485	0.000392	0.0	0.0	Lymphoid	True	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.989025
+ALL-B	ACH-000583	0.000327	0.0	0.0	Lymphoid	True	MC116	Lymphoid	Non-Hodgkin Lymphoma	0.989352
+ALL-B	ACH-001498	0.000318	0.0	0.0	Lymphoid	True	Farage	Lymphoid	Mature B-Cell Neoplasms	0.98967
+ALL-B	ACH-000167	0.000309	0.0	0.0	Lymphoid	True	KE-97	Lymphoid	Mature B-Cell Neoplasms	0.989978
+ALL-B	ACH-001709	0.000308	0.0	0.0	Lymphoid	True	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	0.990286
+ALL-B	ACH-000707	0.000306	0.0	0.0	Lymphoid	True	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	0.990592
+ALL-B	ACH-001636	0.000295	0.0	0.0	Lymphoid	True	Ramos	Lymphoid	Mature B-Cell Neoplasms	0.990888
+ALL-B	ACH-000065	0.000284	1.0	0.0	Lymphoid	False	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.991172
+ALL-B	ACH-000068	0.000283	0.0	0.0	Lymphoid	True	REC-1	Lymphoid	Mature B-Cell Neoplasms	0.991455
+ALL-B	ACH-001539	0.000275	0.0	0.0	Lymphoid	True	KML-1	Lymphoid	Mature B-Cell Neoplasms	0.99173
+ALL-B	ACH-000654	0.000262	0.0	0.0	Lymphoid	True	Raji	Lymphoid	Mature B-Cell Neoplasms	0.991992
+ALL-B	ACH-000271	0.000241	0.0	0.0	Lymphoid	True	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	0.992233
+ALL-B	ACH-000198	0.000237	1.0	0.0	Lymphoid	False	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.99247
+ALL-B	ACH-000263	0.000227	1.0	0.0	Lymphoid	False	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.992697
+ALL-B	ACH-001484	0.000226	0.0	0.0	Lymphoid	True	CI	Lymphoid	Mature B-Cell Neoplasms	0.992923
+ALL-B	ACH-000660	0.000225	0.0	0.0	Lymphoid	True	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	0.993148
+ALL-B	ACH-001669	0.000224	0.0	0.0	Lymphoid	True	TANOUE	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.993371
+ALL-B	ACH-000687	0.00022	0.0	0.0	Lymphoid	True	CI-1	Lymphoid	Non-Hodgkin Lymphoma	0.993591
+ALL-B	ACH-000365	0.0002	0.0	0.0	Lymphoid	True	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	0.993792
+ALL-B	ACH-000295	0.0002	1.0	0.0	Lymphoid	False	EM-2	Myeloid	Myeloproliferative Neoplasms	0.993991
+ALL-B	ACH-000073	0.000183	0.0	0.0	Lymphoid	True	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	0.994175
+ALL-B	ACH-000371	0.000171	0.0	0.0	Lymphoid	True	RL	Lymphoid	Mature B-Cell Neoplasms	0.994345
+ALL-B	ACH-001447	0.000169	0.0	0.0	Lymphoid	True	BJAB	Lymphoid	Mature B-Cell Neoplasms	0.994514
+ALL-B	ACH-000786	0.000164	0.0	0.0	Lymphoid	True	Daudi	Lymphoid	Mature B-Cell Neoplasms	0.994678
+ALL-B	ACH-001147	0.00016	0.0	0.0	Lymphoid	True	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	0.994838
+ALL-B	ACH-000218	0.000159	1.0	0.0	Lymphoid	False	PL-21	Myeloid	Acute Myeloid Leukemia	0.994997
+ALL-B	ACH-000294	0.000159	0.0	0.0	Lymphoid	False	NB-4	Myeloid	Acute Myeloid Leukemia	0.995156
+ALL-B	ACH-000914	0.000156	0.0	0.0	Lymphoid	True	HT	Lymphoid	Mature B-Cell Neoplasms	0.995312
+ALL-B	ACH-000534	0.000156	0.0	0.0	Lymphoid	True	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	0.995468
+ALL-B	ACH-000045	0.000141	0.0	0.0	Lymphoid	False	MV4-11	Myeloid	Acute Myeloid Leukemia	0.995608
+ALL-B	ACH-000206	0.000132	0.0	0.0	Lymphoid	True	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99574
+ALL-B	ACH-000380	0.00013	0.0	0.0	Lymphoid	True	KMS-12-BM	Lymphoid	Mature B-Cell Neoplasms	0.995871
+ALL-B	ACH-000398	0.000126	0.0	0.0	Lymphoid	True	RI-1	Lymphoid	Mature B-Cell Neoplasms	0.995997
+ALL-B	ACH-001068	0.000125	0.0	0.0	Lymphoid	True	FE-PD	Lymphoid	Mature T and NK Neoplasms	0.996121
+ALL-B	ACH-000405	0.000124	0.0	0.0	Lymphoid	True	MEC-1	Lymphoid	Mature B-Cell Neoplasms	0.996246
+ALL-B	ACH-000838	0.000122	0.0	0.0	Lymphoid	True	AMO-1	Lymphoid	Mature B-Cell Neoplasms	0.996368
+ALL-B	ACH-000854	0.000122	0.0	0.0	Lymphoid	True	OCI-MY5	Lymphoid	Mature B-Cell Neoplasms	0.99649
+ALL-B	ACH-002478	0.00012	0.0	0.0	Lymphoid	True	BC-2	Lymphoid	Mature B-Cell Neoplasms	0.99661
+ALL-B	ACH-001574	0.000112	0.0	0.0	Lymphoid	False	MOLM-14	Myeloid	Acute Myeloid Leukemia	0.996721
+ALL-B	ACH-001057	0.000101	0.0	0.0	Lymphoid	True	DERL-2	Lymphoid	Mature T and NK Neoplasms	0.996822
+ALL-B	ACH-000829	0.000101	0.0	0.0	Lymphoid	True	HuNS1	Lymphoid	Mature B-Cell Neoplasms	0.996923
+ALL-B	ACH-000611	0.0001	0.0	0.0	Lymphoid	True	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	0.997023
+ALL-B	ACH-000140	9.1e-05	0.0	0.0	Lymphoid	True	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	0.997114
+ALL-B	ACH-001533	9e-05	0.0	0.0	Lymphoid	True	KARPAS 1718	Lymphoid	Mature B-Cell Neoplasms	0.997204
+ALL-B	ACH-000440	9e-05	0.0	0.0	Lymphoid	True	CA46	Lymphoid	Mature B-Cell Neoplasms	0.997294
+ALL-B	ACH-001678	9e-05	0.0	0.0	Lymphoid	True	U-2940	Lymphoid	Mature B-Cell Neoplasms	0.997385
+ALL-B	ACH-002062	9e-05	0.0	0.0	Lymphoid	True	SLVL	Lymphoid	Mature B-Cell Neoplasms	0.997474
+ALL-B	ACH-000406	8.8e-05	0.0	0.0	Lymphoid	False	U-937	Myeloid	Acute Myeloid Leukemia	0.997563
+ALL-B	ACH-001617	8.8e-05	0.0	0.0	Lymphoid	True	OCI-LY7	Lymphoid	Mature B-Cell Neoplasms	0.997651
+ALL-B	ACH-000817	8.7e-05	0.0	0.0	Lymphoid	True	RPMI 8226	Lymphoid	Mature B-Cell Neoplasms	0.997738
+ALL-B	ACH-001148	7.5e-05	0.0	0.0	Lymphoid	True	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	0.997813
+ALL-B	ACH-000362	7.4e-05	0.0	0.0	Lymphoid	False	MOLM-13	Myeloid	Acute Myeloid Leukemia	0.997888
+ALL-B	ACH-001707	7.1e-05	0.0	0.0	Lymphoid	True	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	0.997959
+ALL-B	ACH-001097	7e-05	0.0	0.0	Lymphoid	True	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	0.998029
+ALL-B	ACH-001571	6.9e-05	0.0	0.0	Lymphoid	True	Mo	Lymphoid	Mature B-Cell Neoplasms	0.998098
+ALL-B	ACH-000069	6.7e-05	0.0	0.0	Lymphoid	True	Hs 611.T	Lymphoid	Hodgkin Lymphoma	0.998166
+ALL-B	ACH-000061	6.6e-05	0.0	0.0	Lymphoid	True	HH	Lymphoid	Non-Hodgkin Lymphoma	0.998231
+ALL-B	ACH-000113	6.4e-05	0.0	0.0	Lymphoid	False	OCI-AML2	Myeloid	Acute Myeloid Leukemia	0.998296
+ALL-B	ACH-000334	6.4e-05	0.0	0.0	Lymphoid	True	DB	Lymphoid	Mature B-Cell Neoplasms	0.99836
+ALL-B	ACH-001520	6.1e-05	0.0	0.0	Lymphoid	True	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998421
+ALL-B	ACH-000754	5.7e-05	0.0	0.0	Lymphoid	True	L-428	Lymphoid	Hodgkin Lymphoma	0.998478
+ALL-B	ACH-000763	5.7e-05	0.0	0.0	Lymphoid	True	MM1-S	Lymphoid	Mature B-Cell Neoplasms	0.998535
+ALL-B	ACH-000557	5.4e-05	0.0	0.0	Lymphoid	False	AML-193	Myeloid	Acute Myeloid Leukemia	0.998589
+ALL-B	ACH-000576	5e-05	0.0	0.0	Lymphoid	True	KMS-27	Lymphoid	Mature B-Cell Neoplasms	0.998638
+ALL-B	ACH-001685	4.8e-05	0.0	0.0	Lymphoid	True	U-HO1	Lymphoid	Hodgkin Lymphoma	0.998686
+ALL-B	ACH-001119	4.7e-05	0.0	0.0	Lymphoid	True	Mac-2A	Lymphoid	Mature T and NK Neoplasms	0.998733
+ALL-B	ACH-000373	4.5e-05	0.0	0.0	Lymphoid	False	SKM-1	Myeloid	Acute Myeloid Leukemia	0.998778
+ALL-B	ACH-000564	4.4e-05	0.0	0.0	Lymphoid	True	KHM-1B	Lymphoid	Mature B-Cell Neoplasms	0.998822
+ALL-B	ACH-002214	4.3e-05	0.0	0.0	Lymphoid	True	BC-1	Lymphoid	Mature B-Cell Neoplasms	0.998865
+ALL-B	ACH-000815	4.2e-05	0.0	0.0	Lymphoid	True	KM-H2	Lymphoid	Hodgkin Lymphoma	0.998908
+ALL-B	ACH-002651	4.2e-05	0.0	0.0	Lymphoid	False	FKH-1	Myeloid	Acute Myeloid Leukemia	0.99895
+ALL-B	ACH-001197	4.1e-05	0.0	0.0	Lymphoid	True	SMZ-1	Lymphoid	Non-Hodgkin Lymphoma	0.998991
+ALL-B	ACH-000168	4.1e-05	0.0	0.0	Lymphoid	False	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.999033
+ALL-B	ACH-000336	3.9e-05	0.0	0.0	Lymphoid	False	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.999072
+ALL-B	ACH-000653	3.5e-05	0.0	0.0	Lymphoid	True	JJN-3	Lymphoid	Mature B-Cell Neoplasms	0.999107
+ALL-B	ACH-000541	3.5e-05	0.0	0.0	Lymphoid	True	KMS-34	Lymphoid	Mature B-Cell Neoplasms	0.999142
+ALL-B	ACH-000077	3.5e-05	0.0	0.0	Lymphoid	True	MJ	Lymphoid	Non-Hodgkin Lymphoma	0.999177
+ALL-B	ACH-000363	3.5e-05	0.0	0.0	Lymphoid	True	SK-MM-2	Lymphoid	Mature B-Cell Neoplasms	0.999212
+ALL-B	ACH-001638	3.2e-05	0.0	0.0	Lymphoid	True	RC-K8	Lymphoid	Mature B-Cell Neoplasms	0.999244
+ALL-B	ACH-001541	3.1e-05	0.0	0.0	Lymphoid	True	KMS-28PE	Lymphoid	Mature B-Cell Neoplasms	0.999275
+ALL-B	ACH-000006	3e-05	0.0	0.0	Lymphoid	False	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	0.999306
+ALL-B	ACH-000519	2.8e-05	0.0	0.0	Lymphoid	True	PEER	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999334
+ALL-B	ACH-001100	2.7e-05	0.0	0.0	Lymphoid	True	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99936
+ALL-B	ACH-001703	2.6e-05	0.0	0.0	Lymphoid	True	VAL	Lymphoid	Mature B-Cell Neoplasms	0.999386
+ALL-B	ACH-001634	2.6e-05	0.0	0.0	Lymphoid	True	PGA-1	Lymphoid	Mature B-Cell Neoplasms	0.999413
+ALL-B	ACH-000877	2.4e-05	0.0	0.0	Lymphoid	True	EB1	Lymphoid	Mature B-Cell Neoplasms	0.999437
+ALL-B	ACH-001111	2.4e-05	0.0	0.0	Lymphoid	True	L82	Lymphoid	Mature T and NK Neoplasms	0.999461
+ALL-B	ACH-001132	2.3e-05	0.0	0.0	Lymphoid	True	MTA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999484
+ALL-B	ACH-000101	2.3e-05	0.0	0.0	Lymphoid	True	KE-37	Lymphoid	Mature T and NK Neoplasms	0.999507
+ALL-B	ACH-001577	2.2e-05	0.0	0.0	Lymphoid	False	MUTZ-8	Myeloid	Acute Myeloid Leukemia	0.999529
+ALL-B	ACH-000050	2.2e-05	0.0	0.0	Lymphoid	True	NCI-H929	Lymphoid	Mature B-Cell Neoplasms	0.999551
+ALL-B	ACH-000419	2.1e-05	0.0	0.0	Lymphoid	True	KMS-28BM	Lymphoid	Mature B-Cell Neoplasms	0.999572
+ALL-B	ACH-000436	2.1e-05	0.0	0.0	Lymphoid	True	OCI-My7	Lymphoid	Mature B-Cell Neoplasms	0.999594
+ALL-B	ACH-002675	2.1e-05	0.0	0.0	Lymphoid	False	SH-2	Myeloid	Acute Myeloid Leukemia	0.999614
+ALL-B	ACH-001656	1.9e-05	0.0	0.0	Lymphoid	False	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.999633
+ALL-B	ACH-000146	1.9e-05	0.0	0.0	Lymphoid	False	THP-1	Myeloid	Acute Myeloid Leukemia	0.999652
+ALL-B	ACH-000923	1.8e-05	0.0	0.0	Lymphoid	True	BCP-1	Lymphoid	Mature B-Cell Neoplasms	0.99967
+ALL-B	ACH-000664	1.7e-05	0.0	0.0	Lymphoid	True	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	0.999687
+ALL-B	ACH-000057	1.7e-05	0.0	0.0	Lymphoid	True	OPM-1	Lymphoid	Mature B-Cell Neoplasms	0.999704
+ALL-B	ACH-001060	1.7e-05	0.0	0.0	Lymphoid	True	DL-40	Lymphoid	Mature T and NK Neoplasms	0.999721
+ALL-B	ACH-001613	1.6e-05	0.0	0.0	Lymphoid	False	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.999736
+ALL-B	ACH-000512	1.6e-05	0.0	0.0	Lymphoid	True	INA6	Lymphoid	Mature B-Cell Neoplasms	0.999752
+ALL-B	ACH-000773	1.5e-05	0.0	0.0	Lymphoid	True	Ki-JK	Lymphoid	Mature T and NK Neoplasms	0.999767
+ALL-B	ACH-001129	1.5e-05	0.0	0.0	Lymphoid	False	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	0.999782
+ALL-B	ACH-000104	1.4e-05	0.0	0.0	Lymphoid	True	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999796
+ALL-B	ACH-000321	1.4e-05	0.0	0.0	Lymphoid	False	MOLM-6	Myeloid	Myeloproliferative Neoplasms	0.99981
+ALL-B	ACH-000714	1.3e-05	0.0	0.0	Lymphoid	True	KMS-11	Lymphoid	Mature B-Cell Neoplasms	0.999823
+ALL-B	ACH-000346	1.3e-05	0.0	0.0	Lymphoid	True	JVM-3	Lymphoid	Mature B-Cell Neoplasms	0.999836
+ALL-B	ACH-000918	1.3e-05	0.0	0.0	Lymphoid	True	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999848
+ALL-B	ACH-000509	1.2e-05	0.0	0.0	Lymphoid	True	HuT 78	Lymphoid	Mature T and NK Neoplasms	0.999861
+ALL-B	ACH-001134	1.2e-05	0.0	0.0	Lymphoid	True	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999873
+ALL-B	ACH-000588	1.2e-05	0.0	0.0	Lymphoid	True	KMS-26	Lymphoid	Mature B-Cell Neoplasms	0.999885
+ALL-B	ACH-000498	1.1e-05	0.0	0.0	Lymphoid	False	KO52	Myeloid	Acute Myeloid Leukemia	0.999896
+ALL-B	ACH-000315	1e-05	0.0	0.0	Lymphoid	True	KARPAS-422	Lymphoid	Mature B-Cell Neoplasms	0.999906
+ALL-B	ACH-000770	8e-06	0.0	0.0	Lymphoid	False	P31/FUJ	Myeloid	Acute Myeloid Leukemia	0.999914
+ALL-B	ACH-001737	8e-06	0.0	0.0	Lymphoid	True	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	0.999922
+ALL-B	ACH-001573	8e-06	0.0	0.0	Lymphoid	False	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.99993
+ALL-B	ACH-000806	8e-06	0.0	0.0	Lymphoid	True	L-540	Lymphoid	Hodgkin Lymphoma	0.999937
+ALL-B	ACH-002716	7e-06	0.0	0.0	Lymphoid	False	MO-91	Myeloid	Acute Myeloid Leukemia	0.999944
+ALL-B	ACH-000038	6e-06	0.0	0.0	Lymphoid	True	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999951
+ALL-B	ACH-000636	6e-06	0.0	0.0	Lymphoid	True	RPMI-8402	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999957
+ALL-B	ACH-003463	6e-06	0.0	0.0	Lymphoid	True	CCLF_HEME_0004_T	Lymphoid	Mature T and NK Neoplasms	0.999962
+ALL-B	ACH-000612	6e-06	0.0	0.0	Lymphoid	True	HuT 102	Lymphoid	Mature T and NK Neoplasms	0.999968
+ALL-B	ACH-000598	5e-06	0.0	0.0	Lymphoid	True	KMS-21BM	Lymphoid	Mature B-Cell Neoplasms	0.999973
+ALL-B	ACH-000453	4e-06	0.0	0.0	Lymphoid	True	MOLP-2	Lymphoid	Mature B-Cell Neoplasms	0.999977
+ALL-B	ACH-000024	4e-06	0.0	0.0	Lymphoid	True	OPM-2	Lymphoid	Mature B-Cell Neoplasms	0.99998
+ALL-B	ACH-000702	3e-06	0.0	0.0	Lymphoid	True	L-1236	Lymphoid	Hodgkin Lymphoma	0.999983
+ALL-B	ACH-000106	3e-06	0.0	0.0	Lymphoid	True	JVM-2	Lymphoid	Mature B-Cell Neoplasms	0.999987
+ALL-B	ACH-000821	3e-06	0.0	0.0	Lymphoid	True	EJM	Lymphoid	Mature B-Cell Neoplasms	0.999989
+ALL-B	ACH-001064	2e-06	0.0	0.0	Lymphoid	True	EB-2	Lymphoid	Mature B-Cell Neoplasms	0.999992
+ALL-B	ACH-000122	2e-06	0.0	0.0	Lymphoid	True	SUP-T11	Lymphoid	Mature T and NK Neoplasms	0.999994
+ALL-B	ACH-000183	2e-06	0.0	0.0	Lymphoid	True	L-363	Lymphoid	Mature B-Cell Neoplasms	0.999996
+ALL-B	ACH-000745	2e-06	0.0	0.0	Lymphoid	True	MOLP-8	Lymphoid	Mature B-Cell Neoplasms	0.999997
+ALL-B	ACH-000157	1e-06	0.0	0.0	Lymphoid	True	A4/Fuk	Lymphoid	Mature B-Cell Neoplasms	0.999998
+ALL-B	ACH-002215	1e-06	0.0	0.0	Lymphoid	True	BC-3	Lymphoid	Mature B-Cell Neoplasms	0.999999
+ALL-B	ACH-001642	1e-06	0.0	0.0	Lymphoid	True	SCC-3	Lymphoid	Non-Hodgkin Lymphoma	1.0
 BRCA-Basal	ACH-002499	0.234834	155.0	50.0	Breast	True	UACC-3199	Breast	Invasive Breast Carcinoma	0.234834
 BRCA-Basal	ACH-000276	0.159331	160.0	33.0	Breast	True	HCC38	Breast	Invasive Breast Carcinoma	0.394165
 BRCA-Basal	ACH-003120	0.093425	37.0	37.0	Breast	False	NCI-H1607	Lung	Lung Neuroendocrine Tumor	0.48759
@@ -3572,259 +3555,81 @@ SARC-UPS	ACH-001745	4.3e-05	0.0	0.0	Soft Tissue	True	RhJT	Soft Tissue	Rhabdomyos
 SARC-UPS	ACH-001184	3.5e-05	0.0	0.0	Soft Tissue	True	SCMC-RM2	Soft Tissue	Rhabdomyosarcoma	0.999961
 SARC-UPS	ACH-002501	2.6e-05	0.0	0.0	Soft Tissue	True	RMZ	Soft Tissue	Rhabdomyosarcoma	0.999987
 SARC-UPS	ACH-002936	1.3e-05	0.0	0.0	Soft Tissue	True	CCLF_PEDS_0043_T	Soft Tissue	Rhabdomyosarcoma	1.0
-TARGET-AML	ACH-000002	0.078813	70.0	21.0	Blood	True	HL-60	Myeloid	Acute Myeloid Leukemia	0.078813
-TARGET-AML	ACH-000263	0.074643	81.0	24.0	Blood	True	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.153456
-TARGET-AML	ACH-001647	0.056809	95.0	14.0	Blood	True	SHI-1	Myeloid	Acute Myeloid Leukemia	0.210266
-TARGET-AML	ACH-000034	0.04839	67.0	9.0	Blood	True	PLB-985	Myeloid	Acute Myeloid Leukemia	0.258656
-TARGET-AML	ACH-000045	0.044148	56.0	14.0	Blood	True	MV4-11	Myeloid	Acute Myeloid Leukemia	0.302804
-TARGET-AML	ACH-000295	0.036304	81.0	7.0	Blood	True	EM-2	Myeloid	Myeloproliferative Neoplasms	0.339108
-TARGET-AML	ACH-001656	0.032887	52.0	4.0	Blood	True	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.371996
-TARGET-AML	ACH-000362	0.031544	42.0	7.0	Blood	True	MOLM-13	Myeloid	Acute Myeloid Leukemia	0.403539
-TARGET-AML	ACH-000065	0.029562	70.0	0.0	Blood	True	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.433102
-TARGET-AML	ACH-000112	0.028952	62.0	0.0	Blood	True	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.462054
-TARGET-AML	ACH-000198	0.024487	49.0	4.0	Blood	True	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.486541
-TARGET-AML	ACH-000321	0.023501	43.0	1.0	Blood	True	MOLM-6	Myeloid	Myeloproliferative Neoplasms	0.510042
-TARGET-AML	ACH-001577	0.022347	44.0	4.0	Blood	True	MUTZ-8	Myeloid	Acute Myeloid Leukemia	0.532389
-TARGET-AML	ACH-000602	0.020097	27.0	4.0	Blood	True	M-07e	Myeloid	Acute Myeloid Leukemia	0.552486
-TARGET-AML	ACH-000439	0.018745	20.0	8.0	Blood	True	ME-1	Myeloid	Acute Myeloid Leukemia	0.571231
-TARGET-AML	ACH-000074	0.018647	26.0	5.0	Blood	True	KU812	Myeloid	Myeloproliferative Neoplasms	0.589878
-TARGET-AML	ACH-002290	0.018622	40.0	2.0	Blood	True	NKM-1	Myeloid	Acute Myeloid Leukemia	0.608499
-TARGET-AML	ACH-000498	0.018108	37.0	2.0	Blood	True	KO52	Myeloid	Acute Myeloid Leukemia	0.626607
-TARGET-AML	ACH-000294	0.016237	46.0	0.0	Blood	True	NB-4	Myeloid	Acute Myeloid Leukemia	0.642844
-TARGET-AML	ACH-001574	0.01564	33.0	1.0	Blood	True	MOLM-14	Myeloid	Acute Myeloid Leukemia	0.658484
-TARGET-AML	ACH-000076	0.014811	32.0	4.0	Blood	True	NCO2	Myeloid	Myeloproliferative Neoplasms	0.673295
-TARGET-AML	ACH-002651	0.014805	37.0	1.0	Blood	True	FKH-1	Myeloid	Acute Myeloid Leukemia	0.6881
-TARGET-AML	ACH-001036	0.014698	26.0	5.0	Blood	True	CMK-11-5	Myeloid	Acute Myeloid Leukemia	0.702798
-TARGET-AML	ACH-000113	0.014536	29.0	1.0	Blood	True	OCI-AML2	Myeloid	Acute Myeloid Leukemia	0.717333
-TARGET-AML	ACH-000301	0.014509	27.0	5.0	Blood	True	LAMA-84	Myeloid	Myeloproliferative Neoplasms	0.731842
-TARGET-AML	ACH-001613	0.013804	41.0	0.0	Blood	True	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.745646
-TARGET-AML	ACH-000218	0.013455	35.0	1.0	Blood	True	PL-21	Myeloid	Acute Myeloid Leukemia	0.759101
-TARGET-AML	ACH-000557	0.012157	19.0	1.0	Blood	True	AML-193	Myeloid	Acute Myeloid Leukemia	0.771258
-TARGET-AML	ACH-000072	0.011294	14.0	2.0	Blood	True	MEG-01	Myeloid	Myeloproliferative Neoplasms	0.782553
-TARGET-AML	ACH-000166	0.01003	15.0	2.0	Blood	True	Kasumi-6	Myeloid	Acute Myeloid Leukemia	0.792583
-TARGET-AML	ACH-000369	0.009996	18.0	0.0	Blood	True	MOLM-16	Myeloid	Acute Myeloid Leukemia	0.802579
-TARGET-AML	ACH-000641	0.009894	17.0	3.0	Blood	True	CMK	Myeloid	Acute Myeloid Leukemia	0.812473
-TARGET-AML	ACH-000406	0.008871	9.0	0.0	Blood	True	U-937	Myeloid	Acute Myeloid Leukemia	0.821344
-TARGET-AML	ACH-000241	0.008483	12.0	0.0	Blood	True	JK-1	Myeloid	Myeloproliferative Neoplasms	0.829826
-TARGET-AML	ACH-000299	0.008393	17.0	0.0	Blood	True	HNT-34	Myeloid	Acute Myeloid Leukemia	0.83822
-TARGET-AML	ACH-000168	0.008274	18.0	0.0	Blood	True	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.846493
-TARGET-AML	ACH-001129	0.007858	14.0	1.0	Blood	True	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	0.854351
-TARGET-AML	ACH-002994	0.007825	15.0	1.0	Blood	True	WSU-AML	Myeloid	Acute Myeloid Leukemia	0.862176
-TARGET-AML	ACH-000487	0.007467	16.0	1.0	Blood	True	F-36P	Myeloid	Myelodysplastic Syndromes	0.869642
-TARGET-AML	ACH-003273	0.007366	17.0	0.0	Blood	True	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	0.877008
-TARGET-AML	ACH-001573	0.007344	12.0	1.0	Blood	True	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.884352
-TARGET-AML	ACH-000006	0.00733	12.0	0.0	Blood	True	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	0.891683
-TARGET-AML	ACH-002668	0.006602	9.0	0.0	Blood	True	KASUMI-3	Myeloid	Acute Myeloid Leukemia	0.898285
-TARGET-AML	ACH-000146	0.00636	10.0	0.0	Blood	True	THP-1	Myeloid	Acute Myeloid Leukemia	0.904645
-TARGET-AML	ACH-000387	0.006253	18.0	0.0	Blood	True	TF-1	Myeloid	Acute Myeloid Leukemia	0.910898
-TARGET-AML	ACH-001684	0.005911	8.0	0.0	Blood	True	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	0.916809
-TARGET-AML	ACH-000373	0.005908	0.0	0.0	Blood	True	SKM-1	Myeloid	Acute Myeloid Leukemia	0.922717
-TARGET-AML	ACH-000004	0.005445	9.0	0.0	Blood	True	HEL	Myeloid	Acute Myeloid Leukemia	0.928162
-TARGET-AML	ACH-000081	0.005307	8.0	0.0	Blood	True	GDM-1	Myeloid	Acute Myeloid Leukemia	0.93347
-TARGET-AML	ACH-002716	0.005262	8.0	0.0	Blood	True	MO-91	Myeloid	Acute Myeloid Leukemia	0.938732
-TARGET-AML	ACH-000336	0.005192	9.0	0.0	Blood	True	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.943924
-TARGET-AML	ACH-000326	0.004601	10.0	1.0	Blood	True	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	0.948525
-TARGET-AML	ACH-000084	0.004376	9.0	0.0	Blood	True	MUTZ-3	Myeloid	Acute Myeloid Leukemia	0.952901
-TARGET-AML	ACH-002946	0.003798	3.0	0.0	Blood	True	UKE-1	Myeloid	Acute Myeloid Leukemia	0.956699
-TARGET-AML	ACH-000386	0.003694	5.0	0.0	Blood	True	KG-1	Myeloid	Acute Myeloid Leukemia	0.960393
-TARGET-AML	ACH-000195	0.00353	4.0	0.0	Blood	True	Set-2	Myeloid	Acute Myeloid Leukemia	0.963922
-TARGET-AML	ACH-002675	0.003184	0.0	0.0	Blood	True	SH-2	Myeloid	Acute Myeloid Leukemia	0.967106
-TARGET-AML	ACH-000983	0.002997	2.0	0.0	Blood	True	KCL-22	Myeloid	Myeloproliferative Neoplasms	0.970103
-TARGET-AML	ACH-000751	0.002783	3.0	0.0	Blood	True	OCI-M1	Myeloid	Acute Myeloid Leukemia	0.972887
-TARGET-AML	ACH-000770	0.00234	1.0	0.0	Blood	True	P31/FUJ	Myeloid	Acute Myeloid Leukemia	0.975227
-TARGET-AML	ACH-000005	0.002059	1.0	0.0	Blood	True	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	0.977285
-TARGET-AML	ACH-002061	0.001853	2.0	0.0	Blood	True	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	0.979138
-TARGET-AML	ACH-000604	0.001184	1.0	0.0	Blood	True	KYO-1	Myeloid	Myeloproliferative Neoplasms	0.980321
-TARGET-AML	ACH-001618	0.001139	0.0	0.0	Blood	True	OCI-M2	Myeloid	Acute Myeloid Leukemia	0.98146
-TARGET-AML	ACH-001735	0.00088	1.0	0.0	Blood	True	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.98234
-TARGET-AML	ACH-000782	0.000639	1.0	1.0	Blood	True	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.982979
-TARGET-AML	ACH-001057	0.000625	0.0	0.0	Blood	True	DERL-2	Lymphoid	Mature T and NK Neoplasms	0.983604
-TARGET-AML	ACH-001147	0.000617	1.0	0.0	Blood	True	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	0.98422
-TARGET-AML	ACH-001068	0.000601	0.0	0.0	Blood	True	FE-PD	Lymphoid	Mature T and NK Neoplasms	0.984822
-TARGET-AML	ACH-001097	0.000553	0.0	0.0	Blood	True	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	0.985375
-TARGET-AML	ACH-001111	0.000511	0.0	0.0	Blood	True	L82	Lymphoid	Mature T and NK Neoplasms	0.985885
-TARGET-AML	ACH-002653	0.000483	1.0	0.0	Blood	True	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.986368
-TARGET-AML	ACH-001736	0.000393	0.0	0.0	Blood	True	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.986761
-TARGET-AML	ACH-001571	0.00036	1.0	0.0	Blood	True	Mo	Lymphoid	Mature B-Cell Neoplasms	0.987121
-TARGET-AML	ACH-000664	0.000341	0.0	0.0	Blood	True	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	0.987462
-TARGET-AML	ACH-001100	0.000337	0.0	0.0	Blood	True	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.987799
-TARGET-AML	ACH-000817	0.000315	0.0	0.0	Blood	True	RPMI 8226	Lymphoid	Mature B-Cell Neoplasms	0.988114
-TARGET-AML	ACH-000206	0.000303	0.0	0.0	Blood	True	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.988417
-TARGET-AML	ACH-000380	0.000279	0.0	0.0	Blood	True	KMS-12-BM	Lymphoid	Mature B-Cell Neoplasms	0.988695
-TARGET-AML	ACH-000773	0.000267	0.0	0.0	Blood	True	Ki-JK	Lymphoid	Mature T and NK Neoplasms	0.988962
-TARGET-AML	ACH-003108	0.000244	0.0	0.0	Blood	True	HF	Lymphoid	Mature B-Cell Neoplasms	0.989206
-TARGET-AML	ACH-000874	0.000243	1.0	0.0	Blood	True	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.989449
-TARGET-AML	ACH-000854	0.000224	0.0	0.0	Blood	True	OCI-MY5	Lymphoid	Mature B-Cell Neoplasms	0.989673
-TARGET-AML	ACH-000509	0.000211	0.0	0.0	Blood	True	HuT 78	Lymphoid	Mature T and NK Neoplasms	0.989884
-TARGET-AML	ACH-000960	0.000207	1.0	0.0	Blood	True	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.990091
-TARGET-AML	ACH-000551	0.000206	0.0	0.0	Blood	True	K-562	Myeloid	Myeloproliferative Neoplasms	0.990297
-TARGET-AML	ACH-000193	0.000203	0.0	0.0	Blood	True	KARPAS-620	Lymphoid	Mature B-Cell Neoplasms	0.990501
-TARGET-AML	ACH-001148	0.0002	0.0	0.0	Blood	True	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	0.990701
-TARGET-AML	ACH-001119	0.000195	0.0	0.0	Blood	True	Mac-2A	Lymphoid	Mature T and NK Neoplasms	0.990896
-TARGET-AML	ACH-001993	0.000187	0.0	0.0	Blood	True	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.991083
-TARGET-AML	ACH-000124	0.000185	0.0	0.0	Blood	True	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	0.991268
-TARGET-AML	ACH-003107	0.000184	0.0	0.0	Blood	True	JMP-1	Lymphoid	Mature B-Cell Neoplasms	0.991452
-TARGET-AML	ACH-001485	0.000184	0.0	0.0	Blood	True	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.991636
-TARGET-AML	ACH-001642	0.000182	0.0	0.0	Blood	True	SCC-3	Lymphoid	Non-Hodgkin Lymphoma	0.991818
-TARGET-AML	ACH-000070	0.000181	0.0	0.0	Blood	True	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.991999
-TARGET-AML	ACH-002478	0.00018	0.0	0.0	Blood	True	BC-2	Lymphoid	Mature B-Cell Neoplasms	0.99218
-TARGET-AML	ACH-000432	0.000165	0.0	0.0	Blood	True	BV-173	Myeloid	Myeloproliferative Neoplasms	0.992345
-TARGET-AML	ACH-001737	0.000161	0.0	0.0	Blood	True	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	0.992506
-TARGET-AML	ACH-000436	0.00016	0.0	0.0	Blood	True	OCI-My7	Lymphoid	Mature B-Cell Neoplasms	0.992666
-TARGET-AML	ACH-000077	0.000156	0.0	0.0	Blood	True	MJ	Lymphoid	Non-Hodgkin Lymphoma	0.992821
-TARGET-AML	ACH-001209	0.000153	0.0	0.0	Blood	True	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.992974
-TARGET-AML	ACH-000061	0.000152	0.0	0.0	Blood	True	HH	Lymphoid	Non-Hodgkin Lymphoma	0.993126
-TARGET-AML	ACH-001134	0.00015	0.0	0.0	Blood	True	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.993276
-TARGET-AML	ACH-000923	0.000144	0.0	0.0	Blood	True	BCP-1	Lymphoid	Mature B-Cell Neoplasms	0.99342
-TARGET-AML	ACH-000918	0.000142	0.0	0.0	Blood	True	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.993561
-TARGET-AML	ACH-000576	0.00014	0.0	0.0	Blood	True	KMS-27	Lymphoid	Mature B-Cell Neoplasms	0.993701
-TARGET-AML	ACH-000653	0.000139	0.0	0.0	Blood	True	JJN-3	Lymphoid	Mature B-Cell Neoplasms	0.99384
-TARGET-AML	ACH-000564	0.000136	0.0	0.0	Blood	True	KHM-1B	Lymphoid	Mature B-Cell Neoplasms	0.993976
-TARGET-AML	ACH-000050	0.000136	0.0	0.0	Blood	True	NCI-H929	Lymphoid	Mature B-Cell Neoplasms	0.994112
-TARGET-AML	ACH-000104	0.000132	0.0	0.0	Blood	True	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.994244
-TARGET-AML	ACH-002060	0.000128	0.0	0.0	Blood	True	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	0.994372
-TARGET-AML	ACH-002059	0.000128	0.0	0.0	Blood	True	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.9945
-TARGET-AML	ACH-002500	0.000125	0.0	0.0	Blood	True	Z-138	Lymphoid	Mature B-Cell Neoplasms	0.994625
-TARGET-AML	ACH-000388	0.000121	0.0	0.0	Blood	True	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	0.994746
-TARGET-AML	ACH-000363	0.000119	0.0	0.0	Blood	True	SK-MM-2	Lymphoid	Mature B-Cell Neoplasms	0.994865
-TARGET-AML	ACH-001707	0.000118	0.0	0.0	Blood	True	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	0.994982
-TARGET-AML	ACH-000158	0.000116	0.0	0.0	Blood	True	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	0.995098
-TARGET-AML	ACH-000838	0.000113	0.0	0.0	Blood	True	AMO-1	Lymphoid	Mature B-Cell Neoplasms	0.995211
-TARGET-AML	ACH-000068	0.000112	0.0	0.0	Blood	True	REC-1	Lymphoid	Mature B-Cell Neoplasms	0.995323
-TARGET-AML	ACH-000080	0.000108	0.0	0.0	Blood	True	BDCM	Myeloid	Acute Myeloid Leukemia	0.995431
-TARGET-AML	ACH-001197	0.000106	0.0	0.0	Blood	True	SMZ-1	Lymphoid	Non-Hodgkin Lymphoma	0.995536
-TARGET-AML	ACH-001685	0.000103	0.0	0.0	Blood	True	U-HO1	Lymphoid	Hodgkin Lymphoma	0.995639
-TARGET-AML	ACH-000519	0.000102	0.0	0.0	Blood	True	PEER	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.995741
-TARGET-AML	ACH-000492	9.7e-05	0.0	0.0	Blood	True	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.995838
-TARGET-AML	ACH-003101	9.6e-05	0.0	0.0	Blood	True	Z-119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.995933
-TARGET-AML	ACH-001484	9e-05	0.0	0.0	Blood	True	CI	Lymphoid	Mature B-Cell Neoplasms	0.996023
-TARGET-AML	ACH-000754	9e-05	0.0	0.0	Blood	True	L-428	Lymphoid	Hodgkin Lymphoma	0.996113
-TARGET-AML	ACH-001132	8.9e-05	0.0	0.0	Blood	True	MTA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.996201
-TARGET-AML	ACH-000815	8.8e-05	0.0	0.0	Blood	True	KM-H2	Lymphoid	Hodgkin Lymphoma	0.996289
-TARGET-AML	ACH-001708	8.6e-05	0.0	0.0	Blood	True	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	0.996375
-TARGET-AML	ACH-001539	8.5e-05	0.0	0.0	Blood	True	KML-1	Lymphoid	Mature B-Cell Neoplasms	0.99646
-TARGET-AML	ACH-000541	8.4e-05	0.0	0.0	Blood	True	KMS-34	Lymphoid	Mature B-Cell Neoplasms	0.996544
-TARGET-AML	ACH-001616	8.3e-05	0.0	0.0	Blood	True	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	0.996627
-TARGET-AML	ACH-003103	8.1e-05	0.0	0.0	Blood	True	Z-181	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.996708
-TARGET-AML	ACH-002214	7.9e-05	0.0	0.0	Blood	True	BC-1	Lymphoid	Mature B-Cell Neoplasms	0.996787
-TARGET-AML	ACH-000130	7.8e-05	0.0	0.0	Blood	True	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.996865
-TARGET-AML	ACH-000612	7.6e-05	0.0	0.0	Blood	True	HuT 102	Lymphoid	Mature T and NK Neoplasms	0.996942
-TARGET-AML	ACH-000922	7.6e-05	0.0	0.0	Blood	True	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997017
-TARGET-AML	ACH-000167	7.4e-05	0.0	0.0	Blood	True	KE-97	Lymphoid	Mature B-Cell Neoplasms	0.997091
-TARGET-AML	ACH-000220	7.3e-05	0.0	0.0	Blood	True	Mino	Lymphoid	Mature B-Cell Neoplasms	0.997164
-TARGET-AML	ACH-001520	7.3e-05	0.0	0.0	Blood	True	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997237
-TARGET-AML	ACH-000938	7.3e-05	0.0	0.0	Blood	True	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99731
-TARGET-AML	ACH-002485	7.2e-05	0.0	0.0	Blood	True	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	0.997381
-TARGET-AML	ACH-003106	7.1e-05	0.0	0.0	Blood	True	RC	Lymphoid	Mature B-Cell Neoplasms	0.997453
-TARGET-AML	ACH-000806	7e-05	0.0	0.0	Blood	True	L-540	Lymphoid	Hodgkin Lymphoma	0.997522
-TARGET-AML	ACH-000728	6.8e-05	0.0	0.0	Blood	True	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99759
-TARGET-AML	ACH-000419	6.4e-05	0.0	0.0	Blood	True	KMS-28BM	Lymphoid	Mature B-Cell Neoplasms	0.997654
-TARGET-AML	ACH-001679	5.9e-05	0.0	0.0	Blood	True	U-2973	Lymphoid	Mature B-Cell Neoplasms	0.997713
-TARGET-AML	ACH-000020	5.7e-05	0.0	0.0	Blood	True	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997771
-TARGET-AML	ACH-001493	5.7e-05	0.0	0.0	Blood	True	DOGUM	Lymphoid	Mature B-Cell Neoplasms	0.997828
-TARGET-AML	ACH-003463	5.7e-05	0.0	0.0	Blood	True	CCLF_HEME_0004_T	Lymphoid	Mature T and NK Neoplasms	0.997885
-TARGET-AML	ACH-000512	5.7e-05	0.0	0.0	Blood	True	INA6	Lymphoid	Mature B-Cell Neoplasms	0.997942
-TARGET-AML	ACH-000057	5.7e-05	0.0	0.0	Blood	True	OPM-1	Lymphoid	Mature B-Cell Neoplasms	0.997998
-TARGET-AML	ACH-001492	5.6e-05	0.0	0.0	Blood	True	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	0.998054
-TARGET-AML	ACH-000101	5.5e-05	0.0	0.0	Blood	True	KE-37	Lymphoid	Mature T and NK Neoplasms	0.998109
-TARGET-AML	ACH-000763	5.5e-05	0.0	0.0	Blood	True	MM1-S	Lymphoid	Mature B-Cell Neoplasms	0.998164
-TARGET-AML	ACH-001541	5.3e-05	0.0	0.0	Blood	True	KMS-28PE	Lymphoid	Mature B-Cell Neoplasms	0.998217
-TARGET-AML	ACH-000157	5.1e-05	0.0	0.0	Blood	True	A4/Fuk	Lymphoid	Mature B-Cell Neoplasms	0.998267
-TARGET-AML	ACH-003100	4.9e-05	0.0	0.0	Blood	True	EJ-1	Lymphoid	Mature B-Cell Neoplasms	0.998316
-TARGET-AML	ACH-000233	4.8e-05	0.0	0.0	Blood	True	DEL	Lymphoid	Mature T and NK Neoplasms	0.998364
-TARGET-AML	ACH-001060	4.7e-05	0.0	0.0	Blood	True	DL-40	Lymphoid	Mature T and NK Neoplasms	0.998411
-TARGET-AML	ACH-000024	4.5e-05	0.0	0.0	Blood	True	OPM-2	Lymphoid	Mature B-Cell Neoplasms	0.998456
-TARGET-AML	ACH-000053	4.4e-05	0.0	0.0	Blood	True	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	0.9985
-TARGET-AML	ACH-000059	4.4e-05	0.0	0.0	Blood	True	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998544
-TARGET-AML	ACH-001669	4.4e-05	0.0	0.0	Blood	True	TANOUE	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998588
-TARGET-AML	ACH-000122	4.4e-05	0.0	0.0	Blood	True	SUP-T11	Lymphoid	Mature T and NK Neoplasms	0.998632
-TARGET-AML	ACH-002215	4.2e-05	0.0	0.0	Blood	True	BC-3	Lymphoid	Mature B-Cell Neoplasms	0.998675
-TARGET-AML	ACH-000656	4e-05	0.0	0.0	Blood	True	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	0.998715
-TARGET-AML	ACH-000287	3.7e-05	0.0	0.0	Blood	True	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	0.998752
-TARGET-AML	ACH-001106	3.7e-05	0.0	0.0	Blood	True	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998788
-TARGET-AML	ACH-000829	3.6e-05	0.0	0.0	Blood	True	HuNS1	Lymphoid	Mature B-Cell Neoplasms	0.998824
-TARGET-AML	ACH-001634	3.6e-05	0.0	0.0	Blood	True	PGA-1	Lymphoid	Mature B-Cell Neoplasms	0.99886
-TARGET-AML	ACH-000944	3.4e-05	0.0	0.0	Blood	True	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	0.998895
-TARGET-AML	ACH-000714	3.4e-05	0.0	0.0	Blood	True	KMS-11	Lymphoid	Mature B-Cell Neoplasms	0.998929
-TARGET-AML	ACH-000636	3.4e-05	0.0	0.0	Blood	True	RPMI-8402	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.998963
-TARGET-AML	ACH-000405	3.4e-05	0.0	0.0	Blood	True	MEC-1	Lymphoid	Mature B-Cell Neoplasms	0.998997
-TARGET-AML	ACH-000073	3.3e-05	0.0	0.0	Blood	True	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	0.99903
-TARGET-AML	ACH-000462	3.3e-05	0.0	0.0	Blood	True	NALM-1	Myeloid	Myeloproliferative Neoplasms	0.999063
-TARGET-AML	ACH-002643	3.1e-05	0.0	0.0	Blood	True	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999094
-TARGET-AML	ACH-001638	3e-05	0.0	0.0	Blood	True	RC-K8	Lymphoid	Mature B-Cell Neoplasms	0.999124
-TARGET-AML	ACH-002062	2.9e-05	0.0	0.0	Blood	True	SLVL	Lymphoid	Mature B-Cell Neoplasms	0.999153
-TARGET-AML	ACH-000702	2.9e-05	0.0	0.0	Blood	True	L-1236	Lymphoid	Hodgkin Lymphoma	0.999183
-TARGET-AML	ACH-000151	2.6e-05	0.0	0.0	Blood	True	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999209
-TARGET-AML	ACH-000226	2.5e-05	0.0	0.0	Blood	True	SUP-M2	Lymphoid	Mature T and NK Neoplasms	0.999234
-TARGET-AML	ACH-001709	2.4e-05	0.0	0.0	Blood	True	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	0.999258
-TARGET-AML	ACH-000598	2.3e-05	0.0	0.0	Blood	True	KMS-21BM	Lymphoid	Mature B-Cell Neoplasms	0.999282
-TARGET-AML	ACH-000156	2.2e-05	0.0	0.0	Blood	True	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999304
-TARGET-AML	ACH-000285	2.2e-05	0.0	0.0	Blood	True	Toledo	Lymphoid	Mature B-Cell Neoplasms	0.999326
-TARGET-AML	ACH-002678	2.1e-05	0.0	0.0	Blood	True	WILL-1	Lymphoid	Mature B-Cell Neoplasms	0.999347
-TARGET-AML	ACH-003460	2.1e-05	0.0	0.0	Blood	True	CCLF_HEME_0001_T	Lymphoid	Mature B-Cell Neoplasms	0.999368
-TARGET-AML	ACH-000346	2.1e-05	0.0	0.0	Blood	True	JVM-3	Lymphoid	Mature B-Cell Neoplasms	0.999389
-TARGET-AML	ACH-001678	2e-05	0.0	0.0	Blood	True	U-2940	Lymphoid	Mature B-Cell Neoplasms	0.999409
-TARGET-AML	ACH-000745	2e-05	0.0	0.0	Blood	True	MOLP-8	Lymphoid	Mature B-Cell Neoplasms	0.999429
-TARGET-AML	ACH-000338	2e-05	0.0	0.0	Blood	True	SR-786	Lymphoid	Mature T and NK Neoplasms	0.999449
-TARGET-AML	ACH-001447	1.9e-05	0.0	0.0	Blood	True	BJAB	Lymphoid	Mature B-Cell Neoplasms	0.999468
-TARGET-AML	ACH-000357	1.9e-05	0.0	0.0	Blood	True	JeKo-1	Lymphoid	Mature B-Cell Neoplasms	0.999487
-TARGET-AML	ACH-001450	1.9e-05	0.0	0.0	Blood	True	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	0.999506
-TARGET-AML	ACH-000140	1.9e-05	0.0	0.0	Blood	True	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	0.999525
-TARGET-AML	ACH-001498	1.8e-05	0.0	0.0	Blood	True	Farage	Lymphoid	Mature B-Cell Neoplasms	0.999543
-TARGET-AML	ACH-001677	1.6e-05	0.0	0.0	Blood	True	U-2904	Lymphoid	Mature B-Cell Neoplasms	0.999559
-TARGET-AML	ACH-000183	1.6e-05	0.0	0.0	Blood	True	L-363	Lymphoid	Mature B-Cell Neoplasms	0.999576
-TARGET-AML	ACH-001533	1.5e-05	0.0	0.0	Blood	True	KARPAS 1718	Lymphoid	Mature B-Cell Neoplasms	0.999591
-TARGET-AML	ACH-001686	1.5e-05	0.0	0.0	Blood	True	ULA	Lymphoid	Mature B-Cell Neoplasms	0.999606
-TARGET-AML	ACH-000567	1.5e-05	0.0	0.0	Blood	True	ST486	Lymphoid	Mature B-Cell Neoplasms	0.999621
-TARGET-AML	ACH-000056	1.5e-05	0.0	0.0	Blood	True	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	0.999636
-TARGET-AML	ACH-000453	1.4e-05	0.0	0.0	Blood	True	MOLP-2	Lymphoid	Mature B-Cell Neoplasms	0.99965
-TARGET-AML	ACH-000914	1.4e-05	0.0	0.0	Blood	True	HT	Lymphoid	Mature B-Cell Neoplasms	0.999664
-TARGET-AML	ACH-002677	1.4e-05	0.0	0.0	Blood	True	U-2946	Lymphoid	Mature B-Cell Neoplasms	0.999678
-TARGET-AML	ACH-000588	1.3e-05	0.0	0.0	Blood	True	KMS-26	Lymphoid	Mature B-Cell Neoplasms	0.999691
-TARGET-AML	ACH-001680	1.3e-05	0.0	0.0	Blood	True	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999704
-TARGET-AML	ACH-000821	1.3e-05	0.0	0.0	Blood	True	EJM	Lymphoid	Mature B-Cell Neoplasms	0.999717
-TARGET-AML	ACH-000687	1.3e-05	0.0	0.0	Blood	True	CI-1	Lymphoid	Non-Hodgkin Lymphoma	0.99973
-TARGET-AML	ACH-000697	1.2e-05	0.0	0.0	Blood	True	A3/KAW	Lymphoid	Mature B-Cell Neoplasms	0.999742
-TARGET-AML	ACH-000660	1.2e-05	0.0	0.0	Blood	True	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	0.999754
-TARGET-AML	ACH-000583	1.2e-05	0.0	0.0	Blood	True	MC116	Lymphoid	Non-Hodgkin Lymphoma	0.999766
-TARGET-AML	ACH-000271	1.1e-05	0.0	0.0	Blood	True	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	0.999777
-TARGET-AML	ACH-001636	1.1e-05	0.0	0.0	Blood	True	Ramos	Lymphoid	Mature B-Cell Neoplasms	0.999789
-TARGET-AML	ACH-002055	1.1e-05	0.0	0.0	Blood	True	TL-1	Lymphoid	Mature B-Cell Neoplasms	0.9998
-TARGET-AML	ACH-000920	1.1e-05	0.0	0.0	Blood	True	CML-T1	Myeloid	Myeloproliferative Neoplasms	0.999811
-TARGET-AML	ACH-000371	1e-05	0.0	0.0	Blood	True	RL	Lymphoid	Mature B-Cell Neoplasms	0.999821
-TARGET-AML	ACH-000654	1e-05	0.0	0.0	Blood	True	Raji	Lymphoid	Mature B-Cell Neoplasms	0.999831
-TARGET-AML	ACH-002676	1e-05	0.0	0.0	Blood	True	TK-6	Myeloid	Myeloproliferative Neoplasms	0.99984
-TARGET-AML	ACH-000402	9e-06	0.0	0.0	Blood	True	BL-70	Lymphoid	Mature B-Cell Neoplasms	0.999849
-TARGET-AML	ACH-000162	9e-06	0.0	0.0	Blood	True	GA-10	Lymphoid	Mature B-Cell Neoplasms	0.999858
-TARGET-AML	ACH-000032	9e-06	0.0	0.0	Blood	True	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999867
-TARGET-AML	ACH-000889	8e-06	0.0	0.0	Blood	True	KMM-1	Lymphoid	Mature B-Cell Neoplasms	0.999875
-TARGET-AML	ACH-000038	8e-06	0.0	0.0	Blood	True	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999883
-TARGET-AML	ACH-000245	8e-06	0.0	0.0	Blood	True	BL-41	Lymphoid	Mature B-Cell Neoplasms	0.999891
-TARGET-AML	ACH-001449	8e-06	0.0	0.0	Blood	True	BL-2	Lymphoid	Mature B-Cell Neoplasms	0.999899
-TARGET-AML	ACH-000626	8e-06	0.0	0.0	Blood	True	U266B1	Lymphoid	Mature B-Cell Neoplasms	0.999907
-TARGET-AML	ACH-000534	8e-06	0.0	0.0	Blood	True	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	0.999914
-TARGET-AML	ACH-000267	7e-06	0.0	0.0	Blood	True	HDLM-2	Lymphoid	Hodgkin Lymphoma	0.999921
-TARGET-AML	ACH-000106	7e-06	0.0	0.0	Blood	True	JVM-2	Lymphoid	Mature B-Cell Neoplasms	0.999928
-TARGET-AML	ACH-000372	6e-06	0.0	0.0	Blood	True	P12-ICHIKAWA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999934
-TARGET-AML	ACH-000707	6e-06	0.0	0.0	Blood	True	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	0.99994
-TARGET-AML	ACH-000069	6e-06	0.0	0.0	Blood	True	Hs 611.T	Lymphoid	Hodgkin Lymphoma	0.999947
-TARGET-AML	ACH-000398	4e-06	0.0	0.0	Blood	True	RI-1	Lymphoid	Mature B-Cell Neoplasms	0.999951
-TARGET-AML	ACH-000995	4e-06	0.0	0.0	Blood	True	JURKAT	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999955
-TARGET-AML	ACH-001503	4e-06	0.0	0.0	Blood	True	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	0.999959
-TARGET-AML	ACH-000204	4e-06	0.0	0.0	Blood	True	LP-1	Lymphoid	Mature B-Cell Neoplasms	0.999964
-TARGET-AML	ACH-000105	4e-06	0.0	0.0	Blood	True	ALL-SIL	Lymphoid	Mature T and NK Neoplasms	0.999967
-TARGET-AML	ACH-000315	4e-06	0.0	0.0	Blood	True	KARPAS-422	Lymphoid	Mature B-Cell Neoplasms	0.999971
-TARGET-AML	ACH-000942	3e-06	0.0	0.0	Blood	True	HPB-ALL	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999975
-TARGET-AML	ACH-000334	3e-06	0.0	0.0	Blood	True	DB	Lymphoid	Mature B-Cell Neoplasms	0.999978
-TARGET-AML	ACH-000365	3e-06	0.0	0.0	Blood	True	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	0.999981
-TARGET-AML	ACH-000877	3e-06	0.0	0.0	Blood	True	EB1	Lymphoid	Mature B-Cell Neoplasms	0.999985
-TARGET-AML	ACH-001703	3e-06	0.0	0.0	Blood	True	VAL	Lymphoid	Mature B-Cell Neoplasms	0.999988
-TARGET-AML	ACH-001617	3e-06	0.0	0.0	Blood	True	OCI-LY7	Lymphoid	Mature B-Cell Neoplasms	0.999991
-TARGET-AML	ACH-000440	3e-06	0.0	0.0	Blood	True	CA46	Lymphoid	Mature B-Cell Neoplasms	0.999993
-TARGET-AML	ACH-000611	2e-06	0.0	0.0	Blood	True	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	0.999996
-TARGET-AML	ACH-000786	2e-06	0.0	0.0	Blood	True	Daudi	Lymphoid	Mature B-Cell Neoplasms	0.999998
-TARGET-AML	ACH-000964	1e-06	0.0	0.0	Blood	True	MOLT-3	Lymphoid	Mature T and NK Neoplasms	0.999999
-TARGET-AML	ACH-001064	1e-06	0.0	0.0	Blood	True	EB-2	Lymphoid	Mature B-Cell Neoplasms	1.0
+TARGET-AML	ACH-000002	0.079858	70.0	21.0	Myeloid	True	HL-60	Myeloid	Acute Myeloid Leukemia	0.079858
+TARGET-AML	ACH-000263	0.076482	82.0	24.0	Myeloid	True	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.15634
+TARGET-AML	ACH-001647	0.057652	95.0	14.0	Myeloid	True	SHI-1	Myeloid	Acute Myeloid Leukemia	0.213992
+TARGET-AML	ACH-000034	0.049192	67.0	9.0	Myeloid	True	PLB-985	Myeloid	Acute Myeloid Leukemia	0.263184
+TARGET-AML	ACH-000045	0.044228	56.0	14.0	Myeloid	True	MV4-11	Myeloid	Acute Myeloid Leukemia	0.307412
+TARGET-AML	ACH-000295	0.036782	81.0	7.0	Myeloid	True	EM-2	Myeloid	Myeloproliferative Neoplasms	0.344194
+TARGET-AML	ACH-001656	0.033687	52.0	4.0	Myeloid	True	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.377881
+TARGET-AML	ACH-000362	0.031569	42.0	7.0	Myeloid	True	MOLM-13	Myeloid	Acute Myeloid Leukemia	0.40945
+TARGET-AML	ACH-000065	0.029863	71.0	0.0	Myeloid	True	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.439312
+TARGET-AML	ACH-000112	0.029173	62.0	0.0	Myeloid	True	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.468485
+TARGET-AML	ACH-000198	0.024744	49.0	4.0	Myeloid	True	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.493229
+TARGET-AML	ACH-000321	0.02372	43.0	1.0	Myeloid	True	MOLM-6	Myeloid	Myeloproliferative Neoplasms	0.516949
+TARGET-AML	ACH-001577	0.022503	44.0	4.0	Myeloid	True	MUTZ-8	Myeloid	Acute Myeloid Leukemia	0.539452
+TARGET-AML	ACH-000602	0.020272	27.0	4.0	Myeloid	True	M-07e	Myeloid	Acute Myeloid Leukemia	0.559724
+TARGET-AML	ACH-002290	0.019677	40.0	2.0	Myeloid	True	NKM-1	Myeloid	Acute Myeloid Leukemia	0.579401
+TARGET-AML	ACH-000439	0.018875	20.0	8.0	Myeloid	True	ME-1	Myeloid	Acute Myeloid Leukemia	0.598276
+TARGET-AML	ACH-000074	0.018735	26.0	5.0	Myeloid	True	KU812	Myeloid	Myeloproliferative Neoplasms	0.617011
+TARGET-AML	ACH-000498	0.018338	37.0	2.0	Myeloid	True	KO52	Myeloid	Acute Myeloid Leukemia	0.635349
+TARGET-AML	ACH-000294	0.016651	46.0	0.0	Myeloid	True	NB-4	Myeloid	Acute Myeloid Leukemia	0.651999
+TARGET-AML	ACH-001574	0.015688	33.0	1.0	Myeloid	True	MOLM-14	Myeloid	Acute Myeloid Leukemia	0.667687
+TARGET-AML	ACH-002651	0.015194	37.0	1.0	Myeloid	True	FKH-1	Myeloid	Acute Myeloid Leukemia	0.682881
+TARGET-AML	ACH-000076	0.015054	32.0	4.0	Myeloid	True	NCO2	Myeloid	Myeloproliferative Neoplasms	0.697935
+TARGET-AML	ACH-000301	0.014906	27.0	5.0	Myeloid	True	LAMA-84	Myeloid	Myeloproliferative Neoplasms	0.712841
+TARGET-AML	ACH-001036	0.014834	26.0	5.0	Myeloid	True	CMK-11-5	Myeloid	Acute Myeloid Leukemia	0.727675
+TARGET-AML	ACH-000113	0.014553	29.0	1.0	Myeloid	True	OCI-AML2	Myeloid	Acute Myeloid Leukemia	0.742228
+TARGET-AML	ACH-001613	0.014444	41.0	0.0	Myeloid	True	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.756672
+TARGET-AML	ACH-000218	0.013536	35.0	1.0	Myeloid	True	PL-21	Myeloid	Acute Myeloid Leukemia	0.770208
+TARGET-AML	ACH-000557	0.012314	19.0	1.0	Myeloid	True	AML-193	Myeloid	Acute Myeloid Leukemia	0.782522
+TARGET-AML	ACH-000072	0.011573	14.0	2.0	Myeloid	True	MEG-01	Myeloid	Myeloproliferative Neoplasms	0.794096
+TARGET-AML	ACH-000166	0.0101	15.0	2.0	Myeloid	True	Kasumi-6	Myeloid	Acute Myeloid Leukemia	0.804196
+TARGET-AML	ACH-000369	0.010042	18.0	0.0	Myeloid	True	MOLM-16	Myeloid	Acute Myeloid Leukemia	0.814238
+TARGET-AML	ACH-000641	0.009941	17.0	3.0	Myeloid	True	CMK	Myeloid	Acute Myeloid Leukemia	0.824179
+TARGET-AML	ACH-000406	0.008967	9.0	0.0	Myeloid	True	U-937	Myeloid	Acute Myeloid Leukemia	0.833146
+TARGET-AML	ACH-000299	0.008686	17.0	0.0	Myeloid	True	HNT-34	Myeloid	Acute Myeloid Leukemia	0.841832
+TARGET-AML	ACH-000241	0.008598	12.0	0.0	Myeloid	True	JK-1	Myeloid	Myeloproliferative Neoplasms	0.850431
+TARGET-AML	ACH-000168	0.008297	18.0	0.0	Myeloid	True	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.858728
+TARGET-AML	ACH-002994	0.00808	15.0	1.0	Myeloid	True	WSU-AML	Myeloid	Acute Myeloid Leukemia	0.866808
+TARGET-AML	ACH-001129	0.007857	14.0	1.0	Myeloid	True	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	0.874665
+TARGET-AML	ACH-003273	0.007641	17.0	0.0	Myeloid	True	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	0.882307
+TARGET-AML	ACH-001573	0.007607	12.0	1.0	Myeloid	True	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.889913
+TARGET-AML	ACH-000487	0.007555	16.0	1.0	Myeloid	True	F-36P	Myeloid	Myelodysplastic Syndromes	0.897469
+TARGET-AML	ACH-000006	0.007355	12.0	0.0	Myeloid	True	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	0.904824
+TARGET-AML	ACH-002668	0.006898	10.0	0.0	Myeloid	True	KASUMI-3	Myeloid	Acute Myeloid Leukemia	0.911722
+TARGET-AML	ACH-000146	0.006379	10.0	0.0	Myeloid	True	THP-1	Myeloid	Acute Myeloid Leukemia	0.918102
+TARGET-AML	ACH-000387	0.006319	18.0	0.0	Myeloid	True	TF-1	Myeloid	Acute Myeloid Leukemia	0.924421
+TARGET-AML	ACH-001684	0.006037	8.0	0.0	Myeloid	True	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	0.930458
+TARGET-AML	ACH-000373	0.005989	0.0	0.0	Myeloid	True	SKM-1	Myeloid	Acute Myeloid Leukemia	0.936448
+TARGET-AML	ACH-002716	0.005722	9.0	0.0	Myeloid	True	MO-91	Myeloid	Acute Myeloid Leukemia	0.942169
+TARGET-AML	ACH-000004	0.005485	9.0	0.0	Myeloid	True	HEL	Myeloid	Acute Myeloid Leukemia	0.947654
+TARGET-AML	ACH-000081	0.005407	8.0	0.0	Myeloid	True	GDM-1	Myeloid	Acute Myeloid Leukemia	0.953062
+TARGET-AML	ACH-000336	0.005242	9.0	0.0	Myeloid	True	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.958304
+TARGET-AML	ACH-000326	0.00495	10.0	1.0	Myeloid	True	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	0.963254
+TARGET-AML	ACH-000084	0.004432	9.0	0.0	Myeloid	True	MUTZ-3	Myeloid	Acute Myeloid Leukemia	0.967687
+TARGET-AML	ACH-002946	0.003938	3.0	0.0	Myeloid	True	UKE-1	Myeloid	Acute Myeloid Leukemia	0.971625
+TARGET-AML	ACH-000386	0.003776	5.0	0.0	Myeloid	True	KG-1	Myeloid	Acute Myeloid Leukemia	0.975401
+TARGET-AML	ACH-000195	0.003541	4.0	0.0	Myeloid	True	Set-2	Myeloid	Acute Myeloid Leukemia	0.978942
+TARGET-AML	ACH-002675	0.003299	0.0	0.0	Myeloid	True	SH-2	Myeloid	Acute Myeloid Leukemia	0.982241
+TARGET-AML	ACH-000983	0.003127	2.0	0.0	Myeloid	True	KCL-22	Myeloid	Myeloproliferative Neoplasms	0.985368
+TARGET-AML	ACH-000751	0.002847	3.0	0.0	Myeloid	True	OCI-M1	Myeloid	Acute Myeloid Leukemia	0.988215
+TARGET-AML	ACH-000770	0.002373	1.0	0.0	Myeloid	True	P31/FUJ	Myeloid	Acute Myeloid Leukemia	0.990588
+TARGET-AML	ACH-000005	0.002076	1.0	0.0	Myeloid	True	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	0.992664
+TARGET-AML	ACH-002061	0.001965	2.0	0.0	Myeloid	True	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	0.994629
+TARGET-AML	ACH-000604	0.001247	1.0	0.0	Myeloid	True	KYO-1	Myeloid	Myeloproliferative Neoplasms	0.995876
+TARGET-AML	ACH-001618	0.001176	0.0	0.0	Myeloid	True	OCI-M2	Myeloid	Acute Myeloid Leukemia	0.997052
+TARGET-AML	ACH-002653	0.00075	1.0	0.0	Myeloid	True	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.997802
+TARGET-AML	ACH-000782	0.000656	1.0	1.0	Myeloid	False	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998458
+TARGET-AML	ACH-001735	0.000637	1.0	0.0	Myeloid	False	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999095
+TARGET-AML	ACH-000432	0.000242	0.0	0.0	Myeloid	True	BV-173	Myeloid	Myeloproliferative Neoplasms	0.999337
+TARGET-AML	ACH-000551	0.000219	0.0	0.0	Myeloid	True	K-562	Myeloid	Myeloproliferative Neoplasms	0.999556
+TARGET-AML	ACH-002060	0.000212	0.0	0.0	Myeloid	True	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	0.999768
+TARGET-AML	ACH-000080	0.000146	0.0	0.0	Myeloid	True	BDCM	Myeloid	Acute Myeloid Leukemia	0.999915
+TARGET-AML	ACH-000462	5.6e-05	0.0	0.0	Myeloid	True	NALM-1	Myeloid	Myeloproliferative Neoplasms	0.999971
+TARGET-AML	ACH-000920	1.5e-05	0.0	0.0	Myeloid	True	CML-T1	Myeloid	Myeloproliferative Neoplasms	0.999985
+TARGET-AML	ACH-002676	1.4e-05	0.0	0.0	Myeloid	True	TK-6	Myeloid	Myeloproliferative Neoplasms	0.999999
+TARGET-AML	ACH-002475	1e-06	0.0	0.0	Myeloid	True	HAP1	Myeloid	Myeloproliferative Neoplasms	1.0
 TARGET-NBL	ACH-001465	0.111229	95.0	32.0	Peripheral Nervous System	True	CHLA-136	Peripheral Nervous System	Neuroblastoma	0.111229
 TARGET-NBL	ACH-000345	0.100143	91.0	25.0	Peripheral Nervous System	True	KP-N-RT-BM-1	Peripheral Nervous System	Neuroblastoma	0.211372
 TARGET-NBL	ACH-000227	0.081419	109.0	25.0	Peripheral Nervous System	True	KP-N-YN	Peripheral Nervous System	Neuroblastoma	0.29279
@@ -5819,218 +5624,176 @@ TCGA-COAD	ACH-002024	4.9e-05	1.0	0.0	Bowel	True	ECC4	Bowel	Colorectal Adenocarci
 TCGA-COAD	ACH-000935	1.9e-05	0.0	0.0	Bowel	True	MDST8	Bowel	Colorectal Adenocarcinoma	0.999973
 TCGA-COAD	ACH-001454	1.6e-05	0.0	0.0	Bowel	True	C10	Bowel	Colorectal Adenocarcinoma	0.999989
 TCGA-COAD	ACH-000683	1.1e-05	0.0	0.0	Bowel	True	SNU-503	Bowel	Colorectal Adenocarcinoma	1.0
-TCGA-DLBC	ACH-003266	0.118803	11.0	11.0	Blood	False	CCLF_RARE_0021_T	Soft Tissue	Leiomyosarcoma	0.118803
-TCGA-DLBC	ACH-000080	0.077411	38.0	17.0	Blood	True	BDCM	Myeloid	Acute Myeloid Leukemia	0.196214
-TCGA-DLBC	ACH-001484	0.070808	37.0	7.0	Blood	True	CI	Lymphoid	Mature B-Cell Neoplasms	0.267022
-TCGA-DLBC	ACH-001485	0.033695	30.0	2.0	Blood	True	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.300717
-TCGA-DLBC	ACH-000158	0.024818	28.0	0.0	Blood	True	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	0.325535
-TCGA-DLBC	ACH-000167	0.0243	26.0	0.0	Blood	True	KE-97	Lymphoid	Mature B-Cell Neoplasms	0.349835
-TCGA-DLBC	ACH-000405	0.024257	23.0	0.0	Blood	True	MEC-1	Lymphoid	Mature B-Cell Neoplasms	0.374092
-TCGA-DLBC	ACH-000069	0.023174	24.0	2.0	Blood	True	Hs 611.T	Lymphoid	Hodgkin Lymphoma	0.397266
-TCGA-DLBC	ACH-000073	0.021954	24.0	0.0	Blood	True	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	0.41922
-TCGA-DLBC	ACH-002485	0.019156	15.0	0.0	Blood	True	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	0.438376
-TCGA-DLBC	ACH-000220	0.017654	15.0	2.0	Blood	True	Mino	Lymphoid	Mature B-Cell Neoplasms	0.45603
-TCGA-DLBC	ACH-000068	0.017447	18.0	0.0	Blood	True	REC-1	Lymphoid	Mature B-Cell Neoplasms	0.473477
-TCGA-DLBC	ACH-001539	0.016831	10.0	0.0	Blood	True	KML-1	Lymphoid	Mature B-Cell Neoplasms	0.490308
-TCGA-DLBC	ACH-001493	0.016666	15.0	0.0	Blood	True	DOGUM	Lymphoid	Mature B-Cell Neoplasms	0.506974
-TCGA-DLBC	ACH-000660	0.015607	11.0	0.0	Blood	True	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	0.52258
-TCGA-DLBC	ACH-001498	0.014784	7.0	2.0	Blood	True	Farage	Lymphoid	Mature B-Cell Neoplasms	0.537364
-TCGA-DLBC	ACH-000687	0.01446	7.0	1.0	Blood	True	CI-1	Lymphoid	Non-Hodgkin Lymphoma	0.551824
-TCGA-DLBC	ACH-000056	0.01431	9.0	1.0	Blood	True	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	0.566134
-TCGA-DLBC	ACH-000140	0.013221	6.0	0.0	Blood	True	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	0.579355
-TCGA-DLBC	ACH-001707	0.013187	9.0	0.0	Blood	True	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	0.592542
-TCGA-DLBC	ACH-000038	0.011821	13.0	0.0	Blood	True	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.604363
-TCGA-DLBC	ACH-001709	0.011795	4.0	0.0	Blood	True	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	0.616159
-TCGA-DLBC	ACH-000534	0.011066	5.0	0.0	Blood	True	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	0.627225
-TCGA-DLBC	ACH-001686	0.01045	3.0	2.0	Blood	True	ULA	Lymphoid	Mature B-Cell Neoplasms	0.637674
-TCGA-DLBC	ACH-000829	0.010106	1.0	0.0	Blood	True	HuNS1	Lymphoid	Mature B-Cell Neoplasms	0.647781
-TCGA-DLBC	ACH-000583	0.00978	4.0	0.0	Blood	True	MC116	Lymphoid	Non-Hodgkin Lymphoma	0.657561
-TCGA-DLBC	ACH-001678	0.009746	0.0	0.0	Blood	True	U-2940	Lymphoid	Mature B-Cell Neoplasms	0.667307
-TCGA-DLBC	ACH-000944	0.00971	2.0	0.0	Blood	True	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	0.677017
-TCGA-DLBC	ACH-000654	0.008933	5.0	0.0	Blood	True	Raji	Lymphoid	Mature B-Cell Neoplasms	0.685949
-TCGA-DLBC	ACH-003107	0.008865	6.0	0.0	Blood	True	JMP-1	Lymphoid	Mature B-Cell Neoplasms	0.694814
-TCGA-DLBC	ACH-002062	0.008378	1.0	0.0	Blood	True	SLVL	Lymphoid	Mature B-Cell Neoplasms	0.703192
-TCGA-DLBC	ACH-001503	0.00801	3.0	0.0	Blood	True	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	0.711202
-TCGA-DLBC	ACH-001449	0.007639	1.0	0.0	Blood	True	BL-2	Lymphoid	Mature B-Cell Neoplasms	0.718841
-TCGA-DLBC	ACH-000914	0.007633	0.0	0.0	Blood	True	HT	Lymphoid	Mature B-Cell Neoplasms	0.726474
-TCGA-DLBC	ACH-001520	0.007606	3.0	0.0	Blood	True	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.73408
-TCGA-DLBC	ACH-000271	0.007573	2.0	0.0	Blood	True	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	0.741652
-TCGA-DLBC	ACH-000193	0.007448	0.0	0.0	Blood	True	KARPAS-620	Lymphoid	Mature B-Cell Neoplasms	0.7491
-TCGA-DLBC	ACH-000287	0.007354	1.0	0.0	Blood	True	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	0.756454
-TCGA-DLBC	ACH-000786	0.007295	2.0	0.0	Blood	True	Daudi	Lymphoid	Mature B-Cell Neoplasms	0.76375
-TCGA-DLBC	ACH-000611	0.007089	2.0	0.0	Blood	True	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	0.770838
-TCGA-DLBC	ACH-001571	0.006569	5.0	0.0	Blood	True	Mo	Lymphoid	Mature B-Cell Neoplasms	0.777407
-TCGA-DLBC	ACH-000707	0.006477	2.0	0.0	Blood	True	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	0.783884
-TCGA-DLBC	ACH-000371	0.006123	1.0	0.0	Blood	True	RL	Lymphoid	Mature B-Cell Neoplasms	0.790007
-TCGA-DLBC	ACH-001685	0.005957	6.0	0.0	Blood	True	U-HO1	Lymphoid	Hodgkin Lymphoma	0.795964
-TCGA-DLBC	ACH-001636	0.00568	0.0	0.0	Blood	True	Ramos	Lymphoid	Mature B-Cell Neoplasms	0.801645
-TCGA-DLBC	ACH-000388	0.0056	0.0	0.0	Blood	True	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	0.807245
-TCGA-DLBC	ACH-000365	0.005494	1.0	0.0	Blood	True	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	0.812738
-TCGA-DLBC	ACH-001616	0.00543	2.0	0.0	Blood	True	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	0.818169
-TCGA-DLBC	ACH-000245	0.005399	1.0	0.0	Blood	True	BL-41	Lymphoid	Mature B-Cell Neoplasms	0.823567
-TCGA-DLBC	ACH-002500	0.005392	0.0	0.0	Blood	True	Z-138	Lymphoid	Mature B-Cell Neoplasms	0.828959
-TCGA-DLBC	ACH-000346	0.005228	1.0	0.0	Blood	True	JVM-3	Lymphoid	Mature B-Cell Neoplasms	0.834187
-TCGA-DLBC	ACH-000402	0.005182	1.0	0.0	Blood	True	BL-70	Lymphoid	Mature B-Cell Neoplasms	0.839369
-TCGA-DLBC	ACH-000206	0.005162	2.0	0.0	Blood	True	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.844531
-TCGA-DLBC	ACH-000106	0.005076	2.0	0.0	Blood	True	JVM-2	Lymphoid	Mature B-Cell Neoplasms	0.849607
-TCGA-DLBC	ACH-001634	0.005052	1.0	0.0	Blood	True	PGA-1	Lymphoid	Mature B-Cell Neoplasms	0.854659
-TCGA-DLBC	ACH-000162	0.004636	1.0	0.0	Blood	True	GA-10	Lymphoid	Mature B-Cell Neoplasms	0.859295
-TCGA-DLBC	ACH-001450	0.004402	2.0	0.0	Blood	True	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	0.863697
-TCGA-DLBC	ACH-000357	0.004229	0.0	0.0	Blood	True	JeKo-1	Lymphoid	Mature B-Cell Neoplasms	0.867926
-TCGA-DLBC	ACH-003108	0.004134	0.0	0.0	Blood	True	HF	Lymphoid	Mature B-Cell Neoplasms	0.87206
-TCGA-DLBC	ACH-001680	0.004012	1.0	0.0	Blood	True	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.876071
-TCGA-DLBC	ACH-000380	0.003855	0.0	0.0	Blood	True	KMS-12-BM	Lymphoid	Mature B-Cell Neoplasms	0.879926
-TCGA-DLBC	ACH-000077	0.003794	2.0	0.0	Blood	True	MJ	Lymphoid	Non-Hodgkin Lymphoma	0.88372
-TCGA-DLBC	ACH-001447	0.003786	0.0	0.0	Blood	True	BJAB	Lymphoid	Mature B-Cell Neoplasms	0.887506
-TCGA-DLBC	ACH-000815	0.003765	3.0	0.0	Blood	True	KM-H2	Lymphoid	Hodgkin Lymphoma	0.891271
-TCGA-DLBC	ACH-000754	0.003272	0.0	0.0	Blood	True	L-428	Lymphoid	Hodgkin Lymphoma	0.894543
-TCGA-DLBC	ACH-000567	0.003093	0.0	0.0	Blood	True	ST486	Lymphoid	Mature B-Cell Neoplasms	0.897636
-TCGA-DLBC	ACH-000612	0.003053	3.0	0.0	Blood	True	HuT 102	Lymphoid	Mature T and NK Neoplasms	0.900689
-TCGA-DLBC	ACH-002677	0.003026	2.0	0.0	Blood	True	U-2946	Lymphoid	Mature B-Cell Neoplasms	0.903715
-TCGA-DLBC	ACH-000854	0.00295	0.0	0.0	Blood	True	OCI-MY5	Lymphoid	Mature B-Cell Neoplasms	0.906665
-TCGA-DLBC	ACH-000877	0.00279	0.0	0.0	Blood	True	EB1	Lymphoid	Mature B-Cell Neoplasms	0.909455
-TCGA-DLBC	ACH-001533	0.002706	0.0	0.0	Blood	True	KARPAS 1718	Lymphoid	Mature B-Cell Neoplasms	0.912161
-TCGA-DLBC	ACH-002055	0.002686	1.0	0.0	Blood	True	TL-1	Lymphoid	Mature B-Cell Neoplasms	0.914847
-TCGA-DLBC	ACH-001638	0.002456	0.0	0.0	Blood	True	RC-K8	Lymphoid	Mature B-Cell Neoplasms	0.917304
-TCGA-DLBC	ACH-000398	0.00232	0.0	0.0	Blood	True	RI-1	Lymphoid	Mature B-Cell Neoplasms	0.919623
-TCGA-DLBC	ACH-001148	0.002307	0.0	0.0	Blood	True	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	0.921931
-TCGA-DLBC	ACH-000656	0.002281	0.0	0.0	Blood	True	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	0.924212
-TCGA-DLBC	ACH-000838	0.002172	0.0	0.0	Blood	True	AMO-1	Lymphoid	Mature B-Cell Neoplasms	0.926384
-TCGA-DLBC	ACH-000702	0.002154	1.0	0.0	Blood	True	L-1236	Lymphoid	Hodgkin Lymphoma	0.928538
-TCGA-DLBC	ACH-001111	0.002106	3.0	0.0	Blood	True	L82	Lymphoid	Mature T and NK Neoplasms	0.930643
-TCGA-DLBC	ACH-001068	0.002096	1.0	0.0	Blood	True	FE-PD	Lymphoid	Mature T and NK Neoplasms	0.932739
-TCGA-DLBC	ACH-000817	0.002023	0.0	0.0	Blood	True	RPMI 8226	Lymphoid	Mature B-Cell Neoplasms	0.934763
-TCGA-DLBC	ACH-000763	0.001993	0.0	0.0	Blood	True	MM1-S	Lymphoid	Mature B-Cell Neoplasms	0.936756
-TCGA-DLBC	ACH-001119	0.00195	2.0	0.0	Blood	True	Mac-2A	Lymphoid	Mature T and NK Neoplasms	0.938706
-TCGA-DLBC	ACH-000285	0.001893	0.0	0.0	Blood	True	Toledo	Lymphoid	Mature B-Cell Neoplasms	0.940599
-TCGA-DLBC	ACH-001617	0.001884	0.0	0.0	Blood	True	OCI-LY7	Lymphoid	Mature B-Cell Neoplasms	0.942483
-TCGA-DLBC	ACH-001147	0.001861	0.0	0.0	Blood	True	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	0.944344
-TCGA-DLBC	ACH-001669	0.001844	0.0	0.0	Blood	True	TANOUE	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.946188
-TCGA-DLBC	ACH-002678	0.001844	0.0	0.0	Blood	True	WILL-1	Lymphoid	Mature B-Cell Neoplasms	0.948032
-TCGA-DLBC	ACH-001703	0.001832	0.0	0.0	Blood	True	VAL	Lymphoid	Mature B-Cell Neoplasms	0.949864
-TCGA-DLBC	ACH-000061	0.001822	0.0	0.0	Blood	True	HH	Lymphoid	Non-Hodgkin Lymphoma	0.951685
-TCGA-DLBC	ACH-003100	0.001777	0.0	0.0	Blood	True	EJ-1	Lymphoid	Mature B-Cell Neoplasms	0.953462
-TCGA-DLBC	ACH-000334	0.001728	0.0	0.0	Blood	True	DB	Lymphoid	Mature B-Cell Neoplasms	0.955191
-TCGA-DLBC	ACH-001492	0.001605	0.0	0.0	Blood	True	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	0.956796
-TCGA-DLBC	ACH-001677	0.001579	0.0	0.0	Blood	True	U-2904	Lymphoid	Mature B-Cell Neoplasms	0.958375
-TCGA-DLBC	ACH-001197	0.001549	0.0	0.0	Blood	True	SMZ-1	Lymphoid	Non-Hodgkin Lymphoma	0.959924
-TCGA-DLBC	ACH-001679	0.001549	0.0	0.0	Blood	True	U-2973	Lymphoid	Mature B-Cell Neoplasms	0.961473
-TCGA-DLBC	ACH-000151	0.001548	0.0	0.0	Blood	True	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.96302
-TCGA-DLBC	ACH-000050	0.001518	0.0	0.0	Blood	True	NCI-H929	Lymphoid	Mature B-Cell Neoplasms	0.964538
-TCGA-DLBC	ACH-000440	0.00143	0.0	0.0	Blood	True	CA46	Lymphoid	Mature B-Cell Neoplasms	0.965968
-TCGA-DLBC	ACH-001541	0.00138	0.0	0.0	Blood	True	KMS-28PE	Lymphoid	Mature B-Cell Neoplasms	0.967349
-TCGA-DLBC	ACH-000653	0.001299	0.0	0.0	Blood	True	JJN-3	Lymphoid	Mature B-Cell Neoplasms	0.968647
-TCGA-DLBC	ACH-000315	0.001226	0.0	0.0	Blood	True	KARPAS-422	Lymphoid	Mature B-Cell Neoplasms	0.969874
-TCGA-DLBC	ACH-003106	0.001149	0.0	0.0	Blood	True	RC	Lymphoid	Mature B-Cell Neoplasms	0.971022
-TCGA-DLBC	ACH-000576	0.001106	0.0	0.0	Blood	True	KMS-27	Lymphoid	Mature B-Cell Neoplasms	0.972129
-TCGA-DLBC	ACH-001097	0.001098	0.0	0.0	Blood	True	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	0.973226
-TCGA-DLBC	ACH-000233	0.001039	1.0	0.0	Blood	True	DEL	Lymphoid	Mature T and NK Neoplasms	0.974265
-TCGA-DLBC	ACH-000541	0.001035	0.0	0.0	Blood	True	KMS-34	Lymphoid	Mature B-Cell Neoplasms	0.9753
-TCGA-DLBC	ACH-000267	0.001028	0.0	0.0	Blood	True	HDLM-2	Lymphoid	Hodgkin Lymphoma	0.976327
-TCGA-DLBC	ACH-000806	0.000975	0.0	0.0	Blood	True	L-540	Lymphoid	Hodgkin Lymphoma	0.977303
-TCGA-DLBC	ACH-000714	0.000924	0.0	0.0	Blood	True	KMS-11	Lymphoid	Mature B-Cell Neoplasms	0.978227
-TCGA-DLBC	ACH-000821	0.000907	0.0	0.0	Blood	True	EJM	Lymphoid	Mature B-Cell Neoplasms	0.979134
-TCGA-DLBC	ACH-001134	0.00087	0.0	0.0	Blood	True	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.980004
-TCGA-DLBC	ACH-001057	0.000862	0.0	0.0	Blood	True	DERL-2	Lymphoid	Mature T and NK Neoplasms	0.980865
-TCGA-DLBC	ACH-000363	0.000849	0.0	0.0	Blood	True	SK-MM-2	Lymphoid	Mature B-Cell Neoplasms	0.981714
-TCGA-DLBC	ACH-000053	0.000838	1.0	0.0	Blood	True	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	0.982552
-TCGA-DLBC	ACH-003463	0.000814	0.0	0.0	Blood	True	CCLF_HEME_0004_T	Lymphoid	Mature T and NK Neoplasms	0.983366
-TCGA-DLBC	ACH-000419	0.000791	0.0	0.0	Blood	True	KMS-28BM	Lymphoid	Mature B-Cell Neoplasms	0.984157
-TCGA-DLBC	ACH-000512	0.000758	0.0	0.0	Blood	True	INA6	Lymphoid	Mature B-Cell Neoplasms	0.984916
-TCGA-DLBC	ACH-002215	0.000753	0.0	0.0	Blood	True	BC-3	Lymphoid	Mature B-Cell Neoplasms	0.985669
-TCGA-DLBC	ACH-000509	0.000723	0.0	0.0	Blood	True	HuT 78	Lymphoid	Mature T and NK Neoplasms	0.986392
-TCGA-DLBC	ACH-000773	0.000707	0.0	0.0	Blood	True	Ki-JK	Lymphoid	Mature T and NK Neoplasms	0.987099
-TCGA-DLBC	ACH-002214	0.000681	0.0	0.0	Blood	True	BC-1	Lymphoid	Mature B-Cell Neoplasms	0.98778
-TCGA-DLBC	ACH-001132	0.00068	0.0	0.0	Blood	True	MTA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.98846
-TCGA-DLBC	ACH-000664	0.00066	0.0	0.0	Blood	True	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	0.989119
-TCGA-DLBC	ACH-000436	0.000624	0.0	0.0	Blood	True	OCI-My7	Lymphoid	Mature B-Cell Neoplasms	0.989743
-TCGA-DLBC	ACH-003460	0.000606	0.0	0.0	Blood	True	CCLF_HEME_0001_T	Lymphoid	Mature B-Cell Neoplasms	0.990349
-TCGA-DLBC	ACH-000157	0.000589	0.0	0.0	Blood	True	A4/Fuk	Lymphoid	Mature B-Cell Neoplasms	0.990938
-TCGA-DLBC	ACH-001100	0.000577	0.0	0.0	Blood	True	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.991515
-TCGA-DLBC	ACH-000626	0.000555	0.0	0.0	Blood	True	U266B1	Lymphoid	Mature B-Cell Neoplasms	0.992071
-TCGA-DLBC	ACH-002478	0.000548	0.0	0.0	Blood	True	BC-2	Lymphoid	Mature B-Cell Neoplasms	0.992619
-TCGA-DLBC	ACH-000226	0.000521	0.0	0.0	Blood	True	SUP-M2	Lymphoid	Mature T and NK Neoplasms	0.993139
-TCGA-DLBC	ACH-001708	0.000471	0.0	0.0	Blood	True	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	0.99361
-TCGA-DLBC	ACH-000453	0.000448	0.0	0.0	Blood	True	MOLP-2	Lymphoid	Mature B-Cell Neoplasms	0.994058
-TCGA-DLBC	ACH-000588	0.00042	0.0	0.0	Blood	True	KMS-26	Lymphoid	Mature B-Cell Neoplasms	0.994478
-TCGA-DLBC	ACH-001064	0.000401	0.0	0.0	Blood	True	EB-2	Lymphoid	Mature B-Cell Neoplasms	0.994879
-TCGA-DLBC	ACH-001060	0.000384	0.0	0.0	Blood	True	DL-40	Lymphoid	Mature T and NK Neoplasms	0.995263
-TCGA-DLBC	ACH-000923	0.000382	0.0	0.0	Blood	True	BCP-1	Lymphoid	Mature B-Cell Neoplasms	0.995644
-TCGA-DLBC	ACH-000057	0.000373	0.0	0.0	Blood	True	OPM-1	Lymphoid	Mature B-Cell Neoplasms	0.996017
-TCGA-DLBC	ACH-000745	0.00035	0.0	0.0	Blood	True	MOLP-8	Lymphoid	Mature B-Cell Neoplasms	0.996367
-TCGA-DLBC	ACH-000598	0.000336	0.0	0.0	Blood	True	KMS-21BM	Lymphoid	Mature B-Cell Neoplasms	0.996703
-TCGA-DLBC	ACH-001735	0.000334	0.0	0.0	Blood	True	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997037
-TCGA-DLBC	ACH-000024	0.000211	0.0	0.0	Blood	True	OPM-2	Lymphoid	Mature B-Cell Neoplasms	0.997248
-TCGA-DLBC	ACH-000122	0.000204	0.0	0.0	Blood	True	SUP-T11	Lymphoid	Mature T and NK Neoplasms	0.997452
-TCGA-DLBC	ACH-000782	0.000203	0.0	0.0	Blood	True	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997655
-TCGA-DLBC	ACH-000697	0.000193	0.0	0.0	Blood	True	A3/KAW	Lymphoid	Mature B-Cell Neoplasms	0.997848
-TCGA-DLBC	ACH-000183	0.000181	0.0	0.0	Blood	True	L-363	Lymphoid	Mature B-Cell Neoplasms	0.998029
-TCGA-DLBC	ACH-000204	0.000179	0.0	0.0	Blood	True	LP-1	Lymphoid	Mature B-Cell Neoplasms	0.998208
-TCGA-DLBC	ACH-000889	0.000177	0.0	0.0	Blood	True	KMM-1	Lymphoid	Mature B-Cell Neoplasms	0.998385
-TCGA-DLBC	ACH-001642	0.000173	0.0	0.0	Blood	True	SCC-3	Lymphoid	Non-Hodgkin Lymphoma	0.998558
-TCGA-DLBC	ACH-000124	0.000169	0.0	0.0	Blood	True	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	0.998727
-TCGA-DLBC	ACH-000564	0.000168	0.0	0.0	Blood	True	KHM-1B	Lymphoid	Mature B-Cell Neoplasms	0.998895
-TCGA-DLBC	ACH-000338	0.000134	0.0	0.0	Blood	True	SR-786	Lymphoid	Mature T and NK Neoplasms	0.99903
-TCGA-DLBC	ACH-002643	0.000134	0.0	0.0	Blood	True	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999164
-TCGA-DLBC	ACH-000326	0.000113	0.0	0.0	Blood	True	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	0.999276
-TCGA-DLBC	ACH-000604	5.1e-05	0.0	0.0	Blood	True	KYO-1	Myeloid	Myeloproliferative Neoplasms	0.999327
-TCGA-DLBC	ACH-001993	4.9e-05	0.0	0.0	Blood	True	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999376
-TCGA-DLBC	ACH-001613	4.4e-05	0.0	0.0	Blood	True	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.99942
-TCGA-DLBC	ACH-001106	4.3e-05	0.0	0.0	Blood	True	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999462
-TCGA-DLBC	ACH-000190	4.2e-05	0.0	0.0	Blood	True	HD-MY-Z	Myeloid	Acute Myeloid Leukemia	0.999504
-TCGA-DLBC	ACH-000983	4.1e-05	0.0	0.0	Blood	True	KCL-22	Myeloid	Myeloproliferative Neoplasms	0.999545
-TCGA-DLBC	ACH-002716	2.9e-05	0.0	0.0	Blood	True	MO-91	Myeloid	Acute Myeloid Leukemia	0.999575
-TCGA-DLBC	ACH-002061	2.3e-05	0.0	0.0	Blood	True	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	0.999598
-TCGA-DLBC	ACH-000960	2.2e-05	0.0	0.0	Blood	True	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99962
-TCGA-DLBC	ACH-001736	2.2e-05	0.0	0.0	Blood	True	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999642
-TCGA-DLBC	ACH-001737	1.9e-05	0.0	0.0	Blood	True	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	0.999662
-TCGA-DLBC	ACH-000336	1.8e-05	0.0	0.0	Blood	True	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.99968
-TCGA-DLBC	ACH-002290	1.8e-05	0.0	0.0	Blood	True	NKM-1	Myeloid	Acute Myeloid Leukemia	0.999697
-TCGA-DLBC	ACH-002475	1.6e-05	0.0	0.0	Blood	True	HAP1	Myeloid	Myeloproliferative Neoplasms	0.999714
-TCGA-DLBC	ACH-000918	1.6e-05	0.0	0.0	Blood	True	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99973
-TCGA-DLBC	ACH-000938	1.5e-05	0.0	0.0	Blood	True	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999745
-TCGA-DLBC	ACH-002668	1.5e-05	0.0	0.0	Blood	True	KASUMI-3	Myeloid	Acute Myeloid Leukemia	0.99976
-TCGA-DLBC	ACH-000020	1.5e-05	0.0	0.0	Blood	True	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999774
-TCGA-DLBC	ACH-001647	1.4e-05	0.0	0.0	Blood	True	SHI-1	Myeloid	Acute Myeloid Leukemia	0.999789
-TCGA-DLBC	ACH-002059	1.4e-05	0.0	0.0	Blood	True	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999803
-TCGA-DLBC	ACH-000551	1.4e-05	0.0	0.0	Blood	True	K-562	Myeloid	Myeloproliferative Neoplasms	0.999816
-TCGA-DLBC	ACH-000373	1.2e-05	0.0	0.0	Blood	True	SKM-1	Myeloid	Acute Myeloid Leukemia	0.999829
-TCGA-DLBC	ACH-000874	1.1e-05	0.0	0.0	Blood	True	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99984
-TCGA-DLBC	ACH-003273	1.1e-05	0.0	0.0	Blood	True	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	0.999851
-TCGA-DLBC	ACH-001618	1e-05	0.0	0.0	Blood	True	OCI-M2	Myeloid	Acute Myeloid Leukemia	0.999861
-TCGA-DLBC	ACH-000301	9e-06	0.0	0.0	Blood	True	LAMA-84	Myeloid	Myeloproliferative Neoplasms	0.99987
-TCGA-DLBC	ACH-000070	8e-06	0.0	0.0	Blood	True	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999878
-TCGA-DLBC	ACH-000072	8e-06	0.0	0.0	Blood	True	MEG-01	Myeloid	Myeloproliferative Neoplasms	0.999885
-TCGA-DLBC	ACH-001573	7e-06	0.0	0.0	Blood	True	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.999893
-TCGA-DLBC	ACH-002651	7e-06	0.0	0.0	Blood	True	FKH-1	Myeloid	Acute Myeloid Leukemia	0.9999
-TCGA-DLBC	ACH-000263	7e-06	0.0	0.0	Blood	True	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.999907
-TCGA-DLBC	ACH-000065	6e-06	0.0	0.0	Blood	True	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.999912
-TCGA-DLBC	ACH-001684	6e-06	0.0	0.0	Blood	True	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	0.999918
-TCGA-DLBC	ACH-000112	5e-06	0.0	0.0	Blood	True	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.999923
-TCGA-DLBC	ACH-000751	5e-06	0.0	0.0	Blood	True	OCI-M1	Myeloid	Acute Myeloid Leukemia	0.999928
-TCGA-DLBC	ACH-000922	5e-06	0.0	0.0	Blood	True	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999932
-TCGA-DLBC	ACH-000299	4e-06	0.0	0.0	Blood	True	HNT-34	Myeloid	Acute Myeloid Leukemia	0.999937
-TCGA-DLBC	ACH-000487	4e-06	0.0	0.0	Blood	True	F-36P	Myeloid	Myelodysplastic Syndromes	0.999941
-TCGA-DLBC	ACH-000081	4e-06	0.0	0.0	Blood	True	GDM-1	Myeloid	Acute Myeloid Leukemia	0.999944
-TCGA-DLBC	ACH-000294	4e-06	0.0	0.0	Blood	True	NB-4	Myeloid	Acute Myeloid Leukemia	0.999948
-TCGA-DLBC	ACH-001656	4e-06	0.0	0.0	Blood	True	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.999952
-TCGA-DLBC	ACH-000920	4e-06	0.0	0.0	Blood	True	CML-T1	Myeloid	Myeloproliferative Neoplasms	0.999955
-TCGA-DLBC	ACH-000034	3e-06	0.0	0.0	Blood	True	PLB-985	Myeloid	Acute Myeloid Leukemia	0.999959
-TCGA-DLBC	ACH-000406	3e-06	0.0	0.0	Blood	True	U-937	Myeloid	Acute Myeloid Leukemia	0.999962
-TCGA-DLBC	ACH-000168	3e-06	0.0	0.0	Blood	True	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.999965
-TCGA-DLBC	ACH-000198	3e-06	0.0	0.0	Blood	True	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.999969
-TCGA-DLBC	ACH-000076	3e-06	0.0	0.0	Blood	True	NCO2	Myeloid	Myeloproliferative Neoplasms	0.999972
-TCGA-DLBC	ACH-000557	3e-06	0.0	0.0	Blood	True	AML-193	Myeloid	Acute Myeloid Leukemia	0.999975
-TCGA-DLBC	ACH-000295	3e-06	0.0	0.0	Blood	True	EM-2	Myeloid	Myeloproliferative Neoplasms	0.999978
-TCGA-DLBC	ACH-000995	3e-06	0.0	0.0	Blood	True	JURKAT	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999981
-TCGA-DLBC	ACH-000146	3e-06	0.0	0.0	Blood	True	THP-1	Myeloid	Acute Myeloid Leukemia	0.999984
-TCGA-DLBC	ACH-000101	3e-06	0.0	0.0	Blood	True	KE-37	Lymphoid	Mature T and NK Neoplasms	0.999987
-TCGA-DLBC	ACH-000492	3e-06	0.0	0.0	Blood	True	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999989
-TCGA-DLBC	ACH-002653	2e-06	0.0	0.0	Blood	True	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.999991
-TCGA-DLBC	ACH-000045	2e-06	0.0	0.0	Blood	True	MV4-11	Myeloid	Acute Myeloid Leukemia	0.999993
-TCGA-DLBC	ACH-000104	2e-06	0.0	0.0	Blood	True	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999996
-TCGA-DLBC	ACH-002675	2e-06	0.0	0.0	Blood	True	SH-2	Myeloid	Acute Myeloid Leukemia	0.999998
-TCGA-DLBC	ACH-000130	2e-06	0.0	0.0	Blood	True	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	1.0
+TCGA-DLBC	ACH-003266	0.122269	11.0	11.0	Lymphoid	False	CCLF_RARE_0021_T	Soft Tissue	Leiomyosarcoma	0.122269
+TCGA-DLBC	ACH-001484	0.075625	38.0	7.0	Lymphoid	True	CI	Lymphoid	Mature B-Cell Neoplasms	0.197894
+TCGA-DLBC	ACH-000080	0.04229	17.0	17.0	Lymphoid	False	BDCM	Myeloid	Acute Myeloid Leukemia	0.240184
+TCGA-DLBC	ACH-001485	0.03577	30.0	2.0	Lymphoid	True	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.275954
+TCGA-DLBC	ACH-000158	0.02578	31.0	0.0	Lymphoid	True	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	0.301733
+TCGA-DLBC	ACH-000167	0.025509	26.0	0.0	Lymphoid	True	KE-97	Lymphoid	Mature B-Cell Neoplasms	0.327243
+TCGA-DLBC	ACH-000405	0.025126	25.0	0.0	Lymphoid	True	MEC-1	Lymphoid	Mature B-Cell Neoplasms	0.352368
+TCGA-DLBC	ACH-000069	0.023979	26.0	2.0	Lymphoid	True	Hs 611.T	Lymphoid	Hodgkin Lymphoma	0.376348
+TCGA-DLBC	ACH-000073	0.022799	25.0	0.0	Lymphoid	True	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	0.399147
+TCGA-DLBC	ACH-002485	0.019643	15.0	0.0	Lymphoid	True	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	0.41879
+TCGA-DLBC	ACH-000220	0.018128	15.0	2.0	Lymphoid	True	Mino	Lymphoid	Mature B-Cell Neoplasms	0.436918
+TCGA-DLBC	ACH-000068	0.018116	19.0	0.0	Lymphoid	True	REC-1	Lymphoid	Mature B-Cell Neoplasms	0.455033
+TCGA-DLBC	ACH-001539	0.017559	10.0	0.0	Lymphoid	True	KML-1	Lymphoid	Mature B-Cell Neoplasms	0.472592
+TCGA-DLBC	ACH-001493	0.01731	15.0	0.0	Lymphoid	True	DOGUM	Lymphoid	Mature B-Cell Neoplasms	0.489902
+TCGA-DLBC	ACH-000660	0.016013	11.0	0.0	Lymphoid	True	SU-DHL-5	Lymphoid	Mature B-Cell Neoplasms	0.505915
+TCGA-DLBC	ACH-001498	0.015245	8.0	2.0	Lymphoid	True	Farage	Lymphoid	Mature B-Cell Neoplasms	0.52116
+TCGA-DLBC	ACH-000687	0.014883	7.0	1.0	Lymphoid	True	CI-1	Lymphoid	Non-Hodgkin Lymphoma	0.536043
+TCGA-DLBC	ACH-000056	0.014595	9.0	1.0	Lymphoid	True	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	0.550638
+TCGA-DLBC	ACH-001707	0.013776	11.0	0.0	Lymphoid	True	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	0.564414
+TCGA-DLBC	ACH-000140	0.013624	6.0	0.0	Lymphoid	True	Pfeiffer	Lymphoid	Mature B-Cell Neoplasms	0.578038
+TCGA-DLBC	ACH-000038	0.012593	13.0	0.0	Lymphoid	True	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.590631
+TCGA-DLBC	ACH-001709	0.012111	4.0	0.0	Lymphoid	True	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	0.602742
+TCGA-DLBC	ACH-000534	0.011324	5.0	0.0	Lymphoid	True	WSU-DLCL2	Lymphoid	Mature B-Cell Neoplasms	0.614066
+TCGA-DLBC	ACH-001686	0.01064	4.0	2.0	Lymphoid	True	ULA	Lymphoid	Mature B-Cell Neoplasms	0.624706
+TCGA-DLBC	ACH-000829	0.010558	2.0	0.0	Lymphoid	True	HuNS1	Lymphoid	Mature B-Cell Neoplasms	0.635264
+TCGA-DLBC	ACH-001678	0.010098	0.0	0.0	Lymphoid	True	U-2940	Lymphoid	Mature B-Cell Neoplasms	0.645362
+TCGA-DLBC	ACH-000944	0.010014	2.0	0.0	Lymphoid	True	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	0.655376
+TCGA-DLBC	ACH-000583	0.009994	4.0	0.0	Lymphoid	True	MC116	Lymphoid	Non-Hodgkin Lymphoma	0.66537
+TCGA-DLBC	ACH-003107	0.009386	6.0	0.0	Lymphoid	True	JMP-1	Lymphoid	Mature B-Cell Neoplasms	0.674756
+TCGA-DLBC	ACH-000654	0.009127	5.0	0.0	Lymphoid	True	Raji	Lymphoid	Mature B-Cell Neoplasms	0.683883
+TCGA-DLBC	ACH-002062	0.008884	1.0	0.0	Lymphoid	True	SLVL	Lymphoid	Mature B-Cell Neoplasms	0.692767
+TCGA-DLBC	ACH-001503	0.008143	3.0	0.0	Lymphoid	True	GUMBUS	Lymphoid	Mature B-Cell Neoplasms	0.70091
+TCGA-DLBC	ACH-001520	0.008	3.0	0.0	Lymphoid	True	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.70891
+TCGA-DLBC	ACH-000193	0.007824	0.0	0.0	Lymphoid	True	KARPAS-620	Lymphoid	Mature B-Cell Neoplasms	0.716734
+TCGA-DLBC	ACH-000914	0.007818	0.0	0.0	Lymphoid	True	HT	Lymphoid	Mature B-Cell Neoplasms	0.724552
+TCGA-DLBC	ACH-001449	0.007807	1.0	0.0	Lymphoid	True	BL-2	Lymphoid	Mature B-Cell Neoplasms	0.732358
+TCGA-DLBC	ACH-000271	0.007724	2.0	0.0	Lymphoid	True	SU-DHL-10	Lymphoid	Mature B-Cell Neoplasms	0.740083
+TCGA-DLBC	ACH-000287	0.00753	1.0	0.0	Lymphoid	True	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	0.747613
+TCGA-DLBC	ACH-000786	0.007443	2.0	0.0	Lymphoid	True	Daudi	Lymphoid	Mature B-Cell Neoplasms	0.755057
+TCGA-DLBC	ACH-000611	0.007239	2.0	0.0	Lymphoid	True	SU-DHL-6	Lymphoid	Mature B-Cell Neoplasms	0.762296
+TCGA-DLBC	ACH-001571	0.006933	6.0	0.0	Lymphoid	True	Mo	Lymphoid	Mature B-Cell Neoplasms	0.769229
+TCGA-DLBC	ACH-000707	0.006607	2.0	0.0	Lymphoid	True	P3HR-1	Lymphoid	Mature B-Cell Neoplasms	0.775836
+TCGA-DLBC	ACH-001685	0.006286	6.0	0.0	Lymphoid	True	U-HO1	Lymphoid	Hodgkin Lymphoma	0.782122
+TCGA-DLBC	ACH-000371	0.006256	1.0	0.0	Lymphoid	True	RL	Lymphoid	Mature B-Cell Neoplasms	0.788378
+TCGA-DLBC	ACH-000388	0.005839	0.0	0.0	Lymphoid	True	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	0.794217
+TCGA-DLBC	ACH-001636	0.005811	0.0	0.0	Lymphoid	True	Ramos	Lymphoid	Mature B-Cell Neoplasms	0.800029
+TCGA-DLBC	ACH-001616	0.005632	2.0	0.0	Lymphoid	True	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	0.80566
+TCGA-DLBC	ACH-000365	0.005598	1.0	0.0	Lymphoid	True	SU-DHL-4	Lymphoid	Mature B-Cell Neoplasms	0.811258
+TCGA-DLBC	ACH-002500	0.005556	0.0	0.0	Lymphoid	True	Z-138	Lymphoid	Mature B-Cell Neoplasms	0.816814
+TCGA-DLBC	ACH-000346	0.005518	1.0	0.0	Lymphoid	True	JVM-3	Lymphoid	Mature B-Cell Neoplasms	0.822332
+TCGA-DLBC	ACH-000245	0.005509	1.0	0.0	Lymphoid	True	BL-41	Lymphoid	Mature B-Cell Neoplasms	0.827841
+TCGA-DLBC	ACH-000206	0.005425	3.0	0.0	Lymphoid	True	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.833266
+TCGA-DLBC	ACH-000106	0.005401	3.0	0.0	Lymphoid	True	JVM-2	Lymphoid	Mature B-Cell Neoplasms	0.838666
+TCGA-DLBC	ACH-001634	0.005334	1.0	0.0	Lymphoid	True	PGA-1	Lymphoid	Mature B-Cell Neoplasms	0.844
+TCGA-DLBC	ACH-000402	0.005284	1.0	0.0	Lymphoid	True	BL-70	Lymphoid	Mature B-Cell Neoplasms	0.849284
+TCGA-DLBC	ACH-000162	0.004724	1.0	0.0	Lymphoid	True	GA-10	Lymphoid	Mature B-Cell Neoplasms	0.854008
+TCGA-DLBC	ACH-001450	0.004485	2.0	0.0	Lymphoid	True	BLUE-1	Lymphoid	Mature B-Cell Neoplasms	0.858494
+TCGA-DLBC	ACH-000357	0.004398	0.0	0.0	Lymphoid	True	JeKo-1	Lymphoid	Mature B-Cell Neoplasms	0.862892
+TCGA-DLBC	ACH-003108	0.004306	0.0	0.0	Lymphoid	True	HF	Lymphoid	Mature B-Cell Neoplasms	0.867198
+TCGA-DLBC	ACH-001680	0.0041	1.0	0.0	Lymphoid	True	U-698-M	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.871298
+TCGA-DLBC	ACH-000380	0.004044	0.0	0.0	Lymphoid	True	KMS-12-BM	Lymphoid	Mature B-Cell Neoplasms	0.875342
+TCGA-DLBC	ACH-000077	0.004017	2.0	0.0	Lymphoid	True	MJ	Lymphoid	Non-Hodgkin Lymphoma	0.879359
+TCGA-DLBC	ACH-000815	0.003973	3.0	0.0	Lymphoid	True	KM-H2	Lymphoid	Hodgkin Lymphoma	0.883332
+TCGA-DLBC	ACH-001447	0.003899	0.0	0.0	Lymphoid	True	BJAB	Lymphoid	Mature B-Cell Neoplasms	0.88723
+TCGA-DLBC	ACH-000754	0.003465	1.0	0.0	Lymphoid	True	L-428	Lymphoid	Hodgkin Lymphoma	0.890696
+TCGA-DLBC	ACH-000612	0.003215	3.0	0.0	Lymphoid	True	HuT 102	Lymphoid	Mature T and NK Neoplasms	0.893911
+TCGA-DLBC	ACH-000567	0.003175	0.0	0.0	Lymphoid	True	ST486	Lymphoid	Mature B-Cell Neoplasms	0.897086
+TCGA-DLBC	ACH-000854	0.003118	0.0	0.0	Lymphoid	True	OCI-MY5	Lymphoid	Mature B-Cell Neoplasms	0.900204
+TCGA-DLBC	ACH-002677	0.003088	2.0	0.0	Lymphoid	True	U-2946	Lymphoid	Mature B-Cell Neoplasms	0.903292
+TCGA-DLBC	ACH-000877	0.002877	0.0	0.0	Lymphoid	True	EB1	Lymphoid	Mature B-Cell Neoplasms	0.906169
+TCGA-DLBC	ACH-001533	0.002801	0.0	0.0	Lymphoid	True	KARPAS 1718	Lymphoid	Mature B-Cell Neoplasms	0.90897
+TCGA-DLBC	ACH-002055	0.002736	1.0	0.0	Lymphoid	True	TL-1	Lymphoid	Mature B-Cell Neoplasms	0.911706
+TCGA-DLBC	ACH-001638	0.002583	0.0	0.0	Lymphoid	True	RC-K8	Lymphoid	Mature B-Cell Neoplasms	0.914289
+TCGA-DLBC	ACH-001148	0.002425	1.0	0.0	Lymphoid	True	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	0.916714
+TCGA-DLBC	ACH-000398	0.002405	0.0	0.0	Lymphoid	True	RI-1	Lymphoid	Mature B-Cell Neoplasms	0.919119
+TCGA-DLBC	ACH-000656	0.002347	0.0	0.0	Lymphoid	True	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	0.921466
+TCGA-DLBC	ACH-000838	0.002296	0.0	0.0	Lymphoid	True	AMO-1	Lymphoid	Mature B-Cell Neoplasms	0.923761
+TCGA-DLBC	ACH-000702	0.002268	1.0	0.0	Lymphoid	True	L-1236	Lymphoid	Hodgkin Lymphoma	0.92603
+TCGA-DLBC	ACH-001068	0.002209	1.0	0.0	Lymphoid	True	FE-PD	Lymphoid	Mature T and NK Neoplasms	0.928238
+TCGA-DLBC	ACH-001111	0.002195	3.0	0.0	Lymphoid	True	L82	Lymphoid	Mature T and NK Neoplasms	0.930433
+TCGA-DLBC	ACH-000817	0.002138	0.0	0.0	Lymphoid	True	RPMI 8226	Lymphoid	Mature B-Cell Neoplasms	0.932572
+TCGA-DLBC	ACH-000763	0.002105	0.0	0.0	Lymphoid	True	MM1-S	Lymphoid	Mature B-Cell Neoplasms	0.934677
+TCGA-DLBC	ACH-001119	0.002039	2.0	0.0	Lymphoid	True	Mac-2A	Lymphoid	Mature T and NK Neoplasms	0.936716
+TCGA-DLBC	ACH-001147	0.001962	1.0	0.0	Lymphoid	True	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	0.938679
+TCGA-DLBC	ACH-000285	0.001947	0.0	0.0	Lymphoid	True	Toledo	Lymphoid	Mature B-Cell Neoplasms	0.940626
+TCGA-DLBC	ACH-001617	0.001932	0.0	0.0	Lymphoid	True	OCI-LY7	Lymphoid	Mature B-Cell Neoplasms	0.942557
+TCGA-DLBC	ACH-000061	0.001912	0.0	0.0	Lymphoid	True	HH	Lymphoid	Non-Hodgkin Lymphoma	0.944469
+TCGA-DLBC	ACH-001669	0.001912	0.0	0.0	Lymphoid	True	TANOUE	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.946381
+TCGA-DLBC	ACH-002678	0.001895	0.0	0.0	Lymphoid	True	WILL-1	Lymphoid	Mature B-Cell Neoplasms	0.948276
+TCGA-DLBC	ACH-001703	0.001892	0.0	0.0	Lymphoid	True	VAL	Lymphoid	Mature B-Cell Neoplasms	0.950167
+TCGA-DLBC	ACH-003100	0.001825	0.0	0.0	Lymphoid	True	EJ-1	Lymphoid	Mature B-Cell Neoplasms	0.951992
+TCGA-DLBC	ACH-000334	0.001766	0.0	0.0	Lymphoid	True	DB	Lymphoid	Mature B-Cell Neoplasms	0.953759
+TCGA-DLBC	ACH-001492	0.001654	0.0	0.0	Lymphoid	True	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	0.955412
+TCGA-DLBC	ACH-001197	0.001631	0.0	0.0	Lymphoid	True	SMZ-1	Lymphoid	Non-Hodgkin Lymphoma	0.957043
+TCGA-DLBC	ACH-001677	0.001625	0.0	0.0	Lymphoid	True	U-2904	Lymphoid	Mature B-Cell Neoplasms	0.958668
+TCGA-DLBC	ACH-000050	0.001603	0.0	0.0	Lymphoid	True	NCI-H929	Lymphoid	Mature B-Cell Neoplasms	0.960271
+TCGA-DLBC	ACH-001679	0.001594	0.0	0.0	Lymphoid	True	U-2973	Lymphoid	Mature B-Cell Neoplasms	0.961865
+TCGA-DLBC	ACH-000151	0.001588	0.0	0.0	Lymphoid	True	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.963453
+TCGA-DLBC	ACH-000440	0.001461	0.0	0.0	Lymphoid	True	CA46	Lymphoid	Mature B-Cell Neoplasms	0.964914
+TCGA-DLBC	ACH-001541	0.00145	0.0	0.0	Lymphoid	True	KMS-28PE	Lymphoid	Mature B-Cell Neoplasms	0.966364
+TCGA-DLBC	ACH-000653	0.001368	0.0	0.0	Lymphoid	True	JJN-3	Lymphoid	Mature B-Cell Neoplasms	0.967732
+TCGA-DLBC	ACH-000315	0.001266	0.0	0.0	Lymphoid	True	KARPAS-422	Lymphoid	Mature B-Cell Neoplasms	0.968998
+TCGA-DLBC	ACH-003106	0.001183	0.0	0.0	Lymphoid	True	RC	Lymphoid	Mature B-Cell Neoplasms	0.970182
+TCGA-DLBC	ACH-000576	0.001167	0.0	0.0	Lymphoid	True	KMS-27	Lymphoid	Mature B-Cell Neoplasms	0.971349
+TCGA-DLBC	ACH-001097	0.001157	0.0	0.0	Lymphoid	True	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	0.972506
+TCGA-DLBC	ACH-000541	0.00109	0.0	0.0	Lymphoid	True	KMS-34	Lymphoid	Mature B-Cell Neoplasms	0.973595
+TCGA-DLBC	ACH-000267	0.001083	0.0	0.0	Lymphoid	True	HDLM-2	Lymphoid	Hodgkin Lymphoma	0.974678
+TCGA-DLBC	ACH-000233	0.001067	1.0	0.0	Lymphoid	True	DEL	Lymphoid	Mature T and NK Neoplasms	0.975745
+TCGA-DLBC	ACH-000806	0.001025	0.0	0.0	Lymphoid	True	L-540	Lymphoid	Hodgkin Lymphoma	0.97677
+TCGA-DLBC	ACH-000714	0.000968	0.0	0.0	Lymphoid	True	KMS-11	Lymphoid	Mature B-Cell Neoplasms	0.977739
+TCGA-DLBC	ACH-000821	0.000958	0.0	0.0	Lymphoid	True	EJM	Lymphoid	Mature B-Cell Neoplasms	0.978697
+TCGA-DLBC	ACH-001134	0.000915	0.0	0.0	Lymphoid	True	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.979612
+TCGA-DLBC	ACH-001057	0.000908	0.0	0.0	Lymphoid	True	DERL-2	Lymphoid	Mature T and NK Neoplasms	0.98052
+TCGA-DLBC	ACH-000363	0.000894	0.0	0.0	Lymphoid	True	SK-MM-2	Lymphoid	Mature B-Cell Neoplasms	0.981414
+TCGA-DLBC	ACH-000053	0.000869	1.0	0.0	Lymphoid	True	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	0.982283
+TCGA-DLBC	ACH-003463	0.000863	0.0	0.0	Lymphoid	True	CCLF_HEME_0004_T	Lymphoid	Mature T and NK Neoplasms	0.983145
+TCGA-DLBC	ACH-000419	0.000835	0.0	0.0	Lymphoid	True	KMS-28BM	Lymphoid	Mature B-Cell Neoplasms	0.98398
+TCGA-DLBC	ACH-000512	0.000798	0.0	0.0	Lymphoid	True	INA6	Lymphoid	Mature B-Cell Neoplasms	0.984778
+TCGA-DLBC	ACH-002215	0.000791	0.0	0.0	Lymphoid	True	BC-3	Lymphoid	Mature B-Cell Neoplasms	0.985569
+TCGA-DLBC	ACH-000509	0.000764	0.0	0.0	Lymphoid	True	HuT 78	Lymphoid	Mature T and NK Neoplasms	0.986333
+TCGA-DLBC	ACH-000773	0.000732	0.0	0.0	Lymphoid	True	Ki-JK	Lymphoid	Mature T and NK Neoplasms	0.987065
+TCGA-DLBC	ACH-001132	0.000716	0.0	0.0	Lymphoid	True	MTA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.987781
+TCGA-DLBC	ACH-002214	0.000713	0.0	0.0	Lymphoid	True	BC-1	Lymphoid	Mature B-Cell Neoplasms	0.988494
+TCGA-DLBC	ACH-000664	0.000686	0.0	0.0	Lymphoid	True	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	0.98918
+TCGA-DLBC	ACH-000436	0.000655	0.0	0.0	Lymphoid	True	OCI-My7	Lymphoid	Mature B-Cell Neoplasms	0.989835
+TCGA-DLBC	ACH-003460	0.000626	0.0	0.0	Lymphoid	True	CCLF_HEME_0001_T	Lymphoid	Mature B-Cell Neoplasms	0.990461
+TCGA-DLBC	ACH-000157	0.000621	0.0	0.0	Lymphoid	True	A4/Fuk	Lymphoid	Mature B-Cell Neoplasms	0.991082
+TCGA-DLBC	ACH-001100	0.000608	0.0	0.0	Lymphoid	True	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99169
+TCGA-DLBC	ACH-000626	0.000585	0.0	0.0	Lymphoid	True	U266B1	Lymphoid	Mature B-Cell Neoplasms	0.992275
+TCGA-DLBC	ACH-002478	0.000576	0.0	0.0	Lymphoid	True	BC-2	Lymphoid	Mature B-Cell Neoplasms	0.992851
+TCGA-DLBC	ACH-000226	0.000539	0.0	0.0	Lymphoid	True	SUP-M2	Lymphoid	Mature T and NK Neoplasms	0.993391
+TCGA-DLBC	ACH-001708	0.00049	0.0	0.0	Lymphoid	True	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	0.993881
+TCGA-DLBC	ACH-000453	0.000476	0.0	0.0	Lymphoid	True	MOLP-2	Lymphoid	Mature B-Cell Neoplasms	0.994356
+TCGA-DLBC	ACH-000588	0.000441	0.0	0.0	Lymphoid	True	KMS-26	Lymphoid	Mature B-Cell Neoplasms	0.994797
+TCGA-DLBC	ACH-001064	0.000413	0.0	0.0	Lymphoid	True	EB-2	Lymphoid	Mature B-Cell Neoplasms	0.99521
+TCGA-DLBC	ACH-001060	0.000403	0.0	0.0	Lymphoid	True	DL-40	Lymphoid	Mature T and NK Neoplasms	0.995613
+TCGA-DLBC	ACH-000923	0.0004	0.0	0.0	Lymphoid	True	BCP-1	Lymphoid	Mature B-Cell Neoplasms	0.996013
+TCGA-DLBC	ACH-000057	0.000392	0.0	0.0	Lymphoid	True	OPM-1	Lymphoid	Mature B-Cell Neoplasms	0.996405
+TCGA-DLBC	ACH-000745	0.000368	0.0	0.0	Lymphoid	True	MOLP-8	Lymphoid	Mature B-Cell Neoplasms	0.996773
+TCGA-DLBC	ACH-000598	0.000355	0.0	0.0	Lymphoid	True	KMS-21BM	Lymphoid	Mature B-Cell Neoplasms	0.997127
+TCGA-DLBC	ACH-001735	0.000351	0.0	0.0	Lymphoid	True	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997478
+TCGA-DLBC	ACH-000024	0.000224	0.0	0.0	Lymphoid	True	OPM-2	Lymphoid	Mature B-Cell Neoplasms	0.997702
+TCGA-DLBC	ACH-000782	0.000214	0.0	0.0	Lymphoid	True	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.997915
+TCGA-DLBC	ACH-000122	0.000213	0.0	0.0	Lymphoid	True	SUP-T11	Lymphoid	Mature T and NK Neoplasms	0.998129
+TCGA-DLBC	ACH-000697	0.000201	0.0	0.0	Lymphoid	True	A3/KAW	Lymphoid	Mature B-Cell Neoplasms	0.99833
+TCGA-DLBC	ACH-000183	0.000189	0.0	0.0	Lymphoid	True	L-363	Lymphoid	Mature B-Cell Neoplasms	0.998519
+TCGA-DLBC	ACH-000204	0.000188	0.0	0.0	Lymphoid	True	LP-1	Lymphoid	Mature B-Cell Neoplasms	0.998707
+TCGA-DLBC	ACH-000889	0.000185	0.0	0.0	Lymphoid	True	KMM-1	Lymphoid	Mature B-Cell Neoplasms	0.998892
+TCGA-DLBC	ACH-001642	0.000183	0.0	0.0	Lymphoid	True	SCC-3	Lymphoid	Non-Hodgkin Lymphoma	0.999075
+TCGA-DLBC	ACH-000564	0.000177	0.0	0.0	Lymphoid	True	KHM-1B	Lymphoid	Mature B-Cell Neoplasms	0.999252
+TCGA-DLBC	ACH-000124	0.000177	0.0	0.0	Lymphoid	True	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	0.999429
+TCGA-DLBC	ACH-002643	0.000146	0.0	0.0	Lymphoid	True	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999575
+TCGA-DLBC	ACH-000338	0.000139	0.0	0.0	Lymphoid	True	SR-786	Lymphoid	Mature T and NK Neoplasms	0.999714
+TCGA-DLBC	ACH-001106	5.2e-05	0.0	0.0	Lymphoid	True	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999766
+TCGA-DLBC	ACH-001993	5.1e-05	0.0	0.0	Lymphoid	True	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999817
+TCGA-DLBC	ACH-000960	2.8e-05	0.0	0.0	Lymphoid	True	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999845
+TCGA-DLBC	ACH-001736	2.8e-05	0.0	0.0	Lymphoid	True	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999872
+TCGA-DLBC	ACH-001737	2e-05	0.0	0.0	Lymphoid	True	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	0.999893
+TCGA-DLBC	ACH-002059	1.7e-05	0.0	0.0	Lymphoid	True	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99991
+TCGA-DLBC	ACH-000918	1.7e-05	0.0	0.0	Lymphoid	True	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999926
+TCGA-DLBC	ACH-000938	1.6e-05	0.0	0.0	Lymphoid	True	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999942
+TCGA-DLBC	ACH-000020	1.5e-05	0.0	0.0	Lymphoid	True	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999957
+TCGA-DLBC	ACH-000070	1.3e-05	0.0	0.0	Lymphoid	True	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99997
+TCGA-DLBC	ACH-000874	1.2e-05	0.0	0.0	Lymphoid	True	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999982
+TCGA-DLBC	ACH-000922	5e-06	0.0	0.0	Lymphoid	True	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999987
+TCGA-DLBC	ACH-000995	3e-06	0.0	0.0	Lymphoid	True	JURKAT	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99999
+TCGA-DLBC	ACH-000101	3e-06	0.0	0.0	Lymphoid	True	KE-37	Lymphoid	Mature T and NK Neoplasms	0.999993
+TCGA-DLBC	ACH-000492	3e-06	0.0	0.0	Lymphoid	True	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999996
+TCGA-DLBC	ACH-000104	2e-06	0.0	0.0	Lymphoid	True	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999998
+TCGA-DLBC	ACH-000130	2e-06	0.0	0.0	Lymphoid	True	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	1.0
 TCGA-GBM	ACH-000622	0.934014	152.0	152.0	CNS/Brain	True	KNS-42	CNS/Brain	Diffuse Glioma	0.934014
 TCGA-GBM	ACH-000232	0.011378	157.0	1.0	CNS/Brain	True	U-251 MG	CNS/Brain	Diffuse Glioma	0.945392
 TCGA-GBM	ACH-000623	0.006718	106.0	4.0	CNS/Brain	True	SNU-201	CNS/Brain	Diffuse Glioma	0.95211
@@ -7392,209 +7155,78 @@ TCGA-KIRP	ACH-000723	0.0	0.0	0.0	Kidney	False	YD-10B	Head and Neck	Head and Neck
 TCGA-KIRP	ACH-000717	0.0	0.0	0.0	Kidney	False	COLO-680N	Esophagus/Stomach	Esophageal Squamous Cell Carcinoma	0.999999
 TCGA-KIRP	ACH-000628	0.0	0.0	0.0	Kidney	False	NCI-H596	Lung	Non-Small Cell Lung Cancer	1.0
 TCGA-KIRP	ACH-001347	0.0	0.0	0.0	Kidney	False	H157	Head and Neck	Head and Neck Squamous Cell Carcinoma	1.0
-TCGA-LAML	ACH-000498	0.108241	105.0	39.0	Blood	True	KO52	Myeloid	Acute Myeloid Leukemia	0.108241
-TCGA-LAML	ACH-000321	0.080768	101.0	17.0	Blood	True	MOLM-6	Myeloid	Myeloproliferative Neoplasms	0.189009
-TCGA-LAML	ACH-000166	0.074053	90.0	12.0	Blood	True	Kasumi-6	Myeloid	Acute Myeloid Leukemia	0.263062
-TCGA-LAML	ACH-000295	0.048034	61.0	12.0	Blood	True	EM-2	Myeloid	Myeloproliferative Neoplasms	0.311096
-TCGA-LAML	ACH-000263	0.043354	74.0	6.0	Blood	True	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.35445
-TCGA-LAML	ACH-000065	0.040826	75.0	15.0	Blood	True	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.395276
-TCGA-LAML	ACH-000081	0.037023	79.0	3.0	Blood	True	GDM-1	Myeloid	Acute Myeloid Leukemia	0.432299
-TCGA-LAML	ACH-000386	0.033677	69.0	3.0	Blood	True	KG-1	Myeloid	Acute Myeloid Leukemia	0.465975
-TCGA-LAML	ACH-000439	0.031557	42.0	7.0	Blood	True	ME-1	Myeloid	Acute Myeloid Leukemia	0.497532
-TCGA-LAML	ACH-001647	0.029082	53.0	4.0	Blood	True	SHI-1	Myeloid	Acute Myeloid Leukemia	0.526614
-TCGA-LAML	ACH-000045	0.02706	49.0	4.0	Blood	True	MV4-11	Myeloid	Acute Myeloid Leukemia	0.553674
-TCGA-LAML	ACH-001577	0.026915	68.0	3.0	Blood	True	MUTZ-8	Myeloid	Acute Myeloid Leukemia	0.580589
-TCGA-LAML	ACH-000198	0.026883	50.0	6.0	Blood	True	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.607473
-TCGA-LAML	ACH-001656	0.026455	36.0	6.0	Blood	True	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.633928
-TCGA-LAML	ACH-002651	0.023883	87.0	0.0	Blood	True	FKH-1	Myeloid	Acute Myeloid Leukemia	0.657811
-TCGA-LAML	ACH-000294	0.021649	21.0	5.0	Blood	True	NB-4	Myeloid	Acute Myeloid Leukemia	0.67946
-TCGA-LAML	ACH-000557	0.021231	40.0	2.0	Blood	True	AML-193	Myeloid	Acute Myeloid Leukemia	0.70069
-TCGA-LAML	ACH-000362	0.020262	33.0	4.0	Blood	True	MOLM-13	Myeloid	Acute Myeloid Leukemia	0.720952
-TCGA-LAML	ACH-000113	0.019858	39.0	3.0	Blood	True	OCI-AML2	Myeloid	Acute Myeloid Leukemia	0.74081
-TCGA-LAML	ACH-001129	0.015829	27.0	3.0	Blood	True	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	0.756639
-TCGA-LAML	ACH-000006	0.015374	24.0	6.0	Blood	True	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	0.772013
-TCGA-LAML	ACH-000112	0.015294	34.0	1.0	Blood	True	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.787307
-TCGA-LAML	ACH-000084	0.014339	49.0	0.0	Blood	True	MUTZ-3	Myeloid	Acute Myeloid Leukemia	0.801646
-TCGA-LAML	ACH-000168	0.014085	34.0	0.0	Blood	True	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.815731
-TCGA-LAML	ACH-001684	0.01397	56.0	0.0	Blood	True	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	0.829701
-TCGA-LAML	ACH-002290	0.011435	15.0	4.0	Blood	True	NKM-1	Myeloid	Acute Myeloid Leukemia	0.841135
-TCGA-LAML	ACH-000299	0.011211	40.0	0.0	Blood	True	HNT-34	Myeloid	Acute Myeloid Leukemia	0.852346
-TCGA-LAML	ACH-000218	0.011017	23.0	0.0	Blood	True	PL-21	Myeloid	Acute Myeloid Leukemia	0.863363
-TCGA-LAML	ACH-000002	0.010718	16.0	1.0	Blood	True	HL-60	Myeloid	Acute Myeloid Leukemia	0.874082
-TCGA-LAML	ACH-001573	0.010687	35.0	1.0	Blood	True	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.884769
-TCGA-LAML	ACH-000406	0.010602	25.0	0.0	Blood	True	U-937	Myeloid	Acute Myeloid Leukemia	0.895371
-TCGA-LAML	ACH-000146	0.010395	20.0	0.0	Blood	True	THP-1	Myeloid	Acute Myeloid Leukemia	0.905766
-TCGA-LAML	ACH-001613	0.010314	26.0	0.0	Blood	True	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.91608
-TCGA-LAML	ACH-000373	0.007944	15.0	0.0	Blood	True	SKM-1	Myeloid	Acute Myeloid Leukemia	0.924024
-TCGA-LAML	ACH-000770	0.006866	10.0	0.0	Blood	True	P31/FUJ	Myeloid	Acute Myeloid Leukemia	0.93089
-TCGA-LAML	ACH-000074	0.006713	6.0	3.0	Blood	True	KU812	Myeloid	Myeloproliferative Neoplasms	0.937603
-TCGA-LAML	ACH-000034	0.006042	10.0	0.0	Blood	True	PLB-985	Myeloid	Acute Myeloid Leukemia	0.943645
-TCGA-LAML	ACH-002668	0.005772	11.0	0.0	Blood	True	KASUMI-3	Myeloid	Acute Myeloid Leukemia	0.949417
-TCGA-LAML	ACH-001574	0.005376	7.0	1.0	Blood	True	MOLM-14	Myeloid	Acute Myeloid Leukemia	0.954793
-TCGA-LAML	ACH-002946	0.004717	11.0	0.0	Blood	True	UKE-1	Myeloid	Acute Myeloid Leukemia	0.95951
-TCGA-LAML	ACH-000336	0.004337	4.0	1.0	Blood	True	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.963847
-TCGA-LAML	ACH-002675	0.003139	7.0	0.0	Blood	True	SH-2	Myeloid	Acute Myeloid Leukemia	0.966987
-TCGA-LAML	ACH-000602	0.002973	6.0	0.0	Blood	True	M-07e	Myeloid	Acute Myeloid Leukemia	0.969959
-TCGA-LAML	ACH-003273	0.002698	4.0	0.0	Blood	True	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	0.972657
-TCGA-LAML	ACH-002994	0.002484	4.0	0.0	Blood	True	WSU-AML	Myeloid	Acute Myeloid Leukemia	0.975141
-TCGA-LAML	ACH-000641	0.002267	4.0	0.0	Blood	True	CMK	Myeloid	Acute Myeloid Leukemia	0.977408
-TCGA-LAML	ACH-001036	0.002263	5.0	1.0	Blood	True	CMK-11-5	Myeloid	Acute Myeloid Leukemia	0.979671
-TCGA-LAML	ACH-000076	0.002222	6.0	0.0	Blood	True	NCO2	Myeloid	Myeloproliferative Neoplasms	0.981892
-TCGA-LAML	ACH-000983	0.002204	1.0	0.0	Blood	True	KCL-22	Myeloid	Myeloproliferative Neoplasms	0.984096
-TCGA-LAML	ACH-000369	0.002149	2.0	0.0	Blood	True	MOLM-16	Myeloid	Acute Myeloid Leukemia	0.986245
-TCGA-LAML	ACH-002716	0.002053	4.0	0.0	Blood	True	MO-91	Myeloid	Acute Myeloid Leukemia	0.988299
-TCGA-LAML	ACH-000004	0.001622	3.0	0.0	Blood	True	HEL	Myeloid	Acute Myeloid Leukemia	0.98992
-TCGA-LAML	ACH-000387	0.00159	4.0	0.0	Blood	True	TF-1	Myeloid	Acute Myeloid Leukemia	0.991511
-TCGA-LAML	ACH-000301	0.001308	2.0	0.0	Blood	True	LAMA-84	Myeloid	Myeloproliferative Neoplasms	0.992818
-TCGA-LAML	ACH-000195	0.00122	2.0	0.0	Blood	True	Set-2	Myeloid	Acute Myeloid Leukemia	0.994039
-TCGA-LAML	ACH-000487	0.000855	3.0	0.0	Blood	True	F-36P	Myeloid	Myelodysplastic Syndromes	0.994894
-TCGA-LAML	ACH-000005	0.000769	2.0	0.0	Blood	True	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	0.995663
-TCGA-LAML	ACH-000326	0.000532	0.0	0.0	Blood	True	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	0.996196
-TCGA-LAML	ACH-000072	0.000368	0.0	0.0	Blood	True	MEG-01	Myeloid	Myeloproliferative Neoplasms	0.996564
-TCGA-LAML	ACH-001735	0.000331	0.0	0.0	Blood	True	SEMK2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.996895
-TCGA-LAML	ACH-000104	0.000324	1.0	0.0	Blood	True	Loucy	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.997219
-TCGA-LAML	ACH-000751	0.000312	0.0	0.0	Blood	True	OCI-M1	Myeloid	Acute Myeloid Leukemia	0.997531
-TCGA-LAML	ACH-000241	0.000227	0.0	0.0	Blood	True	JK-1	Myeloid	Myeloproliferative Neoplasms	0.997758
-TCGA-LAML	ACH-001057	0.000222	0.0	0.0	Blood	True	DERL-2	Lymphoid	Mature T and NK Neoplasms	0.997979
-TCGA-LAML	ACH-000782	0.00022	0.0	0.0	Blood	True	SEM	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.998199
-TCGA-LAML	ACH-001736	0.000191	0.0	0.0	Blood	True	HB1119	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99839
-TCGA-LAML	ACH-001737	0.000129	0.0	0.0	Blood	True	CTV-1-DM	Lymphoid	Mature T and NK Neoplasms	0.99852
-TCGA-LAML	ACH-000918	0.000111	0.0	0.0	Blood	True	MOLT-16	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.99863
-TCGA-LAML	ACH-001618	7.1e-05	0.0	0.0	Blood	True	OCI-M2	Myeloid	Acute Myeloid Leukemia	0.998701
-TCGA-LAML	ACH-000509	6.9e-05	0.0	0.0	Blood	True	HuT 78	Lymphoid	Mature T and NK Neoplasms	0.99877
-TCGA-LAML	ACH-002653	5.9e-05	0.0	0.0	Blood	True	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.998828
-TCGA-LAML	ACH-000604	5.5e-05	0.0	0.0	Blood	True	KYO-1	Myeloid	Myeloproliferative Neoplasms	0.998883
-TCGA-LAML	ACH-002061	5e-05	0.0	0.0	Blood	True	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	0.998933
-TCGA-LAML	ACH-000519	3.9e-05	0.0	0.0	Blood	True	PEER	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.998973
-TCGA-LAML	ACH-000101	3.7e-05	0.0	0.0	Blood	True	KE-37	Lymphoid	Mature T and NK Neoplasms	0.999009
-TCGA-LAML	ACH-003108	3.5e-05	0.0	0.0	Blood	True	HF	Lymphoid	Mature B-Cell Neoplasms	0.999044
-TCGA-LAML	ACH-000380	3.2e-05	0.0	0.0	Blood	True	KMS-12-BM	Lymphoid	Mature B-Cell Neoplasms	0.999076
-TCGA-LAML	ACH-001708	3.1e-05	0.0	0.0	Blood	True	WSU-FSCCL	Lymphoid	Mature B-Cell Neoplasms	0.999108
-TCGA-LAML	ACH-001100	2.9e-05	0.0	0.0	Blood	True	KHYG-1	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999137
-TCGA-LAML	ACH-001111	2.9e-05	0.0	0.0	Blood	True	L82	Lymphoid	Mature T and NK Neoplasms	0.999166
-TCGA-LAML	ACH-000636	2.7e-05	0.0	0.0	Blood	True	RPMI-8402	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999193
-TCGA-LAML	ACH-000817	2.7e-05	0.0	0.0	Blood	True	RPMI 8226	Lymphoid	Mature B-Cell Neoplasms	0.999219
-TCGA-LAML	ACH-001068	2.5e-05	0.0	0.0	Blood	True	FE-PD	Lymphoid	Mature T and NK Neoplasms	0.999244
-TCGA-LAML	ACH-000432	2.5e-05	0.0	0.0	Blood	True	BV-173	Myeloid	Myeloproliferative Neoplasms	0.999269
-TCGA-LAML	ACH-001148	2.3e-05	0.0	0.0	Blood	True	OCILY-132	Lymphoid	Mature B-Cell Neoplasms	0.999292
-TCGA-LAML	ACH-000960	2.2e-05	0.0	0.0	Blood	True	Reh	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999314
-TCGA-LAML	ACH-001571	2.1e-05	0.0	0.0	Blood	True	Mo	Lymphoid	Mature B-Cell Neoplasms	0.999336
-TCGA-LAML	ACH-000124	2.1e-05	0.0	0.0	Blood	True	OCI-LY-19	Lymphoid	Mature B-Cell Neoplasms	0.999357
-TCGA-LAML	ACH-001147	2e-05	0.0	0.0	Blood	True	OCI-Ly12	Lymphoid	Mature T and NK Neoplasms	0.999377
-TCGA-LAML	ACH-000193	1.9e-05	0.0	0.0	Blood	True	KARPAS-620	Lymphoid	Mature B-Cell Neoplasms	0.999396
-TCGA-LAML	ACH-001097	1.9e-05	0.0	0.0	Blood	True	KARPAS-384	Lymphoid	Mature T and NK Neoplasms	0.999414
-TCGA-LAML	ACH-000874	1.8e-05	0.0	0.0	Blood	True	RS4;11	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999433
-TCGA-LAML	ACH-000551	1.7e-05	0.0	0.0	Blood	True	K-562	Myeloid	Myeloproliferative Neoplasms	0.99945
-TCGA-LAML	ACH-000388	1.7e-05	0.0	0.0	Blood	True	NU-DHL-1	Lymphoid	Mature B-Cell Neoplasms	0.999466
-TCGA-LAML	ACH-001106	1.5e-05	0.0	0.0	Blood	True	KOPN-8	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999482
-TCGA-LAML	ACH-000653	1.5e-05	0.0	0.0	Blood	True	JJN-3	Lymphoid	Mature B-Cell Neoplasms	0.999497
-TCGA-LAML	ACH-000206	1.5e-05	0.0	0.0	Blood	True	C8166	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999512
-TCGA-LAML	ACH-000492	1.4e-05	0.0	0.0	Blood	True	MUTZ-5	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999526
-TCGA-LAML	ACH-000020	1.4e-05	0.0	0.0	Blood	True	MHH-CALL-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999539
-TCGA-LAML	ACH-001993	1.4e-05	0.0	0.0	Blood	True	NALM-16	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999553
-TCGA-LAML	ACH-001197	1.4e-05	0.0	0.0	Blood	True	SMZ-1	Lymphoid	Non-Hodgkin Lymphoma	0.999567
-TCGA-LAML	ACH-000077	1.3e-05	0.0	0.0	Blood	True	MJ	Lymphoid	Non-Hodgkin Lymphoma	0.99958
-TCGA-LAML	ACH-000664	1.3e-05	0.0	0.0	Blood	True	SU-DHL-1	Lymphoid	Mature T and NK Neoplasms	0.999593
-TCGA-LAML	ACH-003463	1.2e-05	0.0	0.0	Blood	True	CCLF_HEME_0004_T	Lymphoid	Mature T and NK Neoplasms	0.999605
-TCGA-LAML	ACH-000053	1.1e-05	0.0	0.0	Blood	True	KARPAS-299	Lymphoid	Mature T and NK Neoplasms	0.999616
-TCGA-LAML	ACH-002500	1.1e-05	0.0	0.0	Blood	True	Z-138	Lymphoid	Mature B-Cell Neoplasms	0.999627
-TCGA-LAML	ACH-000612	1e-05	0.0	0.0	Blood	True	HuT 102	Lymphoid	Mature T and NK Neoplasms	0.999638
-TCGA-LAML	ACH-000130	1e-05	0.0	0.0	Blood	True	NALM-19	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999648
-TCGA-LAML	ACH-001132	1e-05	0.0	0.0	Blood	True	MTA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999658
-TCGA-LAML	ACH-001685	1e-05	0.0	0.0	Blood	True	U-HO1	Lymphoid	Hodgkin Lymphoma	0.999668
-TCGA-LAML	ACH-000854	1e-05	0.0	0.0	Blood	True	OCI-MY5	Lymphoid	Mature B-Cell Neoplasms	0.999677
-TCGA-LAML	ACH-000122	1e-05	0.0	0.0	Blood	True	SUP-T11	Lymphoid	Mature T and NK Neoplasms	0.999687
-TCGA-LAML	ACH-000938	9e-06	0.0	0.0	Blood	True	NALM-6	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999696
-TCGA-LAML	ACH-002485	9e-06	0.0	0.0	Blood	True	MAVER-1	Lymphoid	Mature B-Cell Neoplasms	0.999705
-TCGA-LAML	ACH-000773	9e-06	0.0	0.0	Blood	True	Ki-JK	Lymphoid	Mature T and NK Neoplasms	0.999714
-TCGA-LAML	ACH-000080	8e-06	0.0	0.0	Blood	True	BDCM	Myeloid	Acute Myeloid Leukemia	0.999722
-TCGA-LAML	ACH-000462	8e-06	0.0	0.0	Blood	True	NALM-1	Myeloid	Myeloproliferative Neoplasms	0.999731
-TCGA-LAML	ACH-000233	8e-06	0.0	0.0	Blood	True	DEL	Lymphoid	Mature T and NK Neoplasms	0.999738
-TCGA-LAML	ACH-000061	7e-06	0.0	0.0	Blood	True	HH	Lymphoid	Non-Hodgkin Lymphoma	0.999746
-TCGA-LAML	ACH-001707	7e-06	0.0	0.0	Blood	True	WA-OSEL	Lymphoid	Mature B-Cell Neoplasms	0.999753
-TCGA-LAML	ACH-000920	7e-06	0.0	0.0	Blood	True	CML-T1	Myeloid	Myeloproliferative Neoplasms	0.99976
-TCGA-LAML	ACH-002059	7e-06	0.0	0.0	Blood	True	P30/OHK	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999767
-TCGA-LAML	ACH-000220	7e-06	0.0	0.0	Blood	True	Mino	Lymphoid	Mature B-Cell Neoplasms	0.999774
-TCGA-LAML	ACH-000363	7e-06	0.0	0.0	Blood	True	SK-MM-2	Lymphoid	Mature B-Cell Neoplasms	0.99978
-TCGA-LAML	ACH-000070	6e-06	0.0	0.0	Blood	True	697	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999787
-TCGA-LAML	ACH-001209	6e-06	0.0	0.0	Blood	True	TOM-1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999793
-TCGA-LAML	ACH-003107	6e-06	0.0	0.0	Blood	True	JMP-1	Lymphoid	Mature B-Cell Neoplasms	0.999799
-TCGA-LAML	ACH-000156	6e-06	0.0	0.0	Blood	True	MHH-CALL-4	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999805
-TCGA-LAML	ACH-000728	6e-06	0.0	0.0	Blood	True	KASUMI-2	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.99981
-TCGA-LAML	ACH-000050	5e-06	0.0	0.0	Blood	True	NCI-H929	Lymphoid	Mature B-Cell Neoplasms	0.999815
-TCGA-LAML	ACH-001539	5e-06	0.0	0.0	Blood	True	KML-1	Lymphoid	Mature B-Cell Neoplasms	0.999821
-TCGA-LAML	ACH-000922	5e-06	0.0	0.0	Blood	True	RCH-ACV	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999826
-TCGA-LAML	ACH-001669	5e-06	0.0	0.0	Blood	True	TANOUE	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999831
-TCGA-LAML	ACH-002478	5e-06	0.0	0.0	Blood	True	BC-2	Lymphoid	Mature B-Cell Neoplasms	0.999836
-TCGA-LAML	ACH-000995	5e-06	0.0	0.0	Blood	True	JURKAT	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999841
-TCGA-LAML	ACH-000059	5e-06	0.0	0.0	Blood	True	SUP-B15	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999846
-TCGA-LAML	ACH-001492	5e-06	0.0	0.0	Blood	True	DOGKIT	Lymphoid	Mature B-Cell Neoplasms	0.999851
-TCGA-LAML	ACH-000287	5e-06	0.0	0.0	Blood	True	NU-DUL-1	Lymphoid	Mature B-Cell Neoplasms	0.999856
-TCGA-LAML	ACH-002060	4e-06	0.0	0.0	Blood	True	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	0.99986
-TCGA-LAML	ACH-000158	4e-06	0.0	0.0	Blood	True	OCI-LY3	Lymphoid	Mature B-Cell Neoplasms	0.999864
-TCGA-LAML	ACH-000068	4e-06	0.0	0.0	Blood	True	REC-1	Lymphoid	Mature B-Cell Neoplasms	0.999868
-TCGA-LAML	ACH-000357	4e-06	0.0	0.0	Blood	True	JeKo-1	Lymphoid	Mature B-Cell Neoplasms	0.999872
-TCGA-LAML	ACH-000923	4e-06	0.0	0.0	Blood	True	BCP-1	Lymphoid	Mature B-Cell Neoplasms	0.999876
-TCGA-LAML	ACH-001679	4e-06	0.0	0.0	Blood	True	U-2973	Lymphoid	Mature B-Cell Neoplasms	0.99988
-TCGA-LAML	ACH-000806	4e-06	0.0	0.0	Blood	True	L-540	Lymphoid	Hodgkin Lymphoma	0.999884
-TCGA-LAML	ACH-001485	4e-06	0.0	0.0	Blood	True	CII	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999888
-TCGA-LAML	ACH-001484	4e-06	0.0	0.0	Blood	True	CI	Lymphoid	Mature B-Cell Neoplasms	0.999892
-TCGA-LAML	ACH-000226	4e-06	0.0	0.0	Blood	True	SUP-M2	Lymphoid	Mature T and NK Neoplasms	0.999895
-TCGA-LAML	ACH-000541	3e-06	0.0	0.0	Blood	True	KMS-34	Lymphoid	Mature B-Cell Neoplasms	0.999899
-TCGA-LAML	ACH-001060	3e-06	0.0	0.0	Blood	True	DL-40	Lymphoid	Mature T and NK Neoplasms	0.999902
-TCGA-LAML	ACH-000815	3e-06	0.0	0.0	Blood	True	KM-H2	Lymphoid	Hodgkin Lymphoma	0.999906
-TCGA-LAML	ACH-000073	3e-06	0.0	0.0	Blood	True	GRANTA-519	Lymphoid	Mature B-Cell Neoplasms	0.999909
-TCGA-LAML	ACH-000372	3e-06	0.0	0.0	Blood	True	P12-ICHIKAWA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999912
-TCGA-LAML	ACH-000436	3e-06	0.0	0.0	Blood	True	OCI-My7	Lymphoid	Mature B-Cell Neoplasms	0.999915
-TCGA-LAML	ACH-000838	3e-06	0.0	0.0	Blood	True	AMO-1	Lymphoid	Mature B-Cell Neoplasms	0.999918
-TCGA-LAML	ACH-001493	3e-06	0.0	0.0	Blood	True	DOGUM	Lymphoid	Mature B-Cell Neoplasms	0.999921
-TCGA-LAML	ACH-000656	3e-06	0.0	0.0	Blood	True	SU-DHL-8	Lymphoid	Mature B-Cell Neoplasms	0.999924
-TCGA-LAML	ACH-000754	3e-06	0.0	0.0	Blood	True	L-428	Lymphoid	Hodgkin Lymphoma	0.999927
-TCGA-LAML	ACH-000944	3e-06	0.0	0.0	Blood	True	NAMALWA	Lymphoid	Mature B-Cell Neoplasms	0.999929
-TCGA-LAML	ACH-000157	3e-06	0.0	0.0	Blood	True	A4/Fuk	Lymphoid	Mature B-Cell Neoplasms	0.999932
-TCGA-LAML	ACH-000419	3e-06	0.0	0.0	Blood	True	KMS-28BM	Lymphoid	Mature B-Cell Neoplasms	0.999935
-TCGA-LAML	ACH-000338	3e-06	0.0	0.0	Blood	True	SR-786	Lymphoid	Mature T and NK Neoplasms	0.999937
-TCGA-LAML	ACH-001119	3e-06	0.0	0.0	Blood	True	Mac-2A	Lymphoid	Mature T and NK Neoplasms	0.99994
-TCGA-LAML	ACH-000512	3e-06	0.0	0.0	Blood	True	INA6	Lymphoid	Mature B-Cell Neoplasms	0.999942
-TCGA-LAML	ACH-001541	3e-06	0.0	0.0	Blood	True	KMS-28PE	Lymphoid	Mature B-Cell Neoplasms	0.999945
-TCGA-LAML	ACH-001134	2e-06	0.0	0.0	Blood	True	MYLA	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999947
-TCGA-LAML	ACH-000105	2e-06	0.0	0.0	Blood	True	ALL-SIL	Lymphoid	Mature T and NK Neoplasms	0.99995
-TCGA-LAML	ACH-000576	2e-06	0.0	0.0	Blood	True	KMS-27	Lymphoid	Mature B-Cell Neoplasms	0.999952
-TCGA-LAML	ACH-000024	2e-06	0.0	0.0	Blood	True	OPM-2	Lymphoid	Mature B-Cell Neoplasms	0.999954
-TCGA-LAML	ACH-002215	2e-06	0.0	0.0	Blood	True	BC-3	Lymphoid	Mature B-Cell Neoplasms	0.999956
-TCGA-LAML	ACH-000057	2e-06	0.0	0.0	Blood	True	OPM-1	Lymphoid	Mature B-Cell Neoplasms	0.999958
-TCGA-LAML	ACH-000763	2e-06	0.0	0.0	Blood	True	MM1-S	Lymphoid	Mature B-Cell Neoplasms	0.999961
-TCGA-LAML	ACH-002214	2e-06	0.0	0.0	Blood	True	BC-1	Lymphoid	Mature B-Cell Neoplasms	0.999963
-TCGA-LAML	ACH-000964	2e-06	0.0	0.0	Blood	True	MOLT-3	Lymphoid	Mature T and NK Neoplasms	0.999965
-TCGA-LAML	ACH-001616	2e-06	0.0	0.0	Blood	True	OCI-LY18	Lymphoid	Mature B-Cell Neoplasms	0.999967
-TCGA-LAML	ACH-000405	2e-06	0.0	0.0	Blood	True	MEC-1	Lymphoid	Mature B-Cell Neoplasms	0.999968
-TCGA-LAML	ACH-000702	2e-06	0.0	0.0	Blood	True	L-1236	Lymphoid	Hodgkin Lymphoma	0.99997
-TCGA-LAML	ACH-000285	2e-06	0.0	0.0	Blood	True	Toledo	Lymphoid	Mature B-Cell Neoplasms	0.999972
-TCGA-LAML	ACH-000032	2e-06	0.0	0.0	Blood	True	MHH-CALL-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999974
-TCGA-LAML	ACH-000714	2e-06	0.0	0.0	Blood	True	KMS-11	Lymphoid	Mature B-Cell Neoplasms	0.999976
-TCGA-LAML	ACH-000942	2e-06	0.0	0.0	Blood	True	HPB-ALL	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999977
-TCGA-LAML	ACH-001677	1e-06	0.0	0.0	Blood	True	U-2904	Lymphoid	Mature B-Cell Neoplasms	0.999979
-TCGA-LAML	ACH-000745	1e-06	0.0	0.0	Blood	True	MOLP-8	Lymphoid	Mature B-Cell Neoplasms	0.99998
-TCGA-LAML	ACH-001520	1e-06	0.0	0.0	Blood	True	HG-3	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999982
-TCGA-LAML	ACH-000151	1e-06	0.0	0.0	Blood	True	JM1	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999983
-TCGA-LAML	ACH-001709	1e-06	0.0	0.0	Blood	True	WSU-NHL	Lymphoid	Mature B-Cell Neoplasms	0.999984
-TCGA-LAML	ACH-001447	1e-06	0.0	0.0	Blood	True	BJAB	Lymphoid	Mature B-Cell Neoplasms	0.999986
-TCGA-LAML	ACH-003460	1e-06	0.0	0.0	Blood	True	CCLF_HEME_0001_T	Lymphoid	Mature B-Cell Neoplasms	0.999987
-TCGA-LAML	ACH-002678	1e-06	0.0	0.0	Blood	True	WILL-1	Lymphoid	Mature B-Cell Neoplasms	0.999988
-TCGA-LAML	ACH-000167	1e-06	0.0	0.0	Blood	True	KE-97	Lymphoid	Mature B-Cell Neoplasms	0.99999
-TCGA-LAML	ACH-002676	1e-06	0.0	0.0	Blood	True	TK-6	Myeloid	Myeloproliferative Neoplasms	0.999991
-TCGA-LAML	ACH-000937	1e-06	0.0	0.0	Blood	True	PF-382	Lymphoid	T-Lymphoblastic Leukemia/Lymphoma	0.999992
-TCGA-LAML	ACH-000564	1e-06	0.0	0.0	Blood	True	KHM-1B	Lymphoid	Mature B-Cell Neoplasms	0.999993
-TCGA-LAML	ACH-001642	1e-06	0.0	0.0	Blood	True	SCC-3	Lymphoid	Non-Hodgkin Lymphoma	0.999994
-TCGA-LAML	ACH-000197	1e-06	0.0	0.0	Blood	True	TALL-1	Lymphoid	Mature T and NK Neoplasms	0.999995
-TCGA-LAML	ACH-001634	1e-06	0.0	0.0	Blood	True	PGA-1	Lymphoid	Mature B-Cell Neoplasms	0.999995
-TCGA-LAML	ACH-001533	1e-06	0.0	0.0	Blood	True	KARPAS 1718	Lymphoid	Mature B-Cell Neoplasms	0.999996
-TCGA-LAML	ACH-000267	1e-06	0.0	0.0	Blood	True	HDLM-2	Lymphoid	Hodgkin Lymphoma	0.999997
-TCGA-LAML	ACH-002643	1e-06	0.0	0.0	Blood	True	GRANTA-452	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999998
-TCGA-LAML	ACH-000346	1e-06	0.0	0.0	Blood	True	JVM-3	Lymphoid	Mature B-Cell Neoplasms	0.999998
-TCGA-LAML	ACH-000056	1e-06	0.0	0.0	Blood	True	DOHH-2	Lymphoid	Mature B-Cell Neoplasms	0.999999
-TCGA-LAML	ACH-000038	1e-06	0.0	0.0	Blood	True	EHEB	Lymphoid	B-Lymphoblastic Leukemia/Lymphoma	0.999999
-TCGA-LAML	ACH-000567	1e-06	0.0	0.0	Blood	True	ST486	Lymphoid	Mature B-Cell Neoplasms	1.0
+TCGA-LAML	ACH-000498	0.108421	105.0	39.0	Myeloid	True	KO52	Myeloid	Acute Myeloid Leukemia	0.108421
+TCGA-LAML	ACH-000321	0.080867	102.0	17.0	Myeloid	True	MOLM-6	Myeloid	Myeloproliferative Neoplasms	0.189288
+TCGA-LAML	ACH-000166	0.074114	90.0	12.0	Myeloid	True	Kasumi-6	Myeloid	Acute Myeloid Leukemia	0.263402
+TCGA-LAML	ACH-000295	0.048124	61.0	12.0	Myeloid	True	EM-2	Myeloid	Myeloproliferative Neoplasms	0.311526
+TCGA-LAML	ACH-000263	0.043524	74.0	6.0	Myeloid	True	KASUMI-1	Myeloid	Acute Myeloid Leukemia	0.35505
+TCGA-LAML	ACH-000065	0.040946	75.0	15.0	Myeloid	True	OCI-AML5	Myeloid	Acute Myeloid Leukemia	0.395996
+TCGA-LAML	ACH-000081	0.037221	79.0	3.0	Myeloid	True	GDM-1	Myeloid	Acute Myeloid Leukemia	0.433217
+TCGA-LAML	ACH-000386	0.033776	69.0	3.0	Myeloid	True	KG-1	Myeloid	Acute Myeloid Leukemia	0.466993
+TCGA-LAML	ACH-000439	0.031559	42.0	7.0	Myeloid	True	ME-1	Myeloid	Acute Myeloid Leukemia	0.498552
+TCGA-LAML	ACH-001647	0.029175	53.0	4.0	Myeloid	True	SHI-1	Myeloid	Acute Myeloid Leukemia	0.527727
+TCGA-LAML	ACH-000045	0.027078	49.0	4.0	Myeloid	True	MV4-11	Myeloid	Acute Myeloid Leukemia	0.554805
+TCGA-LAML	ACH-000198	0.02695	50.0	6.0	Myeloid	True	EOL-1	Myeloid	Myeloproliferative Neoplasms	0.581755
+TCGA-LAML	ACH-001577	0.026949	68.0	3.0	Myeloid	True	MUTZ-8	Myeloid	Acute Myeloid Leukemia	0.608703
+TCGA-LAML	ACH-001656	0.026549	36.0	6.0	Myeloid	True	SKNO-1	Myeloid	Acute Myeloid Leukemia	0.635252
+TCGA-LAML	ACH-002651	0.024056	87.0	0.0	Myeloid	True	FKH-1	Myeloid	Acute Myeloid Leukemia	0.659308
+TCGA-LAML	ACH-000294	0.021707	21.0	5.0	Myeloid	True	NB-4	Myeloid	Acute Myeloid Leukemia	0.681015
+TCGA-LAML	ACH-000557	0.021299	40.0	2.0	Myeloid	True	AML-193	Myeloid	Acute Myeloid Leukemia	0.702314
+TCGA-LAML	ACH-000362	0.02026	33.0	4.0	Myeloid	True	MOLM-13	Myeloid	Acute Myeloid Leukemia	0.722573
+TCGA-LAML	ACH-000113	0.019862	39.0	3.0	Myeloid	True	OCI-AML2	Myeloid	Acute Myeloid Leukemia	0.742436
+TCGA-LAML	ACH-001129	0.015823	27.0	3.0	Myeloid	True	MONO-MAC-1	Myeloid	Acute Myeloid Leukemia	0.758258
+TCGA-LAML	ACH-000006	0.015379	24.0	6.0	Myeloid	True	MONO-MAC-6	Myeloid	Acute Myeloid Leukemia	0.773637
+TCGA-LAML	ACH-000112	0.015319	34.0	1.0	Myeloid	True	SIG-M5	Myeloid	Acute Myeloid Leukemia	0.788957
+TCGA-LAML	ACH-000084	0.014373	49.0	0.0	Myeloid	True	MUTZ-3	Myeloid	Acute Myeloid Leukemia	0.803329
+TCGA-LAML	ACH-000168	0.014096	34.0	0.0	Myeloid	True	NOMO-1	Myeloid	Acute Myeloid Leukemia	0.817425
+TCGA-LAML	ACH-001684	0.014036	56.0	0.0	Myeloid	True	UCSD-AML1	Myeloid	Acute Myeloid Leukemia	0.831462
+TCGA-LAML	ACH-002290	0.011687	15.0	4.0	Myeloid	True	NKM-1	Myeloid	Acute Myeloid Leukemia	0.843149
+TCGA-LAML	ACH-000299	0.011277	40.0	0.0	Myeloid	True	HNT-34	Myeloid	Acute Myeloid Leukemia	0.854426
+TCGA-LAML	ACH-000218	0.011033	23.0	0.0	Myeloid	True	PL-21	Myeloid	Acute Myeloid Leukemia	0.865458
+TCGA-LAML	ACH-000002	0.010741	16.0	1.0	Myeloid	True	HL-60	Myeloid	Acute Myeloid Leukemia	0.876199
+TCGA-LAML	ACH-001573	0.010737	35.0	1.0	Myeloid	True	MOLM-1	Myeloid	Myeloproliferative Neoplasms	0.886937
+TCGA-LAML	ACH-000406	0.01063	25.0	0.0	Myeloid	True	U-937	Myeloid	Acute Myeloid Leukemia	0.897567
+TCGA-LAML	ACH-000146	0.010398	20.0	0.0	Myeloid	True	THP-1	Myeloid	Acute Myeloid Leukemia	0.907965
+TCGA-LAML	ACH-001613	0.010386	26.0	0.0	Myeloid	True	OCI-AML4	Myeloid	Acute Myeloid Leukemia	0.918352
+TCGA-LAML	ACH-000373	0.007978	15.0	0.0	Myeloid	True	SKM-1	Myeloid	Acute Myeloid Leukemia	0.92633
+TCGA-LAML	ACH-000770	0.006886	10.0	0.0	Myeloid	True	P31/FUJ	Myeloid	Acute Myeloid Leukemia	0.933216
+TCGA-LAML	ACH-000074	0.006712	6.0	3.0	Myeloid	True	KU812	Myeloid	Myeloproliferative Neoplasms	0.939928
+TCGA-LAML	ACH-000034	0.006062	10.0	0.0	Myeloid	True	PLB-985	Myeloid	Acute Myeloid Leukemia	0.945991
+TCGA-LAML	ACH-002668	0.005801	11.0	0.0	Myeloid	True	KASUMI-3	Myeloid	Acute Myeloid Leukemia	0.951792
+TCGA-LAML	ACH-001574	0.005381	7.0	1.0	Myeloid	True	MOLM-14	Myeloid	Acute Myeloid Leukemia	0.957173
+TCGA-LAML	ACH-002946	0.004744	11.0	0.0	Myeloid	True	UKE-1	Myeloid	Acute Myeloid Leukemia	0.961917
+TCGA-LAML	ACH-000336	0.004376	4.0	1.0	Myeloid	True	OCI-AML3	Myeloid	Acute Myeloid Leukemia	0.966293
+TCGA-LAML	ACH-002675	0.003158	7.0	0.0	Myeloid	True	SH-2	Myeloid	Acute Myeloid Leukemia	0.969451
+TCGA-LAML	ACH-000602	0.002981	6.0	0.0	Myeloid	True	M-07e	Myeloid	Acute Myeloid Leukemia	0.972432
+TCGA-LAML	ACH-003273	0.002713	4.0	0.0	Myeloid	True	CHRF-288-11	Myeloid	Acute Myeloid Leukemia	0.975145
+TCGA-LAML	ACH-002994	0.002494	4.0	0.0	Myeloid	True	WSU-AML	Myeloid	Acute Myeloid Leukemia	0.977639
+TCGA-LAML	ACH-000641	0.002271	4.0	0.0	Myeloid	True	CMK	Myeloid	Acute Myeloid Leukemia	0.97991
+TCGA-LAML	ACH-001036	0.00227	5.0	1.0	Myeloid	True	CMK-11-5	Myeloid	Acute Myeloid Leukemia	0.98218
+TCGA-LAML	ACH-000076	0.002228	6.0	0.0	Myeloid	True	NCO2	Myeloid	Myeloproliferative Neoplasms	0.984408
+TCGA-LAML	ACH-000983	0.002226	1.0	0.0	Myeloid	True	KCL-22	Myeloid	Myeloproliferative Neoplasms	0.986634
+TCGA-LAML	ACH-000369	0.002149	2.0	0.0	Myeloid	True	MOLM-16	Myeloid	Acute Myeloid Leukemia	0.988783
+TCGA-LAML	ACH-002716	0.002077	4.0	0.0	Myeloid	True	MO-91	Myeloid	Acute Myeloid Leukemia	0.99086
+TCGA-LAML	ACH-000004	0.001625	3.0	0.0	Myeloid	True	HEL	Myeloid	Acute Myeloid Leukemia	0.992485
+TCGA-LAML	ACH-000387	0.001593	4.0	0.0	Myeloid	True	TF-1	Myeloid	Acute Myeloid Leukemia	0.994078
+TCGA-LAML	ACH-000301	0.001314	2.0	0.0	Myeloid	True	LAMA-84	Myeloid	Myeloproliferative Neoplasms	0.995392
+TCGA-LAML	ACH-000195	0.001221	2.0	0.0	Myeloid	True	Set-2	Myeloid	Acute Myeloid Leukemia	0.996613
+TCGA-LAML	ACH-000487	0.000858	3.0	0.0	Myeloid	True	F-36P	Myeloid	Myelodysplastic Syndromes	0.997471
+TCGA-LAML	ACH-000005	0.000771	2.0	0.0	Myeloid	True	HEL 92.1.7	Myeloid	Acute Myeloid Leukemia	0.998242
+TCGA-LAML	ACH-000326	0.000537	0.0	0.0	Myeloid	True	JURL-MK1	Myeloid	Myeloproliferative Neoplasms	0.998779
+TCGA-LAML	ACH-000072	0.000369	0.0	0.0	Myeloid	True	MEG-01	Myeloid	Myeloproliferative Neoplasms	0.999148
+TCGA-LAML	ACH-000751	0.000313	0.0	0.0	Myeloid	True	OCI-M1	Myeloid	Acute Myeloid Leukemia	0.999461
+TCGA-LAML	ACH-000241	0.000227	0.0	0.0	Myeloid	True	JK-1	Myeloid	Myeloproliferative Neoplasms	0.999688
+TCGA-LAML	ACH-001618	7.1e-05	0.0	0.0	Myeloid	True	OCI-M2	Myeloid	Acute Myeloid Leukemia	0.999759
+TCGA-LAML	ACH-002653	6.1e-05	0.0	0.0	Myeloid	True	JIH-5	Myeloid	Acute Leukemias of Ambiguous Lineage	0.99982
+TCGA-LAML	ACH-000604	5.5e-05	0.0	0.0	Myeloid	True	KYO-1	Myeloid	Myeloproliferative Neoplasms	0.999876
+TCGA-LAML	ACH-002061	5e-05	0.0	0.0	Myeloid	True	P2UR/K-562	Myeloid	Myeloproliferative Neoplasms	0.999926
+TCGA-LAML	ACH-000432	2.6e-05	0.0	0.0	Myeloid	True	BV-173	Myeloid	Myeloproliferative Neoplasms	0.999952
+TCGA-LAML	ACH-000551	1.7e-05	0.0	0.0	Myeloid	True	K-562	Myeloid	Myeloproliferative Neoplasms	0.999969
+TCGA-LAML	ACH-000462	9e-06	0.0	0.0	Myeloid	True	NALM-1	Myeloid	Myeloproliferative Neoplasms	0.999978
+TCGA-LAML	ACH-000080	9e-06	0.0	0.0	Myeloid	True	BDCM	Myeloid	Acute Myeloid Leukemia	0.999986
+TCGA-LAML	ACH-000920	8e-06	0.0	0.0	Myeloid	True	CML-T1	Myeloid	Myeloproliferative Neoplasms	0.999994
+TCGA-LAML	ACH-002060	5e-06	0.0	0.0	Myeloid	True	MY	Myeloid	Acute Leukemias of Ambiguous Lineage	0.999999
+TCGA-LAML	ACH-002676	1e-06	0.0	0.0	Myeloid	True	TK-6	Myeloid	Myeloproliferative Neoplasms	1.0
 TCGA-LIHC	ACH-000739	0.766348	335.0	292.0	Liver	True	Hep G2	Liver	Hepatoblastoma	0.766348
 TCGA-LIHC	ACH-000480	0.073151	356.0	30.0	Liver	True	HuH-7	Liver	Hepatocellular Carcinoma	0.839499
 TCGA-LIHC	ACH-000848	0.053029	356.0	15.0	Liver	True	JHH-7	Liver	Hepatocellular Carcinoma	0.892529

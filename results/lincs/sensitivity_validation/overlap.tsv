@@ -1,0 +1,5 @@
+dataset	drugs	lines	lincs_drugs_mapped	lines_cancer_mapped	scored_drugs_mapped	entries
+prism_sec	1494	728	1194	726	681	543818
+prism_pri	5117	568	3423	567	1135	1887576
+gdsc1	402	968	352	963	271	281530
+gdsc2	295	967	240	962	184	206219

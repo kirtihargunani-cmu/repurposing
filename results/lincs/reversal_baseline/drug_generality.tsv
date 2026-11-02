@@ -1,0 +1,2905 @@
+pert_id	cmap_name	approved	hub_moa	n_groups	n_top_rev	n_top_spec	frac_top_rev	frac_top_spec
+BRD-K94012289	OSI-027	False		41	30	6	0.732	0.146
+BRD-K86118762	linsitinib	False	IGF-1 inhibitor	41	29	8	0.707	0.195
+BRD-K64538373	Ro-4987655	False	MEK inhibitor	41	28	7	0.683	0.171
+BRD-K13049116	BMS-754807	False	IGF-1 inhibitor	41	28	6	0.683	0.146
+BRD-K49865102	PD-0325901	False	MEK inhibitor	41	27	8	0.659	0.195
+BRD-A13021932	BMS-509744	False		41	27	6	0.659	0.146
+BRD-K51313569	palbociclib	True	CDK inhibitor	41	26	10	0.634	0.244
+BRD-K87343924	wortmannin	False	PI3K inhibitor	41	26	10	0.634	0.244
+BRD-K42918627	GSK-2126458	False		41	26	4	0.634	0.098
+BRD-K34581968	BMS-536924	False	IGF-1 inhibitor	41	25	9	0.61	0.22
+BRD-K28965160	BVD-523	False	MAP kinase inhibitor	41	25	6	0.61	0.146
+BRD-K72827473	CEP-37440	False	ALK tyrosine kinase receptor inhibitor	41	25	6	0.61	0.146
+BRD-A45498368	WYE-125132	False		41	24	6	0.585	0.146
+BRD-K09951645	dabrafenib	True	RAF inhibitor	41	24	6	0.585	0.146
+BRD-K24844714	fluorouracil	True	thymidylate synthase inhibitor	41	24	6	0.585	0.146
+BRD-K47598052	PP-1	False	SRC inhibitor	41	24	6	0.585	0.146
+BRD-K60997853	PHA-848125	False	CDK inhibitor|growth factor receptor inhibitor	41	23	8	0.561	0.195
+BRD-K64925568	AMG-232	False	MDM inhibitor	41	23	8	0.561	0.195
+BRD-K74381836	SA-1921456	False		41	23	4	0.561	0.098
+BRD-A18328003	GDC-0980	False		41	22	11	0.537	0.268
+BRD-K59317601	MLN-0128	False	mTOR inhibitor	41	22	10	0.537	0.244
+BRD-K97365803	PI-828	False	PI3K inhibitor	41	22	10	0.537	0.244
+BRD-K22134346	simvastatin	True	HMGCR inhibitor	41	22	7	0.537	0.171
+BRD-K69726342	atorvastatin	True	HMGCR inhibitor	41	22	7	0.537	0.171
+BRD-K85015012	NNC-05-2090	False	GABA uptake inhibitor|GAT inhibitor	41	22	6	0.537	0.146
+BRD-K18834913	LB-42708	False	farnesyltransferase inhibitor	41	22	5	0.537	0.122
+BRD-K71480163	GDC-0068	False		41	22	5	0.537	0.122
+BRD-A75409952	wortmannin	False		41	22	3	0.537	0.073
+BRD-K62627508	RG-7388	False	MDM inhibitor	41	21	12	0.512	0.293
+BRD-K37687095	AZD-8330	False	MEK inhibitor	41	21	9	0.512	0.22
+BRD-A28467416	PKI-179	False	mTOR inhibitor|PI3K inhibitor	41	21	8	0.512	0.195
+BRD-K56032964	AP-26113	False	ALK tyrosine kinase receptor inhibitor	41	21	7	0.512	0.171
+BRD-K42828737	sunitinib	True	FLT3 inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	41	21	6	0.512	0.146
+BRD-K29415052	BGT-226	False	PI3K inhibitor	41	21	4	0.512	0.098
+BRD-K43568579	WZ-4-145	False		41	21	2	0.512	0.049
+BRD-K95142244	talazoparib	True	PARP inhibitor	41	20	10	0.488	0.244
+BRD-K66296774	fluvastatin	True	HMGCR inhibitor	41	20	9	0.488	0.22
+BRD-K52911425	GDC-0941	False	PI3K inhibitor	41	20	8	0.488	0.195
+BRD-A29901043	KIN001-127	False		41	20	7	0.488	0.171
+BRD-K03618428	PP-110	False		41	20	7	0.488	0.171
+BRD-A12230535	nutlin-3	False		41	20	6	0.488	0.146
+BRD-K29395450	PIK-93	False	PI3K inhibitor	41	20	6	0.488	0.146
+BRD-K69932463	AZD-8055	False	mTOR inhibitor	41	20	5	0.488	0.122
+BRD-K68065987	MK-2206	False	AKT inhibitor	41	20	3	0.488	0.073
+BRD-K07955840	PF-05212384	False	mTOR inhibitor|PI3K inhibitor	41	19	8	0.463	0.195
+BRD-K26667523	TAK-733	False	MEK inhibitor	41	19	7	0.463	0.171
+BRD-K56291712	voxtalisib	False	mTOR inhibitor|PI3K inhibitor	41	19	7	0.463	0.171
+BRD-K63068307	ZSTK-474	False	PI3K inhibitor	41	19	6	0.463	0.146
+BRD-K07310275	PF-04691502	False	mTOR inhibitor|PI3K inhibitor	41	19	5	0.463	0.122
+BRD-K20526256	HG-14-10-04	False		41	19	5	0.463	0.122
+BRD-K68488863	ENMD-2076	False	Aurora kinase inhibitor|FLT3 inhibitor|VEGFR inhibitor	41	19	2	0.463	0.049
+BRD-K82244583	MEK-162	True	MEK inhibitor	41	18	9	0.439	0.22
+BRD-K23228615	GDC-0980	False	mTOR inhibitor|PI3K inhibitor	41	18	8	0.439	0.195
+BRD-K67566344	KU-0063794	False	mTOR inhibitor	41	18	7	0.439	0.171
+BRD-K67868012	PI-103	False	mTOR inhibitor|PI3K inhibitor	41	18	6	0.439	0.146
+BRD-K72420232	WZ-4002	False	EGFR inhibitor	41	18	6	0.439	0.146
+BRD-K98795921	SB-2343	False	mTOR inhibitor|PI3K inhibitor	41	18	6	0.439	0.146
+BRD-K51544265	cabozantinib	True	RET tyrosine kinase inhibitor|VEGFR inhibitor	41	18	5	0.439	0.122
+BRD-K67578145	GDC-0879	False	RAF inhibitor	41	18	5	0.439	0.122
+BRD-K12184916	NVP-BEZ235	False	mTOR inhibitor|PI3K inhibitor	41	18	4	0.439	0.098
+BRD-K24593301	AZD-3463	False	ALK tyrosine kinase receptor inhibitor|insulin growth factor receptor inhibitor	41	17	8	0.415	0.195
+BRD-K44844162	taselisib	False	PI3K inhibitor	41	17	7	0.415	0.171
+BRD-K80926963	BRD-K80926963	False		41	17	7	0.415	0.171
+BRD-K99113996	AZD-2014	False	mTOR inhibitor	41	17	7	0.415	0.171
+BRD-K08177763	BRD-K08177763	True	mTOR inhibitor	41	17	6	0.415	0.146
+BRD-K37764012	PF-03758309	False	p21 activated kinase inhibitor	41	17	6	0.415	0.146
+BRD-K21025364	NVP-TAE226	False	protein tyrosine kinase inhibitor	41	17	5	0.415	0.122
+BRD-K05104363	PD-184352	False	MEK inhibitor	41	17	4	0.415	0.098
+BRD-K33610132	rociletinib	False	EGFR inhibitor	41	17	4	0.415	0.098
+BRD-K74461819	BRD-K74461819	False		41	17	4	0.415	0.098
+BRD-K26664453	BRD-K26664453	False	microtubule inhibitor	41	17	1	0.415	0.024
+BRD-K27305650	LY-294002	False	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	41	16	11	0.39	0.268
+BRD-K09078998	deforolimus	False		41	16	7	0.39	0.171
+BRD-K17702546	PD-168393	False	EGFR inhibitor	41	16	7	0.39	0.171
+BRD-K52233191	R-547	False	CDK inhibitor	41	16	7	0.39	0.171
+BRD-K28392481	AZD-4547	False	FGFR inhibitor	41	16	5	0.39	0.122
+BRD-K40175214	torin-1	False	mTOR inhibitor	41	16	4	0.39	0.098
+BRD-K87125912	BRD-K87125912	False		41	16	4	0.39	0.098
+BRD-K75958547	pitavastatin	True	HMGCR inhibitor	41	16	2	0.39	0.049
+BRD-K77908580	entinostat	False	HDAC inhibitor	41	15	12	0.366	0.293
+BRD-K53903639	CHEMBL-1222381	False	neural stem cell inducer	41	15	11	0.366	0.268
+BRD-K93468883	IPI-145	True	PI3K inhibitor	41	15	11	0.366	0.268
+BRD-K03243820	trifluridine	True	DNA directed DNA polymerase inhibitor|thymidylate synthase inhibitor	41	15	10	0.366	0.244
+BRD-K06009608	BRD-K06009608	False		41	15	7	0.366	0.171
+BRD-K03390685	cobimetinib	True	MEK inhibitor	41	15	6	0.366	0.146
+BRD-K49111930	BRD-K49111930	False		41	15	6	0.366	0.146
+BRD-K80700417	SGI-1776	False	Pim kinase inhibitor	41	15	2	0.366	0.049
+BRD-K67075780	TGX-115	False		41	14	8	0.341	0.195
+BRD-K49010888	BRD-K49010888	False		41	14	7	0.341	0.171
+BRD-K06750613	GSK-1059615	False	PI3K inhibitor	41	14	6	0.341	0.146
+BRD-K35424586	SA-247714	False		41	14	6	0.341	0.146
+BRD-K45399554	CAM-9-027-3	False		41	14	5	0.341	0.122
+BRD-K05151076	ZK-164015	False	estrogen receptor antagonist	41	14	4	0.341	0.098
+BRD-K69001009	golvatinib	False	VEGFR inhibitor	41	14	4	0.341	0.098
+BRD-A94413429	NTNCB	False		41	14	3	0.341	0.073
+BRD-K88677950	PD-198306	False	MAP kinase inhibitor|MEK inhibitor	41	14	3	0.341	0.073
+BRD-K63158888	BRD-K63158888	False		41	14	1	0.341	0.024
+BRD-K39841531	TG-101209	False	JAK inhibitor	41	13	12	0.317	0.293
+BRD-K61468417	doxorubicin	False		41	13	12	0.317	0.293
+BRD-K16485616	mocetinostat	False	HDAC inhibitor	41	13	10	0.317	0.244
+BRD-K49371609	PIK-75	False	DNA protein kinase inhibitor|PI3K inhibitor	41	13	10	0.317	0.244
+BRD-K07881437	danusertib	False	Aurora kinase inhibitor|growth factor receptor inhibitor	41	13	8	0.317	0.195
+BRD-U00779237	BRD-U00779237	False		41	13	7	0.317	0.171
+BRD-K68174511	torin-2	False	mTOR inhibitor	41	13	6	0.317	0.146
+BRD-K77625799	vandetanib	True	EGFR inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	41	13	6	0.317	0.146
+BRD-K85140930	aphidicolin	False	RNA synthesis inhibitor	41	13	6	0.317	0.146
+BRD-K02708799	GSK-1059615	False		41	13	5	0.317	0.122
+BRD-K74486276	BRD-K74486276	False		41	13	5	0.317	0.122
+BRD-K12343256	trametinib	True	MEK inhibitor	41	13	4	0.317	0.098
+BRD-K17203476	LY-2874455	False	FGFR antagonist	41	13	4	0.317	0.098
+BRD-K25412176	GSK-2110183	False	AKT inhibitor	41	13	3	0.317	0.073
+BRD-K42805893	AZD-9291	True	EGFR inhibitor	41	13	3	0.317	0.073
+BRD-K05653692	DL-PDMP	False		41	13	2	0.317	0.049
+BRD-K48488978	YM-201636	False	PI3K inhibitor	41	13	2	0.317	0.049
+BRD-K53414658	tivozanib	True	VEGFR inhibitor	41	13	2	0.317	0.049
+BRD-K13662825	dinaciclib	False	CDK inhibitor	41	12	12	0.293	0.293
+BRD-K91966436	daunorubicin	False		41	12	12	0.293	0.293
+BRD-K53308430	SA-1017940	False		41	12	10	0.293	0.244
+BRD-K29905972	axitinib	True	PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	41	12	9	0.293	0.22
+BRD-K52313696	tacedinaline	False	HDAC inhibitor	41	12	9	0.293	0.22
+BRD-K55116708	BRD-K55116708	False		41	12	7	0.293	0.171
+BRD-K44227013	ponatinib	True	Bcr-Abl kinase inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor	41	12	5	0.293	0.122
+BRD-K57080016	selumetinib	True	MEK inhibitor	41	12	5	0.293	0.122
+BRD-K94441233	mevastatin	False	HMGCR inhibitor	41	12	5	0.293	0.122
+BRD-K08589866	linsitinib	False		41	12	4	0.293	0.098
+BRD-K20696416	NVP-AEW541	False		41	12	4	0.293	0.098
+BRD-K73610817	BRD-K73610817	False	XIAP inhibitor	41	12	4	0.293	0.098
+BRD-K89014967	AS-703026	False	MEK inhibitor	41	12	4	0.293	0.098
+BRD-K94294671	OSI-027	False		41	12	4	0.293	0.098
+BRD-K29313308	HDAC3-selective	False		41	12	2	0.293	0.049
+BRD-K63423329	BRD-K63423329	False		41	12	2	0.293	0.049
+BRD-A37630846	daunorubicin	False		41	11	12	0.268	0.293
+BRD-A59985574	topotecan	False		41	11	11	0.268	0.268
+BRD-K21680192	mitoxantrone	True	topoisomerase inhibitor	41	11	9	0.268	0.22
+BRD-U70626184	BI-2536	False	PLK inhibitor	41	11	7	0.268	0.171
+BRD-K05804044	AZ-628	False	RAF inhibitor	41	11	3	0.268	0.073
+BRD-K07762753	aminopurvalanol-a	False	CDK inhibitor|tyrosine kinase inhibitor	41	11	2	0.268	0.049
+BRD-K04548931	epirubicin	True	topoisomerase inhibitor	41	10	12	0.244	0.293
+BRD-A47513740	calyculin	False		41	10	10	0.244	0.244
+BRD-K64800655	PHA-793887	False	CDK inhibitor	41	10	9	0.244	0.22
+BRD-K92571446	WZ-3105	False		41	10	9	0.244	0.22
+BRD-K59023263	BRD-K59023263	False		41	10	8	0.244	0.195
+BRD-K21361524	KPT-330	True	exportin antagonist	41	10	7	0.244	0.171
+BRD-K52618540	inositol	True	insulin sensitizer	41	10	7	0.244	0.171
+BRD-K49456274	pilaralisib	False	PI3K inhibitor	41	10	6	0.244	0.146
+BRD-K63195589	tipifarnib	False		41	10	5	0.244	0.122
+BRD-K63750851	BRD-K63750851	True	dehydrogenase inhibitor|inositol monophosphatase inhibitor	41	10	5	0.244	0.122
+BRD-K87737963	CYT-387	True	JAK inhibitor	41	10	5	0.244	0.122
+BRD-K91663486	BRD-K91663486	False		41	10	5	0.244	0.122
+BRD-A79768653	sirolimus	False		41	10	4	0.244	0.098
+BRD-K73255294	nutlin-3	False		41	10	0	0.244	0.0
+BRD-K11636097	JNJ-7706621	False	CDK inhibitor	41	9	11	0.22	0.268
+BRD-K13390322	AT-7519	False	CDK inhibitor	41	9	11	0.22	0.268
+BRD-K19034817	pacritinib	True	FLT3 inhibitor|JAK inhibitor	41	9	10	0.22	0.244
+BRD-K53780220	BRD-K53780220	False		41	9	10	0.22	0.244
+BRD-K81142122	STK-249718	False		41	9	10	0.22	0.244
+BRD-K06543683	bisindolylmaleimide-ix	False	PKC inhibitor	41	9	9	0.22	0.22
+BRD-K10846167	BRD-K10846167	False		41	9	9	0.22	0.22
+BRD-K11558771	droxinostat	False	HDAC inhibitor	41	9	9	0.22	0.22
+BRD-K77681376	BRD-K77681376	False		41	9	9	0.22	0.22
+BRD-K36280065	tofacitinib	False		41	9	8	0.22	0.195
+BRD-K30677119	PP-30	False		41	9	7	0.22	0.171
+BRD-K74260000	BRD-K74260000	False		41	9	7	0.22	0.171
+BRD-K93788137	PF-431396	False	focal adhesion kinase inhibitor	41	9	6	0.22	0.146
+BRD-K14870255	R-428	False	AXL kinase inhibitor	41	9	5	0.22	0.122
+BRD-K92093830	doxorubicin	True	topoisomerase inhibitor	41	9	5	0.22	0.122
+BRD-K95785537	PP-2	False	SRC inhibitor	41	9	5	0.22	0.122
+BRD-K03449891	foretinib	False	VEGFR inhibitor	41	9	4	0.22	0.098
+BRD-K28428262	brivanib	False	FGFR inhibitor|VEGFR inhibitor	41	9	1	0.22	0.024
+BRD-K89824424	BRD-K89824424	False		41	9	1	0.22	0.024
+BRD-A26002865	verrucarin-a	False		41	8	12	0.195	0.293
+BRD-A36630025	SN-38	False		41	8	11	0.195	0.268
+BRD-K89839824	raltitrexed	True	thymidylate synthase inhibitor	41	8	10	0.195	0.244
+BRD-K17953061	staurosporine	False		41	8	9	0.195	0.22
+BRD-K81418486	vorinostat	True	HDAC inhibitor	41	8	8	0.195	0.195
+BRD-K20285085	fostamatinib	False	SYK inhibitor	41	8	7	0.195	0.171
+BRD-K79090631	CGP-60474	False	CDK inhibitor	41	8	7	0.195	0.171
+BRD-M16762496	PIK-75	False	DNA protein kinase inhibitor|PI3K inhibitor	41	8	7	0.195	0.171
+BRD-K12994359	valdecoxib	True	cyclooxygenase inhibitor	41	8	6	0.195	0.146
+BRD-K15050703	BRD-K15050703	False		41	8	6	0.195	0.146
+BRD-K34022604	clofarabine	True	ribonucleotide reductase inhibitor	41	8	6	0.195	0.146
+BRD-K43389675	daunorubicin	True	RNA synthesis inhibitor|topoisomerase inhibitor	41	8	6	0.195	0.146
+BRD-K81258678	triptolide	False		41	8	6	0.195	0.146
+BRD-A52530684	doxorubicin	False		41	8	5	0.195	0.122
+BRD-K58772419	AZD-6482	False	PI3K inhibitor	41	8	5	0.195	0.122
+BRD-A13254067	okadaic-acid	False		41	8	4	0.195	0.098
+BRD-K24666289	copanlisib	True	PI3K inhibitor	41	8	4	0.195	0.098
+BRD-K41783120	STA-5326	False	interleukin synthesis inhibitor	41	8	4	0.195	0.098
+BRD-K92543914	BRD-K92543914	False		41	8	4	0.195	0.098
+BRD-K96194081	cepharanthine	False	NFkB pathway inhibitor	41	8	4	0.195	0.098
+BRD-U51024685	HG-6-64-01	False		41	8	4	0.195	0.098
+BRD-K32389477	BRD-K32389477	False		41	8	3	0.195	0.073
+BRD-K61829047	7b-cis	False		41	8	3	0.195	0.073
+BRD-A62336480	niguldipine	False		41	8	2	0.195	0.049
+BRD-K19085898	darapladib	False	phospholipase inhibitor	41	8	2	0.195	0.049
+BRD-K13154216	everolimus	False		41	8	1	0.195	0.024
+BRD-K19540840	saracatinib	False	SRC inhibitor	41	8	1	0.195	0.024
+BRD-K36333904	BRD-K36333904	False		41	8	1	0.195	0.024
+BRD-K79222491	BRD-K79222491	False		41	7	11	0.171	0.268
+BRD-K19796430	sonidegib	True	smoothened receptor antagonist	41	7	10	0.171	0.244
+BRD-K00317371	RITA	False	MDM inhibitor	41	7	9	0.171	0.22
+BRD-K45962729	BRD-K45962729	False		41	7	9	0.171	0.22
+BRD-K87909389	alvocidib	False	CDK inhibitor	41	7	9	0.171	0.22
+BRD-K96123349	brequinar	False	dihydroorotate dehydrogenase inhibitor	41	7	9	0.171	0.22
+BRD-A02333338	cyclopamine	False		41	7	8	0.171	0.195
+BRD-K01896723	BRD-K01896723	False		41	7	8	0.171	0.195
+BRD-K47832606	floxuridine	True	DNA synthesis inhibitor	41	7	8	0.171	0.195
+BRD-K55696337	topotecan	True	topoisomerase inhibitor	41	7	8	0.171	0.195
+BRD-A71390734	idarubicin	False		41	7	7	0.171	0.171
+BRD-K28916077	BRD-K28916077	False		41	7	7	0.171	0.171
+BRD-K70549064	staurosporine	False		41	7	7	0.171	0.171
+BRD-A82371568	clofarabine	False		41	7	6	0.171	0.146
+BRD-A85439007	idoxuridin	False		41	7	6	0.171	0.146
+BRD-K92428153	mycophenolate-mofetil	True	dehydrogenase inhibitor|inositol monophosphatase inhibitor	41	7	6	0.171	0.146
+BRD-A27376179	lestaurtinib	False	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	41	7	5	0.171	0.122
+BRD-K30097969	pitavastatin	True		41	7	5	0.171	0.122
+BRD-K50140147	NVP-TAE684	False	ALK tyrosine kinase receptor inhibitor	41	7	5	0.171	0.122
+BRD-K85751432	refametinib	False	MEK inhibitor	41	7	5	0.171	0.122
+BRD-A74914197	pralatrexate	True	dihydrofolate reductase inhibitor	41	7	4	0.171	0.098
+BRD-K41895714	AS-605240	False		41	7	4	0.171	0.098
+BRD-K50836978	purvalanol-a	False	CDK inhibitor	41	7	4	0.171	0.098
+BRD-K12244279	BRD-K12244279	False	MEK inhibitor	41	7	3	0.171	0.073
+BRD-K15108141	gemcitabine	True	ribonucleotide reductase inhibitor	41	7	3	0.171	0.073
+BRD-K23677682	voreloxin	False	topoisomerase inhibitor	41	7	3	0.171	0.073
+BRD-K33218708	BRD-K33218708	False		41	7	3	0.171	0.073
+BRD-K90546933	BRD-K90546933	False		41	7	3	0.171	0.073
+BRD-K49328571	dasatinib	True	Bcr-Abl kinase inhibitor|ephrin inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|SRC inhibitor|tyrosine kinase inhibitor	41	7	2	0.171	0.049
+BRD-K90195324	bazedoxifene	True	selective estrogen receptor modulator (SERM)	41	7	2	0.171	0.049
+BRD-K37890730	camptothecin	False	topoisomerase inhibitor	41	6	11	0.146	0.268
+BRD-K45995181	auranofin	True	NFkB pathway inhibitor	41	6	11	0.146	0.268
+BRD-K58435339	AT-13387	False	HSP inhibitor	41	6	11	0.146	0.268
+BRD-K72414522	AZD-5438	False	CDK inhibitor	41	6	10	0.146	0.244
+BRD-K98762074	HG-6-64-01	False		41	6	10	0.146	0.244
+BRD-A64485570	trifluridine	False		41	6	9	0.146	0.22
+BRD-K08547377	irinotecan	True	topoisomerase inhibitor	41	6	9	0.146	0.22
+BRD-K93830491	BRD-K93830491	False		41	6	9	0.146	0.22
+BRD-K74761218	WT-171	False		41	6	8	0.146	0.195
+BRD-K24681473	YM-155	False	survivin inhibitor	41	6	7	0.146	0.171
+BRD-K43389698	BMS-387032	False	CDK inhibitor|cell cycle inhibitor|MCL1 inhibitor	41	6	7	0.146	0.171
+BRD-K87947369	tozasertib	False	Aurora kinase inhibitor|Bcr-Abl kinase inhibitor|FLT3 inhibitor|JAK inhibitor	41	6	7	0.146	0.171
+BRD-K90219001	BRD-K90219001	False		41	6	7	0.146	0.171
+BRD-K12867552	PCI-24781	False	HDAC inhibitor	41	6	6	0.146	0.146
+BRD-K17516382	alsterpaullone	False		41	6	6	0.146	0.146
+BRD-K39484304	triptolide	False	RNA polymerase inhibitor	41	6	6	0.146	0.146
+BRD-K46574442	BRD-K46574442	False		41	6	6	0.146	0.146
+BRD-K53417444	OTS-167	False	maternal embryonic leucine zipper kinase inhibitor	41	6	6	0.146	0.146
+BRD-K88573743	A-443654	False		41	6	6	0.146	0.146
+BRD-K92158425	BRD-K92158425	False		41	6	6	0.146	0.146
+BRD-K93034159	cladribine	True	adenosine deaminase inhibitor|ribonucleotide reductase inhibitor	41	6	6	0.146	0.146
+BRD-U51951544	ZG-10	False		41	6	6	0.146	0.146
+BRD-A60245366	AS-601245	False		41	6	5	0.146	0.122
+BRD-K18157228	fdcyd	False	DNA methyltransferase inhibitor	41	6	5	0.146	0.122
+BRD-K99636700	BRD-K99636700	False		41	6	5	0.146	0.122
+BRD-U07805514	saracatinib	False	SRC inhibitor	41	6	5	0.146	0.122
+BRD-A61154809	gliclazide	True	ATP channel blocker|insulin secretagogue	41	6	4	0.146	0.098
+BRD-A67097164	ifosfamide	True	DNA alkylating agent	41	6	4	0.146	0.098
+BRD-K14920963	erythrosine	False		41	6	4	0.146	0.098
+BRD-K31542390	BRD-K31542390	False		41	6	4	0.146	0.098
+BRD-K33106058	cytarabine	True	ribonucleotide reductase inhibitor	41	6	4	0.146	0.098
+BRD-K34185671	AMG-517	False	TRPV antagonist	41	6	4	0.146	0.098
+BRD-K70301465	ibrutinib	True	Bruton's tyrosine kinase (BTK) inhibitor	41	6	4	0.146	0.098
+BRD-U60236422	WH-4-025	False		41	6	4	0.146	0.098
+BRD-A06276885	BRD-A06276885	False		41	6	3	0.146	0.073
+BRD-K56343971	vemurafenib	True	RAF inhibitor	41	6	3	0.146	0.073
+BRD-K57282030	JW-7-24-1	False		41	6	3	0.146	0.073
+BRD-K70401845	erlotinib	True	EGFR inhibitor	41	6	3	0.146	0.073
+BRD-A30051119	amikacin	False		41	6	2	0.146	0.049
+BRD-K07609981	dexloxiglumide	False	CCK receptor antagonist	41	6	2	0.146	0.049
+BRD-K17016787	estriol	True	estrogen receptor agonist	41	6	2	0.146	0.049
+BRD-K31126514	BRD-K31126514	False		41	6	2	0.146	0.049
+BRD-K66538826	amuvatinib	False	FLT3 inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RAD51 inhibitor|RET tyrosine kinase inhibitor	41	6	2	0.146	0.049
+BRD-K76694128	rebastinib	False	Bcr-Abl kinase inhibitor|TIE tyrosine kinase inhibitor|VEGFR inhibitor	41	6	2	0.146	0.049
+BRD-A84481105	thioridazine	True	dopamine receptor antagonist	41	6	1	0.146	0.024
+BRD-K63861289	molsidomine	True	guanylate cyclase stimulant	41	6	0	0.146	0.0
+BRD-A25687296	emetine	False		41	5	11	0.122	0.268
+BRD-K85853281	BRD-K85853281	False		41	5	11	0.122	0.268
+BRD-A31946439	BRD-A31946439	False		41	5	10	0.122	0.244
+BRD-K06217810	BRD-K06217810	False		41	5	8	0.122	0.195
+BRD-A02481876	importazole	False		41	5	7	0.122	0.171
+BRD-K22010301	JLK-6	False	gamma secretase inhibitor	41	5	7	0.122	0.171
+BRD-K71847383	cytarabine	True		41	5	7	0.122	0.171
+BRD-A35588707	teniposide	False		41	5	6	0.122	0.146
+BRD-A46747628	ouabain	False		41	5	6	0.122	0.146
+BRD-A62809825	thapsigargin	False		41	5	6	0.122	0.146
+BRD-A79465854	auranofin	False		41	5	6	0.122	0.146
+BRD-K28456706	BRD-K28456706	False		41	5	6	0.122	0.146
+BRD-K62810658	PD-98059	False	MEK inhibitor	41	5	6	0.122	0.146
+BRD-K88378636	withaferin-a	False		41	5	6	0.122	0.146
+BRD-A11702965	chromomycin-a3	False		41	5	5	0.122	0.122
+BRD-K00615600	AG-14361	False	PARP inhibitor	41	5	5	0.122	0.122
+BRD-K09372874	merimepodib	False	inosine monophosphate dehydrogenase inhibitor	41	5	5	0.122	0.122
+BRD-K20197338	BRD-K20197338	False		41	5	5	0.122	0.122
+BRD-K31342827	BRD-K31342827	False	PKC inhibitor	41	5	5	0.122	0.122
+BRD-K45627302	BRD-K45627302	False		41	5	5	0.122	0.122
+BRD-K62310379	fluticasone-propionate	True	glucocorticoid receptor agonist	41	5	5	0.122	0.122
+BRD-K92960067	SMER-3	False		41	5	5	0.122	0.122
+BRD-K98824517	BRD-K98824517	False		41	5	5	0.122	0.122
+BRD-K37991163	paroxetine	True	selective serotonin reuptake inhibitor (SSRI)	41	5	4	0.122	0.098
+BRD-K48812570	macitentan	True	endothelin receptor antagonist	41	5	4	0.122	0.098
+BRD-K73088654	floxuridine	False		41	5	4	0.122	0.098
+BRD-A24021119	BRD-A24021119	False		41	5	3	0.122	0.073
+BRD-K04010869	prostaglandin-a1	False		41	5	3	0.122	0.073
+BRD-K04887706	BRD-K04887706	False		41	5	3	0.122	0.073
+BRD-K25712227	BRD-K25712227	False		41	5	3	0.122	0.073
+BRD-K42436189	AZ-20	False	ATR kinase inhibitor	41	5	3	0.122	0.073
+BRD-K50841342	PAC-1	False		41	5	3	0.122	0.073
+BRD-K51575138	TPCA-1	False	IKK inhibitor	41	5	3	0.122	0.073
+BRD-K70836798	BRD-K70836798	False		41	5	3	0.122	0.073
+BRD-A18419789	etoposide	False		41	5	2	0.122	0.049
+BRD-A64290322	cyclosporin-a	False		41	5	2	0.122	0.049
+BRD-K00337317	NU-7441	False	DNA dependent protein kinase inhibitor	41	5	2	0.122	0.049
+BRD-K06593056	LE-135	False	retinoid receptor agonist	41	5	2	0.122	0.049
+BRD-K17026858	pibenzimol	False	DNA inhibitor	41	5	2	0.122	0.049
+BRD-K41170226	BRD-K41170226	True	biliverdin reductase A activator|G protein-coupled receptor agonist	41	5	2	0.122	0.049
+BRD-K47983010	BX-795	False	IKK inhibitor	41	5	2	0.122	0.049
+BRD-K99818283	PIK-90	False		6	5	2	0.833	0.333
+BRD-K08318631	BRD-K08318631	False		41	5	1	0.122	0.024
+BRD-K26818574	BIX-01294	False	histone lysine methyltransferase inhibitor	41	5	1	0.122	0.024
+BRD-K38615104	A-443654	False		41	5	1	0.122	0.024
+BRD-K51966657	RVE-VIII-11	False		41	5	1	0.122	0.024
+BRD-K68007270	BRD-K68007270	False		41	5	1	0.122	0.024
+BRD-K87434936	BRD-K87434936	False		41	5	1	0.122	0.024
+BRD-K73881242	arbidol	True	cytochrome P450 inhibitor	41	5	0	0.122	0.0
+BRD-A24643465	BRD-A24643465	False		41	4	13	0.098	0.317
+BRD-K80431395	triciribine	False	AKT inhibitor	41	4	11	0.098	0.268
+BRD-K99475619	genz-644282	False	topoisomerase inhibitor	41	4	10	0.098	0.244
+BRD-K11927976	ER-27319	False	mediator release inhibitor|SYK inhibitor	41	4	9	0.098	0.22
+BRD-K67506692	BRD-K67506692	False		41	4	9	0.098	0.22
+BRD-K99545815	PF-562271	False	focal adhesion kinase inhibitor	41	4	9	0.098	0.22
+BRD-A68009927	daunorubicin	False		41	4	8	0.098	0.195
+BRD-A76941896	doxorubicin	False		41	4	8	0.098	0.195
+BRD-K17743125	belinostat	True	HDAC inhibitor	41	4	8	0.098	0.195
+BRD-K18163752	BRD-K18163752	False		41	4	8	0.098	0.195
+BRD-K39503511	quiflapon	False	leukotriene synthesis inhibitor	41	4	8	0.098	0.195
+BRD-K80348542	cephaeline	False		41	4	8	0.098	0.195
+BRD-K83336168	MD-040	False		41	4	8	0.098	0.195
+BRD-K83837640	JNJ-26481585	False	HDAC inhibitor	41	4	8	0.098	0.195
+BRD-A61304759	tanespimycin	False		41	4	7	0.098	0.171
+BRD-A94377914	merck-ketone	False		41	4	7	0.098	0.171
+BRD-K06426971	ryuvidine	False	histone lysine methyltransferase inhibitor	41	4	7	0.098	0.171
+BRD-K23165181	BRD-K23165181	False		41	4	7	0.098	0.171
+BRD-K33720394	BRD-K33720394	False		41	4	7	0.098	0.171
+BRD-K69840642	ISOX	False		41	4	7	0.098	0.171
+BRD-K81814927	BRD-K81814927	False		41	4	7	0.098	0.171
+BRD-K86525559	AZD-7762	False	CHK inhibitor	41	4	7	0.098	0.171
+BRD-A18725729	BRD-A18725729	False		41	4	6	0.098	0.146
+BRD-A80960055	celastrol	False		41	4	6	0.098	0.146
+BRD-K05434375	HA-1004	False	calcium channel blocker	41	4	6	0.098	0.146
+BRD-K11795542	BRD-K11795542	False		41	4	6	0.098	0.146
+BRD-K28822270	resminostat	False	HDAC inhibitor	41	4	6	0.098	0.146
+BRD-K39841630	BRD-K39841630	False		41	4	6	0.098	0.146
+BRD-K52522949	NCH-51	False		41	4	6	0.098	0.146
+BRD-K80622725	STK-397047	False		41	4	6	0.098	0.146
+BRD-K82928847	ACY-1215	False	HDAC inhibitor	41	4	6	0.098	0.146
+BRD-A34806832	proscillaridin	False		41	4	5	0.098	0.122
+BRD-K03109492	NSC-663284	False	CDC inhibitor	41	4	5	0.098	0.122
+BRD-K09426783	TAS-103	False	topoisomerase inhibitor	41	4	5	0.098	0.122
+BRD-K11153516	iniparib	False	PARP inhibitor	41	4	5	0.098	0.122
+BRD-K11663430	pyroxamide	False	HDAC inhibitor	41	4	5	0.098	0.122
+BRD-K13810148	givinostat	True	HDAC inhibitor	41	4	5	0.098	0.122
+BRD-K26304855	BRD-K26304855	False		41	4	5	0.098	0.122
+BRD-K35245662	ciclesonide	True	glucocorticoid receptor agonist	41	4	5	0.098	0.122
+BRD-K43002771	SR-33805	False	calcium channel blocker	41	4	5	0.098	0.122
+BRD-K65814004	diphenyleneiodonium	False	nitric oxide synthase inhibitor	41	4	5	0.098	0.122
+BRD-K68103045	CGS-20625	False	benzodiazepine receptor agonist|GABA benzodiazepine site receptor partial agonist	41	4	5	0.098	0.122
+BRD-K93754473	tamoxifen	True	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	41	4	5	0.098	0.122
+BRD-K99257182	quinine	False		6	4	5	0.667	0.833
+BRD-U68942961	JW-7-24-1	False		41	4	5	0.098	0.122
+BRD-K08502430	angiogenesis-inhibitor	False		41	4	4	0.098	0.098
+BRD-K16730910	regorafenib	True	FGFR inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RAF inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	41	4	4	0.098	0.098
+BRD-K63606607	bufalin	False		41	4	4	0.098	0.098
+BRD-K70578146	dactinomycin	True	RNA polymerase inhibitor	41	4	4	0.098	0.098
+BRD-K87782578	AVL-292	False	Bruton's tyrosine kinase (BTK) inhibitor	41	4	4	0.098	0.098
+BRD-A62025033	temsirolimus	False		41	4	3	0.098	0.073
+BRD-A70155556	lovastatin	False		41	4	3	0.098	0.073
+BRD-A73909368	dactinomycin	False		41	4	3	0.098	0.073
+BRD-K19687926	lapatinib	True	EGFR inhibitor	41	4	3	0.098	0.073
+BRD-K32842773	pemetrexed	True	dihydrofolate reductase inhibitor|thymidylate synthase inhibitor	6	4	3	0.667	0.5
+BRD-K47000838	BRD-K47000838	False		41	4	3	0.098	0.073
+BRD-K52751261	TAK-715	False	p38 MAPK inhibitor	6	4	3	0.667	0.5
+BRD-K75911534	SU-014813	False		41	4	3	0.098	0.073
+BRD-K92317137	BRD-K92317137	False		41	4	3	0.098	0.073
+BRD-K92991072	PAC-1	False	caspase activator	41	4	3	0.098	0.073
+BRD-K99023089	AZD-5363	True	AKT inhibitor	6	4	3	0.667	0.5
+BRD-K21718444	KW-2449	False	Abl kinase inhibitor|Aurora kinase inhibitor|FLT3 inhibitor	41	4	2	0.098	0.049
+BRD-K29251608	BRD-K29251608	False		4	4	2	1.0	0.5
+BRD-K46419649	U-0126	False		41	4	2	0.098	0.049
+BRD-K06666320	MW-STK33-23	False		41	4	1	0.098	0.024
+BRD-K17349619	HLI-373	False		41	4	1	0.098	0.024
+BRD-K23192422	lestaurtinib	False	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	41	4	1	0.098	0.024
+BRD-K62814476	BMS-265246	False	CDK inhibitor	41	4	1	0.098	0.024
+BRD-K62965247	tipifarnib-P2	False	farnesyltransferase inhibitor	41	4	1	0.098	0.024
+BRD-K08417745	SID-26681509	False		41	4	0	0.098	0.0
+BRD-K89732114	trifluoperazine	True	dopamine receptor antagonist	41	4	0	0.098	0.0
+BRD-K12502280	TG-101348	True	FLT3 inhibitor|JAK inhibitor	41	3	9	0.073	0.22
+BRD-K88114291	BRD-K88114291	False		41	3	9	0.073	0.22
+BRD-K91583156	BRD-K91583156	False		41	3	9	0.073	0.22
+BRD-A62184259	cycloheximide	False		41	3	8	0.073	0.195
+BRD-K03067624	emetine	True	protein synthesis inhibitor	41	3	8	0.073	0.195
+BRD-K51318897	fenbendazole	True	tubulin polymerization inhibitor	41	3	8	0.073	0.195
+BRD-K51967704	BIIB-021	False	HSP inhibitor	41	3	8	0.073	0.195
+BRD-K71281111	SNX-2112	False	HSP inhibitor	41	3	8	0.073	0.195
+BRD-K74148702	curcumin	False		41	3	8	0.073	0.195
+BRD-K89274813	DMP-543	False	acetylcholine release enhancer	41	3	8	0.073	0.195
+BRD-A48237631	mitomycin-c	False		41	3	7	0.073	0.171
+BRD-A63998256	helveticoside	False		41	3	7	0.073	0.171
+BRD-K02130563	panobinostat	True	HDAC inhibitor	41	3	7	0.073	0.171
+BRD-K09499853	KU-0060648	False		41	3	7	0.073	0.171
+BRD-K40329609	BRD-K40329609	False		41	3	7	0.073	0.171
+BRD-K83670234	BRD-K83670234	False		41	3	7	0.073	0.171
+BRD-K83794624	pirarubicin	True	topoisomerase inhibitor	41	3	7	0.073	0.171
+BRD-K86797399	SB-939	False	HDAC inhibitor	41	3	7	0.073	0.171
+BRD-K86930074	cediranib	False	KIT inhibitor|VEGFR inhibitor	41	3	7	0.073	0.171
+BRD-K88560311	rucaparib	True	PARP inhibitor	41	3	7	0.073	0.171
+BRD-A10523515	GSK-429286A	False	rho associated kinase inhibitor	41	3	6	0.073	0.146
+BRD-A13122391	triptolide	False		41	3	6	0.073	0.146
+BRD-A19037878	BRD-A19037878	False		41	3	6	0.073	0.146
+BRD-A84174393	meloxicam	False		41	3	6	0.073	0.146
+BRD-K07691486	roscovitine	False	CDK inhibitor	41	3	6	0.073	0.146
+BRD-K22503835	scriptaid	False	HDAC inhibitor	41	3	6	0.073	0.146
+BRD-K36363294	I-BET-151	False	bromodomain inhibitor	41	3	6	0.073	0.146
+BRD-K50691590	bortezomib	False		41	3	6	0.073	0.146
+BRD-A69951442	dexamethasone	False		41	3	5	0.073	0.122
+BRD-K10211010	BRD-K10211010	False		41	3	5	0.073	0.122
+BRD-K18518344	digitoxigenin	False	ATPase inhibitor	41	3	5	0.073	0.122
+BRD-K24576554	AT-9283	False	Aurora kinase inhibitor|JAK inhibitor	41	3	5	0.073	0.122
+BRD-K33245965	BMS-833923	False	smoothened receptor antagonist	41	3	5	0.073	0.122
+BRD-K38852836	ganetespib	False	HSP inhibitor	41	3	5	0.073	0.122
+BRD-K39936803	BRD-K39936803	False		41	3	5	0.073	0.122
+BRD-K64642496	KO-143	False	BCRP inhibitor	41	3	5	0.073	0.122
+BRD-K67392871	CINK-4	False		41	3	5	0.073	0.122
+BRD-K67844266	MLN-4924	False	nedd activating enzyme inhibitor	41	3	5	0.073	0.122
+BRD-K71289571	zafirlukast	True	leukotriene receptor antagonist	41	3	5	0.073	0.122
+BRD-K74236984	UNC-0321	False	histone lysine methyltransferase inhibitor	41	3	5	0.073	0.122
+BRD-K75081836	BRD-K75081836	False		41	3	5	0.073	0.122
+BRD-K78867378	MW-A1-12	False		41	3	5	0.073	0.122
+BRD-K81458380	CX-4945	False	casein kinase inhibitor	41	3	5	0.073	0.122
+BRD-K83354763	BRD-K83354763	False	NFkB pathway inhibitor	41	3	5	0.073	0.122
+BRD-K91145395	prostratin	False		41	3	5	0.073	0.122
+BRD-K92241597	tosedostat	False	peptidase inhibitor	41	3	5	0.073	0.122
+BRD-A13133631	BRD-A13133631	False		41	3	4	0.073	0.098
+BRD-A93236127	digitoxin	False		41	3	4	0.073	0.098
+BRD-A93393712	CVF-SUMO-14	False		41	3	4	0.073	0.098
+BRD-K08219523	5-nonyloxytryptamine	False		41	3	4	0.073	0.098
+BRD-K09132007	D-4476	False	TGF beta receptor inhibitor	41	3	4	0.073	0.098
+BRD-K10361096	BRD-K10361096	False		41	3	4	0.073	0.098
+BRD-K35708212	ouabain	False		41	3	4	0.073	0.098
+BRD-K58214070	BRD-K58214070	False		41	3	4	0.073	0.098
+BRD-K59369769	tozasertib	False	Aurora kinase inhibitor|Bcr-Abl kinase inhibitor|FLT3 inhibitor|JAK inhibitor	41	3	4	0.073	0.098
+BRD-K63828191	raloxifene	True	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	41	3	4	0.073	0.098
+BRD-K66884694	BRD-K66884694	False		41	3	4	0.073	0.098
+BRD-K68870568	flumatinib	False	Bcr-Abl kinase inhibitor	41	3	4	0.073	0.098
+BRD-K75649340	tioguanine	True	purine antagonist	41	3	4	0.073	0.098
+BRD-K81709173	halcinonide	True	glucocorticoid receptor agonist	41	3	4	0.073	0.098
+BRD-K84595254	strophanthidin	False	ATPase inhibitor	41	3	4	0.073	0.098
+BRD-K95435023	PHA-665752	False	c-Met inhibitor	41	3	4	0.073	0.098
+BRD-A43126523	BRD-A43126523	False		3	3	3	1.0	1.0
+BRD-A54927599	KF-38789	False	P selectin inhibitor	41	3	3	0.073	0.073
+BRD-A68061604	BRD-A68061604	False		4	3	3	0.75	0.75
+BRD-A75144621	digoxin	False		41	3	3	0.073	0.073
+BRD-A86248581	tetrahydrouridine	False	cytidine deaminase inhibitor	41	3	3	0.073	0.073
+BRD-K01292756	pimozide	True	dopamine receptor antagonist	41	3	3	0.073	0.073
+BRD-K09907482	BRD-K09907482	False		41	3	3	0.073	0.073
+BRD-K10705233	GW-405833	False	cannabinoid receptor agonist	41	3	3	0.073	0.073
+BRD-K13646352	midostaurin	True	FLT3 inhibitor|KIT inhibitor|PKC inhibitor	41	3	3	0.073	0.073
+BRD-K18787491	U-0126	False	MEK inhibitor	41	3	3	0.073	0.073
+BRD-K18861610	BRD-K18861610	False		41	3	3	0.073	0.073
+BRD-K23499943	alvespimycin	False		41	3	3	0.073	0.073
+BRD-K36852845	BRD-K36852845	False		41	3	3	0.073	0.073
+BRD-K37798499	etoposide	True	topoisomerase inhibitor	41	3	3	0.073	0.073
+BRD-K54028654	trehalose	False	pharmacological chaperone	4	3	3	0.75	0.75
+BRD-K60623809	SU-11652	False		41	3	3	0.073	0.073
+BRD-K98004573	rupatadine	True	histamine receptor antagonist|platelet activating factor receptor antagonist	4	3	3	0.75	0.75
+BRD-K98490050	amsacrine	False		41	3	3	0.073	0.073
+BRD-K99481965	BRD-K99481965	False		41	3	3	0.073	0.073
+BRD-A17828570	fulvestrant	False		4	3	2	0.75	0.5
+BRD-A18497530	5-iodotubercidin	False		41	3	2	0.073	0.049
+BRD-A72711497	lasalocid	False		41	3	2	0.073	0.049
+BRD-A90490067	fulvestrant	False		4	3	2	0.75	0.5
+BRD-K04210847	tamoxifen	False	estrogen receptor antagonist	5	3	2	0.6	0.4
+BRD-K13044802	ciclopirox	True	membrane integrity inhibitor	41	3	2	0.073	0.049
+BRD-K14618467	IKK-16	False	IKK inhibitor	41	3	2	0.073	0.049
+BRD-K35960502	niclosamide	True	DNA replication inhibitor|STAT inhibitor	41	3	2	0.073	0.049
+BRD-K42191735	buparlisib	False	PI3K inhibitor	41	3	2	0.073	0.049
+BRD-K43187018	GDC-0349	False	Pim kinase inhibitor	6	3	2	0.5	0.333
+BRD-K46056750	AZD-7762	False		41	3	2	0.073	0.049
+BRD-K55896799	BRD-K55896799	False		4	3	2	0.75	0.5
+BRD-K60866521	idelalisib	True	PI3K inhibitor	41	3	2	0.073	0.049
+BRD-K61717269	BRD-K61717269	False		41	3	2	0.073	0.049
+BRD-K62818989	BRD-K62818989	False		4	3	2	0.75	0.5
+BRD-K70464547	sertraline	False		41	3	2	0.073	0.049
+BRD-K70642949	GSK-2334470	False	phosphoinositide dependent kinase inhibitor	41	3	2	0.073	0.049
+BRD-K71855865	BRD-K71855865	False		41	3	2	0.073	0.049
+BRD-K75295174	alisertib	False	Aurora kinase inhibitor	41	3	2	0.073	0.049
+BRD-K83720053	avagacestat	False	gamma secretase inhibitor	41	3	2	0.073	0.049
+BRD-K93060291	TL-HRAS-24	False		41	3	2	0.073	0.049
+BRD-K98936959	BRD-K98936959	False		41	3	2	0.073	0.049
+BRD-K99532291	SPB02303	False		41	3	2	0.073	0.049
+BRD-A03216249	mepivacaine	True	potassium channel blocker|sodium channel blocker	41	3	1	0.073	0.024
+BRD-A61856038	tremulacin	False		5	3	1	0.6	0.2
+BRD-K00540336	BRD-K00540336	False		41	3	1	0.073	0.024
+BRD-K09549677	mibefradil	True	T-type calcium channel blocker	6	3	1	0.5	0.167
+BRD-K16478699	PLX-4720	False	RAF inhibitor	41	3	1	0.073	0.024
+BRD-K18961567	LY-2801653	False	MET inhibitor	41	3	1	0.073	0.024
+BRD-K19061412	mubritinib	False	protein tyrosine kinase inhibitor	41	3	1	0.073	0.024
+BRD-K36740062	GSK-1070916	False	Aurora kinase inhibitor	41	3	1	0.073	0.024
+BRD-K41335306	BRD-K41335306	False		41	3	1	0.073	0.024
+BRD-K48803730	BRD-K48803730	False		5	3	1	0.6	0.2
+BRD-K48853221	BRD-K48853221	False		41	3	1	0.073	0.024
+BRD-K54263226	BRD-K54263226	False		41	3	1	0.073	0.024
+BRD-K61401890	deguelin	False		5	3	1	0.6	0.2
+BRD-K86307448	allopurinol	True	xanthine oxidase inhibitor	4	3	1	0.75	0.25
+BRD-K88679075	methandriol	False		5	3	1	0.6	0.2
+BRD-K04218075	clomifene	False		41	3	0	0.073	0.0
+BRD-K89464729	GSK-269962	False	rho associated kinase inhibitor	41	3	0	0.073	0.0
+BRD-K98203492	GSK-J4	False	histone lysine demethylase inhibitor	41	3	0	0.073	0.0
+BRD-A31107743	brefeldin-a	False		41	2	9	0.049	0.22
+BRD-K06792661	narciclasine	False		41	2	9	0.049	0.22
+BRD-K32636001	BRD-K32636001	False		41	2	9	0.049	0.22
+BRD-K59304176	GO-6976	False		41	2	9	0.049	0.22
+BRD-K69023402	thapsigargin	False		41	2	9	0.049	0.22
+BRD-K91370081	anisomycin	False	DNA synthesis inhibitor	41	2	9	0.049	0.22
+BRD-A85860691	chaetocin	False		41	2	8	0.049	0.195
+BRD-K36529613	PU-H71	False	HSP inhibitor	41	2	8	0.049	0.195
+BRD-K51608872	BRD-K51608872	False		41	2	8	0.049	0.195
+BRD-K56957086	dacinostat	False	HDAC inhibitor	41	2	8	0.049	0.195
+BRD-K74710236	VU-0410183-2	False		41	2	8	0.049	0.195
+BRD-K76674262	BRD-K76674262	True	protein synthesis inhibitor	41	2	8	0.049	0.195
+BRD-A38030642	cyclosporin-a	False		41	2	7	0.049	0.171
+BRD-K17210248	daunorubicin	False		41	2	7	0.049	0.171
+BRD-K24859147	KIN001-242	False		41	2	7	0.049	0.171
+BRD-K64645183	BRD-K64645183	False		41	2	7	0.049	0.171
+BRD-K68164687	epothilone-b	False		41	2	7	0.049	0.171
+BRD-K68202742	BRD-K68202742	False	HDAC inhibitor	41	2	7	0.049	0.171
+BRD-K72636697	QL-X-138	False		41	2	7	0.049	0.171
+BRD-K74316684	BRD-K74316684	False		41	2	7	0.049	0.171
+BRD-K89561498	SN-38	True	topoisomerase inhibitor	41	2	7	0.049	0.171
+BRD-K95858622	BRD-K95858622	False		41	2	7	0.049	0.171
+BRD-A20697603	thiostrepton	False		41	2	6	0.049	0.146
+BRD-A36057565	bruceantin	False	protein synthesis inhibitor	41	2	6	0.049	0.146
+BRD-A39646320	HC-toxin	False		41	2	6	0.049	0.146
+BRD-A52650764	ingenol	False		41	2	6	0.049	0.146
+BRD-A80213327	NSC-23766	False		41	2	6	0.049	0.146
+BRD-A80502530	cinobufagin	False		41	2	6	0.049	0.146
+BRD-K01436366	XMD-1150	False	leucine rich repeat kinase inhibitor	41	2	6	0.049	0.146
+BRD-K08109215	I-BET-762	False	bromodomain inhibitor	41	2	6	0.049	0.146
+BRD-K13094524	PFI-1	False	bromodomain inhibitor	41	2	6	0.049	0.146
+BRD-K44732214	BRD-K44732214	False		41	2	6	0.049	0.146
+BRD-K56653679	MD-041	False		41	2	6	0.049	0.146
+BRD-K62459624	BRD-K62459624	False		41	2	6	0.049	0.146
+BRD-K66046182	BRD-K66046182	False		41	2	6	0.049	0.146
+BRD-K66792149	quinoclamine	False		41	2	6	0.049	0.146
+BRD-K72238567	fludarabine	False		41	2	6	0.049	0.146
+BRD-K83694683	BRD-K83694683	False		41	2	6	0.049	0.146
+BRD-A19248578	latrunculin-b	False		41	2	5	0.049	0.122
+BRD-A42649439	triciribine	False		41	2	5	0.049	0.122
+BRD-A49848186	BRD-A49848186	False		41	2	5	0.049	0.122
+BRD-A68930007	ouabain	False		41	2	5	0.049	0.122
+BRD-A90547603	eptifibatide	False		41	2	5	0.049	0.122
+BRD-K10573841	tunicamycin	False		41	2	5	0.049	0.122
+BRD-K15592317	CP-466722	False		41	2	5	0.049	0.122
+BRD-K29950728	clomifene	True	estrogen receptor antagonist	41	2	5	0.049	0.122
+BRD-K39345836	BRD-K39345836	False		41	2	5	0.049	0.122
+BRD-K50938287	sumatriptan	True	serotonin receptor agonist	41	2	5	0.049	0.122
+BRD-K54606188	BRD-K54606188	False	bromodomain inhibitor	41	2	5	0.049	0.122
+BRD-K59058766	BRD-K59058766	False		41	2	5	0.049	0.122
+BRD-K60230970	MG-132	False	proteasome inhibitor	41	2	5	0.049	0.122
+BRD-K62289640	lylamine	False	cannabinoid receptor agonist	41	2	5	0.049	0.122
+BRD-K68346641	amsacrine	True	topoisomerase inhibitor	41	2	5	0.049	0.122
+BRD-K69852452	F-1566-0341	False		41	2	5	0.049	0.122
+BRD-K93779381	ingenol-mebutate	True	PKC activator	41	2	5	0.049	0.122
+BRD-M86331534	pyrvinium-pamoate	False		41	2	5	0.049	0.122
+BRD-A36010170	amcinonide	True	glucocorticoid receptor agonist	41	2	4	0.049	0.098
+BRD-A45333398	periplocymarin	False		41	2	4	0.049	0.098
+BRD-A47816767	BRD-A47816767	False		41	2	4	0.049	0.098
+BRD-A51777634	VU-0418933-1	False		41	2	4	0.049	0.098
+BRD-A68493689	simeprevir	False		41	2	4	0.049	0.098
+BRD-K10749593	BRD-K10749593	False		41	2	4	0.049	0.098
+BRD-K11528507	geldanamycin	False		41	2	4	0.049	0.098
+BRD-K15179879	carfilzomib	True	proteasome inhibitor	41	2	4	0.049	0.098
+BRD-K25504083	cytochalasin-d	False		41	2	4	0.049	0.098
+BRD-K53423944	BRD-K53423944	False		41	2	4	0.049	0.098
+BRD-K64517075	heliomycin	False		41	2	4	0.049	0.098
+BRD-K64890080	BI-2536	False	PLK inhibitor	41	2	4	0.049	0.098
+BRD-K68185022	ursolic-acid	False	ATPase inhibitor|NFkB pathway inhibitor|STAT inhibitor	41	2	4	0.049	0.098
+BRD-K70914287	BIBX-1382	False	EGFR inhibitor	41	2	4	0.049	0.098
+BRD-K71387353	BRD-K71387353	False		41	2	4	0.049	0.098
+BRD-K74717603	etravirine	True	non-nucleoside reverse transcriptase inhibitor	41	2	4	0.049	0.098
+BRD-K79239947	PF-573228	False	focal adhesion kinase inhibitor	41	2	4	0.049	0.098
+BRD-K88510285	bortezomib	True	NFkB pathway inhibitor|proteasome inhibitor	41	2	4	0.049	0.098
+BRD-U61997977	WZ-4-145	False		41	2	4	0.049	0.098
+BRD-A03506276	XL-888	False		41	2	3	0.049	0.073
+BRD-A15079084	BRD-A15079084	False		41	2	3	0.049	0.073
+BRD-A39093044	K784-3187	False		41	2	3	0.049	0.073
+BRD-A56592690	PX-12	False	thioredoxin inhibitor	41	2	3	0.049	0.073
+BRD-A58924247	BRD-A58924247	False		41	2	3	0.049	0.073
+BRD-A71459254	cymarin	False		41	2	3	0.049	0.073
+BRD-K04546108	BRD-K04546108	False		41	2	3	0.049	0.073
+BRD-K04623885	BIBR-1532	False	telomerase inhibitor	41	2	3	0.049	0.073
+BRD-K15600710	obatoclax	False	BCL inhibitor	41	2	3	0.049	0.073
+BRD-K24156250	BRD-K24156250	False		41	2	3	0.049	0.073
+BRD-K28934562	BRD-K28934562	False		41	2	3	0.049	0.073
+BRD-K37618799	MRS-1220	False	adenosine receptor antagonist	7	2	3	0.286	0.429
+BRD-K39120595	bithionol	True	autotaxin inhibitor	41	2	3	0.049	0.073
+BRD-K41213548	KW-2478	False	HSP inhibitor	41	2	3	0.049	0.073
+BRD-K44432556	VU-0418946-1	False	hypoxia inducible factor activator	41	2	3	0.049	0.073
+BRD-K50398167	meclofenamic-acid	True	cyclooxygenase inhibitor|prostanoid receptor antagonist	41	2	3	0.049	0.073
+BRD-K56800335	guanaben-acetate	False		41	2	3	0.049	0.073
+BRD-K60085502	BRD-K60085502	False		41	2	3	0.049	0.073
+BRD-K60476892	YC-1	False	guanylyl cyclase activator	5	2	3	0.4	0.6
+BRD-K62196610	AVN-944	False	inosine monophosphate dehydrogenase inhibitor	41	2	3	0.049	0.073
+BRD-K62242359	BRD-K62242359	False		41	2	3	0.049	0.073
+BRD-K64881305	ispinesib	False	kinesin inhibitor	41	2	3	0.049	0.073
+BRD-K67236950	BRD-K67236950	False		41	2	3	0.049	0.073
+BRD-K74587389	BRD-K74587389	False		41	2	3	0.049	0.073
+BRD-K82732294	BRD-K82732294	False		41	2	3	0.049	0.073
+BRD-K85392418	BRD-K85392418	False		41	2	3	0.049	0.073
+BRD-K89093471	VU-0418934-2	False		41	2	3	0.049	0.073
+BRD-U25771771	WZ-4-145	False		41	2	3	0.049	0.073
+BRD-A34751532	homosalate	False	HSP inducer	4	2	2	0.5	0.5
+BRD-A36275421	BRD-A36275421	False		41	2	2	0.049	0.049
+BRD-A42383464	actinomycin-d	False		5	2	2	0.4	0.4
+BRD-A56085258	LGX-818	False		41	2	2	0.049	0.049
+BRD-A64553394	DPI-201106	False	sodium channel activator	41	2	2	0.049	0.049
+BRD-A66559694	naltrexone	False		6	2	2	0.333	0.333
+BRD-A72309220	metergoline	False		3	2	2	0.667	0.667
+BRD-A85667082	fulvestrant	True	estrogen receptor antagonist	4	2	2	0.5	0.5
+BRD-A93424738	dexamethasone-acetate	False		41	2	2	0.049	0.049
+BRD-K02246294	BRD-K02246294	False		41	2	2	0.049	0.049
+BRD-K05977823	tenovins	False	SIRT inhibitor|TP53 activator	2	2	2	1.0	1.0
+BRD-K11624501	BRD-K11624501	False		41	2	2	0.049	0.049
+BRD-K13559922	BRD-K13559922	False		2	2	2	1.0	1.0
+BRD-K14002526	BRD-K14002526	False		41	2	2	0.049	0.049
+BRD-K16406336	methylene-blue	True	guanylyl cyclase inhibitor|nitric oxide production inhibitor	41	2	2	0.049	0.049
+BRD-K24496482	SB-590885	False		3	2	2	0.667	0.667
+BRD-K28907958	CD-437	False	retinoid receptor agonist	41	2	2	0.049	0.049
+BRD-K31999759	BRD-K31999759	False		41	2	2	0.049	0.049
+BRD-K34014345	naproxol	False		4	2	2	0.5	0.5
+BRD-K37691127	hinokitiol	False		41	2	2	0.049	0.049
+BRD-K41599323	lonafarnib	True	farnesyltransferase inhibitor	41	2	2	0.049	0.049
+BRD-K44309363	dexniguldipine	False	calmodulin antagonist	41	2	2	0.049	0.049
+BRD-K49477330	BRD-K49477330	False		41	2	2	0.049	0.049
+BRD-K50406511	hycanthone	True	RNA synthesis inhibitor	5	2	2	0.4	0.4
+BRD-K53737926	amitriptyline	True	norepinephrine inhibitor|norepinephrine reuptake inhibitor|serotonin receptor antagonist|serotonin–norepinephrine reuptake inhibitor (SNRI)	2	2	2	1.0	1.0
+BRD-K55127134	fluphenazine	True	dopamine receptor antagonist	41	2	2	0.049	0.049
+BRD-K56334280	amonafide	False	topoisomerase inhibitor	41	2	2	0.049	0.049
+BRD-K58211978	roxithromycin	False		41	2	2	0.049	0.049
+BRD-K59574735	ubenimex	True	leukotriene synthesis inhibitor	41	2	2	0.049	0.049
+BRD-K59962020	CHEMBL-374350	False		2	2	2	1.0	1.0
+BRD-K63175663	BRD-K63175663	False		4	2	2	0.5	0.5
+BRD-K65290449	BRD-K65290449	False		6	2	2	0.333	0.333
+BRD-K68588778	BRD-K68588778	False		3	2	2	0.667	0.667
+BRD-K69097969	VU-0418939-2	False		41	2	2	0.049	0.049
+BRD-K70739429	BRD-K70739429	False		2	2	2	1.0	1.0
+BRD-K71726959	BRD-K71726959	False		41	2	2	0.049	0.049
+BRD-K72951360	valrubicin	True	DNA inhibitor|topoisomerase inhibitor	41	2	2	0.049	0.049
+BRD-K74065929	doramapimod	False	p38 MAPK inhibitor	41	2	2	0.049	0.049
+BRD-K76841105	tazarotene	True	retinoid receptor agonist	41	2	2	0.049	0.049
+BRD-K78062244	BRD-K78062244	False		41	2	2	0.049	0.049
+BRD-K78373679	Ro-3306	False	CDK inhibitor	41	2	2	0.049	0.049
+BRD-K79095980	broxuridine	False	antimetabolite	6	2	2	0.333	0.333
+BRD-K79759585	sildenafil	True	phosphodiesterase inhibitor	6	2	2	0.333	0.333
+BRD-K81795824	BRD-K81795824	False		41	2	2	0.049	0.049
+BRD-K87142802	veliparib	False	PARP inhibitor	41	2	2	0.049	0.049
+BRD-K90999434	CCT-031374	False	WNT signaling inhibitor	3	2	2	0.667	0.667
+BRD2492 + BRD3308	BRD2492 + BRD3308	False		5	2	2	0.4	0.4
+BRD-A03249105	ICI-182780	False		4	2	1	0.5	0.25
+BRD-A87137733	GSK-690693	False		6	2	1	0.333	0.167
+BRD-A97437073	rosiglitazone	True		41	2	1	0.049	0.024
+BRD-K01404579	BRD-K01404579	False		41	2	1	0.049	0.024
+BRD-K04853698	LDN-193189	False	bone morphogenic protein inhibitor	41	2	1	0.049	0.024
+BRD-K07667918	linsitinib	False		6	2	1	0.333	0.167
+BRD-K17075857	chloroxine	True	opioid receptor antagonist	41	2	1	0.049	0.024
+BRD-K20722021	CEP-32496	False	RAF inhibitor	3	2	1	0.667	0.333
+BRD-K31380618	BRD-K31380618	False		41	2	1	0.049	0.024
+BRD-K35638681	BRD-K35638681	False		5	2	1	0.4	0.2
+BRD-K36198571	WAY-170523	False	metalloproteinase inhibitor	41	2	1	0.049	0.024
+BRD-K51350053	toremifene	True	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	5	2	1	0.4	0.2
+BRD-K51918615	iodophenpropit	False	histamine receptor antagonist	2	2	1	1.0	0.5
+BRD-K55767450	BRD-K55767450	False		41	2	1	0.049	0.024
+BRD-K56104152	oxiconazole	True	bacterial cell wall synthesis inhibitor	41	2	1	0.049	0.024
+BRD-K60067222	BRD-K60067222	False		4	2	1	0.5	0.25
+BRD-K63460351	toremifene	False		4	2	1	0.5	0.25
+BRD-K63923597	barasertib-HQPA	False	Aurora kinase inhibitor	6	2	1	0.333	0.167
+BRD-K64052750	gefitinib	True	EGFR inhibitor	41	2	1	0.049	0.024
+BRD-K67161258	BRD-K67161258	False		2	2	1	1.0	0.5
+BRD-K78306794	BRD-K78306794	False		2	2	1	1.0	0.5
+BRD-K79404599	enzastaurin	False	PKC inhibitor	41	2	1	0.049	0.024
+BRD-K81169441	cerivastatin	True		3	2	1	0.667	0.333
+BRD-K82484347	GSK-J2	False	histone demethylase inhibitor	41	2	1	0.049	0.024
+BRD-K95196255	BRD-K95196255	False		41	2	1	0.049	0.024
+BRD-K12787259	CX-5461	False	RNA polymerase inhibitor	41	2	0	0.049	0.0
+BRD-K13050541	acivicin	False	gamma glutamyltransferase inhibitor	6	2	0	0.333	0.0
+BRD-K26760349	HG-9-91-01	False		4	2	0	0.5	0.0
+BRD-K32972437	BRD-K32972437	False		41	2	0	0.049	0.0
+BRD-K60038276	irbesartan	True	angiotensin receptor antagonist	41	2	0	0.049	0.0
+BRD-K60219430	serdemetan	False		41	2	0	0.049	0.0
+BRD-K70792160	10-DEBC	False	AKT inhibitor	41	2	0	0.049	0.0
+BRD-K76907295	VU-0418947-2	False		41	2	0	0.049	0.0
+BRD-K90805324	BRD-K90805324	False		2	2	0	1.0	0.0
+BRD-K93425199	BRD-K93425199	False		41	2	0	0.049	0.0
+BRD-U82589721	HG-5-113-01	False		41	2	0	0.049	0.0
+BRD-K91041732	BRD-K91041732	False		41	1	12	0.024	0.293
+BRD-K25630527	LY-2784544	False	JAK inhibitor	41	1	9	0.024	0.22
+BRD-K98645985	BRD-K98645985	False		41	1	9	0.024	0.22
+BRD-A17065207	brefeldin-a	False		41	1	8	0.024	0.195
+BRD-K41859756	NVP-AUY922	False	HSP inhibitor	41	1	8	0.024	0.195
+BRD-K69894866	BRD-K69894866	False		41	1	8	0.024	0.195
+BRD-K79131256	albendazole	True	tubulin polymerization inhibitor	41	1	8	0.024	0.195
+BRD-A28970875	puromycin	False		41	1	7	0.024	0.171
+BRD-A89104433	VU-0415556-1	False		41	1	7	0.024	0.171
+BRD-K30351863	BRD-K30351863	False		41	1	7	0.024	0.171
+BRD-K50387473	XMD-892	False	MAP kinase inhibitor	41	1	7	0.024	0.171
+BRD-K61397605	romidepsin	True	HDAC inhibitor	41	1	7	0.024	0.171
+BRD-K84203638	BRD-K84203638	False		41	1	7	0.024	0.171
+BRD-U33728988	QL-X-138	False		41	1	7	0.024	0.171
+BRD-A44448661	pentobarbital	True		41	1	6	0.024	0.146
+BRD-A49765801	BRD-A49765801	False		41	1	6	0.024	0.146
+BRD-K00627859	tubastatin-a	False	HDAC inhibitor	41	1	6	0.024	0.146
+BRD-K37392901	NSC-632839	False		41	1	6	0.024	0.146
+BRD-K38477985	malonoben	False		41	1	6	0.024	0.146
+BRD-K41438959	perampanel	True		41	1	6	0.024	0.146
+BRD-K52020312	metronidazole	True	DNA inhibitor	41	1	6	0.024	0.146
+BRD-K55930204	phenytoin	True	hydantoin antiepileptic	41	1	6	0.024	0.146
+BRD-K72451865	BRD-K72451865	False		41	1	6	0.024	0.146
+BRD-K73789395	ZM-336372	False	RAF inhibitor	41	1	6	0.024	0.146
+BRD-K78385490	BRD-K78385490	False		41	1	6	0.024	0.146
+BRD-K81473043	tanespimycin	False	HSP inhibitor	41	1	6	0.024	0.146
+BRD-K86961442	BRD-K86961442	False		41	1	6	0.024	0.146
+BRD-K88524550	BRD-K88524550	False		41	1	6	0.024	0.146
+BRD-A15297126	fluocinolone-acetonide	False		41	1	5	0.024	0.122
+BRD-A78360835	cercosporin	False		41	1	5	0.024	0.122
+BRD-K02407574	parbendazole	False	tubulin polymerization inhibitor	41	1	5	0.024	0.122
+BRD-K03601870	ixabepilone	True	microtubule stabilizing agent	41	1	5	0.024	0.122
+BRD-K06188599	BRD-K06188599	False		41	1	5	0.024	0.122
+BRD-K07303502	BRD-K07303502	False		41	1	5	0.024	0.122
+BRD-K08307026	BRD-K08307026	False		41	1	5	0.024	0.122
+BRD-K18724229	BRD-K18724229	False		41	1	5	0.024	0.122
+BRD-K24821794	SGC-CBP30	False	bromodomain inhibitor	41	1	5	0.024	0.122
+BRD-K32828673	chelidonine	False		41	1	5	0.024	0.122
+BRD-K37561857	zardaverine	False	phosphodiesterase inhibitor	41	1	5	0.024	0.122
+BRD-K40718343	AEE-788	False	EGFR inhibitor|VEGFR inhibitor	41	1	5	0.024	0.122
+BRD-K49327517	THZ-2-98-01	False		41	1	5	0.024	0.122
+BRD-K49669041	BX-912	False	pyruvate dehydrogenase kinase inhibitor	41	1	5	0.024	0.122
+BRD-K50324045	BRD-K50324045	False		41	1	5	0.024	0.122
+BRD-K56751279	Y-39983	False	rho associated kinase inhibitor	41	1	5	0.024	0.122
+BRD-K61255301	BRD-K61255301	False		41	1	5	0.024	0.122
+BRD-K68336408	BRD-K68336408	False	EGFR inhibitor	41	1	5	0.024	0.122
+BRD-K69726595	mericitabine	False	HCV inhibitor	41	1	5	0.024	0.122
+BRD-K74402642	NSC-632839	False		41	1	5	0.024	0.122
+BRD-K76401790	JNK-IN-5A	False		41	1	5	0.024	0.122
+BRD-K76703230	YM-155	False	survivin inhibitor	41	1	5	0.024	0.122
+BRD-K77987382	mebendazole	True	tubulin polymerization inhibitor	41	1	5	0.024	0.122
+BRD-K82135108	elesclomol	False	oxidative stress inducer	41	1	5	0.024	0.122
+BRD-K94176593	TWS-119	False	glycogen synthase kinase inhibitor	41	1	5	0.024	0.122
+BRD-K94199083	BRD-K94199083	False		41	1	5	0.024	0.122
+BRD-K95655893	MAZ-51	False		41	1	5	0.024	0.122
+BRD-A06352508	SB-218078	False	CHK inhibitor	41	1	4	0.024	0.098
+BRD-A08003242	rhodomyrtoxin-b	False		41	1	4	0.024	0.098
+BRD-A36318220	necrostatin-1	False		41	1	4	0.024	0.098
+BRD-A36331462	oprozomib	False		41	1	4	0.024	0.098
+BRD-A41451487	PK-11195	False	benzodiazepine receptor antagonist	41	1	4	0.024	0.098
+BRD-A63675168	brivudine	True	DNA directed DNA polymerase inhibitor	41	1	4	0.024	0.098
+BRD-A76490030	K784-3131	False		41	1	4	0.024	0.098
+BRD-A77467113	EMF-sumo1-11	False		41	1	4	0.024	0.098
+BRD-K06858286	cabazitaxel	False		41	1	4	0.024	0.098
+BRD-K07572174	curcumin	True	cyclooxygenase inhibitor|histone acetyltransferase inhibitor|lipoxygenase inhibitor|NFkB pathway inhibitor	41	1	4	0.024	0.098
+BRD-K13566078	BMS-345541	False	IKK inhibitor	41	1	4	0.024	0.098
+BRD-K17705806	JTC-801	False	opioid receptor antagonist	41	1	4	0.024	0.098
+BRD-K19220233	JNK-9L	False		41	1	4	0.024	0.098
+BRD-K23018071	BRD-K23018071	False		41	1	4	0.024	0.098
+BRD-K23478508	digoxin	True		41	1	4	0.024	0.098
+BRD-K26767475	BRD-K26767475	False		41	1	4	0.024	0.098
+BRD-K30309936	BRD-K30309936	False		41	1	4	0.024	0.098
+BRD-K30520487	BRD-K30520487	False		41	1	4	0.024	0.098
+BRD-K36007650	puromycin	False	protein synthesis inhibitor	41	1	4	0.024	0.098
+BRD-K36467523	bindarit	False	NFkB pathway inhibitor	41	1	4	0.024	0.098
+BRD-K44665581	bromosporine	False	bromodomain inhibitor	41	1	4	0.024	0.098
+BRD-K54330070	SB-202190	False	p38 MAPK inhibitor	41	1	4	0.024	0.098
+BRD-K55233780	BRD-K55233780	False		41	1	4	0.024	0.098
+BRD-K59325863	delanzomib	False	proteasome inhibitor	41	1	4	0.024	0.098
+BRD-K59469039	AG-879	False	tyrosine kinase inhibitor	41	1	4	0.024	0.098
+BRD-K61323504	SB-225002	False	CC chemokine receptor antagonist	41	1	4	0.024	0.098
+BRD-K65182930	NVP-AUY922	False		41	1	4	0.024	0.098
+BRD-K66254772	RS-I-002-6	False		41	1	4	0.024	0.098
+BRD-K68532323	SB-743921	False	kinesin-like spindle protein inhibitor	41	1	4	0.024	0.098
+BRD-K71879491	tretinoin	True	retinoid receptor agonist|retinoid receptor ligand	41	1	4	0.024	0.098
+BRD-K72318460	BRD-K72318460	False		41	1	4	0.024	0.098
+BRD-K74117820	nelfinavir	True	HIV protease inhibitor	41	1	4	0.024	0.098
+BRD-K78055238	LY-2090314	False	glycogen synthase kinase inhibitor	41	1	4	0.024	0.098
+BRD-K80786583	BRD-K80786583	False		41	1	4	0.024	0.098
+BRD-K99749624	linifanib	False	PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	41	1	4	0.024	0.098
+BRD-U29336476	BRD-U29336476	False		41	1	4	0.024	0.098
+BRD-A10420615	cyclopiazonic-acid	False	ATPase inhibitor	41	1	3	0.024	0.073
+BRD-A28746609	paclitaxel	False		41	1	3	0.024	0.073
+BRD-A34205397	suloctidil	True		41	1	3	0.024	0.073
+BRD-A52193669	withaferin-a	False		41	1	3	0.024	0.073
+BRD-A53134341	Ro-106-9920	False	NFkB pathway inhibitor	41	1	3	0.024	0.073
+BRD-A58564983	selamectin	False		41	1	3	0.024	0.073
+BRD-A66419424	MLN-9708	True	proteasome inhibitor	41	1	3	0.024	0.073
+BRD-A68065211	BRD-A68065211	False		41	1	3	0.024	0.073
+BRD-A69275535	pinitol	False		41	1	3	0.024	0.073
+BRD-A94756469	digoxin	False		41	1	3	0.024	0.073
+BRD-K08799216	pelitinib	False	EGFR inhibitor	41	1	3	0.024	0.073
+BRD-K09416995	lovastatin	True	HMGCR inhibitor	41	1	3	0.024	0.073
+BRD-K17804045	BRD-K17804045	False		41	1	3	0.024	0.073
+BRD-K18726304	BRD-K18726304	False		41	1	3	0.024	0.073
+BRD-K29506255	BRD-K29506255	False		41	1	3	0.024	0.073
+BRD-K33272502	DG-041	False		41	1	3	0.024	0.073
+BRD-K43449605	oncrasin-1	False	apoptosis stimulant	4	1	3	0.25	0.75
+BRD-K49630153	BRD-K49630153	False		41	1	3	0.024	0.073
+BRD-K50817946	BRD-K50817946	False		41	1	3	0.024	0.073
+BRD-K53734668	PRT-062607	False	SYK inhibitor	41	1	3	0.024	0.073
+BRD-K53932786	BRD-K53932786	False		41	1	3	0.024	0.073
+BRD-K54687541	BRD-K54687541	False		41	1	3	0.024	0.073
+BRD-K56844688	epirubicin	False		41	1	3	0.024	0.073
+BRD-K58138547	BRD-K58138547	False		41	1	3	0.024	0.073
+BRD-K58853583	BRD-K58853583	False		41	1	3	0.024	0.073
+BRD-K68232650	lacosamide	True		41	1	3	0.024	0.073
+BRD-K68552125	BRD-K68552125	False	PKC activator	41	1	3	0.024	0.073
+BRD-K70511574	HMN-214	False	PLK inhibitor	41	1	3	0.024	0.073
+BRD-K71799778	BML-259	False		41	1	3	0.024	0.073
+BRD-K81651477	parthenolide	False		41	1	3	0.024	0.073
+BRD-K84937637	sirolimus	True	mTOR inhibitor	41	1	3	0.024	0.073
+BRD-K85493820	KM-00927	False		41	1	3	0.024	0.073
+BRD-K96799727	pifithrin-mu	False	HSP inhibitor	41	1	3	0.024	0.073
+BRD-U64521890	XMD-16144	False		41	1	3	0.024	0.073
+BRD-U86222656	BRD-U86222656	False		41	1	3	0.024	0.073
+BRD-A00420644	SA-3676	False		4	1	2	0.25	0.5
+BRD-A18411371	BRD-A18411371	False		41	1	2	0.024	0.049
+BRD-A25736793	everolimus	False		2	1	2	0.5	1.0
+BRD-A28105619	BRD-A28105619	False		41	1	2	0.024	0.049
+BRD-A37735495	BRD-A37735495	False		41	1	2	0.024	0.049
+BRD-A39996500	radicicol	False		41	1	2	0.024	0.049
+BRD-A43331270	niguldipine	False		6	1	2	0.167	0.333
+BRD-A44701612	BRD-A44701612	False		2	1	2	0.5	1.0
+BRD-A47706533	l-bso	False	glutathione transferase inhibitor	4	1	2	0.25	0.5
+BRD-A58280226	Y-27632	False		41	1	2	0.024	0.049
+BRD-A60414806	vincristine	False		41	1	2	0.024	0.049
+BRD-A72703248	SKF-96365	False		41	1	2	0.024	0.049
+BRD-K01121114	AT-CSC-18	False		41	1	2	0.024	0.049
+BRD-K01621458	BRD-K01621458	False		41	1	2	0.024	0.049
+BRD-K04465546	BRD-K04465546	False		41	1	2	0.024	0.049
+BRD-K05445342	WP-1066	False	STAT inhibitor	2	1	2	0.5	1.0
+BRD-K08316444	rotenone	False		41	1	2	0.024	0.049
+BRD-K11696279	BU-239	False	imidazoline receptor agonist|imidazoline receptor ligand	41	1	2	0.024	0.049
+BRD-K13514097	everolimus	True	mTOR inhibitor	41	1	2	0.024	0.049
+BRD-K19388745	colforsin-daproate	True	adenylyl cyclase activator	41	1	2	0.024	0.049
+BRD-K19499941	BRD-K19499941	False		41	1	2	0.024	0.049
+BRD-K19894101	MST-312	False		41	1	2	0.024	0.049
+BRD-K22428007	BRD-K22428007	False		3	1	2	0.333	0.667
+BRD-K30466858	ellagic-acid	False	glutathione transferase inhibitor|non-nucleoside reverse transcriptase inhibitor	2	1	2	0.5	1.0
+BRD-K38340366	MW-STK33-1C	False		41	1	2	0.024	0.049
+BRD-K43570134	BRD-K43570134	False		41	1	2	0.024	0.049
+BRD-K44366801	BRD-K44366801	False		41	1	2	0.024	0.049
+BRD-K44408410	BRD-K44408410	False	hypoxia inducible factor inhibitor	41	1	2	0.024	0.049
+BRD-K47150025	KI-8751	False	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	41	1	2	0.024	0.049
+BRD-K48576794	BRD-K48576794	False		41	1	2	0.024	0.049
+BRD-K49049886	CGS-15943	False	adenosine receptor antagonist	41	1	2	0.024	0.049
+BRD-K52321331	BRD-K52321331	False		41	1	2	0.024	0.049
+BRD-K56614220	clofazimine	True	GK0582 inhibitor	41	1	2	0.024	0.049
+BRD-K58479490	BRD-K58479490	False		41	1	2	0.024	0.049
+BRD-K62008436	paclitaxel	True	tubulin polymerization inhibitor	41	1	2	0.024	0.049
+BRD-K62391742	GDC-0199	True	BCL inhibitor	41	1	2	0.024	0.049
+BRD-K63376220	BRD-K63376220	False		2	1	2	0.5	1.0
+BRD-K69116396	sertindole	True	dopamine receptor antagonist|serotonin receptor antagonist	41	1	2	0.024	0.049
+BRD-K69328504	L-690488	False		41	1	2	0.024	0.049
+BRD-K70490179	rimcazole	False	sigma receptor antagonist	41	1	2	0.024	0.049
+BRD-K71823332	epothilone-a	False	microtubule stabilizing agent	5	1	2	0.2	0.4
+BRD-K75627148	BRD-K75627148	False		41	1	2	0.024	0.049
+BRD-K78599730	manumycin-a	False		41	1	2	0.024	0.049
+BRD-K78822642	BRD-K78822642	False		41	1	2	0.024	0.049
+BRD-K79947405	BRD-K79947405	False		41	1	2	0.024	0.049
+BRD-K82857306	I-212148	False		4	1	2	0.25	0.5
+BRD-K86003836	flubendazole	True	tubulin polymerization inhibitor	41	1	2	0.024	0.049
+BRD-K86265745	BRD-K86265745	False		41	1	2	0.024	0.049
+BRD-K86472598	MD-II-051	False		41	1	2	0.024	0.049
+BRD-K88317944	VU-0420364-1	False		6	1	2	0.167	0.333
+BRD-K98548675	parthenolide	False	NFkB pathway inhibitor	41	1	2	0.024	0.049
+BRD-K99582188	BRD-K99582188	False		41	1	2	0.024	0.049
+BRD-A01787639	naftopidil	True		1	1	1	1.0	1.0
+BRD-A14014306	BRD-A14014306	False		1	1	1	1.0	1.0
+BRD-A14941520	dofequidar	False	MRP inhibitor|P glycoprotein inhibitor	1	1	1	1.0	1.0
+BRD-A19918940	lomatin	False		2	1	1	0.5	0.5
+BRD-A22783572	vinblastine	False		41	1	1	0.024	0.024
+BRD-A26097136	bulleyaconitine-a	False		2	1	1	0.5	0.5
+BRD-A27554692	altrenogest	False		2	1	1	0.5	0.5
+BRD-A29520968	acifran	False	cholesterol inhibitor	2	1	1	0.5	0.5
+BRD-A29734509	disopyramide	True	sodium channel blocker	1	1	1	1.0	1.0
+BRD-A31227688	kynuramine	False		2	1	1	0.5	0.5
+BRD-A33746814	avicin-g	False		5	1	1	0.2	0.2
+BRD-A35623999	CGP-37157	False	mitochondrial Na+/Ca2+ exchanger antagonist|sodium/calcium exchange inhibitor	1	1	1	1.0	1.0
+BRD-A37780065	triamcinolone	False		6	1	1	0.167	0.167
+BRD-A42556028	1B	False		41	1	1	0.024	0.024
+BRD-A43155244	BRD-A43155244	False		3	1	1	0.333	0.333
+BRD-A44551378	LFM-A12	False		1	1	1	1.0	1.0
+BRD-A45889380	mepacrine	True	cytokine production inhibitor|NFkB pathway inhibitor|TP53 activator	41	1	1	0.024	0.024
+BRD-A50774520	CVF-SUMO-11	False		41	1	1	0.024	0.024
+BRD-A53176877	methylprednisolone	False		6	1	1	0.167	0.167
+BRD-A53566267	anecortave-acetate	False		4	1	1	0.25	0.25
+BRD-A53576514	orphenadrine	True	acetylcholine receptor antagonist	2	1	1	0.5	0.5
+BRD-A54194844	BRD-A54194844	False		1	1	1	1.0	1.0
+BRD-A57382968	piroxicam	False		4	1	1	0.25	0.25
+BRD-A72180425	K784-3188	False		41	1	1	0.024	0.024
+BRD-A81541225	oligomycin-a	False		41	1	1	0.024	0.024
+BRD-A82396632	miconazole	True		3	1	1	0.333	0.333
+BRD-A83855350	naltrexone	False		2	1	1	0.5	0.5
+BRD-A89067742	BRD-A89067742	False		1	1	1	1.0	1.0
+BRD-K03568209	MW-STK33-4C	False		1	1	1	1.0	1.0
+BRD-K05395900	nicotine	True	acetylcholine receptor agonist	3	1	1	0.333	0.333
+BRD-K05563014	CAM-9-021	False		2	1	1	0.5	0.5
+BRD-K05737787	isoeugenol	False		2	1	1	0.5	0.5
+BRD-K06023321	BRD-K06023321	False		41	1	1	0.024	0.024
+BRD-K08976401	azelaic-acid	True	tyrosinase inhibitor	2	1	1	0.5	0.5
+BRD-K09635314	m-3M3FBS	False	phospholipase activator	5	1	1	0.2	0.2
+BRD-K09790412	H-9	False		6	1	1	0.167	0.167
+BRD-K11432829	SA-1919875	False		41	1	1	0.024	0.024
+BRD-K14619660	altrenogest	False		2	1	1	0.5	0.5
+BRD-K15567136	papaverine	True	phosphodiesterase inhibitor	2	1	1	0.5	0.5
+BRD-K16227029	BRD-K16227029	False		1	1	1	1.0	1.0
+BRD-K16798053	ST-4029573	False		1	1	1	1.0	1.0
+BRD-K16898998	bevirimat-dimeglumine	False	HIV capsid assembly inhibitor	2	1	1	0.5	0.5
+BRD-K21064560	BRD-K21064560	False		41	1	1	0.024	0.024
+BRD-K21528100	BRD-K21528100	False		1	1	1	1.0	1.0
+BRD-K21672174	Ro-28-1675	False	glucokinase activator	41	1	1	0.024	0.024
+BRD-K23412959	BRD-K23412959	False		41	1	1	0.024	0.024
+BRD-K25325018	GSK-690693	False	AKT inhibitor	41	1	1	0.024	0.024
+BRD-K25485361	BRD-K25485361	False		1	1	1	1.0	1.0
+BRD-K25642189	BRD-K25642189	False		1	1	1	1.0	1.0
+BRD-K25723200	azilsartan-medoxomil	True	angiotensin receptor antagonist	2	1	1	0.5	0.5
+BRD-K27316855	calcitriol	True	vitamin D receptor agonist	2	1	1	0.5	0.5
+BRD-K27450477	EHNA	False		4	1	1	0.25	0.25
+BRD-K27665173	D-64406	False		1	1	1	1.0	1.0
+BRD-K31632228	BRD-K31632228	False		3	1	1	0.333	0.333
+BRD-K32485462	BRD-K32485462	False		3	1	1	0.333	0.333
+BRD-K32821942	azathioprine	True	dehydrogenase inhibitor	41	1	1	0.024	0.024
+BRD-K33164466	BRD-K33164466	False		1	1	1	1.0	1.0
+BRD-K33680967	BRD-K33680967	False		1	1	1	1.0	1.0
+BRD-K33780441	SA-1472734	False		1	1	1	1.0	1.0
+BRD-K35468722	SA-1973507	False		41	1	1	0.024	0.024
+BRD-K35860134	BRD-K35860134	False		41	1	1	0.024	0.024
+BRD-K37206356	rhamnetin	False		2	1	1	0.5	0.5
+BRD-K39716612	fluvastatin	False		4	1	1	0.25	0.25
+BRD-K40331046	BRD-K40331046	False	CDK inhibitor	2	1	1	0.5	0.5
+BRD-K40476324	digoxin	False		5	1	1	0.2	0.2
+BRD-K40992116	parachlorophenol	True	antiinfective drug	1	1	1	1.0	1.0
+BRD-K41880142	BRD-K41880142	False		1	1	1	1.0	1.0
+BRD-K42500029	CGP-57380	False	MAP kinase inhibitor	4	1	1	0.25	0.25
+BRD-K43002773	GDC-0068	False	AKT inhibitor	41	1	1	0.024	0.024
+BRD-K43471985	OTX-015	False	bromodomain inhibitor	41	1	1	0.024	0.024
+BRD-K43586850	lacidipine	True	calcium channel blocker	41	1	1	0.024	0.024
+BRD-K43620258	CHEMBL-399379	False		41	1	1	0.024	0.024
+BRD-K43644456	WP-1130	False	deubiquitinase inhibitor	2	1	1	0.5	0.5
+BRD-K43744935	tamoxifen	False		4	1	1	0.25	0.25
+BRD-K44242139	BRD-K44242139	False		41	1	1	0.024	0.024
+BRD-K46556387	BRD-K46556387	False		41	1	1	0.024	0.024
+BRD-K46760727	BRD-K46760727	False		1	1	1	1.0	1.0
+BRD-K47764688	BRD-K47764688	False		1	1	1	1.0	1.0
+BRD-K48723823	BRD-K48723823	False		1	1	1	1.0	1.0
+BRD-K49183052	VU-0415113-1	False		1	1	1	1.0	1.0
+BRD-K52850071	WHI-P154	False	JAK inhibitor	3	1	1	0.333	0.333
+BRD-K53407305	BRD-K53407305	False		1	1	1	1.0	1.0
+BRD-K53610452	BRD-K53610452	False		4	1	1	0.25	0.25
+BRD-K53913732	SB-408124	False	orexin receptor antagonist	1	1	1	1.0	1.0
+BRD-K54770957	etoricoxib	True	cyclooxygenase inhibitor	2	1	1	0.5	0.5
+BRD-K55070890	thiothixene	False		1	1	1	1.0	1.0
+BRD-K56842656	BRD-K56842656	False		1	1	1	1.0	1.0
+BRD-K57041787	dabigatran-etexilate	True	thrombin inhibitor	3	1	1	0.333	0.333
+BRD-K58306044	YL-54	False		1	1	1	1.0	1.0
+BRD-K59037100	oxybenzone	True	lipase inhibitor	2	1	1	0.5	0.5
+BRD-K59204667	DBeQ	False	ATPase inhibitor	41	1	1	0.024	0.024
+BRD-K59470558	BRD-K59470558	False		4	1	1	0.25	0.25
+BRD-K59753975	vindesine	True	tubulin polymerization inhibitor	1	1	1	1.0	1.0
+BRD-K59831625	LDN-212854	False	bone morphogenic protein inhibitor	1	1	1	1.0	1.0
+BRD-K60297835	BRD-K60297835	False		5	1	1	0.2	0.2
+BRD-K61033289	BRD-K61033289	False		41	1	1	0.024	0.024
+BRD-K61250553	loperamide	True	opioid receptor agonist	2	1	1	0.5	0.5
+BRD-K61734568	BRD-K61734568	False	BCL-XL downregulator	41	1	1	0.024	0.024
+BRD-K63000292	BRD-K63000292	False		41	1	1	0.024	0.024
+BRD-K63903580	BRD-K63903580	False		1	1	1	1.0	1.0
+BRD-K64746805	MBCQ	False		1	1	1	1.0	1.0
+BRD-K65050353	BRD-K65050353	False		4	1	1	0.25	0.25
+BRD-K65242613	BRD-K65242613	False		1	1	1	1.0	1.0
+BRD-K65404805	BRD-K65404805	False		4	1	1	0.25	0.25
+BRD-K65983740	BRD-K65983740	False		4	1	1	0.25	0.25
+BRD-K66032149	VU-0365117-1	False		5	1	1	0.2	0.2
+BRD-K66707493	lawsone	False		2	1	1	0.5	0.5
+BRD-K66814954	BRD-K66814954	False		3	1	1	0.333	0.333
+BRD-K68191783	ALW-II-38-3	False		1	1	1	1.0	1.0
+BRD-K68313733	BRD-K68313733	False		41	1	1	0.024	0.024
+BRD-K68938568	GDC-0152	False	XIAP inhibitor	5	1	1	0.2	0.2
+BRD-K69945243	BRD-K69945243	False		3	1	1	0.333	0.333
+BRD-K70358946	aripiprazole	True	serotonin receptor agonist|serotonin receptor antagonist	2	1	1	0.5	0.5
+BRD-K70446295	EPZ-015666	False	protein arginine N-methyltransferase inhibitor	4	1	1	0.25	0.25
+BRD-K71195237	BRD-K71195237	False		1	1	1	1.0	1.0
+BRD-K72541103	BRD-K72541103	False		3	1	1	0.333	0.333
+BRD-K72615639	BRD-K72615639	False		5	1	1	0.2	0.2
+BRD-K73439593	BRD-K73439593	False		1	1	1	1.0	1.0
+BRD-K76304753	phenazopyridine	True	local anesthetic	1	1	1	1.0	1.0
+BRD-K76381171	BRD-K76381171	False		41	1	1	0.024	0.024
+BRD-K76457661	BRD-K76457661	False		5	1	1	0.2	0.2
+BRD-K76775527	nimesulide	True	cyclooxygenase inhibitor	2	1	1	0.5	0.5
+BRD-K78122587	NNC-55-0396	False	T-type calcium channel blocker	41	1	1	0.024	0.024
+BRD-K78166736	BRD-K78166736	False		4	1	1	0.25	0.25
+BRD-K78431006	crizotinib	True	ALK tyrosine kinase receptor inhibitor	41	1	1	0.024	0.024
+BRD-K78513633	lonidamine	True	glucokinase inhibitor	41	1	1	0.024	0.024
+BRD-K78778188	BRD-K78778188	False		1	1	1	1.0	1.0
+BRD-K78978711	KHS-101	False	neural stem cell inducer	41	1	1	0.024	0.024
+BRD-K79554012	BRD-K79554012	False		4	1	1	0.25	0.25
+BRD-K80012633	BRD-K80012633	False		1	1	1	1.0	1.0
+BRD-K80822897	BRD-K80822897	False		1	1	1	1.0	1.0
+BRD-K82153723	BRD-K82153723	False		2	1	1	0.5	0.5
+BRD-K82577285	dipropyl-dopamine	False		3	1	1	0.333	0.333
+BRD-K82603084	ethylenediaminetetraacetic-acid	True	PKC inhibitor	1	1	1	1.0	1.0
+BRD-K82837433	BRD-K82837433	False		2	1	1	0.5	0.5
+BRD-K84895041	BMY-45778	False	IP1 prostacyclin receptor agonist	2	1	1	0.5	0.5
+BRD-K85095987	BRD-K85095987	False		41	1	1	0.024	0.024
+BRD-K85266146	BRD-K85266146	False		1	1	1	1.0	1.0
+BRD-K86671899	BRD-K86671899	False		3	1	1	0.333	0.333
+BRD-K86761848	I-070759	False		2	1	1	0.5	0.5
+BRD-K87990216	piretanide	True	glucocorticoid receptor agonist	2	1	1	0.5	0.5
+BRD-K88429204	pyrimethamine	True	dihydrofolate reductase inhibitor	41	1	1	0.024	0.024
+BRD-K89053832	VLX-600	False	antitumor agent|ubiquitin C-terminal hydrolase inhibitor	2	1	1	0.5	0.5
+BRD-K89997465	BRD-K89997465	True	dopamine receptor antagonist	4	1	1	0.25	0.25
+BRD-K90361987	BRD-K90361987	False		1	1	1	1.0	1.0
+BRD-K91735860	BRD-K91735860	False		1	1	1	1.0	1.0
+BRD-K92213669	lomitapide	True	microsomal trigylceride transfer protein inhibitor	41	1	1	0.024	0.024
+BRD-K92870997	pterostilbene	False	cyclooxygenase inhibitor|PPAR receptor agonist	1	1	1	1.0	1.0
+BRD-K93080877	BRD-K93080877	False		1	1	1	1.0	1.0
+BRD-K93918653	quizartinib	True	FLT3 inhibitor	41	1	1	0.024	0.024
+BRD-K94193354	BRD-K94193354	False		1	1	1	1.0	1.0
+BRD-K95208083	SA-1457472	False		2	1	1	0.5	0.5
+BRD-K96084870	DMBI	False		4	1	1	0.25	0.25
+BRD-K96420933	BRD-K96420933	False		1	1	1	1.0	1.0
+BRD-K97428065	netupitant	True	tachykinin antagonist	41	1	1	0.024	0.024
+BRD-K98733875	baicalin	False		2	1	1	0.5	0.5
+BRD-K99530743	BRD-K99530743	False		2	1	1	0.5	0.5
+BRD-U06877554	JG-98	False		41	1	1	0.024	0.024
+BRD-A11678676	wortmannin	False		2	1	0	0.5	0.0
+BRD-A27640568	BRD-A27640568	False		5	1	0	0.2	0.0
+BRD-A83124583	EMF-sumo1-39	False		41	1	0	0.024	0.0
+BRD-A86871940	nicaraven	False	free radical scavenger	1	1	0	1.0	0.0
+BRD-K00521308	ATN-161	False	integrin antagonist	1	1	0	1.0	0.0
+BRD-K00603606	ticlopidine	True	purinergic receptor antagonist	1	1	0	1.0	0.0
+BRD-K01567962	pyrazolanthrone	False	JNK inhibitor	5	1	0	0.2	0.0
+BRD-K01877528	TL-HRAS-61	False		41	1	0	0.024	0.0
+BRD-K02113016	olaparib	True	PARP inhibitor	41	1	0	0.024	0.0
+BRD-K03816923	rottlerin	False		41	1	0	0.024	0.0
+BRD-K04779531	BRD-K04779531	False		1	1	0	1.0	0.0
+BRD-K05181463	L-741626	False		1	1	0	1.0	0.0
+BRD-K05444225	E-7449	False	PARP inhibitor	1	1	0	1.0	0.0
+BRD-K05885357	BRD-K05885357	False		41	1	0	0.024	0.0
+BRD-K07431800	BRD-K07431800	False		1	1	0	1.0	0.0
+BRD-K08273968	griseofulvin	True	tubulin polymerization inhibitor	4	1	0	0.25	0.0
+BRD-K11533227	BRD-K11533227	False		41	1	0	0.024	0.0
+BRD-K12132598	BRD-K12132598	False		1	1	0	1.0	0.0
+BRD-K13533483	cyclosporin-a	True	calcineurin inhibitor	3	1	0	0.333	0.0
+BRD-K13707774	BRD-K13707774	False		1	1	0	1.0	0.0
+BRD-K14383710	BRD-K14383710	False		1	1	0	1.0	0.0
+BRD-K15179513	NVP-ADW742	False	insulin growth factor receptor inhibitor	2	1	0	0.5	0.0
+BRD-K15409150	penfluridol	True	T-type calcium channel blocker	41	1	0	0.024	0.0
+BRD-K16277767	BRD-K16277767	False		41	1	0	0.024	0.0
+BRD-K17119186	BAS-00535043	False		3	1	0	0.333	0.0
+BRD-K18761689	BRD-K18761689	False		1	1	0	1.0	0.0
+BRD-K19295594	gossypol	False	BCL inhibitor|MCL1 inhibitor	41	1	0	0.024	0.0
+BRD-K21626096	BRD-K21626096	False		1	1	0	1.0	0.0
+BRD-K22149900	ceritinib	True	ALK tyrosine kinase receptor inhibitor	41	1	0	0.024	0.0
+BRD-K24556407	ETP-46464	False	ATR kinase inhibitor	2	1	0	0.5	0.0
+BRD-K24696047	NVP-AEW541	False	IGF-1 inhibitor	2	1	0	0.5	0.0
+BRD-K26341917	L-ergothioneine	False	free radical scavenger	3	1	0	0.333	0.0
+BRD-K26510616	BRD-K26510616	False		5	1	0	0.2	0.0
+BRD-K27239120	SD-6-035-A11	False		1	1	0	1.0	0.0
+BRD-K29423519	BRD-K29423519	False		41	1	0	0.024	0.0
+BRD-K30707190	PNU-74654	False	beta-catenin inhibitor	41	1	0	0.024	0.0
+BRD-K30874624	K-252A	False		2	1	0	0.5	0.0
+BRD-K30990140	FR-122047	False	cyclooxygenase inhibitor	1	1	0	1.0	0.0
+BRD-K32628102	BRD-K32628102	False		1	1	0	1.0	0.0
+BRD-K35004659	BRD-K35004659	False		1	1	0	1.0	0.0
+BRD-K40797222	SC-12267	False	dihydroorotate dehydrogenase inhibitor	2	1	0	0.5	0.0
+BRD-K42573370	BRD-K42573370	False		2	1	0	0.5	0.0
+BRD-K45044657	TC-H-106	False	HDAC inhibitor	1	1	0	1.0	0.0
+BRD-K45303727	BRD-K45303727	False		1	1	0	1.0	0.0
+BRD-K48141473	cebranopadol	False	opioid receptor agonist	2	1	0	0.5	0.0
+BRD-K48296029	BRD-K48296029	False		3	1	0	0.333	0.0
+BRD-K51018020	VAMA-37	False		5	1	0	0.2	0.0
+BRD-K51143828	lurasidone	True	dopamine receptor antagonist|serotonin receptor antagonist	5	1	0	0.2	0.0
+BRD-K51643619	BRD-K51643619	False		1	1	0	1.0	0.0
+BRD-K52914903	BRD-K52914903	False		2	1	0	0.5	0.0
+BRD-K53665955	MK-5108	False	Aurora kinase inhibitor	5	1	0	0.2	0.0
+BRD-K53972329	ruxolitinib	True	JAK inhibitor	41	1	0	0.024	0.0
+BRD-K56001384	antimycin-a	False		2	1	0	0.5	0.0
+BRD-K56411643	BRD-K56411643	False		41	1	0	0.024	0.0
+BRD-K58698715	BRD-K58698715	False		5	1	0	0.2	0.0
+BRD-K61480498	epoxycholesterol	False		1	1	0	1.0	0.0
+BRD-K61894884	BRD-K61894884	False		41	1	0	0.024	0.0
+BRD-K62083683	BRD-K62083683	False		1	1	0	1.0	0.0
+BRD-K62221994	T-98475	False		6	1	0	0.167	0.0
+BRD-K63494246	BRD-K63494246	False		1	1	0	1.0	0.0
+BRD-K66214645	BRD-K66214645	False		41	1	0	0.024	0.0
+BRD-K68873215	BRD-K68873215	False		1	1	0	1.0	0.0
+BRD-K69516039	BRD-K69516039	False		4	1	0	0.25	0.0
+BRD-K77947974	fluspirilene	True	dopamine receptor antagonist	41	1	0	0.024	0.0
+BRD-K80400967	propyl-gallate	False		1	1	0	1.0	0.0
+BRD-K84163249	ercalcitriol	False	vitamin D receptor agonist	1	1	0	1.0	0.0
+BRD-K84447616	BRD-K84447616	False		3	1	0	0.333	0.0
+BRD-K84748119	vicriviroc	False	CC chemokine receptor antagonist	2	1	0	0.5	0.0
+BRD-K90027355	spironolactone	True	mineralocorticoid receptor antagonist	1	1	0	1.0	0.0
+BRD-K92856060	MW-MITF10	False		1	1	0	1.0	0.0
+BRD-K93443135	BRD-K93443135	False		1	1	0	1.0	0.0
+BRD-K93725829	BRD-K93725829	False	MAP kinase inhibitor	3	1	0	0.333	0.0
+BRD-K97194822	BRD-K97194822	False		3	1	0	0.333	0.0
+BRD-K97651142	BRD-K97651142	False		41	1	0	0.024	0.0
+BRD-K98143437	SB-239063	False		6	1	0	0.167	0.0
+BRD-U88459701	atorvastatin	False		2	1	0	0.5	0.0
+BRD-K05153001	BRD-K05153001	False		41	0	10	0.0	0.244
+BRD-K96041907	BRD-K96041907	False		41	0	9	0.0	0.22
+BRD-K85985071	ellipticine	False		41	0	8	0.0	0.195
+BRD-K89930444	AG-592	False		41	0	8	0.0	0.195
+BRD-A47829399	artesunate	False		41	0	7	0.0	0.171
+BRD-A48430263	pioglitazone	True		41	0	7	0.0	0.171
+BRD-K14821540	FCCP	False		41	0	7	0.0	0.171
+BRD-K35520305	dacarbazine	True	DNA alkylating agent	41	0	7	0.0	0.171
+BRD-K36055864	cycloheximide	False	protein synthesis inhibitor	41	0	7	0.0	0.171
+BRD-K60870698	BRD-K60870698	False		41	0	7	0.0	0.171
+BRD-K73008154	BRD-K73008154	False		41	0	7	0.0	0.171
+BRD-K88506063	KD-025	True	rho associated kinase inhibitor	41	0	7	0.0	0.171
+BRD-A55484088	BNTX	False		41	0	6	0.0	0.146
+BRD-K03829970	BRD-K03829970	False		41	0	6	0.0	0.146
+BRD-K11853856	PJ-34	False	PARP inhibitor	41	0	6	0.0	0.146
+BRD-K12539581	nocodazole	False	tubulin polymerization inhibitor	41	0	6	0.0	0.146
+BRD-K15025317	BAY-11-7082	False	NFkB pathway inhibitor	41	0	6	0.0	0.146
+BRD-K43578482	defactinib	False	focal adhesion kinase inhibitor	41	0	6	0.0	0.146
+BRD-K55026842	azacitidine	False		41	0	6	0.0	0.146
+BRD-K57252450	cilengitide	False	integrin antagonist	41	0	6	0.0	0.146
+BRD-A58955223	sulforaphane	False	anticancer agent|aryl hydrocarbon receptor antagonist	41	0	5	0.0	0.122
+BRD-K00313977	BRD-K00313977	False		41	0	5	0.0	0.122
+BRD-K03406345	azacitidine	True	DNA methyltransferase inhibitor	41	0	5	0.0	0.122
+BRD-K03736784	BRD-K03736784	False		41	0	5	0.0	0.122
+BRD-K19416115	sitagliptin	True	dipeptidyl peptidase inhibitor	41	0	5	0.0	0.122
+BRD-K30577245	docetaxel	True	tubulin polymerization inhibitor	41	0	5	0.0	0.122
+BRD-K32944375	BRD-K32944375	False		41	0	5	0.0	0.122
+BRD-K33277808	ouabain	True	ATPase inhibitor	41	0	5	0.0	0.122
+BRD-K68548958	C-646	False		41	0	5	0.0	0.122
+BRD-K91623615	ABT-751	False	tubulin polymerization inhibitor	41	0	5	0.0	0.122
+BRD-K99252563	QL-XII-47	False		41	0	5	0.0	0.122
+BRD-A49680073	BRD-A49680073	False		41	0	4	0.0	0.098
+BRD-A67788537	salermide	False		41	0	4	0.0	0.098
+BRD-A94543220	bifonazole	True	sterol demethylase inhibitor	41	0	4	0.0	0.098
+BRD-K01976263	emetine	False		41	0	4	0.0	0.098
+BRD-K05402890	BRD-K05402890	False		41	0	4	0.0	0.098
+BRD-K07259155	BRD-K07259155	False		41	0	4	0.0	0.098
+BRD-K16803204	filgotinib	True	JAK inhibitor	41	0	4	0.0	0.098
+BRD-K17960872	LJI-308	False		41	0	4	0.0	0.098
+BRD-K18190982	COT-10b	False		41	0	4	0.0	0.098
+BRD-K26997899	D-64131	False	microtubule inhibitor	41	0	4	0.0	0.098
+BRD-K31706415	BRD-K31706415	False		41	0	4	0.0	0.098
+BRD-K32744045	disulfiram	True	aldehyde dehydrogenase inhibitor|DNA methyltransferase inhibitor|TRPV agonist	41	0	4	0.0	0.098
+BRD-K32896438	BRD-K32896438	False		41	0	4	0.0	0.098
+BRD-K44100512	KIN001-043	False		41	0	4	0.0	0.098
+BRD-K45746021	CC-401	False	JNK inhibitor	41	0	4	0.0	0.098
+BRD-K53281329	BAY-61-3606	False	SYK inhibitor	41	0	4	0.0	0.098
+BRD-K57371763	fidaxomicin	False		41	0	4	0.0	0.098
+BRD-K57631554	aminolevulinic-acid	True	oxidizing agent	41	0	4	0.0	0.098
+BRD-K59333713	BRD-K59333713	False	adrenergic receptor antagonist	41	0	4	0.0	0.098
+BRD-K60763357	BRD-K60763357	False		41	0	4	0.0	0.098
+BRD-K67439147	SIB-1893	False		41	0	4	0.0	0.098
+BRD-K71265179	BRD-K71265179	False		41	0	4	0.0	0.098
+BRD-K81332461	maxacalcitol	False		41	0	4	0.0	0.098
+BRD-K81916719	triclabendazole	True	microtubule inhibitor	41	0	4	0.0	0.098
+BRD-K94325918	kinetin-riboside	False		41	0	4	0.0	0.098
+BRD-U86922168	QL-XII-47	False		41	0	4	0.0	0.098
+BRD-A40431293	BRD-A40431293	False		41	0	3	0.0	0.073
+BRD-A58767537	afatinib	False		41	0	3	0.0	0.073
+BRD-A77216878	manumycin-a	False		41	0	3	0.0	0.073
+BRD-K00152668	adarotene	False	retinoid receptor agonist	41	0	3	0.0	0.073
+BRD-K00889002	BRD-K00889002	False		41	0	3	0.0	0.073
+BRD-K01188359	vinblastine	True	microtubule inhibitor|tubulin polymerization inhibitor	41	0	3	0.0	0.073
+BRD-K02950022	BMS-299897	False	gamma secretase inhibitor	41	0	3	0.0	0.073
+BRD-K03063480	PF-477736	False	CHK inhibitor	41	0	3	0.0	0.073
+BRD-K04472231	BRD-K04472231	False		41	0	3	0.0	0.073
+BRD-K04923131	BRD-K04923131	False	glycogen synthase kinase inhibitor|lipoxygenase inhibitor	41	0	3	0.0	0.073
+BRD-K10207760	lasalocid	True	bacterial permeability inducer	41	0	3	0.0	0.073
+BRD-K16189898	CHIR-99021	False	glycogen synthase kinase inhibitor	41	0	3	0.0	0.073
+BRD-K17944737	artesunate	False		41	0	3	0.0	0.073
+BRD-K20109053	BRD-K20109053	False		41	0	3	0.0	0.073
+BRD-K23190681	AV-412	False	protein tyrosine kinase inhibitor	41	0	3	0.0	0.073
+BRD-K23363278	CYT-997	False	tubulin polymerization inhibitor	41	0	3	0.0	0.073
+BRD-K24132293	piperlongumine	False		41	0	3	0.0	0.073
+BRD-K30842649	BRD-K30842649	False		41	0	3	0.0	0.073
+BRD-K33551950	radicicol	False		41	0	3	0.0	0.073
+BRD-K34624563	BRD-K34624563	False		41	0	3	0.0	0.073
+BRD-K36737713	AG-957	False		41	0	3	0.0	0.073
+BRD-K36852164	NPC26	False		41	0	3	0.0	0.073
+BRD-K42308740	ST-056792	False		41	0	3	0.0	0.073
+BRD-K50000283	PHA-767491	False	CDC inhibitor	41	0	3	0.0	0.073
+BRD-K51662849	ilomastat	False	matrix metalloprotease inhibitor	41	0	3	0.0	0.073
+BRD-K55187425	rigosertib	False	cell cycle inhibitor|PLK inhibitor	41	0	3	0.0	0.073
+BRD-K55191674	benzylpenicillin	True	penicillin binding protein inhibitor	41	0	3	0.0	0.073
+BRD-K56301217	ABT-737	False	BCL inhibitor	41	0	3	0.0	0.073
+BRD-K64140008	BRD-K64140008	False		41	0	3	0.0	0.073
+BRD-K67774729	BRD-K67774729	False		41	0	3	0.0	0.073
+BRD-K68747584	PF-03814735	False	Aurora kinase inhibitor	41	0	3	0.0	0.073
+BRD-K74057757	indibulin	False	tubulin polymerization inhibitor	41	0	3	0.0	0.073
+BRD-K77547509	ML-179	False	liver receptor homolog inverse agonist	41	0	3	0.0	0.073
+BRD-K78126613	menadione	True	mitochondrial DNA polymerase inhibitor|phosphatase inhibitor	41	0	3	0.0	0.073
+BRD-K78567475	dolastatin-10	False	tubulin polymerization inhibitor	41	0	3	0.0	0.073
+BRD-K78659596	ixazomib	True	proteasome inhibitor	41	0	3	0.0	0.073
+BRD-K80608265	erteberel	False	estrogen receptor agonist	41	0	3	0.0	0.073
+BRD-K81491172	BRD-K81491172	False		41	0	3	0.0	0.073
+BRD-K81528515	nilotinib	True	Abl kinase inhibitor|Bcr-Abl kinase inhibitor	41	0	3	0.0	0.073
+BRD-K82746043	navitoclax	False	BCL inhibitor	41	0	3	0.0	0.073
+BRD-K83213911	PF-750	False	FAAH inhibitor	41	0	3	0.0	0.073
+BRD-K83699324	NMS-1286937	False	PLK inhibitor	41	0	3	0.0	0.073
+BRD-K86574132	BRD-K86574132	False		41	0	3	0.0	0.073
+BRD-K92428232	GSK-461364	False	PLK inhibitor	41	0	3	0.0	0.073
+BRD-K93112400	BRD-K93112400	False		41	0	3	0.0	0.073
+BRD-K94493764	BRD-K94493764	False		41	0	3	0.0	0.073
+BRD-K95412502	istaroxime	False	ATPase inhibitor	41	0	3	0.0	0.073
+BRD-A02367930	BRD-A02367930	False		41	0	2	0.0	0.049
+BRD-A09719808	BRD-A09719808	False		41	0	2	0.0	0.049
+BRD-A09890259	3-Cl-AHPC	False		41	0	2	0.0	0.049
+BRD-A11007541	BCI-hydrochloride	False		41	0	2	0.0	0.049
+BRD-A24396574	celastrol	False		41	0	2	0.0	0.049
+BRD-A26199074	calmidazolium	False		2	0	2	0.0	1.0
+BRD-A39935389	teroxirone	False	DNA inhibitor	41	0	2	0.0	0.049
+BRD-A50737080	CGK-733	False	ATM kinase inhibitor|ATR kinase inhibitor	41	0	2	0.0	0.049
+BRD-A55594068	vinblastine	False		41	0	2	0.0	0.049
+BRD-A62182663	YK-4279	False	apoptosis inhibitor	41	0	2	0.0	0.049
+BRD-A69815203	cyclosporin-a	False		41	0	2	0.0	0.049
+BRD-A70858459	estramustine	True	DNA alkylating agent	41	0	2	0.0	0.049
+BRD-A83326220	brazilin	False		41	0	2	0.0	0.049
+BRD-A89434049	sarmentogenin	False		41	0	2	0.0	0.049
+BRD-A93942655	BRD-A93942655	False		41	0	2	0.0	0.049
+BRD-K02822062	CT-200783	False		41	0	2	0.0	0.049
+BRD-K09050080	BRD-K09050080	False		41	0	2	0.0	0.049
+BRD-K09854848	MD-II-008-P	False		41	0	2	0.0	0.049
+BRD-K10882151	BRD-K10882151	False		41	0	2	0.0	0.049
+BRD-K14027855	BRD-K14027855	False		41	0	2	0.0	0.049
+BRD-K15563106	phloretin	True	sodium/glucose cotransporter inhibitor	41	0	2	0.0	0.049
+BRD-K15935639	z-leu3-VS	False		41	0	2	0.0	0.049
+BRD-K16410418	BRD-K16410418	False		41	0	2	0.0	0.049
+BRD-K18978393	BRD-K18978393	False		41	0	2	0.0	0.049
+BRD-K19724398	BRD-K19724398	False		41	0	2	0.0	0.049
+BRD-K19826688	BRD-K19826688	False		41	0	2	0.0	0.049
+BRD-K19876534	BRD-K19876534	False		41	0	2	0.0	0.049
+BRD-K21001652	BRD-K21001652	False		41	0	2	0.0	0.049
+BRD-K22848513	BRD-K22848513	False		41	0	2	0.0	0.049
+BRD-K23319301	BRD-K23319301	False		41	0	2	0.0	0.049
+BRD-K23875128	BRD-K23875128	False		41	0	2	0.0	0.049
+BRD-K25079130	BRD-K25079130	False		41	0	2	0.0	0.049
+BRD-K28138218	BRD-K28138218	False		41	0	2	0.0	0.049
+BRD-K29054201	BRD-K29054201	False		4	0	2	0.0	0.5
+BRD-K29968218	KX-2391	True	SRC inhibitor|tubulin polymerization inhibitor	41	0	2	0.0	0.049
+BRD-K30331124	ASC-J9	False	androgen receptor enhancer	41	0	2	0.0	0.049
+BRD-K33379087	tivantinib	False	tyrosine kinase inhibitor	41	0	2	0.0	0.049
+BRD-K37312348	kenpaullone	False	CDK inhibitor|glycogen synthase kinase inhibitor	41	0	2	0.0	0.049
+BRD-K37865504	LY-2183240	False	FAAH inhibitor|FAAH reuptake inhibitor	41	0	2	0.0	0.049
+BRD-K37940862	BRD-K37940862	False		41	0	2	0.0	0.049
+BRD-K38292946	BRD-K38292946	False		41	0	2	0.0	0.049
+BRD-K39597586	BRD-K39597586	False		3	0	2	0.0	0.667
+BRD-K40373196	KU-C104337	False		41	0	2	0.0	0.049
+BRD-K40887525	ritanserin	False	serotonin receptor antagonist	2	0	2	0.0	1.0
+BRD-K41731458	triclosan	True	antibacterial agent	41	0	2	0.0	0.049
+BRD-K47869605	BRD-K47869605	True	microtubule inhibitor|tubulin polymerization inhibitor	41	0	2	0.0	0.049
+BRD-K49350383	thioguanine	True	purine antagonist	41	0	2	0.0	0.049
+BRD-K51290057	SA-792709	False		41	0	2	0.0	0.049
+BRD-K52075715	oxibendazole	True	tubulin polymerization inhibitor	5	0	2	0.0	0.4
+BRD-K54233340	dorsomorphin	False	AMPK inhibitor	41	0	2	0.0	0.049
+BRD-K63265447	docetaxel	False		3	0	2	0.0	0.667
+BRD-K63308290	BRD-K63308290	False		41	0	2	0.0	0.049
+BRD-K64857848	XMD-885	False	MAP kinase inhibitor	41	0	2	0.0	0.049
+BRD-K64863641	BRD-K64863641	False		41	0	2	0.0	0.049
+BRD-K65503129	CCT-018159	False	HSP inhibitor	41	0	2	0.0	0.049
+BRD-K67860401	AR-A014418	False	glycogen synthase kinase inhibitor	41	0	2	0.0	0.049
+BRD-K69496360	BRD-K69496360	False		4	0	2	0.0	0.5
+BRD-K72703948	ZM-447439	False	Aurora kinase inhibitor	41	0	2	0.0	0.049
+BRD-K73261812	BRD-K73261812	False	beta-catenin inhibitor	41	0	2	0.0	0.049
+BRD-K75430629	BRD-K75430629	False		2	0	2	0.0	1.0
+BRD-K77008974	WYE-354	False	mTOR inhibitor	3	0	2	0.0	0.667
+BRD-K78133682	BRD-K78133682	False		41	0	2	0.0	0.049
+BRD-K79330383	BRD-K79330383	False		2	0	2	0.0	1.0
+BRD-K80738081	resveratrol	True	cytochrome P450 inhibitor|SIRT activator	41	0	2	0.0	0.049
+BRD-K81335188	BRD-K81335188	False		41	0	2	0.0	0.049
+BRD-K82109576	vincristine	True	tubulin polymerization inhibitor	41	0	2	0.0	0.049
+BRD-K82685933	BRD-K82685933	False		41	0	2	0.0	0.049
+BRD-K83972459	JWE-035	False		41	0	2	0.0	0.049
+BRD-K84633118	BRD-K84633118	False		41	0	2	0.0	0.049
+BRD-K86892782	edoxudine	True	DNA directed DNA polymerase inhibitor	4	0	2	0.0	0.5
+BRD-K87550320	BRD-K87550320	False		41	0	2	0.0	0.049
+BRD-K88198340	BRD-K88198340	False		41	0	2	0.0	0.049
+BRD-K90382497	GW-843682X	False	PLK inhibitor	41	0	2	0.0	0.049
+BRD-K90826279	BRD-K90826279	False		2	0	2	0.0	1.0
+BRD-K91601245	mercaptopurine	True	immunosuppressant|protein synthesis inhibitor|purine antagonist	41	0	2	0.0	0.049
+BRD-K93747373	HG-5-113-01	False		41	0	2	0.0	0.049
+BRD-K94534639	LY-2811376	False	beta-secretase inhibitor	41	0	2	0.0	0.049
+BRD-K97764662	PD-173074	False	FGFR inhibitor|VEGFR inhibitor	41	0	2	0.0	0.049
+BRD-K99964838	bosutinib	True	Abl kinase inhibitor|Bcr-Abl kinase inhibitor|SRC inhibitor	41	0	2	0.0	0.049
+BRD-A04553218	BRD-A04553218	True		3	0	1	0.0	0.333
+BRD-A04756508	norgestimate	False		2	0	1	0.0	0.5
+BRD-A05821830	docetaxel	False		41	0	1	0.0	0.024
+BRD-A06352418	terfenadine	True	histamine receptor antagonist	41	0	1	0.0	0.024
+BRD-A08545410	doxycycline	False		41	0	1	0.0	0.024
+BRD-A09349126	norethindrone	False		2	0	1	0.0	0.5
+BRD-A09539288	homatropine	False		2	0	1	0.0	0.5
+BRD-A09722536	cyclophosphamide	True	DNA alkylating agent	1	0	1	0.0	1.0
+BRD-A11706664	triciribine	False		5	0	1	0.0	0.2
+BRD-A15010982	HU-211	False		1	0	1	0.0	1.0
+BRD-A15100685	avicin-d	False		1	0	1	0.0	1.0
+BRD-A17535965	gelsemine	False		4	0	1	0.0	0.25
+BRD-A18202423	CPCCOEt	False		1	0	1	0.0	1.0
+BRD-A18763547	BRD-A18763547	False		41	0	1	0.0	0.024
+BRD-A19500257	geldanamycin	False		41	0	1	0.0	0.024
+BRD-A24228527	ofloxacin	True		1	0	1	0.0	1.0
+BRD-A24560335	efatutazone	False	PPAR receptor agonist	1	0	1	0.0	1.0
+BRD-A29731977	BRD-A29731977	False		2	0	1	0.0	0.5
+BRD-A30437061	camptothecin	False		2	0	1	0.0	0.5
+BRD-A33711280	metixene	True		4	0	1	0.0	0.25
+BRD-A38749782	fludrocortisone-acetate	False		3	0	1	0.0	0.333
+BRD-A39747742	BRD-A39747742	False		2	0	1	0.0	0.5
+BRD-A45657137	BRD-A45657137	False		1	0	1	0.0	1.0
+BRD-A51820102	econazole	True	lanosterol demethylase inhibitor|sterol demethylase inhibitor	3	0	1	0.0	0.333
+BRD-A68723818	brompheniramine	True		2	0	1	0.0	0.5
+BRD-A69512159	carbidopa	False		1	0	1	0.0	1.0
+BRD-A74642112	rathyronine	False		1	0	1	0.0	1.0
+BRD-A81177136	KN-62	False	calcium/calmodulin dependent protein kinase inhibitor|purinergic receptor antagonist	2	0	1	0.0	0.5
+BRD-A83237092	none	False		4	0	1	0.0	0.25
+BRD-A87130939	masoprocol	True	lipoxygenase inhibitor	41	0	1	0.0	0.024
+BRD-A90451247	KU-60019	False		41	0	1	0.0	0.024
+BRD-A98444709	BRD-A98444709	False		1	0	1	0.0	1.0
+BRD-K00007652	BRD-K00007652	False		6	0	1	0.0	0.167
+BRD-K00816165	BRD-K00816165	False		2	0	1	0.0	0.5
+BRD-K01493881	apigenin	False	casein kinase inhibitor|cell proliferation inhibitor	1	0	1	0.0	1.0
+BRD-K02882069	BRD-K02882069	False		1	0	1	0.0	1.0
+BRD-K04146668	GW-441756	False		2	0	1	0.0	0.5
+BRD-K04466929	Merck60	False	HDAC inhibitor	41	0	1	0.0	0.024
+BRD-K05639119	SA-1920013	False		41	0	1	0.0	0.024
+BRD-K06765193	BRD-K06765193	False		1	0	1	0.0	1.0
+BRD-K07023879	BRD-K07023879	False		3	0	1	0.0	0.333
+BRD-K07061353	BRD-K07061353	False		3	0	1	0.0	0.333
+BRD-K07378204	BRD-K07378204	False		4	0	1	0.0	0.25
+BRD-K08220319	BRD-K08220319	False		2	0	1	0.0	0.5
+BRD-K09701578	BRD-K09701578	False		1	0	1	0.0	1.0
+BRD-K09991945	BRD-K09991945	False		2	0	1	0.0	0.5
+BRD-K11267252	alectinib	True	ALK tyrosine kinase receptor inhibitor	41	0	1	0.0	0.024
+BRD-K13169950	NSC-3852	False	HDAC inhibitor	41	0	1	0.0	0.024
+BRD-K13183738	pentamidine	True	anti-pneumocystis agent	3	0	1	0.0	0.333
+BRD-K13606314	P-5091	False	ubiquitin specific protease inhibitor	2	0	1	0.0	0.5
+BRD-K14529030	meisoindigo	False	STAT inhibitor	5	0	1	0.0	0.2
+BRD-K15170068	swainsonine	False	alpha mannosidase inhibitor	1	0	1	0.0	1.0
+BRD-K15616905	CCCP	False		41	0	1	0.0	0.024
+BRD-K16732600	MK-0893	False	glucagon receptor antagonist	2	0	1	0.0	0.5
+BRD-K16827616	BRD-K16827616	False		41	0	1	0.0	0.024
+BRD-K17894950	indirubin	False	CDK inhibitor|glycogen synthase kinase inhibitor	1	0	1	0.0	1.0
+BRD-K19166598	BRD-K19166598	False		41	0	1	0.0	0.024
+BRD-K19181733	BRD-K19181733	False		4	0	1	0.0	0.25
+BRD-K19554809	MK-212	False		3	0	1	0.0	0.333
+BRD-K20001883	RVX-208	False	apolipoprotein expression enhancer	1	0	1	0.0	1.0
+BRD-K20755323	SKI-II	False	sphingosine kinase inhibitor	41	0	1	0.0	0.024
+BRD-K21396683	marimastat	False	matrix metalloprotease inhibitor	2	0	1	0.0	0.5
+BRD-K22514639	EGF-816	False	EGFR inhibitor	6	0	1	0.0	0.167
+BRD-K23244363	BRD-K23244363	False		2	0	1	0.0	0.5
+BRD-K23853216	BRD-K23853216	False		2	0	1	0.0	0.5
+BRD-K23984367	sorafenib	True	FLT3 inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|RAF inhibitor|RET tyrosine kinase inhibitor|VEGFR inhibitor	41	0	1	0.0	0.024
+BRD-K24752075	BRD-K24752075	False		1	0	1	0.0	1.0
+BRD-K24890551	BRD-K24890551	False		1	0	1	0.0	1.0
+BRD-K25167492	BRD-K25167492	False		4	0	1	0.0	0.25
+BRD-K26104851	nifuroxazide	False		5	0	1	0.0	0.2
+BRD-K28026280	simvastatin	False		4	0	1	0.0	0.25
+BRD-K28167849	ichthynone	False		1	0	1	0.0	1.0
+BRD-K28366633	BRD-K28366633	False		41	0	1	0.0	0.024
+BRD-K28470988	L-690330	False	inositol monophosphatase inhibitor	2	0	1	0.0	0.5
+BRD-K29173907	isoflupredone-acetate	False		3	0	1	0.0	0.333
+BRD-K29385665	WH-4025	False		4	0	1	0.0	0.25
+BRD-K29668683	BD-1063	False	sigma receptor antagonist	2	0	1	0.0	0.5
+BRD-K29733039	deforolimus	False		5	0	1	0.0	0.2
+BRD-K30418433	BRD-K30418433	False		41	0	1	0.0	0.024
+BRD-K30849099	MW-STK33-2A	False		5	0	1	0.0	0.2
+BRD-K31086665	NH-125	False	eukaryotic translation elongation factor 2 inhibitor	1	0	1	0.0	1.0
+BRD-K31268420	NSC-693868	False	CDK inhibitor|glycogen synthase kinase inhibitor	1	0	1	0.0	1.0
+BRD-K31912990	CGP-71683	False		41	0	1	0.0	0.024
+BRD-K32292990	CGP-53353	False	EGFR inhibitor|PKC inhibitor	1	0	1	0.0	1.0
+BRD-K32501161	vanoxerine	False	dopamine reuptake inhibitor	41	0	1	0.0	0.024
+BRD-K32710582	EI-247	False		1	0	1	0.0	1.0
+BRD-K33586289	EPZ-020411	False	protein arginine N-methyltransferase inhibitor	4	0	1	0.0	0.25
+BRD-K33882852	ZK-93423	False	benzodiazepine receptor agonist	1	0	1	0.0	1.0
+BRD-K34338046	BRD-K34338046	False		2	0	1	0.0	0.5
+BRD-K35169477	taranabant	False	cannabinoid receptor inverse agonist	1	0	1	0.0	1.0
+BRD-K35559145	levomepromazine	True	dopamine receptor antagonist	2	0	1	0.0	0.5
+BRD-K35573744	erbstatin-analog	False	EGFR inhibitor|tyrosine kinase inhibitor	1	0	1	0.0	1.0
+BRD-K35687265	ON-01910	False		41	0	1	0.0	0.024
+BRD-K35781423	SANT-2	False	smoothened receptor antagonist	5	0	1	0.0	0.2
+BRD-K36111658	BRD-K36111658	False		1	0	1	0.0	1.0
+BRD-K37590257	GSK-256066	False	phosphodiesterase inhibitor	4	0	1	0.0	0.25
+BRD-K38061943	BRD-K38061943	False		2	0	1	0.0	0.5
+BRD-K38454082	BRD-K38454082	False		1	0	1	0.0	1.0
+BRD-K39944607	ochratoxin-a	False		1	0	1	0.0	1.0
+BRD-K41431477	A-23187	False		2	0	1	0.0	0.5
+BRD-K41708769	BRD-K41708769	False		1	0	1	0.0	1.0
+BRD-K42197878	BRD-K42197878	False		2	0	1	0.0	0.5
+BRD-K46766834	BRD-K46766834	False		2	0	1	0.0	0.5
+BRD-K47503321	BRD-K47503321	False		41	0	1	0.0	0.024
+BRD-K47977047	BRD-K47977047	False		1	0	1	0.0	1.0
+BRD-K49075727	nintedanib	True	FGFR inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	41	0	1	0.0	0.024
+BRD-K49810818	sorafenib	False		5	0	1	0.0	0.2
+BRD-K49861754	BRD-K49861754	False		4	0	1	0.0	0.25
+BRD-K50199947	WH-4023	False	SRC inhibitor	4	0	1	0.0	0.25
+BRD-K50234570	EMF-bca1-16	False		41	0	1	0.0	0.024
+BRD-K51674646	BRD-K51674646	False		1	0	1	0.0	1.0
+BRD-K51730347	diphencyprone	False	immunostimulant	1	0	1	0.0	1.0
+BRD-K52075040	cerulenin	True	fatty acid synthase inhibitor	41	0	1	0.0	0.024
+BRD-K52163391	BRD-K52163391	False		41	0	1	0.0	0.024
+BRD-K52183142	pregnenolone	False		2	0	1	0.0	0.5
+BRD-K53094739	BRD-K53094739	False		4	0	1	0.0	0.25
+BRD-K53523901	arctigenin	False	MEK inhibitor	1	0	1	0.0	1.0
+BRD-K53792571	inhibitor-BEC	False		2	0	1	0.0	0.5
+BRD-K54006094	formoterol	True	adrenergic receptor agonist	1	0	1	0.0	1.0
+BRD-K54997624	alpelisib	True	PI3K inhibitor	41	0	1	0.0	0.024
+BRD-K55127335	BRD-K55127335	False		4	0	1	0.0	0.25
+BRD-K55420858	mirin	False	MRE11A exonuclease inhibitor	1	0	1	0.0	1.0
+BRD-K55533488	BRD-K55533488	False		41	0	1	0.0	0.024
+BRD-K56269643	BRD-K56269643	False		1	0	1	0.0	1.0
+BRD-K56745457	azauridine	False		5	0	1	0.0	0.2
+BRD-K58568447	K-02288	False	bone morphogenic protein inhibitor	1	0	1	0.0	1.0
+BRD-K60446698	ONX-0914	False		1	0	1	0.0	1.0
+BRD-K60507178	BRD-K60507178	False		4	0	1	0.0	0.25
+BRD-K61195623	BRD-K61195623	False	tubulin polymerization inhibitor	41	0	1	0.0	0.024
+BRD-K61606206	BRD-K61606206	False		2	0	1	0.0	0.5
+BRD-K61991236	BRD-K61991236	False		2	0	1	0.0	0.5
+BRD-K63430059	methoxsalen	True	DNA synthesis inhibitor	3	0	1	0.0	0.333
+BRD-K63675182	triflupromazine	True	dopamine receptor antagonist	41	0	1	0.0	0.024
+BRD-K65955264	BRD-K65955264	False		41	0	1	0.0	0.024
+BRD-K66175015	afatinib	True	EGFR inhibitor	41	0	1	0.0	0.024
+BRD-K66782112	ICI-162846	False	histamine receptor antagonist	2	0	1	0.0	0.5
+BRD-K67808578	BRD-K67808578	False		4	0	1	0.0	0.25
+BRD-K68143200	NSC-95397	False	CDC inhibitor	41	0	1	0.0	0.024
+BRD-K69406317	BRD-K69406317	False		41	0	1	0.0	0.024
+BRD-K69776681	volasertib	False	PLK inhibitor	41	0	1	0.0	0.024
+BRD-K70463136	BAY-87-2243	False	hypoxia inducible factor inhibitor	41	0	1	0.0	0.024
+BRD-K71035033	masitinib	True	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|SRC inhibitor	41	0	1	0.0	0.024
+BRD-K71199328	YL-55	False		1	0	1	0.0	1.0
+BRD-K71221037	birinapant	False	XIAP inhibitor	4	0	1	0.0	0.25
+BRD-K71223042	PCI-29732	False	Bruton's tyrosine kinase (BTK) inhibitor	41	0	1	0.0	0.024
+BRD-K71401720	BRD-K71401720	False		1	0	1	0.0	1.0
+BRD-K72839221	1-NITRONAPHTHALENE	False		1	0	1	0.0	1.0
+BRD-K73155123	BRD-K73155123	False		1	0	1	0.0	1.0
+BRD-K73395020	ARP-101	False		41	0	1	0.0	0.024
+BRD-K73999723	telmisartan	True	angiotensin receptor antagonist	1	0	1	0.0	1.0
+BRD-K74548617	BRD-K74548617	False		1	0	1	0.0	1.0
+BRD-K74733595	BRD-K74733595	False		5	0	1	0.0	0.2
+BRD-K76418961	BRD-K76418961	False		1	0	1	0.0	1.0
+BRD-K77144489	BRD-K77144489	False		1	0	1	0.0	1.0
+BRD-K77480336	BRD-K77480336	False		5	0	1	0.0	0.2
+BRD-K77503770	PF-06465469	False		41	0	1	0.0	0.024
+BRD-K77634909	AEG-3482	False	HSP inducer	41	0	1	0.0	0.024
+BRD-K78485176	olmesartan-medoxomil	True	angiotensin receptor antagonist	41	0	1	0.0	0.024
+BRD-K79018442	KIN001-260	False		1	0	1	0.0	1.0
+BRD-K80169513	BRD-K80169513	False		3	0	1	0.0	0.333
+BRD-K80346834	BRD-K80346834	False		4	0	1	0.0	0.25
+BRD-K80639402	SB-258585	False	serotonin receptor antagonist	2	0	1	0.0	0.5
+BRD-K81209159	herniarin	False		2	0	1	0.0	0.5
+BRD-K82823804	PD-407824	False	PKC inhibitor	41	0	1	0.0	0.024
+BRD-K83631404	BRD-K83631404	False		1	0	1	0.0	1.0
+BRD-K83643280	BG-FA-0953	False		2	0	1	0.0	0.5
+BRD-K83963101	MLN-8054	False	Aurora kinase inhibitor	6	0	1	0.0	0.167
+BRD-K84996356	AZD-3514	False	androgen receptor modulator	41	0	1	0.0	0.024
+BRD-K85090592	pilocarpine	True	acetylcholine receptor agonist	2	0	1	0.0	0.5
+BRD-K85402309	dovitinib	False	EGFR inhibitor|FGFR inhibitor|FLT3 inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	41	0	1	0.0	0.024
+BRD-K86816506	PF-04457845	False	FAAH inhibitor	2	0	1	0.0	0.5
+BRD-K87126403	BRD-K87126403	False		1	0	1	0.0	1.0
+BRD-K87375115	KM-00799	False		1	0	1	0.0	1.0
+BRD-K87718015	dynasore	False	dynamin inhibitor	2	0	1	0.0	0.5
+BRD-K88025533	fingolimod	True	immunosuppressant|sphingosine 1-phosphate receptor agonist	41	0	1	0.0	0.024
+BRD-K89402695	L-655240	False	thromboxane receptor antagonist	2	0	1	0.0	0.5
+BRD-K91263825	nortriptyline	True	tricyclic antidepressant	3	0	1	0.0	0.333
+BRD-K91701654	U-0126	False		4	0	1	0.0	0.25
+BRD-K91832210	BRD-K91832210	False		3	0	1	0.0	0.333
+BRD-K92904839	BRD-K92904839	False		3	0	1	0.0	0.333
+BRD-K92923799	digitoxigenin	False		5	0	1	0.0	0.2
+BRD-K94412749	BRD-K94412749	False		1	0	1	0.0	1.0
+BRD-K94485812	LDN-57444	False	ubiquitin C-terminal hydrolase inhibitor	6	0	1	0.0	0.167
+BRD-K95202259	ML-3163	False		2	0	1	0.0	0.5
+BRD-K96076993	SA-25547	False		41	0	1	0.0	0.024
+BRD-K97309399	thiothixene	False		6	0	1	0.0	0.167
+BRD-K97399794	quercetin	True	polar auxin transport inhibitor	41	0	1	0.0	0.024
+BRD-K97972722	BRD-K97972722	False		4	0	1	0.0	0.25
+BRD-K98404142	BRD-K98404142	False		3	0	1	0.0	0.333
+BRD-K98572433	AZD-8931	False	EGFR inhibitor	2	0	1	0.0	0.5
+BRD-K99633092	BRD-K99633092	False		41	0	1	0.0	0.024
+BRD-U37049823	HG-6-64-01	False		41	0	1	0.0	0.024
+BRD-U64289953	BRD-U64289953	False		2	0	1	0.0	0.5
+BRD-A00758722	noretynodrel	True	progestogen hormone	1	0	0	0.0	0.0
+BRD-A00938334	drospirenone	False		2	0	0	0.0	0.0
+BRD-A01320529	salmeterol	True		1	0	0	0.0	0.0
+BRD-A01346607	flumetasone	False		2	0	0	0.0	0.0
+BRD-A02180903	betamethasone	False		2	0	0	0.0	0.0
+BRD-A02579693	etoposide	False		5	0	0	0.0	0.0
+BRD-A03623303	metoprolol	True		4	0	0	0.0	0.0
+BRD-A04172077	BRD-A04172077	False		4	0	0	0.0	0.0
+BRD-A04287157	BRD-A04287157	False		2	0	0	0.0	0.0
+BRD-A04352665	maraviroc	False		2	0	0	0.0	0.0
+BRD-A04668240	CGP-52432	False		2	0	0	0.0	0.0
+BRD-A04706586	bucladesine	False		2	0	0	0.0	0.0
+BRD-A06304526	alvespimycin	False		1	0	0	0.0	0.0
+BRD-A06416737	BRD-A06416737	False		1	0	0	0.0	0.0
+BRD-A06929388	CVF-SUMO-13	False		1	0	0	0.0	0.0
+BRD-A07875874	cilnidipine	False		1	0	0	0.0	0.0
+BRD-A08187463	racecadotril	True	enkephalinase inhibitor	2	0	0	0.0	0.0
+BRD-A08316103	BRD-A08316103	False		1	0	0	0.0	0.0
+BRD-A09472452	flecainide	True	sodium channel blocker	3	0	0	0.0	0.0
+BRD-A09533288	verapamil	True	calcium channel blocker	1	0	0	0.0	0.0
+BRD-A10903566	imiloxan	False	adrenergic receptor antagonist	3	0	0	0.0	0.0
+BRD-A10934835	BRD-A10934835	False		2	0	0	0.0	0.0
+BRD-A10967948	granisetron	True	serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-A10977446	carvedilol	True		5	0	0	0.0	0.0
+BRD-A11319535	beclomethasone-dipropionate	False		2	0	0	0.0	0.0
+BRD-A11512624	BRD-A11512624	False		1	0	0	0.0	0.0
+BRD-A11990600	lorazepam	True		1	0	0	0.0	0.0
+BRD-A12409803	orteronel	False		1	0	0	0.0	0.0
+BRD-A13020530	BRD-A13020530	False		1	0	0	0.0	0.0
+BRD-A13084692	troglitazone	True	insulin sensitizer|PPAR receptor agonist	41	0	0	0.0	0.0
+BRD-A14886633	norgestrel	True	progesterone receptor agonist	2	0	0	0.0	0.0
+BRD-A15131297	benazepril	False		2	0	0	0.0	0.0
+BRD-A15435692	BMY-14802	False	sigma receptor antagonist	3	0	0	0.0	0.0
+BRD-A15914070	BRD-A15914070	False		1	0	0	0.0	0.0
+BRD-A16296925	indobufen	True	cyclooxygenase inhibitor|platelet aggregation inhibitor	2	0	0	0.0	0.0
+BRD-A16347691	thioctic-acid	True	reducing agent	2	0	0	0.0	0.0
+BRD-A16581344	BRD-A16581344	False		1	0	0	0.0	0.0
+BRD-A16746338	BRD-A16746338	False		1	0	0	0.0	0.0
+BRD-A16820783	BRD-A16820783	False		1	0	0	0.0	0.0
+BRD-A16998493	etodolac	False		1	0	0	0.0	0.0
+BRD-A17818859	BRD-A17818859	False		3	0	0	0.0	0.0
+BRD-A18917088	estradiol	False		2	0	0	0.0	0.0
+BRD-A19195498	trimipramine	True		3	0	0	0.0	0.0
+BRD-A19374631	vinpocetine	False		2	0	0	0.0	0.0
+BRD-A19633847	perhexiline	True	carnitine palmitoyltransferase inhibitor	41	0	0	0.0	0.0
+BRD-A20126139	medrysone	False		3	0	0	0.0	0.0
+BRD-A20243730	danazol	False		1	0	0	0.0	0.0
+BRD-A22032524	amlodipine	True		6	0	0	0.0	0.0
+BRD-A22081593	sulmazole	False		1	0	0	0.0	0.0
+BRD-A22684332	procaterol	False		4	0	0	0.0	0.0
+BRD-A22713669	BVT-948	False		41	0	0	0.0	0.0
+BRD-A22769835	homochlorcyclizine	False		2	0	0	0.0	0.0
+BRD-A23067620	itraconazole	False		1	0	0	0.0	0.0
+BRD-A23072235	pheniramine	True	histamine receptor antagonist	1	0	0	0.0	0.0
+BRD-A23637604	oxymetholone	False		1	0	0	0.0	0.0
+BRD-A23689620	avermectin	False		4	0	0	0.0	0.0
+BRD-A23723433	paclitaxel	False		5	0	0	0.0	0.0
+BRD-A24054354	BRD-A24054354	False		2	0	0	0.0	0.0
+BRD-A24186493	norethynodrel	False		1	0	0	0.0	0.0
+BRD-A24381660	zeranol	False		1	0	0	0.0	0.0
+BRD-A24514565	warfarin	True		4	0	0	0.0	0.0
+BRD-A25088322	CVF-SUMO-7	False		1	0	0	0.0	0.0
+BRD-A25143711	hydrocortisone-valerate	False		2	0	0	0.0	0.0
+BRD-A25337146	AT-SUMO-1	False		1	0	0	0.0	0.0
+BRD-A26095496	clobetasol	False		4	0	0	0.0	0.0
+BRD-A26384407	chlortalidone	True	carbonic anhydrase inhibitor	2	0	0	0.0	0.0
+BRD-A26711594	nicardipine	True	calcium channel blocker	3	0	0	0.0	0.0
+BRD-A27887842	prednisolone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-A28318179	aminomethyltransferase	False	nitric oxide synthase inhibitor	1	0	0	0.0	0.0
+BRD-A29082194	gitoxigenin	False		6	0	0	0.0	0.0
+BRD-A30395175	BRD-A30395175	False		1	0	0	0.0	0.0
+BRD-A30435184	metergoline	False		3	0	0	0.0	0.0
+BRD-A31095847	mozavaptan	True	vasopressin receptor antagonist	2	0	0	0.0	0.0
+BRD-A31159102	fluoxetine	True	selective serotonin reuptake inhibitor (SSRI)	2	0	0	0.0	0.0
+BRD-A32595718	BJM-CSC-15	False		1	0	0	0.0	0.0
+BRD-A33280134	etoposide	False		1	0	0	0.0	0.0
+BRD-A33447119	oxfendazole	True	anthelmintic agent	5	0	0	0.0	0.0
+BRD-A33514596	N-benzylnaltrindole	False		2	0	0	0.0	0.0
+BRD-A33697453	fenticonazole	True	bacterial cell wall synthesis inhibitor	1	0	0	0.0	0.0
+BRD-A33833419	TER-14687	False		1	0	0	0.0	0.0
+BRD-A34037822	KUC107191N	False		1	0	0	0.0	0.0
+BRD-A34299591	budesonide	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-A34462049	tigecycline	False		1	0	0	0.0	0.0
+BRD-A34817987	itraconazole	True		1	0	0	0.0	0.0
+BRD-A35108200	dexamethasone	False		2	0	0	0.0	0.0
+BRD-A35782587	verteporfin	False		4	0	0	0.0	0.0
+BRD-A36136296	HU-210	False		4	0	0	0.0	0.0
+BRD-A36151937	genistein	False		1	0	0	0.0	0.0
+BRD-A36536537	BRD-A36536537	False		4	0	0	0.0	0.0
+BRD-A37704979	SB-203580	False		3	0	0	0.0	0.0
+BRD-A37828317	anthothecol	False		1	0	0	0.0	0.0
+BRD-A38350138	ketoconazole	False		1	0	0	0.0	0.0
+BRD-A38425832	BRD-A38425832	False		4	0	0	0.0	0.0
+BRD-A39415247	BRD-A39415247	False		3	0	0	0.0	0.0
+BRD-A39969961	eplerenone	False		2	0	0	0.0	0.0
+BRD-A40639672	ketorolac	True		2	0	0	0.0	0.0
+BRD-A40802033	BRD-A40802033	False		2	0	0	0.0	0.0
+BRD-A41250203	GP-42	False		5	0	0	0.0	0.0
+BRD-A41692738	TGX-221	False	PI3K inhibitor	1	0	0	0.0	0.0
+BRD-A42628519	iopanoic-acid	True	thyroid hormone inhibitor	2	0	0	0.0	0.0
+BRD-A43805296	BRD-A43805296	False		2	0	0	0.0	0.0
+BRD-A43940795	tetrahydropalmatine	False		1	0	0	0.0	0.0
+BRD-A43974499	reboxetine	True		2	0	0	0.0	0.0
+BRD-A44780397	mifepristone	False		1	0	0	0.0	0.0
+BRD-A45140972	meclocycline	False		1	0	0	0.0	0.0
+BRD-A45524355	BRD-A45524355	False		2	0	0	0.0	0.0
+BRD-A46335897	promethazine	True	histamine receptor antagonist	1	0	0	0.0	0.0
+BRD-A47633927	NPC-15199	False		2	0	0	0.0	0.0
+BRD-A48570745	ivermectin	False		5	0	0	0.0	0.0
+BRD-A49160188	donepezil	True	acetylcholinesterase inhibitor	2	0	0	0.0	0.0
+BRD-A49172652	lansoprazole	True		1	0	0	0.0	0.0
+BRD-A49447682	BRD-A49447682	False		2	0	0	0.0	0.0
+BRD-A50033377	rivaroxaban	False		2	0	0	0.0	0.0
+BRD-A50764878	MDL-73005EF	False		2	0	0	0.0	0.0
+BRD-A50928468	norgestrel	False		1	0	0	0.0	0.0
+BRD-A50998626	palomid-529	False	AKT inhibitor|mTOR inhibitor	2	0	0	0.0	0.0
+BRD-A51078674	diclofensine	False	dopamine reuptake inhibitor	2	0	0	0.0	0.0
+BRD-A51182606	BRD-A51182606	False		2	0	0	0.0	0.0
+BRD-A51571244	hypoestoxide	False		2	0	0	0.0	0.0
+BRD-A52627843	thiostrepton	False		1	0	0	0.0	0.0
+BRD-A52660433	tetrindole	False	monoamine oxidase inhibitor	3	0	0	0.0	0.0
+BRD-A54236247	racephedrine	True	adrenergic receptor agonist	1	0	0	0.0	0.0
+BRD-A54632525	BRD-A54632525	False		1	0	0	0.0	0.0
+BRD-A55272860	sulpiride	True	dopamine receptor antagonist	5	0	0	0.0	0.0
+BRD-A55393291	testosterone	False		3	0	0	0.0	0.0
+BRD-A55424491	methotrexate	False		1	0	0	0.0	0.0
+BRD-A55913614	primaquine	True		1	0	0	0.0	0.0
+BRD-A55946879	BW-B70C	False	lipoxygenase inhibitor	1	0	0	0.0	0.0
+BRD-A56020723	CA-074-Me	False		2	0	0	0.0	0.0
+BRD-A56359832	zileuton	True	leukotriene synthesis inhibitor|lipoxygenase inhibitor	1	0	0	0.0	0.0
+BRD-A57300602	BRD-A57300602	False		4	0	0	0.0	0.0
+BRD-A59174698	ritodrine	True		1	0	0	0.0	0.0
+BRD-A59431241	COL-3	False		5	0	0	0.0	0.0
+BRD-A59468452	BRD-A59468452	False		41	0	0	0.0	0.0
+BRD-A59728941	BRD-A59728941	False		1	0	0	0.0	0.0
+BRD-A59943784	fluticasone	False		2	0	0	0.0	0.0
+BRD-A60571864	budesonide	False		2	0	0	0.0	0.0
+BRD-A61273891	aflatoxin-b1	False		1	0	0	0.0	0.0
+BRD-A61599461	BRD-A61599461	False		1	0	0	0.0	0.0
+BRD-A61767428	ursolic-acid	False		2	0	0	0.0	0.0
+BRD-A61825514	BRD-A61825514	False		1	0	0	0.0	0.0
+BRD-A61858259	CAY-10415	False		1	0	0	0.0	0.0
+BRD-A62057054	MDL-11939	False	serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-A62326914	paroxetine	False		1	0	0	0.0	0.0
+BRD-A62525898	prednisone	False		6	0	0	0.0	0.0
+BRD-A63236097	BRD-A63236097	False		2	0	0	0.0	0.0
+BRD-A63289646	endosulfan	False		1	0	0	0.0	0.0
+BRD-A63583287	SA-1447005	False		5	0	0	0.0	0.0
+BRD-A63894585	clobetasol	False		2	0	0	0.0	0.0
+BRD-A64228451	terreic-acid	False		1	0	0	0.0	0.0
+BRD-A64242993	lanatoside-c	False	cardiac glycoside	1	0	0	0.0	0.0
+BRD-A64297288	amlodipine	True		1	0	0	0.0	0.0
+BRD-A65449987	flunisolide	False		2	0	0	0.0	0.0
+BRD-A65767837	hydrocortisone-acetate	False		3	0	0	0.0	0.0
+BRD-A67479912	progesterone	False		2	0	0	0.0	0.0
+BRD-A67616246	levomequitazine	False	histamine receptor antagonist	2	0	0	0.0	0.0
+BRD-A67709388	antimycin-a	False		1	0	0	0.0	0.0
+BRD-A67748489	K-858	False	kinesin-like spindle protein inhibitor	2	0	0	0.0	0.0
+BRD-A67862938	naftidrofuryl	True	adrenergic receptor antagonist	3	0	0	0.0	0.0
+BRD-A68045637	kepone	False		1	0	0	0.0	0.0
+BRD-A68274214	BRD-A68274214	False		1	0	0	0.0	0.0
+BRD-A68281735	REV-5901	False	leukotriene receptor antagonist|lipoxygenase inhibitor	3	0	0	0.0	0.0
+BRD-A68631409	evodiamine	False	ATPase inhibitor|TRPV agonist	2	0	0	0.0	0.0
+BRD-A68739437	NPK76-II-72-1	False		3	0	0	0.0	0.0
+BRD-A68929948	DAPT-GSI-IX	False		2	0	0	0.0	0.0
+BRD-A69592287	oxetane	False		1	0	0	0.0	0.0
+BRD-A69960130	bromocriptine	False		1	0	0	0.0	0.0
+BRD-A70180851	CCT-244747	False		1	0	0	0.0	0.0
+BRD-A70311631	BRD-A70311631	False		2	0	0	0.0	0.0
+BRD-A70449690	forskolin	False		4	0	0	0.0	0.0
+BRD-A70649075	sulconazole	True	sterol demethylase inhibitor	1	0	0	0.0	0.0
+BRD-A70731303	BRD-A70731303	False		3	0	0	0.0	0.0
+BRD-A70998768	pinaverium	False		2	0	0	0.0	0.0
+BRD-A73741725	exemestane	False		1	0	0	0.0	0.0
+BRD-A73908300	EX-527	False	SIRT inhibitor	2	0	0	0.0	0.0
+BRD-A74667430	etodolac	True	cyclooxygenase inhibitor	3	0	0	0.0	0.0
+BRD-A75172220	hydrocortisone	False		2	0	0	0.0	0.0
+BRD-A75301702	BRD-A75301702	False		4	0	0	0.0	0.0
+BRD-A75479906	rimantadine	True		2	0	0	0.0	0.0
+BRD-A75517195	thiazolopyrimidine	False		3	0	0	0.0	0.0
+BRD-A76528577	vincristine	False		41	0	0	0.0	0.0
+BRD-A76641868	BRD-A76641868	False		2	0	0	0.0	0.0
+BRD-A76747559	rutin	False		4	0	0	0.0	0.0
+BRD-A77824596	fluocinolone-acetonide	False		1	0	0	0.0	0.0
+BRD-A79038507	AGN-192403	False		2	0	0	0.0	0.0
+BRD-A79479878	testosterone	False		1	0	0	0.0	0.0
+BRD-A80017228	bendroflumethiazide	True	sodium/potassium/chloride transporter inhibitor	1	0	0	0.0	0.0
+BRD-A81282034	BRD-A81282034	False		1	0	0	0.0	0.0
+BRD-A81370665	BI-D1870	False	ribosomal protein inhibitor	41	0	0	0.0	0.0
+BRD-A81530502	BRD-A81530502	False		1	0	0	0.0	0.0
+BRD-A81772229	simvastatin	False		2	0	0	0.0	0.0
+BRD-A82307304	atorvastatin	False		1	0	0	0.0	0.0
+BRD-A84045418	calpeptin	False		1	0	0	0.0	0.0
+BRD-A84066268	BRD-A84066268	False		1	0	0	0.0	0.0
+BRD-A84189516	baccatin-III	False		4	0	0	0.0	0.0
+BRD-A85648045	vinblastine	False		1	0	0	0.0	0.0
+BRD-A86109770	guggulsterone	False		1	0	0	0.0	0.0
+BRD-A87479750	tenidap	False		1	0	0	0.0	0.0
+BRD-A88138582	halcinonide	False		2	0	0	0.0	0.0
+BRD-A89175223	bisoprolol	True	adrenergic receptor antagonist	1	0	0	0.0	0.0
+BRD-A89337244	PD-102807	False	acetylcholine receptor antagonist	5	0	0	0.0	0.0
+BRD-A89471977	BRD-A89471977	False		2	0	0	0.0	0.0
+BRD-A89859721	BRD-A89859721	False		41	0	0	0.0	0.0
+BRD-A91658086	FQI-1	False		2	0	0	0.0	0.0
+BRD-A91712064	BRD-A91712064	False		1	0	0	0.0	0.0
+BRD-A92537424	danazol	False		3	0	0	0.0	0.0
+BRD-A92630576	trimebutine	False		2	0	0	0.0	0.0
+BRD-A92800748	BRD-A92800748	False	TIE tyrosine kinase inhibitor	1	0	0	0.0	0.0
+BRD-A93426597	BRD-A93426597	False		4	0	0	0.0	0.0
+BRD-A94451536	BRD-A94451536	False		1	0	0	0.0	0.0
+BRD-A94624445	bucladesine	True	adenosine receptor agonist|cAMP stimulant	1	0	0	0.0	0.0
+BRD-A94793051	gestrinone	False		1	0	0	0.0	0.0
+BRD-A95445494	maackiain	False		2	0	0	0.0	0.0
+BRD-A95820578	BRD-A95820578	False		5	0	0	0.0	0.0
+BRD-A96799240	BRD-A96799240	False		1	0	0	0.0	0.0
+BRD-A97104540	fenoterol	True		1	0	0	0.0	0.0
+BRD-A97701745	pindolol	True	adrenergic receptor antagonist	1	0	0	0.0	0.0
+BRD-A97739905	ketoprofen	True	cyclooxygenase inhibitor	1	0	0	0.0	0.0
+BRD-A98050686	BRD-A98050686	False		1	0	0	0.0	0.0
+BRD-A98175426	betaescin	False		1	0	0	0.0	0.0
+BRD-A98283014	calmidazolium	False		2	0	0	0.0	0.0
+BRD-A98702003	carbenoxolone	False		1	0	0	0.0	0.0
+BRD-A99571536	dubinidine	False		1	0	0	0.0	0.0
+BRD-K00028814	BRD-K00028814	False		4	0	0	0.0	0.0
+BRD-K00064877	BRD-K00064877	False		1	0	0	0.0	0.0
+BRD-K00141503	BRD-K00141503	False		1	0	0	0.0	0.0
+BRD-K00144236	BRD-K00144236	False		1	0	0	0.0	0.0
+BRD-K00234327	RU-24969	False	serotonin receptor agonist	2	0	0	0.0	0.0
+BRD-K00259736	colchicine	True	microtubule inhibitor	41	0	0	0.0	0.0
+BRD-K00328666	BRD-K00328666	False		2	0	0	0.0	0.0
+BRD-K00381581	BRD-K00381581	False		1	0	0	0.0	0.0
+BRD-K00486786	Ro-08-2750	False	NGF binding inhibitor	6	0	0	0.0	0.0
+BRD-K00494077	trovafloxacin	True	bacterial DNA gyrase inhibitor	1	0	0	0.0	0.0
+BRD-K00573290	BRD-K00573290	False		41	0	0	0.0	0.0
+BRD-K00689442	BRD-K00689442	False		2	0	0	0.0	0.0
+BRD-K00824317	BRD-K00824317	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K00910650	BRD-K00910650	False		1	0	0	0.0	0.0
+BRD-K00911143	brexpiprazole	True	dopamine receptor partial agonist	5	0	0	0.0	0.0
+BRD-K01055635	BRD-K01055635	False		1	0	0	0.0	0.0
+BRD-K01140360	BRD-K01140360	False		1	0	0	0.0	0.0
+BRD-K01222707	BRD-K01222707	False		2	0	0	0.0	0.0
+BRD-K01253243	SB-590885	False		2	0	0	0.0	0.0
+BRD-K01448700	BRD-K01448700	False		1	0	0	0.0	0.0
+BRD-K01608965	BRD-K01608965	False		1	0	0	0.0	0.0
+BRD-K01614657	BRD-K01614657	False		4	0	0	0.0	0.0
+BRD-K01638814	rilmenidine	True	adrenergic receptor agonist|imidazoline receptor agonist	1	0	0	0.0	0.0
+BRD-K01651394	BRD-K01651394	False		1	0	0	0.0	0.0
+BRD-K01727336	BRD-K01727336	False		1	0	0	0.0	0.0
+BRD-K01737880	BRD-K01737880	False		4	0	0	0.0	0.0
+BRD-K01773560	UNC-2250	False	MER tyrosine kinase inhibitor	2	0	0	0.0	0.0
+BRD-K01995783	AMG-9810	False	TRPV antagonist	1	0	0	0.0	0.0
+BRD-K02017404	NVP-BSK805	False	JAK inhibitor	1	0	0	0.0	0.0
+BRD-K02216544	BRD-K02216544	False		2	0	0	0.0	0.0
+BRD-K02283807	GR-32191	False		2	0	0	0.0	0.0
+BRD-K02314383	epitiostanol	True	androgen receptor agonist	2	0	0	0.0	0.0
+BRD-K02389548	RG-2833	False	HDAC inhibitor	41	0	0	0.0	0.0
+BRD-K02404261	caffeine	True	adenosine receptor antagonist|phosphodiesterase inhibitor	1	0	0	0.0	0.0
+BRD-K02442533	2-CHLOROACETOPHENONE	False		3	0	0	0.0	0.0
+BRD-K02526760	QS-11	False		1	0	0	0.0	0.0
+BRD-K02558072	BRD-K02558072	False		1	0	0	0.0	0.0
+BRD-K02562327	BRD-K02562327	False		1	0	0	0.0	0.0
+BRD-K02590140	O-2050	False		1	0	0	0.0	0.0
+BRD-K02764365	methiazole	False	anthelmintic agent	4	0	0	0.0	0.0
+BRD-K02920722	BRD-K02920722	False		2	0	0	0.0	0.0
+BRD-K02943813	dasabuvir	True	HCV inhibitor	4	0	0	0.0	0.0
+BRD-K02965346	SU-11274	False	hepatocyte growth factor receptor inhibitor|tyrosine kinase inhibitor	4	0	0	0.0	0.0
+BRD-K02992638	lamivudine	True	nucleoside reverse transcriptase inhibitor	1	0	0	0.0	0.0
+BRD-K03113036	BRD-K03113036	False		1	0	0	0.0	0.0
+BRD-K03222452	BRD-K03222452	False		1	0	0	0.0	0.0
+BRD-K03289534	lersivirine	False	non-nucleoside reverse transcriptase inhibitor	4	0	0	0.0	0.0
+BRD-K03301001	A-7	False	calmodulin antagonist	1	0	0	0.0	0.0
+BRD-K03324036	BRD-K03324036	False		1	0	0	0.0	0.0
+BRD-K03358980	BRD-K03358980	False		1	0	0	0.0	0.0
+BRD-K03371390	BRD-K03371390	False		1	0	0	0.0	0.0
+BRD-K03515977	BRD-K03515977	False		1	0	0	0.0	0.0
+BRD-K03587208	BRD-K03587208	False		2	0	0	0.0	0.0
+BRD-K03641750	BRD-K03641750	False		4	0	0	0.0	0.0
+BRD-K03652504	BRD-K03652504	False		1	0	0	0.0	0.0
+BRD-K03814443	SA-423131	False		1	0	0	0.0	0.0
+BRD-K04264130	favipiravir	True	RNA polymerase inhibitor	4	0	0	0.0	0.0
+BRD-K04534322	BRD-K04534322	False		4	0	0	0.0	0.0
+BRD-K04540960	BRD-K04540960	False		1	0	0	0.0	0.0
+BRD-K04695623	BRD-K04695623	False		1	0	0	0.0	0.0
+BRD-K04801023	SAR-245408	False		2	0	0	0.0	0.0
+BRD-K04949373	parthenolide	False		4	0	0	0.0	0.0
+BRD-K04972057	I-BRD9	False	bromodomain inhibitor	2	0	0	0.0	0.0
+BRD-K04976539	aminogenistein	False		1	0	0	0.0	0.0
+BRD-K05236810	luteolin	False	glucosidase inhibitor	1	0	0	0.0	0.0
+BRD-K05278519	BRD-K05278519	False		1	0	0	0.0	0.0
+BRD-K05322955	BRD-K05322955	False		1	0	0	0.0	0.0
+BRD-K05331696	BRD-K05331696	False		5	0	0	0.0	0.0
+BRD-K05396879	BRD-K05396879	False		1	0	0	0.0	0.0
+BRD-K05446112	ledipasvir	True	HCV inhibitor	3	0	0	0.0	0.0
+BRD-K05549170	BRD-K05549170	False		4	0	0	0.0	0.0
+BRD-K05649647	BRD-K05649647	False		41	0	0	0.0	0.0
+BRD-K05870596	XMD-1499	False		1	0	0	0.0	0.0
+BRD-K05979026	BRD-K05979026	False		4	0	0	0.0	0.0
+BRD-K06057707	p-anisidine.hcl	False		2	0	0	0.0	0.0
+BRD-K06198550	isorotenone	False		1	0	0	0.0	0.0
+BRD-K06221026	DUP-697	False	cyclooxygenase inhibitor	1	0	0	0.0	0.0
+BRD-K06240250	rilpivirine	True	non-nucleoside reverse transcriptase inhibitor	1	0	0	0.0	0.0
+BRD-K06326887	BRD-K06326887	False		1	0	0	0.0	0.0
+BRD-K06405410	BRD-K06405410	False		4	0	0	0.0	0.0
+BRD-K06414098	BRD-K06414098	False		5	0	0	0.0	0.0
+BRD-K06436323	BRD-K06436323	False		1	0	0	0.0	0.0
+BRD-K06542892	ASP-3026	False	ALK tyrosine kinase receptor inhibitor	2	0	0	0.0	0.0
+BRD-K06723172	BRD-K06723172	False		1	0	0	0.0	0.0
+BRD-K06748700	BRD-K06748700	False		1	0	0	0.0	0.0
+BRD-K06749501	GSK-1838705A	False	insulin growth factor receptor inhibitor	1	0	0	0.0	0.0
+BRD-K06854232	AM-580	False	retinoid receptor agonist	6	0	0	0.0	0.0
+BRD-K06902185	minoxidil	True	KATP activator|Kir6 channel (KATP) activator|vasodilator	2	0	0	0.0	0.0
+BRD-K06926592	tretinoin	False		4	0	0	0.0	0.0
+BRD-K06956503	BRD-K06956503	False		1	0	0	0.0	0.0
+BRD-K06980535	promazine	True	dopamine receptor antagonist	2	0	0	0.0	0.0
+BRD-K07005393	BRD-K07005393	False		1	0	0	0.0	0.0
+BRD-K07063907	BRD-K07063907	False		1	0	0	0.0	0.0
+BRD-K07212038	selinidin	False		2	0	0	0.0	0.0
+BRD-K07220430	cinnarizine	True	calcium channel blocker	4	0	0	0.0	0.0
+BRD-K07237224	moclobemide	True	monoamine oxidase inhibitor	1	0	0	0.0	0.0
+BRD-K07265709	razoxane	True	chelating agent|topoisomerase inhibitor	1	0	0	0.0	0.0
+BRD-K07339740	BRD-K07339740	False		1	0	0	0.0	0.0
+BRD-K07382790	BRD-K07382790	False		1	0	0	0.0	0.0
+BRD-K07476834	BRD-K07476834	False		1	0	0	0.0	0.0
+BRD-K07487750	WHI-P154	False	JAK inhibitor	2	0	0	0.0	0.0
+BRD-K07516181	BRD-K07516181	False		1	0	0	0.0	0.0
+BRD-K07954936	2-iminobiotin	False	nitric oxide synthase inhibitor	2	0	0	0.0	0.0
+BRD-K08037784	arbutin	False	melanin inhibitor	2	0	0	0.0	0.0
+BRD-K08114154	BRD-K08114154	False		1	0	0	0.0	0.0
+BRD-K08121566	BRD-K08121566	False		1	0	0	0.0	0.0
+BRD-K08206212	entecavir	True	DNA replication inhibitor|nucleoside reverse transcriptase inhibitor	2	0	0	0.0	0.0
+BRD-K08248804	LCL-161	False	XIAP inhibitor	1	0	0	0.0	0.0
+BRD-K08317416	BRD-K08317416	False		1	0	0	0.0	0.0
+BRD-K08446710	BRD-K08446710	False		1	0	0	0.0	0.0
+BRD-K08448573	BRD-K08448573	False		6	0	0	0.0	0.0
+BRD-K08541433	cdk/crk-inhibitor	False		2	0	0	0.0	0.0
+BRD-K08554278	bisbenzimide	False		2	0	0	0.0	0.0
+BRD-K08656311	BRD-K08656311	False		1	0	0	0.0	0.0
+BRD-K08714182	sericetin	False		1	0	0	0.0	0.0
+BRD-K08725721	BRD-K08725721	False		1	0	0	0.0	0.0
+BRD-K08832567	naringenin	False	aromatase inhibitor|TRPV antagonist	3	0	0	0.0	0.0
+BRD-K08845546	tacrolimus	False		2	0	0	0.0	0.0
+BRD-K08996725	zolantidine	False	histamine receptor antagonist	1	0	0	0.0	0.0
+BRD-K09054764	BRD-K09054764	False		1	0	0	0.0	0.0
+BRD-K09186807	KIN001-244	False		4	0	0	0.0	0.0
+BRD-K09208538	BRD-K09208538	False		2	0	0	0.0	0.0
+BRD-K09295900	BRD-K09295900	False		1	0	0	0.0	0.0
+BRD-K09299610	BRD-K09299610	False		1	0	0	0.0	0.0
+BRD-K09485525	GANT-61	False	GLI antagonist	4	0	0	0.0	0.0
+BRD-K09602097	forskolin	True	adenylyl cyclase activator	4	0	0	0.0	0.0
+BRD-K09613355	BRD-K09613355	False		1	0	0	0.0	0.0
+BRD-K09619322	CD-1530	False	retinoid receptor agonist	4	0	0	0.0	0.0
+BRD-K09638361	IC-261	False	casein kinase inhibitor	5	0	0	0.0	0.0
+BRD-K09641927	BRD-K09641927	False		1	0	0	0.0	0.0
+BRD-K09661167	BRD-K09661167	False		2	0	0	0.0	0.0
+BRD-K09668667	BRD-K09668667	False		1	0	0	0.0	0.0
+BRD-K09997269	BRD-K09997269	False		1	0	0	0.0	0.0
+BRD-K10034020	BRD-K10034020	False		2	0	0	0.0	0.0
+BRD-K10180294	uracil-mustard	True	DNA synthesis inhibitor	1	0	0	0.0	0.0
+BRD-K10325955	BRD-K10325955	False		1	0	0	0.0	0.0
+BRD-K10421834	BRD-K10421834	False		1	0	0	0.0	0.0
+BRD-K10436544	BRD-K10436544	False		4	0	0	0.0	0.0
+BRD-K10466330	AVA	False		5	0	0	0.0	0.0
+BRD-K10484463	BRD-K10484463	False		1	0	0	0.0	0.0
+BRD-K10554164	BRD-K10554164	False		1	0	0	0.0	0.0
+BRD-K10785504	BRD-K10785504	False		5	0	0	0.0	0.0
+BRD-K10852020	tolcapone	True	catechol O methyltransferase inhibitor	2	0	0	0.0	0.0
+BRD-K10860596	granisetron	True	serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-K10870738	CDC	False		2	0	0	0.0	0.0
+BRD-K10916705	RN-486	False		41	0	0	0.0	0.0
+BRD-K10916986	vinorelbine	False		2	0	0	0.0	0.0
+BRD-K10961822	latanoprost	True	prostanoid receptor agonist	3	0	0	0.0	0.0
+BRD-K10995081	perphenazine	True	dopamine receptor antagonist	6	0	0	0.0	0.0
+BRD-K11056481	BRD-K11056481	False		4	0	0	0.0	0.0
+BRD-K11072542	BRD-K11072542	False		4	0	0	0.0	0.0
+BRD-K11169037	BRD-K11169037	False		1	0	0	0.0	0.0
+BRD-K11180501	BRD-K11180501	False		1	0	0	0.0	0.0
+BRD-K11196887	norfloxacin	True	bacterial DNA gyrase inhibitor	1	0	0	0.0	0.0
+BRD-K11357827	LCB-03-0110	False		41	0	0	0.0	0.0
+BRD-K11399644	phenformin	True	AMPK activator	1	0	0	0.0	0.0
+BRD-K11413513	BRD-K11413513	False		41	0	0	0.0	0.0
+BRD-K11451237	BRD-K11451237	False		4	0	0	0.0	0.0
+BRD-K11593101	PF-184	False		2	0	0	0.0	0.0
+BRD-K11717138	benzbromarone	True	chloride channel blocker	1	0	0	0.0	0.0
+BRD-K11740178	CIL56	False		41	0	0	0.0	0.0
+BRD-K11911061	GR-127935	False	serotonin receptor antagonist	41	0	0	0.0	0.0
+BRD-K12040459	AT-7867	False	AKT inhibitor	41	0	0	0.0	0.0
+BRD-K12079898	PD-160170	False	neuropeptide receptor antagonist	1	0	0	0.0	0.0
+BRD-K12087429	BRD-K12087429	False		1	0	0	0.0	0.0
+BRD-K12102668	nialamide	True	monoamine oxidase inhibitor	2	0	0	0.0	0.0
+BRD-K12189280	BRD-K12189280	False		4	0	0	0.0	0.0
+BRD-K12342216	BRD-K12342216	False		1	0	0	0.0	0.0
+BRD-K12411950	BRD-K12411950	False		1	0	0	0.0	0.0
+BRD-K12423485	griseofulvin	False		4	0	0	0.0	0.0
+BRD-K12532266	BRD-K12532266	False		2	0	0	0.0	0.0
+BRD-K12641176	BRD-K12641176	False		4	0	0	0.0	0.0
+BRD-K12738359	BRD-K12738359	False		1	0	0	0.0	0.0
+BRD-K12890410	BRD-K12890410	False		2	0	0	0.0	0.0
+BRD-K12901964	BRD-K12901964	False		1	0	0	0.0	0.0
+BRD-K12906202	carbendazim	True	microtubule inhibitor|tubulin polymerization inhibitor	4	0	0	0.0	0.0
+BRD-K12906962	dichlorobenzamil	False		5	0	0	0.0	0.0
+BRD-K13299110	BRD-K13299110	False		2	0	0	0.0	0.0
+BRD-K13448237	BRD-K13448237	False		1	0	0	0.0	0.0
+BRD-K13552602	BRD-K13552602	False		1	0	0	0.0	0.0
+BRD-K13642330	cosmosiin	False		3	0	0	0.0	0.0
+BRD-K13664374	dichloroacetic-acid	False		2	0	0	0.0	0.0
+BRD-K13679108	BRD-K13679108	False		1	0	0	0.0	0.0
+BRD-K13725475	rhodomyrtoxin	False		1	0	0	0.0	0.0
+BRD-K13800121	parecoxib	True	cyclooxygenase inhibitor	1	0	0	0.0	0.0
+BRD-K13839830	BRD-K13839830	False		1	0	0	0.0	0.0
+BRD-K13960193	BRD-K13960193	False		1	0	0	0.0	0.0
+BRD-K14109347	LY-2603618	False	CHK inhibitor	2	0	0	0.0	0.0
+BRD-K14175878	MK-0812	False	CC chemokine receptor antagonist	2	0	0	0.0	0.0
+BRD-K14200658	syrosingopine	False		4	0	0	0.0	0.0
+BRD-K14316227	BRD-K14316227	False		2	0	0	0.0	0.0
+BRD-K14355517	BRD-K14355517	False		2	0	0	0.0	0.0
+BRD-K14395166	BRD-K14395166	False		1	0	0	0.0	0.0
+BRD-K14602451	BRD-K14602451	False		1	0	0	0.0	0.0
+BRD-K14658796	drotaverine	False		1	0	0	0.0	0.0
+BRD-K14666757	BRD-K14666757	False		1	0	0	0.0	0.0
+BRD-K14788918	BRD-K14788918	False		1	0	0	0.0	0.0
+BRD-K14790374	BRD-K14790374	False		1	0	0	0.0	0.0
+BRD-K14868367	SA-97259	False		4	0	0	0.0	0.0
+BRD-K14888712	BRD-K14888712	False		1	0	0	0.0	0.0
+BRD-K14888893	minoxidil	True	KATP activator|Kir6 channel (KATP) activator|vasodilator	2	0	0	0.0	0.0
+BRD-K14929173	BRD-K14929173	False		2	0	0	0.0	0.0
+BRD-K14939371	BRD-K14939371	False		4	0	0	0.0	0.0
+BRD-K15358569	BRD-K15358569	False		1	0	0	0.0	0.0
+BRD-K15392449	SA-1457187	False		4	0	0	0.0	0.0
+BRD-K15426076	iguratimod	True	cyclooxygenase inhibitor|NFkB pathway inhibitor	1	0	0	0.0	0.0
+BRD-K15507868	tesaglitazar	False	insulin sensitizer|PPAR receptor agonist	1	0	0	0.0	0.0
+BRD-K15801082	BRD-K15801082	False		2	0	0	0.0	0.0
+BRD-K15916496	clotrimazole	True	cytochrome P450 inhibitor|imidazoline receptor ligand	1	0	0	0.0	0.0
+BRD-K15916856	BRD-K15916856	False		1	0	0	0.0	0.0
+BRD-K15933101	ropinirole	True	dopamine receptor agonist	2	0	0	0.0	0.0
+BRD-K15950605	BRD-K15950605	False		1	0	0	0.0	0.0
+BRD-K15976406	telbivudine	True	DNA polymerase inhibitor	3	0	0	0.0	0.0
+BRD-K16037980	Z160	False	N-type calcium channel blocker	1	0	0	0.0	0.0
+BRD-K16163479	BRD-K16163479	False		2	0	0	0.0	0.0
+BRD-K16295392	atrasentan	False	endothelin receptor antagonist	2	0	0	0.0	0.0
+BRD-K16329066	BRD-K16329066	False		1	0	0	0.0	0.0
+BRD-K16533489	I-606051	False		1	0	0	0.0	0.0
+BRD-K16633354	SA-102607	False		4	0	0	0.0	0.0
+BRD-K16757695	PRX-08066	False	serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-K16761703	sotrastaurin	False	PKC inhibitor	1	0	0	0.0	0.0
+BRD-K16769902	BRD-K16769902	False		1	0	0	0.0	0.0
+BRD-K16837150	BRD-K16837150	False		6	0	0	0.0	0.0
+BRD-K16956545	BRD-K16956545	False		1	0	0	0.0	0.0
+BRD-K16995194	BRD-K16995194	False		1	0	0	0.0	0.0
+BRD-K17068645	bendamustine	True	DNA inhibitor	2	0	0	0.0	0.0
+BRD-K17110974	aristolochic-acid	False		2	0	0	0.0	0.0
+BRD-K17113870	lovastatin	False		1	0	0	0.0	0.0
+BRD-K17140735	SCH-79797	False		41	0	0	0.0	0.0
+BRD-K17157581	BRD-K17157581	False		1	0	0	0.0	0.0
+BRD-K17230475	BRD-K17230475	False		4	0	0	0.0	0.0
+BRD-K17497770	butein	False	EGFR inhibitor|SRC inhibitor	4	0	0	0.0	0.0
+BRD-K17500877	bropirimine	False	interferon inducer	2	0	0	0.0	0.0
+BRD-K17513304	firategrast	False	integrin antagonist	2	0	0	0.0	0.0
+BRD-K17555800	talmapimod	False	p38 MAPK inhibitor	2	0	0	0.0	0.0
+BRD-K17561142	amiodarone	True	potassium channel blocker	1	0	0	0.0	0.0
+BRD-K17588104	JQ-1-R	False		2	0	0	0.0	0.0
+BRD-K17674993	diflorasone	True		2	0	0	0.0	0.0
+BRD-K17849083	tranilast	True	angiogenesis inhibitor	41	0	0	0.0	0.0
+BRD-K17863985	BRD-K17863985	False		1	0	0	0.0	0.0
+BRD-K17896185	FIT	False	opioid receptor agonist	5	0	0	0.0	0.0
+BRD-K18036262	L-168049	False	glucagon receptor antagonist	1	0	0	0.0	0.0
+BRD-K18249495	BRD-K18249495	False		2	0	0	0.0	0.0
+BRD-K18309912	BRD-K18309912	False		1	0	0	0.0	0.0
+BRD-K18456137	BRD-K18456137	False		1	0	0	0.0	0.0
+BRD-K18472523	beta-naphthoflavone	False		1	0	0	0.0	0.0
+BRD-K18523449	mestanolone	False		1	0	0	0.0	0.0
+BRD-K18595892	BRD-K18595892	False		2	0	0	0.0	0.0
+BRD-K18618618	cimetidine	True	histamine receptor antagonist	2	0	0	0.0	0.0
+BRD-K18619710	digoxigenin	False	steroid	1	0	0	0.0	0.0
+BRD-K18711687	BRD-K18711687	False		1	0	0	0.0	0.0
+BRD-K18779551	bifemelane	True	acetylcholine release enhancer	2	0	0	0.0	0.0
+BRD-K18812295	chrysenequinone	False		5	0	0	0.0	0.0
+BRD-K18909381	CGS-12066B	False		2	0	0	0.0	0.0
+BRD-K18910433	estradiol	True	estrogen receptor agonist	1	0	0	0.0	0.0
+BRD-K19136521	BRD-K19136521	False	CDK inhibitor|glycogen synthase kinase inhibitor	2	0	0	0.0	0.0
+BRD-K19198293	BRD-K19198293	False		1	0	0	0.0	0.0
+BRD-K19203487	SPP-301	False	endothelin receptor antagonist	2	0	0	0.0	0.0
+BRD-K19227686	phenolphthalein	True	indicator dye	6	0	0	0.0	0.0
+BRD-K19284129	salvinorin-a	False	opioid receptor agonist	2	0	0	0.0	0.0
+BRD-K19333160	RKI-1447	False	rho associated kinase inhibitor	2	0	0	0.0	0.0
+BRD-K19352500	prochlorperazine	True	dopamine receptor antagonist	2	0	0	0.0	0.0
+BRD-K19412342	valspodar	False	P glycoprotein inhibitor	1	0	0	0.0	0.0
+BRD-K19412355	SB-242235	False	p38 MAPK inhibitor	4	0	0	0.0	0.0
+BRD-K19433082	BRD-K19433082	False		1	0	0	0.0	0.0
+BRD-K19438463	CNQX	False	glutamate receptor antagonist	1	0	0	0.0	0.0
+BRD-K19477839	SGX-523	False	hepatocyte growth factor receptor inhibitor	1	0	0	0.0	0.0
+BRD-K19520352	BRD-K19520352	False		4	0	0	0.0	0.0
+BRD-K19534956	BRD-K19534956	False		1	0	0	0.0	0.0
+BRD-K19624190	BRD-K19624190	False		3	0	0	0.0	0.0
+BRD-K19914944	BRD-K19914944	False		1	0	0	0.0	0.0
+BRD-K19926581	BRD-K19926581	False		2	0	0	0.0	0.0
+BRD-K19971276	BRD-K19971276	False		1	0	0	0.0	0.0
+BRD-K20000640	SA-247384	False		4	0	0	0.0	0.0
+BRD-K20016217	BRD-K20016217	False		1	0	0	0.0	0.0
+BRD-K20152659	BRD-K20152659	False	prostanoid receptor agonist	1	0	0	0.0	0.0
+BRD-K20497962	BRD-K20497962	False		1	0	0	0.0	0.0
+BRD-K20505391	MS-023	False		41	0	0	0.0	0.0
+BRD-K20605374	NSC-697923	False	ubiquitin-conjugating enzyme inhibitor	2	0	0	0.0	0.0
+BRD-K20682526	LLY-507	False		1	0	0	0.0	0.0
+BRD-K20931972	BRD-K20931972	False		1	0	0	0.0	0.0
+BRD-K20995441	U-54494A	False	opioid receptor agonist	1	0	0	0.0	0.0
+BRD-K21350491	phenamil	False		1	0	0	0.0	0.0
+BRD-K21532219	UMB-32	False		3	0	0	0.0	0.0
+BRD-K21667562	AM-404	False		2	0	0	0.0	0.0
+BRD-K21672423	BRD-K21672423	False		1	0	0	0.0	0.0
+BRD-K21728777	AMG-900	False	Aurora kinase inhibitor	2	0	0	0.0	0.0
+BRD-K21806131	tegaserod	True	serotonin receptor partial agonist	4	0	0	0.0	0.0
+BRD-K21906513	UNC-669	False	L3MBTL antagonist	1	0	0	0.0	0.0
+BRD-K21908111	AZD-1208	False	Pim kinase inhibitor	2	0	0	0.0	0.0
+BRD-K21913257	BRD-K21913257	False		1	0	0	0.0	0.0
+BRD-K22127577	crenolanib	False	PDGFR tyrosine kinase receptor inhibitor	2	0	0	0.0	0.0
+BRD-K22210218	BRD-K22210218	False		1	0	0	0.0	0.0
+BRD-K22243404	BRD-K22243404	False		2	0	0	0.0	0.0
+BRD-K22322324	BRD-K22322324	False		4	0	0	0.0	0.0
+BRD-K22477529	STF-31	False	NAMPT inhibitor	1	0	0	0.0	0.0
+BRD-K22552152	BRD-K22552152	False		1	0	0	0.0	0.0
+BRD-K22631935	neurodazine	False	neurogenesis of non-pluripotent C2C12 myoblast inducer	4	0	0	0.0	0.0
+BRD-K22861715	chrysin	False	breast cancer resistance protein inhibitor	2	0	0	0.0	0.0
+BRD-K22912836	BRD-K22912836	False		1	0	0	0.0	0.0
+BRD-K22936972	diphenylpyraline	True	dopamine reuptake inhibitor	1	0	0	0.0	0.0
+BRD-K23217072	BRD-K23217072	False		1	0	0	0.0	0.0
+BRD-K23248433	camicinal	False	motilin receptor agonist	1	0	0	0.0	0.0
+BRD-K23282736	BRD-K23282736	False		1	0	0	0.0	0.0
+BRD-K23369905	oxiconazole	False		1	0	0	0.0	0.0
+BRD-K23664396	BRD-K23664396	False		3	0	0	0.0	0.0
+BRD-K23673040	BRD-K23673040	False		1	0	0	0.0	0.0
+BRD-K23786503	BRD-K23786503	False		1	0	0	0.0	0.0
+BRD-K23958338	BRD-K23958338	False		1	0	0	0.0	0.0
+BRD-K23985677	BRD-K23985677	False		1	0	0	0.0	0.0
+BRD-K24077273	BRD-K24077273	False		1	0	0	0.0	0.0
+BRD-K24187789	VU-0238429	False	acetylcholine receptor allosteric modulator	2	0	0	0.0	0.0
+BRD-K24238120	BRD-K24238120	False		2	0	0	0.0	0.0
+BRD-K24379297	BRD-K24379297	False		2	0	0	0.0	0.0
+BRD-K24426149	BRD-K24426149	False		1	0	0	0.0	0.0
+BRD-K24564544	AT-CSC-07	False		1	0	0	0.0	0.0
+BRD-K24565544	BRD-K24565544	False		2	0	0	0.0	0.0
+BRD-K24598397	BRD-K24598397	False		1	0	0	0.0	0.0
+BRD-K24610782	n-nitrosodiethylamine	False		2	0	0	0.0	0.0
+BRD-K24652731	ivermectin	False		1	0	0	0.0	0.0
+BRD-K24798550	BRD-K24798550	False		1	0	0	0.0	0.0
+BRD-K24855614	BRD-K24855614	False		4	0	0	0.0	0.0
+BRD-K24943235	grazoprevir	True	HCV inhibitor	1	0	0	0.0	0.0
+BRD-K24986598	BRD-K24986598	False		1	0	0	0.0	0.0
+BRD-K25186396	tangeritin	False	cell cycle inhibitor	1	0	0	0.0	0.0
+BRD-K25284112	SA-1938820	False		4	0	0	0.0	0.0
+BRD-K25311561	KU-55933	False	ATM kinase inhibitor	3	0	0	0.0	0.0
+BRD-K25373946	BRD-K25373946	False		1	0	0	0.0	0.0
+BRD-K25394294	oxaprozin	True	cyclooxygenase inhibitor	1	0	0	0.0	0.0
+BRD-K25433859	maprotiline	True		4	0	0	0.0	0.0
+BRD-K25473383	BRD-K25473383	False		1	0	0	0.0	0.0
+BRD-K25737009	CD-1530	False		41	0	0	0.0	0.0
+BRD-K25835157	PRT-062070	False	JAK inhibitor|SYK inhibitor	41	0	0	0.0	0.0
+BRD-K25906698	immepip	False	histamine receptor agonist	4	0	0	0.0	0.0
+BRD-K25990552	BRD-K25990552	False		1	0	0	0.0	0.0
+BRD-K26011976	BRD-K26011976	False		1	0	0	0.0	0.0
+BRD-K26043946	BRD-K26043946	False		3	0	0	0.0	0.0
+BRD-K26347562	BRD-K26347562	False		4	0	0	0.0	0.0
+BRD-K26484692	BRD-K26484692	False		2	0	0	0.0	0.0
+BRD-K26603252	PD-153035	False	EGFR inhibitor	2	0	0	0.0	0.0
+BRD-K26619122	BRD-K26619122	True	GABA receptor antagonist	5	0	0	0.0	0.0
+BRD-K26641843	BRD-K26641843	False		3	0	0	0.0	0.0
+BRD-K26669427	WR-216174	False		1	0	0	0.0	0.0
+BRD-K26756394	VE-821	False	ATR kinase inhibitor	3	0	0	0.0	0.0
+BRD-K26833429	costunolide	False	telomerase inhibitor	2	0	0	0.0	0.0
+BRD-K26838195	AST-1306	False	EGFR inhibitor	1	0	0	0.0	0.0
+BRD-K26975650	SF-11003-A1	False		2	0	0	0.0	0.0
+BRD-K26979635	NS-3694	False		1	0	0	0.0	0.0
+BRD-K26989966	UNC-1999	False	histone lysine methyltransferase inhibitor	2	0	0	0.0	0.0
+BRD-K27047490	CCT-251545	False		1	0	0	0.0	0.0
+BRD-K27169919	BRD-K27169919	False		1	0	0	0.0	0.0
+BRD-K27182532	metatinib	False	Bcr-Abl kinase inhibitor	3	0	0	0.0	0.0
+BRD-K27217864	butamben	True	sodium channel blocker	1	0	0	0.0	0.0
+BRD-K27398334	BRD-K27398334	False		6	0	0	0.0	0.0
+BRD-K27465870	SA-1921599	False		4	0	0	0.0	0.0
+BRD-K27484191	BRD-K27484191	False		41	0	0	0.0	0.0
+BRD-K27597389	BRD-K27597389	False		1	0	0	0.0	0.0
+BRD-K27859162	BRD-K27859162	False		2	0	0	0.0	0.0
+BRD-K28024289	BRD-K28024289	False		1	0	0	0.0	0.0
+BRD-K28040935	BRD-K28040935	False		1	0	0	0.0	0.0
+BRD-K28112517	BRD-K28112517	False		2	0	0	0.0	0.0
+BRD-K28115298	BRD-K28115298	False		5	0	0	0.0	0.0
+BRD-K28120222	BRD-K28120222	False	NFkB pathway inhibitor	5	0	0	0.0	0.0
+BRD-K28143534	cyproheptadine	True	histamine receptor antagonist	6	0	0	0.0	0.0
+BRD-K28168037	fenretinide	False		4	0	0	0.0	0.0
+BRD-K28296557	BRD-K28296557	False		41	0	0	0.0	0.0
+BRD-K28307902	flutamide	True	androgen receptor antagonist	3	0	0	0.0	0.0
+BRD-K28358982	BRD-K28358982	False		1	0	0	0.0	0.0
+BRD-K28360340	TW-37	False	BCL inhibitor	41	0	0	0.0	0.0
+BRD-K28433302	BRD-K28433302	False		6	0	0	0.0	0.0
+BRD-K28456624	seocalcitol	False	vitamin D receptor agonist	6	0	0	0.0	0.0
+BRD-K28484895	BRD-K28484895	False		3	0	0	0.0	0.0
+BRD-K28542495	benzydamine	True	prostanoid receptor antagonist	3	0	0	0.0	0.0
+BRD-K28582709	BRD-K28582709	False		1	0	0	0.0	0.0
+BRD-K28731095	calcitriol	False		1	0	0	0.0	0.0
+BRD-K28984613	dutasteride	False		2	0	0	0.0	0.0
+BRD-K28995283	BRD-K28995283	False		1	0	0	0.0	0.0
+BRD-K29003210	BRD-K29003210	False		3	0	0	0.0	0.0
+BRD-K29107232	BRD-K29107232	False		1	0	0	0.0	0.0
+BRD-K29133151	BRD-K29133151	False	thromboxane receptor antagonist	2	0	0	0.0	0.0
+BRD-K29232285	BRD-K29232285	False		4	0	0	0.0	0.0
+BRD-K29254801	thiram	True		3	0	0	0.0	0.0
+BRD-K29322660	edoxaban	False		2	0	0	0.0	0.0
+BRD-K29568987	BRD-K29568987	False		1	0	0	0.0	0.0
+BRD-K29582115	ziprasidone	True	dopamine receptor antagonist|serotonin receptor antagonist	2	0	0	0.0	0.0
+BRD-K29656036	MK-8245	False	stearoyl-CoA desaturase inhibitor	6	0	0	0.0	0.0
+BRD-K29799191	BRD-K29799191	False		2	0	0	0.0	0.0
+BRD-K30189597	SYK-inhibitor	False		2	0	0	0.0	0.0
+BRD-K30229575	BRD-K30229575	False		3	0	0	0.0	0.0
+BRD-K30231186	BRD-K30231186	False		1	0	0	0.0	0.0
+BRD-K30240666	clemastine	True	histamine receptor antagonist	4	0	0	0.0	0.0
+BRD-K30296925	flavokavain-b	False		4	0	0	0.0	0.0
+BRD-K30342454	BRD-K30342454	False		1	0	0	0.0	0.0
+BRD-K30381304	BRD-K30381304	False		2	0	0	0.0	0.0
+BRD-K30393343	BRD-K30393343	False		4	0	0	0.0	0.0
+BRD-K30421593	timolol	False		2	0	0	0.0	0.0
+BRD-K30612446	BRD-K30612446	False		1	0	0	0.0	0.0
+BRD-K30618791	docetaxel	False		4	0	0	0.0	0.0
+BRD-K30645599	BRD-K30645599	False		1	0	0	0.0	0.0
+BRD-K30748066	BRD-K30748066	False		2	0	0	0.0	0.0
+BRD-K30836161	BRD-K30836161	False		1	0	0	0.0	0.0
+BRD-K30867024	SB-216641	False	serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-K30882656	BRD-K30882656	False		1	0	0	0.0	0.0
+BRD-K30993697	BRD-K30993697	False		1	0	0	0.0	0.0
+BRD-K31029552	BRD-K31029552	False		2	0	0	0.0	0.0
+BRD-K31238592	devazepide	False	CCK receptor antagonist	5	0	0	0.0	0.0
+BRD-K31283835	tofacitinib	True	JAK inhibitor	2	0	0	0.0	0.0
+BRD-K31309378	lucitanib	False	FGFR inhibitor|VEGFR inhibitor	2	0	0	0.0	0.0
+BRD-K31406481	VU-0155056	False		2	0	0	0.0	0.0
+BRD-K31444894	SA-1921867	False		3	0	0	0.0	0.0
+BRD-K31462841	BRD-K31462841	False		1	0	0	0.0	0.0
+BRD-K31519811	PF-02545920	False	phosphodiesterase inhibitor	4	0	0	0.0	0.0
+BRD-K31627533	rimexolone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K31841515	oxypurinol	False	xanthine oxidase inhibitor	2	0	0	0.0	0.0
+BRD-K31856043	BRD-K31856043	False		4	0	0	0.0	0.0
+BRD-K32010074	MW-A1-14	False		41	0	0	0.0	0.0
+BRD-K32083350	BRD-K32083350	False		1	0	0	0.0	0.0
+BRD-K32238524	BRD-K32238524	False		1	0	0	0.0	0.0
+BRD-K32330832	VER-155008	False	HSP inhibitor	2	0	0	0.0	0.0
+BRD-K32398298	alprazolam	True		1	0	0	0.0	0.0
+BRD-K32403583	mevastatin	False		1	0	0	0.0	0.0
+BRD-K32526544	DCEBIO	False	potassium channel activator	1	0	0	0.0	0.0
+BRD-K32536677	AGK-2	False		2	0	0	0.0	0.0
+BRD-K32559936	BRD-K32559936	False		1	0	0	0.0	0.0
+BRD-K32581454	BRD-K32581454	False		41	0	0	0.0	0.0
+BRD-K32646222	cupferron	False		1	0	0	0.0	0.0
+BRD-K32862555	BRD-K32862555	False		3	0	0	0.0	0.0
+BRD-K32975941	SA-242443	False		1	0	0	0.0	0.0
+BRD-K33045404	BRD-K33045404	False		5	0	0	0.0	0.0
+BRD-K33148516	BRD-K33148516	False		1	0	0	0.0	0.0
+BRD-K33305493	BRD-K33305493	False		1	0	0	0.0	0.0
+BRD-K33425534	exemestane	True	aromatase inhibitor	3	0	0	0.0	0.0
+BRD-K33583600	BRD-K33583600	False	guanylate cyclase activator	4	0	0	0.0	0.0
+BRD-K33622447	LY-2835219	True	CDK inhibitor	1	0	0	0.0	0.0
+BRD-K33690734	5-BDBD	False	purinergic receptor antagonist	1	0	0	0.0	0.0
+BRD-K33864865	LY-225910	False	CCK receptor antagonist	1	0	0	0.0	0.0
+BRD-K34294489	BRD-K34294489	False		2	0	0	0.0	0.0
+BRD-K34313798	LY-215490	False	glutamate receptor antagonist	6	0	0	0.0	0.0
+BRD-K34332553	BRD-K34332553	False		1	0	0	0.0	0.0
+BRD-K34363599	RJC-00245SC	False		3	0	0	0.0	0.0
+BRD-K34394296	BRD-K34394296	False		1	0	0	0.0	0.0
+BRD-K34452916	FU-JMBII127B	False		2	0	0	0.0	0.0
+BRD-K34508425	KU-C103898N	False		4	0	0	0.0	0.0
+BRD-K34513690	BRD-K34513690	False		4	0	0	0.0	0.0
+BRD-K34532661	BRD-K34532661	False		2	0	0	0.0	0.0
+BRD-K34673456	BRD-K34673456	False		3	0	0	0.0	0.0
+BRD-K34968258	BRD-K34968258	False		1	0	0	0.0	0.0
+BRD-K34990278	BRD-K34990278	False		4	0	0	0.0	0.0
+BRD-K35002913	BRD-K35002913	False		1	0	0	0.0	0.0
+BRD-K35030377	BRD-K35030377	False		3	0	0	0.0	0.0
+BRD-K35046132	BRD-K35046132	False		2	0	0	0.0	0.0
+BRD-K35079116	asiatic-acid	False	apoptosis stimulant	2	0	0	0.0	0.0
+BRD-K35189033	levonorgestrel	True	estrogen receptor agonist|glucocorticoid receptor antagonist|progesterone receptor agonist|progesterone receptor antagonist	3	0	0	0.0	0.0
+BRD-K35213218	BRD-K35213218	False		1	0	0	0.0	0.0
+BRD-K35240538	methylprednisolone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K35483542	alitretinoin	True		4	0	0	0.0	0.0
+BRD-K35498412	FQI-2	False		2	0	0	0.0	0.0
+BRD-K35604418	MIM-1	False		1	0	0	0.0	0.0
+BRD-K35669573	TUL-XX023	False		2	0	0	0.0	0.0
+BRD-K35716340	BRD-K35716340	False		6	0	0	0.0	0.0
+BRD-K35769695	BRD-K35769695	False		1	0	0	0.0	0.0
+BRD-K35832492	BRD-K35832492	False		1	0	0	0.0	0.0
+BRD-K35841161	SA-1472548	False		4	0	0	0.0	0.0
+BRD-K36087356	BRD-K36087356	False		1	0	0	0.0	0.0
+BRD-K36091499	BRD-K36091499	False		1	0	0	0.0	0.0
+BRD-K36153907	KU-C103885	False		2	0	0	0.0	0.0
+BRD-K36192494	BRD-K36192494	False		1	0	0	0.0	0.0
+BRD-K36354764	BRD-K36354764	False		1	0	0	0.0	0.0
+BRD-K36462169	BRD-K36462169	False		1	0	0	0.0	0.0
+BRD-K36627727	tamibarotene	True	retinoid receptor agonist	2	0	0	0.0	0.0
+BRD-K36760124	lanatoside-c	False	cardiac glycoside	5	0	0	0.0	0.0
+BRD-K36772364	BRD-K36772364	False		4	0	0	0.0	0.0
+BRD-K36855468	BRD-K36855468	False		1	0	0	0.0	0.0
+BRD-K36862742	hydroflumethiazide	True	sodium/potassium/chloride transporter inhibitor	1	0	0	0.0	0.0
+BRD-K36888933	BRD-K36888933	False		1	0	0	0.0	0.0
+BRD-K36943170	BRD-K36943170	False		2	0	0	0.0	0.0
+BRD-K36959991	SA-418993	False		4	0	0	0.0	0.0
+BRD-K37043259	BRD-K37043259	False		4	0	0	0.0	0.0
+BRD-K37073485	BRD-K37073485	False		1	0	0	0.0	0.0
+BRD-K37104903	BRD-K37104903	False		3	0	0	0.0	0.0
+BRD-K37194137	III606050	False		1	0	0	0.0	0.0
+BRD-K37237504	CEP-33779	False	JAK inhibitor	2	0	0	0.0	0.0
+BRD-K37255594	BRD-K37255594	False		1	0	0	0.0	0.0
+BRD-K37379014	filanesib	False	kinesin inhibitor|kinesin-like spindle protein inhibitor	2	0	0	0.0	0.0
+BRD-K37456065	VU-0365114-2	False		3	0	0	0.0	0.0
+BRD-K37461197	BRD-K37461197	False		1	0	0	0.0	0.0
+BRD-K37650321	BRD-K37650321	False		1	0	0	0.0	0.0
+BRD-K37720887	SB-525334	False	TGF beta receptor inhibitor	1	0	0	0.0	0.0
+BRD-K37723606	dioscin	False		1	0	0	0.0	0.0
+BRD-K37777176	BRD-K37777176	False		1	0	0	0.0	0.0
+BRD-K37937164	BRD-K37937164	False		1	0	0	0.0	0.0
+BRD-K38003476	clocortolone-pivalate	True	steroid	2	0	0	0.0	0.0
+BRD-K38024286	BRD-K38024286	False		6	0	0	0.0	0.0
+BRD-K38028643	BRD-K38028643	False		2	0	0	0.0	0.0
+BRD-K38183498	clonazepam	True		1	0	0	0.0	0.0
+BRD-K38294617	BRD-K38294617	False		4	0	0	0.0	0.0
+BRD-K38473998	cilomilast	False		5	0	0	0.0	0.0
+BRD-K38625260	BRD-K38625260	False		4	0	0	0.0	0.0
+BRD-K38634661	BRD-K38634661	False		1	0	0	0.0	0.0
+BRD-K38805748	BRD-K38805748	False		1	0	0	0.0	0.0
+BRD-K38921908	BRD-K38921908	False		2	0	0	0.0	0.0
+BRD-K38934024	BRD-K38934024	False		1	0	0	0.0	0.0
+BRD-K39188321	betamethasone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K39252998	atipamezole	True	adrenergic receptor antagonist	2	0	0	0.0	0.0
+BRD-K39256324	rottlerin	False		3	0	0	0.0	0.0
+BRD-K39520573	GW-5074	False	leucine rich repeat kinase inhibitor|RAF inhibitor	1	0	0	0.0	0.0
+BRD-K39569857	BRD-K39569857	False		2	0	0	0.0	0.0
+BRD-K39829853	BRD-K39829853	False		1	0	0	0.0	0.0
+BRD-K39987650	bisacodyl	True	laxative	5	0	0	0.0	0.0
+BRD-K39988237	p-nitrosodiphenylamine	False		1	0	0	0.0	0.0
+BRD-K40064462	BRD-K40064462	False		1	0	0	0.0	0.0
+BRD-K40068530	BRD-K40068530	False		1	0	0	0.0	0.0
+BRD-K40087974	BRD-K40087974	False		1	0	0	0.0	0.0
+BRD-K40109029	SB-505124	False	ALK tyrosine kinase receptor inhibitor	2	0	0	0.0	0.0
+BRD-K40138205	BRD-K40138205	False		4	0	0	0.0	0.0
+BRD-K40156405	BRD-K40156405	False		1	0	0	0.0	0.0
+BRD-K40255344	tyrphostin-A9	False	protein tyrosine kinase inhibitor|tyrosine kinase inhibitor	2	0	0	0.0	0.0
+BRD-K40328231	BRD-K40328231	False		2	0	0	0.0	0.0
+BRD-K40496271	eltrombopag	False		2	0	0	0.0	0.0
+BRD-K40530731	hyoscyamine	True	acetylcholine receptor antagonist	4	0	0	0.0	0.0
+BRD-K40738845	BMS-777607	False	AXL kinase inhibitor|c-Met inhibitor|FLT3 inhibitor|hepatocyte growth factor receptor inhibitor|macrophage migration inhibiting factor inhibitor|tyrosine kinase inhibitor	1	0	0	0.0	0.0
+BRD-K40749452	BRD-K40749452	False		4	0	0	0.0	0.0
+BRD-K40758068	efavirenz	True	HIV protease inhibitor	2	0	0	0.0	0.0
+BRD-K40919711	BAPTA-AM	False		2	0	0	0.0	0.0
+BRD-K41005527	BRD-K41005527	False		1	0	0	0.0	0.0
+BRD-K41141892	SA-1462738	False		4	0	0	0.0	0.0
+BRD-K41172353	BRD-K41172353	False		1	0	0	0.0	0.0
+BRD-K41494493	bisphenol-a	False	synthetic estrogen	3	0	0	0.0	0.0
+BRD-K41708980	BRD-K41708980	False		6	0	0	0.0	0.0
+BRD-K41772907	tolimidone	False	SRC activator	1	0	0	0.0	0.0
+BRD-K41845021	BRD-K41845021	False		5	0	0	0.0	0.0
+BRD-K41900823	BRD-K41900823	False		2	0	0	0.0	0.0
+BRD-K41925105	BRD-K41925105	False		5	0	0	0.0	0.0
+BRD-K42021584	BRD-K42021584	False		1	0	0	0.0	0.0
+BRD-K42098891	protriptyline	True	tricyclic antidepressant	2	0	0	0.0	0.0
+BRD-K42205652	BRD-K42205652	False	SRC inhibitor|SYK inhibitor	1	0	0	0.0	0.0
+BRD-K42495768	tasisulam	False	apoptosis stimulant	1	0	0	0.0	0.0
+BRD-K42576592	BRD-K42576592	False		1	0	0	0.0	0.0
+BRD-K42677417	BRD-K42677417	False		1	0	0	0.0	0.0
+BRD-K42737417	BRD-K42737417	False		1	0	0	0.0	0.0
+BRD-K42898655	temsirolimus	False		2	0	0	0.0	0.0
+BRD-K42918168	4-NITROPYRENE	False		1	0	0	0.0	0.0
+BRD-K43283393	BRD-K43283393	False		1	0	0	0.0	0.0
+BRD-K43410529	MLN-2480	True	RAF inhibitor	4	0	0	0.0	0.0
+BRD-K43481697	BRD-K43481697	False		1	0	0	0.0	0.0
+BRD-K43540029	BRD-K43540029	False		2	0	0	0.0	0.0
+BRD-K43579410	BRD-K43579410	False		1	0	0	0.0	0.0
+BRD-K43621685	CP-673451	False	PDGFR tyrosine kinase receptor inhibitor	2	0	0	0.0	0.0
+BRD-K43796186	BRD-K43796186	False		1	0	0	0.0	0.0
+BRD-K43797669	genistein	False	tyrosine kinase inhibitor	41	0	0	0.0	0.0
+BRD-K44200196	BRD-K44200196	False		1	0	0	0.0	0.0
+BRD-K44218819	tryptamine	False		1	0	0	0.0	0.0
+BRD-K44252324	BRD-K44252324	False		6	0	0	0.0	0.0
+BRD-K44256916	BRD-K44256916	False		4	0	0	0.0	0.0
+BRD-K44273375	tolnaftate	True	fungal squalene epoxidase inhibitor	1	0	0	0.0	0.0
+BRD-K44506257	BRD-K44506257	False		4	0	0	0.0	0.0
+BRD-K44928623	BRD-K44928623	False		1	0	0	0.0	0.0
+BRD-K45158365	valsartan	True	angiotensin receptor antagonist	3	0	0	0.0	0.0
+BRD-K45168550	SB-756050	False	G protein-coupled receptor agonist	1	0	0	0.0	0.0
+BRD-K45192137	dexamethasone	False		2	0	0	0.0	0.0
+BRD-K45205755	BRD-K45205755	False		4	0	0	0.0	0.0
+BRD-K45231555	BRD-K45231555	False		6	0	0	0.0	0.0
+BRD-K45231869	BRD-K45231869	False		1	0	0	0.0	0.0
+BRD-K45293975	7-hydroxystaurosporine	False	CDK inhibitor|CHK inhibitor|PKC inhibitor	1	0	0	0.0	0.0
+BRD-K45330754	BRD-K45330754	True	estrogen receptor agonist	1	0	0	0.0	0.0
+BRD-K45356824	SA-1973497	False		1	0	0	0.0	0.0
+BRD-K45431864	BRD-K45431864	False		1	0	0	0.0	0.0
+BRD-K45479396	BP-554	False	serotonin receptor agonist	1	0	0	0.0	0.0
+BRD-K45481924	BRD-K45481924	False		1	0	0	0.0	0.0
+BRD-K45534781	BRD-K45534781	False		1	0	0	0.0	0.0
+BRD-K45689979	BRD-K45689979	False		1	0	0	0.0	0.0
+BRD-K45718236	BRD-K45718236	False		2	0	0	0.0	0.0
+BRD-K45723650	BRD-K45723650	False		2	0	0	0.0	0.0
+BRD-K45759552	BRD-K45759552	False		2	0	0	0.0	0.0
+BRD-K45818044	SA-425500	False		5	0	0	0.0	0.0
+BRD-K45843042	SA-419083	False		1	0	0	0.0	0.0
+BRD-K45875383	XBD-173	False	benzodiazepine receptor ligand	1	0	0	0.0	0.0
+BRD-K45924332	amrinone	True	phosphodiesterase inhibitor	2	0	0	0.0	0.0
+BRD-K46062088	ST-4062971	False		5	0	0	0.0	0.0
+BRD-K46088987	BRD-K46088987	False		1	0	0	0.0	0.0
+BRD-K46120075	BRD-K46120075	False		1	0	0	0.0	0.0
+BRD-K46137903	prednicarbate	False		2	0	0	0.0	0.0
+BRD-K46272620	valyltryptophan	False		2	0	0	0.0	0.0
+BRD-K46373671	BRD-K46373671	False		1	0	0	0.0	0.0
+BRD-K46424862	hymecromone	False	monoamine oxidase inhibitor	1	0	0	0.0	0.0
+BRD-K46476470	BRD-K46476470	False		4	0	0	0.0	0.0
+BRD-K46503544	etoposide	False		1	0	0	0.0	0.0
+BRD-K46531780	methyl-benzethonium	False	other antibiotic	1	0	0	0.0	0.0
+BRD-K46604138	dapagliflozin	False		1	0	0	0.0	0.0
+BRD-K46652470	nizatidine	False		2	0	0	0.0	0.0
+BRD-K46681113	BRD-K46681113	False		2	0	0	0.0	0.0
+BRD-K46897165	BRD-K46897165	False		4	0	0	0.0	0.0
+BRD-K47095176	talnetant	False	tachykinin antagonist	1	0	0	0.0	0.0
+BRD-K47335880	GMX-1778	False	NAMPT inhibitor	1	0	0	0.0	0.0
+BRD-K47438704	BRD-K47438704	False		2	0	0	0.0	0.0
+BRD-K47495817	BRD-K47495817	False		1	0	0	0.0	0.0
+BRD-K47501804	BRD-K47501804	False		6	0	0	0.0	0.0
+BRD-K47533918	BRD-K47533918	False		1	0	0	0.0	0.0
+BRD-K47551852	BRD-K47551852	False		41	0	0	0.0	0.0
+BRD-K47635719	dexamethasone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K47659338	EMD-386088	False	serotonin receptor agonist	2	0	0	0.0	0.0
+BRD-K47717570	NBQX	False	glutamate receptor antagonist	2	0	0	0.0	0.0
+BRD-K48029790	OBAA	False		2	0	0	0.0	0.0
+BRD-K48195801	tecastemizole	False	histamine receptor antagonist	2	0	0	0.0	0.0
+BRD-K48213016	CC-930	False	JNK inhibitor	1	0	0	0.0	0.0
+BRD-K48222931	BRD-K48222931	False		1	0	0	0.0	0.0
+BRD-K48257023	BRD-K48257023	False		1	0	0	0.0	0.0
+BRD-K48443249	CNX-774	False	Bruton's tyrosine kinase (BTK) inhibitor	41	0	0	0.0	0.0
+BRD-K48505079	BRD-K48505079	False		1	0	0	0.0	0.0
+BRD-K48735772	PD-158780	False	EGFR inhibitor	1	0	0	0.0	0.0
+BRD-K48920366	O-PHENYLENEDIAMINE.2HCL	False		1	0	0	0.0	0.0
+BRD-K48950795	BRD-K48950795	False		5	0	0	0.0	0.0
+BRD-K48970916	danazol	True	estrogen receptor antagonist|progesterone receptor agonist	1	0	0	0.0	0.0
+BRD-K49055432	A-66	False	PI3K inhibitor	3	0	0	0.0	0.0
+BRD-K49094915	BRD-K49094915	False		2	0	0	0.0	0.0
+BRD-K49111258	prazosin	True	adrenergic receptor antagonist	3	0	0	0.0	0.0
+BRD-K49262771	methyl-carbamate	False		2	0	0	0.0	0.0
+BRD-K49276305	BRD-K49276305	False		1	0	0	0.0	0.0
+BRD-K49294207	BIBU-1361	False	EGFR inhibitor	3	0	0	0.0	0.0
+BRD-K49460772	BRD-K49460772	False		4	0	0	0.0	0.0
+BRD-K49577446	flunisolide	True	cytochrome P450 inhibitor	3	0	0	0.0	0.0
+BRD-K49657628	BRD-K49657628	False	EGFR inhibitor|tyrosine kinase inhibitor	2	0	0	0.0	0.0
+BRD-K49671696	ketanserin	True	serotonin receptor antagonist	4	0	0	0.0	0.0
+BRD-K49687815	BRD-K49687815	False		4	0	0	0.0	0.0
+BRD-K49776472	SKF-91488	False	histamine N-methyltransferase inhibitor	1	0	0	0.0	0.0
+BRD-K49814456	BRD-K49814456	False		1	0	0	0.0	0.0
+BRD-K50011261	BRD-K50011261	False		1	0	0	0.0	0.0
+BRD-K50018155	RS-67506	False	serotonin receptor partial agonist	1	0	0	0.0	0.0
+BRD-K50168500	canertinib	False	EGFR inhibitor	41	0	0	0.0	0.0
+BRD-K50204028	BRD-K50204028	False		3	0	0	0.0	0.0
+BRD-K50218765	BRD-K50218765	False		1	0	0	0.0	0.0
+BRD-K50223932	BRD-K50223932	False		1	0	0	0.0	0.0
+BRD-K50277523	BRD-K50277523	False		1	0	0	0.0	0.0
+BRD-K50325075	UCL-2077	False	slow afterhyperpolarization channel blocker	1	0	0	0.0	0.0
+BRD-K50464341	berbamine	False		1	0	0	0.0	0.0
+BRD-K50511260	BRD-K50511260	False		2	0	0	0.0	0.0
+BRD-K50776152	BRD-K50776152	False		2	0	0	0.0	0.0
+BRD-K50777342	BRD-K50777342	False		1	0	0	0.0	0.0
+BRD-K50859149	sulfafurazole	True	bacterial antifolate	1	0	0	0.0	0.0
+BRD-K50919475	BRD-K50919475	False		4	0	0	0.0	0.0
+BRD-K51040301	cobicistat	True	cytochrome P450 inhibitor	1	0	0	0.0	0.0
+BRD-K51276371	aloisine	False		4	0	0	0.0	0.0
+BRD-K51400578	BRD-K51400578	False		1	0	0	0.0	0.0
+BRD-K51443908	KU-C104486	False		2	0	0	0.0	0.0
+BRD-K51592837	BRD-K51592837	False		1	0	0	0.0	0.0
+BRD-K51644197	BRD-K51644197	False		1	0	0	0.0	0.0
+BRD-K51683034	BRD-K51683034	False		1	0	0	0.0	0.0
+BRD-K51816706	oxindole-I	False		6	0	0	0.0	0.0
+BRD-K52062350	BRD-K52062350	False		1	0	0	0.0	0.0
+BRD-K52080565	nandrolone	False		3	0	0	0.0	0.0
+BRD-K52186107	BRD-K52186107	False		3	0	0	0.0	0.0
+BRD-K52256627	chlorhexidine	True	membrane integrity inhibitor	4	0	0	0.0	0.0
+BRD-K52560704	methylstat	False		41	0	0	0.0	0.0
+BRD-K52620403	STO-609	False		1	0	0	0.0	0.0
+BRD-K52662033	lidocaine	True	histamine receptor agonist	2	0	0	0.0	0.0
+BRD-K52785744	BRD-K52785744	False		1	0	0	0.0	0.0
+BRD-K52801121	BRD-K52801121	False		1	0	0	0.0	0.0
+BRD-K52818472	ivacaftor	True	CFTR channel potentiator	2	0	0	0.0	0.0
+BRD-K52918979	BRD-K52918979	False		1	0	0	0.0	0.0
+BRD-K52981369	BRD-K52981369	False		5	0	0	0.0	0.0
+BRD-K53061490	ozagrel	True	thromboxane synthase inhibitor	3	0	0	0.0	0.0
+BRD-K53410660	BRD-K53410660	False		1	0	0	0.0	0.0
+BRD-K53561341	KIN-001-220	False	Aurora kinase inhibitor	4	0	0	0.0	0.0
+BRD-K53732802	VU-0365118-1	False		4	0	0	0.0	0.0
+BRD-K53814070	ripasudil	True	rho associated kinase inhibitor	1	0	0	0.0	0.0
+BRD-K53959060	indirubin	False		1	0	0	0.0	0.0
+BRD-K53978514	BRD-K53978514	False		3	0	0	0.0	0.0
+BRD-K54095730	CMPD-1	False	p38 MAPK inhibitor	41	0	0	0.0	0.0
+BRD-K54256913	MK-1775	False	WEE1 kinase inhibitor	41	0	0	0.0	0.0
+BRD-K54343811	BRD-K54343811	False		2	0	0	0.0	0.0
+BRD-K54472332	elvitegravir	True	HIV integrase inhibitor	41	0	0	0.0	0.0
+BRD-K54634444	artesunate	True	DNA synthesis inhibitor	1	0	0	0.0	0.0
+BRD-K54665485	R-59022	False	diacylglycerol kinase inhibitor|protein kinase inhibitor	2	0	0	0.0	0.0
+BRD-K54708045	nTZDpa	False	PPAR receptor agonist	1	0	0	0.0	0.0
+BRD-K54759182	dosulepin	True	norepinephrine reuptake inhibitor|serotonin–norepinephrine reuptake inhibitor (SNRI)|tricyclic antidepressant	1	0	0	0.0	0.0
+BRD-K54847683	equol	True	estrogen receptor agonist	2	0	0	0.0	0.0
+BRD-K55009937	BRD-K55009937	False		2	0	0	0.0	0.0
+BRD-K55073475	BRD-K55073475	False		1	0	0	0.0	0.0
+BRD-K55082668	BRD-K55082668	False		1	0	0	0.0	0.0
+BRD-K55113501	digoxigenin	False		4	0	0	0.0	0.0
+BRD-K55149044	BRD-K55149044	False		4	0	0	0.0	0.0
+BRD-K55231301	BRD-K55231301	False		1	0	0	0.0	0.0
+BRD-K55242822	BRD-K55242822	False		1	0	0	0.0	0.0
+BRD-K55468218	spiperone	True	dopamine receptor antagonist	5	0	0	0.0	0.0
+BRD-K55591206	BRD-K55591206	False	bacterial DNA gyrase inhibitor	2	0	0	0.0	0.0
+BRD-K55612480	BRD-K55612480	False		4	0	0	0.0	0.0
+BRD-K55722623	BRD-K55722623	False		5	0	0	0.0	0.0
+BRD-K55892330	sorbic-acid	False		1	0	0	0.0	0.0
+BRD-K55996983	BRD-K55996983	False		1	0	0	0.0	0.0
+BRD-K56196992	BRD-K56196992	False		1	0	0	0.0	0.0
+BRD-K56277358	MGCD-265	False	VEGFR inhibitor	4	0	0	0.0	0.0
+BRD-K56384660	BRD-K56384660	False		1	0	0	0.0	0.0
+BRD-K56405753	MK-2461	False	FGFR inhibitor|VEGFR inhibitor	4	0	0	0.0	0.0
+BRD-K56429665	calcipotriol	True	vitamin D receptor agonist	2	0	0	0.0	0.0
+BRD-K56515112	medrysone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K56593336	BRD-K56593336	False		1	0	0	0.0	0.0
+BRD-K56700933	phenethyl-isothiocyanate	False	anticancer agent	1	0	0	0.0	0.0
+BRD-K56869709	BRD-K56869709	False		4	0	0	0.0	0.0
+BRD-K56945204	BRD-K56945204	False		1	0	0	0.0	0.0
+BRD-K57064803	BRD-K57064803	False		41	0	0	0.0	0.0
+BRD-K57169635	dacomitinib	True	EGFR inhibitor	41	0	0	0.0	0.0
+BRD-K57238941	BRD-K57238941	False		2	0	0	0.0	0.0
+BRD-K57261999	marinopyrrole-a	False		2	0	0	0.0	0.0
+BRD-K57309821	BRD-K57309821	False		3	0	0	0.0	0.0
+BRD-K57328348	BRD-K57328348	False		1	0	0	0.0	0.0
+BRD-K57602059	auramine-o	False		1	0	0	0.0	0.0
+BRD-K57678861	BRD-K57678861	False		1	0	0	0.0	0.0
+BRD-K57886322	fluocinonide	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K57930253	nitrazepam	True		1	0	0	0.0	0.0
+BRD-K57954781	BRD-K57954781	False		1	0	0	0.0	0.0
+BRD-K58247702	BRD-K58247702	False		2	0	0	0.0	0.0
+BRD-K58292285	SA-1921085	False		3	0	0	0.0	0.0
+BRD-K58299615	Ro-90-7501	False	beta amyloid protein neurotoxicity inhibitor	1	0	0	0.0	0.0
+BRD-K58550667	FK-866	False	niacinamide phosphoribosyltransferase inhibitor	1	0	0	0.0	0.0
+BRD-K58744164	BRD-K58744164	False		2	0	0	0.0	0.0
+BRD-K58860003	SA-1921617	False		2	0	0	0.0	0.0
+BRD-K58900438	BRD-K58900438	False		1	0	0	0.0	0.0
+BRD-K58945843	BRD-K58945843	False		2	0	0	0.0	0.0
+BRD-K59067695	SU-11274	False		1	0	0	0.0	0.0
+BRD-K59184148	SB-216763	False	glycogen synthase kinase inhibitor	1	0	0	0.0	0.0
+BRD-K59227464	LY-2228820	False	p38 MAPK inhibitor	1	0	0	0.0	0.0
+BRD-K59273480	propentofylline	True	adenosine reuptake inhibitor|phosphodiesterase inhibitor	2	0	0	0.0	0.0
+BRD-K59385073	BRD-K59385073	False		41	0	0	0.0	0.0
+BRD-K59456551	methotrexate	True	dihydrofolate reductase inhibitor	1	0	0	0.0	0.0
+BRD-K59460069	BRD-K59460069	False		2	0	0	0.0	0.0
+BRD-K59472190	BRD-K59472190	False		1	0	0	0.0	0.0
+BRD-K59506194	targinine	False	nitric oxide synthase inhibitor	1	0	0	0.0	0.0
+BRD-K59573506	BRD-K59573506	False		2	0	0	0.0	0.0
+BRD-K59606630	GSK-864	False		1	0	0	0.0	0.0
+BRD-K59632282	quinidine	True	sodium channel blocker	2	0	0	0.0	0.0
+BRD-K59705555	BRD-K59705555	False		1	0	0	0.0	0.0
+BRD-K59733592	BRD-K59733592	False		1	0	0	0.0	0.0
+BRD-K59805090	BRD-K59805090	False		1	0	0	0.0	0.0
+BRD-K59968781	BRD-K59968781	False		2	0	0	0.0	0.0
+BRD-K60070073	BRD-K60070073	False		1	0	0	0.0	0.0
+BRD-K60167861	BRD-K60167861	False		1	0	0	0.0	0.0
+BRD-K60272788	BRD-K60272788	False		1	0	0	0.0	0.0
+BRD-K60391168	BRD-K60391168	False		4	0	0	0.0	0.0
+BRD-K60454961	SA-102042	False		4	0	0	0.0	0.0
+BRD-K60585088	paricalcitol	True	vitamin D receptor agonist	2	0	0	0.0	0.0
+BRD-K60640630	mometasone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K60756411	BRD-K60756411	False		2	0	0	0.0	0.0
+BRD-K60895275	BRD-K60895275	False		2	0	0	0.0	0.0
+BRD-K61105081	BRD-K61105081	False		5	0	0	0.0	0.0
+BRD-K61314889	endo-IWR-1	False	PARP inhibitor	4	0	0	0.0	0.0
+BRD-K61388502	BRD-K61388502	False		1	0	0	0.0	0.0
+BRD-K61394468	glutaraldehyde	False		1	0	0	0.0	0.0
+BRD-K61443650	thiomersal	True	other antibiotic	41	0	0	0.0	0.0
+BRD-K61452026	emtricitabine	True	nucleoside reverse transcriptase inhibitor	4	0	0	0.0	0.0
+BRD-K61496577	flumetasone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K61498099	BRD-K61498099	False		2	0	0	0.0	0.0
+BRD-K61567297	resatorvid	False	toll-like receptor inhibitor	4	0	0	0.0	0.0
+BRD-K61627029	BRD-K61627029	False		1	0	0	0.0	0.0
+BRD-K61662457	CAY-10594	False		6	0	0	0.0	0.0
+BRD-K61776140	BRD-K61776140	False		5	0	0	0.0	0.0
+BRD-K61845293	DDR1-IN-1	False	discoidin domain receptor inhibitor	1	0	0	0.0	0.0
+BRD-K61860715	ZG-10	False		1	0	0	0.0	0.0
+BRD-K62012036	acitretin	True	retinoid receptor agonist	3	0	0	0.0	0.0
+BRD-K62014504	CGI-1746	False		41	0	0	0.0	0.0
+BRD-K62056344	BRD-K62056344	False		1	0	0	0.0	0.0
+BRD-K62200014	anagrelide	True	phosphodiesterase inhibitor	3	0	0	0.0	0.0
+BRD-K62283710	BRD-K62283710	False		1	0	0	0.0	0.0
+BRD-K62353524	DY-131	False		4	0	0	0.0	0.0
+BRD-K62358627	BRD-K62358627	False		1	0	0	0.0	0.0
+BRD-K62387885	basimglurant	False	glutamate receptor antagonist	1	0	0	0.0	0.0
+BRD-K62562723	SR-2640	False	leukotriene receptor antagonist	4	0	0	0.0	0.0
+BRD-K62627073	erismo-ester	False		1	0	0	0.0	0.0
+BRD-K62734952	arglabin	True	farnesyltransferase inhibitor	5	0	0	0.0	0.0
+BRD-K62743802	BRD-K62743802	False		3	0	0	0.0	0.0
+BRD-K62996583	lidoflazine	True	calcium channel blocker	4	0	0	0.0	0.0
+BRD-K63150726	JTE-907	False	cannabinoid receptor inverse agonist	4	0	0	0.0	0.0
+BRD-K63191384	SCH-772984	False		1	0	0	0.0	0.0
+BRD-K63279176	BRD-K63279176	False		1	0	0	0.0	0.0
+BRD-K63343048	orlistat	True	lipase inhibitor	1	0	0	0.0	0.0
+BRD-K63425657	NP-010914	False		1	0	0	0.0	0.0
+BRD-K63455741	BRD-K63455741	False		1	0	0	0.0	0.0
+BRD-K63457253	EPZ-5676	False		2	0	0	0.0	0.0
+BRD-K63569039	BRD-K63569039	False		1	0	0	0.0	0.0
+BRD-K63630713	etacrynic-acid	True	sodium/potassium/chloride transporter inhibitor	1	0	0	0.0	0.0
+BRD-K63667213	SA-1919584	False		2	0	0	0.0	0.0
+BRD-K63716333	BRD-K63716333	False		2	0	0	0.0	0.0
+BRD-K63733272	BRD-K63733272	False		1	0	0	0.0	0.0
+BRD-K63770300	BRD-K63770300	False		5	0	0	0.0	0.0
+BRD-K63938446	BRD-K63938446	False		1	0	0	0.0	0.0
+BRD-K63947990	BRD-K63947990	False		4	0	0	0.0	0.0
+BRD-K64024097	BRD-K64024097	False		6	0	0	0.0	0.0
+BRD-K64058329	BRD-K64058329	False		2	0	0	0.0	0.0
+BRD-K64106162	BRD-K64106162	False		41	0	0	0.0	0.0
+BRD-K64305210	BRD-K64305210	False		6	0	0	0.0	0.0
+BRD-K64337372	BRD-K64337372	False		1	0	0	0.0	0.0
+BRD-K64366478	SA-243913	False		1	0	0	0.0	0.0
+BRD-K64440942	BRD-K64440942	False		1	0	0	0.0	0.0
+BRD-K64451768	GANT-58	False	GLI antagonist	5	0	0	0.0	0.0
+BRD-K64558129	BRD-K64558129	False		1	0	0	0.0	0.0
+BRD-K64606589	apicidin	False		41	0	0	0.0	0.0
+BRD-K64634304	tretinoin	False		2	0	0	0.0	0.0
+BRD-K64822626	KU-C104135	False		3	0	0	0.0	0.0
+BRD-K64888243	AZ-960	False	JAK inhibitor	2	0	0	0.0	0.0
+BRD-K65111630	SJB-shh-31	False		1	0	0	0.0	0.0
+BRD-K65146499	nabumetone	True	cyclooxygenase inhibitor	1	0	0	0.0	0.0
+BRD-K65148580	BRD-K65148580	False		2	0	0	0.0	0.0
+BRD-K65170927	aprepitant	False		2	0	0	0.0	0.0
+BRD-K65200617	BRD-K65200617	False		1	0	0	0.0	0.0
+BRD-K65331431	retinyl	True		1	0	0	0.0	0.0
+BRD-K65494396	BRD-K65494396	False		1	0	0	0.0	0.0
+BRD-K65592642	BRD-K65592642	False	gamma secretase inhibitor	1	0	0	0.0	0.0
+BRD-K65657366	BRD-K65657366	False		1	0	0	0.0	0.0
+BRD-K65904652	BRD-K65904652	False		1	0	0	0.0	0.0
+BRD-K66090100	DMBA	False		1	0	0	0.0	0.0
+BRD-K66142238	BRD-K66142238	False		1	0	0	0.0	0.0
+BRD-K66211423	BRD-K66211423	False		1	0	0	0.0	0.0
+BRD-K66359319	BRD-K66359319	False		2	0	0	0.0	0.0
+BRD-K66401437	THZ-1	False	CDK inhibitor	2	0	0	0.0	0.0
+BRD-K66497480	BRD-K66497480	False		1	0	0	0.0	0.0
+BRD-K66615216	moxifloxacin	True	bacterial DNA gyrase inhibitor	2	0	0	0.0	0.0
+BRD-K66634822	BRD-K66634822	False		4	0	0	0.0	0.0
+BRD-K66695631	BRD-K66695631	False		2	0	0	0.0	0.0
+BRD-K66788707	fludarabine	True	ribonucleotide reductase inhibitor	1	0	0	0.0	0.0
+BRD-K66808046	oxyquinoline	True	chelating agent	3	0	0	0.0	0.0
+BRD-K66898851	sanguinarium-chloride	False	apoptosis stimulant	1	0	0	0.0	0.0
+BRD-K66952385	SA-102096	False		4	0	0	0.0	0.0
+BRD-K67174588	toremifene	False		2	0	0	0.0	0.0
+BRD-K67537649	PQ-401	False	IGF-1 inhibitor	2	0	0	0.0	0.0
+BRD-K67548518	BRD-K67548518	False		41	0	0	0.0	0.0
+BRD-K67697926	BRD-K67697926	False		1	0	0	0.0	0.0
+BRD-K67787765	BRD-K67787765	False		4	0	0	0.0	0.0
+BRD-K67870070	SA-247615	False		6	0	0	0.0	0.0
+BRD-K67901620	avasimibe	False	ACAT inhibitor	41	0	0	0.0	0.0
+BRD-K67966701	lisinopril	True	angiotensin converting enzyme inhibitor	3	0	0	0.0	0.0
+BRD-K68132782	terbinafine	True	fungal squalene epoxidase inhibitor	3	0	0	0.0	0.0
+BRD-K68201904	BRD-K68201904	False		1	0	0	0.0	0.0
+BRD-K68246049	TTNPB	False		4	0	0	0.0	0.0
+BRD-K68319707	BRD-K68319707	False		5	0	0	0.0	0.0
+BRD-K68344511	KM-03472SC	False		4	0	0	0.0	0.0
+BRD-K68407802	KIN001-055	False		4	0	0	0.0	0.0
+BRD-K68756823	FR-180204	False	MAP kinase inhibitor	1	0	0	0.0	0.0
+BRD-K68866125	BRD-K68866125	False		1	0	0	0.0	0.0
+BRD-K68867920	quetiapine	True	dopamine receptor antagonist|serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-K68906258	BRD-K68906258	False		3	0	0	0.0	0.0
+BRD-K68997413	PF-3845	False	FAAH inhibitor	2	0	0	0.0	0.0
+BRD-K69101489	BRD-K69101489	False		6	0	0	0.0	0.0
+BRD-K69503483	BRD-K69503483	False		6	0	0	0.0	0.0
+BRD-K69600043	thiethylperazine	True	dopamine receptor antagonist	2	0	0	0.0	0.0
+BRD-K69608737	tacrolimus	True	calcineurin inhibitor	2	0	0	0.0	0.0
+BRD-K69650333	idarubicin	True	topoisomerase inhibitor	2	0	0	0.0	0.0
+BRD-K69661891	BRD-K69661891	False		2	0	0	0.0	0.0
+BRD-K69747917	BRD-K69747917	False		1	0	0	0.0	0.0
+BRD-K70161581	BRD-K70161581	False		5	0	0	0.0	0.0
+BRD-K70200040	BRD-K70200040	False		1	0	0	0.0	0.0
+BRD-K70333305	BRD-K70333305	False		2	0	0	0.0	0.0
+BRD-K70489510	BRD-K70489510	False		1	0	0	0.0	0.0
+BRD-K70503895	BRD-K70503895	False		1	0	0	0.0	0.0
+BRD-K70505054	ranitidine	False		6	0	0	0.0	0.0
+BRD-K70557564	zosuquidar	False	P glycoprotein inhibitor	2	0	0	0.0	0.0
+BRD-K70565046	BRD-K70565046	False		6	0	0	0.0	0.0
+BRD-K70577657	H-9	False		5	0	0	0.0	0.0
+BRD-K70771662	BRD-K70771662	False		1	0	0	0.0	0.0
+BRD-K70794677	BRD-K70794677	False		1	0	0	0.0	0.0
+BRD-K70875408	BRD-K70875408	False		2	0	0	0.0	0.0
+BRD-K70891562	BRD-K70891562	False		1	0	0	0.0	0.0
+BRD-K70901996	BRD-K70901996	False		4	0	0	0.0	0.0
+BRD-K70917163	BRD-K70917163	False		2	0	0	0.0	0.0
+BRD-K70924353	amtolmetin-guacil	True	cyclooxygenase inhibitor	2	0	0	0.0	0.0
+BRD-K70983703	BRD-K70983703	False		1	0	0	0.0	0.0
+BRD-K71058253	luliconazole	True	sterol demethylase inhibitor	2	0	0	0.0	0.0
+BRD-K71075609	dorzolamide	False		6	0	0	0.0	0.0
+BRD-K71106091	fludarabine-phosphate	True	ribonucleotide reductase inhibitor	6	0	0	0.0	0.0
+BRD-K71182858	BRD-K71182858	False		1	0	0	0.0	0.0
+BRD-K71188711	BRD-K71188711	False		1	0	0	0.0	0.0
+BRD-K71456612	BRD-K71456612	False		41	0	0	0.0	0.0
+BRD-K71467466	KPT-185	False	exportin antagonist	2	0	0	0.0	0.0
+BRD-K71670746	BRD-K71670746	False		4	0	0	0.0	0.0
+BRD-K71701252	BRD-K71701252	False		1	0	0	0.0	0.0
+BRD-K71781559	NSC60043	False		4	0	0	0.0	0.0
+BRD-K71785123	tricresyl-phosphate	False		1	0	0	0.0	0.0
+BRD-K71799949	carbamazepine	True	carboxamide antiepileptic	1	0	0	0.0	0.0
+BRD-K71894218	BRD-K71894218	False		1	0	0	0.0	0.0
+BRD-K71935468	BRD-K71935468	False		5	0	0	0.0	0.0
+BRD-K72166146	BRD-K72166146	True	serotonin receptor agonist	1	0	0	0.0	0.0
+BRD-K72264770	QW-BI-011	False	histone lysine methyltransferase inhibitor	2	0	0	0.0	0.0
+BRD-K72343629	BRD-K72343629	False		1	0	0	0.0	0.0
+BRD-K72723676	benzethonium	True	sodium channel blocker	5	0	0	0.0	0.0
+BRD-K72783841	BRD-K72783841	False		2	0	0	0.0	0.0
+BRD-K72895815	SSR-69071	False		2	0	0	0.0	0.0
+BRD-K73037408	KUC111774N	False		5	0	0	0.0	0.0
+BRD-K73044744	KU-C104495	False		3	0	0	0.0	0.0
+BRD-K73196317	urapidil	True	adrenergic receptor antagonist	5	0	0	0.0	0.0
+BRD-K73237276	tacalcitol	True	vitamin D receptor agonist	1	0	0	0.0	0.0
+BRD-K73319509	PF-04217903	False	c-Met inhibitor	1	0	0	0.0	0.0
+BRD-K73397362	purmorphamine	False	smoothened receptor agonist	2	0	0	0.0	0.0
+BRD-K73459720	BRD-K73459720	False		2	0	0	0.0	0.0
+BRD-K73489793	AZ-6102	False		2	0	0	0.0	0.0
+BRD-K73524797	ST-1859	False	antiamyloidogenic agent	1	0	0	0.0	0.0
+BRD-K73824630	skatole	False		1	0	0	0.0	0.0
+BRD-K73947551	amifostine	True	reducing agent	3	0	0	0.0	0.0
+BRD-K73951926	BRD-K73951926	False		1	0	0	0.0	0.0
+BRD-K73991644	isoquercetin	False	antioxidant	1	0	0	0.0	0.0
+BRD-K74133369	oligomycin-a	False		4	0	0	0.0	0.0
+BRD-K74141488	naftifine	True	fungal squalene epoxidase inhibitor	4	0	0	0.0	0.0
+BRD-K74228917	BRD-K74228917	False		1	0	0	0.0	0.0
+BRD-K74294292	BRD-K74294292	False		1	0	0	0.0	0.0
+BRD-K74305673	BRD-K74305673	False	IKK inhibitor|NFkB pathway inhibitor	41	0	0	0.0	0.0
+BRD-K74514084	pazopanib	True	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	41	0	0	0.0	0.0
+BRD-K74656908	BRD-K74656908	False		2	0	0	0.0	0.0
+BRD-K74690444	BRD-K74690444	False		1	0	0	0.0	0.0
+BRD-K74793820	vincristine	False		1	0	0	0.0	0.0
+BRD-K74797618	MD-049	False		41	0	0	0.0	0.0
+BRD-K74868206	BRD-K74868206	False		4	0	0	0.0	0.0
+BRD-K75051049	BRD-K75051049	False		1	0	0	0.0	0.0
+BRD-K75315865	BRD-K75315865	False		1	0	0	0.0	0.0
+BRD-K75477256	BRD-K75477256	False		1	0	0	0.0	0.0
+BRD-K75641298	metoclopramide	True	dopamine receptor antagonist|serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-K75708657	BRD-K75708657	False		2	0	0	0.0	0.0
+BRD-K75725875	BRD-K75725875	False		1	0	0	0.0	0.0
+BRD-K75819331	BRD-K75819331	False		1	0	0	0.0	0.0
+BRD-K75969390	BRD-K75969390	False		1	0	0	0.0	0.0
+BRD-K75999307	BRD-K75999307	False		1	0	0	0.0	0.0
+BRD-K76042595	SA-424577	False		4	0	0	0.0	0.0
+BRD-K76180386	JIB04	False	histone lysine demethylase inhibitor	2	0	0	0.0	0.0
+BRD-K76205745	losartan	True	angiotensin receptor antagonist	2	0	0	0.0	0.0
+BRD-K76236182	BRD-K76236182	False		4	0	0	0.0	0.0
+BRD-K76618906	michler's-ketone	False		1	0	0	0.0	0.0
+BRD-K76688164	BRD-K76688164	False		1	0	0	0.0	0.0
+BRD-K76691125	BRD-K76691125	False		1	0	0	0.0	0.0
+BRD-K76723084	isotretinoin	True	retinoid receptor agonist	4	0	0	0.0	0.0
+BRD-K76810206	nicergoline	True	adrenergic receptor antagonist	3	0	0	0.0	0.0
+BRD-K76840893	RS-17053	False	adrenergic receptor antagonist	41	0	0	0.0	0.0
+BRD-K76908866	CP-724714	False	EGFR inhibitor|protein tyrosine kinase inhibitor	4	0	0	0.0	0.0
+BRD-K76938712	BRD-K76938712	False		5	0	0	0.0	0.0
+BRD-K76964878	EX-527	False	SIRT inhibitor	6	0	0	0.0	0.0
+BRD-K77172154	BRD-K77172154	False		1	0	0	0.0	0.0
+BRD-K77273736	BRD-K77273736	False		1	0	0	0.0	0.0
+BRD-K77545824	SA-243276	False		1	0	0	0.0	0.0
+BRD-K77547920	BRD-K77547920	False		6	0	0	0.0	0.0
+BRD-K77554836	triamcinolone	True	glucocorticoid receptor agonist	2	0	0	0.0	0.0
+BRD-K77620628	BRD-K77620628	False		41	0	0	0.0	0.0
+BRD-K77637365	BRD-K77637365	False		1	0	0	0.0	0.0
+BRD-K77685957	dequalinium	True	PKC inhibitor	41	0	0	0.0	0.0
+BRD-K77695569	tiabendazole	True	angiogenesis inhibitor	1	0	0	0.0	0.0
+BRD-K77760488	BRD-K77760488	False		1	0	0	0.0	0.0
+BRD-K77830450	forskolin	False		1	0	0	0.0	0.0
+BRD-K77831863	BRD-K77831863	False		1	0	0	0.0	0.0
+BRD-K77841042	brefeldin-a	False	protein synthesis inhibitor	6	0	0	0.0	0.0
+BRD-K77856555	KU-C103874	False		1	0	0	0.0	0.0
+BRD-K77877933	I-606061	False		1	0	0	0.0	0.0
+BRD-K78096648	oxiperomide	False	dopamine receptor antagonist	2	0	0	0.0	0.0
+BRD-K78118466	LY-2157299	False	TGF beta receptor inhibitor	6	0	0	0.0	0.0
+BRD-K78124620	BRD-K78124620	False		4	0	0	0.0	0.0
+BRD-K78278890	NM-PP1	False		4	0	0	0.0	0.0
+BRD-K78692225	leflunomide	True	dihydroorotate dehydrogenase inhibitor|PDGFR tyrosine kinase receptor inhibitor	1	0	0	0.0	0.0
+BRD-K78716413	BRD-K78716413	False		1	0	0	0.0	0.0
+BRD-K78727929	BRD-K78727929	False		2	0	0	0.0	0.0
+BRD-K78790801	KIN001-269	False		4	0	0	0.0	0.0
+BRD-K78800374	BRD-K78800374	False		1	0	0	0.0	0.0
+BRD-K78824440	BRD-K78824440	False		1	0	0	0.0	0.0
+BRD-K78843060	BRD-K78843060	False		2	0	0	0.0	0.0
+BRD-K78930611	MW-STK33-2B	False		4	0	0	0.0	0.0
+BRD-K79119882	BRD-K79119882	False		2	0	0	0.0	0.0
+BRD-K79254416	decitabine	True	DNA methyltransferase inhibitor	41	0	0	0.0	0.0
+BRD-K79259477	NVP-BHG712	False	ephrin inhibitor	2	0	0	0.0	0.0
+BRD-K79511609	BRD-K79511609	False	adenosine receptor agonist	1	0	0	0.0	0.0
+BRD-K79532217	BRD-K79532217	False		1	0	0	0.0	0.0
+BRD-K79758054	BRD-K79758054	False		1	0	0	0.0	0.0
+BRD-K79759031	artesunate	False		1	0	0	0.0	0.0
+BRD-K79826210	BRD-K79826210	False		1	0	0	0.0	0.0
+BRD-K79992300	BRD-K79992300	False		1	0	0	0.0	0.0
+BRD-K80028364	BRD-K80028364	False		2	0	0	0.0	0.0
+BRD-K80045183	BRD-K80045183	False		1	0	0	0.0	0.0
+BRD-K80138901	BRD-K80138901	False		1	0	0	0.0	0.0
+BRD-K80334323	noretynodrel	True	progestogen hormone	1	0	0	0.0	0.0
+BRD-K80343549	TAK-285	False	EGFR inhibitor	1	0	0	0.0	0.0
+BRD-K80473868	BRD-K80473868	False		1	0	0	0.0	0.0
+BRD-K80684056	cantharidin	True	protein phosphatase inhibitor	1	0	0	0.0	0.0
+BRD-K80747759	BRD-K80747759	False		1	0	0	0.0	0.0
+BRD-K80970344	pyrrolidine-dithiocarbamate	False	NFkB pathway inhibitor	4	0	0	0.0	0.0
+BRD-K80981391	I-070754	False		4	0	0	0.0	0.0
+BRD-K81054062	BRD-K81054062	False		1	0	0	0.0	0.0
+BRD-K81164606	BRD-K81164606	False		1	0	0	0.0	0.0
+BRD-K81197548	NSC-632839	False	ubiquitin specific protease inhibitor	2	0	0	0.0	0.0
+BRD-K81272440	dantrolene	True	calcium channel blocker	5	0	0	0.0	0.0
+BRD-K81473089	tacrine	True	acetylcholinesterase inhibitor	1	0	0	0.0	0.0
+BRD-K81647657	BRD-K81647657	False	PI3K inhibitor	2	0	0	0.0	0.0
+BRD-K81658952	BRD-K81658952	False		1	0	0	0.0	0.0
+BRD-K82036761	sertraline	True	selective serotonin reuptake inhibitor (SSRI)	4	0	0	0.0	0.0
+BRD-K82143716	flucytosine	True	other antifungal	1	0	0	0.0	0.0
+BRD-K82147103	lofepramine	True	norepinephrine reuptake inhibitor|serotonin–norepinephrine reuptake inhibitor (SNRI)	1	0	0	0.0	0.0
+BRD-K82216340	BRD-K82216340	True	progesterone receptor agonist	1	0	0	0.0	0.0
+BRD-K82261406	anisomycin	False		1	0	0	0.0	0.0
+BRD-K82328933	BRD-K82328933	False		3	0	0	0.0	0.0
+BRD-K82462389	BRD-K82462389	False		1	0	0	0.0	0.0
+BRD-K82925070	BRD-K82925070	False		1	0	0	0.0	0.0
+BRD-K82941592	rosuvastatin	True	HMGCR inhibitor	2	0	0	0.0	0.0
+BRD-K82987299	BRD-K82987299	False		1	0	0	0.0	0.0
+BRD-K83153774	mirtazapine	True	adrenergic receptor antagonist|serotonin receptor antagonist	1	0	0	0.0	0.0
+BRD-K83155387	BRD-K83155387	False		1	0	0	0.0	0.0
+BRD-K83189926	UNC-1215	False	L3MBTL antagonist	2	0	0	0.0	0.0
+BRD-K83194053	BRD-K83194053	False		2	0	0	0.0	0.0
+BRD-K83289131	CAY-10618	False	NAMPT inhibitor	41	0	0	0.0	0.0
+BRD-K83405785	pimavanserin	True	serotonin receptor inverse agonist	5	0	0	0.0	0.0
+BRD-K83452553	daminozide	False	KDM2A inhibitor	3	0	0	0.0	0.0
+BRD-K83493571	BRD-K83493571	False		4	0	0	0.0	0.0
+BRD-K83582713	BRD-K83582713	False		6	0	0	0.0	0.0
+BRD-K83778500	AT-CSC-18	False		1	0	0	0.0	0.0
+BRD-K83834119	BRD-K83834119	False		2	0	0	0.0	0.0
+BRD-K83988098	alvespimycin	False	HSP inhibitor	1	0	0	0.0	0.0
+BRD-K84011460	nizofenone	True	ion channel antagonist	1	0	0	0.0	0.0
+BRD-K84022666	SA-1463810	False		1	0	0	0.0	0.0
+BRD-K84036904	testosterone	True		1	0	0	0.0	0.0
+BRD-K84245233	BRD-K84245233	False		1	0	0	0.0	0.0
+BRD-K84288283	BRD-K84288283	False		6	0	0	0.0	0.0
+BRD-K84421793	BRD-K84421793	False		1	0	0	0.0	0.0
+BRD-K84450674	BRD-K84450674	False		5	0	0	0.0	0.0
+BRD-K84466663	nelarabine	True	DNA synthesis inhibitor|T cell inhibitor	1	0	0	0.0	0.0
+BRD-K84683831	radezolid	False	bacterial 30S ribosomal subunit inhibitor|bacterial 50S ribosomal subunit inhibitor	41	0	0	0.0	0.0
+BRD-K84959002	BRD-K84959002	False		1	0	0	0.0	0.0
+BRD-K85007671	BRD-K85007671	False		1	0	0	0.0	0.0
+BRD-K85133207	HDAC1-selective	False		4	0	0	0.0	0.0
+BRD-K85134515	BRD-K85134515	False		1	0	0	0.0	0.0
+BRD-K85197047	BRD-K85197047	False		1	0	0	0.0	0.0
+BRD-K85211514	BRD-K85211514	False		1	0	0	0.0	0.0
+BRD-K85242180	beta-CCP	False		2	0	0	0.0	0.0
+BRD-K85275009	BRD-K85275009	False		2	0	0	0.0	0.0
+BRD-K85307935	novobiocin	True	bacterial DNA gyrase inhibitor	1	0	0	0.0	0.0
+BRD-K85318537	OBAA	False		2	0	0	0.0	0.0
+BRD-K85388022	BRD-K85388022	False		1	0	0	0.0	0.0
+BRD-K85449516	BRD-K85449516	False		1	0	0	0.0	0.0
+BRD-K85536714	BRD-K85536714	False		1	0	0	0.0	0.0
+BRD-K85565420	BRD-K85565420	False		1	0	0	0.0	0.0
+BRD-K85606544	neratinib	True	EGFR inhibitor	41	0	0	0.0	0.0
+BRD-K85818861	BRD-K85818861	False		1	0	0	0.0	0.0
+BRD-K85833139	dehydroepiandrosterone	False		4	0	0	0.0	0.0
+BRD-K86162390	BRD-K86162390	False		1	0	0	0.0	0.0
+BRD-K86191692	BRD-K86191692	False		1	0	0	0.0	0.0
+BRD-K86217343	BRD-K86217343	False		1	0	0	0.0	0.0
+BRD-K86301799	dipyridamole	True	phosphodiesterase inhibitor	3	0	0	0.0	0.0
+BRD-K86727142	embelin	False	HCV inhibitor|XIAP inhibitor	1	0	0	0.0	0.0
+BRD-K87124298	OSI-027	False	mTOR inhibitor	1	0	0	0.0	0.0
+BRD-K87168735	G-5555	False		2	0	0	0.0	0.0
+BRD-K87241988	BRD-K87241988	False		1	0	0	0.0	0.0
+BRD-K87510569	RS-504393	False	CC chemokine receptor antagonist	3	0	0	0.0	0.0
+BRD-K87724051	BRD-K87724051	False		2	0	0	0.0	0.0
+BRD-K87827419	melphalan	True	DNA alkylating agent|DNA inhibitor	1	0	0	0.0	0.0
+BRD-K87865140	BRD-K87865140	False		1	0	0	0.0	0.0
+BRD-K87904882	chelerythrine	False		1	0	0	0.0	0.0
+BRD-K87919739	BRD-K87919739	False	protein tyrosine kinase inhibitor	2	0	0	0.0	0.0
+BRD-K88069074	BRD-K88069074	False		3	0	0	0.0	0.0
+BRD-K88282487	BRD-K88282487	False		1	0	0	0.0	0.0
+BRD-K88282786	WIN-552122	False		3	0	0	0.0	0.0
+BRD-K88605167	BRD-K88605167	False		4	0	0	0.0	0.0
+BRD-K88615478	BRD-K88615478	False		6	0	0	0.0	0.0
+BRD-K88707333	BRD-K88707333	False		6	0	0	0.0	0.0
+BRD-K88741031	BRD-K88741031	False		3	0	0	0.0	0.0
+BRD-K88822846	BRD-K88822846	False		1	0	0	0.0	0.0
+BRD-K88868628	iodoacetic-acid	False		1	0	0	0.0	0.0
+BRD-K89015388	GSK-923295	False	centromere associated protein inhibitor	2	0	0	0.0	0.0
+BRD-K89059493	BRD-K89059493	False		1	0	0	0.0	0.0
+BRD-K89085489	fenretinide	False	apoptosis stimulant|retinoid receptor agonist	5	0	0	0.0	0.0
+BRD-K89097220	BRD-K89097220	False		1	0	0	0.0	0.0
+BRD-K89224880	BRD-K89224880	False		1	0	0	0.0	0.0
+BRD-K89329876	BRD-K89329876	False	kinesin inhibitor	4	0	0	0.0	0.0
+BRD-K89451433	BRD-K89451433	False		5	0	0	0.0	0.0
+BRD-K89604161	o-aminoazotoluene	False		1	0	0	0.0	0.0
+BRD-K89692527	BRD-K89692527	False		1	0	0	0.0	0.0
+BRD-K89708791	rifaximin	True	RNA synthesis inhibitor	1	0	0	0.0	0.0
+BRD-K89833114	BRD-K89833114	False		1	0	0	0.0	0.0
+BRD-K89895693	BRD-K89895693	False		1	0	0	0.0	0.0
+BRD-K89941546	BRD-K89941546	False		1	0	0	0.0	0.0
+BRD-K90004018	BRD-K90004018	False		4	0	0	0.0	0.0
+BRD-K90135241	BRD-K90135241	False		1	0	0	0.0	0.0
+BRD-K90140894	BRD-K90140894	False		1	0	0	0.0	0.0
+BRD-K90275731	BRD-K90275731	False		3	0	0	0.0	0.0
+BRD-K90524085	MY-5445	False	phosphodiesterase inhibitor|platelet aggregation inhibitor	4	0	0	0.0	0.0
+BRD-K90543092	levonorgestrel	False		1	0	0	0.0	0.0
+BRD-K90553655	testosterone	True		1	0	0	0.0	0.0
+BRD-K90619727	BRD-K90619727	False		1	0	0	0.0	0.0
+BRD-K90697054	BRD-K90697054	False		4	0	0	0.0	0.0
+BRD-K90948141	indiplon	False	benzodiazepine receptor agonist	2	0	0	0.0	0.0
+BRD-K91044787	BRD-K91044787	False		1	0	0	0.0	0.0
+BRD-K91047982	BRD-K91047982	False		2	0	0	0.0	0.0
+BRD-K91237281	BRD-K91237281	False		4	0	0	0.0	0.0
+BRD-K91290917	amodiaquine	True	histamine receptor agonist	1	0	0	0.0	0.0
+BRD-K91301684	noscapine	False		1	0	0	0.0	0.0
+BRD-K91410384	methyl-parathion	False		2	0	0	0.0	0.0
+BRD-K91595583	BRD-K91595583	False		6	0	0	0.0	0.0
+BRD-K91617567	BRD-K91617567	False		1	0	0	0.0	0.0
+BRD-K91834385	BRD-K91834385	False		1	0	0	0.0	0.0
+BRD-K91913968	BRD-K91913968	False		1	0	0	0.0	0.0
+BRD-K92023938	BRD-K92023938	False		1	0	0	0.0	0.0
+BRD-K92049597	triamterene	True	sodium channel blocker	2	0	0	0.0	0.0
+BRD-K92073408	BRD-K92073408	True	progesterone receptor agonist	1	0	0	0.0	0.0
+BRD-K92138166	mammea-a	False		1	0	0	0.0	0.0
+BRD-K92202821	BRD-K92202821	False		1	0	0	0.0	0.0
+BRD-K92361663	BRD-K92361663	False		2	0	0	0.0	0.0
+BRD-K92434623	BRD-K92434623	False		1	0	0	0.0	0.0
+BRD-K92441787	bexarotene	True	retinoid receptor agonist	4	0	0	0.0	0.0
+BRD-K92723993	imatinib	True	Bcr-Abl kinase inhibitor|KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor	4	0	0	0.0	0.0
+BRD-K92778217	mefenamic-acid	True	cyclooxygenase inhibitor	1	0	0	0.0	0.0
+BRD-K92817986	BIX-02188	False		1	0	0	0.0	0.0
+BRD-K93123848	RAF-265	False	RAF inhibitor|VEGFR inhibitor	41	0	0	0.0	0.0
+BRD-K93189515	BRD-K93189515	False		41	0	0	0.0	0.0
+BRD-K93201660	ML-7	False		1	0	0	0.0	0.0
+BRD-K93215584	BRD-K93215584	False		2	0	0	0.0	0.0
+BRD-K93406156	BRD-K93406156	False		1	0	0	0.0	0.0
+BRD-K93442924	voapaxar	True	thrombin inhibitor	3	0	0	0.0	0.0
+BRD-K93480852	KN-93	False	calcium/calmodulin dependent protein kinase inhibitor	4	0	0	0.0	0.0
+BRD-K93578426	BRD-K93578426	False		1	0	0	0.0	0.0
+BRD-K93880770	BRD-K93880770	False		1	0	0	0.0	0.0
+BRD-K93880783	stavudine	True	DNA directed DNA polymerase inhibitor|nucleoside reverse transcriptase inhibitor	1	0	0	0.0	0.0
+BRD-K93934511	BRD-K93934511	False		2	0	0	0.0	0.0
+BRD-K93950432	BRD-K93950432	False		2	0	0	0.0	0.0
+BRD-K94144010	cotinine	False	nicotine metabolite	1	0	0	0.0	0.0
+BRD-K94172147	BRD-K94172147	False		1	0	0	0.0	0.0
+BRD-K94173926	I-505056	False		1	0	0	0.0	0.0
+BRD-K94544211	BRD-K94544211	False		4	0	0	0.0	0.0
+BRD-K94874010	BRD-K94874010	False		1	0	0	0.0	0.0
+BRD-K94991378	BRD-K94991378	False		3	0	0	0.0	0.0
+BRD-K95017486	BRD-K95017486	False		1	0	0	0.0	0.0
+BRD-K95037415	BRD-K95037415	False		41	0	0	0.0	0.0
+BRD-K95138506	BRD-K95138506	False		1	0	0	0.0	0.0
+BRD-K95285735	BRD-K95285735	False		4	0	0	0.0	0.0
+BRD-K95337198	BRD-K95337198	False		1	0	0	0.0	0.0
+BRD-K95352812	BRD-K95352812	False		2	0	0	0.0	0.0
+BRD-K95638669	BRD-K95638669	False		41	0	0	0.0	0.0
+BRD-K95763993	trapidil	True	PDGFR tyrosine kinase receptor inhibitor	1	0	0	0.0	0.0
+BRD-K95808480	taxifolin	False		1	0	0	0.0	0.0
+BRD-K95880107	PH-797804	False	p38 MAPK inhibitor	1	0	0	0.0	0.0
+BRD-K95901403	XL-147	False	PI3K inhibitor	6	0	0	0.0	0.0
+BRD-K95910931	BRD-K95910931	False		3	0	0	0.0	0.0
+BRD-K95921201	reserpine	True	vesicular monoamine transporter inhibitor	4	0	0	0.0	0.0
+BRD-K96020117	BRD-K96020117	False		1	0	0	0.0	0.0
+BRD-K96037667	norethindrone	True	progesterone receptor agonist	1	0	0	0.0	0.0
+BRD-K96088139	BRD-K96088139	False		1	0	0	0.0	0.0
+BRD-K96134740	kitasamycin	False		1	0	0	0.0	0.0
+BRD-K96319534	phentermine	True		1	0	0	0.0	0.0
+BRD-K96354014	nifedipine	True	calcium channel blocker	2	0	0	0.0	0.0
+BRD-K96366326	PCB-126	False		3	0	0	0.0	0.0
+BRD-K96396151	BRD-K96396151	False		2	0	0	0.0	0.0
+BRD-K96431673	BRD-K96431673	False		1	0	0	0.0	0.0
+BRD-K96471533	nitazoxanide	True	pyruvate ferredoxin oxidoreductase inhibitor	1	0	0	0.0	0.0
+BRD-K96613860	ICI-174864	False		3	0	0	0.0	0.0
+BRD-K96707310	BRD-K96707310	False		1	0	0	0.0	0.0
+BRD-K96778649	tyrphostin-47	False		2	0	0	0.0	0.0
+BRD-K96884956	BRD-K96884956	False		6	0	0	0.0	0.0
+BRD-K96952717	BRD-K96952717	False		1	0	0	0.0	0.0
+BRD-K97056771	GNF-2	False	Bcr-Abl kinase inhibitor	4	0	0	0.0	0.0
+BRD-K97472745	gestrinone	True	progesterone receptor antagonist	2	0	0	0.0	0.0
+BRD-K97514127	vinorelbine	False		3	0	0	0.0	0.0
+BRD-K97530723	melatonin	True	melatonin receptor agonist|nitric oxide synthase inhibitor	2	0	0	0.0	0.0
+BRD-K97534490	BRD-K97534490	False		1	0	0	0.0	0.0
+BRD-K97633445	BRD-K97633445	False		1	0	0	0.0	0.0
+BRD-K97924168	BRD-K97924168	False		1	0	0	0.0	0.0
+BRD-K97936712	BRD-K97936712	False		1	0	0	0.0	0.0
+BRD-K97963946	EMD-1214063	True	hepatocyte growth factor receptor inhibitor	2	0	0	0.0	0.0
+BRD-K98039984	BRD-K98039984	False		41	0	0	0.0	0.0
+BRD-K98143539	compound-w	False	beta-secretase inhibitor	1	0	0	0.0	0.0
+BRD-K98150670	BRD-K98150670	False		1	0	0	0.0	0.0
+BRD-K98426715	tubacin	False		1	0	0	0.0	0.0
+BRD-K98521173	desoxycortone	False	mineralocorticoid receptor agonist	1	0	0	0.0	0.0
+BRD-K98676510	BRD-K98676510	False		3	0	0	0.0	0.0
+BRD-K98731749	BRD-K98731749	False		4	0	0	0.0	0.0
+BRD-K98769987	flumazenil	True	benzodiazepine receptor antagonist	1	0	0	0.0	0.0
+BRD-K98832591	BRD-K98832591	False		1	0	0	0.0	0.0
+BRD-K98834634	BRD-K98834634	False		4	0	0	0.0	0.0
+BRD-K98945308	BRD-K98945308	False		2	0	0	0.0	0.0
+BRD-K98984202	BRD-K98984202	False		2	0	0	0.0	0.0
+BRD-K99006945	BRD-K99006945	False		3	0	0	0.0	0.0
+BRD-K99604664	tanaproget	False	progesterone receptor agonist	2	0	0	0.0	0.0
+BRD-K99616396	motesanib	False	KIT inhibitor|PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	1	0	0	0.0	0.0
+BRD-K99760897	BRD-K99760897	False		2	0	0	0.0	0.0
+BRD-K99792991	hexachlorophene	True	potassium channel activator	41	0	0	0.0	0.0
+BRD-K99946902	hexylresorcinol	True	local anesthetic	1	0	0	0.0	0.0
+BRD-K99999497	BRD-K99999497	False		1	0	0	0.0	0.0
+BRD-M07438658	lapatinib	True	EGFR inhibitor	1	0	0	0.0	0.0
+BRD-M08470251	pyrvinium	False		4	0	0	0.0	0.0
+BRD-M18093923	BRD-M18093923	False		1	0	0	0.0	0.0
+BRD-M30523314	vinorelbine	False		2	0	0	0.0	0.0
+BRD-M32495507	BRD-M32495507	False		1	0	0	0.0	0.0
+BRD-M41154708	BRD-M41154708	False		1	0	0	0.0	0.0
+BRD-M41783010	acamprosate	True	glutamate receptor antagonist	4	0	0	0.0	0.0
+BRD-M54407015	BRD-M54407015	False		2	0	0	0.0	0.0
+BRD-M77293869	BRD-M77293869	False		1	0	0	0.0	0.0
+BRD-M88044810	BRD-M88044810	False		1	0	0	0.0	0.0
+BRD-M91876180	BRD-M91876180	False		1	0	0	0.0	0.0
+BRD-U01690642	BRD-U01690642	False		1	0	0	0.0	0.0
+BRD-U22633929	XMD-1185H	False		4	0	0	0.0	0.0
+BRD-U24835547	GSK-1059615	False		1	0	0	0.0	0.0
+BRD-U43867373	BRD-U43867373	False		3	0	0	0.0	0.0
+BRD-U73238814	QL-XI-92	False		2	0	0	0.0	0.0
+BRD-U73308409	BRD-U73308409	False		1	0	0	0.0	0.0
+BRD-U74615290	BRD-U74615290	False		3	0	0	0.0	0.0
+BRD-U86686840	AZD-7762	False		1	0	0	0.0	0.0

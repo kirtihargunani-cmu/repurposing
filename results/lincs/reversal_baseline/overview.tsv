@@ -1,0 +1,36 @@
+metric	value
+groups	41
+groups_low_mrs	3
+drug_group_rows	50760
+drugs	2904
+mrs_per_group_median	558
+tier1_rev_per_group_median	21
+tier1_spec_per_group_median	19
+tier1_both_per_group_median	10
+rho_rev_spec_within_group_median	0.743
+drugs_top10_rev_in_ge20_groups	44
+drugs_top10_spec_in_ge20_groups	0
+other_pairs	676
+other_rho_rev_median	0.311
+other_rho_spec_median	-0.04
+other_jaccard_top_rev_median	0.122
+other_jaccard_top_spec_median	0.036
+parent_family_pairs	7
+parent_family_rho_rev_median	0.763
+parent_family_rho_spec_median	0.63
+parent_family_jaccard_top_rev_median	0.405
+parent_family_jaccard_top_spec_median	0.234
+same_tissue_key_pairs	20
+same_tissue_key_rho_rev_median	0.752
+same_tissue_key_rho_spec_median	0.661
+same_tissue_key_jaccard_top_rev_median	0.318
+same_tissue_key_jaccard_top_spec_median	0.31
+BRCA_siblings_rho_rev	BRCA-Basal~BRCA-Her2 0.921;BRCA-Basal~BRCA-LumA 0.227;BRCA-Basal~BRCA-LumB 0.715;BRCA-Her2~BRCA-LumA 0.524;BRCA-Her2~BRCA-LumB 0.872;BRCA-LumA~BRCA-LumB 0.763
+BRCA_siblings_jaccard_top_rev	BRCA-Basal~BRCA-Her2 0.615;BRCA-Basal~BRCA-LumA 0.056;BRCA-Basal~BRCA-LumB 0.243;BRCA-Her2~BRCA-LumA 0.162;BRCA-Her2~BRCA-LumB 0.405;BRCA-LumA~BRCA-LumB 0.431
+COADREAD_siblings_rho_rev	TCGA-COAD~TCGA-READ 0.958
+COADREAD_siblings_jaccard_top_rev	TCGA-COAD~TCGA-READ 0.707
+controls_high_n	14
+controls_high_rev_pct_mean	72.7
+controls_high_spec_pct_mean	52.8
+controls_low_rev_pct_mean	98.8
+controls_low_spec_pct_mean	99.5

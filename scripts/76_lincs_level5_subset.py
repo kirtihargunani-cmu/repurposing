@@ -49,7 +49,7 @@ def main():
         print(f"matrix {mat.shape}, chunks {mat.chunks}, dtype {mat.dtype}; cols {len(col_ids)}, rows {len(row_ids)}")
         assert mat.shape == (len(col_ids), len(row_ids))
         gpos = pd.Series(np.arange(len(row_ids)), index=row_ids)[lm.gene_id].values
-        keep = np.isin(col_ids, sig.sig_id.values)
+        keep = np.isin(col_ids, sig.sig_id.values.astype(str))  # str, not object: object arrays take numpy's slow loop
         out = np.empty((int(keep.sum()), len(gpos)), dtype=np.float32)
         k = 0
         for i in range(0, len(col_ids), BLOCK):

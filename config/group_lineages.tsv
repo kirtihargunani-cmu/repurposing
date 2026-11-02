@@ -1,0 +1,46 @@
+# Lineage-matched cell lines per disease group (C24, user 2026-11-01): DepMap lines whose OncotreeCode is listed count as
+# the same cell type as the disease, whatever their organ. Celligner then judges which of them resemble the disease.
+# Used by scripts/79r_data_gaps.py (where good-quality data run out). Subgroups inherit their parent's row.
+# Squamous set (any organ): ESCC;HNSC;HPHSC;LXSC;OCSC;OPHSC;SNSC;LUSC;CESC;CSCC;BLSC. Empty codes = DepMap has no line of this cell type.
+group_id	lineage	codes	note
+BRCA-Basal	breast carcinoma	BRCA;BRCANOS;BRCNOS;IDC;ILC	basal vs luminal within breast is left to Celligner
+BRCA-Her2	breast carcinoma	BRCA;BRCANOS;BRCNOS;IDC;ILC	
+BRCA-LumA	breast carcinoma	BRCA;BRCANOS;BRCNOS;IDC;ILC	
+BRCA-LumB	breast carcinoma	BRCA;BRCANOS;BRCNOS;IDC;ILC	
+CESC-AD	cervical adenocarcinoma	CEAD;ECAD	
+CESC-SCC	squamous cell carcinoma	ESCC;HNSC;HPHSC;LXSC;OCSC;OPHSC;SNSC;LUSC;CESC;CSCC;BLSC	
+ESCA-AD	esophagogastric adenocarcinoma	ESCA;GEJ;STAD;TSTAD;DSTAD;MSTAD;SSRCC	esophageal and stomach adenocarcinoma are molecularly close
+ESCA-SCC	squamous cell carcinoma	ESCC;HNSC;HPHSC;LXSC;OCSC;OPHSC;SNSC;LUSC;CESC;CSCC;BLSC	
+LGG-IDHmut-codel	oligodendroglioma	ODG	
+LGG-IDHmut-noncodel	astrocytoma	ASTR;AASTR	
+LGG-IDHwt	diffuse glioma, IDH-wildtype	GB;GSARC;ASTR;AASTR	IDH-wildtype lower-grade gliomas resemble glioblastoma
+PCPG-PGL	paraganglioma (chromaffin)		no pheochromocytoma / paraganglioma lines; neuroblastoma (current substitute key) is a different cell type
+PCPG-PHEO	pheochromocytoma (chromaffin)		as PCPG-PGL
+SARC-DDLPS	liposarcoma	DDLS;LIPO;WDLS	
+SARC-LMS	leiomyosarcoma	LMS;ULMS	
+SARC-UPS	undifferentiated pleomorphic sarcoma	MFH;MFS	
+TARGET-NBL	neuroblastoma	NBL	
+TARGET-WT	Wilms tumor	WT	
+TCGA-ACC	adrenocortical carcinoma	ACC	
+TCGA-BLCA	urothelial carcinoma	BLCA;UCU	
+TCGA-COAD	colorectal adenocarcinoma	COAD;COADREAD;MACR;READ	
+TCGA-GBM	glioblastoma	GB;GSARC	
+TCGA-HNSC	squamous cell carcinoma	ESCC;HNSC;HPHSC;LXSC;OCSC;OPHSC;SNSC;LUSC;CESC;CSCC;BLSC	
+TCGA-KICH	chromophobe renal cell carcinoma		no chromophobe lines in DepMap
+TCGA-KIRC	clear cell renal cell carcinoma	CCRCC;RCC	RCC = renal cell carcinoma, not otherwise specified
+TCGA-KIRP	papillary renal cell carcinoma	PRCC;RCC	
+TCGA-LIHC	hepatocellular carcinoma	HCC;HCCIHCH	
+TCGA-LUAD	lung adenocarcinoma	LUAD	
+TCGA-LUSC	squamous cell carcinoma	ESCC;HNSC;HPHSC;LXSC;OCSC;OPHSC;SNSC;LUSC;CESC;CSCC;BLSC	
+TCGA-OV	serous ovarian carcinoma	HGSOC;SOC	
+TCGA-PAAD	pancreatic adenocarcinoma	PAAD	
+TCGA-PRAD	prostate adenocarcinoma	PRAD	
+TCGA-READ	colorectal adenocarcinoma	COAD;COADREAD;MACR;READ	
+TCGA-SKCM	melanoma	MEL;SKCM;ACRM	
+TCGA-STAD	esophagogastric adenocarcinoma	STAD;TSTAD;DSTAD;MSTAD;SSRCC;GEJ;ESCA	
+TCGA-THCA	differentiated thyroid carcinoma	THPA;THFO;THPD	anaplastic thyroid lines excluded (dedifferentiated)
+TCGA-UCS	uterine carcinosarcoma	UCS	
+TGCT-NSGCT	non-seminomatous germ cell tumor	EMBCA;TT;TYST	
+TGCT-SEM	seminoma		no seminoma lines in DepMap
+UCEC-EEC	endometrial carcinoma	UCEC	DepMap codes endometrial lines as UCEC without endometrioid / serous split
+UCEC-SER	endometrial carcinoma	UCEC	as UCEC-EEC

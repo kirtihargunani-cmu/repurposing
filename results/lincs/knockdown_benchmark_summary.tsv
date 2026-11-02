@@ -1,0 +1,7 @@
+set	technology	signatures	tfs	auc	frac_neg	tfs_tested	tfs_pass	frac_pass
+aracne_v2_tf	shRNA	909	208	0.552	0.561	175	38	0.217
+aracne_v2_tf	CRISPR	360	98	0.631	0.686	175	38	0.217
+collectri	shRNA	340	82	0.542	0.541	66	16	0.242
+collectri	CRISPR	331	80	0.624	0.668	66	16	0.242
+dorothea_ABC	shRNA	190	48	0.534	0.532	43	13	0.302
+dorothea_ABC	CRISPR	184	47	0.628	0.636	43	13	0.302
