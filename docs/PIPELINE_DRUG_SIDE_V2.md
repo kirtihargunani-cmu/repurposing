@@ -1,11 +1,13 @@
 # Drug side v2: steps, decisions and outputs
 
-Last updated 2026-10-29. Branch `celligner` (worktree `~/projects/repurposing-celligner`). This page explains how drugs
+Last updated 2026-11-02. Branch `celligner` (worktree `~/projects/repurposing-celligner`). This page explains how drugs
 are matched to diseases, step by step: what each step does and why, the exact command, inputs, outputs and the
 decisions behind it. The disease side (signatures, master regulators, subgroups) is documented on `main` in
 `docs/PIPELINE_V2.md`; decisions with full reasoning are in `main:docs/DECISIONS.md` (D-numbers) and in
 [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md) (drug-side decisions, method
-choices and caveats C1-C23). Requirements for how results are reported live in `main:docs/LLM_COORDINATION_NOTES.md`.
+choices and caveats C1-C25). Requirements for how results are reported live in `main:docs/LLM_COORDINATION_NOTES.md`.
+
+Plain-language version with results: [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md).
 
 To run: [`scripts/run_v2_drug.sh`](../scripts/run_v2_drug.sh) (`list`, `show <step>`, or step names in order). Run the
 disease side first (`main:scripts/run_v2.sh`), then `sync_disease`.
@@ -194,4 +196,6 @@ flowchart LR
 - Specificity lists still recur on a few classes (anthracyclines, topotecan) and include oddities (cardiac glycosides,
   pentobarbital, metronidazole) that need checking.
 - LGG and TGCT-SEM subgroups barely differ in drug response: report one list per parent.
+- Worked example (figure): per-regulator contributions for LUAD erlotinib and BRCA-LumB palbociclib,
+  `scripts/worked_example_regulators.py` -> `results/lincs/worked_example_regulators.tsv`.
 - Full caveats: [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md).
