@@ -166,4 +166,4 @@ fair. The rule (D87) was written before running.
 |---|---|
 | Rule and result | `docs/DECISIONS.md`, D87 |
 | Learning and scoring | `scripts/hybrid/hybrid_d87.R`; decision `scripts/hybrid/hybrid_d87_decide.R` |
-| Results | `results/lincs/hybrid/` (`decision.tsv`, `summary.tsv`, `flips.tsv`, per-link directions in `edges_*.tsv.gz`) |
+| Results | `results/lincs/hybrid/` (`decision.tsv`, `summary.tsv`, `flips.tsv`, per-link directions in `edges_*.tsv.gz`, kept locally because the repo ignores `.gz` files) |
