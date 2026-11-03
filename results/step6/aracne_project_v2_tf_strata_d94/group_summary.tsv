@@ -1,0 +1,7 @@
+group_id	contrast	n_tumor	n_normal	n_regulators_kept	n_mr_fdr05	n_mr_p05
+LGG-noncodel-LGr2	gtex	89	151	1054	160	255
+LGG-noncodel-LGr3	gtex	152	151	1059	264	345
+PHEO-kinase-signaling	gtex	77	125	1047	158	231
+PHEO-pseudohypoxia-Wnt	gtex	69	125	1045	64	155
+TGCT-SEM-C1	gtex	32	164	1144	350	423
+TGCT-SEM-C2	gtex	30	164	1140	288	408
