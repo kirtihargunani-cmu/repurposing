@@ -594,6 +594,16 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   The late-only signature carries the same pattern (Basal +32.6); the 6 h signature removes it (Basal -0.3) but does
   not reverse LumA either (-8.5, spread over many weak regulators).
 
+## 2026-11-03: gate check (anti-estrogens in basal breast cancer)
+- All basal anti-estrogen scores come from MCF7 alone (line match 0.0004, flagged `unmatched_lines`, so tier 3), and
+  both gates pass them: `79b` calls ESR1 expressed in Basal (45% of tumors at TPM >= 1, median 0.86 TPM vs 108 in
+  LumA), and `79w` requires binding evidence and the receptor in the assay lines (MCF7 has it). Neither asks whether
+  the tumor has the target at a level like the assay line. Across diseases, 839 receptor passes (766 cohort x drug)
+  rest on a target below 5 TPM and below 5% of its highest cohort (EGFR 218 rows, MET 103, PDGFRA 84, FGFR4 60,
+  PPARG 55, FGFR3 52, ESR1 24, ERBB2 22); they rank at a median percentile of 48 (6.5% in the top 10%), so this is a
+  hygiene issue for most drugs. A relative-expression rule for the gate would be a separate decision (`79w` is the
+  other agent's script).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
