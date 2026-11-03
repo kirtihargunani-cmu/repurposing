@@ -635,6 +635,15 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   within the 0.5-point tolerance. Splitting LumA / LumB read anti-estrogens a little worse than the shared luminal
   network (positive controls 40 vs 46). Production switch pending.
 
+## 2026-11-03: full-pipeline comparison of network configurations (D94): keep pooled
+- Four arms through the whole pipeline (consensus scoring, groups and subgroups, receptor gate, FDA ranking, page,
+  known-use, dependency, PRISM / GDSC), each in its own worktree (`../repurposing_d94_<arm>`).
+- Cell-type networks help breast clearly (basal anti-estrogens 97 -> 77; luminal controls 26 -> 48 with LumA + LumB
+  together, 42 split) and improve known-use specificity and dependency agreement slightly, but drugs that reverse
+  nearly every disease rise from 13.2% to 13.9-14.2% (tolerance 0.5 points), mostly through the dedifferentiated
+  liposarcoma network (57 tumors, least reproducible). Breast's cell-type networks are less reproducible than its
+  very stable pooled network (0.48 vs 0.61), so the uncertainty gate would keep breast pooled anyway.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

@@ -1,0 +1,5 @@
+arm	c1_breast	c2_known_use	c3_dependency	c4_dominance	all_met	detail
+lum	1.0	1.0	1.0	0.0	0.0	neg 77.4 vs 96.7; pos 47.7 vs 25.5; AUC hub 0.641 vs 0.620, chembl 0.492 vs 0.500; D1 -0.0228 vs -0.0376; dominance 14.2% vs 13.2%
+split	1.0	1.0	1.0	0.0	0.0	neg 77.4 vs 96.7; pos 42.0 vs 25.5; AUC hub 0.621 vs 0.620, chembl 0.496 vs 0.500; D1 -0.0304 vs -0.0376; dominance 13.9% vs 13.2%
+gated	0.0	1.0	1.0	0.0	0.0	neg 96.9 vs 96.7; pos 27.1 vs 25.5; AUC hub 0.618 vs 0.620, chembl 0.495 vs 0.500; D1 -0.0284 vs -0.0376; dominance 14.2% vs 13.2%
+DECISION						keep CUR (pooled networks): neither LUM nor SPLIT meets (1)-(4)
