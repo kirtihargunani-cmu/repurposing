@@ -628,6 +628,13 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   inversion is largely corrected: on the basal-only network the luminal regulators barely move under anti-estrogens
   (ESR1 +0.57) and no longer carry the basal disease signature (GATA3 NES +0.18 vs -2.35 pooled).
 
+## 2026-11-03: cell-type networks for all split cohorts (D93): adopted
+- 18 networks for the 20 groups of BRCA, CESC, ESCA, LGG, PCPG, SARC, TGCT, UCEC (each group > 50 tumors on its own;
+  CESC-AD pooled with UCEC-EEC, PCPG-PGL with PCPG-PHEO). Breast anti-estrogen inversion largely corrected (basal 97
+  -> 81, luminal positive controls 21 -> 40), no loss in known-use recovery (41 groups or new cohorts), dominance
+  within the 0.5-point tolerance. Splitting LumA / LumB read anti-estrogens a little worse than the shared luminal
+  network (positive controls 40 vs 46). Production switch pending.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

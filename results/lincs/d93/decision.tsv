@@ -1,0 +1,6 @@
+criterion	value	met
+1 breast: Basal anti-estrogens fall >= 10; positive controls do not fall	negative 80.6 vs 97.2; positive 40.0 vs 21.1	True
+2 non-breast split groups: ChEMBL AUC falls <= 0.02	0.424 vs 0.410 (12 groups)	True
+3 41 groups: AUC falls <= 0.01 (Hub, ChEMBL)	Hub 0.609 vs 0.610; ChEMBL 0.492 vs 0.492	True
+4 dominance rises <= 0.5 points	12.4% vs 12.2%	True
+DECISION	adopt cell-type networks for the 8 split cohorts	True
