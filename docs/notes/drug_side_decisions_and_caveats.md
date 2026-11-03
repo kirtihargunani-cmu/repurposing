@@ -409,6 +409,31 @@ estrogen switches on in cells. Proliferation is not the cause (1 of 122 negative
 **Open (user).** Whether to choose the regulon per regulator where the tumor network misreads a known perturbation
 (e.g. CollecTRI for ESR1, as the knockdown benchmark C19 already allows), and whether to roll sig1 out to production.
 
+### C26. Receptor evidence gate and selectivity window (user, 2026-11-02)
+
+**Why.** The target lists merge LINCS and Repurposing Hub annotations with no evidence level, so many expressed
+"receptor targets" were annotation noise (paclitaxel -> TLR4, docetaxel -> NR1I2, lovastatin -> ITGAL) or real binders
+that cannot explain the score (pentobarbital -> GABA-A, phenytoin -> Nav channels: absent from the cancer lines).
+**Rule (`79w`, `config/drug_gate.yaml: receptor_gate`; thresholds chosen by the user).** Per cohort x drug x receptor:
+(1) binding evidence from ChEMBL 37: curated mechanism on a single protein / complex, or best valid pChEMBL >= 6
+(1 uM); kinase targets need >= 7 (100 nM) even when mechanism-listed; protein-family mechanisms give no member credit
+(as with family rescue off in the target gate); (2) receptor complexes count only when assembled (all components;
+GABA-A alpha + beta + gamma/delta/epsilon/theta/pi; PDGFR / AMPA any subunit); (3) the receptor is expressed
+(TPM >= 1) in >= half of the lines 79e used for that cohort x drug, weighted as 79e weights them. A pass on one line is
+kept and flagged `single_line`. The gate labels receptors; it never removes a drug.
+**Result.** 22,582 rows: 31% pass, 37% bind but the receptor is absent in the matched lines, 32% have no binding
+evidence, 132 complexes incomplete in tumors. Known pairs pass where expected (erlotinib / osimertinib -> EGFR in LUAD,
+flutamide -> AR in PRAD, anti-estrogens -> ESR1 in luminal breast, afatinib -> ERBB2 in HER2) and tamoxifen -> ESR1
+fails in the 20 cohorts where it is borrowed from ESR1-negative lines.
+**Selectivity window** (log10 units weaker than the drug's strongest measured target; passing pairs): median 0.48;
+34% are the drug's best target, 66% within 10x, 11% >= 100x weaker. Curated mechanisms are tight (85% within 10x);
+FDA drugs looser (median 0.75). Drugs' own selectivity: median gap 1st vs 2nd target 0.54 (3.5x); only 33% >= 10x.
+Reported next to each receptor, not used as a cut. Tables `results/lincs/receptor_gate_v2.tsv`,
+`receptor_gate_summary_v2.tsv`, `receptor_gate_selectivity_v2.tsv`.
+**Caveats.** Tumor-side assembly uses per-subunit fractions (not co-expression in the same tumors). ChEMBL coverage is
+uneven: a missing measurement reads as no evidence. Lines are 79e's (direct: in-key; borrowed: out-of-key), so a
+borrowed drug's receptor is judged in other tissues' lines.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ

@@ -1,0 +1,115 @@
+{
+ "date": "2026-11-02",
+ "config": {
+  "receptor_families": {
+   "GPCR": [
+    139
+   ],
+   "nuclear receptor": [
+    71
+   ],
+   "receptor tyrosine kinase": [
+    321
+   ],
+   "receptor Ser/Thr kinase": [
+    344
+   ],
+   "ligand-gated ion channel": [
+    161
+   ],
+   "cytokine / immune receptor": [
+    602,
+    599,
+    782,
+    948,
+    2120
+   ],
+   "integrin": [
+    597
+   ],
+   "other ion channel": [
+    177
+   ]
+  },
+  "kinase_family": 3432,
+  "binding": {
+   "pchembl_min": 6.0,
+   "pchembl_min_kinase": 7.0,
+   "mechanism_target_types": [
+    "SINGLE PROTEIN",
+    "PROTEIN COMPLEX",
+    "PROTEIN COMPLEX GROUP",
+    "CHIMERIC PROTEIN"
+   ]
+  },
+  "assembly": {
+   "any_component": [
+    "Platelet-derived growth factor receptor"
+   ],
+   "groups": {
+    "GABA-A": [
+     [
+      "GABRA"
+     ],
+     [
+      "GABRB"
+     ],
+     [
+      "GABRG",
+      "GABRD",
+      "GABRE",
+      "GABRQ",
+      "GABRP"
+     ]
+    ],
+    "Glutamate receptor ionotropic AMPA": "any"
+   }
+  },
+  "assay_lines": {
+   "tpm_min": 1.0,
+   "min_weighted_fraction": 0.5
+  }
+ },
+ "chembl_release": "ChEMBL_37",
+ "chembl": {
+  "drugs": 442,
+  "chembl_ids": 457,
+  "by_name": 27,
+  "mechanisms": 349,
+  "activities": 52951,
+  "activities_valid": 26983,
+  "targets": 3109
+ },
+ "cache_md5": {
+  "activities.json": "44b566646d0f3399d5b3d3c58b541533",
+  "forms.json": "66e9aefa5b7ab15a1ae1aed31141b122",
+  "mechanisms.json": "d8d967945073a55af0d65de4ac96a0ef",
+  "name_lookup.json": "95dac59c8eee087d57064b602be3900f",
+  "targets.json": "43046e8ac5afefecdf214406265ed657"
+ },
+ "hgnc_genefamily_md5": {
+  "family.csv": "6bf6c0c564709b30264d75f6564aa50c",
+  "hierarchy_closure.csv": "cb6289a74d2bfd65a36648721d3814ec"
+ },
+ "rows": 22582,
+ "gate": {
+  "binds_but_absent_in_matched_lines": 8241,
+  "pass": 7049,
+  "no_binding_evidence:annotation_only": 4187,
+  "no_binding_evidence:weak": 1796,
+  "no_binding_evidence:no_chembl_id": 624,
+  "no_binding_evidence:kinase_mechanism_below_100nM": 327,
+  "no_binding_evidence:kinase_mechanism_unmeasured": 226,
+  "assembly_incomplete_in_tumors": 132
+ },
+ "binding_evidence": {
+  "potent": 426,
+  "annotation_only": 296,
+  "mechanism": 232,
+  "weak": 90,
+  "no_chembl_id": 20,
+  "kinase_mechanism_below_100nM": 7,
+  "kinase_mechanism_unmeasured": 6
+ },
+ "single_line": 1344
+}

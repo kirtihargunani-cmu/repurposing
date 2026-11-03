@@ -1,0 +1,13 @@
+set	value	n	n_no_pchembl	median	q25	q75	frac_best	frac_lt10x	frac_10_100x	frac_ge100x
+all		342	21	0.48	0.0	1.31	0.336	0.661	0.231	0.108
+binding_evidence	mechanism	110	21	0.18	0.0	0.62	0.445	0.855	0.109	0.036
+binding_evidence	potent	232	0	0.74	0.0	1.53	0.284	0.569	0.289	0.142
+kinase_target	False	146	21	0.25	0.0	1.25	0.438	0.678	0.199	0.123
+kinase_target	True	196	0	0.6	0.0	1.34	0.26	0.648	0.255	0.097
+receptor_class	GPCR	72	2	0.42	0.0	1.75	0.389	0.583	0.236	0.181
+receptor_class	integrin	0	4							
+receptor_class	ligand-gated ion channel	1	10	0.66	0.66	0.66	0.0	1.0	0.0	0.0
+receptor_class	nuclear receptor	66	5	0.06	0.0	0.69	0.5	0.773	0.167	0.061
+receptor_class	other ion channel	7	0	0.2	0.0	0.73	0.429	0.714	0.143	0.143
+receptor_class	receptor Ser/Thr kinase	8	0	0.31	0.0	0.79	0.375	0.75	0.25	0.0
+receptor_class	receptor tyrosine kinase	188	0	0.62	0.0	1.34	0.255	0.644	0.255	0.101

@@ -167,6 +167,17 @@ flowchart LR
   `fda_ranking_strata_v2_consensus.tsv`, `fda_matches.tsv`.
 - **Page (`79q`):** `results/lincs/fda_rankings_v2.html`, self-contained (template `scripts/templates/fda_rankings.html`);
   published copy https://claude.ai/artifact/4UVF5F6SxD639VKKJEZenw (private).
+- **Receptor evidence gate (`79w`, step `receptor_gate`; C26):** per cohort / subgroup x drug x expressed receptor
+  target (HGNC receptor families): ChEMBL 37 binding evidence (curated mechanism, or pChEMBL >= 6; kinases >= 7, also
+  when mechanism-listed; no family credit), complexes judged as assembled, and the receptor present in >= half of the
+  lines 79e used for that cohort x drug (79e weights). Flags only (`receptor_gate`, `single_line`); selectivity window
+  per pair. ChEMBL cached in `data/raw/chembl/ChEMBL_37/receptor_gate/`. Outputs `results/lincs/receptor_gate_v2.tsv`,
+  `receptor_gate_summary_v2.tsv`, `receptor_gate_selectivity_v2.tsv`, `receptor_gate_run.json`.
+- **Rankings page (`79x`, step `rankings_page`):** `results/lincs/disease_drug_rankings_v2.html`, self-contained
+  (template `scripts/templates/disease_drug_rankings.html`): every FDA-approved drug (Drugs@FDA match, one LINCS
+  compound per ingredient, the best on the lead score) that passed the target gate, per disease and subgroup, with
+  rev / spec / spec_mech (/ spec_sib, spec_sib_mech) raw and percentile, flags (weak evidence hidden by default),
+  receptor gate and literature where 79o searched (top 10 per disease, top 3 FDA per cohort).
 
 ## Column guide for the main outputs
 

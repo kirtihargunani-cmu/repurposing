@@ -1,0 +1,267 @@
+<title>Disease Drug Rankings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: cohort index on the left (stacks on top at phone width), ranked drug table on the right; rows open to show scores, receptor evidence, papers and trials */
+:root {
+  --bg: #f6f7f5; --panel: #ffffff; --ink: #1d2422; --muted: #5d6965; --line: #dfe4e1; --soft: #eef2f0;
+  --accent: #1f6f63; --accent-ink: #ffffff; --accent-soft: #dcefe9;
+  --ok: #2f7a3f; --ok-soft: #e1f1e3; --warn: #8a5a00; --warn-soft: #fbefd6; --bad: #a33a2b; --bad-soft: #f8e1dc;
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121715; --panel: #18201d; --ink: #e5ece9; --muted: #9aa8a3; --line: #2a3531; --soft: #1e2825;
+  --accent: #5fbfae; --accent-ink: #0d1412; --accent-soft: #1d3a34;
+  --ok: #7cc88a; --ok-soft: #1c3322; --warn: #e6b45a; --warn-soft: #3a2e14; --bad: #ec8a7b; --bad-soft: #3d201b; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121715; --panel: #18201d; --ink: #e5ece9; --muted: #9aa8a3; --line: #2a3531; --soft: #1e2825;
+  --accent: #5fbfae; --accent-ink: #0d1412; --accent-soft: #1d3a34;
+  --ok: #7cc88a; --ok-soft: #1c3322; --warn: #e6b45a; --warn-soft: #3a2e14; --bad: #ec8a7b; --bad-soft: #3d201b; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45 }
+a { color: var(--accent) }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, tr:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 40px; max-width: 1400px; margin: 0 auto }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 18px }
+h1 { font-family: var(--f-display); font-weight: 640; font-size: 1.75rem; margin: 0; text-wrap: balance; letter-spacing: -0.01em }
+.sub { color: var(--muted); font-size: 0.92rem; max-width: 70ch }
+.grid { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 20px; align-items: start }
+@media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr) } }
+aside { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); display: flex; flex-direction: column; gap: 10px }
+@media (max-width: 860px) { aside { position: static; max-height: 340px } }
+.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+.seg button { font: inherit; font-weight: 600; border: 0; padding: 7px 8px; background: var(--panel); color: var(--muted); cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink) }
+input[type="search"], select { font: inherit; width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink) }
+.list { overflow-y: auto; display: flex; flex-direction: column; gap: 2px; min-height: 0 }
+.list button { font: inherit; text-align: left; border: 0; background: transparent; color: var(--ink); padding: 6px 8px; border-radius: 5px; cursor: pointer; display: grid; grid-template-columns: 10px minmax(0,1fr) auto; gap: 8px; align-items: center }
+.list button:hover { background: var(--soft) }
+.list button[aria-current="true"] { background: var(--accent-soft); font-weight: 600 }
+.list .n { font-family: var(--f-mono); font-size: 0.78rem; color: var(--muted) }
+.list .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.dot { width: 9px; height: 9px; border-radius: 50% }
+.dot.matched { background: var(--ok) } .dot.borrowed { background: var(--warn) } .dot.none { background: var(--bad) }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 0.8rem; color: var(--muted) }
+.legend span { display: inline-flex; align-items: center; gap: 5px }
+main { min-width: 0; display: flex; flex-direction: column; gap: 14px }
+.cohort { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px }
+.cohort h2 { font-family: var(--f-display); font-weight: 560; font-size: 1.45rem; margin: 0; text-wrap: balance }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center }
+.chip { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; white-space: nowrap }
+.chip.matched { background: var(--ok-soft); color: var(--ok) } .chip.borrowed { background: var(--warn-soft); color: var(--warn) } .chip.none { background: var(--bad-soft); color: var(--bad) }
+.chip.plain { background: var(--soft); color: var(--muted) }
+.note { color: var(--ink); max-width: 85ch; font-size: 0.95rem }
+.desc { color: var(--muted); font-size: 0.88rem }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center }
+.controls input[type="search"] { max-width: 260px }
+.controls label { display: inline-flex; gap: 6px; align-items: center; font-size: 0.9rem; color: var(--muted); cursor: pointer }
+.count { font-size: 0.85rem; color: var(--muted); margin-left: auto }
+.tablewrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px }
+table { width: 100%; border-collapse: collapse; min-width: 860px }
+th, td { padding: 8px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line) }
+th { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; background: var(--soft); position: sticky; top: 0 }
+td.num, th.num { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-size: 0.86rem }
+tr.row { cursor: pointer } tr.row:hover td { background: var(--soft) }
+.drug { font-weight: 700 } .lincs { font-family: var(--f-mono); font-size: 0.74rem; color: var(--muted) }
+.moa { color: var(--muted); font-size: 0.85rem; max-width: 34ch }
+.about-drug { font-size: 0.8rem; white-space: nowrap }
+.bar { display: inline-block; width: 46px; height: 6px; background: var(--soft); border-radius: 3px; vertical-align: middle; margin-left: 6px; overflow: hidden }
+.bar i { display: block; height: 100%; background: var(--accent) }
+.st { font-size: 0.78rem; font-weight: 700 } .st.m { color: var(--ok) } .st.d { color: var(--muted) }
+.src { font-size: 0.82rem; color: var(--muted) }
+.lit a { white-space: nowrap; font-family: var(--f-mono); font-size: 0.82rem }
+.lit .none { color: var(--muted); font-size: 0.8rem }
+tr.detail td { background: var(--soft); padding: 12px 14px 14px }
+.det { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 22px }
+.det h4 { margin: 0 0 6px; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted) }
+.det ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 5px; font-size: 0.9rem }
+.det p { margin: 0; font-size: 0.9rem }
+.more { font: inherit; font-weight: 600; padding: 8px 14px; border: 1px solid var(--line); background: var(--panel); color: var(--accent); border-radius: 6px; cursor: pointer; align-self: flex-start }
+details.about { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px }
+details.about summary { cursor: pointer; font-weight: 700 }
+details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 0.92rem }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important } }
+/* ---- additions for the full rankings page */
+.score { white-space: nowrap }
+.score .raw { display: block; font-size: 0.74rem; color: var(--muted) }
+th.sort { cursor: pointer; user-select: none } th.sort[aria-sort="descending"] { color: var(--accent) }
+th.sort[aria-sort="descending"]::after { content: " ▾" }
+.flag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em; padding: 1px 6px; border-radius: 999px; margin: 3px 4px 0 0; white-space: nowrap }
+.flag.bad { background: var(--bad-soft); color: var(--bad) } .flag.warn { background: var(--warn-soft); color: var(--warn) }
+.flag.ok { background: var(--ok-soft); color: var(--ok) } .flag.plain { background: var(--soft); color: var(--muted) }
+.rec { display: inline-block; font-family: var(--f-mono); font-size: 0.76rem; padding: 1px 6px; border-radius: 4px; margin: 0 4px 3px 0; white-space: nowrap }
+.rec.p { background: var(--ok-soft); color: var(--ok) } .rec.a, .rec.s { background: var(--warn-soft); color: var(--warn) } .rec.n { background: var(--soft); color: var(--muted); text-decoration: line-through }
+.rec i { font-style: normal; opacity: 0.75 }
+table.mini { min-width: 0; width: 100%; font-size: 0.84rem; background: var(--panel); border: 1px solid var(--line); border-radius: 6px }
+table.mini th, table.mini td { padding: 4px 8px; position: static }
+.det .wide { grid-column: 1 / -1 }
+.controls select { width: auto }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Disease Drug Rankings</h1>
+    <div class="sub">Every FDA-approved drug (Drugs@FDA) that passed the target check, per TCGA / TARGET cohort and subgroup (v2 pipeline, consensus regulons): reversal, disease specificity and mechanism specificity, data-quality flags, receptor evidence and literature. Click a drug for details.</div>
+  </header>
+  <div class="grid">
+    <aside aria-label="Cohorts">
+      <div class="seg" role="group" aria-label="Cohort level">
+        <button id="lvl-group" aria-pressed="true">Diseases (41)</button>
+        <button id="lvl-sub" aria-pressed="false">Subgroups (14)</button>
+      </div>
+      <input id="cohort-q" type="search" placeholder="Find a cohort" aria-label="Find a cohort">
+      <div class="legend"><span><i class="dot matched"></i>matched lines</span><span><i class="dot borrowed"></i>borrowed only</span><span><i class="dot none"></i>no adequate compound</span></div>
+      <div class="list" id="list"></div>
+    </aside>
+    <main>
+      <section class="cohort" id="cohort"></section>
+      <div class="controls">
+        <input id="drug-q" type="search" placeholder="Filter drugs, mechanisms or targets" aria-label="Filter drugs, mechanisms or targets">
+        <label>Rank by <select id="sortby" aria-label="Rank by"></select></label>
+        <label><input id="hide-flag" type="checkbox" checked> Hide weak-evidence drugs</label>
+        <label><input id="only-fda" type="checkbox"> Marketed only</label>
+        <label><input id="only-rec" type="checkbox"> Receptor passes gate</label>
+        <label><input id="only-lit" type="checkbox"> With literature search</label>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="tablewrap"><table aria-label="Ranked drugs">
+        <thead><tr id="thead"></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table></div>
+      <button class="more" id="more" hidden>Show more</button>
+      <details class="about">
+        <summary>How to read this page</summary>
+        <ul>
+          <li><b>Reversal</b> (<code>rev</code>): how strongly the drug pushes the cohort's changed regulators back toward normal tissue, with strongly changed regulators counting more. <b>Specificity</b> (<code>spec</code>): reversal for this cohort minus the drug's average reversal for cancers of other tissues. <b>Mechanism specificity</b> (<code>spec_mech</code>): specificity after removing the part explained by slowing cell division; this is the default ranking (D80). For subgroups, <b>vs sibling</b> (<code>spec_sib_mech</code>) compares the subgroup with its sibling subgroups and is their default ranking. Big numbers are percentiles within the cohort; small numbers are the raw scores.</li>
+          <li><b>Drugs</b>: only LINCS compounds matched to an FDA-approved ingredient in Drugs@FDA (fetched 2026-10-29; <i>marketed</i> = a current prescription or OTC product, <i>discontinued</i> = approved, no current product). Where several LINCS compounds are the same ingredient, the one scoring best on the cohort's lead score is shown, as on the FDA rankings page. Unlike that page, weak-evidence and non-reversing drugs are kept here (weak evidence hidden by default).</li><li><b>Rank</b> is the drug's position among all FDA drugs of the cohort on the chosen score, before any filter.</li>
+          <li><b>Weak-evidence drugs</b> are hidden by default: <i>unmatched lines</i> (the drug's best tested line looks nothing like the cohort) and <i>low transfer</i> (a borrowed drug whose effect carries over poorly between lines, confidence below 0.5). Other flags are shown but not hidden: <i>multi-target</i> (more than 5 annotated targets), <i>proliferation-driven</i> (the score comes mostly from slowing division) and <i>few regulators</i>.</li>
+          <li><b>Receptors</b>: the drug's annotated receptor targets expressed in this cohort's tumors, after the receptor evidence gate. Green: ChEMBL supports binding (curated mechanism, or affinity 1 µM or better; 100 nM for kinases) and the receptor is present in at least half of the cell lines this cohort's score used. Amber: it binds, but the receptor (or the full receptor complex) is missing from those lines or from the tumors, so the score cannot come through it. Struck out: no binding evidence in ChEMBL. <i>1 line</i> marks a pass resting on a single cell line. The window is how many log10 units weaker the drug binds this receptor than its strongest measured target (0 = its main target).</li>
+          <li><b>Literature</b> was searched for each disease's top 10 drugs by mechanism specificity and by reversal (LINCS name) and for each cohort's top 3 FDA drugs (FDA name). PubMed counts need the drug and the disease in a title or abstract; ClinicalTrials.gov matches loosely, so counts are an upper bound. Other rows were not searched and link to a PubMed search.</li>
+          <li>Scores are computational predictions, not yet validated against measured drug sensitivity (PRISM / GDSC).</li>
+        </ul>
+      </details>
+    </main>
+  </div>
+</div>
+
+<script>
+const DATA = __DATA__;
+const STATUS = { "matched": ["matched", "Matched lines"], "borrowed only": ["borrowed", "Borrowed only"], "no adequate compound": ["none", "No adequate compound"] };
+// row layout (79x): 0 drug, 1 source, 2 rev, 3 rev%, 4 spec, 5 spec%, 6 spec_mech, 7 spec_mech%, 8 prolif share, 9 transfer conf,
+// 10 line match, 11 flag bits, 12 literature index, 13 receptors, 14 lines used; subgroups add 15 spec_sib, 16 %, 17 spec_sib_mech, 18 %
+const SORTS = { group: [["spec_mech", 6, "Mechanism specificity"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]],
+  subgroup: [["spec_sib_mech", 17, "Vs sibling (mechanism)"], ["spec_sib", 15, "Vs sibling"], ["spec_mech", 6, "Mechanism specificity"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]] };
+const FL = { unmatched_lines: ["Unmatched lines", "bad"], low_transfer: ["Low transfer", "bad"], multi_target: ["Multi-target", "warn"], prolif_driven: ["Proliferation-driven", "warn"], low_mrs: ["Few regulators", "plain"] };
+const HIDE = ["unmatched_lines", "low_transfer"].map(f => 1 << DATA.flags.indexOf(f)).reduce((a, b) => a | b, 0);
+const EVID = { mechanism: "curated mechanism", potent: "measured affinity", weak: "weaker than cut-off", annotation_only: "annotation only", no_chembl_id: "not in ChEMBL", kinase_mechanism_below_100nM: "kinase, weaker than 100 nM", kinase_mechanism_unmeasured: "kinase, no affinity data" };
+const GATE = { p: "passes", a: "absent in matched lines", s: "complex incomplete in tumors", n: "no binding evidence" };
+const el = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = (v, k = 2) => v == null ? "–" : (+v).toFixed(k);
+let level = "group", current = null, limit = 50, open = new Set(), sortKey = null, ranks = null;
+const units = k => Object.keys(DATA.meta).filter(u => DATA.meta[u].kind === k).sort();
+const isSub = () => DATA.meta[current].kind === "subgroup";
+const sortCol = () => (SORTS[DATA.meta[current].kind].find(s => s[0] === sortKey) || SORTS[DATA.meta[current].kind][0])[1];
+function computeRanks() {
+  const rs = DATA.rows[current] || [], c = sortCol();
+  const order = rs.map((r, i) => i).sort((a, b) => (rs[b][c] ?? -Infinity) - (rs[a][c] ?? -Infinity));
+  ranks = new Map(order.map((i, k) => [i, k + 1]));
+}
+function pick(u) {
+  current = u; limit = 50; open.clear();
+  const ks = SORTS[DATA.meta[u].kind].map(s => s[0]); if (!ks.includes(sortKey)) sortKey = ks[0];
+  try { history.replaceState(null, "", "#" + u) } catch (e) {}
+  el("sortby").innerHTML = SORTS[DATA.meta[u].kind].map(s => `<option value="${s[0]}"${s[0] === sortKey ? " selected" : ""}>${s[2]}</option>`).join("");
+  computeRanks(); renderList(); renderCohort(); renderTable();
+}
+function renderList() {
+  const q = el("cohort-q").value.trim().toLowerCase();
+  el("list").innerHTML = units(level).filter(u => !q || u.toLowerCase().includes(q) || (DATA.meta[u].parent || "").toLowerCase().includes(q)).map(u => {
+    const m = DATA.meta[u], s = (STATUS[m.status] || ["none"])[0];
+    return `<button data-u="${esc(u)}" aria-current="${u === current}"><i class="dot ${s}"></i><span class="name">${esc(u)}</span><span class="n">${(DATA.rows[u] || []).length}</span></button>`;
+  }).join("");
+}
+function renderCohort() {
+  const m = DATA.meta[current], s = STATUS[m.status] || ["none", m.status], rs = DATA.rows[current] || [];
+  const nrec = rs.filter(r => r[13].some(x => x[7] === "p")).length, nlit = rs.filter(r => r[12] >= 0).length, nhid = rs.filter(r => r[11] & HIDE).length;
+  el("cohort").innerHTML = `<h2>${esc(current)}</h2>
+    <div class="chips"><span class="chip ${s[0]}">${esc(s[1])}</span>${m.parent ? `<span class="chip plain">Subgroup of ${esc(m.parent)}</span>` : ""}${m.bl ? `<span class="chip plain">Best tested line: ${esc(m.bl)}</span>` : ""}
+    <span class="chip plain">${rs.length} drugs</span><span class="chip plain">${nhid} weak evidence</span><span class="chip plain">${nrec} with a passing receptor</span><span class="chip plain">${nlit} with literature search</span></div>
+    ${m.desc ? `<div class="desc">${esc(m.desc)}</div>` : ""}<div class="note">${esc(m.note)}</div>`;
+}
+function head() {
+  const sub = isSub(), c = sortCol();
+  const th = (label, col) => `<th class="num sort" data-col="${col}" aria-sort="${col === c ? "descending" : "none"}" title="Rank by this score">${label}</th>`;
+  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th>${sub ? th("Vs sibling (mech)", 17) : ""}${th("Mechanism specificity", 6)}${th("Specificity", 4)}${th("Reversal", 2)}<th>Data</th><th>Receptors</th><th>Literature</th>`;
+}
+const bar = v => v == null ? "" : `<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, v))}%"></i></span>`;
+const score = (pct, raw) => `<td class="num score">${pct == null ? "–" : pct.toFixed(1)}${bar(pct)}<span class="raw">${fmt(raw)}</span></td>`;
+function flags(r) { return DATA.flags.filter((f, i) => r[11] & (1 << i)).map(f => `<span class="flag ${FL[f][1]}">${FL[f][0]}</span>`).join("") }
+function recChips(r) {
+  const xs = r[13].slice().sort((a, b) => "pasn".indexOf(a[7]) - "pasn".indexOf(b[7]));
+  if (!xs.length) return `<span class="src">–</span>`;
+  const shown = xs.slice(0, 4).map(x => `<span class="rec ${x[7]}" title="${esc(x[0] + ": " + GATE[x[7]] + (x[2] ? " · " + (EVID[x[2]] || x[2]) : ""))}">${esc(x[0])}${x[7] === "p" && x[4] != null ? ` <i>w${x[4].toFixed(1)}</i>` : ""}${x[8] ? " <i>1 line</i>" : ""}</span>`).join("");
+  return shown + (xs.length > 4 ? `<span class="src">+${xs.length - 4}</span>` : "");
+}
+function litCell(r, d) {
+  if (r[12] < 0) return `<span class="none">not searched</span>`;
+  const L = DATA.lit[r[12]];
+  return `<a href="${esc(L[2])}" target="_blank" rel="noopener">${L[0] ?? 0} papers</a><br><a href="${esc(L[3])}" target="_blank" rel="noopener">${L[1] ?? 0} trials</a>`;
+}
+function detail(r, d, sub) {
+  const L = r[12] >= 0 ? DATA.lit[r[12]] : null;
+  const srch = `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent('"' + (d.fda ? d.fda[0] : d.c) + '"[tiab] AND (cancer OR tumor OR neoplasm)')}`;
+  const scores = [["Reversal", r[2], r[3]], ["Specificity", r[4], r[5]], ["Mechanism specificity", r[6], r[7]]].concat(sub ? [["Vs sibling", r[15], r[16]], ["Vs sibling (mechanism)", r[17], r[18]]] : []);
+  const rec = r[13].length ? `<table class="mini"><thead><tr><th>Receptor</th><th>Class</th><th>Binding evidence</th><th class="num">pChEMBL</th><th class="num">Window</th><th class="num">Matched lines expressing</th><th>Gate</th></tr></thead><tbody>${r[13].map(x =>
+      `<tr><td><b>${esc(x[0])}</b></td><td>${esc(x[1])}</td><td>${esc(EVID[x[2]] || x[2])}</td><td class="num">${fmt(x[3])}</td><td class="num">${fmt(x[4])}</td><td class="num">${x[5] == null ? "–" : Math.round(100 * x[5]) + "% of " + x[6]}</td><td><span class="rec ${x[7]}">${GATE[x[7]]}</span>${x[8] ? ' <span class="flag plain">1 line</span>' : ""}</td></tr>`).join("")}</tbody></table>` : "<p>No annotated receptor target expressed in this cohort.</p>";
+  return `<tr class="detail"><td colspan="${sub ? 9 : 8}"><div class="det">
+    <div><h4>Scores</h4><table class="mini"><thead><tr><th>Score</th><th class="num">Raw</th><th class="num">Percentile</th></tr></thead><tbody>${scores.map(s => `<tr><td>${s[0]}</td><td class="num">${fmt(s[1])}</td><td class="num">${s[2] == null ? "–" : s[2].toFixed(1)}</td></tr>`).join("")}</tbody></table>
+      <p style="margin-top:6px">Proliferation share of reversal: ${r[8] == null ? "–" : Math.round(100 * r[8]) + "%"}</p></div>
+    <div><h4>Data behind the score</h4><p>${r[1] === "d" ? "Tested in this tissue's lines" : "Borrowed from other tissues' lines"} · ${r[14]} line${r[14] === 1 ? "" : "s"} used${r[1] === "d" && r[10] != null ? ` · best line match ${fmt(r[10])}` : ""}${r[1] === "b" && r[9] != null ? ` · transfer confidence ${fmt(r[9])}` : ""}</p>
+      <p style="margin-top:6px">${flags(r) || "No flags."}</p>
+      <h4 style="margin-top:10px">Drug</h4><p>${esc(d.moa) || "Mechanism not annotated"}${d.ph ? " · " + esc(d.ph) : ""}</p>
+      <p style="margin-top:4px;font-size:0.84rem;color:var(--muted)">Annotated targets: ${esc(d.tg.join(", ")) || "none"}</p>
+      ${d.fda ? `<p style="margin-top:4px">FDA: ${esc(d.fda[0])} · ${d.fda[1] === "m" ? "marketed" : "discontinued"}${d.fda[2] ? " · since " + d.fda[2] : ""}</p>` : ""}${d.ind ? `<p style="margin-top:4px;font-size:0.84rem">Indications: ${esc(d.ind)}</p>` : ""}</div>
+    <div class="wide"><h4>Receptor evidence gate</h4>${rec}</div>
+    <div><h4>Papers on this drug in this disease</h4>${L ? `<p style="margin-bottom:6px;color:var(--muted);font-size:0.82rem">Searched by ${L[6] === "f" ? "FDA ingredient name" : "LINCS name"} · <a href="${esc(L[2])}" target="_blank" rel="noopener">all ${L[0] ?? 0} on PubMed</a></p>${L[4].length ? `<ul>${L[4].map(p => `<li><a href="${esc(p[0])}" target="_blank" rel="noopener">${esc(p[1] || p[0])}</a></li>`).join("")}</ul>` : "<p>No PubMed paper names this drug with this disease.</p>"}` : `<p>Not searched for this pair. <a href="${srch}" target="_blank" rel="noopener">Search PubMed for ${esc(d.fda ? d.fda[0] : d.c)} in cancer</a></p>`}</div>
+    <div><h4>Clinical trials</h4>${L ? (L[5].length ? `<ul>${L[5].map(t => `<li><a href="${esc(t[0])}" target="_blank" rel="noopener">${esc(t[0].split("/").pop())}</a> ${esc(t[1])}</li>`).join("")}</ul>` : "<p>No matching trials.</p>") : "<p>Not searched for this pair.</p>"}</div>
+  </div></td></tr>`;
+}
+function renderTable() {
+  head();
+  const sub = isSub(), q = el("drug-q").value.trim().toLowerCase(), c = sortCol(), all = DATA.rows[current] || [];
+  let ix = all.map((r, i) => i).filter(i => {
+    const r = all[i], d = DATA.drugs[r[0]];
+    return (!el("hide-flag").checked || !(r[11] & HIDE)) && (!el("only-fda").checked || (d.fda && d.fda[1] === "m")) && (!el("only-rec").checked || r[13].some(x => x[7] === "p"))
+      && (!el("only-lit").checked || r[12] >= 0) && (!q || (d.c + " " + (d.fda ? d.fda[0] : "") + " " + d.moa + " " + d.tg.join(" ")).toLowerCase().includes(q));
+  }).sort((a, b) => ranks.get(a) - ranks.get(b));
+  const total = ix.length, lim = Math.min(total, limit);
+  el("tbody").innerHTML = ix.slice(0, lim).map(i => {
+    const r = all[i], d = DATA.drugs[r[0]], name = d.fda ? d.fda[0] : d.c;
+    return `<tr class="row" tabindex="0" data-i="${i}" aria-expanded="${open.has(i)}"><td class="num">${ranks.get(i)}</td>
+      <td><div class="drug">${esc(name)}</div>${name.toLowerCase() !== d.c.toLowerCase() ? `<div class="lincs">${esc(d.c)}</div>` : ""}<div class="moa">${esc(d.moa)}</div>${d.fda ? `<span class="flag ${d.fda[1] === "m" ? "ok" : "plain"}">${d.fda[1] === "m" ? "Marketed" : "Discontinued"}${d.fda[2] ? " · " + d.fda[2] : ""}</span>` : ""}${flags(r)}</td>
+      ${sub ? score(r[18], r[17]) : ""}${score(r[7], r[6])}${score(r[5], r[4])}${score(r[3], r[2])}
+      <td class="src">${r[1] === "d" ? "Direct" : "Borrowed"}${r[1] === "b" && r[9] != null ? `<br>conf ${fmt(r[9])}` : ""}<br>${r[14]} line${r[14] === 1 ? "" : "s"}</td>
+      <td>${recChips(r)}</td><td class="lit">${litCell(r, d)}</td></tr>` + (open.has(i) ? detail(r, d, sub) : "");
+  }).join("") || `<tr><td colspan="9">No drugs match these filters.</td></tr>`;
+  el("count").textContent = `${lim} of ${total} drugs`;
+  el("more").hidden = lim >= total; el("more").textContent = `Show ${Math.min(100, total - lim)} more`;
+}
+el("list").addEventListener("click", e => { const b = e.target.closest("button[data-u]"); if (b) pick(b.dataset.u) });
+el("tbody").addEventListener("click", e => { if (e.target.closest("a")) return; const tr = e.target.closest("tr.row"); if (!tr) return; const i = +tr.dataset.i; open.has(i) ? open.delete(i) : open.add(i); renderTable() });
+el("tbody").addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("tr.row")) { e.preventDefault(); e.target.click() } });
+el("thead").addEventListener("click", e => { const th = e.target.closest("th[data-col]"); if (!th) return; const s = SORTS[DATA.meta[current].kind].find(s => s[1] === +th.dataset.col); if (s) { sortKey = s[0]; el("sortby").value = s[0]; limit = 50; computeRanks(); renderTable() } });
+el("sortby").addEventListener("change", () => { sortKey = el("sortby").value; limit = 50; computeRanks(); renderTable() });
+for (const id of ["drug-q", "hide-flag", "only-fda", "only-rec", "only-lit"]) el(id).addEventListener("input", () => { limit = 50; renderTable() });
+el("cohort-q").addEventListener("input", renderList);
+el("more").addEventListener("click", () => { limit += 100; renderTable() });
+function setLevel(l) { level = l; el("lvl-group").setAttribute("aria-pressed", l === "group"); el("lvl-sub").setAttribute("aria-pressed", l === "subgroup"); if (DATA.meta[current]?.kind !== l) pick(units(l)[0]); else renderList() }
+el("lvl-group").addEventListener("click", () => setLevel("group"));
+el("lvl-sub").addEventListener("click", () => setLevel("subgroup"));
+function fromHash() { const h = decodeURIComponent(location.hash.slice(1)); const u = DATA.meta[h] ? h : "TCGA-LUAD"; level = DATA.meta[u].kind; current = u; setLevel(level); pick(u) }
+window.addEventListener("hashchange", fromHash);
+fromHash();
+</script>
