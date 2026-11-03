@@ -1,0 +1,6 @@
+question	result	met
+time: T6 vs T24	T6 vs T24: 54.4% vs 47.9% (+6.4 points, 171 rows, 33 wins / 22 losses, p = 0.177); coupling 0.131 vs 0.169	FALSE
+time: T6 vs A0	T6 vs A0: 54.4% vs 48.5% (+5.9 points, 171 rows, 29 wins / 19 losses, p = 0.193); coupling 0.131 vs 0.162	FALSE
+dose: DL vs DH	DL vs DH: 47.1% vs 47.1% (+0.0 points, 157 rows, 23 wins / 23 losses, p = 1); coupling 0.147 vs 0.187	FALSE
+DECISION time	time stays descriptive	FALSE
+DECISION dose	dose stays descriptive	FALSE

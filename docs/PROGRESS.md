@@ -539,6 +539,16 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   unreliable ones; tumor links that no other network supports are. Limits: landmark genes and measured regulators only
   (no ESR1), few signatures per line.
 
+## 2026-11-03: time- and dose-resolved drug profiles (D88): descriptive only
+- **What:** drug x line profiles from 6 h vs 24 h signatures (2,854 pairs) and from the lowest active vs the highest
+  dose at 24 h (2,759 pairs), scored with tumor ARACNe as the drug side does; checked on the D84 ligand profiles.
+  `scripts/timedose/`, `results/lincs/timedose/`.
+- **Result:** 6 h profiles read ligands better (+6 points vs 24 h and vs the current profiles) and are less coupled to
+  growth arrest, but with 171 rows the gain is not significant (p = 0.18), so the rule is not met. Where the pair is
+  active at 6 h the gain is large (+18 points, p = 0.007; reported, not in the rule). Under anti-estrogens in MCF7,
+  ARACNe's ESR1 goes from +1.5 to +3.4 at 24 h to about 0 or negative at 6 h. Dose (lowest active vs highest) makes
+  no difference to the reading.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
