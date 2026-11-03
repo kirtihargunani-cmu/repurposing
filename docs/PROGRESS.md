@@ -616,6 +616,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   positive in 79% vs 100%), FOXA1 / GATA3 / XBP1 about halved, PGR now negative (86%). Subtype networks shrink the
   misread but do not remove it: within luminal tumors the degree of luminal differentiation still co-varies with ESR1.
 
+## 2026-11-03: cell-type breast networks (D92, D92a)
+- **What:** networks built per breast cell type before ARACNe, every downstream step rerun under `_d92` / `_d92b` tags
+  (`scripts/d92/`; opt-in `NET_MAP`, `MR_OVERRIDE`, `EXTRA_RDS`, `RES_TAG`, `P1_EXTRA` in 50, 79d, 79e, 79h, 79i).
+- **D92 (rule as written): keep pooled.** Her2 resembles basal more than luminal, so Basal + Her2 shared a network;
+  that put a luminal-vs-basal axis back in, and anti-estrogens stayed at the 94th percentile in basal (needed a
+  10-point drop, got 3.5). Luminal subtypes improved a lot (positive controls 21 -> 46).
+- **D92a arm (user: > 50 tumors is enough; reported):** Basal (190) and Her2 (81) each on their own network.
+  Anti-estrogens fall from the 97th to the 80th percentile in basal and rise in luminal A / B, known-use unchanged;
+  dominance +0.2 points (3 drugs), so the strict "does not rise" check is missed by a hair. The anti-estrogen
+  inversion is largely corrected: on the basal-only network the luminal regulators barely move under anti-estrogens
+  (ESR1 +0.57) and no longer carry the basal disease signature (GATA3 NES +0.18 vs -2.35 pooled).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

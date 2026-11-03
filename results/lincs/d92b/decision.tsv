@@ -1,0 +1,5 @@
+criterion	value	met
+1 negative controls fall >= 10 points; breast positive controls do not fall	negative 79.5 vs 97.2; positive 45.9 vs 21.1	True
+2 known-use AUC falls <= 0.01 (Hub, ChEMBL)	Hub 0.614 vs 0.610; ChEMBL 0.485 vs 0.492	True
+3 dominance does not rise	12.4% vs 12.2%	False
+DECISION	keep the pooled breast network	False

@@ -1,0 +1,5 @@
+group_id	contrast	n_tumor	n_normal	n_regulators_kept	n_mr_fdr05	n_mr_p05
+BRCA-Basal	gtex	190	79	1047	145	238
+BRCA-Her2	gtex	81	79	1094	2	138
+BRCA-LumA	gtex	560	79	1020	147	254
+BRCA-LumB	gtex	209	79	999	198	285
