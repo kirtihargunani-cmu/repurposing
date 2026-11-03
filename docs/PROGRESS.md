@@ -573,3 +573,11 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   borrowed-only cohorts). 1,922 matched compounds have a close FDA drug: `results/lincs/standin_compounds_v2.html`.
 - 79o `MODE=fda_all`: PubMed / trial search for every FDA row of the rankings page (7,444 searches, cached).
 - 79e: guard for `rev_raw` in consensus mode (raw activity folders for v2 now exist and crashed the rerun).
+- 2026-11-03: validation step 1 (protocol pre-registered as C28 before running). (a) Known-use recovery (`79l`,
+  `config/known_use.yaml`, Repurposing Hub + ChEMBL 37 indications): lead-score AUC 0.62 on Hub labels but 0.50 on
+  ChEMBL, and the "drug scores high in every cohort" baseline matches it (0.62 / 0.60); the specificity test (own
+  cancer vs elsewhere) is null (+3.0 points Hub p 0.19; -5.1 ChEMBL p 0.98). Pass rule not met. (b) PRISM / GDSC
+  selective killing against the gated v2 rankings (`79m`): receptor gate pass vs fail inconsistent across datasets
+  (-0.04 / +0.04 / -0.11), matched evidence no better than borrowed, stand-in average never better than the drug's
+  own borrowed score. Pass rule not met -> C16 stands after the gate, FDA filter, evidence split and stand-ins.
+  Next: DepMap CRISPR dependency agreement (step 2), binding evidence beyond receptors.
