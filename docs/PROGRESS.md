@@ -604,6 +604,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   hygiene issue for most drugs. A relative-expression rule for the gate would be a separate decision (`79w` is the
   other agent's script).
 
+## 2026-11-03: identity split (D91): keep spec_mech; luminal-only network on the drug side
+- **Identity split** (`scripts/d91/`, `results/lincs/d91/`; 79i `IDENTITY_FILE`): regulators whose activity mostly
+  separates lineages (DepMap lines) or subtypes (tumors; breast lines) are scored apart, except a drug's own targets.
+  Anti-estrogens move up in luminal A / B (positive controls 45 -> 56) and known-use recovery improves slightly, but
+  they stay at the 97th percentile in basal and growth-arrest dominance rises (8.2 -> 10.1%), so the rule is not
+  met. What keeps basal high is a third component: a quiescence program the drug turns on (MXD4, KLF9, KLF2, NFATC4,
+  THRA) that basal tumors have strongly down; it is neither identity- nor proliferation-tagged.
+- **Luminal-only network on the drug side** (`scripts/explore/brca_lum_drugside.R`): BRCA_LUM (D65, 769 luminal
+  tumors; disease side not materially different, D81) reads anti-estrogens in MCF7 with ESR1 +1.18 (pooled BRCA +2.41,
+  positive in 79% vs 100%), FOXA1 / GATA3 / XBP1 about halved, PGR now negative (86%). Subtype networks shrink the
+  misread but do not remove it: within luminal tumors the degree of luminal differentiation still co-varies with ESR1.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

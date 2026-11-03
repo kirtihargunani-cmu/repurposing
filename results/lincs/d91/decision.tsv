@@ -1,0 +1,5 @@
+criterion	value	met
+1 negative controls fall >= 10 points, positive do not fall	negative 97.1 vs 97.2; positive 56.5 vs 45.0	False
+2 known-use AUC falls <= 0.01 and specificity gap shrinks <= 1 point, Hub and ChEMBL	AUC Hub 0.616 vs 0.610, ChEMBL 0.504 vs 0.492; gap Hub -1.0 vs -3.6, ChEMBL -3.6 vs -4.4	True
+3 dominance does not rise	10.1% vs 8.2%	False
+DECISION	keep spec_mech	False

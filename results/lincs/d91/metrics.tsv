@@ -1,0 +1,5 @@
+set	score	auc_lab_hub	cohorts_lab_hub	spec_gap_lab_hub	drugs_lab_hub	auc_lab_chembl	cohorts_lab_chembl	spec_gap_lab_chembl	drugs_lab_chembl	ctl_pos	ctl_neg	n_pos	n_neg	dominance	dominance_drugs
+aracne	spec_mech	0.6099	17.0000	-3.5965	45.0000	0.4923	34.0000	-4.3632	72.0000	45.0000	97.2000	14.0000	3.0000	0.0822	1144.0000
+aracne	spec_mech_id	0.6161	17.0000	-0.9593	45.0000	0.5039	34.0000	-3.6129	72.0000	56.4500	97.1000	14.0000	3.0000	0.1005	1144.0000
+consensus	spec_mech	0.6199	17.0000	-0.8631	45.0000	0.4996	34.0000	-3.2711	72.0000	49.9000	96.7000	14.0000	3.0000	0.0918	1144.0000
+consensus	spec_mech_id	0.6230	17.0000	0.8542	45.0000	0.5095	34.0000	-2.5821	72.0000	54.9500	96.3000	14.0000	3.0000	0.1005	1144.0000
