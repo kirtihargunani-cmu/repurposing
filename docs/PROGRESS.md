@@ -479,6 +479,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - **Caveats:** the test is small (planned ~200 signatures, got 45 under the rule); the drug folds group by mechanism
   wording, which split tamoxifen from fulvestrant (affects only the ligand report).
 
+## 2026-11-02: hybrid regulons (D87): keep CollecTRI
+- **What:** CollecTRI's target lists with each link's direction relearned from LINCS drug profiles: per target, the
+  correlation across ~1,000 drugs (per line; pooled for lines with few drugs) with the regulator's activity read from
+  its other targets. Ligand drugs were left out of learning. Files in `scripts/hybrid/`, `results/lincs/hybrid/`.
+- **Result: slightly worse, rule not met.** On the 828 D84 knockdown / overexpression signatures: 59.8% vs CollecTRI
+  62.2% (p = 0.18), same direction in every split (knockdown, overexpression, measured and unmeasured TFs, own and
+  pooled directions, raw profiles, all three variants) and in the consensus with ARACNe (65.6% vs 67.0%).
+- **Also found:** learning flips about a quarter of CollecTRI's links in every line, so the links' co-movement across
+  drugs often disagrees with the literature sign. Those flips do not make the perturbation reading better. The ESR1
+  anti-estrogen reading in MCF7 got stronger (7 of 7 negative, median -3.5 vs -2.5), but one regulator does not
+  carry the rule.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

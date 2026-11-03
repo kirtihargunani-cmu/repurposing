@@ -1,0 +1,5 @@
+arm	variant	profiles	correct_variant	correct_collectri
+specific	H1	409	0.5868	0.6235
+specific	H2	409	0.5746	0.6235
+specific	H3	409	0.599	0.6235
+raw	H1_raw	409	0.5061	0.5697
