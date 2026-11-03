@@ -1,0 +1,153 @@
+dataset	cohort	n_matched	n_borrowed	rho_matched	rho_borrowed
+prism_sec	BRCA-Basal	115	10	-0.0225	
+prism_sec	BRCA-Her2	106	10	-0.1184	
+prism_sec	BRCA-LumA	115	11	-0.0437	
+prism_sec	BRCA-LumB	113	10	-0.1566	
+prism_sec	ESCA-AD	3	108		-0.0527
+prism_sec	ESCA-SCC	4	106		-0.0594
+prism_sec	LGG-IDHmut-codel	1	110		-0.278
+prism_sec	LGG-IDHmut-noncodel	1	109		-0.3072
+prism_sec	LGG-IDHwt	1	108		-0.2421
+prism_sec	PCPG-PGL	5	85		-0.194
+prism_sec	PCPG-PHEO	5	87		-0.2121
+prism_sec	SARC-DDLPS	0	48		-0.2064
+prism_sec	SARC-LMS	0	99		0.1016
+prism_sec	SARC-UPS	0	105		-0.2909
+prism_sec	TARGET-NBL	5	103		0.2839
+prism_sec	TARGET-WT	0	99		0.0702
+prism_sec	TCGA-BLCA	1	109		-0.0952
+prism_sec	TCGA-COAD	74	40	0.0905	0.2078
+prism_sec	TCGA-GBM	1	107		-0.1323
+prism_sec	TCGA-HNSC	0	108		0.2016
+prism_sec	TCGA-KICH	0	111		-0.2042
+prism_sec	TCGA-KIRC	0	105		-0.0211
+prism_sec	TCGA-KIRP	0	109		-0.0037
+prism_sec	TCGA-LIHC	20	25	-0.2241	0.0785
+prism_sec	TCGA-LUAD	96	27	0.154	-0.2497
+prism_sec	TCGA-LUSC	93	27	0.1796	0.2955
+prism_sec	TCGA-OV	2	109		-0.1156
+prism_sec	TCGA-PAAD	58	59	-0.1079	-0.0089
+prism_sec	TCGA-PRAD	102	29	-0.0112	-0.0754
+prism_sec	TCGA-READ	74	42	-0.0381	0.2502
+prism_sec	TCGA-SKCM	92	26	0.2057	-0.4762
+prism_sec	TCGA-STAD	4	104		0.026
+prism_sec	TCGA-THCA	0	110		-0.3217
+prism_sec	TCGA-UCS	1	112		-0.1441
+prism_sec	UCEC-EEC	1	110		0.0215
+prism_sec	UCEC-SER	1	110		-0.0776
+prism_pri	BRCA-Basal	154	22	-0.0789	0.2095
+prism_pri	BRCA-Her2	149	21	-0.2214	-0.0695
+prism_pri	BRCA-LumA	153	23	-0.1129	0.3389
+prism_pri	BRCA-LumB	150	21	-0.1719	0.0065
+prism_pri	ESCA-AD	3	145		0.0017
+prism_pri	ESCA-SCC	4	145		-0.0055
+prism_pri	LGG-IDHmut-codel	1	152		0.0486
+prism_pri	LGG-IDHmut-noncodel	1	151		0.0643
+prism_pri	LGG-IDHwt	1	151		0.1
+prism_pri	PCPG-PGL	5	144		0.0726
+prism_pri	PCPG-PHEO	5	148		-0.0068
+prism_pri	SARC-DDLPS	0	148		-0.0339
+prism_pri	SARC-LMS	0	154		0.0278
+prism_pri	SARC-UPS	0	146		-0.1739
+prism_pri	TARGET-NBL	5	149		0.1416
+prism_pri	TARGET-WT	0	147		0.0357
+prism_pri	TCGA-BLCA	1	147		-0.0199
+prism_pri	TCGA-COAD	108	60	0.0272	0.0415
+prism_pri	TCGA-GBM	1	150		0.0984
+prism_pri	TCGA-HNSC	0	142		0.1816
+prism_pri	TCGA-KICH	0	148		-0.1564
+prism_pri	TCGA-KIRC	0	151		0.0163
+prism_pri	TCGA-KIRP	0	144		-0.1855
+prism_pri	TCGA-LIHC	44	108	0.0739	-0.0002
+prism_pri	TCGA-LUAD	133	49	0.1537	-0.0094
+prism_pri	TCGA-LUSC	128	48	0.0115	0.0378
+prism_pri	TCGA-OV	3	145		-0.0095
+prism_pri	TCGA-PAAD	78	85	-0.0789	0.1191
+prism_pri	TCGA-PRAD	167	42	0.0791	-0.1733
+prism_pri	TCGA-READ	109	62	-0.0271	0.127
+prism_pri	TCGA-SKCM	127	40	0.1558	0.0117
+prism_pri	TCGA-STAD	4	142		0.1639
+prism_pri	TCGA-THCA	0	146		-0.022
+prism_pri	TCGA-UCS	1	148		-0.0778
+prism_pri	UCEC-EEC	1	143		0.017
+prism_pri	UCEC-SER	1	144		-0.0688
+gdsc1	BRCA-Basal	44	4	0.106	
+gdsc1	BRCA-Her2	34	3	-0.0982	
+gdsc1	BRCA-LumA	39	4	-0.0908	
+gdsc1	BRCA-LumB	34	3	-0.0833	
+gdsc1	CESC-AD	16	19		
+gdsc1	CESC-SCC	15	20		-0.4992
+gdsc1	ESCA-AD	2	33		0.234
+gdsc1	ESCA-SCC	2	37		0.0349
+gdsc1	LGG-IDHmut-codel	0	44		-0.2724
+gdsc1	LGG-IDHmut-noncodel	0	44		-0.282
+gdsc1	LGG-IDHwt	0	44		-0.2474
+gdsc1	PCPG-PGL	2	41		-0.0145
+gdsc1	PCPG-PHEO	2	41		0.0288
+gdsc1	SARC-DDLPS	0	43		0.0012
+gdsc1	SARC-LMS	0	43		-0.0258
+gdsc1	SARC-UPS	0	44		0.1356
+gdsc1	TARGET-NBL	2	41		-0.177
+gdsc1	TARGET-WT	0	34		0.1667
+gdsc1	TCGA-BLCA	0	35		-0.0378
+gdsc1	TCGA-COAD	21	14	0.1909	
+gdsc1	TCGA-GBM	0	44		-0.3916
+gdsc1	TCGA-HNSC	0	34		-0.0142
+gdsc1	TCGA-KICH	0	35		0.0594
+gdsc1	TCGA-KIRC	0	39		-0.3479
+gdsc1	TCGA-KIRP	0	34		-0.1361
+gdsc1	TCGA-LIHC	16	17		
+gdsc1	TCGA-LUAD	32	4	0.2988	
+gdsc1	TCGA-LUSC	31	5	0.0198	
+gdsc1	TCGA-OV	1	34		-0.0619
+gdsc1	TCGA-PAAD	13	21		0.0688
+gdsc1	TCGA-PRAD	34	11	0.1138	
+gdsc1	TCGA-READ	21	14	-0.1078	
+gdsc1	TCGA-SKCM	30	5	-0.0412	
+gdsc1	TCGA-STAD	2	33		0.0874
+gdsc1	TCGA-THCA	0	33		-0.0765
+gdsc1	TCGA-UCS	0	35		-0.2286
+gdsc1	TGCT-NSGCT	0	24		-0.0792
+gdsc1	TGCT-SEM	0	24		-0.0383
+gdsc1	UCEC-EEC	0	35		0.007
+gdsc1	UCEC-SER	0	35		0.0373
+gdsc2	BRCA-Basal	38	4	-0.0224	
+gdsc2	BRCA-Her2	37	4	-0.1849	
+gdsc2	BRCA-LumA	37	3	-0.3253	
+gdsc2	BRCA-LumB	37	4	-0.3786	
+gdsc2	CESC-AD	21	19	0.0338	
+gdsc2	CESC-SCC	20	20	-0.3699	-0.0075
+gdsc2	ESCA-AD	1	39		-0.0939
+gdsc2	ESCA-SCC	1	38		-0.1478
+gdsc2	LGG-IDHmut-codel	1	32		-0.1336
+gdsc2	LGG-IDHmut-noncodel	1	32		-0.1631
+gdsc2	LGG-IDHwt	1	32		-0.1144
+gdsc2	PCPG-PGL	2	37		-0.2297
+gdsc2	PCPG-PHEO	2	37		-0.1037
+gdsc2	SARC-DDLPS	0	39		-0.2658
+gdsc2	SARC-LMS	0	39		-0.0114
+gdsc2	SARC-UPS	0	40		-0.1413
+gdsc2	TARGET-NBL	2	38		0.3529
+gdsc2	TARGET-WT	0	38		0.1454
+gdsc2	TCGA-BLCA	1	39		-0.0741
+gdsc2	TCGA-COAD	29	11	-0.0163	
+gdsc2	TCGA-GBM	1	32		-0.1789
+gdsc2	TCGA-HNSC	0	40		0.415
+gdsc2	TCGA-KICH	0	41		-0.2399
+gdsc2	TCGA-KIRC	0	39		-0.5727
+gdsc2	TCGA-KIRP	0	39		-0.2739
+gdsc2	TCGA-LIHC	18	21		0.0039
+gdsc2	TCGA-LUAD	34	6	0.361	
+gdsc2	TCGA-LUSC	34	6	0.3824	
+gdsc2	TCGA-OV	2	39		0.3024
+gdsc2	TCGA-PAAD	16	23		0.0771
+gdsc2	TCGA-PRAD	34	10	-0.0099	
+gdsc2	TCGA-READ	29	11	-0.3693	
+gdsc2	TCGA-SKCM	37	4	0.0375	
+gdsc2	TCGA-STAD	1	39		0.0911
+gdsc2	TCGA-THCA	0	31		-0.1016
+gdsc2	TCGA-UCS	1	39		0.0797
+gdsc2	TGCT-NSGCT	0	32		-0.452
+gdsc2	TGCT-SEM	0	32		-0.272
+gdsc2	UCEC-EEC	1	39		0.1423
+gdsc2	UCEC-SER	1	39		0.2433

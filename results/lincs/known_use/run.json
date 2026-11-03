@@ -1,0 +1,23 @@
+{
+ "rows": 7414,
+ "drugs": 383,
+ "cohorts": 41,
+ "chembl_indication_records": 8268,
+ "sources": {
+  "hub": {
+   "labelled_rows": 148,
+   "labelled_drugs": 50,
+   "cohorts_with_labels": 31
+  },
+  "chembl": {
+   "labelled_rows": 399,
+   "labelled_drugs": 88,
+   "cohorts_with_labels": 40
+  }
+ },
+ "min_lab": 3,
+ "min_unlab": 20,
+ "n_perm": 1000,
+ "n_boot": 1000,
+ "seed": 0
+}

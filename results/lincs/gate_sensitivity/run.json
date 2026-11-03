@@ -1,0 +1,18 @@
+{
+ "datasets": [
+  "prism_sec",
+  "prism_pri",
+  "gdsc1",
+  "gdsc2"
+ ],
+ "lead": "spec_mech_pct",
+ "min_lines": 2,
+ "min_wcov": 0.25,
+ "min_drugs": 20,
+ "min_side": 5,
+ "n_perm": 1000,
+ "n_boot": 1000,
+ "seed": 0,
+ "fda_rows": 7414,
+ "gate_known": 2640
+}
