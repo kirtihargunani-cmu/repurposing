@@ -581,3 +581,10 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   (-0.04 / +0.04 / -0.11), matched evidence no better than borrowed, stand-in average never better than the drug's
   own borrowed score. Pass rule not met -> C16 stands after the gate, FDA filter, evidence split and stand-ins.
   Next: DepMap CRISPR dependency agreement (step 2), binding evidence beyond receptors.
+- 2026-11-03: validation step 2 (protocol pre-registered as C29), DepMap 24Q4 CRISPR gene effect added to `05`.
+  `79n`: the yardstick holds (AR / PRAD 7.6 SD, ESR1 / LumB 4.9, ERBB2 / Her2 3.6, BRAF / SKCM 2.9; EGFR / LUAD and
+  KIT / STAD do not, the line sets lack the mutations). D1 lead score vs target dependency null (rho -0.04);
+  D2 the receptor gate carries no dependency information (-0.05 SD, within noise of the 1-8 SD real scale; the split
+  tracks expression); D3 positive - drugs approved for a cancer target genes that cancer depends on (+0.24 Hub /
+  +0.13 ChEMBL SD, p 0.001), which also shows the C28 labels are sound. 154 rows pair an approved drug with a
+  target >= 2 SD depended on and the ranking does not favour them (median percentile 60 vs 53).
