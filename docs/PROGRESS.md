@@ -503,6 +503,14 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   ESR1 in MCF7: on line-specific profiles the consensus does not read anti-estrogens as inhibition; ARACNe
   (+2 to +4) and CollecTRI (-2 to -3) cancel to about 0. On raw profiles it leans negative (12 of 15 profiles).
 
+## 2026-11-03: exploration: ESR1 targets within MCF7 under drugs
+- `scripts/explore/esr1_mcf7_modules.R`: ESR1's BRCA ARACNe targets across 1,145 MCF7 drug profiles (ligand drugs
+  left out). 82% of targets move with the rest of the regulon in ARACNe's direction; luminal-identity genes (GATA3,
+  FOXA1, ERBB4, ANXA9) cohere as strongly as estrogen-response genes (GREB1, MYB, XBP1); the two modules correlate
+  +0.57 (raw +0.61). Under most drugs the luminal program and ER signalling move together; anti-estrogens are the
+  exception that separates them. Co-variation within a line therefore cannot by itself sort identity from signalling
+  targets; that needs the regulator's own perturbations (knockdown, overexpression, ligands).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
