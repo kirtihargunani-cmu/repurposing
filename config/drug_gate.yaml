@@ -34,3 +34,38 @@ family:
   enabled: false
   max_group_size: 15
   min_group_size: 2
+
+receptor_gate:
+  # Receptor evidence gate (scripts/79w_receptor_gate.py; user 2026-11-02). Unit = cohort / subgroup x drug x receptor
+  # target that passed the target gate above. It decides whether the receptor counts as the drug's receptor in that
+  # cohort; it never removes a drug from the rankings.
+  receptor_families:     # HGNC gene-group roots (with all descendants) that define a receptor class; first match wins
+    GPCR: [139]
+    nuclear receptor: [71]
+    receptor tyrosine kinase: [321]
+    receptor Ser/Thr kinase: [344]
+    ligand-gated ion channel: [161]
+    cytokine / immune receptor: [602, 599, 782, 948, 2120]
+    integrin: [597]
+    other ion channel: [177]
+  kinase_family: 3432    # HGNC "Kinases": targets in it use the kinase potency cut
+  binding:
+    pchembl_min: 6.0           # 1 uM: best valid ChEMBL pChEMBL (Ki / Kd / IC50 / EC50) on the target
+    pchembl_min_kinase: 7.0    # 100 nM for kinase targets, also when ChEMBL lists the kinase as a curated mechanism
+    # A curated ChEMBL mechanism (direct_interaction = 1) counts for non-kinase targets when its target is a single
+    # protein, complex, complex group or chimeric protein. PROTEIN FAMILY / SELECTIVITY GROUP mechanisms give no
+    # member-level credit (no family rescue, as in the target gate).
+    mechanism_target_types: [SINGLE PROTEIN, PROTEIN COMPLEX, PROTEIN COMPLEX GROUP, CHIMERIC PROTEIN]
+  assembly:
+    # A gene whose curated mechanism target is a complex is judged as that complex (tumors and lines):
+    # PROTEIN COMPLEX: all components expressed, except these (any component; homodimers are functional)
+    any_component: ["Platelet-derived growth factor receptor"]
+    # complex groups: name prefix -> required subunit classes (one expressed member per class)
+    groups:
+      "GABA-A": [[GABRA], [GABRB], [GABRG, GABRD, GABRE, GABRQ, GABRP]]
+      "Glutamate receptor ionotropic AMPA": any
+  assay_lines:
+    tpm_min: 1.0               # DepMap 24Q4 log2(TPM+1) >= 1
+    min_weighted_fraction: 0.5 # over the lines 79e used for this cohort x drug (direct: in-key, Celligner weights;
+                               # borrowed: out-of-key, equal weights)
+    # Passes resting on one matched line are kept and flagged (single_line; user 2026-11-02).

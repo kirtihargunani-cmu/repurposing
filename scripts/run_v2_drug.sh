@@ -32,11 +32,13 @@ STEPS=(
   "ranking|Drug ranking per disease: consensus, NES-weighted, flags, evidence status (D74-D78)|VERSION=v2 REGULON=consensus $PY scripts/79e_drug_reversal.py"
   "ranking_subgroups|Drug ranking per subgroup, with sibling specificity|VERSION=v2 REGULON=consensus STRATA=1 $PY scripts/79e_drug_reversal.py"
   "split|Proliferation vs mechanism split, diseases and subgroups (spec_mech, spec_sib_mech)|VERSION=v2 REGULON=consensus STRATA=1 $PY scripts/79i_split_reversal.py"
+  "receptor_gate|Receptor evidence gate: ChEMBL binding, assembly, receptor in the cohort's matched lines; selectivity window|$PY scripts/79w_receptor_gate.py"
   "data_gaps|Where good-quality lineage-matched data run out, per group and subgroup (C24)|$PY scripts/79r_data_gaps.py"
   "literature|PubMed / trial links for each disease's top 10 by specificity and by reversal|$PY scripts/79o_literature.py"
   "fda_ranking|FDA-approved drug rankings per disease and subgroup (Drugs@FDA)|$PY scripts/79p_fda_ranking.py"
   "literature_fda|PubMed / trial links for each cohort's top 3 FDA drugs, by FDA name|MODE=fda $PY scripts/79o_literature.py"
   "fda_page|Browsable FDA rankings page (results/lincs/fda_rankings_v2.html)|$PY scripts/79q_fda_page.py"
+  "rankings_page|Browsable FDA drug x disease rankings with all scores, flags, receptors, literature (disease_drug_rankings_v2.html)|$PY scripts/79x_rankings_page.py"
 )
 
 field() { local name=$1 k=$2; for s in "${STEPS[@]}"; do IFS='|' read -r n d c <<< "$s"; [[ $n == "$name" ]] && { [[ $k == d ]] && echo "$d" || echo "$c"; return 0; }; done; return 1; }

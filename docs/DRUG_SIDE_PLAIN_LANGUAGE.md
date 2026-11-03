@@ -54,8 +54,13 @@ follow-up questions:
    `unmatched_lines` (C20). Flagged drugs stay in the table but are never put in the top tiers.
 8. **Label each cancer's evidence.** Each cancer is labeled `matched` (good candidates were tested in similar lines),
    `borrowed only`, or `no adequate compound`. Reports must state this label next to any list.
-9. **Link to the outside world.** We match drugs to FDA approvals, look up PubMed papers and clinical trials for the
-   top drugs, and build a browsable page (`results/lincs/fda_rankings_v2.html`).
+9. **Check which receptors the drug really acts through.** A drug's annotated receptor counts for a cancer only if a
+   drug database (ChEMBL) shows it binds that receptor strongly enough (1 µM; 100 nM for kinase drugs), and the
+   receptor is actually made in the lab cell lines the cancer's score came from. Otherwise the score cannot be
+   coming through that receptor. We also report how much more strongly the drug binds its main target (C26).
+10. **Link to the outside world.** We match drugs to FDA approvals, look up PubMed papers and clinical trials for the
+    top drugs, and build two browsable pages: the FDA top lists (`results/lincs/fda_rankings_v2.html`) and every FDA
+    drug with all its scores, flags, receptors and literature (`results/lincs/disease_drug_rankings_v2.html`).
 
 ## Results
 

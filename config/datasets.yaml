@@ -112,6 +112,13 @@ hgnc:  # complete set; current symbols / Entrez / Ensembl for the ID map
   file: hgnc/hgnc_complete_set_20261001.txt
   sha256: 91d0ad20c34f26fb12c8cce3f80a65a6fc694f3a508040b19f6bfa29ae0d889e
 
+hgnc_genefamily:  # HGNC gene-group tables: family names + hierarchy closure (receptor / kinase classes; scripts/79w_receptor_gate.py)
+  release: 2026-11-02 download
+  access: open
+  url: https://storage.googleapis.com/public-download-files/hgnc/csv/csv/genefamily_db_tables/
+  files: [hgnc/genefamily_20261102/family.csv, hgnc/genefamily_20261102/hierarchy_closure.csv]
+  sha256: [e27f88cc0b69879d0a431cfba0783eaa848d6d78abdbaeee6e5f1e9ad71ff4a1, c8a95cca1de45295703e31e412a757c600f52d1397720f696bca672439dd9eaa]
+
 collectri:  # OmniPath REST, datasets=collectri (pulled 2026-10-01)
   access: open
   url: https://omnipathdb.org/interactions?datasets=collectri&genesymbols=yes&organisms=9606&license=academic&format=tsv&fields=curation_effort,references
@@ -213,6 +220,9 @@ chembl:  # REST API (scripts/79a_drug_annotations.py); raw JSON cached in data/r
   release: ChEMBL_37 (2026-05-01)
   access: open  # CC BY-SA 3.0
   url: https://www.ebi.ac.uk/chembl/api/data
+  receptor_gate:  # scripts/79w_receptor_gate.py: mechanisms, molecule forms, target components and pChEMBL activities
+                  # (human single-protein targets) for drugs whose expressed targets include a receptor; pulled 2026-11-02,
+                  # cached in data/raw/chembl/ChEMBL_37/receptor_gate/ (79w refuses to fetch if the API release differs)
 
 composition:  # tissue-composition references (scripts/04b_download_composition_refs.sh; SPEC_tissue_composition.md, D61)
   access: open
