@@ -511,6 +511,13 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   exception that separates them. Co-variation within a line therefore cannot by itself sort identity from signalling
   targets; that needs the regulator's own perturbations (knockdown, overexpression, ligands).
 
+## 2026-11-03: exploration: anti-estrogen time course in MCF7
+- `scripts/explore/antier_timecourse.py` (level-5 hiq signatures of 8 anti-estrogens in MCF7): at 6 h the
+  estrogen-response genes are already down (mean z -0.88: XBP1, NRIP1, CCND1, GREB1) while the luminal-identity
+  genes have not moved (-0.06); by 24 h the luminal genes are up (+1.09: GATA3 +2.0, HEBP1, MINDY1 +2.4) and stay up
+  at 48 h (+0.83). Timing separates them: direct ER signalling responds early, and the rise of the luminal genes that
+  ARACNe's ESR1 regulon reads as ESR1 activity comes later. Drug profiles (`79c`) currently average all time points.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
