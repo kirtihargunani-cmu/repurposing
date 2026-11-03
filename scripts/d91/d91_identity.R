@@ -13,8 +13,9 @@ setwd(normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", ar
 ETA <- 0.5; MIN_LIN <- 10; MIN_SUB <- 5; MIN_TARGETS <- 10
 N_CORES <- min(as.integer(Sys.getenv("N_CORES", "20")), 24L)
 res <- "results/lincs/d91"; dir.create(res, FALSE, TRUE)
-vd <- "data/processed/lincs/drug_viper_specific_v2_tf_d85"
+vd <- Sys.getenv("VD", "data/processed/lincs/drug_viper_specific_v2_tf_d85")   # D93: VD / NETS / EXTRA_RDS / OUT_FILE
 nets <- sub("\\.regulators\\.txt$", "", list.files(vd, "\\.regulators\\.txt$"))
+if (nzchar(Sys.getenv("NETS"))) nets <- strsplit(Sys.getenv("NETS"), ",")[[1]]
 idm <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE & !is.na(entrez_id)]
 e2g <- setNames(idm$gene_id, as.character(idm$entrez_id))
 ex <- fread("data/raw/depmap_24q4/OmicsExpressionProteinCodingGenesTPMLogp1.csv")
@@ -32,6 +33,7 @@ bsub[bsub %in% names(which(table(bsub) < MIN_SUB))] <- NA
 eta2 <- function(v, f) { k <- !is.na(f) & is.finite(v); v <- v[k]; f <- f[k]; if (length(unique(f)) < 2) return(NA_real_)
   m <- ave(v, f); sum((m - mean(v))^2) / sum((v - mean(v))^2) }
 arac <- readRDS("data/processed/step5/regulons_aracne_project_v2_tf.rds")
+if (nzchar(Sys.getenv("EXTRA_RDS"))) { ex <- readRDS(Sys.getenv("EXTRA_RDS")); arac <- c(arac, ex[setdiff(names(ex), names(arac))]) }
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
 pdir <- "data/processed/step6/aracne_project_v2_tf"
@@ -61,7 +63,7 @@ out <- rbindlist(mclapply(nets, function(net) {
 out[, identity := pmax(eta2_lineage, eta2_subtype_tumors, eta2_breast_lines, na.rm = TRUE) >= ETA]
 out[is.na(identity), identity := FALSE]
 fwrite(out[, .(net, regulator, eta2_lineage = round(eta2_lineage, 3), eta2_subtype_tumors = round(eta2_subtype_tumors, 3),
-               eta2_breast_lines = round(eta2_breast_lines, 3), identity, groups)], file.path(res, "identity_regulators.tsv"), sep = "\t")
+               eta2_breast_lines = round(eta2_breast_lines, 3), identity, groups)], Sys.getenv("OUT_FILE", file.path(res, "identity_regulators.tsv")), sep = "\t")
 options(width = 200); print(out[, .(regulators = .N, identity = sum(identity), by_lineage = sum(eta2_lineage >= ETA, na.rm = TRUE),
               by_subtype = sum(eta2_subtype_tumors >= ETA, na.rm = TRUE), by_breast_lines = sum(eta2_breast_lines >= ETA, na.rm = TRUE)), by = net])
 print(out[net == "BRCA" & regulator %in% c("ESR1", "FOXA1", "GATA3", "XBP1", "SPDEF", "RARA", "SOX13", "CREB3L4", "FOXC1", "TFAP2C", "FOXM1", "E2F1", "MYC")])
