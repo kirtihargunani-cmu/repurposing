@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# D86 perturbation-network pilot: regulons from the line networks (scripts/43b) and the pre-set comparison.
+# D86 perturbation-network pilot: regulons from the line networks (scripts/pnet/pnet_run_aracne.sh) and the pre-set comparison.
 # Rule fixed 2026-11-02 before running (docs/DECISIONS.md D86).
 #   Regulons: viper::aracne2regulon on each network.txt and the matrix it was built from (as scripts/44; no
 #     cross-mappability filter: that corrects RNA-seq read assignment, not L1000 beads); regulators -> HGNC symbols.
@@ -14,12 +14,12 @@
 #   Reported: ligand profiles in the 3 lines scored held out (the fold network without the drug's fold; T and C on the
 #     same profiles); edge stability (share of the all-compound network's edges found in >= 4 of 5 fold networks);
 #     regulators with >= 10 targets per set.
-# Outputs: data/processed/lincs/pnet/regulons.rds; results/lincs/pnet_{signatures,summary,ligands,stability}.tsv
+# Outputs: data/processed/lincs/pnet/regulons.rds; results/lincs/pnet/{signatures,summary,ligands,stability}.tsv
 suppressPackageStartupMessages({library(data.table); library(viper)})
 args <- commandArgs(trailingOnly = FALSE)
-root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
+root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), "../.."))
 setwd(root)
-MIN_T <- 10; D <- "data/processed/lincs/pnet"; res <- "results/lincs"
+MIN_T <- 10; D <- "data/processed/lincs/pnet"; res <- "results/lincs/pnet"
 LINES <- c(MCF7 = "ACH-000019", PC3 = "ACH-000090", A375 = "ACH-000219"); TNET <- c(MCF7 = "BRCA", PC3 = "PRAD", A375 = "SKCM")
 ARMS <- c("raw", "specific"); SETS <- c("all", paste0("f", 1:5))
 idmap <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]; ens2sym <- setNames(idmap$symbol, idmap$gene_id)
@@ -79,7 +79,7 @@ for (l in names(LINES)) {
 nreg <- rbindlist(nreg); print(nreg)
 S <- rbindlist(out)
 for (k in c("P", "T", "C")) S[[paste0("ok_", k)]] <- sign(S[[paste0("nes_", k)]]) == S$direction
-fwrite(S, file.path(res, "pnet_signatures.tsv"), sep = "\t")
+fwrite(S, file.path(res, "signatures.tsv"), sep = "\t")
 
 dec <- rbindlist(lapply(ARMS, function(a) { x <- S[arm == a]
   b <- sum(x$ok_P & !x$ok_T); w <- sum(!x$ok_P & x$ok_T)
@@ -88,7 +88,7 @@ dec <- rbindlist(lapply(ARMS, function(a) { x <- S[arm == a]
              sign_p = if (b + w) binom.test(b, b + w)$p.value else 1) }))
 dec[, qualifies := P_minus_T >= 0.05 & sign_p < 0.05 & P_minus_C >= -0.02]
 dec[, decision := if (any(qualifies)) fifelse(qualifies & correct_P == max(correct_P[qualifies]), "scale_up", "-") else "stop"]
-fwrite(dec, file.path(res, "pnet_summary.tsv"), sep = "\t")
+fwrite(dec, file.path(res, "summary.tsv"), sep = "\t")
 print(dec[, lapply(.SD, function(v) if (is.numeric(v)) round(v, 3) else v)])
 print(S[, .(sigs = .N, P = round(mean(ok_P), 3), T = round(mean(ok_T), 3), C = round(mean(ok_C), 3)), by = .(arm, line)])
 print(S[, .(sigs = .N, P = round(mean(ok_P), 3), T = round(mean(ok_T), 3), C = round(mean(ok_C), 3)), by = .(arm, technology)])
@@ -98,11 +98,11 @@ st <- rbindlist(lapply(names(LINES), function(l) rbindlist(lapply(ARMS, function
   e <- function(s) { f <- fread(file.path(D, sprintf("%s_%s/net_%s/network.txt", l, a, s)))[, 1:2]; paste(f[[1]], f[[2]]) }
   full <- e("all"); hits <- Reduce(`+`, lapply(paste0("f", 1:5), function(s) full %in% e(s)))
   data.table(line = l, arm = a, edges_all = length(full), share_in_4of5 = round(mean(hits >= 4), 3)) }))))
-fwrite(st, file.path(res, "pnet_stability.tsv"), sep = "\t"); print(st)
+fwrite(st, file.path(res, "stability.tsv"), sep = "\t"); print(st)
 
 ## 4. reported: ligands, held out
 idx <- fread("data/processed/lincs/drug_line_profiles_index.tsv"); pg <- fread("data/processed/lincs/drug_line_profiles_genes.tsv")
-folds <- fread(file.path(res, "pnet_folds.tsv"))
+folds <- fread(file.path(res, "folds.tsv"))
 ann <- fread("results/lincs/drug_annotations.tsv", colClasses = "character")
 tg <- function(i) unique(unlist(strsplit(paste(ann$lincs_target[i], ann$hub_target[i], sep = "|"), "\\|")))
 moa <- tolower(paste(ann$hub_moa, ann$lincs_moa))
@@ -125,7 +125,7 @@ for (a in ARMS) {
 LG <- rbindlist(LG)
 if (nrow(LG)) {
   for (k in c("P", "T", "C")) LG[[paste0("ok_", k)]] <- sign(LG[[paste0("nes_", k)]]) == LG$direction
-  fwrite(LG, file.path(res, "pnet_ligands.tsv"), sep = "\t")
+  fwrite(LG, file.path(res, "ligands.tsv"), sep = "\t")
   print(LG[, .(profiles = .N, drugs = uniqueN(drug), P = round(mean(ok_P), 2), T = round(mean(ok_T), 2), C = round(mean(ok_C), 2)), by = .(arm, tf, direction)][order(arm, tf)])
 } else message("no ligand profiles on regulators scored by all three sets")
 message("PNET EVAL DONE")

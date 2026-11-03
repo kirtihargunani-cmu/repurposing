@@ -118,7 +118,7 @@ steroid drugs on the glucocorticoid receptor NR3C1).
 | What | Where |
 |---|---|
 | Rule | `docs/DECISIONS.md`, D86 |
-| Inputs (profiles, regulators, drug groups) | `scripts/79za_pnet_inputs.py`; groups in `results/lincs/pnet_folds.tsv` |
-| Building the maps | `scripts/43b_run_pnet_aracne.sh` (24 threads) |
-| Scoring and the decision | `scripts/79zb_pnet_eval.R`; results `results/lincs/pnet_*.tsv` |
+| Inputs (profiles, regulators, drug groups) | `scripts/pnet/pnet_inputs.py`; groups in `results/lincs/pnet/folds.tsv` |
+| Building the maps | `scripts/pnet/pnet_run_aracne.sh` (24 threads); networks in `data/processed/lincs/pnet/` (not in git) |
+| Scoring and the decision | `scripts/pnet/pnet_eval.R`; results in `results/lincs/pnet/` |
 | Earlier explorations | `scripts/explore/` |

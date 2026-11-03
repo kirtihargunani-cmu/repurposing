@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# D86 perturbation-network pilot: ARACNe-AP on LINCS drug profiles within a line (inputs: scripts/79za_pnet_inputs.py).
+# D86 perturbation-network pilot: ARACNe-AP on LINCS drug profiles within a line (inputs: scripts/pnet/pnet_inputs.py).
 # Same settings as scripts/43_run_aracne.sh: MI threshold p = 1e-8 (seed 1); 100 bootstraps (seeds 1..100); DPI on;
 # consolidation (Bonferroni-corrected Poisson p < 0.05). Regulators: data/processed/lincs/pnet/regulators.txt.
 # One network per <LINE>_<arm>/<set> (set = all, f1..f5) in data/processed/lincs/pnet/<LINE>_<arm>/net_<set>/.
 # Threads: THREADS per network x PARALLEL networks; default 8 x 3 = 24 (user: under half the machine's 64 threads).
 # Resumable: finished bootstraps are kept, finished networks skipped.
 set -euo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/../.."
 D=data/processed/lincs/pnet
 JAVA=${ARACNE_JAVA:-~/miniforge3/envs/aracne/bin/java}
 JAR=${ARACNE_JAR:-~/tools/ARACNe-AP/dist/aracne.jar}

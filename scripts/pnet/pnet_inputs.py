@@ -9,14 +9,14 @@ Folds: compounds grouped by mechanism (Repurposing Hub MOA, else LINCS MOA, else
 the same group -> fold map is used in every line. Inputs per line x arm: "all" (every compound) and f1..f5 (every
 compound outside that fold).
 Outputs: data/processed/lincs/pnet/<LINE>_<arm>/<set>.exp.tsv (gene x compound, first column "gene"),
-         data/processed/lincs/pnet/regulators.txt; results/lincs/pnet_folds.tsv (pert_id, ModelID, cmap_name, group, fold)
+         data/processed/lincs/pnet/regulators.txt; results/lincs/pnet/folds.tsv (pert_id, ModelID, cmap_name, group, fold)
 """
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 PROC = ROOT / "data/processed/lincs"
 OUT = PROC / "pnet"
 LINES = {"MCF7": "ACH-000019", "PC3": "ACH-000090", "A375": "ACH-000219"}
@@ -51,7 +51,7 @@ def main():
     for g in order:
         f = int(np.argmin(load)); fold_of[g] = f + 1; load[f] += sizes[g]
     ix["fold"] = ix.group.map(fold_of)
-    ix[["pert_id", "ModelID", "cmap_name", "group", "fold"]].to_csv(ROOT / "results/lincs/pnet_folds.tsv", sep="\t", index=False)
+    ix[["pert_id", "ModelID", "cmap_name", "group", "fold"]].to_csv(ROOT / "results/lincs/pnet/folds.tsv", sep="\t", index=False)
     print("profiles per fold:", ix.fold.value_counts().sort_index().to_dict(), "| mechanism groups:", len(sizes))
     anti = ix[ix.cmap_name.isin(["fulvestrant", "tamoxifen", "raloxifene", "toremifene", "bazedoxifene"])]
     print("anti-estrogen folds:", anti.groupby("cmap_name").fold.unique().to_dict())
