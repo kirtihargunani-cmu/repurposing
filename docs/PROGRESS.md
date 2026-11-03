@@ -549,6 +549,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   ARACNe's ESR1 goes from +1.5 to +3.4 at 24 h to about 0 or negative at 6 h. Dose (lowest active vs highest) makes
   no difference to the reading.
 
+## 2026-11-03: early and late-only drug signatures (D89)
+- **What:** for 2,854 drug x line pairs with 6 h and 24 h data: early (6 h), late (24 h), late-only (24 h minus what
+  it shares with 6 h) and the current aggregated profile, scored with every tumor ARACNe network.
+  `scripts/timedose/early_late.R`, `results/lincs/early_late/`.
+- **Result:** early and late are different programs (regulator activity correlates 0.37; only 9% of the 24 h signal
+  is the 6 h one persisting). The aggregated profile is essentially the late response (0.91 vs 0.58), so the current
+  ranking reads mostly secondary effects. Anti-estrogens in MCF7: ESR1, FOXA1, GATA3 and XBP1 read up only in the
+  late-only signature; early ESR1 is negative in 6 of 9 profiles.
+- **The planned significance test did not work:** it compares each drug's change with other drugs' changes, and since
+  every drug changes a lot between 6 and 24 h, almost nothing is unusual (0.01-0.2% of tests). A test against
+  replicate noise within the same drug is the right next step.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

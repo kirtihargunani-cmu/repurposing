@@ -1,0 +1,3 @@
+regulators	share_sig	median_onset	share_A0_sign_eq_E	share_A0_sign_eq_L	median_rho_A0_E	median_rho_A0_L	median_rho_A0_R	median_rho_E_L	pairs
+top 25 by |A0|	4e-04	0.585	0.842	0.956	0.579	0.907	0.758	0.365	3278
+all	1e-04	0.508	0.702	0.837	0.579	0.907	0.758	0.365	3278
