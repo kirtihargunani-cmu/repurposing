@@ -51,6 +51,14 @@ if (REGULON == "aracne_project") {
   net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
   groups <- fread(paste0("results/step4", SFX, "/signature_summary.tsv"))[status == "ok", unique(group_id)]
   filt <- fread(paste0("results/step6/aracne_project", SFX, TFX, "/regulator_filter.tsv"))[keep == TRUE & group_id %in% groups]
+  # EXTRA_RDS / NET_MAP / MR_OVERRIDE (D92, 2026-11-03): extra networks, group -> network map, and the mapped groups'
+  #   regulator filter from another Step 6 folder. Defaults: off.
+  if (nzchar(Sys.getenv("EXTRA_RDS"))) { ex <- readRDS(Sys.getenv("EXTRA_RDS")); arac <- c(arac, ex[setdiff(names(ex), names(arac))]) }
+  if (nzchar(Sys.getenv("NET_MAP"))) {
+    nm <- fread(Sys.getenv("NET_MAP")); net_of[nm$group_id] <- nm$net
+    if (nzchar(Sys.getenv("MR_OVERRIDE"))) filt <- rbind(filt[!group_id %in% nm$group_id],
+      fread(file.path(Sys.getenv("MR_OVERRIDE"), "regulator_filter.tsv"))[keep == TRUE & group_id %in% nm$group_id], fill = TRUE)
+  }
   filt[, net := net_of[group_id]]
 } else {
   arac <- list(ALL = readRDS("results/step5/regulons_core.rds")[[REGULON]])

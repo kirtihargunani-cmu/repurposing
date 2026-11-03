@@ -121,6 +121,20 @@ def net_of(cohort):
     return "COADREAD" if cohort in ("TCGA-COAD", "TCGA-READ") else cohort.split("-", 1)[1]
 
 
+# NET_MAP / MR_OVERRIDE (D92, 2026-11-03): groups mapped to another network, their group_mr rows from another Step 6
+#   folder (tumor ARACNe only, not consensus). Defaults: off.
+NETMAP = (pd.read_csv(os.environ["NET_MAP"], sep="\t").set_index("group_id").net.to_dict() if os.environ.get("NET_MAP") else {})
+MR_OVR = os.environ.get("MR_OVERRIDE", "")
+
+
+def mr_override(mr):
+    if not MR_OVR:
+        return mr
+    o = pd.read_csv(ROOT / MR_OVR / "group_mr.tsv", sep="\t")
+    o = o[o.group_id.isin(NETMAP)]
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
 def main():
     rng = np.random.default_rng(SEED)
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
@@ -130,7 +144,7 @@ def main():
         mr = pd.concat([pd.read_csv(ROOT / d / "group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
                         for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
-        mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
+        mr = mr_override(pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t"))
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
     mr_ref, par = mr, {}                      # reference diseases for spec: always the 41 groups
     if STRATA:
@@ -190,7 +204,7 @@ def main():
     if only:
         dd = dd[dd.group_id.isin(only)]
     for g, gd in dd.groupby("group_id"):
-        regs, A, A_raw = load("ALL" if CURATED else net_of(grp.loc[P(g), "cohort"]))
+        regs, A, A_raw = load("ALL" if CURATED else NETMAP.get(P(g), net_of(grp.loc[P(g), "cohort"])))
         k = keys.loc[P(g)]
         km = models[models.OncotreeLineage.isin(str(k.lineages).split(";"))]
         if isinstance(k.diseases, str) and k.diseases:
@@ -302,7 +316,7 @@ def main():
             o["tier_sib"] = np.where(sp_ & ok_t & o.approved, 1, np.where(sp_ & ok_t, 2, 3))
         rows.append(o)
         t1 = o[o.tier_rev == 1].sort_values("rev", ascending=False)
-        summ.append(dict(group_id=g, parent_group=P(g), net=net_of(grp.loc[P(g), "cohort"]), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
+        summ.append(dict(group_id=g, parent_group=P(g), net=NETMAP.get(P(g), net_of(grp.loc[P(g), "cohort"])), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
                          best_line_match=round(best_lm, 4), best_line=best_line, n_key_lines_lincs=len(lincs_key),
                          n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1_rev=len(t1),
                          n_tier2_rev=int((o.tier_rev == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),

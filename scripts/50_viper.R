@@ -54,13 +54,17 @@ TFX <- if (REGSET == "full") "" else paste0("_", REGSET)
 stopifnot(TFX == "" || (SFX == "_v2" && REGULON == "aracne_project"))  # TF-only set is v2 aracne_project
 NULL_ADJUST <- identical(Sys.getenv("NULL_ADJUST"), "1"); STRATA <- Sys.getenv("STRATA"); ST <- nzchar(STRATA)
 stopifnot(SFX == "_v2" || (!NULL_ADJUST && !ST))
-res_dir <- file.path("results/step6", paste0(REGULON, SFX, TFX, if (ST) "_strata")); proc_dir <- file.path("data/processed/step6", paste0(REGULON, SFX, TFX, if (ST) "_strata"))
+# RES_TAG / EXTRA_RDS / NET_MAP (D92, 2026-11-03): output folders get RES_TAG; EXTRA_RDS adds networks to the regulon set;
+#   NET_MAP (group_id, net) maps groups to another network. Defaults: off.
+res_dir <- file.path("results/step6", paste0(REGULON, SFX, TFX, if (ST) "_strata", Sys.getenv("RES_TAG"))); proc_dir <- file.path("data/processed/step6", paste0(REGULON, SFX, TFX, if (ST) "_strata", Sys.getenv("RES_TAG")))
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE); dir.create(proc_dir, recursive = TRUE, showWarnings = FALSE)
 
 if (REGULON == "aracne_project") {
   arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, TFX, ".rds"))
   grp <- fread("results/step1/disease_groups_toil.tsv")
   net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
+  if (nzchar(Sys.getenv("EXTRA_RDS"))) { ex <- readRDS(Sys.getenv("EXTRA_RDS")); arac <- c(arac, ex[setdiff(names(ex), names(arac))]) }
+  if (nzchar(Sys.getenv("NET_MAP"))) { nm <- fread(Sys.getenv("NET_MAP")); net_of[nm$group_id] <- nm$net }
   regs_for <- function(gid) { r <- arac[[net_of[[gid]]]]; if (is.null(r)) stop("no ARACNe network for ", net_of[[gid]]); r }
 } else {
   regs_core <- readRDS("results/step5/regulons_core.rds")[[REGULON]]

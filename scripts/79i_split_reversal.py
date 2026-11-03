@@ -101,6 +101,20 @@ def net_of(cohort):
     return "COADREAD" if cohort in ("TCGA-COAD", "TCGA-READ") else cohort.split("-", 1)[1]
 
 
+# NET_MAP / MR_OVERRIDE (D92, 2026-11-03): groups mapped to another network, their group_mr rows from another Step 6
+#   folder (tumor ARACNe only, not consensus). Defaults: off.
+NETMAP = (pd.read_csv(os.environ["NET_MAP"], sep="\t").set_index("group_id").net.to_dict() if os.environ.get("NET_MAP") else {})
+MR_OVR = os.environ.get("MR_OVERRIDE", "")
+
+
+def mr_override(mr):
+    if not MR_OVR:
+        return mr
+    o = pd.read_csv(ROOT / MR_OVR / "group_mr.tsv", sep="\t")
+    o = o[o.group_id.isin(NETMAP)]
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
 def rz(v):
     return (v - np.median(v)) / (1.4826 * np.median(np.abs(v - np.median(v))))
 
@@ -170,7 +184,7 @@ def main():
         gmr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}/group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
                          for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
-        gmr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
+        gmr = mr_override(pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t"))
     if STRATA_V2:
         sets = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", f"aracne_project{SFX}")]
         smr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}_strata/group_mr.tsv", sep="\t")
@@ -179,6 +193,8 @@ def main():
         smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
     def p1_of(tag):
         x = pd.read_csv(RES / f"prolif_regulators{tag}.tsv", sep="\t")
+        if os.environ.get("P1_EXTRA"):   # D92: P1 lists of extra networks (79h EXTRA_RDS run)
+            x = pd.concat([x, pd.read_csv(os.environ["P1_EXTRA"], sep="\t")], ignore_index=True)
         return x[x.prolif_linked].groupby("net").regulator.apply(set)
     p1 = {k: p1_of(t) for k, (_, t) in CONS_SETS.items()} if CONS else p1_of(SFX)
     if SCORE == "fdr":
@@ -296,7 +312,7 @@ def main():
             "n_mrs", "low_mrs", "rev", "rev_pct", "spec", "spec_pct", "tier_rev", "tier_spec"]
     rows = []
     for g, gd in par.groupby("group_id"):
-        regs, A, A_adj, linked = load(net_of(grp.loc[g, "cohort"]))
+        regs, A, A_adj, linked = load(NETMAP.get(g, net_of(grp.loc[g, "cohort"])))
         D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[g], w[w.group_id == g].set_index("ModelID").weight,
                              A, A_adj)
         m = gmr[(gmr.group_id == g) & gmr.regulator.isin(regs)]
@@ -314,7 +330,7 @@ def main():
             if len(ref) >= MIN_REF and len(mn) >= 2 else np.nan
         cols = []
         if IDENT_FILE:
-            idset = ident.get(net_of(grp.loc[g, "cohort"]), set())
+            idset = ident.get(NETMAP.get(g, net_of(grp.loc[g, "cohort"])), set())
             extras = [dtargets.get((g, p), set()) for p in gd.pert_id]
             base, pool = mn[~mn.regulator.isin(idset)], mn[mn.regulator.isin(idset)]
             o["rev_mech_id"] = rev_extra(Da, regs, base, pool, extras).round(3)
