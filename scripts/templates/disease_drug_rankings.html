@@ -32,7 +32,8 @@ h1 { font-family: var(--f-display); font-weight: 640; font-size: 1.75rem; margin
 @media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr) } }
 aside { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); display: flex; flex-direction: column; gap: 10px }
 @media (max-width: 860px) { aside { position: static; max-height: 340px } }
-.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0 }
+aside > input, aside > .legend { flex-shrink: 0 }
 .seg button { font: inherit; font-weight: 600; border: 0; padding: 7px 8px; background: var(--panel); color: var(--muted); cursor: pointer }
 .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink) }
 input[type="search"], select { font: inherit; width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink) }

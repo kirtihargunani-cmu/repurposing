@@ -32,7 +32,8 @@ h1 { font-family: var(--f-display); font-weight: 640; font-size: 1.75rem; margin
 @media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr) } }
 aside { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); display: flex; flex-direction: column; gap: 10px }
 @media (max-width: 860px) { aside { position: static; max-height: 340px } }
-.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0 }
+aside > input, aside > .legend { flex-shrink: 0 }
 .seg button { font: inherit; font-weight: 600; border: 0; padding: 7px 8px; background: var(--panel); color: var(--muted); cursor: pointer }
 .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink) }
 input[type="search"], select { font: inherit; width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink) }
@@ -161,7 +162,7 @@ function renderVal() {
   el("val").innerHTML = `<div><span class="k">Stand-in tracks drug</span><span class="v">ρ ${v.rho}</span><span class="d">95% CI ${v.lo} to ${v.hi}, ${v.n} FDA drugs</span></div>
     <div><span class="k">Random target-sharing</span><span class="v">ρ ${v.rand}</span><span class="d">same drugs, no similarity rule</span></div>
     <div><span class="k">By shared lines</span><span class="v">ρ ${v.two} / ${v.ge3}</span><span class="d">2 lines / 3 or more</span></div>` +
-    (v.b_n ? `<div><span class="k">Drug's own borrowed score</span><span class="v">ρ ${v.b_bo.toFixed(3)}</span><span class="d">stand-in ${v.b_si.toFixed(3)} (better by ${v.b_lo.toFixed(2)} to ${v.b_hi.toFixed(2)}), average of both ${v.b_av.toFixed(3)}; ${v.b_n} drugs</span></div>` : "");
+    (v.b_n ? `<div><span class="k">Drug's own borrowed score</span><span class="v">ρ ${v.b_bo.toFixed(3)}</span><span class="d">stand-in ${v.b_si.toFixed(3)} (difference ${v.b_lo.toFixed(2)} to ${v.b_hi.toFixed(2)}: ${v.b_lo > 0 ? "stand-in better" : "no clear difference"}), average of both ${v.b_av.toFixed(3)}; ${v.b_n} drugs</span></div>` : "");
   el("a-r").textContent = v.r; el("a-k").textContent = v.k;
 }
 function pick(u) { current = u; limit = 50; try { history.replaceState(null, "", "#" + u) } catch (e) {} renderList(); renderCohort(); renderTable() }

@@ -12,7 +12,7 @@ Inputs: results/lincs/standin_pairs_v2.tsv, standin_run.json, drug_reversal_spli
         stratum_reversal_summary_v2_consensus.tsv, literature_fda_all_v2.tsv (if present), standin_vs_borrowed_summary_v2.tsv
         (79y2, if present), results/step10_v2/strata.tsv;
         template scripts/templates/standin_compounds.html (placeholder __DATA__)
-Output: results/lincs/standin_compounds_v2.html
+Output: results/lincs/standin_compounds_v2.html (published copy: https://claude.ai/artifact/VatFtXvstvr8as21TVKeUN)
 """
 import json
 import math

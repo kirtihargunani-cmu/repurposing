@@ -181,6 +181,7 @@ flowchart LR
   rev / spec / spec_mech (/ spec_sib, spec_sib_mech) raw and percentile, flags (weak evidence hidden by default),
   receptor gate, stand-ins (79y) and literature (79o `MODE=fda_all`: every FDA row, by FDA name; cached in
   `data/interim/lincs/literature_fda_all_*.jsonl`, output `results/lincs/literature_fda_all_v2.tsv`).
+  Published copy https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA (private).
 - **Stand-ins (`79y`, step `standin`; C27):** pairs each FDA drug with LINCS compounds tested in a cohort's matched
   lines that share a target and change CollecTRI regulator activity alike (mean r >= 0.4 over >= 2 shared lines).
   Validated before use (Spearman 0.66 vs 0.34 for random target-sharing pairs). Outputs
@@ -192,6 +193,7 @@ flowchart LR
 - **Stand-in page (`79z`, step `standin_page`):** `results/lincs/standin_compounds_v2.html` (template
   `scripts/templates/standin_compounds.html`): per cohort the compounds tested in its own lines, ranked by the lead
   score, with their closest FDA drugs, the drugs' own scores and literature.
+  Published copy https://claude.ai/artifact/VatFtXvstvr8as21TVKeUN (private).
 
 ## Column guide for the main outputs
 
