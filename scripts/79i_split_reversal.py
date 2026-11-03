@@ -115,6 +115,24 @@ def mr_override(mr):
     return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
 
 
+# MR_OVERRIDE_STRATA (D94, 2026-11-03): subgroup rows (stratum ids) from another Step 6 strata folder replace production
+#   rows for the subgroups present there; used with NET_MAP for subgroups whose parent group moved network. Default: off.
+def mr_override_strata(mr):
+    f = os.environ.get("MR_OVERRIDE_STRATA", "")
+    if not f:
+        return mr
+    o = pd.read_csv(ROOT / f / "group_mr.tsv", sep="\t")
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
+def cons_read(path, k, strata=False):
+    """Consensus: ARACNe-set rows get the D92-D94 overrides (CollecTRI rows are network-independent)."""
+    d = pd.read_csv(path, sep="\t")
+    if k == "aracne":
+        d = mr_override_strata(d) if strata else mr_override(d)
+    return d
+
+
 def rz(v):
     return (v - np.median(v)) / (1.4826 * np.median(np.abs(v - np.median(v))))
 
@@ -181,13 +199,13 @@ def main():
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
     models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
     if CONS:
-        gmr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}/group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
+        gmr = pd.concat([cons_read(ROOT / f"results/step6/{d}/group_mr.tsv", k).assign(regulator=lambda x, k=k: k + "|" + x.regulator)
                          for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
         gmr = mr_override(pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t"))
     if STRATA_V2:
         sets = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", f"aracne_project{SFX}")]
-        smr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}_strata/group_mr.tsv", sep="\t")
+        smr = pd.concat([cons_read(ROOT / f"results/step6/{d}_strata/group_mr.tsv", k or "aracne", strata=True)
                          .assign(regulator=lambda x, k=k: (k + "|" if k else "") + x.regulator) for k, d in sets], ignore_index=True)
     else:
         smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
@@ -358,7 +376,7 @@ def main():
         srows = []
         for s, gd in st.groupby("stratum"):
             p = gd.parent_group.iloc[0]
-            regs, A, A_adj, linked = load(net_of(grp.loc[p, "cohort"]))
+            regs, A, A_adj, linked = load(NETMAP.get(p, net_of(grp.loc[p, "cohort"])))
             D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[p], sw[sw.stratum == s].set_index("ModelID").weight,
                                  A, A_adj)
             m = smr[(smr.group_id == s) & smr.regulator.isin(regs)]

@@ -135,13 +135,31 @@ def mr_override(mr):
     return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
 
 
+# MR_OVERRIDE_STRATA (D94, 2026-11-03): subgroup rows (stratum ids) from another Step 6 strata folder replace production
+#   rows for the subgroups present there; used with NET_MAP for subgroups whose parent group moved network. Default: off.
+def mr_override_strata(mr):
+    f = os.environ.get("MR_OVERRIDE_STRATA", "")
+    if not f:
+        return mr
+    o = pd.read_csv(ROOT / f / "group_mr.tsv", sep="\t")
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
+def cons_read(path, k, strata=False):
+    """Consensus: ARACNe-set rows get the D92-D94 overrides (CollecTRI rows are network-independent)."""
+    d = pd.read_csv(path, sep="\t")
+    if k == "aracne":
+        d = mr_override_strata(d) if strata else mr_override(d)
+    return d
+
+
 def main():
     rng = np.random.default_rng(SEED)
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
     idx["col"] = np.arange(len(idx))
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
     if CONS:   # set-tagged regulators ("aracne|ESR1"), combined per group below
-        mr = pd.concat([pd.read_csv(ROOT / d / "group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
+        mr = pd.concat([cons_read(ROOT / d / "group_mr.tsv", k).assign(regulator=lambda x, k=k: k + "|" + x.regulator)
                         for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
         mr = mr_override(pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t"))
@@ -149,7 +167,7 @@ def main():
     mr_ref, par = mr, {}                      # reference diseases for spec: always the 41 groups
     if STRATA:
         dirs = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", MR_DIR)]
-        mr = pd.concat([pd.read_csv(ROOT / f"{d}_strata" / "group_mr.tsv", sep="\t")
+        mr = pd.concat([cons_read(ROOT / f"{d}_strata" / "group_mr.tsv", k or "aracne", strata=True)
                         .assign(regulator=lambda x, k=k: (k + "|" if k else "") + x.regulator) for k, d in dirs], ignore_index=True)
         dd = pd.read_csv(RES / "stratum_drugs_v2.tsv", sep="\t", low_memory=False)
         par = dd.drop_duplicates("group_id").set_index("group_id").parent_group.to_dict()
