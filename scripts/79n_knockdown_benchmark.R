@@ -64,6 +64,22 @@ if (PERTURB == "d84") {
                   nrow(mo), uniqueN(mo$cmap_name), sum(!is.na(mo$own_z)), -KD_Z, sum(mo$own_z >= -KD_Z, na.rm = TRUE)))
   meta <- rbind(meta, mo, fill = TRUE); X <- cbind(X, Xo)
 }
+# PROJECT=1 (D85, 2026-11-02; with PERTURB=d84): the signature's line generic drug response (79c: mean raw drug profile of
+#   the line, unit vector) projected out of each signature, as the line-specific drug profiles; signatures in lines without
+#   drug profiles dropped. Writes results/lincs/perturbation_benchmark_d85_projected_signatures.tsv.gz instead.
+PROJECT <- Sys.getenv("PROJECT", "0") == "1"; stopifnot(!PROJECT || PERTURB == "d84")
+if (PROJECT) {
+  pg <- fread(file.path(proc, "drug_line_profiles_genes.tsv")); pix <- fread(file.path(proc, "drug_line_profiles_index.tsv"))
+  Pd <- matrix(readBin(file.path(proc, "drug_line_profiles_bing.f32"), "numeric", size = 4, n = nrow(pg) * nrow(pix)), nrow = nrow(pg))
+  gi <- match(rownames(X), pg$gene_id)
+  meta <- meta[ModelID %in% pix$ModelID]; X <- X[, meta$sig_id, drop = FALSE]
+  for (m in unique(meta$ModelID)) {
+    g <- rowMeans(Pd[, pix$ModelID == m, drop = FALSE]); g <- g / sqrt(sum(g^2))
+    gx <- ifelse(is.na(gi), 0, g[gi]); cols <- meta[ModelID == m, sig_id]
+    X[, cols] <- X[, cols, drop = FALSE] - outer(gx, as.vector(crossprod(gx, X[, cols, drop = FALSE])))
+  }
+  rm(Pd); message(sprintf("projected: %d signatures in %d lines with drug profiles", nrow(meta), uniqueN(meta$ModelID)))
+}
 
 prep <- function(rg) {
   r <- lapply(names(rg), function(n) { tm <- rg[[n]]$tfmode; lk <- rg[[n]]$likelihood; e <- sym2ens[n]
@@ -115,7 +131,7 @@ if (length(CMP)) {   # D83 comparison: every listed ARACNe set, same signatures 
 sg <- rbind(cbind(set = "aracne_v2_tf", ar), cur, fill = TRUE)
 if (PERTURB == "d84") {
   sg <- merge(meta[, .(sig_id, technology, direction, own_ok, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")
-  fwrite(sg, file.path(res, "perturbation_benchmark_d84_signatures.tsv.gz"), sep = "\t")
+  fwrite(sg, file.path(res, if (PROJECT) "perturbation_benchmark_d85_projected_signatures.tsv.gz" else "perturbation_benchmark_d84_signatures.tsv.gz"), sep = "\t")
   print(sg[, .(signatures = .N, tfs = uniqueN(cmap_name)), by = .(set, technology)]); message("D84 SIGNATURES DONE"); quit(save = "no")
 }
 sg <- merge(meta[, .(sig_id, technology, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")

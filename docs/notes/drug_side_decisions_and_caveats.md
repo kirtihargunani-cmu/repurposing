@@ -590,3 +590,80 @@ the current answer (2026-10-31; details C18-C23 and `../PIPELINE_DRUG_SIDE_V2.md
   **v2:** PubMed / ClinicalTrials.gov links for the top pairs and FDA-approved rankings exist (`79o`, `79p`); PRISM /
   GDSC on hold.
 - **Why prioritize approved drugs?** Faster translation: an approved drug has known safety.
+
+### C28. Validation step 1: known-use recovery and sensitivity on the gated rankings (user, 2026-11-03)
+
+**Why.** C16 tested the v1 scores against measured drug sensitivity before the receptor gate (C26), the FDA filter
+(`79p`), the matched / borrowed evidence split (C20-C22) and the stand-ins (C27) existed, and found nothing. Two
+questions are open: do the pieces added since carry signal that C16 could not see, and do the published rankings
+recover uses that are already known? Both run on data already on disk.
+
+**Protocol, fixed before looking at any result (this section written first; scripts `79l`, `79m`).**
+
+*A. Known-use recovery (`79l_known_use.py`).* Labels: a drug is a known use of a cohort when its recorded indication
+matches the cohort's regex in `config/known_use.yaml`. Two independent label sets, reported separately: Repurposing
+Hub `indication` for Launched drugs (2020 snapshot) and ChEMBL 37 `drug_indication` with max phase >= 3. Rows: the
+published FDA rows (`fda_rows.py`, gate-passing, one per ingredient). Subgroups inherit the parent's labels, so only
+diseases are tested.
+- A1 (primary) per cohort with >= 3 labelled and >= 20 unlabelled drugs: AUC (= Mann-Whitney U / n1 n2) of the lead
+  score percentile, labelled vs unlabelled. Report the median across cohorts; p by permuting labels within cohort
+  (1,000 draws, one-sided for median AUC > 0.5); 95% CI by bootstrap over cohorts.
+- A2 (secondary) per labelled drug scored in >= 10 cohorts: is its percentile in its labelled cohorts above its median
+  elsewhere? Fraction and a sign test. This asks for cohort specificity, not a high score everywhere.
+- Baselines, same tests: `target_frac` (fraction of targets expressed, no reversal), `rev` (reversal without
+  specificity), and the drug's mean percentile across cohorts (how often a drug is simply high everywhere).
+- Split by evidence: matched (direct) vs borrowed rows.
+- **Pass rule.** "Recovers known uses" = A1 median AUC >= 0.55 with permutation p < 0.05 in **both** label sets, and
+  the lead score above `target_frac` in both. Anything less is reported as no recovery.
+
+*B. Sensitivity on the gated rankings (`79m_gate_sensitivity.py`).* PRISM 20Q2 secondary / primary and GDSC1 / GDSC2
+(`79j` matrices), observed selective killing as in C16 (drug z-scored across all cancer lines, weighted over the
+cohort's own in-key lines).
+- B1 receptor gate: per cohort, median `obs_sel` of drug x receptor pairs that pass the gate vs pairs that fail
+  (drug-level, a drug counts as passing when any of its receptors pass); difference per cohort, median across
+  cohorts, permutation of the pass label within cohort.
+- B2 evidence: within-cohort Spearman of the lead score with `obs_sel`, computed separately for matched and borrowed
+  rows; medians across cohorts, paired bootstrap over cohorts.
+- B3 stand-ins: for FDA rows with a stand-in (C27), within-cohort Spearman of `obs_sel` with the stand-in average vs
+  with the drug's own score; paired bootstrap over cohorts.
+- **Pass rule.** An effect counts only when it is in the same direction with p < 0.05 (or a CI clear of 0) in at
+  least two of the four datasets. PRISM secondary is the primary dataset (8-dose curves).
+
+**Caveats carried from C16.** Viability in 3-5 day assays is not transcriptional reversal; LINCS signatures are
+6-24 h. Known-use labels are biased towards well-studied cancers and towards chemotherapies, which are not specific
+to one cohort; the 2020 Hub snapshot predates recent approvals. The regex mapping is hand-written (and so is a
+judgement, logged in `config/known_use.yaml`); breast and lung subtypes share one label, so the four BRCA cohorts
+cannot be told apart by it.
+
+**Results (run 2026-11-03, protocol above unchanged).**
+
+*A. Known-use recovery (`results/lincs/known_use/`).* 7,414 FDA rows x 41 diseases; labels: Hub 148 rows / 50 drugs /
+31 cohorts, ChEMBL 399 rows / 88 drugs / 40 cohorts.
+- A1 Hub: lead score AUC 0.62 (CI 0.52-0.67, p 0.001, 17 cohorts); ChEMBL: 0.50 (CI 0.42-0.56, p 0.50, 34 cohorts).
+- The baselines explain the Hub result: the drug's own mean percentile across all cohorts gives the same AUC
+  (Hub 0.62, ChEMBL 0.60, both p 0.001). Labelled drugs score high everywhere, not in their own cancer. In ChEMBL
+  `target_frac` (0.56, p 0.001) beats the lead score.
+- A2 (the specificity test): a labelled drug's percentile in its own cancer minus its median elsewhere: Hub +3.0
+  points, 58% positive (p 0.19, 45 drugs); ChEMBL -5.1 points, 39% positive (p 0.98, 72 drugs).
+- **Pass rule not met** (ChEMBL AUC < 0.55 and below `target_frac`): the rankings do not recover known uses. The only
+  positive signal is that approved cancer drugs rank high in every cohort, which the mean-percentile baseline matches.
+
+*B. Sensitivity on the gated rankings (`results/lincs/gate_sensitivity/`).* Four datasets, as C16.
+- B1 receptor gate: median obs_sel difference (passing vs failing drugs) -0.04 (p 0.92, 34 cohorts) in PRISM
+  secondary, +0.04 (p 0.02, 36) in PRISM primary, -0.11 in GDSC1. Directions disagree; **pass rule not met**.
+- B2 matched vs borrowed: within-cohort Spearman 0.04 matched / 0.03 borrowed (PRISM secondary, 8 paired cohorts),
+  -0.01 / 0.02 (PRISM primary, 12); the paired difference CI spans 0 in both. Matched evidence does not predict
+  killing better than borrowed.
+- B3 stand-ins: Spearman with obs_sel for the stand-in average vs the drug's own borrowed percentile: 0.040 vs 0.056
+  (PRISM sec), -0.022 vs 0.028 (PRISM pri), 0.236 vs 0.251 (GDSC1), 0.160 vs 0.169 (GDSC2). The average is never
+  better; **pass rule not met**. (C27 found the stand-in average closer to the drug's *direct transcriptional score*;
+  that is agreement between our own scores, not agreement with killing.)
+- Not pre-registered, so reported only as an observation: on the stand-in subset the lead score correlates with GDSC
+  killing at rho 0.25 / 0.17, higher than anywhere in C16. The subset is 121 / 119 rows of mostly well-studied drugs.
+
+**Conclusion.** C16 stands after the gate, the FDA filter, the evidence split and the stand-ins: none of the four
+scores predicts measured selective killing, and the published rankings do not put a cancer's known drugs above the
+rest beyond those drugs scoring high everywhere. The pieces added since C16 improve what the output *states*
+(evidence level, binding support, which lines a score came from) without yet showing external predictive value.
+Step 2 of the plan (DepMap CRISPR dependency agreement) and binding coverage beyond receptors are untouched by this
+and remain worth running; experimental testing should wait for a positive external signal.

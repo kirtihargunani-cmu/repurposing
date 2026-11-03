@@ -7,7 +7,7 @@
 # Resumable: finished bootstraps are kept, finished networks skipped.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
-D=data/processed/lincs/pnet
+D=${PNET_DIR:-data/processed/lincs/pnet}   # PNET_DIR: other network sets (e.g. pnet_depmap, 2026-11-03)
 JAVA=${ARACNE_JAVA:-~/miniforge3/envs/aracne/bin/java}
 JAR=${ARACNE_JAR:-~/tools/ARACNe-AP/dist/aracne.jar}
 N_BOOT=100; THREADS=${THREADS:-8}; PARALLEL=${PARALLEL:-3}

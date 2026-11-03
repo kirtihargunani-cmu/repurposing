@@ -140,3 +140,30 @@ What this means: for the switches LINCS measures, maps learned from drug experim
 tumor maps, at least at this size. The pilot could not test ESR1 and the other unmeasured switches, so the
 anti-estrogen problem is still open; for now the drug side keeps averaging the tumor map with the curated list, which
 reads anti-estrogens correctly.
+
+## Follow-up (2026-11-02): curated targets, directions learned from drugs (D87)
+
+The pilot left one idea open: keep the curated list's targets, which read anti-estrogens correctly, and only relearn
+whether each switch turns each target **up or down**. Unlike the pilot, this works for switches LINCS does not
+measure, such as ESR1, because a switch's activity is read from its targets, not from its own mRNA.
+
+**How:** in each cell line with enough drug experiments, for every target we asked: across ~1,000 drugs, does this
+gene rise when the switch's other targets say the switch is on? If the answer clearly contradicts the curated
+direction, the direction is flipped. Drugs that act directly on a switch were held back, so the drug check stays
+fair. The rule (D87) was written before running.
+
+**Result: no improvement, so the curated list stays as it is.**
+
+- About a quarter of the curated directions were flipped in every cell line.
+- On the 828 knockdown and overexpression experiments, the relearned list got the direction right 60% of the time;
+  the curated list as it is got 62%.
+- The result was the same in every variant and every subset we looked at.
+- ESR1 in MCF7 read anti-estrogens even more clearly as switching ESR1 off. One switch is not enough to change the
+  list for all of them.
+- The drug side keeps averaging the tumor map with the curated list.
+
+| What | Where |
+|---|---|
+| Rule and result | `docs/DECISIONS.md`, D87 |
+| Learning and scoring | `scripts/hybrid/hybrid_d87.R`; decision `scripts/hybrid/hybrid_d87_decide.R` |
+| Results | `results/lincs/hybrid/` (`decision.tsv`, `summary.tsv`, `flips.tsv`, per-link directions in `edges_*.tsv.gz`, kept locally because the repo ignores `.gz` files) |

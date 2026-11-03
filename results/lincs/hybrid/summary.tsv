@@ -1,0 +1,12 @@
+comparison	variant	base	signatures	tfs	correct_variant	correct_base	diff	wins	losses	p_sign	tfs_3plus	median_tf_diff	tf_better	tf_worse
+all	H1	CollecTRI	828	143	0.5978	0.622	-0.0242	90	110	0.179	77	0	23	26
+all	H2	CollecTRI	828	143	0.593	0.622	-0.029	122	146	0.16	77	0	29	27
+all	H3	CollecTRI	828	143	0.5954	0.622	-0.0266	121	143	0.196	77	0	32	28
+all	H1_raw	CollecTRI	828	143	0.5954	0.622	-0.0266	96	118	0.151	77	0	24	26
+knockdown	H1	CollecTRI	671	119	0.5797	0.6036	-0.0238	77	93	0.25	66	0	20	23
+overexpression	H1	CollecTRI	157	45	0.6752	0.7006	-0.0255	13	17	0.585	22	0	4	5
+TF measured on L1000	H1	CollecTRI	511	58	0.5812	0.5969	-0.0157	62	70	0.543	47	0	15	18
+TF not measured on L1000	H1	CollecTRI	317	85	0.6246	0.6625	-0.0379	28	40	0.182	30	0	8	8
+lines with own directions	H1	CollecTRI	616	122	0.5893	0.612	-0.0227	67	81	0.285	67	0	20	23
+lines with pooled directions	H1	CollecTRI	212	65	0.6226	0.6509	-0.0283	23	29	0.488	26	0	8	9
+consensus with ARACNe	cons_H1	cons_C	828	143	0.6558	0.6703	-0.0145	66	78	0.359	77	0	16	24

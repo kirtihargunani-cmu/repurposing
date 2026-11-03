@@ -43,6 +43,8 @@ STEPS=(
   "fda_page|Browsable FDA rankings page (results/lincs/fda_rankings_v2.html)|$PY scripts/79q_fda_page.py"
   "rankings_page|Browsable FDA drug x disease rankings with all scores, flags, receptors, literature (disease_drug_rankings_v2.html)|$PY scripts/79x_rankings_page.py"
   "standin_page|Browsable LINCS compounds tested in each cohort's lines with their closest FDA drugs (standin_compounds_v2.html)|$PY scripts/79z_standin_page.py"
+  "known_use|Known-use recovery: do a cancer's approved drugs rank high for it? Hub + ChEMBL indications (79l, C28)|$PY scripts/79l_known_use.py"
+  "gate_sensitivity|PRISM / GDSC selective killing vs the gated rankings: gate, matched vs borrowed, stand-ins (79m, C28)|$PY scripts/79m_gate_sensitivity.py"
 )
 
 field() { local name=$1 k=$2; for s in "${STEPS[@]}"; do IFS='|' read -r n d c <<< "$s"; [[ $n == "$name" ]] && { [[ $k == d ]] && echo "$d" || echo "$c"; return 0; }; done; return 1; }

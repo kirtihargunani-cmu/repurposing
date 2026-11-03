@@ -1,0 +1,7 @@
+criterion	value	met
+1 gain >= 2 points	-2.4 points (59.8% vs 62.2%, 828 signatures)	FALSE
+2 sign test p < 0.05	90 wins, 110 losses, p = 0.179	FALSE
+3 median per-TF diff >= 0	+0.000 over 77 TFs (23 better, 26 worse)	TRUE
+4a ESR1 negative in most MCF7 anti-estrogen profiles	7 of 7 negative (median NES -3.50; CollecTRI 6 of 7, -2.46)	TRUE
+4b ligands no more than 5 points below CollecTRI	58.7% vs 62.4% (409 profiles)	TRUE
+DECISION	keep CollecTRI	FALSE

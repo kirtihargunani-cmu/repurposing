@@ -1,0 +1,6 @@
+criterion	value	met
+1 correct share rises >= 2 points	raw 59.2% vs specific 58.7% (+0.4 points)	False
+2a positive controls fall <= 5 points	median spec_mech pct raw 45.2 vs specific 49.9	True
+2b negative controls rise <= 5 points	median spec_mech pct raw 95.4 vs specific 96.7	True
+3 dominance rises <= 10 points	raw 82.1% vs specific 13.2% of 1144 drugs	False
+DECISION	keep line-specific profiles	False

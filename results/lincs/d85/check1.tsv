@@ -1,0 +1,7 @@
+arm	set	signatures	correct_signatures	ligand_profiles	correct_ligands	pooled_n	correct_pooled	correct_kd	correct_oe
+specific	consensus	1577	0.5986	438	0.5457	2015	0.5871	0.5871	0.6565
+specific	aracne_v2_tf	1372	0.6101	438	0.4840	1810	0.5796	0.5945	0.6816
+specific	collectri	698	0.6189	438	0.6347	1136	0.6250	0.6081	0.6561
+raw	consensus	1577	0.6011	438	0.5571	2015	0.5916	0.5840	0.6870
+raw	aracne_v2_tf	1372	0.6064	438	0.5708	1810	0.5978	0.5883	0.6898
+raw	collectri	698	0.6160	438	0.5845	1136	0.6039	0.5915	0.7006

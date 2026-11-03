@@ -479,6 +479,66 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - **Caveats:** the test is small (planned ~200 signatures, got 45 under the rule); the drug folds group by mechanism
   wording, which split tamoxifen from fulvestrant (affects only the ligand report).
 
+## 2026-11-02: hybrid regulons (D87): keep CollecTRI
+- **What:** CollecTRI's target lists with each link's direction relearned from LINCS drug profiles: per target, the
+  correlation across ~1,000 drugs (per line; pooled for lines with few drugs) with the regulator's activity read from
+  its other targets. Ligand drugs were left out of learning. Files in `scripts/hybrid/`, `results/lincs/hybrid/`.
+- **Result: slightly worse, rule not met.** On the 828 D84 knockdown / overexpression signatures: 59.8% vs CollecTRI
+  62.2% (p = 0.18), same direction in every split (knockdown, overexpression, measured and unmeasured TFs, own and
+  pooled directions, raw profiles, all three variants) and in the consensus with ARACNe (65.6% vs 67.0%).
+- **Also found:** learning flips about a quarter of CollecTRI's links in every line, so the links' co-movement across
+  drugs often disagrees with the literature sign. Those flips do not make the perturbation reading better. The ESR1
+  anti-estrogen reading in MCF7 got stronger (7 of 7 negative, median -3.5 vs -2.5), but one regulator does not
+  carry the rule.
+
+## 2026-11-03: raw vs line-specific drug profiles (D85): keep line-specific
+- **What:** the drug-side ranking (79d, 79e, 79i, consensus regulons) rerun on raw and on line-specific profiles
+  (`PROFILE`, `RUN_TAG=_d85`; production outputs untouched), plus the D84 benchmark with each line's generic drug
+  response projected out (79n `PROJECT=1`). Decision script `scripts/d85/d85_decide.py`, outputs `results/lincs/d85/`.
+- **Result: rule not met.** Raw profiles read TF ground truth no better (+0.4 points, needed +2). The checks pull in
+  opposite directions: raw helps ARACNe (+1.8) and hurts CollecTRI (-2.1). On raw profiles 82% of broadly tested
+  drugs reverse at least 80% of the diseases, vs 13% on line-specific ones: growth arrest dominates again, which is
+  what the projection was added to stop. Known-drug controls are similar.
+- **Also found:** the final specificity ranking (`spec_mech`) hardly depends on the choice (median Spearman 0.96).
+  ESR1 in MCF7: on line-specific profiles the consensus does not read anti-estrogens as inhibition; ARACNe
+  (+2 to +4) and CollecTRI (-2 to -3) cancel to about 0. On raw profiles it leans negative (12 of 15 profiles).
+
+## 2026-11-03: exploration: ESR1 targets within MCF7 under drugs
+- `scripts/explore/esr1_mcf7_modules.R`: ESR1's BRCA ARACNe targets across 1,145 MCF7 drug profiles (ligand drugs
+  left out). 82% of targets move with the rest of the regulon in ARACNe's direction; luminal-identity genes (GATA3,
+  FOXA1, ERBB4, ANXA9) cohere as strongly as estrogen-response genes (GREB1, MYB, XBP1); the two modules correlate
+  +0.57 (raw +0.61). Under most drugs the luminal program and ER signalling move together; anti-estrogens are the
+  exception that separates them. Co-variation within a line therefore cannot by itself sort identity from signalling
+  targets; that needs the regulator's own perturbations (knockdown, overexpression, ligands).
+
+## 2026-11-03: exploration: anti-estrogen time course in MCF7
+- `scripts/explore/antier_timecourse.py` (level-5 hiq signatures of 8 anti-estrogens in MCF7): at 6 h the
+  estrogen-response genes are already down (mean z -0.88: XBP1, NRIP1, CCND1, GREB1) while the luminal-identity
+  genes have not moved (-0.06); by 24 h the luminal genes are up (+1.09: GATA3 +2.0, HEBP1, MINDY1 +2.4) and stay up
+  at 48 h (+0.83). Timing separates them: direct ER signalling responds early, and the rise of the luminal genes that
+  ARACNe's ESR1 regulon reads as ESR1 activity comes later. Drug profiles (`79c`) currently average all time points.
+
+## 2026-11-03: exploration: drug timing and dose; identity vs drug-response links
+- **Time and dose** (`scripts/explore/drug_time_dose.py`, `results/lincs/time_dose/`): 6 h data for 32% of active
+  drug x line pairs (3,121 of 9,678); 1,292 pairs (504 drugs) have 6 h and 24 h. Of 2,728 pairs active at either time,
+  46% are active at 6 h and 24 h, 45% only at 24 h (late) and 9% only at 6 h. Proteasome, CHK, topoisomerase, HDAC and
+  CDK inhibitors respond early; glucocorticoids, MEK, EGFR, tubulin and GSK3 inhibitors mostly late. Dose (24 h, >= 3
+  doses, 6,649 pairs): minimum active dose plausible as a potency proxy (bortezomib 0.03 uM, fulvestrant 0.04,
+  trametinib 0.12, palbociclib 0.37, tamoxifen ~15); in 918 pairs the high-dose profile is a different program
+  (r < 0.5 vs the lowest active dose; e.g. vorinostat, gefitinib). Anti-estrogens in MCF7: the luminal-gene rise is
+  absent at 6 h and present at every dose at 24 h (+1.0 from <= 0.1 uM), so it is a slow on-target consequence of ER
+  blockade, not an off-target high-dose effect. Time separates it; dose does not.
+- **Baseline networks** (`scripts/pnet/depmap_baseline_inputs.py`, `compare_baseline_networks.R`): ARACNe on DepMap
+  24Q4 expression (1,588 cancer lines; 69 breast lines), same 978 genes, 81 regulators and settings as the D86 drug
+  networks. Overlap over chance: tumor networks with each other 13-17x, with the DepMap baseline 4-6x, with the drug
+  networks ~2x; drug networks with each other 3x, with the baseline 1.4x. Tumor co-expression resembles cross-line
+  (identity) co-expression; drug networks capture a largely separate structure. Tumor links (BRCA / PRAD / SKCM, on
+  landmark genes) also in the baseline: 23-32%; in the line's drug network only: 7-9%; in neither: 54-62%. Against
+  the line's knockdown / overexpression signatures (pooled): links in both 64% agree, drug-only 56%, baseline-only
+  57%, neither 50%; baseline-only beats neither within signature (p = 0.04). Identity-type links are not the
+  unreliable ones; tumor links that no other network supports are. Limits: landmark genes and measured regulators only
+  (no ESR1), few signatures per line.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
@@ -513,3 +573,11 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   borrowed-only cohorts). 1,922 matched compounds have a close FDA drug: `results/lincs/standin_compounds_v2.html`.
 - 79o `MODE=fda_all`: PubMed / trial search for every FDA row of the rankings page (7,444 searches, cached).
 - 79e: guard for `rev_raw` in consensus mode (raw activity folders for v2 now exist and crashed the rerun).
+- 2026-11-03: validation step 1 (protocol pre-registered as C28 before running). (a) Known-use recovery (`79l`,
+  `config/known_use.yaml`, Repurposing Hub + ChEMBL 37 indications): lead-score AUC 0.62 on Hub labels but 0.50 on
+  ChEMBL, and the "drug scores high in every cohort" baseline matches it (0.62 / 0.60); the specificity test (own
+  cancer vs elsewhere) is null (+3.0 points Hub p 0.19; -5.1 ChEMBL p 0.98). Pass rule not met. (b) PRISM / GDSC
+  selective killing against the gated v2 rankings (`79m`): receptor gate pass vs fail inconsistent across datasets
+  (-0.04 / +0.04 / -0.11), matched evidence no better than borrowed, stand-in average never better than the drug's
+  own borrowed score. Pass rule not met -> C16 stands after the gate, FDA filter, evidence split and stand-ins.
+  Next: DepMap CRISPR dependency agreement (step 2), binding evidence beyond receptors.
