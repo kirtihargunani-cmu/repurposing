@@ -491,6 +491,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   anti-estrogen reading in MCF7 got stronger (7 of 7 negative, median -3.5 vs -2.5), but one regulator does not
   carry the rule.
 
+## 2026-11-03: raw vs line-specific drug profiles (D85): keep line-specific
+- **What:** the drug-side ranking (79d, 79e, 79i, consensus regulons) rerun on raw and on line-specific profiles
+  (`PROFILE`, `RUN_TAG=_d85`; production outputs untouched), plus the D84 benchmark with each line's generic drug
+  response projected out (79n `PROJECT=1`). Decision script `scripts/d85/d85_decide.py`, outputs `results/lincs/d85/`.
+- **Result: rule not met.** Raw profiles read TF ground truth no better (+0.4 points, needed +2). The checks pull in
+  opposite directions: raw helps ARACNe (+1.8) and hurts CollecTRI (-2.1). On raw profiles 82% of broadly tested
+  drugs reverse at least 80% of the diseases, vs 13% on line-specific ones: growth arrest dominates again, which is
+  what the projection was added to stop. Known-drug controls are similar.
+- **Also found:** the final specificity ranking (`spec_mech`) hardly depends on the choice (median Spearman 0.96).
+  ESR1 in MCF7: on line-specific profiles the consensus does not read anti-estrogens as inhibition; ARACNe
+  (+2 to +4) and CollecTRI (-2 to -3) cancel to about 0. On raw profiles it leans negative (12 of 15 profiles).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

@@ -29,7 +29,10 @@ TFX <- if (REGSET == "full") "" else paste0("_", REGSET)
 REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri", "dorothea_ABC"))
 TAG <- if (REGULON == "aracne_project") paste0(SFX, TFX) else paste0("_", REGULON)  # curated: not versioned
 ONLY_NETS <- Filter(nzchar, strsplit(Sys.getenv("ONLY_NETS", ""), ",")[[1]])
-proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_", PROFILE, TAG))
+# RUN_TAG (D85, 2026-11-02): appended to the output folder (e.g. drug_viper_raw_v2_tf_d85); the regulator table then goes
+#   into that folder instead of results/lincs, so production outputs are not touched
+RUN_TAG <- Sys.getenv("RUN_TAG", "")
+proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_", PROFILE, TAG, RUN_TAG))
 dir.create(out_dir, showWarnings = FALSE)
 
 genes <- fread(file.path(proc, "drug_line_profiles_genes.tsv"))
@@ -76,4 +79,5 @@ reg_tab <- mclapply(nets, function(nt) {
   st
 }, mc.cores = N_CORES, mc.preschedule = FALSE)
 bad <- vapply(reg_tab, inherits, logical(1), "try-error"); if (any(bad)) stop("failed: ", paste(nets[bad], collapse = ", "))
-if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), paste0("results/lincs/drug_viper_regulators", TAG, ".tsv"), sep = "\t")
+if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), if (nzchar(RUN_TAG)) file.path(out_dir, "regulators.tsv") else
+                                 paste0("results/lincs/drug_viper_regulators", TAG, ".tsv"), sep = "\t")

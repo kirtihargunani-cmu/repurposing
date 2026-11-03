@@ -69,6 +69,12 @@ if SCORE == "fdr" and OUT.startswith("_v2"):
 ARACNE_SET = os.environ.get("ARACNE_SET", "tf"); assert ARACNE_SET in ("tf", "tf_base", "tf_sig1", "tf_sig2")
 XS = "" if ARACNE_SET == "tf" else f"_{ARACNE_SET}"
 if CONS: OUT += XS
+# PROFILE=specific (default) | raw and RUN_TAG (D85, 2026-11-02): activity from drug_viper_<PROFILE><set><RUN_TAG>, the
+#   proliferation adjustment and P2 on the same profiles' proliferation score (prolif_effect stays on raw profiles);
+#   79e input and outputs with RUN_TAG plus "_raw" for raw
+PROFILE = os.environ.get("PROFILE", "specific"); assert PROFILE in ("specific", "raw")
+RUN_TAG = os.environ.get("RUN_TAG", "")
+OUT += RUN_TAG + ("_raw" if PROFILE == "raw" else "")
 CONS_SETS = {"aracne": (f"aracne_project_v2_{ARACNE_SET}", f"_v2_{ARACNE_SET}"), "collectri": ("collectri_v2", "_collectri")}
 CONTROLS = [("BRCA-LumA", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
@@ -165,14 +171,16 @@ def main():
     def load_one(net, tag, p1s, prefix):
         key = (net, tag)
         if key not in nets:
-            regs = pd.Index((PROC / f"drug_viper_specific{tag}" / f"{net}.regulators.txt").read_text().split())
-            A = np.fromfile(PROC / f"drug_viper_specific{tag}" / f"{net}.f32",
+            vdir = PROC / f"drug_viper_{PROFILE}{tag}{RUN_TAG}"
+            regs = pd.Index((vdir / f"{net}.regulators.txt").read_text().split())
+            A = np.fromfile(vdir / f"{net}.f32",
                             dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
-            pc = pi_spec - pi_spec.mean()
+            pa = pi_raw.astype(np.float64) if PROFILE == "raw" else pi_spec
+            pc = pa - pa.mean()
             Ac = A - A.mean(0)
             beta = Ac.T @ pc / (pc @ pc)
             r = beta * pc.std() / Ac.std(0)
-            A_adj = A - np.outer(pi_spec, beta)
+            A_adj = A - np.outer(pa, beta)
             linked = pd.Index(regs).isin(p1s.get(net, set())) | (np.abs(r) >= R_MIN)
             p2_rows.append(pd.DataFrame({"set": prefix.rstrip("|") or "aracne", "net": net, "regulator": regs, "r_prolif": r.round(3),
                                          "p1": pd.Index(regs).isin(p1s.get(net, set())),

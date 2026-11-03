@@ -99,6 +99,11 @@ SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf"))
 assert SCORE in ("weighted", "fdr")
 if SCORE == "fdr" and SFX.startswith("_v2"):
     SFX += "_fdr"
+# PROFILE=specific (default) | raw and RUN_TAG (D85, 2026-11-02): drug activity from drug_viper_<PROFILE><set><RUN_TAG>
+#   (79d with the same RUN_TAG); outputs get RUN_TAG plus "_raw" for raw (e.g. drug_reversal_v2_consensus_d85_raw.tsv)
+PROFILE = os.environ.get("PROFILE", "specific"); assert PROFILE in ("specific", "raw")
+RUN_TAG = os.environ.get("RUN_TAG", "")
+SFX += RUN_TAG + ("_raw" if PROFILE == "raw" else "")
 STRATA = os.environ.get("STRATA", "0") == "1"
 assert not STRATA or SFX.startswith("_v2"), "STRATA=1 needs VERSION=v2"
 PFX = "stratum_reversal" if STRATA else "drug_reversal"
@@ -151,10 +156,10 @@ def main():
             if Aa is None or Ac is None:
                 return None, None
             return pd.Index(["aracne|" + r for r in ra] + ["collectri|" + r for r in rc]), np.hstack([Aa, Ac])
-        f = PROC / f"drug_viper_{kind}{dtag}" / f"{net}.f32"
+        f = PROC / f"drug_viper_{kind}{dtag}{RUN_TAG}" / f"{net}.f32"
         if not f.exists():
             return None, None
-        regs = pd.Index((PROC / f"drug_viper_{kind}{dtag}" / f"{net}.regulators.txt").read_text().split())
+        regs = pd.Index((PROC / f"drug_viper_{kind}{dtag}{RUN_TAG}" / f"{net}.regulators.txt").read_text().split())
         return regs, np.fromfile(f, dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
 
     def consensus(D, regs, m):
@@ -170,7 +175,7 @@ def main():
 
     def load(net):
         if net not in nets:
-            regs, A = read("specific", net)                                   # profiles x regulators
+            regs, A = read(PROFILE, net)                                   # profiles x regulators
             rr, R = read("raw", net)
             nets[net] = (regs, A, R.T[rr.get_indexer(regs)].T if R is not None else None)
         return nets[net]
