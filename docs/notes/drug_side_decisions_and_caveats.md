@@ -701,3 +701,33 @@ growth (receptors, transporters, enzymes with redundancy), and a transcriptional
 predict gene essentiality, so D1 is a weak expectation. D2 is the test that carries weight here: the gate claims a
 drug binds a receptor that is present and relevant in the cohort's lines, and dependency is an outside check on
 "relevant". A gene can also matter to a tumor without being needed in culture, which this measure cannot see.
+
+**Results (run 2026-11-03, protocol above unchanged; `results/lincs/dependency/`).** 1,178 screened cancer lines,
+17,916 genes, 40 cohorts scored; 6,535 of 7,414 FDA rows have at least one target with a dependency score.
+- **Yardstick met, 6 of 8** (C29 needed >= 4): AR in PRAD 7.6 SD above the typical cancer line (100th percentile of
+  the cohort's genes), ESR1 in LumB 4.9 and LumA 4.0, ERBB2 in Her2 3.6, BRAF in SKCM 2.9, CTNNB1 in LIHC 1.0 (92nd).
+  EGFR in LUAD (48th) and KIT in STAD (49th) do not stand out: the tissue-matched line sets are not enriched for the
+  mutations that create those dependencies. The measure works and its real-signal scale is 1-8 SD.
+- **D1 (lead score vs the drug's most depended-on target): null.** Median rho -0.04 over 40 cohorts (CI -0.06 to
+  0.02, p 0.99); matched rows 0.01 (14 cohorts, p 0.42). The pre-registered weakness holds: the score does not and
+  was not built to rank drugs by target essentiality.
+- **D2 (the gate test): no effect.** Gate-passing pairs sit 0.05 SD *below* failing pairs (p 1.00). The direction is
+  nominally wrong but the size is negligible next to the 1-8 SD scale above; all gate categories fall within 0.1 SD
+  of each other (pass -0.07, no binding evidence -0.03, absent in matched lines +0.01). The split tracks expression,
+  not dependency: genes expressed in most of a cohort's lines read -0.07, unexpressed ones +0.02. **The gate selects
+  receptors that are present and bound; it does not select receptors the cohort's cells need.**
+- **D3 (known-use drugs' targets): positive in both label sets.** Drugs approved for a cancer target genes that
+  cancer's lines depend on more than other drugs' targets do: +0.24 SD (Hub, 13 cohorts, p 0.001) and +0.13 SD
+  (ChEMBL, 34 cohorts, CI 0.05-0.27, p 0.001). This validates both the dependency measure and the C28 labels: the
+  known-use labels do carry cohort-specific biology, so C28's null is not a label artefact.
+- Where strong dependencies do appear, our ranking is near-indifferent to them: the 154 rows with a target >= 2 SD
+  sit at a median lead percentile of 60 against 53 overall, and the 65 rows >= 3 SD at 51.
+
+**Conclusion.** The dependency data is sound (D3, yardstick) and says the opposite of a validation for the ranking:
+the scores are uncorrelated with target essentiality (D1), and the receptor gate's pass label carries no dependency
+information (D2). Combined with C28 this gives a consistent picture: the known-use labels and the DepMap measure both
+behave as expected, and our scores are what fails to line up with them. The gate remains defensible for what it was
+built to do (C26: is the binding real, is the receptor present) and should not be described as evidence that the
+receptor matters in that cancer. A concrete, cheap next step the two runs point at: dependency is an *outside*
+signal that is strong, cohort-specific and currently unused - 154 rows pair an approved drug with a target its
+cohort's lines need >= 2 SD more than average, and the ranking does not favour them.
