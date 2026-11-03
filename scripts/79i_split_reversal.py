@@ -130,8 +130,11 @@ def main():
     gmt = {l.split("\t")[0]: l.rstrip("\n").split("\t")[2:]
            for l in open(ROOT / "data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt")}
     pm = genes.symbol.isin(set(gmt["HALLMARK_E2F_TARGETS"]) | set(gmt["HALLMARK_G2M_CHECKPOINT"])).values
-    pi_raw = np.fromfile(PROC / "drug_line_profiles_bing.f32", dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1)
-    pi_spec = np.fromfile(PROC / "drug_line_profiles_bing_specific.f32",
+    # PROFILE_PREFIX (D90, 2026-11-03): <prefix>_raw.f32 / <prefix>_specific.f32 with the 79c layout replace the 79c profiles
+    pp = os.environ.get("PROFILE_PREFIX", "")
+    f_raw, f_spec = (Path(pp + "_raw.f32"), Path(pp + "_specific.f32")) if pp else (PROC / "drug_line_profiles_bing.f32", PROC / "drug_line_profiles_bing_specific.f32")
+    pi_raw = np.fromfile(f_raw, dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1)
+    pi_spec = np.fromfile(f_spec,
                           dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1).astype(np.float64)
     print(f"proliferation genes on profiles: {pm.sum()}")
 

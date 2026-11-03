@@ -38,7 +38,9 @@ dir.create(out_dir, showWarnings = FALSE)
 genes <- fread(file.path(proc, "drug_line_profiles_genes.tsv"))
 idx <- fread(file.path(proc, "drug_line_profiles_index.tsv"))
 pfile <- if (PROFILE == "raw") "drug_line_profiles_bing.f32" else "drug_line_profiles_bing_specific.f32"
-P <- matrix(readBin(file.path(proc, pfile), "numeric", size = 4,
+# PROFILE_FILE (D90, 2026-11-03): another profile file with the 79c layout (same index and genes), path from the repo root
+if (nzchar(Sys.getenv("PROFILE_FILE"))) { pfile <- normalizePath(Sys.getenv("PROFILE_FILE")); proc_p <- "" } else proc_p <- proc
+P <- matrix(readBin(if (nzchar(proc_p)) file.path(proc_p, pfile) else pfile, "numeric", size = 4,
                     n = nrow(genes) * nrow(idx)), nrow = nrow(genes))
 dimnames(P) <- list(genes$gene_id, paste(idx$pert_id, idx$ModelID, sep = "|"))
 cat(sprintf("profiles (%s): %d genes x %d drug-line profiles\n", PROFILE, nrow(P), ncol(P)))

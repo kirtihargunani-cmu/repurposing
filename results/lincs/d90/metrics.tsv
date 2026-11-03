@@ -1,0 +1,5 @@
+set	arm	auc_lab_hub	cohorts_lab_hub	spec_gap_lab_hub	drugs_lab_hub	auc_lab_chembl	cohorts_lab_chembl	spec_gap_lab_chembl	drugs_lab_chembl	ctl_pos	ctl_neg	dominance	dominance_drugs
+aracne	CUR	0.6099	17.0000	-3.5965	45.0000	0.4923	34.0000	-4.3632	72.0000	45.0000	97.2000	0.1215	1144.0000
+aracne	MECH	0.6019	17.0000	-3.7850	45.0000	0.4994	34.0000	-4.5709	72.0000	56.3500	98.5000	0.0979	1144.0000
+consensus	CUR	0.6199	17.0000	-0.8631	45.0000	0.4996	34.0000	-3.2711	72.0000	49.9000	96.7000	0.1320	1144.0000
+consensus	MECH	0.6207	17.0000	-1.0634	45.0000	0.5092	34.0000	-3.3824	72.0000	59.7000	98.1000	0.1110	1144.0000

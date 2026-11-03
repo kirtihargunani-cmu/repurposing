@@ -561,6 +561,16 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   every drug changes a lot between 6 and 24 h, almost nothing is unusual (0.01-0.2% of tests). A test against
   replicate noise within the same drug is the right next step.
 
+## 2026-11-03: mechanism profiles in the ranking (D90): keep current
+- **What:** the drug ranking (tumor ARACNe only) rebuilt with 6 h profiles at the lowest active dose where a pair is
+  active at 6 h, else the lowest active 24 h dose, else the current profile (`scripts/d90/`, `results/lincs/d90/`;
+  `PROFILE_FILE` in 79d and `PROFILE_PREFIX` in 79i, defaults unchanged). Literature note: `LITERATURE_TIME_DOSE.md`.
+- **Result: rule not met.** Known-use recovery unchanged (Hub AUC 0.60 vs 0.61; the yardstick was already near null).
+  Known-drug controls improve (+11 percentile points) and fewer drugs reverse nearly every disease (9.8 vs 12.2%).
+  ESR1 in MCF7 is still read as up under most anti-estrogens: most of their 6 h signatures fall below the activity
+  cutoff (TAS 0.4), so they used the low-dose 24 h profile, which still shows the late luminal rise. The 2 that used
+  6 h profiles read ESR1 down. Dose alone does not fix the reading; time does, where the 6 h profile is used.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
