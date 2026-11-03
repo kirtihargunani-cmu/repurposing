@@ -1,0 +1,17 @@
+line	class	rows	signatures	regulators	agree
+A375	both	98	39	20	0.582
+A375	drug response only	96	49	21	0.469
+A375	identity only (DepMap)	450	62	33	0.576
+A375	neither	610	68	37	0.561
+MCF7	both	85	38	22	0.753
+MCF7	drug response only	67	34	18	0.687
+MCF7	identity only (DepMap)	272	63	38	0.574
+MCF7	neither	717	66	40	0.48
+PC3	both	84	38	20	0.607
+PC3	drug response only	171	36	19	0.567
+PC3	identity only (DepMap)	285	59	33	0.554
+PC3	neither	802	76	41	0.486
+pooled	both	267	115	35	0.644
+pooled	drug response only	334	119	36	0.563
+pooled	identity only (DepMap)	1007	184	47	0.569
+pooled	neither	2129	210	54	0.505

@@ -518,6 +518,27 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   at 48 h (+0.83). Timing separates them: direct ER signalling responds early, and the rise of the luminal genes that
   ARACNe's ESR1 regulon reads as ESR1 activity comes later. Drug profiles (`79c`) currently average all time points.
 
+## 2026-11-03: exploration: drug timing and dose; identity vs drug-response links
+- **Time and dose** (`scripts/explore/drug_time_dose.py`, `results/lincs/time_dose/`): 6 h data for 32% of active
+  drug x line pairs (3,121 of 9,678); 1,292 pairs (504 drugs) have 6 h and 24 h. Of 2,728 pairs active at either time,
+  46% are active at 6 h and 24 h, 45% only at 24 h (late) and 9% only at 6 h. Proteasome, CHK, topoisomerase, HDAC and
+  CDK inhibitors respond early; glucocorticoids, MEK, EGFR, tubulin and GSK3 inhibitors mostly late. Dose (24 h, >= 3
+  doses, 6,649 pairs): minimum active dose plausible as a potency proxy (bortezomib 0.03 uM, fulvestrant 0.04,
+  trametinib 0.12, palbociclib 0.37, tamoxifen ~15); in 918 pairs the high-dose profile is a different program
+  (r < 0.5 vs the lowest active dose; e.g. vorinostat, gefitinib). Anti-estrogens in MCF7: the luminal-gene rise is
+  absent at 6 h and present at every dose at 24 h (+1.0 from <= 0.1 uM), so it is a slow on-target consequence of ER
+  blockade, not an off-target high-dose effect. Time separates it; dose does not.
+- **Baseline networks** (`scripts/pnet/depmap_baseline_inputs.py`, `compare_baseline_networks.R`): ARACNe on DepMap
+  24Q4 expression (1,588 cancer lines; 69 breast lines), same 978 genes, 81 regulators and settings as the D86 drug
+  networks. Overlap over chance: tumor networks with each other 13-17x, with the DepMap baseline 4-6x, with the drug
+  networks ~2x; drug networks with each other 3x, with the baseline 1.4x. Tumor co-expression resembles cross-line
+  (identity) co-expression; drug networks capture a largely separate structure. Tumor links (BRCA / PRAD / SKCM, on
+  landmark genes) also in the baseline: 23-32%; in the line's drug network only: 7-9%; in neither: 54-62%. Against
+  the line's knockdown / overexpression signatures (pooled): links in both 64% agree, drug-only 56%, baseline-only
+  57%, neither 50%; baseline-only beats neither within signature (p = 0.04). Identity-type links are not the
+  unreliable ones; tumor links that no other network supports are. Limits: landmark genes and measured regulators only
+  (no ESR1), few signatures per line.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
