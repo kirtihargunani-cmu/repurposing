@@ -107,7 +107,8 @@ def pubmed(drug, terms, extra=()):
     q = "(" + " OR ".join(f'"{n}"[tiab]' for n in sorted(set(names(drug)) | set(extra))) + ") AND (" + " OR ".join(f'"{t}"[tiab]' for t in terms) + ")"
     r = get(f"{EUTILS}/esearch.fcgi?db=pubmed&retmode=json&sort=relevance&retmax={RETMAX}&term=" + urllib.parse.quote(q))
     time.sleep(0.35)
-    if not r:
+    if not r or "count" not in r.get("esearchresult", {}):   # NCBI error answer (e.g. rate limit): count as failed
+        time.sleep(2)
         return q, None, []
     return q, int(r["esearchresult"]["count"]), r["esearchresult"]["idlist"]
 
