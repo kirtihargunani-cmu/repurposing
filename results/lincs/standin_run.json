@@ -1,0 +1,73 @@
+{
+ "date": "2026-11-02",
+ "config": {
+  "min_shared_lines": 2,
+  "min_similarity": 0.4,
+  "require_shared_target": true,
+  "validation": {
+   "min_spearman": 0.3,
+   "n_boot": 1000
+  }
+ },
+ "adopted": true,
+ "validation": [
+  {
+   "set": "accepted stand-ins",
+   "n": 503,
+   "spearman": 0.659,
+   "ci_lo": 0.598,
+   "ci_hi": 0.713,
+   "mae_pct": 18.4
+  },
+  {
+   "set": "random shared-target pairs (median of 200)",
+   "n": 927,
+   "spearman": 0.339,
+   "ci_lo": 0.287,
+   "ci_hi": 0.378,
+   "mae_pct": NaN
+  },
+  {
+   "set": "shared lines = 2",
+   "n": 88,
+   "spearman": 0.506,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 25.0
+  },
+  {
+   "set": "shared lines >= 3",
+   "n": 415,
+   "spearman": 0.703,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 17.0
+  },
+  {
+   "set": "similarity 0.4-0.6",
+   "n": 133,
+   "spearman": 0.491,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 21.3
+  },
+  {
+   "set": "similarity >= 0.6",
+   "n": 370,
+   "spearman": 0.695,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 17.4
+  }
+ ],
+ "pairs": 5606,
+ "fda_rows_needing": 8419,
+ "fda_rows_with_standin": 443,
+ "fda_rows_with_standin_by_level": {
+  "disease": 383,
+  "subgroup": 60
+ },
+ "cohorts_with_standins": 20,
+ "matched_compounds_with_close_fda": 1922,
+ "seconds": 18
+}

@@ -69,3 +69,20 @@ receptor_gate:
     min_weighted_fraction: 0.5 # over the lines 79e used for this cohort x drug (direct: in-key, Celligner weights;
                                # borrowed: out-of-key, equal weights)
     # Passes resting on one matched line are kept and flagged (single_line; user 2026-11-02).
+
+standin:
+  # Closest-compound stand-ins (scripts/79y_standin.py; user 2026-11-02). Fixed before looking at results.
+  # Pair = an FDA drug and another LINCS compound. Similarity = mean over their shared profiled lines of the Pearson
+  # correlation of their line-specific regulator activity (CollecTRI, context-free; 79d drug_viper_specific_collectri).
+  min_shared_lines: 2
+  min_similarity: 0.4
+  require_shared_target: true   # >= 1 shared annotated non-ADME target (LINCS / Repurposing Hub; the gate's ADME list)
+  # Use: in a cohort, a compound tested in the cohort's matched lines (direct, no unmatched_lines flag) stands in for a
+  # close FDA drug that was only borrowed or is weak evidence there, and vice versa the page lists, for each such
+  # compound, its closest FDA drugs. A stand-in is reported next to the drug's own score, never replaces it.
+  # Validation (adopt only if met): pairs where both are direct and unflagged in the same cohort; Spearman of
+  # spec_mech percentile (stand-in vs drug's own) >= 0.3 and its 95% bootstrap CI above the same statistic for random
+  # shared-target pairs (no similarity rule).
+  validation:
+    min_spearman: 0.3
+    n_boot: 1000

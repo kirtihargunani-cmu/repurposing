@@ -37,8 +37,12 @@ STEPS=(
   "literature|PubMed / trial links for each disease's top 10 by specificity and by reversal|$PY scripts/79o_literature.py"
   "fda_ranking|FDA-approved drug rankings per disease and subgroup (Drugs@FDA)|$PY scripts/79p_fda_ranking.py"
   "literature_fda|PubMed / trial links for each cohort's top 3 FDA drugs, by FDA name|MODE=fda $PY scripts/79o_literature.py"
+  "literature_fda_all|PubMed / trial links for every FDA drug row of the rankings page, by FDA name (cached, resumable)|MODE=fda_all $PY scripts/79o_literature.py"
+  "standin|Closest-compound stand-ins for borrowed / weak FDA drugs, with validation (79y)|$PY scripts/79y_standin.py"
+  "standin_vs_borrowed|Stand-in vs the drug's own borrowed score: borrowed counterfactual in a sandbox (79e, 79i) + comparison (79y2)|PY=$PY scripts/79y2_borrowed_counterfactual.sh"
   "fda_page|Browsable FDA rankings page (results/lincs/fda_rankings_v2.html)|$PY scripts/79q_fda_page.py"
   "rankings_page|Browsable FDA drug x disease rankings with all scores, flags, receptors, literature (disease_drug_rankings_v2.html)|$PY scripts/79x_rankings_page.py"
+  "standin_page|Browsable LINCS compounds tested in each cohort's lines with their closest FDA drugs (standin_compounds_v2.html)|$PY scripts/79z_standin_page.py"
 )
 
 field() { local name=$1 k=$2; for s in "${STEPS[@]}"; do IFS='|' read -r n d c <<< "$s"; [[ $n == "$name" ]] && { [[ $k == d ]] && echo "$d" || echo "$c"; return 0; }; done; return 1; }

@@ -253,7 +253,7 @@ def main():
             o["low_transfer"] = False
         o["n_mrs"] = n
         o["rev"] = rev.round(3)
-        o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / norm).round(3) if A_raw is not None else np.nan
+        o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / norm).round(3) if A_raw is not None and D_raw is not None else np.nan  # consensus: no raw score (v2)
         o["r_rev"] = r_rev.round(3)
         o["rev_pct"] = (pd.Series(rev).rank(method="max").values - 1) / len(rev) * 100
         o["rev_pct"] = o.rev_pct.round(1)

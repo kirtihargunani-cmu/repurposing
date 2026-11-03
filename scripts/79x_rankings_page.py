@@ -11,7 +11,9 @@ disease's top 10 by spec_mech and by rev (79o) and the FDA-name search of each c
 Pairs never searched link to a PubMed search instead.
 Inputs: results/lincs/drug_reversal_split_v2_consensus.tsv, stratum_reversal_split_v2_consensus.tsv,
         drug_reversal_summary_v2_consensus.tsv, stratum_reversal_summary_v2_consensus.tsv, drug_annotations.tsv,
-        fda_matches.tsv, literature_v2_consensus.tsv, literature_fda_top_v2.tsv, receptor_gate_v2.tsv,
+        fda_matches.tsv, literature_v2_consensus.tsv, literature_fda_top_v2.tsv, literature_fda_all_v2.tsv (79o
+        MODE=fda_all, every row; preferred where present), receptor_gate_v2.tsv, standin_pairs_v2.tsv + standin_run.json
+        (79y: up to 3 stand-ins for borrowed / weak-evidence FDA drugs),
         results/step10_v2/strata.tsv; template scripts/templates/disease_drug_rankings.html (placeholder __DATA__)
 Output: results/lincs/disease_drug_rankings_v2.html
 """
@@ -19,9 +21,13 @@ import json
 import math
 from pathlib import Path
 
+import sys
+
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from fda_rows import drug_name, fda_rows  # noqa: E402
 RES = ROOT / "results/lincs"
 FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs"]   # bit order in the page
 GATE = {"pass": "p", "binds_but_absent_in_matched_lines": "a", "assembly_incomplete_in_tumors": "s"}
@@ -47,18 +53,22 @@ def links(lr):
     return [None if pm is None else int(pm), None if ct is None else int(ct), lr["pubmed_search_url"], lr["trials_search_url"], pa, tr]
 
 
+def standin_vs_borrowed():
+    """79y2 comparison (stand-in vs the drug's own borrowed score), if run"""
+    f = RES / "standin_vs_borrowed_summary_v2.tsv"
+    if not f.exists():
+        return {}
+    c = pd.read_csv(f, sep="\t").set_index("estimate")
+    return dict(b_si=float(c.loc["standin", "spearman"]), b_bo=float(c.loc["borrowed_pct", "spearman"]),
+                b_av=float(c.loc["average", "spearman"]), b_n=int(c.loc["standin", "n"]))
+
+
 def main():
     g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
     s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False).rename(columns={"stratum": "group_id"})
-    g, s = g[g.passes_gate.map(truthy)], s[s.passes_gate.map(truthy)]
-    # FDA-approved drugs only (user 2026-11-02): LINCS compounds matched to Drugs@FDA (79p; marketed or discontinued);
-    # several LINCS IDs of one ingredient -> keep the best on the lead score, as 79p does
-    fdm = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id").fda_ingredient
-    n_all = (len(g), len(s))
-    g = (g[g.pert_id.isin(fdm.index)].assign(ing=lambda x: x.pert_id.map(fdm))
-         .sort_values(["spec_mech", "spec", "rev"], ascending=False).drop_duplicates(["group_id", "ing"]))
-    s = (s[s.pert_id.isin(fdm.index)].assign(ing=lambda x: x.pert_id.map(fdm))
-         .sort_values(["spec_sib_mech", "spec_mech", "rev"], ascending=False).drop_duplicates(["group_id", "ing"]))
+    # FDA-approved drugs only (user 2026-11-02): scripts/fda_rows.py (Drugs@FDA match, one LINCS id per ingredient)
+    n_all = (int(g.passes_gate.map(truthy).sum()), int(s.passes_gate.map(truthy).sum()))
+    g, s = fda_rows()
     print(f"FDA filter: diseases {n_all[0]} -> {len(g)} rows, subgroups {n_all[1]} -> {len(s)} rows")
     # flags not carried into the split tables come from the reversal tables
     for df, f in ((g, "drug_reversal_v2_consensus.tsv"), (s, "stratum_reversal_v2_consensus.tsv")):
@@ -72,6 +82,16 @@ def main():
     fda = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id")
     lit = pd.read_csv(RES / "literature_v2_consensus.tsv", sep="\t")
     top = pd.read_csv(RES / "literature_fda_top_v2.tsv", sep="\t")
+    fa = RES / "literature_fda_all_v2.tsv"
+    lall = pd.read_csv(fa, sep="\t") if fa.exists() else None
+    sp = pd.read_csv(RES / "standin_pairs_v2.tsv", sep="\t")
+    sp = sp[sp.fda_needs_standin & (sp.standin_rank <= 3)].sort_values("standin_rank")
+    SI = {}
+    for r in sp.itertuples(index=False):
+        SI.setdefault((r.group_id, r.fda_pert), []).append(
+            [r.cmp_name, rnd(r.similarity), int(r.n_shared_lines), r.shared_targets, rnd(r.cmp_spec_mech_pct, 1),
+             rnd(r.cmp_spec_pct, 1), rnd(r.cmp_rev_pct, 1), rnd(r.cmp_spec_sib_mech_pct, 1), int(bool(r.cmp_is_fda))])
+    vrun = json.load(open(RES / "standin_run.json"))
     rg = pd.read_csv(RES / "receptor_gate_v2.tsv", sep="\t", low_memory=False)
 
     # ---- drug table
@@ -86,17 +106,17 @@ def main():
                       moa=(clean(a.hub_moa) or clean(a.lincs_moa) or "") if a is not None else "",
                       ph=(clean(a.hub_clinical_phase) or "") if a is not None else "",
                       tg=tg, ind=((clean(a.approved_indications) or "")[:200]) if a is not None else "",
-                      fda=(f.fda_ingredient.title(), f.fda_status[0], str(clean(f.first_fda_approval) or "")[:4]) if f is not None else None))
+                      fda=(drug_name(f.fda_ingredient), f.fda_status[0], str(clean(f.first_fda_approval) or "")[:4]) if f is not None else None))
 
     # ---- literature: (cohort, pert_id or name) -> link record; FDA-name search wins (most specific)
     L, li = [], {}
-    for df, unit, by in ((lit, "group_id", "l"), (top, "unit", "f")):
+    for df, unit, by in ((lit, "group_id", "l"), (top, "unit", "f")) + (((lall, "unit", "a"),) if lall is not None else ()):
         name2p = {}
         for p in pids:
             name2p.setdefault(D[di[p]]["c"], []).append(p)
         for r in df.itertuples(index=False):
             r = r._asdict()
-            ps = [r["cmap_name"]] if r["cmap_name"] in di else name2p.get(r["cmap_name"], [])
+            ps = ([r["pert_id"]] if r.get("pert_id") in di else []) or ([r["cmap_name"]] if r["cmap_name"] in di else name2p.get(r["cmap_name"], []))
             for p in ps:
                 li[(r[unit], p)] = len(L)
             L.append(links(r) + [by])
@@ -119,8 +139,9 @@ def main():
                        rnd(r.spec_mech), rnd(r.spec_mech_pct, 1), rnd(r.prolif_share), rnd(r.transfer_conf),
                        rnd(r.line_match), fl, li.get((u, r.pert_id), -1), R.get((u, r.pert_id), []),
                        int(clean(r.n_lines_used) or 0)]
-                if sub:
-                    row += [rnd(r.spec_sib), rnd(r.spec_sib_pct, 1), rnd(r.spec_sib_mech), rnd(r.spec_sib_mech_pct, 1)]
+                row += ([rnd(r.spec_sib), rnd(r.spec_sib_pct, 1), rnd(r.spec_sib_mech), rnd(r.spec_sib_mech_pct, 1)]
+                        if sub else [None] * 4)
+                row.append(SI.get((u, r.pert_id), []))
                 lst.append(row)
             out[u] = lst
         return out
@@ -131,12 +152,21 @@ def main():
     meta.update({u: dict(kind="subgroup", parent=st.loc[u, "group_id"], status=ss.loc[u, "evidence_status"],
                          note=ss.loc[u, "evidence_note"], bl=clean(ss.loc[u, "best_line"]) or "",
                          desc=clean(st.loc[u, "description"]) or "") for u in S})
-    data = json.dumps(dict(drugs=D, lit=L, rows={**G, **S}, meta=meta, flags=FLAGS), separators=(",", ":"),
+    val = {v["set"]: v for v in vrun["validation"]}
+    data = json.dumps(dict(drugs=D, lit=L, rows={**G, **S}, meta=meta, flags=FLAGS,
+                           standin=dict(adopted=vrun["adopted"], rho=val["accepted stand-ins"]["spearman"],
+                                        lo=val["accepted stand-ins"]["ci_lo"], hi=val["accepted stand-ins"]["ci_hi"],
+                                        rand=val["random shared-target pairs (median of 200)"]["spearman"],
+                                        n=val["accepted stand-ins"]["n"], r=vrun["config"]["min_similarity"],
+                                        k=vrun["config"]["min_shared_lines"],
+                                        **standin_vs_borrowed())), separators=(",", ":"),
                       ensure_ascii=False, allow_nan=False).replace("</", "<\\/")
     page = (ROOT / "scripts/templates/disease_drug_rankings.html").read_text().replace("__DATA__", data, 1)
     (RES / "disease_drug_rankings_v2.html").write_text(page)
     n = sum(map(len, G.values())) + sum(map(len, S.values()))
     nl = sum(1 for v in [*G.values(), *S.values()] for r in v if r[12] >= 0)
+    ns = sum(1 for v in [*G.values(), *S.values()] for r in v if r[19])
+    print(f"rows with a stand-in: {ns}")
     print(f"{len(G)} diseases, {len(S)} subgroups, {n} rows ({nl} with literature), {len(D)} drugs; "
           f"{len(page) / 1e6:.2f} MB -> results/lincs/disease_drug_rankings_v2.html")
 

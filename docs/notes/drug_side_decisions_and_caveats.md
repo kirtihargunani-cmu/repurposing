@@ -434,6 +434,34 @@ Reported next to each receptor, not used as a cut. Tables `results/lincs/recepto
 uneven: a missing measurement reads as no evidence. Lines are 79e's (direct: in-key; borrowed: out-of-key), so a
 borrowed drug's receptor is judged in other tissues' lines.
 
+### C27. Closest-compound stand-ins for borrowed FDA drugs (user, 2026-11-02)
+
+**Why.** 72% of FDA drug x cohort rows are borrowed (never profiled in the cohort's tissue) and 21% are weak evidence,
+while other LINCS compounds with the same target were profiled in the cohort's own lines.
+**Rule (`79y`, `config/drug_gate.yaml: standin`; fixed before looking at results).** A stand-in for an FDA drug in a
+cohort is a compound tested in the cohort's matched lines (direct, no unmatched_lines) that shares >= 1 annotated
+non-ADME target and has similarity >= 0.4: mean Pearson r of line-specific CollecTRI regulator activity over >= 2
+shared profiled lines. Same ingredient / same name never pairs. Reported next to the drug's own score, never instead.
+**Validation (pre-set criterion: Spearman >= 0.3, CI above random target-sharing pairs).** 503 FDA drugs tested in
+their cohort's lines (41 diseases); best stand-in chosen with similarity measured outside the cohort's key lines (as in
+use): stand-in vs own spec_mech percentile Spearman 0.66 (95% CI 0.60-0.71), MAE 18 percentile points; random
+target-sharing compounds 0.34. Better with >= 3 shared lines (0.70) or similarity >= 0.6 (0.70) than with 2 lines
+(0.51). **Adopted.**
+**Coverage.** 443 of 8,419 borrowed / weak FDA rows get a stand-in (383 disease, 60 subgroup rows) in 20 cohorts; the
+27 borrowed-only cohorts have no compound in their own lines, so no stand-in is possible there (C24).
+1,922 matched compounds have a close FDA drug. Tables `results/lincs/standin_pairs_v2.tsv`, `standin_validation_v2.tsv`.
+**Stand-in vs the drug's own borrowed score (`79y2`, user 2026-11-02; rule fixed before looking: paired bootstrap of
+the Spearman difference, CI above 0).** Counterfactual: the 1,690 direct FDA rows with >= 3 lines elsewhere switched to
+borrowed and rescored by 79e / 79i in a sandbox (`scripts/79y2_borrowed_counterfactual.sh`); borrowed percentile taken
+in that run's own distribution (specificity is scaled over all drugs of a cohort; unswitched drugs move <= 0.24
+spec_mech units, rev not at all). On the 485 validation drugs with both: stand-in Spearman 0.65 (0.59-0.71, MAE 18.6),
+borrowed 0.56 (0.49-0.62, MAE 21.4), average of the two 0.68 (0.62-0.73, MAE 17.8). Stand-in better than borrowed by
+0.09 (95% CI 0.02-0.16); average better by 0.12 (0.07-0.17). Gain is largest for close pairs (>= 3 shared lines: 0.70
+vs 0.55). Borrowed across all 1,690 switched rows: 0.60. Open (user): whether reports should show the average as the
+estimate where a stand-in exists. Tables `results/lincs/standin_vs_borrowed_v2.tsv`, `standin_vs_borrowed_summary_v2.tsv`.
+**Caveats.** Shared targets are annotation-level (LINCS / Hub), not ChEMBL-checked. The validation drugs were tested in
+their tissue, so they may be easier to predict than drugs that never were.
+
 ### C13. Strata are close to their parents
 
 Stratum signatures correlate 0.97-0.99 with their parent's (disease side). In the 41-group baseline, COAD and READ

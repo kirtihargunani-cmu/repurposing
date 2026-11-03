@@ -1,0 +1,7 @@
+set	n	spearman	ci_lo	ci_hi	mae_pct
+accepted stand-ins	503	0.659	0.598	0.713	18.4
+random shared-target pairs (median of 200)	927	0.339	0.287	0.378	
+shared lines = 2	88	0.506			25.0
+shared lines >= 3	415	0.703			17.0
+similarity 0.4-0.6	133	0.491			21.3
+similarity >= 0.6	370	0.695			17.4

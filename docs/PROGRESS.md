@@ -478,3 +478,24 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
 - Drug side: PRISM / GDSC validation on hold; check the recurring oddities in specificity lists.
 - Later: CPTAC-HNSCC as an HNSC replication cohort (GDC CPTAC-3, open STAR counts, GENCODE v36; do not pool with Toil);
   subtype splits for mixed cohorts; recount3 non-cancer diseases.
+
+## 2026-11-02 Receptor evidence gate (79w, C26) and full FDA rankings page (79x)
+
+- Receptor targets of the returned drugs (HGNC receptor families): 251 of 868 expressed targets. Many were annotation
+  noise or real binders absent from the cell lines. New gate (thresholds by the user: 1 uM, 100 nM for kinases, receptor
+  in >= half of the cohort's matched lines; single-line passes kept and flagged): 22,582 cohort x drug x receptor rows,
+  31% pass. Selectivity window of passing pairs median 0.48 log10 (66% within 10x of the drug's best target).
+- `results/lincs/disease_drug_rankings_v2.html`: 459 FDA drugs x 41 diseases + 14 subgroups (9,823 rows), all scores,
+  flags, receptor gate, literature where 79o searched (225 rows). Runbook steps `receptor_gate`, `rankings_page`.
+
+## 2026-11-02 Closest-compound stand-ins (79y, 79y2, C27) and stand-in page (79z)
+
+- Stand-in = compound tested in a cohort's own lines that shares a target with an FDA drug and changes CollecTRI
+  regulator activity alike (r >= 0.4 over >= 2 shared lines; rule fixed before looking). Validation on 503 FDA drugs
+  tested in their own lines (similarity measured outside them): Spearman 0.66 vs 0.34 for random target-sharing
+  compounds; adopted. Against the drug's own borrowed score (counterfactual rescoring in a sandbox, 485 drugs):
+  stand-in 0.65, borrowed 0.56, average 0.68; stand-in better by 0.09 (CI 0.02-0.16).
+- Coverage: 443 of 8,419 borrowed / weak FDA rows have a stand-in, in 20 cohorts (none possible in the 27
+  borrowed-only cohorts). 1,922 matched compounds have a close FDA drug: `results/lincs/standin_compounds_v2.html`.
+- 79o `MODE=fda_all`: PubMed / trial search for every FDA row of the rankings page (7,444 searches, cached).
+- 79e: guard for `rev_raw` in consensus mode (raw activity folders for v2 now exist and crashed the rerun).
