@@ -667,3 +667,37 @@ rest beyond those drugs scoring high everywhere. The pieces added since C16 impr
 (evidence level, binding support, which lines a score came from) without yet showing external predictive value.
 Step 2 of the plan (DepMap CRISPR dependency agreement) and binding coverage beyond receptors are untouched by this
 and remain worth running; experimental testing should wait for a positive external signal.
+
+### C29. Validation step 2: CRISPR dependency of the drugs' targets (user, 2026-11-03)
+
+**Why.** Step 1 (C28) asked whether the rankings predict killing or recover known uses; both were null. This asks a
+different question, about targets rather than viability: do the cohort's own cell lines actually need the genes our
+drugs are aimed at? It is also the sharpest available test of the receptor gate (C26), which C28's B1 could not
+answer.
+
+**Data.** DepMap 24Q4 `CRISPRGeneEffect.csv` (Chronos gene effect; negative = knockout slows growth), added to
+`scripts/05_download_depmap.sh` and `config/datasets.yaml`. Each gene is z-scored across all screened cancer lines, so
+common essentials (needed by every line) carry no signal; `dep` = -z, so higher = this line depends on the gene more
+than the typical cancer line does. Per cohort x gene: the weighted mean of `dep` over the cohort's in-key lines
+(Celligner weights, as 79e / 79k), needing >= MIN_LINES screened lines and >= MIN_WCOV of the in-key weight. Per
+cohort x drug: the maximum over the drug's tumor-expressed targets (`targets_expressed`, 79b), i.e. its most
+depended-on target; the mean is reported alongside.
+
+**Tests, fixed before results (`79n_dependency.py`).**
+- Yardstick (runs first; the rest is only interpretable if it holds): known driver-target pairs must stand out in
+  their cohort - EGFR in LUAD, ERBB2 in BRCA-Her2, ESR1 in BRCA-LumA / LumB, AR in PRAD, BRAF in SKCM, KIT in STAD,
+  CTNNB1 in LIHC. Required: >= 4 of them above the 80th percentile of their cohort's gene distribution.
+- D1 (primary) per cohort: Spearman of the lead score percentile with the drug's `dep_max` over the FDA rows; median
+  across cohorts, permutation of the score within cohort (1,000), bootstrap CI over cohorts.
+- D2 (the gate test) per cohort x drug x receptor: `dep` of the receptor gene for pairs that pass the gate vs pairs
+  that fail; median difference across cohorts, permutation of the pass label within cohort.
+- D3 (links to C28) labelled known-use drugs vs unlabelled: difference in `dep_max`, same per-cohort form as C28's A1.
+- Split matched / borrowed, as C28.
+- **Pass rule.** Yardstick met, then D1 median rho >= 0.1 with p < 0.05, and D2 difference > 0 with p < 0.05. Each is
+  judged on its own; D2 can pass while D1 fails.
+
+**Expected weakness, stated in advance.** Most approved drugs act on genes their target cell does not depend on for
+growth (receptors, transporters, enzymes with redundancy), and a transcriptional reversal score is not built to
+predict gene essentiality, so D1 is a weak expectation. D2 is the test that carries weight here: the gate claims a
+drug binds a receptor that is present and relevant in the cohort's lines, and dependency is an outside check on
+"relevant". A gene can also matter to a tumor without being needed in culture, which this measure cannot see.
