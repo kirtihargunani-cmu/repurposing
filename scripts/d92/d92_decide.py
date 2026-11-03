@@ -15,8 +15,11 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-RES = ROOT / "results/lincs"; OUT = RES / "d92"; OUT.mkdir(exist_ok=True); P = ROOT / "data/processed/lincs"
-ARMS = {"pooled": "_v2_tf_d85", "cell_type": "_v2_tf_d92"}
+import os
+TAG = os.environ.get("TAG", "_d92")   # D92a reported arm: TAG=_d92b MAP=results/step5/d92b_group_net.tsv
+MAP = os.environ.get("MAP", "results/step5/d92_group_net.tsv")
+RES = ROOT / "results/lincs"; OUT = RES / TAG.strip("_"); OUT.mkdir(exist_ok=True); P = ROOT / "data/processed/lincs"
+ARMS = {"pooled": "_v2_tf_d85", "cell_type": f"_v2_tf{TAG}"}
 POS = [(g, d) for g in ["BRCA-LumA", "BRCA-LumB"] for d in ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]]
 NEG = [("BRCA-Basal", d) for d in ["fulvestrant", "tamoxifen", "raloxifene"]]
 ANTI_ER = ["fulvestrant", "tamoxifen", "raloxifene", "toremifene", "bazedoxifene", "clomifene"]
@@ -51,7 +54,7 @@ ae = pd.concat(AE); ae.to_csv(OUT / "antier.tsv", sep="\t", index=False)
 idx = pd.read_csv(P / "drug_line_profiles_index.tsv", sep="\t"); cmp = pd.read_csv(RES / "compounds.tsv", sep="\t")[["pert_id", "cmap_name"]]
 rows = idx.reset_index().merge(cmp, on="pert_id"); rows = rows[(rows.ModelID == "ACH-000019") & rows.cmap_name.isin(ANTI_ER)]
 mm = []
-for net, d in [("BRCA", "drug_viper_specific_v2_tf_d85"), ("BRCA_LUM", "drug_viper_specific_v2_tf_d92"), ("BRCA_BASX", "drug_viper_specific_v2_tf_d92")]:
+for net, d in [("BRCA", "drug_viper_specific_v2_tf_d85")] + [(n, f"drug_viper_specific_v2_tf{TAG}") for n in sorted(pd.read_csv(ROOT / MAP, sep="\t").net.unique())]:
     f = P / d / f"{net}.f32"
     if not f.exists():
         continue
@@ -63,8 +66,8 @@ for net, d in [("BRCA", "drug_viper_specific_v2_tf_d85"), ("BRCA_LUM", "drug_vip
 mm = pd.DataFrame(mm, columns=["net", "regulator", "median_nes", "share_negative"]); mm.to_csv(OUT / "mcf7_reading.tsv", sep="\t", index=False)
 
 # disease side
-a = pd.read_csv(ROOT / "results/step6/aracne_project_v2_tf_d92/group_mr.tsv", sep="\t")
-b = pd.read_csv(ROOT / "results/step6/aracne_project_v2_tf_d92pooled/group_mr.tsv", sep="\t")
+a = pd.read_csv(ROOT / f"results/step6/aracne_project_v2_tf{TAG}/group_mr.tsv", sep="\t")
+b = pd.read_csv(ROOT / f"results/step6/aracne_project_v2_tf{TAG}pooled/group_mr.tsv", sep="\t")
 ds = []
 for g in sorted(set(a.group_id)):
     x = a[a.group_id == g].merge(b[b.group_id == g], on="regulator", suffixes=("_c", "_p"))
