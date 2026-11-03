@@ -584,6 +584,16 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   varies for many reasons; the anti-estrogen-specific consequence (8 drugs) cannot dominate a network learned over
   all drugs. Drug-class consequences need per-class contrasts, not one network across drugs.
 
+## 2026-11-03: exploration: how the anti-estrogen misread reaches the ranking
+- `scripts/explore/antier_propagation.py`, `results/lincs/early_late/antier_propagation.tsv`: anti-estrogens in MCF7,
+  per-regulator contributions to rev (tumor ARACNe, BRCA network). Current (aggregated) profiles: LumA rev -4.4 =
+  +6.6 from proliferation-linked regulators (correct direction) and -10.9 from the rest (FOXA1 read +6.5, XBP1 +4.5,
+  RARA +5.2, SOX13, CREB3L4: luminal-program regulators read as rising, against their tumor-vs-normal rise); LumB +6.0
+  (+11.0 / -5.0); Basal +31.7 (+16.4 / +15.3), where the drug's activity anti-correlates with the basal tumor profile
+  (r -0.57). Outcome: anti-estrogens rank at `spec_mech` percentile 96 in Basal, 9 in LumA, 20 in LumB (CUR, `_d85`).
+  The late-only signature carries the same pattern (Basal +32.6); the 6 h signature removes it (Basal -0.3) but does
+  not reverse LumA either (-8.5, spread over many weak regulators).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
