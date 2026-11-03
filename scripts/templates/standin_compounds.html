@@ -137,7 +137,7 @@ details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-dire
         <ul>
           <li><b>Compounds</b> are LINCS compounds that pass the target check and were tested in this cohort's own cell lines (no unmatched-lines flag). <b>Rank</b> is the compound's position among all such compounds of the cohort on mechanism specificity (subgroups: vs sibling), before filters. Only compounds with at least one close FDA drug are listed.</li>
           <li><b>Close</b> means the compound and the FDA drug share at least one annotated target (drug-metabolism genes excluded) and change regulator activity the same way: mean correlation of their line-specific regulator activity of at least <span id="a-r"></span> over at least <span id="a-k"></span> cell lines where both were profiled. The number shown is that correlation.</li>
-          <li>For each FDA drug: its own percentile in this cohort and how it was measured. <i>Borrowed</i> means it was never tested in this cohort's tissue; <i>needs stand-in</i> marks borrowed or weak-evidence drugs, for which this compound's score is the closest measurement in the cohort's own lines. Literature counts are PubMed papers naming the drug and the disease, and ClinicalTrials.gov matches.</li>
+          <li>For each FDA drug: its own percentile in this cohort and how it was measured. <i>Borrowed</i> means it was never tested in this cohort's tissue; <i>needs stand-in</i> marks borrowed or weak-evidence drugs, for which this compound's score is the closest measurement in the cohort's own lines; <i>with this compound</i> is the average of the drug's own percentile and this compound's, which tracked the drug's measured rank better than either alone. Literature counts are PubMed papers naming the drug and the disease, and ClinicalTrials.gov matches.</li>
           <li>The check above: for FDA drugs that were tested in their cohort's lines, the best stand-in was chosen with similarity measured outside those lines, and its percentile compared with the drug's own. The method was adopted only because it beat random target-sharing compounds by a margin fixed beforehand. A stand-in is a second opinion, not a replacement for testing the drug.</li>
           <li>Scores are computational predictions, not yet validated against measured drug sensitivity (PRISM / GDSC).</li>
         </ul>
@@ -181,11 +181,11 @@ function renderCohort() {
     ${m.desc ? `<div class="desc">${esc(m.desc)}</div>` : ""}<div class="note">${esc(m.note)}</div>`;
   el("th-lead").textContent = m.kind === "subgroup" ? "Vs sibling (mech)" : "Mechanism specificity";
 }
-function drugCard(c) {
+function drugCard(c, cp) {
   const src = c[5] === "d" ? "tested here" : "borrowed";
   const lit = c[9] ? ` · <a href="${esc(c[9][2])}" target="_blank" rel="noopener">${c[9][0] ?? 0} papers</a> · <a href="${esc(c[9][3])}" target="_blank" rel="noopener">${c[9][1] ?? 0} trials</a>` : "";
   return `<div class="cd"><span class="nm">${esc(c[0])}</span><span class="sim" title="Similarity over ${c[2]} shared lines">r ${c[1].toFixed(2)} · ${c[2]} lines</span>
-    <span class="meta">Shares <b>${esc(c[3])}</b> · own %ile ${f1(c[4])} (${src})${c[8] ? ' <span class="flag warn">needs stand-in</span>' : ""}${c[6] ? ' <span class="flag bad">unmatched lines</span>' : ""}${c[7] ? ' <span class="flag bad">low transfer</span>' : ""}${lit}</span></div>`;
+    <span class="meta">Shares <b>${esc(c[3])}</b> · own %ile ${f1(c[4])} (${src})${c[8] && c[4] != null && cp != null ? ` · <b>with this compound ${((c[4] + cp) / 2).toFixed(1)}</b>` : ""}${c[8] ? ' <span class="flag warn">needs stand-in</span>' : ""}${c[6] ? ' <span class="flag bad">unmatched lines</span>' : ""}${c[7] ? ' <span class="flag bad">low transfer</span>' : ""}${lit}</span></div>`;
 }
 function renderTable() {
   const m = DATA.meta[current], all = DATA.rows[current] || [], q = el("drug-q").value.trim().toLowerCase(), sub = m.kind === "subgroup";
@@ -204,7 +204,7 @@ function renderTable() {
     <td><div class="drug">${esc(r[1])}</div><div class="moa">${esc(r[2])}</div><div class="lincs">${esc(r[3])}</div>${r[4] ? '<span class="flag ok">FDA drug</span>' : ""}${r[9] != null ? `<span class="flag plain">line match ${r[9].toFixed(2)}</span>` : ""}</td>
     <td class="num">${f1(sub ? r[5] : r[6])}<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, (sub ? r[5] : r[6]) ?? 0))}%"></i></span></td>
     <td class="num">${f1(r[7])}</td><td class="num">${f1(r[8])}</td>
-    <td><div class="close">${r[10].map(drugCard).join("")}</div></td></tr>`).join("") || `<tr><td colspan="6">No compounds match these filters.</td></tr>`;
+    <td><div class="close">${r[10].map(c => drugCard(c, sub ? r[5] : r[6])).join("")}</div></td></tr>`).join("") || `<tr><td colspan="6">No compounds match these filters.</td></tr>`;
   el("count").textContent = `${lim} of ${rs.length} compounds`;
   el("more").hidden = lim >= rs.length; el("more").textContent = `Show ${Math.min(100, rs.length - lim)} more`;
 }

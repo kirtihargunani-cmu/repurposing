@@ -10,6 +10,7 @@
   }
  },
  "adopted": true,
+ "adopted_subgroups_same_rule": true,
  "validation": [
   {
    "set": "accepted stand-ins",
@@ -58,6 +59,54 @@
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 17.4
+  },
+  {
+   "set": "subgroup: accepted stand-ins",
+   "n": 122,
+   "spearman": 0.695,
+   "ci_lo": 0.571,
+   "ci_hi": 0.8,
+   "mae_pct": 19.0
+  },
+  {
+   "set": "subgroup: random shared-target pairs (median of 200)",
+   "n": 199,
+   "spearman": 0.363,
+   "ci_lo": 0.265,
+   "ci_hi": 0.463,
+   "mae_pct": NaN
+  },
+  {
+   "set": "subgroup: shared lines = 2",
+   "n": 23,
+   "spearman": 0.446,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 25.8
+  },
+  {
+   "set": "subgroup: shared lines >= 3",
+   "n": 99,
+   "spearman": 0.757,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 17.5
+  },
+  {
+   "set": "subgroup: similarity 0.4-0.6",
+   "n": 25,
+   "spearman": 0.219,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 30.8
+  },
+  {
+   "set": "subgroup: similarity >= 0.6",
+   "n": 97,
+   "spearman": 0.814,
+   "ci_lo": NaN,
+   "ci_hi": NaN,
+   "mae_pct": 16.0
   }
  ],
  "pairs": 5606,
@@ -69,5 +118,5 @@
  },
  "cohorts_with_standins": 20,
  "matched_compounds_with_close_fda": 1922,
- "seconds": 18
+ "seconds": 21
 }

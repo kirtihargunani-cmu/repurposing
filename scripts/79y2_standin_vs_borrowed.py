@@ -15,7 +15,10 @@ Decision rule (fixed before looking): Spearman with the truth for stand-in and f
 of the difference; "stand-in better" if the 95% CI of (stand-in - borrowed) is above 0, "borrowed better" if below,
 otherwise "no clear difference". The average of the two is reported as a third estimate under the same test vs borrowed.
 Usage: SBX=<sandbox root> python scripts/79y2_standin_vs_borrowed.py
-Outputs: results/lincs/standin_vs_borrowed_v2.tsv (per drug x cohort), standin_vs_borrowed_summary_v2.tsv
+Subgroups (user 2026-11-02): the same on the 14 subgroups' lead score (spec_sib_mech percentile), when the sandbox has
+the STRATA=1 run; same decision rule, reported separately (subgroups share their parents' lines).
+Outputs: results/lincs/standin_vs_borrowed_v2.tsv (per drug x cohort), standin_vs_borrowed_summary_v2.tsv;
+         *_subgroups_v2.tsv for subgroups
 """
 import os
 from pathlib import Path
@@ -30,19 +33,24 @@ SBX = Path(os.environ["SBX"])
 N_BOOT, SEED = 1000, 0
 
 
-def main():
-    orig = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
-    cf = pd.read_csv(SBX / "results/lincs/drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+def run(level):
+    sub = level == "subgroup"
+    f, rf, col = (("stratum_reversal_split_v2_consensus.tsv", "stratum_reversal_v2_consensus.tsv", "spec_sib_mech") if sub
+                  else ("drug_reversal_split_v2_consensus.tsv", "drug_reversal_v2_consensus.tsv", "spec_mech"))
+    ren = {"stratum": "group_id"}
+    orig = pd.read_csv(RES / f, sep="\t", low_memory=False).rename(columns=ren)
+    cf = pd.read_csv(SBX / "results/lincs" / f, sep="\t", low_memory=False).rename(columns=ren)
     V = pd.read_csv(RES / "standin_validation_pairs_v2.tsv", sep="\t")
+    V = V[V.level == level] if "level" in V else V
     flipped = cf[cf.source == "borrowed"].merge(orig[["group_id", "pert_id", "source"]], on=["group_id", "pert_id"],
                                                 suffixes=("", "_orig"))
-    nl = pd.read_csv(SBX / "results/lincs/drug_reversal_v2_consensus.tsv", sep="\t", low_memory=False,
+    nl = pd.read_csv(SBX / "results/lincs" / rf, sep="\t", low_memory=False,
                      usecols=["group_id", "pert_id", "n_lines_used"])
     flipped = flipped[flipped.source_orig == "direct"].merge(nl, on=["group_id", "pert_id"], how="left")
-    flipped = flipped[["group_id", "pert_id", "spec_mech", "n_lines_used", "transfer_conf"]]
+    flipped = flipped[["group_id", "pert_id", col, "n_lines_used", "transfer_conf"]].rename(columns={col: "spec_mech"})
     # specificity is scaled over all drugs of a cohort, so switching drugs shifts every drug's spec slightly (max 0.24
     # spec_mech units, rev unchanged): the borrowed score is placed in the counterfactual run's own distribution
-    dist = {g: x.set_index("pert_id").spec_mech for g, x in cf.groupby("group_id")}
+    dist = {g: x.set_index("pert_id")[col] for g, x in cf.groupby("group_id")}
 
     def pct(g, p, v):
         o = dist[g].drop(p, errors="ignore").dropna().values
@@ -52,7 +60,8 @@ def main():
                                         "n_lines_used": "borrowed_n_lines"}), on=["group_id", "fda_pert"], how="inner")
     T = T.dropna(subset=["own", "standin", "borrowed_pct"])
     T["average"] = (T.standin + T.borrowed_pct) / 2
-    T.to_csv(RES / "standin_vs_borrowed_v2.tsv", sep="\t", index=False)
+    sfx = "_subgroups" if sub else ""
+    T.to_csv(RES / f"standin_vs_borrowed{sfx}_v2.tsv", sep="\t", index=False)
 
     rng = np.random.default_rng(SEED)
     own = T.own.values
@@ -78,7 +87,8 @@ def main():
         r.update(diff_vs_borrowed=round(rho[r["estimate"]] - rho["borrowed_pct"], 3), diff_ci_lo=round(lo, 3), diff_ci_hi=round(hi, 3),
                  verdict=f"{r['estimate']} better" if lo > 0 else ("borrowed better" if hi < 0 else "no clear difference"))
     # context: all switched drugs (with or without a stand-in)
-    allf = flipped.merge(orig[["group_id", "pert_id", "spec_mech_pct"]], on=["group_id", "pert_id"]).dropna(subset=["borrowed_pct"])
+    allf = flipped.merge(orig[["group_id", "pert_id", col + "_pct"]].rename(columns={col + "_pct": "spec_mech_pct"}),
+                         on=["group_id", "pert_id"]).dropna(subset=["borrowed_pct"])
     rows.append(dict(estimate="borrowed_pct, all switched drugs", n=len(allf),
                      spearman=round(spearmanr(allf.spec_mech_pct, allf.borrowed_pct)[0], 3), ci_lo=np.nan, ci_hi=np.nan,
                      mae_pct=round(float((allf.spec_mech_pct - allf.borrowed_pct).abs().mean()), 1),
@@ -92,8 +102,14 @@ def main():
                          diff_vs_borrowed=round(spearmanr(x.own, x.standin)[0] - spearmanr(x.own, x.borrowed_pct)[0], 3),
                          diff_ci_lo=np.nan, diff_ci_hi=np.nan, verdict=f"borrowed on same set {spearmanr(x.own, x.borrowed_pct)[0]:.3f}"))
     S = pd.DataFrame(rows)
-    S.to_csv(RES / "standin_vs_borrowed_summary_v2.tsv", sep="\t", index=False)
-    print(S.to_string(index=False))
+    S.to_csv(RES / f"standin_vs_borrowed_summary{sfx}_v2.tsv", sep="\t", index=False)
+    print(f"== {level}s ({col} percentile)"); print(S.to_string(index=False))
+
+
+def main():
+    run("disease")
+    if (SBX / "results/lincs/stratum_reversal_split_v2_consensus.tsv").exists():
+        run("subgroup")
 
 
 if __name__ == "__main__":

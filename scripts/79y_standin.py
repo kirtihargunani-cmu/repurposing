@@ -13,7 +13,8 @@ Per cohort (41 diseases, 14 subgroups):
   matched compound = passes the target gate, tested in the cohort's matched lines (direct), no unmatched_lines flag
   - FDA drug needing a stand-in (borrowed or weak evidence): its accepted matched compounds, best first (standin_rank)
   - matched compound: its accepted FDA drugs in the cohort's FDA list, best first (closest_rank)
-Validation (diseases only; subgroups repeat their parents): FDA drugs that are themselves matched in a cohort get
+Validation (diseases decide adoption; the 14 subgroups are reported separately on spec_sib_mech, similarity outside
+their parent's key lines; user 2026-11-02): FDA drugs that are themselves matched in a cohort get
 their best accepted matched stand-in, with similarity measured only on lines outside the cohort's tissue key (as in
 use: a borrowed drug was never profiled there; otherwise the score's own profiles would enter the similarity); Spearman of the stand-in's spec_mech percentile with the drug's own, with a
 bootstrap 95% CI, against random shared-target pairs (no similarity rule; 200 draws). Adopted if Spearman >= min and
@@ -164,61 +165,69 @@ def main():
     P["closest_rank"] = P.groupby(["level", "group_id", "cmp_pert"]).similarity.rank(ascending=False, method="first").astype(int)
     P.sort_values(["level", "group_id", "fda_drug", "standin_rank"]).to_csv(RES / "standin_pairs_v2.tsv", sep="\t", index=False)
 
-    # ---------------- validation: FDA drugs matched themselves (diseases)
+    # ---------------- validation: FDA drugs matched themselves; diseases (decides adoption), then subgroups (reported)
     rng = np.random.default_rng(SEED)
-    D = full["disease"]
-    V, rand_pool = [], []
-    for g, x in D.groupby("group_id"):
-        matched = x[(x.source == "direct") & ~x.unmatched_lines]
-        mset = matched.set_index("pert_id")
-        excl = key_lines(g)
-        fdam = matched[matched.pert_id.isin(G[G.group_id == g].pert_id)]
-        for fr in fdam.itertuples(index=False):
-            best, cand_t = None, []
-            for cr in matched.itertuples(index=False):
-                if cr.pert_id == fr.pert_id or (fm.get(cr.pert_id) and fm.get(cr.pert_id) == fm.get(fr.pert_id)) or cr.cmap_name == fr.cmap_name:
-                    continue
-                sh = tg.get(fr.pert_id, set()) & tg.get(cr.pert_id, set())
-                if sh:
-                    cand_t.append(cr.pert_id)
-                r, n = sim_excl(fr.pert_id, cr.pert_id, excl)
-                ok = n >= MIN_LINES and r >= MIN_R and (bool(sh) or not NEED_T)
-                if ok and (best is None or r > best[1]):
-                    best = (cr.pert_id, r, n)
-            if best:
-                V.append(dict(group_id=g, fda_pert=fr.pert_id, own=fr.spec_mech_pct, cmp=best[0],
-                              standin=mset.loc[best[0], "spec_mech_pct"], similarity=best[1], n_shared_lines=best[2]))
-            if cand_t:
-                rand_pool.append((fr.spec_mech_pct, [mset.loc[c, "spec_mech_pct"] for c in cand_t]))
-    V = pd.DataFrame(V)
 
     def boot(a, b, n_boot):
         a, b = np.asarray(a), np.asarray(b)
         st = [spearmanr(a[k], b[k])[0] for k in (rng.integers(0, len(a), len(a)) for _ in range(n_boot))]
         return np.nanpercentile(st, [2.5, 97.5])
-    out = []
-    rho = spearmanr(V.own, V.standin)[0] if len(V) > 2 else np.nan
-    lo, hi = boot(V.own, V.standin, SC["validation"]["n_boot"]) if len(V) > 2 else (np.nan, np.nan)
-    rr = [spearmanr([o for o, _ in rand_pool], [c[rng.integers(len(c))] for _, c in rand_pool])[0] for _ in range(200)]
-    rand_med = float(np.median(rr))
-    out.append(dict(set="accepted stand-ins", n=len(V), spearman=round(rho, 3), ci_lo=round(lo, 3), ci_hi=round(hi, 3),
-                    mae_pct=round(float((V.own - V.standin).abs().mean()), 1) if len(V) else np.nan))
-    out.append(dict(set="random shared-target pairs (median of 200)", n=len(rand_pool), spearman=round(rand_med, 3),
-                    ci_lo=round(float(np.percentile(rr, 2.5)), 3), ci_hi=round(float(np.percentile(rr, 97.5)), 3), mae_pct=np.nan))
-    for lab, m in [("shared lines = 2", V.n_shared_lines == 2), ("shared lines >= 3", V.n_shared_lines >= 3),
-                   ("similarity 0.4-0.6", V.similarity < 0.6), ("similarity >= 0.6", V.similarity >= 0.6)]:
-        x = V[m]
-        out.append(dict(set=lab, n=len(x), spearman=round(spearmanr(x.own, x.standin)[0], 3) if len(x) > 2 else np.nan,
-                        ci_lo=np.nan, ci_hi=np.nan, mae_pct=round(float((x.own - x.standin).abs().mean()), 1) if len(x) else np.nan))
-    O = pd.DataFrame(out)
+
+    def validate(level, D, F, col, pre):
+        """D: cohort table, F: FDA rows, col: lead percentile column; similarity outside the (parent's) key lines"""
+        V, rand_pool = [], []
+        for g, x in D.groupby("group_id"):
+            matched = x[(x.source == "direct") & ~x.unmatched_lines]
+            mset = matched.set_index("pert_id")
+            par = x.parent_group.iloc[0] if level == "subgroup" else g
+            excl = key_lines(par)
+            fdam = matched[matched.pert_id.isin(F[F.group_id == g].pert_id)]
+            for fr in fdam.itertuples(index=False):
+                best, cand_t = None, []
+                for cr in matched.itertuples(index=False):
+                    if cr.pert_id == fr.pert_id or (fm.get(cr.pert_id) and fm.get(cr.pert_id) == fm.get(fr.pert_id)) or cr.cmap_name == fr.cmap_name:
+                        continue
+                    sh = tg.get(fr.pert_id, set()) & tg.get(cr.pert_id, set())
+                    if sh:
+                        cand_t.append(cr.pert_id)
+                    r, n = sim_excl(fr.pert_id, cr.pert_id, excl)
+                    ok = n >= MIN_LINES and r >= MIN_R and (bool(sh) or not NEED_T)
+                    if ok and (best is None or r > best[1]):
+                        best = (cr.pert_id, r, n)
+                own = getattr(fr, col)
+                if best:
+                    V.append(dict(level=level, group_id=g, fda_pert=fr.pert_id, own=own, cmp=best[0],
+                                  standin=mset.loc[best[0], col], similarity=best[1], n_shared_lines=best[2]))
+                if cand_t:
+                    rand_pool.append((own, [mset.loc[c, col] for c in cand_t]))
+        V = pd.DataFrame(V)
+        out = []
+        rho = spearmanr(V.own, V.standin)[0] if len(V) > 2 else np.nan
+        lo, hi = boot(V.own, V.standin, SC["validation"]["n_boot"]) if len(V) > 2 else (np.nan, np.nan)
+        rr = [spearmanr([o for o, _ in rand_pool], [c[rng.integers(len(c))] for _, c in rand_pool])[0] for _ in range(200)]
+        rand_med = float(np.median(rr))
+        out.append(dict(set=pre + "accepted stand-ins", n=len(V), spearman=round(rho, 3), ci_lo=round(lo, 3), ci_hi=round(hi, 3),
+                        mae_pct=round(float((V.own - V.standin).abs().mean()), 1) if len(V) else np.nan))
+        out.append(dict(set=pre + "random shared-target pairs (median of 200)", n=len(rand_pool), spearman=round(rand_med, 3),
+                        ci_lo=round(float(np.percentile(rr, 2.5)), 3), ci_hi=round(float(np.percentile(rr, 97.5)), 3), mae_pct=np.nan))
+        for lab, m in [("shared lines = 2", V.n_shared_lines == 2), ("shared lines >= 3", V.n_shared_lines >= 3),
+                       ("similarity 0.4-0.6", V.similarity < 0.6), ("similarity >= 0.6", V.similarity >= 0.6)]:
+            x = V[m]
+            out.append(dict(set=pre + lab, n=len(x), spearman=round(spearmanr(x.own, x.standin)[0], 3) if len(x) > 2 else np.nan,
+                            ci_lo=np.nan, ci_hi=np.nan, mae_pct=round(float((x.own - x.standin).abs().mean()), 1) if len(x) else np.nan))
+        return V, out, bool(rho >= SC["validation"]["min_spearman"] and lo > rand_med)
+
+    Vd, Od, adopted = validate("disease", full["disease"], G, "spec_mech_pct", "")
+    Vs, Os, adopted_sub = validate("subgroup", full["subgroup"], Sg, "spec_sib_mech_pct", "subgroup: ")
+    O = pd.DataFrame(Od + Os)
     O.to_csv(RES / "standin_validation_v2.tsv", sep="\t", index=False)
-    V.to_csv(RES / "standin_validation_pairs_v2.tsv", sep="\t", index=False)
-    adopted = bool(rho >= SC["validation"]["min_spearman"] and lo > rand_med)
+    pd.concat([Vd, Vs], ignore_index=True).to_csv(RES / "standin_validation_pairs_v2.tsv", sep="\t", index=False)
 
     need = P[P.fda_needs_standin & (P.standin_rank == 1)]
     allneed = sum(((fda_by[l].source == "borrowed") | fda_by[l].unmatched_lines.map(truthy) | fda_by[l].low_transfer.map(truthy)).sum()
                   for l in fda_by)
-    run = dict(date=time.strftime("%Y-%m-%d"), config=SC, adopted=adopted, validation=O.to_dict("records"),
+    run = dict(date=time.strftime("%Y-%m-%d"), config=SC, adopted=adopted, adopted_subgroups_same_rule=adopted_sub,
+               validation=O.to_dict("records"),
                pairs=len(P), fda_rows_needing=int(allneed),
                fda_rows_with_standin=int(len(need)),
                fda_rows_with_standin_by_level=need.level.value_counts().to_dict(),

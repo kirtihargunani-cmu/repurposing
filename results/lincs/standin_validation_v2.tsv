@@ -5,3 +5,9 @@ shared lines = 2	88	0.506			25.0
 shared lines >= 3	415	0.703			17.0
 similarity 0.4-0.6	133	0.491			21.3
 similarity >= 0.6	370	0.695			17.4
+subgroup: accepted stand-ins	122	0.695	0.571	0.8	19.0
+subgroup: random shared-target pairs (median of 200)	199	0.363	0.265	0.463	
+subgroup: shared lines = 2	23	0.446			25.8
+subgroup: shared lines >= 3	99	0.757			17.5
+subgroup: similarity 0.4-0.6	25	0.219			30.8
+subgroup: similarity >= 0.6	97	0.814			16.0

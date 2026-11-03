@@ -450,6 +450,9 @@ target-sharing compounds 0.34. Better with >= 3 shared lines (0.70) or similarit
 **Coverage.** 443 of 8,419 borrowed / weak FDA rows get a stand-in (383 disease, 60 subgroup rows) in 20 cohorts; the
 27 borrowed-only cohorts have no compound in their own lines, so no stand-in is possible there (C24).
 1,922 matched compounds have a close FDA drug. Tables `results/lincs/standin_pairs_v2.tsv`, `standin_validation_v2.tsv`.
+**Subgroups (user 2026-11-02).** Same validation on the 14 subgroups' lead score (spec_sib_mech percentile; similarity
+outside the parent's key lines): 122 FDA drugs, Spearman 0.70 (0.57-0.80) vs 0.36 for random target-sharing pairs;
+passes the same rule. Weak for similarity 0.4-0.6 (0.22, n = 25), strong for >= 0.6 (0.81, n = 97).
 **Stand-in vs the drug's own borrowed score (`79y2`, user 2026-11-02; rule fixed before looking: paired bootstrap of
 the Spearman difference, CI above 0).** Counterfactual: the 1,690 direct FDA rows with >= 3 lines elsewhere switched to
 borrowed and rescored by 79e / 79i in a sandbox (`scripts/79y2_borrowed_counterfactual.sh`); borrowed percentile taken
@@ -457,8 +460,10 @@ in that run's own distribution (specificity is scaled over all drugs of a cohort
 spec_mech units, rev not at all). On the 485 validation drugs with both: stand-in Spearman 0.65 (0.59-0.71, MAE 18.6),
 borrowed 0.56 (0.49-0.62, MAE 21.4), average of the two 0.68 (0.62-0.73, MAE 17.8). Stand-in better than borrowed by
 0.09 (95% CI 0.02-0.16); average better by 0.12 (0.07-0.17). Gain is largest for close pairs (>= 3 shared lines: 0.70
-vs 0.55). Borrowed across all 1,690 switched rows: 0.60. Open (user): whether reports should show the average as the
-estimate where a stand-in exists. Tables `results/lincs/standin_vs_borrowed_v2.tsv`, `standin_vs_borrowed_summary_v2.tsv`.
+vs 0.55). Borrowed across all 1,690 switched rows: 0.60. Decided (user 2026-11-02): where a stand-in exists, reports show the
+average of the drug's own lead percentile and the best stand-in's next to the drug's own score (79x "with stand-in";
+rank option "stand-in averaged"); the drug's own score stays the default ranking. For subgroups the average uses
+spec_sib_mech percentiles, which the validation (diseases, spec_mech) did not test. Tables `results/lincs/standin_vs_borrowed_v2.tsv`, `standin_vs_borrowed_summary_v2.tsv`.
 **Caveats.** Shared targets are annotation-level (LINCS / Hub), not ChEMBL-checked. The validation drugs were tested in
 their tissue, so they may be easier to predict than drugs that never were.
 

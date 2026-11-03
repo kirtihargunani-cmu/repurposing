@@ -13,7 +13,8 @@ Inputs: results/lincs/drug_reversal_split_v2_consensus.tsv, stratum_reversal_spl
         drug_reversal_summary_v2_consensus.tsv, stratum_reversal_summary_v2_consensus.tsv, drug_annotations.tsv,
         fda_matches.tsv, literature_v2_consensus.tsv, literature_fda_top_v2.tsv, literature_fda_all_v2.tsv (79o
         MODE=fda_all, every row; preferred where present), receptor_gate_v2.tsv, standin_pairs_v2.tsv + standin_run.json
-        (79y: up to 3 stand-ins for borrowed / weak-evidence FDA drugs),
+        (79y: up to 3 stand-ins for borrowed / weak-evidence FDA drugs; where one exists the page also shows the
+        average of the drug's own lead percentile and the best stand-in's, and can rank by it: user 2026-11-02),
         results/step10_v2/strata.tsv; template scripts/templates/disease_drug_rankings.html (placeholder __DATA__)
 Output: results/lincs/disease_drug_rankings_v2.html
 """
@@ -141,7 +142,14 @@ def main():
                        int(clean(r.n_lines_used) or 0)]
                 row += ([rnd(r.spec_sib), rnd(r.spec_sib_pct, 1), rnd(r.spec_sib_mech), rnd(r.spec_sib_mech_pct, 1)]
                         if sub else [None] * 4)
-                row.append(SI.get((u, r.pert_id), []))
+                si = SI.get((u, r.pert_id), [])
+                row.append(si)
+                # user 2026-11-02 (C27): where a stand-in exists, show the average of the drug's own lead percentile and
+                # the best stand-in's (79y2: average 0.68 vs own borrowed 0.56 Spearman with the matched-line truth)
+                own = rnd(r.spec_sib_mech_pct, 1) if sub else rnd(r.spec_mech_pct, 1)
+                sip = (si[0][7] if sub else si[0][4]) if si else None
+                avg = round((own + sip) / 2, 1) if si and own is not None and sip is not None else None
+                row += [avg, avg if avg is not None else own]
                 lst.append(row)
             out[u] = lst
         return out
