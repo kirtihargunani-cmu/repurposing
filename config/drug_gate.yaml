@@ -77,6 +77,9 @@ standin:
   min_shared_lines: 2
   min_similarity: 0.4
   require_shared_target: true   # >= 1 shared annotated non-ADME target (LINCS / Repurposing Hub; the gate's ADME list)
+  shared_target_evidence: chembl  # user 2026-11-02: the shared annotated target must be ChEMBL-backed for both compounds
+                                 # (receptor_gate.binding rule: curated mechanism or pChEMBL >= 6; kinases >= 7);
+                                 # "annotation" = annotation overlap only (the first version, C27)
   # Use: in a cohort, a compound tested in the cohort's matched lines (direct, no unmatched_lines flag) stands in for a
   # close FDA drug that was only borrowed or is weak evidence there, and vice versa the page lists, for each such
   # compound, its closest FDA drugs. A stand-in is reported next to the drug's own score, never replaces it.

@@ -7,7 +7,9 @@ low_transfer), while some other LINCS compound with the same target and a simila
 Similarity of two compounds = mean over their shared profiled lines of the Pearson correlation of their line-specific
 regulator activity (CollecTRI, one context-free regulon for all lines: data/processed/lincs/drug_viper_specific_collectri;
 line average removed in 79c/79d). Pair accepted if >= min_shared_lines shared lines, similarity >= min_similarity and
->= 1 shared annotated target (LINCS / Repurposing Hub, ADME genes of the target gate excluded). LINCS ids of the same
+>= 1 shared annotated target (LINCS / Repurposing Hub, ADME genes of the target gate excluded); with
+shared_target_evidence = chembl (user 2026-11-02) both compounds must also bind that target in ChEMBL 37 by the receptor
+gate's rule (scripts/chembl_lib.py; cache data/raw/chembl/ChEMBL_37/standin/). LINCS ids of the same
 FDA ingredient or the same name never pair.
 Per cohort (41 diseases, 14 subgroups):
   matched compound = passes the target gate, tested in the cohort's matched lines (direct), no unmatched_lines flag
@@ -38,6 +40,7 @@ from scipy.stats import spearmanr
 ROOT = Path(__file__).resolve().parent.parent
 RES, PROC = ROOT / "results/lincs", ROOT / "data/processed/lincs"
 sys.path.insert(0, str(ROOT / "scripts"))
+from chembl_lib import RELEASE, Binding  # noqa: E402
 from fda_rows import fda_rows, truthy  # noqa: E402
 
 CFG = yaml.safe_load(open(ROOT / "config/drug_gate.yaml"))
@@ -104,8 +107,24 @@ def main():
     tg = {p: {t for c in ("lincs_target", "hub_target") for t in str(r[c]).split("|") if t not in ("nan", "") and t not in adme}
           for p, r in ann.iterrows()}
     nm = ann.cmap_name.to_dict()
-    fm = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id").fda_ingredient.to_dict()
+    # ---- shared targets: annotated on both; with shared_target_evidence = chembl, ChEMBL-backed binding by both too
     G, Sg = fda_rows()
+    uni = set(G.pert_id) | set(Sg.pert_id)
+    for f in ("drug_reversal_split_v2_consensus.tsv", "stratum_reversal_split_v2_consensus.tsv"):
+        x = pd.read_csv(RES / f, sep="\t", low_memory=False, usecols=["pert_id", "source", "unmatched_lines", "passes_gate"])
+        uni |= set(x[(x.source == "direct") & ~x.unmatched_lines.map(truthy) & x.passes_gate.map(truthy)].pert_id)
+    uni = {p for p in uni if tg.get(p)}
+    EVID = SC.get("shared_target_evidence", "annotation")
+    B = Binding(uni, ROOT / f"data/raw/chembl/{RELEASE}/standin") if EVID == "chembl" else None
+    _sh = {}
+
+    def shared(a, b):
+        k = (a, b) if a < b else (b, a)
+        if k not in _sh:
+            s_ = tg.get(a, set()) & tg.get(b, set())
+            _sh[k] = {g for g in s_ if B.binds(a, g) and B.binds(b, g)} if B else s_
+        return _sh[k]
+    fm = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id").fda_ingredient.to_dict()
     fda_by = {"disease": G, "subgroup": Sg}
     cols = ["group_id", "pert_id", "cmap_name", "source", "unmatched_lines", "low_transfer", "line_match", "rev_pct",
             "spec_pct", "spec_mech", "spec_mech_pct"]
@@ -131,7 +150,7 @@ def main():
             return False, np.nan, 0, ""
         i, j = pi[a], pi[b]
         n, r = int(N[i, j]), float(S[i, j])
-        sh = tg.get(a, set()) & tg.get(b, set())
+        sh = shared(a, b)
         ok = n >= MIN_LINES and r >= MIN_R and (bool(sh) or not NEED_T)
         return ok, r, n, "|".join(sorted(sh))
 
@@ -187,7 +206,7 @@ def main():
                 for cr in matched.itertuples(index=False):
                     if cr.pert_id == fr.pert_id or (fm.get(cr.pert_id) and fm.get(cr.pert_id) == fm.get(fr.pert_id)) or cr.cmap_name == fr.cmap_name:
                         continue
-                    sh = tg.get(fr.pert_id, set()) & tg.get(cr.pert_id, set())
+                    sh = shared(fr.pert_id, cr.pert_id)
                     if sh:
                         cand_t.append(cr.pert_id)
                     r, n = sim_excl(fr.pert_id, cr.pert_id, excl)
@@ -226,7 +245,7 @@ def main():
     need = P[P.fda_needs_standin & (P.standin_rank == 1)]
     allneed = sum(((fda_by[l].source == "borrowed") | fda_by[l].unmatched_lines.map(truthy) | fda_by[l].low_transfer.map(truthy)).sum()
                   for l in fda_by)
-    run = dict(date=time.strftime("%Y-%m-%d"), config=SC, adopted=adopted, adopted_subgroups_same_rule=adopted_sub,
+    run = dict(date=time.strftime("%Y-%m-%d"), config=SC, chembl=B.n if B else None, adopted=adopted, adopted_subgroups_same_rule=adopted_sub,
                validation=O.to_dict("records"),
                pairs=len(P), fda_rows_needing=int(allneed),
                fda_rows_with_standin=int(len(need)),
