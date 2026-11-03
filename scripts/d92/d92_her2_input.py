@@ -7,7 +7,8 @@ import numpy as np
 import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent.parent
 IN = ROOT / "data/processed/step5/aracne_inputs_v2"
-x0 = pd.read_csv(IN / "BRCA.exp.tsv", sep="\t", nrows=0).columns[1:]
+import os as _os
+x0 = pd.read_csv(IN / f"{_os.environ.get('COHORT', 'BRCA')}.exp.tsv", sep="\t", nrows=0).columns[1:]   # COHORT (D96): source cohort input
 cov = pd.read_csv(ROOT / "results/step3/covariates_toil.tsv", sep="\t", low_memory=False)
 sub_of = cov.drop_duplicates("sample").set_index("sample").group_id.reindex(x0)
 import os
