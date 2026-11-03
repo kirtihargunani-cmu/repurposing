@@ -73,6 +73,8 @@ flowchart LR
 - **Knockdown benchmark** (`knockdown_subset`, `knockdown_benchmark`, `79m` / `79n`): LINCS shRNA and CRISPR knockdowns
   of 336 TFs. All regulon sets detect knockdowns weakly and about equally, with too little data to pick a set per TF
   (C19), so both sets are averaged instead. Reported, not used.
+- **Overexpression added (D84, `79u`, `79n` PERTURB=d84, `79v`):** neither set wins (57 TFs, p = 0.15), so the
+  consensus stays; 4 per-TF switches and per-regulator flags in `results/lincs/d84_choice.tsv` (not yet applied).
 - Outputs: `data/processed/lincs/drug_viper_specific_v2_tf/<NET>.f32`, `drug_viper_specific_collectri/ALL.f32` (not in
   git); regulator tables `results/lincs/drug_viper_regulators_*.tsv`.
 

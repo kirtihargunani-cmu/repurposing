@@ -1,0 +1,591 @@
+regulator	n_nets	n_disagree	n_sigs	n_lines	pass_aracne	pass_collectri	correct_aracne	correct_collectri	choice	flag
+SP3	28	28							consensus	untested
+NR2F1	28	26							consensus	untested
+SP1	28	28							consensus	untested
+ETV3	28	28							consensus	untested
+BACH1	28	28							consensus	untested
+ELF2	28	27							consensus	untested
+SKIL	27	26	2	1	False	False	0.5	0.5	consensus	insufficient
+NFIL3	28	28	5	3	False	False	0.6	0.4	consensus	insufficient
+NR3C2	25	22							consensus	untested
+HHEX	28	26							consensus	untested
+NFAT5	28	27							consensus	untested
+TP73	15	13							consensus	untested
+TGIF1	28	28	1	1	False	False	0	0	consensus	insufficient
+HOXA5	18	18	2	1	False	False	1	0	consensus	insufficient
+EGR4	1	1							consensus	untested
+TFCP2	28	28							consensus	untested
+TTF1	28	28							consensus	untested
+AR	22	17							consensus	untested
+SOX5	14	12							consensus	untested
+KLF11	28	25							consensus	untested
+ZNF362	28	25							consensus	untested
+MEF2A	28	26							consensus	untested
+PATZ1	28	26							consensus	untested
+MZF1	28	27							consensus	untested
+ZNF384	28	28							consensus	untested
+YBX3	28	21							consensus	untested
+ZFPM1	26	26							consensus	untested
+TBX2	28	24	1	1	False	False	0	0	consensus	insufficient
+E2F5	28	21							consensus	untested
+DLX4	7	5							consensus	untested
+STAT6	28	23							consensus	untested
+NFIC	28	21							consensus	untested
+ZNF91	15	13							consensus	untested
+NFE2	5	3							consensus	untested
+SP2	28	28							consensus	untested
+KLF10	28	27	2	2	False	False	0.5	0.5	consensus	insufficient
+POU2F1	26	21							consensus	untested
+NR1I2	3	2							consensus	untested
+SMAD4	28	26	3	3	True	False	1	0.6667	consensus	insufficient
+HOXA7	18	14							consensus	untested
+MLXIPL	14	13							consensus	untested
+MEIS1	25	20							consensus	untested
+ZBED1	28	22							consensus	untested
+PITX1	18	14							consensus	untested
+ZBTB7B	28	24							consensus	untested
+ZEB1	28	16							consensus	untested
+TBX3	27	21							consensus	untested
+ZNF382	6	4							consensus	untested
+SOX6	22	19							consensus	untested
+CXXC1	28	26							consensus	untested
+STAT5B	28	24	1	1	False	False	0	0	consensus	insufficient
+BHLHE41	27	17							consensus	untested
+NR1D1	27	20							consensus	untested
+NFATC4	27	24							consensus	untested
+TEAD1	28	23							consensus	untested
+FOXH1	1	1							consensus	untested
+CREB5	24	21							consensus	untested
+KLF8	23	15							consensus	untested
+TEF	28	25							consensus	untested
+GATA4	5	3	1	1	False	False	1	1	consensus	insufficient
+PRDM1	28	19							consensus	untested
+ZNF354C	16	10							consensus	untested
+RBPJ	27	20							consensus	untested
+HOXB7	21	13							consensus	untested
+NRF1	28	22							consensus	untested
+TRPS1	27	16							consensus	untested
+TBPL1	28	22	8	6	False	False	0.75	1	consensus	not_supported
+ZEB2	28	19							consensus	untested
+NR2F2	28	17							consensus	untested
+RXRA	28	18							consensus	untested
+HES1	28	15							consensus	untested
+PAX8	26	17	1	1	False	False	1	0	consensus	insufficient
+ELK3	28	17							consensus	untested
+DMTF1	28	21	3	2	False	False	0.3333	0.3333	consensus	insufficient
+GTF3A	27	18							consensus	untested
+ZIC1	6	4							consensus	untested
+ZNF331	19	13							consensus	untested
+NFIX	28	17							consensus	untested
+NFYB	28	18							consensus	untested
+WT1	5	3							consensus	untested
+NFYC	28	17							consensus	untested
+USF2	28	18							consensus	untested
+MBD2	28	18							consensus	untested
+RXRB	28	19							consensus	untested
+LHX2	7	5							consensus	untested
+ZGLP1	9	8	3	2	True	True	1	1	consensus	insufficient
+NR4A2	26	21							consensus	untested
+THRB	24	13	2	2	False	False	1	1	consensus	insufficient
+RFX1	28	19							consensus	untested
+VDR	25	16							consensus	untested
+FOXL2	3	2							consensus	untested
+NR2C1	27	18							consensus	untested
+EHF	17	9							consensus	untested
+NFYA	28	15							consensus	untested
+PDX1	2	1	1	1	False	False	1	1	consensus	insufficient
+IRF3	28	17							consensus	untested
+NR4A3	24	13							consensus	untested
+BARX2	17	10							consensus	untested
+CEBPG	28	15							consensus	untested
+TRERF1	27	15	3	3	False	False	0	0.3333	consensus	insufficient
+ZNF699	14	7							consensus	untested
+RARA	28	15							consensus	untested
+GATA3	20	11	1	1	False	False	0	0	consensus	insufficient
+IKZF1	27	15							consensus	untested
+E2F4	28	15							consensus	untested
+ZBTB33	28	14							consensus	untested
+BCL6	27	12							consensus	untested
+TCF12	28	13	1	1	False	False	1	1	consensus	insufficient
+IRF5	27	12							consensus	untested
+ZFP42	1	0							consensus	untested
+IRF6	25	12							consensus	untested
+HOXC8	10	5							consensus	untested
+RORC	20	9	1	1	False	False	1	1	consensus	insufficient
+MTF1	28	11							consensus	untested
+CREM	28	11							consensus	untested
+ZBTB17	28	12							consensus	untested
+NKX3-1	17	7							consensus	untested
+HOXA1	13	6							consensus	untested
+KCNIP3	22	9							consensus	untested
+SOX2	11	5	10	4	False	False	0.3	0.7	consensus	not_supported
+NR0B1	3	1	2	2	False	False	0	0.5	consensus	insufficient
+NCOA2	28	11							consensus	untested
+DBP	26	10							consensus	untested
+FOXP3	18	3							consensus	untested
+USF1	28	12	11	8	False	False	0.3636	0.1818	consensus	not_supported
+SIX1	18	6							consensus	untested
+STAT3	28	11	3	3	False	False	0.6667	0.3333	consensus	insufficient
+TP53	28	13	22	11	False	False	0.5909	0.6818	consensus	not_supported
+RARG	28	11	1	1	False	False	1	1	consensus	insufficient
+PLAGL1	27	10							consensus	untested
+ZBTB4	28	9							consensus	untested
+HLF	24	9	1	1	False	False	0	0	consensus	insufficient
+GATA5	2	0							consensus	untested
+HOXB13	9	3	9	5	False	False	0.7778	0.6667	consensus	not_supported
+RFX5	28	12	7	6	False	False	0.7143	0.4286	consensus	not_supported
+MAX	28	12							consensus	untested
+SMAD3	27	11	12	9	False	False	0.6667	0.5833	consensus	not_supported
+ETV5	28	10	1	1	False	False	1	1	consensus	insufficient
+NR2E1	2	0							consensus	untested
+PKNOX1	26	8							consensus	untested
+ESR2	1	0							consensus	untested
+PBX1	28	9							consensus	untested
+TCF7L2	28	8							consensus	untested
+YY1	28	0	2	2	False	False	1	1	consensus	insufficient
+SMAD1	28	6							consensus	untested
+TP63	9	2							consensus	untested
+HOXA13	12	4	2	2	False	False	0	0.5	consensus	insufficient
+SNAI2	27	8	2	1	False	False	1	0.5	consensus	insufficient
+NKX2-5	2	0	5	4	False	False	0.6	0.6	consensus	insufficient
+GFI1	12	0							consensus	untested
+HOXD13	10	2							consensus	untested
+ZKSCAN7	17	4							consensus	untested
+SP4	28	9							consensus	untested
+NRL	11	1							consensus	untested
+KDM5B	28	8	11	7	False	False	0.8182	0.4545	consensus	not_supported
+NR2C2	28	3							consensus	untested
+FOXA1	15	3	1	1	False	False	1	1	consensus	insufficient
+PAX5	6	0							consensus	untested
+RELA	28	8	1	1	False	False	1	1	consensus	insufficient
+STAT5A	28	8	1	1	False	False	1	1	consensus	insufficient
+MSX2	17	7	5	5	False	False	0.4	1	consensus	insufficient
+PGR	10	2							consensus	untested
+PPARG	26	12	10	7	False	False	0.5	0.9	consensus	not_supported
+DLX2	2	1	1	1	False	False	1	0	consensus	insufficient
+ATF5	27	7	10	8	False	False	0.4	0.6	consensus	not_supported
+ESRRG	16	4	1	1	False	False	1	1	consensus	insufficient
+HSF2	28	4							consensus	untested
+HSF1	28	6							consensus	untested
+KLF2	28	4							consensus	untested
+MSC	23	5							consensus	untested
+CDX1	2	0	1	1	False	False	1	0	consensus	insufficient
+OTX2	1	0							consensus	untested
+FOXN1	4	0							consensus	untested
+BMAL1	27	5							consensus	untested
+NFIA	28	10							consensus	untested
+CEBPA	25	4	1	1	False	False	0	1	consensus	insufficient
+LMX1B	5	2	2	2	False	False	1	1	consensus	insufficient
+CREB3	28	3	2	2	False	False	1	1	consensus	insufficient
+HEY1	28	8	2	1	False	False	0	0.5	consensus	insufficient
+CUX1	27	0							consensus	untested
+POU3F1	7	1							consensus	untested
+DNMT1	27	1	22	9	True	False	0.9091	0.5455	consensus	tested
+RUNX3	27	3							consensus	untested
+TBX15	12	4							consensus	untested
+SALL4	17	3	6	5	False	False	0.6667	0.3333	consensus	not_supported
+ZNF143	28	4							consensus	untested
+BHLHA15	1	0							consensus	untested
+PITX2	6	0							consensus	untested
+TCF7	28	5							consensus	untested
+ZBTB16	13	0							consensus	untested
+TCF3	28	4							consensus	untested
+KLF15	24	5							consensus	untested
+ETV7	21	4							consensus	untested
+MBD1	28	3							consensus	untested
+PAX6	17	4							consensus	untested
+ETV6	28	2							consensus	untested
+PPARA	26	6							consensus	untested
+NR1H3	28	5							consensus	untested
+TET1	12	2							consensus	untested
+JDP2	28	9	2	2	False	False	0.5	0	consensus	insufficient
+MAFK	27	1							consensus	untested
+SOX11	10	1	1	1	False	False	1	1	consensus	insufficient
+SMAD5	28	1							consensus	untested
+MITF	28	4	5	2	True	True	1	1	consensus	insufficient
+PURA	28	0	1	1	False	False	1	1	consensus	insufficient
+NR3C1	28	0							consensus	untested
+GLI3	26	10							consensus	untested
+RORA	24	4							consensus	untested
+PAX2	6	0							consensus	untested
+TFE3	28	1							consensus	untested
+NR1H4	4	0	2	2	False	False	0.5	0.5	consensus	insufficient
+MECP2	28	5							consensus	untested
+NR5A2	15	1							consensus	untested
+KLF9	28	3							consensus	untested
+HOXA10	18	2	1	1	False	False	1	1	consensus	insufficient
+IRX1	4	1							consensus	untested
+RARB	27	4							consensus	untested
+AIRE	1	0	2	2	False	False	0	0.5	consensus	insufficient
+CTCF	28	0	1	1	False	False	1	0	consensus	insufficient
+BHLHE40	28	1							consensus	untested
+FOXQ1	13	4	4	4	False	False	0.5	0.5	consensus	insufficient
+ESR1	17	5	2	1	False	False	1	1	consensus	insufficient
+OLIG2	2	0							consensus	untested
+CREBZF	28	2							consensus	untested
+CEBPZ	28	2	7	6	False	True	0.5714	0.8571	consensus	tested
+ERF	28	1							consensus	untested
+KMT2B	28	0							consensus	untested
+NFKB1	28	3							consensus	untested
+NKX2-1	3	0							consensus	untested
+HOXC6	20	1							consensus	untested
+TFAP2B	3	0							consensus	untested
+FOXC1	28	4							consensus	untested
+EPAS1	28	2	1	1	False	False	1	1	consensus	insufficient
+MXD1	26	0							consensus	untested
+GRHL3	17	0	1	1	False	False	0	1	consensus	insufficient
+ETV4	23	2							consensus	untested
+PROX1	18	5							consensus	untested
+KLF5	26	2							consensus	untested
+CDX2	1	0	8	6	False	False	1	0.625	consensus	not_supported
+SATB1	28	9	1	1	False	False	0	1	consensus	insufficient
+FOXD3	3	1							consensus	untested
+MEF2D	28	1							consensus	untested
+FOXA2	7	1							consensus	untested
+FLI1	28	0							consensus	untested
+AHR	28	2	1	1	False	False	1	1	consensus	insufficient
+TFAP2C	17	5							consensus	untested
+GATA6	24	3							consensus	untested
+MAFB	28	2							consensus	untested
+NFIB	27	8							consensus	untested
+ZNF148	28	0							consensus	untested
+BCL11B	20	2							consensus	untested
+ARX	4	1							consensus	untested
+THRA	28	2							consensus	untested
+NFATC2	28	5	7	5	True	True	0.8571	1	consensus	tested
+STAT2	28	4							consensus	untested
+SOX9	28	7							consensus	untested
+KAT7	28	2							consensus	untested
+ETV1	28	3	13	5	True	False	0.7692	0.3077	aracne_v2_tf	tested
+HIF1A	28	4	21	12	False	True	0.7619	0.8095	consensus	tested
+REL	27	1							consensus	untested
+EBF1	27	3	12	4	True	True	1	0.9167	consensus	tested
+PPARD	28	7	3	2	False	False	0.3333	0.6667	consensus	insufficient
+IRF4	14	1							consensus	untested
+SATB2	20	6							consensus	untested
+LYL1	28	1							consensus	untested
+MAF	28	4							consensus	untested
+TFAP2A	20	2							consensus	untested
+NFATC3	28	2	3	3	False	False	0.3333	0.6667	consensus	insufficient
+ARNT	28	0							consensus	untested
+IRF2	28	4	2	2	False	False	1	1	consensus	insufficient
+BATF	15	1							consensus	untested
+RUNX1	28	3							consensus	untested
+HIC1	28	6							consensus	untested
+MSX1	24	2							consensus	untested
+ELF4	28	3	2	2	False	False	1	1	consensus	insufficient
+NCOA3	28	1	17	8	False	True	0.4118	0.7059	collectri	tested
+NR5A1	2	0							consensus	untested
+ETS2	28	3							consensus	untested
+TFAP4	27	0	1	1	False	False	0	1	consensus	insufficient
+HOXA9	14	0	8	5	True	False	0.875	0.5	consensus	tested
+MECOM	28	0							consensus	untested
+NR1I3	1	0							consensus	untested
+ELF1	28	0							consensus	untested
+ATF2	28	1							consensus	untested
+FOSB	28	0							consensus	untested
+ZBTB7A	28	1							consensus	untested
+FOSL1	23	0	13	8	True	False	0.9231	0.6923	consensus	tested
+MAZ	28	3							consensus	untested
+MYCN	13	1							consensus	untested
+SOX10	6	1	1	1	False	False	1	1	consensus	insufficient
+HAND2	7	0							consensus	untested
+SOX4	28	3	14	11	True	False	0.7143	0.5714	consensus	tested
+FOXC2	9	1							consensus	untested
+REST	28	1	2	1	False	False	0.5	1	consensus	insufficient
+ATF1	28	0	9	9	True	False	0.6667	0.3333	aracne_v2_tf	tested
+TWIST2	14	1	6	4	False	False	0.6667	0.6667	consensus	not_supported
+DLX3	12	0	6	6	False	False	0.6667	0.3333	consensus	not_supported
+FOXO1	28	0							consensus	untested
+NR1H2	27	1	5	3	False	False	0.2	0	consensus	insufficient
+DDIT3	27	2	1	1	False	False	1	1	consensus	insufficient
+ASCL1	3	0							consensus	untested
+HEY2	25	0	1	1	False	False	0	0	consensus	insufficient
+SNAI1	24	1							consensus	untested
+CEBPD	27	1	4	4	False	False	0.75	0.25	consensus	insufficient
+MYB	15	2	1	1	False	False	0	1	consensus	insufficient
+DLX5	12	1							consensus	untested
+FOXO4	28	0	8	6	True	False	0.625	0.75	consensus	tested
+TCF4	28	1							consensus	untested
+LEF1	27	4							consensus	untested
+TAL1	13	0							consensus	untested
+NFATC1	27	3							consensus	untested
+ELF3	21	0							consensus	untested
+GATA2	27	5	7	5	False	False	0.4286	0.4286	consensus	not_supported
+HMGA2	15	0	2	2	False	False	1	1	consensus	insufficient
+POU3F2	4	1							consensus	untested
+SREBF1	28	2							consensus	untested
+NCOA1	28	0							consensus	untested
+CREB1	28	1	1	1	False	False	1	1	consensus	insufficient
+HBP1	28	0							consensus	untested
+SPIB	6	0							consensus	untested
+PAX3	1	0							consensus	untested
+FOSL2	28	2							consensus	untested
+CLOCK	28	1							consensus	untested
+HLX	28	0							consensus	untested
+SRF	28	1							consensus	untested
+GLI2	21	2							consensus	untested
+RELB	28	0	8	5	True	False	0.875	0.625	consensus	tested
+TBP	28	2							consensus	untested
+FOXG1	2	0							consensus	untested
+SPDEF	10	0	7	4	True	False	0.8571	0.4286	aracne_v2_tf	tested
+IRF8	28	0							consensus	untested
+KLF4	28	2							consensus	untested
+ELK1	28	3							consensus	untested
+TCF21	13	0							consensus	untested
+ATF6	28	0	26	11	True	False	0.8462	0.5769	consensus	tested
+NR4A1	28	0							consensus	untested
+NFE2L2	28	0	11	6	True	True	0.9091	0.9091	consensus	tested
+JUND	28	2							consensus	untested
+POU2F2	25	0							consensus	untested
+XBP1	28	1	23	13	False	True	0.7391	0.7826	consensus	tested
+ETS1	28	2	6	6	False	True	0.6667	0.8333	consensus	tested
+RUNX2	27	2							consensus	untested
+EOMES	5	0							consensus	untested
+NEUROD1	3	0	1	1	False	False	0	0	consensus	insufficient
+MEF2C	28	1							consensus	untested
+CEBPB	27	0	3	3	False	True	1	1	consensus	insufficient
+STAT1	28	0	9	7	False	False	0.4444	0.3333	consensus	not_supported
+SOX17	20	2							consensus	untested
+HNF4A	9	1	13	6	True	True	0.9231	1	consensus	tested
+TWIST1	20	1							consensus	untested
+NFKB2	27	1							consensus	untested
+IRF1	28	0	1	1	False	False	1	1	consensus	insufficient
+GLI1	10	1	1	1	False	False	0	1	consensus	insufficient
+STAT4	20	0							consensus	untested
+TBX21	2	0							consensus	untested
+TBX5	4	0							consensus	untested
+JUNB	28	0	1	1	False	False	1	1	consensus	insufficient
+EGR3	26	0							consensus	untested
+EGR2	26	0							consensus	untested
+KLF6	28	0	10	2	True	True	1	1	consensus	tested
+KMT2A	28	0	2	2	False	False	1	1	consensus	insufficient
+ERG	28	0	3	3	True	True	1	1	consensus	insufficient
+FOXJ1	5	0	5	2	False	True	1	1	consensus	insufficient
+SREBF2	27	0	2	1	False	False	1	1	consensus	insufficient
+ATF3	28	1							consensus	untested
+MYC	28	2	3	3	True	True	1	1	consensus	insufficient
+JUN	27	0							consensus	untested
+FOXM1	28	0							consensus	untested
+EGR1	27	0							consensus	untested
+IRF9	28	0							consensus	untested
+MYBL2	26	0	5	4	True	True	1	1	consensus	insufficient
+SPI1	28	0							consensus	untested
+FOS	28	0							consensus	untested
+E2F2	21	0							consensus	untested
+E2F1	27	0							consensus	untested
+ABL1			17	11	False	False		0.7647	consensus	not_supported
+AHRR			4	3	False	False	1		consensus	insufficient
+AKAP8			6	5	False	False	0.5		consensus	not_supported
+AKAP8L			2	2	False	False	0		consensus	insufficient
+ALX1			2	2	False	False	0		consensus	insufficient
+APEX1			1	1	False	False		0	consensus	insufficient
+ARID2			5	5	False	False	0.6		consensus	insufficient
+ASCL2			6	3	False	False	0.6667		consensus	not_supported
+ATF4			3	2	False	True		1	consensus	insufficient
+ATF7			3	3	True	False	1		consensus	insufficient
+ATMIN			8	8	True	False	0.625		consensus	tested
+BARX1			3	3	False	False	0.3333		consensus	insufficient
+BATF2			2	2	False	False	1		consensus	insufficient
+BATF3			1	1	False	False	1		consensus	insufficient
+BCL6B			1	1	False	False	0		consensus	insufficient
+BRCA1			6	5	False	False		0.5	consensus	not_supported
+CBX2			3	3	False	False	1		consensus	insufficient
+CREB3L4			10	9	False	False	0.6		consensus	not_supported
+CREBBP			1	1	False	False		1	consensus	insufficient
+CTCFL			2	2	False	False	0		consensus	insufficient
+CXXC5			1	1	False	False	0		consensus	insufficient
+DNMT3A			2	2	False	False		1	consensus	insufficient
+DOT1L			9	5	True	False	0.7778		consensus	tested
+DRAP1			20	11	False	False	0.6		consensus	not_supported
+E2F7			9	5	False	False	0.1111		consensus	not_supported
+ESRRA			1	1	False	False		1	consensus	insufficient
+EZH2			18	10	False	False		0.4444	consensus	not_supported
+FBXL19			12	10	False	False	0.5833		consensus	not_supported
+FOXA3			9	4	False	False	0.8889		consensus	not_supported
+FOXJ3			7	6	True	False	0.7143		consensus	tested
+FOXO3			5	5	False	False		0.4	consensus	insufficient
+FOXP1			2	2	False	False	0		consensus	insufficient
+FOXP2			6	2	False	False	0.8333		consensus	not_supported
+FOXP4			6	6	False	False	0.6667		consensus	not_supported
+FOXR1			1	1	False	False	0		consensus	insufficient
+GATAD2B			7	7	False	False	0.1429		consensus	not_supported
+GLIS3			5	4	False	False	0.6		consensus	insufficient
+GRHL1			3	2	False	False	0.3333		consensus	insufficient
+GTF2I			8	6	False	False		0.625	consensus	not_supported
+HDAC1			1	1	False	False		0	consensus	insufficient
+HDAC3			1	1	False	False		0	consensus	insufficient
+HIVEP3			1	1	False	False	0		consensus	insufficient
+HMBOX1			7	7	False	False	0.4286		consensus	not_supported
+HMG20B			6	5	False	False	0.5		consensus	not_supported
+HNF1A			3	3	True	False	0.6667		consensus	insufficient
+HNF1B			7	6	False	False	0.5714		consensus	not_supported
+HNF4G			5	5	False	False	0.6		consensus	insufficient
+HOMEZ			8	8	False	False	0.375		consensus	not_supported
+HOXB4			2	2	False	False	0.5		consensus	insufficient
+HOXB8			2	2	False	False	0		consensus	insufficient
+HOXC9			7	5	False	False	0.5714		consensus	not_supported
+ID2			9	7	False	True		0.7778	consensus	tested
+ISL1			2	2	False	False	0.5		consensus	insufficient
+ISX			12	5	False	False	0.4167		consensus	not_supported
+JAZF1			8	4	False	False	0.5		consensus	not_supported
+KAT6A			15	12	False	False		0.3333	consensus	not_supported
+KDM2A			2	2	False	False	0.5		consensus	insufficient
+KDM2B			12	7	False	False	0.25		consensus	not_supported
+KDM5A			32	12	False	False		0.5312	consensus	not_supported
+L3MBTL3			1	1	False	False	1		consensus	insufficient
+L3MBTL4			1	1	False	False	1		consensus	insufficient
+LHX4			7	5	False	False	0.2857		consensus	not_supported
+LHX8			3	2	False	False	0.6667		consensus	insufficient
+LHX9			3	3	False	False	0		consensus	insufficient
+LIN28B			3	3	False	False	0.3333		consensus	insufficient
+MBD3			17	10	True	False	0.6471		consensus	tested
+MBD6			14	10	False	False	0.2857		consensus	not_supported
+MBNL2			9	7	True	False	0.8889		consensus	tested
+MESP1			5	5	True	False	0.6		consensus	insufficient
+MIXL1			1	1	False	False	1		consensus	insufficient
+MTA1			9	7	False	False		0.4444	consensus	not_supported
+MTA3			9	9	False	False		0.5556	consensus	not_supported
+MTF2			9	6	True	False	0.7778		consensus	tested
+MYF6			7	2	False	False	0.5714	0.4286	consensus	not_supported
+MYOD1			5	2	False	True	0.8	1	consensus	insufficient
+NANOG			6	2	False	False		0.5	consensus	not_supported
+NFE2L1			1	1	False	False	1		consensus	insufficient
+NFKBIB			7	7	False	False		0.4286	consensus	not_supported
+NKX2-3			1	1	False	False	1		consensus	insufficient
+NME2			4	3	True	False	0.75		consensus	insufficient
+NOTCH1			4	3	False	False		0.5	consensus	insufficient
+NPM1			1	1	False	False		1	consensus	insufficient
+NR2F6			19	12	True	False	0.8947		consensus	tested
+OSR1			4	4	False	False	0.75		consensus	insufficient
+OTX1			8	6	False	False	0.625		consensus	not_supported
+OVOL2			3	3	False	False	1		consensus	insufficient
+PBX4			4	4	False	False	0.5		consensus	insufficient
+PHF19			8	7	False	False	0.375		consensus	not_supported
+PIN1			10	8	True	False	1		consensus	tested
+PLSCR1			12	8	False	False	0.5833		consensus	not_supported
+POU5F1			13	6	False	False		0.2308	consensus	not_supported
+PURG			6	2	False	False	0.1667		consensus	not_supported
+RB1			7	7	False	False		0.7143	consensus	not_supported
+RFX6			1	1	False	False	0		consensus	insufficient
+SETDB1			1	1	False	False	1		consensus	insufficient
+SETDB2			6	4	True	False	1		consensus	tested
+SIM2			9	6	False	False	0.6667		consensus	not_supported
+SIN3A			27	13	False	False		0.6667	consensus	not_supported
+SIX4			6	6	False	False	0.5		consensus	not_supported
+SMARCA4			19	11	False	False		0.4737	consensus	not_supported
+SNAI3			1	1	False	False	0		consensus	insufficient
+SOX14			6	2	False	False	1		consensus	not_supported
+SP100			1	1	False	False	0		consensus	insufficient
+SP6			3	2	True	False	0.6667		consensus	insufficient
+SP8			5	2	False	False	0.4		consensus	insufficient
+SPEN			2	2	False	False	1		consensus	insufficient
+SRSF2			30	14	False	False		0.4333	consensus	not_supported
+TAF1			1	1	False	False		1	consensus	insufficient
+TAL2			2	1	False	False	1		consensus	insufficient
+TBX20			1	1	False	False	0		consensus	insufficient
+TCFL5			4	3	False	False	0.75		consensus	insufficient
+TEAD2			6	6	False	False	0.8333		consensus	not_supported
+TET2			2	2	False	False	0		consensus	insufficient
+TFDP1			4	4	False	False		0.75	consensus	insufficient
+TFEB			2	1	False	False	1		consensus	insufficient
+THAP11			5	5	False	False	1		consensus	insufficient
+TIGD3			1	1	False	False	1		consensus	insufficient
+TSHZ3			1	1	False	False	0		consensus	insufficient
+ZBTB20			4	4	False	False	0.5		consensus	insufficient
+ZBTB26			7	7	False	False	0.2857		consensus	not_supported
+ZBTB41			7	7	False	False	0.5714		consensus	not_supported
+ZBTB45			7	7	False	False	0.5714		consensus	not_supported
+ZBTB46			7	6	False	False	0.7143		consensus	not_supported
+ZBTB49			7	7	False	False	0		consensus	not_supported
+ZFAT			3	3	False	False	0		consensus	insufficient
+ZFP1			7	7	False	False	0.2857		consensus	not_supported
+ZFP28			2	2	False	False	0.5		consensus	insufficient
+ZFP3			3	3	False	False	0.3333		consensus	insufficient
+ZFP90			6	5	False	False	0.3333		consensus	not_supported
+ZFP91			3	3	False	False	0.6667		consensus	insufficient
+ZFX			1	1	False	False	1		consensus	insufficient
+ZGPAT			9	8	False	False	0.5556		consensus	not_supported
+ZIC2			4	4	False	False	0.5		consensus	insufficient
+ZKSCAN2			4	4	False	False	0.25		consensus	insufficient
+ZNF114			3	3	False	False	0.6667		consensus	insufficient
+ZNF138			6	6	False	False	0.5		consensus	not_supported
+ZNF141			1	1	False	False	1		consensus	insufficient
+ZNF169			3	3	False	False	1		consensus	insufficient
+ZNF182			7	7	False	False	0.4286		consensus	not_supported
+ZNF213			5	5	False	False	0.2		consensus	insufficient
+ZNF274			1	1	False	False	0		consensus	insufficient
+ZNF296			11	7	False	False	0.2727		consensus	not_supported
+ZNF300			5	4	False	False	0.6		consensus	insufficient
+ZNF317			7	7	False	False	0.5714		consensus	not_supported
+ZNF318			2	2	False	False	0.5		consensus	insufficient
+ZNF333			7	7	False	False	0.5714		consensus	not_supported
+ZNF354B			7	7	False	False	0.2857		consensus	not_supported
+ZNF366			3	3	True	False	1		consensus	insufficient
+ZNF367			5	4	True	False	0.6		consensus	insufficient
+ZNF385B			3	3	True	False	1		consensus	insufficient
+ZNF395			3	3	False	False	0.6667		consensus	insufficient
+ZNF398			7	7	False	False	0.7143		consensus	not_supported
+ZNF418			4	4	False	False	0.5		consensus	insufficient
+ZNF433			5	5	False	False	0.8		consensus	insufficient
+ZNF436			8	8	False	False	0.75		consensus	not_supported
+ZNF449			6	6	False	False	0.5		consensus	not_supported
+ZNF451			5	5	False	False	1		consensus	insufficient
+ZNF462			5	5	False	False	0.6		consensus	insufficient
+ZNF486			2	2	False	False	0		consensus	insufficient
+ZNF488			3	3	True	False	0.6667		consensus	insufficient
+ZNF490			5	5	False	False	0.4		consensus	insufficient
+ZNF496			6	6	False	False	0.3333		consensus	not_supported
+ZNF501			1	1	False	False	0		consensus	insufficient
+ZNF502			3	3	False	False	0.6667		consensus	insufficient
+ZNF503			2	2	False	False	0.5		consensus	insufficient
+ZNF513			4	3	True	False	1		consensus	insufficient
+ZNF517			8	8	False	False	0.625		consensus	not_supported
+ZNF519			6	6	False	False	0		consensus	not_supported
+ZNF521			1	1	False	False	1		consensus	insufficient
+ZNF524			10	8	False	False	0.7		consensus	not_supported
+ZNF543			5	4	False	False	0.8		consensus	insufficient
+ZNF546			3	3	False	False	0.3333		consensus	insufficient
+ZNF548			8	8	False	False	0.625		consensus	not_supported
+ZNF554			4	3	False	False	0.25		consensus	insufficient
+ZNF558			6	6	False	False	0.8333		consensus	not_supported
+ZNF559			6	6	False	False	0.5		consensus	not_supported
+ZNF563			3	3	False	False	0.3333		consensus	insufficient
+ZNF567			8	8	False	False	0.25		consensus	not_supported
+ZNF57			8	7	False	False	0.5		consensus	not_supported
+ZNF572			3	3	True	False	0.6667		consensus	insufficient
+ZNF577			4	4	False	False	0.5		consensus	insufficient
+ZNF581			5	5	True	False	0.6		consensus	insufficient
+ZNF582			4	3	False	False	0.5		consensus	insufficient
+ZNF583			4	4	False	False	0.5		consensus	insufficient
+ZNF585A			7	7	False	False	0.2857		consensus	not_supported
+ZNF596			6	6	True	False	0.8333		consensus	tested
+ZNF597			3	3	False	False	0.3333		consensus	insufficient
+ZNF599			5	5	False	False	0.8		consensus	insufficient
+ZNF607			5	5	False	False	0.4		consensus	insufficient
+ZNF608			1	1	False	False	1		consensus	insufficient
+ZNF610			2	2	False	False	0		consensus	insufficient
+ZNF619			7	7	False	False	0.4286		consensus	not_supported
+ZNF621			8	8	False	False	0.375		consensus	not_supported
+ZNF624			5	5	False	False	0.4		consensus	insufficient
+ZNF625			4	4	False	False	0.5		consensus	insufficient
+ZNF626			4	3	False	False	0.75		consensus	insufficient
+ZNF653			9	7	True	False	1		consensus	tested
+ZNF662			1	1	False	False	1		consensus	insufficient
+ZNF677			4	3	False	False	0.5		consensus	insufficient
+ZNF678			7	7	False	False	0.2857		consensus	not_supported
+ZNF684			8	8	False	False	0.75		consensus	not_supported
+ZNF689			7	7	False	False	0.4286		consensus	not_supported
+ZNF707			7	7	False	False	0.2857		consensus	not_supported
+ZNF77			7	7	False	False	0.5714		consensus	not_supported
+ZNF785			5	5	True	False	1		consensus	insufficient
+ZNF786			8	8	False	False	0.5		consensus	not_supported
+ZNF791			9	8	False	False	0.5556		consensus	not_supported
+ZNF792			5	5	False	False	0.8		consensus	insufficient
+ZNF8			7	7	False	False	0.4286		consensus	not_supported
+ZNF805			2	2	False	False	0		consensus	insufficient
+ZNF830			2	2	False	False	0		consensus	insufficient
+ZNF85			5	4	False	False	1		consensus	insufficient
+ZNF92			6	6	False	False	0.3333		consensus	not_supported
+ZSCAN1			1	1	False	False	0		consensus	insufficient
+ZSCAN29			7	7	False	False	0.2857		consensus	not_supported
