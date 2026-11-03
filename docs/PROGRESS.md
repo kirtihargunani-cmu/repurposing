@@ -571,6 +571,19 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   cutoff (TAS 0.4), so they used the low-dose 24 h profile, which still shows the late luminal rise. The 2 that used
   6 h profiles read ESR1 down. Dose alone does not fix the reading; time does, where the 6 h profile is used.
 
+## 2026-11-03: exploration: lagged ARACNe across drugs (TimeDelay-ARACNE adapted)
+- **What:** TimeDelay-ARACNE (Zoppoli 2010) needs one long time series; LINCS has 2 time points per drug. Adapted:
+  samples = the drugs of one line (MCF7 604, PC3 445, A375 325), regulators at 6 h (mrna: 81 measured TFs; act: ~950
+  regulator activities from the early signature with the lineage tumor network, incl. ESR1), targets = each landmark
+  gene's late change (24 h beyond what its own 6 h value predicts; 86-91% of the 24 h variance). ARACNe-AP as D86.
+  `scripts/explore/lagged_aracne_{inputs.py,eval.R}`, `results/lincs/pnet/lagged_*.tsv`.
+- **Result: nothing usable.** Lagged links overlap the tumor and DepMap networks at chance (1.0-1.3x) and the
+  same-line drug network at 1.7-2.2x. Against knockdown / overexpression signatures every network sits near chance on
+  landmark links (lagged 0.46-0.53, drug 0.49-0.51, tumor 0.52-0.56). ESR1 in MCF7: 6 lagged links, all to
+  housekeeping / metabolic genes, none to luminal or estrogen-response genes. Across ~600 drugs, early ESR1 activity
+  varies for many reasons; the anti-estrogen-specific consequence (8 drugs) cannot dominate a network learned over
+  all drugs. Drug-class consequences need per-class contrasts, not one network across drugs.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

@@ -36,7 +36,7 @@ publisher pages were read (PMC full texts blocked automated access); claims mark
 | DRomics (Larras et al. 2018, *Environ Sci Technol*; CRAN) | dose-response model choice, response shape, benchmark dose | yes, where >= 3-4 doses |
 | ImpulseDE2 (Fischer, Theis, Yosef 2018, *Nucleic Acids Res* 46:e119) | impulse model of a time course | no: needs several time points; LINCS has 2 |
 | DREM (Ernst et al. 2007, *Mol Syst Biol* 3:74) | when TF-driven gene groups split over time | no: needs several time points |
-| TimeDelay-ARACNE (Zoppoli et al. 2010, *BMC Bioinformatics* 11:154) | ARACNe with time lags, directed links | not as published (one long time series, small networks); a lagged variant across drugs is explored in `scripts/explore/` |
+| TimeDelay-ARACNE (Zoppoli et al. 2010, *BMC Bioinformatics* 11:154) | ARACNe with time lags, directed links | not as published (one long time series, small networks); a lagged variant across drugs (`scripts/explore/lagged_aracne_*`, 2026-11-03) found no usable links: chance overlap with other networks, chance agreement with perturbations |
 
 ## Links
 
