@@ -465,6 +465,20 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   ARACNe 56% vs 51% for the rest; 32 of 80 TFs below 50%. Per edge, neither set is validated; edges both sets support
   are the most reliable (ARACNe edges with the same sign in CollecTRI: 63%).
 
+## 2026-11-02: perturbation-network pilot (D86): stop
+- **What:** ARACNe on LINCS drug profiles within one cell line (MCF7, PC3, A375; 1,081-1,221 drugs each; 978
+  measured genes, 81 measured TFs), raw and line-specific, 36 networks (all drugs + 5 mechanism-grouped held-out
+  builds). Files in `scripts/pnet/`, `results/lincs/pnet/`; plain language in
+  `PERTURBATION_NETWORK_PILOT_PLAIN_LANGUAGE.md`.
+- **Result: no advantage, rule not met.** Pre-set check (knockdown / overexpression in the same lines, regulators all
+  three sets score): 45 signatures, 13 TFs; perturbation network 62%, tumor ARACNe 69%, CollecTRI 62% (p = 0.63).
+  Wider exploratory comparison (133 signatures, 37 TFs): 57% vs 59%; per line inconsistent. Networks moderately
+  stable (61-65% of edges in >= 4 of 5 held-out builds).
+- **Also found:** L1000 inferred genes (ESR1, AR, FOXA1, E2F1, SP1, RELA ...) are ~88% a fixed mix of landmark genes
+  on held-out profiles (measured genes from the other 977: 62%), so they cannot serve as regulators in such networks.
+- **Caveats:** the test is small (planned ~200 signatures, got 45 under the rule); the drug folds group by mechanism
+  wording, which split tamoxifen from fulvestrant (affects only the ligand report).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

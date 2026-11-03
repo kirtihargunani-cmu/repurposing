@@ -1,6 +1,6 @@
 # Perturbation-network pilot in plain language
 
-Written 2026-11-02, before the pilot's result. The rule is decision D86 in [`DECISIONS.md`](DECISIONS.md); the
+Written 2026-11-02 before the pilot ran; the result is added at the end. The rule is decision D86 in [`DECISIONS.md`](DECISIONS.md); the
 findings that led to it are in [`PROGRESS.md`](PROGRESS.md) (2026-11-02 entries). Background on the drug side:
 [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md).
 
@@ -122,3 +122,21 @@ steroid drugs on the glucocorticoid receptor NR3C1).
 | Building the maps | `scripts/pnet/pnet_run_aracne.sh` (24 threads); networks in `data/processed/lincs/pnet/` (not in git) |
 | Scoring and the decision | `scripts/pnet/pnet_eval.R`; results in `results/lincs/pnet/` |
 | Earlier explorations | `scripts/explore/` |
+
+## Result (2026-11-02): no advantage, so we stopped
+
+- **The main test came out much smaller than planned.** Only 45 experiments on 13 switches could be scored by all
+  three lists, because on the 978 measured genes the curated list has enough targets for few switches.
+- **The perturbation map did not do better.** It got the direction right 62% of the time, the tumor map 69% and the
+  curated list 62%. The gap is not significant either way. Both data versions (raw and line-specific) gave the same
+  totals.
+- **A wider, informal comparison agrees.** Dropping the curated-list requirement gives 133 experiments on 37 switches:
+  57% for the perturbation map vs 59% for the tumor map. It did better in MCF7 and worse in A375.
+- **The maps are only moderately stable.** About two thirds of the links reappear when a fifth of the drugs is left
+  out.
+- **The drug check was too small to read** (30 drug profiles).
+
+What this means: for the switches LINCS measures, maps learned from drug experiments read switches no better than the
+tumor maps, at least at this size. The pilot could not test ESR1 and the other unmeasured switches, so the
+anti-estrogen problem is still open; for now the drug side keeps averaging the tumor map with the curated list, which
+reads anti-estrogens correctly.

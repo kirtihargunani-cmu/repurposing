@@ -1,0 +1,7 @@
+line	arm	edges_all	share_in_4of5
+MCF7	raw	5410	0.642
+MCF7	specific	5388	0.648
+PC3	raw	6022	0.638
+PC3	specific	5924	0.627
+A375	raw	5999	0.607
+A375	specific	5574	0.635

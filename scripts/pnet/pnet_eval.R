@@ -60,8 +60,9 @@ prep <- function(rg, genes_in) {
   names(r) <- names(rg); r <- Filter(Negate(is.null), r); class(r) <- "regulon"; r
 }
 Tn <- readRDS("data/processed/step5/regulons_aracne_project_v2_tf.rds"); Cr <- readRDS("results/step5/regulons_core.rds")$collectri
-nes_of <- function(reg, M, tf) { v <- viper(M, reg, method = "none", minsize = MIN_T, verbose = FALSE)
-  v[cbind(match(tf, rownames(v)), seq_len(ncol(M)))] }
+nes_of <- function(reg, M, tf) { n <- ncol(M); if (n == 1) M <- cbind(M, M)   # viper fails on a one-column matrix
+  v <- viper(M, reg, method = "none", minsize = MIN_T, verbose = FALSE)
+  v[cbind(match(tf, rownames(v)), seq_len(n))] }
 
 out <- list(); nreg <- list()
 for (l in names(LINES)) {
