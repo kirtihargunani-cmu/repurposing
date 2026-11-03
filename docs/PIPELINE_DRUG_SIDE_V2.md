@@ -73,6 +73,8 @@ flowchart LR
 - **Knockdown benchmark** (`knockdown_subset`, `knockdown_benchmark`, `79m` / `79n`): LINCS shRNA and CRISPR knockdowns
   of 336 TFs. All regulon sets detect knockdowns weakly and about equally, with too little data to pick a set per TF
   (C19), so both sets are averaged instead. Reported, not used.
+- **Overexpression added (D84, `79u`, `79n` PERTURB=d84, `79v`):** neither set wins (57 TFs, p = 0.15), so the
+  consensus stays; 4 per-TF switches and per-regulator flags in `results/lincs/d84_choice.tsv` (not yet applied).
 - Outputs: `data/processed/lincs/drug_viper_specific_v2_tf/<NET>.f32`, `drug_viper_specific_collectri/ALL.f32` (not in
   git); regulator tables `results/lincs/drug_viper_regulators_*.tsv`.
 
@@ -177,7 +179,21 @@ flowchart LR
   (template `scripts/templates/disease_drug_rankings.html`): every FDA-approved drug (Drugs@FDA match, one LINCS
   compound per ingredient, the best on the lead score) that passed the target gate, per disease and subgroup, with
   rev / spec / spec_mech (/ spec_sib, spec_sib_mech) raw and percentile, flags (weak evidence hidden by default),
-  receptor gate and literature where 79o searched (top 10 per disease, top 3 FDA per cohort).
+  receptor gate, stand-ins (79y) and literature (79o `MODE=fda_all`: every FDA row, by FDA name; cached in
+  `data/interim/lincs/literature_fda_all_*.jsonl`, output `results/lincs/literature_fda_all_v2.tsv`).
+  Published copy https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA (private).
+- **Stand-ins (`79y`, step `standin`; C27):** pairs each FDA drug with LINCS compounds tested in a cohort's matched
+  lines that share a target and change CollecTRI regulator activity alike (mean r >= 0.4 over >= 2 shared lines).
+  Validated before use (Spearman 0.66 vs 0.34 for random target-sharing pairs). Outputs
+  `results/lincs/standin_pairs_v2.tsv`, `standin_validation_v2.tsv`, `standin_validation_pairs_v2.tsv`, `standin_run.json`.
+- **Stand-in vs borrowed (`79y2`, step `standin_vs_borrowed`; C27):** `scripts/79y2_borrowed_counterfactual.sh` rescores
+  every direct FDA drug as borrowed (79e, 79i in a sandbox under `logs/`, production untouched), then compares stand-in,
+  borrowed and their average against the drug's own matched-line percentile (485 drugs: 0.65, 0.56, 0.68 Spearman).
+  Outputs `results/lincs/standin_vs_borrowed_v2.tsv`, `standin_vs_borrowed_summary_v2.tsv`.
+- **Stand-in page (`79z`, step `standin_page`):** `results/lincs/standin_compounds_v2.html` (template
+  `scripts/templates/standin_compounds.html`): per cohort the compounds tested in its own lines, ranked by the lead
+  score, with their closest FDA drugs, the drugs' own scores and literature.
+  Published copy https://claude.ai/artifact/VatFtXvstvr8as21TVKeUN (private).
 
 ## Column guide for the main outputs
 

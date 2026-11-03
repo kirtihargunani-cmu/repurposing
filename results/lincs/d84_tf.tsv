@@ -1,0 +1,1178 @@
+analysis	cmap_name	set	n_sigs	n_lines	n_kd	n_oe	median_fpct	frac_correct	correct_kd	correct_oe	pass
+main	ABL1	collectri	17	11	17	0	0.3291	0.7647	0.7647		False
+main	AHR	aracne_v2_tf	1	1	1	0	0.0222	1	1		False
+main	AHR	collectri	1	1	1	0	0.3737	1	1		False
+main	AHR	dorothea_ABC	1	1	1	0	0.7863	0	0		False
+main	AHRR	aracne_v2_tf	4	3	4	0	0.4437	1	1		False
+main	AIRE	aracne_v2_tf	2	2	0	2	0.5823	0		0	False
+main	AIRE	collectri	2	2	0	2	0.4183	0.5		0.5	False
+main	AKAP8	aracne_v2_tf	6	5	6	0	0.4961	0.5	0.5		False
+main	AKAP8L	aracne_v2_tf	2	2	2	0	0.7965	0	0		False
+main	ALX1	aracne_v2_tf	2	2	2	0	0.7404	0	0		False
+main	APEX1	collectri	1	1	1	0	0.6561	0	0		False
+main	ARID2	aracne_v2_tf	5	5	5	0	0.3529	0.6	0.6		False
+main	ARID2	dorothea_ABC	5	5	5	0	0.2481	1	1		True
+main	ASCL2	aracne_v2_tf	6	3	1	5	0.2581	0.6667	1	0.6	False
+main	ATF1	aracne_v2_tf	9	9	9	0	0.09906	0.6667	0.6667		True
+main	ATF1	collectri	9	9	9	0	0.5287	0.3333	0.3333		False
+main	ATF1	dorothea_ABC	9	9	9	0	0.2557	0.5556	0.5556		False
+main	ATF4	collectri	3	2	3	0	0.01486	1	1		True
+main	ATF4	dorothea_ABC	3	2	3	0	0	1	1		True
+main	ATF5	aracne_v2_tf	10	8	10	0	0.4976	0.4	0.4		False
+main	ATF5	collectri	10	8	10	0	0.4798	0.6	0.6		False
+main	ATF6	aracne_v2_tf	26	11	26	0	0.07347	0.8462	0.8462		True
+main	ATF6	collectri	26	11	26	0	0.2824	0.5769	0.5769		False
+main	ATF6	dorothea_ABC	26	11	26	0	0.4103	0.6538	0.6538		False
+main	ATF7	aracne_v2_tf	3	3	3	0	0.156	1	1		True
+main	ATF7	dorothea_ABC	3	3	3	0	0.4695	0.6667	0.6667		False
+main	ATMIN	aracne_v2_tf	8	8	8	0	0.2464	0.625	0.625		True
+main	BARX1	aracne_v2_tf	3	3	3	0	0.5684	0.3333	0.3333		False
+main	BATF2	aracne_v2_tf	2	2	2	0	0.2311	1	1		False
+main	BATF3	aracne_v2_tf	1	1	0	1	0.1517	1		1	False
+main	BCL6B	aracne_v2_tf	1	1	0	1	0.9685	0		0	False
+main	BRCA1	collectri	6	5	6	0	0.5478	0.5	0.5		False
+main	CBX2	aracne_v2_tf	3	3	3	0	0.4387	1	1		False
+main	CDX1	aracne_v2_tf	1	1	1	0	0.03014	1	1		False
+main	CDX1	collectri	1	1	1	0	0.8875	0	0		False
+main	CDX2	aracne_v2_tf	8	6	4	4	0.4406	1	1	1	False
+main	CDX2	collectri	8	6	4	4	0.3641	0.625	0.25	1	False
+main	CDX2	dorothea_ABC	8	6	4	4	0.2595	0.625	0.25	1	False
+main	CEBPA	aracne_v2_tf	1	1	1	0	0.589	0	0		False
+main	CEBPA	collectri	1	1	1	0	0.02335	1	1		False
+main	CEBPA	dorothea_ABC	1	1	1	0	0.3015	1	1		False
+main	CEBPB	aracne_v2_tf	3	3	3	0	0.4209	1	1		False
+main	CEBPB	collectri	3	3	3	0	0.07219	1	1		True
+main	CEBPB	dorothea_ABC	3	3	3	0	0.542	0.3333	0.3333		False
+main	CEBPD	aracne_v2_tf	4	4	4	0	0.4515	0.75	0.75		False
+main	CEBPD	collectri	4	4	4	0	0.7856	0.25	0.25		False
+main	CEBPD	dorothea_ABC	4	4	4	0	0.7634	0.5	0.5		False
+main	CEBPZ	aracne_v2_tf	7	6	7	0	0.1619	0.5714	0.5714		False
+main	CEBPZ	collectri	7	6	7	0	0.1316	0.8571	0.8571		True
+main	CREB1	aracne_v2_tf	1	1	1	0	0.03308	1	1		False
+main	CREB1	collectri	1	1	1	0	0.1316	1	1		False
+main	CREB1	dorothea_ABC	1	1	1	0	0.6183	1	1		False
+main	CREB3	aracne_v2_tf	2	2	0	2	0.009281	1		1	False
+main	CREB3	collectri	2	2	0	2	0.0828	1		1	False
+main	CREB3	dorothea_ABC	2	2	0	2	0.08397	1		1	False
+main	CREB3L4	aracne_v2_tf	10	9	10	0	0.3854	0.6	0.6		False
+main	CREBBP	collectri	1	1	1	0	0.31	1	1		False
+main	CTCF	aracne_v2_tf	1	1	1	0	0.1134	1	1		False
+main	CTCF	collectri	1	1	1	0	0.4777	0	0		False
+main	CTCF	dorothea_ABC	1	1	1	0	0.8511	0	0		False
+main	CTCFL	aracne_v2_tf	2	2	0	2	0.7428	0		0	False
+main	CTCFL	dorothea_ABC	2	2	0	2	0.5305	0.5		0.5	False
+main	CXXC5	aracne_v2_tf	1	1	1	0	0.7314	0	0		False
+main	DDIT3	aracne_v2_tf	1	1	1	0	0.2753	1	1		False
+main	DDIT3	collectri	1	1	1	0	0.518	1	1		False
+main	DLX2	aracne_v2_tf	1	1	1	0	0.2803	1	1		False
+main	DLX2	collectri	1	1	1	0	0.7452	0	0		False
+main	DLX3	aracne_v2_tf	6	6	2	4	0.3477	0.6667	0.5	0.75	False
+main	DLX3	collectri	6	6	2	4	0.5244	0.3333	0.5	0.25	False
+main	DMTF1	aracne_v2_tf	3	2	3	0	0.7219	0.3333	0.3333		False
+main	DMTF1	collectri	3	2	3	0	0.6582	0.3333	0.3333		False
+main	DNMT1	aracne_v2_tf	22	9	22	0	0.06011	0.9091	0.9091		True
+main	DNMT1	collectri	22	9	22	0	0.4278	0.5455	0.5455		False
+main	DNMT3A	collectri	2	2	2	0	0.4416	1	1		False
+main	DOT1L	aracne_v2_tf	9	5	9	0	0.2381	0.7778	0.7778		True
+main	DRAP1	aracne_v2_tf	20	11	20	0	0.4006	0.6	0.6		False
+main	E2F7	aracne_v2_tf	9	5	9	0	0.9974	0.1111	0.1111		False
+main	E2F7	dorothea_ABC	9	5	9	0	0.7023	0.3333	0.3333		False
+main	EBF1	aracne_v2_tf	12	4	0	12	0.04847	1		1	True
+main	EBF1	collectri	12	4	0	12	0.1762	0.9167		0.9167	True
+main	EBF1	dorothea_ABC	12	4	0	12	0.1641	0.9167		0.9167	True
+main	ELF4	aracne_v2_tf	2	2	0	2	0.02058	1		1	False
+main	ELF4	collectri	2	2	0	2	0.4119	1		1	False
+main	EPAS1	aracne_v2_tf	1	1	1	0	0.2076	1	1		False
+main	EPAS1	collectri	1	1	1	0	0.09766	1	1		False
+main	EPAS1	dorothea_ABC	1	1	1	0	0.7901	0	0		False
+main	ERG	aracne_v2_tf	3	3	0	3	0.004479	1		1	True
+main	ERG	collectri	3	3	0	3	0.1465	1		1	True
+main	ERG	dorothea_ABC	3	3	0	3	0.07634	1		1	True
+main	ESR1	aracne_v2_tf	2	1	2	0	0.1248	1	1		False
+main	ESR1	collectri	2	1	2	0	0.08068	1	1		False
+main	ESR1	dorothea_ABC	2	1	2	0	0.3397	0.5	0.5		False
+main	ESRRA	collectri	1	1	1	0	0.2845	1	1		False
+main	ESRRA	dorothea_ABC	1	1	1	0	0.04198	1	1		False
+main	ESRRG	aracne_v2_tf	1	1	0	1	0.1876	1		1	False
+main	ESRRG	collectri	1	1	0	1	0.01062	1		1	False
+main	ETS1	aracne_v2_tf	6	6	6	0	0.3971	0.6667	0.6667		False
+main	ETS1	collectri	6	6	6	0	0.1688	0.8333	0.8333		True
+main	ETS1	dorothea_ABC	6	6	6	0	0.4389	0.6667	0.6667		False
+main	ETV1	aracne_v2_tf	13	5	4	9	0.08667	0.7692	0.5	0.8889	True
+main	ETV1	collectri	13	5	4	9	0.6709	0.3077	0.75	0.1111	False
+main	ETV1	dorothea_ABC	13	5	4	9	0.3817	0.7692	0.75	0.7778	False
+main	ETV5	aracne_v2_tf	1	1	1	0	0.2314	1	1		False
+main	ETV5	collectri	1	1	1	0	0.397	1	1		False
+main	EZH2	collectri	18	10	18	0	0.6168	0.4444	0.4444		False
+main	FBXL19	aracne_v2_tf	12	10	12	0	0.3639	0.5833	0.5833		False
+main	FOSL1	aracne_v2_tf	13	8	11	2	0.1733	0.9231	0.9091	1	True
+main	FOSL1	collectri	13	8	11	2	0.3609	0.6923	0.6364	1	False
+main	FOSL1	dorothea_ABC	13	8	11	2	0.3817	0.5385	0.4545	1	False
+main	FOXA1	aracne_v2_tf	1	1	1	0	0.09074	1	1		False
+main	FOXA1	collectri	1	1	1	0	0.01911	1	1		False
+main	FOXA1	dorothea_ABC	1	1	1	0	0.8015	0	0		False
+main	FOXA3	aracne_v2_tf	9	4	3	6	0.2985	0.8889	1	0.8333	False
+main	FOXJ1	aracne_v2_tf	5	2	0	5	0.3689	1		1	False
+main	FOXJ1	collectri	5	2	0	5	0	1		1	True
+main	FOXJ3	aracne_v2_tf	7	6	7	0	0.1059	0.7143	0.7143		True
+main	FOXO3	collectri	5	5	5	0	0.7707	0.4	0.4		False
+main	FOXO3	dorothea_ABC	5	5	5	0	0.3931	0.6	0.6		False
+main	FOXO4	aracne_v2_tf	8	6	8	0	0.211	0.625	0.625		True
+main	FOXO4	collectri	8	6	8	0	0.5096	0.75	0.75		False
+main	FOXO4	dorothea_ABC	8	6	8	0	0.5458	0.5	0.5		False
+main	FOXP1	aracne_v2_tf	2	2	2	0	0.5032	0	0		False
+main	FOXP1	dorothea_ABC	2	2	2	0	0.8149	0	0		False
+main	FOXP2	aracne_v2_tf	6	2	0	6	0.2636	0.8333		0.8333	False
+main	FOXP2	dorothea_ABC	6	2	0	6	0.2882	0.8333		0.8333	False
+main	FOXP4	aracne_v2_tf	6	6	6	0	0.2578	0.6667	0.6667		False
+main	FOXQ1	aracne_v2_tf	4	4	4	0	0.3841	0.5	0.5		False
+main	FOXQ1	collectri	4	4	4	0	0.5446	0.5	0.5		False
+main	FOXR1	aracne_v2_tf	1	1	0	1	0.9415	0		0	False
+main	GATA2	aracne_v2_tf	7	5	6	1	0.6115	0.4286	0.3333	1	False
+main	GATA2	collectri	7	5	6	1	0.6093	0.4286	0.3333	1	False
+main	GATA2	dorothea_ABC	7	5	6	1	0.8168	0.2857	0.1667	1	False
+main	GATA3	aracne_v2_tf	1	1	1	0	0.3941	0	0		False
+main	GATA3	collectri	1	1	1	0	0.518	0	0		False
+main	GATA3	dorothea_ABC	1	1	1	0	0.7557	0	0		False
+main	GATA4	aracne_v2_tf	1	1	1	0	0.2609	1	1		False
+main	GATA4	collectri	1	1	1	0	0.09554	1	1		False
+main	GATAD2B	aracne_v2_tf	7	7	7	0	0.807	0.1429	0.1429		False
+main	GLI1	aracne_v2_tf	1	1	1	0	0.6337	0	0		False
+main	GLI1	collectri	1	1	1	0	0.3588	1	1		False
+main	GLIS3	aracne_v2_tf	5	4	5	0	0.3933	0.6	0.6		False
+main	GRHL1	aracne_v2_tf	3	2	3	0	0.6524	0.3333	0.3333		False
+main	GRHL3	aracne_v2_tf	1	1	1	0	0.5177	0	0		False
+main	GRHL3	collectri	1	1	1	0	0.5032	1	1		False
+main	GTF2I	collectri	8	6	8	0	0.448	0.625	0.625		False
+main	HDAC1	collectri	1	1	1	0	0.535	0	0		False
+main	HDAC3	collectri	1	1	1	0	0.6242	0	0		False
+main	HEY1	aracne_v2_tf	2	1	0	2	0.6224	0		0	False
+main	HEY1	collectri	2	1	0	2	0.4873	0.5		0.5	False
+main	HEY2	aracne_v2_tf	1	1	0	1	0.6096	0		0	False
+main	HEY2	collectri	1	1	0	1	0.6624	0		0	False
+main	HIF1A	aracne_v2_tf	21	12	21	0	0.4025	0.7619	0.7619		False
+main	HIF1A	collectri	21	12	21	0	0.03822	0.8095	0.8095		True
+main	HIF1A	dorothea_ABC	21	12	21	0	0.06107	0.9048	0.9048		True
+main	HIVEP3	aracne_v2_tf	1	1	1	0	0.7637	0	0		False
+main	HLF	aracne_v2_tf	1	1	0	1	0.5255	0		0	False
+main	HLF	collectri	1	1	0	1	0.5244	0		0	False
+main	HMBOX1	aracne_v2_tf	7	7	7	0	0.5187	0.4286	0.4286		False
+main	HMBOX1	dorothea_ABC	7	7	7	0	0.5038	0.5714	0.5714		False
+main	HMG20B	aracne_v2_tf	6	5	6	0	0.4046	0.5	0.5		False
+main	HMGA2	aracne_v2_tf	2	2	2	0	0.3949	1	1		False
+main	HMGA2	collectri	2	2	2	0	0.06688	1	1		False
+main	HNF1A	aracne_v2_tf	3	3	3	0	0.1027	0.6667	0.6667		True
+main	HNF1B	aracne_v2_tf	7	6	7	0	0.377	0.5714	0.5714		False
+main	HNF1B	dorothea_ABC	7	6	7	0	0.3779	0.7143	0.7143		False
+main	HNF4A	aracne_v2_tf	13	6	5	8	0.05602	0.9231	0.8	1	True
+main	HNF4A	collectri	13	6	5	8	0.1062	1	1	1	True
+main	HNF4A	dorothea_ABC	13	6	5	8	0.03053	0.9231	0.8	1	True
+main	HNF4G	aracne_v2_tf	5	5	5	0	0.5982	0.6	0.6		False
+main	HNF4G	dorothea_ABC	5	5	5	0	0.6183	0.4	0.4		False
+main	HOMEZ	aracne_v2_tf	8	8	8	0	0.5972	0.375	0.375		False
+main	HOXA10	aracne_v2_tf	1	1	1	0	0.3489	1	1		False
+main	HOXA10	collectri	1	1	1	0	0.5223	1	1		False
+main	HOXA13	aracne_v2_tf	2	2	2	0	0.6866	0	0		False
+main	HOXA13	collectri	2	2	2	0	0.5106	0.5	0.5		False
+main	HOXA5	aracne_v2_tf	2	1	2	0	0.2743	1	1		False
+main	HOXA5	collectri	2	1	2	0	0.9958	0	0		False
+main	HOXA9	aracne_v2_tf	8	5	5	3	0.1864	0.875	1	0.6667	True
+main	HOXA9	collectri	8	5	5	3	0.4045	0.5	0.8	0	False
+main	HOXA9	dorothea_ABC	8	5	5	3	0.9065	0	0	0	False
+main	HOXB13	aracne_v2_tf	9	5	5	4	0.4553	0.7778	0.8	0.75	False
+main	HOXB13	collectri	9	5	5	4	0.3843	0.6667	0.4	1	False
+main	HOXB13	dorothea_ABC	9	5	5	4	0.7023	0.2222	0.2	0.25	False
+main	HOXB4	aracne_v2_tf	2	2	2	0	0.5257	0.5	0.5		False
+main	HOXB8	aracne_v2_tf	2	2	2	0	0.638	0	0		False
+main	HOXC9	aracne_v2_tf	7	5	5	2	0.5029	0.5714	0.6	0.5	False
+main	ID2	collectri	9	7	8	1	0.1635	0.7778	0.75	1	True
+main	IRF1	aracne_v2_tf	1	1	1	0	0	1	1		False
+main	IRF1	collectri	1	1	1	0	0	1	1		False
+main	IRF1	dorothea_ABC	1	1	1	0	0.003817	1	1		False
+main	IRF2	aracne_v2_tf	2	2	1	1	0.006652	1	1	1	False
+main	IRF2	collectri	2	2	1	1	0.02335	1	1	1	False
+main	IRF2	dorothea_ABC	2	2	1	1	0.01336	1	1	1	False
+main	ISL1	aracne_v2_tf	2	2	2	0	0.5182	0.5	0.5		False
+main	ISX	aracne_v2_tf	12	5	1	11	0.6158	0.4167	1	0.3636	False
+main	JAZF1	aracne_v2_tf	8	4	8	0	0.5978	0.5	0.5		False
+main	JDP2	aracne_v2_tf	2	2	2	0	0.4029	0.5	0.5		False
+main	JDP2	collectri	2	2	2	0	0.845	0	0		False
+main	JUNB	aracne_v2_tf	1	1	0	1	0.0185	1		1	False
+main	JUNB	collectri	1	1	0	1	0.3397	1		1	False
+main	JUNB	dorothea_ABC	1	1	0	1	0.5611	1		1	False
+main	KAT6A	collectri	15	12	15	0	0.5796	0.3333	0.3333		False
+main	KDM2A	aracne_v2_tf	2	2	2	0	0.3653	0.5	0.5		False
+main	KDM2B	aracne_v2_tf	12	7	12	0	0.6773	0.25	0.25		False
+main	KDM5A	collectri	32	12	32	0	0.4363	0.5312	0.5312		False
+main	KDM5B	aracne_v2_tf	11	7	11	0	0.4076	0.8182	0.8182		False
+main	KDM5B	collectri	11	7	11	0	0.5541	0.4545	0.4545		False
+main	KDM5B	dorothea_ABC	11	7	11	0	0.584	0.3636	0.3636		False
+main	KLF10	aracne_v2_tf	2	2	2	0	0.6921	0.5	0.5		False
+main	KLF10	collectri	2	2	2	0	0.5265	0.5	0.5		False
+main	KLF6	aracne_v2_tf	10	2	0	10	0.04541	1		1	True
+main	KLF6	collectri	10	2	0	10	0.1465	1		1	True
+main	KLF6	dorothea_ABC	10	2	0	10	0.07252	1		1	True
+main	KMT2A	aracne_v2_tf	2	2	2	0	0.03293	1	1		False
+main	KMT2A	collectri	2	2	2	0	0.09873	1	1		False
+main	KMT2A	dorothea_ABC	2	2	2	0	0.001908	1	1		False
+main	L3MBTL3	aracne_v2_tf	1	1	1	0	0.4196	1	1		False
+main	L3MBTL4	aracne_v2_tf	1	1	1	0	0.14	1	1		False
+main	LHX4	aracne_v2_tf	7	5	5	2	0.5674	0.2857	0.2	0.5	False
+main	LHX8	aracne_v2_tf	3	2	2	1	0.4155	0.6667	0.5	1	False
+main	LHX9	aracne_v2_tf	3	3	0	3	0.6141	0		0	False
+main	LIN28B	aracne_v2_tf	3	3	3	0	0.7449	0.3333	0.3333		False
+main	LMX1B	aracne_v2_tf	2	2	2	0	0.4091	1	1		False
+main	LMX1B	collectri	2	2	2	0	0.2463	1	1		False
+main	MBD3	aracne_v2_tf	17	10	17	0	0.247	0.6471	0.6471		True
+main	MBD6	aracne_v2_tf	14	10	14	0	0.6519	0.2857	0.2857		False
+main	MBNL2	aracne_v2_tf	9	7	9	0	0.206	0.8889	0.8889		True
+main	MESP1	aracne_v2_tf	5	5	5	0	0.1545	0.6	0.6		True
+main	MITF	aracne_v2_tf	5	2	0	5	0.0009251	1		1	True
+main	MITF	collectri	5	2	0	5	0	1		1	True
+main	MITF	dorothea_ABC	5	2	0	5	0	1		1	True
+main	MIXL1	aracne_v2_tf	1	1	1	0	0.2144	1	1		False
+main	MSX2	aracne_v2_tf	5	5	5	0	0.6113	0.4	0.4		False
+main	MSX2	collectri	5	5	5	0	0.2994	1	1		False
+main	MTA1	collectri	9	7	9	0	0.673	0.4444	0.4444		False
+main	MTA3	collectri	9	9	9	0	0.3822	0.5556	0.5556		False
+main	MTF2	aracne_v2_tf	9	6	7	2	0.1039	0.7778	0.8571	0.5	True
+main	MYB	aracne_v2_tf	1	1	0	1	0.63	0		0	False
+main	MYB	collectri	1	1	0	1	0.4374	1		1	False
+main	MYB	dorothea_ABC	1	1	0	1	0.1756	1		1	False
+main	MYBL2	aracne_v2_tf	5	4	5	0	0.0181	1	1		True
+main	MYBL2	collectri	5	4	5	0	0.02548	1	1		True
+main	MYBL2	dorothea_ABC	5	4	5	0	0.09542	0.8	0.8		True
+main	MYC	aracne_v2_tf	3	3	3	0	0.004566	1	1		True
+main	MYC	collectri	3	3	3	0	0	1	1		True
+main	MYC	dorothea_ABC	3	3	3	0	0.003817	1	1		True
+main	MYF6	aracne_v2_tf	7	2	0	7	0.2639	0.5714		0.5714	False
+main	MYF6	collectri	7	2	0	7	0.4756	0.4286		0.4286	False
+main	MYOD1	aracne_v2_tf	5	2	0	5	0.4146	0.8		0.8	False
+main	MYOD1	collectri	5	2	0	5	0.002123	1		1	True
+main	MYOD1	dorothea_ABC	5	2	0	5	0.313	0.8		0.8	False
+main	NANOG	collectri	6	2	0	6	0.3907	0.5		0.5	False
+main	NANOG	dorothea_ABC	6	2	0	6	0.1832	0.8333		0.8333	True
+main	NCOA3	aracne_v2_tf	17	8	17	0	0.5444	0.4118	0.4118		False
+main	NCOA3	collectri	17	8	17	0	0.2378	0.7059	0.7059		True
+main	NCOA3	dorothea_ABC	17	8	17	0	0.2099	0.7059	0.7059		True
+main	NEUROD1	aracne_v2_tf	1	1	1	0	0.8492	0	0		False
+main	NEUROD1	collectri	1	1	1	0	0.7686	0	0		False
+main	NEUROD1	dorothea_ABC	1	1	1	0	0.2252	1	1		False
+main	NFATC2	aracne_v2_tf	7	5	7	0	0.2313	0.8571	0.8571		True
+main	NFATC2	collectri	7	5	7	0	0.2038	1	1		True
+main	NFATC3	aracne_v2_tf	3	3	3	0	0.7151	0.3333	0.3333		False
+main	NFATC3	collectri	3	3	3	0	0.5308	0.6667	0.6667		False
+main	NFE2L1	aracne_v2_tf	1	1	0	1	0.06762	1		1	False
+main	NFE2L1	dorothea_ABC	1	1	0	1	0.8206	0		0	False
+main	NFE2L2	aracne_v2_tf	11	6	4	7	0.03515	0.9091	0.75	1	True
+main	NFE2L2	collectri	11	6	4	7	0	0.9091	0.75	1	True
+main	NFE2L2	dorothea_ABC	11	6	4	7	0	0.9091	0.75	1	True
+main	NFIL3	aracne_v2_tf	5	3	0	5	0.3022	0.6		0.6	False
+main	NFIL3	collectri	5	3	0	5	0.603	0.4		0.4	False
+main	NFKBIB	collectri	7	7	6	1	0.7962	0.4286	0.3333	1	False
+main	NKX2-3	aracne_v2_tf	1	1	1	0	0.2105	1	1		False
+main	NKX2-5	aracne_v2_tf	5	4	5	0	0.3765	0.6	0.6		False
+main	NKX2-5	collectri	5	4	5	0	0.3949	0.6	0.6		False
+main	NME2	aracne_v2_tf	4	3	4	0	0.07586	0.75	0.75		True
+main	NOTCH1	collectri	4	3	4	0	0.5605	0.5	0.5		False
+main	NPM1	collectri	1	1	1	0	0.06369	1	1		False
+main	NR0B1	aracne_v2_tf	2	2	1	1	0.7839	0	0	0	False
+main	NR0B1	collectri	2	2	1	1	0.552	0.5	0	1	False
+main	NR1H2	aracne_v2_tf	5	3	5	0	0.7457	0.2	0.2		False
+main	NR1H2	collectri	5	3	5	0	0.9639	0	0		False
+main	NR1H2	dorothea_ABC	5	3	5	0	0.8779	0.2	0.2		False
+main	NR1H4	aracne_v2_tf	2	2	2	0	0.4215	0.5	0.5		False
+main	NR1H4	collectri	2	2	2	0	0.6348	0.5	0.5		False
+main	NR2F6	aracne_v2_tf	19	12	19	0	0.09537	0.8947	0.8947		True
+main	NR2F6	dorothea_ABC	19	12	19	0	0.4466	0.3684	0.3684		False
+main	OSR1	aracne_v2_tf	4	4	4	0	0.3784	0.75	0.75		False
+main	OTX1	aracne_v2_tf	8	6	6	2	0.4804	0.625	0.6667	0.5	False
+main	OVOL2	aracne_v2_tf	3	3	0	3	0.3784	1		1	False
+main	PAX8	aracne_v2_tf	1	1	0	1	0.3062	1		1	False
+main	PAX8	collectri	1	1	0	1	0.8004	0		0	False
+main	PBX4	aracne_v2_tf	4	4	4	0	0.4575	0.5	0.5		False
+main	PDX1	aracne_v2_tf	1	1	1	0	0.3479	1	1		False
+main	PDX1	collectri	1	1	1	0	0.2824	1	1		False
+main	PDX1	dorothea_ABC	1	1	1	0	0.5267	1	1		False
+main	PHF19	aracne_v2_tf	8	7	7	1	0.5786	0.375	0.2857	1	False
+main	PIN1	aracne_v2_tf	10	8	10	0	0.07854	1	1		True
+main	PLSCR1	aracne_v2_tf	12	8	12	0	0.2801	0.5833	0.5833		False
+main	POU5F1	collectri	13	6	4	9	0.6391	0.2308	0	0.3333	False
+main	POU5F1	dorothea_ABC	13	6	4	9	0.4122	0.5385	0.75	0.4444	False
+main	PPARD	aracne_v2_tf	3	2	3	0	0.6557	0.3333	0.3333		False
+main	PPARD	collectri	3	2	3	0	0.535	0.6667	0.6667		False
+main	PPARG	aracne_v2_tf	10	7	9	1	0.3574	0.5	0.5556	0	False
+main	PPARG	collectri	10	7	9	1	0.1582	0.9	1	0	False
+main	PPARG	dorothea_ABC	10	7	9	1	0.1164	0.9	0.8889	1	True
+main	PURA	aracne_v2_tf	1	1	1	0	0.07032	1	1		False
+main	PURA	collectri	1	1	1	0	0.4246	1	1		False
+main	PURG	aracne_v2_tf	6	2	0	6	0.5971	0.1667		0.1667	False
+main	RARG	aracne_v2_tf	1	1	1	0	0.1023	1	1		False
+main	RARG	collectri	1	1	1	0	0.5839	1	1		False
+main	RB1	collectri	7	7	7	0	0.2972	0.7143	0.7143		False
+main	RELA	aracne_v2_tf	1	1	1	0	0.01792	1	1		False
+main	RELA	collectri	1	1	1	0	0.3142	1	1		False
+main	RELA	dorothea_ABC	1	1	1	0	0.09542	1	1		False
+main	RELB	aracne_v2_tf	8	5	4	4	0.1607	0.875	0.75	1	True
+main	RELB	collectri	8	5	4	4	0.1805	0.625	0.25	1	False
+main	RELB	dorothea_ABC	8	5	4	4	0.1679	0.875	0.75	1	True
+main	REST	aracne_v2_tf	2	1	2	0	0.4222	0.5	0.5		False
+main	REST	collectri	2	1	2	0	0.006369	1	1		False
+main	REST	dorothea_ABC	2	1	2	0	0.2863	1	1		False
+main	RFX5	aracne_v2_tf	7	6	7	0	0.3828	0.7143	0.7143		False
+main	RFX5	collectri	7	6	7	0	0.4989	0.4286	0.4286		False
+main	RFX5	dorothea_ABC	7	6	7	0	0.3092	0.5714	0.5714		False
+main	RFX6	aracne_v2_tf	1	1	1	0	0.7114	0	0		False
+main	RORC	aracne_v2_tf	1	1	0	1	0.02741	1		1	False
+main	RORC	collectri	1	1	0	1	0.0913	1		1	False
+main	SALL4	aracne_v2_tf	6	5	5	1	0.428	0.6667	0.6	1	False
+main	SALL4	collectri	6	5	5	1	0.5786	0.3333	0.2	1	False
+main	SATB1	aracne_v2_tf	1	1	0	1	0.4781	0		0	False
+main	SATB1	collectri	1	1	0	1	0.1699	1		1	False
+main	SETDB1	aracne_v2_tf	1	1	1	0	0.08676	1	1		False
+main	SETDB2	aracne_v2_tf	6	4	6	0	0.2426	1	1		True
+main	SIM2	aracne_v2_tf	9	6	5	4	0.3858	0.6667	0.6	0.75	False
+main	SIN3A	collectri	27	13	27	0	0.3822	0.6667	0.6667		False
+main	SIX4	aracne_v2_tf	6	6	6	0	0.4729	0.5	0.5		False
+main	SKIL	aracne_v2_tf	2	1	2	0	0.472	0.5	0.5		False
+main	SKIL	collectri	2	1	2	0	0.3992	0.5	0.5		False
+main	SMAD3	aracne_v2_tf	12	9	12	0	0.4683	0.6667	0.6667		False
+main	SMAD3	collectri	12	9	12	0	0.4236	0.5833	0.5833		False
+main	SMAD3	dorothea_ABC	12	9	12	0	0.2099	0.8333	0.8333		True
+main	SMAD4	aracne_v2_tf	3	3	3	0	0.143	1	1		True
+main	SMAD4	collectri	3	3	3	0	0.2781	0.6667	0.6667		False
+main	SMAD4	dorothea_ABC	3	3	3	0	0.0687	1	1		True
+main	SMARCA4	collectri	19	11	19	0	0.4671	0.4737	0.4737		False
+main	SNAI2	aracne_v2_tf	2	1	2	0	0.1071	1	1		False
+main	SNAI2	collectri	2	1	2	0	0.5276	0.5	0.5		False
+main	SNAI2	dorothea_ABC	2	1	2	0	0.7481	0	0		False
+main	SNAI3	aracne_v2_tf	1	1	0	1	0.811	0		0	False
+main	SOX10	aracne_v2_tf	1	1	1	0	0.4218	1	1		False
+main	SOX10	collectri	1	1	1	0	0.1104	1	1		False
+main	SOX10	dorothea_ABC	1	1	1	0	0.1336	1	1		False
+main	SOX11	aracne_v2_tf	1	1	1	0	0.2615	1	1		False
+main	SOX11	collectri	1	1	1	0	0.1911	1	1		False
+main	SOX11	dorothea_ABC	1	1	1	0	0.1756	1	1		False
+main	SOX14	aracne_v2_tf	6	2	0	6	0.434	1		1	False
+main	SOX2	aracne_v2_tf	10	4	0	10	0.8496	0.3		0.3	False
+main	SOX2	collectri	10	4	0	10	0.3981	0.7		0.7	False
+main	SOX2	dorothea_ABC	10	4	0	10	0.09351	0.8		0.8	True
+main	SOX4	aracne_v2_tf	14	11	14	0	0.1145	0.7143	0.7143		True
+main	SOX4	collectri	14	11	14	0	0.4618	0.5714	0.5714		False
+main	SP100	aracne_v2_tf	1	1	1	0	0.612	0	0		False
+main	SP6	aracne_v2_tf	3	2	0	3	0.1471	0.6667		0.6667	True
+main	SP8	aracne_v2_tf	5	2	0	5	0.6429	0.4		0.4	False
+main	SPDEF	aracne_v2_tf	7	4	7	0	0.0619	0.8571	0.8571		True
+main	SPDEF	collectri	7	4	7	0	0.5329	0.4286	0.4286		False
+main	SPEN	aracne_v2_tf	2	2	2	0	0.2354	1	1		False
+main	SREBF2	aracne_v2_tf	2	1	2	0	0.1329	1	1		False
+main	SREBF2	collectri	2	1	2	0	0.001062	1	1		False
+main	SREBF2	dorothea_ABC	2	1	2	0	0.007634	1	1		False
+main	SRSF2	collectri	30	14	30	0	0.6051	0.4333	0.4333		False
+main	STAT1	aracne_v2_tf	9	7	9	0	0.4595	0.4444	0.4444		False
+main	STAT1	collectri	9	7	9	0	0.6391	0.3333	0.3333		False
+main	STAT1	dorothea_ABC	9	7	9	0	0.7214	0.4444	0.4444		False
+main	STAT3	aracne_v2_tf	3	3	3	0	0.3858	0.6667	0.6667		False
+main	STAT3	collectri	3	3	3	0	0.5478	0.3333	0.3333		False
+main	STAT3	dorothea_ABC	3	3	3	0	0.355	0.3333	0.3333		False
+main	STAT5A	aracne_v2_tf	1	1	1	0	0.4509	1	1		False
+main	STAT5A	collectri	1	1	1	0	0.4692	1	1		False
+main	STAT5A	dorothea_ABC	1	1	1	0	0.3359	1	1		False
+main	STAT5B	aracne_v2_tf	1	1	1	0	0.6421	0	0		False
+main	STAT5B	collectri	1	1	1	0	0.5223	0	0		False
+main	STAT5B	dorothea_ABC	1	1	1	0	0.5802	0	0		False
+main	TAF1	collectri	1	1	1	0	0.02123	1	1		False
+main	TAL2	aracne_v2_tf	2	1	1	1	0.4019	1	1	1	False
+main	TBPL1	aracne_v2_tf	8	6	8	0	0.338	0.75	0.75		False
+main	TBPL1	collectri	8	6	8	0	0.3248	1	1		False
+main	TBX2	aracne_v2_tf	1	1	1	0	0.9754	0	0		False
+main	TBX2	collectri	1	1	1	0	0.5796	0	0		False
+main	TBX20	aracne_v2_tf	1	1	1	0	0.5674	0	0		False
+main	TCF12	aracne_v2_tf	1	1	1	0	0.08949	1	1		False
+main	TCF12	collectri	1	1	1	0	0.3992	1	1		False
+main	TCF12	dorothea_ABC	1	1	1	0	0.03053	1	1		False
+main	TCFL5	aracne_v2_tf	4	3	4	0	0.2857	0.75	0.75		False
+main	TEAD2	aracne_v2_tf	6	6	6	0	0.4694	0.8333	0.8333		False
+main	TEAD2	dorothea_ABC	6	6	6	0	0.7901	0.3333	0.3333		False
+main	TET2	aracne_v2_tf	2	2	2	0	0.7849	0	0		False
+main	TFAP4	aracne_v2_tf	1	1	0	1	0.8343	0		0	False
+main	TFAP4	collectri	1	1	0	1	0.3631	1		1	False
+main	TFAP4	dorothea_ABC	1	1	0	1	0.187	1		1	False
+main	TFDP1	collectri	4	4	4	0	0.2611	0.75	0.75		False
+main	TFDP1	dorothea_ABC	4	4	4	0	0.2481	0.75	0.75		True
+main	TFEB	aracne_v2_tf	2	1	0	2	0.1272	1		1	False
+main	TGIF1	aracne_v2_tf	1	1	0	1	0.9381	0		0	False
+main	TGIF1	collectri	1	1	0	1	0.8153	0		0	False
+main	THAP11	aracne_v2_tf	5	5	5	0	0.3724	1	1		False
+main	THAP11	dorothea_ABC	5	5	5	0	0.5992	0.6	0.6		False
+main	THRB	aracne_v2_tf	2	2	2	0	0.1643	1	1		False
+main	THRB	collectri	2	2	2	0	0.4321	1	1		False
+main	TIGD3	aracne_v2_tf	1	1	1	0	0.3726	1	1		False
+main	TP53	aracne_v2_tf	22	11	21	1	0.3436	0.5909	0.619	0	False
+main	TP53	collectri	22	11	21	1	0.04034	0.6818	0.7143	0	False
+main	TP53	dorothea_ABC	22	11	21	1	0.001908	0.5909	0.619	0	False
+main	TRERF1	aracne_v2_tf	3	3	3	0	0.7726	0	0		False
+main	TRERF1	collectri	3	3	3	0	0.4607	0.3333	0.3333		False
+main	TSHZ3	aracne_v2_tf	1	1	1	0	0.9521	0	0		False
+main	TWIST2	aracne_v2_tf	6	4	3	3	0.4674	0.6667	0.3333	1	False
+main	TWIST2	collectri	6	4	3	3	0.2866	0.6667	1	0.3333	False
+main	USF1	aracne_v2_tf	11	8	8	3	0.6981	0.3636	0.125	1	False
+main	USF1	collectri	11	8	8	3	0.6369	0.1818	0.25	0	False
+main	USF1	dorothea_ABC	11	8	8	3	0.4771	0.4545	0.5	0.3333	False
+main	XBP1	aracne_v2_tf	23	13	20	3	0.3537	0.7391	0.7	1	False
+main	XBP1	collectri	23	13	20	3	0.2293	0.7826	0.75	1	True
+main	XBP1	dorothea_ABC	23	13	20	3	0.4542	0.4348	0.4	0.6667	False
+main	YY1	aracne_v2_tf	2	2	2	0	0.02376	1	1		False
+main	YY1	collectri	2	2	2	0	0.3482	1	1		False
+main	YY1	dorothea_ABC	2	2	2	0	0.645	0	0		False
+main	ZBTB20	aracne_v2_tf	4	4	2	2	0.6046	0.5	0	1	False
+main	ZBTB26	aracne_v2_tf	7	7	7	0	0.6343	0.2857	0.2857		False
+main	ZBTB41	aracne_v2_tf	7	7	7	0	0.2476	0.5714	0.5714		False
+main	ZBTB45	aracne_v2_tf	7	7	7	0	0.4212	0.5714	0.5714		False
+main	ZBTB46	aracne_v2_tf	7	6	7	0	0.3143	0.7143	0.7143		False
+main	ZBTB49	aracne_v2_tf	7	7	7	0	0.6234	0	0		False
+main	ZFAT	aracne_v2_tf	3	3	3	0	0.6603	0	0		False
+main	ZFP1	aracne_v2_tf	7	7	7	0	0.5571	0.2857	0.2857		False
+main	ZFP28	aracne_v2_tf	2	2	2	0	0.5939	0.5	0.5		False
+main	ZFP3	aracne_v2_tf	3	3	3	0	0.7448	0.3333	0.3333		False
+main	ZFP90	aracne_v2_tf	6	5	6	0	0.4966	0.3333	0.3333		False
+main	ZFP91	aracne_v2_tf	3	3	3	0	0.3987	0.6667	0.6667		False
+main	ZFX	aracne_v2_tf	1	1	1	0	0.1711	1	1		False
+main	ZFX	dorothea_ABC	1	1	1	0	0.0229	1	1		False
+main	ZGLP1	aracne_v2_tf	3	2	3	0	0.2026	1	1		True
+main	ZGLP1	collectri	3	2	3	0	0.1146	1	1		True
+main	ZGPAT	aracne_v2_tf	9	8	9	0	0.2414	0.5556	0.5556		False
+main	ZIC2	aracne_v2_tf	4	4	4	0	0.4982	0.5	0.5		False
+main	ZKSCAN2	aracne_v2_tf	4	4	4	0	0.6161	0.25	0.25		False
+main	ZNF114	aracne_v2_tf	3	3	3	0	0.4603	0.6667	0.6667		False
+main	ZNF138	aracne_v2_tf	6	6	6	0	0.4541	0.5	0.5		False
+main	ZNF141	aracne_v2_tf	1	1	1	0	0.138	1	1		False
+main	ZNF169	aracne_v2_tf	3	3	3	0	0.3499	1	1		False
+main	ZNF182	aracne_v2_tf	7	7	7	0	0.4562	0.4286	0.4286		False
+main	ZNF213	aracne_v2_tf	5	5	5	0	0.6184	0.2	0.2		False
+main	ZNF274	aracne_v2_tf	1	1	1	0	0.4709	0	0		False
+main	ZNF274	dorothea_ABC	1	1	1	0	0.003817	1	1		False
+main	ZNF296	aracne_v2_tf	11	7	6	5	0.8034	0.2727	0.3333	0.2	False
+main	ZNF300	aracne_v2_tf	5	4	4	1	0.4363	0.6	0.75	0	False
+main	ZNF317	aracne_v2_tf	7	7	7	0	0.1305	0.5714	0.5714		False
+main	ZNF318	aracne_v2_tf	2	2	2	0	0.4918	0.5	0.5		False
+main	ZNF333	aracne_v2_tf	7	7	7	0	0.4743	0.5714	0.5714		False
+main	ZNF354B	aracne_v2_tf	7	7	7	0	0.642	0.2857	0.2857		False
+main	ZNF366	aracne_v2_tf	3	3	0	3	0.1787	1		1	True
+main	ZNF367	aracne_v2_tf	5	4	5	0	0.145	0.6	0.6		True
+main	ZNF385B	aracne_v2_tf	3	3	3	0	0.2267	1	1		True
+main	ZNF395	aracne_v2_tf	3	3	3	0	0.3515	0.6667	0.6667		False
+main	ZNF398	aracne_v2_tf	7	7	6	1	0.4619	0.7143	0.8333	0	False
+main	ZNF418	aracne_v2_tf	4	4	4	0	0.5092	0.5	0.5		False
+main	ZNF433	aracne_v2_tf	5	5	5	0	0.3796	0.8	0.8		False
+main	ZNF436	aracne_v2_tf	8	8	8	0	0.3521	0.75	0.75		False
+main	ZNF449	aracne_v2_tf	6	6	6	0	0.4845	0.5	0.5		False
+main	ZNF451	aracne_v2_tf	5	5	5	0	0.2907	1	1		False
+main	ZNF462	aracne_v2_tf	5	5	5	0	0.4943	0.6	0.6		False
+main	ZNF486	aracne_v2_tf	2	2	2	0	0.7033	0	0		False
+main	ZNF488	aracne_v2_tf	3	3	3	0	0.2304	0.6667	0.6667		True
+main	ZNF490	aracne_v2_tf	5	5	5	0	0.5929	0.4	0.4		False
+main	ZNF496	aracne_v2_tf	6	6	6	0	0.4803	0.3333	0.3333		False
+main	ZNF501	aracne_v2_tf	1	1	1	0	0.5642	0	0		False
+main	ZNF502	aracne_v2_tf	3	3	3	0	0.4458	0.6667	0.6667		False
+main	ZNF503	aracne_v2_tf	2	2	0	2	0.6506	0.5		0.5	False
+main	ZNF513	aracne_v2_tf	4	3	4	0	0.02271	1	1		True
+main	ZNF517	aracne_v2_tf	8	8	8	0	0.4621	0.625	0.625		False
+main	ZNF519	aracne_v2_tf	6	6	6	0	0.7602	0	0		False
+main	ZNF521	aracne_v2_tf	1	1	1	0	0.1249	1	1		False
+main	ZNF524	aracne_v2_tf	10	8	8	2	0.3364	0.7	0.75	0.5	False
+main	ZNF543	aracne_v2_tf	5	4	4	1	0.3578	0.8	0.75	1	False
+main	ZNF546	aracne_v2_tf	3	3	3	0	0.6365	0.3333	0.3333		False
+main	ZNF548	aracne_v2_tf	8	8	8	0	0.4261	0.625	0.625		False
+main	ZNF554	aracne_v2_tf	4	3	3	1	0.5305	0.25	0.3333	0	False
+main	ZNF558	aracne_v2_tf	6	6	6	0	0.4291	0.8333	0.8333		False
+main	ZNF559	aracne_v2_tf	6	6	6	0	0.5549	0.5	0.5		False
+main	ZNF563	aracne_v2_tf	3	3	3	0	0.5529	0.3333	0.3333		False
+main	ZNF567	aracne_v2_tf	8	8	8	0	0.5136	0.25	0.25		False
+main	ZNF57	aracne_v2_tf	8	7	7	1	0.5826	0.5	0.5714	0	False
+main	ZNF572	aracne_v2_tf	3	3	3	0	0.1909	0.6667	0.6667		True
+main	ZNF577	aracne_v2_tf	4	4	4	0	0.5035	0.5	0.5		False
+main	ZNF581	aracne_v2_tf	5	5	5	0	0.2202	0.6	0.6		True
+main	ZNF582	aracne_v2_tf	4	3	3	1	0.4595	0.5	0.6667	0	False
+main	ZNF583	aracne_v2_tf	4	4	4	0	0.4485	0.5	0.5		False
+main	ZNF585A	aracne_v2_tf	7	7	7	0	0.7419	0.2857	0.2857		False
+main	ZNF596	aracne_v2_tf	6	6	6	0	0.2333	0.8333	0.8333		True
+main	ZNF597	aracne_v2_tf	3	3	3	0	0.6485	0.3333	0.3333		False
+main	ZNF599	aracne_v2_tf	5	5	5	0	0.2999	0.8	0.8		False
+main	ZNF607	aracne_v2_tf	5	5	5	0	0.479	0.4	0.4		False
+main	ZNF608	aracne_v2_tf	1	1	1	0	0.2451	1	1		False
+main	ZNF610	aracne_v2_tf	2	2	1	1	0.7629	0	0	0	False
+main	ZNF619	aracne_v2_tf	7	7	7	0	0.7057	0.4286	0.4286		False
+main	ZNF621	aracne_v2_tf	8	8	8	0	0.5567	0.375	0.375		False
+main	ZNF624	aracne_v2_tf	5	5	5	0	0.5156	0.4	0.4		False
+main	ZNF625	aracne_v2_tf	4	4	4	0	0.4559	0.5	0.5		False
+main	ZNF626	aracne_v2_tf	4	3	3	1	0.5196	0.75	0.6667	1	False
+main	ZNF653	aracne_v2_tf	9	7	7	2	0.2136	1	1	1	True
+main	ZNF662	aracne_v2_tf	1	1	1	0	0.519	1	1		False
+main	ZNF677	aracne_v2_tf	4	3	3	1	0.5273	0.5	0.3333	1	False
+main	ZNF678	aracne_v2_tf	7	7	7	0	0.7057	0.2857	0.2857		False
+main	ZNF684	aracne_v2_tf	8	8	8	0	0.3699	0.75	0.75		False
+main	ZNF689	aracne_v2_tf	7	7	7	0	0.5176	0.4286	0.4286		False
+main	ZNF707	aracne_v2_tf	7	7	7	0	0.5635	0.2857	0.2857		False
+main	ZNF77	aracne_v2_tf	7	7	7	0	0.4933	0.5714	0.5714		False
+main	ZNF785	aracne_v2_tf	5	5	5	0	0.1578	1	1		True
+main	ZNF786	aracne_v2_tf	8	8	8	0	0.4294	0.5	0.5		False
+main	ZNF791	aracne_v2_tf	9	8	8	1	0.4015	0.5556	0.625	0	False
+main	ZNF792	aracne_v2_tf	5	5	5	0	0.5064	0.8	0.8		False
+main	ZNF8	aracne_v2_tf	7	7	7	0	0.5495	0.4286	0.4286		False
+main	ZNF805	aracne_v2_tf	2	2	2	0	0.5978	0	0		False
+main	ZNF830	aracne_v2_tf	2	2	2	0	0.7585	0	0		False
+main	ZNF85	aracne_v2_tf	5	4	4	1	0.3714	1	1	1	False
+main	ZNF92	aracne_v2_tf	6	6	6	0	0.7137	0.3333	0.3333		False
+main	ZSCAN1	aracne_v2_tf	1	1	1	0	0.559	0	0		False
+main	ZSCAN29	aracne_v2_tf	7	7	7	0	0.6248	0.2857	0.2857		False
+no_own_check	ABL1	collectri	17	11	17	0	0.3291	0.7647	0.7647		False
+no_own_check	AHDC1	aracne_v2_tf	4	2	0	4	0.5533	0.25		0.25	False
+no_own_check	AHR	aracne_v2_tf	1	1	1	0	0.0222	1	1		False
+no_own_check	AHR	collectri	1	1	1	0	0.3737	1	1		False
+no_own_check	AHR	dorothea_ABC	1	1	1	0	0.7863	0	0		False
+no_own_check	AHRR	aracne_v2_tf	4	3	4	0	0.4437	1	1		False
+no_own_check	AIRE	aracne_v2_tf	2	2	0	2	0.5823	0		0	False
+no_own_check	AIRE	collectri	2	2	0	2	0.4183	0.5		0.5	False
+no_own_check	AKAP8	aracne_v2_tf	6	5	6	0	0.4961	0.5	0.5		False
+no_own_check	AKAP8L	aracne_v2_tf	2	2	2	0	0.7965	0	0		False
+no_own_check	ALX1	aracne_v2_tf	2	2	2	0	0.7404	0	0		False
+no_own_check	APEX1	collectri	1	1	1	0	0.6561	0	0		False
+no_own_check	ARID2	aracne_v2_tf	5	5	5	0	0.3529	0.6	0.6		False
+no_own_check	ARID2	dorothea_ABC	5	5	5	0	0.2481	1	1		True
+no_own_check	ASCL2	aracne_v2_tf	6	3	1	5	0.2581	0.6667	1	0.6	False
+no_own_check	ATF1	aracne_v2_tf	9	9	9	0	0.09906	0.6667	0.6667		True
+no_own_check	ATF1	collectri	9	9	9	0	0.5287	0.3333	0.3333		False
+no_own_check	ATF1	dorothea_ABC	9	9	9	0	0.2557	0.5556	0.5556		False
+no_own_check	ATF4	collectri	3	2	3	0	0.01486	1	1		True
+no_own_check	ATF4	dorothea_ABC	3	2	3	0	0	1	1		True
+no_own_check	ATF5	aracne_v2_tf	10	8	10	0	0.4976	0.4	0.4		False
+no_own_check	ATF5	collectri	10	8	10	0	0.4798	0.6	0.6		False
+no_own_check	ATF6	aracne_v2_tf	26	11	26	0	0.07347	0.8462	0.8462		True
+no_own_check	ATF6	collectri	26	11	26	0	0.2824	0.5769	0.5769		False
+no_own_check	ATF6	dorothea_ABC	26	11	26	0	0.4103	0.6538	0.6538		False
+no_own_check	ATF7	aracne_v2_tf	3	3	3	0	0.156	1	1		True
+no_own_check	ATF7	dorothea_ABC	3	3	3	0	0.4695	0.6667	0.6667		False
+no_own_check	ATMIN	aracne_v2_tf	8	8	8	0	0.2464	0.625	0.625		True
+no_own_check	BARX1	aracne_v2_tf	3	3	3	0	0.5684	0.3333	0.3333		False
+no_own_check	BATF2	aracne_v2_tf	2	2	2	0	0.2311	1	1		False
+no_own_check	BATF3	aracne_v2_tf	1	1	0	1	0.1517	1		1	False
+no_own_check	BCL6	aracne_v2_tf	3	3	0	3	0.2183	1		1	True
+no_own_check	BCL6	collectri	3	3	0	3	0.2654	0.6667		0.6667	False
+no_own_check	BCL6	dorothea_ABC	3	3	0	3	0.3435	0.6667		0.6667	False
+no_own_check	BCL6B	aracne_v2_tf	1	1	0	1	0.9685	0		0	False
+no_own_check	BRCA1	collectri	6	5	6	0	0.5478	0.5	0.5		False
+no_own_check	CBX2	aracne_v2_tf	3	3	3	0	0.4387	1	1		False
+no_own_check	CDX1	aracne_v2_tf	1	1	1	0	0.03014	1	1		False
+no_own_check	CDX1	collectri	1	1	1	0	0.8875	0	0		False
+no_own_check	CDX2	aracne_v2_tf	8	6	4	4	0.4406	1	1	1	False
+no_own_check	CDX2	collectri	8	6	4	4	0.3641	0.625	0.25	1	False
+no_own_check	CDX2	dorothea_ABC	8	6	4	4	0.2595	0.625	0.25	1	False
+no_own_check	CEBPA	aracne_v2_tf	1	1	1	0	0.589	0	0		False
+no_own_check	CEBPA	collectri	1	1	1	0	0.02335	1	1		False
+no_own_check	CEBPA	dorothea_ABC	1	1	1	0	0.3015	1	1		False
+no_own_check	CEBPB	aracne_v2_tf	3	3	3	0	0.4209	1	1		False
+no_own_check	CEBPB	collectri	3	3	3	0	0.07219	1	1		True
+no_own_check	CEBPB	dorothea_ABC	3	3	3	0	0.542	0.3333	0.3333		False
+no_own_check	CEBPD	aracne_v2_tf	4	4	4	0	0.4515	0.75	0.75		False
+no_own_check	CEBPD	collectri	4	4	4	0	0.7856	0.25	0.25		False
+no_own_check	CEBPD	dorothea_ABC	4	4	4	0	0.7634	0.5	0.5		False
+no_own_check	CEBPG	aracne_v2_tf	1	1	0	1	0.7216	0		0	False
+no_own_check	CEBPG	collectri	1	1	0	1	0.8917	0		0	False
+no_own_check	CEBPG	dorothea_ABC	1	1	0	1	0.8397	0		0	False
+no_own_check	CEBPZ	aracne_v2_tf	7	6	7	0	0.1619	0.5714	0.5714		False
+no_own_check	CEBPZ	collectri	7	6	7	0	0.1316	0.8571	0.8571		True
+no_own_check	CREB1	aracne_v2_tf	1	1	1	0	0.03308	1	1		False
+no_own_check	CREB1	collectri	1	1	1	0	0.1316	1	1		False
+no_own_check	CREB1	dorothea_ABC	1	1	1	0	0.6183	1	1		False
+no_own_check	CREB3	aracne_v2_tf	2	2	0	2	0.009281	1		1	False
+no_own_check	CREB3	collectri	2	2	0	2	0.0828	1		1	False
+no_own_check	CREB3	dorothea_ABC	2	2	0	2	0.08397	1		1	False
+no_own_check	CREB3L1	aracne_v2_tf	1	1	0	1	0.9001	0		0	False
+no_own_check	CREB3L1	dorothea_ABC	1	1	0	1	0.2481	1		1	False
+no_own_check	CREB3L4	aracne_v2_tf	10	9	10	0	0.3854	0.6	0.6		False
+no_own_check	CREBBP	collectri	1	1	1	0	0.31	1	1		False
+no_own_check	CTBP2	collectri	2	2	0	2	0.3843	1		1	False
+no_own_check	CTCF	aracne_v2_tf	2	2	1	1	0.08724	1	1	1	False
+no_own_check	CTCF	collectri	2	2	1	1	0.6645	0	0	0	False
+no_own_check	CTCF	dorothea_ABC	2	2	1	1	0.5248	0.5	0	1	False
+no_own_check	CTCFL	aracne_v2_tf	2	2	0	2	0.7428	0		0	False
+no_own_check	CTCFL	dorothea_ABC	2	2	0	2	0.5305	0.5		0.5	False
+no_own_check	CXXC5	aracne_v2_tf	1	1	1	0	0.7314	0	0		False
+no_own_check	DDIT3	aracne_v2_tf	2	2	1	1	0.1701	1	1	1	False
+no_own_check	DDIT3	collectri	2	2	1	1	0.4724	0.5	1	0	False
+no_own_check	DLX2	aracne_v2_tf	1	1	1	0	0.2803	1	1		False
+no_own_check	DLX2	collectri	1	1	1	0	0.7452	0	0		False
+no_own_check	DLX3	aracne_v2_tf	6	6	2	4	0.3477	0.6667	0.5	0.75	False
+no_own_check	DLX3	collectri	6	6	2	4	0.5244	0.3333	0.5	0.25	False
+no_own_check	DMTF1	aracne_v2_tf	3	2	3	0	0.7219	0.3333	0.3333		False
+no_own_check	DMTF1	collectri	3	2	3	0	0.6582	0.3333	0.3333		False
+no_own_check	DNMT1	aracne_v2_tf	22	9	22	0	0.06011	0.9091	0.9091		True
+no_own_check	DNMT1	collectri	22	9	22	0	0.4278	0.5455	0.5455		False
+no_own_check	DNMT3A	collectri	2	2	2	0	0.4416	1	1		False
+no_own_check	DOT1L	aracne_v2_tf	9	5	9	0	0.2381	0.7778	0.7778		True
+no_own_check	DRAP1	aracne_v2_tf	20	11	20	0	0.4006	0.6	0.6		False
+no_own_check	E2F7	aracne_v2_tf	9	5	9	0	0.9974	0.1111	0.1111		False
+no_own_check	E2F7	dorothea_ABC	9	5	9	0	0.7023	0.3333	0.3333		False
+no_own_check	E2F8	aracne_v2_tf	1	1	0	1	0.9991	0		0	False
+no_own_check	EBF1	aracne_v2_tf	12	4	0	12	0.04847	1		1	True
+no_own_check	EBF1	collectri	12	4	0	12	0.1762	0.9167		0.9167	True
+no_own_check	EBF1	dorothea_ABC	12	4	0	12	0.1641	0.9167		0.9167	True
+no_own_check	EGR1	aracne_v2_tf	3	3	0	3	0.3224	1		1	False
+no_own_check	EGR1	collectri	3	3	0	3	0.189	1		1	True
+no_own_check	EGR1	dorothea_ABC	3	3	0	3	0.01527	1		1	True
+no_own_check	EHF	aracne_v2_tf	2	2	0	2	0.576	0.5		0.5	False
+no_own_check	EHF	collectri	2	2	0	2	0.793	0		0	False
+no_own_check	EHF	dorothea_ABC	2	2	0	2	0.4294	0.5		0.5	False
+no_own_check	ELF1	aracne_v2_tf	1	1	0	1	0.333	1		1	False
+no_own_check	ELF1	collectri	1	1	0	1	0.3248	1		1	False
+no_own_check	ELF1	dorothea_ABC	1	1	0	1	0.7595	0		0	False
+no_own_check	ELF4	aracne_v2_tf	3	3	0	3	0.01512	1		1	True
+no_own_check	ELF4	collectri	3	3	0	3	0.3418	1		1	False
+no_own_check	ELK1	aracne_v2_tf	1	1	0	1	0.4783	1		1	False
+no_own_check	ELK1	collectri	1	1	0	1	0.5159	1		1	False
+no_own_check	ELK1	dorothea_ABC	1	1	0	1	1	0		0	False
+no_own_check	ELK3	aracne_v2_tf	5	5	0	5	0.2873	0.6		0.6	False
+no_own_check	ELK3	collectri	5	5	0	5	0.1338	1		1	True
+no_own_check	EPAS1	aracne_v2_tf	1	1	1	0	0.2076	1	1		False
+no_own_check	EPAS1	collectri	1	1	1	0	0.09766	1	1		False
+no_own_check	EPAS1	dorothea_ABC	1	1	1	0	0.7901	0	0		False
+no_own_check	ERF	aracne_v2_tf	1	1	0	1	0.2081	1		1	False
+no_own_check	ERF	collectri	1	1	0	1	0.02123	1		1	False
+no_own_check	ERG	aracne_v2_tf	3	3	0	3	0.004479	1		1	True
+no_own_check	ERG	collectri	3	3	0	3	0.1465	1		1	True
+no_own_check	ERG	dorothea_ABC	3	3	0	3	0.07634	1		1	True
+no_own_check	ESR1	aracne_v2_tf	5	3	2	3	0.2174	1	1	1	True
+no_own_check	ESR1	collectri	5	3	2	3	0.2187	0.6	1	0.3333	False
+no_own_check	ESR1	dorothea_ABC	5	3	2	3	0.3473	0.6	0.5	0.6667	False
+no_own_check	ESRRA	collectri	1	1	1	0	0.2845	1	1		False
+no_own_check	ESRRA	dorothea_ABC	1	1	1	0	0.04198	1	1		False
+no_own_check	ESRRG	aracne_v2_tf	7	2	0	7	0.1876	1		1	True
+no_own_check	ESRRG	collectri	7	2	0	7	0.2166	0.7143		0.7143	True
+no_own_check	ETS1	aracne_v2_tf	6	6	6	0	0.3971	0.6667	0.6667		False
+no_own_check	ETS1	collectri	6	6	6	0	0.1688	0.8333	0.8333		True
+no_own_check	ETS1	dorothea_ABC	6	6	6	0	0.4389	0.6667	0.6667		False
+no_own_check	ETS2	aracne_v2_tf	4	2	0	4	0.05967	0.75		0.75	True
+no_own_check	ETS2	collectri	4	2	0	4	0.258	1		1	False
+no_own_check	ETS2	dorothea_ABC	4	2	0	4	0.124	1		1	True
+no_own_check	ETV1	aracne_v2_tf	13	5	4	9	0.08667	0.7692	0.5	0.8889	True
+no_own_check	ETV1	collectri	13	5	4	9	0.6709	0.3077	0.75	0.1111	False
+no_own_check	ETV1	dorothea_ABC	13	5	4	9	0.3817	0.7692	0.75	0.7778	False
+no_own_check	ETV5	aracne_v2_tf	2	1	1	1	0.3724	1	1	1	False
+no_own_check	ETV5	collectri	2	1	1	1	0.6369	0.5	1	0	False
+no_own_check	EZH2	collectri	18	10	18	0	0.6168	0.4444	0.4444		False
+no_own_check	FBXL19	aracne_v2_tf	12	10	12	0	0.3639	0.5833	0.5833		False
+no_own_check	FLI1	aracne_v2_tf	4	4	0	4	0.4361	0.5		0.5	False
+no_own_check	FLI1	collectri	4	4	0	4	0.3355	1		1	False
+no_own_check	FLI1	dorothea_ABC	4	4	0	4	0.126	0.75		0.75	True
+no_own_check	FOS	aracne_v2_tf	7	2	0	7	0.3728	0.8571		0.8571	False
+no_own_check	FOS	collectri	7	2	0	7	0.3864	0.7143		0.7143	False
+no_own_check	FOS	dorothea_ABC	7	2	0	7	0.4084	0.4286		0.4286	False
+no_own_check	FOSL1	aracne_v2_tf	14	8	11	3	0.1844	0.8571	0.9091	0.6667	True
+no_own_check	FOSL1	collectri	14	8	11	3	0.3864	0.6429	0.6364	0.6667	False
+no_own_check	FOSL1	dorothea_ABC	14	8	11	3	0.3989	0.5	0.4545	0.6667	False
+no_own_check	FOSL2	aracne_v2_tf	3	3	0	3	0.2982	1		1	False
+no_own_check	FOSL2	collectri	3	3	0	3	0.4692	1		1	False
+no_own_check	FOSL2	dorothea_ABC	3	3	0	3	0.2901	0.6667		0.6667	False
+no_own_check	FOXA1	aracne_v2_tf	1	1	1	0	0.09074	1	1		False
+no_own_check	FOXA1	collectri	1	1	1	0	0.01911	1	1		False
+no_own_check	FOXA1	dorothea_ABC	1	1	1	0	0.8015	0	0		False
+no_own_check	FOXA3	aracne_v2_tf	9	4	3	6	0.2985	0.8889	1	0.8333	False
+no_own_check	FOXJ1	aracne_v2_tf	5	2	0	5	0.3689	1		1	False
+no_own_check	FOXJ1	collectri	5	2	0	5	0	1		1	True
+no_own_check	FOXJ3	aracne_v2_tf	7	6	7	0	0.1059	0.7143	0.7143		True
+no_own_check	FOXO3	collectri	6	5	5	1	0.6157	0.5	0.4	1	False
+no_own_check	FOXO3	dorothea_ABC	6	5	5	1	0.3359	0.6667	0.6	1	False
+no_own_check	FOXO4	aracne_v2_tf	8	6	8	0	0.211	0.625	0.625		True
+no_own_check	FOXO4	collectri	8	6	8	0	0.5096	0.75	0.75		False
+no_own_check	FOXO4	dorothea_ABC	8	6	8	0	0.5458	0.5	0.5		False
+no_own_check	FOXP1	aracne_v2_tf	2	2	2	0	0.5032	0	0		False
+no_own_check	FOXP1	dorothea_ABC	2	2	2	0	0.8149	0	0		False
+no_own_check	FOXP2	aracne_v2_tf	6	2	0	6	0.2636	0.8333		0.8333	False
+no_own_check	FOXP2	dorothea_ABC	6	2	0	6	0.2882	0.8333		0.8333	False
+no_own_check	FOXP3	aracne_v2_tf	7	3	0	7	0.6879	0.4286		0.4286	False
+no_own_check	FOXP3	collectri	7	3	0	7	0.3885	0.7143		0.7143	False
+no_own_check	FOXP4	aracne_v2_tf	6	6	6	0	0.2578	0.6667	0.6667		False
+no_own_check	FOXQ1	aracne_v2_tf	4	4	4	0	0.3841	0.5	0.5		False
+no_own_check	FOXQ1	collectri	4	4	4	0	0.5446	0.5	0.5		False
+no_own_check	FOXR1	aracne_v2_tf	1	1	0	1	0.9415	0		0	False
+no_own_check	GATA2	aracne_v2_tf	7	5	6	1	0.6115	0.4286	0.3333	1	False
+no_own_check	GATA2	collectri	7	5	6	1	0.6093	0.4286	0.3333	1	False
+no_own_check	GATA2	dorothea_ABC	7	5	6	1	0.8168	0.2857	0.1667	1	False
+no_own_check	GATA3	aracne_v2_tf	5	5	1	4	0.6519	0.2	0	0.25	False
+no_own_check	GATA3	collectri	5	5	1	4	0.4416	0.6	0	0.75	False
+no_own_check	GATA3	dorothea_ABC	5	5	1	4	0.813	0.2	0	0.25	False
+no_own_check	GATA4	aracne_v2_tf	1	1	1	0	0.2609	1	1		False
+no_own_check	GATA4	collectri	1	1	1	0	0.09554	1	1		False
+no_own_check	GATAD2B	aracne_v2_tf	7	7	7	0	0.807	0.1429	0.1429		False
+no_own_check	GLI1	aracne_v2_tf	1	1	1	0	0.6337	0	0		False
+no_own_check	GLI1	collectri	1	1	1	0	0.3588	1	1		False
+no_own_check	GLIS3	aracne_v2_tf	5	4	5	0	0.3933	0.6	0.6		False
+no_own_check	GMEB1	aracne_v2_tf	1	1	0	1	0.4718	1		1	False
+no_own_check	GRHL1	aracne_v2_tf	3	2	3	0	0.6524	0.3333	0.3333		False
+no_own_check	GRHL3	aracne_v2_tf	1	1	1	0	0.5177	0	0		False
+no_own_check	GRHL3	collectri	1	1	1	0	0.5032	1	1		False
+no_own_check	GTF2B	aracne_v2_tf	1	1	0	1	0.08885	1		1	False
+no_own_check	GTF2I	collectri	8	6	8	0	0.448	0.625	0.625		False
+no_own_check	HAND2	aracne_v2_tf	6	2	0	6	0.7562	0		0	False
+no_own_check	HAND2	collectri	6	2	0	6	0.5849	0.3333		0.3333	False
+no_own_check	HDAC1	collectri	2	2	1	1	0.3769	0.5	0	1	False
+no_own_check	HDAC3	collectri	2	2	1	1	0.7261	0	0	0	False
+no_own_check	HEY1	aracne_v2_tf	11	4	0	11	0.8152	0.09091		0.09091	False
+no_own_check	HEY1	collectri	11	4	0	11	0.4268	0.5455		0.5455	False
+no_own_check	HEY2	aracne_v2_tf	6	2	0	6	0.3767	0.6667		0.6667	False
+no_own_check	HEY2	collectri	6	2	0	6	0.8631	0		0	False
+no_own_check	HIF1A	aracne_v2_tf	21	12	21	0	0.4025	0.7619	0.7619		False
+no_own_check	HIF1A	collectri	21	12	21	0	0.03822	0.8095	0.8095		True
+no_own_check	HIF1A	dorothea_ABC	21	12	21	0	0.06107	0.9048	0.9048		True
+no_own_check	HIVEP3	aracne_v2_tf	1	1	1	0	0.7637	0	0		False
+no_own_check	HLF	aracne_v2_tf	4	4	0	4	0.4468	0.5		0.5	False
+no_own_check	HLF	collectri	4	4	0	4	0.6444	0.25		0.25	False
+no_own_check	HMBOX1	aracne_v2_tf	7	7	7	0	0.5187	0.4286	0.4286		False
+no_own_check	HMBOX1	dorothea_ABC	7	7	7	0	0.5038	0.5714	0.5714		False
+no_own_check	HMG20B	aracne_v2_tf	6	5	6	0	0.4046	0.5	0.5		False
+no_own_check	HMGA1	collectri	1	1	0	1	0.276	1		1	False
+no_own_check	HMGA2	aracne_v2_tf	2	2	2	0	0.3949	1	1		False
+no_own_check	HMGA2	collectri	2	2	2	0	0.06688	1	1		False
+no_own_check	HNF1A	aracne_v2_tf	3	3	3	0	0.1027	0.6667	0.6667		True
+no_own_check	HNF1B	aracne_v2_tf	7	6	7	0	0.377	0.5714	0.5714		False
+no_own_check	HNF1B	dorothea_ABC	7	6	7	0	0.3779	0.7143	0.7143		False
+no_own_check	HNF4A	aracne_v2_tf	13	6	5	8	0.05602	0.9231	0.8	1	True
+no_own_check	HNF4A	collectri	13	6	5	8	0.1062	1	1	1	True
+no_own_check	HNF4A	dorothea_ABC	13	6	5	8	0.03053	0.9231	0.8	1	True
+no_own_check	HNF4G	aracne_v2_tf	5	5	5	0	0.5982	0.6	0.6		False
+no_own_check	HNF4G	dorothea_ABC	5	5	5	0	0.6183	0.4	0.4		False
+no_own_check	HOMEZ	aracne_v2_tf	8	8	8	0	0.5972	0.375	0.375		False
+no_own_check	HOXA10	aracne_v2_tf	1	1	1	0	0.3489	1	1		False
+no_own_check	HOXA10	collectri	1	1	1	0	0.5223	1	1		False
+no_own_check	HOXA13	aracne_v2_tf	2	2	2	0	0.6866	0	0		False
+no_own_check	HOXA13	collectri	2	2	2	0	0.5106	0.5	0.5		False
+no_own_check	HOXA2	aracne_v2_tf	1	1	0	1	0.8577	0		0	False
+no_own_check	HOXA5	aracne_v2_tf	5	4	2	3	0.4339	0.6	1	0.3333	False
+no_own_check	HOXA5	collectri	5	4	2	3	0.8365	0.2	0	0.3333	False
+no_own_check	HOXA6	aracne_v2_tf	1	1	0	1	0.4108	1		1	False
+no_own_check	HOXA9	aracne_v2_tf	8	5	5	3	0.1864	0.875	1	0.6667	True
+no_own_check	HOXA9	collectri	8	5	5	3	0.4045	0.5	0.8	0	False
+no_own_check	HOXA9	dorothea_ABC	8	5	5	3	0.9065	0	0	0	False
+no_own_check	HOXB13	aracne_v2_tf	9	5	5	4	0.4553	0.7778	0.8	0.75	False
+no_own_check	HOXB13	collectri	9	5	5	4	0.3843	0.6667	0.4	1	False
+no_own_check	HOXB13	dorothea_ABC	9	5	5	4	0.7023	0.2222	0.2	0.25	False
+no_own_check	HOXB4	aracne_v2_tf	2	2	2	0	0.5257	0.5	0.5		False
+no_own_check	HOXB5	aracne_v2_tf	2	2	0	2	0.6208	0		0	False
+no_own_check	HOXB7	aracne_v2_tf	3	3	0	3	0.5164	0.6667		0.6667	False
+no_own_check	HOXB7	collectri	3	3	0	3	0.4225	1		1	False
+no_own_check	HOXB8	aracne_v2_tf	2	2	2	0	0.638	0	0		False
+no_own_check	HOXC10	aracne_v2_tf	1	1	0	1	0.3543	1		1	False
+no_own_check	HOXC11	aracne_v2_tf	4	1	0	4	0.5296	0.5		0.5	False
+no_own_check	HOXC9	aracne_v2_tf	7	5	5	2	0.5029	0.5714	0.6	0.5	False
+no_own_check	HOXD9	aracne_v2_tf	6	2	0	6	0.3678	0.8333		0.8333	False
+no_own_check	ID2	collectri	9	7	8	1	0.1635	0.7778	0.75	1	True
+no_own_check	IRF1	aracne_v2_tf	1	1	1	0	0	1	1		False
+no_own_check	IRF1	collectri	1	1	1	0	0	1	1		False
+no_own_check	IRF1	dorothea_ABC	1	1	1	0	0.003817	1	1		False
+no_own_check	IRF2	aracne_v2_tf	2	2	1	1	0.006652	1	1	1	False
+no_own_check	IRF2	collectri	2	2	1	1	0.02335	1	1	1	False
+no_own_check	IRF2	dorothea_ABC	2	2	1	1	0.01336	1	1	1	False
+no_own_check	IRF5	aracne_v2_tf	3	3	0	3	0.1221	1		1	True
+no_own_check	IRF5	collectri	3	3	0	3	0.2144	0.6667		0.6667	True
+no_own_check	ISL1	aracne_v2_tf	2	2	2	0	0.5182	0.5	0.5		False
+no_own_check	ISX	aracne_v2_tf	12	5	1	11	0.6158	0.4167	1	0.3636	False
+no_own_check	JAZF1	aracne_v2_tf	8	4	8	0	0.5978	0.5	0.5		False
+no_own_check	JDP2	aracne_v2_tf	2	2	2	0	0.4029	0.5	0.5		False
+no_own_check	JDP2	collectri	2	2	2	0	0.845	0	0		False
+no_own_check	JUNB	aracne_v2_tf	4	1	0	4	0.1947	1		1	True
+no_own_check	JUNB	collectri	4	1	0	4	0.3843	1		1	False
+no_own_check	JUNB	dorothea_ABC	4	1	0	4	0.6393	0.25		0.25	False
+no_own_check	KAT5	collectri	1	1	0	1	0.4841	1		1	False
+no_own_check	KAT6A	collectri	15	12	15	0	0.5796	0.3333	0.3333		False
+no_own_check	KDM2A	aracne_v2_tf	2	2	2	0	0.3653	0.5	0.5		False
+no_own_check	KDM2B	aracne_v2_tf	12	7	12	0	0.6773	0.25	0.25		False
+no_own_check	KDM5A	collectri	32	12	32	0	0.4363	0.5312	0.5312		False
+no_own_check	KDM5B	aracne_v2_tf	11	7	11	0	0.4076	0.8182	0.8182		False
+no_own_check	KDM5B	collectri	11	7	11	0	0.5541	0.4545	0.4545		False
+no_own_check	KDM5B	dorothea_ABC	11	7	11	0	0.584	0.3636	0.3636		False
+no_own_check	KLF10	aracne_v2_tf	2	2	2	0	0.6921	0.5	0.5		False
+no_own_check	KLF10	collectri	2	2	2	0	0.5265	0.5	0.5		False
+no_own_check	KLF3	aracne_v2_tf	2	2	0	2	0.2098	1		1	False
+no_own_check	KLF3	dorothea_ABC	2	2	0	2	0.7424	0		0	False
+no_own_check	KLF6	aracne_v2_tf	12	4	0	12	0.04912	1		1	True
+no_own_check	KLF6	collectri	12	4	0	12	0.2728	0.9167		0.9167	False
+no_own_check	KLF6	dorothea_ABC	12	4	0	12	0.0687	1		1	True
+no_own_check	KMT2A	aracne_v2_tf	2	2	2	0	0.03293	1	1		False
+no_own_check	KMT2A	collectri	2	2	2	0	0.09873	1	1		False
+no_own_check	KMT2A	dorothea_ABC	2	2	2	0	0.001908	1	1		False
+no_own_check	L3MBTL3	aracne_v2_tf	1	1	1	0	0.4196	1	1		False
+no_own_check	L3MBTL4	aracne_v2_tf	1	1	1	0	0.14	1	1		False
+no_own_check	LHX4	aracne_v2_tf	7	5	5	2	0.5674	0.2857	0.2	0.5	False
+no_own_check	LHX8	aracne_v2_tf	3	2	2	1	0.4155	0.6667	0.5	1	False
+no_own_check	LHX9	aracne_v2_tf	3	3	0	3	0.6141	0		0	False
+no_own_check	LIN28B	aracne_v2_tf	3	3	3	0	0.7449	0.3333	0.3333		False
+no_own_check	LMX1B	aracne_v2_tf	2	2	2	0	0.4091	1	1		False
+no_own_check	LMX1B	collectri	2	2	2	0	0.2463	1	1		False
+no_own_check	MAFB	aracne_v2_tf	6	2	0	6	0.1636	1		1	True
+no_own_check	MAFB	collectri	6	2	0	6	0.1486	1		1	True
+no_own_check	MAFB	dorothea_ABC	6	2	0	6	0.2824	1		1	False
+no_own_check	MBD3	aracne_v2_tf	17	10	17	0	0.247	0.6471	0.6471		True
+no_own_check	MBD6	aracne_v2_tf	14	10	14	0	0.6519	0.2857	0.2857		False
+no_own_check	MBNL2	aracne_v2_tf	11	8	9	2	0.2278	0.7273	0.8889	0	False
+no_own_check	MECP2	aracne_v2_tf	5	2	0	5	0.8381	0.2		0.2	False
+no_own_check	MECP2	collectri	5	2	0	5	0.6412	0.4		0.4	False
+no_own_check	MEF2A	aracne_v2_tf	1	1	0	1	0.5079	0		0	False
+no_own_check	MEF2A	collectri	1	1	0	1	0.414	1		1	False
+no_own_check	MEF2A	dorothea_ABC	1	1	0	1	0.1908	1		1	False
+no_own_check	MEIS2	aracne_v2_tf	7	4	0	7	0.4884	0.5714		0.5714	False
+no_own_check	MEIS2	dorothea_ABC	7	4	0	7	0.3817	0.5714		0.5714	False
+no_own_check	MEOX2	aracne_v2_tf	4	2	0	4	0.4463	0.75		0.75	False
+no_own_check	MESP1	aracne_v2_tf	5	5	5	0	0.1545	0.6	0.6		True
+no_own_check	MITF	aracne_v2_tf	6	2	0	6	0.003238	1		1	True
+no_own_check	MITF	collectri	6	2	0	6	0	1		1	True
+no_own_check	MITF	dorothea_ABC	6	2	0	6	0	1		1	True
+no_own_check	MIXL1	aracne_v2_tf	1	1	1	0	0.2144	1	1		False
+no_own_check	MSX2	aracne_v2_tf	5	5	5	0	0.6113	0.4	0.4		False
+no_own_check	MSX2	collectri	5	5	5	0	0.2994	1	1		False
+no_own_check	MTA1	collectri	9	7	9	0	0.673	0.4444	0.4444		False
+no_own_check	MTA3	collectri	9	9	9	0	0.3822	0.5556	0.5556		False
+no_own_check	MTF2	aracne_v2_tf	9	6	7	2	0.1039	0.7778	0.8571	0.5	True
+no_own_check	MXD3	aracne_v2_tf	2	2	0	2	0.9562	0		0	False
+no_own_check	MYB	aracne_v2_tf	2	2	0	2	0.6092	0		0	False
+no_own_check	MYB	collectri	2	2	0	2	0.5743	0.5		0.5	False
+no_own_check	MYB	dorothea_ABC	2	2	0	2	0.1298	1		1	False
+no_own_check	MYBL2	aracne_v2_tf	5	4	5	0	0.0181	1	1		True
+no_own_check	MYBL2	collectri	5	4	5	0	0.02548	1	1		True
+no_own_check	MYBL2	dorothea_ABC	5	4	5	0	0.09542	0.8	0.8		True
+no_own_check	MYC	aracne_v2_tf	3	3	3	0	0.004566	1	1		True
+no_own_check	MYC	collectri	3	3	3	0	0	1	1		True
+no_own_check	MYC	dorothea_ABC	3	3	3	0	0.003817	1	1		True
+no_own_check	MYF6	aracne_v2_tf	7	2	0	7	0.2639	0.5714		0.5714	False
+no_own_check	MYF6	collectri	7	2	0	7	0.4756	0.4286		0.4286	False
+no_own_check	MYOD1	aracne_v2_tf	5	2	0	5	0.4146	0.8		0.8	False
+no_own_check	MYOD1	collectri	5	2	0	5	0.002123	1		1	True
+no_own_check	MYOD1	dorothea_ABC	5	2	0	5	0.313	0.8		0.8	False
+no_own_check	NANOG	collectri	6	2	0	6	0.3907	0.5		0.5	False
+no_own_check	NANOG	dorothea_ABC	6	2	0	6	0.1832	0.8333		0.8333	True
+no_own_check	NCOA3	aracne_v2_tf	18	8	17	1	0.5312	0.3889	0.4118	0	False
+no_own_check	NCOA3	collectri	18	8	17	1	0.258	0.7222	0.7059	1	False
+no_own_check	NCOA3	dorothea_ABC	18	8	17	1	0.229	0.7222	0.7059	1	True
+no_own_check	NEUROD1	aracne_v2_tf	1	1	1	0	0.8492	0	0		False
+no_own_check	NEUROD1	collectri	1	1	1	0	0.7686	0	0		False
+no_own_check	NEUROD1	dorothea_ABC	1	1	1	0	0.2252	1	1		False
+no_own_check	NFATC2	aracne_v2_tf	7	5	7	0	0.2313	0.8571	0.8571		True
+no_own_check	NFATC2	collectri	7	5	7	0	0.2038	1	1		True
+no_own_check	NFATC3	aracne_v2_tf	3	3	3	0	0.7151	0.3333	0.3333		False
+no_own_check	NFATC3	collectri	3	3	3	0	0.5308	0.6667	0.6667		False
+no_own_check	NFE2L1	aracne_v2_tf	5	2	0	5	0.1581	0.8		0.8	True
+no_own_check	NFE2L1	dorothea_ABC	5	2	0	5	0.2939	0.8		0.8	False
+no_own_check	NFE2L2	aracne_v2_tf	11	6	4	7	0.03515	0.9091	0.75	1	True
+no_own_check	NFE2L2	collectri	11	6	4	7	0	0.9091	0.75	1	True
+no_own_check	NFE2L2	dorothea_ABC	11	6	4	7	0	0.9091	0.75	1	True
+no_own_check	NFIB	aracne_v2_tf	2	2	0	2	0.2649	1		1	False
+no_own_check	NFIB	collectri	2	2	0	2	0.1253	1		1	False
+no_own_check	NFIL3	aracne_v2_tf	6	3	0	6	0.384	0.5		0.5	False
+no_own_check	NFIL3	collectri	6	3	0	6	0.638	0.3333		0.3333	False
+no_own_check	NFKBIB	collectri	7	7	6	1	0.7962	0.4286	0.3333	1	False
+no_own_check	NKX2-3	aracne_v2_tf	1	1	1	0	0.2105	1	1		False
+no_own_check	NKX2-5	aracne_v2_tf	5	4	5	0	0.3765	0.6	0.6		False
+no_own_check	NKX2-5	collectri	5	4	5	0	0.3949	0.6	0.6		False
+no_own_check	NME2	aracne_v2_tf	4	3	4	0	0.07586	0.75	0.75		True
+no_own_check	NOTCH1	collectri	4	3	4	0	0.5605	0.5	0.5		False
+no_own_check	NPM1	collectri	2	1	1	1	0.04883	1	1	1	False
+no_own_check	NR0B1	aracne_v2_tf	2	2	1	1	0.7839	0	0	0	False
+no_own_check	NR0B1	collectri	2	2	1	1	0.552	0.5	0	1	False
+no_own_check	NR1H2	aracne_v2_tf	5	3	5	0	0.7457	0.2	0.2		False
+no_own_check	NR1H2	collectri	5	3	5	0	0.9639	0	0		False
+no_own_check	NR1H2	dorothea_ABC	5	3	5	0	0.8779	0.2	0.2		False
+no_own_check	NR1H4	aracne_v2_tf	2	2	2	0	0.4215	0.5	0.5		False
+no_own_check	NR1H4	collectri	2	2	2	0	0.6348	0.5	0.5		False
+no_own_check	NR2F6	aracne_v2_tf	21	12	19	2	0.1169	0.8571	0.8947	0.5	True
+no_own_check	NR2F6	dorothea_ABC	21	12	19	2	0.4466	0.381	0.3684	0.5	False
+no_own_check	NR4A1	aracne_v2_tf	8	2	0	8	0.4195	0.5		0.5	False
+no_own_check	NR4A1	collectri	8	2	0	8	0.5329	0.375		0.375	False
+no_own_check	NR4A1	dorothea_ABC	8	2	0	8	0.7576	0		0	False
+no_own_check	NR4A2	aracne_v2_tf	7	2	0	7	0.7771	0		0	False
+no_own_check	NR4A2	collectri	7	2	0	7	0.6561	0.4286		0.4286	False
+no_own_check	OSR1	aracne_v2_tf	4	4	4	0	0.3784	0.75	0.75		False
+no_own_check	OSR2	aracne_v2_tf	3	3	0	3	0.6918	0.3333		0.3333	False
+no_own_check	OTX1	aracne_v2_tf	8	6	6	2	0.4804	0.625	0.6667	0.5	False
+no_own_check	OVOL2	aracne_v2_tf	4	4	0	4	0.383	0.75		0.75	False
+no_own_check	PA2G4	aracne_v2_tf	1	1	0	1	0.0009251	1		1	False
+no_own_check	PAX8	aracne_v2_tf	2	2	0	2	0.3391	1		1	False
+no_own_check	PAX8	collectri	2	2	0	2	0.5032	0.5		0.5	False
+no_own_check	PBX4	aracne_v2_tf	4	4	4	0	0.4575	0.5	0.5		False
+no_own_check	PDX1	aracne_v2_tf	1	1	1	0	0.3479	1	1		False
+no_own_check	PDX1	collectri	1	1	1	0	0.2824	1	1		False
+no_own_check	PDX1	dorothea_ABC	1	1	1	0	0.5267	1	1		False
+no_own_check	PHF1	aracne_v2_tf	2	2	0	2	0.4853	0.5		0.5	False
+no_own_check	PHF19	aracne_v2_tf	8	7	7	1	0.5786	0.375	0.2857	1	False
+no_own_check	PIN1	aracne_v2_tf	10	8	10	0	0.07854	1	1		True
+no_own_check	PLSCR1	aracne_v2_tf	12	8	12	0	0.2801	0.5833	0.5833		False
+no_own_check	POU2AF1	aracne_v2_tf	1	1	0	1	0.1869	1		1	False
+no_own_check	POU5F1	collectri	13	6	4	9	0.6391	0.2308	0	0.3333	False
+no_own_check	POU5F1	dorothea_ABC	13	6	4	9	0.4122	0.5385	0.75	0.4444	False
+no_own_check	PPARD	aracne_v2_tf	3	2	3	0	0.6557	0.3333	0.3333		False
+no_own_check	PPARD	collectri	3	2	3	0	0.535	0.6667	0.6667		False
+no_own_check	PPARG	aracne_v2_tf	10	7	9	1	0.3574	0.5	0.5556	0	False
+no_own_check	PPARG	collectri	10	7	9	1	0.1582	0.9	1	0	False
+no_own_check	PPARG	dorothea_ABC	10	7	9	1	0.1164	0.9	0.8889	1	True
+no_own_check	PRDM1	aracne_v2_tf	5	5	0	5	0.5861	0.4		0.4	False
+no_own_check	PRDM1	collectri	5	5	0	5	0.3843	0.6		0.6	False
+no_own_check	PRDM1	dorothea_ABC	5	5	0	5	0.3779	0.8		0.8	False
+no_own_check	PURA	aracne_v2_tf	1	1	1	0	0.07032	1	1		False
+no_own_check	PURA	collectri	1	1	1	0	0.4246	1	1		False
+no_own_check	PURG	aracne_v2_tf	6	2	0	6	0.5971	0.1667		0.1667	False
+no_own_check	RARA	aracne_v2_tf	1	1	0	1	0.6031	0		0	False
+no_own_check	RARA	collectri	1	1	0	1	0.5223	1		1	False
+no_own_check	RARA	dorothea_ABC	1	1	0	1	0.5496	0		0	False
+no_own_check	RARG	aracne_v2_tf	3	3	1	2	0.1152	0.6667	1	0.5	True
+no_own_check	RARG	collectri	3	3	1	2	0.7558	0.3333	1	0	False
+no_own_check	RB1	collectri	7	7	7	0	0.2972	0.7143	0.7143		False
+no_own_check	RELA	aracne_v2_tf	1	1	1	0	0.01792	1	1		False
+no_own_check	RELA	collectri	1	1	1	0	0.3142	1	1		False
+no_own_check	RELA	dorothea_ABC	1	1	1	0	0.09542	1	1		False
+no_own_check	RELB	aracne_v2_tf	9	5	4	5	0.1171	0.8889	0.75	1	True
+no_own_check	RELB	collectri	9	5	4	5	0.08705	0.6667	0.25	1	False
+no_own_check	RELB	dorothea_ABC	9	5	4	5	0.1031	0.8889	0.75	1	True
+no_own_check	REST	aracne_v2_tf	2	1	2	0	0.4222	0.5	0.5		False
+no_own_check	REST	collectri	2	1	2	0	0.006369	1	1		False
+no_own_check	REST	dorothea_ABC	2	1	2	0	0.2863	1	1		False
+no_own_check	RFX5	aracne_v2_tf	8	6	7	1	0.3804	0.75	0.7143	1	False
+no_own_check	RFX5	collectri	8	6	7	1	0.5	0.375	0.4286	0	False
+no_own_check	RFX5	dorothea_ABC	8	6	7	1	0.3073	0.625	0.5714	1	False
+no_own_check	RFX6	aracne_v2_tf	1	1	1	0	0.7114	0	0		False
+no_own_check	RORC	aracne_v2_tf	3	3	0	3	0.1295	1		1	True
+no_own_check	RORC	collectri	3	3	0	3	0.3376	0.6667		0.6667	False
+no_own_check	RXRG	aracne_v2_tf	1	1	0	1	0.05643	1		1	False
+no_own_check	SALL4	aracne_v2_tf	6	5	5	1	0.428	0.6667	0.6	1	False
+no_own_check	SALL4	collectri	6	5	5	1	0.5786	0.3333	0.2	1	False
+no_own_check	SATB1	aracne_v2_tf	2	2	0	2	0.6942	0		0	False
+no_own_check	SATB1	collectri	2	2	0	2	0.1008	1		1	False
+no_own_check	SATB2	aracne_v2_tf	10	4	0	10	0.6462	0.2		0.2	False
+no_own_check	SATB2	collectri	10	4	0	10	0.587	0.4		0.4	False
+no_own_check	SETDB1	aracne_v2_tf	1	1	1	0	0.08676	1	1		False
+no_own_check	SETDB2	aracne_v2_tf	6	4	6	0	0.2426	1	1		True
+no_own_check	SHOX2	aracne_v2_tf	4	2	0	4	0.449	0.75		0.75	False
+no_own_check	SIM2	aracne_v2_tf	9	6	5	4	0.3858	0.6667	0.6	0.75	False
+no_own_check	SIN3A	collectri	27	13	27	0	0.3822	0.6667	0.6667		False
+no_own_check	SIX4	aracne_v2_tf	6	6	6	0	0.4729	0.5	0.5		False
+no_own_check	SKIL	aracne_v2_tf	2	1	2	0	0.472	0.5	0.5		False
+no_own_check	SKIL	collectri	2	1	2	0	0.3992	0.5	0.5		False
+no_own_check	SMAD3	aracne_v2_tf	12	9	12	0	0.4683	0.6667	0.6667		False
+no_own_check	SMAD3	collectri	12	9	12	0	0.4236	0.5833	0.5833		False
+no_own_check	SMAD3	dorothea_ABC	12	9	12	0	0.2099	0.8333	0.8333		True
+no_own_check	SMAD4	aracne_v2_tf	3	3	3	0	0.143	1	1		True
+no_own_check	SMAD4	collectri	3	3	3	0	0.2781	0.6667	0.6667		False
+no_own_check	SMAD4	dorothea_ABC	3	3	3	0	0.0687	1	1		True
+no_own_check	SMAD7	collectri	1	1	0	1	0.03397	1		1	False
+no_own_check	SMARCA4	collectri	19	11	19	0	0.4671	0.4737	0.4737		False
+no_own_check	SNAI2	aracne_v2_tf	2	1	2	0	0.1071	1	1		False
+no_own_check	SNAI2	collectri	2	1	2	0	0.5276	0.5	0.5		False
+no_own_check	SNAI2	dorothea_ABC	2	1	2	0	0.7481	0	0		False
+no_own_check	SNAI3	aracne_v2_tf	1	1	0	1	0.811	0		0	False
+no_own_check	SOX10	aracne_v2_tf	4	3	1	3	0.4442	0.75	1	0.6667	False
+no_own_check	SOX10	collectri	4	3	1	3	0.3747	1	1	1	False
+no_own_check	SOX10	dorothea_ABC	4	3	1	3	0.4656	0.5	1	0.3333	False
+no_own_check	SOX11	aracne_v2_tf	1	1	1	0	0.2615	1	1		False
+no_own_check	SOX11	collectri	1	1	1	0	0.1911	1	1		False
+no_own_check	SOX11	dorothea_ABC	1	1	1	0	0.1756	1	1		False
+no_own_check	SOX14	aracne_v2_tf	6	2	0	6	0.434	1		1	False
+no_own_check	SOX2	aracne_v2_tf	10	4	0	10	0.8496	0.3		0.3	False
+no_own_check	SOX2	collectri	10	4	0	10	0.3981	0.7		0.7	False
+no_own_check	SOX2	dorothea_ABC	10	4	0	10	0.09351	0.8		0.8	True
+no_own_check	SOX4	aracne_v2_tf	14	11	14	0	0.1145	0.7143	0.7143		True
+no_own_check	SOX4	collectri	14	11	14	0	0.4618	0.5714	0.5714		False
+no_own_check	SP100	aracne_v2_tf	1	1	1	0	0.612	0	0		False
+no_own_check	SP6	aracne_v2_tf	3	2	0	3	0.1471	0.6667		0.6667	True
+no_own_check	SP8	aracne_v2_tf	5	2	0	5	0.6429	0.4		0.4	False
+no_own_check	SPDEF	aracne_v2_tf	10	7	7	3	0.1108	0.9	0.8571	1	True
+no_own_check	SPDEF	collectri	10	7	7	3	0.6677	0.3	0.4286	0	False
+no_own_check	SPEN	aracne_v2_tf	2	2	2	0	0.2354	1	1		False
+no_own_check	SREBF2	aracne_v2_tf	2	1	2	0	0.1329	1	1		False
+no_own_check	SREBF2	collectri	2	1	2	0	0.001062	1	1		False
+no_own_check	SREBF2	dorothea_ABC	2	1	2	0	0.007634	1	1		False
+no_own_check	SRSF2	collectri	30	14	30	0	0.6051	0.4333	0.4333		False
+no_own_check	STAT1	aracne_v2_tf	9	7	9	0	0.4595	0.4444	0.4444		False
+no_own_check	STAT1	collectri	9	7	9	0	0.6391	0.3333	0.3333		False
+no_own_check	STAT1	dorothea_ABC	9	7	9	0	0.7214	0.4444	0.4444		False
+no_own_check	STAT3	aracne_v2_tf	3	3	3	0	0.3858	0.6667	0.6667		False
+no_own_check	STAT3	collectri	3	3	3	0	0.5478	0.3333	0.3333		False
+no_own_check	STAT3	dorothea_ABC	3	3	3	0	0.355	0.3333	0.3333		False
+no_own_check	STAT5A	aracne_v2_tf	1	1	1	0	0.4509	1	1		False
+no_own_check	STAT5A	collectri	1	1	1	0	0.4692	1	1		False
+no_own_check	STAT5A	dorothea_ABC	1	1	1	0	0.3359	1	1		False
+no_own_check	STAT5B	aracne_v2_tf	1	1	1	0	0.6421	0	0		False
+no_own_check	STAT5B	collectri	1	1	1	0	0.5223	0	0		False
+no_own_check	STAT5B	dorothea_ABC	1	1	1	0	0.5802	0	0		False
+no_own_check	TAF1	collectri	1	1	1	0	0.02123	1	1		False
+no_own_check	TAL2	aracne_v2_tf	2	1	1	1	0.4019	1	1	1	False
+no_own_check	TBPL1	aracne_v2_tf	8	6	8	0	0.338	0.75	0.75		False
+no_own_check	TBPL1	collectri	8	6	8	0	0.3248	1	1		False
+no_own_check	TBX2	aracne_v2_tf	1	1	1	0	0.9754	0	0		False
+no_own_check	TBX2	collectri	1	1	1	0	0.5796	0	0		False
+no_own_check	TBX20	aracne_v2_tf	1	1	1	0	0.5674	0	0		False
+no_own_check	TCF12	aracne_v2_tf	2	2	1	1	0.4522	0.5	1	0	False
+no_own_check	TCF12	collectri	2	2	1	1	0.379	1	1	1	False
+no_own_check	TCF12	dorothea_ABC	2	2	1	1	0.1565	1	1	1	False
+no_own_check	TCF4	aracne_v2_tf	1	1	0	1	0.0444	1		1	False
+no_own_check	TCF4	collectri	1	1	0	1	0.6837	0		0	False
+no_own_check	TCF4	dorothea_ABC	1	1	0	1	0.2328	1		1	False
+no_own_check	TCF7L2	aracne_v2_tf	3	3	0	3	0.266	1		1	False
+no_own_check	TCF7L2	collectri	3	3	0	3	0.4735	0.3333		0.3333	False
+no_own_check	TCF7L2	dorothea_ABC	3	3	0	3	0.374	1		1	False
+no_own_check	TCFL5	aracne_v2_tf	4	3	4	0	0.2857	0.75	0.75		False
+no_own_check	TEAD2	aracne_v2_tf	6	6	6	0	0.4694	0.8333	0.8333		False
+no_own_check	TEAD2	dorothea_ABC	6	6	6	0	0.7901	0.3333	0.3333		False
+no_own_check	TEAD4	aracne_v2_tf	1	1	0	1	0.9963	0		0	False
+no_own_check	TEAD4	dorothea_ABC	1	1	0	1	0.187	1		1	False
+no_own_check	TET2	aracne_v2_tf	2	2	2	0	0.7849	0	0		False
+no_own_check	TFAP2A	aracne_v2_tf	4	2	0	4	0.03654	1		1	True
+no_own_check	TFAP2A	collectri	4	2	0	4	0.7495	0.25		0.25	False
+no_own_check	TFAP2A	dorothea_ABC	4	2	0	4	0.5611	0.25		0.25	False
+no_own_check	TFAP4	aracne_v2_tf	4	4	0	4	0.8709	0.25		0.25	False
+no_own_check	TFAP4	collectri	4	4	0	4	0.3673	0.75		0.75	False
+no_own_check	TFAP4	dorothea_ABC	4	4	0	4	0.2156	0.75		0.75	True
+no_own_check	TFDP1	collectri	4	4	4	0	0.2611	0.75	0.75		False
+no_own_check	TFDP1	dorothea_ABC	4	4	4	0	0.2481	0.75	0.75		True
+no_own_check	TFDP2	aracne_v2_tf	1	1	0	1	0.08418	1		1	False
+no_own_check	TFEB	aracne_v2_tf	6	2	0	6	0.1869	0.8333		0.8333	True
+no_own_check	TGIF1	aracne_v2_tf	5	2	0	5	0.8455	0.2		0.2	False
+no_own_check	TGIF1	collectri	5	2	0	5	0.8153	0.4		0.4	False
+no_own_check	THAP11	aracne_v2_tf	5	5	5	0	0.3724	1	1		False
+no_own_check	THAP11	dorothea_ABC	5	5	5	0	0.5992	0.6	0.6		False
+no_own_check	THRB	aracne_v2_tf	2	2	2	0	0.1643	1	1		False
+no_own_check	THRB	collectri	2	2	2	0	0.4321	1	1		False
+no_own_check	TIGD3	aracne_v2_tf	1	1	1	0	0.3726	1	1		False
+no_own_check	TP53	aracne_v2_tf	25	11	21	4	0.3226	0.6	0.619	0.5	False
+no_own_check	TP53	collectri	25	11	21	4	0.1125	0.6	0.7143	0	False
+no_own_check	TP53	dorothea_ABC	25	11	21	4	0.3092	0.52	0.619	0	False
+no_own_check	TRERF1	aracne_v2_tf	3	3	3	0	0.7726	0	0		False
+no_own_check	TRERF1	collectri	3	3	3	0	0.4607	0.3333	0.3333		False
+no_own_check	TSHZ3	aracne_v2_tf	1	1	1	0	0.9521	0	0		False
+no_own_check	TWIST2	aracne_v2_tf	6	4	3	3	0.4674	0.6667	0.3333	1	False
+no_own_check	TWIST2	collectri	6	4	3	3	0.2866	0.6667	1	0.3333	False
+no_own_check	USF1	aracne_v2_tf	11	8	8	3	0.6981	0.3636	0.125	1	False
+no_own_check	USF1	collectri	11	8	8	3	0.6369	0.1818	0.25	0	False
+no_own_check	USF1	dorothea_ABC	11	8	8	3	0.4771	0.4545	0.5	0.3333	False
+no_own_check	WT1	aracne_v2_tf	1	1	0	1	0.07401	1		1	False
+no_own_check	WT1	collectri	1	1	0	1	0.4204	1		1	False
+no_own_check	WT1	dorothea_ABC	1	1	0	1	0.7137	0		0	False
+no_own_check	XBP1	aracne_v2_tf	26	13	20	6	0.3315	0.7692	0.7	1	False
+no_own_check	XBP1	collectri	26	13	20	6	0.2049	0.8077	0.75	1	True
+no_own_check	XBP1	dorothea_ABC	26	13	20	6	0.4389	0.5	0.4	0.8333	False
+no_own_check	YY1	aracne_v2_tf	2	2	2	0	0.02376	1	1		False
+no_own_check	YY1	collectri	2	2	2	0	0.3482	1	1		False
+no_own_check	YY1	dorothea_ABC	2	2	2	0	0.645	0	0		False
+no_own_check	ZBED1	aracne_v2_tf	1	1	0	1	0.6235	0		0	False
+no_own_check	ZBED1	collectri	1	1	0	1	0.172	1		1	False
+no_own_check	ZBED1	dorothea_ABC	1	1	0	1	0.9695	0		0	False
+no_own_check	ZBTB20	aracne_v2_tf	4	4	2	2	0.6046	0.5	0	1	False
+no_own_check	ZBTB26	aracne_v2_tf	7	7	7	0	0.6343	0.2857	0.2857		False
+no_own_check	ZBTB41	aracne_v2_tf	7	7	7	0	0.2476	0.5714	0.5714		False
+no_own_check	ZBTB45	aracne_v2_tf	7	7	7	0	0.4212	0.5714	0.5714		False
+no_own_check	ZBTB46	aracne_v2_tf	7	6	7	0	0.3143	0.7143	0.7143		False
+no_own_check	ZBTB48	aracne_v2_tf	1	1	0	1	0.3312	1		1	False
+no_own_check	ZBTB49	aracne_v2_tf	7	7	7	0	0.6234	0	0		False
+no_own_check	ZFAT	aracne_v2_tf	3	3	3	0	0.6603	0	0		False
+no_own_check	ZFP1	aracne_v2_tf	7	7	7	0	0.5571	0.2857	0.2857		False
+no_own_check	ZFP28	aracne_v2_tf	2	2	2	0	0.5939	0.5	0.5		False
+no_own_check	ZFP3	aracne_v2_tf	3	3	3	0	0.7448	0.3333	0.3333		False
+no_own_check	ZFP90	aracne_v2_tf	6	5	6	0	0.4966	0.3333	0.3333		False
+no_own_check	ZFP91	aracne_v2_tf	3	3	3	0	0.3987	0.6667	0.6667		False
+no_own_check	ZFX	aracne_v2_tf	1	1	1	0	0.1711	1	1		False
+no_own_check	ZFX	dorothea_ABC	1	1	1	0	0.0229	1	1		False
+no_own_check	ZGLP1	aracne_v2_tf	3	2	3	0	0.2026	1	1		True
+no_own_check	ZGLP1	collectri	3	2	3	0	0.1146	1	1		True
+no_own_check	ZGPAT	aracne_v2_tf	9	8	9	0	0.2414	0.5556	0.5556		False
+no_own_check	ZIC2	aracne_v2_tf	4	4	4	0	0.4982	0.5	0.5		False
+no_own_check	ZKSCAN2	aracne_v2_tf	4	4	4	0	0.6161	0.25	0.25		False
+no_own_check	ZNF114	aracne_v2_tf	3	3	3	0	0.4603	0.6667	0.6667		False
+no_own_check	ZNF133	aracne_v2_tf	1	1	0	1	0.6577	0		0	False
+no_own_check	ZNF136	aracne_v2_tf	1	1	0	1	0.3148	1		1	False
+no_own_check	ZNF138	aracne_v2_tf	6	6	6	0	0.4541	0.5	0.5		False
+no_own_check	ZNF141	aracne_v2_tf	1	1	1	0	0.138	1	1		False
+no_own_check	ZNF169	aracne_v2_tf	3	3	3	0	0.3499	1	1		False
+no_own_check	ZNF182	aracne_v2_tf	7	7	7	0	0.4562	0.4286	0.4286		False
+no_own_check	ZNF200	aracne_v2_tf	1	1	0	1	0.8952	0		0	False
+no_own_check	ZNF213	aracne_v2_tf	5	5	5	0	0.6184	0.2	0.2		False
+no_own_check	ZNF219	aracne_v2_tf	1	1	0	1	0.004625	1		1	False
+no_own_check	ZNF24	aracne_v2_tf	1	1	0	1	0.5369	0		0	False
+no_own_check	ZNF24	dorothea_ABC	1	1	0	1	0.542	1		1	False
+no_own_check	ZNF274	aracne_v2_tf	1	1	1	0	0.4709	0	0		False
+no_own_check	ZNF274	dorothea_ABC	1	1	1	0	0.003817	1	1		False
+no_own_check	ZNF281	aracne_v2_tf	1	1	0	1	0.3182	1		1	False
+no_own_check	ZNF296	aracne_v2_tf	11	7	6	5	0.8034	0.2727	0.3333	0.2	False
+no_own_check	ZNF300	aracne_v2_tf	5	4	4	1	0.4363	0.6	0.75	0	False
+no_own_check	ZNF317	aracne_v2_tf	7	7	7	0	0.1305	0.5714	0.5714		False
+no_own_check	ZNF318	aracne_v2_tf	2	2	2	0	0.4918	0.5	0.5		False
+no_own_check	ZNF32	aracne_v2_tf	1	1	0	1	0.9667	0		0	False
+no_own_check	ZNF333	aracne_v2_tf	7	7	7	0	0.4743	0.5714	0.5714		False
+no_own_check	ZNF354B	aracne_v2_tf	7	7	7	0	0.642	0.2857	0.2857		False
+no_own_check	ZNF366	aracne_v2_tf	3	3	0	3	0.1787	1		1	True
+no_own_check	ZNF367	aracne_v2_tf	5	4	5	0	0.145	0.6	0.6		True
+no_own_check	ZNF385B	aracne_v2_tf	3	3	3	0	0.2267	1	1		True
+no_own_check	ZNF395	aracne_v2_tf	3	3	3	0	0.3515	0.6667	0.6667		False
+no_own_check	ZNF398	aracne_v2_tf	7	7	6	1	0.4619	0.7143	0.8333	0	False
+no_own_check	ZNF418	aracne_v2_tf	4	4	4	0	0.5092	0.5	0.5		False
+no_own_check	ZNF423	aracne_v2_tf	3	1	0	3	0.9639	0		0	False
+no_own_check	ZNF433	aracne_v2_tf	5	5	5	0	0.3796	0.8	0.8		False
+no_own_check	ZNF436	aracne_v2_tf	8	8	8	0	0.3521	0.75	0.75		False
+no_own_check	ZNF449	aracne_v2_tf	6	6	6	0	0.4845	0.5	0.5		False
+no_own_check	ZNF451	aracne_v2_tf	5	5	5	0	0.2907	1	1		False
+no_own_check	ZNF462	aracne_v2_tf	5	5	5	0	0.4943	0.6	0.6		False
+no_own_check	ZNF486	aracne_v2_tf	2	2	2	0	0.7033	0	0		False
+no_own_check	ZNF488	aracne_v2_tf	3	3	3	0	0.2304	0.6667	0.6667		True
+no_own_check	ZNF490	aracne_v2_tf	5	5	5	0	0.5929	0.4	0.4		False
+no_own_check	ZNF496	aracne_v2_tf	6	6	6	0	0.4803	0.3333	0.3333		False
+no_own_check	ZNF501	aracne_v2_tf	1	1	1	0	0.5642	0	0		False
+no_own_check	ZNF502	aracne_v2_tf	3	3	3	0	0.4458	0.6667	0.6667		False
+no_own_check	ZNF503	aracne_v2_tf	2	2	0	2	0.6506	0.5		0.5	False
+no_own_check	ZNF513	aracne_v2_tf	4	3	4	0	0.02271	1	1		True
+no_own_check	ZNF517	aracne_v2_tf	8	8	8	0	0.4621	0.625	0.625		False
+no_own_check	ZNF519	aracne_v2_tf	6	6	6	0	0.7602	0	0		False
+no_own_check	ZNF521	aracne_v2_tf	1	1	1	0	0.1249	1	1		False
+no_own_check	ZNF524	aracne_v2_tf	10	8	8	2	0.3364	0.7	0.75	0.5	False
+no_own_check	ZNF543	aracne_v2_tf	5	4	4	1	0.3578	0.8	0.75	1	False
+no_own_check	ZNF546	aracne_v2_tf	3	3	3	0	0.6365	0.3333	0.3333		False
+no_own_check	ZNF548	aracne_v2_tf	8	8	8	0	0.4261	0.625	0.625		False
+no_own_check	ZNF554	aracne_v2_tf	4	3	3	1	0.5305	0.25	0.3333	0	False
+no_own_check	ZNF558	aracne_v2_tf	6	6	6	0	0.4291	0.8333	0.8333		False
+no_own_check	ZNF559	aracne_v2_tf	6	6	6	0	0.5549	0.5	0.5		False
+no_own_check	ZNF563	aracne_v2_tf	3	3	3	0	0.5529	0.3333	0.3333		False
+no_own_check	ZNF567	aracne_v2_tf	8	8	8	0	0.5136	0.25	0.25		False
+no_own_check	ZNF57	aracne_v2_tf	8	7	7	1	0.5826	0.5	0.5714	0	False
+no_own_check	ZNF572	aracne_v2_tf	3	3	3	0	0.1909	0.6667	0.6667		True
+no_own_check	ZNF577	aracne_v2_tf	4	4	4	0	0.5035	0.5	0.5		False
+no_own_check	ZNF581	aracne_v2_tf	5	5	5	0	0.2202	0.6	0.6		True
+no_own_check	ZNF582	aracne_v2_tf	4	3	3	1	0.4595	0.5	0.6667	0	False
+no_own_check	ZNF583	aracne_v2_tf	4	4	4	0	0.4485	0.5	0.5		False
+no_own_check	ZNF585A	aracne_v2_tf	7	7	7	0	0.7419	0.2857	0.2857		False
+no_own_check	ZNF596	aracne_v2_tf	6	6	6	0	0.2333	0.8333	0.8333		True
+no_own_check	ZNF597	aracne_v2_tf	3	3	3	0	0.6485	0.3333	0.3333		False
+no_own_check	ZNF599	aracne_v2_tf	5	5	5	0	0.2999	0.8	0.8		False
+no_own_check	ZNF607	aracne_v2_tf	5	5	5	0	0.479	0.4	0.4		False
+no_own_check	ZNF608	aracne_v2_tf	1	1	1	0	0.2451	1	1		False
+no_own_check	ZNF610	aracne_v2_tf	2	2	1	1	0.7629	0	0	0	False
+no_own_check	ZNF619	aracne_v2_tf	7	7	7	0	0.7057	0.4286	0.4286		False
+no_own_check	ZNF621	aracne_v2_tf	8	8	8	0	0.5567	0.375	0.375		False
+no_own_check	ZNF624	aracne_v2_tf	5	5	5	0	0.5156	0.4	0.4		False
+no_own_check	ZNF625	aracne_v2_tf	4	4	4	0	0.4559	0.5	0.5		False
+no_own_check	ZNF626	aracne_v2_tf	4	3	3	1	0.5196	0.75	0.6667	1	False
+no_own_check	ZNF653	aracne_v2_tf	9	7	7	2	0.2136	1	1	1	True
+no_own_check	ZNF662	aracne_v2_tf	1	1	1	0	0.519	1	1		False
+no_own_check	ZNF669	aracne_v2_tf	1	1	0	1	0.406	1		1	False
+no_own_check	ZNF677	aracne_v2_tf	4	3	3	1	0.5273	0.5	0.3333	1	False
+no_own_check	ZNF678	aracne_v2_tf	7	7	7	0	0.7057	0.2857	0.2857		False
+no_own_check	ZNF684	aracne_v2_tf	8	8	8	0	0.3699	0.75	0.75		False
+no_own_check	ZNF689	aracne_v2_tf	7	7	7	0	0.5176	0.4286	0.4286		False
+no_own_check	ZNF692	aracne_v2_tf	1	1	0	1	0.3855	1		1	False
+no_own_check	ZNF707	aracne_v2_tf	7	7	7	0	0.5635	0.2857	0.2857		False
+no_own_check	ZNF77	aracne_v2_tf	7	7	7	0	0.4933	0.5714	0.5714		False
+no_own_check	ZNF785	aracne_v2_tf	5	5	5	0	0.1578	1	1		True
+no_own_check	ZNF786	aracne_v2_tf	8	8	8	0	0.4294	0.5	0.5		False
+no_own_check	ZNF791	aracne_v2_tf	9	8	8	1	0.4015	0.5556	0.625	0	False
+no_own_check	ZNF792	aracne_v2_tf	5	5	5	0	0.5064	0.8	0.8		False
+no_own_check	ZNF8	aracne_v2_tf	7	7	7	0	0.5495	0.4286	0.4286		False
+no_own_check	ZNF805	aracne_v2_tf	2	2	2	0	0.5978	0	0		False
+no_own_check	ZNF830	aracne_v2_tf	2	2	2	0	0.7585	0	0		False
+no_own_check	ZNF85	aracne_v2_tf	5	4	4	1	0.3714	1	1	1	False
+no_own_check	ZNF92	aracne_v2_tf	6	6	6	0	0.7137	0.3333	0.3333		False
+no_own_check	ZSCAN1	aracne_v2_tf	1	1	1	0	0.559	0	0		False
+no_own_check	ZSCAN29	aracne_v2_tf	7	7	7	0	0.6248	0.2857	0.2857		False

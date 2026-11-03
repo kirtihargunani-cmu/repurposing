@@ -17,6 +17,12 @@ MODE=fda (user 2026-10-29): the top FDA_N FDA-approved drugs of every disease an
   their FDA ingredient name (salt removed) OR their LINCS name when it is a real name (not BRD-... or a code); subgroups
   use their parent disease's terms. Also drug_review_url: PubMed reviews about the drug itself. Output
   results/lincs/literature_fda_top_v2.tsv (unit, level, parent, fda_rank, drug, ...).
+MODE=fda_all (user 2026-11-02): every FDA drug row of the rankings page (scripts/fda_rows.py: target-gate pass, Drugs@FDA
+  match, one per ingredient; flagged drugs included), same searches as MODE=fda. A subgroup uses its parent's terms, so
+  each disease x drug is searched once and shared with its subgroups. PubMed and ClinicalTrials.gov run in two threads
+  (PubMed <= 3 requests / s, NCBI's limit without a key); answers are cached line by line in
+  data/interim/lincs/literature_fda_all_{pubmed,trials}.jsonl, so an interrupted run resumes. Output
+  results/lincs/literature_fda_all_v2.tsv (unit, level, parent_group, pert_id, drug, ...).
 """
 import os
 import json
@@ -101,7 +107,8 @@ def pubmed(drug, terms, extra=()):
     q = "(" + " OR ".join(f'"{n}"[tiab]' for n in sorted(set(names(drug)) | set(extra))) + ") AND (" + " OR ".join(f'"{t}"[tiab]' for t in terms) + ")"
     r = get(f"{EUTILS}/esearch.fcgi?db=pubmed&retmode=json&sort=relevance&retmax={RETMAX}&term=" + urllib.parse.quote(q))
     time.sleep(0.35)
-    if not r:
+    if not r or "count" not in r.get("esearchresult", {}):   # NCBI error answer (e.g. rate limit): count as failed
+        time.sleep(2)
         return q, None, []
     return q, int(r["esearchresult"]["count"]), r["esearchresult"]["idlist"]
 
@@ -226,5 +233,95 @@ def main_fda():
     print(out[["unit", "fda_rank", "drug", "pubmed_count", "trial_count"]].head(30).to_string(index=False))
 
 
+def main_fda_all():
+    import sys
+    import threading
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from fda_rows import fda_rows
+    g, s = fda_rows()
+    g = g.assign(level="disease", parent_group=None)
+    s = s.assign(level="subgroup")
+    sel = pd.concat([g, s], ignore_index=True)
+    sel["disease_key"] = sel.parent_group.fillna(sel.group_id)
+    sel["extra"] = sel.cmap_name.map(lambda n: "" if is_code(n) else "|".join(names(n)))
+    q = sel.drop_duplicates(["disease_key", "drug", "extra"])[["disease_key", "drug", "extra"]]
+    cache = ROOT / "data/interim/lincs"
+    cache.mkdir(parents=True, exist_ok=True)
+    print(f"{len(sel)} cohort x drug rows -> {len(q)} distinct searches", flush=True)
+
+    def load(f):
+        d = {}
+        if f.exists():
+            for line in open(f):
+                r = json.loads(line)
+                d[tuple(r["k"])] = r["v"]
+        return d
+
+    def worker(kind):
+        f = cache / f"literature_fda_all_{kind}.jsonl"
+        done = load(f)
+        todo = [r for r in q.itertuples(index=False) if (r.disease_key, r.drug, r.extra) not in done]
+        t0 = time.time()
+        with open(f, "a") as fh:
+            for i, r in enumerate(todo):
+                terms, cond = DISEASE[r.disease_key]
+                if kind == "pubmed":
+                    qq, n, ids = pubmed(r.drug, terms, tuple(r.extra.split("|")) if r.extra else ())
+                    v = dict(q=qq, n=n, ids=ids)
+                else:
+                    n, st = trials(r.drug, cond)
+                    v = dict(n=n, st=st, cond=cond)
+                if v["n"] is None:      # failed request: not cached, retried on the next run
+                    continue
+                fh.write(json.dumps(dict(k=[r.disease_key, r.drug, r.extra], v=v)) + "\n")
+                fh.flush()
+                if i % 250 == 0:
+                    print(f"{kind}: {i}/{len(todo)} ({time.time() - t0:.0f}s)", flush=True)
+    th = [threading.Thread(target=worker, args=(k,)) for k in ("pubmed", "trials")]
+    [t.start() for t in th]
+    [t.join() for t in th]
+    pm, ct = load(cache / "literature_fda_all_pubmed.jsonl"), load(cache / "literature_fda_all_trials.jsonl")
+    ids = sorted({i for v in pm.values() for i in v["ids"]})
+    tf = cache / "literature_fda_all_titles.json"
+    titles = json.load(open(tf)) if tf.exists() else {}
+    need = [i for i in ids if i not in titles]
+    for k in range(0, len(need), 150):
+        r = get(f"{EUTILS}/esummary.fcgi?db=pubmed&retmode=json&id=" + ",".join(need[k:k + 150]))
+        time.sleep(0.35)
+        if r:
+            for pid in r["result"].get("uids", []):
+                d = r["result"][pid]
+                titles[pid] = f'{d.get("title", "").rstrip(".")} ({d.get("source", "")} {d.get("pubdate", "")[:4]})'
+    json.dump(titles, open(tf, "w"))
+    out = []
+    for r in sel.itertuples(index=False):
+        k = (r.disease_key, r.drug, r.extra)
+        P, C = pm.get(k), ct.get(k)
+        d = dict(unit=r.group_id, level=r.level, parent_group=r.parent_group, pert_id=r.pert_id, cmap_name=r.cmap_name,
+                 drug=r.drug, pubmed_count=P["n"] if P else None, trial_count=C["n"] if C else None,
+                 pubmed_query=P["q"] if P else "")
+        d["pubmed_search_url"] = "https://pubmed.ncbi.nlm.nih.gov/?term=" + urllib.parse.quote(d["pubmed_query"])
+        d["drug_review_url"] = ("https://pubmed.ncbi.nlm.nih.gov/?sort=relevance&term="
+                                + urllib.parse.quote(f'"{r.drug}"[tiab] AND review[pt]'))
+        pids = P["ids"] if P else []
+        for j in range(RETMAX):
+            pid = pids[j] if j < len(pids) else ""
+            d[f"paper{j + 1}"] = f"https://pubmed.ncbi.nlm.nih.gov/{pid}/" if pid else ""
+            d[f"paper{j + 1}_title"] = titles.get(pid, "")
+        d["trials_search_url"] = ("https://clinicaltrials.gov/search?intr=" + urllib.parse.quote(r.drug)
+                                  + "&cond=" + urllib.parse.quote(DISEASE[r.disease_key][1]))
+        st = C["st"] if C else []
+        for j in range(RETMAX):
+            t = st[j] if j < len(st) else None
+            d[f"trial{j + 1}"] = f"https://clinicaltrials.gov/study/{t[0]}" if t else ""
+            d[f"trial{j + 1}_info"] = f"{t[1]}, {t[2]}: {t[3]}" if t else ""
+        out.append(d)
+    out = pd.DataFrame(out)
+    out.to_csv(RES / "literature_fda_all_v2.tsv", sep="\t", index=False)
+    print(f"{len(out)} rows; searched {int(out.pubmed_count.notna().sum())}; PubMed hits {int((out.pubmed_count > 0).sum())}; "
+          f"trials {int((out.trial_count > 0).sum())}; failed searches pubmed {int(out.pubmed_count.isna().sum())} "
+          f"trials {int(out.trial_count.isna().sum())}")
+
+
 if __name__ == "__main__":
-    main_fda() if MODE == "fda" else main()
+    {"fda": main_fda, "fda_all": main_fda_all}.get(MODE, main)()

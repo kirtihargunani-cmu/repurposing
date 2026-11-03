@@ -32,7 +32,8 @@ h1 { font-family: var(--f-display); font-weight: 640; font-size: 1.75rem; margin
 @media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr) } }
 aside { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); display: flex; flex-direction: column; gap: 10px }
 @media (max-width: 860px) { aside { position: static; max-height: 340px } }
-.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden }
+.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0 }
+aside > input, aside > .legend { flex-shrink: 0 }
 .seg button { font: inherit; font-weight: 600; border: 0; padding: 7px 8px; background: var(--panel); color: var(--muted); cursor: pointer }
 .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink) }
 input[type="search"], select { font: inherit; width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink) }
@@ -87,6 +88,7 @@ details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-dire
 /* ---- additions for the full rankings page */
 .score { white-space: nowrap }
 .score .raw { display: block; font-size: 0.74rem; color: var(--muted) }
+.score .avg { display: block; margin-top: 3px; font-size: 0.74rem; font-weight: 600; color: var(--accent) }
 th.sort { cursor: pointer; user-select: none } th.sort[aria-sort="descending"] { color: var(--accent) }
 th.sort[aria-sort="descending"]::after { content: " ▾" }
 .flag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em; padding: 1px 6px; border-radius: 999px; margin: 3px 4px 0 0; white-space: nowrap }
@@ -99,6 +101,7 @@ table.mini { min-width: 0; width: 100%; font-size: 0.84rem; background: var(--pa
 table.mini th, table.mini td { padding: 4px 8px; position: static }
 .det .wide { grid-column: 1 / -1 }
 .controls select { width: auto }
+.si { display: inline-block; font-size: 0.76rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; margin-top: 4px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis }
 </style>
 
 <div class="wrap">
@@ -125,6 +128,7 @@ table.mini th, table.mini td { padding: 4px 8px; position: static }
         <label><input id="only-fda" type="checkbox"> Marketed only</label>
         <label><input id="only-rec" type="checkbox"> Receptor passes gate</label>
         <label><input id="only-lit" type="checkbox"> With literature search</label>
+        <label><input id="only-si" type="checkbox"> Has a stand-in</label>
         <span class="count" id="count"></span>
       </div>
       <div class="tablewrap"><table aria-label="Ranked drugs">
@@ -140,6 +144,7 @@ table.mini th, table.mini td { padding: 4px 8px; position: static }
           <li><b>Weak-evidence drugs</b> are hidden by default: <i>unmatched lines</i> (the drug's best tested line looks nothing like the cohort) and <i>low transfer</i> (a borrowed drug whose effect carries over poorly between lines, confidence below 0.5). Other flags are shown but not hidden: <i>multi-target</i> (more than 5 annotated targets), <i>proliferation-driven</i> (the score comes mostly from slowing division) and <i>few regulators</i>.</li>
           <li><b>Receptors</b>: the drug's annotated receptor targets expressed in this cohort's tumors, after the receptor evidence gate. Green: ChEMBL supports binding (curated mechanism, or affinity 1 µM or better; 100 nM for kinases) and the receptor is present in at least half of the cell lines this cohort's score used. Amber: it binds, but the receptor (or the full receptor complex) is missing from those lines or from the tumors, so the score cannot come through it. Struck out: no binding evidence in ChEMBL. <i>1 line</i> marks a pass resting on a single cell line. The window is how many log10 units weaker the drug binds this receptor than its strongest measured target (0 = its main target).</li>
           <li><b>Literature</b> was searched for each disease's top 10 drugs by mechanism specificity and by reversal (LINCS name) and for each cohort's top 3 FDA drugs (FDA name). PubMed counts need the drug and the disease in a title or abstract; ClinicalTrials.gov matches loosely, so counts are an upper bound. Other rows were not searched and link to a PubMed search.</li>
+          <li id="about-si"></li>
           <li>Scores are computational predictions, not yet validated against measured drug sensitivity (PRISM / GDSC).</li>
         </ul>
       </details>
@@ -152,8 +157,9 @@ const DATA = __DATA__;
 const STATUS = { "matched": ["matched", "Matched lines"], "borrowed only": ["borrowed", "Borrowed only"], "no adequate compound": ["none", "No adequate compound"] };
 // row layout (79x): 0 drug, 1 source, 2 rev, 3 rev%, 4 spec, 5 spec%, 6 spec_mech, 7 spec_mech%, 8 prolif share, 9 transfer conf,
 // 10 line match, 11 flag bits, 12 literature index, 13 receptors, 14 lines used; subgroups add 15 spec_sib, 16 %, 17 spec_sib_mech, 18 %
-const SORTS = { group: [["spec_mech", 6, "Mechanism specificity"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]],
-  subgroup: [["spec_sib_mech", 17, "Vs sibling (mechanism)"], ["spec_sib", 15, "Vs sibling"], ["spec_mech", 6, "Mechanism specificity"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]] };
+// 19 stand-ins, 20 average of own lead %ile and best stand-in's (null without one), 21 that average or own lead %ile
+const SORTS = { group: [["spec_mech", 6, "Mechanism specificity"], ["avg", 21, "Mechanism specificity, stand-in averaged"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]],
+  subgroup: [["spec_sib_mech", 17, "Vs sibling (mechanism)"], ["avg", 21, "Vs sibling (mech), stand-in averaged"], ["spec_sib", 15, "Vs sibling"], ["spec_mech", 6, "Mechanism specificity"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]] };
 const FL = { unmatched_lines: ["Unmatched lines", "bad"], low_transfer: ["Low transfer", "bad"], multi_target: ["Multi-target", "warn"], prolif_driven: ["Proliferation-driven", "warn"], low_mrs: ["Few regulators", "plain"] };
 const HIDE = ["unmatched_lines", "low_transfer"].map(f => 1 << DATA.flags.indexOf(f)).reduce((a, b) => a | b, 0);
 const EVID = { mechanism: "curated mechanism", potent: "measured affinity", weak: "weaker than cut-off", annotation_only: "annotation only", no_chembl_id: "not in ChEMBL", kinase_mechanism_below_100nM: "kinase, weaker than 100 nM", kinase_mechanism_unmeasured: "kinase, no affinity data" };
@@ -198,7 +204,7 @@ function head() {
   el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th>${sub ? th("Vs sibling (mech)", 17) : ""}${th("Mechanism specificity", 6)}${th("Specificity", 4)}${th("Reversal", 2)}<th>Data</th><th>Receptors</th><th>Literature</th>`;
 }
 const bar = v => v == null ? "" : `<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, v))}%"></i></span>`;
-const score = (pct, raw) => `<td class="num score">${pct == null ? "–" : pct.toFixed(1)}${bar(pct)}<span class="raw">${fmt(raw)}</span></td>`;
+const score = (pct, raw, avg) => `<td class="num score">${pct == null ? "–" : pct.toFixed(1)}${bar(pct)}<span class="raw">${fmt(raw)}</span>${avg != null ? `<span class="avg" title="Average of this drug's own percentile and its best stand-in's">with stand-in ${avg.toFixed(1)}</span>` : ""}</td>`;
 function flags(r) { return DATA.flags.filter((f, i) => r[11] & (1 << i)).map(f => `<span class="flag ${FL[f][1]}">${FL[f][0]}</span>`).join("") }
 function recChips(r) {
   const xs = r[13].slice().sort((a, b) => "pasn".indexOf(a[7]) - "pasn".indexOf(b[7]));
@@ -226,6 +232,10 @@ function detail(r, d, sub) {
       <p style="margin-top:4px;font-size:0.84rem;color:var(--muted)">Annotated targets: ${esc(d.tg.join(", ")) || "none"}</p>
       ${d.fda ? `<p style="margin-top:4px">FDA: ${esc(d.fda[0])} · ${d.fda[1] === "m" ? "marketed" : "discontinued"}${d.fda[2] ? " · since " + d.fda[2] : ""}</p>` : ""}${d.ind ? `<p style="margin-top:4px;font-size:0.84rem">Indications: ${esc(d.ind)}</p>` : ""}</div>
     <div class="wide"><h4>Receptor evidence gate</h4>${rec}</div>
+    ${r[19].length ? `<div class="wide"><h4>Stand-ins tested in this cohort's own lines</h4><table class="mini"><thead><tr><th>Compound</th><th class="num">Similarity</th><th class="num">Shared lines</th><th>Shared targets</th><th class="num">${sub ? "Vs sibling (mech) %ile" : "Mech. specificity %ile"}</th><th class="num">Specificity %ile</th><th class="num">Reversal %ile</th></tr></thead><tbody>${r[19].map(x =>
+      `<tr><td><b>${esc(x[0])}</b>${x[8] ? ' <span class="flag ok">FDA</span>' : ""}</td><td class="num">${fmt(x[1])}</td><td class="num">${x[2]}</td><td>${esc(x[3].replaceAll("|", ", "))}</td><td class="num">${sub ? fmt(x[7], 1) : fmt(x[4], 1)}</td><td class="num">${fmt(x[5], 1)}</td><td class="num">${fmt(x[6], 1)}</td></tr>`).join("")}</tbody></table>
+      ${r[20] != null ? `<p style="margin-top:6px"><b>Average with the best stand-in: ${r[20].toFixed(1)}</b> (own ${(sub ? r[18] : r[7]).toFixed(1)}, ${esc(r[19][0][0])} ${(sub ? r[19][0][7] : r[19][0][4]).toFixed(1)}).</p>` : ""}
+      <p style="margin-top:6px;color:var(--muted);font-size:0.84rem">This drug was ${r[1] === "b" ? "never profiled in this cohort's lines" : "only profiled in poorly matched lines"}. These compounds were, share a target with it and change regulator activity the same way in the lines where both were profiled. Their scores here are a second opinion next to the drug's own, not a replacement.</p></div>` : ""}
     <div><h4>Papers on this drug in this disease</h4>${L ? `<p style="margin-bottom:6px;color:var(--muted);font-size:0.82rem">Searched by ${L[6] === "f" ? "FDA ingredient name" : "LINCS name"} · <a href="${esc(L[2])}" target="_blank" rel="noopener">all ${L[0] ?? 0} on PubMed</a></p>${L[4].length ? `<ul>${L[4].map(p => `<li><a href="${esc(p[0])}" target="_blank" rel="noopener">${esc(p[1] || p[0])}</a></li>`).join("")}</ul>` : "<p>No PubMed paper names this drug with this disease.</p>"}` : `<p>Not searched for this pair. <a href="${srch}" target="_blank" rel="noopener">Search PubMed for ${esc(d.fda ? d.fda[0] : d.c)} in cancer</a></p>`}</div>
     <div><h4>Clinical trials</h4>${L ? (L[5].length ? `<ul>${L[5].map(t => `<li><a href="${esc(t[0])}" target="_blank" rel="noopener">${esc(t[0].split("/").pop())}</a> ${esc(t[1])}</li>`).join("")}</ul>` : "<p>No matching trials.</p>") : "<p>Not searched for this pair.</p>"}</div>
   </div></td></tr>`;
@@ -236,15 +246,15 @@ function renderTable() {
   let ix = all.map((r, i) => i).filter(i => {
     const r = all[i], d = DATA.drugs[r[0]];
     return (!el("hide-flag").checked || !(r[11] & HIDE)) && (!el("only-fda").checked || (d.fda && d.fda[1] === "m")) && (!el("only-rec").checked || r[13].some(x => x[7] === "p"))
-      && (!el("only-lit").checked || r[12] >= 0) && (!q || (d.c + " " + (d.fda ? d.fda[0] : "") + " " + d.moa + " " + d.tg.join(" ")).toLowerCase().includes(q));
+      && (!el("only-lit").checked || r[12] >= 0) && (!el("only-si").checked || r[19].length) && (!q || (d.c + " " + (d.fda ? d.fda[0] : "") + " " + d.moa + " " + d.tg.join(" ")).toLowerCase().includes(q));
   }).sort((a, b) => ranks.get(a) - ranks.get(b));
   const total = ix.length, lim = Math.min(total, limit);
   el("tbody").innerHTML = ix.slice(0, lim).map(i => {
     const r = all[i], d = DATA.drugs[r[0]], name = d.fda ? d.fda[0] : d.c;
     return `<tr class="row" tabindex="0" data-i="${i}" aria-expanded="${open.has(i)}"><td class="num">${ranks.get(i)}</td>
       <td><div class="drug">${esc(name)}</div>${name.toLowerCase() !== d.c.toLowerCase() ? `<div class="lincs">${esc(d.c)}</div>` : ""}<div class="moa">${esc(d.moa)}</div>${d.fda ? `<span class="flag ${d.fda[1] === "m" ? "ok" : "plain"}">${d.fda[1] === "m" ? "Marketed" : "Discontinued"}${d.fda[2] ? " · " + d.fda[2] : ""}</span>` : ""}${flags(r)}</td>
-      ${sub ? score(r[18], r[17]) : ""}${score(r[7], r[6])}${score(r[5], r[4])}${score(r[3], r[2])}
-      <td class="src">${r[1] === "d" ? "Direct" : "Borrowed"}${r[1] === "b" && r[9] != null ? `<br>conf ${fmt(r[9])}` : ""}<br>${r[14]} line${r[14] === 1 ? "" : "s"}</td>
+      ${sub ? score(r[18], r[17], r[20]) : ""}${score(r[7], r[6], sub ? null : r[20])}${score(r[5], r[4])}${score(r[3], r[2])}
+      <td class="src">${r[1] === "d" ? "Direct" : "Borrowed"}${r[1] === "b" && r[9] != null ? `<br>conf ${fmt(r[9])}` : ""}<br>${r[14]} line${r[14] === 1 ? "" : "s"}${r[19].length ? `<br><span class="si" title="Closest compound tested in this cohort's own lines (similarity ${fmt(r[19][0][1])})">Stand-in: ${esc(r[19][0][0])}</span>` : ""}</td>
       <td>${recChips(r)}</td><td class="lit">${litCell(r, d)}</td></tr>` + (open.has(i) ? detail(r, d, sub) : "");
   }).join("") || `<tr><td colspan="9">No drugs match these filters.</td></tr>`;
   el("count").textContent = `${lim} of ${total} drugs`;
@@ -255,7 +265,7 @@ el("tbody").addEventListener("click", e => { if (e.target.closest("a")) return; 
 el("tbody").addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("tr.row")) { e.preventDefault(); e.target.click() } });
 el("thead").addEventListener("click", e => { const th = e.target.closest("th[data-col]"); if (!th) return; const s = SORTS[DATA.meta[current].kind].find(s => s[1] === +th.dataset.col); if (s) { sortKey = s[0]; el("sortby").value = s[0]; limit = 50; computeRanks(); renderTable() } });
 el("sortby").addEventListener("change", () => { sortKey = el("sortby").value; limit = 50; computeRanks(); renderTable() });
-for (const id of ["drug-q", "hide-flag", "only-fda", "only-rec", "only-lit"]) el(id).addEventListener("input", () => { limit = 50; renderTable() });
+for (const id of ["drug-q", "hide-flag", "only-fda", "only-rec", "only-lit", "only-si"]) el(id).addEventListener("input", () => { limit = 50; renderTable() });
 el("cohort-q").addEventListener("input", renderList);
 el("more").addEventListener("click", () => { limit += 100; renderTable() });
 function setLevel(l) { level = l; el("lvl-group").setAttribute("aria-pressed", l === "group"); el("lvl-sub").setAttribute("aria-pressed", l === "subgroup"); if (DATA.meta[current]?.kind !== l) pick(units(l)[0]); else renderList() }
@@ -263,5 +273,6 @@ el("lvl-group").addEventListener("click", () => setLevel("group"));
 el("lvl-sub").addEventListener("click", () => setLevel("subgroup"));
 function fromHash() { const h = decodeURIComponent(location.hash.slice(1)); const u = DATA.meta[h] ? h : "TCGA-LUAD"; level = DATA.meta[u].kind; current = u; setLevel(level); pick(u) }
 window.addEventListener("hashchange", fromHash);
+{ const v = DATA.standin; el("about-si").innerHTML = `<b>Stand-ins</b>: for a drug that was borrowed or has weak evidence, the closest LINCS compounds that were tested in this cohort's own lines. Close means at least one shared annotated target and a similar effect on regulator activity (mean correlation at least ${v.r} over at least ${v.k} cell lines profiled with both). Checked on ${v.n} FDA drugs that were tested in their cohort's lines, with the similarity measured only outside those lines: a stand-in's mechanism-specificity percentile tracks the drug's own (Spearman ${v.rho}, 95% CI ${v.lo} to ${v.hi}), against ${v.rand} for random compounds that share a target.` + (v.b_n ? ` On the same ${v.b_n} drugs the drug's own borrowed score reached ${v.b_bo.toFixed(2)}, the stand-in ${v.b_si.toFixed(2)} and the average of the two ${v.b_av.toFixed(2)}, so where a stand-in exists the page shows that average under the drug's own score ("with stand-in"), and "Rank by" can use it.` : "") }
 fromHash();
 </script>

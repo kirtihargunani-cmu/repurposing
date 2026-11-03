@@ -20,6 +20,10 @@
 # COMPARE_SETS=tf_base,tf_sig1,tf_sig2 (D83): score only these ARACNe target lists (same rules, same signatures) and write
 #   knockdown_benchmark_compare_d83.tsv (per set: signatures, TFs, share read as lower activity, AUC, TFs passing);
 #   the production outputs above are not touched.
+# PERTURB=d84 (D84, 2026-11-02): knockdowns as above plus overexpression (scripts/79u; expected: higher activity), all
+#   scored with the same code; overexpression kept regardless of line expression, own-mRNA check (z >= +1.5 where on the
+#   profile) recorded as own_ok, not applied here (79v applies it, with a sensitivity run without it). Writes only
+#   results/lincs/perturbation_benchmark_d84_signatures.tsv.gz; the production outputs above are not touched.
 suppressPackageStartupMessages({library(data.table); library(viper); library(parallel)})
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
@@ -46,6 +50,20 @@ meta[, keep := !is.na(expr) & expr >= MIN_EXPR & (is.na(own_z) | own_z <= KD_Z)]
 message(sprintf("signatures: %d; TF expressed and knockdown confirmed: %d (%d TFs)", nrow(meta), sum(meta$keep),
                 uniqueN(meta[keep == TRUE, cmap_name])))
 meta <- meta[keep == TRUE]; X <- X[, meta$sig_id]
+PERTURB <- Sys.getenv("PERTURB", "kd"); stopifnot(PERTURB %in% c("kd", "d84"))
+meta[, `:=`(direction = -1L, own_ok = TRUE)]
+if (PERTURB == "d84") {
+  mo <- fread(file.path(proc, "overexpression_bing_sigs.tsv.gz"))
+  Xo <- matrix(readBin(file.path(proc, "overexpression_bing.f32"), "numeric", size = 4, n = nrow(genes) * nrow(mo)), nrow = nrow(genes))
+  Xo <- Xo[ok_g, , drop = FALSE]; rownames(Xo) <- rownames(X); colnames(Xo) <- mo$sig_id
+  stopifnot(!anyDuplicated(c(meta$sig_id, mo$sig_id)))
+  mo <- merge(mo, exl, by = c("ModelID", "cmap_name"), all.x = TRUE)[match(colnames(Xo), sig_id)]
+  mo[, own_z := { e <- sym2ens[cmap_name]; ifelse(is.na(e), NA_real_, Xo[cbind(match(e, rownames(Xo)), seq_len(.N))]) }]
+  mo[, `:=`(keep = TRUE, direction = 1L, own_ok = is.na(own_z) | own_z >= -KD_Z)]
+  message(sprintf("overexpression: %d signatures (%d TFs); own mRNA on profile %d, up (z >= %.1f) %d",
+                  nrow(mo), uniqueN(mo$cmap_name), sum(!is.na(mo$own_z)), -KD_Z, sum(mo$own_z >= -KD_Z, na.rm = TRUE)))
+  meta <- rbind(meta, mo, fill = TRUE); X <- cbind(X, Xo)
+}
 
 prep <- function(rg) {
   r <- lapply(names(rg), function(n) { tm <- rg[[n]]$tfmode; lk <- rg[[n]]$likelihood; e <- sym2ens[n]
@@ -95,6 +113,11 @@ if (length(CMP)) {   # D83 comparison: every listed ARACNe set, same signatures 
   fwrite(cmp, file.path(res, "knockdown_benchmark_compare_d83.tsv"), sep = "\t"); print(cmp); quit(save = "no")
 }
 sg <- rbind(cbind(set = "aracne_v2_tf", ar), cur, fill = TRUE)
+if (PERTURB == "d84") {
+  sg <- merge(meta[, .(sig_id, technology, direction, own_ok, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")
+  fwrite(sg, file.path(res, "perturbation_benchmark_d84_signatures.tsv.gz"), sep = "\t")
+  print(sg[, .(signatures = .N, tfs = uniqueN(cmap_name)), by = .(set, technology)]); message("D84 SIGNATURES DONE"); quit(save = "no")
+}
 sg <- merge(meta[, .(sig_id, technology, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")
 fwrite(sg, file.path(res, "knockdown_benchmark_signatures.tsv.gz"), sep = "\t")
 

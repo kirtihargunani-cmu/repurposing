@@ -405,6 +405,80 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   run and is labelled so in the script.
 - PC1 plate excess > 0.15 in TGCT-SEM C1 / C2 and COAD-CIN.
 
+## 2026-11-02: ARACNe vs CollecTRI agreement on drug profiles (C25 follow-up, `79t`)
+- **Question (user):** how many regulators behave like ESR1 (read in opposite directions by the two regulon sets)?
+  Diagnostic only. Classes fixed before looking: Spearman over all 9,678 drug x line profiles, disagree < 0, weak
+  0-0.3, agree >= 0.3; ESR1-type = opposite sign in > 50% of profiles where CollecTRI |NES| >= 2 (>= 30 profiles).
+- **Result:** of 8,148 network x regulator pairs (375 regulators, 28 networks) 2,658 disagree (33%), 4,104 weak,
+  1,386 agree; 2,638 ESR1-type. Median rho 0.09; curated-vs-curated baseline (DoRothEA vs CollecTRI) 0.23. 287
+  regulators disagree in >= 1 network, 108 in at least half. Strongest: SP3, SP1, NR2F1, ETV3, BACH1 (rho -0.3 to -0.4
+  in all 28 networks), also AR, NR3C2, TP73. Identity share (D82) adds a little: disagree 32% (< 10% identity) vs 46%
+  (>= 30%). ESR1 disagrees in BRCA, CESC, SKCM, UCEC, OV; weak elsewhere.
+- **How to read it (corrected the same day):** low agreement over all profiles does not show that either set is wrong:
+  most drugs do not act on most TFs, so the correlation mostly reflects which general programs each target list picks
+  up (the two curated sets, which share sources, agree at only 0.23). On knockdowns the two sets read TF loss equally
+  (AUC shRNA 0.55 vs 0.54, CRISPR 0.63 vs 0.62; both read ESR1 knockdown as lower, -1.6 / -1.8). The ESR1 inversion is
+  specific to the drugs, not a wrong ESR1 regulon.
+- ESR1 in MCF7 (scratch check): ARACNe positive targets that are Hallmark estrogen genes (40) fall slightly under
+  anti-estrogens (-0.09); the other 132 rise (+0.37; GATA3 +4.1, FOXA1 +1.1), on measured landmark genes (+0.71) more
+  than inferred ones (+0.18). The line-specific projection (`79c`) roughly doubles the misread (raw +1.1, specific +2.4).
+  One estriol profile only, too weak (GREB1 +0.45) to check the agonist direction.
+- Ground truth available for a per-regulator choice: drugs acting directly on a TF with a known direction, mainly
+  nuclear-receptor ligands (NR3C1 29 agonists, ESR1 13 antagonists / 9 agonists, RARA/B/G, AR, PGR, PPARG, VDR, NR3C2,
+  RXR): about 12 TFs. Open: the per-regulator rule (fix before running).
+
+## 2026-11-02: perturbation benchmark with overexpression (D84)
+- **Rule (D84, fixed before running):** LINCS overexpression (wild-type ORF projects OEB / OEC; allele screens excluded)
+  added to the knockdown benchmark, expected direction up; a set replaces the consensus only if better on both kinds,
+  p < 0.05 and >= 5 points; per-TF switch only with >= 6 signatures in >= 2 lines; flags, not removal.
+- **Data:** 614 overexpression signatures (197 TFs) subset (`08b`, `79u`); 533 scored; own mRNA up in only 94 of the
+  365 where measured (L1000 probes may miss ORF transcripts), so the run without that check is reported too.
+- **Result: keep the consensus.** 57 TFs testable on both sets: ARACNe better 25, CollecTRI 18, tied 14 (p = 0.15;
+  without the own-mRNA check 90 TFs, p = 0.35). Both read knockdowns correctly 60% and overexpression ~70%.
+  Per TF: ETV1, ATF1, SPDEF -> ARACNe, NCOA3 -> CollecTRI. Flags: 32 tested, 99 not supported, 197 insufficient,
+  262 untested.
+- **Ligands (report only):** CollecTRI ahead on line-specific profiles (0.64 vs 0.48, mainly nuclear receptors: ESR1,
+  RARA, RXRB, PPARG agonists; ARACNe ahead on TP53, VDR), tied on raw profiles (0.58 vs 0.57). The line-specific
+  projection makes ARACNe's ESR1 misread in MCF7 worse (+0.9 raw -> +2.0).
+- **Found:** production drug activity predates the current regulator filter (30 rows more, 8 fewer on a rerun);
+  `79d` raw run rewrites the regulator table, restored from a copy.
+
+## 2026-11-02: exploration, can ARACNe edges be corrected? (not a decision; scratch scripts)
+- **Edge-level test:** every ARACNe edge vs the D84 knockdown / overexpression signatures of its regulator
+  (lineage-matched networks, 116k edge x signature pairs): overall 55% move as predicted. Best predictor: recurrence
+  (share of the regulator's networks with the same signed edge): 52% at <= 10% -> 68% at > 75%; holds within the same
+  signature (+11 points, 73% of signatures, p ~ 1e-24) and for shRNA, CRISPR and ORF. Negative-mode and D82 identity
+  edges ~ chance; hubs, targets that are regulators, generic responders: no effect.
+- **Hidden factors (BRCA, LUAD, COADREAD, SKCM):** removing the top 5 / 10 / 20 principal components of the tumor
+  expression removes >= half the correlation of 52-64% / 72-80% / 84-87% of edges (D82 identity edges: 98% removed;
+  D82 signaling: 76% at k = 10). Surviving edges agree more (k = 10: 61% vs 55%; +6 points within signature), partly
+  the same signal as recurrence. Removed edges stay above chance (54-55%).
+- **Regulon level: no gain.** Down-weighting by recurrence: +0.007 AUC on held-out TFs (5-95% -0.005 to +0.016); by
+  factor survival or both: -0.0002. Per regulator, the share of factor-removed edges predicts neither benchmark
+  failure (rho +0.10) nor drug-side disagreement with CollecTRI (-0.07).
+- **Why:** major regulators drive the major axes (BRCA ESR1 / FOXA1 / GATA3 / XBP1 92-93% removed at k = 5, SKCM
+  MITF / SOX10 75%), so removing the factors removes their programs too. ESR1: 167 of 172 positive targets removed;
+  the 5 left still rise under anti-estrogens. From tumor co-expression, a lineage regulator's targets cannot be told
+  apart from its lineage program; the ESR1 drug misread is structural, not an edge-quality problem.
+- **CollecTRI edges, same test** (`scripts/explore/collectri_edges.R`): 52% move as predicted (ARACNe 55%; not the
+  same signature mix: CollecTRI over all lines, ARACNe lineage-matched); repression edges 51%; CollecTRI edges also in
+  ARACNe 56% vs 51% for the rest; 32 of 80 TFs below 50%. Per edge, neither set is validated; edges both sets support
+  are the most reliable (ARACNe edges with the same sign in CollecTRI: 63%).
+
+## 2026-11-02: perturbation-network pilot (D86): stop
+- **What:** ARACNe on LINCS drug profiles within one cell line (MCF7, PC3, A375; 1,081-1,221 drugs each; 978
+  measured genes, 81 measured TFs), raw and line-specific, 36 networks (all drugs + 5 mechanism-grouped held-out
+  builds). Files in `scripts/pnet/`, `results/lincs/pnet/`; plain language in
+  `PERTURBATION_NETWORK_PILOT_PLAIN_LANGUAGE.md`.
+- **Result: no advantage, rule not met.** Pre-set check (knockdown / overexpression in the same lines, regulators all
+  three sets score): 45 signatures, 13 TFs; perturbation network 62%, tumor ARACNe 69%, CollecTRI 62% (p = 0.63).
+  Wider exploratory comparison (133 signatures, 37 TFs): 57% vs 59%; per line inconsistent. Networks moderately
+  stable (61-65% of edges in >= 4 of 5 held-out builds).
+- **Also found:** L1000 inferred genes (ESR1, AR, FOXA1, E2F1, SP1, RELA ...) are ~88% a fixed mix of landmark genes
+  on held-out profiles (measured genes from the other 977: 62%), so they cannot serve as regulators in such networks.
+- **Caveats:** the test is small (planned ~200 signatures, got 45 under the rule); the drug folds group by mechanism
+  wording, which split tamoxifen from fulvestrant (affects only the ligand report).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
@@ -418,3 +492,24 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
 - Drug side: PRISM / GDSC validation on hold; check the recurring oddities in specificity lists.
 - Later: CPTAC-HNSCC as an HNSC replication cohort (GDC CPTAC-3, open STAR counts, GENCODE v36; do not pool with Toil);
   subtype splits for mixed cohorts; recount3 non-cancer diseases.
+
+## 2026-11-02 Receptor evidence gate (79w, C26) and full FDA rankings page (79x)
+
+- Receptor targets of the returned drugs (HGNC receptor families): 251 of 868 expressed targets. Many were annotation
+  noise or real binders absent from the cell lines. New gate (thresholds by the user: 1 uM, 100 nM for kinases, receptor
+  in >= half of the cohort's matched lines; single-line passes kept and flagged): 22,582 cohort x drug x receptor rows,
+  31% pass. Selectivity window of passing pairs median 0.48 log10 (66% within 10x of the drug's best target).
+- `results/lincs/disease_drug_rankings_v2.html`: 459 FDA drugs x 41 diseases + 14 subgroups (9,823 rows), all scores,
+  flags, receptor gate, literature where 79o searched (225 rows). Runbook steps `receptor_gate`, `rankings_page`.
+
+## 2026-11-02 Closest-compound stand-ins (79y, 79y2, C27) and stand-in page (79z)
+
+- Stand-in = compound tested in a cohort's own lines that shares a target with an FDA drug and changes CollecTRI
+  regulator activity alike (r >= 0.4 over >= 2 shared lines; rule fixed before looking). Validation on 503 FDA drugs
+  tested in their own lines (similarity measured outside them): Spearman 0.66 vs 0.34 for random target-sharing
+  compounds; adopted. Against the drug's own borrowed score (counterfactual rescoring in a sandbox, 485 drugs):
+  stand-in 0.65, borrowed 0.56, average 0.68; stand-in better by 0.09 (CI 0.02-0.16).
+- Coverage: 443 of 8,419 borrowed / weak FDA rows have a stand-in, in 20 cohorts (none possible in the 27
+  borrowed-only cohorts). 1,922 matched compounds have a close FDA drug: `results/lincs/standin_compounds_v2.html`.
+- 79o `MODE=fda_all`: PubMed / trial search for every FDA row of the rankings page (7,444 searches, cached).
+- 79e: guard for `rev_raw` in consensus mode (raw activity folders for v2 now exist and crashed the rerun).

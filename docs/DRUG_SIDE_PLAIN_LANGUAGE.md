@@ -58,9 +58,15 @@ follow-up questions:
    drug database (ChEMBL) shows it binds that receptor strongly enough (1 µM; 100 nM for kinase drugs), and the
    receptor is actually made in the lab cell lines the cancer's score came from. Otherwise the score cannot be
    coming through that receptor. We also report how much more strongly the drug binds its main target (C26).
-10. **Link to the outside world.** We match drugs to FDA approvals, look up PubMed papers and clinical trials for the
-    top drugs, and build two browsable pages: the FDA top lists (`results/lincs/fda_rankings_v2.html`) and every FDA
-    drug with all its scores, flags, receptors and literature (`results/lincs/disease_drug_rankings_v2.html`).
+10. **Find stand-ins for drugs never tested on this cancer's cells.** Most FDA drugs were only tested on other cancers'
+    cells. For these we look for another compound that was tested on this cancer's cells, hits the same target and
+    changes the cell's switches the same way. Its score is shown next to the drug's own as a second opinion. Checked
+    first on drugs that were tested here: a stand-in's rank follows the drug's real rank fairly well (C27). Only
+    cancers with their own lab data (about 20 of 55 groups) can have stand-ins.
+11. **Link to the outside world.** We match drugs to FDA approvals, look up PubMed papers and clinical trials for the
+    top drugs, and build two browsable pages: the FDA top lists (`results/lincs/fda_rankings_v2.html`), every FDA
+    drug with all its scores, flags, receptors, stand-ins and literature (`results/lincs/disease_drug_rankings_v2.html`),
+    and the compounds tested on each cancer's own cells with their closest FDA drugs (`results/lincs/standin_compounds_v2.html`).
 
 ## Results
 
