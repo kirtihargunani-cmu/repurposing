@@ -186,6 +186,8 @@ depmap:  # DepMap Public 24Q4 via Figshare (newest full release there; portal do
     - OmicsSomaticMutationsMatrixDamaging.csv
     - OmicsFusionFiltered.csv
     - OmicsCNGene.csv  # relative copy ratio (linear)
+    - CRISPRGeneEffect.csv  # Chronos gene effect, CRISPR knockout (scripts/79n_dependency.py; added 2026-11-03)
+    - CRISPRInferredCommonEssentials.csv
     - README.txt
 
 lincs2020:  # CMap LINCS 2020 "beta" release metadata (scripts/07_download_lincs.sh); signature matrices not pulled yet

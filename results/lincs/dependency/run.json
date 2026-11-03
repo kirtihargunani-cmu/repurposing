@@ -1,0 +1,15 @@
+{
+ "lines_screened": 1164,
+ "genes": 17916,
+ "cohorts_scored": 49,
+ "yardstick_above_80pct": 6,
+ "yardstick_n": 8,
+ "fda_rows": 7414,
+ "rows_with_dep": 6535,
+ "min_lines": 2,
+ "min_wcov": 0.25,
+ "min_drugs": 20,
+ "n_perm": 1000,
+ "n_boot": 1000,
+ "seed": 0
+}

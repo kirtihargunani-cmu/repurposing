@@ -21,6 +21,8 @@ OmicsSomaticMutationsMatrixHotspot.csv 51065750 a5aeb1deef897ead3c955c372148d840
 OmicsSomaticMutationsMatrixDamaging.csv 51065747 cb20fdbe1cf3b9b0d8ed4f53e1f399b6
 OmicsFusionFiltered.csv 51065693 16ebb6c5cab1e066d904ac6d7488f82e
 OmicsCNGene.csv 51065324 4696565fa74dc805983bc278b4a41802
+CRISPRGeneEffect.csv 51064667 6edf7ade09b9b34199210b559d4745d3
+CRISPRInferredCommonEssentials.csv 51064916 545edef0d377f252db6e5e675201bd77
 EOF
 (cd data/raw && find depmap_24q4 -type f | sort | xargs sha256sum | sed 's#  #  ./#') > data/raw/.new.sha256
 cat data/raw/checksums.sha256 data/raw/.new.sha256 | sort -u -k2 -o data/raw/checksums.sha256 && rm data/raw/.new.sha256
