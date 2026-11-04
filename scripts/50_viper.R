@@ -64,7 +64,9 @@ if (REGULON == "aracne_project") {
   grp <- fread("results/step1/disease_groups_toil.tsv")
   net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
   if (nzchar(Sys.getenv("EXTRA_RDS"))) { ex <- readRDS(Sys.getenv("EXTRA_RDS")); arac <- c(arac, ex[setdiff(names(ex), names(arac))]) }
-  if (nzchar(Sys.getenv("NET_MAP"))) { nm <- fread(Sys.getenv("NET_MAP")); net_of[nm$group_id] <- nm$net }
+  # D97 (2026-11-03): production network map config/group_networks.tsv is the default for the v2 TF-only set; NET_MAP overrides
+  nmf <- Sys.getenv("NET_MAP", if (SFX == "_v2" && REGSET == "tf" && file.exists("config/group_networks.tsv")) "config/group_networks.tsv" else "")
+  if (nzchar(nmf)) { nm <- fread(nmf); net_of[nm$group_id] <- nm$net }
   regs_for <- function(gid) { r <- arac[[net_of[[gid]]]]; if (is.null(r)) stop("no ARACNe network for ", net_of[[gid]]); r }
 } else {
   regs_core <- readRDS("results/step5/regulons_core.rds")[[REGULON]]

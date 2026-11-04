@@ -54,8 +54,10 @@ if (REGULON == "aracne_project") {
   # EXTRA_RDS / NET_MAP / MR_OVERRIDE (D92, 2026-11-03): extra networks, group -> network map, and the mapped groups'
   #   regulator filter from another Step 6 folder. Defaults: off.
   if (nzchar(Sys.getenv("EXTRA_RDS"))) { ex <- readRDS(Sys.getenv("EXTRA_RDS")); arac <- c(arac, ex[setdiff(names(ex), names(arac))]) }
-  if (nzchar(Sys.getenv("NET_MAP"))) {
-    nm <- fread(Sys.getenv("NET_MAP")); net_of[nm$group_id] <- nm$net
+  # D97 (2026-11-03): production network map config/group_networks.tsv is the default for the v2 TF-only set; NET_MAP overrides
+  nmf <- Sys.getenv("NET_MAP", if (SFX == "_v2" && REGSET == "tf" && file.exists("config/group_networks.tsv")) "config/group_networks.tsv" else "")
+  if (nzchar(nmf)) {
+    nm <- fread(nmf); net_of[nm$group_id] <- nm$net
     if (nzchar(Sys.getenv("MR_OVERRIDE"))) filt <- rbind(filt[!group_id %in% nm$group_id],
       fread(file.path(Sys.getenv("MR_OVERRIDE"), "regulator_filter.tsv"))[keep == TRUE & group_id %in% nm$group_id], fill = TRUE)
   }

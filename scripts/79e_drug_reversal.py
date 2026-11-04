@@ -123,7 +123,10 @@ def net_of(cohort):
 
 # NET_MAP / MR_OVERRIDE (D92, 2026-11-03): groups mapped to another network, their group_mr rows from another Step 6
 #   folder (tumor ARACNe only, not consensus). Defaults: off.
-NETMAP = (pd.read_csv(os.environ["NET_MAP"], sep="\t").set_index("group_id").net.to_dict() if os.environ.get("NET_MAP") else {})
+# D97 (2026-11-03): config/group_networks.tsv is the default map for the v2 TF-only ARACNe set (alone or in the consensus)
+_ARAC_TF = os.environ.get("VERSION") == "v2" and ((CONS and ARACNE_SET == "tf") or (REGULON == "aracne_project" and os.environ.get("REGSET") == "tf"))
+_NMF = os.environ.get("NET_MAP") or (str(ROOT / "config/group_networks.tsv") if _ARAC_TF and (ROOT / "config/group_networks.tsv").exists() else "")
+NETMAP = (pd.read_csv(_NMF, sep="\t").set_index("group_id").net.to_dict() if _NMF else {})
 MR_OVR = os.environ.get("MR_OVERRIDE", "")
 
 
