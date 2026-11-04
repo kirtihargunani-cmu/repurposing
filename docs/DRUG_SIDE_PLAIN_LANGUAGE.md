@@ -133,6 +133,57 @@ fewer drugs already used for each cancer (0.61 -> 0.51), so the main ranking kee
 now carries an early score, a late score and a label (works early and late, early only, late only, neither, or no
 early data), which shows whether its effect is direct or develops later.
 
+### How much did the cell-type maps gain? The evidence in numbers
+
+**In short:** the cell-type maps fix most of the breast anti-estrogen inversion, which is solidly supported. Outside
+breast we can only show they do no harm. Before = pooled maps (results commit `3320b5f`); after = production since D97.
+
+**Evidence 1: anti-estrogens now rank more like clinical practice.** Median rank of the 6 anti-estrogens
+(percentile within each subtype's list; higher = recommended more strongly):
+
+| Breast subtype | Should be | Before | After |
+|---|---|---|---|
+| Luminal A (ER+) | high | 15th | **38th** |
+| Luminal B (ER+) | high | 30th | **43rd** |
+| Basal / triple-negative (ER-) | low | 95th | **70th** |
+| Her2 (map unchanged, too few tumors) | middle | 56th | 56th |
+
+Before, anti-estrogens ranked 80 points higher in basal (where they do not work) than in luminal A (where they are
+standard care). Now the gap is 32 points: still the wrong way round, but less than half as large. Examples:
+fulvestrant luminal A 14.5 -> 37.2 and basal 98.7 -> 76.5; tamoxifen luminal A 49 -> 74; toremifene basal 93 -> 68.
+Not every drug improved: tamoxifen in luminal B dipped slightly (62 -> 57).
+
+**Why: the basal disease profile is no longer defined by "not luminal".** The drug side did not get better at reading
+anti-estrogens; our maps still read them as switching ESR1 on (D99). The gain came from the disease side. On the old
+mixed map, basal tumors were described largely as "the luminal regulators are switched off" (ESR1 -2.5, GATA3 -2.4,
+XBP1 -2.6). So any drug that nudged luminal genes up looked like it was fixing basal cancer. With a basal-only map,
+that luminal axis largely disappears (ESR1 -0.7, GATA3 +0.2, XBP1 -0.2), and the raw reversal score of anti-estrogens
+in basal falls by a third (30.3 -> 20.1).
+
+**Evidence 2: approved drugs stand out a little more in their own cancer.** Comparing each approved drug's rank in the
+cancer it is approved for with its rank elsewhere, the median advantage rose from +2.9 to +6.6 percentile points (Hub
+labels); on ChEMBL labels it moved from -5.0 to -4.0. Overall known-use recovery stayed about the same (AUC Hub 0.620
+-> 0.615, ChEMBL 0.500 -> 0.514; 0.5 is chance). Agreement with cell-line gene dependencies moved from -0.038 to
+-0.029: slightly better, still essentially zero.
+
+**What it cost, and what is uncertain.**
+
+- Twelve more broad growth blockers look good for almost every cancer (151 -> 163 of 1,144 drugs). They stay
+  mid-ranked on the main score (D98), so they do not flood the top of the lists.
+- The new maps are noisier. Built twice from independent halves of their runs, they share 0.40-0.57 of their links,
+  against 0.61 for the old combined breast map, because each has fewer tumors.
+- Outside breast there is no ground truth for a benefit. In the other 7 cancers the rankings moved (only 10 of the top
+  20 stayed for leiomyosarcoma, 12-13 for esophageal cancer) and known-use recovery did not drop: no harm, but no shown
+  gain either.
+- Basal breast cancer still ranks anti-estrogens too high (70th). Part of that is a "slow down" program the drugs switch
+  on, which basal tumors have switched off. Fixing the ESR1 reading alone did not help (D101), because the whole
+  luminal program is still misread on the drug side.
+
+**Bottom line.** The cell-type maps fixed the clearest known error, the breast inversion, by about 60%, and made
+approved drugs stand out somewhat more in their own cancer. The cost is slightly noisier maps and about 12 more broad
+growth blockers. The evidence for a gain is concrete only in breast; elsewhere the change is neutral as far as we can
+measure.
+
 ### What it gets wrong, honestly
 
 - **Anti-estrogens in luminal A breast cancer ranked low** because the tumor-learned map misread them (C18). Removing

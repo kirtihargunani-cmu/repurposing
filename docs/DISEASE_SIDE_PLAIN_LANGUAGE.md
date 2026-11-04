@@ -109,7 +109,10 @@ master-regulator lists of the big subtypes barely change (luminal A / B, glioma:
 those of mixed or small ones change more (basal breast 0.90). In basal breast cancer, low "luminal" regulators
 (ESR1, GATA3) no longer dominate its list, which is what had made anti-estrogens look useful there. Smaller networks
 are noisier: the overlap between two halves of a network's runs is 0.40 at 85 tumors vs about 0.6 for the largest
-networks. The patient-level analyses and the subgroup clustering have not yet been rerun on the new networks.
+networks. The patient-level analyses and the subgroup clustering have not yet been rerun on the new networks. What this gained on the drug
+side, with numbers (anti-estrogens in breast, known-use checks, costs), is in [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md),
+"How much did the cell-type maps gain?". In production the basal breast profile changed most: ESR1 -2.5 -> -0.7,
+GATA3 -2.4 -> +0.2, XBP1 -2.6 -> -0.2; luminal A barely changed (overall agreement 0.94 with before).
 
 ## What is not done yet
 
