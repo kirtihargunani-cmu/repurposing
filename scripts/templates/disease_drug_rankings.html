@@ -141,11 +141,12 @@ table.mini th, table.mini td { padding: 4px 8px; position: static }
         <ul>
           <li><b>Reversal</b> (<code>rev</code>): how strongly the drug pushes the cohort's changed regulators back toward normal tissue, with strongly changed regulators counting more. <b>Specificity</b> (<code>spec</code>): reversal for this cohort minus the drug's average reversal for cancers of other tissues. <b>Mechanism specificity</b> (<code>spec_mech</code>): specificity after removing the part explained by slowing cell division; this is the default ranking (D80). For subgroups, <b>vs sibling</b> (<code>spec_sib_mech</code>) compares the subgroup with its sibling subgroups and is their default ranking. Big numbers are percentiles within the cohort; small numbers are the raw scores.</li>
           <li><b>Drugs</b>: only LINCS compounds matched to an FDA-approved ingredient in Drugs@FDA (fetched 2026-10-29; <i>marketed</i> = a current prescription or OTC product, <i>discontinued</i> = approved, no current product). Where several LINCS compounds are the same ingredient, the one scoring best on the cohort's lead score is shown, as on the FDA rankings page. Unlike that page, weak-evidence and non-reversing drugs are kept here (weak evidence hidden by default).</li><li><b>Rank</b> is the drug's position among all FDA drugs of the cohort on the chosen score, before any filter.</li>
+          <li><b>Timing</b> (D100): drugs with both 6 h and 24 h LINCS profiles are also ranked on each time point. <i>Early + late</i> reverses the disease in both; <i>early only</i> is a direct effect the cell adapts to; <i>late only</i> is a slower or secondary effect. The main ranking uses all time points, because known uses track the 24 h response better (D100).</li>
           <li><b>Weak-evidence drugs</b> are hidden by default: <i>unmatched lines</i> (the drug's best tested line looks nothing like the cohort) and <i>low transfer</i> (a borrowed drug whose effect carries over poorly between lines, confidence below 0.5). Other flags are shown but not hidden: <i>multi-target</i> (more than 5 annotated targets), <i>proliferation-driven</i> (the score comes mostly from slowing division) and <i>few regulators</i>.</li>
           <li><b>Receptors</b>: the drug's annotated receptor targets expressed in this cohort's tumors, after the receptor evidence gate. Green: ChEMBL supports binding (curated mechanism, or affinity 1 µM or better; 100 nM for kinases) and the receptor is present in at least half of the cell lines this cohort's score used. Amber: it binds, but the receptor (or the full receptor complex) is missing from those lines or from the tumors, so the score cannot come through it. Struck out: no binding evidence in ChEMBL. <i>1 line</i> marks a pass resting on a single cell line. The window is how many log10 units weaker the drug binds this receptor than its strongest measured target (0 = its main target).</li>
           <li><b>Literature</b> was searched for each disease's top 10 drugs by mechanism specificity and by reversal (LINCS name) and for each cohort's top 3 FDA drugs (FDA name). PubMed counts need the drug and the disease in a title or abstract; ClinicalTrials.gov matches loosely, so counts are an upper bound. Other rows were not searched and link to a PubMed search.</li>
           <li id="about-si"></li>
-          <li>Scores are computational predictions, not yet validated against measured drug sensitivity (PRISM / GDSC).</li>
+          <li>Scores are computational predictions. Checks so far (C28, C29, D99): drugs move their target pathways as expected in 75% of profiles, but the ranking recovers known uses only modestly and does not predict which cell lines a drug kills (PRISM / GDSC). Treat rankings as hypotheses.</li>
         </ul>
       </details>
     </main>
@@ -201,11 +202,14 @@ function renderCohort() {
 function head() {
   const sub = isSub(), c = sortCol();
   const th = (label, col) => `<th class="num sort" data-col="${col}" aria-sort="${col === c ? "descending" : "none"}" title="Rank by this score">${label}</th>`;
-  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th>${sub ? th("Vs sibling (mech)", 17) : ""}${th("Mechanism specificity", 6)}${th("Specificity", 4)}${th("Reversal", 2)}<th>Data</th><th>Receptors</th><th>Literature</th>`;
+  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th>${sub ? th("Vs sibling (mech)", 17) : ""}${th("Mechanism specificity", 6)}${th("Specificity", 4)}${th("Reversal", 2)}<th>Data</th><th title="Early (6 h) vs late (24 h) drug response, D100">Timing</th><th>Receptors</th><th>Literature</th>`;
 }
 const bar = v => v == null ? "" : `<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, v))}%"></i></span>`;
 const score = (pct, raw, avg) => `<td class="num score">${pct == null ? "–" : pct.toFixed(1)}${bar(pct)}<span class="raw">${fmt(raw)}</span>${avg != null ? `<span class="avg" title="Average of this drug's own percentile and its best stand-in's">with stand-in ${avg.toFixed(1)}</span>` : ""}</td>`;
 function flags(r) { return DATA.flags.filter((f, i) => r[11] & (1 << i)).map(f => `<span class="flag ${FL[f][1]}">${FL[f][0]}</span>`).join("") }
+const TIMING = {b: ["Early + late", "ok", "Reverses the disease in both the 6 h and the 24 h profile (top 25% on mechanism specificity, positive reversal)"], e: ["Early only", "warn", "Reverses at 6 h but not at 24 h: a direct effect the cell adapts to"], l: ["Late only", "plain", "Reverses at 24 h but not at 6 h: a slower or secondary effect"], n: ["Neither", "plain", "Has 6 h and 24 h data but neither profile is a strong reverser"]};
+const timingCell = r => { const t = TIMING[r[22]]; if (!t) return `<span class="lincs" title="No 6 h profile for this drug in this cohort's lines">no 6 h data</span>`;
+  return `<span class="flag ${t[1]}" title="${t[2]}. Early ${r[23] == null ? "–" : r[23].toFixed(0)}th, late ${r[24] == null ? "–" : r[24].toFixed(0)}th percentile">${t[0]}</span>`; };
 function recChips(r) {
   const xs = r[13].slice().sort((a, b) => "pasn".indexOf(a[7]) - "pasn".indexOf(b[7]));
   if (!xs.length) return `<span class="src">–</span>`;
@@ -220,7 +224,7 @@ function litCell(r, d) {
 function detail(r, d, sub) {
   const L = r[12] >= 0 ? DATA.lit[r[12]] : null;
   const srch = `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent('"' + (d.fda ? d.fda[0] : d.c) + '"[tiab] AND (cancer OR tumor OR neoplasm)')}`;
-  const scores = [["Reversal", r[2], r[3]], ["Specificity", r[4], r[5]], ["Mechanism specificity", r[6], r[7]]].concat(sub ? [["Vs sibling", r[15], r[16]], ["Vs sibling (mechanism)", r[17], r[18]]] : []);
+  const scores = [["Reversal", r[2], r[3]], ["Specificity", r[4], r[5]], ["Mechanism specificity", r[6], r[7]]].concat(r[22] ? [["Mech. specificity, early (6 h)", null, r[23]], ["Mech. specificity, late (24 h)", null, r[24]]] : []).concat(sub ? [["Vs sibling", r[15], r[16]], ["Vs sibling (mechanism)", r[17], r[18]]] : []);
   const rec = r[13].length ? `<table class="mini"><thead><tr><th>Receptor</th><th>Class</th><th>Binding evidence</th><th class="num">pChEMBL</th><th class="num">Window</th><th class="num">Matched lines expressing</th><th>Gate</th></tr></thead><tbody>${r[13].map(x =>
       `<tr><td><b>${esc(x[0])}</b></td><td>${esc(x[1])}</td><td>${esc(EVID[x[2]] || x[2])}</td><td class="num">${fmt(x[3])}</td><td class="num">${fmt(x[4])}</td><td class="num">${x[5] == null ? "–" : Math.round(100 * x[5]) + "% of " + x[6]}</td><td><span class="rec ${x[7]}">${GATE[x[7]]}</span>${x[8] ? ' <span class="flag plain">1 line</span>' : ""}</td></tr>`).join("")}</tbody></table>` : "<p>No annotated receptor target expressed in this cohort.</p>";
   return `<tr class="detail"><td colspan="${sub ? 9 : 8}"><div class="det">
@@ -255,8 +259,8 @@ function renderTable() {
       <td><div class="drug">${esc(name)}</div>${name.toLowerCase() !== d.c.toLowerCase() ? `<div class="lincs">${esc(d.c)}</div>` : ""}<div class="moa">${esc(d.moa)}</div>${d.fda ? `<span class="flag ${d.fda[1] === "m" ? "ok" : "plain"}">${d.fda[1] === "m" ? "Marketed" : "Discontinued"}${d.fda[2] ? " · " + d.fda[2] : ""}</span>` : ""}${flags(r)}</td>
       ${sub ? score(r[18], r[17], r[20]) : ""}${score(r[7], r[6], sub ? null : r[20])}${score(r[5], r[4])}${score(r[3], r[2])}
       <td class="src">${r[1] === "d" ? "Direct" : "Borrowed"}${r[1] === "b" && r[9] != null ? `<br>conf ${fmt(r[9])}` : ""}<br>${r[14]} line${r[14] === 1 ? "" : "s"}${r[19].length ? `<br><span class="si" title="Closest compound tested in this cohort's own lines (similarity ${fmt(r[19][0][1])})">Stand-in: ${esc(r[19][0][0])}</span>` : ""}</td>
-      <td>${recChips(r)}</td><td class="lit">${litCell(r, d)}</td></tr>` + (open.has(i) ? detail(r, d, sub) : "");
-  }).join("") || `<tr><td colspan="9">No drugs match these filters.</td></tr>`;
+      <td>${timingCell(r)}</td><td>${recChips(r)}</td><td class="lit">${litCell(r, d)}</td></tr>` + (open.has(i) ? detail(r, d, sub) : "");
+  }).join("") || `<tr><td colspan="10">No drugs match these filters.</td></tr>`;
   el("count").textContent = `${lim} of ${total} drugs`;
   el("more").hidden = lim >= total; el("more").textContent = `Show ${Math.min(100, total - lim)} more`;
 }

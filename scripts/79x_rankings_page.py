@@ -15,7 +15,8 @@ Inputs: results/lincs/drug_reversal_split_v2_consensus.tsv, stratum_reversal_spl
         MODE=fda_all, every row; preferred where present), receptor_gate_v2.tsv, standin_pairs_v2.tsv + standin_run.json
         (79y: up to 3 stand-ins for borrowed / weak-evidence FDA drugs; where one exists the page also shows the
         average of the drug's own lead percentile and the best stand-in's, and can rank by it: user 2026-11-02),
-        results/step10_v2/strata.tsv; template scripts/templates/disease_drug_rankings.html (placeholder __DATA__)
+        results/step10_v2/strata.tsv, results/lincs/d100/timing_scores.tsv (D100 timing class, optional);
+        template scripts/templates/disease_drug_rankings.html (placeholder __DATA__)
 Output: results/lincs/disease_drug_rankings_v2.html (published copy: https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA)
 """
 import json
@@ -94,6 +95,14 @@ def main():
              rnd(r.cmp_spec_pct, 1), rnd(r.cmp_rev_pct, 1), rnd(r.cmp_spec_sib_mech_pct, 1), int(bool(r.cmp_is_fda))])
     vrun = json.load(open(RES / "standin_run.json"))
     rg = pd.read_csv(RES / "receptor_gate_v2.tsv", sep="\t", low_memory=False)
+    # D100 (user 2026-11-03): early (6 h) / late (24 h) scores and timing class per disease x drug, where available
+    tf = RES / "d100/timing_scores.tsv"
+    TC = {"both": "b", "early only": "e", "late only": "l", "neither": "n"}
+    TM = {}
+    if tf.exists():
+        for t in pd.read_csv(tf, sep="\t").itertuples(index=False):
+            if t.timing_class in TC:
+                TM[(t.group_id, t.pert_id)] = [TC[t.timing_class], rnd(t.spec_mech_early_pct, 1), rnd(t.spec_mech_late_pct, 1)]
 
     # ---- drug table
     pids = sorted(set(g.pert_id) | set(s.pert_id))
@@ -150,6 +159,7 @@ def main():
                 sip = (si[0][7] if sub else si[0][4]) if si else None
                 avg = round((own + sip) / 2, 1) if si and own is not None and sip is not None else None
                 row += [avg, avg if avg is not None else own]
+                row += TM.get((u, r.pert_id), [None, None, None])   # 22-24: timing class, early / late percentile (D100)
                 lst.append(row)
             out[u] = lst
         return out
