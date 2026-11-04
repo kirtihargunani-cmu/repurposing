@@ -713,6 +713,9 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - D102b (carrier exception: target counts if >= 2% of tumors express it highly) fails both ways: it brings back
   ESR1 in Basal (6 of 190 tumors ER-high, 3.2%) and does not rescue ALK in LUAD (3 of 513 tumors, 0.6%). No
   threshold on expression separates them; a curated biomarker list (fusion targets) would be needed.
+- **D102c: D102a adopted (user: a subtype's ranking should describe one cohesive group).** New step `79i2` re-ranks
+  the production split tables; known-use Hub 0.614 -> 0.617, ChEMBL 0.514 -> 0.531; page republished with the flags
+  "Target absent" and "Minority target" (e.g. ALK inhibitors in lung adenocarcinoma).
 
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here

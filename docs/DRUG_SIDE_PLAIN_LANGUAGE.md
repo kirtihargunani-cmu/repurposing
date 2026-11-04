@@ -208,6 +208,10 @@ measure.
   basal tumors make a lot of the estrogen receptor (3%), more than the share of lung tumors in our data with high ALK
   (3 of 513), so the rule brought the anti-estrogens back in basal and still did not rescue the ALK drugs. Expression
   alone cannot tell a rare but targetable mutation from leftover expression.
+  **Decision (D102c, now in use):** each subtype's list describes its typical tumor, since that is the point of
+  splitting patients into subtypes. So the revised rule is switched on: drugs whose target the typical tumor lacks
+  go to the bottom of that list and are marked "Target absent". Where a handful of tumors do make the target (like
+  ALK in lung cancer), the page adds "Minority target" so a biomarker-selected use is not lost from view.
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.
