@@ -204,6 +204,10 @@ measure.
   a little, and the known-use checks hold across all 41 cancers. One catch before switching it on: drugs for targets
   that only a small share of patients carry, such as ALK inhibitors in lung cancer (ALK fusions in a few percent of
   tumors), are pushed down too, because the typical tumor has almost none of the target.
+  We tried letting a target count if even a small share of tumors make a lot of it (D102b). It backfired: 6 of 190
+  basal tumors make a lot of the estrogen receptor (3%), more than the share of lung tumors in our data with high ALK
+  (3 of 513), so the rule brought the anti-estrogens back in basal and still did not rescue the ALK drugs. Expression
+  alone cannot tell a rare but targetable mutation from leftover expression.
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.

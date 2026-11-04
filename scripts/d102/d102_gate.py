@@ -36,7 +36,7 @@ for d in judged:
         pv = [best[m][t] for m in ms if t in best.get(m, {})]; p = max(pv) if pv else np.nan
         if (mech and (not kin or p >= c)) or p >= c:
             ev.add(t)
-    if AMEND == "a":   # D102a (2): curated direct mechanism genes (any target type) among the annotated targets
+    if AMEND in ("a", "b"):   # D102a (2): curated direct mechanism genes (any target type) among the annotated targets
         mech_g = set()
         for m in MECH:
             if m["direct_interaction"] == 1 and m["target_chembl_id"] and ({m["molecule_chembl_id"], m["parent_molecule_chembl_id"]} & ms):
@@ -51,8 +51,33 @@ for d in judged:
 idm = pd.read_csv(ROOT / "results/step5/id_map.tsv", sep="\t").query("primary_for_hgnc").drop_duplicates("symbol")
 te = pd.read_csv(PROC / "target_expression.tsv.gz", sep="\t")
 te["symbol"] = te.gene_id.map(dict(zip(idm.gene_id, idm.symbol))); te = te.dropna(subset=["symbol"]).drop_duplicates(["group_id", "symbol"])
-te["gmax"] = te.groupby("symbol").median_tpm.transform(lambda v: v.quantile(0.9) if AMEND == "a" else v.max())
+te["gmax"] = te.groupby("symbol").median_tpm.transform(lambda v: v.quantile(0.9) if AMEND in ("a", "b") else v.max())
 te["present"] = (te.median_tpm >= 1) & (te.median_tpm >= 0.1 * te.gmax)
+if AMEND == "b":   # D102b carrier exception: >= 2% and >= 3 tumors at TPM >= max(10, R)
+    cf = OUT / "carriers_d102b.tsv.gz"
+    genes = te[te.symbol.isin(set().union(*E.values()))].drop_duplicates("symbol")
+    if not cf.exists():
+        cov = pd.read_csv(ROOT / "results/step3/covariates_toil.tsv", sep="\t", low_memory=False)
+        tum = cov[(cov.role == "tumor") & (cov.primary_per_patient == True) & cov.group_id.isin(set(te.group_id))].drop_duplicates(["group_id", "sample"])
+        f = ROOT / "data/raw/solid_toil/TcgaTargetGtex_rsem_gene_tpm.gz"; hdr = pd.read_csv(f, sep="\t", nrows=0).columns
+        use = sorted(set(tum["sample"]) & set(hdr)); parts = []
+        for ch in pd.read_csv(f, sep="\t", usecols=[hdr[0]] + use, chunksize=5000, index_col=0):
+            ch.index = ch.index.str.split(".").str[0]; parts.append(ch[ch.index.isin(set(genes.gene_id))])
+        tpm = np.power(2.0, pd.concat(parts)) - 0.001
+        thr = genes.set_index("gene_id").gmax.clip(lower=10).reindex(tpm.index)
+        hi = tpm.ge(thr, axis=0); rows = []
+        for g, dg in tum[tum["sample"].isin(use)].groupby("group_id"):
+            h = hi[dg["sample"]]; rows.append(pd.DataFrame({"gene_id": h.index, "group_id": g, "n_tumors": h.shape[1], "n_carriers": h.sum(axis=1).values}))
+        pd.concat(rows).to_csv(cf, sep="\t", index=False)
+    car = pd.read_csv(cf, sep="\t")
+    te = te.merge(car, on=["gene_id", "group_id"], how="left")
+    te["carrier_share"] = te.n_carriers / te.n_tumors
+    te["rescued"] = ~te.present & (te.carrier_share >= 0.02) & (te.n_carriers >= 3)
+    te["present"] = te.present | te.rescued
+    te[te.rescued][["symbol", "group_id", "median_tpm", "gmax", "n_carriers", "n_tumors", "carrier_share"]].sort_values(["symbol", "group_id"]) \
+        .to_csv(OUT / f"{TAG}_rescued_targets.tsv", sep="\t", index=False, float_format="%.3f")
+    print("rescued gene x group:", int(te.rescued.sum()), "| ESR1 Basal:", te[(te.symbol == "ESR1") & (te.group_id == "BRCA-Basal")][["median_tpm", "gmax", "n_carriers", "n_tumors", "rescued"]].to_dict("records"),
+          "| ALK LUAD:", te[(te.symbol == "ALK") & (te.group_id == "TCGA-LUAD")][["n_carriers", "n_tumors", "rescued"]].to_dict("records"))
 P = te.set_index(["group_id", "symbol"])
 pres = P.present.to_dict(); med = P.median_tpm.to_dict(); gmax = P.gmax.to_dict()
 
@@ -106,7 +131,7 @@ crit = [("B3 known-use AUC falls <= 0.01 (Hub, ChEMBL)", f"Hub {x['auc_lab_hub']
          x["auc_lab_hub"] >= c["auc_lab_hub"] - 0.01 and x["auc_lab_chembl"] >= c["auc_lab_chembl"] - 0.01)]
 if STAGE == 1:
     nl = labd[labd.group_id.isin(["BRCA-LumA", "BRCA-LumB"])]
-    if AMEND == "a":   # D102a (3): only Hub (approved-use) labels stop; ChEMBL-only listed for review
+    if AMEND in ("a", "b"):   # D102a (3): only Hub (approved-use) labels stop; ChEMBL-only listed for review
         print("ChEMBL-only labeled demoted (review):", nl[~nl.lab_hub][["group_id", "cmap_name", "evidence_targets_tpm"]].to_string(index=False))
         nl = nl[nl.lab_hub]
     crit = [("B1 Basal negative controls fall >= 20", f"{x['ctl_neg']:.1f} vs {c['ctl_neg']:.1f}", x["ctl_neg"] <= c["ctl_neg"] - 20),
@@ -114,6 +139,15 @@ if STAGE == 1:
            [("B4 no labeled drug demoted in LumA / LumB", f"{len(nl)} ({', '.join(sorted(set(nl.cmap_name)))})", len(nl) == 0)]
 else:
     crit += [("PRAD controls not lower", f"{x['ctl_prad']:.1f} vs {c['ctl_prad']:.1f}", x["ctl_prad"] >= c["ctl_prad"])]
+if AMEND == "b" and STAGE == 1:
+    alk = sp[(sp.group_id == "TCGA-LUAD") & sp.cmap_name.isin(["alectinib", "ceritinib"]) & sp.target_absent] if "TCGA-LUAD" in groups else None
+    if alk is None:   # stage 1 is breast only: judge S1 on LUAD separately
+        full = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False, usecols=["group_id", "cmap_name"])
+        x_ = full[(full.group_id == "TCGA-LUAD") & full.cmap_name.isin(["alectinib", "ceritinib"])]
+        dem = [d for d in x_.cmap_name if flag("TCGA-LUAD", d)[0]]
+    else:
+        dem = list(alk.cmap_name)
+    crit.append(("S1 alectinib / ceritinib not demoted in LUAD", f"demoted: {sorted(set(dem))}", len(dem) == 0))
 dec = pd.DataFrame(crit, columns=["criterion", "value", "met"])
 dec.loc[len(dec)] = ("DECISION", ("go to stage 2" if STAGE == 1 else "adopt (needs the user's go-ahead)") if dec.met.all() else "stop", dec.met.all())
 dec.to_csv(OUT / f"{TAG}_decision.tsv", sep="\t", index=False)

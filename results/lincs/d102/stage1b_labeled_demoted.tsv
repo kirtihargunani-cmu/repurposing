@@ -1,0 +1,5 @@
+pert_id	lab_hub	lab_chembl	group_id	cmap_name	evidence_targets_tpm
+BRD-A03623303	False	True	BRCA-LumA	metoprolol	ADRB1:0.14/1.2;ADRB2:0.84/2.2
+BRD-A03623303	False	True	BRCA-Her2	metoprolol	ADRB1:0.07/1.2;ADRB2:0.76/2.2
+BRD-K64052750	False	True	BRCA-LumB	gefitinib	EGFR:1.26/44.6
+BRD-K64052750	False	True	BRCA-LumA	gefitinib	EGFR:2.83/44.6
