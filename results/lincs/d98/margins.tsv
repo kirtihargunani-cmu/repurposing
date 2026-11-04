@@ -1,0 +1,4 @@
+margin	broad_t12_before	broad_t12_after	precision_lab_hub_before	recall_lab_hub_before	precision_lab_hub_after	recall_lab_hub_after	precision_lab_chembl_before	recall_lab_chembl_before	precision_lab_chembl_after	recall_lab_chembl_after
+25	516.0000	498.0000	0.0316	22.0000	0.0318	22.0000	0.0417	29.0000	0.0419	29.0000
+15	516.0000	516.0000	0.0316	22.0000	0.0316	22.0000	0.0417	29.0000	0.0417	29.0000
+35	516.0000	280.0000	0.0316	22.0000	0.0319	21.0000	0.0417	29.0000	0.0379	25.0000

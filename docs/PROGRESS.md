@@ -655,7 +655,8 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - **D97 (user decision):** the 85-tumor cell-type networks are production (`config/group_networks.tsv`, 12 groups).
   Backups `*_pre_d97` (regulon file, drug activity, Step 6 data); last pre-switch results commit `3320b5f`. Rebuilt:
   Step 6 for the 12 groups and 4 subgroups, drug activity, P1 lists, rankings (consensus and TF arm), downstream.
-  The 79y2 comparison step first failed (needs `SBX`), resumed. Verification against the D96 test arm follows.
+  The 79y2 comparison step first failed (needs `SBX`), resumed. Verified: production equals the D96 test arm on every
+  check (basal anti-estrogens 76.5, luminal controls 41.3, known-use 0.615 / 0.514, dominance 14.2%).
 - **Written before running, queued after the switch:** D98 selectivity flag for broad reversers at the tier step;
   D99 PROGENy / DoRothEA validation (on-target pathways, ESR1 check, disease contrasts, agreement before vs after
   the switch); D100 early (6 h) and late (24 h) rankings as reported columns, with a test of early profiles as lead.

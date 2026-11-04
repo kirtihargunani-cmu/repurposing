@@ -1,0 +1,4 @@
+criterion	value	met
+1 broad reversers' tier 1-2 rows fall >= 50%	516 -> 498	False
+2 known-use precision not lower; recall falls <= 10% (Hub, ChEMBL)	lab_hub: precision 0.032 -> 0.032, recall 22 -> 22; lab_chembl: precision 0.042 -> 0.042, recall 29 -> 29	True
+DECISION	do not adopt	False

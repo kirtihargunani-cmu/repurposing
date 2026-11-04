@@ -1,0 +1,5 @@
+group_id	contrast	n_tumor	n_normal	n_normal_null	null_adjusted	n_regulators_kept	n_mr_fdr05	n_mr_p05	effective_dim	pc1_var	n_pc_80pct	median_rho	median_frac_hit	frac_patients_rho_gt_0.5
+LGG-noncodel-LGr2	gtex	89	151	151	FALSE	1054	160	255	4.92	0.357	5	0.811	0.94	0.944
+LGG-noncodel-LGr3	gtex	152	151	151	FALSE	1059	264	345	6.18	0.291	6	0.818	1	0.967
+PHEO-kinase-signaling	gtex	77	125	125	FALSE	1055	170	246	5.35	0.371	8	0.873	1	1
+PHEO-pseudohypoxia-Wnt	gtex	69	125	125	FALSE	1054	88	168	5.64	0.364	7	0.889	0.88	0.986
