@@ -693,7 +693,7 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   program as a whole drives the anti-estrogen rank.
 - Rankings page (`79x`, template): new Timing column (early + late, early only, late only, neither, no 6 h data) with
   early / late percentiles in the tooltip and the score table, a legend entry, and an updated validation note
-  (4,483 of 9,823 FDA rows have a timing class).
+  (4,483 of 9,823 FDA rows have a timing class). Published as a new page: https://claude.ai/artifact/DkoreTiuHXRkqaEYMG5hfk
 
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here

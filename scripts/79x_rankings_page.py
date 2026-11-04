@@ -17,7 +17,8 @@ Inputs: results/lincs/drug_reversal_split_v2_consensus.tsv, stratum_reversal_spl
         average of the drug's own lead percentile and the best stand-in's, and can rank by it: user 2026-11-02),
         results/step10_v2/strata.tsv, results/lincs/d100/timing_scores.tsv (D100 timing class, optional);
         template scripts/templates/disease_drug_rankings.html (placeholder __DATA__)
-Output: results/lincs/disease_drug_rankings_v2.html (published copy: https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA)
+Output: results/lincs/disease_drug_rankings_v2.html (published copy with the D97 networks and D100 timing column:
+        https://claude.ai/artifact/DkoreTiuHXRkqaEYMG5hfk ; earlier copy https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA)
 """
 import json
 import math
