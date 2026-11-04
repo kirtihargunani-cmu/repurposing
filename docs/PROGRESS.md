@@ -705,6 +705,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   ChEMBL trial labels for breast cancer, are demoted in LumA / LumB. 53-72 drugs demoted per breast group.
 - Issues for an amendment: amplified cohorts set the 10% reference (ERBB2 51 TPM in Basal counts absent vs 1,271
   in Her2); tamoxifen escapes on EBP; anti-estrogens also demoted in Her2 (ESR1 2.1 TPM).
+- D102a (amended: 90th-percentile reference, curated mechanism targets first, only approved-use labels stop):
+  breast passes (Basal anti-estrogens 76.5 -> 3.0 incl. tamoxifen 3.4; luminal controls 41.3 -> 43.6; Hub AUC
+  0.614 -> 0.640) and all 41 groups pass (Hub 0.614 -> 0.617, ChEMBL 0.514 -> 0.530, PRAD controls not lower;
+  median 47 drugs demoted per group). Caveat: ALK inhibitors (alectinib, ceritinib) are demoted in lung cancer
+  because ALK fusions occur in a few percent of tumors and the median is ~0.15 TPM. Not in production yet.
 
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here

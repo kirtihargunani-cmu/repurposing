@@ -1,0 +1,230 @@
+group_id	pert_id	cmap_name	source	hub_moa	spec_mech_pct	spec_mech_pct_d102	evidence_targets_tpm
+BRCA-Basal	BRD-A27376179	lestaurtinib	direct	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	96.8	3.8	FLT3:0.31/0.4;NTRK1:0.20/1.5
+BRCA-Basal	BRD-A22684332	procaterol	direct		95.6	3.8	ADRB2:0.34/2.2
+BRCA-Basal	BRD-K68232650	lacosamide	direct		91.7	3.7	SCN10A:-0.00/0.0;SCN1A:0.02/0.6;SCN3A:0.05/5.3;SCN9A:0.07/1.1
+BRCA-Basal	BRD-K61323504	SB-225002	direct	CC chemokine receptor antagonist	89.9	3.6	CXCR2:0.14/0.6
+BRCA-Basal	BRD-K23192422	lestaurtinib	direct	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	89.1	3.6	FLT3:0.31/0.4;NTRK1:0.20/1.5
+BRCA-Basal	BRD-K41170226	BRD-K41170226	borrowed	biliverdin reductase A activator|G protein-coupled receptor agonist	87.0	3.5	GPBAR1:0.41/1.2
+BRCA-Basal	BRD-K04210847	tamoxifen	direct	estrogen receptor antagonist	86.3	3.4	ESR1:0.86/11.1;ESR2:0.20/0.5;ESRRG:0.56/2.0
+BRCA-Basal	BRD-K24593301	AZD-3463	direct	ALK tyrosine kinase receptor inhibitor|insulin growth factor receptor inhibitor	85.8	3.4	ALK:0.15/1.5
+BRCA-Basal	BRD-K34185671	AMG-517	borrowed	TRPV antagonist	83.7	3.3	TRPV1:0.33/1.0
+BRCA-Basal	BRD-K11911061	GR-127935	direct	serotonin receptor antagonist	82.8	3.2	HTR1A:-0.00/0.0;HTR1B:0.07/0.3;HTR1D:0.19/1.7;HTR2A:0.10/1.0;HTR2C:-0.00/0.3
+BRCA-Basal	BRD-K47598052	PP-1	direct	SRC inhibitor	81.1	3.2	RET:0.74/7.9
+BRCA-Basal	BRD-K72827473	CEP-37440	direct	ALK tyrosine kinase receptor inhibitor	80.7	3.1	ALK:0.15/1.5
+BRCA-Basal	BRD-A55272860	sulpiride	direct	dopamine receptor antagonist	77.4	3.0	DRD2:0.27/1.5
+BRCA-Basal	BRD-A17828570	fulvestrant	direct		76.5	3.0	ESR1:0.86/11.1
+BRCA-Basal	BRD-K89997465	BRD-K89997465	direct	dopamine receptor antagonist	75.8	2.9	DRD2:0.27/1.5;DRD3:-0.00/0.0;DRD4:0.36/1.0;HTR2A:0.10/1.0
+BRCA-Basal	BRD-A85667082	fulvestrant	direct	estrogen receptor antagonist	74.6	2.8	ESR1:0.86/11.1
+BRCA-Basal	BRD-K78485176	olmesartan-medoxomil	direct	angiotensin receptor antagonist	74.6	2.8	AGTR1:0.36/3.9
+BRCA-Basal	BRD-K34313798	LY-215490	direct	glutamate receptor antagonist	72.3	2.7	GRIK1:0.02/1.3
+BRCA-Basal	BRD-K90195324	bazedoxifene	direct	selective estrogen receptor modulator (SERM)	72.0	2.6	ESR1:0.86/11.1;ESR2:0.20/0.5
+BRCA-Basal	BRD-A90490067	fulvestrant	direct		71.5	2.6	ESR1:0.86/11.1
+BRCA-Basal	BRD-A84481105	thioridazine	direct	dopamine receptor antagonist	67.6	2.5	DRD2:0.27/1.5;DRD3:-0.00/0.0;DRD4:0.36/1.0;HTR2A:0.10/1.0;HTR2C:-0.00/0.3
+BRCA-Basal	BRD-K77947974	fluspirilene	borrowed	dopamine receptor antagonist	65.5	2.4	DRD2:0.27/1.5
+BRCA-Basal	BRD-K04218075	clomifene	direct		64.1	2.4	ESR1:0.86/11.1
+BRCA-Basal	BRD-K63828191	raloxifene	direct	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	63.7	2.3	ESR1:0.86/11.1
+BRCA-Basal	BRD-K63675182	triflupromazine	direct	dopamine receptor antagonist	63.7	2.3	DRD2:0.27/1.5
+BRCA-Basal	BRD-K10705233	GW-405833	borrowed	cannabinoid receptor agonist	63.1	2.2	CNR2:0.05/0.1
+BRCA-Basal	BRD-K77547509	ML-179	borrowed	liver receptor homolog inverse agonist	62.2	2.1	NR5A2:0.47/2.9
+BRCA-Basal	BRD-K93754473	tamoxifen	direct	estrogen receptor antagonist|selective estrogen receptor modulator (SERM)	62.1	2.1	ESR1:0.86/11.1;ESR2:0.20/0.5;ESRRG:0.56/2.0
+BRCA-Basal	BRD-K07609981	dexloxiglumide	direct	CCK receptor antagonist	61.2	2.0	CCKAR:-0.00/0.0
+BRCA-Basal	BRD-K50938287	sumatriptan	direct	serotonin receptor agonist	59.1	1.9	HTR1B:0.07/0.3;HTR1D:0.19/1.7
+BRCA-Basal	BRD-A64553394	DPI-201106	direct	sodium channel activator	56.7	1.9	ADRB2:0.34/2.2
+BRCA-Basal	BRD-K11267252	alectinib	borrowed	ALK tyrosine kinase receptor inhibitor	54.4	1.8	ALK:0.15/1.5
+BRCA-Basal	BRD-A03623303	metoprolol	direct		54.0	1.7	ADRB1:0.12/1.2;ADRB2:0.34/2.2
+BRCA-Basal	BRD-K43744935	tamoxifen	direct		51.6	1.7	ESR1:0.86/11.1;ESR2:0.20/0.5;ESRRG:0.56/2.0
+BRCA-Basal	BRD-K60038276	irbesartan	borrowed	angiotensin receptor antagonist	51.2	1.6	AGTR1:0.36/3.9
+BRCA-Basal	BRD-K56032964	AP-26113	direct	ALK tyrosine kinase receptor inhibitor	50.6	1.5	ALK:0.15/1.5
+BRCA-Basal	BRD-K22149900	ceritinib	direct	ALK tyrosine kinase receptor inhibitor	50.2	1.5	ALK:0.15/1.5
+BRCA-Basal	BRD-K17016787	estriol	direct	estrogen receptor agonist	48.6	1.4	ESR1:0.86/11.1;ESR2:0.20/0.5
+BRCA-Basal	BRD-K29950728	clomifene	direct	estrogen receptor antagonist	47.7	1.3	ESR1:0.86/11.1
+BRCA-Basal	BRD-K00911143	brexpiprazole	direct	dopamine receptor partial agonist	43.5	1.3	DRD2:0.27/1.5;HTR1A:-0.00/0.0;HTR2A:0.10/1.0
+BRCA-Basal	BRD-K97428065	netupitant	borrowed	tachykinin antagonist	43.1	1.2	TACR1:0.72/0.5
+BRCA-Basal	BRD-K10995081	perphenazine	direct	dopamine receptor antagonist	41.8	1.1	DRD2:0.27/1.5
+BRCA-Basal	BRD-K83405785	pimavanserin	direct	serotonin receptor inverse agonist	41.2	1.1	HTR2A:0.10/1.0
+BRCA-Basal	BRD-K01292756	pimozide	direct	dopamine receptor antagonist	38.8	1.0	DRD1:0.01/0.3;DRD2:0.27/1.5;DRD3:-0.00/0.0;DRD4:0.36/1.0;DRD5:0.01/0.1;HTR2A:0.10/1.0
+BRCA-Basal	BRD-K00486786	Ro-08-2750	direct	NGF binding inhibitor	38.3	0.9	NGF:0.55/3.4
+BRCA-Basal	BRD-K49671696	ketanserin	direct	serotonin receptor antagonist	33.3	0.9	ADRA1A:0.05/1.0;DRD1:0.01/0.3;HTR1A:-0.00/0.0;HTR1D:0.19/1.7;HTR2A:0.10/1.0;HTR2B:0.36/1.2;HTR2C:-0.00/0.3;SLC18A2:0.06/0.7
+BRCA-Basal	BRD-K55468218	spiperone	direct	dopamine receptor antagonist	33.0	0.8	ADRA1A:0.05/1.0;ADRA1B:0.34/1.7;DRD1:0.01/0.3;DRD2:0.27/1.5;DRD3:-0.00/0.0;DRD4:0.36/1.0;HTR1A:-0.00/0.0;HTR2A:0.10/1.0;HTR2B:0.36/1.2;HTR2C:-0.00/0.3;HTR7:0.14/0.5
+BRCA-Basal	BRD-K70505054	ranitidine	direct		32.0	0.7	HRH2:0.59/0.9
+BRCA-Basal	BRD-K80608265	erteberel	direct	estrogen receptor agonist	22.8	0.7	ESR2:0.20/0.5
+BRCA-Basal	BRD-A55484088	BNTX	direct		21.5	0.6	OPRD1:0.07/0.3
+BRCA-Basal	BRD-K69116396	sertindole	direct	dopamine receptor antagonist|serotonin receptor antagonist	20.6	0.5	ADRA1A:0.05/1.0;ADRA1B:0.34/1.7;ADRA1D:0.06/0.4;DRD2:0.27/1.5;HTR2A:0.10/1.0;HTR2C:-0.00/0.3
+BRCA-Basal	BRD-A10977446	carvedilol	direct		20.1	0.5	ADRA1A:0.05/1.0;ADRA1B:0.34/1.7;ADRA1D:0.06/0.4;ADRB1:0.12/1.2;ADRB2:0.34/2.2;ADRB3:0.02/0.1
+BRCA-Basal	BRD-K76840893	RS-17053	direct	adrenergic receptor antagonist	16.0	0.4	ADRA1A:0.05/1.0;ADRA1D:0.06/0.4
+BRCA-Basal	BRD-K55930204	phenytoin	direct	hydantoin antiepileptic	9.9	0.3	SCN10A:-0.00/0.0;SCN11A:0.05/0.2;SCN1A:0.02/0.6;SCN2A:0.16/3.3;SCN3A:0.05/5.3;SCN4A:0.10/0.4;SCN5A:0.12/0.6;SCN7A:0.02/1.4;SCN8A:0.34/3.0;SCN9A:0.07/1.1
+BRCA-Basal	BRD-K84996356	AZD-3514	direct	androgen receptor modulator	8.7	0.3	AR:0.61/6.7
+BRCA-Basal	BRD-M86331534	pyrvinium-pamoate	direct		8.6	0.2	AR:0.61/6.7
+BRCA-Basal	BRD-K41438959	perampanel	direct		3.8	0.1	GRIA1:0.01/11.0
+BRCA-Basal	BRD-K59333713	BRD-K59333713	direct	adrenergic receptor antagonist	0.7	0.1	ADRA1A:0.05/1.0
+BRCA-Her2	BRD-A27376179	lestaurtinib	direct	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	98.2	3.7	FLT3:0.52/0.4;NTRK1:0.18/1.5
+BRCA-Her2	BRD-K61323504	SB-225002	direct	CC chemokine receptor antagonist	98.1	3.6	CXCR2:0.14/0.6
+BRCA-Her2	BRD-K24593301	AZD-3463	direct	ALK tyrosine kinase receptor inhibitor|insulin growth factor receptor inhibitor	97.2	3.6	ALK:0.11/1.5
+BRCA-Her2	BRD-K42805893	AZD-9291	direct	EGFR inhibitor	97.0	3.5	EGFR:3.45/44.6
+BRCA-Her2	BRD-K72827473	CEP-37440	direct	ALK tyrosine kinase receptor inhibitor	93.1	3.4	ALK:0.11/1.5
+BRCA-Her2	BRD-A22684332	procaterol	direct		92.3	3.4	ADRB2:0.76/2.2
+BRCA-Her2	BRD-K23192422	lestaurtinib	direct	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	91.1	3.3	FLT3:0.52/0.4;NTRK1:0.18/1.5
+BRCA-Her2	BRD-K34313798	LY-215490	direct	glutamate receptor antagonist	90.1	3.2	GRIK1:0.02/1.3
+BRCA-Her2	BRD-K41170226	BRD-K41170226	borrowed	biliverdin reductase A activator|G protein-coupled receptor agonist	89.9	3.2	GPBAR1:0.39/1.2
+BRCA-Her2	BRD-K34185671	AMG-517	borrowed	TRPV antagonist	87.1	3.1	TRPV1:0.29/1.0
+BRCA-Her2	BRD-K22149900	ceritinib	direct	ALK tyrosine kinase receptor inhibitor	83.5	3.0	ALK:0.11/1.5
+BRCA-Her2	BRD-K68232650	lacosamide	direct		80.2	3.0	SCN10A:-0.00/0.0;SCN1A:-0.00/0.6;SCN3A:0.07/5.3;SCN9A:0.08/1.1
+BRCA-Her2	BRD-A55272860	sulpiride	direct	dopamine receptor antagonist	80.1	2.9	DRD2:0.09/1.5
+BRCA-Her2	BRD-K78485176	olmesartan-medoxomil	direct	angiotensin receptor antagonist	80.1	2.9	AGTR1:0.65/3.9
+BRCA-Her2	BRD-K33610132	rociletinib	direct	EGFR inhibitor	77.8	2.8	EGFR:3.45/44.6
+BRCA-Her2	BRD-K11911061	GR-127935	direct	serotonin receptor antagonist	77.2	2.7	HTR1A:-0.00/0.0;HTR1B:0.12/0.3;HTR1D:0.17/1.7;HTR2A:0.04/1.0;HTR2C:-0.00/0.3
+BRCA-Her2	BRD-K70401845	erlotinib	direct	EGFR inhibitor	74.3	2.6	EGFR:3.45/44.6
+BRCA-Her2	BRD-K70914287	BIBX-1382	direct	EGFR inhibitor	73.1	2.6	EGFR:3.45/44.6
+BRCA-Her2	BRD-A03623303	metoprolol	direct		72.4	2.5	ADRB1:0.07/1.2;ADRB2:0.76/2.2
+BRCA-Her2	BRD-K89997465	BRD-K89997465	direct	dopamine receptor antagonist	71.3	2.4	DRD2:0.09/1.5;DRD3:-0.00/0.0;DRD4:0.39/1.0;HTR2A:0.04/1.0
+BRCA-Her2	BRD-A64553394	DPI-201106	direct	sodium channel activator	71.1	2.4	ADRB2:0.76/2.2
+BRCA-Her2	BRD-K56032964	AP-26113	direct	ALK tyrosine kinase receptor inhibitor	69.6	2.3	ALK:0.11/1.5
+BRCA-Her2	BRD-K00911143	brexpiprazole	direct	dopamine receptor partial agonist	67.7	2.3	DRD2:0.09/1.5;HTR1A:-0.00/0.0;HTR2A:0.04/1.0
+BRCA-Her2	BRD-K00486786	Ro-08-2750	direct	NGF binding inhibitor	64.7	2.2	NGF:0.44/3.4
+BRCA-Her2	BRD-K60038276	irbesartan	borrowed	angiotensin receptor antagonist	60.9	2.1	AGTR1:0.65/3.9
+BRCA-Her2	BRD-K77947974	fluspirilene	borrowed	dopamine receptor antagonist	59.2	2.1	DRD2:0.09/1.5
+BRCA-Her2	BRD-K11267252	alectinib	borrowed	ALK tyrosine kinase receptor inhibitor	56.8	2.0	ALK:0.11/1.5
+BRCA-Her2	BRD-K72420232	WZ-4002	borrowed	EGFR inhibitor	55.6	1.9	EGFR:3.45/44.6
+BRCA-Her2	BRD-K49671696	ketanserin	direct	serotonin receptor antagonist	49.4	1.9	ADRA1A:0.03/1.0;DRD1:0.04/0.3;HTR1A:-0.00/0.0;HTR1D:0.17/1.7;HTR2A:0.04/1.0;HTR2B:0.61/1.2;HTR2C:-0.00/0.3;SLC18A2:0.18/0.7
+BRCA-Her2	BRD-K40530731	hyoscyamine	direct	acetylcholine receptor antagonist	47.9	1.8	CHRM1:0.96/2.5;CHRM2:-0.00/0.1;CHRM3:0.13/3.3
+BRCA-Her2	BRD-K08799216	pelitinib	direct	EGFR inhibitor	46.4	1.7	EGFR:3.45/44.6
+BRCA-Her2	BRD-K07609981	dexloxiglumide	direct	CCK receptor antagonist	46.3	1.7	CCKAR:0.01/0.0
+BRCA-Her2	BRD-K37991163	paroxetine	direct	selective serotonin reuptake inhibitor (SSRI)	44.9	1.6	CHRM1:0.96/2.5;CHRM2:-0.00/0.1;CHRM3:0.13/3.3;CHRM4:0.11/0.7;CHRM5:0.06/0.1;SLC6A2:0.04/1.0;SLC6A4:0.16/0.3
+BRCA-Her2	BRD-K70505054	ranitidine	direct		43.0	1.5	HRH2:0.58/0.9
+BRCA-Her2	BRD-K50938287	sumatriptan	direct	serotonin receptor agonist	40.5	1.5	HTR1B:0.12/0.3;HTR1D:0.17/1.7
+BRCA-Her2	BRD-K80608265	erteberel	direct	estrogen receptor agonist	40.1	1.4	ESR2:0.17/0.5
+BRCA-Her2	BRD-K10995081	perphenazine	direct	dopamine receptor antagonist	37.5	1.3	DRD2:0.09/1.5
+BRCA-Her2	BRD-K01292756	pimozide	direct	dopamine receptor antagonist	35.1	1.3	DRD1:0.04/0.3;DRD2:0.09/1.5;DRD3:-0.00/0.0;DRD4:0.39/1.0;DRD5:-0.00/0.1;HTR2A:0.04/1.0
+BRCA-Her2	BRD-K63675182	triflupromazine	direct	dopamine receptor antagonist	34.6	1.2	DRD2:0.09/1.5
+BRCA-Her2	BRD-K10705233	GW-405833	borrowed	cannabinoid receptor agonist	34.3	1.1	CNR2:0.08/0.1
+BRCA-Her2	BRD-K68336408	BRD-K68336408	direct	EGFR inhibitor	32.2	1.1	EGFR:3.45/44.6
+BRCA-Her2	BRD-K97428065	netupitant	borrowed	tachykinin antagonist	32.0	1.0	TACR1:0.28/0.5
+BRCA-Her2	BRD-A55484088	BNTX	direct		29.3	0.9	OPRD1:0.06/0.3
+BRCA-Her2	BRD-A84481105	thioridazine	direct	dopamine receptor antagonist	29.0	0.9	DRD2:0.09/1.5;DRD3:-0.00/0.0;DRD4:0.39/1.0;HTR2A:0.04/1.0;HTR2C:-0.00/0.3
+BRCA-Her2	BRD-K22514639	EGF-816	direct	EGFR inhibitor	25.7	0.8	EGFR:3.45/44.6
+BRCA-Her2	BRD-K69116396	sertindole	direct	dopamine receptor antagonist|serotonin receptor antagonist	24.8	0.7	ADRA1A:0.03/1.0;ADRA1B:0.33/1.7;ADRA1D:0.06/0.4;DRD2:0.09/1.5;HTR2A:0.04/1.0;HTR2C:-0.00/0.3
+BRCA-Her2	BRD-K76840893	RS-17053	direct	adrenergic receptor antagonist	24.7	0.7	ADRA1A:0.03/1.0;ADRA1D:0.06/0.4
+BRCA-Her2	BRD-K17705806	JTC-801	borrowed	opioid receptor antagonist	23.8	0.6	OPRL1:0.79/3.5
+BRCA-Her2	BRD-A10977446	carvedilol	direct		21.0	0.5	ADRA1A:0.03/1.0;ADRA1B:0.33/1.7;ADRA1D:0.06/0.4;ADRB1:0.07/1.2;ADRB2:0.76/2.2;ADRB3:0.01/0.1
+BRCA-Her2	BRD-K77547509	ML-179	borrowed	liver receptor homolog inverse agonist	19.5	0.5	NR5A2:0.65/2.9
+BRCA-Her2	BRD-K83405785	pimavanserin	direct	serotonin receptor inverse agonist	15.6	0.4	HTR2A:0.04/1.0
+BRCA-Her2	BRD-K64052750	gefitinib	direct	EGFR inhibitor	9.3	0.3	EGFR:3.45/44.6
+BRCA-Her2	BRD-K55468218	spiperone	direct	dopamine receptor antagonist	6.4	0.3	ADRA1A:0.03/1.0;ADRA1B:0.33/1.7;DRD1:0.04/0.3;DRD2:0.09/1.5;DRD3:-0.00/0.0;DRD4:0.39/1.0;HTR1A:-0.00/0.0;HTR2A:0.04/1.0;HTR2B:0.61/1.2;HTR2C:-0.00/0.3;HTR7:0.16/0.5
+BRCA-Her2	BRD-K55930204	phenytoin	direct	hydantoin antiepileptic	6.0	0.2	SCN10A:-0.00/0.0;SCN11A:0.04/0.2;SCN1A:-0.00/0.6;SCN2A:0.09/3.3;SCN3A:0.07/5.3;SCN4A:0.14/0.4;SCN5A:0.04/0.6;SCN7A:0.11/1.4;SCN8A:0.61/3.0;SCN9A:0.08/1.1
+BRCA-Her2	BRD-K41438959	perampanel	direct		5.7	0.1	GRIA1:0.01/11.0
+BRCA-Her2	BRD-K59333713	BRD-K59333713	direct	adrenergic receptor antagonist	1.8	0.1	ADRA1A:0.03/1.0
+BRCA-LumA	BRD-K61323504	SB-225002	direct	CC chemokine receptor antagonist	98.1	3.6	CXCR2:0.20/0.6
+BRCA-LumA	BRD-K33379087	tivantinib	direct	tyrosine kinase inhibitor	91.4	3.6	MET:2.99/37.4
+BRCA-LumA	BRD-A22684332	procaterol	direct		91.2	3.5	ADRB2:0.84/2.2
+BRCA-LumA	BRD-K41170226	BRD-K41170226	borrowed	biliverdin reductase A activator|G protein-coupled receptor agonist	89.6	3.4	GPBAR1:0.43/1.2
+BRCA-LumA	BRD-K33610132	rociletinib	direct	EGFR inhibitor	85.4	3.4	EGFR:2.83/44.6
+BRCA-LumA	BRD-K24593301	AZD-3463	direct	ALK tyrosine kinase receptor inhibitor|insulin growth factor receptor inhibitor	82.5	3.3	ALK:0.07/1.5
+BRCA-LumA	BRD-K68232650	lacosamide	direct		79.2	3.2	SCN10A:-0.00/0.0;SCN1A:-0.00/0.6;SCN3A:0.12/5.3;SCN9A:0.12/1.1
+BRCA-LumA	BRD-K34185671	AMG-517	borrowed	TRPV antagonist	79.2	3.2	TRPV1:0.56/1.0
+BRCA-LumA	BRD-K34313798	LY-215490	direct	glutamate receptor antagonist	76.0	3.1	GRIK1:0.05/1.3
+BRCA-LumA	BRD-A55272860	sulpiride	direct	dopamine receptor antagonist	74.1	3.0	DRD2:0.21/1.5
+BRCA-LumA	BRD-A03623303	metoprolol	direct		72.8	3.0	ADRB1:0.14/1.2;ADRB2:0.84/2.2
+BRCA-LumA	BRD-K00486786	Ro-08-2750	direct	NGF binding inhibitor	72.5	2.9	NGF:0.59/3.4
+BRCA-LumA	BRD-A64553394	DPI-201106	direct	sodium channel activator	71.2	2.8	ADRB2:0.84/2.2
+BRCA-LumA	BRD-K11911061	GR-127935	direct	serotonin receptor antagonist	69.7	2.8	HTR1A:-0.00/0.0;HTR1B:0.10/0.3;HTR1D:0.27/1.7;HTR2A:0.09/1.0;HTR2C:-0.00/0.3
+BRCA-LumA	BRD-K11267252	alectinib	borrowed	ALK tyrosine kinase receptor inhibitor	69.6	2.7	ALK:0.07/1.5
+BRCA-LumA	BRD-K42805893	AZD-9291	direct	EGFR inhibitor	67.7	2.6	EGFR:2.83/44.6
+BRCA-LumA	BRD-K89997465	BRD-K89997465	direct	dopamine receptor antagonist	64.7	2.6	DRD2:0.21/1.5;DRD3:-0.00/0.0;DRD4:0.48/1.0;HTR2A:0.09/1.0
+BRCA-LumA	BRD-K50938287	sumatriptan	direct	serotonin receptor agonist	63.3	2.5	HTR1B:0.10/0.3;HTR1D:0.27/1.7
+BRCA-LumA	BRD-K40530731	hyoscyamine	direct	acetylcholine receptor antagonist	62.3	2.4	CHRM1:0.31/2.5;CHRM2:-0.00/0.1;CHRM3:0.22/3.3
+BRCA-LumA	BRD-K70401845	erlotinib	direct	EGFR inhibitor	61.3	2.4	EGFR:2.83/44.6
+BRCA-LumA	BRD-K77947974	fluspirilene	borrowed	dopamine receptor antagonist	61.0	2.3	DRD2:0.21/1.5
+BRCA-LumA	BRD-K72827473	CEP-37440	direct	ALK tyrosine kinase receptor inhibitor	57.6	2.3	ALK:0.07/1.5
+BRCA-LumA	BRD-K00911143	brexpiprazole	direct	dopamine receptor partial agonist	55.3	2.2	DRD2:0.21/1.5;HTR1A:-0.00/0.0;HTR2A:0.09/1.0
+BRCA-LumA	BRD-K95435023	PHA-665752	borrowed	c-Met inhibitor	52.5	2.1	MET:2.99/37.4
+BRCA-LumA	BRD-K70505054	ranitidine	direct		51.8	2.1	HRH2:0.60/0.9
+BRCA-LumA	BRD-K72420232	WZ-4002	borrowed	EGFR inhibitor	50.1	2.0	EGFR:2.83/44.6
+BRCA-LumA	BRD-K83405785	pimavanserin	direct	serotonin receptor inverse agonist	49.6	1.9	HTR2A:0.09/1.0
+BRCA-LumA	BRD-K18961567	LY-2801653	direct	MET inhibitor	48.6	1.9	MET:2.99/37.4
+BRCA-LumA	BRD-K70914287	BIBX-1382	direct	EGFR inhibitor	46.0	1.8	EGFR:2.83/44.6
+BRCA-LumA	BRD-K10705233	GW-405833	borrowed	cannabinoid receptor agonist	44.5	1.7	CNR2:0.04/0.1
+BRCA-LumA	BRD-K78431006	crizotinib	direct	ALK tyrosine kinase receptor inhibitor	42.6	1.7	ALK:0.07/1.5;MET:2.99/37.4
+BRCA-LumA	BRD-K22149900	ceritinib	direct	ALK tyrosine kinase receptor inhibitor	42.2	1.6	ALK:0.07/1.5
+BRCA-LumA	BRD-K97428065	netupitant	borrowed	tachykinin antagonist	42.0	1.5	TACR1:0.49/0.5
+BRCA-LumA	BRD-K80608265	erteberel	direct	estrogen receptor agonist	39.8	1.5	ESR2:0.16/0.5
+BRCA-LumA	BRD-A84481105	thioridazine	direct	dopamine receptor antagonist	39.0	1.4	DRD2:0.21/1.5;DRD3:-0.00/0.0;DRD4:0.48/1.0;HTR2A:0.09/1.0;HTR2C:-0.00/0.3
+BRCA-LumA	BRD-K63675182	triflupromazine	direct	dopamine receptor antagonist	38.7	1.3	DRD2:0.21/1.5
+BRCA-LumA	BRD-K07609981	dexloxiglumide	direct	CCK receptor antagonist	32.9	1.3	CCKAR:0.03/0.0
+BRCA-LumA	BRD-K10995081	perphenazine	direct	dopamine receptor antagonist	28.5	1.2	DRD2:0.21/1.5
+BRCA-LumA	BRD-A55484088	BNTX	direct		26.7	1.1	OPRD1:0.11/0.3
+BRCA-LumA	BRD-K56032964	AP-26113	direct	ALK tyrosine kinase receptor inhibitor	25.3	1.1	ALK:0.07/1.5
+BRCA-LumA	BRD-K01292756	pimozide	direct	dopamine receptor antagonist	23.9	1.0	DRD1:0.05/0.3;DRD2:0.21/1.5;DRD3:-0.00/0.0;DRD4:0.48/1.0;DRD5:-0.00/0.1;HTR2A:0.09/1.0
+BRCA-LumA	BRD-K08799216	pelitinib	direct	EGFR inhibitor	23.8	0.9	EGFR:2.83/44.6
+BRCA-LumA	BRD-A10977446	carvedilol	direct		23.7	0.9	ADRA1A:0.07/1.0;ADRA1B:0.40/1.7;ADRA1D:0.10/0.4;ADRB1:0.14/1.2;ADRB2:0.84/2.2;ADRB3:0.01/0.1
+BRCA-LumA	BRD-K56277358	MGCD-265	direct	VEGFR inhibitor	22.8	0.8	MET:2.99/37.4
+BRCA-LumA	BRD-K37991163	paroxetine	direct	selective serotonin reuptake inhibitor (SSRI)	21.4	0.7	CHRM1:0.31/2.5;CHRM2:-0.00/0.1;CHRM3:0.22/3.3;CHRM4:0.18/0.7;CHRM5:0.07/0.1;SLC6A2:0.04/1.0;SLC6A4:0.61/0.3
+BRCA-LumA	BRD-K22514639	EGF-816	direct	EGFR inhibitor	20.5	0.7	EGFR:2.83/44.6
+BRCA-LumA	BRD-K64052750	gefitinib	direct	EGFR inhibitor	19.5	0.6	EGFR:2.83/44.6
+BRCA-LumA	BRD-K56405753	MK-2461	direct	FGFR inhibitor|VEGFR inhibitor	17.9	0.5	MET:2.99/37.4
+BRCA-LumA	BRD-K41438959	perampanel	direct		15.9	0.5	GRIA1:0.07/11.0
+BRCA-LumA	BRD-K68336408	BRD-K68336408	direct	EGFR inhibitor	15.4	0.4	EGFR:2.83/44.6
+BRCA-LumA	BRD-K69116396	sertindole	direct	dopamine receptor antagonist|serotonin receptor antagonist	15.2	0.3	ADRA1A:0.07/1.0;ADRA1B:0.40/1.7;ADRA1D:0.10/0.4;DRD2:0.21/1.5;HTR2A:0.09/1.0;HTR2C:-0.00/0.3
+BRCA-LumA	BRD-K02965346	SU-11274	direct	hepatocyte growth factor receptor inhibitor|tyrosine kinase inhibitor	12.6	0.3	MET:2.99/37.4
+BRCA-LumA	BRD-K76840893	RS-17053	direct	adrenergic receptor antagonist	7.5	0.2	ADRA1A:0.07/1.0;ADRA1D:0.10/0.4
+BRCA-LumA	BRD-K55930204	phenytoin	direct	hydantoin antiepileptic	6.8	0.1	SCN10A:-0.00/0.0;SCN11A:0.08/0.2;SCN1A:-0.00/0.6;SCN2A:0.15/3.3;SCN3A:0.12/5.3;SCN4A:0.35/0.4;SCN5A:0.06/0.6;SCN7A:0.45/1.4;SCN8A:0.46/3.0;SCN9A:0.12/1.1
+BRCA-LumA	BRD-K59333713	BRD-K59333713	direct	adrenergic receptor antagonist	3.4	0.1	ADRA1A:0.07/1.0
+BRCA-LumB	BRD-A27376179	lestaurtinib	direct	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	97.0	4.0	FLT3:0.66/0.4;NTRK1:0.18/1.5
+BRCA-LumB	BRD-K61323504	SB-225002	direct	CC chemokine receptor antagonist	94.4	3.9	CXCR2:0.15/0.6
+BRCA-LumB	BRD-A22684332	procaterol	direct		93.2	3.8	ADRB2:0.43/2.2
+BRCA-LumB	BRD-K41170226	BRD-K41170226	borrowed	biliverdin reductase A activator|G protein-coupled receptor agonist	90.2	3.8	GPBAR1:0.37/1.2
+BRCA-LumB	BRD-K23192422	lestaurtinib	direct	FLT3 inhibitor|growth factor receptor inhibitor|JAK inhibitor	86.6	3.7	FLT3:0.66/0.4;NTRK1:0.18/1.5
+BRCA-LumB	BRD-A55272860	sulpiride	direct	dopamine receptor antagonist	86.0	3.6	DRD2:0.11/1.5
+BRCA-LumB	BRD-K33379087	tivantinib	direct	tyrosine kinase inhibitor	85.7	3.6	MET:1.68/37.4
+BRCA-LumB	BRD-K34185671	AMG-517	borrowed	TRPV antagonist	84.2	3.5	TRPV1:0.44/1.0
+BRCA-LumB	BRD-K68232650	lacosamide	direct		83.9	3.4	SCN10A:-0.00/0.0;SCN1A:-0.00/0.6;SCN3A:0.04/5.3;SCN9A:0.09/1.1
+BRCA-LumB	BRD-K24593301	AZD-3463	direct	ALK tyrosine kinase receptor inhibitor|insulin growth factor receptor inhibitor	82.8	3.4	ALK:0.07/1.5
+BRCA-LumB	BRD-K33610132	rociletinib	direct	EGFR inhibitor	81.7	3.3	EGFR:1.26/44.6
+BRCA-LumB	BRD-A03623303	metoprolol	direct		78.6	3.2	ADRB1:0.06/1.2;ADRB2:0.43/2.2
+BRCA-LumB	BRD-K89997465	BRD-K89997465	direct	dopamine receptor antagonist	77.8	3.2	DRD2:0.11/1.5;DRD3:-0.00/0.0;DRD4:0.27/1.0;HTR2A:0.03/1.0
+BRCA-LumB	BRD-K83405785	pimavanserin	direct	serotonin receptor inverse agonist	72.5	3.1	HTR2A:0.03/1.0
+BRCA-LumB	BRD-K11267252	alectinib	borrowed	ALK tyrosine kinase receptor inhibitor	71.8	3.0	ALK:0.07/1.5
+BRCA-LumB	BRD-K77547509	ML-179	borrowed	liver receptor homolog inverse agonist	67.6	3.0	NR5A2:0.72/2.9
+BRCA-LumB	BRD-K78431006	crizotinib	direct	ALK tyrosine kinase receptor inhibitor	67.2	2.9	ALK:0.07/1.5;MET:1.68/37.4
+BRCA-LumB	BRD-K10705233	GW-405833	borrowed	cannabinoid receptor agonist	63.2	2.8	CNR2:0.02/0.1
+BRCA-LumB	BRD-K49671696	ketanserin	direct	serotonin receptor antagonist	62.5	2.8	ADRA1A:0.04/1.0;DRD1:0.02/0.3;HTR1A:-0.00/0.0;HTR1D:0.24/1.7;HTR2A:0.03/1.0;HTR2B:0.73/1.2;HTR2C:-0.00/0.3;SLC18A2:0.25/0.7
+BRCA-LumB	BRD-K11911061	GR-127935	direct	serotonin receptor antagonist	61.6	2.7	HTR1A:-0.00/0.0;HTR1B:0.10/0.3;HTR1D:0.24/1.7;HTR2A:0.03/1.0;HTR2C:-0.00/0.3
+BRCA-LumB	BRD-K34313798	LY-215490	direct	glutamate receptor antagonist	60.7	2.6	GRIK1:0.01/1.3
+BRCA-LumB	BRD-A64553394	DPI-201106	direct	sodium channel activator	60.4	2.6	ADRB2:0.43/2.2
+BRCA-LumB	BRD-A84481105	thioridazine	direct	dopamine receptor antagonist	59.8	2.5	DRD2:0.11/1.5;DRD3:-0.00/0.0;DRD4:0.27/1.0;HTR2A:0.03/1.0;HTR2C:-0.00/0.3
+BRCA-LumB	BRD-K22149900	ceritinib	direct	ALK tyrosine kinase receptor inhibitor	58.5	2.4	ALK:0.07/1.5
+BRCA-LumB	BRD-K77947974	fluspirilene	borrowed	dopamine receptor antagonist	57.7	2.4	DRD2:0.11/1.5
+BRCA-LumB	BRD-K70401845	erlotinib	direct	EGFR inhibitor	57.4	2.3	EGFR:1.26/44.6
+BRCA-LumB	BRD-K50938287	sumatriptan	direct	serotonin receptor agonist	56.8	2.3	HTR1B:0.10/0.3;HTR1D:0.24/1.7
+BRCA-LumB	BRD-K72827473	CEP-37440	direct	ALK tyrosine kinase receptor inhibitor	56.1	2.2	ALK:0.07/1.5
+BRCA-LumB	BRD-K56032964	AP-26113	direct	ALK tyrosine kinase receptor inhibitor	53.7	2.1	ALK:0.07/1.5
+BRCA-LumB	BRD-K70914287	BIBX-1382	direct	EGFR inhibitor	53.0	2.1	EGFR:1.26/44.6
+BRCA-LumB	BRD-K00911143	brexpiprazole	direct	dopamine receptor partial agonist	52.7	2.0	DRD2:0.11/1.5;HTR1A:-0.00/0.0;HTR2A:0.03/1.0
+BRCA-LumB	BRD-K00486786	Ro-08-2750	direct	NGF binding inhibitor	52.5	1.9	NGF:0.40/3.4
+BRCA-LumB	BRD-K72420232	WZ-4002	borrowed	EGFR inhibitor	51.0	1.9	EGFR:1.26/44.6
+BRCA-LumB	BRD-K40530731	hyoscyamine	direct	acetylcholine receptor antagonist	48.9	1.8	CHRM1:0.22/2.5;CHRM2:-0.00/0.1;CHRM3:0.12/3.3
+BRCA-LumB	BRD-K63675182	triflupromazine	direct	dopamine receptor antagonist	48.8	1.7	DRD2:0.11/1.5
+BRCA-LumB	BRD-K07609981	dexloxiglumide	direct	CCK receptor antagonist	45.6	1.7	CCKAR:-0.00/0.0
+BRCA-LumB	BRD-K95435023	PHA-665752	borrowed	c-Met inhibitor	41.4	1.6	MET:1.68/37.4
+BRCA-LumB	BRD-K97428065	netupitant	borrowed	tachykinin antagonist	39.6	1.5	TACR1:0.14/0.5
+BRCA-LumB	BRD-K10995081	perphenazine	direct	dopamine receptor antagonist	36.3	1.5	DRD2:0.11/1.5
+BRCA-LumB	BRD-K55468218	spiperone	direct	dopamine receptor antagonist	34.9	1.4	ADRA1A:0.04/1.0;ADRA1B:0.35/1.7;DRD1:0.02/0.3;DRD2:0.11/1.5;DRD3:-0.00/0.0;DRD4:0.27/1.0;HTR1A:-0.00/0.0;HTR2A:0.03/1.0;HTR2B:0.73/1.2;HTR2C:-0.00/0.3;HTR7:0.18/0.5
+BRCA-LumB	BRD-K01292756	pimozide	direct	dopamine receptor antagonist	34.4	1.3	DRD1:0.02/0.3;DRD2:0.11/1.5;DRD3:-0.00/0.0;DRD4:0.27/1.0;DRD5:-0.00/0.1;HTR2A:0.03/1.0
+BRCA-LumB	BRD-K56277358	MGCD-265	direct	VEGFR inhibitor	34.1	1.3	MET:1.68/37.4
+BRCA-LumB	BRD-K37991163	paroxetine	direct	selective serotonin reuptake inhibitor (SSRI)	30.6	1.2	CHRM1:0.22/2.5;CHRM2:-0.00/0.1;CHRM3:0.12/3.3;CHRM4:0.13/0.7;CHRM5:0.05/0.1;SLC6A2:-0.00/1.0;SLC6A4:0.31/0.3
+BRCA-LumB	BRD-K80608265	erteberel	direct	estrogen receptor agonist	30.6	1.2	ESR2:0.12/0.5
+BRCA-LumB	BRD-K68336408	BRD-K68336408	direct	EGFR inhibitor	28.6	1.1	EGFR:1.26/44.6
+BRCA-LumB	BRD-K64052750	gefitinib	direct	EGFR inhibitor	28.5	1.0	EGFR:1.26/44.6
+BRCA-LumB	BRD-A10977446	carvedilol	direct		27.5	0.9	ADRA1A:0.04/1.0;ADRA1B:0.35/1.7;ADRA1D:0.06/0.4;ADRB1:0.06/1.2;ADRB2:0.43/2.2;ADRB3:0.01/0.1
+BRCA-LumB	BRD-K70505054	ranitidine	direct		27.3	0.9	HRH2:0.51/0.9
+BRCA-LumB	BRD-K42805893	AZD-9291	direct	EGFR inhibitor	26.7	0.8	EGFR:1.26/44.6
+BRCA-LumB	BRD-K22514639	EGF-816	direct	EGFR inhibitor	23.6	0.7	EGFR:1.26/44.6
+BRCA-LumB	BRD-K08799216	pelitinib	direct	EGFR inhibitor	22.9	0.7	EGFR:1.26/44.6
+BRCA-LumB	BRD-A55484088	BNTX	direct		22.7	0.6	OPRD1:0.12/0.3
+BRCA-LumB	BRD-K18961567	LY-2801653	direct	MET inhibitor	21.5	0.5	MET:1.68/37.4
+BRCA-LumB	BRD-K56405753	MK-2461	direct	FGFR inhibitor|VEGFR inhibitor	20.7	0.5	MET:1.68/37.4
+BRCA-LumB	BRD-K02965346	SU-11274	direct	hepatocyte growth factor receptor inhibitor|tyrosine kinase inhibitor	17.4	0.4	MET:1.68/37.4
+BRCA-LumB	BRD-K41438959	perampanel	direct		12.1	0.3	GRIA1:0.02/11.0
+BRCA-LumB	BRD-K69116396	sertindole	direct	dopamine receptor antagonist|serotonin receptor antagonist	12.0	0.3	ADRA1A:0.04/1.0;ADRA1B:0.35/1.7;ADRA1D:0.06/0.4;DRD2:0.11/1.5;HTR2A:0.03/1.0;HTR2C:-0.00/0.3
+BRCA-LumB	BRD-K55930204	phenytoin	direct	hydantoin antiepileptic	8.0	0.2	SCN10A:-0.00/0.0;SCN11A:0.06/0.2;SCN1A:-0.00/0.6;SCN2A:0.06/3.3;SCN3A:0.04/5.3;SCN4A:0.19/0.4;SCN5A:0.03/0.6;SCN7A:0.12/1.4;SCN8A:0.55/3.0;SCN9A:0.09/1.1
+BRCA-LumB	BRD-K76840893	RS-17053	direct	adrenergic receptor antagonist	5.8	0.1	ADRA1A:0.04/1.0;ADRA1D:0.06/0.4
+BRCA-LumB	BRD-K59333713	BRD-K59333713	direct	adrenergic receptor antagonist	4.2	0.1	ADRA1A:0.04/1.0
