@@ -14,10 +14,14 @@ Rule (docs/DECISIONS.md D102, D102a):
                  spec_sib_mech_pct for subgroups, recomputed); tier_spec_mech (tier_spec_sib_mech) = 3
 Reported: evidence_targets (gene:median/R), target_carrier_share (41 groups: share of tumors at TPM >= max(10, R),
 from the D102b carrier table; shown on the page as "Minority target" when >= 3 tumors carry it).
+Also refreshes the 79i summaries that use these percentiles: split_controls{SFX}.tsv (spec_mech, spec_sib_mech) and
+split_overview{SFX}.tsv (drugs_top10_spec_mech_in_ge20_groups, controls_*_spec_mech_pct_mean).
+Env SFX (default _v2_consensus) selects the tables, e.g. _v2_consensus_d100early for the D100 time-split rankings.
 Idempotent: reruns start from the *_pregate columns. 79b / 79w are read, never edited (other agent's scripts).
 """
 import importlib.util
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -26,6 +30,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 RES, PROC = ROOT / "results/lincs", ROOT / "data/processed/lincs"
 CARRIERS = RES / "d102/carriers_d102b.tsv.gz"
+SFX = os.environ.get("SFX", "_v2_consensus")
+TOP_PCT = 10   # as 79i
 spec = importlib.util.spec_from_file_location("w79", ROOT / "scripts/79w_receptor_gate.py")
 w = importlib.util.module_from_spec(spec); spec.loader.exec_module(w)
 
@@ -106,6 +112,7 @@ def apply(f, unit, P, E, pct_cols):
     df["target_carriers"], df["target_carrier_share"] = ncar, np.round(share, 4)
     for c, tier in pct_cols:
         base = c.replace("_pct", "")
+        df[c] = df[c + "_pregate"]
         for g, x in df.groupby(unit):
             key = (~x.target_absent).astype(float) * 1e6 + x[base].rank(method="max")
             df.loc[x.index, c] = (key.rank(method="max", pct=True) * 100).round(1).values
@@ -114,15 +121,41 @@ def apply(f, unit, P, E, pct_cols):
     return df
 
 
+def refresh_summaries(g, s):
+    fc, fo = RES / f"split_controls{SFX}.tsv", RES / f"split_overview{SFX}.tsv"
+    if not fc.exists():
+        return
+    ctl = pd.read_csv(fc, sep="\t")
+    for i, r in ctl.iterrows():
+        if r.unit in set(g.group_id):
+            x = g[(g.group_id == r.unit) & (g.cmap_name == r.drug)]
+            ctl.loc[i, "spec_mech"] = x.spec_mech_pct.max()
+        else:
+            x = s[(s.stratum == r.unit) & (s.cmap_name == r.drug)]
+            ctl.loc[i, "spec_mech"] = x.spec_mech_pct.max()
+            if "spec_sib_mech" in ctl:
+                ctl.loc[i, "spec_sib_mech"] = x.spec_sib_mech_pct.max()
+    ctl.to_csv(fc, sep="\t", index=False)
+    if fo.exists():
+        ov = pd.read_csv(fo, sep="\t").set_index("metric")
+        ok = g[~g.low_mrs.astype(str).str.lower().eq("true")]
+        top = ok[ok.spec_mech_pct >= 100 - TOP_PCT].groupby("pert_id").size()
+        ov.loc["drugs_top10_spec_mech_in_ge20_groups", "value"] = int((top >= 20).sum())
+        for exp in ["high", "low"]:
+            ov.loc[f"controls_{exp}_spec_mech_pct_mean", "value"] = round(ctl[ctl.expected == exp].spec_mech.mean(), 1)
+        ov.reset_index().to_csv(fo, sep="\t", index=False)
+
+
 def main():
     E = evidence_targets(); P = presence()
-    g = apply(RES / "drug_reversal_split_v2_consensus.tsv", "group_id", P["group"], E, [("spec_mech_pct", "tier_spec_mech")])
-    s = apply(RES / "stratum_reversal_split_v2_consensus.tsv", "stratum", P["stratum"], E,
+    g = apply(RES / f"drug_reversal_split{SFX}.tsv", "group_id", P["group"], E, [("spec_mech_pct", "tier_spec_mech")])
+    s = apply(RES / f"stratum_reversal_split{SFX}.tsv", "stratum", P["stratum"], E,
               [("spec_mech_pct", "tier_spec_mech"), ("spec_sib_mech_pct", "tier_spec_sib_mech")])
-    run = dict(rule="D102a / D102c", drugs_with_evidence_targets=len(E),
+    refresh_summaries(g, s)
+    run = dict(rule="D102a / D102c", tables=SFX, drugs_with_evidence_targets=len(E),
                groups_absent_rows=int(g.target_absent.sum()), subgroup_absent_rows=int(s.target_absent.sum()),
                groups_minority_rows=int((g.target_absent & (g.target_carriers >= 3)).sum()))
-    json.dump(run, open(RES / "target_presence_run.json", "w"), indent=1)
+    json.dump(run, open(RES / f"target_presence_run{'' if SFX == '_v2_consensus' else SFX}.json", "w"), indent=1)
     print(run)
 
 

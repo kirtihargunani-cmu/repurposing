@@ -1,5 +1,5 @@
 {
- "date": "2026-11-03",
+ "date": "2026-11-04",
  "config": {
   "min_shared_lines": 2,
   "min_similarity": 0.4,
@@ -24,98 +24,98 @@
   {
    "set": "accepted stand-ins",
    "n": 303,
-   "spearman": 0.555,
-   "ci_lo": 0.461,
-   "ci_hi": 0.635,
+   "spearman": 0.593,
+   "ci_lo": 0.507,
+   "ci_hi": 0.67,
    "mae_pct": 19.4
   },
   {
    "set": "random shared-target pairs (median of 200)",
    "n": 573,
-   "spearman": 0.316,
-   "ci_lo": 0.256,
-   "ci_hi": 0.364,
+   "spearman": 0.422,
+   "ci_lo": 0.371,
+   "ci_hi": 0.468,
    "mae_pct": NaN
   },
   {
    "set": "shared lines = 2",
    "n": 48,
-   "spearman": 0.395,
+   "spearman": 0.586,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 25.8
+   "mae_pct": 22.3
   },
   {
    "set": "shared lines >= 3",
    "n": 255,
-   "spearman": 0.586,
+   "spearman": 0.592,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 18.2
+   "mae_pct": 18.9
   },
   {
    "set": "similarity 0.4-0.6",
    "n": 110,
-   "spearman": 0.44,
+   "spearman": 0.514,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 21.8
+   "mae_pct": 23.5
   },
   {
    "set": "similarity >= 0.6",
    "n": 193,
-   "spearman": 0.602,
+   "spearman": 0.635,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 18.0
+   "mae_pct": 17.1
   },
   {
    "set": "subgroup: accepted stand-ins",
    "n": 68,
-   "spearman": 0.754,
-   "ci_lo": 0.609,
-   "ci_hi": 0.857,
-   "mae_pct": 17.3
+   "spearman": 0.714,
+   "ci_lo": 0.554,
+   "ci_hi": 0.84,
+   "mae_pct": 18.0
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
    "n": 124,
-   "spearman": 0.257,
-   "ci_lo": 0.149,
-   "ci_hi": 0.35,
+   "spearman": 0.262,
+   "ci_lo": 0.146,
+   "ci_hi": 0.366,
    "mae_pct": NaN
   },
   {
    "set": "subgroup: shared lines = 2",
    "n": 15,
-   "spearman": 0.592,
+   "spearman": 0.451,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 22.4
+   "mae_pct": 27.7
   },
   {
    "set": "subgroup: shared lines >= 3",
    "n": 53,
-   "spearman": 0.783,
+   "spearman": 0.789,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 15.9
+   "mae_pct": 15.3
   },
   {
    "set": "subgroup: similarity 0.4-0.6",
    "n": 17,
-   "spearman": 0.373,
+   "spearman": 0.391,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 26.7
+   "mae_pct": 25.6
   },
   {
    "set": "subgroup: similarity >= 0.6",
    "n": 51,
-   "spearman": 0.839,
+   "spearman": 0.775,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 14.2
+   "mae_pct": 15.5
   }
  ],
  "pairs": 2689,
