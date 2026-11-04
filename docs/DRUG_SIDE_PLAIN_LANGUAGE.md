@@ -118,9 +118,12 @@ no extra filter was added. This change was adopted by the
 user's decision, knowing that trade-off (D97).
 
 **Still open.** Basal breast cancer still ranks anti-estrogens fairly high, because the drugs switch on a "slow down"
-program that basal tumors have switched off. And we are now ranking drugs separately on their early (6 h) and late
-(24 h) responses (D100), because the two are different programs: the early one reflects what the drug does directly,
-the late one also includes how the cell adapts.
+program that basal tumors have switched off. We also ranked drugs separately on their early (6 h) and late (24 h)
+responses (D100), because the two are different programs: the early one reflects what the drug does directly, the late
+one also includes how the cell adapts. Ranking on the early response finds fewer broad growth blockers but recovers
+fewer drugs already used for each cancer (0.61 -> 0.51), so the main ranking keeps using all time points. Each drug
+now carries an early score, a late score and a label (works early and late, early only, late only, neither, or no
+early data), which shows whether its effect is direct or develops later.
 
 ### What it gets wrong, honestly
 

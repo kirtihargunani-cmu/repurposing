@@ -680,6 +680,13 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   a pathway-based ranking (0.17), slightly more after the switch than before; tier 1-2 drugs reverse pathways a bit
   more than average.
 
+## 2026-11-03: early (6 h) and late (24 h) rankings (D100)
+- Both rankings run through production for the 1,123 drugs with both time points. Ranking on early profiles loses
+  known-use recovery (Hub AUC 0.61 -> 0.51) and slightly worsens the breast controls, though it cuts broad
+  growth-arrest hits (14.2% -> 11.1%); the late ranking is essentially the current one. Aggregated stays the lead.
+- Each cancer x drug row now has early and late scores and a timing class (both 4,668; early only 1,871; late only
+  2,051; neither 19,408; unknown 22,762) in `results/lincs/d100/timing_scores.tsv`, to be shown on the rankings page.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
