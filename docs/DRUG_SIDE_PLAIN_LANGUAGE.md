@@ -112,8 +112,9 @@ esophageal, glioma, pheochromocytoma, sarcoma and endometrial cancer. Smaller su
 
 Checks against known drug uses and cell-line gene dependencies stayed the same or improved slightly. The cost: about
 12 more drugs (of 1,144) now look like they help almost every cancer, mostly broad growth blockers such as mTOR
-inhibitors. Our main score already pushes those to the middle of each list, and a separate rule (D98) is being tested
-to keep them out of the top tiers unless they are clearly specific to that cancer. This change was adopted by the
+inhibitors. Our main score already pushes those to the middle of each list, and a check (D98) confirmed that where they reach the
+top tiers they are already clearly specific to that cancer (on average 36 percentile points above their usual rank), so
+no extra filter was added. This change was adopted by the
 user's decision, knowing that trade-off (D97).
 
 **Still open.** Basal breast cancer still ranks anti-estrogens fairly high, because the drugs switch on a "slow down"

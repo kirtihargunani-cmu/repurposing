@@ -663,6 +663,12 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Literature notes added: `LITERATURE_NETWORKS.md` (network building), `LITERATURE_SCORING.md` (scoring methods,
   gaps: reversal is largely generic anti-proliferation, Koudijs 2023).
 
+## 2026-11-03: selectivity flag for broad reversers (D98): not adopted
+- The 163 drugs that reverse >= 80% of cancers reach tiers 1-2 in 516 cancer x drug rows, but in those rows they
+  already rank far above their own typical position (median 36 percentile points above their median), because tiers
+  require a top-10% mechanism-specificity score. Requiring 25 points removes only 18 rows; 35 points removes about
+  half but loses 4 of 29 known uses (ChEMBL). The existing specificity score already does the selectivity job.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
