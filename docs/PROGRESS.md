@@ -735,6 +735,13 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   in luminal breast scored on ER-negative lines). Matched pairs: 15 line-only, 352 tumor-only. Raw TPM scales (Toil vs
   DepMap) are not aligned.
 
+## 2026-11-04: receptor level tumor vs scoring lines (D104), not adopted
+- Rule: drugs acting only through receptors are demoted where the scoring lines lack the receptor (unless the drug
+  induces it) or the tumor has < 10% of the lines' level. Known-use holds (Hub 0.615 vs 0.617), but prostate
+  anti-androgens fall 86.7 -> 5.6: LNCaP makes ~20x more AR than the average prostate tumor. Anti-angiogenic drugs
+  (tivozanib, pazopanib in kidney) are demoted because cancer lines lack VEGF receptors, which sit on tumor vessels.
+- 928 of 3,587 judged pairs would be demoted; 904 receptor rows rescued because the drug raises the receptor.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8

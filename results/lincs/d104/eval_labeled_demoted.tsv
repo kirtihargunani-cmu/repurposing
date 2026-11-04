@@ -1,0 +1,16 @@
+cohort	pert_id	lab_hub	lab_chembl	group_id	cmap_name	receptors
+BRCA-Her2	BRD-K04210847	True	False	BRCA-Her2	tamoxifen	ESR1:tumor_far_lower;ESRRG:line_absent
+TCGA-KICH	BRD-K53414658	True	True	TCGA-KICH	tivozanib	FLT1:line_absent;FLT4:line_absent;KDR:line_absent
+TCGA-PRAD	BRD-K28307902	True	True	TCGA-PRAD	flutamide	AR:tumor_far_lower
+TCGA-PRAD	BRD-A97437073	False	True	TCGA-PRAD	rosiglitazone	PPARG:tumor_far_lower
+TCGA-KIRC	BRD-K53414658	True	True	TCGA-KIRC	tivozanib	FLT1:line_absent;FLT4:line_absent;KDR:line_absent
+BRCA-Her2	BRD-A90490067	True	False	BRCA-Her2	fulvestrant	ESR1:tumor_far_lower
+TCGA-KIRP	BRD-K53414658	True	True	TCGA-KIRP	tivozanib	FLT1:line_absent;FLT4:line_absent;KDR:line_absent
+TCGA-KIRP	BRD-K74514084	True	True	TCGA-KIRP	pazopanib	CSF1R:line_absent;FLT1:line_absent;FLT4:line_absent;KDR:line_absent;KIT:line_absent
+TCGA-LUAD	BRD-K71289571	False	True	TCGA-LUAD	zafirlukast	CYSLTR1:line_absent
+TCGA-OV	BRD-K63828191	False	True	TCGA-OV	raloxifene	ESR1:line_absent
+BRCA-Her2	BRD-K63828191	True	True	BRCA-Her2	raloxifene	ESR1:tumor_far_lower
+TCGA-LUSC	BRD-K71289571	False	True	TCGA-LUSC	zafirlukast	CYSLTR1:line_absent
+TCGA-PRAD	BRD-K93754473	False	True	TCGA-PRAD	tamoxifen	ESR1:line_absent;ESRRG:line_absent
+TCGA-PRAD	BRD-K18910433	False	True	TCGA-PRAD	estradiol	ESR1:line_absent
+TCGA-OV	BRD-K93754473	False	True	TCGA-OV	tamoxifen	ESR1:line_absent

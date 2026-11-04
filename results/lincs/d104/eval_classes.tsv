@@ -1,0 +1,5 @@
+d104	False	True
+ok	424	2235
+receptor_mismatch:line_absent	130	702
+receptor_mismatch:mixed	2	5
+receptor_mismatch:tumor_far_lower	10	79
