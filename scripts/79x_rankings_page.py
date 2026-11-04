@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from fda_rows import drug_name, fda_rows  # noqa: E402
 RES = ROOT / "results/lincs"
-FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs"]   # bit order in the page
+FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target"]   # bit order in the page
 GATE = {"pass": "p", "binds_but_absent_in_matched_lines": "a", "assembly_incomplete_in_tumors": "s"}
 
 
@@ -72,6 +72,8 @@ def main():
     # FDA-approved drugs only (user 2026-11-02): scripts/fda_rows.py (Drugs@FDA match, one LINCS id per ingredient)
     n_all = (int(g.passes_gate.map(truthy).sum()), int(s.passes_gate.map(truthy).sum()))
     g, s = fda_rows()
+    for df in (g, s):   # D102c (79i2): target absent in this cohort's typical tumor; minority = >= 3 tumors carry it
+        df["minority_target"] = df.target_absent.map(truthy) & (df.get("target_carriers", 0).fillna(0) >= 3)
     print(f"FDA filter: diseases {n_all[0]} -> {len(g)} rows, subgroups {n_all[1]} -> {len(s)} rows")
     # flags not carried into the split tables come from the reversal tables
     for df, f in ((g, "drug_reversal_v2_consensus.tsv"), (s, "stratum_reversal_v2_consensus.tsv")):

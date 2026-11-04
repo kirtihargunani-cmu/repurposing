@@ -135,6 +135,19 @@ flowchart LR
 - Outputs: `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv`,
   `split_overview_v2_consensus.tsv`, `split_controls_v2_consensus.tsv`.
 
+### 9a. Target presence in the ranking (`79i2`; D102a, adopted as D102c 2026-11-04)
+- Runs after `79i`, in place on the two split tables (backups `*_pre_d102.tsv`; idempotent from `*_pregate` columns).
+- A drug with ChEMBL-backed targets (curated mechanism genes first, else pChEMBL >= 6, kinases >= 7) whose targets are
+  all barely made by the cohort's typical tumor (median TPM < 1 or < 10% of the 90th percentile of the gene's 41
+  group medians; subgroups judged on their own tumors) is ranked below every other drug: `spec_mech_pct` (and
+  `spec_sib_mech_pct`) recomputed, tier 3; raw scores unchanged (`target_absent`, `evidence_targets`,
+  `target_carriers` reported). Rankings describe the cohort's typical tumor (user): minority-carrier targets such as
+  ALK in LUAD are demoted and flagged "Minority target" on the page.
+- Effect: 1,934 of ~49,000 group x drug rows demoted (27-70 per group), 626 subgroup rows; Basal anti-estrogens
+  76.5 -> 3.0; known-use AUC (79l, lead score) Hub 0.614 -> 0.617, ChEMBL 0.514 -> 0.531 (Hub on matched lines
+  0.645 -> 0.614: alectinib / ceritinib in lung).
+- The rankings page now sorts on the percentile (raw score breaks ties), so the demotion shows.
+
 ### 9b. Data gaps: is there good-quality, lineage-matched data? (`data_gaps`, `79r`; C24)
 - **Rule (user, 2026-11-01):** a drug list needs cell lines of the disease's own cell type (lineage), not just its organ.
   If there is no good-quality lineage-matched data, the report says "no good-quality data at <step>" instead of a list.
