@@ -724,6 +724,24 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Stand-in agreement 0.555 -> 0.593 (random shared-target pairs 0.316 -> 0.422, still below); dependency check D1
   turns slightly positive (matched 0.004 -> 0.056, p 0.02); PRISM / GDSC still no signal.
 
+## 2026-11-04: receptor level in tumor vs assay lines, sizing for D104 (descriptive)
+- `scripts/d104/d104_size.py` -> `results/lincs/d104/size_{rows,summary}.tsv`. Per cohort x drug x bound receptor (79w
+  mechanism / potent), tumor median TPM vs the weighted mean DepMap TPM of the scoring lines (79e / 79w line rule).
+  Provisional classes: line only (line >= 1 TPM, tumor < 10% of line), tumor only (tumor >= 1, line < 1).
+- Poorly matched pairs (borrowed or unmatched lines; 4,182 cohort x drug with a bound receptor): 318 have every bound
+  receptor line-only (221 already demoted by D102c; 7 of the rest in the top 10%, e.g. cilengitide in PCPG, ITGB3 ~1
+  vs 27 TPM; pioglitazone in PCPG, PPARG 3 vs 50); 1,538 have >= 1 receptor the tumor makes but the lines do not
+  (median percentile 52, 100 in the top 10%; e.g. antipsychotics in PHEO, DRD2 101 TPM vs < 1 in the lines; genistein
+  in luminal breast scored on ER-negative lines). Matched pairs: 15 line-only, 352 tumor-only. Raw TPM scales (Toil vs
+  DepMap) are not aligned.
+
+## 2026-11-04: receptor level tumor vs scoring lines (D104), not adopted
+- Rule: drugs acting only through receptors are demoted where the scoring lines lack the receptor (unless the drug
+  induces it) or the tumor has < 10% of the lines' level. Known-use holds (Hub 0.615 vs 0.617), but prostate
+  anti-androgens fall 86.7 -> 5.6: LNCaP makes ~20x more AR than the average prostate tumor. Anti-angiogenic drugs
+  (tivozanib, pazopanib in kidney) are demoted because cancer lines lack VEGF receptors, which sit on tumor vessels.
+- 928 of 3,587 judged pairs would be demoted; 904 receptor rows rescued because the drug raises the receptor.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8

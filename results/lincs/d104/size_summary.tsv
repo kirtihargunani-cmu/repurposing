@@ -1,0 +1,15 @@
+level	poor_match	cls	n	n_drugs	already_d102_absent	top10pct_not_absent	median_pct
+receptor_row	False	both	778	189.0			
+receptor_row	False	tumor_only	763	140.0			
+receptor_row	False	neither	247	135.0			
+receptor_row	False	line_only	31	26.0			
+receptor_row	True	both	5440	170.0			
+receptor_row	True	tumor_only	2656	141.0			
+receptor_row	True	neither	1082	133.0			
+receptor_row	True	line_only	671	91.0			
+cohort_x_drug	False	other	439		123.0	37.0	36.2
+cohort_x_drug	False	tumor_only_any	352		22.0	28.0	48.4
+cohort_x_drug	False	line_only_all	15		8.0	1.0	4.6
+cohort_x_drug	True	other	2326		510.0	140.0	41.7
+cohort_x_drug	True	tumor_only_any	1538		48.0	100.0	51.9
+cohort_x_drug	True	line_only_all	318		221.0	7.0	2.7
