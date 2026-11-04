@@ -89,11 +89,43 @@ carried by one or two genes. Palbociclib in luminal B breast cancer works mostly
 E2F8, MYBL1). That matches how the drug is known to act, and it is why its mechanism score is lower than its reversal
 score. Table: `results/lincs/worked_example_regulators.tsv`.
 
+### What changed on 2026-11-03: separate networks for different cell types
+
+**The problem we traced.** The breast "map" of which genes each switch controls was learned from all breast tumors
+mixed together. In that mix, ER-positive (luminal) and ER-negative (basal) tumors are different kinds of cells, so the
+map learned "ESR1 goes with being luminal" rather than "ESR1 switches these genes on". Anti-estrogens make MCF7 cells
+look a little more luminal after a day, which that map read as ESR1 switching on. The ranking then did the opposite
+of what doctors do: anti-estrogens near the top for basal breast cancer and near the bottom for luminal.
+
+**What we tried, in order.** Removing "identity" links from the map, learning maps from drug experiments, relearning
+link directions, using early (6 h) drug profiles, splitting the score into identity and mechanism parts, and blending
+several maps together (metaVIPER). Each helped a little or only on one side.
+
+**What fixed most of it.** Building a separate map for each cell type that has enough tumors (85 or more): luminal A,
+luminal B and basal breast cancer each get their own, and so do the clearly different subtypes of cervical,
+esophageal, glioma, pheochromocytoma, sarcoma and endometrial cancer. Smaller subtypes keep the shared map.
+
+| Anti-estrogens (rank percentile) | Before | After |
+|---|---|---|
+| Luminal breast cancer (should be high) | about 26th | about 41st |
+| Basal breast cancer (should be low) | about 97th | about 77th |
+
+Checks against known drug uses and cell-line gene dependencies stayed the same or improved slightly. The cost: about
+12 more drugs (of 1,144) now look like they help almost every cancer, mostly broad growth blockers such as mTOR
+inhibitors. Our main score already pushes those to the middle of each list, and a separate rule (D98) is being tested
+to keep them out of the top tiers unless they are clearly specific to that cancer. This change was adopted by the
+user's decision, knowing that trade-off (D97).
+
+**Still open.** Basal breast cancer still ranks anti-estrogens fairly high, because the drugs switch on a "slow down"
+program that basal tumors have switched off. And we are now ranking drugs separately on their early (6 h) and late
+(24 h) responses (D100), because the two are different programs: the early one reflects what the drug does directly,
+the late one also includes how the cell adapts.
+
 ### What it gets wrong, honestly
 
-- **Anti-estrogens in luminal A breast cancer rank low.** The tumor-learned map misreads them (C18). Removing
-  "identity" links from that map helped only a little (luminal A 9.7 -> 12.3, luminal B 23.4 -> 26.0 percentile; D83,
-  C25).
+- **Anti-estrogens in luminal A breast cancer ranked low** because the tumor-learned map misread them (C18). Removing
+  "identity" links helped only a little (D83, C25); separate cell-type maps (D97, above) lift them to about the 41st
+  percentile, which is better but still not near the top.
 - **Anti-estrogens rank at the top in basal (triple-negative) breast cancer, where they should not work.** They were
   only tested in MCF7, a luminal line that looks nothing like basal tumors. The `unmatched_lines` flag catches this and
   keeps them out of the top tiers (C20).
@@ -148,8 +180,12 @@ with paper and trial links, are on the FDA rankings page.
 
 ## What is not done yet
 
-- **No test yet against measured drug killing of cell lines** (PRISM / GDSC). This is on hold. Until then these are
-  ranked hypotheses, not validated predictions.
+- **Tests against measured drug killing of cell lines (PRISM / GDSC), known drug uses and gene dependencies** have
+  been run (C28, C29): known uses are recovered a little better than chance, and the scores do not predict which
+  cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
+  scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
+- **An independent check with a different kind of map (PROGENy pathways, D99)** is queued: do drugs move the
+  pathways they target, and does our ranking agree with a pathway-based one?
 - Scoring on same-cell-type lines only (instead of same-organ) is not implemented. The data-gap check reports it but
   does not change rankings.
 - The odd recurring hits above still need to be reviewed.
