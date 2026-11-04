@@ -644,6 +644,13 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   liposarcoma network (57 tumors, least reproducible). Breast's cell-type networks are less reproducible than its
   very stable pooled network (0.48 vs 0.61), so the uncertainty gate would keep breast pooled anyway.
 
+## 2026-11-03: metaVIPER-style breast (D95) and 85-tumor floor (D96): neither adopted
+- D95 helps luminal breast (controls 26 -> 43) but barely moves basal (97 -> 92): combining networks by signal
+  strength lets the pooled network's strong anti-estrogen misread dominate. D96 matches the D94 cell-type results
+  (basal 97 -> 77, luminal 26 -> 41, ChEMBL known-use 0.500 -> 0.514). Both raise growth-arrest dominance by about
+  1 point (151 -> 161-163 drugs). A control rerun on the same network leaves dominance unchanged, so the rise is a
+  real effect of the new networks, not noise from rerunning.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

@@ -1,0 +1,5 @@
+arm	rule	c1_breast	c2_known_use	c3_dependency	c4_dominance	all_met	detail
+meta	D95	False	True	True	False	False	neg 92.1 vs 96.7; pos 43.2 vs 25.5; AUC hub 0.618 vs 0.620, chembl 0.498 vs 0.500; D1 -0.0374 vs -0.0376; dominance 14.1% vs 13.2%
+t85	D96	True	True	True	False	False	neg 76.5 vs 96.7; pos 41.3 vs 25.5; AUC hub 0.615 vs 0.620, chembl 0.514 vs 0.500; D1 -0.0289 vs -0.0376; dominance 14.2% vs 13.2%
+lum	D94 (reported)	True	True	True	False	False	neg 77.4 vs 96.7; pos 47.7 vs 25.5; AUC hub 0.641 vs 0.620, chembl 0.492 vs 0.500; D1 -0.0228 vs -0.0376; dominance 14.2% vs 13.2%
+split	D94 (reported)	True	True	True	False	False	neg 77.4 vs 96.7; pos 42.0 vs 25.5; AUC hub 0.621 vs 0.620, chembl 0.496 vs 0.500; D1 -0.0304 vs -0.0376; dominance 13.9% vs 13.2%

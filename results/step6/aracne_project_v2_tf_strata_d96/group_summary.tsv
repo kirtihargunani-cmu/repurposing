@@ -1,0 +1,3 @@
+group_id	contrast	n_tumor	n_normal	n_regulators_kept	n_mr_fdr05	n_mr_p05
+PHEO-kinase-signaling	gtex	77	125	1055	170	246
+PHEO-pseudohypoxia-Wnt	gtex	69	125	1054	88	168
