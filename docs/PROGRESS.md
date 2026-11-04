@@ -742,6 +742,12 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   (tivozanib, pazopanib in kidney) are demoted because cancer lines lack VEGF receptors, which sit on tumor vessels.
 - 928 of 3,587 judged pairs would be demoted; 904 receptor rows rescued because the drug raises the receptor.
 
+## 2026-11-04: D104a (receptor in scoring lines, amended): criteria met
+- Dropped the tumor-vs-line abundance test; receptors whose tumor expression rises with stroma / immune content
+  (ESTIMATE rho >= 0.3) are treated as tumor-environment targets (flagged, not demoted). 546 of 3,587 judged pairs
+  demoted, 286 flagged; known-use Hub 0.622 vs 0.617, prostate controls 86.8 vs 86.7, breast 44.3 vs 43.6.
+- Gap: tivozanib in KIRC / KIRP still demoted (ESTIMATE does not capture tumor vessels). Awaiting go-ahead.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8
