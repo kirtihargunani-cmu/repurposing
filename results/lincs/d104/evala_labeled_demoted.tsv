@@ -1,0 +1,5 @@
+cohort	pert_id	lab_hub	lab_chembl	group_id	cmap_name	receptors
+TCGA-KIRC	BRD-K53414658	True	True	TCGA-KIRC	tivozanib	FLT1:line_absent;FLT4:line_absent;KDR:line_absent
+TCGA-KIRP	BRD-K53414658	True	True	TCGA-KIRP	tivozanib	FLT1:line_absent;FLT4:line_absent;KDR:line_absent
+TCGA-OV	BRD-K63828191	False	True	TCGA-OV	raloxifene	ESR1:line_absent
+TCGA-OV	BRD-K93754473	False	True	TCGA-OV	tamoxifen	ESR1:line_absent
