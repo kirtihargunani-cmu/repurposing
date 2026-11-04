@@ -1,0 +1,4 @@
+criterion	value	met
+B3 known-use AUC falls <= 0.01 (Hub, ChEMBL)	Hub 0.617 vs 0.614; ChEMBL 0.530 vs 0.514	True
+PRAD controls not lower	86.7 vs 86.3	True
+DECISION	adopt (needs the user's go-ahead)	True
