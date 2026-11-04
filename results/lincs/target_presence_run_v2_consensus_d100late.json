@@ -1,0 +1,8 @@
+{
+ "rule": "D102a / D102c",
+ "tables": "_v2_consensus_d100late",
+ "drugs_with_evidence_targets": 331,
+ "groups_absent_rows": 1934,
+ "subgroup_absent_rows": 626,
+ "groups_minority_rows": 364
+}

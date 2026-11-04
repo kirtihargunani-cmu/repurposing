@@ -19,12 +19,12 @@ controls_high_rev_nonprolif_pct_mean	46.8
 controls_high_rev_mech_pct_mean	48.3
 controls_high_prolif_effect_pct_mean	49.7
 controls_high_spec_pct_mean	48.2
-controls_high_spec_mech_pct_mean	48.7
+controls_high_spec_mech_pct_mean	50.6
 controls_low_rev_pct_mean	76.4
 controls_low_rev_prolif_pct_mean	78.7
 controls_low_rev_nonprolif_pct_mean	71.4
 controls_low_rev_mech_pct_mean	70.7
 controls_low_prolif_effect_pct_mean	47.7
 controls_low_spec_pct_mean	66.6
-controls_low_spec_mech_pct_mean	61.1
+controls_low_spec_mech_pct_mean	2.3
 prolif_driven_rows_frac_of_top10_rev	0.108

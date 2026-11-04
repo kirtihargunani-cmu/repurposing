@@ -1,0 +1,4 @@
+	ctl_pos	ctl_neg	auc_lab_hub	auc_lab_chembl	dominance
+agg	41.3000	76.5000	0.6145	0.5142	0.1425
+early	38.9500	78.7000	0.5141	0.5067	0.1110
+late	38.2500	76.8000	0.6145	0.5123	0.1565

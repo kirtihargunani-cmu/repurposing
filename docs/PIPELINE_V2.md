@@ -126,8 +126,10 @@ reasons in `genes_v2_dropped.tsv`):
   map is `config/group_networks.tsv`, read by default by `50_viper.R`, `79d`, `79e`, `79i` (`NET_MAP` overrides). Why:
   pooled networks mixed subtypes whose cells differ (luminal vs basal breast), which inverted the anti-estrogen
   ranking. Network reproducibility (two halves of the bootstraps) rises with log tumor count, 0.40 at 85 tumors vs 0.41
-  at 100 (`results/lincs/d94/reproducibility.tsv`). Not yet rerun on the new networks: patient-level purity / quality
-  correction (`61`), Step 7-8 descriptive outputs; subgroup membership unchanged.
+  at 100 (`results/lincs/d94/reproducibility.tsv`). **Not rerun on the new networks (D103, user 2026-11-04):**
+  patient-level VIPER with purity / quality correction (`61`), so patient NES for the 12 switched groups still come
+  from the pooled networks; Step 7-8 descriptive outputs; subgroups (D79) kept fixed, defined on the pooled networks.
+  Group-level Step 6 signatures, which feed the drug ranking, are on the new networks.
 
 - **Inputs** (`VERSION=v2 python scripts/42_aracne_inputs.py` -> `data/processed/step5/aracne_inputs_v2/`): per cohort,
   tumors only, v2 gene set, genes with TPM >= 1 in >= 10% of tumors. COAD + READ pooled. Plus a luminal-only breast

@@ -717,6 +717,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   the production split tables; known-use Hub 0.614 -> 0.617, ChEMBL 0.514 -> 0.531; page republished with the flags
   "Target absent" and "Minority target" (e.g. ALK inhibitors in lung adenocarcinoma).
 
+## 2026-11-04: downstream refresh after the target gate (D102c)
+- All outputs that read the lead percentile rerun on the gated ranking (FDA lists, literature, stand-ins and their
+  counterfactual, known-use, dependency, PRISM / GDSC sensitivity, the three pages), plus the 79i summaries and the
+  D100 timing labels (gate applied to the early / late rankings; D100 decision unchanged).
+- Stand-in agreement 0.555 -> 0.593 (random shared-target pairs 0.316 -> 0.422, still below); dependency check D1
+  turns slightly positive (matched 0.004 -> 0.056, p 0.02); PRISM / GDSC still no signal.
+
+## 2026-11-04: disease side left as is (D103)
+- User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
+  NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8
+  summaries for the 12 switched groups still use the pooled networks. Group-level signatures (drug ranking) are current.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
