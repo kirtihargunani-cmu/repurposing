@@ -710,6 +710,9 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   0.614 -> 0.640) and all 41 groups pass (Hub 0.614 -> 0.617, ChEMBL 0.514 -> 0.530, PRAD controls not lower;
   median 47 drugs demoted per group). Caveat: ALK inhibitors (alectinib, ceritinib) are demoted in lung cancer
   because ALK fusions occur in a few percent of tumors and the median is ~0.15 TPM. Not in production yet.
+- D102b (carrier exception: target counts if >= 2% of tumors express it highly) fails both ways: it brings back
+  ESR1 in Basal (6 of 190 tumors ER-high, 3.2%) and does not rescue ALK in LUAD (3 of 513 tumors, 0.6%). No
+  threshold on expression separates them; a curated biomarker list (fusion targets) would be needed.
 
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
