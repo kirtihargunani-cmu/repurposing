@@ -75,6 +75,11 @@ flowchart LR
   (C19), so both sets are averaged instead. Reported, not used.
 - **Overexpression added (D84, `79u`, `79n` PERTURB=d84, `79v`):** neither set wins (57 TFs, p = 0.15), so the
   consensus stays; 4 per-TF switches and per-regulator flags in `results/lincs/d84_choice.tsv` (not yet applied).
+- **Cell-type networks (D97, 2026-11-03):** groups in split cohorts with >= 85 tumors score drugs on their own
+  network (`config/group_networks.tsv`); full drug-activity rerun, which also refreshed the regulator filter. Effect
+  (D96 full-pipeline test): anti-estrogens in basal breast 97th -> 77th percentile, luminal controls 26 -> 41, known-use
+  and dependency checks unchanged or better, 12 more drugs reverse >= 80% of cancers (they stay mid-ranked on
+  `spec_mech`). Earlier attempts and literature: D92-D96 in `DECISIONS.md`, `LITERATURE_NETWORKS.md`.
 - Outputs: `data/processed/lincs/drug_viper_specific_v2_tf/<NET>.f32`, `drug_viper_specific_collectri/ALL.f32` (not in
   git); regulator tables `results/lincs/drug_viper_regulators_*.tsv`.
 

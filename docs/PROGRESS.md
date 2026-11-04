@@ -651,6 +651,17 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   1 point (151 -> 161-163 drugs). A control rerun on the same network leaves dominance unchanged, so the rise is a
   real effect of the new networks, not noise from rerunning.
 
+## 2026-11-03: production switch to cell-type networks (D97) and queued checks (D98-D100)
+- **D97 (user decision):** the 85-tumor cell-type networks are production (`config/group_networks.tsv`, 12 groups).
+  Backups `*_pre_d97` (regulon file, drug activity, Step 6 data); last pre-switch results commit `3320b5f`. Rebuilt:
+  Step 6 for the 12 groups and 4 subgroups, drug activity, P1 lists, rankings (consensus and TF arm), downstream.
+  The 79y2 comparison step first failed (needs `SBX`), resumed. Verification against the D96 test arm follows.
+- **Written before running, queued after the switch:** D98 selectivity flag for broad reversers at the tier step;
+  D99 PROGENy / DoRothEA validation (on-target pathways, ESR1 check, disease contrasts, agreement before vs after
+  the switch); D100 early (6 h) and late (24 h) rankings as reported columns, with a test of early profiles as lead.
+- Literature notes added: `LITERATURE_NETWORKS.md` (network building), `LITERATURE_SCORING.md` (scoring methods,
+  gaps: reversal is largely generic anti-proliferation, Koudijs 2023).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.
