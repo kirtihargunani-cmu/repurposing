@@ -695,6 +695,17 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   early / late percentiles in the tooltip and the score table, a legend entry, and an updated validation note
   (4,483 of 9,823 FDA rows have a timing class). Published as a new page: https://claude.ai/artifact/DkoreTiuHXRkqaEYMG5hfk
 
+## 2026-11-04: relative target-presence gate (D102), breast stage
+- Rule (D102): a drug whose ChEMBL-backed targets (79w binding rule) are all absent in a group (median TPM < 1 or
+  < 10% of the gene's highest group median) is ranked below every other drug in that group; scores are unchanged.
+  Post-ranking step on production (`scripts/d102/d102_gate.py`, `STAGE=1`); 79b / 79w untouched.
+- Breast: Basal anti-estrogens 76.5 -> 3.3 (fulvestrant, raloxifene to the bottom; tamoxifen stays at 87 because its
+  potent target EBP is expressed), LumA / LumB controls 41.3 -> 43.8, known-use AUC Hub 0.614 -> 0.637, ChEMBL
+  0.494 -> 0.488. Stopped by B4: gefitinib (EGFR 1-3 TPM in luminal) and metoprolol (beta receptors < 1 TPM), both
+  ChEMBL trial labels for breast cancer, are demoted in LumA / LumB. 53-72 drugs demoted per breast group.
+- Issues for an amendment: amplified cohorts set the 10% reference (ERBB2 51 TPM in Basal counts absent vs 1,271
+  in Her2); tamoxifen escapes on EBP; anti-estrogens also demoted in Her2 (ESR1 2.1 TPM).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

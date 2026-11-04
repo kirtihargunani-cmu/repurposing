@@ -191,7 +191,13 @@ measure.
   percentile, which is better but still not near the top.
 - **Anti-estrogens rank at the top in basal (triple-negative) breast cancer, where they should not work.** They were
   only tested in MCF7, a luminal line that looks nothing like basal tumors. The `unmatched_lines` flag catches this and
-  keeps them out of the top tiers (C20).
+  keeps them out of the top tiers (C20). Tiers alone do not move the rank, though: with the cell-type maps they still
+  sit at about the 70th percentile. **Test on 2026-11-04 (D102):** a drug gets no credit in a cancer whose tumors
+  barely make its target (here ESR1: 0.86 units in basal tumors vs 108 in luminal A). In breast this sends
+  fulvestrant and raloxifene from the 76th to the 3rd percentile in basal and nudges them up in luminal, without
+  hurting the known-use check. It is not adopted yet: it also pushed down two drugs that have been tried in breast
+  cancer trials (gefitinib, metoprolol, whose targets are nearly absent in luminal tumors), which the rule set in
+  advance did not allow, and tamoxifen escapes because it also binds a second protein that basal tumors do make.
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.

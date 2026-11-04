@@ -1,0 +1,10 @@
+pert_id	lab_hub	lab_chembl	group_id	cmap_name	evidence_targets_tpm
+BRD-A17828570	True	False	BRCA-Basal	fulvestrant	ESR1:0.86/138.8;ESR2:0.20/1.0
+BRD-A03623303	False	True	BRCA-LumA	metoprolol	ADRB1:0.14/12.5;ADRB2:0.84/8.7
+BRD-A03623303	False	True	BRCA-Her2	metoprolol	ADRB1:0.07/12.5;ADRB2:0.76/8.7
+BRD-A90490067	True	False	BRCA-Her2	fulvestrant	ESR1:2.08/138.8;ESR2:0.17/1.0
+BRD-K63828191	True	True	BRCA-Basal	raloxifene	ESR1:0.86/138.8;ESR2:0.20/1.0
+BRD-K63828191	True	True	BRCA-Her2	raloxifene	ESR1:2.08/138.8;ESR2:0.17/1.0
+BRD-K64052750	False	True	BRCA-LumB	gefitinib	EGFR:1.26/97.2
+BRD-K64052750	False	True	BRCA-LumA	gefitinib	EGFR:2.83/97.2
+BRD-K64052750	False	True	BRCA-Her2	gefitinib	EGFR:3.45/97.2
