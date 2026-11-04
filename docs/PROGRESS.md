@@ -669,6 +669,17 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   require a top-10% mechanism-specificity score. Requiring 25 points removes only 18 rows; 35 points removes about
   half but loses 4 of 29 known uses (ChEMBL). The existing specificity score already does the selectivity job.
 
+## 2026-11-03: independent pathway check (D99, PROGENy / DoRothEA)
+- Drug profiles carry on-target signal: kinase and pathway inhibitors move their pathway as expected in 75% of
+  1,446 profiles (PI3K 91%, MAPK 86%, p53 81%, EGFR 68%; JAK-STAT and NFkB at chance). Timing makes no difference
+  here (6 h 74% vs 24 h 73%); the lowest active dose reads best (81%).
+- PROGENy reads anti-estrogens as blocking estrogen signalling in all 15 MCF7 profiles, while our ARACNe ESR1 reads
+  them as activating on every breast network, including the new luminal ones. The ranking improved through the
+  disease side, not through a fixed ESR1 reading.
+- Disease pathways match known biology in 4 of 5 checks (thyroid MAPK fails). Our lead score agrees only weakly with
+  a pathway-based ranking (0.17), slightly more after the switch than before; tier 1-2 drugs reverse pathways a bit
+  more than average.
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

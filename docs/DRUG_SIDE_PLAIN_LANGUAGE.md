@@ -185,8 +185,12 @@ with paper and trial links, are on the FDA rankings page.
   been run (C28, C29): known uses are recovered a little better than chance, and the scores do not predict which
   cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
   scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
-- **An independent check with a different kind of map (PROGENy pathways, D99)** is queued: do drugs move the
-  pathways they target, and does our ranking agree with a pathway-based one?
+- **An independent check with a different kind of map (PROGENy pathways, D99).** Good news: the drug data are sound.
+  Drugs that block a pathway (PI3K, MAPK, EGFR, p53 activators) move that pathway the right way in 75% of profiles.
+  Revealing news: PROGENy reads every anti-estrogen profile as switching estrogen signalling off, while all our
+  ARACNe breast maps, even the new luminal ones, still read ESR1 as on. The anti-estrogen ranking improved because the
+  disease side changed, not because the ESR1 reading was fixed. Our ranking and a pathway-based ranking agree only
+  weakly (0.17), so they capture different things.
 - Scoring on same-cell-type lines only (instead of same-organ) is not implemented. The data-gap check reports it but
   does not change rankings.
 - The odd recurring hits above still need to be reviewed.
