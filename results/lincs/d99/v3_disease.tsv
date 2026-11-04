@@ -1,0 +1,6 @@
+contrast	holds
+Estrogen LumA > Basal	True
+Estrogen LumB > Basal	True
+Androgen PRAD top 5 (rank 1)	True
+Hypoxia KIRC top 5 (rank 1)	True
+MAPK THCA top 10 (rank 17)	False

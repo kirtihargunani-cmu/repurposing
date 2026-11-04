@@ -121,21 +121,56 @@ def net_of(cohort):
     return "COADREAD" if cohort in ("TCGA-COAD", "TCGA-READ") else cohort.split("-", 1)[1]
 
 
+# NET_MAP / MR_OVERRIDE (D92, 2026-11-03): groups mapped to another network, their group_mr rows from another Step 6
+#   folder (tumor ARACNe only, not consensus). Defaults: off.
+# D97 (2026-11-03): config/group_networks.tsv is the default map for the v2 TF-only ARACNe set (alone or in the consensus)
+_ARAC_TF = os.environ.get("VERSION") == "v2" and ((CONS and ARACNE_SET == "tf") or (REGULON == "aracne_project" and os.environ.get("REGSET") == "tf"))
+_NMF = os.environ.get("NET_MAP") or (str(ROOT / "config/group_networks.tsv") if _ARAC_TF and (ROOT / "config/group_networks.tsv").exists() else "")
+NETMAP = (pd.read_csv(_NMF, sep="\t").set_index("group_id").net.to_dict() if _NMF else {})
+MR_OVR = os.environ.get("MR_OVERRIDE", "")
+
+
+def mr_override(mr):
+    if not MR_OVR:
+        return mr
+    o = pd.read_csv(ROOT / MR_OVR / "group_mr.tsv", sep="\t")
+    o = o[o.group_id.isin(NETMAP)]
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
+# MR_OVERRIDE_STRATA (D94, 2026-11-03): subgroup rows (stratum ids) from another Step 6 strata folder replace production
+#   rows for the subgroups present there; used with NET_MAP for subgroups whose parent group moved network. Default: off.
+def mr_override_strata(mr):
+    f = os.environ.get("MR_OVERRIDE_STRATA", "")
+    if not f:
+        return mr
+    o = pd.read_csv(ROOT / f / "group_mr.tsv", sep="\t")
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
+def cons_read(path, k, strata=False):
+    """Consensus: ARACNe-set rows get the D92-D94 overrides (CollecTRI rows are network-independent)."""
+    d = pd.read_csv(path, sep="\t")
+    if k == "aracne":
+        d = mr_override_strata(d) if strata else mr_override(d)
+    return d
+
+
 def main():
     rng = np.random.default_rng(SEED)
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
     idx["col"] = np.arange(len(idx))
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
     if CONS:   # set-tagged regulators ("aracne|ESR1"), combined per group below
-        mr = pd.concat([pd.read_csv(ROOT / d / "group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
+        mr = pd.concat([cons_read(ROOT / d / "group_mr.tsv", k).assign(regulator=lambda x, k=k: k + "|" + x.regulator)
                         for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
-        mr = pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t")
+        mr = mr_override(pd.read_csv(ROOT / MR_DIR / "group_mr.tsv", sep="\t"))
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False)
     mr_ref, par = mr, {}                      # reference diseases for spec: always the 41 groups
     if STRATA:
         dirs = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", MR_DIR)]
-        mr = pd.concat([pd.read_csv(ROOT / f"{d}_strata" / "group_mr.tsv", sep="\t")
+        mr = pd.concat([cons_read(ROOT / f"{d}_strata" / "group_mr.tsv", k or "aracne", strata=True)
                         .assign(regulator=lambda x, k=k: (k + "|" if k else "") + x.regulator) for k, d in dirs], ignore_index=True)
         dd = pd.read_csv(RES / "stratum_drugs_v2.tsv", sep="\t", low_memory=False)
         par = dd.drop_duplicates("group_id").set_index("group_id").parent_group.to_dict()
@@ -190,7 +225,7 @@ def main():
     if only:
         dd = dd[dd.group_id.isin(only)]
     for g, gd in dd.groupby("group_id"):
-        regs, A, A_raw = load("ALL" if CURATED else net_of(grp.loc[P(g), "cohort"]))
+        regs, A, A_raw = load("ALL" if CURATED else NETMAP.get(P(g), net_of(grp.loc[P(g), "cohort"])))
         k = keys.loc[P(g)]
         km = models[models.OncotreeLineage.isin(str(k.lineages).split(";"))]
         if isinstance(k.diseases, str) and k.diseases:
@@ -302,7 +337,7 @@ def main():
             o["tier_sib"] = np.where(sp_ & ok_t & o.approved, 1, np.where(sp_ & ok_t, 2, 3))
         rows.append(o)
         t1 = o[o.tier_rev == 1].sort_values("rev", ascending=False)
-        summ.append(dict(group_id=g, parent_group=P(g), net=net_of(grp.loc[P(g), "cohort"]), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
+        summ.append(dict(group_id=g, parent_group=P(g), net=NETMAP.get(P(g), net_of(grp.loc[P(g), "cohort"])), n_mrs=n, n_eff=round(float(n_eff), 1), n_tested=len(tested), score=SCORE,
                          best_line_match=round(best_lm, 4), best_line=best_line, n_key_lines_lincs=len(lincs_key),
                          n_drugs=len(o), n_reversing=int(reversing.sum()), n_tier1_rev=len(t1),
                          n_tier2_rev=int((o.tier_rev == 2).sum()), n_tier1_multi_target=int(t1.multi_target.sum()),

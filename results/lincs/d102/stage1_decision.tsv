@@ -1,0 +1,6 @@
+criterion	value	met
+B1 Basal negative controls fall >= 20	3.3 vs 76.5	True
+B2 LumA / LumB positive controls not lower	43.8 vs 41.3	True
+B3 known-use AUC falls <= 0.01 (Hub, ChEMBL)	Hub 0.637 vs 0.614; ChEMBL 0.488 vs 0.494	True
+B4 no labeled drug demoted in LumA / LumB	3 (gefitinib, metoprolol)	False
+DECISION	stop	False

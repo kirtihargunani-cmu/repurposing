@@ -89,14 +89,115 @@ carried by one or two genes. Palbociclib in luminal B breast cancer works mostly
 E2F8, MYBL1). That matches how the drug is known to act, and it is why its mechanism score is lower than its reversal
 score. Table: `results/lincs/worked_example_regulators.tsv`.
 
+### What changed on 2026-11-03: separate networks for different cell types
+
+**The problem we traced.** The breast "map" of which genes each switch controls was learned from all breast tumors
+mixed together. In that mix, ER-positive (luminal) and ER-negative (basal) tumors are different kinds of cells, so the
+map learned "ESR1 goes with being luminal" rather than "ESR1 switches these genes on". Anti-estrogens make MCF7 cells
+look a little more luminal after a day, which that map read as ESR1 switching on. The ranking then did the opposite
+of what doctors do: anti-estrogens near the top for basal breast cancer and near the bottom for luminal.
+
+**What we tried, in order.** Removing "identity" links from the map, learning maps from drug experiments, relearning
+link directions, using early (6 h) drug profiles, splitting the score into identity and mechanism parts, and blending
+several maps together (metaVIPER). Each helped a little or only on one side.
+
+**What fixed most of it.** Building a separate map for each cell type that has enough tumors (85 or more): luminal A,
+luminal B and basal breast cancer each get their own, and so do the clearly different subtypes of cervical,
+esophageal, glioma, pheochromocytoma, sarcoma and endometrial cancer. Smaller subtypes keep the shared map.
+
+| Anti-estrogens (rank percentile) | Before | After |
+|---|---|---|
+| Luminal breast cancer (should be high) | about 26th | about 41st |
+| Basal breast cancer (should be low) | about 97th | about 77th |
+
+Checks against known drug uses and cell-line gene dependencies stayed the same or improved slightly. The cost: about
+12 more drugs (of 1,144) now look like they help almost every cancer, mostly broad growth blockers such as mTOR
+inhibitors. Our main score already pushes those to the middle of each list, and a check (D98) confirmed that where they reach the
+top tiers they are already clearly specific to that cancer (on average 36 percentile points above their usual rank), so
+no extra filter was added. This change was adopted by the
+user's decision, knowing that trade-off (D97).
+
+**Fixing the ESR1 reading alone is not enough (D101).** An independent pathway map (PROGENy) reads anti-estrogens
+correctly, so we tried using it for ESR1 and AR on the drug side. The rankings barely moved (under one percentile
+point): ESR1 is one of about 1,000 switches in each cancer's score, and what holds anti-estrogens back is the whole
+luminal program being read as rising, not ESR1 itself.
+
+The rankings page now shows a **Timing** label for each drug where 6 h data exist: works early and late, early only
+(a direct effect the cell adapts to), late only (a slower or secondary effect), or neither.
+
+**Still open.** Basal breast cancer still ranks anti-estrogens fairly high, because the drugs switch on a "slow down"
+program that basal tumors have switched off. We also ranked drugs separately on their early (6 h) and late (24 h)
+responses (D100), because the two are different programs: the early one reflects what the drug does directly, the late
+one also includes how the cell adapts. Ranking on the early response finds fewer broad growth blockers but recovers
+fewer drugs already used for each cancer (0.61 -> 0.51), so the main ranking keeps using all time points. Each drug
+now carries an early score, a late score and a label (works early and late, early only, late only, neither, or no
+early data), which shows whether its effect is direct or develops later.
+
+### How much did the cell-type maps gain? The evidence in numbers
+
+**In short:** the cell-type maps fix most of the breast anti-estrogen inversion, which is solidly supported. Outside
+breast we can only show they do no harm. Before = pooled maps (results commit `3320b5f`); after = production since D97.
+
+**Evidence 1: anti-estrogens now rank more like clinical practice.** Median rank of the 6 anti-estrogens
+(percentile within each subtype's list; higher = recommended more strongly):
+
+| Breast subtype | Should be | Before | After |
+|---|---|---|---|
+| Luminal A (ER+) | high | 15th | **38th** |
+| Luminal B (ER+) | high | 30th | **43rd** |
+| Basal / triple-negative (ER-) | low | 95th | **70th** |
+| Her2 (map unchanged, too few tumors) | middle | 56th | 56th |
+
+Before, anti-estrogens ranked 80 points higher in basal (where they do not work) than in luminal A (where they are
+standard care). Now the gap is 32 points: still the wrong way round, but less than half as large. Examples:
+fulvestrant luminal A 14.5 -> 37.2 and basal 98.7 -> 76.5; tamoxifen luminal A 49 -> 74; toremifene basal 93 -> 68.
+Not every drug improved: tamoxifen in luminal B dipped slightly (62 -> 57).
+
+**Why: the basal disease profile is no longer defined by "not luminal".** The drug side did not get better at reading
+anti-estrogens; our maps still read them as switching ESR1 on (D99). The gain came from the disease side. On the old
+mixed map, basal tumors were described largely as "the luminal regulators are switched off" (ESR1 -2.5, GATA3 -2.4,
+XBP1 -2.6). So any drug that nudged luminal genes up looked like it was fixing basal cancer. With a basal-only map,
+that luminal axis largely disappears (ESR1 -0.7, GATA3 +0.2, XBP1 -0.2), and the raw reversal score of anti-estrogens
+in basal falls by a third (30.3 -> 20.1).
+
+**Evidence 2: approved drugs stand out a little more in their own cancer.** Comparing each approved drug's rank in the
+cancer it is approved for with its rank elsewhere, the median advantage rose from +2.9 to +6.6 percentile points (Hub
+labels); on ChEMBL labels it moved from -5.0 to -4.0. Overall known-use recovery stayed about the same (AUC Hub 0.620
+-> 0.615, ChEMBL 0.500 -> 0.514; 0.5 is chance). Agreement with cell-line gene dependencies moved from -0.038 to
+-0.029: slightly better, still essentially zero.
+
+**What it cost, and what is uncertain.**
+
+- Twelve more broad growth blockers look good for almost every cancer (151 -> 163 of 1,144 drugs). They stay
+  mid-ranked on the main score (D98), so they do not flood the top of the lists.
+- The new maps are noisier. Built twice from independent halves of their runs, they share 0.40-0.57 of their links,
+  against 0.61 for the old combined breast map, because each has fewer tumors.
+- Outside breast there is no ground truth for a benefit. In the other 7 cancers the rankings moved (only 10 of the top
+  20 stayed for leiomyosarcoma, 12-13 for esophageal cancer) and known-use recovery did not drop: no harm, but no shown
+  gain either.
+- Basal breast cancer still ranks anti-estrogens too high (70th). Part of that is a "slow down" program the drugs switch
+  on, which basal tumors have switched off. Fixing the ESR1 reading alone did not help (D101), because the whole
+  luminal program is still misread on the drug side.
+
+**Bottom line.** The cell-type maps fixed the clearest known error, the breast inversion, by about 60%, and made
+approved drugs stand out somewhat more in their own cancer. The cost is slightly noisier maps and about 12 more broad
+growth blockers. The evidence for a gain is concrete only in breast; elsewhere the change is neutral as far as we can
+measure.
+
 ### What it gets wrong, honestly
 
-- **Anti-estrogens in luminal A breast cancer rank low.** The tumor-learned map misreads them (C18). Removing
-  "identity" links from that map helped only a little (luminal A 9.7 -> 12.3, luminal B 23.4 -> 26.0 percentile; D83,
-  C25).
+- **Anti-estrogens in luminal A breast cancer ranked low** because the tumor-learned map misread them (C18). Removing
+  "identity" links helped only a little (D83, C25); separate cell-type maps (D97, above) lift them to about the 41st
+  percentile, which is better but still not near the top.
 - **Anti-estrogens rank at the top in basal (triple-negative) breast cancer, where they should not work.** They were
   only tested in MCF7, a luminal line that looks nothing like basal tumors. The `unmatched_lines` flag catches this and
-  keeps them out of the top tiers (C20).
+  keeps them out of the top tiers (C20). Tiers alone do not move the rank, though: with the cell-type maps they still
+  sit at about the 70th percentile. **Test on 2026-11-04 (D102):** a drug gets no credit in a cancer whose tumors
+  barely make its target (here ESR1: 0.86 units in basal tumors vs 108 in luminal A). In breast this sends
+  fulvestrant and raloxifene from the 76th to the 3rd percentile in basal and nudges them up in luminal, without
+  hurting the known-use check. It is not adopted yet: it also pushed down two drugs that have been tried in breast
+  cancer trials (gefitinib, metoprolol, whose targets are nearly absent in luminal tumors), which the rule set in
+  advance did not allow, and tamoxifen escapes because it also binds a second protein that basal tumors do make.
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.
@@ -148,8 +249,16 @@ with paper and trial links, are on the FDA rankings page.
 
 ## What is not done yet
 
-- **No test yet against measured drug killing of cell lines** (PRISM / GDSC). This is on hold. Until then these are
-  ranked hypotheses, not validated predictions.
+- **Tests against measured drug killing of cell lines (PRISM / GDSC), known drug uses and gene dependencies** have
+  been run (C28, C29): known uses are recovered a little better than chance, and the scores do not predict which
+  cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
+  scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
+- **An independent check with a different kind of map (PROGENy pathways, D99).** Good news: the drug data are sound.
+  Drugs that block a pathway (PI3K, MAPK, EGFR, p53 activators) move that pathway the right way in 75% of profiles.
+  Revealing news: PROGENy reads every anti-estrogen profile as switching estrogen signalling off, while all our
+  ARACNe breast maps, even the new luminal ones, still read ESR1 as on. The anti-estrogen ranking improved because the
+  disease side changed, not because the ESR1 reading was fixed. Our ranking and a pathway-based ranking agree only
+  weakly (0.17), so they capture different things.
 - Scoring on same-cell-type lines only (instead of same-organ) is not implemented. The data-gap check reports it but
   does not change rankings.
 - The odd recurring hits above still need to be reviewed.

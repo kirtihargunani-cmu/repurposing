@@ -1,5 +1,5 @@
 {
- "date": "2026-11-02",
+ "date": "2026-11-03",
  "config": {
   "min_shared_lines": 2,
   "min_similarity": 0.4,
@@ -23,66 +23,66 @@
  "validation": [
   {
    "set": "accepted stand-ins",
-   "n": 301,
-   "spearman": 0.518,
-   "ci_lo": 0.42,
-   "ci_hi": 0.605,
-   "mae_pct": 20.5
+   "n": 303,
+   "spearman": 0.555,
+   "ci_lo": 0.461,
+   "ci_hi": 0.635,
+   "mae_pct": 19.4
   },
   {
    "set": "random shared-target pairs (median of 200)",
-   "n": 569,
-   "spearman": 0.298,
-   "ci_lo": 0.236,
-   "ci_hi": 0.355,
+   "n": 573,
+   "spearman": 0.316,
+   "ci_lo": 0.256,
+   "ci_hi": 0.364,
    "mae_pct": NaN
   },
   {
    "set": "shared lines = 2",
    "n": 48,
-   "spearman": 0.401,
+   "spearman": 0.395,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 27.0
+   "mae_pct": 25.8
   },
   {
    "set": "shared lines >= 3",
-   "n": 253,
-   "spearman": 0.542,
+   "n": 255,
+   "spearman": 0.586,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 19.2
+   "mae_pct": 18.2
   },
   {
    "set": "similarity 0.4-0.6",
-   "n": 108,
-   "spearman": 0.349,
+   "n": 110,
+   "spearman": 0.44,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 23.8
+   "mae_pct": 21.8
   },
   {
    "set": "similarity >= 0.6",
    "n": 193,
-   "spearman": 0.59,
+   "spearman": 0.602,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 18.6
+   "mae_pct": 18.0
   },
   {
    "set": "subgroup: accepted stand-ins",
    "n": 68,
    "spearman": 0.754,
-   "ci_lo": 0.615,
-   "ci_hi": 0.848,
+   "ci_lo": 0.609,
+   "ci_hi": 0.857,
    "mae_pct": 17.3
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
    "n": 124,
-   "spearman": 0.256,
-   "ci_lo": 0.129,
-   "ci_hi": 0.357,
+   "spearman": 0.257,
+   "ci_lo": 0.149,
+   "ci_hi": 0.35,
    "mae_pct": NaN
   },
   {
@@ -118,14 +118,14 @@
    "mae_pct": 14.2
   }
  ],
- "pairs": 2684,
- "fda_rows_needing": 8419,
- "fda_rows_with_standin": 269,
+ "pairs": 2689,
+ "fda_rows_needing": 8416,
+ "fda_rows_with_standin": 268,
  "fda_rows_with_standin_by_level": {
-  "disease": 231,
+  "disease": 230,
   "subgroup": 38
  },
  "cohorts_with_standins": 20,
- "matched_compounds_with_close_fda": 1086,
- "seconds": 914
+ "matched_compounds_with_close_fda": 1091,
+ "seconds": 21
 }

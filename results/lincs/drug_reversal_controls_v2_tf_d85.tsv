@@ -1,0 +1,23 @@
+group_id	drug	expected	source	n_ids	rev_pct	spec_pct	tier_rev	tier_spec
+BRCA-LumA	fulvestrant	high	direct	3.0	57.0	11.1	3.0	3.0
+BRCA-LumA	tamoxifen	high	direct	3.0	80.1	36.0	3.0	3.0
+BRCA-LumA	raloxifene	high	direct	1.0	25.6	3.9	3.0	3.0
+BRCA-LumA	palbociclib	high	direct	1.0	44.4	10.1	3.0	3.0
+BRCA-LumB	fulvestrant	high	direct	3.0	87.9	42.2	3.0	3.0
+BRCA-LumB	tamoxifen	high	direct	3.0	92.9	68.9	2.0	3.0
+BRCA-LumB	raloxifene	high	direct	1.0	66.4	23.2	3.0	3.0
+BRCA-LumB	palbociclib	high	direct	1.0	83.2	42.0	3.0	3.0
+TCGA-PRAD	bicalutamide	high	not in list					
+TCGA-PRAD	enzalutamide	high	not in list					
+TCGA-PRAD	flutamide	high	direct	1.0	86.9	84.9	3.0	3.0
+TCGA-PRAD	nilutamide	high	not in list					
+TCGA-COAD	fluorouracil	high	borrowed	1.0	80.6	56.0	3.0	3.0
+TCGA-COAD	irinotecan	high	direct	1.0	64.5	97.2	3.0	1.0
+TCGA-COAD	oxaliplatin	high	not in list					
+TCGA-LUAD	erlotinib	high	direct	1.0	96.4	97.7	1.0	1.0
+TCGA-LUAD	gefitinib	high	direct	1.0	87.0	90.3	3.0	1.0
+TCGA-LUAD	afatinib	high	direct	2.0	16.3	37.5	3.0	3.0
+TCGA-LUAD	osimertinib	high	not in list					
+BRCA-Basal	fulvestrant	low	direct	3.0	99.9	99.8	3.0	3.0
+BRCA-Basal	tamoxifen	low	direct	3.0	98.7	97.8	3.0	3.0
+BRCA-Basal	raloxifene	low	direct	1.0	97.3	96.5	3.0	3.0

@@ -75,6 +75,14 @@ if CONS: OUT += XS
 PROFILE = os.environ.get("PROFILE", "specific"); assert PROFILE in ("specific", "raw")
 RUN_TAG = os.environ.get("RUN_TAG", "")
 OUT += RUN_TAG + ("_raw" if PROFILE == "raw" else "")
+# IDENTITY_FILE (D91, 2026-11-03): table net / regulator / identity (scripts/d91/d91_identity.R). Adds, for the 41
+#   groups: rev_identity (identity-linked, non-proliferation regulators, activity A), rev_mech_id (rev_mech without
+#   identity-linked regulators, except the drug's own expressed targets from 79b) and spec_mech_id (as spec_mech);
+#   outputs get "_id" appended to the suffix. Default: off, outputs unchanged.
+IDENT_FILE = os.environ.get("IDENTITY_FILE", "")
+IN79E = OUT                                    # 79e output suffix (input here)
+if IDENT_FILE:
+    OUT += "_id"
 CONS_SETS = {"aracne": (f"aracne_project_v2_{ARACNE_SET}", f"_v2_{ARACNE_SET}"), "collectri": ("collectri_v2", "_collectri")}
 CONTROLS = [("BRCA-LumA", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
             ("BRCA-LumB", "high", ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]),
@@ -93,6 +101,41 @@ def net_of(cohort):
     return "COADREAD" if cohort in ("TCGA-COAD", "TCGA-READ") else cohort.split("-", 1)[1]
 
 
+# NET_MAP / MR_OVERRIDE (D92, 2026-11-03): groups mapped to another network, their group_mr rows from another Step 6
+#   folder (tumor ARACNe only, not consensus). Defaults: off.
+# D97 (2026-11-03): config/group_networks.tsv is the default map for the v2 TF-only ARACNe set (alone or in the consensus)
+_ARAC_TF = os.environ.get("VERSION") == "v2" and ((CONS and ARACNE_SET == "tf") or (REGULON == "aracne_project" and os.environ.get("REGSET") == "tf"))
+_NMF = os.environ.get("NET_MAP") or (str(ROOT / "config/group_networks.tsv") if _ARAC_TF and (ROOT / "config/group_networks.tsv").exists() else "")
+NETMAP = (pd.read_csv(_NMF, sep="\t").set_index("group_id").net.to_dict() if _NMF else {})
+MR_OVR = os.environ.get("MR_OVERRIDE", "")
+
+
+def mr_override(mr):
+    if not MR_OVR:
+        return mr
+    o = pd.read_csv(ROOT / MR_OVR / "group_mr.tsv", sep="\t")
+    o = o[o.group_id.isin(NETMAP)]
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
+# MR_OVERRIDE_STRATA (D94, 2026-11-03): subgroup rows (stratum ids) from another Step 6 strata folder replace production
+#   rows for the subgroups present there; used with NET_MAP for subgroups whose parent group moved network. Default: off.
+def mr_override_strata(mr):
+    f = os.environ.get("MR_OVERRIDE_STRATA", "")
+    if not f:
+        return mr
+    o = pd.read_csv(ROOT / f / "group_mr.tsv", sep="\t")
+    return pd.concat([mr[~mr.group_id.isin(o.group_id)], o], ignore_index=True)
+
+
+def cons_read(path, k, strata=False):
+    """Consensus: ARACNe-set rows get the D92-D94 overrides (CollecTRI rows are network-independent)."""
+    d = pd.read_csv(path, sep="\t")
+    if k == "aracne":
+        d = mr_override_strata(d) if strata else mr_override(d)
+    return d
+
+
 def rz(v):
     return (v - np.median(v)) / (1.4826 * np.median(np.abs(v - np.median(v))))
 
@@ -105,6 +148,22 @@ def mr_rev(D, regs, m):
     c = regs.get_indexer(m.regulator)
     w = m.nes.values if SCORE == "weighted" else np.sign(m.nes.values)
     return -(D[:, c] * w).sum(1) / max(np.sqrt((w ** 2).sum()), 1e-12)
+
+
+def wts(m):
+    return m.nes.values if SCORE == "weighted" else np.sign(m.nes.values)
+
+
+def rev_extra(D, regs, base, pool, extras):
+    """rev over base regulators, plus per drug the pool regulators among its extras (D91 exception)."""
+    w = wts(base); num = -(D[:, regs.get_indexer(base.regulator)] * w).sum(1); den = np.full(D.shape[0], (w ** 2).sum())
+    if len(pool):
+        for i, ex in enumerate(extras):
+            if ex:
+                q = pool[pool.regulator.isin(ex)]
+                if len(q):
+                    w2 = wts(q); num[i] -= D[i, regs.get_indexer(q.regulator)] @ w2; den[i] += (w2 ** 2).sum()
+    return num / np.sqrt(np.maximum(den, 1e-12))
 
 
 def consensus(Ds, regs, m, linked):
@@ -130,8 +189,11 @@ def main():
     gmt = {l.split("\t")[0]: l.rstrip("\n").split("\t")[2:]
            for l in open(ROOT / "data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt")}
     pm = genes.symbol.isin(set(gmt["HALLMARK_E2F_TARGETS"]) | set(gmt["HALLMARK_G2M_CHECKPOINT"])).values
-    pi_raw = np.fromfile(PROC / "drug_line_profiles_bing.f32", dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1)
-    pi_spec = np.fromfile(PROC / "drug_line_profiles_bing_specific.f32",
+    # PROFILE_PREFIX (D90, 2026-11-03): <prefix>_raw.f32 / <prefix>_specific.f32 with the 79c layout replace the 79c profiles
+    pp = os.environ.get("PROFILE_PREFIX", "")
+    f_raw, f_spec = (Path(pp + "_raw.f32"), Path(pp + "_specific.f32")) if pp else (PROC / "drug_line_profiles_bing.f32", PROC / "drug_line_profiles_bing_specific.f32")
+    pi_raw = np.fromfile(f_raw, dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1)
+    pi_spec = np.fromfile(f_spec,
                           dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1).astype(np.float64)
     print(f"proliferation genes on profiles: {pm.sum()}")
 
@@ -140,18 +202,20 @@ def main():
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
     models = models[models.OncotreePrimaryDisease != "Non-Cancerous"]
     if CONS:
-        gmr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}/group_mr.tsv", sep="\t").assign(regulator=lambda x, k=k: k + "|" + x.regulator)
+        gmr = pd.concat([cons_read(ROOT / f"results/step6/{d}/group_mr.tsv", k).assign(regulator=lambda x, k=k: k + "|" + x.regulator)
                          for k, (d, _) in CONS_SETS.items()], ignore_index=True)
     else:
-        gmr = pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t")
+        gmr = mr_override(pd.read_csv(ROOT / f"results/step6/aracne_project{SFX}/group_mr.tsv", sep="\t"))
     if STRATA_V2:
         sets = [(k, d) for k, (d, _) in CONS_SETS.items()] if CONS else [("", f"aracne_project{SFX}")]
-        smr = pd.concat([pd.read_csv(ROOT / f"results/step6/{d}_strata/group_mr.tsv", sep="\t")
+        smr = pd.concat([cons_read(ROOT / f"results/step6/{d}_strata/group_mr.tsv", k or "aracne", strata=True)
                          .assign(regulator=lambda x, k=k: (k + "|" if k else "") + x.regulator) for k, d in sets], ignore_index=True)
     else:
         smr = pd.read_csv(ROOT / "results/step10/stratum_mr.tsv", sep="\t") if STRATA else None
     def p1_of(tag):
         x = pd.read_csv(RES / f"prolif_regulators{tag}.tsv", sep="\t")
+        if os.environ.get("P1_EXTRA"):   # D92: P1 lists of extra networks (79h EXTRA_RDS run)
+            x = pd.concat([x, pd.read_csv(os.environ["P1_EXTRA"], sep="\t")], ignore_index=True)
         return x[x.prolif_linked].groupby("net").regulator.apply(set)
     p1 = {k: p1_of(t) for k, (_, t) in CONS_SETS.items()} if CONS else p1_of(SFX)
     if SCORE == "fdr":
@@ -228,6 +292,28 @@ def main():
                 out.append(rz(mr_rev(Da, regs, m2)))
         return out
 
+    ident, dtargets = {}, {}
+    if IDENT_FILE:
+        it = pd.read_csv(IDENT_FILE, sep="\t")
+        ident = it[it.identity].groupby("net").regulator.apply(set).to_dict()
+        dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", usecols=["group_id", "pert_id", "targets_expressed"], low_memory=False)
+        dtargets = {(g, p): set(str(t).split("|")) for g, p, t in dd.itertuples(index=False) if isinstance(t, str)}
+
+    def refs_mech_id(Da, regs, linked, idset, extras, own_key):
+        out = []
+        for g2, m2 in gmr.groupby("group_id"):
+            if g2 not in keys.index or keys.loc[g2, "key"] == own_key:
+                continue
+            if CONS:
+                (Da2,), regs2, m2, lk2 = consensus([Da], regs, m2[m2.regulator.isin(regs)], linked)
+                m2 = m2[~m2.regulator.isin(lk2)]; D2, r2 = Da2, regs2
+            else:
+                m2 = m2[m2.regulator.isin(regs) & ~m2.regulator.isin(linked)]; D2, r2 = Da, regs
+            base, pool = m2[~m2.regulator.isin(idset)], m2[m2.regulator.isin(idset)]
+            if len(base) >= MIN_MRS_REF:
+                out.append(rz(rev_extra(D2, r2, base, pool, extras)))
+        return out
+
     def finish(o, cols):
         for c in ["rev_prolif", "rev_nonprolif", "rev_mech", "prolif_effect", "spec_mech"] + cols:
             o[c + "_pct"] = pct(o[c].values)
@@ -240,14 +326,14 @@ def main():
         return o
 
     # 41 groups
-    par = pd.read_csv(RES / f"drug_reversal{OUT}.tsv", sep="\t", low_memory=False)
+    par = pd.read_csv(RES / f"drug_reversal{IN79E}.tsv", sep="\t", low_memory=False)
     w = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     keep = ["group_id", "pert_id", "cmap_name", "source", "passes_gate", "approved", "multi_target", "hub_moa",
             *(["line_match", "unmatched_lines", "transfer_conf", "low_transfer"] if CONS or SFX.startswith("_v2") else []),
             "n_mrs", "low_mrs", "rev", "rev_pct", "spec", "spec_pct", "tier_rev", "tier_spec"]
     rows = []
     for g, gd in par.groupby("group_id"):
-        regs, A, A_adj, linked = load(net_of(grp.loc[g, "cohort"]))
+        regs, A, A_adj, linked = load(NETMAP.get(g, net_of(grp.loc[g, "cohort"])))
         D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[g], w[w.group_id == g].set_index("ModelID").weight,
                              A, A_adj)
         m = gmr[(gmr.group_id == g) & gmr.regulator.isin(regs)]
@@ -263,7 +349,19 @@ def main():
         o["n_ref_mech"] = len(ref)
         o["spec_mech"] = (rz(sc["rev_mech"]) - np.mean(ref, axis=0)).round(3) \
             if len(ref) >= MIN_REF and len(mn) >= 2 else np.nan
-        rows.append(finish(o, []))
+        cols = []
+        if IDENT_FILE:
+            idset = ident.get(NETMAP.get(g, net_of(grp.loc[g, "cohort"])), set())
+            extras = [dtargets.get((g, p), set()) for p in gd.pert_id]
+            base, pool = mn[~mn.regulator.isin(idset)], mn[mn.regulator.isin(idset)]
+            o["rev_mech_id"] = rev_extra(Da, regs, base, pool, extras).round(3)
+            o["rev_identity"] = np.round(mr_rev(D, regs, pool), 3) if len(pool) else 0.0
+            o["n_mrs_identity"] = len(pool)
+            ref2 = refs_mech_id(Da0, regs0, linked0, idset, extras, keys.loc[g, "key"])
+            o["spec_mech_id"] = (rz(o.rev_mech_id.values) - np.mean(ref2, axis=0)).round(3) \
+                if len(ref2) >= MIN_REF and len(base) >= 2 else np.nan
+            cols = ["rev_mech_id", "rev_identity", "spec_mech_id"]
+        rows.append(finish(o, cols))
         print(f"{g:<20} MRs {len(m):>4} (prolif {sc['n_mrs_prolif']:>3})  "
               f"rho(rev, rev_mech) {o.rev.corr(o.rev_mech, method='spearman'):.2f}", flush=True)
     out = pd.concat(rows, ignore_index=True)
@@ -281,7 +379,7 @@ def main():
         srows = []
         for s, gd in st.groupby("stratum"):
             p = gd.parent_group.iloc[0]
-            regs, A, A_adj, linked = load(net_of(grp.loc[p, "cohort"]))
+            regs, A, A_adj, linked = load(NETMAP.get(p, net_of(grp.loc[p, "cohort"])))
             D, Da, pe = activity(gd.pert_id, gd.source, keys.loc[p], sw[sw.stratum == s].set_index("ModelID").weight,
                                  A, A_adj)
             m = smr[(smr.group_id == s) & smr.regulator.isin(regs)]

@@ -38,7 +38,9 @@ dir.create(out_dir, showWarnings = FALSE)
 genes <- fread(file.path(proc, "drug_line_profiles_genes.tsv"))
 idx <- fread(file.path(proc, "drug_line_profiles_index.tsv"))
 pfile <- if (PROFILE == "raw") "drug_line_profiles_bing.f32" else "drug_line_profiles_bing_specific.f32"
-P <- matrix(readBin(file.path(proc, pfile), "numeric", size = 4,
+# PROFILE_FILE (D90, 2026-11-03): another profile file with the 79c layout (same index and genes), path from the repo root
+if (nzchar(Sys.getenv("PROFILE_FILE"))) { pfile <- normalizePath(Sys.getenv("PROFILE_FILE")); proc_p <- "" } else proc_p <- proc
+P <- matrix(readBin(if (nzchar(proc_p)) file.path(proc_p, pfile) else pfile, "numeric", size = 4,
                     n = nrow(genes) * nrow(idx)), nrow = nrow(genes))
 dimnames(P) <- list(genes$gene_id, paste(idx$pert_id, idx$ModelID, sep = "|"))
 cat(sprintf("profiles (%s): %d genes x %d drug-line profiles\n", PROFILE, nrow(P), ncol(P)))
@@ -49,6 +51,16 @@ if (REGULON == "aracne_project") {
   net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
   groups <- fread(paste0("results/step4", SFX, "/signature_summary.tsv"))[status == "ok", unique(group_id)]
   filt <- fread(paste0("results/step6/aracne_project", SFX, TFX, "/regulator_filter.tsv"))[keep == TRUE & group_id %in% groups]
+  # EXTRA_RDS / NET_MAP / MR_OVERRIDE (D92, 2026-11-03): extra networks, group -> network map, and the mapped groups'
+  #   regulator filter from another Step 6 folder. Defaults: off.
+  if (nzchar(Sys.getenv("EXTRA_RDS"))) { ex <- readRDS(Sys.getenv("EXTRA_RDS")); arac <- c(arac, ex[setdiff(names(ex), names(arac))]) }
+  # D97 (2026-11-03): production network map config/group_networks.tsv is the default for the v2 TF-only set; NET_MAP overrides
+  nmf <- Sys.getenv("NET_MAP", if (SFX == "_v2" && REGSET == "tf" && file.exists("config/group_networks.tsv")) "config/group_networks.tsv" else "")
+  if (nzchar(nmf)) {
+    nm <- fread(nmf); net_of[nm$group_id] <- nm$net
+    if (nzchar(Sys.getenv("MR_OVERRIDE"))) filt <- rbind(filt[!group_id %in% nm$group_id],
+      fread(file.path(Sys.getenv("MR_OVERRIDE"), "regulator_filter.tsv"))[keep == TRUE & group_id %in% nm$group_id], fill = TRUE)
+  }
   filt[, net := net_of[group_id]]
 } else {
   arac <- list(ALL = readRDS("results/step5/regulons_core.rds")[[REGULON]])

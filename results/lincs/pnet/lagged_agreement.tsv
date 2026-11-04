@@ -1,0 +1,16 @@
+line	network	rows	signatures	regulators	agree
+MCF7	lagged_mrna	1966	68	42	0.514
+MCF7	contemporaneous_drug	5658	68	42	0.508
+MCF7	tumor	1141	67	41	0.535
+MCF7	lagged_act	480	97	75	0.531
+MCF7	tumor_act_regs	1260	94	72	0.521
+PC3	lagged_mrna	2883	79	43	0.518
+PC3	contemporaneous_drug	7474	79	43	0.487
+PC3	tumor	1342	77	42	0.519
+PC3	lagged_act	664	116	82	0.515
+PC3	tumor_act_regs	1376	115	81	0.541
+A375	lagged_mrna	2445	69	38	0.515
+A375	contemporaneous_drug	6183	69	38	0.514
+A375	tumor	1254	69	38	0.561
+A375	lagged_act	598	122	80	0.455
+A375	tumor_act_regs	1802	118	77	0.564

@@ -1,0 +1,41 @@
+comp	ver	set	arm	vs	rows	tfs	correct_arm	correct_vs	diff	wins	losses	p_sign	coupling_arm	coupling_vs
+time	specific	aracne	T6	T24	171	32	0.5439	0.4795	0.0643	33	22	0.177	0.131	0.169
+time	specific	aracne	T6	A0	171	32	0.5439	0.4854	0.0585	29	19	0.193	0.131	0.162
+time	specific	aracne	T24	A0	171	32	0.4795	0.4854	-0.0058	12	13	1	0.169	0.162
+dose	specific	aracne	DL	DH	157	27	0.4713	0.4713	0	23	23	1	0.147	0.187
+dose	specific	aracne	DL	A0	157	27	0.4713	0.4331	0.0382	17	11	0.345	0.147	0.161
+dose	specific	aracne	DH	A0	157	27	0.4713	0.4331	0.0382	19	13	0.377	0.187	0.161
+time	specific	collectri	T6	T24	171	32	0.6667	0.6433	0.0234	25	21	0.659	0.101	0.152
+time	specific	collectri	T6	A0	171	32	0.6667	0.6608	0.0058	20	19	1	0.101	0.165
+time	specific	collectri	T24	A0	171	32	0.6433	0.6608	-0.0175	12	15	0.701	0.152	0.165
+dose	specific	collectri	DL	DH	157	27	0.6178	0.6433	-0.0255	18	22	0.636	0.128	0.151
+dose	specific	collectri	DL	A0	157	27	0.6178	0.6624	-0.0446	9	16	0.23	0.128	0.156
+dose	specific	collectri	DH	A0	157	27	0.6433	0.6624	-0.0191	16	19	0.736	0.151	0.156
+time	specific	consensus	T6	T24	171	32	0.6374	0.5497	0.0877	32	17	0.0444	0.131	0.169
+time	specific	consensus	T6	A0	171	32	0.6374	0.5322	0.1053	30	12	0.00792	0.131	0.162
+time	specific	consensus	T24	A0	171	32	0.5497	0.5322	0.0175	14	11	0.69	0.169	0.162
+dose	specific	consensus	DL	DH	157	27	0.5287	0.5223	0.0064	26	25	1	0.147	0.187
+dose	specific	consensus	DL	A0	157	27	0.5287	0.4968	0.0318	17	12	0.458	0.147	0.161
+dose	specific	consensus	DH	A0	157	27	0.5223	0.4968	0.0255	21	17	0.627	0.187	0.161
+time	raw	aracne	T6	T24	171	32	0.5789	0.538	0.0409	28	21	0.392	0.265	0.208
+time	raw	aracne	T6	A0	171	32	0.5789	0.5673	0.0117	22	20	0.878	0.265	0.186
+time	raw	aracne	T24	A0	171	32	0.538	0.5673	-0.0292	9	14	0.405	0.208	0.186
+dose	raw	aracne	DL	DH	157	27	0.5541	0.5096	0.0446	19	12	0.281	0.198	0.229
+dose	raw	aracne	DL	A0	157	27	0.5541	0.5478	0.0064	9	8	1	0.198	0.218
+dose	raw	aracne	DH	A0	157	27	0.5096	0.5478	-0.0382	10	16	0.327	0.229	0.218
+time	raw	collectri	T6	T24	171	32	0.6374	0.6257	0.0117	19	17	0.868	0.172	0.159
+time	raw	collectri	T6	A0	171	32	0.6374	0.614	0.0234	16	12	0.572	0.172	0.142
+time	raw	collectri	T24	A0	171	32	0.6257	0.614	0.0117	13	11	0.839	0.159	0.142
+dose	raw	collectri	DL	DH	157	27	0.6306	0.6242	0.0064	19	18	1	0.138	0.157
+dose	raw	collectri	DL	A0	157	27	0.6306	0.6051	0.0255	11	7	0.481	0.138	0.147
+dose	raw	collectri	DH	A0	157	27	0.6242	0.6051	0.0191	14	11	0.69	0.157	0.147
+time	raw	consensus	T6	T24	171	32	0.6257	0.5789	0.0468	26	18	0.291	0.265	0.208
+time	raw	consensus	T6	A0	171	32	0.6257	0.5789	0.0468	24	16	0.268	0.265	0.186
+time	raw	consensus	T24	A0	171	32	0.5789	0.5789	0	10	10	1	0.208	0.186
+dose	raw	consensus	DL	DH	157	27	0.5414	0.5478	-0.0064	18	19	1	0.198	0.229
+dose	raw	consensus	DL	A0	157	27	0.5414	0.5159	0.0255	12	8	0.503	0.198	0.218
+dose	raw	consensus	DH	A0	157	27	0.5478	0.5159	0.0318	17	12	0.458	0.229	0.218
+time (active at 6 h)	specific	aracne	T6	T24	77	25	0.5455	0.3636	0.1818	19	5	0.00661	0.131	0.169
+time (active at 6 h)	specific	aracne	T6	A0	77	25	0.5455	0.4026	0.1429	14	3	0.0127	0.131	0.162
+time (active at 6 h)	raw	aracne	T6	T24	77	25	0.5844	0.4805	0.1039	13	5	0.0963	0.265	0.208
+time (active at 6 h)	raw	aracne	T6	A0	77	25	0.5844	0.5325	0.0519	7	3	0.344	0.265	0.186

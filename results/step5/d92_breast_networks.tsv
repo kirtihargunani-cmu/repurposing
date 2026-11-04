@@ -1,0 +1,2 @@
+net	groups	n_samples	n_genes	n_regulators_tf	her2_r_luminal	her2_r_basal	her2_to
+BRCA_BASX	BRCA-Basal;BRCA-Her2	271	14116	1276	-0.4835	0.2716	basal

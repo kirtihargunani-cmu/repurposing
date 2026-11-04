@@ -23,6 +23,8 @@ REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("ar
 if (REGULON == "collectri") SFX <- "_collectri"
 arac <- if (REGULON == "collectri") list(ALL = readRDS("results/step5/regulons_core.rds")$collectri) else
   readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, ".rds"))
+# EXTRA_RDS (D92, 2026-11-03): score only the networks in this regulon file; output gets OUT_TAG. Default: off.
+if (nzchar(Sys.getenv("EXTRA_RDS"))) arac <- readRDS(Sys.getenv("EXTRA_RDS"))
 idm <- fread("results/step5/id_map.tsv")[primary_for_hgnc == TRUE]
 gmt <- strsplit(readLines("data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"), "\t")
 names(gmt) <- vapply(gmt, `[`, "", 1)
@@ -46,5 +48,6 @@ out <- rbindlist(lapply(names(arac), function(net) {
 }))
 out[, `:=`(prolif_linked = fdr < FDR_MAX & fold >= MIN_FOLD)]
 setcolorder(out, c("net", "regulator"))
-fwrite(out, paste0("results/lincs/prolif_regulators", SFX, ".tsv"), sep = "\t")
+fwrite(out, if (nzchar(Sys.getenv("EXTRA_RDS"))) paste0("results/lincs/prolif_regulators", SFX, Sys.getenv("OUT_TAG"), ".tsv") else
+  paste0("results/lincs/prolif_regulators", SFX, ".tsv"), sep = "\t")
 print(out[, .(regulators = .N, prolif_linked = sum(prolif_linked)), by = net])

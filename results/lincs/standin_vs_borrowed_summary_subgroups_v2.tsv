@@ -1,8 +1,8 @@
 estimate	n	spearman	ci_lo	ci_hi	mae_pct	diff_vs_borrowed	diff_ci_lo	diff_ci_hi	verdict
-standin	66	0.762	0.626	0.858	16.8	0.233	0.052	0.416	standin better
-borrowed_pct	66	0.529	0.343	0.662	24.7				
-average	66	0.776	0.661	0.856	17.7	0.247	0.121	0.39	average better
-borrowed_pct, all switched drugs	238	0.476			24.6				
+standin	66	0.762	0.626	0.856	16.8	0.233	0.063	0.419	standin better
+borrowed_pct	66	0.529	0.337	0.669	24.7				
+average	66	0.776	0.649	0.854	17.7	0.247	0.116	0.389	average better
+borrowed_pct, all switched drugs	238	0.473			24.6				
 standin, similarity >= 0.6	49	0.848			13.4	0.305			borrowed on same set 0.543
 standin, similarity < 0.6	17	0.373			26.7	-0.1			borrowed on same set 0.473
 standin, shared lines >= 3	53	0.783			15.9	0.231			borrowed on same set 0.552

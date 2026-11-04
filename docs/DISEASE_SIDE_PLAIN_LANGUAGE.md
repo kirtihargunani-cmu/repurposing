@@ -99,6 +99,21 @@ follows lab batch.
 The names come from the known TCGA subtypes of their patients. The glioma and seminoma pairs barely differ in drug
 response, so the drug side reports one list for each of them.
 
+### Separate networks for different cell types (2026-11-03)
+
+Each cancer used to get one network, learned from all its tumors together, even when the cancer contains clearly
+different kinds of cells (luminal vs basal breast cancer, squamous vs adenocarcinoma of the esophagus, the glioma
+subtypes). In such a mix the network mostly learns which genes go with which cell type. Now every subtype with 85 or
+more tumors gets its own network (12 subtypes in 8 cancers); smaller subtypes keep the shared one (D97). The
+master-regulator lists of the big subtypes barely change (luminal A / B, glioma: 0.97-0.99 agreement with before);
+those of mixed or small ones change more (basal breast 0.90). In basal breast cancer, low "luminal" regulators
+(ESR1, GATA3) no longer dominate its list, which is what had made anti-estrogens look useful there. Smaller networks
+are noisier: the overlap between two halves of a network's runs is 0.40 at 85 tumors vs about 0.6 for the largest
+networks. The patient-level analyses and the subgroup clustering have not yet been rerun on the new networks. What this gained on the drug
+side, with numbers (anti-estrogens in breast, known-use checks, costs), is in [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md),
+"How much did the cell-type maps gain?". In production the basal breast profile changed most: ESR1 -2.5 -> -0.7,
+GATA3 -2.4 -> +0.2, XBP1 -2.6 -> -0.2; luminal A barely changed (overall agreement 0.94 with before).
+
 ## What is not done yet
 
 - **Replication of the new subgroups** in other patient cohorts (cohorts to choose).

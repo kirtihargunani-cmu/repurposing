@@ -1,0 +1,17 @@
+# D99 (2026-11-03, fixed before any PROGENy score was computed): on-target pathway expectations from mechanism-of-action
+# labels (Repurposing Hub hub_moa, else LINCS lincs_moa; case-insensitive regex). direction = expected sign of the PROGENy
+# pathway score in the drug's profile. receptor = gene that must be expressed in the line (DepMap log2(TPM+1) >= 1), else -.
+pathway	direction	moa_regex	receptor
+MAPK	-1	MEK inhibitor|RAF inhibitor|ERK inhibitor	-
+EGFR	-1	EGFR inhibitor	-
+PI3K	-1	PI3K inhibitor|AKT inhibitor|mTOR inhibitor	-
+Estrogen	-1	estrogen receptor antagonist|selective estrogen receptor modulator|estrogen receptor degrader	ESR1
+Estrogen	1	estrogen receptor agonist	ESR1
+Androgen	-1	androgen receptor antagonist	AR
+Androgen	1	androgen receptor agonist	AR
+JAK-STAT	-1	JAK inhibitor	-
+NFkB	-1	IKK inhibitor|NFkB pathway inhibitor	-
+TGFb	-1	TGF beta receptor inhibitor|TGF-beta receptor inhibitor	-
+VEGF	-1	VEGFR inhibitor	-
+p53	1	MDM inhibitor	-
+WNT	-1	tankyrase inhibitor|porcupine inhibitor	-

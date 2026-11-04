@@ -1,0 +1,3 @@
+group_id	contrast	n_tumor	n_normal	n_regulators_kept	n_mr_fdr05	n_mr_p05
+PCPG-PHEO	gtex	146	125	1046	99	192
+UCEC-EEC	gtex	107	77	1058	195	344

@@ -539,6 +539,173 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   unreliable ones; tumor links that no other network supports are. Limits: landmark genes and measured regulators only
   (no ESR1), few signatures per line.
 
+## 2026-11-03: time- and dose-resolved drug profiles (D88): descriptive only
+- **What:** drug x line profiles from 6 h vs 24 h signatures (2,854 pairs) and from the lowest active vs the highest
+  dose at 24 h (2,759 pairs), scored with tumor ARACNe as the drug side does; checked on the D84 ligand profiles.
+  `scripts/timedose/`, `results/lincs/timedose/`.
+- **Result:** 6 h profiles read ligands better (+6 points vs 24 h and vs the current profiles) and are less coupled to
+  growth arrest, but with 171 rows the gain is not significant (p = 0.18), so the rule is not met. Where the pair is
+  active at 6 h the gain is large (+18 points, p = 0.007; reported, not in the rule). Under anti-estrogens in MCF7,
+  ARACNe's ESR1 goes from +1.5 to +3.4 at 24 h to about 0 or negative at 6 h. Dose (lowest active vs highest) makes
+  no difference to the reading.
+
+## 2026-11-03: early and late-only drug signatures (D89)
+- **What:** for 2,854 drug x line pairs with 6 h and 24 h data: early (6 h), late (24 h), late-only (24 h minus what
+  it shares with 6 h) and the current aggregated profile, scored with every tumor ARACNe network.
+  `scripts/timedose/early_late.R`, `results/lincs/early_late/`.
+- **Result:** early and late are different programs (regulator activity correlates 0.37; only 9% of the 24 h signal
+  is the 6 h one persisting). The aggregated profile is essentially the late response (0.91 vs 0.58), so the current
+  ranking reads mostly secondary effects. Anti-estrogens in MCF7: ESR1, FOXA1, GATA3 and XBP1 read up only in the
+  late-only signature; early ESR1 is negative in 6 of 9 profiles.
+- **The planned significance test did not work:** it compares each drug's change with other drugs' changes, and since
+  every drug changes a lot between 6 and 24 h, almost nothing is unusual (0.01-0.2% of tests). A test against
+  replicate noise within the same drug is the right next step.
+
+## 2026-11-03: mechanism profiles in the ranking (D90): keep current
+- **What:** the drug ranking (tumor ARACNe only) rebuilt with 6 h profiles at the lowest active dose where a pair is
+  active at 6 h, else the lowest active 24 h dose, else the current profile (`scripts/d90/`, `results/lincs/d90/`;
+  `PROFILE_FILE` in 79d and `PROFILE_PREFIX` in 79i, defaults unchanged). Literature note: `LITERATURE_TIME_DOSE.md`.
+- **Result: rule not met.** Known-use recovery unchanged (Hub AUC 0.60 vs 0.61; the yardstick was already near null).
+  Known-drug controls improve (+11 percentile points) and fewer drugs reverse nearly every disease (9.8 vs 12.2%).
+  ESR1 in MCF7 is still read as up under most anti-estrogens: most of their 6 h signatures fall below the activity
+  cutoff (TAS 0.4), so they used the low-dose 24 h profile, which still shows the late luminal rise. The 2 that used
+  6 h profiles read ESR1 down. Dose alone does not fix the reading; time does, where the 6 h profile is used.
+
+## 2026-11-03: exploration: lagged ARACNe across drugs (TimeDelay-ARACNE adapted)
+- **What:** TimeDelay-ARACNE (Zoppoli 2010) needs one long time series; LINCS has 2 time points per drug. Adapted:
+  samples = the drugs of one line (MCF7 604, PC3 445, A375 325), regulators at 6 h (mrna: 81 measured TFs; act: ~950
+  regulator activities from the early signature with the lineage tumor network, incl. ESR1), targets = each landmark
+  gene's late change (24 h beyond what its own 6 h value predicts; 86-91% of the 24 h variance). ARACNe-AP as D86.
+  `scripts/explore/lagged_aracne_{inputs.py,eval.R}`, `results/lincs/pnet/lagged_*.tsv`.
+- **Result: nothing usable.** Lagged links overlap the tumor and DepMap networks at chance (1.0-1.3x) and the
+  same-line drug network at 1.7-2.2x. Against knockdown / overexpression signatures every network sits near chance on
+  landmark links (lagged 0.46-0.53, drug 0.49-0.51, tumor 0.52-0.56). ESR1 in MCF7: 6 lagged links, all to
+  housekeeping / metabolic genes, none to luminal or estrogen-response genes. Across ~600 drugs, early ESR1 activity
+  varies for many reasons; the anti-estrogen-specific consequence (8 drugs) cannot dominate a network learned over
+  all drugs. Drug-class consequences need per-class contrasts, not one network across drugs.
+
+## 2026-11-03: exploration: how the anti-estrogen misread reaches the ranking
+- `scripts/explore/antier_propagation.py`, `results/lincs/early_late/antier_propagation.tsv`: anti-estrogens in MCF7,
+  per-regulator contributions to rev (tumor ARACNe, BRCA network). Current (aggregated) profiles: LumA rev -4.4 =
+  +6.6 from proliferation-linked regulators (correct direction) and -10.9 from the rest (FOXA1 read +6.5, XBP1 +4.5,
+  RARA +5.2, SOX13, CREB3L4: luminal-program regulators read as rising, against their tumor-vs-normal rise); LumB +6.0
+  (+11.0 / -5.0); Basal +31.7 (+16.4 / +15.3), where the drug's activity anti-correlates with the basal tumor profile
+  (r -0.57). Outcome: anti-estrogens rank at `spec_mech` percentile 96 in Basal, 9 in LumA, 20 in LumB (CUR, `_d85`).
+  The late-only signature carries the same pattern (Basal +32.6); the 6 h signature removes it (Basal -0.3) but does
+  not reverse LumA either (-8.5, spread over many weak regulators).
+
+## 2026-11-03: gate check (anti-estrogens in basal breast cancer)
+- All basal anti-estrogen scores come from MCF7 alone (line match 0.0004, flagged `unmatched_lines`, so tier 3), and
+  both gates pass them: `79b` calls ESR1 expressed in Basal (45% of tumors at TPM >= 1, median 0.86 TPM vs 108 in
+  LumA), and `79w` requires binding evidence and the receptor in the assay lines (MCF7 has it). Neither asks whether
+  the tumor has the target at a level like the assay line. Across diseases, 839 receptor passes (766 cohort x drug)
+  rest on a target below 5 TPM and below 5% of its highest cohort (EGFR 218 rows, MET 103, PDGFRA 84, FGFR4 60,
+  PPARG 55, FGFR3 52, ESR1 24, ERBB2 22); they rank at a median percentile of 48 (6.5% in the top 10%), so this is a
+  hygiene issue for most drugs. A relative-expression rule for the gate would be a separate decision (`79w` is the
+  other agent's script).
+
+## 2026-11-03: identity split (D91): keep spec_mech; luminal-only network on the drug side
+- **Identity split** (`scripts/d91/`, `results/lincs/d91/`; 79i `IDENTITY_FILE`): regulators whose activity mostly
+  separates lineages (DepMap lines) or subtypes (tumors; breast lines) are scored apart, except a drug's own targets.
+  Anti-estrogens move up in luminal A / B (positive controls 45 -> 56) and known-use recovery improves slightly, but
+  they stay at the 97th percentile in basal and growth-arrest dominance rises (8.2 -> 10.1%), so the rule is not
+  met. What keeps basal high is a third component: a quiescence program the drug turns on (MXD4, KLF9, KLF2, NFATC4,
+  THRA) that basal tumors have strongly down; it is neither identity- nor proliferation-tagged.
+- **Luminal-only network on the drug side** (`scripts/explore/brca_lum_drugside.R`): BRCA_LUM (D65, 769 luminal
+  tumors; disease side not materially different, D81) reads anti-estrogens in MCF7 with ESR1 +1.18 (pooled BRCA +2.41,
+  positive in 79% vs 100%), FOXA1 / GATA3 / XBP1 about halved, PGR now negative (86%). Subtype networks shrink the
+  misread but do not remove it: within luminal tumors the degree of luminal differentiation still co-varies with ESR1.
+
+## 2026-11-03: cell-type breast networks (D92, D92a)
+- **What:** networks built per breast cell type before ARACNe, every downstream step rerun under `_d92` / `_d92b` tags
+  (`scripts/d92/`; opt-in `NET_MAP`, `MR_OVERRIDE`, `EXTRA_RDS`, `RES_TAG`, `P1_EXTRA` in 50, 79d, 79e, 79h, 79i).
+- **D92 (rule as written): keep pooled.** Her2 resembles basal more than luminal, so Basal + Her2 shared a network;
+  that put a luminal-vs-basal axis back in, and anti-estrogens stayed at the 94th percentile in basal (needed a
+  10-point drop, got 3.5). Luminal subtypes improved a lot (positive controls 21 -> 46).
+- **D92a arm (user: > 50 tumors is enough; reported):** Basal (190) and Her2 (81) each on their own network.
+  Anti-estrogens fall from the 97th to the 80th percentile in basal and rise in luminal A / B, known-use unchanged;
+  dominance +0.2 points (3 drugs), so the strict "does not rise" check is missed by a hair. The anti-estrogen
+  inversion is largely corrected: on the basal-only network the luminal regulators barely move under anti-estrogens
+  (ESR1 +0.57) and no longer carry the basal disease signature (GATA3 NES +0.18 vs -2.35 pooled).
+
+## 2026-11-03: cell-type networks for all split cohorts (D93): adopted
+- 18 networks for the 20 groups of BRCA, CESC, ESCA, LGG, PCPG, SARC, TGCT, UCEC (each group > 50 tumors on its own;
+  CESC-AD pooled with UCEC-EEC, PCPG-PGL with PCPG-PHEO). Breast anti-estrogen inversion largely corrected (basal 97
+  -> 81, luminal positive controls 21 -> 40), no loss in known-use recovery (41 groups or new cohorts), dominance
+  within the 0.5-point tolerance. Splitting LumA / LumB read anti-estrogens a little worse than the shared luminal
+  network (positive controls 40 vs 46). Production switch pending.
+
+## 2026-11-03: full-pipeline comparison of network configurations (D94): keep pooled
+- Four arms through the whole pipeline (consensus scoring, groups and subgroups, receptor gate, FDA ranking, page,
+  known-use, dependency, PRISM / GDSC), each in its own worktree (`../repurposing_d94_<arm>`).
+- Cell-type networks help breast clearly (basal anti-estrogens 97 -> 77; luminal controls 26 -> 48 with LumA + LumB
+  together, 42 split) and improve known-use specificity and dependency agreement slightly, but drugs that reverse
+  nearly every disease rise from 13.2% to 13.9-14.2% (tolerance 0.5 points), mostly through the dedifferentiated
+  liposarcoma network (57 tumors, least reproducible). Breast's cell-type networks are less reproducible than its
+  very stable pooled network (0.48 vs 0.61), so the uncertainty gate would keep breast pooled anyway.
+
+## 2026-11-03: metaVIPER-style breast (D95) and 85-tumor floor (D96): neither adopted
+- D95 helps luminal breast (controls 26 -> 43) but barely moves basal (97 -> 92): combining networks by signal
+  strength lets the pooled network's strong anti-estrogen misread dominate. D96 matches the D94 cell-type results
+  (basal 97 -> 77, luminal 26 -> 41, ChEMBL known-use 0.500 -> 0.514). Both raise growth-arrest dominance by about
+  1 point (151 -> 161-163 drugs). A control rerun on the same network leaves dominance unchanged, so the rise is a
+  real effect of the new networks, not noise from rerunning.
+
+## 2026-11-03: production switch to cell-type networks (D97) and queued checks (D98-D100)
+- **D97 (user decision):** the 85-tumor cell-type networks are production (`config/group_networks.tsv`, 12 groups).
+  Backups `*_pre_d97` (regulon file, drug activity, Step 6 data); last pre-switch results commit `3320b5f`. Rebuilt:
+  Step 6 for the 12 groups and 4 subgroups, drug activity, P1 lists, rankings (consensus and TF arm), downstream.
+  The 79y2 comparison step first failed (needs `SBX`), resumed. Verified: production equals the D96 test arm on every
+  check (basal anti-estrogens 76.5, luminal controls 41.3, known-use 0.615 / 0.514, dominance 14.2%).
+- **Written before running, queued after the switch:** D98 selectivity flag for broad reversers at the tier step;
+  D99 PROGENy / DoRothEA validation (on-target pathways, ESR1 check, disease contrasts, agreement before vs after
+  the switch); D100 early (6 h) and late (24 h) rankings as reported columns, with a test of early profiles as lead.
+- Literature notes added: `LITERATURE_NETWORKS.md` (network building), `LITERATURE_SCORING.md` (scoring methods,
+  gaps: reversal is largely generic anti-proliferation, Koudijs 2023).
+
+## 2026-11-03: selectivity flag for broad reversers (D98): not adopted
+- The 163 drugs that reverse >= 80% of cancers reach tiers 1-2 in 516 cancer x drug rows, but in those rows they
+  already rank far above their own typical position (median 36 percentile points above their median), because tiers
+  require a top-10% mechanism-specificity score. Requiring 25 points removes only 18 rows; 35 points removes about
+  half but loses 4 of 29 known uses (ChEMBL). The existing specificity score already does the selectivity job.
+
+## 2026-11-03: independent pathway check (D99, PROGENy / DoRothEA)
+- Drug profiles carry on-target signal: kinase and pathway inhibitors move their pathway as expected in 75% of
+  1,446 profiles (PI3K 91%, MAPK 86%, p53 81%, EGFR 68%; JAK-STAT and NFkB at chance). Timing makes no difference
+  here (6 h 74% vs 24 h 73%); the lowest active dose reads best (81%).
+- PROGENy reads anti-estrogens as blocking estrogen signalling in all 15 MCF7 profiles, while our ARACNe ESR1 reads
+  them as activating on every breast network, including the new luminal ones. The ranking improved through the
+  disease side, not through a fixed ESR1 reading.
+- Disease pathways match known biology in 4 of 5 checks (thyroid MAPK fails). Our lead score agrees only weakly with
+  a pathway-based ranking (0.17), slightly more after the switch than before; tier 1-2 drugs reverse pathways a bit
+  more than average.
+
+## 2026-11-03: early (6 h) and late (24 h) rankings (D100)
+- Both rankings run through production for the 1,123 drugs with both time points. Ranking on early profiles loses
+  known-use recovery (Hub AUC 0.61 -> 0.51) and slightly worsens the breast controls, though it cuts broad
+  growth-arrest hits (14.2% -> 11.1%); the late ranking is essentially the current one. Aggregated stays the lead.
+- Each cancer x drug row now has early and late scores and a timing class (both 4,668; early only 1,871; late only
+  2,051; neither 19,408; unknown 22,762) in `results/lincs/d100/timing_scores.tsv`, to be shown on the rankings page.
+
+## 2026-11-03: PROGENy reading for ESR1 / AR (D101), rankings page timing column
+- D101: reading ESR1 and AR on the drug side from PROGENy (correct for anti-estrogens) moves anti-estrogens by under
+  one percentile point; not adopted. A single receptor carries little weight among ~1,000 regulators; the luminal
+  program as a whole drives the anti-estrogen rank.
+- Rankings page (`79x`, template): new Timing column (early + late, early only, late only, neither, no 6 h data) with
+  early / late percentiles in the tooltip and the score table, a legend entry, and an updated validation note
+  (4,483 of 9,823 FDA rows have a timing class). Published as a new page: https://claude.ai/artifact/DkoreTiuHXRkqaEYMG5hfk
+
+## 2026-11-04: relative target-presence gate (D102), breast stage
+- Rule (D102): a drug whose ChEMBL-backed targets (79w binding rule) are all absent in a group (median TPM < 1 or
+  < 10% of the gene's highest group median) is ranked below every other drug in that group; scores are unchanged.
+  Post-ranking step on production (`scripts/d102/d102_gate.py`, `STAGE=1`); 79b / 79w untouched.
+- Breast: Basal anti-estrogens 76.5 -> 3.3 (fulvestrant, raloxifene to the bottom; tamoxifen stays at 87 because its
+  potent target EBP is expressed), LumA / LumB controls 41.3 -> 43.8, known-use AUC Hub 0.614 -> 0.637, ChEMBL
+  0.494 -> 0.488. Stopped by B4: gefitinib (EGFR 1-3 TPM in luminal) and metoprolol (beta receptors < 1 TPM), both
+  ChEMBL trial labels for breast cancer, are demoted in LumA / LumB. 53-72 drugs demoted per breast group.
+- Issues for an amendment: amplified cohorts set the 10% reference (ERBB2 51 TPM in Basal counts absent vs 1,271
+  in Her2); tamoxifen escapes on EBP; anti-estrogens also demoted in Her2 (ESR1 2.1 TPM).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

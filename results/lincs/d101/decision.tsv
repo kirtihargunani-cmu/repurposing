@@ -1,0 +1,6 @@
+criterion	value	met
+1 breast: positive +5, Basal not higher	pos 41.8 vs 41.3; neg 76.0 vs 76.5	False
+2 prostate controls not lower	86.3 vs 86.3	True
+3 known-use AUC falls <= 0.01	Hub 0.616 vs 0.614; ChEMBL 0.514 vs 0.514	True
+4 dominance rises <= 0.5	14.2% vs 14.2%	True
+DECISION	do not adopt	False

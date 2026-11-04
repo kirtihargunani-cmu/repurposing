@@ -1,0 +1,7 @@
+check	value	reading
+V1 drug profiles carry on-target pathway signal	74.6% expected sign over 1446 profiles, p = 2.1e-81	yes
+V2 ESR1 misread is network-side	PROGENy Estrogen negative in 15 of 15; ARACNe ESR1 (BRCA pooled) positive in 15 of 15	yes
+V3 disease contrasts hold	4 of 5	not all: V4 is weak evidence
+V4 D97 does not lose agreement	median Spearman post 0.170 vs pre 0.163	ok
+V4 tiers favour pathway-reversing drugs	tier 1-2 median PROGENy-reversal percentile post 58.6	yes
+V5 DoRothEA A-B ligand reading (reported)	60.1% of 346 ligand profiles	-

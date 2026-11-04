@@ -1,0 +1,7 @@
+criterion	value	met
+1 Hub AUC +0.03, ChEMBL not lower	Hub 0.602 vs 0.610; ChEMBL 0.499 vs 0.492	False
+2 specificity gap not smaller	Hub -3.8 vs -3.6; ChEMBL -4.6 vs -4.4	False
+3 controls	positive 56.3 vs 45.0; negative 98.5 vs 97.2	True
+4 dominance not higher	9.8% vs 12.2%	True
+5 ESR1 negative in most MCF7 anti-estrogen profiles	13% negative (MECH, 15 profiles)	False
+DECISION	keep current profiles	False
