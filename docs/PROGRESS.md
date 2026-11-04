@@ -687,6 +687,14 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Each cancer x drug row now has early and late scores and a timing class (both 4,668; early only 1,871; late only
   2,051; neither 19,408; unknown 22,762) in `results/lincs/d100/timing_scores.tsv`, to be shown on the rankings page.
 
+## 2026-11-03: PROGENy reading for ESR1 / AR (D101), rankings page timing column
+- D101: reading ESR1 and AR on the drug side from PROGENy (correct for anti-estrogens) moves anti-estrogens by under
+  one percentile point; not adopted. A single receptor carries little weight among ~1,000 regulators; the luminal
+  program as a whole drives the anti-estrogen rank.
+- Rankings page (`79x`, template): new Timing column (early + late, early only, late only, neither, no 6 h data) with
+  early / late percentiles in the tooltip and the score table, a legend entry, and an updated validation note
+  (4,483 of 9,823 FDA rows have a timing class).
+
 ## Assumptions register
 Moved to [`DECISIONS.md`](DECISIONS.md), section 2 (A1-A43, with current status). The list that used to be here
 (numbered 1-16) is in this file's git history.

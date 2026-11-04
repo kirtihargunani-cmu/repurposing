@@ -117,6 +117,14 @@ top tiers they are already clearly specific to that cancer (on average 36 percen
 no extra filter was added. This change was adopted by the
 user's decision, knowing that trade-off (D97).
 
+**Fixing the ESR1 reading alone is not enough (D101).** An independent pathway map (PROGENy) reads anti-estrogens
+correctly, so we tried using it for ESR1 and AR on the drug side. The rankings barely moved (under one percentile
+point): ESR1 is one of about 1,000 switches in each cancer's score, and what holds anti-estrogens back is the whole
+luminal program being read as rising, not ESR1 itself.
+
+The rankings page now shows a **Timing** label for each drug where 6 h data exist: works early and late, early only
+(a direct effect the cell adapts to), late only (a slower or secondary effect), or neither.
+
 **Still open.** Basal breast cancer still ranks anti-estrogens fairly high, because the drugs switch on a "slow down"
 program that basal tumors have switched off. We also ranked drugs separately on their early (6 h) and late (24 h)
 responses (D100), because the two are different programs: the early one reflects what the drug does directly, the late

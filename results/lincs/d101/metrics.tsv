@@ -1,0 +1,3 @@
+	ctl_pos	ctl_neg	ctl_prad	auc_lab_hub	auc_lab_chembl	dominance
+production	41.3000	76.5000	86.3000	0.6145	0.5142	0.1425
+d101	41.7500	76.0000	86.3000	0.6161	0.5138	0.1416
