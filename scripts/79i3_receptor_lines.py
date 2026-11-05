@@ -93,11 +93,13 @@ def main():
             ks[key_group] = set(m.index)
         return ks[key_group]
 
-    def judge(df, unit, parent, pres):
+    def judge(df, unit, parent, PP):
+        pres = PP.present.to_dict(); pres_fda = PP.present_fda.to_dict() if "present_fda" in PP else pres
         status, detail = [], []
         for u, par, pert, d, src in zip(df[unit], df[parent], df.pert_id, df.cmap_name, df.source):
             e = E.get(d)
-            tp = [t for t in e if pres.get((u, t), True)] if e else []
+            pm = pres_fda if d in i2.FDA_NAMES else pres
+            tp = [t for t in e if pm.get((u, t), True)] if e else []
             if not tp or not set(tp) <= REC:
                 status.append(""); detail.append(""); continue
             L = by_drug.get(pert, np.array([]))
@@ -133,8 +135,8 @@ def main():
         return df
 
     g["_par"] = g.group_id
-    g = rerank(judge(g, "group_id", "_par", P["group"].present.to_dict()), "group_id", [("spec_mech_pct", "tier_spec_mech")]).drop(columns="_par")
-    s = rerank(judge(s, "stratum", "parent_group", P["stratum"].present.to_dict()), "stratum",
+    g = rerank(judge(g, "group_id", "_par", P["group"]), "group_id", [("spec_mech_pct", "tier_spec_mech")]).drop(columns="_par")
+    s = rerank(judge(s, "stratum", "parent_group", P["stratum"]), "stratum",
                [("spec_mech_pct", "tier_spec_mech"), ("spec_sib_mech_pct", "tier_spec_sib_mech")])
     g.to_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", index=False)
     s.to_csv(RES / f"stratum_reversal_split{SFX}.tsv", sep="\t", index=False)

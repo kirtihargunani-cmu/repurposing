@@ -1,0 +1,2 @@
+cohort	pert_id	lab_hub	lab_chembl	group_id	cmap_name	spec_mech_pct_prod	target_absent_prod	receptor_status_prod	evidence_targets_prod	spec_mech_pct_d105	target_absent_d105	receptor_status_d105	evidence_targets_d105	target_source	secondary_targets	dem_prod	dem_d105
+BRCA-Basal	BRD-K51350053	True	True	BRCA-Basal	toremifene	70.2	False			2.8	True		ESR1:0.86/11.1;ESR2:0.20/0.5	chembl_mechanism		False	True

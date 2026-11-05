@@ -33,6 +33,7 @@ CARRIERS = RES / "d102/carriers_d102b.tsv.gz"
 SFX = os.environ.get("SFX", "_v2_consensus")
 TARGETS = os.environ.get("TARGETS", "")   # "d105": ChEMBL primary targets for every ranked drug (D105)
 SOURCE, SECONDARY = {}, {}
+FDA_NAMES = set()   # D105a scope (cmap names of FDA drugs)
 TOP_PCT = 10   # as 79i
 spec = importlib.util.spec_from_file_location("w79", ROOT / "scripts/79w_receptor_gate.py")
 w = importlib.util.module_from_spec(spec); spec.loader.exec_module(w)
@@ -89,9 +90,81 @@ def evidence_targets_d105():
     return E
 
 
+IDG_CUT = {"kinase": 7.5, "GPCR": 7.0, "nuclear receptor": 7.0, "ion channel": 5.0, "other": 6.0}   # Pharos / TCRD
+
+
+def evidence_targets_d105a():
+    """D105a: FDA drugs only (others keep the default evidence targets). Tiers: curated mechanism on human proteins
+    (parent / salt lookup; non-protein or non-human mechanisms -> no protein gate); annotated targets confirmed at the IDG
+    family cutoff, within 1 log unit of the best; annotated targets (unverified_binding)."""
+    E = evidence_targets_default()
+    import yaml
+    hg = w.hgnc(); cls, kinases = w.classes(hg)
+    fam = lambda g: "kinase" if g in kinases else ("ion channel" if "ion channel" in cls.get(g, "") else (cls.get(g) if cls.get(g) in ("GPCR", "nuclear receptor") else "other"))
+    cfg = yaml.safe_load(open(ROOT / "config/drug_gate.yaml"))["adme"]
+    gg = hg.dropna(subset=["gene_group_id"]).assign(gid=lambda d: d.gene_group_id.str.split("|")).explode("gid")
+    adme = set(gg[gg.gid.isin({str(i) for i in cfg["hgnc_group_ids"]})].symbol) | set(cfg["genes"])
+    dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", dtype=str)
+    ann = {}
+    for r in dd[["cmap_name", "targets_expressed", "targets_not_expressed"]].itertuples(index=False):
+        for c in r[1:]:
+            if isinstance(c, str):
+                ann.setdefault(r[0], set()).update(c.split("|"))
+    fm = set(pd.read_csv(RES / "fda_matches.tsv", sep="\t").pert_id)
+    sp = pd.read_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", usecols=["pert_id", "cmap_name"]).drop_duplicates()
+    FDA_NAMES.update(sp[sp.pert_id.isin(fm)].cmap_name)
+    w.CACHE = w.RAW / "chembl" / w.RELEASE / "d105_all"
+    d2m, _, _, best, _ = w.chembl(sorted(FDA_NAMES))
+    mech = json.load(open(w.CACHE / "mechanisms.json")) + json.load(open(w.CACHE / "mechanisms_by_parent.json"))
+    T = {t["target_chembl_id"]: t for t in json.load(open(w.CACHE / "targets.json")) + json.load(open(w.CACHE / "targets_by_parent.json"))}
+    PROT = {"SINGLE PROTEIN", "PROTEIN FAMILY", "PROTEIN COMPLEX", "PROTEIN COMPLEX GROUP", "CHIMERIC PROTEIN"}
+    genes_of = lambda t: {x["component_synonym"] for c in t.get("target_components") or [] for x in c.get("target_component_synonyms") or [] if x["syn_type"] == "GENE_SYMBOL"}
+    for d in FDA_NAMES:
+        ms = d2m.get(d, set())
+        recs = [m for m in mech if m["direct_interaction"] == 1 and ({m["molecule_chembl_id"], m["parent_molecule_chembl_id"]} & ms)]
+        hum = set()
+        for m in recs:
+            t = T.get(m["target_chembl_id"]) if m["target_chembl_id"] else None
+            if t and t.get("target_type") in PROT and t.get("organism") == "Homo sapiens":
+                hum |= genes_of(t)
+        hum -= adme
+        pv = {}
+        for m in ms:
+            for gene, v in best.get(m, {}).items():
+                pv[gene] = max(pv.get(gene, -1.0), v)
+        conf = {gene: v for gene, v in pv.items() if gene not in adme and v >= IDG_CUT[fam(gene)]}
+        an = ann.get(d, set()) - adme
+        if hum:
+            prim, src = hum, "chembl_mechanism"
+        elif recs:
+            nonhuman = any((T.get(m["target_chembl_id"]) or {}).get("organism") not in (None, "Homo sapiens") for m in recs if m["target_chembl_id"])
+            prim, src = set(), ("non_human_target" if nonhuman else "non_protein_mechanism")
+        elif an & set(conf):
+            ca = {g_: conf[g_] for g_ in an & set(conf)}; top = max(ca.values())
+            prim, src = {g_ for g_, v in ca.items() if v >= top - 1}, "confirmed_annotation"
+        elif an:
+            prim, src = an, "annotation"
+        else:
+            prim, src = set(), "none"
+        SOURCE[d] = src
+        if prim:
+            E[d] = prim
+        else:
+            E.pop(d, None)
+        sec = sorted(((g_, v) for g_, v in conf.items() if g_ not in prim), key=lambda x: -x[1])
+        SECONDARY[d] = ";".join([f"{g_}:{v:.1f}" for g_, v in sec[:8]] + [f"{g_}:ann" for g_ in sorted(an - prim - set(conf))][:8])
+    return E
+
+
 def evidence_targets():
     if TARGETS == "d105":
         return evidence_targets_d105()
+    if TARGETS == "d105a":
+        return evidence_targets_d105a()
+    return evidence_targets_default()
+
+
+def evidence_targets_default():
     hg = w.hgnc(); cls, kinases = w.classes(hg)
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", dtype=str)
     ann = {}
@@ -154,7 +227,7 @@ def presence(genes=None):
     out = {}
     g = pd.read_csv(PROC / "target_expression.tsv.gz", sep="\t")
     sx = pd.read_csv(PROC / "target_expression_strata_v2.tsv.gz", sep="\t")
-    if TARGETS == "d105" and genes:
+    if TARGETS in ("d105", "d105a") and genes:
         gx, sxx = extra_expression(sym, genes)
         g, sx = pd.concat([g, gx], ignore_index=True), pd.concat([sx, sxx], ignore_index=True)
     g["symbol"] = g.gene_id.map(sym); g = g.dropna(subset=["symbol"]).drop_duplicates(["group_id", "symbol"])
@@ -166,6 +239,9 @@ def presence(genes=None):
     for k, t in (("group", g), ("stratum", s)):
         t["R"] = t.symbol.map(R)
         t["present"] = (t.median_tpm >= 1) & (t.median_tpm >= 0.1 * t.R)
+        if TARGETS == "d105a":   # D105a: relative rule for receptors only; other targets need median TPM >= 1
+            rec = set(w.classes(w.hgnc())[0])
+            t["present_fda"] = (t.median_tpm >= 1) & ((t.median_tpm >= 0.1 * t.R) | ~t.symbol.isin(rec))
         out[k] = t.set_index(["group_id", "symbol"])
     return out
 
@@ -179,6 +255,7 @@ def apply(f, unit, P, E, pct_cols):
         if c + "_pregate" not in df:
             df[c + "_pregate"] = df[c]
     pres, med, R = P.present.to_dict(), P.median_tpm.to_dict(), P.R.to_dict()
+    pres_fda = P.present_fda.to_dict() if "present_fda" in P else pres
     nc = P.n_carriers.to_dict() if "n_carriers" in P else {}
     nt = P.n_tumors.to_dict() if "n_tumors" in P else {}
     absent, evs, share, ncar = [], [], [], []
@@ -186,13 +263,14 @@ def apply(f, unit, P, E, pct_cols):
         e = E.get(d)
         if not e:
             absent.append(False); evs.append(""); share.append(np.nan); ncar.append(np.nan); continue
-        absent.append(not any(pres.get((g, t), True) for t in e))
+        pm = pres_fda if d in FDA_NAMES else pres
+        absent.append(not any(pm.get((g, t), True) for t in e))
         evs.append(";".join(f"{t}:{med.get((g, t), np.nan):.2f}/{R.get((g, t), np.nan):.1f}" for t in sorted(e)))
         best = max(e, key=lambda t: nc.get((g, t), -1))
         n = nc.get((g, best), np.nan)
         ncar.append(n); share.append(n / nt[(g, best)] if n == n and nt.get((g, best)) else np.nan)
     df["target_absent"], df["evidence_targets"] = absent, evs
-    if TARGETS == "d105":
+    if TARGETS in ("d105", "d105a"):
         df["target_source"] = df.cmap_name.map(SOURCE).fillna("")
         df["unverified_binding"] = df.target_source.eq("annotation")
         df["secondary_targets"] = df.cmap_name.map(SECONDARY).fillna("")
