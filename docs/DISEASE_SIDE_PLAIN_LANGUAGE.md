@@ -116,11 +116,12 @@ GATA3 -2.4 -> +0.2, XBP1 -2.6 -> -0.2; luminal A barely changed (overall agreeme
 
 ## What is not done yet
 
-- **Patient-level results are still on the old networks (D103, 2026-11-04).** We kept the subgroups fixed: they were
-  found with the old shared networks and are not being re-clustered. We also have not rerun the per-patient regulator
-  scores (purity- and RNA-quality-corrected) on the new cell-type networks. The cancer- and subtype-level profiles
-  used to rank drugs are up to date; anything said about individual patients or about how the subgroups were formed
-  still reflects the old networks.
+- **Subgroups were found with the old networks (D103, 2026-11-04).** We kept the subgroups fixed: they were found
+  with the old shared networks and are not being re-clustered. The per-patient regulator scores (purity- and RNA-
+  quality-corrected) have now been rerun on the new cell-type networks (D106, 2026-11-05). They mostly agree with
+  the old ones (correlation 0.84-0.97 per regulator). In esophageal squamous cancer, whose network is built from only
+  92 tumors, individual patients now match their group's profile much less well (0.61 -> 0.31), so patient-level
+  statements there are weaker.
 - **Replication of the new subgroups** in other patient cohorts (cohorts to choose).
 - **For the PI:** the recurring block (D26) and the kidney reference, which has only 21 donors (D60).
 - **For the user:**
