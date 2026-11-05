@@ -1,0 +1,260 @@
+group_id	pert_id	cmap_name	spec_mech_pct_prod	target_absent_prod	receptor_status_prod	evidence_targets_prod	spec_mech_pct_d105	target_absent_d105	receptor_status_d105	evidence_targets_d105	target_source	secondary_targets	dem_prod	dem_d105
+LGG-IDHmut-noncodel	BRD-A37630846	daunorubicin	100.0	False			6.8	True		TOP2A:4.95/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+LGG-IDHmut-codel	BRD-A37630846	daunorubicin	100.0	False			8.2	True		TOP2A:4.43/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-LIHC	BRD-K68191783	ALW-II-38-3	99.9	False			11.9	True		DDR1:5.47/205.6	annotation		False	True
+LGG-IDHmut-codel	BRD-K91966436	daunorubicin	99.9	False			8.1	True		TOP2A:4.43/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+LGG-IDHmut-noncodel	BRD-K91966436	daunorubicin	99.9	False			6.7	True		TOP2A:4.95/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-PRAD	BRD-K78373679	Ro-3306	99.8	False			10.6	True		CDK1:3.69/48.5	chembl_potency		False	True
+TCGA-KICH	BRD-A37630846	daunorubicin	99.8	False			11.4	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+LGG-IDHmut-noncodel	BRD-K61468417	doxorubicin	99.8	False			6.6	True		AURKA:1.87/25.8;TOP2A:4.95/72.6	chembl_potency	ESR1:6.3;TOP2B:6.1	False	True
+PCPG-PGL	BRD-K03067624	emetine	99.8	False			14.4	False	receptor_mismatch	ADRA2A:1.36/4.6;ADRA2C:0.66/6.8;SLC2A1:9.19/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+TCGA-KIRC	BRD-A37630846	daunorubicin	99.8	False			6.9	True		TOP2A:4.74/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-SKCM	BRD-K07303502	BRD-K07303502	99.8	False			10.3	True		FAAH:1.33/26.3	chembl_potency	PLA2G4C:6.4;PLA2G4B:6.1	False	True
+LGG-IDHmut-codel	BRD-K61468417	doxorubicin	99.8	False			8.0	True		AURKA:2.13/25.8;TOP2A:4.43/72.6	chembl_potency	ESR1:6.3;TOP2B:6.1	False	True
+SARC-DDLPS	BRD-A25687296	emetine	99.7	False			8.3	False	receptor_mismatch	ADRA2A:1.35/4.6;ADRA2C:1.44/6.8;SLC2A1:15.00/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+LGG-IDHmut-codel	BRD-K04548931	epirubicin	99.7	False			8.0	True		TOP2A:4.43/72.6	chembl_potency	CHD1:ann	False	True
+PCPG-PGL	BRD-K01976263	emetine	99.7	False			14.4	False	receptor_mismatch	ADRA2A:1.36/4.6;ADRA2C:0.66/6.8;SLC2A1:9.19/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+TCGA-KIRP	BRD-A37630846	daunorubicin	99.7	False			8.7	True		TOP2A:3.29/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+LGG-IDHmut-noncodel	BRD-K04548931	epirubicin	99.7	False			6.6	True		TOP2A:4.95/72.6	chembl_potency	CHD1:ann	False	True
+TCGA-KICH	BRD-K91966436	daunorubicin	99.7	False			11.3	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-KIRC	BRD-K91966436	daunorubicin	99.7	False			6.8	True		TOP2A:4.74/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+PCPG-PHEO	BRD-K01976263	emetine	99.6	False			13.3	False	receptor_mismatch	ADRA2A:1.59/4.6;ADRA2C:0.68/6.8;SLC2A1:9.70/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+UCEC-SER	BRD-K94325918	kinetin-riboside	99.6	False			8.6	True		ADORA3:0.93/7.8	chembl_potency		False	True
+CESC-SCC	BRD-K14619660	altrenogest	99.5	False			9.4	True		PGR:0.10/1.1	annotation		False	True
+UCEC-EEC	BRD-K94325918	kinetin-riboside	99.5	False			9.0	True		ADORA3:0.77/7.8	chembl_potency		False	True
+TCGA-LIHC	BRD-K69023402	thapsigargin	99.5	False			11.8	True		ATP2A1:0.26/2.0	chembl_potency	MTOR:8.4	False	True
+TCGA-PRAD	BRD-K01436366	XMD-1150	99.5	False			10.5	True		LRRK2:0.71/5.4	chembl_potency	BRD4:7.2;BRDT:6.4	False	True
+TCGA-KIRP	BRD-K91966436	daunorubicin	99.4	False			8.6	True		TOP2A:3.29/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+LGG-IDHmut-noncodel	BRD-K17210248	daunorubicin	99.3	False			6.5	True		TOP2A:4.95/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+PCPG-PGL	BRD-K94325918	kinetin-riboside	99.3	False			12.8	True		ADORA3:0.77/7.8	chembl_potency		False	True
+TCGA-BLCA	BRD-K19894101	MST-312	99.2	False			8.0	True		TERT:0.40/0.4	chembl_potency		False	True
+TCGA-LIHC	BRD-K14821540	FCCP	99.1	False			11.7	True		TSHR:0.03/0.4	chembl_potency		False	True
+PCPG-PHEO	BRD-K62289640	lylamine	99.1	False			11.7	True		CNR1:0.75/5.2	annotation		False	True
+LGG-IDHmut-noncodel	BRD-K85853281	BRD-K85853281	99.0	False			6.4	True		THPO:0.92/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+TGCT-SEM	BRD-K85853281	BRD-K85853281	99.0	False			8.4	True		THPO:0.21/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+PCPG-PHEO	BRD-K18518344	digitoxigenin	99.0	False			11.6	True		ATP12A:-0.00/0.7	chembl_potency	ATP1A1:ann	False	True
+TCGA-COAD	BRD-A61154809	gliclazide	99.0	False			8.7	False	receptor_mismatch	ABCC8:0.20/12.4;KCNJ11:1.52/6.8	chembl_mechanism		False	True
+CESC-AD	BRD-K14619660	altrenogest	99.0	False			9.0	True		PGR:0.31/1.1	annotation		False	True
+LGG-IDHmut-codel	BRD-K17210248	daunorubicin	99.0	False			7.9	True		TOP2A:4.43/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-KICH	BRD-K04548931	epirubicin	99.0	False			11.2	True		TOP2A:0.97/72.6	chembl_potency	CHD1:ann	False	True
+TCGA-LIHC	BRD-K41431477	A-23187	98.9	False			11.7	True		NPSR1:-0.00/0.1	chembl_potency	HTT:6.0	False	True
+TCGA-READ	BRD-A61154809	gliclazide	98.9	False			8.4	False	receptor_mismatch	ABCC8:0.14/12.4;KCNJ11:1.35/6.8	chembl_mechanism		False	True
+TCGA-LIHC	BRD-K91370081	anisomycin	98.7	False			11.6	True		SLC2A1:2.72/202.2	chembl_potency	NHP2L1:ann;RPL10L:ann;RPL11:ann;RPL13A:ann;RPL15:ann;RPL19:ann;RPL23:ann;RPL23A:ann	False	True
+SARC-DDLPS	BRD-A29901043	KIN001-127	98.7	False			6.6	True		ITK:0.91/1.6	annotation		False	True
+TCGA-BLCA	BRD-K53903639	CHEMBL-1222381	98.7	False			8.0	True		CAMK2A:0.05/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+LGG-IDHmut-noncodel	BRD-A76941896	doxorubicin	98.7	False			6.3	True		AURKA:1.87/25.8;TOP2A:4.95/72.6	chembl_potency	ESR1:6.3;TOP2B:6.1	False	True
+ESCA-AD	BRD-K85853281	BRD-K85853281	98.6	False			6.6	True		THPO:0.13/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+PCPG-PGL	BRD-K62289640	lylamine	98.6	False			14.2	False	receptor_mismatch	CNR1:1.32/5.2	annotation		False	True
+TCGA-READ	BRD-K99257182	quinine	98.6	False			8.3	False	receptor_mismatch	KCNN4:75.27/56.4	annotation		False	True
+TCGA-GBM	BRD-K85853281	BRD-K85853281	98.6	False			4.4	True		THPO:0.69/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+LGG-IDHmut-codel	BRD-A76941896	doxorubicin	98.5	False			7.8	True		AURKA:2.13/25.8;TOP2A:4.43/72.6	chembl_potency	ESR1:6.3;TOP2B:6.1	False	True
+BRCA-Basal	BRD-K85853281	BRD-K85853281	98.4	False			7.9	True		THPO:0.21/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+PCPG-PGL	BRD-A63675168	brivudine	98.3	False			12.7	True		TK1:2.48/87.0	chembl_potency		False	True
+TCGA-KIRC	BRD-K04548931	epirubicin	98.3	False			6.7	True		TOP2A:4.74/72.6	chembl_potency	CHD1:ann	False	True
+TCGA-STAD	BRD-A61154809	gliclazide	98.3	False			6.6	False	receptor_mismatch	ABCC8:0.24/12.4;KCNJ11:1.43/6.8	chembl_mechanism		False	True
+TGCT-SEM	BRD-K68103045	CGS-20625	98.3	False			9.3	False	receptor_mismatch	GABRA1:-0.00/0.7;GABRA2:0.04/0.8;GABRA3:34.71/2.3;GABRA4:-0.00/0.1;GABRA5:0.58/0.7;GABRA6:-0.00/-0.0	annotation		False	True
+TCGA-STAD	BRD-K53903639	CHEMBL-1222381	98.2	False			6.2	True		CAMK2A:0.10/3.7;NEUROD1:0.03/0.6	annotation		False	True
+TCGA-KIRP	BRD-K04548931	epirubicin	98.1	False			8.5	True		TOP2A:3.29/72.6	chembl_potency	CHD1:ann	False	True
+TCGA-LUSC	BRD-K67439147	SIB-1893	98.1	False			8.6	True		GRM5:0.02/0.1	annotation		False	True
+TCGA-COAD	BRD-K99257182	quinine	98.1	False			8.6	False	receptor_mismatch	KCNN4:65.94/56.4	annotation		False	True
+TCGA-KIRC	BRD-A68009927	daunorubicin	98.0	False			6.6	True		TOP2A:4.74/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-SKCM	BRD-A15010982	HU-211	98.0	False			10.2	True		CNR1:0.15/5.2;CNR2:0.03/0.1;GRIN1:0.06/2.6	annotation		False	True
+ESCA-SCC	BRD-K85853281	BRD-K85853281	98.0	False			6.6	True		THPO:0.14/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+TCGA-KIRP	BRD-K24681473	YM-155	97.8	False			8.4	True		BIRC5:1.46/40.5	annotation		False	True
+TCGA-LIHC	BRD-A62809825	thapsigargin	97.8	False			11.5	True		ATP2A1:0.26/2.0	chembl_potency	MTOR:8.4	False	True
+PCPG-PHEO	BRD-K19894101	MST-312	97.8	False			11.5	True		TERT:-0.00/0.4	chembl_potency		False	True
+TARGET-NBL	BRD-K15025317	BAY-11-7082	97.7	False			6.6	True		ALDH1A1:8.82/111.6	chembl_potency	RELA:ann	False	True
+TCGA-ACC	BRD-U86922168	QL-XII-47	97.7	False			12.4	True		BMX:0.19/0.6;BTK:0.75/6.0	chembl_potency		False	True
+SARC-UPS	BRD-A29901043	KIN001-127	97.7	False			7.4	True		ITK:0.70/1.6	annotation		False	True
+TCGA-KICH	BRD-K89839824	raltitrexed	97.6	False			11.1	True		TYMS:3.94/95.4	chembl_mechanism	SLC19A1:8.2;DHFR:8.1;FOLR1:7.8;FOLR2:7.7;SLC46A1:7.0;EHMT2:6.9;FPGS:ann	False	True
+SARC-LMS	BRD-K15025317	BAY-11-7082	97.3	False			5.1	True		ALDH1A1:10.24/111.6	chembl_potency	RELA:ann	False	True
+TCGA-ACC	BRD-K14821540	FCCP	97.3	False			12.3	True		TSHR:0.07/0.4	chembl_potency		False	True
+TCGA-LIHC	BRD-K62289640	lylamine	97.2	False			11.4	True		CNR1:0.03/5.2	annotation		False	True
+TCGA-STAD	BRD-K85853281	BRD-K85853281	97.2	False			6.0	True		THPO:0.17/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+TCGA-KICH	BRD-K24681473	YM-155	97.2	False			11.0	True		BIRC5:0.77/40.5	annotation		False	True
+TCGA-ACC	BRD-K37940862	BRD-K37940862	97.1	False			12.2	True		NPSR1:-0.00/0.1	annotation		False	True
+TCGA-HNSC	BRD-K43568579	WZ-4-145	97.1	False			8.2	True		FGFR1:8.70/111.2	chembl_potency	EGFR:7.8;FGFR2:7.7;FGFR4:7.7;FGFR3:7.5	False	True
+TCGA-LIHC	BRD-K03067624	emetine	97.1	False			11.4	True		ADRA2A:0.21/4.6;ADRA2C:0.69/6.8;SLC2A1:2.72/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+TCGA-LUAD	BRD-A61154809	gliclazide	97.0	False			7.9	False	receptor_mismatch	ABCC8:0.33/12.4;KCNJ11:1.75/6.8	chembl_mechanism		False	True
+TCGA-PRAD	BRD-K14821540	FCCP	97.0	False			10.4	True		TSHR:0.07/0.4	chembl_potency		False	True
+TCGA-KIRC	BRD-K43389675	daunorubicin	96.9	False			6.6	True		TOP2A:4.74/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+SARC-LMS	BRD-K89274813	DMP-543	96.9	False			5.0	True		KCNQ2:0.01/69.6;TSHR:0.09/0.4	chembl_potency		False	True
+TCGA-SKCM	BRD-K38477985	malonoben	96.8	False			10.1	True		EGFR:0.52/44.6	annotation		False	True
+TARGET-NBL	BRD-K91145395	prostratin	96.7	False			6.5	True		PRKCG:0.11/0.9	chembl_potency		False	True
+PCPG-PGL	BRD-U86922168	QL-XII-47	96.6	False			12.6	True		BMX:0.63/0.6;BTK:0.71/6.0	chembl_potency		False	True
+CESC-AD	BRD-K19894101	MST-312	96.6	False			9.0	True		TERT:0.53/0.4	chembl_potency		False	True
+TCGA-KIRC	BRD-K31342827	BRD-K31342827	96.6	False			6.5	True		LMTK3:0.21/7.7	chembl_potency	PRKCB:8.8;PRKCA:8.6;PRKACA:8.3;PRKCE:8.2;PRKCQ:8.2;PRKCD:8.1;PIM1:8.0;PRKCH:8.0;PDPK1:ann;PRKCI:ann;PRKCZ:ann	False	True
+BRCA-Basal	BRD-K53903639	CHEMBL-1222381	96.6	False			7.8	True		CAMK2A:0.11/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+TCGA-KIRP	BRD-K53903639	CHEMBL-1222381	96.6	False			8.3	True		CAMK2A:0.01/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+TCGA-KIRC	BRD-A71390734	idarubicin	96.5	False			6.4	True		TOP2A:4.74/72.6	chembl_potency	NR3C1:7.0;LMNA:6.6;PMP22:6.4;HTT:6.2	False	True
+TCGA-ACC	BRD-K62289640	lylamine	96.5	False			12.2	True		CNR1:0.74/5.2	annotation		False	True
+TCGA-BLCA	BRD-K14821540	FCCP	96.4	False			7.9	True		TSHR:0.06/0.4	chembl_potency		False	True
+CESC-AD	BRD-K94325918	kinetin-riboside	96.4	False			8.9	True		ADORA3:0.72/7.8	chembl_potency		False	True
+PCPG-PGL	BRD-U33728988	QL-X-138	96.3	False			12.5	True		BMX:0.63/0.6;BTK:0.71/6.0	chembl_potency	MTOR:7.7;MKNK2:7.6;BLK:7.5;JAK3:7.4;NR2C2:6.1	False	True
+TCGA-KICH	BRD-A68009927	daunorubicin	96.3	False			10.9	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TARGET-NBL	BRD-K89274813	DMP-543	96.3	False			8.4	False	receptor_mismatch	KCNQ2:100.58/69.6;TSHR:0.36/0.4	chembl_potency		False	True
+TCGA-LIHC	BRD-K55468218	spiperone	96.3	False	acts_on_tumor_environment	ADRA1A:0.75/1.0;ADRA1B:1.19/1.7;DRD1:0.05/0.3;DRD2:-0.00/1.5;DRD3:-0.00/-0.0;DRD4:0.28/1.0;HTR1A:-0.00/0.0;HTR2A:0.01/1.0;HTR2B:0.47/1.2;HTR2C:-0.00/0.3;HTR7:0.05/0.5	11.3	True		DRD2:-0.00/1.5;DRD3:-0.00/-0.0;DRD4:0.28/1.0	chembl_potency	HTR2A:9.0;ADRA1B:8.2;ADRA1A:8.1;SLC6A4:8.1;HTR1A:7.8;HTR7:7.7;KCNH2:6.7;DRD1:6.5;ADRA1D:ann;DRD5:ann;HTR1D:ann;HTR6:ann	False	True
+ESCA-AD	BRD-K53903639	CHEMBL-1222381	96.2	False			6.4	True		CAMK2A:0.09/3.7;NEUROD1:0.01/0.6	annotation		False	True
+PCPG-PHEO	BRD-A63675168	brivudine	96.2	False			11.4	True		TK1:2.20/87.0	chembl_potency		False	True
+BRCA-LumB	BRD-K81272440	dantrolene	96.2	False			7.9	True		RYR1:0.70/12.9;RYR3:0.06/0.8	annotation		False	True
+SARC-DDLPS	BRD-K01976263	emetine	96.2	False			8.2	False	receptor_mismatch	ADRA2A:1.35/4.6;ADRA2C:1.44/6.8;SLC2A1:15.00/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+TCGA-OV	BRD-K19894101	MST-312	96.2	False			7.9	True		TERT:0.20/0.4	chembl_potency		False	True
+LGG-IDHmut-codel	BRD-K79090631	CGP-60474	96.1	False			7.7	True		CDK1:4.11/48.5;XBP1:30.04/312.1	chembl_potency	RAB9A:6.2;HTT:6.2;NPC1:6.1;CDK2:ann	False	True
+TCGA-BLCA	BRD-K55127134	fluphenazine	96.1	False	ok	DRD1:0.19/0.3;DRD2:0.04/1.5;DRD5:0.01/0.1;HRH1:3.58/7.4;HTR2A:0.03/1.0;HTR6:-0.00/0.3;HTR7:0.45/0.5	7.7	True		DRD2:0.04/1.5;DRD3:-0.00/-0.0;HTR2A:0.03/1.0	chembl_potency	HRH1:8.3;ADRA1A:8.2;HTR7:8.1;SIGMAR1:8.1;DRD1:8.0;ADRA2B:7.9;ADRA1D:7.8;DRD5:7.7;CALM1:ann	False	True
+TGCT-SEM	BRD-K56800335	guanaben-acetate	96.1	False			8.0	True		ADRA2A:0.72/4.6;ADRA2B:0.66/0.9	annotation		False	True
+PCPG-PGL	BRD-K99252563	QL-XII-47	96.0	False			12.4	True		BMX:0.63/0.6;BTK:0.71/6.0	chembl_potency		False	True
+TCGA-LIHC	BRD-K94325918	kinetin-riboside	96.0	False			11.1	True		ADORA3:0.59/7.8	chembl_potency		False	True
+PCPG-PGL	BRD-K91370081	anisomycin	95.9	False			12.4	True		SLC2A1:9.19/202.2	chembl_potency	NHP2L1:ann;RPL10L:ann;RPL11:ann;RPL13A:ann;RPL15:ann;RPL19:ann;RPL23:ann;RPL23A:ann	False	True
+TCGA-SKCM	BRD-K91145395	prostratin	95.9	False			10.0	True		PRKCG:0.01/0.9	chembl_potency		False	True
+TCGA-ACC	BRD-K99252563	QL-XII-47	95.8	False			12.1	True		BMX:0.19/0.6;BTK:0.75/6.0	chembl_potency		False	True
+SARC-DDLPS	BRD-K91370081	anisomycin	95.7	False			6.6	True		SLC2A1:15.00/202.2	chembl_potency	NHP2L1:ann;RPL10L:ann;RPL11:ann;RPL13A:ann;RPL15:ann;RPL19:ann;RPL23:ann;RPL23A:ann	False	True
+PCPG-PHEO	BRD-K03067624	emetine	95.7	False			13.1	False	receptor_mismatch	ADRA2A:1.59/4.6;ADRA2C:0.68/6.8;SLC2A1:9.70/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+UCEC-EEC	BRD-K19894101	MST-312	95.7	False			8.7	True		TERT:0.40/0.4	chembl_potency		False	True
+TARGET-WT	BRD-K85853281	BRD-K85853281	95.5	False			10.1	True		THPO:0.48/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+TCGA-KIRC	BRD-K24681473	YM-155	95.3	False			6.3	True		BIRC5:2.50/40.5	annotation		False	True
+TCGA-KICH	BRD-A64485570	trifluridine	95.1	False			10.8	True		TYMS:3.94/95.4	annotation		False	True
+TCGA-BLCA	BRD-K62289640	lylamine	95.1	False			7.6	True		CNR1:0.09/5.2	annotation		False	True
+PCPG-PHEO	BRD-K37991163	paroxetine	95.1	False		CHRM1:4.10/2.5;CHRM2:-0.00/0.1;CHRM3:1.78/3.3;CHRM4:0.67/0.7;CHRM5:0.10/0.1;SLC6A2:69.72/1.0;SLC6A4:0.07/0.3	11.3	True		SLC6A4:0.07/0.3	chembl_potency	HTR6:9.2;MPO:7.7;CHRM4:7.5;CHRM1:7.5;CHRM3:7.4;SLC6A2:7.4;CHRM5:7.0;TACR1:6.7;HTR2A:ann	False	True
+TCGA-THCA	BRD-K64881305	ispinesib	95.1	False			8.9	True		KIF11:1.33/17.0	chembl_mechanism		False	True
+TCGA-LIHC	BRD-K01976263	emetine	95.1	False			11.1	True		ADRA2A:0.21/4.6;ADRA2C:0.69/6.8;SLC2A1:2.72/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+PCPG-PGL	BRD-K19416115	sitagliptin	95.0	False			12.3	True		DPP4:0.42/26.8	chembl_potency		False	True
+UCEC-SER	BRD-K14821540	FCCP	95.0	False			8.3	True		TSHR:0.24/0.4	chembl_potency		False	True
+TCGA-PRAD	BRD-K19554809	MK-212	94.9	False			10.4	True		HTR2C:-0.00/0.3	chembl_potency	HTR2A:6.4;HTR1A:6.1	False	True
+LGG-IDHmut-codel	BRD-A68009927	daunorubicin	94.9	False			7.6	True		TOP2A:4.43/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-ACC	BRD-K69023402	thapsigargin	94.9	False			12.0	True		ATP2A1:0.61/2.0	chembl_potency	MTOR:8.4	False	True
+TCGA-READ	BRD-K19554809	MK-212	94.8	False			7.5	True		HTR2C:-0.00/0.3	chembl_potency	HTR2A:6.4;HTR1A:6.1	False	True
+TCGA-OV	BRD-K01436366	XMD-1150	94.8	False			7.8	True		LRRK2:0.33/5.4	chembl_potency	BRD4:7.2;BRDT:6.4	False	True
+TGCT-NSGCT	BRD-K41895714	AS-605240	94.8	False			7.4	True		PIK3CG:0.59/1.4	annotation		False	True
+TCGA-PAAD	BRD-A01787639	naftopidil	94.8	False			5.9	True		ADRA1D:0.12/0.4	chembl_mechanism	ADRA1A:8.4;HTR1A:8.1;ADRA1B:7.7;DRD3:7.4;HTR2B:7.3;ADRA2C:6.7;ADRA2A:6.5;ADRA2B:6.5	False	True
+LGG-IDHmut-noncodel	BRD-A68009927	daunorubicin	94.8	False			6.2	True		TOP2A:4.95/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-THCA	BRD-K69023402	thapsigargin	94.5	False			8.8	True		ATP2A1:0.36/2.0	chembl_potency	MTOR:8.4	False	True
+TCGA-LUAD	BRD-A04756508	norgestimate	94.5	False			6.9	True		PGR:0.17/1.1	chembl_mechanism	NR3C1:7.4	False	True
+TCGA-KIRP	BRD-K04623885	BIBR-1532	94.5	False			8.2	True		TERT:-0.00/0.4	chembl_potency		False	True
+TCGA-HNSC	BRD-K08219523	5-nonyloxytryptamine	94.5	False			8.1	True		HTR1B:0.07/0.3	chembl_potency	HTR1D:7.8;HTR2A:6.6;HTR1A:6.5	False	True
+TCGA-LIHC	BRD-A22783572	vinblastine	94.5	False			11.0	True		PTGS1:0.63/11.9	chembl_potency	JUN:ann;TUBA1A:ann;TUBB:ann;TUBD1:ann;TUBE1:ann;TUBG1:ann	False	True
+PCPG-PGL	BRD-K18518344	digitoxigenin	94.5	False			12.2	True		ATP12A:-0.00/0.7	chembl_potency	ATP1A1:ann	False	True
+TCGA-KICH	BRD-K43389675	daunorubicin	94.4	False			10.8	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-KIRP	BRD-K43389675	daunorubicin	94.4	False			8.1	True		TOP2A:3.29/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-PAAD	BRD-K69023402	thapsigargin	94.4	False			5.8	True		ATP2A1:0.49/2.0	chembl_potency	MTOR:8.4	False	True
+TCGA-KIRC	BRD-A61154809	gliclazide	94.4	False			6.2	True		ABCC8:0.14/12.4;KCNJ11:0.55/6.8	chembl_mechanism		False	True
+TCGA-LUAD	BRD-K51918615	iodophenpropit	94.3	False			6.9	True		HRH4:0.04/0.0	chembl_potency	HRH3:ann	False	True
+TCGA-KIRP	BRD-A71390734	idarubicin	94.3	False			8.0	True		TOP2A:3.29/72.6	chembl_potency	NR3C1:7.0;LMNA:6.6;PMP22:6.4;HTT:6.2	False	True
+TCGA-KICH	BRD-K53903639	CHEMBL-1222381	94.2	False			10.7	True		CAMK2A:-0.00/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+TCGA-LIHC	BRD-A25687296	emetine	94.2	False			10.8	True		ADRA2A:0.21/4.6;ADRA2C:0.69/6.8;SLC2A1:2.72/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+TGCT-SEM	BRD-K85015012	NNC-05-2090	94.1	False			7.8	True		SLC6A12:0.93/8.4	annotation		False	True
+TCGA-SKCM	BRD-K15616905	CCCP	94.1	False			9.9	True		TSHR:0.13/0.4	chembl_potency		False	True
+TCGA-THCA	BRD-K31912990	CGP-71683	94.0	False			8.7	True		NPY5R:0.05/0.2	annotation		False	True
+TCGA-ACC	BRD-K72636697	QL-X-138	94.0	False			11.6	True		BMX:0.19/0.6;BTK:0.75/6.0	chembl_potency	MTOR:7.7;MKNK2:7.6;BLK:7.5;JAK3:7.4;NR2C2:6.1	False	True
+ESCA-AD	BRD-K04623885	BIBR-1532	93.9	False			6.2	True		TERT:0.57/0.4	chembl_potency		False	True
+TCGA-THCA	BRD-A62809825	thapsigargin	93.9	False			8.7	True		ATP2A1:0.36/2.0	chembl_potency	MTOR:8.4	False	True
+BRCA-LumA	BRD-K22322324	BRD-K22322324	93.9	False			7.1	True		TSHR:0.14/0.4	chembl_potency		False	True
+UCEC-EEC	BRD-K14821540	FCCP	93.9	False			8.7	True		TSHR:0.06/0.4	chembl_potency		False	True
+SARC-LMS	BRD-K91145395	prostratin	93.8	False			4.9	True		PRKCG:0.07/0.9	chembl_potency		False	True
+TGCT-SEM	BRD-K70464547	sertraline	93.8	False			7.7	True		SLC6A4:0.15/0.3	chembl_potency	SLC6A3:7.6;SIGMAR1:7.5;ADRA2B:7.1;ADRA2A:7.0;CHRM1:6.5;OPRK1:6.5;CHRM5:6.4;CHRM4:6.4	False	True
+TCGA-COAD	BRD-K19554809	MK-212	93.7	False			7.9	True		HTR2C:-0.00/0.3	chembl_potency	HTR2A:6.4;HTR1A:6.1	False	True
+TCGA-KICH	BRD-K47832606	floxuridine	93.7	False			10.6	True		TYMS:3.94/95.4	chembl_mechanism	LMNA:8.4	False	True
+TCGA-SKCM	BRD-K15409150	penfluridol	93.6	False			11.4	False	receptor_mismatch	ADRA1D:0.07/0.4;ADRA2B:0.14/0.9;ADRA2C:1.65/6.8;ADRB3:0.02/0.1;DRD1:-0.00/0.3;DRD2:0.06/1.5;DRD3:-0.00/-0.0;DRD4:0.14/1.0;DRD5:-0.00/0.1;HRH1:0.75/7.4;HRH2:2.53/0.9;HTR1A:-0.00/0.0;HTR2A:0.02/1.0;HTR2B:0.52/1.2;HTR2C:-0.00/0.3;HTR5A:-0.00/0.1;HTR6:0.01/0.3;HTR7:0.14/0.5;OPRK1:-0.00/0.3;OPRM1:-0.00/0.0;SLC6A2:-0.00/1.0;SLC6A4:0.03/0.3	chembl_potency	CACNA1G:ann	False	True
+TCGA-SKCM	BRD-A33833419	TER-14687	93.5	False			9.8	True		PRKCQ:0.56/3.0	annotation		False	True
+UCEC-EEC	BRD-K37940862	BRD-K37940862	93.4	False			8.6	True		NPSR1:-0.00/0.1	annotation		False	True
+TARGET-WT	BRD-K85015012	NNC-05-2090	93.4	False			10.0	True		SLC6A12:0.81/8.4	annotation		False	True
+ESCA-AD	BRD-A60245366	AS-601245	93.3	False			6.1	True		MAPK10:1.33/22.5	chembl_potency	MAPK8:ann;MAPK9:ann	False	True
+TCGA-KICH	BRD-K08547377	irinotecan	93.3	False			10.5	True		ACHE:0.39/13.1;ADRA2C:0.27/6.8;CHRM4:0.14/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+TCGA-ACC	BRD-K19894101	MST-312	93.3	False			11.5	True		TERT:0.04/0.4	chembl_potency		False	True
+TCGA-LUAD	BRD-K67439147	SIB-1893	93.3	False			6.7	True		GRM5:0.02/0.1	annotation		False	True
+UCEC-SER	BRD-K69023402	thapsigargin	93.2	False			8.2	True		ATP2A1:0.97/2.0	chembl_potency	MTOR:8.4	False	True
+BRCA-LumB	BRD-K56800335	guanaben-acetate	93.2	False			8.8	False	receptor_mismatch	ADRA2A:4.68/4.6;ADRA2B:0.23/0.9	annotation		False	True
+TCGA-ACC	BRD-U33728988	QL-X-138	93.2	False			11.5	True		BMX:0.19/0.6;BTK:0.75/6.0	chembl_potency	MTOR:7.7;MKNK2:7.6;BLK:7.5;JAK3:7.4;NR2C2:6.1	False	True
+TCGA-KIRC	BRD-K68103045	CGS-20625	93.1	False			6.1	True		GABRA1:-0.00/0.7;GABRA2:0.01/0.8;GABRA3:0.01/2.3;GABRA4:-0.00/0.1;GABRA5:-0.00/0.7;GABRA6:-0.00/-0.0	annotation		False	True
+CESC-SCC	BRD-K53903639	CHEMBL-1222381	93.1	False			9.1	True		CAMK2A:0.11/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+SARC-LMS	BRD-K18518344	digitoxigenin	93.1	False			4.8	True		ATP12A:-0.00/0.7	chembl_potency	ATP1A1:ann	False	True
+TCGA-KICH	BRD-A71390734	idarubicin	93.0	False			10.4	True		TOP2A:0.97/72.6	chembl_potency	NR3C1:7.0;LMNA:6.6;PMP22:6.4;HTT:6.2	False	True
+TCGA-UCS	BRD-K37940862	BRD-K37940862	93.0	False			5.9	True		NPSR1:-0.00/0.1	annotation		False	True
+PCPG-PGL	BRD-A25687296	emetine	93.0	False			14.1	False	receptor_mismatch	ADRA2A:1.36/4.6;ADRA2C:0.66/6.8;SLC2A1:9.19/202.2	chembl_potency	GPR35:6.5;RPS2:ann	False	True
+TCGA-ACC	BRD-K21672174	Ro-28-1675	93.0	False			11.4	True		GCK:0.25/2.4	annotation		False	True
+TCGA-LUSC	BRD-K51918615	iodophenpropit	92.9	False			8.6	True		HRH4:0.03/0.0	chembl_potency	HRH3:ann	False	True
+LGG-IDHmut-noncodel	BRD-K43389675	daunorubicin	92.8	False			6.1	True		TOP2A:4.95/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+UCEC-SER	BRD-K19894101	MST-312	92.8	False			8.1	True		TERT:0.28/0.4	chembl_potency		False	True
+TARGET-WT	BRD-K31342827	BRD-K31342827	92.8	False			9.9	True		LMTK3:0.24/7.7	chembl_potency	PRKCB:8.8;PRKCA:8.6;PRKACA:8.3;PRKCE:8.2;PRKCQ:8.2;PRKCD:8.1;PIM1:8.0;PRKCH:8.0;PDPK1:ann;PRKCI:ann;PRKCZ:ann	False	True
+CESC-AD	BRD-K01436366	XMD-1150	92.7	False			8.7	True		LRRK2:0.50/5.4	chembl_potency	BRD4:7.2;BRDT:6.4	False	True
+TCGA-UCS	BRD-K14821540	FCCP	92.7	False			5.9	True		TSHR:0.39/0.4	chembl_potency		False	True
+TGCT-SEM	BRD-K53903639	CHEMBL-1222381	92.7	False			7.5	True		CAMK2A:0.43/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+TCGA-LIHC	BRD-K37940862	BRD-K37940862	92.7	False			10.8	True		NPSR1:-0.00/0.1	annotation		False	True
+LGG-IDHmut-codel	BRD-K43389675	daunorubicin	92.6	False			7.5	True		TOP2A:4.43/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-HNSC	BRD-U61997977	WZ-4-145	92.6	False			8.0	True		FGFR1:8.70/111.2	chembl_potency	EGFR:7.8;FGFR2:7.7;FGFR4:7.7;FGFR3:7.5	False	True
+TCGA-PRAD	BRD-K18518344	digitoxigenin	92.5	False			10.3	True		ATP12A:0.11/0.7	chembl_potency	ATP1A1:ann	False	True
+UCEC-SER	BRD-K37940862	BRD-K37940862	92.5	False			8.0	True		NPSR1:-0.00/0.1	annotation		False	True
+TCGA-KIRP	BRD-K76703230	YM-155	92.5	False			7.9	True		BIRC5:1.46/40.5	annotation		False	True
+CESC-SCC	BRD-A33711280	metixene	92.5	False			9.0	True		CHRM1:0.01/2.5;CHRM2:-0.00/0.1	chembl_potency	ADRA1A:6.2;DRD3:6.1;CHRM5:ann	False	True
+BRCA-LumA	BRD-K81272440	dantrolene	92.4	False			7.0	True		RYR1:1.09/12.9;RYR3:0.12/0.8	annotation		False	True
+TCGA-LIHC	BRD-K33882852	ZK-93423	92.4	False			10.7	True		GABRA1:-0.00/0.7;GABRA2:-0.00/0.8;GABRA3:-0.00/2.3;GABRA5:-0.00/0.7	chembl_potency	GABRB2:ann;GABRG2:ann	False	True
+SARC-LMS	BRD-K21672174	Ro-28-1675	92.4	False			4.7	True		GCK:0.38/2.4	annotation		False	True
+TCGA-LUAD	BRD-A83855350	naltrexone	92.4	False			6.7	True		OPRD1:0.07/0.3;OPRK1:0.04/0.3;OPRM1:-0.00/0.0	annotation		False	True
+ESCA-AD	BRD-K68103045	CGS-20625	92.4	False			6.0	True		GABRA1:-0.00/0.7;GABRA2:0.41/0.8;GABRA3:0.10/2.3;GABRA4:0.01/0.1;GABRA5:-0.00/0.7;GABRA6:-0.00/-0.0	annotation		False	True
+TARGET-WT	BRD-K83794624	pirarubicin	92.3	False			9.8	True		PTGS1:0.95/11.9	chembl_potency	TOP2A:ann	False	True
+PCPG-PHEO	BRD-K19416115	sitagliptin	92.2	False			11.2	True		DPP4:0.48/26.8	chembl_potency		False	True
+TARGET-NBL	BRD-K19894101	MST-312	92.1	False			6.2	True		TERT:0.33/0.4	chembl_potency		False	True
+ESCA-SCC	BRD-K08547377	irinotecan	92.1	False			7.0	False	receptor_mismatch	ACHE:0.79/13.1;ADRA2C:1.79/6.8;CHRM4:0.16/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+TCGA-BLCA	BRD-U25771771	WZ-4-145	92.1	False			7.4	True		FGFR1:6.48/111.2	chembl_potency	EGFR:7.8;FGFR2:7.7;FGFR4:7.7;FGFR3:7.5	False	True
+TCGA-PRAD	BRD-K76304753	phenazopyridine	92.0	False			10.3	True		SCN1A:-0.00/0.6	annotation		False	True
+TCGA-OV	BRD-K14821540	FCCP	92.0	False			7.7	True		TSHR:0.22/0.4	chembl_potency		False	True
+LGG-IDHmut-noncodel	BRD-K35520305	dacarbazine	91.9	False			6.0	True		MMP9:0.15/39.9	chembl_potency	PGD:ann;POLA2:ann	False	True
+TCGA-COAD	BRD-K43568579	WZ-4-145	91.9	False			7.7	True		FGFR1:8.47/111.2	chembl_potency	EGFR:7.8;FGFR2:7.7;FGFR4:7.7;FGFR3:7.5	False	True
+TCGA-UCS	BRD-K19894101	MST-312	91.9	False			5.8	True		TERT:0.39/0.4	chembl_potency		False	True
+TCGA-PRAD	BRD-K67439147	SIB-1893	91.9	False			10.2	True		GRM5:-0.00/0.1	annotation		False	True
+TCGA-LUSC	BRD-A61154809	gliclazide	91.8	False			8.4	True		ABCC8:0.15/12.4;KCNJ11:0.88/6.8	chembl_mechanism		False	True
+SARC-DDLPS	BRD-K67439147	SIB-1893	91.8	False			6.4	True		GRM5:-0.00/0.1	annotation		False	True
+ESCA-SCC	BRD-K04623885	BIBR-1532	91.8	False			6.5	True		TERT:0.19/0.4	chembl_potency		False	True
+BRCA-LumA	BRD-K53903639	CHEMBL-1222381	91.8	False			6.9	True		CAMK2A:0.13/3.7;NEUROD1:-0.00/0.6	annotation		False	True
+TCGA-KICH	BRD-K03243820	trifluridine	91.8	False			10.3	True		TYMS:3.94/95.4	annotation		False	True
+TCGA-LIHC	BRD-K64881305	ispinesib	91.7	False			10.5	True		KIF11:1.17/17.0	chembl_mechanism		False	True
+PCPG-PGL	BRD-K69023402	thapsigargin	91.7	False			12.1	True		ATP2A1:0.25/2.0	chembl_potency	MTOR:8.4	False	True
+TCGA-GBM	BRD-K70464547	sertraline	91.7	False			4.3	True		SLC6A4:0.06/0.3	chembl_potency	SLC6A3:7.6;SIGMAR1:7.5;ADRA2B:7.1;ADRA2A:7.0;CHRM1:6.5;OPRK1:6.5;CHRM5:6.4;CHRM4:6.4	False	True
+CESC-SCC	BRD-A16347691	thioctic-acid	91.6	False			8.9	True		ACHE:0.58/13.1	chembl_potency	TDP1:6.5;LMNA:6.5;APEX1:6.3;THRB:6.0;PTGS2:ann	False	True
+TGCT-SEM	BRD-K05653692	DL-PDMP	91.6	False			7.3	True		MAPT:0.62/46.5	chembl_potency	ASAH1:ann;UGCG:ann	False	True
+BRCA-Basal	BRD-K68103045	CGS-20625	91.6	False			7.6	True		GABRA1:-0.00/0.7;GABRA2:0.01/0.8;GABRA3:0.07/2.3;GABRA4:-0.00/0.1;GABRA5:0.09/0.7;GABRA6:-0.00/-0.0	annotation		False	True
+PCPG-PGL	BRD-K37991163	paroxetine	91.6	False		CHRM1:0.09/2.5;CHRM2:0.02/0.1;CHRM3:1.06/3.3;CHRM4:1.06/0.7;CHRM5:0.07/0.1;SLC6A2:40.03/1.0;SLC6A4:0.07/0.3	12.0	True		SLC6A4:0.07/0.3	chembl_potency	HTR6:9.2;MPO:7.7;CHRM4:7.5;CHRM1:7.5;CHRM3:7.4;SLC6A2:7.4;CHRM5:7.0;TACR1:6.7;HTR2A:ann	False	True
+TCGA-HNSC	BRD-U25771771	WZ-4-145	91.6	False			8.0	True		FGFR1:8.70/111.2	chembl_potency	EGFR:7.8;FGFR2:7.7;FGFR4:7.7;FGFR3:7.5	False	True
+BRCA-Her2	BRD-K22322324	BRD-K22322324	91.5	False			7.5	True		TSHR:0.21/0.4	chembl_potency		False	True
+UCEC-EEC	BRD-K69023402	thapsigargin	91.5	False			8.4	True		ATP2A1:0.98/2.0	chembl_potency	MTOR:8.4	False	True
+PCPG-PGL	BRD-K72636697	QL-X-138	91.4	False			11.9	True		BMX:0.63/0.6;BTK:0.71/6.0	chembl_potency	MTOR:7.7;MKNK2:7.6;BLK:7.5;JAK3:7.4;NR2C2:6.1	False	True
+TARGET-WT	BRD-K68103045	CGS-20625	91.4	False			9.6	True		GABRA1:0.01/0.7;GABRA2:0.10/0.8;GABRA3:0.06/2.3;GABRA4:-0.00/0.1;GABRA5:0.71/0.7;GABRA6:0.01/-0.0	annotation		False	True
+CESC-SCC	BRD-K55127134	fluphenazine	91.3	False	ok	DRD1:0.01/0.3;DRD2:0.04/1.5;DRD5:0.02/0.1;HRH1:3.78/7.4;HTR2A:0.01/1.0;HTR6:0.01/0.3;HTR7:0.43/0.5	8.7	True		DRD2:0.04/1.5;DRD3:-0.00/-0.0;HTR2A:0.01/1.0	chembl_potency	HRH1:8.3;ADRA1A:8.2;HTR7:8.1;SIGMAR1:8.1;DRD1:8.0;ADRA2B:7.9;ADRA1D:7.8;DRD5:7.7;CALM1:ann	False	True
+TCGA-KICH	BRD-K85853281	BRD-K85853281	91.3	False			10.2	True		THPO:0.03/1.3	chembl_potency	S100A4:6.4;HIF1A:6.3;STAT6:6.1;TOP2A:ann	False	True
+LGG-IDHmut-codel	BRD-K35520305	dacarbazine	91.3	False			7.3	True		MMP9:0.21/39.9	chembl_potency	PGD:ann;POLA2:ann	False	True
+TCGA-KIRP	BRD-A68009927	daunorubicin	91.2	False			7.8	True		TOP2A:3.29/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;NR3C1:7.0;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-LIHC	BRD-K25737009	CD-1530	91.2	False			10.5	True		NR2E1:0.01/0.1	chembl_potency	RARG:ann	False	True
+LGG-IDHmut-codel	BRD-A52530684	doxorubicin	91.2	False			7.3	True		AURKA:2.13/25.8;TOP2A:4.43/72.6	chembl_potency	ESR1:6.3;TOP2B:6.1	False	True
+BRCA-Her2	BRD-K45205755	BRD-K45205755	91.2	False			7.5	True		NPBWR1:0.01/0.3	chembl_potency		False	True
+TCGA-KICH	BRD-K68164687	epothilone-b	91.1	False			10.1	True		TUBB:68.83/954.5	annotation		False	True
+TCGA-BLCA	BRD-K44309363	dexniguldipine	91.1	False			7.3	True		ADRA1A:-0.00/1.0	chembl_potency	ADRA1B:7.6;ADRA1D:7.1;ADRA2C:6.3;ADRA2B:6.2;ADRA2A:6.0;ADORA3:ann	False	True
+CESC-SCC	BRD-K19894101	MST-312	91.0	False			8.6	True		TERT:0.30/0.4	chembl_potency		False	True
+LGG-IDHmut-noncodel	BRD-A52530684	doxorubicin	91.0	False			5.9	True		AURKA:1.87/25.8;TOP2A:4.95/72.6	chembl_potency	ESR1:6.3;TOP2B:6.1	False	True
+TCGA-READ	BRD-K73397362	purmorphamine	91.0	False	ok	SMO:3.10/26.8	7.4	True		SCTR:0.07/0.5	chembl_potency	SMO:6.0	False	True
+PCPG-PHEO	BRD-K08219523	5-nonyloxytryptamine	91.0	False			11.1	True		HTR1B:0.33/0.3	chembl_potency	HTR1D:7.8;HTR2A:6.6;HTR1A:6.5	False	True
+TCGA-KIRP	BRD-K35520305	dacarbazine	91.0	False			7.7	True		MMP9:3.06/39.9	chembl_potency	PGD:ann;POLA2:ann	False	True
+TCGA-SKCM	BRD-A34462049	tigecycline	90.9	False			9.7	True		PTGS2:0.49/5.5	chembl_potency		False	True
+CESC-AD	BRD-A70858459	estramustine	90.9	False			10.7	False	receptor_mismatch	ESR1:6.84/11.1;ESR2:0.38/0.5;MAP1A:0.91/30.7;MAP2:3.95/73.0	annotation		False	True
+CESC-SCC	BRD-K05653692	DL-PDMP	90.9	False			8.6	True		MAPT:0.27/46.5	chembl_potency	ASAH1:ann;UGCG:ann	False	True
+TCGA-LUSC	BRD-A04756508	norgestimate	90.8	False			8.3	True		PGR:0.10/1.1	chembl_mechanism	NR3C1:7.4	False	True
+TCGA-ACC	BRD-K18518344	digitoxigenin	90.8	False			11.3	True		ATP12A:-0.00/0.7	chembl_potency	ATP1A1:ann	False	True
+TCGA-PRAD	BRD-K64890080	BI-2536	90.8	False			10.0	True		PLK1:1.78/38.4	chembl_mechanism	PLK2:9.1;BRD4:8.9;PLK3:8.8;RPS6KA4:7.9;CAMKK1:7.7;CAMKK2:7.6;MYLK:7.0;BRDT:7.0	False	True
+PCPG-PGL	BRD-K19894101	MST-312	90.7	False			11.7	True		TERT:-0.00/0.4	chembl_potency		False	True
+LGG-IDHmut-noncodel	BRD-K24681473	YM-155	90.7	False			5.9	True		BIRC5:3.00/40.5	annotation		False	True
+TCGA-ACC	BRD-A63675168	brivudine	90.7	False			11.2	True		TK1:6.39/87.0	chembl_potency		False	True
+TCGA-SKCM	BRD-A18202423	CPCCOEt	90.7	False			9.6	True		GRM1:0.08/0.2	annotation		False	True
+TCGA-UCS	BRD-K62289640	lylamine	90.5	False			5.6	True		CNR1:0.26/5.2	annotation		False	True
+SARC-LMS	BRD-K19416115	sitagliptin	90.5	False			4.5	True		DPP4:1.86/26.8	chembl_potency		False	True
+TCGA-SKCM	BRD-K93080877	BRD-K93080877	90.5	False			9.5	True		MAPT:1.30/46.5	chembl_potency		False	True
+UCEC-SER	BRD-K01436366	XMD-1150	90.5	False			7.9	True		LRRK2:0.33/5.4	chembl_potency	BRD4:7.2;BRDT:6.4	False	True
+TCGA-LUSC	BRD-A83855350	naltrexone	90.5	False			8.2	True		OPRD1:0.02/0.3;OPRK1:0.13/0.3;OPRM1:-0.00/0.0	annotation		False	True
+CESC-AD	BRD-K18518344	digitoxigenin	90.4	False			8.6	True		ATP12A:0.01/0.7	chembl_potency	ATP1A1:ann	False	True
+TCGA-PRAD	BRD-K53913732	SB-408124	90.4	False			9.9	True		HCRTR1:0.01/0.1	chembl_potency	HTR2B:6.5;HCRTR2:6.1	False	True
+CESC-SCC	BRD-K07954936	2-iminobiotin	90.3	False			8.5	True		NOS1:0.01/0.3;NOS2:0.12/1.3	annotation		False	True
+PCPG-PHEO	BRD-K91145395	prostratin	90.3	False			11.0	True		PRKCG:0.02/0.9	chembl_potency		False	True
+SARC-UPS	BRD-K62289640	lylamine	90.2	False			7.3	True		CNR1:0.07/5.2	annotation		False	True
+SARC-DDLPS	BRD-K62289640	lylamine	90.2	False			6.3	True		CNR1:0.31/5.2	annotation		False	True
+PCPG-PGL	BRD-K89274813	DMP-543	90.1	False			14.0	False	receptor_mismatch	KCNQ2:90.56/69.6;TSHR:0.18/0.4	chembl_potency		False	True
+BRCA-Basal	BRD-K81272440	dantrolene	90.1	False			8.9	False	receptor_mismatch	RYR1:4.34/12.9;RYR3:0.20/0.8	annotation		False	True
+TCGA-STAD	BRD-K68103045	CGS-20625	90.0	False			5.9	True		GABRA1:-0.00/0.7;GABRA2:0.38/0.8;GABRA3:0.04/2.3;GABRA4:0.03/0.1;GABRA5:0.02/0.7;GABRA6:-0.00/-0.0	annotation		False	True
+LGG-IDHmut-codel	BRD-K24681473	YM-155	90.0	False			7.2	True		BIRC5:2.32/40.5	annotation		False	True
+TCGA-KIRC	BRD-K67439147	SIB-1893	90.0	False			5.9	True		GRM5:0.04/0.1	annotation		False	True

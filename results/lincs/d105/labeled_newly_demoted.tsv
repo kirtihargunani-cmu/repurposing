@@ -1,0 +1,17 @@
+cohort	pert_id	lab_hub	lab_chembl	group_id	cmap_name	spec_mech_pct_prod	target_absent_prod	receptor_status_prod	evidence_targets_prod	spec_mech_pct_d105	target_absent_d105	receptor_status_d105	evidence_targets_d105	target_source	secondary_targets	dem_prod	dem_d105
+ESCA-SCC	BRD-K08547377	False	True	ESCA-SCC	irinotecan	92.1	False			7.0	False	receptor_mismatch	ACHE:0.79/13.1;ADRA2C:1.79/6.8;CHRM4:0.16/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+TCGA-KICH	BRD-K24844714	False	True	TCGA-KICH	fluorouracil	76.4	False			8.1	True		TYMS:3.94/95.4	chembl_mechanism	LMNA:8.0;THPO:7.9;CYP19A1:6.2;TSHR:6.1;DPYD:ann	False	True
+BRCA-Basal	BRD-K08547377	False	True	BRCA-Basal	irinotecan	87.8	False			7.5	True		ACHE:0.65/13.1;ADRA2C:0.35/6.8;CHRM4:0.07/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+TCGA-LUSC	BRD-K08547377	False	True	TCGA-LUSC	irinotecan	88.7	False			9.0	False	receptor_mismatch	ACHE:0.92/13.1;ADRA2C:1.08/6.8;CHRM4:0.13/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+TGCT-SEM	BRD-A67097164	True	True	TGCT-SEM	ifosfamide	78.2	False			5.5	True		LMNA:32.52/333.9	chembl_potency	PTGS1:ann	False	True
+BRCA-Basal	BRD-K51350053	True	True	BRCA-Basal	toremifene	70.2	False			5.9	True		ESR1:0.86/11.1	annotation		False	True
+TCGA-LUAD	BRD-K73947551	False	True	TCGA-LUAD	amifostine	54.6	False			4.4	True		DRD3:-0.00/-0.0	chembl_potency	ALPPL2:ann;ENPP1:ann	False	True
+BRCA-Her2	BRD-K66175015	False	True	BRCA-Her2	afatinib	54.0	False	ok	EGFR:3.45/44.6;ERBB2:1270.96/101.5;ERBB4:1.23/4.3	4.5	True		EGFR:3.45/44.6	chembl_potency	ERBB4:9.0;ERBB2:8.7;GAK:7.1;ADRA2B:6.1	False	True
+BRCA-LumA	BRD-K66175015	False	True	BRCA-LumA	afatinib	47.2	False	ok	EGFR:2.83/44.6;ERBB2:131.41/101.5;ERBB4:6.05/4.3	3.6	True		EGFR:2.83/44.6	chembl_potency	ERBB4:9.0;ERBB2:8.7;GAK:7.1;ADRA2B:6.1	False	True
+TCGA-LUSC	BRD-K73947551	False	True	TCGA-LUSC	amifostine	35.0	False			3.0	True		DRD3:-0.00/-0.0	chembl_potency	ALPPL2:ann;ENPP1:ann	False	True
+BRCA-LumB	BRD-K66175015	False	True	BRCA-LumB	afatinib	41.2	False	ok	EGFR:1.26/44.6;ERBB2:114.32/101.5;ERBB4:4.28/4.3	3.3	True		EGFR:1.26/44.6	chembl_potency	ERBB4:9.0;ERBB2:8.7;GAK:7.1;ADRA2B:6.1	False	True
+UCEC-EEC	BRD-K08547377	False	True	UCEC-EEC	irinotecan	23.4	False			9.4	False	receptor_mismatch	ACHE:0.26/13.1;ADRA2C:7.24/6.8;CHRM4:0.09/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+UCEC-SER	BRD-K08547377	False	True	UCEC-SER	irinotecan	19.0	False			8.7	False	receptor_mismatch	ACHE:0.53/13.1;ADRA2C:10.67/6.8;CHRM4:0.04/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+CESC-SCC	BRD-K08547377	False	True	CESC-SCC	irinotecan	12.3	False			9.5	False	receptor_mismatch	ACHE:0.58/13.1;ADRA2C:1.55/6.8;CHRM4:0.06/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+CESC-AD	BRD-K08547377	False	True	CESC-AD	irinotecan	16.5	False			9.4	False	receptor_mismatch	ACHE:0.50/13.1;ADRA2C:5.48/6.8;CHRM4:0.06/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True
+TCGA-LIHC	BRD-K08547377	False	True	TCGA-LIHC	irinotecan	11.3	False			0.8	True		ACHE:0.77/13.1;ADRA2C:0.69/6.8;CHRM4:0.01/0.7	chembl_potency	TOP1:ann;TOP1MT:ann	False	True

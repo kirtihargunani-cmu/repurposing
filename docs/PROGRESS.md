@@ -758,6 +758,13 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - `79i3` after `79i2`; 406 demoted, 426 tumor-environment flags (groups). Downstream rerun: known-use Hub 0.623,
   ChEMBL 0.542; dependency D1 on matched lines 0.079 (p 0.002); stand-ins 0.605. Page republished.
 
+## 2026-11-04: D105 (ChEMBL primary targets for every drug): not adopted
+- ChEMBL 37 fetched for all 2,698 ranked drugs (1,835 with an id). Known-use Hub 0.642 vs 0.623, toremifene now
+  caught in Basal, but criterion 2 fails mechanically (Basal controls 3.0 -> 6.8 as the demoted block grew by 2,694
+  rows). Problems: mechanisms stored on salt forms missed (irinotecan, doxorubicin), non-protein mechanisms (DNA
+  alkylators) fall back to off-target potency hits, and the relative presence cut demotes proliferation enzymes in
+  slow tumors (TOP2A in LGG, TYMS in KICH). Amendment needed.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8
