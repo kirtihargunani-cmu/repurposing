@@ -84,7 +84,28 @@ def main():
         keep = lambda df: df[df.get("evidence_targets", pd.Series("", index=df.index)).fillna("").ne("") & ~df.target_absent.map(truthy)
                              & ~df.receptor_mismatch & df.get("target_source", pd.Series("", index=df.index)).isin(["chembl_mechanism", "confirmed_annotation", "annotation"])]
         n0 = (len(g), len(s)); g, s = keep(g), keep(s)
-        print(f"target present only: diseases {n0[0]} -> {len(g)} rows, subgroups {n0[1]} -> {len(s)} rows")
+        # user 2026-11-04: presence must rest on data: >= 1 main target with a tumor value that passes the rule
+        # (receptors: median >= 1 TPM and >= 10% of the typical high R; other targets: median >= 1 TPM)
+        import importlib.util
+        sp_ = importlib.util.spec_from_file_location("w79", ROOT / "scripts/79w_receptor_gate.py"); w79 = importlib.util.module_from_spec(sp_); sp_.loader.exec_module(w79)
+        REC = set(w79.classes(w79.hgnc())[0])
+        def by_data(ev):
+            for item in str(ev).split(";"):
+                gene, _, v = item.partition(":"); m, _, R = v.partition("/")
+                try:
+                    m, R = float(m), float(R)
+                except ValueError:
+                    continue
+                if m == m and m >= 1 and (gene not in REC or (R == R and m >= 0.1 * R)):
+                    return True
+            return False
+        n1 = (len(g), len(s)); g, s = g[g.evidence_targets.map(by_data)], s[s.evidence_targets.map(by_data)]
+        print(f"target present only: diseases {n0[0]} -> {n1[0]} -> {len(g)} rows (presence backed by data), subgroups {n0[1]} -> {n1[1]} -> {len(s)}")
+        # user 2026-11-04: percentiles re-ranked among the FDA drugs on this page, per cohort / subgroup
+        for df in (g, s):
+            for c in ["rev", "spec", "spec_mech", "spec_sib", "spec_sib_mech"]:
+                if c in df:
+                    df[c + "_pct"] = (df.groupby("group_id")[c].rank(method="max", pct=True) * 100).round(1)
     # flags not carried into the split tables come from the reversal tables
     for df, f in ((g, "drug_reversal_v2_consensus.tsv"), (s, "stratum_reversal_v2_consensus.tsv")):
         r = pd.read_csv(RES / f, sep="\t", low_memory=False, usecols=["group_id", "pert_id", "n_lines_used"])
@@ -170,7 +191,7 @@ def main():
                 # the best stand-in's (79y2: average 0.68 vs own borrowed 0.56 Spearman with the matched-line truth)
                 own = rnd(r.spec_sib_mech_pct, 1) if sub else rnd(r.spec_mech_pct, 1)
                 sip = (si[0][7] if sub else si[0][4]) if si else None
-                avg = round((own + sip) / 2, 1) if si and own is not None and sip is not None else None
+                avg = round((own + sip) / 2, 1) if si and own is not None and sip is not None and not PRESENT_ONLY else None   # stand-in percentiles are on the all-compound scale
                 row += [avg, avg if avg is not None else own]
                 row += TM.get((u, r.pert_id), [None, None, None])   # 22-24: timing class, early / late percentile (D100)
                 row += [clean(getattr(r, "target_source", "")) or "", clean(getattr(r, "evidence_targets", "")) or "",
@@ -197,7 +218,10 @@ def main():
     page = (ROOT / "scripts/templates/disease_drug_rankings.html").read_text().replace("__DATA__", data, 1)
     if PRESENT_ONLY:
         page = page.replace("<title>Disease Drug Rankings</title>", "<title>Target-Present Drug Rankings</title>", 1).replace(
-            "<h1>Disease Drug Rankings</h1>", "<h1>Target-Present Drug Rankings</h1>\n    <p class=\"sub\">Only FDA drugs whose main target (ChEMBL curated mechanism, binding-confirmed or annotated target) is made by this cancer's typical tumor and by the cell lines the score came from (or sits in the tumor's environment). Drugs acting on DNA or pathogens, and drugs without target data, are left out.</p>", 1)
+            "<h1>Disease Drug Rankings</h1>", "<h1>Target-Present Drug Rankings</h1>\n    <p class=\"sub\">Only FDA drugs with at least one main target (ChEMBL curated mechanism, binding-confirmed or annotated target) that tumor data show is made by this cancer's typical tumor, and, for receptor drugs, by the cell lines the score came from (or by the tumor's vessels / immune cells). Drugs acting on DNA or pathogens and drugs without target data are left out. Percentiles are among the FDA drugs on this page, per cohort. Hidden by default (untick 'Hide weak-evidence drugs'): unmatched or low-transfer lines and unverified binding.</p>", 1).replace(
+            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch"]',
+            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "unverified_binding"]', 1)
+        assert '"receptor_mismatch", "unverified_binding"]' in page
     (RES / OUT_HTML).write_text(page)
     n = sum(map(len, G.values())) + sum(map(len, S.values()))
     nl = sum(1 for v in [*G.values(), *S.values()] for r in v if r[12] >= 0)

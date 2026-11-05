@@ -777,6 +777,10 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Rankings page: "Target in tumor" column, main-target source, secondary targets. New page with target-present drugs
   only: https://claude.ai/artifact/WXbtdXQzvcxF6fRX35fKSK
 
+## 2026-11-04: target-present page tightened (D105c)
+- Presence must rest on measured tumor expression (no rows lost); unverified binding hidden by default with the
+  weak-evidence rows (5,173 of 6,864 rows visible); percentiles re-ranked among the page's FDA drugs per cohort.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8
