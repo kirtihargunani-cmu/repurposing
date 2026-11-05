@@ -1,0 +1,4 @@
+criterion	value	met
+1 known-use AUC falls <= 0.01	Hub 0.642 vs 0.623; ChEMBL 0.534 vs 0.542	True
+2 controls	pos 46.1 vs 44.2; PRAD 87.3 vs 86.8; Basal 6.8 vs 3.0	False
+DECISION	do not adopt	False
