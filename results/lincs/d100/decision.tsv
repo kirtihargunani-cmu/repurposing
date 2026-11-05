@@ -1,4 +1,4 @@
 arm	role	c1_known_use	c2_breast	c3_dominance	all_met	detail
-early	lead test	0.0	0.0	1.0	0.0	AUC hub 0.548 vs 0.617, chembl 0.534 vs 0.530; pos 41.3 vs 43.6; neg 3.0 vs 3.0; dominance 11.1% vs 14.2%
-late	reported	1.0	0.0	0.0	0.0	AUC hub 0.628 vs 0.617, chembl 0.535 vs 0.530; pos 40.7 vs 43.6; neg 3.0 vs 3.0; dominance 15.6% vs 14.2%
+early	lead test	0.0	0.0	1.0	0.0	AUC hub 0.561 vs 0.623, chembl 0.546 vs 0.542; pos 42.0 vs 44.2; neg 3.0 vs 3.0; dominance 11.1% vs 14.2%
+late	reported	1.0	0.0	0.0	0.0	AUC hub 0.641 vs 0.623, chembl 0.550 vs 0.542; pos 41.4 vs 44.2; neg 3.0 vs 3.0; dominance 15.6% vs 14.2%
 DECISION						aggregated stays the lead; early / late scores and timing class added as reported columns

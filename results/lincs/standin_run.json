@@ -24,65 +24,65 @@
   {
    "set": "accepted stand-ins",
    "n": 303,
-   "spearman": 0.593,
-   "ci_lo": 0.507,
-   "ci_hi": 0.67,
-   "mae_pct": 19.4
+   "spearman": 0.605,
+   "ci_lo": 0.518,
+   "ci_hi": 0.681,
+   "mae_pct": 19.1
   },
   {
    "set": "random shared-target pairs (median of 200)",
    "n": 573,
-   "spearman": 0.422,
+   "spearman": 0.42,
    "ci_lo": 0.371,
-   "ci_hi": 0.468,
+   "ci_hi": 0.466,
    "mae_pct": NaN
   },
   {
    "set": "shared lines = 2",
    "n": 48,
-   "spearman": 0.586,
+   "spearman": 0.588,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 22.3
+   "mae_pct": 22.2
   },
   {
    "set": "shared lines >= 3",
    "n": 255,
-   "spearman": 0.592,
+   "spearman": 0.605,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 18.9
+   "mae_pct": 18.5
   },
   {
    "set": "similarity 0.4-0.6",
    "n": 110,
-   "spearman": 0.514,
+   "spearman": 0.545,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 23.5
+   "mae_pct": 22.7
   },
   {
    "set": "similarity >= 0.6",
    "n": 193,
-   "spearman": 0.635,
+   "spearman": 0.634,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 17.1
+   "mae_pct": 17.0
   },
   {
    "set": "subgroup: accepted stand-ins",
    "n": 68,
    "spearman": 0.714,
-   "ci_lo": 0.554,
-   "ci_hi": 0.84,
+   "ci_lo": 0.553,
+   "ci_hi": 0.838,
    "mae_pct": 18.0
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
    "n": 124,
-   "spearman": 0.262,
-   "ci_lo": 0.146,
-   "ci_hi": 0.366,
+   "spearman": 0.265,
+   "ci_lo": 0.148,
+   "ci_hi": 0.368,
    "mae_pct": NaN
   },
   {
@@ -99,15 +99,15 @@
    "spearman": 0.789,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 15.3
+   "mae_pct": 15.2
   },
   {
    "set": "subgroup: similarity 0.4-0.6",
    "n": 17,
-   "spearman": 0.391,
+   "spearman": 0.397,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 25.6
+   "mae_pct": 25.5
   },
   {
    "set": "subgroup: similarity >= 0.6",

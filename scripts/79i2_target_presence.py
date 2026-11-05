@@ -31,12 +31,67 @@ ROOT = Path(__file__).resolve().parent.parent
 RES, PROC = ROOT / "results/lincs", ROOT / "data/processed/lincs"
 CARRIERS = RES / "d102/carriers_d102b.tsv.gz"
 SFX = os.environ.get("SFX", "_v2_consensus")
+TARGETS = os.environ.get("TARGETS", "")   # "d105": ChEMBL primary targets for every ranked drug (D105)
+SOURCE, SECONDARY = {}, {}
 TOP_PCT = 10   # as 79i
 spec = importlib.util.spec_from_file_location("w79", ROOT / "scripts/79w_receptor_gate.py")
 w = importlib.util.module_from_spec(spec); spec.loader.exec_module(w)
 
 
+def evidence_targets_d105():
+    """D105: primary targets = curated mechanism genes; else most potent target + those within 10-fold (cut 6, kinases 7);
+    else annotated targets (unverified_binding). Secondary = other potent targets and other annotated targets."""
+    import yaml
+    hg = w.hgnc(); _, kinases = w.classes(hg)
+    cfg = yaml.safe_load(open(ROOT / "config/drug_gate.yaml"))["adme"]
+    gg = hg.dropna(subset=["gene_group_id"]).assign(gid=lambda d: d.gene_group_id.str.split("|")).explode("gid")
+    adme = set(gg[gg.gid.isin({str(i) for i in cfg["hgnc_group_ids"]})].symbol) | set(cfg["genes"])
+    dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", dtype=str)
+    ann = {}
+    for r in dd[["cmap_name", "targets_expressed", "targets_not_expressed"]].itertuples(index=False):
+        for c in r[1:]:
+            if isinstance(c, str):
+                ann.setdefault(r[0], set()).update(c.split("|"))
+    drugs = sorted(set(pd.read_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", usecols=["cmap_name"]).cmap_name.dropna()))
+    w.CACHE = w.RAW / "chembl" / w.RELEASE / "d105_all"
+    d2m, _, _, best, _ = w.chembl(drugs)
+    mech = json.load(open(w.CACHE / "mechanisms.json"))
+    tg = {t["target_chembl_id"]: {x["component_synonym"] for c in t.get("target_components") or []
+                                  for x in c.get("target_component_synonyms") or [] if x["syn_type"] == "GENE_SYMBOL"}
+          for t in json.load(open(w.CACHE / "targets.json")) if t.get("organism") == "Homo sapiens"}
+    m_by = {}
+    for m in mech:
+        if m["direct_interaction"] == 1 and m["target_chembl_id"] in tg:
+            for mol in {m["molecule_chembl_id"], m["parent_molecule_chembl_id"]}:
+                m_by.setdefault(mol, set()).update(tg[m["target_chembl_id"]])
+    cut, cut_k = w.RG["binding"]["pchembl_min"], w.RG["binding"]["pchembl_min_kinase"]
+    E = {}
+    for d in drugs:
+        ms = d2m.get(d, set())
+        pv = {}
+        for m in ms:
+            for gene, v in best.get(m, {}).items():
+                pv[gene] = max(pv.get(gene, -1.0), v)
+        elig = {gene: v for gene, v in pv.items() if gene not in adme and v >= (cut_k if gene in kinases else cut)}
+        mg = set().union(*(m_by.get(m, set()) for m in ms)) - adme if ms else set()
+        an = ann.get(d, set()) - adme
+        if mg:
+            prim, src = mg, "chembl_mechanism"
+        elif elig:
+            top = max(elig.values()); prim, src = {gene for gene, v in elig.items() if v >= top - 1}, "chembl_potency"
+        elif an:
+            prim, src = an, "annotation"
+        else:
+            continue
+        E[d] = prim; SOURCE[d] = src
+        sec = sorted(((gene, v) for gene, v in elig.items() if gene not in prim), key=lambda x: -x[1])
+        SECONDARY[d] = ";".join([f"{gene}:{v:.1f}" for gene, v in sec[:8]] + [f"{gene}:ann" for gene in sorted(an - prim - set(elig))][:8])
+    return E
+
+
 def evidence_targets():
+    if TARGETS == "d105":
+        return evidence_targets_d105()
     hg = w.hgnc(); cls, kinases = w.classes(hg)
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", dtype=str)
     ann = {}
@@ -69,16 +124,44 @@ def evidence_targets():
     return E
 
 
-def presence():
+def extra_expression(sym, genes):
+    """D105: group / subgroup medians (79b group_expression, read-only import) for target genes missing from the 79b
+    tables; cached in data/processed/lincs/target_expression{,_strata_v2}_d105.tsv.gz"""
+    s2g = {v: k for k, v in sym.items()}
+    sp_ = importlib.util.spec_from_file_location("b79", ROOT / "scripts/79b_target_gate.py"); b = importlib.util.module_from_spec(sp_); sp_.loader.exec_module(b)
+    out = []
+    for base, extra, strata in (("target_expression.tsv.gz", "target_expression_d105.tsv.gz", False),
+                                ("target_expression_strata_v2.tsv.gz", "target_expression_strata_v2_d105.tsv.gz", True)):
+        have = set(pd.read_csv(PROC / base, sep="\t", usecols=["gene_id"]).gene_id)
+        fx = PROC / extra
+        ex = pd.read_csv(fx, sep="\t") if fx.exists() else pd.DataFrame(columns=["gene_id", "group_id", "median_tpm", "frac_expressed"])
+        need = {s2g[x] for x in genes if x in s2g} - have - set(ex.gene_id)
+        if need:
+            if strata:
+                sp2 = pd.read_csv(ROOT / "results/step10_v2/stratum_patients.tsv", sep="\t")
+                new = b.group_expression(need, None, 1.0, sp2.rename(columns={"group_id": "parent", "stratum": "group_id"})[["group_id", "sample"]])
+            else:
+                sig = pd.read_csv(ROOT / "results/step4/signature_summary.tsv", sep="\t")
+                new = b.group_expression(need, sorted(set(sig.loc[sig.status == "ok", "group_id"])), 1.0)
+            ex = pd.concat([ex, new], ignore_index=True); ex.to_csv(fx, sep="\t", index=False)
+        out.append(ex)
+    return out
+
+
+def presence(genes=None):
     idm = pd.read_csv(ROOT / "results/step5/id_map.tsv", sep="\t").query("primary_for_hgnc").drop_duplicates("symbol")
     sym = dict(zip(idm.gene_id, idm.symbol))
     out = {}
     g = pd.read_csv(PROC / "target_expression.tsv.gz", sep="\t")
+    sx = pd.read_csv(PROC / "target_expression_strata_v2.tsv.gz", sep="\t")
+    if TARGETS == "d105" and genes:
+        gx, sxx = extra_expression(sym, genes)
+        g, sx = pd.concat([g, gx], ignore_index=True), pd.concat([sx, sxx], ignore_index=True)
     g["symbol"] = g.gene_id.map(sym); g = g.dropna(subset=["symbol"]).drop_duplicates(["group_id", "symbol"])
     R = g.groupby("symbol").median_tpm.quantile(0.9)
     car = pd.read_csv(CARRIERS, sep="\t") if CARRIERS.exists() else pd.DataFrame(columns=["gene_id", "group_id", "n_tumors", "n_carriers"])
     g = g.merge(car, on=["gene_id", "group_id"], how="left")
-    s = pd.read_csv(PROC / "target_expression_strata_v2.tsv.gz", sep="\t")
+    s = sx
     s["symbol"] = s.gene_id.map(sym); s = s.dropna(subset=["symbol"]).drop_duplicates(["group_id", "symbol"])
     for k, t in (("group", g), ("stratum", s)):
         t["R"] = t.symbol.map(R)
@@ -109,6 +192,10 @@ def apply(f, unit, P, E, pct_cols):
         n = nc.get((g, best), np.nan)
         ncar.append(n); share.append(n / nt[(g, best)] if n == n and nt.get((g, best)) else np.nan)
     df["target_absent"], df["evidence_targets"] = absent, evs
+    if TARGETS == "d105":
+        df["target_source"] = df.cmap_name.map(SOURCE).fillna("")
+        df["unverified_binding"] = df.target_source.eq("annotation")
+        df["secondary_targets"] = df.cmap_name.map(SECONDARY).fillna("")
     df["target_carriers"], df["target_carrier_share"] = ncar, np.round(share, 4)
     for c, tier in pct_cols:
         base = c.replace("_pct", "")
@@ -147,7 +234,7 @@ def refresh_summaries(g, s):
 
 
 def main():
-    E = evidence_targets(); P = presence()
+    E = evidence_targets(); P = presence(set().union(*E.values()))
     g = apply(RES / f"drug_reversal_split{SFX}.tsv", "group_id", P["group"], E, [("spec_mech_pct", "tier_spec_mech")])
     s = apply(RES / f"stratum_reversal_split{SFX}.tsv", "stratum", P["stratum"], E,
               [("spec_mech_pct", "tier_spec_mech"), ("spec_sib_mech_pct", "tier_spec_sib_mech")])
