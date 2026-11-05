@@ -1,0 +1,612 @@
+group_id	cmap_name	pert_id	source	approved	hub_moa	spec_mech_pct	rev_pct	target_source	main_targets	secondary_targets	receptor_status	top_spec_mech	top_rev	already_searched
+BRCA-Basal	STK-249718	BRD-K81142122	borrowed	False		98.9	85.8					True	False	True
+BRCA-Basal	triptolide	BRD-K39484304	borrowed	False	RNA polymerase inhibitor	93.4	94.2					True	True	True
+BRCA-Basal	auranofin	BRD-K45995181	borrowed	True	NFkB pathway inhibitor	91.8	72.9	non_protein_mechanism		IKBKB:ann;PRDX5:ann;TRPA1:ann		True	False	True
+BRCA-Basal	brivanib	BRD-K28428262	borrowed	False	FGFR inhibitor|VEGFR inhibitor	91.7	87.6		FGFR1:25.07/111.2;FLT1:7.21/13.6;KDR:5.57/10.7		ok	True	True	True
+BRCA-Basal	CGS-20625	BRD-K68103045	borrowed	False	benzodiazepine receptor agonist|GABA benzodiazepine site receptor partial agonist	91.6	62.6					True	False	True
+BRCA-Basal	dactinomycin	BRD-A73909368	borrowed	False		90.6	85.6	non_protein_mechanism		POLR2A:ann		True	False	True
+BRCA-Basal	deforolimus	BRD-K09078998	borrowed	False		90.4	95.8					True	True	True
+BRCA-Basal	ciclesonide	BRD-K35245662	borrowed	True	glucocorticoid receptor agonist	90.2	64.7	chembl_mechanism	NR3C1:8.29/18.1	SERPINA6:ann	ok	True	False	True
+BRCA-Basal	pyrimethamine	BRD-K88429204	borrowed	True	dihydrofolate reductase inhibitor	89.0	82.6	non_human_target		DHFR:6.1;SLC47A1:ann		True	False	True
+BRCA-Basal	fludarabine	BRD-K72238567	borrowed	False		88.7	65.3	annotation	ADA:10.10/18.1;DCK:14.08/18.8;POLA1:6.12/8.5;RRM1:44.16/54.6;RRM2:35.94/60.7			True	False	True
+BRCA-Basal	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	84.3	89.9					False	True	True
+BRCA-Basal	NNC-05-2090	BRD-K85015012	borrowed	False	GABA uptake inhibitor|GAT inhibitor	82.2	94.4					False	True	True
+BRCA-Basal	GDC-0879	BRD-K67578145	borrowed	False	RAF inhibitor	75.1	87.5					False	True	True
+BRCA-Basal	wortmannin	BRD-K87343924	borrowed	False	PI3K inhibitor	73.2	92.3					False	True	True
+BRCA-Basal	BMS-509744	BRD-A13021932	borrowed	False		69.0	93.5					False	True	True
+BRCA-Basal	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	62.1	95.5					False	True	True
+BRCA-Basal	WZ-4002	BRD-K72420232	borrowed	False	EGFR inhibitor	58.7	87.7		EGFR:10.18/44.6		ok	False	True	True
+BRCA-Her2	STK-249718	BRD-K81142122	borrowed	False		98.4	87.5					True	False	True
+BRCA-Her2	PI-103	BRD-K67868012	direct	False	mTOR inhibitor|PI3K inhibitor	97.3	99.5					True	True	True
+BRCA-Her2	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	97.2	99.1					True	True	True
+BRCA-Her2	SB-2343	BRD-K98795921	borrowed	False	mTOR inhibitor|PI3K inhibitor	96.7	97.6					True	True	True
+BRCA-Her2	A-443654	BRD-K38615104	direct	False		96.0	71.1					True	False	True
+BRCA-Her2	torin-1	BRD-K40175214	direct	False	mTOR inhibitor	95.3	98.5					True	True	True
+BRCA-Her2	PF-04691502	BRD-K07310275	borrowed	False	mTOR inhibitor|PI3K inhibitor	94.4	96.1					True	False	True
+BRCA-Her2	deforolimus	BRD-K09078998	borrowed	False		94.0	97.6					True	True	True
+BRCA-Her2	PF-05212384	BRD-K07955840	borrowed	False	mTOR inhibitor|PI3K inhibitor	93.8	96.0	chembl_mechanism	MTOR:15.88/22.7;PIK3CA:9.27/11.2;PIK3CB:17.59/23.5;PIK3CD:3.55/8.0;PIK3CG:1.19/1.4;PIK3R1:36.65/33.8;PIK3R2:40.76/53.7;PIK3R3:38.10/22.9;PIK3R5:3.01/4.4	PIK3C2B:9.3*		True	False	True
+BRCA-Her2	tofacitinib	BRD-K36280065	borrowed	False		93.4	90.5	chembl_mechanism	JAK1:43.78/58.3;JAK2:4.33/5.2;JAK3:3.33/5.3;TYK2:40.03/84.9	DCLK3:8.1		True	False	False
+BRCA-Her2	GDC-0941	BRD-K52911425	direct	False	PI3K inhibitor	90.2	98.7					False	True	True
+BRCA-Her2	GDC-0980	BRD-A18328003	direct	False		90.1	98.1					False	True	True
+BRCA-Her2	lapatinib	BRD-K19687926	direct	True	EGFR inhibitor	87.6	99.4		EGFR:3.45/44.6;ERBB2:1270.96/101.5		ok	False	True	True
+BRCA-Her2	torin-2	BRD-K68174511	direct	False	mTOR inhibitor	85.9	97.7					False	True	True
+BRCA-Her2	palbociclib	BRD-K51313569	direct	True	CDK inhibitor	64.3	97.9	chembl_mechanism	CCND1:58.31/147.9;CDK4:117.82/184.7;CDK6:2.16/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+BRCA-LumA	RITA	BRD-K00317371	direct	False	MDM inhibitor	100.0	99.9					True	True	True
+BRCA-LumA	epirubicin	BRD-K04548931	direct	True	topoisomerase inhibitor	99.9	99.7	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+BRCA-LumA	importazole	BRD-A02481876	direct	False		99.9	99.1					True	False	True
+BRCA-LumA	oncrasin-1	BRD-K43449605	direct	False	apoptosis stimulant	99.8	98.7					True	False	True
+BRCA-LumA	daunorubicin	BRD-K91966436	direct	False		99.7	99.5	chembl_mechanism	TOP2A:20.45/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+BRCA-LumA	fenbendazole	BRD-K51318897	direct	True	tubulin polymerization inhibitor	99.7	98.9					True	False	True
+BRCA-LumA	doxorubicin	BRD-K61468417	direct	False		99.5	99.4	chembl_mechanism	TOP2A:20.45/72.6			True	True	True
+BRCA-LumA	idarubicin	BRD-A71390734	direct	False		99.5	99.1	chembl_mechanism	TOP2A:20.45/72.6			True	False	True
+BRCA-LumA	YM-155	BRD-K24681473	direct	False	survivin inhibitor	99.4	96.6					True	False	True
+BRCA-LumA	YC-1	BRD-K60476892	direct	False	guanylyl cyclase activator	99.3	98.1					True	False	True
+BRCA-LumA	SMER-3	BRD-K92960067	direct	False		99.2	99.8					False	True	True
+BRCA-LumA	R-547	BRD-K52233191	direct	False	CDK inhibitor	99.1	99.7					False	True	True
+BRCA-LumA	JNJ-7706621	BRD-K11636097	direct	False	CDK inhibitor	98.7	99.3					False	True	True
+BRCA-LumA	trehalose	BRD-K54028654	direct	False	pharmacological chaperone	98.5	99.9					False	True	True
+BRCA-LumA	PF-431396	BRD-K93788137	direct	False	focal adhesion kinase inhibitor	97.5	99.6					False	True	True
+BRCA-LumA	bisindolylmaleimide-ix	BRD-K06543683	direct	False	PKC inhibitor	95.4	99.5					False	True	True
+BRCA-LumB	RITA	BRD-K00317371	direct	False	MDM inhibitor	100.0	99.9					True	True	True
+BRCA-LumB	daunorubicin	BRD-K91966436	direct	False		99.9	99.7	chembl_mechanism	TOP2A:56.77/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+BRCA-LumB	idarubicin	BRD-A71390734	direct	False		99.9	99.9	chembl_mechanism	TOP2A:56.77/72.6			True	True	True
+BRCA-LumB	epirubicin	BRD-K04548931	direct	True	topoisomerase inhibitor	99.8	99.8	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+BRCA-LumB	oncrasin-1	BRD-K43449605	direct	False	apoptosis stimulant	99.7	98.8					True	False	True
+BRCA-LumB	importazole	BRD-A02481876	direct	False		99.6	98.9					True	False	True
+BRCA-LumB	R-547	BRD-K52233191	direct	False	CDK inhibitor	99.5	99.7					True	True	True
+BRCA-LumB	doxorubicin	BRD-K61468417	direct	False		99.5	99.5	chembl_mechanism	TOP2A:56.77/72.6			True	True	True
+BRCA-LumB	YM-155	BRD-K24681473	direct	False	survivin inhibitor	99.4	96.2					True	False	True
+BRCA-LumB	SMER-3	BRD-K92960067	direct	False		99.3	99.5					False	True	True
+BRCA-LumB	JNJ-7706621	BRD-K11636097	direct	False	CDK inhibitor	99.1	99.3					False	True	True
+BRCA-LumB	dinaciclib	BRD-K13662825	direct	False	CDK inhibitor	98.9	99.4					False	True	True
+CESC-AD	BIIB-021	BRD-K51967704	direct	False	HSP inhibitor	99.9	99.8					True	True	True
+CESC-AD	LJI-308	BRD-K17960872	borrowed	False		99.8	98.6					True	False	True
+CESC-AD	GSK-1059615	BRD-K02708799	direct	False		99.7	99.9					True	True	True
+CESC-AD	OTS-167	BRD-K53417444	direct	False	maternal embryonic leucine zipper kinase inhibitor	99.6	99.0					True	True	True
+CESC-AD	calyculin	BRD-A47513740	borrowed	False		99.5	99.3					True	True	True
+CESC-AD	mercaptopurine	BRD-K91601245	direct	True	immunosuppressant|protein synthesis inhibitor|purine antagonist	99.4	95.7	chembl_mechanism	PPAT:7.39/10.0	HPRT1:ann;IMPDH1:ann;IMPDH2:ann		True	False	True
+CESC-AD	PKI-179	BRD-A28467416	direct	False	mTOR inhibitor|PI3K inhibitor	99.3	99.8					True	True	True
+CESC-AD	SNX-2112	BRD-K71281111	direct	False	HSP inhibitor	99.2	99.4					True	True	True
+CESC-AD	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	99.1	98.8					True	False	True
+CESC-AD	RS-I-002-6	BRD-K66254772	borrowed	False		99.0	92.2					True	False	True
+CESC-AD	altrenogest	BRD-K14619660	direct	False		99.0	99.1					False	True	True
+CESC-AD	AT-13387	BRD-K58435339	direct	False	HSP inhibitor	98.5	99.2					False	True	True
+CESC-AD	triptolide	BRD-K81258678	direct	False		95.6	99.4					False	True	True
+CESC-AD	AVL-292	BRD-K87782578	direct	False	Bruton's tyrosine kinase (BTK) inhibitor	93.3	99.0					False	True	True
+CESC-SCC	calyculin	BRD-A47513740	borrowed	False		99.8	97.1					True	False	True
+CESC-SCC	ZSTK-474	BRD-K63068307	borrowed	False	PI3K inhibitor	98.2	98.6					True	True	True
+CESC-SCC	GDC-0980	BRD-A18328003	borrowed	False		98.0	98.9					True	True	True
+CESC-SCC	LY-294002	BRD-K27305650	borrowed	False	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	97.7	96.4					True	False	True
+CESC-SCC	HG-6-64-01	BRD-K98762074	borrowed	False		97.2	89.3					True	False	True
+CESC-SCC	PI-828	BRD-K97365803	borrowed	False	PI3K inhibitor	97.1	97.4					True	True	True
+CESC-SCC	GDC-0941	BRD-K52911425	borrowed	False	PI3K inhibitor	96.9	98.1					True	True	True
+CESC-SCC	TG-101209	BRD-K39841531	borrowed	False	JAK inhibitor	96.8	95.0					True	False	True
+CESC-SCC	OSI-027	BRD-K94012289	borrowed	False		96.7	99.0					True	True	True
+CESC-SCC	TGX-115	BRD-K67075780	borrowed	False		96.4	94.8					True	False	True
+CESC-SCC	wortmannin	BRD-K87343924	borrowed	False	PI3K inhibitor	96.0	98.0					False	True	True
+CESC-SCC	AZD-8055	BRD-K69932463	borrowed	False	mTOR inhibitor	95.2	97.3					False	True	True
+CESC-SCC	WYE-125132	BRD-A45498368	borrowed	False		94.7	97.8					False	True	True
+CESC-SCC	BMS-754807	BRD-K13049116	borrowed	False	IGF-1 inhibitor	94.0	98.5		IGF1R:8.56/16.4		ok	False	True	True
+CESC-SCC	simvastatin	BRD-K22134346	borrowed	True	HMGCR inhibitor	92.6	97.6	chembl_mechanism	HMGCR:19.65/30.7	ITGB2:ann		False	True	True
+ESCA-AD	daunorubicin	BRD-A37630846	borrowed	False		100.0	99.9	chembl_mechanism	TOP2A:68.73/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+ESCA-AD	doxorubicin	BRD-K61468417	borrowed	False		99.8	99.8	chembl_mechanism	TOP2A:68.73/72.6			True	True	True
+ESCA-AD	SN-38	BRD-A36630025	direct	False		99.7	98.3					True	True	True
+ESCA-AD	topotecan	BRD-A59985574	borrowed	False		99.7	99.1	chembl_mechanism	TOP1:76.24/56.1	HIF1A:7.6;TOP1MT:ann		True	True	True
+ESCA-AD	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.6	99.4	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+ESCA-AD	STK-249718	BRD-K81142122	borrowed	False		99.2	98.0					True	False	True
+ESCA-AD	PIK-75	BRD-K49371609	direct	False	DNA protein kinase inhibitor|PI3K inhibitor	99.0	96.3					True	False	True
+ESCA-AD	JNJ-7706621	BRD-K11636097	borrowed	False	CDK inhibitor	98.8	98.5					True	True	True
+ESCA-AD	ER-27319	BRD-K11927976	borrowed	False	mediator release inhibitor|SYK inhibitor	98.7	97.1					True	False	True
+ESCA-AD	dinaciclib	BRD-K13662825	borrowed	False	CDK inhibitor	98.5	99.0					False	True	True
+ESCA-AD	pirarubicin	BRD-K83794624	borrowed	True	topoisomerase inhibitor	97.8	98.4					False	True	True
+ESCA-AD	WZ-3105	BRD-K92571446	borrowed	False		95.1	98.3					False	True	True
+ESCA-SCC	daunorubicin	BRD-A37630846	borrowed	False		100.0	99.9	chembl_mechanism	TOP2A:75.34/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+ESCA-SCC	topotecan	BRD-A59985574	borrowed	False	topoisomerase inhibitor	99.8	99.6	chembl_mechanism	TOP1:55.27/56.1	HIF1A:7.6;TOP1MT:ann		True	True	True
+ESCA-SCC	doxorubicin	BRD-K61468417	borrowed	False		99.7	99.7	chembl_mechanism	TOP2A:75.34/72.6			True	True	True
+ESCA-SCC	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.7	99.5	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+ESCA-SCC	RITA	BRD-K00317371	borrowed	False	MDM inhibitor	99.5	86.3					True	False	True
+ESCA-SCC	ER-27319	BRD-K11927976	borrowed	False	mediator release inhibitor|SYK inhibitor	99.3	95.9					True	False	True
+ESCA-SCC	MD-040	BRD-K83336168	borrowed	False		99.2	76.9					True	False	True
+ESCA-SCC	camptothecin	BRD-K37890730	borrowed	False	topoisomerase inhibitor	99.0	74.6					True	False	True
+ESCA-SCC	pirarubicin	BRD-K83794624	borrowed	True	topoisomerase inhibitor	97.6	98.3					False	True	False
+ESCA-SCC	danusertib	BRD-K07881437	borrowed	False	Aurora kinase inhibitor|growth factor receptor inhibitor	91.4	98.6		AURKA:21.63/25.8;AURKB:39.03/40.8;AURKC:0.64/1.5			False	True	True
+ESCA-SCC	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	85.9	99.8	chembl_mechanism	CCND1:170.29/147.9;CDK4:103.31/184.7;CDK6:18.45/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+ESCA-SCC	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	69.3	98.4	chembl_mechanism	MAP2K1:38.83/46.3;MAP2K2:115.24/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	True
+ESCA-SCC	AMG-232	BRD-K64925568	borrowed	False	MDM inhibitor	67.2	98.5					False	True	True
+LGG-IDHmut-codel	daunorubicin	BRD-A37630846	borrowed	False		100.0	99.9	chembl_mechanism	TOP2A:4.43/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+LGG-IDHmut-codel	doxorubicin	BRD-K61468417	borrowed	False		99.8	99.8	chembl_mechanism	TOP2A:4.43/72.6			True	True	True
+LGG-IDHmut-codel	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.7	99.1	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+LGG-IDHmut-codel	cyclopamine	BRD-A02333338	borrowed	False		99.0	99.5		SMO:11.14/26.8		ok	True	True	True
+LGG-IDHmut-codel	givinostat	BRD-K13810148	borrowed	True	HDAC inhibitor	98.9	98.5	chembl_mechanism	HDAC1:17.42/113.0;HDAC10:21.14/21.7;HDAC11:42.87/31.3;HDAC2:53.83/117.5;HDAC3:35.13/57.3;HDAC4:18.90/8.0;HDAC5:54.46/54.5;HDAC6:64.20/52.6;HDAC7:14.69/52.0;HDAC8:13.47/16.2;HDAC9:9.99/9.6			True	True	True
+LGG-IDHmut-codel	dinaciclib	BRD-K13662825	borrowed	False	CDK inhibitor	98.8	99.0					True	True	True
+LGG-IDHmut-codel	topotecan	BRD-A59985574	borrowed	False		98.7	97.2	chembl_mechanism	TOP1:37.14/56.1	HIF1A:7.6;TOP1MT:ann		True	False	True
+LGG-IDHmut-codel	merck-ketone	BRD-A94377914	borrowed	False		98.4	99.0					False	True	True
+LGG-IDHmut-codel	PIK-75	BRD-M16762496	borrowed	False	DNA protein kinase inhibitor|PI3K inhibitor	97.3	98.7					False	True	True
+LGG-IDHmut-noncodel	daunorubicin	BRD-A37630846	borrowed	False		100.0	99.9	chembl_mechanism	TOP2A:4.95/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+LGG-IDHmut-noncodel	doxorubicin	BRD-K61468417	borrowed	False		99.8	99.8	chembl_mechanism	TOP2A:4.95/72.6			True	True	True
+LGG-IDHmut-noncodel	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.7	99.1	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+LGG-IDHmut-noncodel	cyclopamine	BRD-A02333338	borrowed	False		99.1	99.7		SMO:13.31/26.8		ok	True	True	True
+LGG-IDHmut-noncodel	dinaciclib	BRD-K13662825	borrowed	False	CDK inhibitor	98.9	98.9					True	True	True
+LGG-IDHmut-noncodel	ER-27319	BRD-K11927976	borrowed	False	mediator release inhibitor|SYK inhibitor	98.6	97.1					True	False	True
+LGG-IDHmut-noncodel	givinostat	BRD-K13810148	borrowed	True	HDAC inhibitor	98.5	97.9	chembl_mechanism	HDAC1:35.70/113.0;HDAC10:17.88/21.7;HDAC11:32.33/31.3;HDAC2:54.12/117.5;HDAC3:39.50/57.3;HDAC4:11.41/8.0;HDAC5:52.40/54.5;HDAC6:54.02/52.6;HDAC7:14.78/52.0;HDAC8:12.61/16.2;HDAC9:6.48/9.6			True	False	True
+LGG-IDHmut-noncodel	CHEMBL-1222381	BRD-K53903639	borrowed	False	neural stem cell inducer	98.3	98.7					False	True	True
+LGG-IDHmut-noncodel	PIK-75	BRD-M16762496	borrowed	False	DNA protein kinase inhibitor|PI3K inhibitor	98.1	99.2					False	True	True
+LGG-IDHmut-noncodel	merck-ketone	BRD-A94377914	borrowed	False		97.7	98.8					False	True	True
+LGG-IDHwt	daunorubicin	BRD-A37630846	borrowed	False		100.0	99.4	chembl_mechanism	TOP2A:16.36/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+LGG-IDHwt	doxorubicin	BRD-K61468417	borrowed	False		99.9	99.7	chembl_mechanism	TOP2A:16.36/72.6			True	True	True
+LGG-IDHwt	merck-ketone	BRD-A94377914	borrowed	False		99.7	99.7					True	True	True
+LGG-IDHwt	givinostat	BRD-K13810148	borrowed	True	HDAC inhibitor	99.6	98.3	chembl_mechanism	HDAC1:40.95/113.0;HDAC10:16.52/21.7;HDAC11:31.01/31.3;HDAC2:44.03/117.5;HDAC3:47.83/57.3;HDAC4:7.20/8.0;HDAC5:36.89/54.5;HDAC6:52.62/52.6;HDAC7:23.64/52.0;HDAC8:13.29/16.2;HDAC9:9.59/9.6			True	False	True
+LGG-IDHwt	CHEMBL-1222381	BRD-K53903639	borrowed	False	neural stem cell inducer	99.5	96.6					True	False	True
+LGG-IDHwt	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.4	96.0	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	False	True
+LGG-IDHwt	dinaciclib	BRD-K13662825	borrowed	False	CDK inhibitor	99.3	95.5					True	False	True
+LGG-IDHwt	NCH-51	BRD-K52522949	borrowed	False		99.0	98.3					True	False	True
+LGG-IDHwt	scriptaid	BRD-K22503835	borrowed	False	HDAC inhibitor	99.0	94.7					True	False	True
+LGG-IDHwt	cyclopamine	BRD-A02333338	borrowed	False		98.4	98.5		SMO:25.01/26.8		ok	False	True	True
+LGG-IDHwt	axitinib	BRD-K29905972	borrowed	True	PDGFR tyrosine kinase receptor inhibitor|VEGFR inhibitor	94.4	99.2	chembl_mechanism	FLT1:9.55/13.6;FLT4:2.40/6.1;KDR:5.74/10.7	PDGFRA:9.3*;AURKC:8.9*;PDGFRB:8.8;KIT:8.5;PLK4:7.6;STK16:6.4*;HDAC6:6.4*;CSF1:ann	ok	False	True	True
+LGG-IDHwt	NNC-05-2090	BRD-K85015012	borrowed	False	GABA uptake inhibitor|GAT inhibitor	93.0	99.6					False	True	True
+LGG-IDHwt	fluvastatin	BRD-K66296774	borrowed	True	HMGCR inhibitor	87.2	99.1	annotation	HMGCR:24.80/30.7			False	True	True
+LGG-IDHwt	RG-7388	BRD-K62627508	borrowed	False	MDM inhibitor	65.1	99.0					False	True	True
+LGG-IDHwt	AMG-232	BRD-K64925568	borrowed	False	MDM inhibitor	63.9	99.5					False	True	True
+LGG-IDHwt	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	53.6	99.9	chembl_mechanism	CCND1:26.32/147.9;CDK4:114.13/184.7;CDK6:9.17/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+PCPG-PGL	bruceantin	BRD-A36057565	borrowed	False	protein synthesis inhibitor	99.9	95.9					True	False	True
+PCPG-PGL	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	99.8	95.8					True	False	True
+PCPG-PGL	puromycin	BRD-K36007650	borrowed	False	protein synthesis inhibitor	99.7	98.8					True	True	True
+PCPG-PGL	bindarit	BRD-K36467523	borrowed	False	NFkB pathway inhibitor	99.6	94.3					True	False	True
+PCPG-PGL	cilengitide	BRD-K57252450	borrowed	False	integrin antagonist	99.5	94.8		ITGAV:13.30/44.9;ITGB3:1.22/6.8		ok	True	False	True
+PCPG-PGL	metronidazole	BRD-K52020312	borrowed	True	DNA inhibitor	99.4	97.0	non_human_target				True	False	True
+PCPG-PGL	kinetin-riboside	BRD-K94325918	borrowed	False		99.3	93.5					True	False	True
+PCPG-PGL	pioglitazone	BRD-A48430263	borrowed	True		99.2	95.2	chembl_mechanism	PPARG:3.26/20.7	CA2:6.9*;MAOB:6.6;ABCB11:6.5;PTPN1:6.2*	ok	True	False	True
+PCPG-PGL	JTC-801	BRD-K17705806	borrowed	False	opioid receptor antagonist	99.1	80.9		OPRL1:1.21/3.5		ok	True	False	True
+PCPG-PGL	lylamine	BRD-K62289640	borrowed	False	cannabinoid receptor agonist	98.6	99.9					False	True	True
+PCPG-PGL	narciclasine	BRD-K06792661	borrowed	False		98.5	99.0					False	True	True
+PCPG-PGL	WZ-4-145	BRD-U61997977	borrowed	False		98.3	99.2					False	True	True
+PCPG-PGL	helveticoside	BRD-A63998256	borrowed	False		97.5	99.5					False	True	True
+PCPG-PGL	cycloheximide	BRD-A62184259	borrowed	False		97.3	98.6					False	True	True
+PCPG-PGL	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	95.9	99.3					False	True	True
+PCPG-PGL	cyclosporin-a	BRD-A38030642	borrowed	False		95.4	99.0					False	True	True
+PCPG-PGL	SR-33805	BRD-K43002771	borrowed	False	calcium channel blocker	94.0	99.8					False	True	True
+PCPG-PGL	BVD-523	BRD-K28965160	borrowed	False	MAP kinase inhibitor	82.2	99.7					False	True	True
+PCPG-PHEO	helveticoside	BRD-A63998256	borrowed	False		99.8	99.9					True	True	True
+PCPG-PHEO	cilengitide	BRD-K57252450	borrowed	False	integrin antagonist	99.7	91.9		ITGAV:13.64/44.9;ITGB3:0.88/6.8		ok	True	False	True
+PCPG-PHEO	digitoxin	BRD-A93236127	borrowed	False		99.6	99.3	chembl_mechanism	ATP1A1:504.78/520.5;ATP1A2:1.73/4.6;ATP1A3:292.84/104.6;ATP1A4:0.01/0.4;ATP1B1:482.86/339.6;ATP1B2:7.47/15.5;ATP1B3:71.66/177.8;FXYD2:0.32/4.1	STAT3:6.2*		True	True	True
+PCPG-PHEO	emetine	BRD-K01976263	borrowed	False		99.6	88.0					True	False	True
+PCPG-PHEO	strophanthidin	BRD-K84595254	borrowed	False	ATPase inhibitor	99.4	99.0					True	True	True
+PCPG-PHEO	cinobufagin	BRD-A80502530	borrowed	False		99.3	99.6					True	True	True
+PCPG-PHEO	lylamine	BRD-K62289640	borrowed	False	cannabinoid receptor agonist	99.1	99.7					True	True	True
+PCPG-PHEO	digitoxigenin	BRD-K18518344	borrowed	False	ATPase inhibitor	99.0	99.4					True	True	True
+PCPG-PHEO	periplocymarin	BRD-A45333398	borrowed	False		99.0	99.5					True	True	True
+PCPG-PHEO	bindarit	BRD-K36467523	borrowed	False	NFkB pathway inhibitor	98.9	89.8					True	False	True
+PCPG-PHEO	bufalin	BRD-K63606607	borrowed	False		98.2	99.1					False	True	True
+PCPG-PHEO	digoxin	BRD-A75144621	borrowed	False		97.6	99.8	chembl_mechanism	ATP1A1:504.78/520.5;ATP1A2:1.73/4.6;ATP1A3:292.84/104.6;ATP1A4:0.01/0.4;ATP1B1:482.86/339.6;ATP1B2:7.47/15.5;ATP1B3:71.66/177.8;FXYD2:0.32/4.1			False	True	True
+PCPG-PHEO	BVD-523	BRD-K28965160	borrowed	False	MAP kinase inhibitor	91.6	99.2					False	True	True
+SARC-DDLPS	verrucarin-a	BRD-A26002865	borrowed	False		99.9	91.3					True	False	True
+SARC-DDLPS	cephaeline	BRD-K80348542	borrowed	False		99.7	88.8					True	False	True
+SARC-DDLPS	emetine	BRD-A25687296	borrowed	False	protein synthesis inhibitor	99.7	82.2					True	False	True
+SARC-DDLPS	QL-X-138	BRD-K72636697	borrowed	False		99.4	73.8					True	False	True
+SARC-DDLPS	tozasertib	BRD-K87947369	borrowed	False	Aurora kinase inhibitor|Bcr-Abl kinase inhibitor|FLT3 inhibitor|JAK inhibitor	99.3	94.0		AURKA:8.42/25.8;AURKB:18.33/40.8;AURKC:1.21/1.5			True	False	True
+SARC-DDLPS	JW-7-24-1	BRD-U68942961	borrowed	False		99.2	69.1					True	False	True
+SARC-DDLPS	torin-2	BRD-K68174511	borrowed	False	mTOR inhibitor	99.2	95.5					True	False	True
+SARC-DDLPS	MLN-0128	BRD-K59317601	borrowed	False	mTOR inhibitor	99.0	99.7					True	True	True
+SARC-DDLPS	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	99.0	99.0					True	True	True
+SARC-DDLPS	KIN001-127	BRD-A29901043	borrowed	False		98.7	99.1					False	True	True
+SARC-DDLPS	OSI-027	BRD-K94012289	borrowed	False		98.4	99.5					False	True	True
+SARC-DDLPS	PHA-848125	BRD-K60997853	borrowed	False	CDK inhibitor|growth factor receptor inhibitor	97.5	99.9		CDK1:25.66/48.5;CDK2:22.95/45.9;CDK4:2356.12/184.7;NTRK1:0.83/1.5			False	True	True
+SARC-DDLPS	GSK-2126458	BRD-K42918627	borrowed	False		95.4	99.3					False	True	True
+SARC-DDLPS	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	94.6	99.8	chembl_mechanism	MAP2K1:41.80/46.3;MAP2K2:142.14/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	True
+SARC-DDLPS	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	93.5	99.4					False	True	True
+SARC-DDLPS	AZD-8330	BRD-K37687095	borrowed	False	MEK inhibitor	92.0	99.6					False	True	True
+SARC-DDLPS	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	45.8	99.0	chembl_mechanism	CCND1:85.16/147.9;CDK4:2356.12/184.7;CDK6:4.53/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	False
+SARC-LMS	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	99.8	66.7					True	False	True
+SARC-LMS	QL-XII-47	BRD-U86922168	borrowed	False		99.7	49.0					True	False	True
+SARC-LMS	pioglitazone	BRD-A48430263	borrowed	True		99.7	65.6	chembl_mechanism	PPARG:5.81/20.7	CA2:6.9*;MAOB:6.6;ABCB11:6.5;PTPN1:6.2*	ok	True	False	True
+SARC-LMS	cilengitide	BRD-K57252450	borrowed	False	integrin antagonist	99.4	47.4		ITGAV:37.14/44.9;ITGB3:10.91/6.8		ok	True	False	True
+SARC-LMS	KD-025	BRD-K88506063	borrowed	True	rho associated kinase inhibitor	99.3	78.8	chembl_mechanism	ROCK1:18.05/16.1;ROCK2:12.97/13.0			True	False	True
+SARC-LMS	brivudine	BRD-A63675168	borrowed	True	DNA directed DNA polymerase inhibitor	99.2	81.5					True	False	True
+SARC-LMS	cycloheximide	BRD-A62184259	borrowed	False		99.0	63.0					True	False	True
+SARC-LMS	delanzomib	BRD-K59325863	borrowed	False	proteasome inhibitor	98.9	48.0					True	False	True
+SARC-LMS	AT-CSC-18	BRD-K01121114	borrowed	False		98.3	96.4					True	False	True
+SARC-LMS	aminolevulinic-acid	BRD-K57631554	borrowed	True	oxidizing agent	98.1	79.0	non_protein_mechanism		ALAD:ann		True	False	False
+SARC-LMS	AMG-232	BRD-K64925568	borrowed	False	MDM inhibitor	67.6	99.8					False	True	True
+SARC-LMS	PF-03758309	BRD-K37764012	borrowed	False	p21 activated kinase inhibitor	66.3	99.6					False	True	True
+SARC-LMS	nutlin-3	BRD-A12230535	borrowed	False		59.8	99.7					False	True	True
+SARC-LMS	RG-7388	BRD-K62627508	borrowed	False	MDM inhibitor	57.4	99.7					False	True	True
+SARC-LMS	PD-168393	BRD-K17702546	borrowed	False	EGFR inhibitor	55.0	99.0		EGFR:8.05/44.6;ERBB2:21.60/101.5;SRC:48.28/57.4			False	True	True
+SARC-LMS	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	54.5	99.9	chembl_mechanism	CCND1:13.04/147.9;CDK4:133.50/184.7;CDK6:1.11/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+SARC-LMS	WZ-4002	BRD-K72420232	borrowed	False	EGFR inhibitor	49.5	99.4		EGFR:8.05/44.6		ok	False	True	True
+SARC-LMS	BVD-523	BRD-K28965160	borrowed	False	MAP kinase inhibitor	42.5	99.2					False	True	True
+SARC-LMS	BMS-509744	BRD-A13021932	borrowed	False		38.0	98.9					False	True	True
+SARC-LMS	PHA-848125	BRD-K60997853	borrowed	False	CDK inhibitor|growth factor receptor inhibitor	15.6	99.5		CDK1:27.54/48.5;CDK2:45.88/45.9;CDK4:133.50/184.7;NTRK1:0.36/1.5			False	True	True
+SARC-UPS	tozasertib	BRD-K87947369	borrowed	False	Aurora kinase inhibitor|Bcr-Abl kinase inhibitor|FLT3 inhibitor|JAK inhibitor	99.9	95.0		AURKA:17.86/25.8;AURKB:36.17/40.8;AURKC:1.54/1.5			True	False	True
+SARC-UPS	HG-6-64-01	BRD-K98762074	borrowed	False		99.7	94.9					True	False	True
+SARC-UPS	ZSTK-474	BRD-K63068307	borrowed	False	PI3K inhibitor	99.6	98.2					True	False	True
+SARC-UPS	KPT-330	BRD-K21361524	borrowed	True	exportin antagonist	99.5	96.0	chembl_mechanism	XPO1:54.76/98.8			True	False	True
+SARC-UPS	GDC-0980	BRD-K23228615	borrowed	False	mTOR inhibitor|PI3K inhibitor	99.1	99.0					True	True	True
+SARC-UPS	AZD-2014	BRD-K99113996	borrowed	False	mTOR inhibitor	99.0	97.5					True	False	True
+SARC-UPS	defactinib	BRD-K43578482	borrowed	False	focal adhesion kinase inhibitor	99.0	81.6	chembl_mechanism	PTK2:36.26/63.7;PTK2B:7.20/18.7	CDKL5:7.8*;ADORA3:7.6;JAK2:7.5*;STK16:6.0*		True	False	True
+SARC-UPS	AT-13387	BRD-K58435339	borrowed	False	HSP inhibitor	98.9	94.2					True	False	True
+SARC-UPS	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	98.8	56.7					True	False	True
+SARC-UPS	MLN-0128	BRD-K59317601	borrowed	False	mTOR inhibitor	98.7	99.7					True	True	True
+SARC-UPS	BMS-536924	BRD-K34581968	borrowed	False	IGF-1 inhibitor	98.6	99.3					False	True	True
+SARC-UPS	AZD-8330	BRD-K37687095	borrowed	False	MEK inhibitor	94.7	99.9					False	True	True
+SARC-UPS	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	94.2	99.8	chembl_mechanism	MAP2K1:46.27/46.3;MAP2K2:183.41/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	True
+SARC-UPS	BVD-523	BRD-K28965160	borrowed	False	MAP kinase inhibitor	93.2	99.0					False	True	False
+SARC-UPS	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	92.5	99.2					False	True	True
+SARC-UPS	PHA-848125	BRD-K60997853	borrowed	False	CDK inhibitor|growth factor receptor inhibitor	92.0	99.6		CDK1:31.65/48.5;CDK2:33.13/45.9;CDK4:186.68/184.7;NTRK1:1.52/1.5			False	True	True
+SARC-UPS	BMS-754807	BRD-K13049116	borrowed	False	IGF-1 inhibitor	86.5	99.5		IGF1R:3.82/16.4		ok	False	True	True
+SARC-UPS	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	54.6	99.1	chembl_mechanism	CCND1:36.95/147.9;CDK4:186.68/184.7;CDK6:5.49/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+TARGET-NBL	mocetinostat	BRD-K16485616	direct	False	HDAC inhibitor	100.0	97.4					True	False	True
+TARGET-NBL	MRS-1220	BRD-K37618799	direct	False	adenosine receptor antagonist	99.9	64.1		ADORA3:1.22/7.8		acts_on_tumor_environment	True	False	True
+TARGET-NBL	floxuridine	BRD-K47832606	borrowed	True	DNA synthesis inhibitor	99.7	99.5	chembl_mechanism	TYMS:95.39/95.4			True	True	True
+TARGET-NBL	withaferin-a	BRD-K88378636	direct	False		99.6	78.7					True	False	True
+TARGET-NBL	SB-939	BRD-K86797399	direct	False	HDAC inhibitor	99.4	65.0					True	False	True
+TARGET-NBL	LY-2784544	BRD-K25630527	borrowed	False	JAK inhibitor	99.2	90.4					True	False	True
+TARGET-NBL	entinostat	BRD-K77908580	direct	False	HDAC inhibitor	98.9	99.1					True	True	True
+TARGET-NBL	YM-155	BRD-K24681473	borrowed	False	survivin inhibitor	98.8	52.8					True	False	True
+TARGET-NBL	trifluridine	BRD-K03243820	borrowed	True	DNA directed DNA polymerase inhibitor|thymidylate synthase inhibitor	98.7	99.8	non_human_target		TYMS:ann		True	True	True
+TARGET-NBL	droxinostat	BRD-K11558771	borrowed	False	HDAC inhibitor	98.5	99.3					True	True	True
+TARGET-NBL	talazoparib	BRD-K95142244	borrowed	True	PARP inhibitor	85.9	99.4	chembl_mechanism	PARP1:79.57/102.0;PARP2:51.23/31.7	PARP4:9.2*;PARP3:7.6*;TNKS:7.3;PARP11:6.8*;PARP16:6.0*		False	True	True
+TARGET-NBL	LB-42708	BRD-K18834913	borrowed	False	farnesyltransferase inhibitor	75.4	99.2					False	True	True
+TARGET-NBL	mitoxantrone	BRD-K21680192	direct	True	topoisomerase inhibitor	68.6	99.9	chembl_mechanism	TOP2A:78.75/72.6	SLC47A1:6.4;SLC47A2:6.2;KCNH2:5.5		False	True	True
+TARGET-NBL	RG-7388	BRD-K62627508	borrowed	False	MDM inhibitor	50.8	99.6					False	True	True
+TARGET-NBL	AMG-232	BRD-K64925568	borrowed	False	MDM inhibitor	48.7	99.7					False	True	True
+TARGET-NBL	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	32.7	99.7	chembl_mechanism	CCND1:314.95/147.9;CDK4:102.15/184.7;CDK6:30.32/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+TARGET-WT	daunorubicin	BRD-A37630846	borrowed	False		100.0	99.8	chembl_mechanism	TOP2A:190.16/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+TARGET-WT	doxorubicin	BRD-K61468417	borrowed	False		99.9	99.9	chembl_mechanism	TOP2A:190.16/72.6			True	True	True
+TARGET-WT	RITA	BRD-K00317371	borrowed	False	MDM inhibitor	99.7	97.1					True	False	True
+TARGET-WT	STK-249718	BRD-K81142122	borrowed	False		99.7	99.0					True	True	True
+TARGET-WT	topotecan	BRD-A59985574	borrowed	False		99.6	99.1	chembl_mechanism	TOP1:82.27/56.1	HIF1A:7.6;TOP1MT:ann		True	True	True
+TARGET-WT	sonidegib	BRD-K19796430	borrowed	True	smoothened receptor antagonist	99.5	82.4	chembl_mechanism	SMO:50.45/26.8		ok	True	False	True
+TARGET-WT	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.4	99.2	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	True	True
+TARGET-WT	pacritinib	BRD-K19034817	borrowed	True	FLT3 inhibitor|JAK inhibitor	99.3	99.5	chembl_mechanism	ACVR1:22.97/25.9;FLT3:0.10/0.4;IRAK1:21.53/77.5;JAK2:2.28/5.2	STK11:8.5*;NQO2:8.4*;BMP2K:7.4*;AAK1:7.4*;GAK:6.2*;JAK1:ann;JAK3:ann		True	True	True
+TARGET-WT	ryuvidine	BRD-K06426971	borrowed	False	histone lysine methyltransferase inhibitor	99.2	91.2					True	False	True
+TARGET-WT	trifluridine	BRD-K03243820	borrowed	True	DNA directed DNA polymerase inhibitor|thymidylate synthase inhibitor	95.4	99.3	non_human_target		TYMS:ann		False	True	True
+TARGET-WT	NNC-05-2090	BRD-K85015012	borrowed	False	GABA uptake inhibitor|GAT inhibitor	93.4	98.9					False	True	True
+TARGET-WT	AMG-232	BRD-K64925568	borrowed	False	MDM inhibitor	71.8	98.8					False	True	True
+TCGA-ACC	bruceantin	BRD-A36057565	borrowed	False	protein synthesis inhibitor	100.0	80.1					True	False	True
+TCGA-ACC	kinetin-riboside	BRD-K94325918	borrowed	False		99.8	81.5					True	False	True
+TCGA-ACC	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	99.7	82.6					True	False	True
+TCGA-ACC	narciclasine	BRD-K06792661	borrowed	False		99.7	89.4					True	False	True
+TCGA-ACC	JG-98	BRD-U06877554	borrowed	False		99.4	99.0					True	True	True
+TCGA-ACC	VU-0410183-2	BRD-K74710236	borrowed	False		99.3	99.8					True	True	True
+TCGA-ACC	metronidazole	BRD-K52020312	borrowed	True	DNA inhibitor	99.2	81.9	non_human_target				True	False	True
+TCGA-ACC	artesunate	BRD-A47829399	borrowed	False		98.8	92.1	non_protein_mechanism				True	False	True
+TCGA-ACC	BGT-226	BRD-K29415052	borrowed	False	PI3K inhibitor	82.1	99.3					False	True	True
+TCGA-ACC	wortmannin	BRD-K87343924	borrowed	False	PI3K inhibitor	77.4	99.7					False	True	True
+TCGA-ACC	simvastatin	BRD-K22134346	borrowed	True	HMGCR inhibitor	76.9	99.5	chembl_mechanism	HMGCR:85.84/30.7	ITGB2:ann		False	True	True
+TCGA-ACC	BVD-523	BRD-K28965160	borrowed	False	MAP kinase inhibitor	74.7	99.9					False	True	True
+TCGA-ACC	OSI-027	BRD-K94012289	borrowed	False		74.6	99.4					False	True	True
+TCGA-ACC	GSK-2126458	BRD-K42918627	borrowed	False		74.4	99.1					False	True	True
+TCGA-ACC	MLN-0128	BRD-K59317601	borrowed	False	mTOR inhibitor	72.5	99.0					False	True	True
+TCGA-ACC	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	42.4	99.7	chembl_mechanism	CCND1:27.73/147.9;CDK4:138.78/184.7;CDK6:3.39/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+TCGA-BLCA	SA-1017940	BRD-K53308430	borrowed	False		100.0	99.9					True	True	True
+TCGA-BLCA	entinostat	BRD-K77908580	borrowed	False	HDAC inhibitor	99.8	99.0					True	True	True
+TCGA-BLCA	VU-0410183-2	BRD-K74710236	borrowed	False		99.7	96.2					True	False	True
+TCGA-BLCA	helveticoside	BRD-A63998256	borrowed	False		99.7	77.2					True	False	True
+TCGA-BLCA	SA-247714	BRD-K35424586	borrowed	False		99.5	99.4					True	True	True
+TCGA-BLCA	mocetinostat	BRD-K16485616	borrowed	False	HDAC inhibitor	99.4	95.8					True	False	True
+TCGA-BLCA	MST-312	BRD-K19894101	borrowed	False		99.2	71.1					True	False	True
+TCGA-BLCA	AG-592	BRD-K89930444	borrowed	False		99.0	80.6					True	False	True
+TCGA-BLCA	tacedinaline	BRD-K52313696	borrowed	False	HDAC inhibitor	99.0	95.9					True	False	True
+TCGA-BLCA	NSC-632839	BRD-K37392901	borrowed	False		98.8	63.2					True	False	True
+TCGA-BLCA	ZSTK-474	BRD-K63068307	borrowed	False	PI3K inhibitor	91.8	99.0					False	True	True
+TCGA-BLCA	wortmannin	BRD-K87343924	borrowed	False	PI3K inhibitor	88.6	99.3					False	True	True
+TCGA-BLCA	AZD-8330	BRD-K37687095	borrowed	False	MEK inhibitor	85.5	99.6					False	True	True
+TCGA-BLCA	simvastatin	BRD-K22134346	borrowed	True	HMGCR inhibitor	83.8	99.2	chembl_mechanism	HMGCR:14.37/30.7	ITGB2:ann		False	True	True
+TCGA-BLCA	BMS-754807	BRD-K13049116	borrowed	False	IGF-1 inhibitor	78.7	99.7		IGF1R:5.05/16.4		ok	False	True	True
+TCGA-BLCA	OSI-027	BRD-K94012289	borrowed	False		61.8	99.1					False	True	True
+TCGA-BLCA	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	42.5	99.5	chembl_mechanism	CCND1:51.61/147.9;CDK4:116.21/184.7;CDK6:1.85/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+TCGA-COAD	CCT-031374	BRD-K90999434	direct	False	WNT signaling inhibitor	100.0	99.0					True	False	True
+TCGA-COAD	cytarabine	BRD-K71847383	direct	True		99.9	94.9	chembl_mechanism	POLA1:6.70/8.5;POLA2:18.09/25.2;POLD1:24.12/56.7;POLD2:119.87/127.1;POLD3:10.60/14.8;POLD4:107.56/113.3;POLE:17.60/34.7;POLE2:7.28/15.9;POLE3:51.56/58.3;PRIM1:10.83/17.1;PRIM2:11.08/16.6	MDM2:7.7*;POLB:ann		True	False	True
+TCGA-COAD	tofacitinib	BRD-K36280065	borrowed	False		99.8	96.3	chembl_mechanism	JAK1:37.34/58.3;JAK2:3.41/5.2;JAK3:2.34/5.3;TYK2:46.74/84.9	DCLK3:8.1		True	False	True
+TCGA-COAD	brivanib	BRD-K28428262	direct	False	FGFR inhibitor|VEGFR inhibitor	99.7	92.3		FGFR1:8.47/111.2;FLT1:4.97/13.6;KDR:3.27/10.7		ok	True	False	True
+TCGA-COAD	10-DEBC	BRD-K70792160	direct	False	AKT inhibitor	99.6	99.0					True	False	True
+TCGA-COAD	calcitriol	BRD-K27316855	direct	True	vitamin D receptor agonist	99.5	92.2	chembl_mechanism	VDR:26.39/17.5	CYP24A1:8.5*;GC:7.6*	ok	True	False	True
+TCGA-COAD	inositol	BRD-K52618540	direct	True	insulin sensitizer	99.4	94.0					True	False	True
+TCGA-COAD	doxorubicin	BRD-K61468417	borrowed	False		99.3	90.1	chembl_mechanism	TOP2A:43.28/72.6			True	False	True
+TCGA-COAD	fostamatinib	BRD-K20285085	direct	False	SYK inhibitor	99.3	99.9	chembl_mechanism	SYK:22.70/19.9	FLT3:9.0;EIF2AK4:8.5*;MAP3K10:8.4;MAP3K9:8.4*;JAK2:8.2;KIT:8.2;NEK6:8.2*;RET:8.2		True	True	True
+TCGA-COAD	PP-2	BRD-K95785537	direct	False	SRC inhibitor	99.2	90.7					True	False	False
+TCGA-COAD	GDC-0980	BRD-A18328003	direct	False		98.0	99.9					False	True	True
+TCGA-COAD	fluvastatin	BRD-K66296774	borrowed	True	HMGCR inhibitor	96.0	99.8	annotation	HMGCR:30.68/30.7			False	True	True
+TCGA-COAD	NVP-BEZ235	BRD-K12184916	direct	False	mTOR inhibitor|PI3K inhibitor	95.1	99.3					False	True	True
+TCGA-COAD	linsitinib	BRD-K07667918	direct	False	IGF-1 inhibitor	93.9	99.6		IGF1R:5.76/16.4;INSR:9.29/18.8		ok	False	True	True
+TCGA-COAD	MLN-0128	BRD-K59317601	direct	False	mTOR inhibitor	92.8	99.7					False	True	True
+TCGA-COAD	GDC-0068	BRD-K71480163	direct	False		91.1	99.3					False	True	True
+TCGA-COAD	MK-2206	BRD-K68065987	direct	False	AKT inhibitor	90.4	99.4					False	True	True
+TCGA-COAD	WYE-125132	BRD-A45498368	direct	False		89.8	99.5					False	True	True
+TCGA-GBM	merck-ketone	BRD-A94377914	borrowed	False		100.0	95.7					True	False	True
+TCGA-GBM	cyclopamine	BRD-A02333338	borrowed	False		99.9	95.4		SMO:23.58/26.8		ok	True	False	True
+TCGA-GBM	givinostat	BRD-K13810148	borrowed	True	HDAC inhibitor	99.8	90.2	chembl_mechanism	HDAC1:50.47/113.0;HDAC10:16.46/21.7;HDAC11:14.37/31.3;HDAC2:66.83/117.5;HDAC3:59.89/57.3;HDAC4:4.27/8.0;HDAC5:29.85/54.5;HDAC6:44.07/52.6;HDAC7:22.96/52.0;HDAC8:13.98/16.2;HDAC9:9.13/9.6			True	False	True
+TCGA-GBM	CHEMBL-1222381	BRD-K53903639	borrowed	False	neural stem cell inducer	99.7	79.5					True	False	True
+TCGA-GBM	daunorubicin	BRD-A37630846	borrowed	False		99.7	90.5	chembl_mechanism	TOP2A:35.76/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	False	True
+TCGA-GBM	SA-1017940	BRD-K53308430	borrowed	False		99.4	92.6					True	False	True
+TCGA-GBM	mocetinostat	BRD-K16485616	borrowed	False	HDAC inhibitor	99.3	84.6					True	False	True
+TCGA-GBM	entinostat	BRD-K77908580	borrowed	False	HDAC inhibitor	99.2	90.0					True	False	True
+TCGA-GBM	NCH-51	BRD-K52522949	borrowed	False		99.1	89.1					True	False	True
+TCGA-GBM	NNC-05-2090	BRD-K85015012	borrowed	False	GABA uptake inhibitor|GAT inhibitor	94.7	99.1					False	True	True
+TCGA-GBM	fluvastatin	BRD-K66296774	borrowed	True	HMGCR inhibitor	89.4	99.5	annotation	HMGCR:18.79/30.7			False	True	True
+TCGA-GBM	atorvastatin	BRD-K69726342	borrowed	True	HMGCR inhibitor	89.2	99.2	chembl_mechanism	HMGCR:18.79/30.7	AHR:ann;DPP4:ann		False	True	True
+TCGA-GBM	BMS-509744	BRD-A13021932	borrowed	False		87.8	99.7					False	True	True
+TCGA-GBM	BMS-754807	BRD-K13049116	borrowed	False	IGF-1 inhibitor	83.5	99.0		IGF1R:4.25/16.4		ok	False	True	True
+TCGA-GBM	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	82.4	99.4					False	True	True
+TCGA-GBM	simvastatin	BRD-K22134346	borrowed	True	HMGCR inhibitor	78.2	99.3	chembl_mechanism	HMGCR:18.79/30.7	ITGB2:ann		False	True	True
+TCGA-GBM	AMG-232	BRD-K64925568	borrowed	False	MDM inhibitor	67.7	99.8					False	True	True
+TCGA-GBM	RG-7388	BRD-K62627508	borrowed	False	MDM inhibitor	63.4	99.6					False	True	True
+TCGA-GBM	palbociclib	BRD-K51313569	borrowed	True	CDK inhibitor	47.6	99.9	chembl_mechanism	CCND1:21.46/147.9;CDK4:182.09/184.7;CDK6:8.41/10.4	PARP1:8.5*;STING1:8.2*;CLK4:7.7;CSNK2B:6.3*		False	True	True
+TCGA-HNSC	HG-6-64-01	BRD-K98762074	borrowed	False		100.0	98.3					True	False	True
+TCGA-HNSC	PP-2	BRD-K95785537	borrowed	False	SRC inhibitor	99.9	99.7					True	True	True
+TCGA-HNSC	BMS-536924	BRD-K34581968	borrowed	False	IGF-1 inhibitor	99.8	99.7					True	True	True
+TCGA-HNSC	PP-110	BRD-K03618428	borrowed	False		99.7	99.3					True	True	True
+TCGA-HNSC	fostamatinib	BRD-K20285085	borrowed	False	SYK inhibitor	99.7	99.5	chembl_mechanism	SYK:17.43/19.9	FLT3:9.0;EIF2AK4:8.5*;MAP3K10:8.4;MAP3K9:8.4*;JAK2:8.2;KIT:8.2;NEK6:8.2*;RET:8.2		True	True	True
+TCGA-HNSC	PD-98059	BRD-K62810658	borrowed	False	MEK inhibitor	99.6	97.8					True	False	True
+TCGA-HNSC	HG-14-10-04	BRD-K20526256	borrowed	False		99.5	99.2					True	True	True
+TCGA-HNSC	U-0126	BRD-K18787491	borrowed	False	MEK inhibitor	99.3	96.0					True	False	True
+TCGA-HNSC	LY-294002	BRD-K27305650	borrowed	False	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	99.2	98.7					True	True	True
+TCGA-HNSC	NVP-AEW541	BRD-K20696416	borrowed	False		99.1	98.9		IGF1R:13.12/16.4		ok	True	True	True
+TCGA-HNSC	GDC-0941	BRD-K52911425	borrowed	False	PI3K inhibitor	99.0	99.6					False	True	True
+TCGA-HNSC	ENMD-2076	BRD-K68488863	borrowed	False	Aurora kinase inhibitor|FLT3 inhibitor|VEGFR inhibitor	98.3	98.8		AURKA:20.45/25.8;FLT3:0.15/0.4;KDR:2.72/10.7			False	True	False
+TCGA-HNSC	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	93.5	98.6	chembl_mechanism	MAP2K1:41.85/46.3;MAP2K2:107.11/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	False
+TCGA-KICH	STK-249718	BRD-K81142122	borrowed	False		100.0	99.9					True	True	True
+TCGA-KICH	MD-040	BRD-K83336168	borrowed	False		99.9	99.4					True	True	True
+TCGA-KICH	sonidegib	BRD-K19796430	borrowed	True	smoothened receptor antagonist	99.8	99.7	chembl_mechanism	SMO:5.38/26.8		ok	True	True	True
+TCGA-KICH	RITA	BRD-K00317371	borrowed	False	MDM inhibitor	99.7	99.3					True	True	True
+TCGA-KICH	ryuvidine	BRD-K06426971	borrowed	False	histone lysine methyltransferase inhibitor	99.7	99.5					True	True	True
+TCGA-KICH	auranofin	BRD-K45995181	borrowed	True	NFkB pathway inhibitor	99.6	99.1	non_protein_mechanism		IKBKB:ann;PRDX5:ann;TRPA1:ann		True	True	True
+TCGA-KICH	celastrol	BRD-A80960055	borrowed	False		99.5	99.0					True	True	True
+TCGA-KICH	topotecan	BRD-A59985574	borrowed	False		99.4	99.0	chembl_mechanism	TOP1:23.50/56.1	HIF1A:7.6;TOP1MT:ann		True	True	False
+TCGA-KICH	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.2	98.5	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	False	False
+TCGA-KICH	JNJ-7706621	BRD-K11636097	borrowed	False	CDK inhibitor	99.1	98.9					True	True	False
+TCGA-KIRC	doxorubicin	BRD-K61468417	borrowed	False		100.0	99.9	chembl_mechanism	TOP2A:4.74/72.6			True	True	True
+TCGA-KIRC	RITA	BRD-K00317371	borrowed	False	MDM inhibitor	99.9	99.6					True	True	True
+TCGA-KIRC	daunorubicin	BRD-A37630846	borrowed	False		99.8	99.7	chembl_mechanism	TOP2A:4.74/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+TCGA-KIRC	STK-249718	BRD-K81142122	borrowed	False		99.7	99.8					True	True	True
+TCGA-KIRC	topotecan	BRD-K55696337	borrowed	True	topoisomerase inhibitor	99.6	99.1	chembl_mechanism	TOP1:30.70/56.1	HIF1A:7.6;TOP1MT:ann		True	True	True
+TCGA-KIRC	genz-644282	BRD-K99475619	borrowed	False	topoisomerase inhibitor	99.5	97.9					True	False	True
+TCGA-KIRC	camptothecin	BRD-K37890730	borrowed	False	topoisomerase inhibitor	99.4	99.0					True	False	True
+TCGA-KIRC	celastrol	BRD-A80960055	borrowed	False		99.3	99.4					True	True	True
+TCGA-KIRC	sonidegib	BRD-K19796430	borrowed	True	smoothened receptor antagonist	99.1	99.5	chembl_mechanism	SMO:13.50/26.8		ok	False	True	True
+TCGA-KIRC	pacritinib	BRD-K19034817	borrowed	True	FLT3 inhibitor|JAK inhibitor	98.8	99.3	chembl_mechanism	ACVR1:19.73/25.9;FLT3:0.43/0.4;IRAK1:33.58/77.5;JAK2:4.93/5.2	STK11:8.5*;NQO2:8.4*;BMP2K:7.4*;AAK1:7.4*;GAK:6.2*;JAK1:ann;JAK3:ann		False	True	True
+TCGA-KIRC	auranofin	BRD-A79465854	borrowed	False		98.1	99.2	non_protein_mechanism		IKBKB:ann;PRDX5:ann;TRPA1:ann		False	True	True
+TCGA-KIRP	STK-249718	BRD-K81142122	borrowed	False		100.0	99.7					True	True	True
+TCGA-KIRP	JNJ-7706621	BRD-K11636097	borrowed	False	CDK inhibitor	99.9	99.6					True	True	True
+TCGA-KIRP	topotecan	BRD-A59985574	borrowed	False		99.8	94.3	chembl_mechanism	TOP1:25.60/56.1	HIF1A:7.6;TOP1MT:ann		True	False	True
+TCGA-KIRP	daunorubicin	BRD-A37630846	borrowed	False		99.7	96.2	chembl_mechanism	TOP2A:3.29/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	False	True
+TCGA-KIRP	doxorubicin	BRD-K61468417	borrowed	False		99.7	96.7	chembl_mechanism	TOP2A:3.29/72.6			True	False	True
+TCGA-KIRP	MD-040	BRD-K83336168	borrowed	False		99.6	99.0					True	False	True
+TCGA-KIRP	RITA	BRD-K00317371	borrowed	False	MDM inhibitor	99.5	93.2					True	False	True
+TCGA-KIRP	auranofin	BRD-A79465854	borrowed	False		99.3	99.4	non_protein_mechanism		IKBKB:ann;PRDX5:ann;TRPA1:ann		True	True	True
+TCGA-KIRP	ryuvidine	BRD-K06426971	borrowed	False	histone lysine methyltransferase inhibitor	99.2	97.4					True	False	True
+TCGA-KIRP	bisindolylmaleimide-ix	BRD-K06543683	borrowed	False	PKC inhibitor	99.1	99.2					False	True	True
+TCGA-KIRP	dinaciclib	BRD-K13662825	borrowed	False	CDK inhibitor	98.9	99.7					False	True	True
+TCGA-KIRP	WZ-3105	BRD-K92571446	borrowed	False		98.8	99.9					False	True	True
+TCGA-KIRP	sonidegib	BRD-K19796430	borrowed	True	smoothened receptor antagonist	98.7	99.8	chembl_mechanism	SMO:33.72/26.8		ok	False	True	True
+TCGA-KIRP	AT-7519	BRD-K13390322	borrowed	False	CDK inhibitor	98.5	99.1					False	True	True
+TCGA-KIRP	PIK-75	BRD-K49371609	borrowed	False	DNA protein kinase inhibitor|PI3K inhibitor	97.7	99.5					False	True	True
+TCGA-KIRP	A-443654	BRD-K38615104	borrowed	False		93.3	99.3					False	True	True
+TCGA-LIHC	ALW-II-38-3	BRD-K68191783	direct	False		99.9	99.8					True	True	True
+TCGA-LIHC	VU-0418939-2	BRD-K69097969	direct	False		99.7	99.0					True	True	True
+TCGA-LIHC	digitoxin	BRD-A93236127	direct	False		99.6	99.6	chembl_mechanism	ATP1A1:136.65/520.5;ATP1A2:0.21/4.6;ATP1A3:0.04/104.6;ATP1A4:0.01/0.4;ATP1B1:97.95/339.6;ATP1B2:0.58/15.5;ATP1B3:21.59/177.8;FXYD2:4.07/4.1	STAT3:6.2*		True	True	True
+TCGA-LIHC	narciclasine	BRD-K06792661	direct	False		99.6	95.3					True	False	True
+TCGA-LIHC	niclosamide	BRD-K35960502	direct	True	DNA replication inhibitor|STAT inhibitor	99.4	99.2	non_human_target		ANO1:7.5*;STAT3:6.6		True	True	True
+TCGA-LIHC	F-1566-0341	BRD-K69852452	direct	False		99.3	98.9					True	True	True
+TCGA-LIHC	FCCP	BRD-K14821540	direct	False		99.1	97.9					True	False	True
+TCGA-LIHC	puromycin	BRD-A28970875	borrowed	False		99.0	94.8					True	False	True
+TCGA-LIHC	A-23187	BRD-K41431477	direct	False		98.9	94.3					True	False	True
+TCGA-LIHC	I-070759	BRD-K86761848	direct	False		98.8	98.5					True	True	True
+TCGA-LIHC	anisomycin	BRD-K91370081	direct	False	DNA synthesis inhibitor	98.7	99.1					False	True	True
+TCGA-LIHC	cyclosporin-a	BRD-K13533483	direct	True	calcineurin inhibitor	96.5	98.7					False	True	True
+TCGA-LIHC	dabrafenib	BRD-K09951645	direct	True	RAF inhibitor	95.7	99.5	chembl_mechanism	BRAF:3.74/10.4	CDK16:7.9*;CDK2:7.7*;RAF1:7.6;NR1I2:7.1;LIMK1:ann;NEK11:ann;SIK1:ann		False	True	True
+TCGA-LIHC	SA-1921456	BRD-K74381836	direct	False		77.4	99.4					False	True	True
+TCGA-LUAD	GDC-0980	BRD-A18328003	direct	False		100.0	99.9					True	True	True
+TCGA-LUAD	PP-110	BRD-K03618428	direct	False		99.8	98.2					True	False	True
+TCGA-LUAD	BMS-536924	BRD-K34581968	direct	False	IGF-1 inhibitor	99.7	99.0					True	True	True
+TCGA-LUAD	NVP-TAE684	BRD-K50140147	direct	False	ALK tyrosine kinase receptor inhibitor	99.6	93.5		ALK:0.15/1.5;INSR:9.35/18.8		acts_on_tumor_environment	True	False	True
+TCGA-LUAD	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	99.6	99.3					True	True	True
+TCGA-LUAD	SB-2343	BRD-K98795921	borrowed	False	mTOR inhibitor|PI3K inhibitor	99.5	98.7					True	True	True
+TCGA-LUAD	PI-103	BRD-K67868012	direct	False	mTOR inhibitor|PI3K inhibitor	99.4	99.7					True	True	True
+TCGA-LUAD	tofacitinib	BRD-K36280065	borrowed	False		99.3	95.3	chembl_mechanism	JAK1:40.66/58.3;JAK2:3.85/5.2;JAK3:5.23/5.3;TYK2:53.98/84.9	DCLK3:8.1		True	False	True
+TCGA-LUAD	inositol	BRD-K52618540	borrowed	True	insulin sensitizer	99.1	93.8					True	False	True
+TCGA-LUAD	PHA-848125	BRD-K60997853	borrowed	False	CDK inhibitor|growth factor receptor inhibitor	98.9	97.9		CDK1:16.98/48.5;CDK2:22.76/45.9;CDK4:100.81/184.7;NTRK1:0.27/1.5			True	False	False
+TCGA-LUAD	WH-4-025	BRD-U60236422	direct	False		98.4	98.8					False	True	True
+TCGA-LUAD	KU-0063794	BRD-K67566344	direct	False	mTOR inhibitor	97.4	98.9					False	True	True
+TCGA-LUAD	AZD-8055	BRD-K69932463	direct	False	mTOR inhibitor	96.8	98.4					False	True	True
+TCGA-LUAD	OSI-027	BRD-K94012289	borrowed	False		92.1	98.2					False	True	True
+TCGA-LUAD	AZD-9291	BRD-K42805893	direct	True	EGFR inhibitor	91.6	99.4	chembl_mechanism	EGFR:15.26/44.6	ERBB3:8.7*;CARS1:7.9*;ERBB2:7.6;KCNH2:5.5	ok	False	True	True
+TCGA-LUSC	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	99.2	98.3					True	True	True
+TCGA-LUSC	PHA-848125	BRD-K60997853	borrowed	False	CDK inhibitor|growth factor receptor inhibitor	99.1	98.7		CDK1:43.28/48.5;CDK2:39.08/45.9;CDK4:184.70/184.7;NTRK1:0.25/1.5			True	True	True
+TCGA-LUSC	SB-2343	BRD-K98795921	borrowed	False	mTOR inhibitor|PI3K inhibitor	98.7	97.8					True	True	True
+TCGA-LUSC	GDC-0980	BRD-K23228615	borrowed	False	mTOR inhibitor|PI3K inhibitor	97.8	94.8					True	True	True
+TCGA-LUSC	AZD-2014	BRD-K99113996	borrowed	False	mTOR inhibitor	97.5	94.9					True	True	True
+TCGA-LUSC	PF-04691502	BRD-K07310275	borrowed	False	mTOR inhibitor|PI3K inhibitor	97.4	96.4					True	True	True
+TCGA-LUSC	voxtalisib	BRD-K56291712	borrowed	False	mTOR inhibitor|PI3K inhibitor	96.8	95.8					True	True	True
+TCGA-LUSC	SGC-CBP30	BRD-K24821794	borrowed	False	bromodomain inhibitor	96.5	79.1					True	False	True
+TCGA-LUSC	tozasertib	BRD-K87947369	borrowed	False	Aurora kinase inhibitor|Bcr-Abl kinase inhibitor|FLT3 inhibitor|JAK inhibitor	96.5	91.6		AURKA:20.56/25.8;AURKB:32.20/40.8;AURKC:0.94/1.5			True	False	True
+TCGA-LUSC	PF-05212384	BRD-K07955840	borrowed	False	mTOR inhibitor|PI3K inhibitor	95.8	94.5	chembl_mechanism	MTOR:14.55/22.7;PIK3CA:14.46/11.2;PIK3CB:17.58/23.5;PIK3CD:5.67/8.0;PIK3CG:0.92/1.4;PIK3R1:10.29/33.8;PIK3R2:36.09/53.7;PIK3R3:6.78/22.9;PIK3R5:2.58/4.4	PIK3C2B:9.3*		True	True	True
+TCGA-LUSC	OSI-027	BRD-K94012289	borrowed	False		95.6	98.4					False	True	True
+TCGA-LUSC	PIK-93	BRD-K29395450	borrowed	False	PI3K inhibitor	95.4	97.0					False	True	True
+TCGA-OV	BIIB-021	BRD-K51967704	borrowed	False	HSP inhibitor	99.9	98.3					True	False	True
+TCGA-OV	SNX-2112	BRD-K71281111	borrowed	False	HSP inhibitor	99.8	95.5					True	False	True
+TCGA-OV	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	99.7	97.5					True	False	True
+TCGA-OV	puromycin	BRD-A28970875	borrowed	False	protein synthesis inhibitor	99.5	88.6					True	False	True
+TCGA-OV	narciclasine	BRD-K06792661	borrowed	False		99.3	95.1					True	False	True
+TCGA-OV	AT-13387	BRD-K58435339	borrowed	False	HSP inhibitor	99.2	97.8					True	False	True
+TCGA-OV	RS-I-002-6	BRD-K66254772	borrowed	False		99.0	64.8					True	False	True
+TCGA-OV	kinetin-riboside	BRD-K94325918	borrowed	False		98.7	68.2					True	False	True
+TCGA-OV	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	98.6	92.3					True	False	True
+TCGA-OV	calyculin	BRD-A47513740	borrowed	False		97.6	99.2					False	True	True
+TCGA-OV	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	93.7	99.6					False	True	True
+TCGA-OV	GSK-1059615	BRD-K02708799	borrowed	False		91.4	99.1					False	True	True
+TCGA-OV	MLN-0128	BRD-K59317601	borrowed	False	mTOR inhibitor	91.4	99.7					False	True	True
+TCGA-OV	BGT-226	BRD-K29415052	borrowed	False	PI3K inhibitor	91.2	99.7					False	True	True
+TCGA-OV	OSI-027	BRD-K94012289	borrowed	False		87.0	99.9					False	True	True
+TCGA-OV	torin-1	BRD-K40175214	borrowed	False	mTOR inhibitor	86.7	99.4					False	True	True
+TCGA-OV	GSK-2126458	BRD-K42918627	borrowed	False		81.5	99.3					False	True	True
+TCGA-OV	WYE-125132	BRD-A45498368	borrowed	False		81.4	99.5					False	True	True
+TCGA-OV	torin-2	BRD-K68174511	borrowed	False	mTOR inhibitor	78.3	99.0					False	True	True
+TCGA-PAAD	AT-9283	BRD-K24576554	direct	False	Aurora kinase inhibitor|JAK inhibitor	99.8	95.4					True	False	True
+TCGA-PAAD	NVP-AUY922	BRD-K65182930	borrowed	False		99.6	93.0					True	False	True
+TCGA-PAAD	HG-6-64-01	BRD-K98762074	borrowed	False		99.5	99.2					True	True	True
+TCGA-PAAD	puromycin	BRD-A28970875	borrowed	False		99.4	96.5					True	False	True
+TCGA-PAAD	bruceantin	BRD-A36057565	direct	False	protein synthesis inhibitor	99.3	97.0					True	False	True
+TCGA-PAAD	XL-888	BRD-A03506276	direct	False		99.2	96.1					True	False	True
+TCGA-PAAD	BIIB-021	BRD-K51967704	direct	False	HSP inhibitor	99.1	97.1					True	False	True
+TCGA-PAAD	TG-101209	BRD-K39841531	borrowed	False	JAK inhibitor	99.0	98.4					True	True	True
+TCGA-PAAD	tanespimycin	BRD-K81473043	borrowed	False	HSP inhibitor	98.9	94.3					True	False	True
+TCGA-PAAD	I-BET-151	BRD-K36363294	direct	False	bromodomain inhibitor	98.8	96.2					True	False	True
+TCGA-PAAD	verrucarin-a	BRD-A26002865	borrowed	False		98.7	99.2					False	True	True
+TCGA-PAAD	cephaeline	BRD-K80348542	borrowed	False		97.2	98.7					False	True	True
+TCGA-PAAD	AZD-9291	BRD-K42805893	direct	True	EGFR inhibitor	95.4	99.7	chembl_mechanism	EGFR:9.55/44.6	ERBB3:8.7*;CARS1:7.9*;ERBB2:7.6;KCNH2:5.5	ok	False	True	True
+TCGA-PAAD	MLN-0128	BRD-K59317601	direct	False	mTOR inhibitor	95.2	98.9					False	True	True
+TCGA-PAAD	voxtalisib	BRD-K56291712	direct	False	mTOR inhibitor|PI3K inhibitor	94.1	99.3					False	True	True
+TCGA-PAAD	GDC-0980	BRD-K23228615	direct	False	mTOR inhibitor|PI3K inhibitor	93.1	98.6					False	True	True
+TCGA-PAAD	GDC-0941	BRD-K52911425	borrowed	False	PI3K inhibitor	92.6	98.7					False	True	True
+TCGA-PAAD	calyculin	BRD-A47513740	borrowed	False		92.4	99.1					False	True	True
+TCGA-PRAD	IKK-16	BRD-K14618467	direct	False	IKK inhibitor	100.0	99.9					True	True	True
+TCGA-PRAD	panobinostat	BRD-K02130563	direct	True	HDAC inhibitor	99.9	98.9	chembl_mechanism	HDAC1:100.32/113.0;HDAC10:20.16/21.7;HDAC11:15.40/31.3;HDAC2:55.44/117.5;HDAC3:44.57/57.3;HDAC4:3.50/8.0;HDAC5:27.73/54.5;HDAC6:26.15/52.6;HDAC7:23.56/52.0;HDAC8:13.77/16.2;HDAC9:3.97/9.6	BRD4:8.3*;PIK3C3:8.3*;FOXO1:6.4*		True	True	True
+TCGA-PRAD	I-BET-762	BRD-K08109215	direct	False	bromodomain inhibitor	99.8	99.5					True	True	True
+TCGA-PRAD	Ro-3306	BRD-K78373679	direct	False	CDK inhibitor	99.8	99.9					True	True	True
+TCGA-PRAD	PCI-24781	BRD-K12867552	direct	False	HDAC inhibitor	99.7	94.7					True	False	True
+TCGA-PRAD	XMD-1150	BRD-K01436366	direct	False	leucine rich repeat kinase inhibitor	99.5	99.2					True	True	True
+TCGA-PRAD	AG-14361	BRD-K00615600	direct	False	PARP inhibitor	99.3	87.8					True	False	True
+TCGA-PRAD	I-BET-151	BRD-K36363294	direct	False	bromodomain inhibitor	99.1	98.8					True	True	True
+TCGA-PRAD	mirin	BRD-K55420858	direct	False	MRE11A exonuclease inhibitor	99.1	90.5					True	False	True
+TCGA-PRAD	aminopurvalanol-a	BRD-K07762753	direct	False	CDK inhibitor|tyrosine kinase inhibitor	98.9	97.2					True	False	True
+TCGA-PRAD	MW-STK33-23	BRD-K06666320	direct	False		98.2	98.2					False	True	True
+TCGA-PRAD	LY-294002	BRD-K27305650	direct	False	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	97.9	98.9					False	True	True
+TCGA-PRAD	MW-STK33-4C	BRD-K03568209	direct	False		93.5	98.7					False	True	True
+TCGA-PRAD	KU-0060648	BRD-K09499853	direct	False		90.6	98.6					False	True	True
+TCGA-READ	cytarabine	BRD-K71847383	direct	True		99.9	98.4	chembl_mechanism	POLA1:8.14/8.5;POLA2:16.55/25.2;POLD1:21.66/56.7;POLD2:117.76/127.1;POLD3:10.24/14.8;POLD4:101.16/113.3;POLE:17.09/34.7;POLE2:6.70/15.9;POLE3:53.67/58.3;PRIM1:11.67/17.1;PRIM2:11.35/16.6	MDM2:7.7*;POLB:ann		True	False	True
+TCGA-READ	doxorubicin	BRD-K61468417	borrowed	False		99.9	96.2	chembl_mechanism	TOP2A:47.27/72.6			True	False	True
+TCGA-READ	calcitriol	BRD-K27316855	direct	True	vitamin D receptor agonist	99.7	97.9	chembl_mechanism	VDR:26.02/17.5	CYP24A1:8.5*;GC:7.6*	ok	True	False	True
+TCGA-READ	brivanib	BRD-K28428262	direct	False	FGFR inhibitor|VEGFR inhibitor	99.6	97.8		FGFR1:8.87/111.2;FLT1:6.18/13.6;KDR:4.51/10.7		ok	True	False	True
+TCGA-READ	tofacitinib	BRD-K36280065	borrowed	False		99.6	98.6	chembl_mechanism	JAK1:39.92/58.3;JAK2:3.12/5.2;JAK3:2.25/5.3;TYK2:42.38/84.9	DCLK3:8.1		True	False	True
+TCGA-READ	albendazole	BRD-K79131256	direct	True	tubulin polymerization inhibitor	99.5	80.2	non_human_target		TUBA1A:ann;TUBB:ann;TUBB4B:ann		True	False	True
+TCGA-READ	CCT-031374	BRD-K90999434	direct	False	WNT signaling inhibitor	99.4	99.7					True	True	True
+TCGA-READ	idarubicin	BRD-A71390734	direct	False		99.3	99.3	chembl_mechanism	TOP2A:47.27/72.6			True	True	True
+TCGA-READ	meclofenamic-acid	BRD-K50398167	direct	True	cyclooxygenase inhibitor|prostanoid receptor antagonist	99.3	87.1		PTGS1:5.11/11.9;PTGS2:2.06/5.5			True	False	True
+TCGA-READ	inositol	BRD-K52618540	direct	True	insulin sensitizer	99.0	98.0					True	False	True
+TCGA-READ	10-DEBC	BRD-K70792160	direct	False	AKT inhibitor	98.0	99.6					False	True	True
+TCGA-READ	atorvastatin	BRD-K69726342	borrowed	True	HMGCR inhibitor	95.7	99.5	chembl_mechanism	HMGCR:31.94/30.7	AHR:ann;DPP4:ann		False	True	True
+TCGA-READ	fluvastatin	BRD-K66296774	borrowed	True	HMGCR inhibitor	95.1	99.9	annotation	HMGCR:31.94/30.7			False	True	True
+TCGA-READ	fostamatinib	BRD-K20285085	direct	False	SYK inhibitor	94.5	99.4	chembl_mechanism	SYK:25.94/19.9	FLT3:9.0;EIF2AK4:8.5*;MAP3K10:8.4;MAP3K9:8.4*;JAK2:8.2;KIT:8.2;NEK6:8.2*;RET:8.2		False	True	True
+TCGA-READ	MK-2206	BRD-K68065987	direct	False	AKT inhibitor	87.7	99.6					False	True	True
+TCGA-READ	NVP-BEZ235	BRD-K12184916	direct	False	mTOR inhibitor|PI3K inhibitor	86.8	99.2					False	True	False
+TCGA-READ	GDC-0980	BRD-A18328003	direct	False		86.5	99.9					False	True	True
+TCGA-READ	GDC-0068	BRD-K71480163	direct	False		83.8	99.3					False	True	True
+TCGA-SKCM	VU-0418933-1	BRD-A51777634	direct	False		100.0	99.7					True	True	True
+TCGA-SKCM	manumycin-a	BRD-K78599730	direct	False		99.9	98.9					True	True	True
+TCGA-SKCM	NSC-632839	BRD-K74402642	direct	False		99.6	99.2					True	True	True
+TCGA-SKCM	VU-0410183-2	BRD-K74710236	direct	False		99.4	99.8					True	True	True
+TCGA-SKCM	calyculin	BRD-A47513740	direct	False		99.4	99.9					True	True	True
+TCGA-SKCM	BMS-345541	BRD-K13566078	direct	False	IKK inhibitor	99.3	98.8					True	True	True
+TCGA-SKCM	VU-0418946-1	BRD-K44432556	direct	False	hypoxia inducible factor activator	99.1	97.8					True	False	True
+TCGA-SKCM	anisomycin	BRD-K91370081	direct	False	DNA synthesis inhibitor	98.9	99.1					True	True	True
+TCGA-SKCM	clofarabine	BRD-A82371568	direct	False		98.7	97.7	chembl_mechanism	POLA1:6.68/8.5;POLA2:15.34/25.2;POLD1:25.81/56.7;POLD2:127.06/127.1;POLD3:7.78/14.8;POLD4:68.07/113.3;POLE:13.75/34.7;POLE2:4.04/15.9;POLE3:38.36/58.3;PRIM1:7.36/17.1;PRIM2:8.89/16.6;RRM1:27.95/54.6;RRM2:28.63/60.7;RRM2B:10.13/17.2			True	False	True
+TCGA-SKCM	GP-42	BRD-A41250203	direct	False		98.5	99.2					False	True	True
+TCGA-SKCM	5-iodotubercidin	BRD-A18497530	direct	False		94.2	98.9					False	True	True
+TCGA-STAD	PD-98059	BRD-K62810658	borrowed	False	MEK inhibitor	100.0	98.5					True	False	True
+TCGA-STAD	PIK-75	BRD-K49371609	direct	False	DNA protein kinase inhibitor|PI3K inhibitor	99.9	81.9					True	False	True
+TCGA-STAD	SN-38	BRD-A36630025	direct	False		99.8	75.2					True	False	True
+TCGA-STAD	daunorubicin	BRD-A37630846	borrowed	False		99.7	90.3	chembl_mechanism	TOP2A:42.07/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	False	True
+TCGA-STAD	doxorubicin	BRD-K61468417	borrowed	False		99.7	93.8	chembl_mechanism	TOP2A:42.07/72.6			True	False	True
+TCGA-STAD	PP-110	BRD-K03618428	direct	False		99.4	87.9					True	False	True
+TCGA-STAD	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.2	89.7	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	False	True
+TCGA-STAD	topotecan	BRD-A59985574	borrowed	False		99.1	80.1	chembl_mechanism	TOP1:51.13/56.1	HIF1A:7.6;TOP1MT:ann		True	False	True
+TCGA-STAD	tofacitinib	BRD-K36280065	borrowed	False		98.9	89.9	chembl_mechanism	JAK1:48.34/58.3;JAK2:7.20/5.2;JAK3:5.08/5.3;TYK2:45.32/84.9	DCLK3:8.1		True	False	False
+TCGA-STAD	LY-294002	BRD-K27305650	borrowed	False	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	98.8	98.9					False	True	False
+TCGA-STAD	BMS-536924	BRD-K34581968	borrowed	False	IGF-1 inhibitor	98.3	99.4					False	True	True
+TCGA-STAD	PI-828	BRD-K97365803	borrowed	False	PI3K inhibitor	98.1	99.7					False	True	True
+TCGA-STAD	TAK-733	BRD-K26667523	borrowed	False	MEK inhibitor	97.0	99.2					False	True	True
+TCGA-STAD	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	92.8	99.9	chembl_mechanism	MAP2K1:24.36/46.3;MAP2K2:89.18/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	True
+TCGA-STAD	GDC-0980	BRD-A18328003	borrowed	False		92.3	99.1					False	True	True
+TCGA-STAD	AZD-8330	BRD-K37687095	borrowed	False	MEK inhibitor	90.6	99.8					False	True	True
+TCGA-STAD	MEK-162	BRD-K82244583	borrowed	True	MEK inhibitor	86.2	99.0	chembl_mechanism	MAP2K1:24.36/46.3;MAP2K2:89.18/134.9			False	True	False
+TCGA-STAD	BMS-754807	BRD-K13049116	borrowed	False	IGF-1 inhibitor	81.5	99.3		IGF1R:6.35/16.4		ok	False	True	True
+TCGA-STAD	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	76.8	99.6					False	True	True
+TCGA-THCA	verrucarin-a	BRD-A26002865	borrowed	False		99.9	99.8					True	True	True
+TCGA-THCA	cephaeline	BRD-K80348542	borrowed	False		99.7	99.6					True	True	True
+TCGA-THCA	emetine	BRD-A25687296	borrowed	False	protein synthesis inhibitor	99.7	99.4					True	True	True
+TCGA-THCA	calyculin	BRD-A47513740	borrowed	False		99.6	99.7					True	True	True
+TCGA-THCA	torin-2	BRD-K68174511	borrowed	False	mTOR inhibitor	99.2	99.3					True	True	True
+TCGA-THCA	brefeldin-a	BRD-A31107743	borrowed	False		99.1	76.0					True	False	True
+TCGA-THCA	BIIB-021	BRD-K51967704	borrowed	False	HSP inhibitor	99.0	91.5					True	False	True
+TCGA-THCA	HG-6-64-01	BRD-K98762074	borrowed	False		99.0	97.2					True	False	True
+TCGA-THCA	narciclasine	BRD-K06792661	borrowed	False		98.8	98.4					True	False	True
+TCGA-THCA	NSC-23766	BRD-A80213327	borrowed	False		98.3	98.8					False	True	True
+TCGA-THCA	JW-7-24-1	BRD-U68942961	borrowed	False		96.7	99.0					False	True	True
+TCGA-THCA	A-443654	BRD-K88573743	borrowed	False		93.7	98.9					False	True	True
+TCGA-THCA	okadaic-acid	BRD-A13254067	borrowed	False		74.0	99.0					False	True	True
+TCGA-UCS	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	100.0	99.7					True	True	True
+TCGA-UCS	bruceantin	BRD-A36057565	borrowed	False	protein synthesis inhibitor	99.9	98.7					True	False	True
+TCGA-UCS	kinetin-riboside	BRD-K94325918	borrowed	False		99.7	98.6					True	False	True
+TCGA-UCS	puromycin	BRD-K36007650	borrowed	False	protein synthesis inhibitor	99.7	99.1					True	True	True
+TCGA-UCS	narciclasine	BRD-K06792661	borrowed	False		99.6	99.5					True	True	True
+TCGA-UCS	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	99.3	99.8					True	True	True
+TCGA-UCS	QL-X-138	BRD-K72636697	borrowed	False		98.9	99.0					True	True	True
+TCGA-UCS	verrucarin-a	BRD-A26002865	borrowed	False		98.7	99.6					True	True	True
+TCGA-UCS	cephaeline	BRD-K80348542	borrowed	False		98.3	99.3					False	True	True
+TCGA-UCS	BIIB-021	BRD-K51967704	borrowed	False	HSP inhibitor	97.8	98.8					False	True	True
+TGCT-NSGCT	PD-98059	BRD-K62810658	borrowed	False	MEK inhibitor	99.9	99.0					True	False	True
+TGCT-NSGCT	LY-294002	BRD-K27305650	borrowed	False	DNA dependent protein kinase inhibitor|mTOR inhibitor|phosphodiesterase inhibitor|PI3K inhibitor|PLK inhibitor	99.7	99.1					True	True	True
+TGCT-NSGCT	PP-110	BRD-K03618428	borrowed	False		99.6	98.7					True	False	True
+TGCT-NSGCT	SGC-CBP30	BRD-K24821794	borrowed	False	bromodomain inhibitor	99.5	89.2					True	False	True
+TGCT-NSGCT	deforolimus	BRD-K09078998	borrowed	False		99.4	99.4					True	True	True
+TGCT-NSGCT	BMS-536924	BRD-K34581968	borrowed	False	IGF-1 inhibitor	99.3	99.3					True	True	True
+TGCT-NSGCT	PI-828	BRD-K97365803	borrowed	False	PI3K inhibitor	99.2	99.5					True	True	True
+TGCT-NSGCT	GDC-0941	BRD-K52911425	borrowed	False	PI3K inhibitor	99.0	99.2					True	True	True
+TGCT-NSGCT	tozasertib	BRD-K87947369	borrowed	False	Aurora kinase inhibitor|Bcr-Abl kinase inhibitor|FLT3 inhibitor|JAK inhibitor	99.0	94.1		AURKA:31.51/25.8;AURKB:82.08/40.8;AURKC:1.29/1.5			True	False	True
+TGCT-NSGCT	GDC-0980	BRD-K23228615	borrowed	False	mTOR inhibitor|PI3K inhibitor	98.7	97.6					True	False	True
+TGCT-NSGCT	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	98.6	99.9	chembl_mechanism	MAP2K1:29.99/46.3;MAP2K2:117.84/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	True
+TGCT-NSGCT	MEK-162	BRD-K82244583	borrowed	True	MEK inhibitor	98.1	99.7	chembl_mechanism	MAP2K1:29.99/46.3;MAP2K2:117.84/134.9			False	True	True
+TGCT-NSGCT	TAK-733	BRD-K26667523	borrowed	False	MEK inhibitor	97.6	99.6					False	True	True
+TGCT-NSGCT	AZD-8330	BRD-K37687095	borrowed	False	MEK inhibitor	96.4	99.7					False	True	True
+TGCT-NSGCT	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	96.3	99.8					False	True	True
+TGCT-SEM	daunorubicin	BRD-A37630846	borrowed	False		100.0	98.9	chembl_mechanism	TOP2A:47.20/72.6	HDAC6:7.7*;HDAC1:7.3*;HDAC8:6.7*;PEPD:6.5*;TOP2B:ann		True	True	True
+TGCT-SEM	doxorubicin	BRD-K61468417	borrowed	False		99.9	99.3	chembl_mechanism	TOP2A:47.20/72.6			True	True	True
+TGCT-SEM	sonidegib	BRD-K19796430	borrowed	True	smoothened receptor antagonist	99.7	56.6	chembl_mechanism	SMO:18.24/26.8		ok	True	False	True
+TGCT-SEM	epirubicin	BRD-K04548931	borrowed	True	topoisomerase inhibitor	99.6	97.7	non_protein_mechanism		TOP2A:8.5*;CHD1:ann		True	False	True
+TGCT-SEM	pacritinib	BRD-K19034817	borrowed	True	FLT3 inhibitor|JAK inhibitor	99.5	97.0	chembl_mechanism	ACVR1:22.35/25.9;FLT3:0.45/0.4;IRAK1:24.88/77.5;JAK2:3.10/5.2	STK11:8.5*;NQO2:8.4*;BMP2K:7.4*;AAK1:7.4*;GAK:6.2*;JAK1:ann;JAK3:ann		True	False	True
+TGCT-SEM	flumatinib	BRD-K68870568	borrowed	False	Bcr-Abl kinase inhibitor	99.4	96.3		ABL1:28.67/42.6			True	False	True
+TGCT-SEM	ER-27319	BRD-K11927976	borrowed	False	mediator release inhibitor|SYK inhibitor	99.0	86.0					True	False	True
+TGCT-SEM	MEK-162	BRD-K82244583	borrowed	True	MEK inhibitor	96.4	99.9	chembl_mechanism	MAP2K1:33.00/46.3;MAP2K2:121.00/134.9			False	True	True
+TGCT-SEM	BMS-754807	BRD-K13049116	borrowed	False	IGF-1 inhibitor	95.7	99.6		IGF1R:9.49/16.4		ok	False	True	True
+TGCT-SEM	BMS-536924	BRD-K34581968	borrowed	False	IGF-1 inhibitor	94.6	98.8					False	True	False
+TGCT-SEM	PD-184352	BRD-K05104363	borrowed	False	MEK inhibitor	94.4	98.7					False	True	False
+TGCT-SEM	AZD-8330	BRD-K37687095	borrowed	False	MEK inhibitor	93.7	99.8					False	True	True
+TGCT-SEM	PD-0325901	BRD-K49865102	borrowed	False	MEK inhibitor	86.2	99.5	chembl_mechanism	MAP2K1:33.00/46.3;MAP2K2:121.00/134.9	BRAF:8.2*;MAPK1:7.6*		False	True	True
+TGCT-SEM	TAK-733	BRD-K26667523	borrowed	False	MEK inhibitor	81.2	98.6					False	True	False
+TGCT-SEM	Ro-4987655	BRD-K64538373	borrowed	False	MEK inhibitor	78.8	99.4					False	True	True
+UCEC-EEC	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	99.8	99.7					True	True	True
+UCEC-EEC	puromycin	BRD-A28970875	borrowed	False	protein synthesis inhibitor	99.7	97.4					True	False	True
+UCEC-EEC	kinetin-riboside	BRD-K94325918	borrowed	False		99.5	88.6					True	False	True
+UCEC-EEC	narciclasine	BRD-K06792661	borrowed	False		99.4	98.9					True	True	True
+UCEC-EEC	BIIB-021	BRD-K51967704	borrowed	False	HSP inhibitor	99.2	98.0					True	False	True
+UCEC-EEC	LJI-308	BRD-K17960872	borrowed	False		99.1	94.2					True	False	True
+UCEC-EEC	azacitidine	BRD-K55026842	borrowed	False		99.0	86.8	chembl_mechanism	DNMT1:49.04/57.3;DNMT3A:16.25/24.8			True	False	True
+UCEC-EEC	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	99.0	98.4					True	False	True
+UCEC-EEC	RS-I-002-6	BRD-K66254772	borrowed	False		98.9	78.8					True	False	True
+UCEC-EEC	verrucarin-a	BRD-A26002865	borrowed	False		98.7	99.2					False	True	True
+UCEC-EEC	calyculin	BRD-A47513740	borrowed	False		97.6	99.6					False	True	True
+UCEC-EEC	JW-7-24-1	BRD-K57282030	borrowed	False		86.9	99.0					False	True	True
+UCEC-EEC	MLN-0128	BRD-K59317601	borrowed	False	mTOR inhibitor	85.2	99.4					False	True	True
+UCEC-EEC	OSI-027	BRD-K94012289	borrowed	False		84.9	99.7					False	True	True
+UCEC-EEC	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	83.0	99.3					False	True	True
+UCEC-EEC	ZSTK-474	BRD-K63068307	borrowed	False	PI3K inhibitor	81.8	99.0					False	True	True
+UCEC-EEC	WYE-125132	BRD-A45498368	borrowed	False		74.7	99.1					False	True	True
+UCEC-SER	anisomycin	BRD-K91370081	borrowed	False	DNA synthesis inhibitor	99.9	99.7					True	True	True
+UCEC-SER	puromycin	BRD-A28970875	borrowed	False	protein synthesis inhibitor	99.8	96.9					True	False	True
+UCEC-SER	kinetin-riboside	BRD-K94325918	borrowed	False		99.6	83.0					True	False	True
+UCEC-SER	narciclasine	BRD-K06792661	borrowed	False		99.5	98.6					True	False	True
+UCEC-SER	emetine	BRD-K03067624	borrowed	True	protein synthesis inhibitor	99.4	98.3					True	False	True
+UCEC-SER	BIIB-021	BRD-K51967704	borrowed	False	HSP inhibitor	99.2	98.5					True	False	True
+UCEC-SER	bruceantin	BRD-A36057565	borrowed	False	protein synthesis inhibitor	99.1	94.1					True	False	True
+UCEC-SER	RS-I-002-6	BRD-K66254772	borrowed	False		99.0	81.2					True	False	True
+UCEC-SER	CT-200783	BRD-K02822062	borrowed	False		98.9	78.0					True	False	True
+UCEC-SER	calyculin	BRD-A47513740	borrowed	False		97.5	99.6					False	True	True
+UCEC-SER	JW-7-24-1	BRD-K57282030	borrowed	False		84.7	98.9					False	True	True
+UCEC-SER	OSI-027	BRD-K94012289	borrowed	False		83.7	99.7					False	True	True
+UCEC-SER	MLN-0128	BRD-K59317601	borrowed	False	mTOR inhibitor	82.5	99.4					False	True	True
+UCEC-SER	ZSTK-474	BRD-K63068307	borrowed	False	PI3K inhibitor	82.2	99.2					False	True	True
+UCEC-SER	GDC-0941	BRD-K52911425	borrowed	False	PI3K inhibitor	81.9	99.3					False	True	True
+UCEC-SER	PKI-179	BRD-A28467416	borrowed	False	mTOR inhibitor|PI3K inhibitor	81.4	99.0					False	True	True
+UCEC-SER	GDC-0980	BRD-A18328003	borrowed	False		75.9	99.0					False	True	True
+UCEC-SER	WYE-125132	BRD-A45498368	borrowed	False		71.1	99.1					False	True	True

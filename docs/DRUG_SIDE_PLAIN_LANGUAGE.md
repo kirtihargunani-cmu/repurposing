@@ -220,6 +220,13 @@ measure.
   and marked "Acts on tumor environment". About 400 drug-cancer pairs were moved down; the known-use check rose
   slightly (0.617 -> 0.623). A first version compared tumor and line levels directly and failed: one prostate cell
   line makes 20 times more androgen receptor than a typical tumor, which pushed the prostate drugs to the bottom.
+- **Each FDA drug is judged on its real main target (D105b, 2026-11-04).** We now take the target from ChEMBL's
+  hand-curated record of how the drug works (found for 291 of 413 FDA drugs), or else from the drug's listed target,
+  checked against lab binding data where possible. Lab binding data never picks the target on its own: when we tried
+  that, irinotecan's "target" came out as an enzyme it only hits in a side assay. Drugs that act on DNA or on germs
+  are not checked against human proteins. This gave the biggest improvement so far in finding drugs already used for
+  each cancer (0.623 -> 0.660). A separate page now shows only drugs whose main target is actually made by the
+  cancer's tumors.
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.

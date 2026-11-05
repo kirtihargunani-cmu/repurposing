@@ -13,10 +13,10 @@ PY=${PY:-$HOME/miniforge3/envs/celligner/bin/python}
 SBX=${SBX:-$R/logs/sbx_borrowed_cf}
 export OMP_NUM_THREADS=${THREADS:-8} OPENBLAS_NUM_THREADS=${THREADS:-8} MKL_NUM_THREADS=${THREADS:-8}
 rm -rf "$SBX"; mkdir -p "$SBX/scripts" "$SBX/results/lincs"
-cp scripts/79e_drug_reversal.py scripts/79i_split_reversal.py scripts/79i2_target_presence.py scripts/79i3_receptor_lines.py scripts/79w_receptor_gate.py "$SBX/scripts/"   # 79i2: D102c gate (reads 79w helpers)
+cp scripts/79e_drug_reversal.py scripts/79i_split_reversal.py scripts/79i2_target_presence.py scripts/79i3_receptor_lines.py scripts/79w_receptor_gate.py scripts/79b_target_gate.py "$SBX/scripts/"   # 79i2: D102c gate (reads 79w helpers)
 for d in config data R; do ln -s "$R/$d" "$SBX/$d"; done
 for d in "$R"/results/*; do n=$(basename "$d"); [ "$n" != lincs ] && ln -s "$d" "$SBX/results/$n"; done
-for f in drug_transfer_confidence_v2.tsv prolif_regulators_v2_tf.tsv prolif_regulators_collectri.tsv drug_annotations.tsv; do   # drug_annotations: 79i2 (via 79w)
+for f in drug_transfer_confidence_v2.tsv prolif_regulators_v2_tf.tsv prolif_regulators_collectri.tsv drug_annotations.tsv fda_matches.tsv; do   # drug_annotations, fda_matches: 79i2 (79w helpers, D105b FDA scope)
   ln -s "$R/results/lincs/$f" "$SBX/results/lincs/$f"; done
 "$PY" - "$R" "$SBX" <<'EOF'
 import sys, pandas as pd

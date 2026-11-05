@@ -153,6 +153,14 @@ flowchart LR
   the receptor tracks the tumor's stroma / immune (ESTIMATE) or blood-vessel content (PECAM1 / VWF / CDH5 score) with
   rho >= 0.4, in which case it is flagged "Acts on tumor environment" (e.g. VEGF receptors in kidney cancer). 406
   group rows demoted, 426 flagged; known-use Hub 0.617 -> 0.623.
+- **Main targets of FDA drugs (`79i2` default; D105a, adopted as D105b 2026-11-04):** (1) the ChEMBL curated mechanism
+  (records on salt forms included); drugs acting on DNA / RNA or on pathogens are not checked against human proteins;
+  (2) else annotated targets confirmed by binding data at family cutoffs (kinases 30 nM, GPCRs / nuclear receptors
+  100 nM, ion channels 10 uM, others 1 uM; median of Ki / Kd / IC50 / EC50 values); (3) else annotated targets, flagged
+  "unverified binding". Receptors keep the relative presence rule; other targets need median TPM >= 1. Other
+  compounds keep the D102a evidence targets. Secondary targets are reported. Known-use Hub 0.623 -> 0.660.
+- 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows. A second page lists
+  only drugs whose main target is present (`PRESENT_ONLY=1 python scripts/79x_rankings_page.py`).
 
 ### 9b. Data gaps: is there good-quality, lineage-matched data? (`data_gaps`, `79r`; C24)
 - **Rule (user, 2026-11-01):** a drug list needs cell lines of the disease's own cell type (lineage), not just its organ.
