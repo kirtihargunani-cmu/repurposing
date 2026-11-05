@@ -765,6 +765,12 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   alkylators) fall back to off-target potency hits, and the relative presence cut demotes proliferation enzymes in
   slow tumors (TOP2A in LGG, TYMS in KICH). Amendment needed.
 
+## 2026-11-04: D105a (FDA drugs, tiered main targets): criteria met
+- Curated mechanisms found for 291 of 413 FDA drugs once salt-form records are included; 81 act on DNA or pathogen
+  targets and are not gated on human proteins; 37 rely on annotation. Known-use Hub 0.623 -> 0.660, ChEMBL 0.553;
+  toremifene caught in Basal; other compounds unchanged. Secondary-target list needs outlier handling (max of single
+  measurements). Awaiting go-ahead.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8

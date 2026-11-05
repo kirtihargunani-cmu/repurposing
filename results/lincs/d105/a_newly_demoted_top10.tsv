@@ -1,0 +1,31 @@
+group_id	pert_id	cmap_name	spec_mech_pct_prod	target_absent_prod	receptor_status_prod	evidence_targets_prod	spec_mech_pct_d105	target_absent_d105	receptor_status_d105	evidence_targets_d105	target_source	secondary_targets	dem_prod	dem_d105
+TCGA-KICH	BRD-K61468417	doxorubicin	99.9	False			5.6	True		TOP2A:0.97/72.6	chembl_mechanism	TOP2B:6.1;KCNH2:5.2	False	True
+TCGA-KICH	BRD-A37630846	daunorubicin	99.8	False			5.5	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-KICH	BRD-K91966436	daunorubicin	99.7	False			5.4	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TCGA-KICH	BRD-K21680192	mitoxantrone	97.4	False			5.3	True		TOP2A:0.97/72.6	chembl_mechanism	THPO:7.6;LMNA:7.2;CHRM2:7.1;CHRM4:7.0;SLC47A1:6.7;SLC47A2:6.3;KCNH2:5.5	False	True
+TCGA-SKCM	BRD-A29734509	disopyramide	96.6	False			5.4	True		SCN10A:-0.00/-0.0;SCN11A:0.02/0.2;SCN1A:-0.00/0.6;SCN2A:0.02/3.3;SCN3A:0.03/5.3;SCN4A:0.08/0.4;SCN5A:0.03/0.6;SCN7A:0.01/1.4;SCN8A:0.34/3.0;SCN9A:0.10/1.1	chembl_mechanism	BLM:6.2;CHRM1:ann;CHRM2:ann;CHRM3:ann;KCND2:ann;KCND3:ann;KCNH2:ann	False	True
+TCGA-KICH	BRD-A68009927	daunorubicin	96.3	False			5.2	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+BRCA-LumB	BRD-K81272440	dantrolene	96.2	False			4.4	True		RYR1:0.70/12.9;RYR3:0.06/0.8	chembl_mechanism		False	True
+TCGA-KICH	BRD-A52530684	doxorubicin	96.1	False			5.2	True		TOP2A:0.97/72.6	chembl_mechanism	TOP2B:6.1;KCNH2:5.2	False	True
+TCGA-BLCA	BRD-K55127134	fluphenazine	96.1	False	ok	DRD1:0.19/0.3;DRD2:0.04/1.5;DRD5:0.01/0.1;HRH1:3.58/7.4;HTR2A:0.03/1.0;HTR6:-0.00/0.3;HTR7:0.45/0.5	4.1	True		DRD2:0.04/1.5	chembl_mechanism	DRD3:9.7;HTR2A:8.8;HRH1:8.3;ADRA1A:8.2;HTR7:8.1;SIGMAR1:8.1;DRD1:8.0;ADRA2B:7.9;CALM1:ann	False	True
+TCGA-LUAD	BRD-K25433859	maprotiline	95.2	False			3.2	True		SLC6A2:0.01/1.0	chembl_mechanism	HRH1:9.0;HTR2A:7.8;HTR2C:7.4;CHRM4:7.2;CHRM3:7.0;KCNH2:5.3;CACNA1B:5.0	False	True
+PCPG-PHEO	BRD-K37991163	paroxetine	95.1	False		CHRM1:4.10/2.5;CHRM2:-0.00/0.1;CHRM3:1.78/3.3;CHRM4:0.67/0.7;CHRM5:0.10/0.1;SLC6A2:69.72/1.0;SLC6A4:0.07/0.3	4.6	True		SLC6A4:0.07/0.3	chembl_mechanism	HTR6:9.2;MPO:7.7;CHRM4:7.5;CHRM1:7.5;CHRM3:7.4;SLC6A2:7.4;CHRM5:7.0;SLC6A3:6.4;CHRM2:ann;HTR2A:ann	False	True
+PCPG-PGL	BRD-K19416115	sitagliptin	95.0	False			5.2	True		DPP4:0.42/26.8	chembl_mechanism		False	True
+TCGA-LUAD	BRD-A04756508	norgestimate	94.5	False			3.0	True		PGR:0.17/1.1	chembl_mechanism	NR3C1:7.4	False	True
+TCGA-KICH	BRD-K43389675	daunorubicin	94.4	False			5.1	True		TOP2A:0.97/72.6	chembl_mechanism	HDAC6:7.7;HDAC1:7.3;HDAC8:6.7;PEPD:6.5;TOP2B:ann	False	True
+TGCT-SEM	BRD-K70464547	sertraline	93.8	False			3.8	True		SLC6A4:0.15/0.3	chembl_mechanism	SLC6A3:7.6;SIGMAR1:7.5;ADRA2B:7.1;SLC6A2:6.4;KCNH2:5.7;CACNA1C:5.3	False	True
+TCGA-READ	BRD-A03216249	mepivacaine	93.3	False			3.7	True		SCN10A:-0.00/-0.0;SCN11A:0.03/0.2;SCN1A:-0.00/0.6;SCN2A:0.04/3.3;SCN3A:0.07/5.3;SCN4A:0.03/0.4;SCN5A:0.17/0.6;SCN7A:0.07/1.4;SCN8A:0.56/3.0;SCN9A:0.20/1.1	chembl_mechanism		False	True
+TCGA-KICH	BRD-A71390734	idarubicin	93.0	False			5.0	True		TOP2A:0.97/72.6	chembl_mechanism	LMNA:6.6;PMP22:6.4;HTT:6.2	False	True
+CESC-SCC	BRD-A33711280	metixene	92.5	False			5.2	True		CHRM1:0.01/2.5;HTR2C:-0.00/0.3	chembl_mechanism	CHRM2:8.3;KCNH2:5.5;CHRM5:ann	False	True
+BRCA-LumA	BRD-K81272440	dantrolene	92.4	False			4.1	True		RYR1:1.09/12.9;RYR3:0.12/0.8	chembl_mechanism		False	True
+TCGA-LUAD	BRD-A83855350	naltrexone	92.4	False			2.9	True		OPRD1:0.07/0.3;OPRK1:0.04/0.3;OPRM1:-0.00/0.0	annotation		False	True
+PCPG-PHEO	BRD-K19416115	sitagliptin	92.2	False			4.5	True		DPP4:0.48/26.8	chembl_mechanism		False	True
+TCGA-COAD	BRD-A03216249	mepivacaine	91.9	False			4.0	True		SCN10A:-0.00/-0.0;SCN11A:0.02/0.2;SCN1A:-0.00/0.6;SCN2A:0.03/3.3;SCN3A:0.07/5.3;SCN4A:0.02/0.4;SCN5A:0.09/0.6;SCN7A:0.04/1.4;SCN8A:0.55/3.0;SCN9A:0.12/1.1	chembl_mechanism		False	True
+TCGA-GBM	BRD-K70464547	sertraline	91.7	False			2.5	True		SLC6A4:0.06/0.3	chembl_mechanism	SLC6A3:7.6;SIGMAR1:7.5;ADRA2B:7.1;SLC6A2:6.4;KCNH2:5.7;CACNA1C:5.3	False	True
+CESC-SCC	BRD-K25433859	maprotiline	91.7	False			5.1	True		SLC6A2:0.34/1.0	chembl_mechanism	HRH1:9.0;HTR2A:7.8;HTR2C:7.4;CHRM4:7.2;CHRM3:7.0;KCNH2:5.3;CACNA1B:5.0	False	True
+PCPG-PGL	BRD-K37991163	paroxetine	91.6	False		CHRM1:0.09/2.5;CHRM2:0.02/0.1;CHRM3:1.06/3.3;CHRM4:1.06/0.7;CHRM5:0.07/0.1;SLC6A2:40.03/1.0;SLC6A4:0.07/0.3	5.1	True		SLC6A4:0.07/0.3	chembl_mechanism	HTR6:9.2;MPO:7.7;CHRM4:7.5;CHRM1:7.5;CHRM3:7.4;SLC6A2:7.4;CHRM5:7.0;SLC6A3:6.4;CHRM2:ann;HTR2A:ann	False	True
+CESC-SCC	BRD-K55127134	fluphenazine	91.3	False	ok	DRD1:0.01/0.3;DRD2:0.04/1.5;DRD5:0.02/0.1;HRH1:3.78/7.4;HTR2A:0.01/1.0;HTR6:0.01/0.3;HTR7:0.43/0.5	4.9	True		DRD2:0.04/1.5	chembl_mechanism	DRD3:9.7;HTR2A:8.8;HRH1:8.3;ADRA1A:8.2;HTR7:8.1;SIGMAR1:8.1;DRD1:8.0;ADRA2B:7.9;CALM1:ann	False	True
+TCGA-LUSC	BRD-A04756508	norgestimate	90.8	False			4.3	True		PGR:0.10/1.1	chembl_mechanism	NR3C1:7.4	False	True
+TCGA-LUSC	BRD-A83855350	naltrexone	90.5	False			4.2	True		OPRD1:0.02/0.3;OPRK1:0.13/0.3;OPRM1:-0.00/0.0	annotation		False	True
+BRCA-Basal	BRD-K81272440	dantrolene	90.1	False			5.2	False	receptor_mismatch	RYR1:4.34/12.9;RYR3:0.20/0.8	chembl_mechanism		False	True
+TCGA-KICH	BRD-K92093830	doxorubicin	90.1	False			4.7	True		TOP2A:0.97/72.6	chembl_mechanism	TOP2B:6.1;KCNH2:5.2	False	True

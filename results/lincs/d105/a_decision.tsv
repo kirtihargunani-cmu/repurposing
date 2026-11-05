@@ -1,0 +1,4 @@
+criterion	value	met
+1 known-use AUC falls <= 0.01	Hub 0.660 vs 0.623; ChEMBL 0.553 vs 0.542	True
+2 controls (Basal anti-estrogens all demoted: True)	pos 44.5 vs 44.2; PRAD 86.9 vs 86.8; Basal 3.4 vs 3.0	True
+DECISION	adopt (needs the user's go-ahead)	True
