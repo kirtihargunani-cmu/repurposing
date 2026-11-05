@@ -212,6 +212,14 @@ measure.
   splitting patients into subtypes. So the revised rule is switched on: drugs whose target the typical tumor lacks
   go to the bottom of that list and are marked "Target absent". Where a handful of tumors do make the target (like
   ALK in lung cancer), the page adds "Minority target" so a biomarker-selected use is not lost from view.
+- **The cell lines must have the receptor too (D104c, 2026-11-04).** A drug's score comes from cell lines. If the
+  drug works through a receptor and none of those lines makes it (nor does the drug switch it on), the experiment
+  could not show the drug's real effect, so the drug moves near the bottom and is marked "Receptor absent in tested
+  lines". Exception: some receptors sit on blood vessels or immune cells inside the tumor, not on the cancer cells,
+  and cancer lines never have them (VEGF receptors, targets of kidney-cancer drugs like tivozanib). Those are kept
+  and marked "Acts on tumor environment". About 400 drug-cancer pairs were moved down; the known-use check rose
+  slightly (0.617 -> 0.623). A first version compared tumor and line levels directly and failed: one prostate cell
+  line makes 20 times more androgen receptor than a typical tumor, which pushed the prostate drugs to the bottom.
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.

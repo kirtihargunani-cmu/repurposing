@@ -147,6 +147,12 @@ flowchart LR
   76.5 -> 3.0; known-use AUC (79l, lead score) Hub 0.614 -> 0.617, ChEMBL 0.514 -> 0.531 (Hub on matched lines
   0.645 -> 0.614: alectinib / ceritinib in lung).
 - The rankings page now sorts on the percentile (raw score breaks ties), so the demotion shows.
+- **Receptor in the scoring lines (`79i3`; D104b, adopted as D104c 2026-11-04):** for drugs acting only through
+  receptors, each receptor must be made (TPM >= 1) or induced by the drug (profile z >= 2) in at least half the
+  weighted lines the score came from. If none is, the drug ranks just above the target-absent drugs (tier 3), unless
+  the receptor tracks the tumor's stroma / immune (ESTIMATE) or blood-vessel content (PECAM1 / VWF / CDH5 score) with
+  rho >= 0.4, in which case it is flagged "Acts on tumor environment" (e.g. VEGF receptors in kidney cancer). 406
+  group rows demoted, 426 flagged; known-use Hub 0.617 -> 0.623.
 
 ### 9b. Data gaps: is there good-quality, lineage-matched data? (`data_gaps`, `79r`; C24)
 - **Rule (user, 2026-11-01):** a drug list needs cell lines of the disease's own cell type (lineage), not just its organ.

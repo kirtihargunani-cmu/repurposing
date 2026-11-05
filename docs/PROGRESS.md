@@ -754,6 +754,10 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   The signal is broad (39% of receptor rows reach the cut), so it also rescues some non-vascular cases (NVP-TAE684
   via INSR in lung). 338 pairs demoted, 494 flagged. Awaiting the user's choice between D104a and D104b.
 
+## 2026-11-04: D104c in production (receptor in the scoring lines, rho 0.4)
+- `79i3` after `79i2`; 406 demoted, 426 tumor-environment flags (groups). Downstream rerun: known-use Hub 0.623,
+  ChEMBL 0.542; dependency D1 on matched lines 0.079 (p 0.002); stand-ins 0.605. Page republished.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8
