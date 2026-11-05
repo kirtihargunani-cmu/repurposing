@@ -748,6 +748,12 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   demoted, 286 flagged; known-use Hub 0.622 vs 0.617, prostate controls 86.8 vs 86.7, breast 44.3 vs 43.6.
 - Gap: tivozanib in KIRC / KIRP still demoted (ESTIMATE does not capture tumor vessels). Awaiting go-ahead.
 
+## 2026-11-04: D104b (adds a blood-vessel signal): criteria met
+- Receptors that track an endothelial score (PECAM1, VWF, CDH5) also count as tumor environment. Tivozanib in kidney
+  is rescued (VEGF receptors rho 0.55-0.90); no approved-use drug demoted; known-use Hub 0.621, ChEMBL 0.540.
+  The signal is broad (39% of receptor rows reach the cut), so it also rescues some non-vascular cases (NVP-TAE684
+  via INSR in lung). 338 pairs demoted, 494 flagged. Awaiting the user's choice between D104a and D104b.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8

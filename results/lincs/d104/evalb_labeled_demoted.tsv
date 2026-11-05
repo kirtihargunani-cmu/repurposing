@@ -1,0 +1,3 @@
+cohort	pert_id	lab_hub	lab_chembl	group_id	cmap_name	receptors
+TCGA-OV	BRD-K63828191	False	True	TCGA-OV	raloxifene	ESR1:line_absent
+TCGA-OV	BRD-K93754473	False	True	TCGA-OV	tamoxifen	ESR1:line_absent
