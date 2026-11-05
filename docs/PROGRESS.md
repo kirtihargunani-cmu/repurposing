@@ -771,6 +771,12 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   toremifene caught in Basal; other compounds unchanged. Secondary-target list needs outlier handling (max of single
   measurements). Awaiting go-ahead.
 
+## 2026-11-04: D105b in production (FDA main targets), target-present page
+- Production equals the D105a test (Hub 0.660, ChEMBL 0.553; Basal anti-estrogens 2.9). Fixed: 79p / 79o ignored
+  the D102c / D104c demotions. Literature search held for the user's review of the pairs (19 new of 611).
+- Rankings page: "Target in tumor" column, main-target source, secondary targets. New page with target-present drugs
+  only: https://claude.ai/artifact/WXbtdXQzvcxF6fRX35fKSK
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8

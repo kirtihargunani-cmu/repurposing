@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RES, PROC = ROOT / "results/lincs", ROOT / "data/processed/lincs"
 CARRIERS = RES / "d102/carriers_d102b.tsv.gz"
 SFX = os.environ.get("SFX", "_v2_consensus")
-TARGETS = os.environ.get("TARGETS", "")   # "d105": ChEMBL primary targets for every ranked drug (D105)
+TARGETS = os.environ.get("TARGETS", "d105a")   # production (D105b): "d105a" FDA tiered main targets; "default": D102a evidence targets; "d105": D105 test
 SOURCE, SECONDARY = {}, {}
 FDA_NAMES = set()   # D105a scope (cmap names of FDA drugs)
 TOP_PCT = 10   # as 79i
@@ -114,11 +114,17 @@ def evidence_targets_d105a():
     sp = pd.read_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", usecols=["pert_id", "cmap_name"]).drop_duplicates()
     FDA_NAMES.update(sp[sp.pert_id.isin(fm)].cmap_name)
     w.CACHE = w.RAW / "chembl" / w.RELEASE / "d105_all"
-    d2m, _, _, best, _ = w.chembl(sorted(FDA_NAMES))
+    d2m, _, _, _, _ = w.chembl(sorted(FDA_NAMES))
     mech = json.load(open(w.CACHE / "mechanisms.json")) + json.load(open(w.CACHE / "mechanisms_by_parent.json"))
     T = {t["target_chembl_id"]: t for t in json.load(open(w.CACHE / "targets.json")) + json.load(open(w.CACHE / "targets_by_parent.json"))}
     PROT = {"SINGLE PROTEIN", "PROTEIN FAMILY", "PROTEIN COMPLEX", "PROTEIN COMPLEX GROUP", "CHIMERIC PROTEIN"}
     genes_of = lambda t: {x["component_synonym"] for c in t.get("target_components") or [] for x in c.get("target_component_synonyms") or [] if x["syn_type"] == "GENE_SYMBOL"}
+    # D105b cleanup: median valid pChEMBL per molecule x gene over Ki / Kd / IC50 / EC50 only (no HTS 'Potency'), with counts
+    act = pd.DataFrame(json.load(open(w.CACHE / "activities.json")))
+    act = act[act.data_validity_comment.isna() & (act.potential_duplicate.astype(str) != "1") & act.standard_type.isin(["Ki", "Kd", "IC50", "EC50"])].copy()
+    one = {k: next(iter(genes_of(t))) for k, t in T.items() if t.get("target_type") == "SINGLE PROTEIN" and t.get("organism") == "Homo sapiens" and len(genes_of(t)) == 1}
+    act["gene"] = act.target_chembl_id.map(one); act["pchembl_value"] = act.pchembl_value.astype(float)
+    act = act.dropna(subset=["gene"])
     for d in FDA_NAMES:
         ms = d2m.get(d, set())
         recs = [m for m in mech if m["direct_interaction"] == 1 and ({m["molecule_chembl_id"], m["parent_molecule_chembl_id"]} & ms)]
@@ -128,10 +134,8 @@ def evidence_targets_d105a():
             if t and t.get("target_type") in PROT and t.get("organism") == "Homo sapiens":
                 hum |= genes_of(t)
         hum -= adme
-        pv = {}
-        for m in ms:
-            for gene, v in best.get(m, {}).items():
-                pv[gene] = max(pv.get(gene, -1.0), v)
+        ag = act[act.molecule_chembl_id.isin(ms)].groupby("gene").pchembl_value.agg(["median", "size"])
+        pv, nmeas = ag["median"].to_dict(), ag["size"].to_dict()
         conf = {gene: v for gene, v in pv.items() if gene not in adme and v >= IDG_CUT[fam(gene)]}
         an = ann.get(d, set()) - adme
         if hum:
@@ -152,7 +156,7 @@ def evidence_targets_d105a():
         else:
             E.pop(d, None)
         sec = sorted(((g_, v) for g_, v in conf.items() if g_ not in prim), key=lambda x: -x[1])
-        SECONDARY[d] = ";".join([f"{g_}:{v:.1f}" for g_, v in sec[:8]] + [f"{g_}:ann" for g_ in sorted(an - prim - set(conf))][:8])
+        SECONDARY[d] = ";".join([f"{g_}:{v:.1f}" + ("*" if nmeas.get(g_, 0) == 1 else "") for g_, v in sec[:8]] + [f"{g_}:ann" for g_ in sorted(an - prim - set(conf))][:8])
     return E
 
 

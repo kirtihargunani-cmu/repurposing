@@ -1,7 +1,7 @@
 test	subset	n_cohorts	estimate	ci_lo	ci_hi	p	detail
-D1_lead_vs_dependency	all	40	0.0172	-0.0096	0.0444	0.14385614385614387	within-cohort Spearman of the lead score with the drug's most depended-on target
-D1_lead_vs_dependency	matched	14	0.079	-0.0034	0.161	0.001998001998001998	within-cohort Spearman of the lead score with the drug's most depended-on target
-D1_lead_vs_dependency	borrowed	40	-0.0016	-0.0215	0.039	0.5214785214785215	within-cohort Spearman of the lead score with the drug's most depended-on target
+D1_lead_vs_dependency	all	40	-0.0118	-0.0412	0.0471	0.7802197802197802	within-cohort Spearman of the lead score with the drug's most depended-on target
+D1_lead_vs_dependency	matched	14	0.0619	-0.0196	0.184	0.015984015984015984	within-cohort Spearman of the lead score with the drug's most depended-on target
+D1_lead_vs_dependency	borrowed	40	-0.037	-0.0611	0.0203	0.9760239760239761	within-cohort Spearman of the lead score with the drug's most depended-on target
 D2_gate_pass_vs_fail	all	40	-0.052	-0.13	0.0113	1.0	median dependency of the receptor gene, gate-passing pairs minus failing pairs
 D3_known_use_dependency	hub	13	0.2446	-0.0125	0.4198	0.000999000999000999	dep_max of drugs approved for this cancer minus the rest
 D3_known_use_dependency	chembl	34	0.1286	0.0457	0.2567	0.001998001998001998	dep_max of drugs approved for this cancer minus the rest

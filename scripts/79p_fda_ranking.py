@@ -10,7 +10,7 @@ non-alphanumerics removed. fda_status = "marketed" if any product of the ingredi
 "discontinued" (only discontinued products; still FDA-approved historically). first_fda_approval = earliest original
 (ORIG) approval of an NDA / BLA containing the ingredient.
 Ranking (D80: specificity first): per disease, FDA-approved drugs that pass the target gate, are not flagged
-(unmatched_lines / low_transfer) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
+(unmatched_lines / low_transfer), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
 spec_sib_mech (vs the sibling), with spec_mech. A drug listed under several LINCS ids keeps its best row. Literature /
 trial counts are joined from 79o where that pair was searched.
 Outputs: results/lincs/fda_ranking_v2_consensus.tsv (41 groups), fda_ranking_strata_v2_consensus.tsv (14 subgroups),
@@ -82,7 +82,7 @@ def main():
     summ = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
 
     def rank(df, unit, order, extra):
-        ok = df[df.passes_gate & ~df.unmatched_lines & ~df.low_transfer & (df.rev > 0)]
+        ok = df[df.passes_gate & ~df.unmatched_lines & ~df.low_transfer & (df.rev > 0) & (~df.get("target_absent", pd.Series(False, index=df.index)).astype(str).str.lower().eq("true")) & ~df.get("receptor_status", pd.Series("", index=df.index)).eq("receptor_mismatch")]   # D102c / D104c demotions excluded
         x = ok.merge(m.drop(columns="cmap_name"), on="pert_id").join(keep_ann, on="pert_id")
         x = x.sort_values(order, ascending=False).drop_duplicates([unit, "fda_ingredient"])
         x["fda_rank"] = x.groupby(unit).cumcount() + 1

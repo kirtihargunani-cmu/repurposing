@@ -21,6 +21,7 @@ Output: results/lincs/disease_drug_rankings_v2.html (published copy with the D97
         https://claude.ai/artifact/DkoreTiuHXRkqaEYMG5hfk ; earlier copy https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA)
 """
 import json
+import os
 import math
 from pathlib import Path
 
@@ -32,7 +33,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from fda_rows import drug_name, fda_rows  # noqa: E402
 RES = ROOT / "results/lincs"
-FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target", "receptor_mismatch", "tumor_environment"]   # bit order in the page
+PRESENT_ONLY = os.environ.get("PRESENT_ONLY", "0") == "1"
+OUT_HTML = "disease_drug_rankings_v2_target_present.html" if PRESENT_ONLY else "disease_drug_rankings_v2.html"
+FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target", "receptor_mismatch", "tumor_environment", "unverified_binding"]   # bit order in the page
 GATE = {"pass": "p", "binds_but_absent_in_matched_lines": "a", "assembly_incomplete_in_tumors": "s"}
 
 
@@ -77,6 +80,11 @@ def main():
         rs = df.get("receptor_status", pd.Series("", index=df.index)).fillna("")   # D104c (79i3)
         df["receptor_mismatch"], df["tumor_environment"] = rs.eq("receptor_mismatch"), rs.eq("acts_on_tumor_environment")
     print(f"FDA filter: diseases {n_all[0]} -> {len(g)} rows, subgroups {n_all[1]} -> {len(s)} rows")
+    if PRESENT_ONLY:   # user 2026-11-04: only drugs whose main target (D105b) is present in the cancer's tumors
+        keep = lambda df: df[df.get("evidence_targets", pd.Series("", index=df.index)).fillna("").ne("") & ~df.target_absent.map(truthy)
+                             & ~df.receptor_mismatch & df.get("target_source", pd.Series("", index=df.index)).isin(["chembl_mechanism", "confirmed_annotation", "annotation"])]
+        n0 = (len(g), len(s)); g, s = keep(g), keep(s)
+        print(f"target present only: diseases {n0[0]} -> {len(g)} rows, subgroups {n0[1]} -> {len(s)} rows")
     # flags not carried into the split tables come from the reversal tables
     for df, f in ((g, "drug_reversal_v2_consensus.tsv"), (s, "stratum_reversal_v2_consensus.tsv")):
         r = pd.read_csv(RES / f, sep="\t", low_memory=False, usecols=["group_id", "pert_id", "n_lines_used"])
@@ -165,6 +173,8 @@ def main():
                 avg = round((own + sip) / 2, 1) if si and own is not None and sip is not None else None
                 row += [avg, avg if avg is not None else own]
                 row += TM.get((u, r.pert_id), [None, None, None])   # 22-24: timing class, early / late percentile (D100)
+                row += [clean(getattr(r, "target_source", "")) or "", clean(getattr(r, "evidence_targets", "")) or "",
+                        clean(getattr(r, "secondary_targets", "")) or ""]   # 25-27: main-target source, main targets, secondary (D105b)
                 lst.append(row)
             out[u] = lst
         return out
@@ -185,13 +195,16 @@ def main():
                                         **standin_vs_borrowed())), separators=(",", ":"),
                       ensure_ascii=False, allow_nan=False).replace("</", "<\\/")
     page = (ROOT / "scripts/templates/disease_drug_rankings.html").read_text().replace("__DATA__", data, 1)
-    (RES / "disease_drug_rankings_v2.html").write_text(page)
+    if PRESENT_ONLY:
+        page = page.replace("<title>Disease Drug Rankings</title>", "<title>Target-Present Drug Rankings</title>", 1).replace(
+            "<h1>Disease Drug Rankings</h1>", "<h1>Target-Present Drug Rankings</h1>\n    <p class=\"sub\">Only FDA drugs whose main target (ChEMBL curated mechanism, binding-confirmed or annotated target) is made by this cancer's typical tumor and by the cell lines the score came from (or sits in the tumor's environment). Drugs acting on DNA or pathogens, and drugs without target data, are left out.</p>", 1)
+    (RES / OUT_HTML).write_text(page)
     n = sum(map(len, G.values())) + sum(map(len, S.values()))
     nl = sum(1 for v in [*G.values(), *S.values()] for r in v if r[12] >= 0)
     ns = sum(1 for v in [*G.values(), *S.values()] for r in v if r[19])
     print(f"rows with a stand-in: {ns}")
     print(f"{len(G)} diseases, {len(S)} subgroups, {n} rows ({nl} with literature), {len(D)} drugs; "
-          f"{len(page) / 1e6:.2f} MB -> results/lincs/disease_drug_rankings_v2.html")
+          f"{len(page) / 1e6:.2f} MB -> results/lincs/{OUT_HTML}")
 
 
 if __name__ == "__main__":
