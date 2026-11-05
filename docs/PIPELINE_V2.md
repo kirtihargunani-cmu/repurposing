@@ -127,8 +127,10 @@ reasons in `genes_v2_dropped.tsv`):
   pooled networks mixed subtypes whose cells differ (luminal vs basal breast), which inverted the anti-estrogen
   ranking. Network reproducibility (two halves of the bootstraps) rises with log tumor count, 0.40 at 85 tumors vs 0.41
   at 100 (`results/lincs/d94/reproducibility.tsv`). **Not rerun on the new networks (D103, user 2026-11-04):**
-  patient-level VIPER with purity / quality correction (`61`), so patient NES for the 12 switched groups still come
-  from the pooled networks; Step 7-8 descriptive outputs; subgroups (D79) kept fixed, defined on the pooled networks.
+  Step 7-8 descriptive outputs; subgroups (D79) kept fixed, defined on the pooled networks. **Patient-level VIPER
+  (`61`) rerun on the cell-type networks for the 12 switched groups (D106, 2026-11-05;** 61 now reads
+  `config/group_networks.tsv` by default): patient NES agree with the old ones at r 0.84-0.97 per regulator;
+  ESCA-SCC patients follow the group profile less (concordance 0.61 -> 0.31).
   Group-level Step 6 signatures, which feed the drug ranking, are on the new networks.
 
 - **Inputs** (`VERSION=v2 python scripts/42_aracne_inputs.py` -> `data/processed/step5/aracne_inputs_v2/`): per cohort,

@@ -781,6 +781,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Presence must rest on measured tumor expression (no rows lost); unverified binding hidden by default with the
   weak-evidence rows (5,173 of 6,864 rows visible); percentiles re-ranked among the page's FDA drugs per cohort.
 
+## 2026-11-05: patient-level VIPER on the cell-type networks (D106)
+- `61` now reads the network map; rerun for the 12 switched groups (no errors). Patient NES vs old r 0.84-0.97;
+  concordance with group MRs up in 6 groups, down in 5 (ESCA-SCC 0.61 -> 0.31); confounding still negligible.
+  Subgroups stay fixed; 84 / 86 and the Step 8 inputs are stale on these scores.
+
 ## 2026-11-04: disease side left as is (D103)
 - User: keep the D79 subgroups fixed and leave the disease side for now. Patient-level VIPER (`61`, corrected patient
   NES) has not been run on the updated pipeline (D97 cell-type networks); patient NES, Step 8 inputs and Step 7-8

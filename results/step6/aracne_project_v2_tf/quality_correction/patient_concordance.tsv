@@ -1,83 +1,83 @@
 version	median_rho	median_frac_hit	group_id
-v1: purity+quality, TMM + mappability filter (61)	0.717	0.898	BRCA-Basal
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.805	1	BRCA-Basal
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.846	0.946	BRCA-Basal
+v1: purity+quality, TMM + mappability filter (61)	0.793	0.761	BRCA-Basal
 v1: purity+quality, TMM + mappability filter (61)	0.815	0.894	BRCA-Her2
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.844	0.979	BRCA-Her2
-v1: purity+quality, TMM + mappability filter (61)	0.838	0.872	BRCA-LumA
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.804	0.915	BRCA-LumA
-v1: purity+quality, TMM + mappability filter (61)	0.829	0.894	BRCA-LumB
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.843	0.979	BRCA-LumB
+v1: purity+quality, TMM + mappability filter (61)	0.828	0.773	BRCA-LumA
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.818	0.932	BRCA-LumA
+v1: purity+quality, TMM + mappability filter (61)	0.675	0.723	BRCA-LumB
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.715	0.872	BRCA-LumB
 v1: purity+quality, TMM + mappability filter (61)	0.796	0.702	CESC-AD
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.802	0.702	CESC-AD
-v1: purity+quality, TMM + mappability filter (61)	0.807	0.583	CESC-SCC
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.793	0.719	CESC-SCC
-v1: purity+quality, TMM + mappability filter (61)	0.735	0.98	ESCA-AD
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.795	0.98	ESCA-AD
-v1: purity+quality, TMM + mappability filter (61)	0.584	0.688	ESCA-SCC
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.605	0.667	ESCA-SCC
-v1: purity+quality, TMM + mappability filter (61)	0.849	1	LGG-IDHmut-codel
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.875	1	LGG-IDHmut-codel
-v1: purity+quality, TMM + mappability filter (61)	0.796	1	LGG-IDHmut-noncodel
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.737	1	LGG-IDHmut-noncodel
-v1: purity+quality, TMM + mappability filter (61)	0.521	0.844	LGG-IDHwt
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.649	0.911	LGG-IDHwt
+v1: purity+quality, TMM + mappability filter (61)	0.8	0.667	CESC-SCC
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.795	0.708	CESC-SCC
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.765	0.898	ESCA-AD
+v1: purity+quality, TMM + mappability filter (61)	0.759	0.755	ESCA-AD
+v1: purity+quality, TMM + mappability filter (61)	0.432	0.54	ESCA-SCC
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.309	0.62	ESCA-SCC
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.765	1.0	LGG-IDHmut-codel
+v1: purity+quality, TMM + mappability filter (61)	0.532	0.958	LGG-IDHmut-codel
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.79	1.0	LGG-IDHmut-noncodel
+v1: purity+quality, TMM + mappability filter (61)	0.691	0.95	LGG-IDHmut-noncodel
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.674	0.932	LGG-IDHwt
+v1: purity+quality, TMM + mappability filter (61)	0.507	0.705	LGG-IDHwt
 v1: purity+quality, TMM + mappability filter (61)	0.867	0.872	PCPG-PGL
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.882	0.979	PCPG-PGL
-v1: purity+quality, TMM + mappability filter (61)	0.83	0.867	PCPG-PHEO
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.868	0.929	PCPG-PHEO
+v1: purity+quality, TMM + mappability filter (61)	0.852	0.898	PCPG-PHEO
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.9	0.939	PCPG-PHEO
 v1: purity+quality, TMM + mappability filter (61)	0.705	0.792	SARC-DDLPS
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.797	0.896	SARC-DDLPS
-v1: purity+quality, TMM + mappability filter (61)	0.718	0.622	SARC-LMS
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.772	0.8	SARC-LMS
-v1: purity+quality, TMM + mappability filter (61)	0.839	0.778	SARC-UPS
+v1: purity+quality, TMM + mappability filter (61)	0.596	0.479	SARC-LMS
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.662	0.854	SARC-LMS
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.876	0.933	SARC-UPS
+v1: purity+quality, TMM + mappability filter (61)	0.839	0.778	SARC-UPS
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.778	1.0	TARGET-NBL
 v1: purity+quality, TMM + mappability filter (61)	0.743	0.98	TARGET-NBL
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.778	1	TARGET-NBL
 v1: purity+quality, TMM + mappability filter (61)	0.13	0.812	TARGET-WT
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.348	0.958	TARGET-WT
 v1: purity+quality, TMM + mappability filter (61)	0.628	0.48	TCGA-ACC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.684	0.56	TCGA-ACC
 v1: purity+quality, TMM + mappability filter (61)	0.801	0.438	TCGA-BLCA
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.838	0.542	TCGA-BLCA
-v1: purity+quality, TMM + mappability filter (61)	0.833	0.6	TCGA-COAD
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.85	0.7	TCGA-COAD
+v1: purity+quality, TMM + mappability filter (61)	0.833	0.6	TCGA-COAD
 v1: purity+quality, TMM + mappability filter (61)	0.607	0.8	TCGA-GBM
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.823	0.96	TCGA-GBM
 v1: purity+quality, TMM + mappability filter (61)	0.817	0.562	TCGA-HNSC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.823	0.646	TCGA-HNSC
 v1: purity+quality, TMM + mappability filter (61)	0.524	0.809	TCGA-KICH
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.493	1	TCGA-KICH
-v1: purity+quality, TMM + mappability filter (61)	0.369	0.286	TCGA-KIRC
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.493	1.0	TCGA-KICH
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.218	0.827	TCGA-KIRC
-v1: purity+quality, TMM + mappability filter (61)	0.543	0.53	TCGA-KIRP
+v1: purity+quality, TMM + mappability filter (61)	0.369	0.286	TCGA-KIRC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.632	0.8	TCGA-KIRP
+v1: purity+quality, TMM + mappability filter (61)	0.543	0.53	TCGA-KIRP
 v1: purity+quality, TMM + mappability filter (61)	0.596	0.522	TCGA-LIHC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.537	0.63	TCGA-LIHC
 v1: purity+quality, TMM + mappability filter (61)	0.744	0.729	TCGA-LUAD
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.758	0.792	TCGA-LUAD
-v1: purity+quality, TMM + mappability filter (61)	0.867	0.915	TCGA-LUSC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.904	0.979	TCGA-LUSC
-v1: purity+quality, TMM + mappability filter (61)	0.853	0.854	TCGA-OV
+v1: purity+quality, TMM + mappability filter (61)	0.867	0.915	TCGA-LUSC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.853	0.938	TCGA-OV
+v1: purity+quality, TMM + mappability filter (61)	0.853	0.854	TCGA-OV
 v1: purity+quality, TMM + mappability filter (61)	0.791	0.761	TCGA-PAAD
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.813	0.864	TCGA-PAAD
 v1: purity+quality, TMM + mappability filter (61)	0.78	0.864	TCGA-PRAD
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.802	0.909	TCGA-PRAD
-v1: purity+quality, TMM + mappability filter (61)	0.847	0.78	TCGA-READ
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.83	0.89	TCGA-READ
-v1: purity+quality, TMM + mappability filter (61)	0.799	0.8	TCGA-SKCM
+v1: purity+quality, TMM + mappability filter (61)	0.847	0.78	TCGA-READ
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.84	0.9	TCGA-SKCM
-v1: purity+quality, TMM + mappability filter (61)	0.753	0.438	TCGA-STAD
+v1: purity+quality, TMM + mappability filter (61)	0.799	0.8	TCGA-SKCM
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.736	0.438	TCGA-STAD
-v1: purity+quality, TMM + mappability filter (61)	0.82	0.796	TCGA-THCA
+v1: purity+quality, TMM + mappability filter (61)	0.753	0.438	TCGA-STAD
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.818	0.837	TCGA-THCA
-v1: purity+quality, TMM + mappability filter (61)	0.368	0.587	TCGA-UCS
+v1: purity+quality, TMM + mappability filter (61)	0.82	0.796	TCGA-THCA
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.349	0.717	TCGA-UCS
-v1: purity+quality, TMM + mappability filter (61)	0.804	0.969	TGCT-NSGCT
+v1: purity+quality, TMM + mappability filter (61)	0.368	0.587	TCGA-UCS
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.827	0.98	TGCT-NSGCT
+v1: purity+quality, TMM + mappability filter (61)	0.804	0.969	TGCT-NSGCT
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.848	1.0	TGCT-SEM
 v1: purity+quality, TMM + mappability filter (61)	0.807	0.979	TGCT-SEM
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.848	1	TGCT-SEM
-v1: purity+quality, TMM + mappability filter (61)	0.651	0.958	UCEC-EEC
-v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.727	0.979	UCEC-EEC
-v1: purity+quality, TMM + mappability filter (61)	0.657	0.957	UCEC-SER
+v1: purity+quality, TMM + mappability filter (61)	0.57	0.938	UCEC-EEC
+v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.755	1.0	UCEC-EEC
 v2: purity (ESTIMATE) + quality, GTEx at anchor (61)	0.711	0.979	UCEC-SER
+v1: purity+quality, TMM + mappability filter (61)	0.657	0.957	UCEC-SER

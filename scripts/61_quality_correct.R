@@ -87,6 +87,9 @@ dir.create(out_nes, recursive = TRUE, showWarnings = FALSE); dir.create(res_dir,
 arac <- readRDS(paste0("data/processed/step5/regulons_aracne_project", RS, ".rds"))
 grp <- fread("results/step1/disease_groups_toil.tsv")
 net_of <- setNames(ifelse(grp$cohort %in% c("TCGA-COAD", "TCGA-READ"), "COADREAD", sub("^[^-]+-", "", grp$cohort)), grp$group_id)
+# D106 (2026-11-05): production network map as in 50_viper.R (D97): default for VERSION=v2 REGSET=tf; NET_MAP overrides
+nmf <- Sys.getenv("NET_MAP", if (V2 && REGSET == "tf" && file.exists("config/group_networks.tsv")) "config/group_networks.tsv" else "")
+if (nzchar(nmf)) { nm <- fread(nmf); net_of[nm$group_id] <- nm$net; message("network map: ", nmf, " (", nrow(nm), " groups)") }
 summ <- fread(paste0("results/step4", VS, "/signature_summary.tsv"))[status == "ok"]
 contrast_for <- summ[, .(contrast = if ("gtex" %in% contrast) "gtex" else "adjacent"), by = group_id]
 zmat <- list(gtex = fread(paste0("results/step4", VS, "/z_tumor_vs_gtex.tsv")), adjacent = fread(paste0("results/step4", VS, "/z_tumor_vs_adjacent.tsv")))
