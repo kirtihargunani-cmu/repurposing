@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import os
-AMEND = os.environ.get("AMEND", ""); PFX = "evala_" if AMEND == "a" else "eval_"
+AMEND = os.environ.get("AMEND", ""); PFX = {"a": "evala_", "b": "evalb_"}.get(AMEND, "eval_")
 ROOT = Path(__file__).resolve().parent.parent.parent; RES = ROOT / "results/lincs"; OUT = RES / "d104"; RAW = ROOT / "data/raw"; PROC = ROOT / "data/processed/lincs"
 def load(name, f):
     s = importlib.util.spec_from_file_location(name, ROOT / f); m = importlib.util.module_from_spec(s); s.loader.exec_module(m); return m
@@ -35,11 +35,12 @@ f = RAW / "depmap_24q4/OmicsExpressionProteinCodingGenesTPMLogp1.csv"; hdr = pd.
 X = pd.read_csv(f, usecols=[hdr[0]] + [c for c in hdr[1:] if c.split(" (")[0] in genes_all], index_col=0)
 X.columns = [c.split(" (")[0] for c in X.columns]; X = X.loc[:, ~X.columns.duplicated()]; X = np.power(2.0, X) - 1
 RHO = {}
-if AMEND == "a":   # D104a (2): Spearman of receptor TPM with ESTIMATE score across each group's tumors
-    rf = OUT / "estimate_rho.tsv.gz"
+if AMEND in ("a", "b"):   # D104a (2) / D104b: Spearman of receptor TPM with ESTIMATE score across each group's tumors
+    rf = OUT / ("estimate_rho.tsv.gz" if AMEND == "a" else "estimate_endo_rho.tsv.gz")
     if not rf.exists():
         idm = pd.read_csv(ROOT / "results/step5/id_map.tsv", sep="\t").query("primary_for_hgnc").drop_duplicates("symbol")
-        s2g = dict(zip(idm.symbol, idm.gene_id)); gids = {s2g[g]: g for g in genes_all if g in s2g}
+        s2g = dict(zip(idm.symbol, idm.gene_id)); ENDO = ["PECAM1", "VWF", "CDH5"]
+        gids = {s2g[g]: g for g in genes_all | (set(ENDO) if AMEND == "b" else set()) if g in s2g}
         cov = pd.read_csv(ROOT / "results/step3/covariates_toil.tsv", sep="\t", low_memory=False)
         tum = cov[(cov.role == "tumor") & (cov.primary_per_patient == True) & cov.group_id.isin(set(sp.group_id))].drop_duplicates(["group_id", "sample"]).dropna(subset=["estimate_score"])
         ft = ROOT / "data/raw/solid_toil/TcgaTargetGtex_rsem_gene_tpm.gz"; hd = pd.read_csv(ft, sep="\t", nrows=0).columns
@@ -51,9 +52,17 @@ if AMEND == "a":   # D104a (2): Spearman of receptor TPM with ESTIMATE score acr
         for g, dg in tum[tum["sample"].isin(use)].groupby("group_id"):
             es = dg.set_index("sample").estimate_score.rank(); Tg = T[es.index].rank(axis=1)
             rho = Tg.apply(lambda v: np.corrcoef(v.values, es.values)[0, 1], axis=1)
-            out.append(pd.DataFrame({"group_id": g, "target": rho.index, "rho": rho.values.round(3), "n": len(es)}))
+            o_ = pd.DataFrame({"group_id": g, "target": rho.index, "rho": rho.values.round(3), "n": len(es)})
+            if AMEND == "b":   # endothelial score: mean z of log2(TPM + 1) of PECAM1, VWF, CDH5 (Toil values are log2(TPM + 0.001))
+                lt_ = np.log2(np.power(2.0, T.loc[[x for x in ENDO if x in T.index], es.index]) - 0.001 + 1)
+                en = lt_.sub(lt_.mean(axis=1), axis=0).div(lt_.std(axis=1), axis=0).mean().rank()
+                o_["rho_endo"] = Tg.apply(lambda v: np.corrcoef(v.values, en.values)[0, 1], axis=1).values.round(3)
+            out.append(o_)
         pd.concat(out).to_csv(rf, sep="\t", index=False)
-    rr = pd.read_csv(rf, sep="\t"); RHO = {(g, t): v for g, t, v in zip(rr.group_id, rr.target, rr.rho)}
+    rr = pd.read_csv(rf, sep="\t")
+    if AMEND == "b":
+        rr = rr[~rr.target.isin(ENDO if 'ENDO' in dir() else ["PECAM1", "VWF", "CDH5"])]; rr["rho"] = rr[["rho", "rho_endo"]].max(axis=1)
+    RHO = {(g, t): v for g, t, v in zip(rr.group_id, rr.target, rr.rho)}
 RHO_MIN = 0.3
 G = pd.read_csv(PROC / "drug_line_profiles_genes.tsv", sep="\t"); gcol = {s: i for i, s in enumerate(G.symbol)}
 PR = np.memmap(PROC / "drug_line_profiles_bing.f32", dtype=np.float32, mode="r").reshape(len(idx), len(G))
@@ -85,7 +94,7 @@ for x in sp[["group_id", "pert_id", "cmap_name", "source", "unmatched_lines"]].d
         frac = float((ws * sup).sum() / ws.sum()); lt = float((ws * tpm).sum() / ws.sum())
         tm = med.get((x.group_id, t), np.nan)
         rho = RHO.get((x.group_id, t), np.nan)
-        if AMEND == "a":   # D104a (1) no line-relative abundance test, (2) tumor-environment exception
+        if AMEND in ("a", "b"):   # D104a (1) no line-relative abundance test, (2) tumor-environment exception
             stat = ("tumor_environment" if rho >= RHO_MIN else "line_absent") if frac < 0.5 else "matched"
         else:
             stat = "line_absent" if frac < 0.5 else ("tumor_far_lower" if tm < 0.1 * lt else "matched")
@@ -144,12 +153,12 @@ top = sp[sp.mismatch & (sp.spec_mech_pct >= 90)]
 labd = lab[lab.lab_hub | lab.lab_chembl].merge(sp[sp.mismatch][["group_id", "pert_id", "cmap_name", "receptors"]], left_on=["cohort", "pert_id"], right_on=["group_id", "pert_id"])
 labd.to_csv(OUT / (PFX + "labeled_demoted.tsv"), sep="\t", index=False)
 sens = {}
-if AMEND == "a":
+if AMEND in ("a", "b"):
     for cut in [0.2, 0.3, 0.4]:
         st2 = RC.assign(s2=np.where(RC.support >= 0.5, "matched", np.where(RC.rho_estimate >= cut, "tumor_environment", "line_absent")))
         dl = st2.groupby(["group_id", "pert_id"]).s2.apply(lambda v: "ok" if "matched" in set(v) else ("env" if "tumor_environment" in set(v) else "mismatch"))
         sens[cut] = dl.value_counts().to_dict()
-for cut in ([] if AMEND == "a" else [0.05, 0.1, 0.2]):
+for cut in ([] if AMEND in ("a", "b") else [0.05, 0.1, 0.2]):
     st2 = np.where(RC.support < 0.5, "line_absent", np.where(RC.tumor_tpm < cut * RC.line_tpm, "tumor_far_lower", "matched"))
     sens[cut] = pd.Series(st2).value_counts().to_dict()
 pd.DataFrame(sens).to_csv(OUT / (PFX + "sensitivity.tsv"), sep="\t")
