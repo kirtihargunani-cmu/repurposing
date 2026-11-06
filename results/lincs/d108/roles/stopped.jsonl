@@ -50,3 +50,14 @@
 {"nct": "NCT03340558", "drug": "Cobimetinib", "drug_role": "single_agent", "role_note": "Cobimetinib added to atezolizumab vs atezolizumab cohort; negative similar trial", "stop_attributable_to_drug": "yes"}
 {"nct": "NCT05827614", "drug": "Erlotinib", "drug_role": "combination", "role_note": "Erlotinib partner of BBI-355; business/market stop", "stop_attributable_to_drug": "no"}
 {"nct": "NCT01732640", "drug": "Afatinib", "drug_role": "combination", "role_note": "Afatinib with carboplatin/paclitaxel induction, single arm; regimen toxicity", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00558636", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Carboplatin-paclitaxel in both arms; tests sorafenib; sorafenib lacked efficacy", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00473889", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Carboplatin-paclitaxel in both arms; vorinostat missed endpoint", "stop_attributable_to_drug": "no"}
+{"nct": "NCT04856176", "drug": "Paclitaxel", "drug_role": "combination", "role_note": "Single arm: chemo-immuno induction then GM-CSF plus pembrolizumab maintenance; futility", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT01268059", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Carboplatin-paclitaxel in both arms; MEDI-575 arm safety concerns", "stop_attributable_to_drug": "no"}
+{"nct": "NCT05493501", "drug": "Paclitaxel", "drug_role": "combination", "role_note": "Optional chemo partner in aumolertinib combination arm; corporate stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT05226598", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Platinum chemo in both arms; tests vibostolimab; futility", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02711137", "drug": "Paclitaxel", "drug_role": "combination", "role_note": "SOC partner in one INCB057643 combo cohort; study-wide INCB057643 safety stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00787852", "drug": "Paclitaxel", "drug_role": "combination", "role_note": "Dasatinib plus paclitaxel-carboplatin chemoradiation, single arm; regimen efficacy/safety stop", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00300885", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Carboplatin-paclitaxel in both arms; sorafenib missed primary endpoint", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00460317", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Paclitaxel-carboplatin in both arms; motesanib missed primary endpoint", "stop_attributable_to_drug": "no"}
+{"nct": "NCT05518110", "drug": "Trametinib", "drug_role": "combination", "role_note": "Trametinib plus hydroxychloroquine single arm; futility of combination", "stop_attributable_to_drug": "partly"}

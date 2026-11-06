@@ -20,3 +20,11 @@ For every input line write exactly one JSON line to the output file with keys:
   active moiety X"); empty otherwise. For prodrugs, report the active moiety's Cmax if given, and say so here.
 
 Write valid JSON, one object per line. Process every line.
+
+## D109b addendum: FDA archived labels and reviews
+
+Input lines here have `drug`, `doc_type` (label or review), `url` and `passages` (excerpts around Cmax mentions from a
+Drugs@FDA PDF converted by pdftotext; tables may be laid out with spaces). Apply the same rules to the passages, copy
+`url` into the output line, and take `quote` verbatim from one passage (whitespace may be collapsed when checked, but
+characters must match). Review documents often report Cmax from phase 1 dose-escalation tables: use the value at the
+dose that was approved, if the passages state it; otherwise say which dose in `note`.

@@ -55,6 +55,16 @@ follow-up questions:
    tumor inside the body at a useful dose, so it gets the flag `local_route` ("Local use only"; D107). The one
    exception is a bladder rinse (intravesical) for bladder cancer. Flagged drugs stay in the table but are never put
    in the top tiers.
+
+   Three more checks (D109) send a drug to the weak-evidence pile: its effect was seen on only one lab plate and a
+   second plate testing the same doses saw nothing (a sign of a plate mix-up, as with metronidazole); its score was
+   borrowed from other cancers although it was tested on this cancer's own cells and did nothing there; or the lab
+   dose that worked is more than 10 times the highest level the drug reaches in patients' blood (taken from its FDA
+   label or FDA review). Drugs that simply shut down the whole cell (protein synthesis, the sodium pump) are marked
+   'generic mechanism' but kept.
+12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
+    read why stopped trials stopped and what the published results of finished trials said (with a quote), and
+    count a failure only when the trial actually tested the drug (D108).
 8. **Label each cancer's evidence.** Each cancer is labeled `matched` (good candidates were tested in similar lines),
    `borrowed only`, or `no adequate compound`. Reports must state this label next to any list.
 9. **Check which receptors the drug really acts through.** A drug's annotated receptor counts for a cancer only if a

@@ -201,12 +201,8 @@ def exposure():
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False).drop_duplicates("pert_id").set_index("pert_id")
     mwf = CACHE / "d109_mw.json"
     mw = json.load(open(mwf)) if mwf.exists() else {}
-    rows = []
-    for drug, a in ans.items():
-        ok = bool(a.get("quote")) and norm(a["quote"]) in norm(lab.get(drug, "")) and a.get("cmax_value") not in (None, "")
-        pid = fd[fd.drug == drug].pert_id.iloc[0] if (fd.drug == drug).any() else None
-        cid = ann.chembl_id.get(pid) if pid else None
-        if ok and isinstance(cid, str) and cid not in mw:
+    def molw(cid):
+        if isinstance(cid, str) and cid not in mw:
             b = get(f"https://www.ebi.ac.uk/chembl/api/data/molecule/{cid}.json")
             if b:
                 j = json.loads(b)
@@ -216,22 +212,58 @@ def exposure():
                     j = json.loads(b2) if b2 else j
                 mw[cid] = float((j.get("molecule_properties") or {}).get("full_mwt") or "nan")
                 json.dump(mw, open(mwf, "w"))
-        u = str(a.get("cmax_unit", "")).strip().lower().replace("μ", "µ")
-        v = pd.to_numeric(a.get("cmax_value"), errors="coerce")
+        return mw.get(cid, np.nan) if isinstance(cid, str) else np.nan
+
+    def judge(drug, a, text, source):
+        ok = bool(a.get("quote")) and norm(a["quote"]) in norm(text) and a.get("cmax_value") not in (None, "")
+        pid = fd[fd.drug == drug].pert_id.iloc[0] if (fd.drug == drug).any() else None
+        cid = ann.chembl_id.get(pid) if pid else None
+        m_ = molw(cid) if ok else np.nan
+        u = re.sub(r"\s+", "", str(a.get("cmax_unit", ""))).lower().replace("μ", "µ").replace("mcmol", "µmol").replace("umol/l", "um").replace("µmol/l", "µm").replace("nmol/l", "nm")
+        v = pd.to_numeric(str(a.get("cmax_value", "")).replace(",", ""), errors="coerce")
         um = np.nan
         if ok and v == v:
             if u in ("um", "µm"):
                 um = v
             elif u == "nm":
                 um = v / 1000
-            elif u in UNIT and UNIT[u] is not None and isinstance(cid, str) and mw.get(cid, np.nan) == mw.get(cid, np.nan):
-                um = v * UNIT[u] * 1000 / mw[cid]       # ug/mL -> mg/L -> umol/L
-        rows.append(dict(drug=drug, cmax_value=a.get("cmax_value"), cmax_unit=a.get("cmax_unit"), dose=a.get("dose"),
-                         quote=a.get("quote"), quote_check="ok" if ok else "rejected", mw=mw.get(cid) if isinstance(cid, str) else np.nan, cmax_uM=um))
+            elif u in UNIT and UNIT[u] is not None and m_ == m_:
+                um = v * UNIT[u] * 1000 / m_       # ug/mL -> mg/L -> umol/L
+        return dict(drug=drug, source=source, url=a.get("url", ""), cmax_value=a.get("cmax_value"), cmax_unit=a.get("cmax_unit"),
+                    dose=a.get("dose"), quote=a.get("quote"), note=a.get("note", ""), quote_check="ok" if ok else "rejected", mw=m_, cmax_uM=um)
+
+    rows = [judge(drug, a, lab.get(drug, ""), "openfda_label") for drug, a in ans.items()]
+    # D109b: archived labels and reviews (precedence label > review), quote checked against the document text
+    have = {r["drug"] for r in rows if r["cmax_uM"] == r["cmax_uM"]}
+    dq = OUT / "doc_queue.jsonl"
+    dtext = {}
+    if dq.exists():
+        for line in open(dq):
+            q = json.loads(line)
+            tf = CACHE / "d109_docs" / (__import__("hashlib").md5(q["url"].encode()).hexdigest() + ".txt")
+            dtext[(q["drug"], q["url"])] = (q["doc_type"], tf.read_text(errors="ignore") if tf.exists() else " ".join(q["passages"]))
+    dans = []
+    for f in sorted((OUT / "cmax_docs").glob("*.jsonl")) if (OUT / "cmax_docs").exists() else []:
+        for line in open(f):
+            if line.strip():
+                dans.append(json.loads(line))
+    for typ in ("label", "review"):
+        for a in dans:
+            k = (a["drug"], a.get("url", ""))
+            if a["drug"] in have or k not in dtext or dtext[k][0] != typ:
+                continue
+            r = judge(a["drug"], a, dtext[k][1], "fda_" + typ)
+            rows.append(r)
+            if r["cmax_uM"] == r["cmax_uM"]:
+                have.add(a["drug"])
     cm = pd.DataFrame(rows)
     cm.to_csv(OUT / "cmax.tsv", sep="\t", index=False)
-    print(f"Cmax answers {len(cm)}; quote ok {int((cm.quote_check == 'ok').sum())}; converted to uM {int(cm.cmax_uM.notna().sum())}")
-    ef = ef.drop(columns="low_exposure").merge(fd, on=["group_id", "pert_id"], how="left").merge(cm[["drug", "cmax_uM"]], on="drug", how="left")
+    print(f"Cmax answers {len(cm)}; quote ok {int((cm.quote_check == 'ok').sum())}; drugs with a Cmax in uM {cm[cm.cmax_uM.notna()].drug.nunique()} "
+          f"(by source: {cm[cm.cmax_uM.notna()].drop_duplicates('drug').source.value_counts().to_dict()})")
+    cm.to_csv(OUT / "cmax.tsv", sep="\t", index=False)
+    best = cm[cm.cmax_uM.notna()].drop_duplicates("drug")[["drug", "cmax_uM", "source"]].rename(columns={"source": "cmax_source"})
+    ef = ef.drop(columns=[c for c in ("low_exposure", "drug", "cmax_uM", "cmax_source", "exposure_ratio") if c in ef])
+    ef = ef.merge(fd.drop_duplicates(["group_id", "pert_id"]), on=["group_id", "pert_id"], how="left").merge(best, on="drug", how="left")
     ef["exposure_ratio"] = ef.min_active_dose_uM / ef.cmax_uM
     ef["low_exposure"] = np.where(ef.exposure_ratio.notna(), ef.exposure_ratio > EXPO, pd.NA)
     ef.to_csv(RES / "evidence_flags_v2.tsv", sep="\t", index=False)

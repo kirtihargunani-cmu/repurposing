@@ -8,10 +8,10 @@ from pathlib import Path
 import pandas as pd
 
 RES = Path(__file__).resolve().parent.parent / "results/lincs"
-FLAGS = ["dose_inconsistent", "inactive_matched_line", "low_exposure", "generic_mechanism"]
+FLAGS = ["dose_inconsistent", "plate_confined", "inactive_matched_line", "low_exposure", "generic_mechanism"]
 # D109 result: rule (1) dose_inconsistent not adopted (flags 45% of judged profiles, incl. doxorubicin / temsirolimus;
 # does not separate plate artifacts from high-dose cytotoxicity); computed and kept in the table, not used.
-WEAK = ["inactive_matched_line", "low_exposure"]
+WEAK = ["plate_confined", "inactive_matched_line", "low_exposure"]   # plate_confined: D109a (replaces the dose rule)
 
 
 def apply_evidence(df, unit="group_id"):
@@ -25,6 +25,9 @@ def apply_evidence(df, unit="group_id"):
     e = pd.read_csv(f, sep="\t", low_memory=False)
     if "exposure_ratio" not in e:
         e["exposure_ratio"] = float("nan")
+    for c in FLAGS:
+        if c not in e:
+            e[c] = False
     e = e.drop_duplicates(["group_id", "pert_id"]).set_index(["group_id", "pert_id"])[FLAGS + ["exposure_ratio"]]
     df = df.join(e, on=[unit, "pert_id"])
     for c in FLAGS:
