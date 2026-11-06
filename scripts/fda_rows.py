@@ -13,6 +13,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from route_flag import apply_route  # noqa: E402
+from evidence_flags import apply_evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
@@ -45,5 +46,5 @@ def fda_rows():
         df["fda_ingredient"] = df.pert_id.map(fm)
         df["drug"] = df.fda_ingredient.map(drug_name)
         df = df.sort_values(order, ascending=False).drop_duplicates(["group_id", "fda_ingredient"])
-        out.append(apply_route(df))   # D107 local_route flag (kept, shown on the pages)
+        out.append(apply_evidence(apply_route(df)))   # D107 / D109 flags (kept, shown on the pages)
     return out[0], out[1]

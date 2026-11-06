@@ -14,7 +14,9 @@ STAGE=fetch
   results/lincs/d108/reading_queue.jsonl.
   Output: results/lincs/d108/trials.tsv (pair x trial).
 STAGE=merge
-  Reads the model answers results/lincs/d108/readings/*.jsonl ({nct, outcome, reason_class, reason, quote, pmid});
+  Reads the model answers results/lincs/d108/readings/*.jsonl ({nct, outcome, reason_class, reason, quote, pmid,
+  drug_role}; prompt results/lincs/d108/reading_prompt.md); trials where the drug is background in every arm are not
+  counted as the drug failing;
   an answer is accepted only if its quote occurs verbatim (whitespace / case normalized) in that trial's abstracts.
   Outputs: results/lincs/d108/trials_read.tsv (trials.tsv + model columns), results/lincs/trial_outcomes_v2.tsv
   (one row per pair: counts and the failed / stopped trials with reasons).
@@ -234,26 +236,51 @@ def merge():
         if a.get("outcome") in ("not_reported", "not_this_trial"):
             ok = True
         acc += ok; rej += not ok
-        rec[nct] = dict(model_outcome=a.get("outcome") if ok else "not_reported", model_reason_class=a.get("reason_class") if ok else "",
+        rec[nct] = dict(model_drug_role=a.get("drug_role", ""), model_outcome=a.get("outcome") if ok else "not_reported", model_reason_class=a.get("reason_class") if ok else "",
                         model_reason=a.get("reason") if ok else "", model_quote=a.get("quote") if ok else "",
                         model_pmid=a.get("pmid") if ok else "", quote_check="ok" if ok else "rejected")
     m = tr.join(pd.DataFrame.from_dict(rec, orient="index"), on="nct")
     m.to_csv(OUT / "trials_read.tsv", sep="\t", index=False)
     print(f"answers {len(ans)} of {len(q)} queued; accepted {acc}, rejected (quote not in abstract) {rej}")
-    m["failed"] = (m.stop_class.isin(["efficacy", "safety"]) | m.model_outcome.eq("negative"))
+    # a negative trial in which the drug is part of the backbone in every arm does not test it (reported, not counted)
+    role = OUT / "roles"   # role-only pass (D108 amendment): overrides drug_role
+    if role.exists():
+        rr = {}
+        for f in sorted(role.glob("*.jsonl")):
+            for line in open(f):
+                if line.strip():
+                    a = json.loads(line); rr[a["nct"]] = a["drug_role"]
+        m["model_drug_role"] = m.nct.map(rr).fillna(m.model_drug_role)
+    m["background"] = ~m.model_drug_role.isin(["single_agent", "combination"]) & m.model_drug_role.notna() & m.model_drug_role.ne("")
+    # third amendment: stopped efficacy / safety trials get a role per (nct, drug) from roles/stopped.jsonl
+    sf = OUT / "roles/stopped.jsonl"
+    stop_role = {}
+    if sf.exists():
+        for line in open(sf):
+            if line.strip():
+                a = json.loads(line); stop_role[(a["nct"], a["drug"])] = (a["drug_role"], a.get("stop_attributable_to_drug", "yes"))
+    is_stop = m.stop_class.isin(["efficacy", "safety"])
+    m.loc[is_stop, "model_drug_role"] = [stop_role.get((n, d), ("", ""))[0] for n, d in zip(m.nct[is_stop], m.drug[is_stop])]
+    m["stop_attributable"] = ""
+    m.loc[is_stop, "stop_attributable"] = [stop_role.get((n, d), ("", ""))[1] for n, d in zip(m.nct[is_stop], m.drug[is_stop])]
+    is_stop = is_stop & m.stop_attributable.ne("no")   # fourth amendment: a stop blamed on another drug does not count
+    m["background"] = ~m.model_drug_role.isin(["single_agent", "combination"]) & m.model_drug_role.notna() & m.model_drug_role.ne("")
+    m["failed"] = (is_stop | m.model_outcome.eq("negative")) & ~m.background
+    m["fail_eff"] = m.failed & (m.stop_class.eq("efficacy") | m.model_reason_class.isin(["lack_of_efficacy", "both"]))
+    m["fail_saf"] = m.failed & (m.stop_class.eq("safety") | m.model_reason_class.isin(["toxicity", "both"]))
     m["stopped_other"] = m.stop_class.isin(["accrual", "business", "other", "not_given"])
+    m.to_csv(OUT / "trials_read.tsv", sep="\t", index=False)
 
     def summ(d):
         f = d[d.failed]
-        why = [f"{r.nct} ({r.phase}, {r.status.lower()}): " + (f"stopped for {r.stop_class}: {r.why_stopped}" if r.stop_class in ("efficacy", "safety")
+        why = [f"{r.nct} ({r.phase}, {r.status.lower()}; {r.model_drug_role or 'role not judged'}): " + (f"stopped for {r.stop_class}: {r.why_stopped}" if r.stop_class in ("efficacy", "safety")
                else f"negative [{r.model_reason_class}]: {r.model_reason} \"{r.model_quote}\" (PMID {r.model_pmid}; model-extracted)")
                for r in f.itertuples(index=False)]
         return pd.Series(dict(n_trials=d.nct.nunique(), n_completed=int((d.status == "COMPLETED").sum()),
-                              n_positive=int(d.model_outcome.eq("positive").sum()), n_mixed=int(d.model_outcome.eq("mixed").sum()),
-                              n_failed=int(d.failed.sum()), n_failed_efficacy=int((d.stop_class.eq("efficacy") | (d.model_outcome.eq("negative") & d.model_reason_class.isin(["lack_of_efficacy", "both"]))).sum()),
-                              n_failed_safety=int((d.stop_class.eq("safety") | (d.model_outcome.eq("negative") & d.model_reason_class.isin(["toxicity", "both"]))).sum()),
-                              n_stopped_not_failed=int(d.stopped_other.sum()), failures=" || ".join(why)))
-    s = m.groupby(["unit", "level", "parent_group", "fda_rank", "drug"], dropna=False).apply(summ, include_groups=False).reset_index()
+                              n_positive=int((d.model_outcome.eq("positive") & ~d.background).sum()), n_mixed=int((d.model_outcome.eq("mixed") & ~d.background).sum()),
+                              n_failed=int(d.failed.sum()), n_failed_efficacy=int(d.fail_eff.sum()), n_failed_safety=int(d.fail_saf.sum()),
+                              n_not_testing_drug=int(d.background.sum()), n_stopped_not_failed=int(d.stopped_other.sum()), failures=" || ".join(why)))
+    s = m.groupby(["unit", "level", "parent_group", "fda_rank", "drug"], dropna=False).apply(summ).reset_index()
     s.to_csv(RES / "trial_outcomes_v2.tsv", sep="\t", index=False)
     print(f"pairs with a listed trial {len(s)}; with a failed trial {(s.n_failed > 0).sum()} "
           f"(efficacy {(s.n_failed_efficacy > 0).sum()}, safety {(s.n_failed_safety > 0).sum()}); with a positive completed trial {(s.n_positive > 0).sum()}")

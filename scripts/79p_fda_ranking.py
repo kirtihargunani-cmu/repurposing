@@ -11,7 +11,7 @@ non-alphanumerics removed. fda_status = "marketed" if any product of the ingredi
 ingredient's products; local_route = none of them systemic (D107). first_fda_approval = earliest original
 (ORIG) approval of an NDA / BLA containing the ingredient.
 Ranking (D80: specificity first): per disease, FDA-approved drugs that pass the target gate, are not flagged
-(unmatched_lines / low_transfer / local_route, D107: no systemic formulation, scripts/route_flag.py), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
+(unmatched_lines / low_transfer / local_route, D107: no systemic formulation, scripts/route_flag.py; D109: dose_inconsistent / inactive_matched_line / low_exposure, scripts/evidence_flags.py), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
 spec_sib_mech (vs the sibling), with spec_mech. A drug listed under several LINCS ids keeps its best row. Literature /
 trial counts are joined from 79o where that pair was searched.
 Outputs: results/lincs/fda_ranking_v2_consensus.tsv (41 groups), fda_ranking_strata_v2_consensus.tsv (14 subgroups),
@@ -25,6 +25,7 @@ import pandas as pd
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from route_flag import apply_route, fda_routes, is_local  # noqa: E402
+from evidence_flags import apply_evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
@@ -93,6 +94,8 @@ def main():
         ok = df[df.passes_gate & ~df.unmatched_lines & ~df.low_transfer & (df.rev > 0) & (~df.get("target_absent", pd.Series(False, index=df.index)).astype(str).str.lower().eq("true")) & ~df.get("receptor_status", pd.Series("", index=df.index)).eq("receptor_mismatch")]   # D102c / D104c demotions excluded
         ok = apply_route(ok, unit)
         ok = ok[~ok.local_route]   # D107: no systemic formulation
+        ok = apply_evidence(ok, unit)
+        ok = ok[~ok.weak_d109]   # D109: dose_inconsistent / inactive_matched_line / low_exposure
         x = ok.merge(m.drop(columns=["cmap_name", "local_route"]), on="pert_id").join(keep_ann, on="pert_id")
         x = x.sort_values(order, ascending=False).drop_duplicates([unit, "fda_ingredient"])
         x["fda_rank"] = x.groupby(unit).cumcount() + 1

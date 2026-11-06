@@ -1,0 +1,52 @@
+{"nct": "NCT02213133", "drug": "Selinexor", "drug_role": "single_agent", "role_note": "Single-arm selinexor monotherapy; stopped for enrollment, not safety", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01009346", "drug": "Everolimus", "drug_role": "combination", "role_note": "Everolimus added to cetuximab/platinum, single arm; regimen toxicity", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT01133678", "drug": "Everolimus", "drug_role": "single_agent", "role_note": "Everolimus vs placebo on induction chemo; everolimus futility", "stop_attributable_to_drug": "yes"}
+{"nct": "NCT00551759", "drug": "Docetaxel", "drug_role": "combination", "role_note": "Docetaxel is adjuvant part of multimodal single-arm regimen; regimen toxicity", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT05429502", "drug": "Topotecan", "drug_role": "background", "role_note": "TOTEM backbone in all arms; ribociclib combo toxicity drove stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01110876", "drug": "Vorinostat", "drug_role": "combination", "role_note": "Vorinostat+erlotinib(+/-TMZ) experimental regimen; combination toxicity", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT01761747", "drug": "Ponatinib", "drug_role": "single_agent", "role_note": "Single-arm ponatinib monotherapy; stopped for ponatinib toxicity/FDA hold", "stop_attributable_to_drug": "yes"}
+{"nct": "NCT02822482", "drug": "Copanlisib", "drug_role": "combination", "role_note": "Copanlisib plus cetuximab single arm; futility of combination", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00787852", "drug": "Dasatinib", "drug_role": "combination", "role_note": "Dasatinib added to chemoradiation, single arm; regimen efficacy/safety stop", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT01514864", "drug": "Dasatinib", "drug_role": "single_agent", "role_note": "Dasatinib monotherapy in DDR2/BRAF cohorts; lack of efficacy", "stop_attributable_to_drug": "yes"}
+{"nct": "NCT00283634", "drug": "Erlotinib", "drug_role": "background", "role_note": "Erlotinib in all arms; trial explores adding bortezomib", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00281021", "drug": "Erlotinib", "drug_role": "background", "role_note": "Continued erlotinib backbone; trial tests adding digoxin", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01728181", "drug": "Erlotinib", "drug_role": "background", "role_note": "Erlotinib in both arms; tivozanib was the ineffective drug", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01515969", "drug": "Erlotinib", "drug_role": "background", "role_note": "Erlotinib backbone, dovitinib added; combination toxicity mainly dovitinib addition", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00783471", "drug": "Erlotinib", "drug_role": "combination", "role_note": "Both arms intermittent erlotinib+docetaxel sequences; low efficacy both arms", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00750698", "drug": "Erlotinib", "drug_role": "background", "role_note": "Continued erlotinib backbone; tests entinostat; business stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02495233", "drug": "Erlotinib", "drug_role": "background", "role_note": "Erlotinib backbone after TKI resistance; gilteritinib combo AEs", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT04165031", "drug": "Erlotinib", "drug_role": "combination", "role_note": "Optional partner of LY3499446, never started; LY3499446 toxicity", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01244191", "drug": "Erlotinib", "drug_role": "background", "role_note": "Erlotinib in both arms; tivantinib futility", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00946712", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Carboplatin-paclitaxel in all arms; tests bevacizumab/cetuximab", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02629848", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Paclitaxel-carboplatin in both arms; motesanib missed endpoint", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00526890", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Chemoradiation backbone; tests selenomethionine; selenomethionine lacked efficacy", "stop_attributable_to_drug": "no"}
+{"nct": "NCT05791097", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Platinum doublet in all arms; tests ociperlimab; business stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00004859", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Chemoradiation in both arms; thalidomide futility", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02711137", "drug": "Azacitidine", "drug_role": "combination", "role_note": "SOC partner in one INCB057643 arm; INCB057643 safety stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01285102", "drug": "Irinotecan", "drug_role": "single_agent", "role_note": "Irinotecan-eluting bead chemoembolization, single arm; DEBIRI toxicity", "stop_attributable_to_drug": "yes"}
+{"nct": "NCT00271011", "drug": "Irinotecan", "drug_role": "combination", "role_note": "Mitomycin/irinotecan/cetuximab single arm; stopped for investigator loss", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01375816", "drug": "Irinotecan", "drug_role": "comparator", "role_note": "Conventional irinotecan in FOLFIRI control vs liposomal irinotecan arm", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00838578", "drug": "Irinotecan", "drug_role": "background", "role_note": "Irinotecan backbone; tests KRN330; stopped on KRN330 interim", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01133990", "drug": "Irinotecan", "drug_role": "background", "role_note": "FOLFIRI in all arms; E7820 combination not tolerable", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01016860", "drug": "Irinotecan", "drug_role": "background", "role_note": "Irinotecan backbone; tests OSI-906; OSI-906 lacked efficacy", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00642746", "drug": "Irinotecan", "drug_role": "background", "role_note": "Irinotecan in FOLFIRI backbone of one arm; trial tests erlotinib", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00936832", "drug": "Irinotecan", "drug_role": "background", "role_note": "FOLFIRI backbone with sunitinib; stopped for sunitinib futility elsewhere", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00824785", "drug": "Epirubicin", "drug_role": "background", "role_note": "EOX in both arms; panitumumab lacked efficacy", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02076594", "drug": "Epirubicin", "drug_role": "comparator", "role_note": "EOX is standard control; experimental low-TOX failed", "stop_attributable_to_drug": "no"}
+{"nct": "NCT04543188", "drug": "Binimetinib", "drug_role": "combination", "role_note": "Partner of new BRAF inhibitor PF-07284890; business stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT03878719", "drug": "Binimetinib", "drug_role": "combination", "role_note": "Binimetinib+encorafenib in adolescents; poor recruitment stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT04190628", "drug": "Cobimetinib", "drug_role": "combination", "role_note": "Partner of new drug ABM-1310; non-safety, non-efficacy stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02818023", "drug": "Cobimetinib", "drug_role": "combination", "role_note": "Vemurafenib/cobimetinib plus pembrolizumab; triplet toxicity", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT01495988", "drug": "Cobimetinib", "drug_role": "background", "role_note": "Vem/cobi in control and bevacizumab arm; tests bevacizumab", "stop_attributable_to_drug": "no"}
+{"nct": "NCT03630120", "drug": "Cabozantinib", "drug_role": "background", "role_note": "TKI in all arms; trial tests adaptive dosing strategy", "stop_attributable_to_drug": "no"}
+{"nct": "NCT00859339", "drug": "Sunitinib", "drug_role": "combination", "role_note": "Sunitinib added to neoadjuvant cis/gem single arm; regimen toxicity", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00005047", "drug": "Vinblastine", "drug_role": "combination", "role_note": "Vinblastine part of MVAC vs observation; MVAC futility", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT02711137", "drug": "Gemcitabine", "drug_role": "combination", "role_note": "SOC partner in one INCB057643 arm; INCB057643 safety stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT05358249", "drug": "Trametinib", "drug_role": "combination", "role_note": "Trametinib partner of JDQ443; business stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT04294160", "drug": "Trametinib", "drug_role": "combination", "role_note": "Trametinib in experimental triplets with new drugs; business stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT02119676", "drug": "Regorafenib", "drug_role": "background", "role_note": "Regorafenib in both arms; ruxolitinib futility", "stop_attributable_to_drug": "no"}
+{"nct": "NCT05985109", "drug": "Regorafenib", "drug_role": "combination", "role_note": "Regorafenib plus KN046 single-arm cohorts; combination lacked efficacy", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT04294160", "drug": "Dabrafenib", "drug_role": "background", "role_note": "Dabrafenib in every platform arm; business stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT03340558", "drug": "Cobimetinib", "drug_role": "single_agent", "role_note": "Cobimetinib added to atezolizumab vs atezolizumab cohort; negative similar trial", "stop_attributable_to_drug": "yes"}
+{"nct": "NCT05827614", "drug": "Erlotinib", "drug_role": "combination", "role_note": "Erlotinib partner of BBI-355; business/market stop", "stop_attributable_to_drug": "no"}
+{"nct": "NCT01732640", "drug": "Afatinib", "drug_role": "combination", "role_note": "Afatinib with carboplatin/paclitaxel induction, single arm; regimen toxicity", "stop_attributable_to_drug": "partly"}

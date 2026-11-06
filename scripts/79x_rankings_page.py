@@ -35,7 +35,7 @@ from fda_rows import drug_name, fda_rows  # noqa: E402
 RES = ROOT / "results/lincs"
 PRESENT_ONLY = os.environ.get("PRESENT_ONLY", "0") == "1"
 OUT_HTML = "disease_drug_rankings_v2_target_present.html" if PRESENT_ONLY else "disease_drug_rankings_v2.html"
-FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target", "receptor_mismatch", "tumor_environment", "unverified_binding", "local_route"]   # bit order in the page
+FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target", "receptor_mismatch", "tumor_environment", "unverified_binding", "local_route", "inactive_matched_line", "low_exposure", "generic_mechanism"]   # bit order (D109 dose_inconsistent not adopted) in the page
 GATE = {"pass": "p", "binds_but_absent_in_matched_lines": "a", "assembly_incomplete_in_tumors": "s"}
 
 
@@ -219,8 +219,8 @@ def main():
     if PRESENT_ONLY:
         page = page.replace("<title>Disease Drug Rankings</title>", "<title>Target-Present Drug Rankings</title>", 1).replace(
             "<h1>Disease Drug Rankings</h1>", "<h1>Target-Present Drug Rankings</h1>\n    <p class=\"sub\">Only FDA drugs with at least one main target (ChEMBL curated mechanism, binding-confirmed or annotated target) that tumor data show is made by this cancer's typical tumor, and, for receptor drugs, by the cell lines the score came from (or by the tumor's vessels / immune cells). Drugs acting on DNA or pathogens and drugs without target data are left out. Percentiles are among the FDA drugs on this page, per cohort. Hidden by default (untick 'Hide weak-evidence drugs'): unmatched or low-transfer lines, no systemic formulation (local use only) and unverified binding.</p>", 1).replace(
-            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route"]',
-            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "unverified_binding"]', 1)
+            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "inactive_matched_line", "low_exposure"]',
+            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "inactive_matched_line", "low_exposure", "unverified_binding"]', 1)
         assert '"local_route", "unverified_binding"]' in page
     (RES / OUT_HTML).write_text(page)
     n = sum(map(len, G.values())) + sum(map(len, S.values()))
