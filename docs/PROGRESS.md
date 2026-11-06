@@ -781,6 +781,18 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Presence must rest on measured tumor expression (no rows lost); unverified binding hidden by default with the
   weak-evidence rows (5,173 of 6,864 rows visible); percentiles re-ranked among the page's FDA drugs per cohort.
 
+## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
+- D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
+  read from linked abstracts by subagents (631 trials, quotes verified), drug role (single agent / combination /
+  comparator / background) and stop attribution. Disease top 10: 147 pairs with a trial, 41 with a failed trial,
+  44 with a positive one. Pages show 'Why trials failed'.
+- D109: dose-consistency rule not adopted (flagged 45% of judged profiles, incl. doxorubicin); replaced by
+  plate_confined (D109a, 781 drugs, incl. metronidazole). inactive_matched_line 2,271 rows; generic_mechanism
+  omacetaxine / digoxin / dactinomycin (shown only); low_exposure from FDA label / archived label / review Cmax
+  (123 of 384 FDA drugs, D109b), 51 drugs flagged.
+- Rebuild: FDA disease rows 2,722 -> 2,426; metronidazole, pentobarbital (PAAD), azacitidine (PAAD), defactinib out
+  of the PAAD top 10; fedratinib still #1 (tested 8 uM vs label Cmax 3.4 uM, not flagged).
+
 ## 2026-11-06: route flag (D107) and literature rerun
 - New flag `local_route` (`scripts/route_flag.py`): no systemic formulation in Drugs@FDA (ChEMBL topical-only for
   non-FDA drugs); bladder exception for intravesical. 49 of 527 FDA ingredients flagged; FDA rankings 2,913 -> 2,722

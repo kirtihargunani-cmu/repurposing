@@ -1,0 +1,104 @@
+{"nct": "NCT02684032", "drug_role": "combination", "role_note": "Single-arm add-on to palbociclib plus endocrine therapy; multi-drug regimen"}
+{"nct": "NCT02025985", "drug_role": "single_agent", "role_note": "Single-arm selinexor monotherapy in gynecologic cancers"}
+{"nct": "NCT01522820", "drug_role": "single_agent", "role_note": "Vaccine with vs without sirolimus; sirolimus is the difference"}
+{"nct": "NCT01283334", "drug_role": "combination", "role_note": "Single-arm everolimus with cetuximab and carboplatin"}
+{"nct": "NCT00381706", "drug_role": "combination", "role_note": "Epirubicin within ECF regimen compared against other chemo regimens"}
+{"nct": "NCT00238407", "drug_role": "combination", "role_note": "Single-arm docetaxel-cisplatin with radiotherapy"}
+{"nct": "NCT03933449", "drug_role": "comparator", "role_note": "Docetaxel in investigator-choice chemo control arm vs pembrolizumab"}
+{"nct": "NCT02564263", "drug_role": "comparator", "role_note": "Docetaxel in investigator-choice chemo control arm vs pembrolizumab"}
+{"nct": "NCT01851733", "drug_role": "combination", "role_note": "Single-arm doxorubicin after laser ablation; tests ablation-enabled delivery"}
+{"nct": "NCT01342757", "drug_role": "combination", "role_note": "Vorinostat given with temozolomide; imaging response study"}
+{"nct": "NCT02606461", "drug_role": "single_agent", "role_note": "Selinexor vs placebo, randomized"}
+{"nct": "NCT03332667", "drug_role": "combination", "role_note": "Nonrandomized MIBG-dinutuximab cohorts with/without vorinostat; multi-agent regimen"}
+{"nct": "NCT00352534", "drug_role": "combination", "role_note": "Doxorubicin within standard multi-drug DD4A regimen; risk-adapted therapy"}
+{"nct": "NCT00945009", "drug_role": "combination", "role_note": "Doxorubicin within vincristine-dactinomycin-doxorubicin regimen"}
+{"nct": "NCT00002641", "drug_role": "combination", "role_note": "Surgery with or without doxorubicin-ifosfamide adjuvant chemotherapy"}
+{"nct": "NCT00779389", "drug_role": "single_agent", "role_note": "Window trial includes dasatinib-alone arm vs placebo"}
+{"nct": "NCT00265317", "drug_role": "background", "role_note": "Erlotinib in both arms; trial tests adding sunitinib"}
+{"nct": "NCT02039674", "drug_role": "combination", "role_note": "Erlotinib cohort combined with pembrolizumab"}
+{"nct": "NCT01217619", "drug_role": "single_agent", "role_note": "Single-arm neoadjuvant erlotinib monotherapy"}
+{"nct": "NCT01523587", "drug_role": "comparator", "role_note": "Erlotinib control arm vs afatinib (LUX-Lung 8)"}
+{"nct": "NCT02625168", "drug_role": "comparator", "role_note": "Erlotinib comparison cohort vs afatinib"}
+{"nct": "NCT02535338", "drug_role": "combination", "role_note": "Erlotinib combined with onalespib (new HSP90 inhibitor)"}
+{"nct": "NCT00556712", "drug_role": "single_agent", "role_note": "Erlotinib maintenance vs placebo"}
+{"nct": "NCT00373425", "drug_role": "single_agent", "role_note": "Adjuvant erlotinib vs placebo (RADIANT)"}
+{"nct": "NCT07271446", "drug_role": "background", "role_note": "EGFR-TKI backbone for all; trial tests PB101 cell product"}
+{"nct": "NCT00966472", "drug_role": "background", "role_note": "Standard-dose erlotinib backbone; rosuvastatin dose escalated"}
+{"nct": "NCT00367601", "drug_role": "combination", "role_note": "Single-arm erlotinib plus bevacizumab"}
+{"nct": "NCT04179890", "drug_role": "comparator", "role_note": "Retrospective TKI cohorts; focus afatinib, erlotinib one of comparators"}
+{"nct": "NCT02296125", "drug_role": "comparator", "role_note": "Erlotinib in control arm vs osimertinib (FLAURA)"}
+{"nct": "NCT00364351", "drug_role": "comparator", "role_note": "Erlotinib control arm vs vandetanib"}
+{"nct": "NCT01306045", "drug_role": "single_agent", "role_note": "Basket arm: erlotinib monotherapy for EGFR-mutant tumors"}
+{"nct": "NCT00874419", "drug_role": "single_agent", "role_note": "Erlotinib vs gemcitabine-carboplatin (OPTIMAL)"}
+{"nct": "NCT02367781", "drug_role": "background", "role_note": "Carboplatin/nab-paclitaxel in both arms; tests atezolizumab"}
+{"nct": "NCT02264990", "drug_role": "background", "role_note": "Paclitaxel-carboplatin backbone; tests veliparib vs platinum doublet"}
+{"nct": "NCT02364999", "drug_role": "background", "role_note": "Paclitaxel-carboplatin in both arms; biosimilar vs bevacizumab"}
+{"nct": "NCT02186847", "drug_role": "background", "role_note": "Chemoradiation in both arms; tests adding metformin"}
+{"nct": "NCT00023673", "drug_role": "background", "role_note": "Concurrent paclitaxel-carboplatin in all; tests radiation dose escalation"}
+{"nct": "NCT05318443", "drug_role": "background", "role_note": "Paclitaxel-carboplatin in both arms; biosimilar vs bevacizumab"}
+{"nct": "NCT00006004", "drug_role": "combination", "role_note": "Paclitaxel-carboplatin regimen vs gemcitabine-cisplatin"}
+{"nct": "NCT01763671", "drug_role": "combination", "role_note": "Paclitaxel plus bevacizumab vs docetaxel"}
+{"nct": "NCT02811497", "drug_role": "combination", "role_note": "Oral azacitidine combined with durvalumab"}
+{"nct": "NCT03727880", "drug_role": "single_agent", "role_note": "Pembrolizumab with vs without defactinib"}
+{"nct": "NCT00003427", "drug_role": "combination", "role_note": "Oxaliplatin plus irinotecan doublet, phase 1"}
+{"nct": "NCT00559676", "drug_role": "combination", "role_note": "Irinotecan within FOLFIRI/FOLFIRINOX; biomarker/PK study"}
+{"nct": "NCT03206151", "drug_role": "background", "role_note": "FOLFIRI in both arms; tests adding CMAB009"}
+{"nct": "NCT00003950", "drug_role": "background", "role_note": "Irinotecan backbone; tests cyclosporine modulation"}
+{"nct": "NCT00066274", "drug_role": "combination", "role_note": "Irinotecan in IRINOX and FOLFIRI regimens vs FOLFOX"}
+{"nct": "NCT00778102", "drug_role": "single_agent", "role_note": "FOLFOXIRI vs mFOLFOX6, both with bevacizumab; irinotecan is difference"}
+{"nct": "NCT00730158", "drug_role": "background", "role_note": "Irinotecan in both arms; tests KD018 vs placebo"}
+{"nct": "NCT04109924", "drug_role": "combination", "role_note": "Single-arm TAS-102, irinotecan and bevacizumab"}
+{"nct": "NCT05004350", "drug_role": "comparator", "role_note": "Irinotecan in control arm vs encorafenib-cetuximab"}
+{"nct": "NCT02162563", "drug_role": "combination", "role_note": "Irinotecan in triplet vs doublet regimens, not isolated"}
+{"nct": "NCT02314182", "drug_role": "background", "role_note": "Chemotherapy in both arms; tests primary tumor resection"}
+{"nct": "NCT00467142", "drug_role": "combination", "role_note": "Single-arm FOLFIRI plus bevacizumab"}
+{"nct": "NCT00668863", "drug_role": "background", "role_note": "FOLFIRI backbone; trial tests adding sunitinib"}
+{"nct": "NCT04088786", "drug_role": "single_agent", "role_note": "HIPEC with nal-irinotecan alone, phase 1"}
+{"nct": "NCT00535353", "drug_role": "background", "role_note": "Irinotecan backbone; trial tests adding olaparib"}
+{"nct": "NCT00115765", "drug_role": "background", "role_note": "Chemo-bevacizumab in both arms; tests adding panitumumab"}
+{"nct": "NCT02980510", "drug_role": "single_agent", "role_note": "FOLFIRINOX vs mFOLFOX6, both with panitumumab; irinotecan is difference"}
+{"nct": "NCT00925015", "drug_role": "background", "role_note": "Cetuximab-irinotecan backbone; tests dalotuzumab"}
+{"nct": "NCT02069704", "drug_role": "background", "role_note": "FOLFOX/FOLFIRI in both arms; biosimilar vs bevacizumab"}
+{"nct": "NCT00569790", "drug_role": "combination", "role_note": "Single-arm irinotecan, S-1 and bevacizumab"}
+{"nct": "NCT01328171", "drug_role": "background", "role_note": "FOLFOXIRI in both arms; tests adding panitumumab"}
+{"nct": "NCT00628810", "drug_role": "combination", "role_note": "Single-arm high-dose FOLFIRI plus bevacizumab"}
+{"nct": "NCT03164655", "drug_role": "background", "role_note": "Systemic chemo in both arms; tests HAI oxaliplatin"}
+{"nct": "NCT00561470", "drug_role": "background", "role_note": "FOLFIRI in both arms; tests aflibercept vs placebo"}
+{"nct": "NCT02009449", "drug_role": "background", "role_note": "Chemo partners incl. gemcitabine backbone; tests pegilodecakin"}
+{"nct": "NCT05644249", "drug_role": "combination", "role_note": "Single-arm PIPAC doxorubicin-cisplatin plus systemic FOLFOX"}
+{"nct": "NCT00743964", "drug_role": "single_agent", "role_note": "ECX vs CX; epirubicin is the only difference"}
+{"nct": "NCT01042782", "drug_role": "combination", "role_note": "Everolimus combined with mitomycin C, phase 1"}
+{"nct": "NCT00519324", "drug_role": "single_agent", "role_note": "Single-arm everolimus monotherapy"}
+{"nct": "NCT01682083", "drug_role": "combination", "role_note": "Trametinib with dabrafenib vs placebo"}
+{"nct": "NCT02296112", "drug_role": "single_agent", "role_note": "Single-arm trametinib monotherapy"}
+{"nct": "NCT02439411", "drug_role": "single_agent", "role_note": "Retrospective dabrafenib with vs without trametinib; trametinib is difference"}
+{"nct": "NCT03551626", "drug_role": "combination", "role_note": "Single-arm dabrafenib plus trametinib; pyrexia management"}
+{"nct": "NCT03213691", "drug_role": "single_agent", "role_note": "Single-arm selumetinib monotherapy (Pediatric MATCH)"}
+{"nct": "NCT02902042", "drug_role": "combination", "role_note": "Binimetinib in encorafenib-pembrolizumab triplet"}
+{"nct": "NCT01656642", "drug_role": "combination", "role_note": "Cobimetinib with vemurafenib and atezolizumab"}
+{"nct": "NCT01689519", "drug_role": "single_agent", "role_note": "Vemurafenib plus cobimetinib vs vemurafenib plus placebo"}
+{"nct": "NCT01010126", "drug_role": "combination", "role_note": "Single-arm temsirolimus plus bevacizumab"}
+{"nct": "NCT01835145", "drug_role": "single_agent", "role_note": "Cabozantinib vs temozolomide or dacarbazine"}
+{"nct": "NCT02091141", "drug_role": "single_agent", "role_note": "Basket arm: erlotinib monotherapy for EGFR alterations"}
+{"nct": "NCT02710734", "drug_role": "background", "role_note": "Neoadjuvant MVAC for all; tests risk-enabled bladder sparing"}
+{"nct": "NCT01031420", "drug_role": "combination", "role_note": "Single-arm dose-dense MVAC regimen"}
+{"nct": "NCT03267316", "drug_role": "background", "role_note": "Platinum-gemcitabine backbone; tests CAN04"}
+{"nct": "NCT04868773", "drug_role": "background", "role_note": "TAS-102 backbone; cabozantinib dose escalated"}
+{"nct": "NCT03317119", "drug_role": "background", "role_note": "TAS-102 backbone; trametinib dose de-escalated"}
+{"nct": "NCT03306394", "drug_role": "single_agent", "role_note": "Single-arm trifluridine/tipiracil monotherapy"}
+{"nct": "NCT02399943", "drug_role": "combination", "role_note": "Single-arm trametinib plus panitumumab"}
+{"nct": "NCT04534218", "drug_role": "combination", "role_note": "Regorafenib with metronomic chemo and aspirin"}
+{"nct": "NCT04787341", "drug_role": "background", "role_note": "Regorafenib in both sequences; tests panitumumab rechallenge order"}
+{"nct": "NCT03305913", "drug_role": "combination", "role_note": "Regorafenib combined with TAS-102, phase 1"}
+{"nct": "NCT02466009", "drug_role": "single_agent", "role_note": "Regorafenib alone listed as intervention"}
+{"nct": "NCT03829852", "drug_role": "single_agent", "role_note": "Retrospective cohort of regorafenib monotherapy"}
+{"nct": "NCT01584830", "drug_role": "single_agent", "role_note": "Regorafenib vs placebo (CONCUR)"}
+{"nct": "NCT01387880", "drug_role": "combination", "role_note": "Everolimus with irinotecan and cetuximab"}
+{"nct": "NCT00544414", "drug_role": "combination", "role_note": "Gemcitabine within multi-drug induction/adjuvant program"}
+{"nct": "NCT00076310", "drug_role": "combination", "role_note": "Single-arm cisplatin, docetaxel and erlotinib"}
+{"nct": "NCT00400374", "drug_role": "combination", "role_note": "Erlotinib plus celecoxib for prevention"}
+{"nct": "NCT02145637", "drug_role": "combination", "role_note": "Afatinib plus ruxolitinib, phase 1"}
+{"nct": "NCT00005638", "drug_role": "combination", "role_note": "Escalating irinotecan with cisplatin and radiotherapy"}
+{"nct": "NCT03712397", "drug_role": "combination", "role_note": "Nal-irinotecan with 5-FU/leucovorin, single arm"}
+{"nct": "NCT00276640", "drug_role": "background", "role_note": "Vincristine-carboplatin in both arms; tests adding etoposide"}
+{"nct": "NCT04051606", "drug_role": "single_agent", "role_note": "Single-arm regorafenib monotherapy in glioblastoma"}

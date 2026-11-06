@@ -137,6 +137,9 @@ def main():
     from route_flag import apply_route
     ok = apply_route(ok)
     ok = ok[~ok.local_route]   # D107: no systemic formulation
+    from evidence_flags import apply_evidence
+    ok = apply_evidence(ok)
+    ok = ok[~ok.weak_d109]   # D109
     a = ok.sort_values("spec_mech", ascending=False).groupby("group_id").head(TOP_N).assign(top_spec_mech=True)
     b = ok.sort_values("rev", ascending=False).groupby("group_id").head(TOP_N).assign(top_rev=True)
     sel = pd.concat([a, b]).groupby(["group_id", "cmap_name"], as_index=False).agg(

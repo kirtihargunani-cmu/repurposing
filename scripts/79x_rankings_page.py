@@ -35,7 +35,7 @@ from fda_rows import drug_name, fda_rows  # noqa: E402
 RES = ROOT / "results/lincs"
 PRESENT_ONLY = os.environ.get("PRESENT_ONLY", "0") == "1"
 OUT_HTML = "disease_drug_rankings_v2_target_present.html" if PRESENT_ONLY else "disease_drug_rankings_v2.html"
-FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target", "receptor_mismatch", "tumor_environment", "unverified_binding", "local_route"]   # bit order in the page
+FLAGS = ["unmatched_lines", "low_transfer", "multi_target", "prolif_driven", "low_mrs", "target_absent", "minority_target", "receptor_mismatch", "tumor_environment", "unverified_binding", "local_route", "plate_confined", "inactive_matched_line", "low_exposure", "generic_mechanism"]   # bit order (D109 dose_inconsistent not adopted) in the page
 GATE = {"pass": "p", "binds_but_absent_in_matched_lines": "a", "assembly_incomplete_in_tumors": "s"}
 
 
@@ -129,6 +129,21 @@ def main():
              rnd(r.cmp_spec_pct, 1), rnd(r.cmp_rev_pct, 1), rnd(r.cmp_spec_sib_mech_pct, 1), int(bool(r.cmp_is_fda))])
     vrun = json.load(open(RES / "standin_run.json"))
     rg = pd.read_csv(RES / "receptor_gate_v2.tsv", sep="\t", low_memory=False)
+    # D108 (user 2026-11-06): trial outcomes for each cohort's top 10 FDA drugs; failed trials with the reason
+    TO = {}
+    tf_ = RES / "d108/trials_read.tsv"
+    if tf_.exists():
+        t8 = pd.read_csv(tf_, sep="\t", low_memory=False)
+        for c in ("failed", "background"):
+            t8[c] = t8[c].astype(str).str.lower().eq("true")
+        for (u, dn), d in t8.groupby(["unit", "drug"]):
+            f = d[d.failed].drop_duplicates("nct")
+            items = [[r.nct, str(r.phase), str(r.status).lower(), clean(r.model_drug_role) or "",
+                      "stopped" if str(r.stop_class) in ("efficacy", "safety") else "negative",
+                      (f"{r.stop_class}: {r.why_stopped}" if str(r.stop_class) in ("efficacy", "safety") else f"{clean(r.model_reason_class) or ''}: {clean(r.model_reason) or ''}"),
+                      clean(r.model_quote) or "", str(clean(r.model_pmid) or "").split(".")[0]] for r in f.itertuples(index=False)]
+            TO[(u, dn)] = [int(d.nct.nunique()), int(len(f)), int((d.model_outcome.eq("positive") & ~d.background).drop_duplicates().sum()),
+                           int(d.drop_duplicates("nct").background.sum()), items]
     # D100 (user 2026-11-03): early (6 h) / late (24 h) scores and timing class per disease x drug, where available
     tf = RES / "d100/timing_scores.tsv"
     TC = {"both": "b", "early only": "e", "late only": "l", "neither": "n"}
@@ -196,6 +211,7 @@ def main():
                 row += TM.get((u, r.pert_id), [None, None, None])   # 22-24: timing class, early / late percentile (D100)
                 row += [clean(getattr(r, "target_source", "")) or "", clean(getattr(r, "evidence_targets", "")) or "",
                         clean(getattr(r, "secondary_targets", "")) or ""]   # 25-27: main-target source, main targets, secondary (D105b)
+                row.append(TO.get((u, r.drug)))   # 28: D108 trial outcomes (top 10 per cohort) or null
                 lst.append(row)
             out[u] = lst
         return out
@@ -219,9 +235,9 @@ def main():
     if PRESENT_ONLY:
         page = page.replace("<title>Disease Drug Rankings</title>", "<title>Target-Present Drug Rankings</title>", 1).replace(
             "<h1>Disease Drug Rankings</h1>", "<h1>Target-Present Drug Rankings</h1>\n    <p class=\"sub\">Only FDA drugs with at least one main target (ChEMBL curated mechanism, binding-confirmed or annotated target) that tumor data show is made by this cancer's typical tumor, and, for receptor drugs, by the cell lines the score came from (or by the tumor's vessels / immune cells). Drugs acting on DNA or pathogens and drugs without target data are left out. Percentiles are among the FDA drugs on this page, per cohort. Hidden by default (untick 'Hide weak-evidence drugs'): unmatched or low-transfer lines, no systemic formulation (local use only) and unverified binding.</p>", 1).replace(
-            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route"]',
-            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "unverified_binding"]', 1)
-        assert '"local_route", "unverified_binding"]' in page
+            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "plate_confined", "inactive_matched_line", "low_exposure"]',
+            'const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "plate_confined", "inactive_matched_line", "low_exposure", "unverified_binding"]', 1)
+        assert '"low_exposure", "unverified_binding"]' in page
     (RES / OUT_HTML).write_text(page)
     n = sum(map(len, G.values())) + sum(map(len, S.values()))
     nl = sum(1 for v in [*G.values(), *S.values()] for r in v if r[12] >= 0)

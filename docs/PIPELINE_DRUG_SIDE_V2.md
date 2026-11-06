@@ -166,7 +166,19 @@ flowchart LR
   rectal, enteral, injection into the circulation. Other drugs: ChEMBL topical-only (79a). Exception: intravesical
   counts as reaching the tumor in bladder cancer. Same use as `unmatched_lines` / `low_transfer`: kept on the pages
   ('Local use only', hidden by default), excluded from 79p and from 79o pair selection. 49 of 527 FDA-matched
-  ingredients flagged. Systemic drugs with implausible exposure (antibiotics, sedatives) are not covered. A second page lists
+  ingredients flagged. Systemic drugs with implausible exposure (antibiotics, sedatives) are not covered.
+- **Evidence flags (D109, D109a, D109b; `79f3_evidence_flags.py`, `79f4_plate_confined.py`, `79f5_fda_docs.py`,
+  helper `evidence_flags.py`):** `plate_confined` (all active signatures from one compound plate; a second plate at
+  the same doses silent), `inactive_matched_line` (borrowed score, but the drug was measured in a matched line of
+  the cohort with a reproducible null), `low_exposure` (lowest active LINCS dose > 10x the label Cmax; Cmax from the
+  openFDA label, else archived Drugs@FDA labels / reviews, read by subagents with verified quotes;
+  `results/lincs/d109/cmax.tsv`) are weak-evidence flags (hidden, excluded from 79p / 79o).
+  `generic_mechanism` (ChEMBL: ribosome / protein synthesis, Na/K-ATPase, DNA-directed RNA polymerase) is shown
+  only. The D109 dose-consistency rule was not adopted. Table: `results/lincs/evidence_flags_v2.tsv`.
+- **Trial outcomes (D108; `79o2_trial_outcomes.py`, STAGE=fetch then merge):** top 10 FDA drugs per cohort; trials
+  listing the drug; stop reasons by rule; completed trials read from abstracts (prompt
+  `results/lincs/d108/reading_prompt.md`, readings and roles in `results/lincs/d108/`). Output
+  `results/lincs/trial_outcomes_v2.tsv`; pages show 'Why trials failed'. A second page lists
   only drugs whose main target is present (`PRESENT_ONLY=1 python scripts/79x_rankings_page.py`).
 
 ### 9b. Data gaps: is there good-quality, lineage-matched data? (`data_gaps`, `79r`; C24)
