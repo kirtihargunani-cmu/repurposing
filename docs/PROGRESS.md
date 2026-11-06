@@ -781,6 +781,16 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Presence must rest on measured tumor expression (no rows lost); unverified binding hidden by default with the
   weak-evidence rows (5,173 of 6,864 rows visible); percentiles re-ranked among the page's FDA drugs per cohort.
 
+## 2026-11-06: route flag (D107) and literature rerun
+- New flag `local_route` (`scripts/route_flag.py`): no systemic formulation in Drugs@FDA (ChEMBL topical-only for
+  non-FDA drugs); bladder exception for intravesical. 49 of 527 FDA ingredients flagged; FDA rankings 2,913 -> 2,722
+  disease rows; 8 top-3 placements removed (ciclesonide, halcinonide, ciclopirox, ingenol mebutate).
+- Literature (79o pairs, MODE=fda, MODE=fda_all) rerun on the D105b-c rankings: the 11-02 tables were stale (17 of 123
+  disease top-3 pairs had changed). Every FDA pair now searched: PubMed >= 1 64.9%, trial >= 1 44.9%, either 69.9%;
+  top 3 either 76.4%. A hit means the pair was studied, not that it worked.
+- Not covered: systemic drugs with implausible exposure (metronidazole, pentobarbital, cardiac glycosides) and
+  class-level trial failures (JAK inhibitors in PDAC: ruxolitinib JANUS 1/2); both still open.
+
 ## 2026-11-05: patient-level VIPER on the cell-type networks (D106)
 - `61` now reads the network map; rerun for the 12 switched groups (no errors). Patient NES vs old r 0.84-0.97;
   concordance with group MRs up in 6 groups, down in 5 (ESCA-SCC 0.61 -> 0.31); confounding still negligible.

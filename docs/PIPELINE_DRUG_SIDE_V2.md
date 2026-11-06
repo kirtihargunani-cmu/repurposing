@@ -28,7 +28,7 @@ flowchart LR
   A["Drug regulator activity<br/>ARACNe TF + CollecTRI"]
   T["Target check<br/>drug target expressed"]
   S["Scores<br/>rev, spec, spec_mech, spec_sib_mech"]
-  F["Flags + evidence status<br/>unmatched_lines, low_transfer"]
+  F["Flags + evidence status<br/>unmatched_lines, low_transfer, local_route"]
   O["Outputs<br/>rankings, FDA list, literature, page"]
   L --> A --> S
   DS --> S
@@ -159,7 +159,14 @@ flowchart LR
   100 nM, ion channels 10 uM, others 1 uM; median of Ki / Kd / IC50 / EC50 values); (3) else annotated targets, flagged
   "unverified binding". Receptors keep the relative presence rule; other targets need median TPM >= 1. Other
   compounds keep the D102a evidence targets. Secondary targets are reported. Known-use Hub 0.623 -> 0.660.
-- 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows. A second page lists
+- 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
+- **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
+  every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,
+  vaginal, dental, intravitreal, intravesical, ...); systemic = oral, sublingual, buccal, transmucosal, transdermal,
+  rectal, enteral, injection into the circulation. Other drugs: ChEMBL topical-only (79a). Exception: intravesical
+  counts as reaching the tumor in bladder cancer. Same use as `unmatched_lines` / `low_transfer`: kept on the pages
+  ('Local use only', hidden by default), excluded from 79p and from 79o pair selection. 49 of 527 FDA-matched
+  ingredients flagged. Systemic drugs with implausible exposure (antibiotics, sedatives) are not covered. A second page lists
   only drugs whose main target is present (`PRESENT_ONLY=1 python scripts/79x_rankings_page.py`).
 
 ### 9b. Data gaps: is there good-quality, lineage-matched data? (`data_gaps`, `79r`; C24)
@@ -235,6 +242,7 @@ flowchart LR
 | `source` | `direct` (tested in the disease's tissue) or `borrowed` |
 | `line_match`, `unmatched_lines` | direct drugs: best tested line's Celligner weight relative to the disease's best line; flag if < 0.1 |
 | `transfer_conf`, `low_transfer` | borrowed drugs: predicted transfer accuracy relative to a replicate; flag if < 0.5 |
+| `local_route`, `routes` | no systemic formulation (D107): Drugs@FDA routes of the ingredient all local; ChEMBL topical-only otherwise |
 | `passes_gate`, `gate_reason` | target check result |
 | `approved` | approved anywhere (ChEMBL phase 4 or Hub "Launched"); FDA status is in the `fda_*` files |
 | `rev`, `rev_pct` | reversal score and its percentile within the disease |

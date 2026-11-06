@@ -7,10 +7,11 @@ fetched 2026-10-29; small molecules and CDER biologics). The `approved` column o
 Matching: a LINCS drug's names (cmap_name, ChEMBL preferred name, Repurposing Hub name) against each Drugs@FDA active
 ingredient (combination products split on ";"), both normalized: upper case, salt / hydrate words removed (SALTS),
 non-alphanumerics removed. fda_status = "marketed" if any product of the ingredient is prescription or OTC now, else
-"discontinued" (only discontinued products; still FDA-approved historically). first_fda_approval = earliest original
+"discontinued" (only discontinued products; still FDA-approved historically). fda_routes = all routes of the
+ingredient's products; local_route = none of them systemic (D107). first_fda_approval = earliest original
 (ORIG) approval of an NDA / BLA containing the ingredient.
 Ranking (D80: specificity first): per disease, FDA-approved drugs that pass the target gate, are not flagged
-(unmatched_lines / low_transfer), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
+(unmatched_lines / low_transfer / local_route, D107: no systemic formulation, scripts/route_flag.py), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
 spec_sib_mech (vs the sibling), with spec_mech. A drug listed under several LINCS ids keeps its best row. Literature /
 trial counts are joined from 79o where that pair was searched.
 Outputs: results/lincs/fda_ranking_v2_consensus.tsv (41 groups), fda_ranking_strata_v2_consensus.tsv (14 subgroups),
@@ -20,6 +21,10 @@ import re
 from pathlib import Path
 
 import pandas as pd
+
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from route_flag import apply_route, fda_routes, is_local  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
@@ -58,6 +63,9 @@ def fda_table():
     t["first_fda_approval"] = nb.dropna(subset=["orig_date"]).groupby("key").orig_date.min().reindex(t.index).str[:10]
     t["fda_appl_nda_bla"] = nb.groupby("key").ApplNo.apply(lambda v: ";".join(sorted(set(v))[:5])).reindex(t.index)
     t["fda_status"] = t.marketed.map({True: "marketed", False: "discontinued"})
+    rt = fda_routes(norm).reindex(t.index)   # D107: routes over all products of the ingredient
+    t["fda_routes"] = rt.map(lambda r: "|".join(sorted(r)) if isinstance(r, set) else "")
+    t["local_route"] = rt.map(lambda r: is_local(r) if isinstance(r, set) else None)
     return t.drop(columns="marketed")
 
 
@@ -83,7 +91,9 @@ def main():
 
     def rank(df, unit, order, extra):
         ok = df[df.passes_gate & ~df.unmatched_lines & ~df.low_transfer & (df.rev > 0) & (~df.get("target_absent", pd.Series(False, index=df.index)).astype(str).str.lower().eq("true")) & ~df.get("receptor_status", pd.Series("", index=df.index)).eq("receptor_mismatch")]   # D102c / D104c demotions excluded
-        x = ok.merge(m.drop(columns="cmap_name"), on="pert_id").join(keep_ann, on="pert_id")
+        ok = apply_route(ok, unit)
+        ok = ok[~ok.local_route]   # D107: no systemic formulation
+        x = ok.merge(m.drop(columns=["cmap_name", "local_route"]), on="pert_id").join(keep_ann, on="pert_id")
         x = x.sort_values(order, ascending=False).drop_duplicates([unit, "fda_ingredient"])
         x["fda_rank"] = x.groupby(unit).cumcount() + 1
         x["drug"] = x.fda_ingredient.map(lambda v: " ".join(w for w in v.split() if w.upper() not in SALTS).capitalize())

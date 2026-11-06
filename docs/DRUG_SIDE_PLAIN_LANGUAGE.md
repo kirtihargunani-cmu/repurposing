@@ -51,7 +51,10 @@ follow-up questions:
    - For subgroups, `spec_sib_mech` compares the subgroup with its sibling (for example MSI-like vs CIN-like colon
      cancer).
 7. **Flag weak evidence.** If a drug's best test line looks nothing like the cancer, it gets the flag
-   `unmatched_lines` (C20). Flagged drugs stay in the table but are never put in the top tiers.
+   `unmatched_lines` (C20). If a drug only exists as a cream, eye drop, inhaler or other local form, it cannot reach a
+   tumor inside the body at a useful dose, so it gets the flag `local_route` ("Local use only"; D107). The one
+   exception is a bladder rinse (intravesical) for bladder cancer. Flagged drugs stay in the table but are never put
+   in the top tiers.
 8. **Label each cancer's evidence.** Each cancer is labeled `matched` (good candidates were tested in similar lines),
    `borrowed only`, or `no adequate compound`. Reports must state this label next to any list.
 9. **Check which receptors the drug really acts through.** A drug's annotated receptor counts for a cancer only if a
