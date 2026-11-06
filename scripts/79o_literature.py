@@ -2,7 +2,7 @@
 """Literature and trial links for the top v2 drug-disease pairs (user 2026-10-29; runs in `celligner`).
 
 Pairs: per disease (41 groups), the union of the top TOP_N drugs by spec_mech (reports lead with it, D80) and by rev,
-among drugs that pass the target gate, are not flagged (unmatched_lines / low_transfer), are not demoted by D102c / D104c
+among drugs that pass the target gate, are not flagged (unmatched_lines / low_transfer / local_route, D107), are not demoted by D102c / D104c
 (target_absent, receptor_mismatch) and have rev > 0
 (results/lincs/drug_reversal_split_v2_consensus.tsv). Unnamed LINCS compounds (BRD-...) are skipped.
 Searches (same for every pair; no manual curation):
@@ -132,6 +132,11 @@ def main():
     o = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
     df = o
     ok = o[o.passes_gate & ~o.unmatched_lines & ~o.low_transfer & (o.rev > 0) & ~o.cmap_name.str.startswith("BRD-") & (~df.get("target_absent", pd.Series(False, index=df.index)).astype(str).str.lower().eq("true")) & ~df.get("receptor_status", pd.Series("", index=df.index)).eq("receptor_mismatch")]   # D102c / D104c demotions excluded
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from route_flag import apply_route
+    ok = apply_route(ok)
+    ok = ok[~ok.local_route]   # D107: no systemic formulation
     a = ok.sort_values("spec_mech", ascending=False).groupby("group_id").head(TOP_N).assign(top_spec_mech=True)
     b = ok.sort_values("rev", ascending=False).groupby("group_id").head(TOP_N).assign(top_rev=True)
     sel = pd.concat([a, b]).groupby(["group_id", "cmap_name"], as_index=False).agg(

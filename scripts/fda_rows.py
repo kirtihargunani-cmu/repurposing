@@ -2,12 +2,17 @@
 
 Rows: drugs that pass the target gate (79b) and are matched to a Drugs@FDA ingredient (79p, fda_matches.tsv; marketed
 or discontinued). Several LINCS ids of one ingredient -> the best on the cohort's lead score (diseases: spec_mech, then
-spec, rev; subgroups: spec_sib_mech, then spec_mech, rev), as 79p does. Unlike 79p, flagged and non-reversing drugs are
+spec, rev; subgroups: spec_sib_mech, then spec_mech, rev), as 79p does. Unlike 79p, flagged (incl. D107 local_route) and non-reversing drugs are
 kept (the page shows them, weak evidence hidden by default). `drug` = FDA ingredient with salt words removed (79p rule).
 """
 from pathlib import Path
 
+import sys
+
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from route_flag import apply_route  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
@@ -37,5 +42,6 @@ def fda_rows():
         df = df[df.passes_gate.map(truthy) & df.pert_id.isin(fm.index)].copy()
         df["fda_ingredient"] = df.pert_id.map(fm)
         df["drug"] = df.fda_ingredient.map(drug_name)
-        out.append(df.sort_values(order, ascending=False).drop_duplicates(["group_id", "fda_ingredient"]))
+        df = df.sort_values(order, ascending=False).drop_duplicates(["group_id", "fda_ingredient"])
+        out.append(apply_route(df))   # D107 local_route flag (kept, shown on the pages)
     return out[0], out[1]
