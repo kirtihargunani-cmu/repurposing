@@ -1,0 +1,202 @@
+drug	cmax_value	cmax_unit	dose	quote	quote_check	mw	cmax_uM
+Doxorubicin	8.34	µg/mL	20 mg/m 2 single IV infusion (liposomal; AIDS-KS)	Dose Parameter (units) 10 mg/m 2 20 mg/m 2 Peak Plasma Concentration (µg/mL) 4.12 ± 0.215 8.34 ± 0.49	ok		
+Azacitidine	750.0	ng/ml	75 mg/m 2 single subcutaneous dose	Absorption Azacitidine is rapidly absorbed after subcutaneous administration; the peak plasma azacitidine concentration of 750 ± 403 ng/ml occurred in 0.5 hour after subcutaneous administration	ok	244.21	3.071127308464027
+Idarubicin					rejected		
+Eptifibatide					rejected		
+Cytarabine					rejected		
+Aminolevulinic acid					rejected		
+Ixazomib					rejected		
+Digoxin					rejected		
+Triclabendazole	1.16	μmol/L	10 mg/kg single oral dose with food (recommended: 2 x 10 mg/kg 12 h apart)	After oral administration of a single dose of 10 mg/kg triclabendazole with a 560-kcal meal to patients with fascioliasis, mean peak plasma concentrations (C max ) for triclabendazole, the sulfoxide and sulfone metabolites were 1.16, 38.6, and 2.29 μmol/L, respectively	ok	359.67	
+Cladribine	29.0	ng/ mL	10 mg oral	The cladribine mean maximum concentration (C max ) was in the range of 22 to 29 ng/ mL and corresponding mean AUC was in the range of 80 to 101 ng∙h/mL	ok	285.69	
+Sildenafil	440.0	ng/mL	100 mg single oral dose	Based on the pharmacokinetic profile of a single 100 mg oral dose given to healthy normal volunteers, the plasma levels of sildenafil at 24 hours post dose are approximately 2 ng/mL (compared to peak plasma levels of approximately 440 ng/mL	ok	474.59	0.9271160370003583
+Quizartinib	529.0	ng/mL	53 mg once daily, maintenance, steady state	Steady state exposure following 53 mg VANFLYTA once daily during maintenance therapy in patients with newly diagnosed AML C max 529 ng/mL	ok	560.68	0.9434971819932939
+Fidaxomicin	5.2	ng/mL	200 mg single oral dose	Pharmacokinetic Parameters of Fidaxomicin 200 mg in Healthy Adult Males Parameter Fidaxomicin OP-1118 N Value N Value C max (ng/mL) 14 5.20 ± 2.81	ok		
+Perampanel					rejected		
+Tofacitinib	84.7	ng/mL	10 mg twice daily, steady state	Dosing Regimen 5 mg Twice Daily 10 mg Twice Daily AUC 2 4 (ng.hr/mL) 263.4 (15) 539.6 (22) C m a x (ng/mL) 42.7 (26) 84.7 (18)	ok	312.38	0.2711441193418273
+Ixabepilone	252.0	ng/mL	40 mg/m 2 single IV dose	Following administration of a single 40 mg/m 2 dose of IXEMPRA, the mean (% coefficient of variation) maximum plasma concentration (Cmax) was 252 ng/mL	ok	506.71	0.4973258866018038
+Phenytoin					rejected		
+Paroxetine	61.7	ng/mL	30 mg once daily, steady state	received 30 mg tablets daily for 30 days, steady-state paroxetine concentrations were achieved by approximately 10 days for most subjects, although it may take substantially longer in an occasional patient. At steady state, mean values of C max , T max , C min , and T ½ were 61.7 ng/mL	ok	329.37	0.18732732185687828
+Macitentan					rejected		
+Quinine	6.8	mcg/mL	648 mg three times daily for 7 days, steady state (healthy volunteers)	The steady state C max (±SD) and AUC 0-8 (±SD) for healthy volunteers are 6.8 ± 1.24 mcg/mL and 48.8 ± 9.15 mcg*h/mL, respectively, following 7 days of oral quinine sulfate 648 mg three times daily	ok		
+Nintedanib					rejected		
+Afatinib					rejected		
+Podofilox					rejected		
+Calcitriol	60.0	pg/mL	0.5 mcg single oral dose	Following a single oral dose of 0.5 mcg, mean serum concentrations of calcitriol rose from a baseline value of 40.0±4.4 (SD) pg/mL to 60.0±4.4 pg/mL at 2 hours	ok	416.65	0.00014400576023040922
+Regorafenib	3.9	µg/mL	160 mg once daily, steady state	At steady-state, regorafenib reaches a geometric mean C max of 3.9 µg/mL and a geometric mean AUC of 58.3 µg*h/mL	ok	482.82	8.077544426494345
+Maraviroc	888.0	ng/mL	300 mg twice daily (healthy volunteers, Phase 1)	Mean Maraviroc Pharmacokinetic Parameters in Adults Patient Population Maraviroc Dose n AUC 12 (ng.h/mL) C max (ng/mL) C min (ng/mL) Healthy volunteers (Phase 1) 300 mg twice daily 64 2908 888	ok		
+Meloxicam	2.3	µg/mL	15 mg capsules, steady state (elderly males, fed)	Pharmacokinetic Parameters (% CV) Steady State Single Dose Healthy male adults (Fed) 2 Elderly males (Fed) 2 Elderly females (Fed) 2 Renal failure (Fasted) Hepatic insufficiency (Fasted) 7.5 mg 3 tablets 15 mg capsules 15 mg capsules 15 mg capsules 15 mg capsules N 18 5 8 12 12 C max [µg/mL] 1.05 (20) 2.3 (59)	ok	351.41	6.54506132437893
+Dabrafenib					rejected		
+Dasatinib	82.2	ng/mL	100 mg once daily, steady state	At 100 mg QD, the maximum concentration at steady state (C max ) is 82.2 ng/mL (CV% 69%), area under the plasma drug concentration time curve	ok	488.02	0.16843571984754724
+Lacosamide					rejected		
+Lovastatin					rejected		
+Nelfinavir	4.0	mg/L	1250 mg twice daily for 28 days, steady state (HIV patients)	Regimen AUC 24 mg∙h/L C max mg/L C trough Morning mg/L C trough Afternoon or Evening mg/L Data are mean ± SD 1250 mg BID 52.8±15.7 4.0±0.8	ok	567.8	7.044734061289187
+Brompheniramine					rejected		
+Cobimetinib	273.0	ng/mL	60 mg once daily, steady state	Following oral dosing of 60 mg once daily in cancer patients, the median time to achieve peak plasma levels (T max ) was 2.4 (range:1–24) hours, geometric mean steady-state AUC 0-24h was 4340 ng∙h/mL (61% CV) and C max was 273 ng/mL (60% CV)	ok	531.32	0.5138146503049009
+Tamoxifen	122.0	ng/mL	20 mg once daily for 3 months, steady state	The average steady-state plasma concentrations of tamoxifen and N-desmethyl tamoxifen after administration of 20 mg tamoxifen once daily for 3 months are 122 ng/mL	ok	371.52	0.32838070628768307
+Allopurinol	3.0	mcg/mL	300 mg single oral dose	After a single oral dose of 300 mg allopurinol tablets, maximum plasma levels of about 3 mcg/mL of allopurinol tablets and 6.5 mcg/mL of oxipurinol are produced	ok	136.11	22.040996253030634
+Entecavir	8.2	ng/mL	1 mg once daily, steady state	For a 1 mg oral dose, C max was 8.2 ng/mL and C trough was 0.5 ng/mL	ok	277.28	0.029572994806693596
+Penicillin g	400.0	mcg/mL	5 million units single IV dose over 3-5 min (concentration at 5-6 min)	In a study of ten patients administered a single 5 million unit dose of penicillin G intravenously over 3–5 minutes, the mean serum concentrations were 400 mcg/mL, 273 mcg/mL and 3.0 mcg/mL at 5–6 minutes, 10 minutes and 4 hours after completion of the injection, respectively	ok	334.4	1196.1722488038279
+Sirolimus	15.0	ng/mL	2 mg daily (tablets), steady state, renal transplant patients with cyclosporine	FOLLOWING SIROLIMUS 2 MG DAILY a,b Multiple Dose (daily dose) Solution Tablets C max (ng/mL) 14.4 ± 5.3 15.0 ± 4.9	ok		
+Erlotinib					rejected		
+Pimozide					rejected		
+Nifedipine	115.0	ng/mL	90 mg extended-release tablet, single dose, fasting	The mean peak plasma concentration of nifedipine following a 90 mg nifedipine extended-release tablet, administered under fasting conditions, is approximately 115 ng/mL	ok	346.34	0.33204365652249235
+Atrasentan					rejected		
+Simvastatin					rejected		
+Neratinib					rejected		
+Imatinib					rejected		
+Gefitinib					rejected		
+Rimantadine	74.0	ng/mL	100 mg single oral dose	The mean ± SD peak plasma concentration after a single 100 mg dose of rimantadine hydrochloride was 74 ± 22 ng/mL	ok	179.31	0.41269310133288717
+Dorzolamide					rejected		
+Methoxsalen					rejected		
+Methylprednisolone					rejected		
+Pazopanib	58.1	mcg/mL	800 mg once daily	The recommended dosage of 800 mg once daily results in mean AUC of 1,037 mcg•h/mL and C max of 58.1 mcg/mL. There was no consistent increase in AUC or C max at pazopanib doses above 800 mg.	ok	437.53	132.79089433867392
+Clemastine					rejected		
+Naltrexone					rejected		
+Dexrazoxane	36.5	mcg/mL	500 mg/m 2 IV over 15-30 min (10:1 with doxorubicin 50 mg/m2)	The mean peak plasma concentration of dexrazoxane was 36.5 mcg/mL at 15- minute after intravenous administration of 500 mg/m 2 dose of dexrazoxane for injection over 15 to 30 minutes prior to the 50 mg/m 2 doxorubicin dose	ok	268.27	136.0569575427741
+Amlodipine					rejected		
+Azilsartan medoxomil					rejected		
+Toremifene					rejected		
+Etodolac	37.0	μg/mL	600 mg single oral dose	Mean (± 1 SD) peak plasma concentrations (C max ) range from approximately 14 ± 4 to 37 ± 9 μg/mL after 200 to 600 mg single doses	ok	287.36	128.75835189309575
+Leflunomide					rejected		
+Prednisone					rejected		
+Methotrexate					rejected		
+Perphenazine	984.0	pg/mL	4 mg every 8 hours for 5 days, steady state (normal volunteers)	received perphenazine 4 mg q8h for 5 days, steady-state concentrations of perphenazine were reached within 72 hours. Mean (%CV) C max and C min values for perphenazine and 7-hydroxyperphenazine at steady-state are listed below: Parameter Perphenazine 7 - Hydroxyperphenazine C m a x (pg/mL) 984 (43)	ok	403.98	0.002435764146739937
+Verapamil	400.0	ng/mL	120 mg every 6 hours (immediate release), chronic dosing	Chronic oral administration of 120 mg of verapamil HCl every 6 hours resulted in plasma levels of verapamil ranging from 125 to 400 ng/mL	ok	454.61	0.8798750577418006
+Metoprolol					rejected		
+Nizatidine	3600.0	mcg/L	300 mg single oral dose	Peak plasma concentrations (700 to 1,800 mcg/L for a 150 mg dose and 1,400 to 3,600 mcg/L for a 300 mg dose) occur from 0	ok	331.47	10.860711376595166
+Clotrimazole					rejected		
+Naftifine					rejected		
+Warfarin					rejected		
+Lidocaine					rejected		
+Rosuvastatin					rejected		
+Dutasteride	40.0	ng/mL	0.5 mg once daily for 1 year, steady state	The terminal elimination half-life of dutasteride is approximately 5 weeks at steady state. The average steady-state serum dutasteride concentration was 40 ng/mL following 0.5 mg/day for 1 year	ok		
+Lisinopril					rejected		
+Eplerenone					rejected		
+Carbidopa					rejected		
+Isotretinoin	862.0	ng/mL	80 mg single oral dose (2 x 40 mg), fed	Isotretinoin 2×40 mg Capsules AUC 0–∞ (ng∙hr/mL) C max (ng/mL) T max (hr) t 1/2 (hr) Fed Eating a standardized high-fat meal. 10,004 (22%) 862 (22%)	ok	300.44	2.8691252829183864
+Benazepril					rejected		
+Triamterene					rejected		
+Ketorolac	6.85	mcg/mL	30 mg IV bolus four times daily, steady state	C max (mcg/mL) [steady state qid] 1.05 ± 0.26 4 1.56 ± 0.44 4 3.11 ± 0.87 4 N/A 5 3.09 ±1.17 4 6.85 ± 2.61	ok	255.27	26.834332275629723
+Losartan					rejected		
+Cobicistat	1.28	mcg/mL	150 mg once daily with atazanavir, steady state	Adults From pooled Intensive PK analysis of trials with TYBOST + atazanavir. , From Intensive PK analysis of Trial GS-US-299-0102 with TYBOST + darunavir. , N=30 N=21 N=30 N=21 AUC tau (mcg∙hr/mL) 9.65 (41.8) 7.69 (43.9) 39.96 (52.1) 90.56 (45.3) C max (mcg/mL) 1.28 (35.6)	ok	776.04	1.6493995154888923
+Ketoprofen	3.9	mg/L	4 x 50 mg immediate-release (50 mg every 4 hours), fasted	Kinetic Parameters Ketoprofen Immediate-Release (4 x 50 mg) Ketoprofen Extended-Release (1 x 200 mg) Extent of oral absorption (bioavailability) F s (%) ~ 90 ~ 90 Peak plasma levels C max (mg/L) Fasted 3.9 ± 1.3	ok	254.29	15.33682016595226
+Emtricitabine	1.8	mcg/mL	200 mg once daily, steady state (HIV-1 infected)	Following multiple dose oral administration of FTC to 20 HIV-1 infected subjects, the steady-state plasma FTC C max was 1.8 ± 0.7 mcg/mL	ok	247.25	7.280080889787664
+Brexpiprazole					rejected		
+Budesonide					rejected		
+Medroxyprogesterone	7.0	ng/mL	150 mg single IM dose (depot)	Following a single 150 mg IM dose of medroxyprogesterone acetate injectable suspension in eight women between the ages of 28 and 36 years old, medroxyprogesterone acetate concentrations, measured by an extracted radioimmunoassay procedure, increase for approximately 3 weeks to reach peak plasma concentrations of 1 to 7 ng/mL	ok	386.53	0.01810984917082762
+Danazol	253.7	ng/mL	400 mg single oral dose, fed (healthy females)	Fasting Fed Fasting Fed Fasting Fed 100 45.9 ± 23.9 113.8 ± 46.0 1-8 2-6 484 ± 263 741 ± 265 200 63.8 ± 27.7 159 ± 57.3 1-6 2-4 681 ± 363 1252 ± 307 400 60.4 ± 30.0 253.7 ± 105.5	ok		
+Doxycycline	3.61	mcg/mL	200 mg single oral dose	Following a 200 mg dose of doxycycline monohydrate, 24 normal adult volunteers averaged the following serum concentration values: Time (hr): 0.5 1.0 1.5 2.0 3.0 4.0 8.0 12.0 24.0 48.0 72.0 Conc. 1.02 2.26 2.67 3.01 3.16 3.03 2.03 1.62 0.95 0.37 0.15 (mcg/mL) Average Observed Values Maximum Concentration 3.61 mcg/mL	ok		
+Terbinafine	1.0	mcg/mL	250 mg single oral dose	Peak plasma concentrations of 1 mcg/mL appear within 2 hours after a single 250 mg dose; the AUC is approximately 4.56 mcg•h/mL	ok	291.44	3.4312379906670327
+Ketoconazole	3.5	mcg/mL	200 mg single oral dose with a meal	Mean peak plasma concentrations of approximately 3.5 mcg/mL are reached within 1 to 2 hours, following oral administration of a single 200 mg dose	ok	531.44	6.5858798735511055
+Mirtazapine					rejected		
+Zileuton	5.9	mcg/mL	600 mg immediate-release four times daily (asthma patients)	In patients with asthma receiving zileuton immediate-release tablets 600 mg four times daily, peak plasma levels averaging 5.9 mcg/mL	ok	236.3	24.96826068556919
+Lamivudine	2.6	mcg/mL	300 mg single oral dose (normal renal function)	after a Single 300-mg Oral Dose of 3TC in Subjects with Varying Degrees of Renal Function Parameter Creatinine Clearance Criterion (Number of Subjects) > 60 mL/min (n = 6) 10 to 30 mL/min (n = 4) < 10 mL/min (n = 6) Creatinine clearance (mL/min) 111 ± 14 28 ± 8 6 ± 2 C max (mcg/mL) 2.6 ± 0.5	ok	229.26	11.340835732356277
+Tacrolimus	19.2	ng/mL	0.2 mg/kg/day oral (kidney transplant patients)	Kidney Transplant Patients 26 IV(0.02 mg/kg/12 hr) * * 294 † ± 262 18.8 ± 16.7 0.083 ± 0.050 1.41 ± 0.66 PO(0.2 mg/kg/day) 19.2 ± 10.3	ok	804.03	0.023879705981120106
+Moxifloxacin	4.5	mg/L	400 mg once daily oral, multiple dose (steady state)	Multiple Dose Oral Healthy young male/female (n = 15) 4.5 ± 0.5	ok	401.44	11.20964527700279
+Econazole					rejected		
+Beclomethasone					rejected		
+Rilpivirine	167.0	ng/mL	25 mg once daily, steady state (postpartum women)	Postpartum (6-12 Weeks) (n=11) 2 nd Trimester of pregnancy (n=15) 3 rd Trimester of pregnancy (n=13) C 0h , ng/mL 111 ± 69.2 65.0 ± 23.9 63.5 ± 26.2 C min , ng/mL 84.0 ± 58.8 54.3 ± 25.8 52.9 ± 24.4 C max , ng/mL 167 ± 101	ok	366.43	0.45574871053134297
+Chlorhexidine					rejected		
+Flucytosine	80.0	mcg/mL	150 mg/kg/day in divided doses every 6 hours (6-week regimen, with amphotericin B)	Other studies revealed mean serum concentrations of approximately 70 to 80 mcg/mL 1 to 2 hours after a dose in patients with normal renal function receiving a 6-week regimen of flucytosine (150 mg/kg/day given in divided doses every 6 hours	ok	129.09	619.7226741033387
+Timolol					rejected		
+Topotecan					rejected		
+Sonidegib	1030.0	ng/mL	200 mg once daily, steady state (estimated)	Following a dose of 200 mg once daily, the estimated mean steady-state C max is 1030 ng/mL, AUC 0-24h is 22 μg*h/mL	ok	485.51	2.1214805050359415
+Pioglitazone					rejected		
+Metronidazole	40.0	mcg/mL	2,000 mg single oral dose	Oral administration of 250 mg, 500 mg, or 2,000 mg produced peak plasma concentrations of 6 mcg/mL, 12 mcg/mL, and 40 mcg/mL, respectively.	ok	171.16	233.69946249123626
+Trifluridine					rejected		
+Tretinoin	138.0	ng/mL	22.5 mg/m2 orally twice daily, after 1 week of continuous treatment	the mean ± SD peak tretinoin concentrations after the first dose was 394 ± 89 and after 1 week of continuous treatment was 138 ± 139 ng/mL	ok	300.44	0.4593263213952869
+Vorinostat	1.2	µM	400 mg once daily with food, steady state	At steady state in the fed-state, oral administration of multiple 400-mg doses of vorinostat resulted in a mean AUC and C max and a median T max of 6.0±2.0 µM∙hr, 1.2±0.53 µM and 4 (0.5-14) hours, respectively.	ok	264.32	1.2
+Ponatinib	73.0	ng/mL	45 mg once daily, presumed steady state	The mean (CV%) C max and AUC( 0-24 ) of ICLUSIG 45 mg orally once daily at presumed steady-state in patients with advanced hematologic malignancies were 73 ng/mL (74%)	ok	532.57	0.13707118313085603
+Duvelisib	1.5	µg/mL	25 mg twice daily, steady state	At steady state following 25 mg BID administration of duvelisib in patients, the geometric mean (CV%) maximum concentration (C max ) was 1.5 (64%) µg/mL	ok	416.87	3.5982440569002327
+Nilotinib	2260.0	ng/mL	400 mg twice daily, steady state	In adult patients with resistant or intolerant Ph+ CML given nilotinib 400 mg twice daily, the steady-state mean (% CV) C max and AUC 0-12h were 2,260 ng/mL (35%)	ok	529.53	4.267935716578854
+Tazarotene					rejected		
+Ciclesonide					rejected		
+Sumatriptan	74.0	ng/mL	6 mg subcutaneous single dose	the maximum serum concentration (C max ) of sumatriptan was (mean ± standard deviation) 74 ± 15 ng/mL	ok	295.41	0.2504993060492197
+Lonafarnib	2695.0	ng/mL	150 mg/m2 twice daily, steady state	150 mg/m 2 N 18 18 18 8 Results 4 (0, 12) 2695 (1090) 16020 (4978) 19539 (6434)	ok	638.83	4.218649719017579
+Disopyramide	3.23	mcg/ml	300 mg single oral dose (immediate-release)	With a single 300-mg oral dose, peak disopyramide plasma concentrations of 3.23 ± 0.75 mcg/ml (mean ± SD) at 2.5 ± 2.3 hours were obtained with two 150-mg immediate-release capsules	ok	339.48	9.514551667255802
+Fedratinib	1804.0	ng/mL	400 mg once daily, steady state	At the dose of 400 mg once daily, the geometric mean (coefficient of variation, %CV) fedratinib C max is 1804 ng/mL (49%)	ok	524.69	3.4382206636299526
+Paclitaxel	3650.0	ng/mL	175 mg/m2 3-hour IV infusion	175 3 5 3,650 15,007 20.2 12.2 C max = Maximum plasma concentration	ok	853.92	4.274405096496159
+Zafirlukast	326.0	ng/ml	20 mg single oral dose	Mean (% Coefficient of Variation) pharmacokinetic parameters of zafirlukast following single 20 mg oral dose administration to male volunteers (n=36) 1. Median and range C max ng/ml t max 1 h AUC ng•h/mL t 1/2 h CL/f L/h 326 (31.0)	ok	575.69	0.5662769893519081
+Etoposide					rejected		
+Defactinib					rejected		
+Sorafenib					rejected		
+Clofazimine	0.7	mcg/mL	100 mg daily	The average serum concentrations of clofazimine in leprosy patients treated with LAMPRENE 100 mg and 300 mg daily were 0.7 mcg/mL and 1 mcg/mL, respectively.	ok	473.41	1.478633742422002
+Sitagliptin	950.0	nM	100 mg single oral dose	Following a single oral 100-mg dose to healthy volunteers, mean plasma AUC of sitagliptin was 8.52 µM•hr, C max was 950 nM	ok	407.32	0.95
+Pitavastatin					rejected		
+Pralatrexate					rejected		
+Colchicine	6.2	ng/mL	1.8 mg over one hour (gout flare regimen), single course	colchicine tablets given as 1.8 mg colchicine over one hour to healthy, young adults under fasting conditions, colchicine appears to be readily absorbed, reaching mean maximum plasma concentrations of 6.2 ng/mL	ok	399.44	0.015521730422591631
+Olmesartan medoxomil					rejected		
+Everolimus					rejected		
+Fluticasone					rejected		
+Pindolol	167.0	ng/mL	20 mg single oral dose	After a single dose, intersubject variation for peak plasma concentrations was about 4-fold (e.g., 45 to 167 ng/mL for a 20 mg dose).	ok	248.33	0.6724922482180968
+Trametinib					rejected		
+Fluvastatin					rejected		
+Amikacin	38.0	mcg/mL	500 mg (7.5 mg/kg) IV infusion over 30 min, single dose	Single doses of 500 mg (7.5 mg/kg) administered to normal adults as an infusion over a period of 30 minutes produced a mean peak serum concentration of 38 mcg/mL at the end of the infusion	ok		
+Cabozantinib					rejected		
+Talazoparib	19.0	ng/mL	1 mg once daily, steady state	the mean [% coefficient of variation (CV%)] AUC and maximum observed plasma concentration (C max ) of talazoparib at steady-state was 173 (32%) ng.hr/mL and 19 (32%) ng/mL, respectively.	ok	380.36	0.04995267641182038
+Mycophenolate mofetil	20.0	mcg/mL	1.5 g twice daily oral, heart transplant >6 months (steady state)	Heart transplant Patients (twice daily dosing) Time After Transplantation Dose/Route T max (h) C max (mcg/mL) Interdosing Interval AUC (0-12h) (mcg•h/mL ) Early (Day before discharge) 1.5 g/oral 1.8 (±1.3) (n=11) 11.5 (±6.8) (n=11) 43.3 (±20.8) (n=9) Late (Greater than 6 months) 1.5 g/oral 1.1 (±0.7) (n=52) 20.0 (±9.4)	ok	433.5	46.1361014994233
+Pyrimethamine					rejected		
+Netupitant	496.0	ng/mL	300 mg netupitant (one AKYNZEO capsule) single oral dose, cancer patients	C max (ng/mL) Healthy Subjects 434 (56) 1.53 (25) Patients 496 (49) 0.95 (35)	ok	578.6	0.8572416176978914
+Tolcapone	6.0	mcg/mL	200 mg three times daily	With tid dosing of 100 mg or 200 mg, C max is approximately 3 mcg/mL and 6 mcg/mL, respectively.	ok	273.24	21.958717610891522
+Atorvastatin					rejected		
+Palbociclib					rejected		
+Acamprosate	350.0	ng/mL	666 mg three times daily, steady state	Steady-state peak plasma concentrations after acamprosate calcium delayed-release tablets doses of 2 x 333 mg tablets three times daily average 350 ng/mL	ok	181.21	1.9314607361624636
+Etravirine	569.0	ng/mL	200 mg twice daily, postpartum women	C max , ng/mL 569 ± 261 (528) 774 ± 300 (828) 785 ± 238 (694)	ok	435.29	1.30717452732661
+Lurasidone					rejected		
+Ropinirole					rejected		
+Irbesartan					rejected		
+Fluorouracil					rejected		
+Efavirenz	12.9	µM	600 mg once daily, steady state	In 35 HIV-1 infected subjects receiving EFV 600 mg once daily, steady-state C max was 12.9 ± 3.7 µM (mean ± SD), C min was 5.6 ± 3.2 µM	ok	315.68	12.9
+Acitretin	416.0	ng per mL	50 mg single oral dose	After administration of a single 50-mg oral dose of acitretin to 18 healthy subjects, maximum plasma concentrations ranged from 196 to 728 ng per mL (mean: 416 ng per mL)	ok	326.44	
+Alectinib	665.0	ng/mL	600 mg twice daily, steady state	the geometric mean (coefficient of variation %) steady-state maximal concentration (C max,ss ) for alectinib was 665 ng/mL (44%) and for M4 was 246 ng/mL (45%)	ok	482.63	1.3778671031639145
+Olaparib	7.6	μg/mL	300 mg twice daily, steady state	The mean steady state olaparib C max and AUC is 7.6 μg/mL (35%) and 49.2 μg*h/mL (44%), following a dose of 300 mg twice daily.	ok	434.47	17.492577162980183
+Nicardipine	133.0	ng/mL	40 mg every 8 hours, steady state	Steady-state C max values following 20-, 30-, and 40-mg doses every 8 hours averaged 36, 88, and 133 ng/mL, respectively.	ok	479.53	0.2773549100160574
+Cyclophosphamide					rejected		
+Ethacrynic acid					rejected		
+Raloxifene					rejected		
+Telmisartan					rejected		
+Tovorafenib	6.9	µg/mL	380 mg/m2 once weekly (max 600 mg), steady state	Tovorafenib steady state maximum concentration (C max ) is 6.9 µg/mL (23%) and the area under the concentration-time curve (AUC) is 508 µg*h/mL (31%	ok	506.3	13.628283626308512
+Ivermectin	46.6	ng/mL	12 mg single oral dose (mean 165 mcg/kg)	after single 12-mg doses of ivermectin tablets in fasting healthy volunteers (representing a mean dose of 165 mcg/kg), the mean peak plasma concentrations of the major component (H 2 B 1a ) were 46.6 (±21.9)	ok	875.11	0.053250448515043826
+Loperamide					rejected		
+Sertraline	142.0	ng/mL	200 mg/day for 30 days, steady state	a group of 22 separately studied adults between 18 and 45 years of age (11 male, 11 female) received 30 days of 200 mg/day sertraline and exhibited a mean sertraline AUC (0-24 hr) of 2570 ng-hr/mL, mean C max of 142 ng/mL	ok	306.24	0.4636886102403345
+Dipyridamole	1.98	mcg/mL	200 mg extended-release twice daily, steady state	The peak plasma concentration at steady-state is 1.98 mcg/mL (1.01 to 3.99 mcg/mL) and the steady-state trough concentration is 0.53 mcg/mL	ok	504.64	3.9235890932149653
+Valsartan					rejected		
+Quinidine					rejected		
+Pilocarpine	41.0	ng/mL	10 mg three times daily (last dose of multiple dosing)	T max values were 1.25 hours and 0.85 hours. C max values were 15 ng/mL and 41 ng/mL.	ok	208.26	0.19686929799289352
+Ivacaftor	768.0	ng/mL	150 mg single oral dose, fed	the mean (±SD) for AUC and C max were 10600 (5260) ng*hr/mL and 768 (233) ng/mL, respectively.	ok	392.5	1.956687898089172
+Rivaroxaban					rejected		
+Bromocriptine	628.0	pg/mL	5 mg twice daily for 14 days, steady state	Following bromocriptine mesylate 5 mg administered twice daily for 14 days, the bromocriptine C max and AUC at steady-state were 628 ± 375 pg/mL	ok		
+Nabumetone					rejected		
+Edoxaban					rejected		
+Cimetidine					rejected		
+Prednisolone					rejected		
+Donepezil					rejected		
+Alprazolam					rejected		
+Latanoprost					rejected		
+Grazoprevir	165.0	ng/mL	100 mg once daily (ZEPATIER), steady state, non-cirrhotic HCV patients	Grazoprevir 1420 (1400, 1530) 165 (161, 176) 18.0 (17.8, 19.9)	ok	766.92	0.21514629948364888
+Carvedilol					rejected		
+Lorazepam	20.0	ng/mL	2 mg single oral dose	The peak plasma level of lorazepam from a 2 mg dose is approximately 20 ng/mL.	ok	321.16	0.06227425582264291
+Formoterol					rejected		
+Ranitidine	545.0	ng/mL	150 mg single oral dose	compared to an intravenous (IV) injection with mean peak levels of 440 to 545 ng/mL occurring 2 to 3 hours after a 150 mg dose.	ok		
+Anagrelide					rejected		
+Piroxicam	8.0	mcg/mL	20 mg once daily, repeated dosing (steady state)	while maximum drug plasma concentrations, after repeated daily administration of 20 mg piroxicam, usually stabilize at 3 mcg/mL to 8 mcg/mL.	ok		
+Ledipasvir	323.0	ng/mL	90 mg once daily (ledipasvir/sofosbuvir 90/400 mg), steady state, HCV patients	Steady-state C max for ledipasvir, sofosbuvir, and GS-331007 were 323, 618, and 707 ng/mL, respectively.	ok	889.02	0.3633214100920114
+Fluoxetine	302.0	ng/mL	40 mg/day for 30 days	After 30 days of dosing at 40 mg/day, plasma concentrations of fluoxetine in the range of 91 ng/mL to 302 ng/mL and norfluoxetine in the range of 72 ng/mL to 258 ng/mL have been observed.	ok	309.33	0.9763036239614652
+Quetiapine					rejected		
+Drospirenone	70.3	ng/mL	3 mg once daily (with EE 0.02 mg), cycle 1 day 21 (steady state)	DRSP Cycle / Day No. of Subjects C max a (ng/mL) T max b (h) AUC(0 to 24h) a (ng•h/mL) t 1/2 a (h) 1/1 23 38.4 (25) 1.5 (1 to 2) 268 (19) NA c 1/21 23 70.3 (15)	ok		
+Carbamazepine					rejected		
+Prazosin					rejected		
+Norethindrone	12.7	ng/mL	1 mg norethindrone acetate once daily (1/30 or 1/35 strength), steady state	1/30 12 12.7 (4.1) 102 (32) 166 (85) 139 (42) 1/35 21 12.7 (4.1)	ok	340.46	0.037302473124596135
+Flumazenil	24.0	ng/mL	1 mg total IV over 5 minutes	Pharmacokinetic parameters following a 5-minute infusion of a total of 1 mg of flumazenil mean (coefficient of variation, range): C max (ng/mL) 24 (38%, 11 -43)	ok	303.29	0.0791321837185532
+Metoclopramide					rejected		
+Mifepristone					rejected		
+Mefenamic acid	20.0	mcg/mL	1 g single oral dose	Following a single 1-gram oral dose, mean peak plasma levels ranging from 10 to 20 mcg/mL have been reported.	ok	241.29	82.88781134734137
+Ziprasidone					rejected		
+Spironolactone					rejected		
+Mometasone furoate					rejected		
+Itraconazole	1.7	mcg/ml	130 mg twice daily (TOLSURA), steady state	Steady-state concentrations are generally reached within about 15 days, with mean C max values of 0.6 mcg/ml and 1.7 mcg/ml after oral administration of 130 mg once daily and 130 mg twice daily, respectively	ok	705.65	2.4091263374194005
+Oxaprozin					rejected		
+Aripiprazole					rejected		
+Melphalan	2.8	mcg/mL	20 mg/m2 IV	Mean (±SD) peak melphalan plasma concentrations in myeloma patients given IV melphalan at doses of 10 or 20 mg/m 2 were 1.2 ± 0.4 and 2.8 ± 1.9 mcg/mL, respectively.	ok	305.21	9.174011336456866
+Amiodarone	26.0	mg/L	150 mg IV over 10 minutes (loading), patients with VF/VT	Peak concentrations after 10-minute infusions of 150 mg intravenous amiodarone in patients with ventricular fibrillation (VF) or hemodynamically unstable ventricular tachycardia (VT) range between 7 and 26 mg/L.	ok	645.32	40.290088638195
