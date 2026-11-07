@@ -221,7 +221,8 @@ flowchart LR
   FDA drugs of every disease and subgroup by FDA ingredient name. ClinicalTrials.gov matches loosely; counts are an
   upper bound. Outputs `results/lincs/literature_v2_consensus.tsv`, `literature_fda_top_v2.tsv`.
 - **FDA rankings (`79p`):** Drugs@FDA (downloaded 2026-10-29 to `data/raw/drugsatfda`, not in git) matched by
-  ingredient name with salts removed (527 of 3,058 LINCS drugs; 458 marketed). Per disease the eligible FDA drugs
+  ingredient name with salts removed (542 of 3,058 LINCS drugs; 471 marketed). Salt words, INN / USAN aliases and
+  exclusions are kept in `scripts/fda_rows.py` (D112). Per disease the eligible FDA drugs
   ranked by `spec_mech`, per subgroup by `spec_sib_mech`. Outputs `results/lincs/fda_ranking_v2_consensus.tsv`,
   `fda_ranking_strata_v2_consensus.tsv`, `fda_matches.tsv`.
 - **Page (`79q`):** `results/lincs/fda_rankings_v2.html`, self-contained (template `scripts/templates/fda_rankings.html`);

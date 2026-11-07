@@ -2,8 +2,8 @@
  "rule": "D104b / D104c (rho 0.4)",
  "tables": "_v2_consensus",
  "groups": {
-  "": 47170,
-  "ok": 2821,
+  "": 47168,
+  "ok": 2823,
   "receptor_mismatch": 395,
   "acts_on_tumor_environment": 374
  },

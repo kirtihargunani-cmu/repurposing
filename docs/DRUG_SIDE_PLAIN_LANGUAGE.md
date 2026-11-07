@@ -64,6 +64,11 @@ follow-up questions:
    'generic mechanism' but kept. (Fix D111, 2026-11-07: the blood-level check had skipped 24 drugs whose FDA values
    were found but not converted to the lab's units, among them bortezomib and everolimus; they are now checked, and
    the check covers every lab version of a drug, not only one. Bortezomib leaves two top-10 lists.)
+   (Fix D112, 2026-11-07: some FDA drugs were missed because their FDA name carries an unusual salt word, for
+   example "lapatinib ditosylate", or a different spelling, for example "tioguanine" vs "thioguanine". Fifteen lab
+   compounds now match, among them lapatinib, a standard HER2 breast cancer drug, which now ranks 6th of 20 FDA
+   drugs in HER2 breast cancer. Cyclosporine, an immune-suppressing transplant drug, also appears and lands in ten
+   top-10 lists; whether lab doses are reachable in patients has not been checked for it yet.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).
