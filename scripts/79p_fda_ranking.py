@@ -30,12 +30,7 @@ from evidence_flags import apply_evidence  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 FDA = ROOT / "data/raw/drugsatfda/extracted"
-SALTS = {"HYDROCHLORIDE", "DIHYDROCHLORIDE", "HCL", "SODIUM", "DISODIUM", "POTASSIUM", "CALCIUM", "MAGNESIUM", "ZINC",
-         "MESYLATE", "DIMESYLATE", "MALEATE", "TARTRATE", "BITARTRATE", "CITRATE", "SULFATE", "BISULFATE", "PHOSPHATE",
-         "ACETATE", "DIACETATE", "SUCCINATE", "FUMARATE", "HEMIFUMARATE", "HYDROBROMIDE", "BROMIDE", "CHLORIDE", "TOSYLATE",
-         "BESYLATE", "MALATE", "LACTATE", "GLUCONATE", "MONOHYDRATE", "DIHYDRATE", "TRIHYDRATE", "HYDRATE", "ANHYDROUS",
-         "TROMETHAMINE", "MEGLUMINE", "ESYLATE", "NAPSYLATE", "PAMOATE", "STEARATE", "NITRATE", "OXALATE", "SALICYLATE",
-         "HYCLATE", "DECANOATE", "PROPIONATE", "VALERATE", "DIPROPIONATE", "BENZOATE", "CYPIONATE", "ENANTHATE"}
+from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2)
 
 
 def norm(s):
@@ -75,8 +70,10 @@ def main():
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False).drop_duplicates("pert_id")
     rows = []
     for r in ann.itertuples(index=False):
-        for col in ("cmap_name", "chembl_pref_name", "hub_name"):
-            k = norm(getattr(r, col))
+        if r.cmap_name in FDA_EXCLUDE:   # D112
+            continue
+        for col in ("fda_alias", "cmap_name", "chembl_pref_name", "hub_name"):
+            k = norm(FDA_ALIAS.get(r.cmap_name)) if col == "fda_alias" else norm(getattr(r, col))
             if k in t.index:
                 rows.append(dict(pert_id=r.pert_id, cmap_name=r.cmap_name, matched_on=col, **t.loc[k].to_dict()))
                 break
@@ -99,7 +96,7 @@ def main():
         x = ok.merge(m.drop(columns=["cmap_name", "local_route"]), on="pert_id").join(keep_ann, on="pert_id")
         x = x.sort_values(order, ascending=False).drop_duplicates([unit, "fda_ingredient"])
         x["fda_rank"] = x.groupby(unit).cumcount() + 1
-        x["drug"] = x.fda_ingredient.map(lambda v: " ".join(w for w in v.split() if w.upper() not in SALTS).capitalize())
+        x["drug"] = x.fda_ingredient.map(drug_name)
         x["n_fda_eligible"] = x.groupby(unit)[unit].transform("size")
         x["drugsatfda_url"] = x.fda_appl_nda_bla.fillna("").str.split(";").str[0].map(
             lambda a: f"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo={a}" if a else "")

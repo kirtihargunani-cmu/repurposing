@@ -794,6 +794,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - D111 in production: the exposure flag (D109b) recovers 24 verified Cmax values lost to a molecular-weight lookup and
   unit spellings (147 of 384 FDA drugs now), and applies Cmax to every LINCS compound of an ingredient. low_exposure
   459 -> 513 FDA rows (52 drugs); bortezomib leaves the PAAD and PCPG-PGL top 10, everolimus COAD-MSI-like.
+- D112 in production: Drugs@FDA matching adds 5 salt / ester words, 4 griseofulvin size labels and 4 INN / USAN
+  aliases, and drops one wrong match (MRE-269); 542 compounds matched (was 527). New FDA drugs include lapatinib,
+  rucaparib, cyclosporine, thioguanine. Missing ChEMBL mechanisms for newly matched drugs fetched (lapatinib now
+  EGFR + ERBB2; #6 in BRCA-Her2). Cyclosporine enters 10 top-10 lists without a Cmax reading. Open: 43 FDA drugs
+  carry a wrong ChEMBL id (no curated mechanism), proposed as D113.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

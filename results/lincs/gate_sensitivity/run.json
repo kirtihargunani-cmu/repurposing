@@ -13,6 +13,6 @@
  "n_perm": 1000,
  "n_boot": 1000,
  "seed": 0,
- "fda_rows": 7414,
- "gate_known": 2640
+ "fda_rows": 7570,
+ "gate_known": 2708
 }

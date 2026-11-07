@@ -39,7 +39,7 @@ disease	BRCA-Her2		BRD-K53414658	Tivozanib	direct	True	False	77.2	66.8	55.3		Tru
 disease	BRCA-Her2		BRD-K12343256	Trametinib	direct	True	False	79.2	72.1	75.3		True	BRD-K57080016	selumetinib	True	0.223	68.1	74.1	78.7		0.855	9	MAP2K1	1	2
 disease	BRCA-Her2		BRD-K77625799	Vandetanib	direct	True	False	82.6	74.3	61.4		True	BRD-K49328571	dasatinib	True	0.1651	11.1	2.6	6.4		0.645	6	SRC	1	1
 disease	BRCA-Her2		BRD-K77625799	Vandetanib	direct	True	False	82.6	74.3	61.4		True	BRD-K42805893	AZD-9291	True	0.2158	99.9	99.0	4.1		0.477	5	EGFR	2	1
-disease	BRCA-Her2		BRD-K77625799	Vandetanib	direct	True	False	82.6	74.3	61.4		True	BRD-K19687926	lapatinib	False	0.223	99.4	96.8	87.6		0.468	3	EGFR	3	1
+disease	BRCA-Her2		BRD-K77625799	Vandetanib	direct	True	False	82.6	74.3	61.4		True	BRD-K19687926	lapatinib	True	0.223	99.4	96.8	87.6		0.468	3	EGFR	3	1
 disease	BRCA-Her2		BRD-K77625799	Vandetanib	direct	True	False	82.6	74.3	61.4		True	BRD-K50168500	canertinib	False	0.223	37.0	31.8	32.2		0.426	4	EGFR	4	1
 disease	BRCA-Her2		BRD-K77625799	Vandetanib	direct	True	False	82.6	74.3	61.4		True	BRD-K03449891	foretinib	False	0.223	68.6	32.0	19.0		0.412	6	FLT1|FLT4|KDR	5	3
 disease	BRCA-Her2		BRD-K56343971	Vemurafenib	direct	True	False	90.7	91.5	94.2		True	BRD-K16478699	PLX-4720	False	0.223	22.9	60.4	80.3		0.66	5	BRAF	1	2
@@ -85,7 +85,7 @@ disease	BRCA-LumA		BRD-K99964838	Bosutinib	direct	False	False	46.4	45.8	55.3		Fa
 disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K53414658	tivozanib	True	0.2973	67.0	39.0	47.7		0.662	6	KDR|KIT	1	1
 disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K59369769	tozasertib	False	0.2973	36.3	36.1	35.5		0.586	6	FLT3	2	1
 disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K68488863	ENMD-2076	False	0.2973	45.7	17.3	21.4		0.46	8	FLT3|KDR	3	4
-disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.43	5	KDR|RET	4	5
+disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.43	5	KDR|RET	4	6
 disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K03449891	foretinib	False	0.2973	64.7	44.5	46.0		0.422	8	KDR|MET	5	2
 disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K87947369	tozasertib	False	0.2973	32.2	10.4	11.8		0.414	3	FLT3	6	4
 disease	BRCA-LumA		BRD-K51544265	Cabozantinib	direct	False	False	87.4	75.7	77.1		False	BRD-K20285085	fostamatinib	True	0.2973	64.0	46.5	47.3		0.402	6	RET	7	1
@@ -117,7 +117,7 @@ disease	BRCA-LumA		BRD-K09951645	Dabrafenib	borrowed	False	False	72.3	49.6	57.5	
 disease	BRCA-LumA		BRD-K09951645	Dabrafenib	borrowed	False	False	72.3	49.6	57.5		True	BRD-K16478699	PLX-4720	False	0.2703	63.9	88.8	88.2		0.688	4	BRAF	2	1
 disease	BRCA-LumA		BRD-K09951645	Dabrafenib	borrowed	False	False	72.3	49.6	57.5		True	BRD-K16730910	regorafenib	True	0.2973	87.4	80.1	81.7		0.576	4	BRAF|RAF1	3	1
 disease	BRCA-LumA		BRD-K57169635	Dacomitinib	direct	False	False	34.7	51.1	53.7		False	BRD-K66175015	afatinib	True	0.2973	39.1	44.5	47.6		0.517	8	EGFR|ERBB2|ERBB4	1	1
-disease	BRCA-LumA		BRD-K57169635	Dacomitinib	direct	False	False	34.7	51.1	53.7		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.447	5	EGFR	2	4
+disease	BRCA-LumA		BRD-K57169635	Dacomitinib	direct	False	False	34.7	51.1	53.7		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.447	5	EGFR	2	5
 disease	BRCA-LumA		BRD-K57169635	Dacomitinib	direct	False	False	34.7	51.1	53.7		False	BRD-K22514639	EGF-816	False	0.2973	24.4	15.0	0.7		0.435	2	EGFR	3	3
 disease	BRCA-LumA		BRD-K57169635	Dacomitinib	direct	False	False	34.7	51.1	53.7		False	BRD-K42805893	AZD-9291	True	0.3543	93.6	66.3	3.0		0.402	7	EGFR	4	2
 disease	BRCA-LumA		BRD-K49328571	Dasatinib	direct	False	False	39.3	17.7	18.6		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.645	6	SRC	1	1
@@ -177,6 +177,7 @@ disease	BRCA-LumA		BRD-K03601870	Ixabepilone	direct	False	False	81.7	83.3	82.1		
 disease	BRCA-LumA		BRD-K03601870	Ixabepilone	direct	False	False	81.7	83.3	82.1		False	BRD-K23363278	CYT-997	False	0.2973	88.8	97.0	97.7		0.523	4	TUBB	2	2
 disease	BRCA-LumA		BRD-K03601870	Ixabepilone	direct	False	False	81.7	83.3	82.1		False	BRD-K78567475	dolastatin-10	False	0.2973	81.2	95.4	96.5		0.519	4	TUBB	3	2
 disease	BRCA-LumA		BRD-K03601870	Ixabepilone	direct	False	False	81.7	83.3	82.1		False	BRD-K62008436	paclitaxel	True	0.2973	91.8	90.5	93.2		0.429	3	TUBB|TUBB3	4	1
+disease	BRCA-LumA		BRD-K19687926	Lapatinib	direct	False	False	85.9	71.3	75.8		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.468	3	EGFR	1	4
 disease	BRCA-LumA		BRD-K49865102	Mirdametinib	direct	False	False	72.9	32.3	44.4		False	BRD-K57080016	selumetinib	True	0.2703	68.0	69.8	72.9		0.862	9	MAP2K1	1	1
 disease	BRCA-LumA		BRD-K49865102	Mirdametinib	direct	False	False	72.9	32.3	44.4		False	BRD-K82244583	MEK-162	True	0.2973	43.0	31.8	37.1		0.805	6	MAP2K1	2	1
 disease	BRCA-LumA		BRD-K49865102	Mirdametinib	direct	False	False	72.9	32.3	44.4		False	BRD-K12343256	trametinib	True	0.2973	48.8	65.3	66.6		0.781	8	MAP2K1	3	2
@@ -265,7 +266,7 @@ disease	BRCA-LumA		BRD-K42828737	Sunitinib	direct	False	False	95.1	74.0	79.9		Fa
 disease	BRCA-LumA		BRD-K42828737	Sunitinib	direct	False	False	95.1	74.0	79.9		False	BRD-K53414658	tivozanib	True	0.2973	67.0	39.0	47.7		0.455	6	FLT1|FLT4|KDR|KIT|PDGFRA|PDGFRB	4	2
 disease	BRCA-LumA		BRD-K42828737	Sunitinib	direct	False	False	95.1	74.0	79.9		False	BRD-K68488863	ENMD-2076	False	0.2973	45.7	17.3	21.4		0.436	9	FLT3|KDR|PDGFRA	5	5
 disease	BRCA-LumA		BRD-K42828737	Sunitinib	direct	False	False	95.1	74.0	79.9		False	BRD-K59369769	tozasertib	False	0.2973	36.3	36.1	35.5		0.435	9	FLT3	6	2
-disease	BRCA-LumA		BRD-K42828737	Sunitinib	direct	False	False	95.1	74.0	79.9		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.417	5	FLT1|FLT4|KDR|RET	7	6
+disease	BRCA-LumA		BRD-K42828737	Sunitinib	direct	False	False	95.1	74.0	79.9		False	BRD-K77625799	vandetanib	True	0.2973	61.5	42.2	46.0		0.417	5	FLT1|FLT4|KDR|RET	7	7
 disease	BRCA-LumA		BRD-K95142244	Talazoparib	direct	False	False	81.5	54.7	65.1		False	BRD-K11853856	PJ-34	False	0.2973	45.3	36.8	47.8		0.541	2	PARP1	1	1
 disease	BRCA-LumA		BRD-K95142244	Talazoparib	direct	False	False	81.5	54.7	65.1		False	BRD-K02113016	olaparib	True	0.2973	32.9	21.1	29.1		0.54	2	PARP1|PARP2	2	1
 disease	BRCA-LumA		BRD-K04210847	Tamoxifen	direct	False	False	91.9	67.1	75.4		False	BRD-K90195324	bazedoxifene	True	0.2973	54.2	33.9	42.4		0.596	2	ESR1|ESR2	1	2
@@ -296,7 +297,7 @@ disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		F
 disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K68488863	ENMD-2076	False	0.2973	45.7	17.3	21.4		0.574	6	KDR|SRC	3	1
 disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K99964838	bosutinib	True	0.2973	46.4	45.8	55.3		0.523	4	SRC	4	1
 disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K42805893	AZD-9291	True	0.3543	93.6	66.3	3.0		0.477	5	EGFR	5	1
-disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K19687926	lapatinib	False	0.2973	85.9	71.3	75.8		0.468	3	EGFR	6	1
+disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K19687926	lapatinib	True	0.2973	85.9	71.3	75.8		0.468	3	EGFR	6	1
 disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K57169635	dacomitinib	True	0.2973	34.7	51.1	53.7		0.447	5	EGFR	7	2
 disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K51544265	cabozantinib	True	0.2973	87.4	75.7	77.1		0.43	5	KDR|RET	8	2
 disease	BRCA-LumA		BRD-K77625799	Vandetanib	direct	False	False	61.5	42.2	46.0		False	BRD-K50168500	canertinib	False	0.2973	14.0	18.2	23.8		0.426	4	EGFR	9	1
@@ -364,7 +365,7 @@ disease	BRCA-LumB		BRD-K99964838	Bosutinib	direct	False	False	76.0	71.0	71.9		Fa
 disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K53414658	tivozanib	True	0.6297	86.9	63.9	60.0		0.662	6	KDR|KIT	1	1
 disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K59369769	tozasertib	False	0.6297	44.3	29.1	30.0		0.586	6	FLT3	2	1
 disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K68488863	ENMD-2076	False	0.6297	81.3	48.2	43.9		0.46	8	FLT3|KDR	3	4
-disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.43	5	KDR|RET	4	5
+disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.43	5	KDR|RET	4	6
 disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K03449891	foretinib	False	0.6297	82.1	75.9	75.1		0.422	8	KDR|MET	5	2
 disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K87947369	tozasertib	False	0.6297	21.0	6.9	10.3		0.414	3	FLT3	6	4
 disease	BRCA-LumB		BRD-K51544265	Cabozantinib	direct	False	False	91.7	82.5	80.1		False	BRD-K20285085	fostamatinib	True	0.6297	82.0	70.2	68.6		0.402	6	RET	7	1
@@ -394,7 +395,7 @@ disease	BRCA-LumB		BRD-K09951645	Dabrafenib	borrowed	False	False	80.0	58.0	57.1	
 disease	BRCA-LumB		BRD-K09951645	Dabrafenib	borrowed	False	False	80.0	58.0	57.1		True	BRD-K16478699	PLX-4720	False	0.1648	52.7	84.1	87.2		0.688	4	BRAF	2	1
 disease	BRCA-LumB		BRD-K09951645	Dabrafenib	borrowed	False	False	80.0	58.0	57.1		True	BRD-K16730910	regorafenib	True	0.6297	89.7	81.9	79.7		0.576	4	BRAF|RAF1	3	1
 disease	BRCA-LumB		BRD-K57169635	Dacomitinib	direct	False	False	28.7	44.3	51.0		False	BRD-K66175015	afatinib	True	0.6297	20.4	33.7	41.6		0.517	8	EGFR|ERBB2|ERBB4	1	1
-disease	BRCA-LumB		BRD-K57169635	Dacomitinib	direct	False	False	28.7	44.3	51.0		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.447	5	EGFR	2	4
+disease	BRCA-LumB		BRD-K57169635	Dacomitinib	direct	False	False	28.7	44.3	51.0		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.447	5	EGFR	2	5
 disease	BRCA-LumB		BRD-K57169635	Dacomitinib	direct	False	False	28.7	44.3	51.0		False	BRD-K22514639	EGF-816	False	0.6297	45.9	25.4	0.8		0.435	2	EGFR	3	3
 disease	BRCA-LumB		BRD-K57169635	Dacomitinib	direct	False	False	28.7	44.3	51.0		False	BRD-K42805893	AZD-9291	True	0.6297	77.6	34.3	0.9		0.402	7	EGFR	4	2
 disease	BRCA-LumB		BRD-K49328571	Dasatinib	direct	False	False	62.7	38.8	37.3		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.645	6	SRC	1	1
@@ -456,6 +457,7 @@ disease	BRCA-LumB		BRD-K03601870	Ixabepilone	direct	False	False	70.9	77.8	79.7		
 disease	BRCA-LumB		BRD-K03601870	Ixabepilone	direct	False	False	70.9	77.8	79.7		False	BRD-K23363278	CYT-997	False	0.6297	87.2	94.8	96.0		0.523	4	TUBB	2	2
 disease	BRCA-LumB		BRD-K03601870	Ixabepilone	direct	False	False	70.9	77.8	79.7		False	BRD-K78567475	dolastatin-10	False	0.6297	76.7	91.3	93.1		0.519	4	TUBB	3	2
 disease	BRCA-LumB		BRD-K03601870	Ixabepilone	direct	False	False	70.9	77.8	79.7		False	BRD-K62008436	paclitaxel	True	0.6297	88.4	86.4	86.8		0.429	3	TUBB|TUBB3	4	1
+disease	BRCA-LumB		BRD-K19687926	Lapatinib	direct	False	False	87.6	78.6	76.9		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.468	3	EGFR	1	4
 disease	BRCA-LumB		BRD-K49865102	Mirdametinib	direct	False	False	75.3	31.6	31.9		False	BRD-K57080016	selumetinib	True	0.1648	74.2	73.8	75.0		0.862	9	MAP2K1	1	1
 disease	BRCA-LumB		BRD-K49865102	Mirdametinib	direct	False	False	75.3	31.6	31.9		False	BRD-K82244583	MEK-162	True	0.6297	83.8	67.3	66.1		0.805	6	MAP2K1	2	1
 disease	BRCA-LumB		BRD-K49865102	Mirdametinib	direct	False	False	75.3	31.6	31.9		False	BRD-K12343256	trametinib	True	0.6297	60.8	73.1	73.7		0.781	8	MAP2K1	3	2
@@ -544,7 +546,7 @@ disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.2		Fa
 disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.2		False	BRD-K53414658	tivozanib	True	0.6297	86.9	63.9	60.0		0.455	6	FLT1|FLT4|KDR|KIT|PDGFRA|PDGFRB	4	2
 disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.2		False	BRD-K68488863	ENMD-2076	False	0.6297	81.3	48.2	43.9		0.436	9	FLT3|KDR|PDGFRA	5	5
 disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.2		False	BRD-K59369769	tozasertib	False	0.6297	44.3	29.1	30.0		0.435	9	FLT3	6	2
-disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.2		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.417	5	FLT1|FLT4|KDR|RET	7	6
+disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.2		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.417	5	FLT1|FLT4|KDR|RET	7	7
 disease	BRCA-LumB		BRD-K95142244	Talazoparib	direct	False	False	83.6	58.1	58.4		False	BRD-K11853856	PJ-34	False	0.6297	64.0	52.7	56.2		0.541	2	PARP1	1	1
 disease	BRCA-LumB		BRD-K95142244	Talazoparib	direct	False	False	83.6	58.1	58.4		False	BRD-K02113016	olaparib	True	0.6297	46.5	29.0	32.4		0.54	2	PARP1|PARP2	2	1
 disease	BRCA-LumB		BRD-K04210847	Tamoxifen	direct	False	False	84.5	59.0	59.4		False	BRD-K90195324	bazedoxifene	True	0.6297	68.4	43.7	45.6		0.596	2	ESR1|ESR2	1	2
@@ -574,7 +576,7 @@ disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		F
 disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K68488863	ENMD-2076	False	0.6297	81.3	48.2	43.9		0.574	6	KDR|SRC	3	1
 disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K99964838	bosutinib	True	0.6297	76.0	71.0	71.9		0.523	4	SRC	4	1
 disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K42805893	AZD-9291	True	0.6297	77.6	34.3	0.9		0.477	5	EGFR	5	1
-disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K19687926	lapatinib	False	0.6297	87.6	78.6	76.9		0.468	3	EGFR	6	1
+disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K19687926	lapatinib	True	0.6297	87.6	78.6	76.9		0.468	3	EGFR	6	1
 disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K57169635	dacomitinib	True	0.6297	28.7	44.3	51.0		0.447	5	EGFR	7	2
 disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K51544265	cabozantinib	True	0.6297	91.7	82.5	80.1		0.43	5	KDR|RET	8	2
 disease	BRCA-LumB		BRD-K77625799	Vandetanib	direct	False	False	84.6	69.8	67.4		False	BRD-K50168500	canertinib	False	0.6297	46.0	52.3	55.1		0.426	4	EGFR	9	1
@@ -1004,7 +1006,7 @@ disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1	
 disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K28392481	AZD-4547	False	0.2816	93.9	79.7	84.7		0.531	3	KDR	5	1
 disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K69001009	golvatinib	False	0.2816	84.9	78.4	74.7		0.508	3	KDR	6	1
 disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K42805893	AZD-9291	True	0.1604	54.0	57.0	59.6		0.477	5	EGFR	7	1
-disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K19687926	lapatinib	False	0.2123	60.7	52.6	60.7		0.468	3	EGFR	8	1
+disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K19687926	lapatinib	True	0.2123	60.7	52.6	60.7		0.468	3	EGFR	8	1
 disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K57169635	dacomitinib	True	0.2816	30.0	56.7	59.3		0.447	5	EGFR	9	1
 disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K51544265	cabozantinib	True	0.2816	91.5	86.5	87.2		0.43	5	KDR|RET	10	2
 disease	TCGA-COAD		BRD-K77625799	Vandetanib	borrowed	False	False	89.6	88.4	85.1		True	BRD-K42828737	sunitinib	True	0.2816	90.4	75.6	67.6		0.417	5	FLT1|FLT4|KDR|RET	11	3
@@ -1174,9 +1176,9 @@ disease	TCGA-LUAD		BRD-K15179879	Carfilzomib	direct	True	False	39.1	75.8	84.7		T
 disease	TCGA-LUAD		BRD-K15179879	Carfilzomib	direct	True	False	39.1	75.8	84.7		True	BRD-K78659596	ixazomib	True	0.1984	5.3	28.7	45.4		0.564	6	PSMB1	2	2
 disease	TCGA-LUAD		BRD-K15179879	Carfilzomib	direct	True	False	39.1	75.8	84.7		True	BRD-K88510285	bortezomib	True	0.1984	30.3	65.5	82.9		0.562	6	PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9	3	2
 disease	TCGA-LUAD		BRD-K81169441	Cerivastatin	direct	True	False	98.9	97.4	95.8		True	BRD-K94441233	mevastatin	False	0.1984	81.3	70.8	70.8		0.616	2	HMGCR	1	3
-disease	TCGA-LUAD		BRD-K38003476	Clocortolone pivalate	direct	False	False	57.6	55.9	55.1		False	BRD-K81709173	halcinonide	True	0.1984	29.0	49.4	54.1		0.757	2	NR3C1	1	1
-disease	TCGA-LUAD		BRD-K38003476	Clocortolone pivalate	direct	False	False	57.6	55.9	55.1		False	BRD-K62310379	fluticasone-propionate	True	0.1984	39.2	51.5	53.9		0.702	2	NR3C1	2	1
-disease	TCGA-LUAD		BRD-K38003476	Clocortolone pivalate	direct	False	False	57.6	55.9	55.1		False	BRD-K47635719	dexamethasone	True	0.1984	75.7	84.4	84.3		0.699	2	NR3C1	3	1
+disease	TCGA-LUAD		BRD-K38003476	Clocortolone	direct	False	False	57.6	55.9	55.1		False	BRD-K81709173	halcinonide	True	0.1984	29.0	49.4	54.1		0.757	2	NR3C1	1	1
+disease	TCGA-LUAD		BRD-K38003476	Clocortolone	direct	False	False	57.6	55.9	55.1		False	BRD-K62310379	fluticasone-propionate	True	0.1984	39.2	51.5	53.9		0.702	2	NR3C1	2	1
+disease	TCGA-LUAD		BRD-K38003476	Clocortolone	direct	False	False	57.6	55.9	55.1		False	BRD-K47635719	dexamethasone	True	0.1984	75.7	84.4	84.3		0.699	2	NR3C1	3	1
 disease	TCGA-LUAD		BRD-K03390685	Cobimetinib	direct	True	False	92.7	64.6	49.6		True	BRD-K12343256	trametinib	True	0.1984	90.9	65.4	57.6		0.741	7	MAP2K1	1	3
 disease	TCGA-LUAD		BRD-K03390685	Cobimetinib	direct	True	False	92.7	64.6	49.6		True	BRD-K49865102	PD-0325901	True	0.1984	92.5	77.8	69.9		0.719	7	MAP2K1	2	4
 disease	TCGA-LUAD		BRD-K03390685	Cobimetinib	direct	True	False	92.7	64.6	49.6		True	BRD-K05104363	PD-184352	False	0.1984	96.0	94.3	91.0		0.709	5	MAP2K1	3	5
@@ -1310,7 +1312,7 @@ disease	TCGA-LUAD		BRD-K81418486	Vorinostat	direct	False	False	38.9	20.5	26.5		F
 disease	TCGA-OV		BRD-K57169635	Dacomitinib	borrowed	False	False	36.4	44.6	48.2		True	BRD-K66175015	afatinib	True	0.1393	75.2	62.7	59.2		0.517	8	EGFR|ERBB2|ERBB4	1	1
 disease	TCGA-OV		BRD-K57169635	Dacomitinib	borrowed	False	False	36.4	44.6	48.2		True	BRD-K42805893	AZD-9291	True	0.1393	68.3	74.1	3.9		0.402	7	EGFR	2	2
 disease	TCGA-OV		BRD-K77625799	Vandetanib	borrowed	False	False	25.8	9.8	16.1		True	BRD-K42805893	AZD-9291	True	0.1393	68.3	74.1	3.9		0.477	5	EGFR	1	1
-disease	TCGA-OV		BRD-K77625799	Vandetanib	borrowed	False	False	25.8	9.8	16.1		True	BRD-K19687926	lapatinib	False	0.1393	11.1	13.5	18.1		0.468	3	EGFR	2	1
+disease	TCGA-OV		BRD-K77625799	Vandetanib	borrowed	False	False	25.8	9.8	16.1		True	BRD-K19687926	lapatinib	True	0.1393	11.1	13.5	18.1		0.468	3	EGFR	2	1
 disease	TCGA-PAAD		BRD-K66175015	Afatinib	borrowed	False	False	68.9	76.3	76.8		True	BRD-K57169635	dacomitinib	True	0.148	51.8	68.6	83.3		0.517	8	EGFR|ERBB2|ERBB4	1	1
 disease	TCGA-PAAD		BRD-K66175015	Afatinib	borrowed	False	False	68.9	76.3	76.8		True	BRD-K08799216	pelitinib	False	0.148	88.2	93.5	94.5		0.481	8	EGFR	2	1
 disease	TCGA-PAAD		BRD-K54997624	Alpelisib	borrowed	False	True	88.4	79.9	78.9		True	BRD-K07310275	PF-04691502	False	0.148	96.6	75.1	93.8		0.621	4	PIK3CA	1	3
@@ -1336,7 +1338,7 @@ disease	TCGA-PAAD		BRD-K99964838	Bosutinib	borrowed	False	False	12.4	11.8	17.6		
 disease	TCGA-PAAD		BRD-K99964838	Bosutinib	borrowed	False	False	12.4	11.8	17.6		True	BRD-K68488863	ENMD-2076	False	0.148	95.6	66.6	83.0		0.424	6	SRC	2	6
 disease	TCGA-PAAD		BRD-K51544265	Cabozantinib	direct	False	False	68.6	65.3	56.5		False	BRD-K53414658	tivozanib	True	0.148	78.0	50.0	38.7		0.662	6	KDR|KIT	1	1
 disease	TCGA-PAAD		BRD-K51544265	Cabozantinib	direct	False	False	68.6	65.3	56.5		False	BRD-K68488863	ENMD-2076	False	0.148	95.6	66.6	83.0		0.46	8	FLT3|KDR	2	4
-disease	TCGA-PAAD		BRD-K51544265	Cabozantinib	direct	False	False	68.6	65.3	56.5		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.43	5	KDR|RET	3	5
+disease	TCGA-PAAD		BRD-K51544265	Cabozantinib	direct	False	False	68.6	65.3	56.5		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.43	5	KDR|RET	3	6
 disease	TCGA-PAAD		BRD-K51544265	Cabozantinib	direct	False	False	68.6	65.3	56.5		False	BRD-K03449891	foretinib	False	0.148	87.5	68.0	79.3		0.422	8	KDR|MET	4	2
 disease	TCGA-PAAD		BRD-K51544265	Cabozantinib	direct	False	False	68.6	65.3	56.5		False	BRD-K21718444	KW-2449	False	0.148	72.0	60.4	50.9		0.411	4	FLT3	5	2
 disease	TCGA-PAAD		BRD-K15179879	Carfilzomib	direct	False	False	11.9	32.2	31.5		False	BRD-K60230970	MG-132	False	0.148	91.8	98.8	94.9		0.59	7	PSMB1	1	1
@@ -1355,7 +1357,7 @@ disease	TCGA-PAAD		BRD-K24666289	Copanlisib	borrowed	False	False	95.1	92.7	93.2	
 disease	TCGA-PAAD		BRD-K24666289	Copanlisib	borrowed	False	False	95.1	92.7	93.2		True	BRD-K44844162	taselisib	False	0.148	86.6	50.8	51.7		0.535	6	PIK3CA	2	2
 disease	TCGA-PAAD		BRD-K24666289	Copanlisib	borrowed	False	False	95.1	92.7	93.2		True	BRD-K12184916	NVP-BEZ235	False	0.148	48.1	14.5	20.3		0.513	4	PIK3CA|PIK3CD|PIK3CG	3	3
 disease	TCGA-PAAD		BRD-K09951645	Dabrafenib	borrowed	False	False	86.5	68.2	84.1		True	BRD-K93123848	RAF-265	False	0.148	43.1	57.7	64.0		0.652	4	BRAF	1	1
-disease	TCGA-PAAD		BRD-K57169635	Dacomitinib	direct	False	False	51.8	68.6	83.3		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.447	5	EGFR	1	4
+disease	TCGA-PAAD		BRD-K57169635	Dacomitinib	direct	False	False	51.8	68.6	83.3		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.447	5	EGFR	1	5
 disease	TCGA-PAAD		BRD-K57169635	Dacomitinib	direct	False	False	51.8	68.6	83.3		False	BRD-K42805893	AZD-9291	True	0.148	99.7	90.7	95.4		0.402	7	EGFR	2	2
 disease	TCGA-PAAD		BRD-K49328571	Dasatinib	direct	False	False	90.6	64.9	87.6		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.645	6	SRC	1	1
 disease	TCGA-PAAD		BRD-K49328571	Dasatinib	direct	False	False	90.6	64.9	87.6		False	BRD-K68488863	ENMD-2076	False	0.148	95.6	66.6	83.0		0.559	10	SRC	2	2
@@ -1385,6 +1387,7 @@ disease	TCGA-PAAD		BRD-K13810148	Givinostat	borrowed	False	False	22.2	20.9	26.1	
 disease	TCGA-PAAD		BRD-K13810148	Givinostat	borrowed	False	False	22.2	20.9	26.1		True	BRD-K77908580	entinostat	False	0.148	67.0	39.0	61.6		0.453	4	HDAC1|HDAC2|HDAC3|HDAC9	9	1
 disease	TCGA-PAAD		BRD-K03601870	Ixabepilone	borrowed	False	False	43.7	55.4	51.5		True	BRD-K00259736	colchicine	True	0.148	5.3	2.6	13.0		0.525	3	TUBB|TUBB3	1	1
 disease	TCGA-PAAD		BRD-K03601870	Ixabepilone	borrowed	False	False	43.7	55.4	51.5		True	BRD-K78567475	dolastatin-10	False	0.148	5.9	2.5	12.8		0.519	4	TUBB	2	2
+disease	TCGA-PAAD		BRD-K19687926	Lapatinib	borrowed	False	True	21.3	15.0	20.8		True	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.468	3	EGFR	1	4
 disease	TCGA-PAAD		BRD-K49865102	Mirdametinib	direct	False	False	21.2	3.9	16.7		False	BRD-K57080016	selumetinib	True	0.148	13.3	14.2	19.0		0.862	9	MAP2K1	1	1
 disease	TCGA-PAAD		BRD-K49865102	Mirdametinib	direct	False	False	21.2	3.9	16.7		False	BRD-K64538373	Ro-4987655	False	0.148	0.8	0.5	5.6		0.85	6	MAP2K1	2	2
 disease	TCGA-PAAD		BRD-K49865102	Mirdametinib	direct	False	False	21.2	3.9	16.7		False	BRD-K82244583	MEK-162	True	0.148	0.5	0.2	4.8		0.805	6	MAP2K1	3	1
@@ -1438,7 +1441,7 @@ disease	TCGA-PAAD		BRD-K42828737	Sunitinib	direct	False	False	71.2	62.7	61.5		Fa
 disease	TCGA-PAAD		BRD-K42828737	Sunitinib	direct	False	False	71.2	62.7	61.5		False	BRD-K68488863	ENMD-2076	False	0.148	95.6	66.6	83.0		0.436	9	FLT3|KDR|PDGFRA	4	5
 disease	TCGA-PAAD		BRD-K42828737	Sunitinib	direct	False	False	71.2	62.7	61.5		False	BRD-K21718444	KW-2449	False	0.148	72.0	60.4	50.9		0.418	6	FLT3	5	1
 disease	TCGA-PAAD		BRD-K42828737	Sunitinib	direct	False	False	71.2	62.7	61.5		False	BRD-K69001009	golvatinib	False	0.148	55.4	17.9	37.6		0.418	4	KDR	6	3
-disease	TCGA-PAAD		BRD-K42828737	Sunitinib	direct	False	False	71.2	62.7	61.5		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.417	5	FLT1|FLT4|KDR|RET	7	6
+disease	TCGA-PAAD		BRD-K42828737	Sunitinib	direct	False	False	71.2	62.7	61.5		False	BRD-K77625799	vandetanib	True	0.148	69.3	28.1	51.9		0.417	5	FLT1|FLT4|KDR|RET	7	7
 disease	TCGA-PAAD		BRD-K53414658	Tivozanib	direct	False	False	78.0	50.0	38.7		False	BRD-K51544265	cabozantinib	True	0.148	68.6	65.3	56.5		0.662	6	KDR|KIT	1	1
 disease	TCGA-PAAD		BRD-K53414658	Tivozanib	direct	False	False	78.0	50.0	38.7		False	BRD-K68488863	ENMD-2076	False	0.148	95.6	66.6	83.0		0.487	7	KDR|PDGFRA	2	3
 disease	TCGA-PAAD		BRD-K53414658	Tivozanib	direct	False	False	78.0	50.0	38.7		False	BRD-K42828737	sunitinib	True	0.148	71.2	62.7	61.5		0.455	6	FLT1|FLT4|KDR|KIT|PDGFRA|PDGFRB	3	2
@@ -1773,7 +1776,7 @@ disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8	
 disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K68488863	ENMD-2076	False	0.1861	94.2	47.5	60.1		0.574	6	KDR|SRC	4	1
 disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K28392481	AZD-4547	False	0.1861	94.1	73.8	80.5		0.531	3	KDR	5	1
 disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K69001009	golvatinib	False	0.1861	79.1	62.1	62.6		0.508	3	KDR	6	1
-disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K19687926	lapatinib	False	0.1847	52.2	40.9	49.3		0.468	3	EGFR	7	1
+disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K19687926	lapatinib	True	0.1847	52.2	40.9	49.3		0.468	3	EGFR	7	1
 disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K57169635	dacomitinib	True	0.1861	37.8	75.3	74.5		0.447	5	EGFR	8	1
 disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K51544265	cabozantinib	True	0.1861	88.4	72.3	73.8		0.43	5	KDR|RET	9	2
 disease	TCGA-READ		BRD-K77625799	Vandetanib	borrowed	False	False	89.4	84.7	83.8		True	BRD-K42828737	sunitinib	True	0.1861	86.3	54.0	53.3		0.417	5	FLT1|FLT4|KDR|RET	10	3
@@ -1850,7 +1853,7 @@ disease	TCGA-SKCM		BRD-K99964838	Bosutinib	direct	False	False	12.1	23.5	43.6		Fa
 disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K53414658	tivozanib	True	0.2679	60.8	15.6	24.3		0.662	6	KDR|KIT	1	1
 disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K59369769	tozasertib	False	0.879	73.8	72.0	68.8		0.586	6	FLT3	2	1
 disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K68488863	ENMD-2076	False	0.2679	20.4	4.6	16.4		0.46	8	FLT3|KDR	3	4
-disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.43	5	KDR|RET	4	5
+disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.43	5	KDR|RET	4	6
 disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K03449891	foretinib	False	0.2679	26.1	3.9	11.9		0.422	8	KDR|MET	5	2
 disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K87947369	tozasertib	False	0.2679	49.9	33.0	26.0		0.414	3	FLT3	6	4
 disease	TCGA-SKCM		BRD-K51544265	Cabozantinib	direct	False	False	79.9	35.6	44.4		False	BRD-K21718444	KW-2449	False	0.2679	73.0	24.1	35.7		0.411	4	FLT3	7	2
@@ -1895,7 +1898,7 @@ disease	TCGA-SKCM		BRD-K09951645	Dabrafenib	direct	False	False	68.5	20.4	34.2		F
 disease	TCGA-SKCM		BRD-K09951645	Dabrafenib	direct	False	False	68.5	20.4	34.2		False	BRD-K16730910	regorafenib	True	0.2679	23.7	21.4	25.8		0.576	4	BRAF|RAF1	6	1
 disease	TCGA-SKCM		BRD-K09951645	Dabrafenib	direct	False	False	68.5	20.4	34.2		False	BRD-K67578145	GDC-0879	False	0.2679	81.8	37.8	44.6		0.409	4	BRAF	7	3
 disease	TCGA-SKCM		BRD-K57169635	Dacomitinib	direct	False	False	0.8	2.5	8.8		False	BRD-K66175015	afatinib	True	0.879	45.2	57.6	64.9		0.517	8	EGFR|ERBB2|ERBB4	1	1
-disease	TCGA-SKCM		BRD-K57169635	Dacomitinib	direct	False	False	0.8	2.5	8.8		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.447	5	EGFR	2	4
+disease	TCGA-SKCM		BRD-K57169635	Dacomitinib	direct	False	False	0.8	2.5	8.8		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.447	5	EGFR	2	5
 disease	TCGA-SKCM		BRD-K57169635	Dacomitinib	direct	False	False	0.8	2.5	8.8		False	BRD-K42805893	AZD-9291	True	0.2679	25.1	5.6	1.0		0.402	7	EGFR	3	2
 disease	TCGA-SKCM		BRD-K49328571	Dasatinib	direct	False	False	17.3	13.8	19.6		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.645	6	SRC	1	1
 disease	TCGA-SKCM		BRD-K49328571	Dasatinib	direct	False	False	17.3	13.8	19.6		False	BRD-K19540840	saracatinib	False	0.2679	34.2	14.6	23.2		0.57	9	ABL1|LCK|SRC|YES1	2	1
@@ -1956,6 +1959,7 @@ disease	TCGA-SKCM		BRD-K03601870	Ixabepilone	direct	False	False	10.1	50.0	50.4		
 disease	TCGA-SKCM		BRD-K03601870	Ixabepilone	direct	False	False	10.1	50.0	50.4		False	BRD-K62008436	paclitaxel	True	0.2679	20.5	45.0	53.8		0.429	3	TUBB|TUBB3	4	1
 disease	TCGA-SKCM		BRD-K78659596	Ixazomib	direct	False	False	57.9	82.4	84.5		False	BRD-K88510285	bortezomib	True	0.879	53.1	81.5	81.1		0.664	13	PSMB1	1	1
 disease	TCGA-SKCM		BRD-K78659596	Ixazomib	direct	False	False	57.9	82.4	84.5		False	BRD-K60230970	MG-132	False	0.2679	57.6	81.2	26.7		0.569	11	PSMB1	2	3
+disease	TCGA-SKCM		BRD-K19687926	Lapatinib	direct	False	False	20.0	11.6	13.0		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.468	3	EGFR	1	4
 disease	TCGA-SKCM		BRD-K49865102	Mirdametinib	direct	False	False	84.2	26.9	46.0		False	BRD-K57080016	selumetinib	True	0.879	24.8	12.8	15.8		0.862	9	MAP2K1	1	1
 disease	TCGA-SKCM		BRD-K49865102	Mirdametinib	direct	False	False	84.2	26.9	46.0		False	BRD-K64538373	Ro-4987655	False	0.2679	64.8	14.9	39.9		0.85	6	MAP2K1	2	2
 disease	TCGA-SKCM		BRD-K49865102	Mirdametinib	direct	False	False	84.2	26.9	46.0		False	BRD-K26667523	TAK-733	False	0.2679	52.3	23.6	51.9		0.848	5	MAP2K1	3	2
@@ -2062,7 +2066,7 @@ disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		Fa
 disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		False	BRD-K59369769	tozasertib	False	0.879	73.8	72.0	68.8		0.435	9	FLT3	6	2
 disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		False	BRD-K21718444	KW-2449	False	0.2679	73.0	24.1	35.7		0.418	6	FLT3	7	1
 disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		False	BRD-K69001009	golvatinib	False	0.2679	0.3	0.1	7.1		0.418	4	KDR	8	3
-disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.417	5	FLT1|FLT4|KDR|RET	9	6
+disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		False	BRD-K77625799	vandetanib	True	0.2679	9.7	4.5	12.4		0.417	5	FLT1|FLT4|KDR|RET	9	7
 disease	TCGA-SKCM		BRD-K42828737	Sunitinib	direct	False	False	36.5	11.2	16.4		False	BRD-K28392481	AZD-4547	False	0.2679	30.2	15.6	19.7		0.409	5	KDR	10	2
 disease	TCGA-SKCM		BRD-K95142244	Talazoparib	direct	False	False	11.9	15.8	31.2		False	BRD-K02113016	olaparib	True	0.2679	6.6	10.7	14.3		0.54	2	PARP1|PARP2	1	1
 disease	TCGA-SKCM		BRD-K04210847	Tamoxifen	direct	False	False	56.8	25.1	3.4		False	BRD-K90195324	bazedoxifene	True	0.2679	40.6	24.6	2.0		0.596	2	ESR1|ESR2	1	2
@@ -2098,7 +2102,7 @@ disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		Fal
 disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K99964838	bosutinib	True	0.879	12.1	23.5	43.6		0.523	4	SRC	5	1
 disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K69001009	golvatinib	False	0.2679	0.3	0.1	7.1		0.508	3	KDR	6	1
 disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K42805893	AZD-9291	True	0.2679	25.1	5.6	1.0		0.477	5	EGFR	7	1
-disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K19687926	lapatinib	False	0.2679	20.0	11.6	13.0		0.468	3	EGFR	8	1
+disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K19687926	lapatinib	True	0.2679	20.0	11.6	13.0		0.468	3	EGFR	8	1
 disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K57169635	dacomitinib	True	0.2679	0.8	2.5	8.8		0.447	5	EGFR	9	2
 disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K51544265	cabozantinib	True	0.2679	79.9	35.6	44.4		0.43	5	KDR|RET	10	2
 disease	TCGA-SKCM		BRD-K77625799	Vandetanib	direct	False	False	9.7	4.5	12.4		False	BRD-K50168500	canertinib	False	0.879	29.8	38.5	57.2		0.426	4	EGFR	11	1
@@ -2381,7 +2385,7 @@ subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	8
 subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K68488863	ENMD-2076	False	0.1932	94.5	51.1	66.2	7.0	0.574	6	KDR|SRC	4	1
 subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K28392481	AZD-4547	False	0.1932	94.1	78.0	84.5	44.6	0.531	3	KDR	5	1
 subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K69001009	golvatinib	False	0.1932	76.2	56.4	54.5	10.1	0.508	3	KDR	6	1
-subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K19687926	lapatinib	False	0.2316	50.3	36.2	43.5	14.5	0.468	3	EGFR	7	1
+subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K19687926	lapatinib	True	0.2316	50.3	36.2	43.5	14.5	0.468	3	EGFR	7	1
 subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K57169635	dacomitinib	True	0.1932	33.8	67.6	67.3	62.3	0.447	5	EGFR	8	1
 subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K51544265	cabozantinib	True	0.1932	89.3	77.6	78.9	19.5	0.43	5	KDR|RET	9	2
 subgroup	COAD-CIN-like	TCGA-COAD	BRD-K77625799	Vandetanib	borrowed	False	False	89.8	87.4	86.5	76.2	True	BRD-K42828737	sunitinib	True	0.1932	85.4	52.8	49.6	12.4	0.417	5	FLT1|FLT4|KDR|RET	10	3

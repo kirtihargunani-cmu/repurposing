@@ -11,9 +11,9 @@
   }
  },
  "chembl": {
-  "compounds": 1202,
-  "with_chembl": 1046,
-  "molecules": 1037,
+  "compounds": 1203,
+  "with_chembl": 1047,
+  "molecules": 1038,
   "mechanisms": 637,
   "activities": 122635,
   "targets": 3162
@@ -23,27 +23,27 @@
  "validation": [
   {
    "set": "accepted stand-ins",
-   "n": 303,
-   "spearman": 0.636,
-   "ci_lo": 0.55,
-   "ci_hi": 0.712,
-   "mae_pct": 18.1
+   "n": 307,
+   "spearman": 0.633,
+   "ci_lo": 0.548,
+   "ci_hi": 0.711,
+   "mae_pct": 18.2
   },
   {
    "set": "random shared-target pairs (median of 200)",
-   "n": 573,
-   "spearman": 0.487,
-   "ci_lo": 0.443,
-   "ci_hi": 0.528,
+   "n": 587,
+   "spearman": 0.483,
+   "ci_lo": 0.436,
+   "ci_hi": 0.529,
    "mae_pct": NaN
   },
   {
    "set": "shared lines = 2",
-   "n": 48,
-   "spearman": 0.752,
+   "n": 52,
+   "spearman": 0.739,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 17.2
+   "mae_pct": 17.6
   },
   {
    "set": "shared lines >= 3",
@@ -55,34 +55,34 @@
   },
   {
    "set": "similarity 0.4-0.6",
-   "n": 110,
-   "spearman": 0.535,
+   "n": 113,
+   "spearman": 0.531,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 22.8
+   "mae_pct": 23.0
   },
   {
    "set": "similarity >= 0.6",
-   "n": 193,
-   "spearman": 0.687,
+   "n": 194,
+   "spearman": 0.691,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 15.5
+   "mae_pct": 15.4
   },
   {
    "set": "subgroup: accepted stand-ins",
    "n": 68,
    "spearman": 0.831,
-   "ci_lo": 0.71,
+   "ci_lo": 0.716,
    "ci_hi": 0.904,
    "mae_pct": 14.4
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
-   "n": 124,
-   "spearman": 0.435,
-   "ci_lo": 0.334,
-   "ci_hi": 0.535,
+   "n": 125,
+   "spearman": 0.434,
+   "ci_lo": 0.324,
+   "ci_hi": 0.55,
    "mae_pct": NaN
   },
   {
@@ -118,11 +118,11 @@
    "mae_pct": 10.9
   }
  ],
- "pairs": 2689,
- "fda_rows_needing": 8416,
- "fda_rows_with_standin": 268,
+ "pairs": 2693,
+ "fda_rows_needing": 8596,
+ "fda_rows_with_standin": 269,
  "fda_rows_with_standin_by_level": {
-  "disease": 230,
+  "disease": 231,
   "subgroup": 38
  },
  "cohorts_with_standins": 20,

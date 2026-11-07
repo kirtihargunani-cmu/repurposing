@@ -22,7 +22,14 @@ SALTS = {"HYDROCHLORIDE", "DIHYDROCHLORIDE", "HCL", "SODIUM", "DISODIUM", "POTAS
          "ACETATE", "DIACETATE", "SUCCINATE", "FUMARATE", "HEMIFUMARATE", "HYDROBROMIDE", "BROMIDE", "CHLORIDE", "TOSYLATE",
          "BESYLATE", "MALATE", "LACTATE", "GLUCONATE", "MONOHYDRATE", "DIHYDRATE", "TRIHYDRATE", "HYDRATE", "ANHYDROUS",
          "TROMETHAMINE", "MEGLUMINE", "ESYLATE", "NAPSYLATE", "PAMOATE", "STEARATE", "NITRATE", "OXALATE", "SALICYLATE",
-         "HYCLATE", "DECANOATE", "PROPIONATE", "VALERATE", "DIPROPIONATE", "BENZOATE", "CYPIONATE", "ENANTHATE"}
+         "HYCLATE", "DECANOATE", "PROPIONATE", "VALERATE", "DIPROPIONATE", "BENZOATE", "CYPIONATE", "ENANTHATE",
+         # D112: salts / esters found missing, and griseofulvin particle-size labels
+         "DITOSYLATE", "CAMSYLATE", "ISETHIONATE", "XINAFOATE", "PIVALATE",
+         "MICROSIZE", "ULTRAMICROSIZE", "MICROCRYSTALLINE", "ULTRAMICROCRYSTALLINE"}
+# D112: LINCS cmap_name -> Drugs@FDA ingredient (INN vs USAN spellings; reviewed one by one)
+FDA_ALIAS = {"tioguanine": "THIOGUANINE", "cyclosporin-a": "CYCLOSPORINE", "noretynodrel": "NORETHYNODREL", "clomifene": "CLOMIPHENE"}
+# D112: LINCS cmap_names never matched to Drugs@FDA (wrong ChEMBL / Hub names): MRE-269 is selexipag's metabolite, not treprostinil
+FDA_EXCLUDE = {"MRE-269"}
 
 
 def truthy(v):
@@ -31,7 +38,7 @@ def truthy(v):
 
 def drug_name(ingredient):
     """79p display name (SALTS identical to 79p; a shorter list split names, e.g. "Nintedanib esylate", D107): salt words removed, capitalized"""
-    return " ".join(w for w in str(ingredient).split() if w.upper() not in SALTS).capitalize()
+    return " ".join(w.strip(",") for w in str(ingredient).split() if w.strip(",").upper() not in SALTS).strip(" ,").capitalize()   # D112: "GRISEOFULVIN, ULTRAMICROSIZE"
 
 
 def fda_rows():
