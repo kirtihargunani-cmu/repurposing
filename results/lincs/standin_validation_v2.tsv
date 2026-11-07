@@ -1,13 +1,13 @@
 set	n	spearman	ci_lo	ci_hi	mae_pct
-accepted stand-ins	303	0.636	0.552	0.712	17.8
-random shared-target pairs (median of 200)	573	0.485	0.44	0.529	
-shared lines = 2	48	0.75			17.2
-shared lines >= 3	255	0.602			17.9
-similarity 0.4-0.6	110	0.536			21.8
-similarity >= 0.6	193	0.686			15.5
-subgroup: accepted stand-ins	68	0.83	0.71	0.904	14.5
-subgroup: random shared-target pairs (median of 200)	124	0.436	0.334	0.535	
-subgroup: shared lines = 2	15	0.898			12.4
-subgroup: shared lines >= 3	53	0.789			15.1
-subgroup: similarity 0.4-0.6	17	0.397			25.2
-subgroup: similarity >= 0.6	51	0.905			10.9
+accepted stand-ins	303	0.636	0.55	0.712	18.1
+random shared-target pairs (median of 200)	573	0.487	0.443	0.528	
+shared lines = 2	48	0.752			17.2
+shared lines >= 3	255	0.602			18.3
+similarity 0.4-0.6	110	0.535			22.8
+similarity >= 0.6	193	0.687			15.5
+subgroup: accepted stand-ins	68	0.831	0.71	0.904	14.4
+subgroup: random shared-target pairs (median of 200)	124	0.435	0.334	0.535	
+subgroup: shared lines = 2	15	0.909			12.4
+subgroup: shared lines >= 3	53	0.789			15.0
+subgroup: similarity 0.4-0.6	17	0.397			25.1
+subgroup: similarity >= 0.6	51	0.906			10.9

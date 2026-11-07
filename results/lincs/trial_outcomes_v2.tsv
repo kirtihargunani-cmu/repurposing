@@ -84,10 +84,10 @@ LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	1	Binimetinib	1	0	0	0	0	0	0	0	1
 LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	3	Fludarabine	11	1	0	0	0	0	0	1	1	
 LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	4	Vandetanib	5	5	0	0	0	0	0	0	0	
 LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	5	Regorafenib	7	5	1	0	1	1	0	0	0	"NCT04051606 (PHASE2, completed; single_agent): negative [lack_of_efficacy]: Regorafenib produced no responses in bevacizumab-refractory glioblastoma and the study stopped for futility. ""Regorafenib did not improve OS or PFS in bevacizumab-refractory recurrent glioblastoma. The study was halted early due to futility."" (PMID 42325608; model-extracted)"
-LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	7	Ceritinib	2	1	0	0	0	0	0	0	1	
-LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	8	Belinostat	1	1	0	0	0	0	0	0	0	
-LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	9	Docetaxel	2	2	1	1	0	0	0	0	0	
-LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	10	Dacarbazine	1	1	0	0	0	0	0	0	0	
+LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	7	Belinostat	1	1	0	0	0	0	0	0	0	
+LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	8	Docetaxel	2	2	1	1	0	0	0	0	0	
+LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	9	Dacarbazine	1	1	0	0	0	0	0	0	0	
+LGG-noncodel-LGr3	subgroup	LGG-IDHmut-noncodel	10	Doxorubicin	7	3	0	0	0	0	0	0	2	
 PHEO-kinase-signaling	subgroup	PCPG-PHEO	1	Everolimus	3	1	0	0	0	0	0	0	2	
 PHEO-kinase-signaling	subgroup	PCPG-PHEO	6	Temsirolimus	1	1	0	0	0	0	0	0	0	
 SARC-DDLPS	disease		1	Selinexor	3	1	1	0	0	0	0	0	1	

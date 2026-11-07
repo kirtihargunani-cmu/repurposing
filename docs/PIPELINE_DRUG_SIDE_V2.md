@@ -159,6 +159,10 @@ flowchart LR
   100 nM, ion channels 10 uM, others 1 uM; median of Ki / Kd / IC50 / EC50 values); (3) else annotated targets, flagged
   "unverified binding". Receptors keep the relative presence rule; other targets need median TPM >= 1. Other
   compounds keep the D102a evidence targets. Secondary targets are reported. Known-use Hub 0.623 -> 0.660.
+- **Fusion targets (D110, 2026-11-07):** a ChEMBL chimeric mechanism target counts only through the kinase the drug
+  binds (`config/drug_gate.yaml` `chimeric_kinase`: Bcr/Abl -> ABL1, EML4-ALK and NPM/ALK -> ALK; an unmapped one stops
+  the run). Before, the fusion partners (EML4, NPM1, made everywhere) kept ALK inhibitors 'present' in every cohort.
+  Target-absent rows 2,184 (groups), 687 (subgroups); receptor_mismatch 395 / 127. Known-use Hub 0.631 (was 0.660).
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

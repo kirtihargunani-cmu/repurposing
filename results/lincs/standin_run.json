@@ -1,5 +1,5 @@
 {
- "date": "2026-11-04",
+ "date": "2026-11-07",
  "config": {
   "min_shared_lines": 2,
   "min_similarity": 0.4,
@@ -25,22 +25,22 @@
    "set": "accepted stand-ins",
    "n": 303,
    "spearman": 0.636,
-   "ci_lo": 0.552,
+   "ci_lo": 0.55,
    "ci_hi": 0.712,
-   "mae_pct": 17.8
+   "mae_pct": 18.1
   },
   {
    "set": "random shared-target pairs (median of 200)",
    "n": 573,
-   "spearman": 0.485,
-   "ci_lo": 0.44,
-   "ci_hi": 0.529,
+   "spearman": 0.487,
+   "ci_lo": 0.443,
+   "ci_hi": 0.528,
    "mae_pct": NaN
   },
   {
    "set": "shared lines = 2",
    "n": 48,
-   "spearman": 0.75,
+   "spearman": 0.752,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 17.2
@@ -51,20 +51,20 @@
    "spearman": 0.602,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 17.9
+   "mae_pct": 18.3
   },
   {
    "set": "similarity 0.4-0.6",
    "n": 110,
-   "spearman": 0.536,
+   "spearman": 0.535,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 21.8
+   "mae_pct": 22.8
   },
   {
    "set": "similarity >= 0.6",
    "n": 193,
-   "spearman": 0.686,
+   "spearman": 0.687,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 15.5
@@ -72,15 +72,15 @@
   {
    "set": "subgroup: accepted stand-ins",
    "n": 68,
-   "spearman": 0.83,
+   "spearman": 0.831,
    "ci_lo": 0.71,
    "ci_hi": 0.904,
-   "mae_pct": 14.5
+   "mae_pct": 14.4
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
    "n": 124,
-   "spearman": 0.436,
+   "spearman": 0.435,
    "ci_lo": 0.334,
    "ci_hi": 0.535,
    "mae_pct": NaN
@@ -88,7 +88,7 @@
   {
    "set": "subgroup: shared lines = 2",
    "n": 15,
-   "spearman": 0.898,
+   "spearman": 0.909,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 12.4
@@ -99,7 +99,7 @@
    "spearman": 0.789,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 15.1
+   "mae_pct": 15.0
   },
   {
    "set": "subgroup: similarity 0.4-0.6",
@@ -107,12 +107,12 @@
    "spearman": 0.397,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 25.2
+   "mae_pct": 25.1
   },
   {
    "set": "subgroup: similarity >= 0.6",
    "n": 51,
-   "spearman": 0.905,
+   "spearman": 0.906,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 10.9

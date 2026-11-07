@@ -225,6 +225,12 @@ measure.
   splitting patients into subtypes. So the revised rule is switched on: drugs whose target the typical tumor lacks
   go to the bottom of that list and are marked "Target absent". Where a handful of tumors do make the target (like
   ALK in lung cancer), the page adds "Minority target" so a biomarker-selected use is not lost from view.
+  **Fix (D110, 2026-11-07):** an audit found the ALK drugs were not actually being pushed down. ChEMBL lists their
+  target as the fusion protein (for example EML4-ALK), and the code counted both halves, so EML4, a gene almost every
+  cell makes, made the target look present everywhere. The drug only binds the ALK half, so now only ALK counts.
+  Alectinib, ceritinib and crizotinib now drop to the bottom wherever the typical tumor lacks ALK (67 disease and 20
+  subgroup rows). The same applies to imatinib-type drugs (only ABL1 counts), which changes nothing because ABL1 is
+  made almost everywhere.
 - **The cell lines must have the receptor too (D104c, 2026-11-04).** A drug's score comes from cell lines. If the
   drug works through a receptor and none of those lines makes it (nor does the drug switch it on), the experiment
   could not show the drug's real effect, so the drug moves near the bottom and is marked "Receptor absent in tested

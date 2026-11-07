@@ -2,7 +2,7 @@
  "rule": "D102a / D102c",
  "tables": "_v2_consensus_d100late",
  "drugs_with_evidence_targets": 500,
- "groups_absent_rows": 2117,
- "subgroup_absent_rows": 667,
- "groups_minority_rows": 427
+ "groups_absent_rows": 2184,
+ "subgroup_absent_rows": 687,
+ "groups_minority_rows": 442
 }

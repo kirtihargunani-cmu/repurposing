@@ -781,6 +781,17 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Presence must rest on measured tumor expression (no rows lost); unverified binding hidden by default with the
   weak-evidence rows (5,173 of 6,864 rows visible); percentiles re-ranked among the page's FDA drugs per cohort.
 
+## 2026-11-07: audit and D110 (fusion targets)
+- Full audit of the drug side (5 reviewers: core scoring, gates / flags, validation / outputs, docs vs results,
+  methods). Core scores recomputed independently and match production. Main findings: the known-use AUC mostly
+  measures drug class (an anticancer yes / no label scores as well; within anticancer drugs the lead score is at
+  chance); ALK fusion-partner bug in `79i2`; Cmax lookup, salt list and compound-pick bugs; the runbook misses the
+  gate and flag steps; several doc numbers out of date. Fixes are being worked through in order (D110 on).
+- D110 in production: a ChEMBL chimeric (fusion) mechanism target counts only through its kinase (Bcr/Abl -> ABL1,
+  EML4-ALK / NPM-ALK -> ALK). Alectinib, ceritinib, crizotinib now target-absent where the typical tumor lacks ALK
+  (+67 group, +20 subgroup rows); FDA lists 2,426 -> 2,381 rows; two subgroup top-10 changes. Known-use Hub
+  0.660 -> 0.631 (reported only).
+
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
   read from linked abstracts by subagents (631 trials, quotes verified), drug role (single agent / combination /
