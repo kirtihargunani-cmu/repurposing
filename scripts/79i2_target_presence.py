@@ -192,7 +192,9 @@ def evidence_targets_default():
     judged = {d for d, ts in ann.items() if ts & set(cls)}
     d2m, _, _, best, _ = w.chembl(sorted(judged))
     mech = json.load(open(w.CACHE / "mechanisms.json"))
-    tg = {t["target_chembl_id"]: target_genes(t) for t in json.load(open(w.CACHE / "targets.json"))}   # D110
+    used = {m["target_chembl_id"] for m in mech if m["direct_interaction"] == 1 and m["target_chembl_id"]}
+    tg = {t["target_chembl_id"]: target_genes(t) for t in json.load(open(w.CACHE / "targets.json"))
+          if t["target_chembl_id"] in used}   # D110 (only mechanism targets are read; unused fusions in the cache are ignored)
     cut, cut_k = w.RG["binding"]["pchembl_min"], w.RG["binding"]["pchembl_min_kinase"]
     E = {}
     for d in judged:
