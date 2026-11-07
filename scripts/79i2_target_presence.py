@@ -17,6 +17,7 @@ from the D102b carrier table; shown on the page as "Minority target" when >= 3 t
 Also refreshes the 79i summaries that use these percentiles: split_controls{SFX}.tsv (spec_mech, spec_sib_mech) and
 split_overview{SFX}.tsv (drugs_top10_spec_mech_in_ge20_groups, controls_*_spec_mech_pct_mean).
 Env SFX (default _v2_consensus) selects the tables, e.g. _v2_consensus_d100early for the D100 time-split rankings.
+D110 (2026-11-07): a ChEMBL CHIMERIC PROTEIN mechanism target counts only through its kinase (config chimeric_kinase).
 Idempotent: reruns start from the *_pregate columns. 79b / 79w are read, never edited (other agent's scripts).
 """
 import importlib.util
@@ -37,6 +38,18 @@ FDA_NAMES = set()   # D105a scope (cmap names of FDA drugs)
 TOP_PCT = 10   # as 79i
 spec = importlib.util.spec_from_file_location("w79", ROOT / "scripts/79w_receptor_gate.py")
 w = importlib.util.module_from_spec(spec); spec.loader.exec_module(w)
+CHIMERIC = w.RG["chimeric_kinase"]   # D110: fusion target -> the kinase the drug binds
+
+
+def target_genes(t):
+    """Gene symbols a ChEMBL mechanism target contributes as main targets. D110: a CHIMERIC PROTEIN counts only through
+    its kinase component (config chimeric_kinase); an unmapped chimeric target stops the run."""
+    if t.get("target_type") == "CHIMERIC PROTEIN":
+        if t.get("pref_name") not in CHIMERIC:
+            raise SystemExit(f"D110: chimeric target {t.get('target_chembl_id')} '{t.get('pref_name')}' not in config/drug_gate.yaml chimeric_kinase")
+        return {CHIMERIC[t["pref_name"]]}
+    return {x["component_synonym"] for c in t.get("target_components") or []
+            for x in c.get("target_component_synonyms") or [] if x["syn_type"] == "GENE_SYMBOL"}
 
 
 def evidence_targets_d105():
@@ -132,7 +145,7 @@ def evidence_targets_d105a():
         for m in recs:
             t = T.get(m["target_chembl_id"]) if m["target_chembl_id"] else None
             if t and t.get("target_type") in PROT and t.get("organism") == "Homo sapiens":
-                hum |= genes_of(t)
+                hum |= target_genes(t)   # D110: fusion partners do not count
         hum -= adme
         ag = act[act.molecule_chembl_id.isin(ms)].groupby("gene").pchembl_value.agg(["median", "size"])
         pv, nmeas = ag["median"].to_dict(), ag["size"].to_dict()
@@ -179,9 +192,7 @@ def evidence_targets_default():
     judged = {d for d, ts in ann.items() if ts & set(cls)}
     d2m, _, _, best, _ = w.chembl(sorted(judged))
     mech = json.load(open(w.CACHE / "mechanisms.json"))
-    tg = {t["target_chembl_id"]: {s["component_synonym"] for c in t.get("target_components") or []
-                                  for s in c.get("target_component_synonyms") or [] if s["syn_type"] == "GENE_SYMBOL"}
-          for t in json.load(open(w.CACHE / "targets.json"))}
+    tg = {t["target_chembl_id"]: target_genes(t) for t in json.load(open(w.CACHE / "targets.json"))}   # D110
     cut, cut_k = w.RG["binding"]["pchembl_min"], w.RG["binding"]["pchembl_min_kinase"]
     E = {}
     for d in judged:

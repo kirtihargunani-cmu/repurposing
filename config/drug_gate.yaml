@@ -56,6 +56,12 @@ receptor_gate:
     # protein, complex, complex group or chimeric protein. PROTEIN FAMILY / SELECTIVITY GROUP mechanisms give no
     # member-level credit (no family rescue, as in the target gate).
     mechanism_target_types: [SINGLE PROTEIN, PROTEIN COMPLEX, PROTEIN COMPLEX GROUP, CHIMERIC PROTEIN]
+  # D110: a CHIMERIC PROTEIN mechanism target counts in 79i2 only through the kinase the drug binds (the fusion partner
+  # has no binding site and is made in almost every tissue). ChEMBL target pref_name -> gene. 79i2 stops on an unmapped one.
+  chimeric_kinase:
+    "Bcr/Abl fusion protein": ABL1
+    "EML4-ALK": ALK
+    "NPM/ALK (Nucleophosmin/ALK tyrosine kinase receptor)": ALK
   assembly:
     # A gene whose curated mechanism target is a complex is judged as that complex (tumors and lines):
     # PROTEIN COMPLEX: all components expressed, except these (any component; homodimers are functional)
