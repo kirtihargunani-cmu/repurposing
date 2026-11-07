@@ -61,7 +61,9 @@ follow-up questions:
    borrowed from other cancers although it was tested on this cancer's own cells and did nothing there; or the lab
    dose that worked is more than 10 times the highest level the drug reaches in patients' blood (taken from its FDA
    label or FDA review). Drugs that simply shut down the whole cell (protein synthesis, the sodium pump) are marked
-   'generic mechanism' but kept.
+   'generic mechanism' but kept. (Fix D111, 2026-11-07: the blood-level check had skipped 24 drugs whose FDA values
+   were found but not converted to the lab's units, among them bortezomib and everolimus; they are now checked, and
+   the check covers every lab version of a drug, not only one. Bortezomib leaves two top-10 lists.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).
