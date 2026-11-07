@@ -179,6 +179,8 @@ flowchart LR
   `results/lincs/d109/cmax.tsv`) are weak-evidence flags (hidden, excluded from 79p / 79o).
   `generic_mechanism` (ChEMBL: ribosome / protein synthesis, Na/K-ATPase, DNA-directed RNA polymerase) is shown
   only. The D109 dose-consistency rule was not adopted. Table: `results/lincs/evidence_flags_v2.tsv`.
+  D111 (2026-11-07): Cmax is converted with the parent molecular weight of any compound of the ingredient (else the
+  ChEMBL name lookup) and applies to every LINCS compound of the ingredient; 147 of 384 FDA drugs have a Cmax.
 - **Trial outcomes (D108; `79o2_trial_outcomes.py`, STAGE=fetch then merge):** top 10 FDA drugs per cohort; trials
   listing the drug; stop reasons by rule; completed trials read from abstracts (prompt
   `results/lincs/d108/reading_prompt.md`, readings and roles in `results/lincs/d108/`). Output

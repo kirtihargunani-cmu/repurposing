@@ -791,6 +791,9 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   EML4-ALK / NPM-ALK -> ALK). Alectinib, ceritinib, crizotinib now target-absent where the typical tumor lacks ALK
   (+67 group, +20 subgroup rows); FDA lists 2,426 -> 2,381 rows; two subgroup top-10 changes. Known-use Hub
   0.660 -> 0.631 (reported only).
+- D111 in production: the exposure flag (D109b) recovers 24 verified Cmax values lost to a molecular-weight lookup and
+  unit spellings (147 of 384 FDA drugs now), and applies Cmax to every LINCS compound of an ingredient. low_exposure
+  459 -> 513 FDA rows (52 drugs); bortezomib leaves the PAAD and PCPG-PGL top 10, everolimus COAD-MSI-like.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

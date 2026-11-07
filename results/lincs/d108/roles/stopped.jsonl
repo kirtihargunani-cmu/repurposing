@@ -61,3 +61,4 @@
 {"nct": "NCT00300885", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Carboplatin-paclitaxel in both arms; sorafenib missed primary endpoint", "stop_attributable_to_drug": "no"}
 {"nct": "NCT00460317", "drug": "Paclitaxel", "drug_role": "background", "role_note": "Paclitaxel-carboplatin in both arms; motesanib missed primary endpoint", "stop_attributable_to_drug": "no"}
 {"nct": "NCT05518110", "drug": "Trametinib", "drug_role": "combination", "role_note": "Trametinib plus hydroxychloroquine single arm; futility of combination", "stop_attributable_to_drug": "partly"}
+{"nct": "NCT00544908", "drug": "Dasatinib", "drug_role": "single_agent", "role_note": "Single-arm dasatinib monotherapy (other interventions are lab procedures); terminated for toxicity after 7 patients (read 2026-11-07, D111 new top-10 pair)", "stop_attributable_to_drug": "yes"}

@@ -195,10 +195,18 @@ def exposure():
                 ans[a["drug"]] = a
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
-    from fda_rows import fda_rows
+    from fda_rows import fda_rows, drug_name
     g, s = fda_rows()
     fd = pd.concat([g, s])[["group_id", "pert_id", "drug"]]
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False).drop_duplicates("pert_id").set_index("pert_id")
+    # D111: Cmax belongs to the ingredient -> every LINCS compound of an FDA ingredient (fda_matches, same drug name)
+    fm = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id")
+    p2d = dict(zip(fm.pert_id, fm.fda_ingredient.map(drug_name)))
+    p2c = dict(zip(fm.pert_id, fm.cmap_name))
+    nl = json.load(open(ROOT / "data/raw/chembl/ChEMBL_37/d105_all/name_lookup.json"))   # cmap name -> ChEMBL id (D105 cache)
+    d2p = {}
+    for p_, d_ in sorted(p2d.items()):
+        d2p.setdefault(d_, []).append(p_)
     mwf = CACHE / "d109_mw.json"
     mw = json.load(open(mwf)) if mwf.exists() else {}
     def molw(cid):
@@ -216,10 +224,17 @@ def exposure():
 
     def judge(drug, a, text, source):
         ok = bool(a.get("quote")) and norm(a["quote"]) in norm(text) and a.get("cmax_value") not in (None, "")
-        pid = fd[fd.drug == drug].pert_id.iloc[0] if (fd.drug == drug).any() else None
-        cid = ann.chembl_id.get(pid) if pid else None
-        m_ = molw(cid) if ok else np.nan
-        u = re.sub(r"\s+", "", str(a.get("cmax_unit", ""))).lower().replace("μ", "µ").replace("mcmol", "µmol").replace("umol/l", "um").replace("µmol/l", "µm").replace("nmol/l", "nm")
+        # D111: weight from any compound of the ingredient (fda_rows compound first, then the others in pert_id order)
+        pids = list(dict.fromkeys(list(fd[fd.drug == drug].pert_id[:1]) + d2p.get(drug, [])))
+        m_ = np.nan
+        if ok:
+            for cid in [ann.chembl_id.get(pid) for pid in pids] + [nl.get(p2c.get(pid)) for pid in pids]:   # D111: annotation id, else ChEMBL name lookup
+                m_ = molw(cid)
+                if m_ == m_:
+                    break
+        u = str(a.get("cmax_unit", "")).lower()
+        u = re.sub(r"\bmicrograms?\b", "ug", re.sub(r"\bnanograms?\b", "ng", re.sub(r"\s+per\s+", "/", u)))   # D111 spellings
+        u = re.sub(r"\s+", "", u).replace("μ", "µ").replace("mcmol", "µmol").replace("umol/l", "um").replace("µmol/l", "µm").replace("nmol/l", "nm")
         v = pd.to_numeric(str(a.get("cmax_value", "")).replace(",", ""), errors="coerce")
         um = np.nan
         if ok and v == v:
@@ -263,7 +278,8 @@ def exposure():
     cm.to_csv(OUT / "cmax.tsv", sep="\t", index=False)
     best = cm[cm.cmax_uM.notna()].drop_duplicates("drug")[["drug", "cmax_uM", "source"]].rename(columns={"source": "cmax_source"})
     ef = ef.drop(columns=[c for c in ("low_exposure", "drug", "cmax_uM", "cmax_source", "exposure_ratio") if c in ef])
-    ef = ef.merge(fd.drop_duplicates(["group_id", "pert_id"]), on=["group_id", "pert_id"], how="left").merge(best, on="drug", how="left")
+    ef["drug"] = ef.pert_id.map(p2d)   # D111: every compound of an FDA ingredient, not only the fda_rows pick
+    ef = ef.merge(best, on="drug", how="left")
     ef["exposure_ratio"] = ef.min_active_dose_uM / ef.cmax_uM
     ef["low_exposure"] = np.where(ef.exposure_ratio.notna(), ef.exposure_ratio > EXPO, pd.NA)
     ef.to_csv(RES / "evidence_flags_v2.tsv", sep="\t", index=False)

@@ -45,7 +45,6 @@ COAD-MSI-like	subgroup	TCGA-COAD	6	Dasatinib	8	5	0	0	0	0	0	0	1
 COAD-MSI-like	subgroup	TCGA-COAD	7	Vemurafenib	11	5	1	1	0	0	0	1	0	
 COAD-MSI-like	subgroup	TCGA-COAD	8	Dabrafenib	10	1	0	0	0	0	0	1	0	
 COAD-MSI-like	subgroup	TCGA-COAD	9	Cobimetinib	9	6	1	1	1	1	0	1	0	NCT03340558 (PHASE2, withdrawn; single_agent): stopped for efficacy: Negative results in a similar study
-COAD-MSI-like	subgroup	TCGA-COAD	10	Everolimus	14	9	1	0	1	1	0	1	2	"NCT01154335 (PHASE1, completed; combination): negative [lack_of_efficacy]: Linsitinib plus everolimus produced no objective responses and no indication of clinical activity in refractory mCRC. ""The MTD of OSI-906 and everolimus was 50 mg BID and 5 mg QD, respectively. No indications of clinical activity were observed in refractory mCRC patients."" (PMID 25335932; model-extracted)"
 ESCA-AD	disease		2	Doxorubicin	5	3	0	0	1	1	0	0	1	"NCT02262455 (PHASE1, completed; combination): negative [lack_of_efficacy]: No objective responses with STM 434 in phase I; only metabolic effects were seen. ""No responses were observed in the 30 evaluable patients, but the stable disease rate in patients with granulosa cell ovarian cancer was 10 of 12 (80%)."" (PMID 31068369; model-extracted)"
 ESCA-AD	disease		3	Topotecan	1	1	0	0	0	0	0	0	0	
 ESCA-AD	disease		4	Epirubicin	19	13	1	0	0	0	0	3	3	
@@ -151,10 +150,10 @@ TCGA-OV	disease		10	Bortezomib	9	7	1	0	0	0	0	0	1
 TCGA-PAAD	disease		3	Osimertinib	3	1	0	0	0	0	0	0	1	
 TCGA-PAAD	disease		4	Copanlisib	2	0	0	0	0	0	0	0	1	
 TCGA-PAAD	disease		5	Gedatolisib	1	0	0	0	0	0	0	0	1	
-TCGA-PAAD	disease		6	Bortezomib	11	6	0	0	0	0	0	0	3	
-TCGA-PAAD	disease		8	Fostamatinib	1	0	0	0	0	0	0	0	0	
-TCGA-PAAD	disease		9	Vorinostat	6	3	0	0	0	0	0	0	3	
-TCGA-PAAD	disease		10	Trametinib	11	3	1	0	1	1	0	0	3	NCT05518110 (PHASE2, terminated; combination): stopped for efficacy: Study terminated due to futility
+TCGA-PAAD	disease		7	Fostamatinib	1	0	0	0	0	0	0	0	0	
+TCGA-PAAD	disease		8	Vorinostat	6	3	0	0	0	0	0	0	3	
+TCGA-PAAD	disease		9	Trametinib	11	3	1	0	1	1	0	0	3	NCT05518110 (PHASE2, terminated; combination): stopped for efficacy: Study terminated due to futility
+TCGA-PAAD	disease		10	Dasatinib	10	5	0	0	1	0	1	0	2	NCT00544908 (PHASE2, terminated; single_agent): stopped for safety: Toxicity
 TCGA-PRAD	disease		1	Panobinostat	5	4	0	0	0	0	0	0	1	
 TCGA-PRAD	disease		2	Azacitidine	6	4	0	0	0	0	0	0	1	
 TCGA-PRAD	disease		3	Belinostat	3	3	0	0	0	0	0	0	0	
