@@ -168,6 +168,11 @@ def chembl(drugs):
     for n, m in byname.items():
         d2m.setdefault(n, set()).add(m)
     d2m = {n: s | {par.get(m, m) for m in s} for n, s in d2m.items()}
+    if (CACHE / "d113_ids.json").exists():   # D113: FDA drugs whose ChEMBL id was resolved from the FDA ingredient name
+        for n, v in json.load(open(CACHE / "d113_ids.json")).items():
+            d2m[n] = (d2m.get(n, set()) if v["mode"] == "add" else set()) | set(v["ids"])
+    if (CACHE / "activities_by_parent.json").exists():   # D113: activities of those resolved ids
+        act = act + json.load(open(CACHE / "activities_by_parent.json"))
     T = {}
     for t in tg:
         syms = {s["component_synonym"] for c in t.get("target_components") or [] for s in c.get("target_component_synonyms") or []

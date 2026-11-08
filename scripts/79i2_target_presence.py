@@ -133,7 +133,8 @@ def evidence_targets_d105a():
     PROT = {"SINGLE PROTEIN", "PROTEIN FAMILY", "PROTEIN COMPLEX", "PROTEIN COMPLEX GROUP", "CHIMERIC PROTEIN"}
     genes_of = lambda t: {x["component_synonym"] for c in t.get("target_components") or [] for x in c.get("target_component_synonyms") or [] if x["syn_type"] == "GENE_SYMBOL"}
     # D105b cleanup: median valid pChEMBL per molecule x gene over Ki / Kd / IC50 / EC50 only (no HTS 'Potency'), with counts
-    act = pd.DataFrame(json.load(open(w.CACHE / "activities.json")))
+    act = pd.DataFrame(json.load(open(w.CACHE / "activities.json")) + (json.load(open(w.CACHE / "activities_by_parent.json"))
+                       if (w.CACHE / "activities_by_parent.json").exists() else []))   # D113
     act = act[act.data_validity_comment.isna() & (act.potential_duplicate.astype(str) != "1") & act.standard_type.isin(["Ki", "Kd", "IC50", "EC50"])].copy()
     one = {k: next(iter(genes_of(t))) for k, t in T.items() if t.get("target_type") == "SINGLE PROTEIN" and t.get("organism") == "Homo sapiens" and len(genes_of(t)) == 1}
     act["gene"] = act.target_chembl_id.map(one); act["pchembl_value"] = act.pchembl_value.astype(float)

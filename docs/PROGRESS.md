@@ -799,6 +799,10 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   rucaparib, cyclosporine, thioguanine. Missing ChEMBL mechanisms for newly matched drugs fetched (lapatinib now
   EGFR + ERBB2; #6 in BRCA-Her2). Cyclosporine enters 10 top-10 lists without a Cmax reading. Open: 43 FDA drugs
   carry a wrong ChEMBL id (no curated mechanism), proposed as D113.
+- D113 in production (11-08): FDA drugs without a ChEMBL mechanism record get their ChEMBL id from the FDA ingredient
+  name (44 resolved, 32 applied). FDA drugs on a curated mechanism 295 -> 325 of 422; 'unverified binding' 35 -> 8.
+  Tioguanine -> IMPDH1/2 (was annotated as thioguanosine), vincristine -> tubulins, cyclosporine -> PPIA. Meloxicam
+  (COX-2 only) now target-absent in 16 groups / 7 subgroups. No top-10 list changed.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
