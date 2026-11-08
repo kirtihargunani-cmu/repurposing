@@ -4,7 +4,7 @@ AGG = production (post D97); EARLY / LATE = _d100early / _d100late consensus out
 Reported columns: per group x drug spec_mech_early_pct, spec_mech_late_pct, timing class (both: early and late rev_mech > 0
 and both in the top 25%; early only; late only; neither; timing unknown = no timed pair among the drug's lines for the group:
 in-key lines with Celligner weight > 0 for direct drugs, any line for borrowed drugs) -> results/lincs/d100/timing_scores.tsv
-Lead test (EARLY as lead vs AGG): (1) known-use AUC falls <= 0.01 on Hub and ChEMBL and rises >= 0.01 on one; (2) breast
+Lead test (EARLY as lead vs AGG): (1) known-use AUC (D118: 79l primary metric) falls <= 0.01 on Hub and ChEMBL and rises >= 0.01 on one; (2) breast
 positive-control median not lower, Basal negative-control median not higher; (3) dominance rises <= 0.5 points.
 Outputs results/lincs/d100/{decision.tsv, metrics.tsv, timing_scores.tsv, timing_classes.tsv, antier.tsv}
 """
@@ -18,7 +18,11 @@ ARMS = {"agg": "_v2_consensus", "early": "_v2_consensus_d100early", "late": "_v2
 POS = [(g, d) for g in ["BRCA-LumA", "BRCA-LumB"] for d in ["fulvestrant", "tamoxifen", "raloxifene", "palbociclib"]]
 NEG = [("BRCA-Basal", d) for d in ["fulvestrant", "tamoxifen", "raloxifene"]]
 ANTI_ER = ["fulvestrant", "tamoxifen", "raloxifene", "toremifene", "bazedoxifene", "clomifene"]
-lab = pd.read_csv(RES / "known_use/labels.tsv", sep="\t")[["cohort", "pert_id", "lab_hub", "lab_chembl"]].drop_duplicates(["cohort", "pert_id"])
+# D118: known-use AUC = the primary metric of 79l (pooled within-cohort AUC, eligible rows of anticancer drugs, drug-level labels)
+import importlib.util, sys  # noqa: E401
+sys.path.insert(0, str(ROOT / "scripts"))
+_s = importlib.util.spec_from_file_location("ku", ROOT / "scripts/79l_known_use.py"); KU = importlib.util.module_from_spec(_s); _s.loader.exec_module(KU)
+lab = pd.read_csv(RES / "known_use/labels.tsv", sep="\t")[["cohort", "fda_ingredient", "lab_hub", "lab_chembl", "excl_hub", "excl_chembl", "anticancer"]]
 
 
 def auc(x, y):
@@ -31,11 +35,10 @@ for arm, sfx in ARMS.items():
     sp = pd.read_csv(RES / f"drug_reversal_split{sfx}.tsv", sep="\t", low_memory=False); SP[arm] = sp
     best = lambda g, d: sp[(sp.group_id == g) & (sp.cmap_name == d)].spec_mech_pct.max()
     o = {"ctl_pos": float(np.nanmedian([best(g, d) for g, d in POS])), "ctl_neg": float(np.nanmedian([best(g, d) for g, d in NEG]))}
-    s = sp.groupby(["group_id", "pert_id"]).spec_mech_pct.max().reset_index()
-    dd = lab.merge(s, left_on=["cohort", "pert_id"], right_on=["group_id", "pert_id"])
-    for ls in ["lab_hub", "lab_chembl"]:
-        o[f"auc_{ls}"] = float(np.median([auc(g[g[ls]].spec_mech_pct.dropna().values, g[~g[ls]].spec_mech_pct.dropna().values)
-                                          for c, g in dd.groupby("cohort") if g[ls].sum() >= 3 and (~g[ls]).sum() >= 20]))
+    dd = KU.drug_table(sp).merge(lab, on=["cohort", "fda_ingredient"])
+    for src in ["hub", "chembl"]:
+        X = dd[dd.eligible & dd.anticancer & ~dd[f"excl_{src}"]]
+        o[f"auc_lab_{src}"] = float(KU.pooled_auc(X, f"lab_{src}", "spec_mech_pct")["auc"])
     r = pd.read_csv(RES / f"drug_reversal{sfx}.tsv", sep="\t", usecols=["group_id", "pert_id", "rev"])
     t = r.groupby("pert_id").agg(n=("group_id", "nunique"), pos=("rev", lambda x: (x > 0).mean())); t = t[t.n >= 33]
     o["dominance"] = float((t.pos >= 0.8).mean())

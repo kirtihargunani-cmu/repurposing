@@ -818,6 +818,10 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   reproduces the FDA lists byte for byte. A flags-only rerun now stops instead of dropping flags. Tiers and evidence
   status are recomputed after all gates (evidence status unchanged everywhere). Fixed a hash-seed dependence in the
   79i2 carrier count.
+- D118 (11-08): known-use metric redesigned (drug-level labels and scores, cancer-word regexes, subtype table, primary
+  = pooled AUC among eligible anticancer drugs, next to the drug-class baseline). Result: Hub 0.462, ChEMBL 0.430
+  (chance 0.5; class baseline 0.66). Within cancer drugs the lead score does not recover each cancer's own drugs; the
+  earlier 0.63 came from the gates and from drugs that score high everywhere.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

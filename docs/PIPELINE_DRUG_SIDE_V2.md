@@ -186,6 +186,12 @@ flowchart LR
   between `fda_docs` / `exposure` and `trials_fetch` / `trials_merge`. 79i4 recomputes tier_mech / tier_spec_mech /
   tier_spec_sib_mech from the final percentiles and every flag, and evidence_status / evidence_note from the lead-score
   tier (79e values kept as *_79e). `apply_evidence` stops if plate_confined / low_exposure are missing.
+- **Known-use metric (`known_use`, 79l; D118, 2026-11-08; reported only):** unit cohort x FDA ingredient, score = mean
+  post-gate spec_mech_pct over the ingredient's gate-passing compounds; labels per drug (all ChEMBL ids of all compounds;
+  each indication term matched alone and required to contain a tumour word; subtype table in `config/known_use.yaml`).
+  Primary = pooled within-cohort AUC on eligible rows of anticancer drugs (ATC L01 / L02 or Hub oncology): Hub 0.462,
+  ChEMBL 0.430; class baseline 0.663 / 0.652; pre-gate 0.509 / 0.476. Known-use AUCs quoted above this line (D85-D113)
+  are the old metric (median per-cohort AUC, best compound, pert-level labels) and are not comparable.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

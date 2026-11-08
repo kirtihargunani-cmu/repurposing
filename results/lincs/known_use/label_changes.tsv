@@ -1,0 +1,222 @@
+source	change	cohort	fda_ingredient	drug
+hub	gained	TCGA-KIRC	TEMSIROLIMUS	Temsirolimus
+hub	gained	TCGA-KIRP	TEMSIROLIMUS	Temsirolimus
+hub	gained	TCGA-LUAD	PEMETREXED DISODIUM	Pemetrexed
+hub	lost	LGG-IDHmut-codel	EVEROLIMUS	Everolimus
+hub	lost	LGG-IDHmut-noncodel	EVEROLIMUS	Everolimus
+hub	lost	LGG-IDHwt	EVEROLIMUS	Everolimus
+hub	lost	TCGA-PRAD	NORFLOXACIN	Norfloxacin
+hub	subtype_removed	BRCA-Basal	FULVESTRANT	Fulvestrant
+hub	subtype_removed	BRCA-Basal	LAPATINIB DITOSYLATE	Lapatinib
+hub	subtype_removed	BRCA-Basal	NERATINIB MALEATE	Neratinib
+hub	subtype_removed	BRCA-Basal	RALOXIFENE HYDROCHLORIDE	Raloxifene
+hub	subtype_removed	BRCA-Basal	TAMOXIFEN CITRATE	Tamoxifen
+hub	subtype_removed	BRCA-Basal	TOREMIFENE CITRATE	Toremifene
+hub	subtype_removed	BRCA-Her2	FULVESTRANT	Fulvestrant
+hub	subtype_removed	BRCA-Her2	RALOXIFENE HYDROCHLORIDE	Raloxifene
+hub	subtype_removed	BRCA-Her2	TAMOXIFEN CITRATE	Tamoxifen
+hub	subtype_removed	BRCA-Her2	TOREMIFENE CITRATE	Toremifene
+hub	subtype_removed	BRCA-LumA	LAPATINIB DITOSYLATE	Lapatinib
+hub	subtype_removed	BRCA-LumA	NERATINIB MALEATE	Neratinib
+hub	subtype_removed	BRCA-LumB	LAPATINIB DITOSYLATE	Lapatinib
+hub	subtype_removed	BRCA-LumB	NERATINIB MALEATE	Neratinib
+hub	subtype_removed	TCGA-LUSC	AFATINIB	Afatinib
+hub	subtype_removed	TCGA-LUSC	ALECTINIB HYDROCHLORIDE	Alectinib
+hub	subtype_removed	TCGA-LUSC	CERITINIB	Ceritinib
+hub	subtype_removed	TCGA-LUSC	CRIZOTINIB	Crizotinib
+hub	subtype_removed	TCGA-LUSC	ERLOTINIB HYDROCHLORIDE	Erlotinib
+hub	subtype_removed	TCGA-LUSC	GEFITINIB	Gefitinib
+chembl	gained	BRCA-Basal	CYCLOSPORINE	Cyclosporine
+chembl	gained	BRCA-Basal	CYTARABINE	Cytarabine
+chembl	gained	BRCA-Basal	DOCETAXEL	Docetaxel
+chembl	gained	BRCA-Basal	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	BRCA-Basal	ETOPOSIDE	Etoposide
+chembl	gained	BRCA-Basal	EVEROLIMUS	Everolimus
+chembl	gained	BRCA-Basal	PACLITAXEL	Paclitaxel
+chembl	gained	BRCA-Basal	PREDNISONE	Prednisone
+chembl	gained	BRCA-Basal	SIROLIMUS	Sirolimus
+chembl	gained	BRCA-Basal	TEMSIROLIMUS	Temsirolimus
+chembl	gained	BRCA-Basal	TRETINOIN	Tretinoin
+chembl	gained	BRCA-Her2	CYCLOSPORINE	Cyclosporine
+chembl	gained	BRCA-Her2	CYTARABINE	Cytarabine
+chembl	gained	BRCA-Her2	DOCETAXEL	Docetaxel
+chembl	gained	BRCA-Her2	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	BRCA-Her2	ETOPOSIDE	Etoposide
+chembl	gained	BRCA-Her2	EVEROLIMUS	Everolimus
+chembl	gained	BRCA-Her2	LAPATINIB DITOSYLATE	Lapatinib
+chembl	gained	BRCA-Her2	PACLITAXEL	Paclitaxel
+chembl	gained	BRCA-Her2	PREDNISONE	Prednisone
+chembl	gained	BRCA-Her2	TEMSIROLIMUS	Temsirolimus
+chembl	gained	BRCA-Her2	TRETINOIN	Tretinoin
+chembl	gained	BRCA-LumA	CYCLOSPORINE	Cyclosporine
+chembl	gained	BRCA-LumA	CYTARABINE	Cytarabine
+chembl	gained	BRCA-LumA	DOCETAXEL	Docetaxel
+chembl	gained	BRCA-LumA	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	BRCA-LumA	ETOPOSIDE	Etoposide
+chembl	gained	BRCA-LumA	EVEROLIMUS	Everolimus
+chembl	gained	BRCA-LumA	FULVESTRANT	Fulvestrant
+chembl	gained	BRCA-LumA	PACLITAXEL	Paclitaxel
+chembl	gained	BRCA-LumA	PREDNISONE	Prednisone
+chembl	gained	BRCA-LumA	TAMOXIFEN CITRATE	Tamoxifen
+chembl	gained	BRCA-LumA	TEMSIROLIMUS	Temsirolimus
+chembl	gained	BRCA-LumA	TRETINOIN	Tretinoin
+chembl	gained	BRCA-LumB	CYCLOSPORINE	Cyclosporine
+chembl	gained	BRCA-LumB	CYTARABINE	Cytarabine
+chembl	gained	BRCA-LumB	DOCETAXEL	Docetaxel
+chembl	gained	BRCA-LumB	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	BRCA-LumB	ETOPOSIDE	Etoposide
+chembl	gained	BRCA-LumB	EVEROLIMUS	Everolimus
+chembl	gained	BRCA-LumB	PACLITAXEL	Paclitaxel
+chembl	gained	BRCA-LumB	PREDNISONE	Prednisone
+chembl	gained	BRCA-LumB	TEMSIROLIMUS	Temsirolimus
+chembl	gained	BRCA-LumB	TRETINOIN	Tretinoin
+chembl	gained	CESC-AD	PACLITAXEL	Paclitaxel
+chembl	gained	CESC-SCC	PACLITAXEL	Paclitaxel
+chembl	gained	CESC-SCC	TOPOTECAN HYDROCHLORIDE	Topotecan
+chembl	gained	ESCA-AD	PACLITAXEL	Paclitaxel
+chembl	gained	ESCA-SCC	PACLITAXEL	Paclitaxel
+chembl	gained	LGG-IDHmut-codel	VINCRISTINE SULFATE	Vincristine
+chembl	gained	LGG-IDHmut-noncodel	VINCRISTINE SULFATE	Vincristine
+chembl	gained	LGG-IDHwt	EVEROLIMUS	Everolimus
+chembl	gained	LGG-IDHwt	VINCRISTINE SULFATE	Vincristine
+chembl	gained	SARC-DDLPS	BORTEZOMIB	Bortezomib
+chembl	gained	SARC-DDLPS	EPIRUBICIN HYDROCHLORIDE	Epirubicin
+chembl	gained	SARC-DDLPS	ETOPOSIDE	Etoposide
+chembl	gained	SARC-DDLPS	IDARUBICIN HYDROCHLORIDE	Idarubicin
+chembl	gained	SARC-DDLPS	LAPATINIB DITOSYLATE	Lapatinib
+chembl	gained	SARC-LMS	BORTEZOMIB	Bortezomib
+chembl	gained	SARC-LMS	CYTARABINE	Cytarabine
+chembl	gained	SARC-LMS	DACTINOMYCIN	Dactinomycin
+chembl	gained	SARC-LMS	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	SARC-LMS	EPIRUBICIN HYDROCHLORIDE	Epirubicin
+chembl	gained	SARC-LMS	IDARUBICIN HYDROCHLORIDE	Idarubicin
+chembl	gained	SARC-LMS	LAPATINIB DITOSYLATE	Lapatinib
+chembl	gained	SARC-UPS	BORTEZOMIB	Bortezomib
+chembl	gained	SARC-UPS	DACTINOMYCIN	Dactinomycin
+chembl	gained	SARC-UPS	EPIRUBICIN HYDROCHLORIDE	Epirubicin
+chembl	gained	SARC-UPS	ETOPOSIDE	Etoposide
+chembl	gained	SARC-UPS	IDARUBICIN HYDROCHLORIDE	Idarubicin
+chembl	gained	SARC-UPS	LAPATINIB DITOSYLATE	Lapatinib
+chembl	gained	TARGET-NBL	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	TARGET-NBL	ETOPOSIDE	Etoposide
+chembl	gained	TARGET-NBL	TOPOTECAN HYDROCHLORIDE	Topotecan
+chembl	gained	TARGET-NBL	VINCRISTINE SULFATE	Vincristine
+chembl	gained	TARGET-WT	DACTINOMYCIN	Dactinomycin
+chembl	gained	TCGA-ACC	ETOPOSIDE	Etoposide
+chembl	gained	TCGA-BLCA	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	TCGA-BLCA	EPIRUBICIN HYDROCHLORIDE	Epirubicin
+chembl	gained	TCGA-BLCA	PACLITAXEL	Paclitaxel
+chembl	gained	TCGA-BLCA	VINBLASTINE SULFATE	Vinblastine
+chembl	gained	TCGA-COAD	CYCLOSPORINE	Cyclosporine
+chembl	gained	TCGA-COAD	TRIFLURIDINE	Trifluridine
+chembl	gained	TCGA-GBM	TOFACITINIB CITRATE	Tofacitinib
+chembl	gained	TCGA-GBM	VINCRISTINE SULFATE	Vincristine
+chembl	gained	TCGA-HNSC	DOCETAXEL	Docetaxel
+chembl	gained	TCGA-HNSC	LAPATINIB DITOSYLATE	Lapatinib
+chembl	gained	TCGA-HNSC	PACLITAXEL	Paclitaxel
+chembl	gained	TCGA-KICH	DACTINOMYCIN	Dactinomycin
+chembl	gained	TCGA-KICH	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	TCGA-KICH	TEMSIROLIMUS	Temsirolimus
+chembl	gained	TCGA-KIRC	DACTINOMYCIN	Dactinomycin
+chembl	gained	TCGA-KIRC	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	TCGA-KIRC	EVEROLIMUS	Everolimus
+chembl	gained	TCGA-KIRC	TEMSIROLIMUS	Temsirolimus
+chembl	gained	TCGA-KIRP	DACTINOMYCIN	Dactinomycin
+chembl	gained	TCGA-KIRP	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	TCGA-KIRP	ETOPOSIDE	Etoposide
+chembl	gained	TCGA-KIRP	EVEROLIMUS	Everolimus
+chembl	gained	TCGA-KIRP	TEMSIROLIMUS	Temsirolimus
+chembl	gained	TCGA-LIHC	CYCLOSPORINE	Cyclosporine
+chembl	gained	TCGA-LIHC	DOXORUBICIN HYDROCHLORIDE	Doxorubicin
+chembl	gained	TCGA-LIHC	EPIRUBICIN HYDROCHLORIDE	Epirubicin
+chembl	gained	TCGA-LUAD	DOCETAXEL	Docetaxel
+chembl	gained	TCGA-LUAD	PACLITAXEL	Paclitaxel
+chembl	gained	TCGA-LUAD	VINBLASTINE SULFATE	Vinblastine
+chembl	gained	TCGA-LUAD	VINORELBINE TARTRATE	Vinorelbine
+chembl	gained	TCGA-LUSC	DOCETAXEL	Docetaxel
+chembl	gained	TCGA-LUSC	TRETINOIN	Tretinoin
+chembl	gained	TCGA-LUSC	VINORELBINE TARTRATE	Vinorelbine
+chembl	gained	TCGA-OV	ETOPOSIDE	Etoposide
+chembl	gained	TCGA-OV	RUCAPARIB CAMSYLATE	Rucaparib
+chembl	gained	TCGA-PRAD	ATORVASTATIN CALCIUM	Atorvastatin
+chembl	gained	TCGA-PRAD	CABAZITAXEL	Cabazitaxel
+chembl	gained	TCGA-PRAD	CALCITRIOL	Calcitriol
+chembl	gained	TCGA-PRAD	DOCETAXEL	Docetaxel
+chembl	gained	TCGA-PRAD	ESTRAMUSTINE PHOSPHATE SODIUM	Estramustine
+chembl	gained	TCGA-PRAD	EVEROLIMUS	Everolimus
+chembl	gained	TCGA-PRAD	KETOCONAZOLE	Ketoconazole
+chembl	gained	TCGA-PRAD	MELOXICAM	Meloxicam
+chembl	gained	TCGA-PRAD	PACLITAXEL	Paclitaxel
+chembl	gained	TCGA-PRAD	RUCAPARIB CAMSYLATE	Rucaparib
+chembl	gained	TCGA-READ	CYCLOSPORINE	Cyclosporine
+chembl	gained	TCGA-READ	FLOXURIDINE	Floxuridine
+chembl	gained	TCGA-READ	TRIFLURIDINE	Trifluridine
+chembl	gained	TCGA-SKCM	FLUDARABINE PHOSPHATE	Fludarabine
+chembl	gained	TCGA-SKCM	SELUMETINIB SULFATE	Selumetinib
+chembl	gained	TCGA-STAD	EVEROLIMUS	Everolimus
+chembl	gained	TCGA-STAD	PACLITAXEL	Paclitaxel
+chembl	gained	TGCT-NSGCT	VINBLASTINE SULFATE	Vinblastine
+chembl	gained	TGCT-SEM	PACLITAXEL	Paclitaxel
+chembl	gained	TGCT-SEM	VINBLASTINE SULFATE	Vinblastine
+chembl	lost	ESCA-AD	FLUTICASONE PROPIONATE	Fluticasone
+chembl	lost	ESCA-SCC	FLUTICASONE PROPIONATE	Fluticasone
+chembl	lost	LGG-IDHmut-codel	AMINOLEVULINIC ACID HYDROCHLORIDE	Aminolevulinic acid
+chembl	lost	LGG-IDHmut-noncodel	AMINOLEVULINIC ACID HYDROCHLORIDE	Aminolevulinic acid
+chembl	lost	LGG-IDHwt	AMINOLEVULINIC ACID HYDROCHLORIDE	Aminolevulinic acid
+chembl	lost	TCGA-GBM	AMINOLEVULINIC ACID HYDROCHLORIDE	Aminolevulinic acid
+chembl	lost	TCGA-GBM	PACLITAXEL	Paclitaxel
+chembl	lost	TCGA-LUAD	BETAMETHASONE DIPROPIONATE	Betamethasone
+chembl	lost	TCGA-LUAD	CICLESONIDE	Ciclesonide
+chembl	lost	TCGA-LUAD	COLCHICINE	Colchicine
+chembl	lost	TCGA-LUAD	MOMETASONE FUROATE	Mometasone furoate
+chembl	lost	TCGA-LUAD	MYCOPHENOLATE MOFETIL	Mycophenolate mofetil
+chembl	lost	TCGA-LUAD	SILDENAFIL CITRATE	Sildenafil
+chembl	lost	TCGA-LUAD	TRIAMCINOLONE	Triamcinolone
+chembl	lost	TCGA-LUAD	ZAFIRLUKAST	Zafirlukast
+chembl	lost	TCGA-LUSC	BETAMETHASONE DIPROPIONATE	Betamethasone
+chembl	lost	TCGA-LUSC	CICLESONIDE	Ciclesonide
+chembl	lost	TCGA-LUSC	COLCHICINE	Colchicine
+chembl	lost	TCGA-LUSC	MOMETASONE FUROATE	Mometasone furoate
+chembl	lost	TCGA-LUSC	MYCOPHENOLATE MOFETIL	Mycophenolate mofetil
+chembl	lost	TCGA-LUSC	SILDENAFIL CITRATE	Sildenafil
+chembl	lost	TCGA-LUSC	TRIAMCINOLONE	Triamcinolone
+chembl	lost	TCGA-LUSC	ZAFIRLUKAST	Zafirlukast
+chembl	lost	TCGA-OV	RALOXIFENE HYDROCHLORIDE	Raloxifene
+chembl	lost	TCGA-OV	SIMVASTATIN	Simvastatin
+chembl	lost	TCGA-UCS	FLUOROURACIL	Fluorouracil
+chembl	lost	TCGA-UCS	GEMCITABINE HYDROCHLORIDE	Gemcitabine
+chembl	lost	TCGA-UCS	IRINOTECAN HYDROCHLORIDE	Irinotecan
+chembl	lost	TCGA-UCS	METRONIDAZOLE	Metronidazole
+chembl	lost	TCGA-UCS	TOPOTECAN HYDROCHLORIDE	Topotecan
+chembl	lost	UCEC-EEC	FLUOROURACIL	Fluorouracil
+chembl	lost	UCEC-EEC	GEMCITABINE HYDROCHLORIDE	Gemcitabine
+chembl	lost	UCEC-EEC	IRINOTECAN HYDROCHLORIDE	Irinotecan
+chembl	lost	UCEC-EEC	METRONIDAZOLE	Metronidazole
+chembl	lost	UCEC-EEC	TOPOTECAN HYDROCHLORIDE	Topotecan
+chembl	lost	UCEC-SER	FLUOROURACIL	Fluorouracil
+chembl	lost	UCEC-SER	GEMCITABINE HYDROCHLORIDE	Gemcitabine
+chembl	lost	UCEC-SER	IRINOTECAN HYDROCHLORIDE	Irinotecan
+chembl	lost	UCEC-SER	METRONIDAZOLE	Metronidazole
+chembl	lost	UCEC-SER	TOPOTECAN HYDROCHLORIDE	Topotecan
+chembl	subtype_removed	BRCA-Basal	AFATINIB	Afatinib
+chembl	subtype_removed	BRCA-Basal	NERATINIB MALEATE	Neratinib
+chembl	subtype_removed	BRCA-Basal	RALOXIFENE HYDROCHLORIDE	Raloxifene
+chembl	subtype_removed	BRCA-Basal	TOREMIFENE CITRATE	Toremifene
+chembl	subtype_removed	BRCA-Her2	RALOXIFENE HYDROCHLORIDE	Raloxifene
+chembl	subtype_removed	BRCA-LumA	AFATINIB	Afatinib
+chembl	subtype_removed	BRCA-LumA	NERATINIB MALEATE	Neratinib
+chembl	subtype_removed	BRCA-LumB	AFATINIB	Afatinib
+chembl	subtype_removed	BRCA-LumB	NERATINIB MALEATE	Neratinib
+chembl	subtype_removed	TCGA-LUSC	AFATINIB	Afatinib
+chembl	subtype_removed	TCGA-LUSC	ALECTINIB HYDROCHLORIDE	Alectinib
+chembl	subtype_removed	TCGA-LUSC	CABOZANTINIB	Cabozantinib
+chembl	subtype_removed	TCGA-LUSC	CERITINIB	Ceritinib
+chembl	subtype_removed	TCGA-LUSC	CRIZOTINIB	Crizotinib
+chembl	subtype_removed	TCGA-LUSC	DACOMITINIB	Dacomitinib
+chembl	subtype_removed	TCGA-LUSC	ERLOTINIB HYDROCHLORIDE	Erlotinib
+chembl	subtype_removed	TCGA-LUSC	GEFITINIB	Gefitinib
+chembl	subtype_removed	TCGA-LUSC	OSIMERTINIB MESYLATE	Osimertinib
+chembl	subtype_removed	TCGA-LUSC	PEMETREXED DISODIUM	Pemetrexed
+chembl	subtype_removed	TCGA-LUSC	SORAFENIB TOSYLATE	Sorafenib
+chembl	subtype_removed	TCGA-LUSC	SUNITINIB MALATE	Sunitinib
+chembl	subtype_removed	TCGA-LUSC	VANDETANIB	Vandetanib

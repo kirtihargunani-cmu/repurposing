@@ -323,8 +323,12 @@ with paper and trial links, are on the FDA rankings page.
 ## What is not done yet
 
 - **Tests against measured drug killing of cell lines (PRISM / GDSC), known drug uses and gene dependencies** have
-  been run (C28, C29): known uses are recovered a little better than chance, and the scores do not predict which
-  cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
+  been run (C28, C29) and do not support the scores. **Known uses (redone carefully as D118, 2026-11-08):** if we
+  only compare cancer drugs with each other, the drugs already approved for a cancer do not rank higher for that
+  cancer than other cancer drugs do; they rank slightly lower (0.46 and 0.43 on the two label sources, where 0.5 is a
+  coin toss). The earlier "better than chance" (about 0.63) mostly reflected that cancer drugs rank above non-cancer
+  drugs, and that the target checks push some drugs down; simply knowing whether a drug is a cancer drug scores 0.66.
+  The scores also do not predict which cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
   scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
 - **An independent check with a different kind of map (PROGENy pathways, D99).** Good news: the drug data are sound.
   Drugs that block a pathway (PI3K, MAPK, EGFR, p53 activators) move that pathway the right way in 75% of profiles.
