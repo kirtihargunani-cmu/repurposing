@@ -7,7 +7,8 @@ active lines outside the key. Matched line = in-key line with weight >= 0.1 x th
 (1) dose_inconsistent: per drug x line and time point with an active signature, signatures at doses >= 2x the highest
     active dose (any quality) have median TAS < 0.5 x the median TAS of the active ones; profiles without a higher dose
     are not judged. Row flag: >= 50% of the judged lines behind the score inconsistent.
-(2) inactive_matched_line: borrowed row; the drug has >= 1 is_hiq signature in a matched line, none active.
+(2) inactive_matched_line: borrowed row; the drug has >= 1 is_hiq signature in a matched line, none active. D116: over the
+    drug's sibling compounds (same FDA ingredient, else cmap_name); per-compound value kept as inactive_matched_line_own.
     inconclusive_matched_line: only low-quality signatures there (reported, not a flag).
 (3) generic_mechanism: ChEMBL curated mechanism (molecule or parent) in GENERIC.
 (4) low_exposure (FDA drugs, STAGE=exposure): lowest active dose in the lines behind the score > 10 x label Cmax (uM).
@@ -104,6 +105,13 @@ def flags():
     gen_ids = {i for x in mech if x.get("mechanism_of_action") in GENERIC for i in (x["molecule_chembl_id"], x.get("parent_molecule_chembl_id"))}
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False).drop_duplicates("pert_id").set_index("pert_id")
     gen = ann.chembl_id.isin(gen_ids)
+    # D116: sibling compounds of a drug (FDA ingredient for FDA drugs, else cmap_name)
+    fmz = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id").fda_ingredient
+    dkey = {p: ("fda:" + fmz[p]) if p in fmz.index else ("cmap:" + str(c)) for p, c in ann.cmap_name.items()}
+    sib = {}
+    for p, k in dkey.items():
+        sib.setdefault(k, set()).add(p)
+    sibs = lambda p: sib.get(dkey.get(p), set()) | {p}
     wg = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     ws = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long_v2.tsv", sep="\t").rename(columns={"stratum": "group_id"})
     res = []
@@ -122,13 +130,16 @@ def flags():
                 jj = [r for r in j if r.judged]
                 inc = sum(r.inconsistent for r in jj)
                 min_dose = min([r.min_active_dose for r in j], default=np.nan)
-                inact = incon = False
+                inact = incon = own = False
                 if src == "borrowed":
                     mh = hiq.get(p, set()) & matched
-                    inact = bool(mh)                     # hiq signatures in a matched line, none active (else it would be direct)
-                    incon = (not inact) and bool(anyq.get(p, set()) & matched)
+                    own = bool(mh)                       # hiq signatures in a matched line, none active (else it would be direct)
+                    S = sibs(p)                          # D116: judged over the drug's sibling compounds
+                    act_m = any(lines_of.get(q, set()) & matched for q in S)
+                    inact = (not act_m) and any(hiq.get(q, set()) & matched for q in S)
+                    incon = (not act_m) and (not inact) and any(anyq.get(q, set()) & matched for q in S)
                 res.append(dict(group_id=g, pert_id=p, source=src, n_lines=len(L), n_dose_judged=len(jj), n_dose_inconsistent=inc,
-                                dose_inconsistent=bool(jj) and inc / len(jj) >= ROW_SHARE, inactive_matched_line=inact,
+                                dose_inconsistent=bool(jj) and inc / len(jj) >= ROW_SHARE, inactive_matched_line=inact, inactive_matched_line_own=own,
                                 inconclusive_matched_line=incon, generic_mechanism=bool(gen.get(p, False)),
                                 min_active_dose_uM=min_dose))
     ef = pd.DataFrame(res)

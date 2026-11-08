@@ -89,7 +89,7 @@ LGG-IDHmut-codel	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	92.5	9
 LGG-IDHwt	Topotecan	BRD-A59985574	topotecan	borrowed	False	False	96.9	97.6	94.2	1.0	61.05121951219512
 ESCA-SCC	Epirubicin	BRD-K04548931	epirubicin	borrowed	False	False	99.7	99.7	99.5	1.0	63.58536585365854
 TCGA-KICH	Cytarabine	BRD-K71847383	cytarabine	borrowed	False	False	98.3	98.5	98.7	1.0	59.02682926829268
-TCGA-UCS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.6	97.9	95.7	1.0	54.073170731707314
+TCGA-UCS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.6	97.9	95.7	1.0	54.21463414634147
 PCPG-PGL	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	97.1	86.9	96.6	1.0	51.72682926829269
 LGG-IDHmut-codel	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	92.3	92.9	93.4	1.0	51.50731707317074
 TCGA-GBM	Givinostat	BRD-K13810148	givinostat	borrowed	False	False	99.8	99.6	90.2	1.0	50.580487804878054
@@ -136,7 +136,7 @@ TCGA-GBM	Doxorubicin	BRD-A76941896	doxorubicin	borrowed	False	False	99.0	95.9	84
 PCPG-PHEO	Pioglitazone	BRD-A48430263	pioglitazone	borrowed	False	False	97.9	98.2	87.6	1.0	34.665853658536584
 TARGET-WT	Cytarabine	BRD-K71847383	cytarabine	borrowed	False	False	96.9	98.0	95.8	1.0	59.02682926829268
 TCGA-KICH	Axitinib	BRD-K29905972	axitinib	borrowed	True	True	96.8	93.5	94.1	1.0	51.50731707317074
-PCPG-PGL	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	95.4	95.6	99.0	1.0	64.51951219512196
+PCPG-PGL	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	95.4	95.6	99.0	1.0	65.96585365853659
 TCGA-KIRC	Cabazitaxel	BRD-K06858286	cabazitaxel	borrowed	False	False	96.2	96.1	93.3		57.43658536585366
 TARGET-NBL	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	95.5	94.4	90.6	1.0	55.20243902439025
 BRCA-LumB	Cabazitaxel	BRD-K06858286	cabazitaxel	matched	False	False	97.7	97.3	94.9		57.43658536585366
@@ -153,7 +153,7 @@ SARC-LMS	Artesunate	BRD-K17944737	artesunate	borrowed	False	False	94.3	94.7	77.2
 LGG-IDHmut-noncodel	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	90.4	90.7	89.9	1.0	55.20243902439025
 PCPG-PHEO	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	97.4	98.0	89.2	1.0	45.8
 TARGET-NBL	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	94.8	95.8	93.9	1.0	46.86829268292683
-UCEC-EEC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	99.0	98.3	86.8	1.0	54.073170731707314
+UCEC-EEC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	99.0	98.3	86.8	1.0	54.21463414634147
 PCPG-PHEO	Ixazomib	BRD-A66419424	MLN-9708	borrowed	False	False	97.2	96.2	80.7		50.20975609756098
 TCGA-KIRP	Mitoxantrone	BRD-K21680192	mitoxantrone	borrowed	False	False	97.4	97.5	93.0	1.0	48.78780487804878
 CESC-AD	Mercaptopurine	BRD-K91601245	mercaptopurine	matched	False	False	99.4	99.2	95.7	1.0	54.40975609756098
@@ -179,6 +179,7 @@ TARGET-WT	Trifluridine	BRD-K03243820	trifluridine	borrowed	False	False	95.4	97.6
 BRCA-LumB	Topotecan	BRD-K55696337	topotecan	matched	False	False	96.2	96.2	96.8	1.0	61.05121951219512
 BRCA-LumA	Albendazole	BRD-K79131256	albendazole	matched	False	False	98.2	97.7	95.4	1.0	54.87560975609756
 LGG-IDHmut-codel	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	89.5	89.7	89.6	1.0	55.20243902439025
+TCGA-SKCM	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	95.6	94.7	95.8	1.0	65.96585365853659
 LGG-IDHwt	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	92.0	89.4	85.1	1.0	56.12926829268293
 ESCA-AD	Mitoxantrone	BRD-K21680192	mitoxantrone	borrowed	False	False	97.6	96.6	93.4	1.0	48.78780487804878
 TCGA-KICH	Floxuridine	BRD-K47832606	floxuridine	borrowed	False	False	94.3	93.0	94.6	1.0	61.78536585365853
@@ -191,18 +192,18 @@ LGG-IDHwt	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	91.3	83.5	6
 ESCA-SCC	Sonidegib	BRD-K19796430	sonidegib	borrowed	False	False	97.5	97.6	74.0	1.0	51.43170731707317
 UCEC-SER	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	borrowed	False	False	98.1	98.2	84.1	1.0	48.48048780487805
 LGG-IDHwt	Mitoxantrone	BRD-K21680192	mitoxantrone	borrowed	False	False	91.3	90.2	76.2	1.0	48.78780487804878
-TCGA-ACC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.5	99.0	79.5	1.0	54.073170731707314
+TCGA-ACC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.5	99.0	79.5	1.0	54.21463414634147
 SARC-DDLPS	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	98.5	99.4	96.1	1.0	58.0609756097561
 SARC-LMS	Paclitaxel	BRD-K62008436	paclitaxel	borrowed	False	True	92.1	84.3	78.3	0.6818181818181818	63.59024390243902
-UCEC-SER	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.0	97.3	74.4	1.0	54.073170731707314
+UCEC-SER	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.0	97.3	74.4	1.0	54.21463414634147
 LGG-IDHwt	Trifluridine	BRD-A64485570	trifluridine	borrowed	False	False	91.2	87.4	76.7	1.0	60.90487804878049
 BRCA-LumB	Auranofin	BRD-K45995181	auranofin	borrowed	False	False	96.0	95.2	91.4	1.0	56.380487804878044
 LGG-IDHmut-noncodel	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	89.0	88.9	93.7	0.8666666666666667	60.76341463414634
 TCGA-KICH	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	93.9	91.2	88.2	1.0	58.84390243902439
-TCGA-ACC	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	98.3	98.1	94.8	1.0	64.51951219512196
+TCGA-ACC	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	98.3	98.1	94.8	1.0	65.96585365853659
 TCGA-UCS	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	95.3	94.8	91.2	0.5625	48.20487804878049
 TCGA-UCS	Artesunate	BRD-A47829399	artesunate	borrowed	False	False	95.3	93.9	92.5		56.85853658536585
-TCGA-SKCM	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	95.0	95.4	93.2	1.0	54.073170731707314
+TCGA-SKCM	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	95.0	95.4	93.2	1.0	54.21463414634147
 LGG-IDHwt	Panobinostat	BRD-K02130563	panobinostat	borrowed	False	False	91.0	89.2	86.8	1.0	54.61463414634146
 TCGA-KIRC	Macitentan	BRD-K48812570	macitentan	borrowed	False	False	93.4	93.9	96.5	1.0	43.607317073170734
 UCEC-EEC	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	borrowed	False	False	97.7	97.6	89.9	1.0	48.48048780487805
@@ -212,10 +213,10 @@ BRCA-LumB	Paclitaxel	BRD-A23723433	paclitaxel	matched	True	False	95.6	95.4	91.8	
 PCPG-PHEO	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	94.9	95.0	92.0	1.0	49.582926829268295
 TGCT-SEM	Doxorubicin	BRD-K61468417	doxorubicin	borrowed	False	False	99.9	99.9	99.3	1.0	63.23658536585366
 TCGA-KIRC	Mebendazole	BRD-K77987382	mebendazole	borrowed	False	False	93.3	93.3	87.5	1.0	54.951219512195124
-SARC-LMS	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	91.7	85.1	75.5	1.0	64.51951219512196
+SARC-LMS	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	91.7	85.1	75.5	1.0	65.96585365853659
 LGG-IDHmut-codel	Bosutinib	BRD-K99964838	bosutinib	borrowed	False	False	89.2	89.1	87.8	0.8947368421052632	51.517073170731706
 TCGA-KICH	Docetaxel	BRD-K30577245	docetaxel	borrowed	False	False	93.6	91.1	81.6	0.6666666666666666	65.59024390243901
-BRCA-Her2	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	99.3	98.1	98.4	1.0	66.54878048780488
+BRCA-Her2	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	99.3	98.1	98.4	1.0	66.76829268292683
 SARC-DDLPS	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	98.2	98.5	96.7	1.0	58.65853658536585
 TCGA-KIRP	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	96.1	88.4	85.2	1.0	65.85853658536585
 TCGA-KIRC	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	92.9	92.3	94.8	1.0	52.5609756097561
@@ -231,7 +232,7 @@ LGG-IDHwt	Dactinomycin	BRD-A73909368	dactinomycin	borrowed	False	False	90.4	88.4
 TCGA-PAAD	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	matched	False	False	96.5	96.2	90.5	1.0	48.48048780487805
 TARGET-WT	Rucaparib	BRD-K88560311	rucaparib	borrowed	False	False	93.7	95.5	91.1	1.0	49.665853658536584
 TCGA-KICH	Mebendazole	BRD-K77987382	mebendazole	borrowed	False	False	93.0	92.3	87.8	1.0	54.951219512195124
-TCGA-LIHC	Cyclosporine	BRD-A38030642	cyclosporin-a	matched	False	False	97.4	97.9	94.7	1.0	64.51951219512196
+TCGA-LIHC	Cyclosporine	BRD-A38030642	cyclosporin-a	matched	False	False	97.4	97.9	94.7	1.0	65.96585365853659
 BRCA-LumB	Trifluridine	BRD-K03243820	trifluridine	matched	False	False	95.0	94.0	94.1	1.0	60.90487804878049
 BRCA-LumA	Pacritinib	BRD-K19034817	pacritinib	matched	False	False	97.4	97.4	97.4	1.0	53.46341463414634
 TCGA-KICH	Sorafenib	BRD-K23984367	sorafenib	borrowed	True	True	92.6	90.1	90.2	0.8181818181818182	50.1390243902439
@@ -241,7 +242,7 @@ PCPG-PHEO	Mercaptopurine	BRD-K91601245	mercaptopurine	borrowed	False	False	94.6	
 ESCA-SCC	Pacritinib	BRD-K19034817	pacritinib	borrowed	False	False	96.8	97.6	95.8	0.75	53.46341463414634
 LGG-IDHmut-codel	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	88.6	88.4	92.0	0.8666666666666667	60.76341463414634
 TCGA-READ	Doxorubicin	BRD-K61468417	doxorubicin	borrowed	False	False	99.9	99.9	96.2	1.0	63.23658536585366
-TCGA-PRAD	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	98.9	92.1	92.2	1.0	54.073170731707314
+TCGA-PRAD	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	98.9	92.1	92.2	1.0	54.21463414634147
 TCGA-KIRP	Cytarabine	BRD-K33106058	cytarabine	borrowed	False	False	95.5	96.7	98.8	1.0	59.02682926829268
 TCGA-GBM	Cytarabine	BRD-K33106058	cytarabine	borrowed	False	False	95.6	79.0	49.6	1.0	59.02682926829268
 TCGA-STAD	Doxorubicin	BRD-K61468417	doxorubicin	borrowed	False	False	99.7	99.9	93.8	1.0	63.23658536585366
@@ -266,8 +267,8 @@ BRCA-LumB	Ifosfamide	BRD-A67097164	ifosfamide	matched	False	False	94.1	95.3	96.1
 TCGA-ACC	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	97.0	98.4	79.4	1.0	45.8
 LGG-IDHmut-noncodel	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	87.2	86.1	88.7	1.0	58.980487804878045
 ESCA-SCC	Teniposide	BRD-A35588707	teniposide	borrowed	False	False	96.2	94.3	78.9	1.0	58.6219512195122
-TCGA-KIRC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	91.7	92.0	91.7	1.0	71.76585365853659
-PCPG-PHEO	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	94.3	93.8	95.6	1.0	64.51951219512196
+TCGA-KIRC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	91.7	92.0	91.7	1.0	72.20243902439024
+PCPG-PHEO	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	94.3	93.8	95.6	1.0	65.96585365853659
 TCGA-KICH	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	91.3	86.4	89.3	0.8888888888888888	54.400000000000006
 TCGA-KIRC	Floxuridine	BRD-K47832606	floxuridine	borrowed	False	False	91.6	90.1	76.9	1.0	61.78536585365853
 LGG-IDHwt	Dacarbazine	BRD-K35520305	dacarbazine	borrowed	False	False	89.5	86.8	61.2	1.0	50.71951219512195
@@ -288,7 +289,7 @@ TCGA-ACC	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	96.3	95.
 TCGA-ACC	Simeprevir	BRD-A68493689	simeprevir	borrowed	False	False	96.2	98.0	98.9		48.514634146341464
 TCGA-KICH	Vinblastine	BRD-A55594068	vinblastine	borrowed	False	False	90.7	90.5	87.3	1.0	62.302439024390246
 TCGA-UCS	Thioguanine	BRD-K75649340	tioguanine	borrowed	False	False	92.9	92.5	82.3		54.69024390243903
-SARC-LMS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	89.4	86.7	64.0	1.0	54.073170731707314
+SARC-LMS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	89.4	86.7	64.0	1.0	54.21463414634147
 TCGA-GBM	Dactinomycin	BRD-A73909368	dactinomycin	borrowed	False	False	94.8	89.6	85.8	1.0	58.300000000000004
 TCGA-KIRP	Idarubicin	BRD-A71390734	idarubicin	borrowed	False	False	94.3	92.0	89.9	1.0	56.87317073170732
 UCEC-SER	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	95.8	98.4	89.7	1.0	51.72682926829269
@@ -298,7 +299,7 @@ TCGA-KIRC	Vinblastine	BRD-K01188359	vinblastine	borrowed	False	False	90.8	90.9	8
 LGG-IDHwt	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	89.2	87.5	77.4	1.0	55.52439024390244
 TCGA-GBM	Trifluridine	BRD-K03243820	trifluridine	borrowed	False	False	94.5	99.0	98.4	1.0	60.90487804878049
 ESCA-SCC	Mitoxantrone	BRD-K21680192	mitoxantrone	borrowed	False	False	95.3	96.2	82.9	1.0	48.78780487804878
-ESCA-SCC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	95.1	93.5	81.0	1.0	71.76585365853659
+ESCA-SCC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	95.1	93.5	81.0	1.0	72.20243902439024
 UCEC-EEC	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	95.7	95.5	86.2	0.1875	48.20487804878049
 BRCA-LumA	Trifluridine	BRD-K03243820	trifluridine	matched	False	False	96.2	94.1	90.4	1.0	60.90487804878049
 TCGA-HNSC	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	98.0	95.1	97.5	0.9	59.26829268292683
@@ -311,10 +312,10 @@ UCEC-EEC	Artesunate	BRD-A47829399	artesunate	borrowed	False	False	95.5	94.0	89.5
 TCGA-LIHC	Dabrafenib	BRD-K09951645	dabrafenib	matched	False	False	95.7	95.4	99.5	0.8	61.22926829268293
 TGCT-NSGCT	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	98.5	97.7	96.1	1.0	55.517073170731706
 ESCA-AD	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	94.9	96.8	92.6	1.0	53.94878048780488
-TCGA-THCA	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	98.1	99.0	91.4	1.0	54.073170731707314
+TCGA-THCA	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	98.1	99.0	91.4	1.0	54.21463414634147
 LGG-IDHmut-codel	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	87.1	87.2	89.8	1.0	58.980487804878045
 UCEC-EEC	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	95.3	98.1	90.5	1.0	51.72682926829269
-TCGA-OV	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.4	97.3	80.8	1.0	54.073170731707314
+TCGA-OV	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	98.4	97.3	80.8	1.0	54.21463414634147
 TCGA-HNSC	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	97.9	97.7	95.3	0.8823529411764706	54.68780487804877
 LGG-IDHmut-noncodel	Venetoclax	BRD-K62391742	GDC-0199	borrowed	False	False	86.3	85.8	67.1	1.0	47.295
 TARGET-WT	Clofarabine	BRD-K34022604	clofarabine	borrowed	False	False	92.0	94.1	90.6	1.0	66.43170731707316
@@ -352,7 +353,7 @@ TCGA-KIRC	Clomiphene	BRD-K29950728	clomifene	borrowed	False	False	89.1	91.1	93.6
 TCGA-READ	Irinotecan	BRD-K08547377	irinotecan	matched	True	True	99.0	99.3	76.5	1.0	58.84390243902439
 TARGET-WT	Dactinomycin	BRD-A73909368	dactinomycin	borrowed	True	False	91.2	90.3	94.3	1.0	58.300000000000004
 TCGA-UCS	Ixazomib	BRD-K78659596	ixazomib	borrowed	False	False	91.7	91.4	74.7	1.0	50.20975609756098
-TARGET-WT	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	91.1	89.3	68.9	1.0	71.76585365853659
+TARGET-WT	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	91.1	89.3	68.9	1.0	72.20243902439024
 TCGA-THCA	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	borrowed	False	False	97.4	98.0	88.8	1.0	48.48048780487805
 PCPG-PGL	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	88.2	74.5	52.5	0.8947368421052632	48.456097560975614
 TCGA-UCS	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	91.5	89.4	85.9	1.0	45.8
@@ -360,7 +361,7 @@ BRCA-LumB	Vinblastine	BRD-A55594068	vinblastine	matched	False	False	91.9	90.8	83
 TCGA-KIRP	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	92.7	86.0	78.8	1.0	58.84390243902439
 ESCA-AD	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	94.2	87.9	93.9	1.0	51.50731707317074
 TCGA-ACC	Pioglitazone	BRD-A48430263	pioglitazone	borrowed	False	False	94.3	95.4	53.4	1.0	34.665853658536584
-TCGA-LUSC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	98.5	98.2	97.5	1.0	66.54878048780488
+TCGA-LUSC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	98.5	98.2	97.5	1.0	66.76829268292683
 PCPG-PGL	Bortezomib	BRD-K88510285	bortezomib	borrowed	False	False	88.1	79.5	65.3	0.9090909090909091	52.97560975609756
 TARGET-NBL	Venetoclax	BRD-K62391742	GDC-0199	borrowed	False	False	88.9	83.9	54.0	1.0	47.295
 BRCA-LumA	Cabazitaxel	BRD-K06858286	cabazitaxel	matched	False	False	95.2	94.6	86.2		57.43658536585366
@@ -369,6 +370,7 @@ TCGA-UCS	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	91.3	90.3	94.5	
 TCGA-KICH	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	88.9	86.9	81.8	1.0	56.12926829268293
 ESCA-AD	Dactinomycin	BRD-A73909368	dactinomycin	borrowed	False	False	94.1	94.3	95.3	1.0	58.300000000000004
 TCGA-HNSC	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	96.9	95.2	96.6	1.0	60.48780487804878
+TCGA-PAAD	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	93.6	96.0	80.9	1.0	54.21463414634147
 TARGET-NBL	Auranofin	BRD-K45995181	auranofin	borrowed	False	False	88.7	89.8	78.2	1.0	56.380487804878044
 LGG-IDHmut-codel	Vandetanib	BRD-K77625799	vandetanib	borrowed	False	False	85.6	86.2	89.4	0.8461538461538461	57.50975609756098
 LGG-IDHwt	Docetaxel	BRD-K30577245	docetaxel	borrowed	False	False	87.4	90.0	68.3	0.7142857142857143	65.59024390243901
@@ -397,19 +399,19 @@ SARC-LMS	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	86.9	81.0	59
 UCEC-SER	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	93.4	93.4	77.7	0.25	48.20487804878049
 TCGA-GBM	Vorinostat	BRD-K81418486	vorinostat	borrowed	False	False	93.0	92.4	84.5	1.0	57.380487804878044
 TCGA-READ	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	98.6	97.3	97.8		55.09756097560975
-UCEC-SER	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	93.3	93.4	94.2	1.0	64.51951219512196
+UCEC-SER	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	93.3	93.4	94.2	1.0	65.96585365853659
 TCGA-STAD	Topotecan	BRD-A59985574	topotecan	borrowed	False	False	99.1	99.5	80.1	1.0	61.05121951219512
 TCGA-COAD	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	99.8	99.7	96.3	1.0	58.234146341463415
 TCGA-BLCA	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	97.8	98.7	93.5		50.34634146341463
 TARGET-NBL	Epirubicin	BRD-K04548931	epirubicin	borrowed	False	False	88.3	83.8	80.7	1.0	63.58536585365854
 TCGA-HNSC	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	96.2	94.0	95.7	1.0	56.519512195121955
-PCPG-PGL	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	87.3	85.7	62.2	1.0	54.073170731707314
+PCPG-PGL	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	87.3	85.7	62.2	1.0	54.21463414634147
 TCGA-ACC	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	93.7	79.4	56.2	1.0	51.72682926829269
 ESCA-AD	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	93.1	90.6	72.8	1.0	56.12926829268293
 LGG-IDHwt	Clofarabine	BRD-K34022604	clofarabine	borrowed	False	False	87.1	88.6	81.1	1.0	66.43170731707316
 TCGA-KIRP	Rosiglitazone	BRD-A97437073	rosiglitazone	borrowed	False	False	91.3	88.5	92.1	1.0	41.517073170731706
 TCGA-GBM	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	92.6	99.4	97.1	1.0	51.50731707317074
-LGG-IDHmut-codel	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	85.4	84.2	83.8	1.0	71.76585365853659
+LGG-IDHmut-codel	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	85.4	84.2	83.8	1.0	72.20243902439024
 ESCA-SCC	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	92.6	95.2	97.6	1.0	51.50731707317074
 TCGA-READ	Daunorubicin	BRD-A37630846	daunorubicin	borrowed	False	False	98.4	99.2	85.4	1.0	61.99512195121952
 TCGA-PRAD	Ixazomib	BRD-K78659596	ixazomib	matched	False	False	97.2	96.9	83.6	1.0	50.20975609756098
@@ -435,12 +437,12 @@ UCEC-SER	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	92.3	89.9	93.2	
 SARC-UPS	Trametinib	BRD-K12343256	trametinib	borrowed	False	True	96.3	97.5	96.5	1.0	60.48780487804878
 BRCA-LumA	Ifosfamide	BRD-A67097164	ifosfamide	matched	False	False	94.4	96.0	97.8	1.0	55.18780487804877
 BRCA-LumB	Gemcitabine	BRD-K15108141	gemcitabine	matched	True	True	90.6	90.3	90.5	1.0	58.980487804878045
-BRCA-LumB	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	90.4	89.1	94.4	1.0	71.76585365853659
+BRCA-LumB	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	90.4	89.1	94.4	1.0	72.20243902439024
 BRCA-LumA	Vinblastine	BRD-A55594068	vinblastine	matched	False	False	94.3	92.5	82.1	1.0	62.302439024390246
 TCGA-THCA	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	96.5	83.7	88.5	1.0	58.0609756097561
 TCGA-HNSC	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	95.1	95.1	95.5	1.0	58.65853658536585
 TCGA-KICH	Etoposide	BRD-K37798499	etoposide	borrowed	False	True	87.2	83.1	84.9	1.0	65.85853658536585
-BRCA-LumB	Vincristine	BRD-A60414806	vincristine	matched	False	False	90.2	88.9	73.7	1.0	64.9560975609756
+BRCA-LumB	Vincristine	BRD-A60414806	vincristine	matched	False	False	90.2	88.9	73.7	1.0	65.03414634146341
 ESCA-AD	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	92.2	88.4	97.0	0.8666666666666667	60.76341463414634
 TCGA-PAAD	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	92.2	90.6	97.9	1.0	58.65853658536585
 TCGA-KICH	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	87.2	81.7	78.7	1.0	46.86829268292683
@@ -488,7 +490,7 @@ TGCT-NSGCT	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	96.1	98.3	
 TARGET-WT	Mebendazole	BRD-K77987382	mebendazole	borrowed	False	False	89.6	86.3	53.2	1.0	54.951219512195124
 TCGA-KIRP	Menadione	BRD-K78126613	menadione	borrowed	False	False	90.4	89.3	75.5	0.7142857142857143	27.151219512195123
 TCGA-THCA	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	95.5	96.0	91.9	0.3125	48.20487804878049
-ESCA-AD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	91.7	93.4	85.4	1.0	71.76585365853659
+ESCA-AD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	91.7	93.4	85.4	1.0	72.20243902439024
 LGG-IDHmut-noncodel	Paclitaxel	BRD-A28746609	paclitaxel	borrowed	False	False	83.2	81.6	60.2	0.5	63.59024390243902
 TCGA-KIRC	Valdecoxib	BRD-K12994359	valdecoxib	borrowed	False	False	85.7	81.7	91.2	1.0	33.7425
 TARGET-WT	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	89.4	89.2	73.2	1.0	58.84390243902439
@@ -501,10 +503,10 @@ TCGA-PAAD	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	91.0	86.8
 SARC-DDLPS	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	92.2	92.5	94.3	1.0	60.582926829268295
 TCGA-KICH	Bosutinib	BRD-K99964838	bosutinib	borrowed	False	False	86.4	81.6	85.8	1.0	51.517073170731706
 TCGA-THCA	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	95.2	93.1	95.9	0.6666666666666666	53.2925
-PCPG-PHEO	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	89.8	83.7	67.5	1.0	64.9560975609756
-TCGA-HNSC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	94.2	95.4	97.1	1.0	66.54878048780488
+PCPG-PHEO	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	89.8	83.7	67.5	1.0	65.03414634146341
+TCGA-HNSC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	94.2	95.4	97.1	1.0	66.76829268292683
 BRCA-LumA	Mitoxantrone	BRD-K21680192	mitoxantrone	matched	False	False	93.1	93.2	87.2	1.0	48.78780487804878
-BRCA-LumA	Vincristine	BRD-A60414806	vincristine	matched	False	False	93.1	92.3	75.7	1.0	64.9560975609756
+BRCA-LumA	Vincristine	BRD-A60414806	vincristine	matched	False	False	93.1	92.3	75.7	1.0	65.03414634146341
 TCGA-OV	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	borrowed	False	False	95.0	95.7	78.5	1.0	48.48048780487805
 PCPG-PHEO	Aminolevulinic acid	BRD-K57631554	aminolevulinic-acid	borrowed	False	True	89.6	88.4	60.0	1.0	43.96341463414634
 TCGA-THCA	Thioguanine	BRD-K49350383	thioguanine	borrowed	False	False	94.8	96.7	80.3	1.0	54.69024390243903
@@ -512,7 +514,7 @@ TARGET-WT	Dacarbazine	BRD-K35520305	dacarbazine	borrowed	False	False	88.9	87.0	5
 TCGA-GBM	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	91.1	90.8	90.6	0.9333333333333333	60.76341463414634
 TARGET-NBL	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	84.9	92.5	96.8	1.0	51.50731707317074
 ESCA-SCC	Auranofin	BRD-K45995181	auranofin	borrowed	False	False	91.4	93.1	81.2	1.0	56.380487804878044
-TCGA-KICH	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	85.5	86.8	88.4	1.0	71.76585365853659
+TCGA-KICH	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	85.5	86.8	88.4	1.0	72.20243902439024
 TGCT-SEM	Dactinomycin	BRD-K70578146	dactinomycin	borrowed	True	False	98.3	96.0	91.4	1.0	58.300000000000004
 TCGA-READ	Trifluridine	BRD-A64485570	trifluridine	matched	False	False	97.1	97.7	90.8	1.0	60.90487804878049
 TCGA-KIRC	Clofarabine	BRD-K34022604	clofarabine	borrowed	False	False	85.0	83.5	78.9	1.0	66.43170731707316
@@ -525,23 +527,22 @@ UCEC-SER	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	90.3	89.6	63.9	1.
 TCGA-HNSC	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	93.5	87.4	98.6	1.0	57.18536585365853
 TCGA-PAAD	Vorinostat	BRD-K81418486	vorinostat	matched	False	False	90.2	80.7	82.1	1.0	57.380487804878044
 TARGET-NBL	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	84.2	89.9	94.8		50.34634146341463
-CESC-AD	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	93.7	93.7	84.6	1.0	64.9560975609756
+CESC-AD	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	93.7	93.7	84.6	1.0	65.03414634146341
 PCPG-PHEO	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	borrowed	False	False	89.1	80.7	55.4	1.0	48.48048780487805
 TCGA-LIHC	Afatinib	BRD-K66175015	afatinib	matched	False	False	91.0	86.0	62.2	0.6666666666666666	51.00975609756098
-TCGA-STAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	97.9	93.9	64.4	1.0	71.76585365853659
+TCGA-STAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	97.9	93.9	64.4	1.0	72.20243902439024
 TCGA-KIRP	Trifluridine	BRD-A64485570	trifluridine	borrowed	False	False	89.9	88.0	90.3	1.0	60.90487804878049
 LGG-IDHmut-noncodel	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	82.6	84.3	75.2	1.0	46.86829268292683
 BRCA-LumA	Cytarabine	BRD-K71847383	cytarabine	matched	False	False	92.5	89.9	86.7	1.0	59.02682926829268
 ESCA-SCC	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	91.2	88.9	73.6	1.0	53.94878048780488
 TARGET-WT	Teniposide	BRD-A35588707	teniposide	borrowed	False	False	88.4	87.8	63.6	1.0	58.6219512195122
 UCEC-EEC	Ixazomib	BRD-K78659596	ixazomib	borrowed	False	False	90.6	92.5	56.2	1.0	50.20975609756098
-TGCT-NSGCT	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	95.3	91.4	89.9	1.0	66.54878048780488
+TGCT-NSGCT	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	95.3	91.4	89.9	1.0	66.76829268292683
 TCGA-READ	Gemcitabine	BRD-K15108141	gemcitabine	matched	False	False	96.7	97.5	95.5	1.0	58.980487804878045
 BRCA-Her2	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	True	93.8	92.9	96.0	1.0	58.65853658536585
 TCGA-KIRC	Methylene blue	BRD-K16406336	methylene-blue	borrowed	False	False	84.8	82.8	79.1	1.0	47.83157894736842
 TCGA-THCA	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	94.1	94.1	96.4	1.0	60.582926829268295
 TCGA-LIHC	Artesunate	BRD-A47829399	artesunate	borrowed	False	False	90.7	90.9	80.8		56.85853658536585
-TCGA-LUAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	98.2	98.6	97.8	1.0	66.54878048780488
 TCGA-SKCM	Dexamethasone	BRD-A93424738	dexamethasone-acetate	matched	False	False	88.2	89.1	94.0	1.0	61.40731707317073
 UCEC-SER	Pyrvinium	BRD-M86331534	pyrvinium-pamoate	borrowed	False	False	90.0	89.9	74.1	1.0	55.1551724137931
 TGCT-NSGCT	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	94.9	95.9	86.0	1.0	58.234146341463415
@@ -550,7 +551,6 @@ TCGA-KIRP	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	89.7	89.9	9
 TCGA-KIRC	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	84.3	81.6	93.4		55.09756097560975
 TARGET-WT	Belinostat	BRD-K17743125	belinostat	borrowed	False	False	88.0	89.5	65.6	1.0	57.580487804878054
 LGG-IDHmut-noncodel	Vinblastine	BRD-A22783572	vinblastine	borrowed	False	False	82.2	82.3	56.1	1.0	62.302439024390246
-TCGA-PRAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	94.7	90.8	96.7	1.0	66.54878048780488
 TCGA-GBM	Belinostat	BRD-K17743125	belinostat	borrowed	False	False	90.2	90.3	69.1	1.0	57.580487804878054
 TCGA-ACC	Ixazomib	BRD-K78659596	ixazomib	borrowed	False	False	91.1	90.1	48.0	1.0	50.20975609756098
 TCGA-SKCM	Niclosamide	BRD-K35960502	niclosamide	matched	False	False	87.5	85.6	78.1	1.0	44.05609756097561
@@ -571,7 +571,7 @@ UCEC-EEC	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	90.2	92.9	88.8	1.0	5
 SARC-UPS	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	93.4	93.9	94.4	1.0	60.582926829268295
 PCPG-PGL	Estramustine	BRD-A70858459	estramustine	borrowed	False	False	83.1	79.9	76.6	0.5	49.421951219512195
 TGCT-NSGCT	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	False	94.5	94.0	94.8	0.8333333333333334	61.863414634146345
-UCEC-EEC	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	89.8	90.0	93.6	1.0	64.51951219512196
+UCEC-EEC	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	89.8	90.0	93.6	1.0	65.96585365853659
 TCGA-OV	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	93.5	97.5	80.6	1.0	51.72682926829269
 TGCT-NSGCT	Sirolimus	BRD-A79768653	sirolimus	borrowed	False	False	94.4	92.7	93.7	1.0	65.83170731707317
 SARC-DDLPS	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	90.4	84.5	84.9	1.0	60.582926829268295
@@ -579,13 +579,13 @@ TCGA-PRAD	Pyrvinium	BRD-M86331534	pyrvinium-pamoate	matched	False	False	94.2	68.
 TCGA-COAD	Deoxycholic acid	BRD-K41170226	BRD-K41170226	matched	False	False	98.7	98.1	89.7	1.0	52.5609756097561
 TGCT-SEM	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	False	97.6	95.1	98.3	0.8333333333333334	61.863414634146345
 TCGA-HNSC	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	92.3	90.8	93.2	1.0	60.582926829268295
-LGG-IDHmut-noncodel	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	82.1	76.7	70.6	1.0	71.76585365853659
+LGG-IDHmut-noncodel	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	82.1	76.7	70.6	1.0	72.20243902439024
 SARC-UPS	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	92.9	90.7	84.0	0.8333333333333334	60.15853658536585
 TGCT-NSGCT	Ifosfamide	BRD-A67097164	ifosfamide	borrowed	True	True	93.9	91.3	81.4	1.0	55.18780487804877
 TARGET-WT	Givinostat	BRD-K13810148	givinostat	borrowed	False	False	87.4	89.9	82.9	1.0	50.580487804878054
 TCGA-ACC	Niclosamide	BRD-K35960502	niclosamide	borrowed	False	False	90.0	87.9	80.9	1.0	44.05609756097561
 SARC-DDLPS	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	89.9	85.5	83.0	0.8333333333333334	60.15853658536585
-BRCA-LumA	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	91.7	92.3	98.4	1.0	66.54878048780488
+BRCA-LumA	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	91.7	92.3	98.4	1.0	66.76829268292683
 CESC-AD	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	91.8	89.7	89.5	0.8333333333333334	60.15853658536585
 UCEC-EEC	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	89.1	86.1	87.8	0.8333333333333334	60.15853658536585
 TCGA-UCS	Mercaptopurine	BRD-K91601245	mercaptopurine	borrowed	False	False	84.9	84.6	81.2	1.0	54.40975609756098
@@ -597,16 +597,16 @@ PCPG-PGL	Nilotinib	BRD-K81528515	nilotinib	borrowed	False	False	82.4	81.5	65.6	1
 CESC-SCC	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	94.8	92.9	88.5	1.0	65.83170731707317
 TCGA-GBM	Bosutinib	BRD-K99964838	bosutinib	borrowed	False	False	89.5	92.0	78.6	0.8947368421052632	51.517073170731706
 ESCA-SCC	Givinostat	BRD-K13810148	givinostat	borrowed	False	False	90.0	90.4	92.3	1.0	50.580487804878054
-TCGA-PAAD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	88.5	82.7	89.3	1.0	64.51951219512196
+TCGA-PAAD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	88.5	82.7	89.3	1.0	65.96585365853659
 TCGA-UCS	Selinexor	BRD-K21361524	KPT-330	borrowed	False	True	84.6	80.9	87.8	1.0	58.0609756097561
 TCGA-HNSC	Erlotinib	BRD-K70401845	erlotinib	borrowed	False	True	92.0	91.9	86.7	0.5	42.60243902439024
 TCGA-LIHC	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	89.6	86.8	65.1	0.125	48.20487804878049
-TCGA-KIRP	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	88.7	85.8	98.7	1.0	66.54878048780488
+TCGA-KIRP	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	88.7	85.8	98.7	1.0	66.76829268292683
 TCGA-GBM	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	89.4	93.5	99.5	1.0	56.62439024390244
 BRCA-LumB	Teniposide	BRD-A35588707	teniposide	matched	False	False	86.9	87.2	94.8	1.0	58.6219512195122
 PCPG-PHEO	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	87.3	74.9	50.2	0.8947368421052632	48.456097560975614
 LGG-IDHwt	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	84.3	74.6	57.7	1.0	58.980487804878045
-SARC-DDLPS	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	89.5	79.0	90.1	1.0	66.54878048780488
+SARC-DDLPS	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	89.5	79.0	90.1	1.0	66.76829268292683
 TCGA-SKCM	Digoxin	BRD-K23478508	digoxin	matched	False	False	86.4	86.9	82.7	1.0	58.775609756097566
 TCGA-READ	Macitentan	BRD-K48812570	macitentan	matched	False	False	95.9	94.8	88.9	1.0	43.607317073170734
 TCGA-LUSC	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	95.8	95.0	94.5	1.0	58.65853658536585
@@ -616,7 +616,7 @@ TCGA-UCS	Bortezomib	BRD-K88510285	bortezomib	borrowed	False	False	84.4	84.2	67.8
 TCGA-STAD	Pacritinib	BRD-K19034817	pacritinib	borrowed	False	False	97.1	98.6	85.1	0.75	53.46341463414634
 TGCT-SEM	Vandetanib	BRD-K77625799	vandetanib	borrowed	False	False	97.2	97.8	97.6	0.7692307692307693	57.50975609756098
 SARC-UPS	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	92.3	82.9	83.3	1.0	65.83170731707317
-TCGA-KIRP	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	88.5	90.7	91.0	1.0	71.76585365853659
+TCGA-KIRP	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	88.5	90.7	91.0	1.0	72.20243902439024
 TCGA-UCS	Digoxin	BRD-K23478508	digoxin	borrowed	False	False	84.2	88.9	79.4	1.0	58.775609756097566
 BRCA-LumA	Gemcitabine	BRD-K15108141	gemcitabine	matched	True	True	91.4	90.1	89.8	1.0	58.980487804878045
 TGCT-NSGCT	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	93.4	93.0	85.1		55.09756097560975
@@ -624,7 +624,7 @@ PCPG-PGL	Mercaptopurine	BRD-K91601245	mercaptopurine	borrowed	False	False	81.8	7
 TCGA-UCS	Niclosamide	BRD-K35960502	niclosamide	borrowed	False	False	84.0	83.6	86.1	1.0	44.05609756097561
 TCGA-GBM	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	89.2	95.5	99.2	1.0	51.802439024390246
 TCGA-HNSC	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	91.5	94.3	88.1	1.0	65.83170731707317
-TCGA-BLCA	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	93.6	94.6	78.1	1.0	64.51951219512196
+TCGA-BLCA	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	93.6	94.6	78.1	1.0	65.96585365853659
 TCGA-KIRC	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	82.7	83.0	80.9	1.0	55.20243902439025
 TCGA-KICH	Rucaparib	BRD-K88560311	rucaparib	borrowed	False	False	82.3	76.0	69.6	1.0	49.665853658536584
 TARGET-WT	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	86.9	81.6	71.3	1.0	53.94878048780488
@@ -666,7 +666,7 @@ SARC-UPS	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	91.3	97.1	98.0	1
 LGG-IDHmut-noncodel	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	81.2	79.5	83.2	1.0	60.00975609756098
 SARC-DDLPS	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	88.5	95.8	97.5	1.0	56.50975609756098
 UCEC-SER	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	87.1	87.0	95.0	0.75	60.582926829268295
-BRCA-LumA	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	90.5	82.5	84.3	1.0	71.76585365853659
+BRCA-LumA	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	90.5	82.5	84.3	1.0	72.20243902439024
 TARGET-WT	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	86.5	86.5	88.8	0.5	52.5609756097561
 LGG-IDHwt	Rucaparib	BRD-K88560311	rucaparib	borrowed	False	False	83.4	88.8	85.4	1.0	49.665853658536584
 TCGA-GBM	Auranofin	BRD-K45995181	auranofin	borrowed	False	False	88.4	90.6	67.0	0.6666666666666666	56.380487804878044
@@ -677,7 +677,7 @@ BRCA-LumB	Menadione	BRD-K78126613	menadione	matched	False	False	85.6	81.5	50.0	0
 TCGA-COAD	Irinotecan	BRD-K08547377	irinotecan	matched	True	True	97.5	98.4	62.6	1.0	58.84390243902439
 SARC-UPS	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	False	91.0	91.2	95.1	0.6666666666666666	61.863414634146345
 TCGA-THCA	Bortezomib	BRD-K88510285	bortezomib	borrowed	False	False	91.7	94.5	85.9	0.9090909090909091	52.97560975609756
-TCGA-THCA	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	91.7	79.2	83.8	1.0	64.51951219512196
+TCGA-THCA	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	91.7	79.2	83.8	1.0	65.96585365853659
 TCGA-STAD	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	96.2	96.7	93.3	0.9333333333333333	60.76341463414634
 TARGET-NBL	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	80.5	75.8	83.6	1.0	55.580487804878054
 TGCT-SEM	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	96.4	98.3	99.9	1.0	56.50975609756098
@@ -692,7 +692,7 @@ TCGA-COAD	Sirolimus	BRD-A79768653	sirolimus	matched	False	False	97.4	97.8	98.4	1
 BRCA-LumA	Pralatrexate	BRD-A74914197	pralatrexate	matched	False	False	89.9	88.2	97.4	1.0	61.599999999999994
 TARGET-WT	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	86.1	85.8	74.7	1.0	58.980487804878045
 CESC-AD	Artesunate	BRD-K17944737	artesunate	matched	False	False	90.2	87.8	67.8		56.85853658536585
-PCPG-PHEO	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	85.0	81.5	48.9	1.0	54.073170731707314
+PCPG-PHEO	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	85.0	81.5	48.9	1.0	54.21463414634147
 LGG-IDHmut-codel	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	80.8	79.7	84.1	1.0	60.00975609756098
 TCGA-READ	Fostamatinib	BRD-K20285085	fostamatinib	matched	False	False	94.5	92.4	99.4	0.5	55.517073170731706
 TCGA-KICH	Dacarbazine	BRD-K35520305	dacarbazine	borrowed	False	False	80.9	80.9	79.4	1.0	50.71951219512195
@@ -729,14 +729,14 @@ TCGA-ACC	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	85.5	72.1	68.2	1.0	5
 LGG-IDHmut-codel	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	80.2	80.1	82.0	0.5	52.5609756097561
 TCGA-OV	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	90.0	86.8	66.4	1.0	45.8
 TCGA-LIHC	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	86.4	87.1	63.7	1.0	45.8
-TGCT-NSGCT	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	90.6	94.7	96.4	1.0	71.76585365853659
+TGCT-NSGCT	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	90.6	94.7	96.4	1.0	72.20243902439024
 TARGET-WT	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	85.7	82.4	89.2	1.0	58.234146341463415
 TCGA-KIRP	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	86.1	79.9	73.8	1.0	56.76829268292683
 TCGA-KIRC	Etoposide	BRD-K37798499	etoposide	borrowed	False	True	81.1	78.4	74.8	1.0	65.85853658536585
 TGCT-NSGCT	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	90.4	94.8	97.4	1.0	55.88780487804878
 TCGA-KIRP	Cabazitaxel	BRD-K06858286	cabazitaxel	borrowed	False	False	85.9	87.2	79.7		57.43658536585366
 TCGA-KICH	Vorinostat	BRD-K81418486	vorinostat	borrowed	False	False	79.6	77.3	80.7	1.0	57.380487804878044
-PCPG-PGL	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	79.0	67.5	52.2	1.0	64.9560975609756
+PCPG-PGL	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	79.0	67.5	52.2	1.0	65.03414634146341
 SARC-DDLPS	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	87.2	67.8	78.3	1.0	65.83170731707317
 BRCA-LumB	Pralatrexate	BRD-A74914197	pralatrexate	matched	False	False	84.6	84.9	95.9	1.0	61.599999999999994
 TCGA-THCA	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	90.4	88.5	94.1		55.09756097560975
@@ -770,7 +770,6 @@ TCGA-LIHC	Simeprevir	BRD-A68493689	simeprevir	borrowed	False	False	84.4	85.4	85.
 TCGA-SKCM	Ixazomib	BRD-K78659596	ixazomib	matched	False	False	84.5	82.4	57.9	1.0	50.20975609756098
 TCGA-THCA	Trametinib	BRD-K12343256	trametinib	borrowed	False	True	89.5	75.8	85.8	1.0	60.48780487804878
 SARC-DDLPS	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	False	86.2	81.7	93.4	0.8333333333333334	61.863414634146345
-TCGA-PAAD	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	84.0	80.8	82.9	1.0	65.85853658536585
 TCGA-COAD	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	96.0	96.4	99.8	1.0	56.62439024390244
 TCGA-STAD	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	93.9	88.4	94.4	1.0	64.74878048780488
 TCGA-STAD	Ifosfamide	BRD-A67097164	ifosfamide	borrowed	False	False	93.9	86.4	72.1	1.0	55.18780487804877
@@ -806,7 +805,6 @@ TCGA-HNSC	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	87.6	84.3	83.4	
 TCGA-HNSC	Dactinomycin	BRD-K70578146	dactinomycin	borrowed	False	False	87.5	93.1	86.4	1.0	58.300000000000004
 LGG-IDHwt	Vinblastine	BRD-A22783572	vinblastine	borrowed	False	False	80.7	81.7	54.8	1.0	62.302439024390246
 TCGA-STAD	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	92.0	91.9	97.1	1.0	60.48780487804878
-TCGA-STAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	92.0	84.5	95.3	1.0	66.54878048780488
 SARC-UPS	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	88.6	82.5	83.0	1.0	60.582926829268295
 TCGA-LUAD	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	94.3	93.9	95.3	1.0	58.65853658536585
 TCGA-READ	Clofarabine	BRD-K34022604	clofarabine	matched	False	False	93.0	94.3	83.7	1.0	66.43170731707316
@@ -824,7 +822,7 @@ TARGET-NBL	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	76
 TCGA-LUAD	Erlotinib	BRD-K70401845	erlotinib	matched	True	True	94.1	95.9	96.2	0.5	42.60243902439024
 TGCT-NSGCT	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	88.0	87.8	88.2	1.0	60.00975609756098
 UCEC-SER	Mercaptopurine	BRD-K91601245	mercaptopurine	borrowed	False	False	83.6	82.8	62.3	1.0	54.40975609756098
-TCGA-KIRP	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	84.7	67.4	76.7	1.0	64.51951219512196
+TCGA-KIRP	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	84.7	67.4	76.7	1.0	65.96585365853659
 TCGA-SKCM	Digitoxin	BRD-A93236127	digitoxin	matched	False	False	82.9	85.7	77.8	1.0	51.72682926829269
 TCGA-OV	Ixazomib	BRD-K78659596	ixazomib	borrowed	False	False	87.4	86.7	47.8	1.0	50.20975609756098
 TCGA-THCA	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	88.5	88.6	96.8	1.0	58.234146341463415
@@ -856,6 +854,7 @@ TCGA-OV	Bortezomib	BRD-K88510285	bortezomib	borrowed	False	False	86.9	87.5	59.8	
 TCGA-KIRP	Venetoclax	BRD-K62391742	GDC-0199	borrowed	False	False	84.2	83.1	58.4	1.0	47.295
 TCGA-KICH	Teniposide	BRD-A35588707	teniposide	borrowed	False	False	77.9	74.2	64.3	1.0	58.6219512195122
 TCGA-KIRC	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	79.0	70.7	73.7	1.0	52.51219512195122
+TCGA-READ	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	92.4	91.7	70.9	1.0	72.20243902439024
 BRCA-Her2	Lapatinib	BRD-K19687926	lapatinib	matched	True	False	87.6	96.8	99.4	1.0	45.853658536585364
 PCPG-PHEO	Vinblastine	BRD-K01188359	vinblastine	borrowed	False	False	82.2	75.8	54.1	1.0	62.302439024390246
 TCGA-THCA	Ixabepilone	BRD-K03601870	ixabepilone	borrowed	False	False	87.8	91.4	84.1	1.0	56.18536585365853
@@ -867,7 +866,7 @@ TCGA-OV	Digoxin	BRD-K23478508	digoxin	borrowed	False	False	86.1	92.0	77.5	1.0	58
 TARGET-WT	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	83.5	83.9	90.1	1.0	61.599999999999994
 TGCT-NSGCT	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	87.2	84.2	90.3	1.0	64.74878048780488
 TCGA-STAD	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	90.2	86.7	87.2		55.09756097560975
-TCGA-GBM	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	85.6	89.8	98.5	1.0	71.76585365853659
+TCGA-GBM	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	85.6	89.8	98.5	1.0	72.20243902439024
 PCPG-PGL	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	77.1	72.8	78.4	0.8333333333333334	60.15853658536585
 UCEC-EEC	Niclosamide	BRD-K35960502	niclosamide	borrowed	False	False	81.2	81.6	83.0	1.0	44.05609756097561
 TGCT-NSGCT	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	87.1	94.4	97.7	1.0	56.62439024390244
@@ -889,18 +888,18 @@ ESCA-AD	Trifluridine	BRD-K03243820	trifluridine	borrowed	False	True	84.9	77.7	95
 TGCT-NSGCT	Dactinomycin	BRD-K70578146	dactinomycin	borrowed	True	False	86.8	82.9	84.8	1.0	58.300000000000004
 TCGA-COAD	Epirubicin	BRD-K56844688	epirubicin	matched	False	False	93.6	95.5	88.7	1.0	63.58536585365854
 TGCT-NSGCT	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	86.6	87.2	88.6	0.9411764705882353	54.68780487804877
-BRCA-LumA	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	85.7	88.9	82.4	1.0	54.073170731707314
-CESC-SCC	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	90.4	91.0	76.0	1.0	64.51951219512196
+BRCA-LumA	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	85.7	88.9	82.4	1.0	54.21463414634147
+CESC-SCC	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	90.4	91.0	76.0	1.0	65.96585365853659
 BRCA-Basal	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	89.0	89.3	82.6	1.0	55.580487804878054
 LGG-IDHmut-noncodel	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	76.3	74.9	86.2	1.0	61.599999999999994
 TCGA-KIRP	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	83.3	74.9	83.4	1.0	61.599999999999994
-TCGA-HNSC	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	85.4	82.0	86.2	1.0	64.51951219512196
-TCGA-COAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	93.5	90.6	95.3	1.0	66.54878048780488
+TCGA-HNSC	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	85.4	82.0	86.2	1.0	65.96585365853659
+TCGA-COAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	93.5	90.6	95.3	1.0	66.76829268292683
 SARC-DDLPS	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	82.9	78.5	79.6	1.0	56.951219512195124
 BRCA-Her2	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	86.5	88.2	87.0		55.09756097560975
 TCGA-KIRC	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	78.0	79.2	62.2	0.8947368421052632	48.456097560975614
 PCPG-PHEO	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	81.5	85.1	80.2		50.34634146341463
-TCGA-OV	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	84.6	84.1	78.6	1.0	64.51951219512196
+TCGA-OV	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	84.6	84.1	78.6	1.0	65.96585365853659
 TCGA-HNSC	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	85.1	80.7	69.7	1.0	56.951219512195124
 TCGA-PAAD	Panobinostat	BRD-K02130563	panobinostat	borrowed	False	False	81.3	77.9	77.8	1.0	54.61463414634146
 BRCA-Basal	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	88.7	81.8	65.3	1.0	53.94878048780488
@@ -922,14 +921,14 @@ TCGA-KICH	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	76.6	73
 TCGA-READ	Paclitaxel	BRD-K62008436	paclitaxel	matched	False	False	91.0	88.9	54.5	0.6363636363636364	63.59024390243902
 TCGA-ACC	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	80.2	74.8	79.9	0.75	60.582926829268295
 TCGA-KIRP	Bosutinib	BRD-K99964838	bosutinib	borrowed	False	False	82.7	73.5	58.0	0.9473684210526315	51.517073170731706
-LGG-IDHwt	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	78.5	85.8	95.1	1.0	71.76585365853659
+LGG-IDHwt	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	78.5	85.8	95.1	1.0	72.20243902439024
 TCGA-LUAD	Osimertinib	BRD-K42805893	AZD-9291	matched	False	True	91.6	94.8	99.4	1.0	43.05853658536586
 TCGA-HNSC	Macitentan	BRD-K48812570	macitentan	borrowed	False	False	84.2	86.1	77.1	1.0	43.607317073170734
 ESCA-AD	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	84.3	81.7	86.8	0.5	55.580487804878054
 CESC-AD	Pyrvinium	BRD-M86331534	pyrvinium-pamoate	borrowed	False	False	84.0	83.8	72.1	1.0	55.1551724137931
 TCGA-HNSC	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	83.7	72.1	91.5	1.0	56.50975609756098
 TCGA-READ	Docetaxel	BRD-A05821830	docetaxel	matched	False	False	90.7	85.8	53.7	1.0	65.59024390243901
-TCGA-KICH	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	76.4	76.7	64.1	1.0	64.9560975609756
+TCGA-KICH	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	76.4	76.7	64.1	1.0	65.03414634146341
 TCGA-STAD	Sirolimus	BRD-A79768653	sirolimus	borrowed	False	False	87.8	85.9	92.9	1.0	65.83170731707317
 TCGA-PAAD	Pyrvinium	BRD-M86331534	pyrvinium-pamoate	borrowed	False	False	80.4	79.3	67.8	1.0	55.1551724137931
 TCGA-PAAD	Mepivacaine	BRD-A03216249	mepivacaine	matched	False	False	80.3	83.9	90.3		23.536585365853657
@@ -948,7 +947,6 @@ UCEC-SER	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	81.2	81.3	98
 TGCT-SEM	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	92.7	90.9	81.7	1.0	55.52439024390244
 BRCA-LumA	Clofarabine	BRD-K34022604	clofarabine	matched	False	False	83.8	75.4	79.7	1.0	66.43170731707316
 TCGA-LUAD	Irinotecan	BRD-K08547377	irinotecan	matched	False	True	90.4	84.3	56.9	1.0	58.84390243902439
-TCGA-LIHC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	80.3	76.8	48.8	1.0	54.073170731707314
 BRCA-Basal	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	87.2	84.6	81.5	1.0	58.234146341463415
 SARC-DDLPS	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	81.5	89.2	92.0	1.0	43.05853658536586
 TCGA-STAD	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	86.9	87.5	95.7	0.9	59.26829268292683
@@ -979,7 +977,7 @@ CESC-SCC	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	88.1	87.1	90.2
 SARC-DDLPS	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	80.7	92.2	96.4	1.0	55.88780487804878
 TCGA-HNSC	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	82.6	85.7	86.5	1.0	61.599999999999994
 TCGA-UCS	Simeprevir	BRD-A68493689	simeprevir	borrowed	False	False	76.7	73.6	81.9		48.514634146341464
-BRCA-Basal	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	87.0	77.6	86.4	1.0	66.54878048780488
+BRCA-Basal	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	87.0	77.6	86.4	1.0	66.76829268292683
 PCPG-PHEO	Artesunate	BRD-A47829399	artesunate	borrowed	False	False	79.5	74.5	53.0		56.85853658536585
 TCGA-PRAD	Teniposide	BRD-A35588707	teniposide	matched	False	False	85.5	85.6	77.2	1.0	58.6219512195122
 TCGA-LUAD	Fluvastatin	BRD-K66296774	fluvastatin	matched	False	False	89.7	92.1	94.4	1.0	56.62439024390244
@@ -992,11 +990,11 @@ TCGA-STAD	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	86.2	93.9	99.0	
 TCGA-THCA	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	84.4	79.5	78.1	0.8333333333333334	60.15853658536585
 LGG-IDHmut-codel	Sorafenib	BRD-K23984367	sorafenib	borrowed	False	False	75.8	74.7	66.3	0.9090909090909091	50.1390243902439
 PCPG-PHEO	Nilotinib	BRD-K81528515	nilotinib	borrowed	False	False	79.3	77.1	54.0	1.0	50.72195121951219
-BRCA-LumB	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	79.3	81.6	91.3	1.0	66.54878048780488
+BRCA-LumB	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	79.3	81.6	91.3	1.0	66.76829268292683
 TCGA-SKCM	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	79.6	82.2	91.4	1.0	60.582926829268295
 TCGA-THCA	Teniposide	BRD-A35588707	teniposide	borrowed	False	False	84.2	83.2	64.1	1.0	58.6219512195122
 TCGA-HNSC	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	82.5	76.2	88.5	1.0	43.05853658536586
-TGCT-SEM	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	91.8	81.7	86.4	1.0	66.54878048780488
+TGCT-SEM	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	91.8	81.7	86.4	1.0	66.76829268292683
 TCGA-LIHC	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	79.1	81.1	83.5		50.34634146341463
 TARGET-WT	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	80.7	82.1	90.0	0.9333333333333333	60.76341463414634
 TCGA-STAD	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	86.0	89.1	81.0	0.9444444444444444	54.400000000000006
@@ -1036,13 +1034,14 @@ TCGA-HNSC	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	81.6	75.5	66.1	
 BRCA-LumB	Axitinib	BRD-K29905972	axitinib	matched	False	False	78.4	79.9	86.6	1.0	51.50731707317074
 TARGET-WT	Etoposide	BRD-K37798499	etoposide	borrowed	False	True	79.5	80.1	74.0	1.0	65.85853658536585
 TCGA-PAAD	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	78.0	78.3	65.7	1.0	49.582926829268295
-TCGA-READ	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	88.3	85.4	95.4	1.0	66.54878048780488
+TCGA-READ	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	88.3	85.4	95.4	1.0	66.76829268292683
 TCGA-OV	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	81.6	85.9	98.1	1.0	58.65853658536585
 UCEC-SER	Bortezomib	BRD-K88510285	bortezomib	borrowed	False	False	78.5	82.2	49.4	0.9090909090909091	52.97560975609756
 SARC-DDLPS	Artesunate	BRD-A47829399	artesunate	borrowed	False	False	79.5	88.1	61.1		56.85853658536585
 CESC-SCC	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	86.5	84.9	89.2	0.5	55.517073170731706
 TCGA-THCA	Ixazomib	BRD-K78659596	ixazomib	borrowed	False	False	83.0	87.3	59.3	1.0	50.20975609756098
 LGG-IDHwt	Valdecoxib	BRD-K12994359	valdecoxib	borrowed	False	False	76.6	78.4	83.0	1.0	33.7425
+TCGA-COAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	89.9	88.9	64.6	1.0	72.20243902439024
 TCGA-COAD	Selumetinib	BRD-K57080016	selumetinib	matched	False	False	89.8	89.4	96.1	1.0	60.582926829268295
 TGCT-NSGCT	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	83.3	88.9	92.9	1.0	56.800000000000004
 SARC-DDLPS	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	79.4	73.1	87.4	0.8823529411764706	54.68780487804877
@@ -1054,9 +1053,9 @@ CESC-SCC	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	86.1	82.6	80.1
 TGCT-SEM	Trifluridine	BRD-A64485570	trifluridine	borrowed	False	False	90.4	88.6	82.4	1.0	60.90487804878049
 TCGA-PAAD	Midostaurin	BRD-K13646352	midostaurin	matched	False	False	77.6	69.0	81.1	1.0	60.975
 SARC-UPS	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	82.4	80.1	88.7	0.8235294117647058	54.68780487804877
-TGCT-SEM	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	90.2	87.2	68.4	1.0	71.76585365853659
+TGCT-SEM	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	90.2	87.2	68.4	1.0	72.20243902439024
 BRCA-LumA	Ixabepilone	BRD-K03601870	ixabepilone	matched	True	True	82.1	83.3	81.7	1.0	56.18536585365853
-TCGA-HNSC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	80.7	86.6	74.9	1.0	71.76585365853659
+TCGA-HNSC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	80.7	86.6	74.9	1.0	72.20243902439024
 SARC-UPS	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	82.3	88.4	91.9	1.0	43.05853658536586
 TARGET-WT	Nilotinib	BRD-K81528515	nilotinib	borrowed	False	False	78.8	78.1	52.2	1.0	50.72195121951219
 TCGA-GBM	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	81.3	88.6	93.8	1.0	56.519512195121955
@@ -1095,7 +1094,7 @@ TGCT-NSGCT	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	82.2	91.
 BRCA-LumA	Rucaparib	BRD-K88560311	rucaparib	matched	False	False	80.8	73.7	61.8	1.0	49.665853658536584
 TCGA-LIHC	Regorafenib	BRD-K16730910	regorafenib	matched	False	True	76.1	72.5	84.4	0.8333333333333334	54.400000000000006
 TCGA-UCS	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	75.1	75.3	43.0	0.8947368421052632	48.456097560975614
-TCGA-PAAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	75.9	75.4	95.7	1.0	66.54878048780488
+TCGA-PAAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	75.9	75.4	95.7	1.0	66.76829268292683
 TCGA-KICH	Nilotinib	BRD-K81528515	nilotinib	borrowed	False	False	73.2	71.2	60.8	1.0	50.72195121951219
 ESCA-AD	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	79.4	80.1	83.3	1.0	58.234146341463415
 TCGA-LUAD	Sirolimus	BRD-A79768653	sirolimus	matched	False	False	85.5	93.2	96.8	1.0	65.83170731707317
@@ -1112,10 +1111,9 @@ TCGA-HNSC	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	79.1	72.6	74.0	
 TARGET-NBL	Mitoxantrone	BRD-K21680192	mitoxantrone	matched	False	False	68.7	90.5	99.9	1.0	48.78780487804878
 TCGA-COAD	Cabozantinib	BRD-K51544265	cabozantinib	matched	False	False	87.2	86.5	91.5	0.6666666666666666	61.863414634146345
 LGG-IDHmut-noncodel	Clofazimine	BRD-K56614220	clofazimine	borrowed	False	False	73.0	70.2	82.0		55.356097560975606
-TCGA-THCA	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	80.3	81.0	97.3	1.0	66.54878048780488
+TCGA-THCA	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	80.3	81.0	97.3	1.0	66.76829268292683
 TCGA-BLCA	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	82.7	65.5	57.1	1.0	58.775609756097566
-TCGA-SKCM	Cyclosporine	BRD-A64290322	cyclosporin-a	matched	False	False	77.3	73.5	82.9	1.0	64.51951219512196
-SARC-UPS	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	80.2	64.0	76.8	1.0	66.54878048780488
+SARC-UPS	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	80.2	64.0	76.8	1.0	66.76829268292683
 TCGA-KICH	Rosiglitazone	BRD-A97437073	rosiglitazone	borrowed	False	False	72.6	70.1	78.6	1.0	41.517073170731706
 TCGA-GBM	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	79.8	73.6	52.9	1.0	55.20243902439025
 TCGA-BLCA	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	82.5	78.3	71.9	1.0	55.52439024390244
@@ -1159,7 +1157,7 @@ TCGA-ACC	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	74.2	70.2	
 CESC-AD	Vorinostat	BRD-K81418486	vorinostat	matched	False	False	78.1	49.2	81.4	1.0	57.380487804878044
 LGG-IDHwt	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	74.2	80.0	72.0	1.0	46.86829268292683
 TCGA-THCA	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	78.6	67.3	60.1	1.0	65.85853658536585
-ESCA-SCC	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	78.8	74.8	83.1	1.0	64.51951219512196
+ESCA-SCC	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	78.8	74.8	83.1	1.0	65.96585365853659
 BRCA-LumA	Estramustine	BRD-A70858459	estramustine	matched	False	False	79.1	72.8	63.3	0.75	49.421951219512195
 TGCT-SEM	Macitentan	BRD-K48812570	macitentan	borrowed	False	False	87.4	83.2	61.9	1.0	43.607317073170734
 TCGA-GBM	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	78.2	91.0	99.3	1.0	55.88780487804878
@@ -1206,10 +1204,9 @@ TGCT-SEM	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	85.8	70.2	81.5	1
 TCGA-READ	Dasatinib	BRD-K49328571	dasatinib	matched	False	False	82.7	81.6	96.7	0.9411764705882353	54.68780487804877
 TCGA-THCA	Cabazitaxel	BRD-K06858286	cabazitaxel	borrowed	False	False	76.6	80.7	71.2		57.43658536585366
 TGCT-SEM	Cytarabine	BRD-K71847383	cytarabine	borrowed	False	False	85.7	86.3	84.0	1.0	59.02682926829268
-TCGA-READ	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	82.6	83.2	75.8	1.0	71.76585365853659
 UCEC-SER	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	74.6	75.6	84.5	1.0	65.83170731707317
 CESC-SCC	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	80.3	77.5	82.2	0.3333333333333333	53.2925
-TCGA-PRAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	77.6	81.9	78.2	1.0	71.76585365853659
+TCGA-PRAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	77.6	81.9	78.2	1.0	72.20243902439024
 TARGET-NBL	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	66.1	61.4	56.5	1.0	56.951219512195124
 TCGA-KICH	Ifosfamide	BRD-A67097164	ifosfamide	borrowed	False	True	70.0	71.0	76.8	1.0	55.18780487804877
 BRCA-LumB	Trametinib	BRD-K12343256	trametinib	matched	False	False	73.8	73.1	60.8	1.0	60.48780487804878
@@ -1222,7 +1219,7 @@ LGG-IDHmut-codel	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	70.9
 UCEC-EEC	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	73.3	65.0	76.1		50.34634146341463
 ESCA-AD	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	True	76.7	64.6	69.4	0.8888888888888888	54.400000000000006
 SARC-LMS	Clofarabine	BRD-A82371568	clofarabine	borrowed	False	False	68.4	59.0	53.1	1.0	66.43170731707316
-SARC-DDLPS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	73.9	80.9	92.9	1.0	71.76585365853659
+SARC-DDLPS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	73.9	80.9	92.9	1.0	72.20243902439024
 BRCA-LumB	Givinostat	BRD-K13810148	givinostat	matched	False	False	73.7	70.3	56.4	1.0	50.580487804878054
 SARC-DDLPS	Simeprevir	BRD-A68493689	simeprevir	borrowed	False	False	73.7	88.8	80.9		48.514634146341464
 TCGA-OV	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	74.7	74.8	66.0	1.0	49.582926829268295
@@ -1233,7 +1230,7 @@ TCGA-KIRC	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	71.9	67.8	82.9	
 BRCA-LumA	Cabozantinib	BRD-K51544265	cabozantinib	matched	False	False	77.1	75.7	87.4	1.0	61.863414634146345
 TARGET-WT	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	74.2	69.9	87.8	1.0	64.74878048780488
 SARC-DDLPS	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	73.3	67.3	76.6	1.0	55.580487804878054
-TCGA-OV	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	74.5	74.7	55.7	1.0	64.9560975609756
+TCGA-OV	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	74.5	74.7	55.7	1.0	65.03414634146341
 TCGA-BLCA	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	78.1	83.3	93.9	1.0	60.48780487804878
 TCGA-HNSC	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	74.7	69.2	80.2	0.5	40.94390243902439
 TCGA-ACC	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	72.1	71.3	53.9	0.6666666666666666	42.46341463414634
@@ -1242,7 +1239,7 @@ TCGA-STAD	Vorinostat	BRD-K81418486	vorinostat	matched	False	False	78.4	81.8	78.4
 LGG-IDHmut-codel	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	70.6	71.1	85.7	1.0	56.800000000000004
 TCGA-BLCA	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	77.9	75.1	65.9	1.0	56.951219512195124
 TCGA-KIRC	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	71.8	50.3	55.2	1.0	54.24878048780487
-CESC-AD	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	75.7	76.2	69.1	1.0	64.51951219512196
+CESC-AD	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	75.7	76.2	69.1	1.0	65.96585365853659
 SARC-UPS	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	76.0	69.1	82.3	1.0	61.599999999999994
 TGCT-NSGCT	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	79.0	57.7	60.2	1.0	53.94878048780488
 BRCA-Her2	Imatinib	BRD-K92723993	imatinib	matched	False	False	77.8	73.1	64.9	0.8888888888888888	75.85
@@ -1260,20 +1257,19 @@ TARGET-WT	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	74.0	73.3	7
 LGG-IDHmut-noncodel	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	70.4	73.8	86.5	1.0	56.519512195121955
 TGCT-SEM	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	84.7	85.2	96.2	1.0	56.519512195121955
 SARC-DDLPS	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	72.3	64.2	57.3	1.0	56.76829268292683
-TCGA-UCS	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	70.8	73.3	48.0	1.0	64.9560975609756
-TCGA-ACC	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	71.6	75.3	96.6	1.0	71.76585365853659
+TCGA-UCS	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	70.8	73.3	48.0	1.0	65.03414634146341
+TCGA-ACC	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	71.6	75.3	96.6	1.0	72.20243902439024
 TCGA-LUAD	Sunitinib	BRD-K42828737	sunitinib	matched	False	True	81.6	84.1	92.4	0.9	59.26829268292683
 SARC-UPS	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	75.4	82.6	77.4	1.0	65.85853658536585
 TCGA-KICH	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	69.4	58.0	65.3	1.0	52.51219512195122
 TCGA-ACC	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	71.4	71.4	68.7	0.8333333333333334	60.15853658536585
 UCEC-EEC	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	72.1	73.6	88.7	1.0	65.83170731707317
-TCGA-COAD	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	81.8	79.2	72.9	1.0	71.76585365853659
 ESCA-SCC	Ifosfamide	BRD-A67097164	ifosfamide	borrowed	False	False	76.4	74.0	55.5	1.0	55.18780487804877
 TCGA-THCA	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	75.0	70.6	60.3	1.0	58.84390243902439
 LGG-IDHmut-noncodel	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	70.1	65.6	60.1		23.536585365853657
 TCGA-ACC	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	71.2	78.1	97.1	1.0	51.802439024390246
 TGCT-SEM	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	84.4	78.8	85.7	0.8823529411764706	54.68780487804877
-TGCT-SEM	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	84.4	77.7	73.6	1.0	64.51951219512196
+TGCT-SEM	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	84.4	77.7	73.6	1.0	65.96585365853659
 TCGA-GBM	Ceritinib	BRD-K22149900	ceritinib	borrowed	False	False	75.8	72.1	58.1	0.6	4.341463414634147
 TGCT-NSGCT	Etoposide	BRD-K37798499	etoposide	borrowed	False	True	78.3	82.0	74.0	1.0	65.85853658536585
 TCGA-PRAD	Vorinostat	BRD-K81418486	vorinostat	matched	False	False	76.0	52.2	59.4	1.0	57.380487804878044
@@ -1288,7 +1284,7 @@ BRCA-LumA	Lapatinib	BRD-K19687926	lapatinib	matched	True	False	75.8	71.3	85.9	1.
 LGG-IDHmut-noncodel	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	69.9	74.4	89.5	0.6666666666666666	51.802439024390246
 ESCA-SCC	Cytarabine	BRD-K71847383	cytarabine	borrowed	False	False	76.2	81.6	72.2	1.0	59.02682926829268
 PCPG-PGL	Vinblastine	BRD-A22783572	vinblastine	borrowed	False	False	69.2	68.2	47.4	1.0	62.302439024390246
-TCGA-LIHC	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	71.9	70.8	96.0	1.0	71.76585365853659
+TCGA-LIHC	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	71.9	70.8	96.0	1.0	72.20243902439024
 TCGA-THCA	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	True	74.4	57.5	67.3	1.0	60.582926829268295
 TCGA-COAD	Meloxicam	BRD-A84174393	meloxicam	matched	False	False	81.2	80.9	57.7	1.0	31.67560975609756
 CESC-AD	Simeprevir	BRD-A68493689	simeprevir	matched	False	False	74.8	70.5	63.8		48.514634146341464
@@ -1298,13 +1294,13 @@ TCGA-KIRC	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	70.8	76.0	7
 TCGA-STAD	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	77.1	81.9	91.8	1.0	57.170731707317074
 TCGA-STAD	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	77.1	81.4	74.6	1.0	52.5609756097561
 ESCA-AD	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	74.8	67.4	56.1	1.0	46.86829268292683
-LGG-IDHmut-codel	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	69.8	64.6	60.4	1.0	64.9560975609756
+LGG-IDHmut-codel	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	69.8	64.6	60.4	1.0	65.03414634146341
 LGG-IDHwt	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	71.9	71.9	62.9	0.5	52.5609756097561
 TCGA-LIHC	Vemurafenib	BRD-K56343971	vemurafenib	matched	False	False	71.5	73.4	76.4	1.0	56.30975609756097
 TCGA-STAD	Etoposide	BRD-K37798499	etoposide	borrowed	False	True	76.7	79.3	70.3	1.0	65.85853658536585
 LGG-IDHmut-noncodel	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	69.4	71.9	71.5	0.8888888888888888	54.400000000000006
 BRCA-LumB	Sunitinib	BRD-K42828737	sunitinib	matched	False	True	72.3	74.8	94.6	1.0	59.26829268292683
-SARC-UPS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	74.4	78.9	92.7	1.0	71.76585365853659
+SARC-UPS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	74.4	78.9	92.7	1.0	72.20243902439024
 TCGA-STAD	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	76.4	88.6	97.8	1.0	54.24878048780487
 TCGA-THCA	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	74.0	79.5	81.2		23.536585365853657
 LGG-IDHwt	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	71.7	80.5	90.3	1.0	56.800000000000004
@@ -1312,11 +1308,10 @@ TCGA-THCA	Paclitaxel	BRD-K62008436	paclitaxel	borrowed	False	True	73.7	67.5	58.5
 CESC-SCC	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	77.6	76.8	84.5	1.0	60.582926829268295
 LGG-IDHmut-codel	Everolimus	BRD-K13514097	everolimus	borrowed	True	True	69.5	67.0	72.6	1.0	64.74878048780488
 SARC-DDLPS	Teniposide	BRD-A35588707	teniposide	borrowed	False	False	71.0	67.9	54.4	1.0	58.6219512195122
-TCGA-BLCA	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	75.9	85.5	98.1	1.0	71.76585365853659
+TCGA-BLCA	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	75.9	85.5	98.1	1.0	72.20243902439024
 TCGA-HNSC	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	72.6	76.9	88.3	1.0	64.74878048780488
 ESCA-SCC	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	75.5	72.9	88.9	1.0	60.582926829268295
 TARGET-WT	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	72.6	77.9	91.0	1.0	52.51219512195122
-BRCA-LumB	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	72.1	72.8	62.2	1.0	53.94878048780488
 PCPG-PGL	Paclitaxel	BRD-K62008436	paclitaxel	borrowed	False	True	68.1	66.5	60.1	0.7272727272727273	63.59024390243902
 TGCT-NSGCT	Macitentan	BRD-K48812570	macitentan	borrowed	False	False	77.3	72.9	58.3	1.0	43.607317073170734
 PCPG-PHEO	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	72.1	65.7	78.2	0.3333333333333333	53.2925
@@ -1360,7 +1355,6 @@ TGCT-SEM	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	80.0	80.9	91.5	0
 TCGA-THCA	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	71.4	61.8	63.3	1.0	49.71707317073171
 TGCT-SEM	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	79.9	78.2	93.5	1.0	60.48780487804878
 TCGA-THCA	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	71.2	82.3	93.5	1.0	58.775609756097566
-TCGA-PAAD	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	68.2	65.5	88.3	1.0	58.234146341463415
 TCGA-GBM	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	73.4	70.5	78.0	1.0	40.94390243902439
 TCGA-LIHC	Fingolimod	BRD-K88025533	fingolimod	matched	False	False	70.0	59.8	58.6	0.75	53.84390243902439
 TCGA-PRAD	Doxorubicin	BRD-K61468417	doxorubicin	borrowed	False	False	72.6	54.9	56.0	1.0	63.23658536585366
@@ -1394,7 +1388,7 @@ TCGA-KIRC	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	68.6	57.1	
 TCGA-STAD	Trifluridine	BRD-A64485570	trifluridine	borrowed	False	False	72.0	75.1	70.5	1.0	60.90487804878049
 PCPG-PHEO	Paclitaxel	BRD-K62008436	paclitaxel	borrowed	False	True	70.1	66.6	53.1	0.7272727272727273	63.59024390243902
 SARC-UPS	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	71.2	63.9	55.9	1.0	56.76829268292683
-TCGA-KIRC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	68.5	67.6	92.6	1.0	66.54878048780488
+TCGA-KIRC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	68.5	67.6	92.6	1.0	66.76829268292683
 SARC-LMS	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	64.4	42.7	62.2	0.3333333333333333	60.975
 CESC-SCC	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	73.8	76.4	86.4	1.0	56.800000000000004
 TGCT-NSGCT	Vorinostat	BRD-K81418486	vorinostat	borrowed	False	False	74.2	79.4	75.0	1.0	57.380487804878044
@@ -1411,7 +1405,7 @@ TGCT-SEM	Ifosfamide	BRD-A67097164	ifosfamide	borrowed	True	True	78.5	73.4	70.2	1
 TCGA-PRAD	Trifluridine	BRD-K03243820	trifluridine	borrowed	False	False	70.9	47.8	62.3	1.0	60.90487804878049
 TCGA-KIRP	Methylene blue	BRD-K16406336	methylene-blue	borrowed	False	False	71.4	74.7	57.0	1.0	47.83157894736842
 TCGA-HNSC	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	69.3	75.9	75.4	1.0	60.00975609756098
-TCGA-THCA	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	69.3	82.3	81.7	1.0	71.76585365853659
+TCGA-THCA	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	69.3	82.3	81.7	1.0	72.20243902439024
 LGG-IDHwt	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	68.6	82.8	96.3	1.0	55.88780487804878
 PCPG-PHEO	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	69.5	79.9	95.0	1.0	57.18536585365853
 BRCA-LumA	Clofazimine	BRD-K56614220	clofazimine	matched	False	False	72.3	73.1	73.3		55.356097560975606
@@ -1420,7 +1414,7 @@ PCPG-PGL	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	65.8	63.8	54
 TCGA-UCS	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	67.4	66.8	64.2	1.0	56.951219512195124
 TCGA-THCA	Panobinostat	BRD-K02130563	panobinostat	borrowed	False	False	69.1	65.2	58.1	1.0	54.61463414634146
 TCGA-UCS	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	67.2	65.6	76.1	0.3333333333333333	53.2925
-SARC-LMS	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	64.0	22.6	65.1	1.0	66.54878048780488
+SARC-LMS	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	64.0	22.6	65.1	1.0	66.76829268292683
 BRCA-Basal	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	72.9	69.4	74.3		55.09756097560975
 TCGA-KIRC	Tivozanib	BRD-K53414658	tivozanib	borrowed	True	True	68.1	61.0	76.3	1.0	56.800000000000004
 TCGA-STAD	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	71.2	76.9	81.1	1.0	60.00975609756098
@@ -1448,21 +1442,18 @@ CESC-AD	Romidepsin	BRD-K61397605	romidepsin	matched	False	False	69.9	46.6	66.0	1
 TCGA-UCS	Vinblastine	BRD-K01188359	vinblastine	borrowed	False	False	66.4	65.8	43.9	1.0	62.302439024390246
 UCEC-SER	Etravirine	BRD-K74717603	etravirine	borrowed	False	False	68.2	59.7	61.7		43.66341463414634
 TCGA-ACC	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	67.4	58.1	60.3	1.0	60.00975609756098
-CESC-AD	Everolimus	BRD-K13514097	everolimus	borrowed	False	False	69.6	68.6	70.8	1.0	64.74878048780488
 LGG-IDHwt	Etoposide	BRD-K37798499	etoposide	borrowed	False	False	67.2	71.9	71.0	1.0	65.85853658536585
 TCGA-HNSC	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	67.7	69.1	71.1	1.0	55.580487804878054
 BRCA-LumB	Fostamatinib	BRD-K20285085	fostamatinib	matched	False	False	68.6	70.2	82.0	1.0	55.517073170731706
-ESCA-SCC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	70.1	61.8	75.0	1.0	66.54878048780488
+ESCA-SCC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	70.1	61.8	75.0	1.0	66.76829268292683
 PCPG-PHEO	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	68.9	64.1	66.4	0.8333333333333334	60.15853658536585
 TCGA-LUAD	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	74.5	62.6	76.0	1.0	58.0609756097561
 TCGA-READ	Crizotinib	BRD-K78431006	crizotinib	matched	False	False	74.0	67.3	84.5	0.5	40.94390243902439
 SARC-DDLPS	Vandetanib	BRD-K77625799	vandetanib	borrowed	False	False	65.5	71.2	89.4	0.7307692307692307	57.50975609756098
-TCGA-UCS	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	66.0	68.9	69.1	1.0	65.83170731707317
 LGG-IDHmut-noncodel	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	66.6	64.3	54.7	1.0	58.84390243902439
 TCGA-READ	Cabozantinib	BRD-K51544265	cabozantinib	matched	False	False	73.8	72.3	88.4	0.6666666666666666	61.863414634146345
-TARGET-WT	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	69.9	62.5	85.7	1.0	66.54878048780488
+TARGET-WT	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	69.9	62.5	85.7	1.0	66.76829268292683
 TCGA-OV	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	67.6	68.0	67.5	1.0	65.83170731707317
-TCGA-LIHC	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	67.5	67.0	93.1	1.0	51.802439024390246
 CESC-AD	Albendazole	BRD-K79131256	albendazole	matched	False	False	68.6	73.4	68.1	1.0	54.87560975609756
 ESCA-SCC	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	69.6	72.6	71.1	0.5	52.5609756097561
 TCGA-OV	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	True	67.5	63.2	97.6	1.0	55.88780487804878
@@ -1533,16 +1524,15 @@ SARC-UPS	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	67.2	47.0	82.0
 TCGA-LUSC	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	71.8	75.2	80.3	1.0	58.0609756097561
 SARC-UPS	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	67.0	65.5	86.5	0.8666666666666667	60.76341463414634
 TGCT-SEM	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	74.2	67.7	68.9	1.0	56.951219512195124
-TCGA-LIHC	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	66.0	69.0	47.5	1.0	64.9560975609756
 TGCT-SEM	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	73.7	66.3	87.3	1.0	55.517073170731706
 TCGA-LIHC	Pazopanib	BRD-K74514084	pazopanib	matched	False	False	65.6	61.4	75.2	0.75	54.18292682926829
 ESCA-SCC	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	67.8	68.4	68.2	0.3333333333333333	60.975
 TCGA-LIHC	Etravirine	BRD-K74717603	etravirine	borrowed	False	False	65.4	66.9	69.0		43.66341463414634
-TCGA-STAD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	66.7	67.9	78.3	1.0	64.51951219512196
+TCGA-STAD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	66.7	67.9	78.3	1.0	65.96585365853659
 TCGA-READ	Rivaroxaban	BRD-A50033377	rivaroxaban	matched	False	False	70.7	66.1	61.2	1.0	73.7
 UCEC-SER	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	65.9	53.8	95.9	1.0	55.88780487804878
 TARGET-WT	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	67.9	67.3	69.3	1.0	60.00975609756098
-TARGET-NBL	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	59.5	56.2	52.3	1.0	64.51951219512196
+TARGET-NBL	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	59.5	56.2	52.3	1.0	65.96585365853659
 LGG-IDHmut-codel	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	65.3	73.3	84.4	1.0	54.24878048780487
 ESCA-SCC	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	67.2	74.1	62.4	1.0	55.20243902439025
 TCGA-UCS	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	64.4	55.8	89.1	1.0	55.88780487804878
@@ -1552,7 +1542,7 @@ TCGA-GBM	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	67.3	61.5	64
 TCGA-READ	Nortriptyline	BRD-K91263825	nortriptyline	matched	False	False	70.2	64.5	68.8	0.32	24.8
 TCGA-COAD	Pyrimethamine	BRD-K88429204	pyrimethamine	matched	False	False	71.2	83.7	65.5	0.5	55.580487804878054
 TCGA-KIRP	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	68.0	63.7	57.7	1.0	55.52439024390244
-TCGA-LUAD	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	69.6	76.7	87.5	1.0	64.51951219512196
+TCGA-LUAD	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	69.6	76.7	87.5	1.0	65.96585365853659
 CESC-AD	Belumosudil	BRD-K88506063	KD-025	matched	False	False	64.9	67.9	66.9	1.0	45.8
 SARC-DDLPS	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	62.9	39.5	67.0	1.0	58.234146341463415
 TCGA-READ	Mitoxantrone	BRD-K21680192	mitoxantrone	matched	False	False	69.7	77.1	58.7	1.0	48.78780487804878
@@ -1567,7 +1557,7 @@ LGG-IDHwt	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	64.7	60.6	6
 SARC-DDLPS	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	62.3	57.3	54.5	1.0	58.84390243902439
 ESCA-SCC	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	66.7	57.6	67.9	0.3333333333333333	53.2925
 ESCA-AD	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	67.1	67.3	67.9	0.6666666666666666	60.975
-SARC-UPS	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	65.4	72.6	58.7	1.0	64.51951219512196
+SARC-UPS	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	65.4	72.6	58.7	1.0	65.96585365853659
 TCGA-COAD	Erlotinib	BRD-K70401845	erlotinib	matched	False	True	70.0	63.1	75.9	1.0	42.60243902439024
 BRCA-LumA	Axitinib	BRD-K29905972	axitinib	matched	False	False	67.6	59.0	58.6	1.0	51.50731707317074
 TCGA-LIHC	Mercaptopurine	BRD-K91601245	mercaptopurine	borrowed	False	False	64.5	61.6	51.5	1.0	54.40975609756098
@@ -1590,7 +1580,7 @@ TGCT-SEM	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	71.2	73.6	71
 SARC-UPS	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	63.9	56.6	73.0	0.3333333333333333	60.975
 SARC-UPS	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	63.6	73.4	91.8	1.0	51.802439024390246
 TCGA-STAD	Givinostat	BRD-K13810148	givinostat	borrowed	False	False	64.7	78.0	70.7	1.0	50.580487804878054
-TGCT-NSGCT	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	67.6	60.1	64.6	1.0	64.51951219512196
+TGCT-NSGCT	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	67.6	60.1	64.6	1.0	65.96585365853659
 TARGET-NBL	Idarubicin	BRD-A71390734	idarubicin	borrowed	False	False	58.0	51.3	48.9	1.0	56.87317073170732
 CESC-AD	Cabozantinib	BRD-K51544265	cabozantinib	matched	False	False	62.9	64.1	91.5	0.8333333333333334	61.863414634146345
 TCGA-SKCM	Epirubicin	BRD-K04548931	epirubicin	matched	False	False	63.9	71.4	76.1	1.0	63.58536585365854
@@ -1608,7 +1598,7 @@ LGG-IDHmut-codel	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	63.5	65.
 CESC-AD	Belinostat	BRD-K17743125	belinostat	matched	False	False	62.5	50.9	78.9	1.0	57.580487804878054
 CESC-AD	Gefitinib	BRD-K64052750	gefitinib	matched	False	False	62.3	59.1	67.2	1.0	38.44878048780488
 TCGA-READ	Mirdametinib	BRD-K49865102	PD-0325901	matched	False	False	67.1	60.5	92.5	1.0	57.18536585365853
-TCGA-OV	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	63.1	63.7	69.2	1.0	66.54878048780488
+TCGA-OV	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	63.1	63.7	69.2	1.0	66.76829268292683
 TCGA-PRAD	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	63.7	54.4	70.1	0.3333333333333333	53.2925
 PCPG-PHEO	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	63.7	76.6	84.8	1.0	56.50975609756098
 TCGA-COAD	Sunitinib	BRD-K42828737	sunitinib	matched	False	False	67.6	75.6	90.4	0.8	59.26829268292683
@@ -1625,7 +1615,7 @@ TGCT-NSGCT	Idarubicin	BRD-A71390734	idarubicin	borrowed	False	False	65.7	73.0	57
 TCGA-KIRC	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	62.8	62.1	65.8	0.3333333333333333	60.975
 CESC-SCC	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	63.6	84.7	93.6	1.0	54.24878048780487
 TCGA-READ	Nilotinib	BRD-K81528515	nilotinib	matched	False	False	66.3	68.8	67.0	1.0	50.72195121951219
-CESC-SCC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	63.4	56.6	82.3	1.0	66.54878048780488
+CESC-SCC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	63.4	56.6	82.3	1.0	66.76829268292683
 TCGA-ACC	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	62.6	70.5	83.5	1.0	52.51219512195122
 TCGA-SKCM	Simvastatin	BRD-K22134346	simvastatin	matched	False	False	62.7	49.9	88.8	1.0	55.88780487804878
 TCGA-GBM	Valdecoxib	BRD-K12994359	valdecoxib	borrowed	False	False	64.7	64.9	81.6	1.0	33.7425
@@ -1663,7 +1653,7 @@ TCGA-COAD	Floxuridine	BRD-K47832606	floxuridine	borrowed	True	True	65.4	76.5	56.
 ESCA-SCC	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	63.4	63.6	60.1	1.0	56.76829268292683
 LGG-IDHwt	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	61.6	70.9	89.9	0.9	59.26829268292683
 TCGA-READ	Givinostat	BRD-K13810148	givinostat	borrowed	False	False	64.4	69.4	63.0	1.0	50.580487804878054
-CESC-AD	Temsirolimus	BRD-A62025033	temsirolimus	matched	False	False	60.9	59.3	48.7	1.0	66.54878048780488
+CESC-AD	Temsirolimus	BRD-A62025033	temsirolimus	matched	False	False	60.9	59.3	48.7	1.0	66.76829268292683
 BRCA-LumA	Vorinostat	BRD-K81418486	vorinostat	matched	False	False	64.3	56.1	54.6	1.0	57.380487804878044
 UCEC-SER	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	61.8	54.3	84.4	1.0	60.48780487804878
 CESC-SCC	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	61.9	64.1	64.2	1.0	54.18292682926829
@@ -1743,20 +1733,20 @@ BRCA-LumA	Bexarotene	BRD-K92441787	bexarotene	matched	False	False	60.6	66.3	61.5
 TCGA-PAAD	Cabozantinib	BRD-K51544265	cabozantinib	matched	False	False	56.5	65.3	68.6	0.8333333333333334	61.863414634146345
 LGG-IDHwt	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	False	60.0	63.0	81.6	0.8333333333333334	61.863414634146345
 TCGA-OV	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	57.7	60.3	87.6	1.0	64.74878048780488
-UCEC-EEC	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	58.3	59.0	77.1	1.0	66.54878048780488
+UCEC-EEC	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	58.3	59.0	77.1	1.0	66.76829268292683
 SARC-UPS	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	57.9	62.9	92.0	1.0	56.62439024390244
 TCGA-COAD	Lapatinib	BRD-K19687926	lapatinib	matched	False	False	60.7	52.6	60.7	1.0	45.853658536585364
 UCEC-SER	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	59.7	56.6	48.3	1.0	56.76829268292683
 TGCT-SEM	Clofarabine	BRD-K34022604	clofarabine	borrowed	False	False	63.2	70.9	68.3	1.0	66.43170731707316
 ESCA-SCC	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	60.4	63.4	56.6	1.0	58.980487804878045
 TCGA-COAD	Everolimus	BRD-K13514097	everolimus	borrowed	False	False	60.5	56.2	63.2	1.0	64.74878048780488
-TCGA-SKCM	Temsirolimus	BRD-A62025033	temsirolimus	matched	False	False	59.5	66.1	84.1	1.0	66.54878048780488
+TCGA-SKCM	Temsirolimus	BRD-A62025033	temsirolimus	matched	False	False	59.5	66.1	84.1	1.0	66.76829268292683
 LGG-IDHmut-codel	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	59.4	61.5	68.7	1.0	52.51219512195122
 TCGA-LUSC	Clofazimine	BRD-K56614220	clofazimine	borrowed	False	False	61.1	64.4	73.9		55.356097560975606
 TCGA-UCS	Osimertinib	BRD-K42805893	AZD-9291	matched	False	False	58.2	57.1	51.7	1.0	43.05853658536586
 TCGA-STAD	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	58.4	72.0	98.1	1.0	56.62439024390244
 TCGA-SKCM	Cobimetinib	BRD-K03390685	cobimetinib	matched	True	True	59.3	64.5	82.8	1.0	56.519512195121955
-TCGA-UCS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	58.0	54.1	82.4	1.0	71.76585365853659
+TCGA-UCS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	58.0	54.1	82.4	1.0	72.20243902439024
 CESC-AD	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	matched	False	False	58.4	49.7	57.7	1.0	60.00975609756098
 LGG-IDHwt	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	59.4	63.5	69.6	1.0	54.18292682926829
 TCGA-GBM	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	60.7	65.6	76.1	1.0	49.71707317073171
@@ -1777,7 +1767,6 @@ TCGA-KICH	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	Fal
 TCGA-KICH	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	57.7	56.0	63.9	0.5	52.5609756097561
 UCEC-EEC	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	56.5	46.2	79.9	1.0	60.48780487804878
 SARC-LMS	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	True	54.6	100.0	99.9	1.0	54.24878048780487
-TCGA-LUAD	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	57.9	69.3	90.4	1.0	51.802439024390246
 TARGET-NBL	Paclitaxel	BRD-K62008436	paclitaxel	borrowed	False	False	53.2	53.4	49.3	0.7727272727272727	63.59024390243902
 ESCA-SCC	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	59.4	57.4	58.1		55.09756097560975
 TGCT-SEM	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	60.8	58.5	71.8	0.5	40.94390243902439
@@ -1854,8 +1843,8 @@ BRCA-LumA	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	56.2	46.8	66.4	1.
 TCGA-PAAD	Daunorubicin	BRD-A68009927	daunorubicin	matched	False	False	52.6	71.2	56.4	1.0	61.99512195121952
 PCPG-PHEO	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	56.5	64.1	73.8	1.0	61.22926829268293
 LGG-IDHmut-noncodel	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	False	57.4	63.0	77.2	1.0	57.170731707317074
-TCGA-OV	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	54.2	49.5	91.2	1.0	71.76585365853659
-UCEC-SER	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	56.3	56.1	72.0	1.0	66.54878048780488
+TCGA-OV	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	54.2	49.5	91.2	1.0	72.20243902439024
+UCEC-SER	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	56.3	56.1	72.0	1.0	66.76829268292683
 TCGA-READ	Azathioprine	BRD-K32821942	azathioprine	matched	False	False	54.9	56.1	68.4	1.0	56.951219512195124
 TGCT-NSGCT	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	56.6	91.7	95.5	1.0	54.24878048780487
 TCGA-READ	Binimetinib	BRD-K82244583	MEK-162	matched	False	False	54.4	52.7	91.8	1.0	56.50975609756098
@@ -1872,7 +1861,6 @@ TCGA-READ	Digoxin	BRD-K23478508	digoxin	matched	False	False	53.7	47.9	57.7	1.0	5
 ESCA-SCC	Sirolimus	BRD-A79768653	sirolimus	borrowed	False	False	56.2	50.5	67.7	1.0	65.83170731707317
 TCGA-ACC	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	55.0	48.4	54.5	0.3333333333333333	60.975
 TCGA-STAD	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	53.4	54.9	61.7	1.0	54.18292682926829
-TCGA-LIHC	Everolimus	BRD-K13514097	everolimus	borrowed	False	False	55.2	54.6	52.9	1.0	64.74878048780488
 TARGET-NBL	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	50.5	43.3	62.7	1.0	61.599999999999994
 TARGET-WT	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	58.1	70.4	95.6	1.0	56.50975609756098
 TCGA-COAD	Palbociclib	BRD-K51313569	palbociclib	matched	False	False	53.7	48.7	80.1	1.0	54.24878048780487
@@ -1886,7 +1874,7 @@ TCGA-READ	Sunitinib	BRD-K42828737	sunitinib	matched	False	False	53.3	54.0	86.3	0
 TCGA-PRAD	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	52.6	34.7	57.2	1.0	60.582926829268295
 TCGA-PAAD	Vandetanib	BRD-K77625799	vandetanib	matched	False	False	51.9	28.1	69.3	0.7307692307692307	57.50975609756098
 TCGA-KICH	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	54.6	48.8	53.9	1.0	49.71707317073171
-PCPG-PHEO	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	55.1	66.1	83.7	1.0	71.76585365853659
+PCPG-PHEO	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	55.1	66.1	83.7	1.0	72.20243902439024
 TCGA-STAD	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	52.3	63.1	52.6	1.0	55.20243902439025
 TCGA-ACC	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	54.4	55.2	78.8	1.0	60.582926829268295
 TCGA-LUAD	Trifluridine	BRD-A64485570	trifluridine	borrowed	False	False	53.2	57.8	67.2	1.0	60.90487804878049
@@ -1903,7 +1891,6 @@ SARC-UPS	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	52.4	59.9	75
 TCGA-OV	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	52.7	47.4	72.4	1.0	60.48780487804878
 TCGA-PRAD	Menadione	BRD-K78126613	menadione	matched	False	False	51.8	72.7	74.6	0.7142857142857143	27.151219512195123
 SARC-DDLPS	Etravirine	BRD-K74717603	etravirine	borrowed	False	False	50.2	74.9	73.2		43.66341463414634
-TCGA-UCS	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	53.5	50.4	52.8	1.0	64.51951219512196
 TCGA-PRAD	Docetaxel	BRD-K63265447	docetaxel	matched	True	False	51.6	86.6	86.3	1.0	65.59024390243901
 UCEC-EEC	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	52.4	46.7	63.7	0.5	40.94390243902439
 PCPG-PHEO	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	54.2	53.3	53.4		52.27317073170731
@@ -1923,7 +1910,7 @@ TCGA-PAAD	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	50.5	73.7	70.2	
 TCGA-ACC	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	53.3	39.9	53.8	1.0	65.83170731707317
 TCGA-STAD	Floxuridine	BRD-K47832606	floxuridine	borrowed	False	False	50.2	77.8	57.5	1.0	61.78536585365853
 TCGA-BLCA	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	53.0	53.2	85.2	0.5	55.517073170731706
-UCEC-SER	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	54.0	40.2	85.8	1.0	71.76585365853659
+UCEC-SER	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	54.0	40.2	85.8	1.0	72.20243902439024
 UCEC-SER	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	53.9	45.6	74.8	1.0	60.582926829268295
 TCGA-SKCM	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	53.1	50.4	72.1	0.8	60.76341463414634
 TCGA-LUSC	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	52.7	76.2	92.6	1.0	51.802439024390246
@@ -1955,6 +1942,7 @@ TCGA-GBM	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	53.0	
 LGG-IDHmut-noncodel	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	55.0	52.1	58.6	0.9166666666666666	54.18292682926829
 TCGA-ACC	Clofarabine	BRD-A82371568	clofarabine	borrowed	False	False	52.3	50.3	45.5	1.0	66.43170731707316
 BRCA-LumA	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	51.9	53.5	69.8	1.0	60.582926829268295
+TCGA-COAD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	49.2	44.3	62.0	1.0	65.96585365853659
 ESCA-SCC	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	52.8	56.7	87.9	1.0	57.170731707317074
 LGG-IDHmut-noncodel	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	54.5	44.8	64.4	1.0	58.234146341463415
 TCGA-UCS	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	50.9	44.3	72.6	0.9	59.26829268292683
@@ -1962,12 +1950,12 @@ CESC-AD	Erlotinib	BRD-K70401845	erlotinib	matched	False	False	50.1	51.1	66.7	0.5
 TCGA-COAD	Vorinostat	BRD-K81418486	vorinostat	matched	False	False	48.5	52.0	49.9	1.0	57.380487804878044
 TCGA-BLCA	Erlotinib	BRD-K70401845	erlotinib	borrowed	False	False	51.2	45.8	66.8	0.5	42.60243902439024
 TCGA-OV	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	49.1	43.7	66.3	1.0	60.582926829268295
-TCGA-SKCM	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	51.0	33.1	81.4	1.0	71.76585365853659
+TCGA-SKCM	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	51.0	33.1	81.4	1.0	72.20243902439024
 SARC-UPS	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	48.8	63.9	69.8		50.34634146341463
 PCPG-PGL	Trifluridine	BRD-K03243820	trifluridine	borrowed	False	False	51.7	62.1	67.3	1.0	60.90487804878049
 TCGA-SKCM	Methylene blue	BRD-K16406336	methylene-blue	matched	False	False	50.7	62.5	63.4	1.0	47.83157894736842
 TCGA-KIRP	Afatinib	BRD-K66175015	afatinib	borrowed	False	False	53.1	57.8	57.2	0.6666666666666666	51.00975609756098
-TCGA-PAAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	47.5	54.9	63.7	1.0	71.76585365853659
+TCGA-PAAD	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	47.5	54.9	63.7	1.0	72.20243902439024
 LGG-IDHmut-noncodel	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	53.9	55.5	74.8	1.0	60.582926829268295
 TCGA-UCS	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	50.3	45.7	55.1	0.8333333333333334	54.18292682926829
 TCGA-LUAD	Clofazimine	BRD-K56614220	clofazimine	borrowed	False	False	48.2	50.7	69.4		55.356097560975606
@@ -1975,12 +1963,11 @@ BRCA-LumB	Azathioprine	BRD-K32821942	azathioprine	matched	False	False	51.9	52.3	
 PCPG-PHEO	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	51.3	45.9	51.5	0.3333333333333333	60.975
 TCGA-PAAD	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	47.3	28.3	59.0	1.0	57.170731707317074
 TCGA-READ	Lapatinib	BRD-K19687926	lapatinib	matched	False	False	49.3	40.9	52.2	1.0	45.853658536585364
-TCGA-BLCA	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	50.4	42.3	70.7	1.0	66.54878048780488
-ESCA-AD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	52.8	55.0	81.0	1.0	66.54878048780488
+TCGA-BLCA	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	50.4	42.3	70.7	1.0	66.76829268292683
 TGCT-NSGCT	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	48.8	41.0	49.9		52.27317073170731
 UCEC-EEC	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	49.5	14.0	74.0	1.0	54.24878048780487
 ESCA-SCC	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	51.7	52.4	69.4	0.5	40.94390243902439
-SARC-DDLPS	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	46.2	61.2	76.1	1.0	64.51951219512196
+SARC-DDLPS	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	46.2	61.2	76.1	1.0	65.96585365853659
 PCPG-PGL	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	51.1	69.9	81.6	1.0	56.50975609756098
 TCGA-LUSC	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	49.1	54.1	65.5	1.0	55.580487804878054
 TCGA-KIRP	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	52.3	81.6	79.8	1.0	53.94878048780488
@@ -2001,7 +1988,7 @@ TCGA-OV	Etravirine	BRD-K74717603	etravirine	borrowed	False	False	47.2	37.5	44.9	
 LGG-IDHmut-noncodel	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	52.9	64.1	81.6	1.0	56.50975609756098
 TCGA-OV	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	False	46.9	37.9	83.8	1.0	57.170731707317074
 TCGA-LUAD	Givinostat	BRD-K13810148	givinostat	matched	False	False	46.0	52.1	66.2	1.0	50.580487804878054
-TCGA-GBM	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	50.0	57.5	66.2	1.0	64.51951219512196
+TCGA-GBM	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	50.0	57.5	66.2	1.0	65.96585365853659
 TCGA-SKCM	Dactinomycin	BRD-K70578146	dactinomycin	matched	False	False	49.1	66.9	74.7	1.0	58.300000000000004
 BRCA-LumB	Fluorouracil	BRD-K24844714	fluorouracil	matched	False	True	50.6	51.5	82.9	1.0	57.170731707317074
 SARC-LMS	Sirolimus	BRD-A79768653	sirolimus	borrowed	False	False	49.5	30.9	63.2	1.0	65.83170731707317
@@ -2049,7 +2036,6 @@ TCGA-PAAD	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	44.2	24.1	5
 TCGA-ACC	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	48.3	50.9	47.3	1.0	46.86829268292683
 PCPG-PGL	Azathioprine	BRD-K32821942	azathioprine	borrowed	False	False	48.4	44.3	44.2	1.0	56.951219512195124
 ESCA-AD	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	49.3	35.0	73.4	1.0	43.05853658536586
-TCGA-COAD	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	43.6	36.3	50.7	1.0	64.51951219512196
 TCGA-LUAD	Vinblastine	BRD-A22783572	vinblastine	matched	False	False	42.5	53.8	66.0	1.0	62.302439024390246
 BRCA-LumA	Thioguanine	BRD-K75649340	tioguanine	matched	False	False	47.2	38.1	56.8		54.69024390243903
 TCGA-LIHC	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	46.5	47.5	52.7	1.0	65.85853658536585
@@ -2066,6 +2052,7 @@ TARGET-NBL	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	44.8	55.2	
 TCGA-ACC	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	48.1	52.2	63.2	0.8888888888888888	54.400000000000006
 TARGET-NBL	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	44.7	43.8	58.6	1.0	52.5609756097561
 TCGA-COAD	Digoxin	BRD-K23478508	digoxin	matched	False	False	43.0	35.7	52.5	1.0	58.775609756097566
+TCGA-READ	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	44.7	38.2	57.1	1.0	65.96585365853659
 SARC-UPS	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	42.2	59.6	79.8	1.0	52.51219512195122
 TCGA-BLCA	Regorafenib	BRD-K16730910	regorafenib	borrowed	False	False	45.9	54.4	65.1	0.8888888888888888	54.400000000000006
 CESC-AD	Trifluridine	BRD-A64485570	trifluridine	matched	False	False	44.6	36.5	80.8	1.0	60.90487804878049
@@ -2088,7 +2075,7 @@ TCGA-ACC	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	47.6	58.9	91.5	1
 BRCA-Basal	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	46.3	42.4	63.6	1.0	58.0609756097561
 SARC-LMS	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	46.2	49.4	50.1	1.0	58.84390243902439
 TCGA-LIHC	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	45.9	47.9	46.9	1.0	55.52439024390244
-PCPG-PGL	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	47.4	59.5	81.4	1.0	71.76585365853659
+PCPG-PGL	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	47.4	59.5	81.4	1.0	72.20243902439024
 ESCA-SCC	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	47.3	45.4	77.7	1.0	43.05853658536586
 PCPG-PHEO	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	46.7	42.1	77.5	1.0	58.65853658536585
 TCGA-KICH	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	49.5	39.8	54.5	1.0	56.519512195121955
@@ -2101,16 +2088,15 @@ TCGA-BLCA	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	45.1	54.2	88.5	
 PCPG-PGL	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	47.3	46.0	49.5	0.75	54.18292682926829
 BRCA-LumA	Vandetanib	BRD-K77625799	vandetanib	matched	False	False	46.1	42.2	61.5	0.8461538461538461	57.50975609756098
 SARC-LMS	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	46.1	93.6	98.8	1.0	61.22926829268293
-TCGA-LUSC	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	42.7	47.3	68.1	1.0	64.51951219512196
+TCGA-LUSC	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	42.7	47.3	68.1	1.0	65.96585365853659
 TCGA-READ	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	43.6	36.1	57.8	1.0	60.582926829268295
 UCEC-EEC	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	46.2	24.5	82.7	1.0	57.18536585365853
 TCGA-BLCA	Clofazimine	BRD-K56614220	clofazimine	borrowed	False	False	44.8	42.6	71.9		55.356097560975606
 BRCA-LumB	Toremifene	BRD-K51350053	toremifene	matched	True	True	47.7	44.4	73.9	1.0	18.900000000000002
-UCEC-EEC	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	46.1	28.9	78.6	1.0	71.76585365853659
+UCEC-EEC	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	46.1	28.9	78.6	1.0	72.20243902439024
 LGG-IDHwt	Everolimus	BRD-K13154216	everolimus	borrowed	True	False	46.9	34.4	53.2	1.0	64.74878048780488
 TCGA-SKCM	Mirdametinib	BRD-K49865102	PD-0325901	matched	False	False	46.0	26.9	84.2	1.0	57.18536585365853
 PCPG-PHEO	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	46.4	45.5	50.0	0.8333333333333334	54.18292682926829
-ESCA-AD	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	46.6	22.6	82.2	1.0	51.802439024390246
 BRCA-LumA	Palbociclib	BRD-K51313569	palbociclib	matched	True	True	45.0	30.8	61.2	1.0	54.24878048780487
 PCPG-PHEO	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	46.3	53.3	73.0	0.9	59.26829268292683
 BRCA-LumB	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	True	47.0	48.8	74.4	1.0	58.65853658536585
@@ -2124,7 +2110,7 @@ LGG-IDHwt	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	46.4	48.8	64.7	
 BRCA-LumA	Mirdametinib	BRD-K49865102	PD-0325901	matched	False	False	44.5	32.3	72.9	1.0	57.18536585365853
 TCGA-LUAD	Fingolimod	BRD-K88025533	fingolimod	matched	False	False	38.7	41.5	60.5	0.75	53.84390243902439
 TCGA-READ	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	41.8	30.5	75.0	1.0	58.65853658536585
-ESCA-AD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	45.4	35.5	54.4	1.0	64.51951219512196
+ESCA-AD	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	45.4	35.5	54.4	1.0	65.96585365853659
 TCGA-UCS	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	45.9	37.8	66.3	1.0	61.22926829268293
 TARGET-WT	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	49.7	59.7	96.2	1.0	57.18536585365853
 PCPG-PGL	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	46.0	51.8	72.5	0.8	59.26829268292683
@@ -2137,7 +2123,7 @@ TCGA-GBM	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	False	44.6	82.0	
 LGG-IDHmut-noncodel	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	48.2	44.2	70.5	0.7647058823529411	54.68780487804877
 PCPG-PGL	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	45.5	43.3	43.6	0.7777777777777778	55.52439024390244
 TCGA-BLCA	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	42.7	58.2	89.9	1.0	57.170731707317074
-TCGA-KICH	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	True	False	47.4	49.0	61.0	1.0	66.54878048780488
+TCGA-KICH	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	True	False	47.4	49.0	61.0	1.0	66.76829268292683
 BRCA-LumB	Bazedoxifene	BRD-K90195324	bazedoxifene	matched	False	False	45.7	43.7	68.4	0.5	11.18888888888889
 TCGA-SKCM	Cabozantinib	BRD-K51544265	cabozantinib	matched	False	False	44.4	35.6	79.9	0.6666666666666666	61.863414634146345
 TCGA-GBM	Paclitaxel	BRD-K62008436	paclitaxel	borrowed	False	True	44.1	50.6	52.4	0.7272727272727273	63.59024390243902
@@ -2151,7 +2137,6 @@ CESC-AD	Tofacitinib	BRD-K36280065	tofacitinib	matched	False	False	41.1	38.4	75.5
 LGG-IDHwt	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	45.2	74.1	93.8	1.0	57.18536585365853
 TCGA-BLCA	Floxuridine	BRD-K47832606	floxuridine	borrowed	False	False	42.0	46.3	49.0	1.0	61.78536585365853
 PCPG-PGL	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	45.1	30.7	43.7	1.0	58.980487804878045
-TCGA-STAD	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	38.5	56.3	93.1	1.0	51.802439024390246
 ESCA-SCC	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	43.8	32.5	61.7	1.0	58.65853658536585
 BRCA-LumA	Bazedoxifene	BRD-K90195324	bazedoxifene	matched	False	False	42.4	33.9	54.2	0.5	11.18888888888889
 UCEC-SER	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	44.4	31.8	83.7	1.0	56.62439024390244
@@ -2160,7 +2145,7 @@ BRCA-LumB	Fulvestrant	BRD-A85667082	fulvestrant	matched	True	True	44.3	42.7	71.7
 SARC-UPS	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	36.6	23.3	55.8	1.0	58.234146341463415
 PCPG-PHEO	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	44.7	59.7	77.0	1.0	51.802439024390246
 TCGA-KIRC	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	True	45.5	41.5	68.8	0.6666666666666666	61.863414634146345
-TARGET-WT	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	47.7	42.1	48.3	1.0	64.51951219512196
+TARGET-WT	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	47.7	42.1	48.3	1.0	65.96585365853659
 PCPG-PGL	Etravirine	BRD-K74717603	etravirine	borrowed	False	False	44.8	58.7	47.6		43.66341463414634
 PCPG-PHEO	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	44.5	79.3	85.6	1.0	54.24878048780487
 TARGET-WT	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	47.5	52.1	81.3	1.0	60.582926829268295
@@ -2176,7 +2161,7 @@ BRCA-LumA	Momelotinib	BRD-K87737963	CYT-387	matched	False	False	40.8	27.0	52.8	1
 TGCT-NSGCT	Pacritinib	BRD-K19034817	pacritinib	borrowed	False	False	34.1	59.9	70.0	0.75	53.46341463414634
 LGG-IDHwt	Trametinib	BRD-K12343256	trametinib	borrowed	False	False	44.2	55.5	79.0	1.0	60.48780487804878
 CESC-AD	Amikacin	BRD-A30051119	amikacin	matched	False	False	39.8	37.7	53.1		55.09756097560975
-SARC-LMS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	42.3	77.3	93.7	1.0	71.76585365853659
+SARC-LMS	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	42.3	77.3	93.7	1.0	72.20243902439024
 BRCA-LumA	Fulvestrant	BRD-A90490067	fulvestrant	matched	True	False	40.6	35.2	78.0	1.0	40.15
 BRCA-LumA	Pyrvinium	BRD-M08470251	pyrvinium	matched	False	False	40.4	38.1	53.0		55.1551724137931
 CESC-AD	Floxuridine	BRD-K73088654	floxuridine	matched	False	False	39.6	36.2	58.3		61.78536585365853
@@ -2185,7 +2170,7 @@ PCPG-PHEO	Amikacin	BRD-A30051119	amikacin	borrowed	False	False	42.8	38.3	55.6		5
 TCGA-SKCM	Nelfinavir	BRD-K74117820	nelfinavir	matched	False	False	42.3	36.4	55.9		50.34634146341463
 TCGA-ACC	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	42.4	74.5	99.7	1.0	54.24878048780487
 TCGA-SKCM	Doxorubicin	BRD-K92093830	doxorubicin	matched	False	False	42.0	32.5	57.2	1.0	63.23658536585366
-LGG-IDHwt	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	43.8	43.6	55.9	1.0	64.51951219512196
+LGG-IDHwt	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	43.8	43.6	55.9	1.0	65.96585365853659
 TCGA-OV	Dasatinib	BRD-K49328571	dasatinib	borrowed	False	False	38.2	37.6	60.3	0.8235294117647058	54.68780487804877
 TCGA-HNSC	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	35.8	20.3	64.5	1.0	57.170731707317074
 TARGET-NBL	Dactinomycin	BRD-A73909368	dactinomycin	borrowed	False	False	40.5	26.1	52.5	1.0	58.300000000000004
@@ -2199,7 +2184,7 @@ TCGA-KIRP	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	41.1	37.0	63.8	
 LGG-IDHmut-codel	Sunitinib	BRD-K42828737	sunitinib	borrowed	False	False	44.1	42.7	70.7	0.9	59.26829268292683
 TCGA-KIRC	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	42.5	28.1	57.3	1.0	57.18536585365853
 SARC-UPS	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	33.2	53.1	77.8	1.0	51.50731707317074
-PCPG-PHEO	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	41.7	33.1	73.5	1.0	66.54878048780488
+PCPG-PHEO	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	41.7	33.1	73.5	1.0	66.76829268292683
 TARGET-WT	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	44.9	49.4	86.9	1.0	61.22926829268293
 UCEC-EEC	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	39.8	21.1	68.4	1.0	51.802439024390246
 TCGA-BLCA	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	37.8	36.9	71.0	1.0	61.599999999999994
@@ -2262,16 +2247,16 @@ TGCT-NSGCT	Etravirine	BRD-K74717603	etravirine	borrowed	False	False	26.4	43.4	50
 TCGA-READ	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	30.1	25.8	52.7		50.34634146341463
 TCGA-SKCM	Binimetinib	BRD-K82244583	MEK-162	matched	False	True	36.8	15.6	67.1	1.0	56.50975609756098
 LGG-IDHmut-noncodel	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	41.0	50.3	84.2	1.0	57.18536585365853
-LGG-IDHmut-noncodel	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	40.7	43.5	58.7	1.0	64.51951219512196
+LGG-IDHmut-noncodel	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	40.7	43.5	58.7	1.0	65.96585365853659
 BRCA-LumB	Dasatinib	BRD-K49328571	dasatinib	matched	False	False	37.3	38.8	62.7	0.9411764705882353	54.68780487804877
 UCEC-SER	Binimetinib	BRD-K82244583	MEK-162	borrowed	False	False	37.2	22.9	68.9	1.0	56.50975609756098
 TCGA-COAD	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	27.5	21.5	58.2	1.0	58.0609756097561
 UCEC-SER	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	37.0	26.0	64.2	1.0	56.519512195121955
 TARGET-NBL	Clofazimine	BRD-K56614220	clofazimine	borrowed	False	False	37.6	31.9	55.3		55.356097560975606
 TARGET-NBL	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	37.4	39.9	61.6	0.8666666666666667	60.76341463414634
-TCGA-UCS	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	37.9	41.8	47.0	1.0	66.54878048780488
+TCGA-UCS	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	37.9	41.8	47.0	1.0	66.76829268292683
 TCGA-ACC	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	37.5	37.2	74.5	1.0	56.800000000000004
-TCGA-ACC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	37.3	23.7	53.2	1.0	66.54878048780488
+TCGA-ACC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	37.3	23.7	53.2	1.0	66.76829268292683
 ESCA-AD	Selinexor	BRD-K21361524	KPT-330	borrowed	False	False	33.0	16.1	60.3	1.0	58.0609756097561
 TCGA-KIRC	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	37.9	30.6	64.6	1.0	56.62439024390244
 UCEC-EEC	Everolimus	BRD-K13154216	everolimus	borrowed	False	False	35.1	34.7	71.8	1.0	64.74878048780488
@@ -2291,7 +2276,7 @@ TARGET-WT	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	39.5	37.1
 TCGA-SKCM	Vemurafenib	BRD-K56343971	vemurafenib	matched	True	True	33.8	27.4	80.0	1.0	56.30975609756097
 TCGA-KIRC	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	37.2	33.1	60.4	0.5	55.517073170731706
 SARC-LMS	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	36.6	83.4	95.8	1.0	51.802439024390246
-TCGA-GBM	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	31.6	19.8	68.8	1.0	66.54878048780488
+TCGA-GBM	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	31.6	19.8	68.8	1.0	66.76829268292683
 TCGA-THCA	Clomiphene	BRD-K29950728	clomifene	borrowed	False	False	29.7	70.5	77.6	1.0	23.370833333333334
 SARC-LMS	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	36.5	64.9	66.3		52.27317073170731
 ESCA-SCC	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	33.2	41.9	91.6	1.0	56.62439024390244
@@ -2334,7 +2319,6 @@ ESCA-AD	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	27.9	10.0	76.
 TARGET-NBL	Palbociclib	BRD-K51313569	palbociclib	borrowed	False	False	33.1	88.2	99.7	1.0	54.24878048780487
 TCGA-GBM	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	27.8	23.3	60.7	0.3333333333333333	53.2925
 TGCT-SEM	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	23.1	15.6	53.1	1.0	60.582926829268295
-TCGA-LIHC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	29.6	22.7	50.7	1.0	66.54878048780488
 TCGA-OV	Clofazimine	BRD-K56614220	clofazimine	borrowed	False	False	27.9	28.0	47.7		55.356097560975606
 TGCT-SEM	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	21.9	14.2	67.8	1.0	58.65853658536585
 UCEC-EEC	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	29.9	16.6	55.1	1.0	56.519512195121955
@@ -2349,7 +2333,7 @@ TCGA-BLCA	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	25.7	37.2	66.2	
 TARGET-NBL	Momelotinib	BRD-K87737963	CYT-387	borrowed	False	False	31.7	48.0	82.7	1.0	52.51219512195122
 PCPG-PGL	Cabozantinib	BRD-K51544265	cabozantinib	borrowed	False	False	33.8	30.8	54.0	0.8333333333333334	61.863414634146345
 TCGA-THCA	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	25.3	35.5	55.2	1.0	58.980487804878045
-TARGET-NBL	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	31.1	49.8	95.0	1.0	71.76585365853659
+TARGET-NBL	Pitavastatin	BRD-K75958547	pitavastatin	borrowed	False	False	31.1	49.8	95.0	1.0	72.20243902439024
 PCPG-PHEO	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	False	30.4	36.9	52.4	1.0	57.170731707317074
 TCGA-BLCA	Dactinomycin	BRD-A73909368	dactinomycin	borrowed	False	False	25.2	21.3	49.6	1.0	58.300000000000004
 SARC-LMS	Erlotinib	BRD-K70401845	erlotinib	borrowed	False	False	32.6	24.6	48.4	0.5	42.60243902439024
@@ -2383,7 +2367,7 @@ SARC-LMS	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	25.9	75.1	76.0
 TCGA-ACC	Vandetanib	BRD-K77625799	vandetanib	borrowed	False	False	24.7	24.9	57.7	0.6153846153846154	57.50975609756098
 TCGA-SKCM	Gedatolisib	BRD-K07955840	PF-05212384	matched	False	False	20.3	23.3	59.8	1.0	58.65853658536585
 TARGET-NBL	Mirdametinib	BRD-K49865102	PD-0325901	borrowed	False	False	24.8	46.9	96.4	1.0	57.18536585365853
-CESC-AD	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	22.2	15.1	67.3	1.0	71.76585365853659
+CESC-AD	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	22.2	15.1	67.3	1.0	72.20243902439024
 UCEC-SER	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	21.2	12.3	49.0	1.0	56.800000000000004
 UCEC-EEC	Tivozanib	BRD-K53414658	tivozanib	borrowed	False	False	20.4	10.8	46.6	1.0	56.800000000000004
 SARC-LMS	Pacritinib	BRD-K19034817	pacritinib	borrowed	False	False	24.0	41.6	66.3	0.75	53.46341463414634
@@ -2558,7 +2542,6 @@ ESCA-SCC	Ciclesonide	BRD-K35245662	ciclesonide	borrowed	False	False	93.1	93.3	73
 BRCA-LumA	Cladribine	BRD-K93034159	cladribine	matched	False	False	95.3	93.4	92.1	1.0	55.20243902439025
 TCGA-PAAD	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	93.7	94.7	86.4	0.25	48.20487804878049
 TCGA-KICH	Tirbanibulin	BRD-K29968218	KX-2391	borrowed	False	False	88.8	87.8	84.3	1.0	53.419512195121946
-TCGA-PAAD	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	93.6	96.0	80.9	1.0	54.073170731707314
 TCGA-UCS	Tretinoin	BRD-K71879491	tretinoin	borrowed	False	False	91.3	90.6	79.7	0.8571428571428571	57.98048780487805
 TCGA-KIRC	Masoprocol	BRD-A87130939	masoprocol	borrowed	False	False	88.3	89.3	77.7	1.0	50.72682926829269
 TCGA-PAAD	Defactinib	BRD-K43578482	defactinib	matched	False	False	93.5	93.8	71.9	1.0	51.93658536585366
@@ -2579,6 +2562,7 @@ TCGA-KICH	Podofilox	BRD-K47869605	BRD-K47869605	borrowed	False	False	87.6	88.4	8
 CESC-AD	Phenytoin	BRD-K55930204	phenytoin	borrowed	False	False	5.6	94.9	84.1	0.1	14.626315789473683
 PCPG-PGL	Fluticasone	BRD-K62310379	fluticasone-propionate	borrowed	False	False	86.6	91.6	89.4	0.75	53.18536585365853
 BRCA-Basal	Paclitaxel	BRD-A23723433	paclitaxel	matched	True	False	96.2	91.0	70.2	0.5	63.59024390243902
+TCGA-UCS	Cyclosporine	BRD-A38030642	cyclosporin-a	borrowed	False	False	88.9	88.5	86.9	1.0	65.96585365853659
 TCGA-PRAD	Selinexor	BRD-K21361524	KPT-330	matched	False	False	97.0	84.0	94.2	1.0	58.0609756097561
 LGG-IDHmut-codel	Zafirlukast	BRD-K71289571	zafirlukast	borrowed	False	False	3.4	82.4	53.1	0.5	20.237837837837837
 LGG-IDHmut-codel	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	5.9	84.7	84.8	0.8333333333333334	9.065853658536586
@@ -2604,7 +2588,7 @@ BRCA-LumB	Tirbanibulin	BRD-K29968218	KX-2391	matched	False	False	89.7	88.4	80.3	
 TCGA-LUSC	Romidepsin	BRD-K61397605	romidepsin	matched	False	False	97.5	94.4	60.4	1.0	56.12926829268293
 BRCA-Her2	Irinotecan	BRD-K08547377	irinotecan	matched	False	True	95.0	98.4	97.7	1.0	58.84390243902439
 BRCA-Basal	Teniposide	BRD-A35588707	teniposide	matched	False	False	95.5	98.3	98.2	1.0	58.6219512195122
-BRCA-Her2	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	94.9	97.3	96.2	1.0	71.76585365853659
+BRCA-Her2	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	94.9	97.3	96.2	1.0	72.20243902439024
 TCGA-PAAD	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	91.1	89.0	94.6	1.0	53.2925
 TCGA-BLCA	Phenytoin	BRD-K55930204	phenytoin	borrowed	False	False	4.4	95.7	54.8	0.1	14.626315789473683
 SARC-LMS	Tretinoin	BRD-K71879491	tretinoin	borrowed	False	False	84.4	42.0	21.1	0.7857142857142857	57.98048780487805
@@ -2632,6 +2616,7 @@ LGG-IDHwt	Masoprocol	BRD-A87130939	masoprocol	borrowed	False	False	85.8	79.0	49.
 BRCA-LumA	Dantrolene	BRD-K81272440	dantrolene	matched	False	False	4.2	91.5	62.9	0.5	3.66
 TCGA-SKCM	Defactinib	BRD-K43578482	defactinib	borrowed	False	False	88.4	85.9	83.3	1.0	51.93658536585366
 BRCA-Her2	Ponatinib	BRD-K44227013	ponatinib	matched	False	False	93.7	94.6	77.6	1.0	60.76341463414634
+TCGA-LUAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	98.2	98.6	97.8	1.0	66.76829268292683
 TCGA-KIRC	Tirbanibulin	BRD-K29968218	KX-2391	borrowed	False	False	84.6	83.4	77.2	1.0	53.419512195121946
 LGG-IDHmut-codel	Meloxicam	BRD-A84174393	meloxicam	borrowed	False	False	3.2	80.2	69.4	1.0	31.67560975609756
 PCPG-PGL	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	4.8	86.4	73.1	0.6666666666666666	43.30975609756098
@@ -2645,6 +2630,7 @@ TCGA-OV	Metronidazole	BRD-K52020312	metronidazole	borrowed	False	False	94.1	92.9
 ESCA-SCC	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	3.3	90.0	83.6	0.9166666666666666	9.065853658536586
 CESC-SCC	Chlorpheniramine	BRD-A04553218	BRD-A04553218	matched	False	False	95.7	94.0	78.7		47.23333333333333
 TCGA-KICH	Olmesartan medoxomil	BRD-K78485176	olmesartan-medoxomil	borrowed	False	False	4.2	83.7	79.9	1.0	7.870833333333333
+TCGA-PRAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	94.7	90.8	96.7	1.0	66.76829268292683
 TARGET-NBL	Phenytoin	BRD-K55930204	phenytoin	borrowed	False	False	83.3	82.5	59.8	0.7	14.626315789473683
 BRCA-Basal	Quinine	BRD-K99257182	quinine	matched	False	False	94.3	89.7	88.4	1.0	96.39999999999999
 TCGA-GBM	Netupitant	BRD-K97428065	netupitant	borrowed	False	False	2.4	77.0	76.8	1.0	2.7
@@ -2668,7 +2654,7 @@ SARC-DDLPS	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	89.9	94.0	
 TCGA-LIHC	Phenytoin	BRD-K55930204	phenytoin	borrowed	False	False	4.9	91.8	73.7	0.2	14.626315789473683
 CESC-SCC	Tolcapone	BRD-K10852020	tolcapone	matched	False	False	94.9	93.8	93.9	1.0	90.65
 TCGA-LUSC	Fostamatinib	BRD-K20285085	fostamatinib	matched	False	False	96.0	94.9	89.7	1.0	55.517073170731706
-BRCA-Basal	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	93.6	93.7	91.3	1.0	71.76585365853659
+BRCA-Basal	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	93.6	93.7	91.3	1.0	72.20243902439024
 TGCT-SEM	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	4.4	98.2	87.6	0.75	9.065853658536586
 TCGA-LUSC	Cerivastatin	BRD-K81169441	cerivastatin	matched	False	False	96.0	97.7	98.9	1.0	74.39999999999999
 LGG-IDHmut-noncodel	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	2.9	83.7	80.6	0.8333333333333334	9.065853658536586
@@ -2706,7 +2692,7 @@ TCGA-PRAD	Oxiconazole	BRD-K56104152	oxiconazole	matched	False	False	92.9	88.2	90
 TCGA-READ	Sonidegib	BRD-K19796430	sonidegib	borrowed	False	False	95.0	95.6	57.5	1.0	51.43170731707317
 TCGA-UCS	Ruxolitinib	BRD-K53972329	ruxolitinib	borrowed	False	False	83.4	82.9	72.8	1.0	55.67560975609756
 LGG-IDHmut-codel	Ceritinib	BRD-K22149900	ceritinib	borrowed	False	False	5.9	79.1	72.4	0.6	4.341463414634147
-TARGET-NBL	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	80.8	69.9	33.5	1.0	64.9560975609756
+TARGET-NBL	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	80.8	69.9	33.5	1.0	65.03414634146341
 TCGA-SKCM	Lovastatin	BRD-A70155556	lovastatin	matched	False	False	85.8	81.7	88.4	1.0	67.70975609756097
 SARC-DDLPS	Tretinoin	BRD-K71879491	tretinoin	borrowed	False	False	88.4	78.8	40.2	0.7857142857142857	57.98048780487805
 BRCA-LumB	Macitentan	BRD-K48812570	macitentan	matched	False	False	5.2	83.1	63.7	1.0	43.607317073170734
@@ -2750,6 +2736,7 @@ TCGA-KIRC	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	81.3	79.4	79.
 TARGET-NBL	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	79.1	39.4	17.4	1.0	51.72682926829269
 CESC-AD	Maraviroc	BRD-A04352665	maraviroc	matched	False	False	89.1	88.0	85.4	1.0	93.69999999999999
 TCGA-GBM	Dexamethasone	BRD-A93424738	dexamethasone-acetate	borrowed	False	False	87.2	82.3	56.6	1.0	61.40731707317073
+TCGA-LIHC	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	86.1	83.7	54.8	1.0	54.21463414634147
 CESC-SCC	Pimozide	BRD-K01292756	pimozide	borrowed	False	False	5.6	94.0	87.9	0.25	3.0365853658536586
 TARGET-NBL	Sitagliptin	BRD-K19416115	sitagliptin	borrowed	False	False	3.3	81.3	62.8	1.0	36.015789473684215
 TCGA-GBM	Mitoxantrone	BRD-K21680192	mitoxantrone	borrowed	False	False	87.0	83.1	45.9	1.0	48.78780487804878
@@ -2769,7 +2756,8 @@ TCGA-ACC	Paroxetine	BRD-K37991163	paroxetine	borrowed	False	False	6.2	85.3	81.2	
 TCGA-PAAD	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	84.1	68.2	86.5	1.0	61.22926829268293
 TCGA-KIRP	Oxiconazole	BRD-K56104152	oxiconazole	borrowed	False	False	85.5	85.1	87.8		55.37560975609756
 CESC-SCC	Defactinib	BRD-K43578482	defactinib	borrowed	False	False	92.3	91.8	71.4	1.0	51.93658536585366
-SARC-DDLPS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	86.1	90.3	50.3	1.0	54.073170731707314
+TCGA-PAAD	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	84.0	80.8	82.9	1.0	65.85853658536585
+SARC-DDLPS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	86.1	90.3	50.3	1.0	54.21463414634147
 LGG-IDHmut-noncodel	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	78.8	78.2	78.9	1.0	54.546341463414635
 TCGA-GBM	Lacosamide	BRD-K68232650	lacosamide	borrowed	False	False	86.5	39.9	11.1	0.5	45.059999999999995
 SARC-LMS	Duvelisib	BRD-K93468883	IPI-145	borrowed	False	False	77.7	34.2	72.4	1.0	56.44146341463414
@@ -2792,7 +2780,8 @@ LGG-IDHmut-noncodel	Netupitant	BRD-K97428065	netupitant	borrowed	False	False	5.3
 LGG-IDHwt	Zafirlukast	BRD-K71289571	zafirlukast	borrowed	False	False	2.2	67.4	27.1	1.0	20.237837837837837
 TCGA-PAAD	Dacomitinib	BRD-K57169635	dacomitinib	matched	False	False	83.3	68.6	51.8	0.6666666666666666	43.30975609756098
 SARC-LMS	Ruxolitinib	BRD-K53972329	ruxolitinib	borrowed	False	False	76.7	59.7	44.2	1.0	55.67560975609756
-SARC-LMS	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	76.7	52.4	23.3	1.0	64.9560975609756
+TCGA-STAD	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	92.0	84.5	95.3	1.0	66.76829268292683
+SARC-LMS	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	76.7	52.4	23.3	1.0	65.03414634146341
 CESC-AD	Ruxolitinib	BRD-K53972329	ruxolitinib	borrowed	False	False	86.7	85.6	74.5	1.0	55.67560975609756
 BRCA-Basal	Dantrolene	BRD-K81272440	dantrolene	matched	False	False	5.4	87.6	44.1	0.5	3.66
 BRCA-LumB	Zafirlukast	BRD-K71289571	zafirlukast	borrowed	False	False	5.1	79.4	49.6	0.5	20.237837837837837
@@ -2945,7 +2934,7 @@ TCGA-COAD	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	4.2	91.6	75
 LGG-IDHmut-codel	Penicillin g	BRD-K55191674	benzylpenicillin	borrowed	False	False	76.0	71.8	67.5		54.099999999999994
 TARGET-NBL	Olmesartan medoxomil	BRD-K78485176	olmesartan-medoxomil	borrowed	False	False	5.5	68.1	62.8	1.0	7.870833333333333
 BRCA-LumB	Nilotinib	BRD-K81528515	nilotinib	matched	False	False	79.6	75.5	43.3	1.0	50.72195121951219
-CESC-AD	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	82.8	85.6	21.6	1.0	54.073170731707314
+CESC-AD	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	82.8	85.6	21.6	1.0	54.21463414634147
 LGG-IDHmut-codel	Netupitant	BRD-K97428065	netupitant	borrowed	False	False	5.5	74.8	85.9	1.0	2.7
 BRCA-Her2	Duvelisib	BRD-K93468883	IPI-145	borrowed	False	False	85.0	79.7	92.9	1.0	56.44146341463414
 TCGA-PRAD	Fostamatinib	BRD-K20285085	fostamatinib	matched	False	False	85.9	71.3	84.2	1.0	55.517073170731706
@@ -2998,7 +2987,7 @@ PCPG-PGL	Olaparib	BRD-K02113016	olaparib	borrowed	False	False	74.4	71.5	72.9	1.0
 BRCA-Her2	Clemastine	BRD-K30240666	clemastine	matched	False	False	5.1	68.9	64.2	1.0	57.0
 CESC-SCC	Alpelisib	BRD-K54997624	alpelisib	borrowed	False	False	87.0	82.2	76.5	0.75	58.380487804878044
 ESCA-AD	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	3.2	83.6	69.7		23.536585365853657
-LGG-IDHwt	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	77.0	62.9	24.7	1.0	64.9560975609756
+LGG-IDHwt	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	77.0	62.9	24.7	1.0	65.03414634146341
 TCGA-PRAD	Pioglitazone	BRD-A48430263	pioglitazone	matched	False	False	84.4	83.6	54.5	1.0	34.665853658536584
 LGG-IDHmut-noncodel	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	74.5	76.0	76.2	1.0	38.44878048780488
 BRCA-LumB	Decitabine	BRD-K79254416	decitabine	matched	False	False	78.6	75.0	63.3	1.0	56.76829268292683
@@ -3018,7 +3007,7 @@ BRCA-LumA	Acamprosate	BRD-M41783010	acamprosate	matched	False	False	82.6	84.2	70
 TCGA-COAD	Rimantadine	BRD-A75479906	rimantadine	matched	False	False	90.1	93.4	54.8		90.94999999999999
 TGCT-NSGCT	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	83.5	88.5	81.6	1.0	54.546341463414635
 TCGA-ACC	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	5.9	76.7	85.8	0.75	49.71707317073171
-LGG-IDHmut-noncodel	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	74.3	67.9	32.8	1.0	64.9560975609756
+LGG-IDHmut-noncodel	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	74.3	67.9	32.8	1.0	65.03414634146341
 TARGET-NBL	Hexachlorophene	BRD-K99792991	hexachlorophene	borrowed	False	False	71.3	71.5	71.3	1.0	46.03414634146341
 BRCA-Basal	Valdecoxib	BRD-K12994359	valdecoxib	matched	False	False	85.9	90.7	90.7	1.0	33.7425
 TCGA-READ	Hydrocortisone	BRD-A75172220	hydrocortisone	matched	False	False	88.0	92.0	29.3	1.0	72.06
@@ -3064,7 +3053,7 @@ TARGET-WT	Venetoclax	BRD-K62391742	GDC-0199	borrowed	False	False	78.7	74.8	45.9	
 ESCA-AD	Paclitaxel	BRD-A28746609	paclitaxel	borrowed	False	False	80.6	80.8	38.5	1.0	63.59024390243902
 TCGA-LUSC	Capivasertib	BRD-K99023089	AZD-5363	matched	False	False	88.3	90.4	92.5	1.0	81.83333333333333
 CESC-SCC	Mercaptopurine	BRD-K91601245	mercaptopurine	matched	False	False	85.6	63.0	36.9	1.0	54.40975609756098
-BRCA-Her2	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	83.0	53.5	29.0	1.0	54.073170731707314
+BRCA-Her2	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	83.0	53.5	29.0	1.0	54.21463414634147
 PCPG-PGL	Sumatriptan	BRD-K50938287	sumatriptan	borrowed	False	False	4.4	80.9	55.1	0.125	6.492000000000001
 TCGA-COAD	Ciclesonide	BRD-K35245662	ciclesonide	borrowed	False	False	89.0	93.5	57.8	1.0	54.670731707317074
 ESCA-AD	Penicillin g	BRD-K55191674	benzylpenicillin	borrowed	False	False	80.4	84.3	58.2		54.099999999999994
@@ -3104,7 +3093,7 @@ TCGA-PRAD	Alectinib	BRD-K11267252	alectinib	matched	False	False	5.1	67.7	60.0	0.
 BRCA-LumB	Valdecoxib	BRD-K12994359	valdecoxib	matched	False	False	3.6	76.4	85.3	0.5	33.7425
 TCGA-THCA	Tretinoin	BRD-K71879491	tretinoin	borrowed	False	False	81.3	87.5	74.2	0.7857142857142857	57.98048780487805
 TCGA-COAD	Atrasentan	BRD-K16295392	atrasentan	matched	False	False	88.0	87.7	16.7	1.0	91.1
-TCGA-LUAD	Azacitidine	BRD-K55026842	azacitidine	matched	False	False	85.8	63.4	16.8	1.0	54.073170731707314
+TCGA-LUAD	Azacitidine	BRD-K55026842	azacitidine	matched	False	False	85.8	63.4	16.8	1.0	54.21463414634147
 TCGA-LUAD	Topotecan	BRD-K55696337	topotecan	matched	False	True	85.6	80.1	38.8	1.0	61.05121951219512
 SARC-DDLPS	Amcinonide	BRD-A36010170	amcinonide	borrowed	False	False	77.7	70.4	57.9	1.0	50.94146341463414
 TCGA-COAD	Ixabepilone	BRD-K03601870	ixabepilone	matched	False	False	87.7	80.2	46.9	1.0	56.18536585365853
@@ -3112,7 +3101,7 @@ TCGA-LUAD	Valrubicin	BRD-K72951360	valrubicin	matched	False	False	85.5	87.0	94.1
 TGCT-SEM	Thioridazine	BRD-A84481105	thioridazine	borrowed	False	False	3.3	86.7	84.4	0.09090909090909091	2.792307692307692
 BRCA-LumA	Allopurinol	BRD-K86307448	allopurinol	matched	False	False	3.8	82.2	93.0	1.0	47.175
 TCGA-ACC	Rosiglitazone	BRD-A97437073	rosiglitazone	borrowed	False	False	75.2	69.1	68.5	1.0	41.517073170731706
-BRCA-Her2	Vincristine	BRD-A60414806	vincristine	matched	False	False	81.4	63.4	30.0	1.0	64.9560975609756
+BRCA-Her2	Vincristine	BRD-A60414806	vincristine	matched	False	False	81.4	63.4	30.0	1.0	65.03414634146341
 LGG-IDHwt	Paclitaxel	BRD-A28746609	paclitaxel	borrowed	False	False	75.2	70.1	46.9	0.5	63.59024390243902
 TCGA-PAAD	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	75.7	72.4	59.3	1.0	50.15365853658537
 BRCA-Her2	Ixabepilone	BRD-K03601870	ixabepilone	matched	True	True	81.3	70.0	57.4	1.0	56.18536585365853
@@ -3138,7 +3127,7 @@ LGG-IDHmut-noncodel	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	7
 TCGA-SKCM	Rosiglitazone	BRD-A97437073	rosiglitazone	matched	False	False	4.8	72.6	80.4	1.0	41.517073170731706
 TCGA-PRAD	Floxuridine	BRD-K73088654	floxuridine	matched	False	False	81.0	87.7	60.2		61.78536585365853
 TCGA-KIRP	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	3.3	80.0	82.2		23.536585365853657
-TCGA-KIRC	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	74.0	75.1	53.6	1.0	64.9560975609756
+TCGA-KIRC	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	74.0	75.1	53.6	1.0	65.03414634146341
 PCPG-PHEO	Rosiglitazone	BRD-A97437073	rosiglitazone	borrowed	False	False	76.2	71.3	84.9	1.0	41.517073170731706
 TCGA-KIRP	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	78.2	69.5	68.9	1.0	54.546341463414635
 TCGA-UCS	Lovastatin	BRD-K09416995	lovastatin	borrowed	False	False	74.2	72.5	78.8	0.75	67.70975609756097
@@ -3257,7 +3246,7 @@ BRCA-Her2	Griseofulvin	BRD-K12423485	griseofulvin	matched	False	False	78.6	56.5	
 LGG-IDHmut-codel	Fluocinolone acetonide	BRD-A15297126	fluocinolone-acetonide	borrowed	False	False	71.2	68.2	52.2	1.0	51.59268292682927
 TCGA-READ	Loperamide	BRD-K61250553	loperamide	matched	False	False	3.1	81.9	88.1	0.16666666666666666	3.25
 TGCT-NSGCT	Triflupromazine	BRD-K63675182	triflupromazine	borrowed	False	False	3.2	78.1	79.5	0.4	2.531578947368421
-UCEC-EEC	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	73.6	78.8	43.4	1.0	64.9560975609756
+UCEC-EEC	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	73.6	78.8	43.4	1.0	65.03414634146341
 TARGET-NBL	Afatinib	BRD-A58767537	afatinib	borrowed	False	False	2.9	60.7	21.8	0.6666666666666666	51.00975609756098
 BRCA-LumA	Tretinoin	BRD-K06926592	tretinoin	matched	False	False	77.4	84.0	80.2	0.75	57.98048780487805
 TCGA-BLCA	Bazedoxifene	BRD-K90195324	bazedoxifene	borrowed	False	False	3.9	87.4	91.0	0.5	11.18888888888889
@@ -3328,7 +3317,7 @@ PCPG-PHEO	Duvelisib	BRD-K93468883	IPI-145	borrowed	False	False	72.9	65.8	95.3	0.
 CESC-SCC	Ponatinib	BRD-K44227013	ponatinib	matched	False	False	78.8	74.0	90.7	0.8666666666666667	60.76341463414634
 TCGA-LUSC	Fluvastatin	BRD-K66296774	fluvastatin	matched	False	False	81.7	90.7	95.1	1.0	56.62439024390244
 BRCA-LumB	Allopurinol	BRD-K86307448	allopurinol	matched	False	False	3.5	72.9	84.1	1.0	47.175
-TCGA-SKCM	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	73.9	69.4	44.1	1.0	64.9560975609756
+TCGA-SKCM	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	73.9	69.4	44.1	1.0	65.03414634146341
 TCGA-LUAD	Tirbanibulin	BRD-K29968218	KX-2391	matched	False	False	81.5	71.8	31.4	1.0	53.419512195121946
 BRCA-Her2	Tazarotene	BRD-K76841105	tazarotene	matched	False	False	77.2	67.0	63.5	1.0	52.78292682926829
 ESCA-AD	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	75.1	74.3	78.5	1.0	54.546341463414635
@@ -3393,6 +3382,7 @@ PCPG-PHEO	Fluocinolone acetonide	BRD-A15297126	fluocinolone-acetonide	borrowed	F
 TCGA-LIHC	Aminolevulinic acid	BRD-K57631554	aminolevulinic-acid	borrowed	False	False	71.2	69.7	45.4	1.0	43.96341463414634
 TCGA-BLCA	Ruxolitinib	BRD-K53972329	ruxolitinib	borrowed	False	False	75.5	70.0	46.5	1.0	55.67560975609756
 BRCA-Her2	Erlotinib	BRD-K70401845	erlotinib	matched	False	False	3.0	91.7	93.2	0.5	42.60243902439024
+BRCA-LumB	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	72.1	72.8	62.2	1.0	53.94878048780488
 BRCA-LumB	Bosutinib	BRD-K99964838	bosutinib	matched	False	False	72.0	71.0	76.0	0.9473684210526315	51.517073170731706
 TCGA-HNSC	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	72.1	65.3	55.3	1.0	50.15365853658537
 BRCA-LumA	Sertraline	BRD-K70464547	sertraline	matched	False	False	3.5	62.6	83.7	1.0	11.042857142857143
@@ -3459,7 +3449,7 @@ TCGA-READ	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	78.6	71.1	82.7	
 TCGA-LUSC	Osimertinib	BRD-K42805893	AZD-9291	matched	False	True	78.6	86.4	94.3	1.0	43.05853658536586
 TCGA-KIRC	Estramustine	BRD-A70858459	estramustine	borrowed	False	False	69.5	68.4	53.5	0.75	49.421951219512195
 TCGA-OV	Bazedoxifene	BRD-K90195324	bazedoxifene	borrowed	False	False	5.4	63.0	82.3	0.5	11.18888888888889
-TCGA-LUSC	Vincristine	BRD-K82109576	vincristine	matched	False	False	78.6	62.8	26.9	1.0	64.9560975609756
+TCGA-LUSC	Vincristine	BRD-K82109576	vincristine	matched	False	False	78.6	62.8	26.9	1.0	65.03414634146341
 TCGA-STAD	Ixabepilone	BRD-K03601870	ixabepilone	borrowed	False	False	74.1	54.9	20.3	1.0	56.18536585365853
 TGCT-SEM	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	2.8	86.9	77.6	1.0	38.44878048780488
 ESCA-SCC	Fluticasone	BRD-K62310379	fluticasone-propionate	borrowed	False	True	74.0	75.5	66.6	0.75	53.18536585365853
@@ -3475,6 +3465,7 @@ TCGA-THCA	Alpelisib	BRD-K54997624	alpelisib	borrowed	False	False	71.4	74.7	86.3	
 TCGA-LIHC	Pimozide	BRD-K01292756	pimozide	borrowed	False	False	4.1	70.1	79.4	0.08333333333333333	3.0365853658536586
 TCGA-READ	Etoposide	BRD-K37798499	etoposide	borrowed	False	True	78.2	77.1	65.3	1.0	65.85853658536585
 TCGA-UCS	Afatinib	BRD-A58767537	afatinib	borrowed	False	False	68.3	67.9	39.5	1.0	51.00975609756098
+TCGA-PAAD	Tofacitinib	BRD-K36280065	tofacitinib	borrowed	False	False	68.2	65.5	88.3	1.0	58.234146341463415
 TCGA-LUSC	Tirbanibulin	BRD-K29968218	KX-2391	matched	False	False	77.8	65.4	31.6	1.0	53.419512195121946
 TCGA-PRAD	Sonidegib	BRD-K19796430	sonidegib	borrowed	False	False	72.6	94.4	85.1	1.0	51.43170731707317
 TCGA-PRAD	Mebendazole	BRD-K77987382	mebendazole	matched	False	False	72.5	70.6	42.2	1.0	54.951219512195124
@@ -3496,7 +3487,7 @@ BRCA-Basal	Osimertinib	BRD-K42805893	AZD-9291	matched	False	False	74.3	80.6	91.1
 TCGA-PRAD	Vinblastine	BRD-K01188359	vinblastine	matched	False	True	72.1	64.9	55.2	1.0	62.302439024390246
 BRCA-LumA	Alpelisib	BRD-K54997624	alpelisib	matched	True	True	73.3	72.1	65.9	1.0	58.380487804878044
 TCGA-READ	Oxiconazole	BRD-K56104152	oxiconazole	borrowed	False	False	77.3	75.8	57.3		55.37560975609756
-TCGA-BLCA	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	73.3	59.3	21.4	1.0	64.9560975609756
+TCGA-BLCA	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	73.3	59.3	21.4	1.0	65.03414634146341
 PCPG-PGL	Troglitazone	BRD-A13084692	troglitazone	borrowed	False	False	66.6	64.4	69.4	0.5	37.03170731707317
 BRCA-Her2	Metoprolol	BRD-A03623303	metoprolol	matched	False	True	2.9	67.7	57.1	0.5	3.15
 TCGA-SKCM	Irbesartan	BRD-K60038276	irbesartan	borrowed	False	False	4.6	67.4	77.7	0.3333333333333333	21.046341463414635
@@ -3535,9 +3526,10 @@ TCGA-LUAD	Idarubicin	BRD-A71390734	idarubicin	matched	False	False	76.6	65.0	33.2
 TCGA-GBM	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	71.9	81.6	78.2	1.0	38.44878048780488
 LGG-IDHmut-codel	Valdecoxib	BRD-K12994359	valdecoxib	borrowed	False	False	2.2	66.7	78.2	1.0	33.7425
 CESC-AD	Simvastatin	BRD-K22134346	simvastatin	borrowed	False	False	71.0	69.3	94.4	1.0	55.88780487804878
+TCGA-LIHC	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	69.2	69.9	36.1	1.0	65.03414634146341
 TGCT-NSGCT	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	2.8	74.1	81.5	1.0	43.05853658536586
 TCGA-LIHC	Clotrimazole	BRD-K15916496	clotrimazole	matched	False	False	69.1	70.3	24.5	1.0	69.1
-UCEC-SER	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	69.7	73.2	39.5	1.0	64.9560975609756
+UCEC-SER	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	69.7	73.2	39.5	1.0	65.03414634146341
 TCGA-BLCA	Troglitazone	BRD-A13084692	troglitazone	borrowed	False	False	71.6	74.4	75.5	0.5	37.03170731707317
 UCEC-SER	Bazedoxifene	BRD-K90195324	bazedoxifene	borrowed	False	False	5.2	58.0	79.5	0.5	11.18888888888889
 TCGA-GBM	Zafirlukast	BRD-K71289571	zafirlukast	borrowed	False	False	71.7	49.4	9.1	1.0	20.237837837837837
@@ -3626,6 +3618,7 @@ TCGA-PRAD	Ciclesonide	BRD-K35245662	ciclesonide	matched	False	False	69.7	80.2	79
 TCGA-STAD	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	70.4	75.9	70.8	1.0	38.44878048780488
 TCGA-LUAD	Bazedoxifene	BRD-K90195324	bazedoxifene	borrowed	False	False	4.0	73.8	81.9	0.5	11.18888888888889
 TCGA-PRAD	Metronidazole	BRD-K52020312	metronidazole	borrowed	False	False	69.6	62.5	36.8		46.58536585365854
+CESC-AD	Everolimus	BRD-K13514097	everolimus	borrowed	False	False	69.6	68.6	70.8	1.0	64.74878048780488
 PCPG-PHEO	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	3.9	69.0	82.6	1.0	43.05853658536586
 LGG-IDHmut-noncodel	Valdecoxib	BRD-K12994359	valdecoxib	borrowed	False	False	2.3	66.6	80.8	1.0	33.7425
 TCGA-PAAD	Fidaxomicin	BRD-K57371763	fidaxomicin	borrowed	False	False	65.4	60.2	33.4		44.885365853658534
@@ -3636,12 +3629,14 @@ LGG-IDHwt	Cabazitaxel	BRD-K06858286	cabazitaxel	borrowed	False	False	67.1	53.4	4
 BRCA-Her2	Methylene blue	BRD-K16406336	methylene-blue	matched	False	False	71.5	58.8	20.0	1.0	47.83157894736842
 TCGA-LUAD	Penicillin g	BRD-K55191674	benzylpenicillin	matched	False	False	74.5	74.7	50.2		54.099999999999994
 ESCA-AD	Sorafenib	BRD-K23984367	sorafenib	borrowed	False	False	70.6	67.9	52.1	0.8181818181818182	50.1390243902439
+TCGA-UCS	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	66.0	68.9	69.1	1.0	65.83170731707317
 TCGA-ACC	Pimozide	BRD-K01292756	pimozide	borrowed	False	False	5.3	66.7	84.3	0.25	3.0365853658536586
 TCGA-LUAD	Digitoxin	BRD-A93236127	digitoxin	matched	False	False	74.3	64.7	40.8	1.0	51.72682926829269
 TCGA-LUSC	Teniposide	BRD-A35588707	teniposide	matched	False	False	74.2	55.4	29.1	1.0	58.6219512195122
 BRCA-LumA	Macitentan	BRD-K48812570	macitentan	matched	False	False	4.6	72.5	50.6	1.0	43.607317073170734
 TCGA-LUAD	Alectinib	BRD-K11267252	alectinib	matched	True	True	2.4	72.7	60.8	0.5	4.104878048780488
 BRCA-Basal	Zafirlukast	BRD-K71289571	zafirlukast	borrowed	False	False	71.2	67.5	32.6	0.5	20.237837837837837
+TCGA-LIHC	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	67.5	67.0	93.1	1.0	51.802439024390246
 BRCA-LumA	Alectinib	BRD-K11267252	alectinib	borrowed	False	False	4.6	69.8	65.5	0.5	4.104878048780488
 ESCA-SCC	Masoprocol	BRD-A87130939	masoprocol	borrowed	False	False	69.6	71.2	35.8	1.0	50.72682926829269
 BRCA-Basal	Ixabepilone	BRD-K03601870	ixabepilone	matched	True	True	71.1	59.0	48.4	1.0	56.18536585365853
@@ -3659,7 +3654,7 @@ CESC-SCC	Albendazole	BRD-K79131256	albendazole	matched	False	False	70.7	62.9	55.
 TCGA-PRAD	Nabumetone	BRD-K65146499	nabumetone	matched	False	False	68.7	30.8	41.4	1.0	68.7
 LGG-IDHwt	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	3.8	68.5	74.7	1.0	40.94390243902439
 TCGA-OV	Disulfiram	BRD-K32744045	disulfiram	borrowed	False	False	67.0	65.5	54.8	0.5	45.921951219512195
-BRCA-Basal	Vincristine	BRD-A60414806	vincristine	matched	False	False	70.6	65.1	29.6	1.0	64.9560975609756
+BRCA-Basal	Vincristine	BRD-A60414806	vincristine	matched	False	False	70.6	65.1	29.6	1.0	65.03414634146341
 TCGA-COAD	Ruxolitinib	BRD-K53972329	ruxolitinib	matched	False	False	74.5	62.0	38.0	1.0	55.67560975609756
 TCGA-LUSC	Lacosamide	BRD-K68232650	lacosamide	borrowed	False	False	3.5	55.8	30.6	0.25	45.059999999999995
 BRCA-LumA	Idelalisib	BRD-K60866521	idelalisib	matched	False	False	70.9	68.7	61.6	1.0	57.84634146341464
@@ -3697,7 +3692,7 @@ TCGA-LUAD	Alpelisib	BRD-K54997624	alpelisib	borrowed	False	False	72.5	73.3	75.5	
 TCGA-LUSC	Pentamidine	BRD-K13183738	pentamidine	matched	False	False	73.3	73.6	78.3	1.0	70.25
 CESC-AD	Pioglitazone	BRD-A48430263	pioglitazone	matched	False	False	4.8	66.0	44.1	1.0	34.665853658536584
 SARC-UPS	Ruxolitinib	BRD-K53972329	ruxolitinib	borrowed	False	False	68.0	61.7	45.9	1.0	55.67560975609756
-TARGET-WT	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	68.8	59.3	30.2	1.0	64.9560975609756
+TARGET-WT	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	68.8	59.3	30.2	1.0	65.03414634146341
 TCGA-PRAD	Carfilzomib	BRD-K15179879	carfilzomib	matched	False	False	68.0	95.9	70.5	0.8947368421052632	48.456097560975614
 TARGET-WT	Erlotinib	BRD-K70401845	erlotinib	borrowed	False	False	2.9	62.9	73.4	0.5	42.60243902439024
 TCGA-PRAD	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	67.9	68.7	68.4		23.536585365853657
@@ -3772,7 +3767,7 @@ TCGA-LIHC	Irbesartan	BRD-K60038276	irbesartan	borrowed	False	False	65.8	65.7	77.
 TCGA-COAD	Protriptyline	BRD-K42098891	protriptyline	matched	False	False	2.7	63.3	82.8	0.5	39.35
 ESCA-AD	Selumetinib	BRD-K57080016	selumetinib	borrowed	False	False	68.3	56.9	85.1	1.0	60.582926829268295
 TCGA-READ	Tirbanibulin	BRD-K29968218	KX-2391	matched	False	False	70.9	66.0	46.0	1.0	53.419512195121946
-TCGA-PRAD	Vincristine	BRD-A60414806	vincristine	matched	False	False	66.9	66.4	56.9	1.0	64.9560975609756
+TCGA-PRAD	Vincristine	BRD-A60414806	vincristine	matched	False	False	66.9	66.4	56.9	1.0	65.03414634146341
 UCEC-SER	Alpelisib	BRD-K54997624	alpelisib	borrowed	False	False	66.2	67.7	75.0	0.75	58.380487804878044
 TCGA-UCS	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	65.1	58.5	53.4	1.0	43.30975609756098
 CESC-SCC	Fluticasone	BRD-K62310379	fluticasone-propionate	matched	False	False	68.3	55.2	74.5	0.75	53.18536585365853
@@ -3797,14 +3792,14 @@ TCGA-BLCA	Dexamethasone	BRD-A93424738	dexamethasone-acetate	borrowed	False	False
 ESCA-AD	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	False	67.7	79.7	83.4	1.0	58.980487804878045
 BRCA-Her2	Rucaparib	BRD-K88560311	rucaparib	matched	False	False	68.0	75.5	60.1	1.0	49.665853658536584
 TCGA-KICH	Artesunate	BRD-K17944737	artesunate	borrowed	False	False	64.0	57.3	33.7		56.85853658536585
-TCGA-GBM	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	67.5	48.6	14.3	1.0	64.9560975609756
+TCGA-GBM	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	67.5	48.6	14.3	1.0	65.03414634146341
 TCGA-LUAD	Ponatinib	BRD-K44227013	ponatinib	matched	False	False	70.1	78.1	87.5	0.9333333333333333	60.76341463414634
 CESC-AD	Rosiglitazone	BRD-A97437073	rosiglitazone	borrowed	False	False	4.5	71.6	74.3	1.0	41.517073170731706
 BRCA-Basal	Lurasidone	BRD-K51143828	lurasidone	matched	False	False	2.8	50.6	43.7	0.5	3.3
 TCGA-KIRC	Nilotinib	BRD-K81528515	nilotinib	borrowed	False	False	64.5	66.6	34.5	1.0	50.72195121951219
 TCGA-BLCA	Hexachlorophene	BRD-K99792991	hexachlorophene	borrowed	False	False	67.0	67.9	64.2	1.0	46.03414634146341
-SARC-UPS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	66.3	67.3	30.8	1.0	54.073170731707314
-TCGA-LUAD	Vincristine	BRD-K82109576	vincristine	matched	False	False	69.8	59.6	21.3	1.0	64.9560975609756
+SARC-UPS	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	66.3	67.3	30.8	1.0	54.21463414634147
+TCGA-LUAD	Vincristine	BRD-K82109576	vincristine	matched	False	False	69.8	59.6	21.3	1.0	65.03414634146341
 TCGA-COAD	Amitriptyline	BRD-K53737926	amitriptyline	matched	False	False	2.5	62.5	89.8	0.22857142857142856	37.6
 TCGA-COAD	Amlodipine	BRD-A22032524	amlodipine	matched	False	False	71.2	79.1	38.6	0.75	49.314285714285724
 SARC-DDLPS	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	2.4	62.8	79.9	0.5	40.94390243902439
@@ -3961,7 +3956,7 @@ TCGA-STAD	Fingolimod	BRD-K88025533	fingolimod	borrowed	False	False	62.6	60.9	50.
 SARC-DDLPS	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	60.2	30.4	14.8	1.0	51.72682926829269
 TCGA-PRAD	Nelarabine	BRD-K84466663	nelarabine	matched	False	False	61.8	81.1	63.0	1.0	61.8
 TGCT-SEM	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	67.7	71.7	73.0	1.0	54.546341463414635
-TCGA-LUSC	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	66.0	48.5	28.4	1.0	71.76585365853659
+TCGA-LUSC	Pitavastatin	BRD-K30097969	pitavastatin	matched	False	False	66.0	48.5	28.4	1.0	72.20243902439024
 TARGET-NBL	Everolimus	BRD-K13514097	everolimus	borrowed	False	False	56.2	45.6	45.5	1.0	64.74878048780488
 TCGA-THCA	Fingolimod	BRD-K88025533	fingolimod	borrowed	False	False	60.1	63.4	60.2	0.75	53.84390243902439
 LGG-IDHmut-noncodel	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	63.0	61.5	48.9	1.0	43.30975609756098
@@ -3980,7 +3975,7 @@ TARGET-NBL	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	56.0	37.1	
 UCEC-EEC	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	61.1	69.6	28.5	0.8947368421052632	48.456097560975614
 TCGA-HNSC	Meloxicam	BRD-A84174393	meloxicam	borrowed	False	False	60.4	67.8	32.2	1.0	31.67560975609756
 TCGA-PRAD	Idelalisib	BRD-K60866521	idelalisib	matched	False	False	61.1	62.0	74.1	0.75	57.84634146341464
-TCGA-READ	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	64.2	58.0	36.6	1.0	64.9560975609756
+TCGA-READ	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	64.2	58.0	36.6	1.0	65.03414634146341
 TCGA-LUSC	Prednisolone	BRD-A27887842	prednisolone	matched	False	False	65.0	51.6	19.8	0.6666666666666666	68.15
 TCGA-LIHC	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	61.0	54.8	45.6	0.6666666666666666	43.30975609756098
 SARC-LMS	Triclosan	BRD-K41731458	triclosan	borrowed	False	False	58.3	77.5	67.7	1.0	46.6609756097561
@@ -4071,7 +4066,7 @@ TCGA-LUSC	Bazedoxifene	BRD-K90195324	bazedoxifene	borrowed	False	False	2.8	75.1	
 TCGA-KIRP	Nilotinib	BRD-K81528515	nilotinib	borrowed	False	False	63.3	62.5	36.7	1.0	50.72195121951219
 TCGA-PRAD	Gemcitabine	BRD-K15108141	gemcitabine	matched	False	False	59.3	60.4	59.1	1.0	58.980487804878045
 TCGA-GBM	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	61.8	64.7	44.0	0.8333333333333334	42.46341463414634
-ESCA-AD	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	62.3	66.9	44.9	1.0	64.9560975609756
+ESCA-AD	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	62.3	66.9	44.9	1.0	65.03414634146341
 TCGA-COAD	Romidepsin	BRD-K61397605	romidepsin	matched	False	False	63.2	63.3	47.9	1.0	56.12926829268293
 TCGA-COAD	Olaparib	BRD-K02113016	olaparib	borrowed	False	False	63.2	55.8	53.1	1.0	50.40243902439025
 TCGA-KIRC	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	60.5	56.6	35.1	0.6666666666666666	43.30975609756098
@@ -4101,6 +4096,7 @@ PCPG-PHEO	Olmesartan medoxomil	BRD-K78485176	olmesartan-medoxomil	borrowed	False
 TCGA-LUSC	Fluticasone	BRD-A59943784	fluticasone	matched	False	False	62.6	66.9	63.9	0.5	53.18536585365853
 TCGA-COAD	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	True	61.8	57.2	80.6	1.0	57.170731707317074
 TCGA-THCA	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	57.2	54.2	49.6	1.0	56.76829268292683
+ESCA-AD	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	61.8	68.2	74.1	1.0	66.76829268292683
 TCGA-LUAD	Vandetanib	BRD-K77625799	vandetanib	matched	False	True	60.8	72.0	81.8	0.8076923076923077	57.50975609756098
 TCGA-LUAD	Auranofin	BRD-A79465854	auranofin	matched	False	False	60.8	67.8	44.4		56.380487804878044
 PCPG-PHEO	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	3.3	62.0	58.7	1.0	38.44878048780488
@@ -4125,7 +4121,7 @@ TCGA-PAAD	Tazarotene	BRD-K76841105	tazarotene	borrowed	False	False	56.8	50.1	46.
 TGCT-NSGCT	Afatinib	BRD-K66175015	afatinib	borrowed	False	False	61.5	53.5	36.8	1.0	51.00975609756098
 BRCA-Basal	Griseofulvin	BRD-K12423485	griseofulvin	matched	False	False	62.5	39.7	51.9		64.075
 BRCA-Basal	Imatinib	BRD-K92723993	imatinib	matched	False	False	62.3	59.8	56.6	0.8888888888888888	75.85
-CESC-SCC	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	58.6	56.4	37.2	1.0	64.9560975609756
+CESC-SCC	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	58.6	56.4	37.2	1.0	65.03414634146341
 PCPG-PHEO	Ingenol mebutate	BRD-K93779381	ingenol-mebutate	borrowed	False	False	60.4	75.0	54.6	0.8	46.27804878048781
 BRCA-LumA	Warfarin	BRD-A24514565	warfarin	matched	False	False	60.9	63.5	58.0	1.0	60.775
 TCGA-LIHC	Docetaxel	BRD-A05821830	docetaxel	borrowed	False	False	58.7	57.9	34.6	1.0	65.59024390243901
@@ -4202,7 +4198,7 @@ ESCA-AD	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	60.6	56.3	51.3	
 LGG-IDHwt	Eptifibatide	BRD-A90547603	eptifibatide	borrowed	False	False	1.3	68.1	42.4	1.0	18.765
 TCGA-KIRC	Triflupromazine	BRD-K63675182	triflupromazine	borrowed	False	False	1.3	58.5	62.8	0.2	2.531578947368421
 TCGA-KIRC	Vemurafenib	BRD-K56343971	vemurafenib	borrowed	False	False	58.7	51.0	57.6	1.0	56.30975609756097
-TARGET-NBL	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	53.8	15.7	0.0	1.0	54.073170731707314
+TARGET-NBL	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	53.8	15.7	0.0	1.0	54.21463414634147
 SARC-DDLPS	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	55.5	65.9	30.8	1.0	45.8
 BRCA-LumB	Erlotinib	BRD-K70401845	erlotinib	matched	False	False	2.6	60.7	73.7	0.5	42.60243902439024
 BRCA-Her2	Bazedoxifene	BRD-K90195324	bazedoxifene	matched	False	False	58.9	77.8	91.3	0.5	11.18888888888889
@@ -4237,6 +4233,7 @@ CESC-SCC	Colchicine	BRD-K00259736	colchicine	matched	False	False	56.3	53.1	43.1	
 PCPG-PHEO	Lovastatin	BRD-A70155556	lovastatin	borrowed	False	False	58.6	55.9	77.1	1.0	67.70975609756097
 TCGA-THCA	Sitagliptin	BRD-K19416115	sitagliptin	borrowed	False	False	54.4	54.2	29.4	1.0	36.015789473684215
 PCPG-PGL	Duvelisib	BRD-K93468883	IPI-145	borrowed	False	False	57.3	42.5	83.8	0.75	56.44146341463414
+TCGA-LUAD	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	57.9	69.3	90.4	1.0	51.802439024390246
 UCEC-EEC	Fidaxomicin	BRD-K57371763	fidaxomicin	borrowed	False	False	56.4	51.3	39.5		44.885365853658534
 TCGA-PRAD	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	56.7	40.8	42.4	1.0	38.44878048780488
 TCGA-KIRP	Valdecoxib	BRD-K12994359	valdecoxib	borrowed	False	False	2.4	47.0	63.6	0.5	33.7425
@@ -4351,7 +4348,7 @@ SARC-DDLPS	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	52.3	30.9	30.9	1.0
 CESC-AD	Pimozide	BRD-K01292756	pimozide	borrowed	False	False	4.0	53.3	58.8	0.3333333333333333	3.0365853658536586
 TCGA-BLCA	Venetoclax	BRD-K62391742	GDC-0199	borrowed	False	False	56.7	49.0	30.5	1.0	47.295
 TGCT-SEM	Vemurafenib	BRD-K56343971	vemurafenib	borrowed	False	False	58.8	56.3	67.7	1.0	56.30975609756097
-BRCA-LumB	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	57.2	53.7	31.5	1.0	54.073170731707314
+BRCA-LumB	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	57.2	53.7	31.5	1.0	54.21463414634147
 BRCA-LumB	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	57.2	58.0	80.0	1.0	61.22926829268293
 BRCA-LumA	Valdecoxib	BRD-K12994359	valdecoxib	matched	False	False	2.4	47.7	56.5	1.0	33.7425
 TCGA-SKCM	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	matched	False	False	56.2	40.6	49.6	1.0	60.00975609756098
@@ -4370,7 +4367,7 @@ TCGA-READ	Talazoparib	BRD-K95142244	talazoparib	borrowed	False	False	55.5	55.1	7
 TCGA-LUSC	Decitabine	BRD-K79254416	decitabine	matched	False	False	56.0	72.0	76.8	1.0	56.76829268292683
 TCGA-COAD	Fluphenazine	BRD-K55127134	fluphenazine	matched	False	False	1.6	50.4	75.1	0.375	2.575609756097561
 TCGA-THCA	Fluorouracil	BRD-K24844714	fluorouracil	borrowed	False	False	52.2	29.2	43.7	1.0	57.170731707317074
-TCGA-KIRP	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	58.7	69.3	51.4	1.0	64.9560975609756
+TCGA-KIRP	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	58.7	69.3	51.4	1.0	65.03414634146341
 ESCA-SCC	Hexachlorophene	BRD-K99792991	hexachlorophene	borrowed	False	False	57.5	56.2	53.1	1.0	46.03414634146341
 TCGA-BLCA	Ingenol mebutate	BRD-K93779381	ingenol-mebutate	borrowed	False	False	56.2	71.2	61.3	0.8	46.27804878048781
 TCGA-LUAD	Clocortolone	BRD-K38003476	clocortolone-pivalate	matched	False	False	55.1	55.9	57.6	1.0	53.35
@@ -4415,6 +4412,7 @@ PCPG-PHEO	Tirbanibulin	BRD-K29968218	KX-2391	borrowed	False	False	55.7	47.8	38.4
 BRCA-LumA	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	55.4	64.3	49.5	1.0	53.94878048780488
 TCGA-KIRC	Ingenol mebutate	BRD-K93779381	ingenol-mebutate	borrowed	False	False	55.5	52.3	23.9	0.8	46.27804878048781
 BRCA-LumB	Griseofulvin	BRD-K12423485	griseofulvin	matched	False	False	56.2	49.5	47.1		64.075
+TCGA-LIHC	Everolimus	BRD-K13514097	everolimus	borrowed	False	False	55.2	54.6	52.9	1.0	64.74878048780488
 TCGA-LIHC	Thioguanine	BRD-K49350383	thioguanine	borrowed	False	False	55.2	49.4	24.6	1.0	54.69024390243903
 BRCA-LumA	Bosutinib	BRD-K99964838	bosutinib	matched	False	False	55.3	45.8	46.4	0.9473684210526315	51.517073170731706
 TCGA-THCA	Vinblastine	BRD-K01188359	vinblastine	borrowed	False	False	51.4	61.6	39.5	1.0	62.302439024390246
@@ -4441,7 +4439,7 @@ CESC-AD	Hexachlorophene	BRD-K99792991	hexachlorophene	matched	False	False	53.7	5
 BRCA-Her2	Mirdametinib	BRD-K49865102	PD-0325901	matched	False	False	55.5	69.6	84.6	1.0	57.18536585365853
 TCGA-LIHC	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	3.4	46.4	71.9	0.5	55.517073170731706
 ESCA-SCC	Mercaptopurine	BRD-K91601245	mercaptopurine	borrowed	False	False	55.7	46.7	34.8	1.0	54.40975609756098
-TGCT-NSGCT	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	55.3	38.8	18.5	1.0	64.9560975609756
+TGCT-NSGCT	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	55.3	38.8	18.5	1.0	65.03414634146341
 TGCT-NSGCT	Talazoparib	BRD-K95142244	talazoparib	borrowed	False	False	55.2	74.0	84.0	1.0	52.62439024390244
 TCGA-PAAD	Sumatriptan	BRD-K50938287	sumatriptan	matched	False	False	3.6	53.3	31.7	0.25	6.492000000000001
 TCGA-BLCA	Pentobarbital	BRD-A44448661	pentobarbital	borrowed	False	False	55.0	43.4	26.0	0.3125	48.20487804878049
@@ -4470,7 +4468,7 @@ TCGA-BLCA	Triclosan	BRD-K41731458	triclosan	borrowed	False	False	54.6	56.6	45.3	
 TCGA-HNSC	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	51.8	47.2	33.9	1.0	56.12926829268293
 TCGA-KICH	Fluticasone	BRD-K62310379	fluticasone-propionate	borrowed	False	False	54.1	43.3	39.7	1.0	53.18536585365853
 TCGA-SKCM	Tamoxifen	BRD-K04210847	tamoxifen	matched	False	False	3.4	25.1	56.8	0.75	9.065853658536586
-TCGA-LUAD	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	52.9	59.4	88.1	1.0	71.76585365853659
+TCGA-LUAD	Pitavastatin	BRD-K75958547	pitavastatin	matched	False	False	52.9	59.4	88.1	1.0	72.20243902439024
 BRCA-Basal	Cobimetinib	BRD-K03390685	cobimetinib	matched	False	False	55.1	73.1	88.7	1.0	56.519512195121955
 TCGA-KIRP	Estramustine	BRD-A70858459	estramustine	borrowed	False	False	56.8	59.4	45.1	0.75	49.421951219512195
 PCPG-PHEO	Troglitazone	BRD-A13084692	troglitazone	borrowed	False	False	54.8	53.0	56.6	0.5	37.03170731707317
@@ -4559,7 +4557,7 @@ TGCT-SEM	Idelalisib	BRD-K60866521	idelalisib	borrowed	False	False	54.2	45.4	69.8
 SARC-UPS	Metronidazole	BRD-K52020312	metronidazole	borrowed	False	False	50.5	51.3	20.5		46.58536585365854
 ESCA-AD	Afatinib	BRD-A58767537	afatinib	borrowed	False	False	55.1	58.7	14.9	0.6666666666666666	51.00975609756098
 TCGA-LUAD	Trifluoperazine	BRD-K89732114	trifluoperazine	matched	False	False	1.3	64.3	87.1	0.4	2.9146341463414633
-TGCT-SEM	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	54.0	44.3	19.7	1.0	64.9560975609756
+TGCT-SEM	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	54.0	44.3	19.7	1.0	65.03414634146341
 LGG-IDHmut-codel	Oxiconazole	BRD-K56104152	oxiconazole	borrowed	False	False	54.8	49.7	54.9		55.37560975609756
 TCGA-PRAD	Ciclopirox	BRD-K13044802	ciclopirox	matched	False	False	50.2	58.1	77.3	1.0	47.29512195121951
 TCGA-UCS	Hexachlorophene	BRD-K99792991	hexachlorophene	borrowed	False	False	52.3	51.0	50.1	1.0	46.03414634146341
@@ -4640,7 +4638,7 @@ TCGA-LIHC	Carfilzomib	BRD-K15179879	carfilzomib	borrowed	False	False	51.3	45.2	1
 TGCT-NSGCT	Thioguanine	BRD-K75649340	tioguanine	borrowed	False	False	50.1	39.3	17.3		54.69024390243903
 TARGET-NBL	Crizotinib	BRD-K78431006	crizotinib	borrowed	False	False	4.8	55.8	70.1	1.0	40.94390243902439
 CESC-AD	Aminolevulinic acid	BRD-K57631554	aminolevulinic-acid	matched	False	False	49.8	47.1	26.2	1.0	43.96341463414634
-TCGA-COAD	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	48.4	42.8	29.9	1.0	64.9560975609756
+TCGA-COAD	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	48.4	42.8	29.9	1.0	65.03414634146341
 TCGA-PAAD	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	48.2	42.3	43.0		52.27317073170731
 TCGA-LUSC	Meloxicam	BRD-A84174393	meloxicam	matched	False	False	50.3	30.1	17.3	1.0	31.67560975609756
 LGG-IDHmut-noncodel	Troglitazone	BRD-A13084692	troglitazone	borrowed	False	False	1.7	53.4	56.0	1.0	37.03170731707317
@@ -4649,7 +4647,7 @@ LGG-IDHmut-noncodel	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False
 TARGET-NBL	Olaparib	BRD-K02113016	olaparib	borrowed	False	False	47.9	45.5	54.7	1.0	50.40243902439025
 TCGA-ACC	Tirbanibulin	BRD-K29968218	KX-2391	borrowed	False	False	51.7	48.7	31.2	1.0	53.419512195121946
 TCGA-THCA	Aminolevulinic acid	BRD-K57631554	aminolevulinic-acid	borrowed	False	False	47.2	43.3	19.1	1.0	43.96341463414634
-TCGA-PRAD	Cyclosporine	BRD-A64290322	cyclosporin-a	matched	False	False	48.4	25.0	52.6	1.0	64.51951219512196
+TCGA-PRAD	Cyclosporine	BRD-A64290322	cyclosporin-a	matched	False	False	48.4	25.0	52.6	1.0	65.96585365853659
 TGCT-NSGCT	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	49.7	55.6	42.7	1.0	43.30975609756098
 TCGA-PRAD	Fingolimod	BRD-K88025533	fingolimod	borrowed	False	False	48.3	47.7	43.5	1.0	53.84390243902439
 UCEC-SER	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	51.2	47.8	31.4	1.0	50.15365853658537
@@ -4728,7 +4726,7 @@ TCGA-OV	Tazarotene	BRD-K76841105	tazarotene	borrowed	False	False	47.3	47.6	44.7	
 TCGA-LIHC	Colchicine	BRD-K00259736	colchicine	borrowed	False	False	49.6	50.9	28.7	0.6111111111111112	54.96341463414634
 TCGA-KIRP	Hexachlorophene	BRD-K99792991	hexachlorophene	borrowed	False	False	51.9	46.0	38.9	1.0	46.03414634146341
 TCGA-READ	Olmesartan medoxomil	BRD-K78485176	olmesartan-medoxomil	matched	False	False	1.3	41.3	25.5	1.0	7.870833333333333
-TCGA-ACC	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	50.3	42.2	16.7	1.0	64.9560975609756
+TCGA-ACC	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	50.3	42.2	16.7	1.0	65.03414634146341
 SARC-UPS	Raloxifene	BRD-K63828191	raloxifene	borrowed	False	False	1.4	43.9	68.8	0.5	7.003703703703703
 TCGA-PRAD	Fluphenazine	BRD-K55127134	fluphenazine	borrowed	False	False	2.2	33.1	42.3	0.25	2.575609756097561
 SARC-DDLPS	Talazoparib	BRD-K95142244	talazoparib	borrowed	False	False	45.4	76.3	87.9	1.0	52.62439024390244
@@ -4914,7 +4912,6 @@ TCGA-UCS	Fingolimod	BRD-K88025533	fingolimod	borrowed	False	False	47.3	44.9	39.8
 TCGA-OV	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	43.8	43.3	42.0	1.0	50.15365853658537
 BRCA-Basal	Netupitant	BRD-K97428065	netupitant	borrowed	False	False	1.2	46.5	61.1	1.0	2.7
 TCGA-LUAD	Budesonide	BRD-A60571864	budesonide	matched	False	False	41.8	44.0	51.4	1.0	38.55
-TCGA-READ	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	44.7	38.2	57.1	1.0	64.51951219512196
 TGCT-NSGCT	Dacarbazine	BRD-K35520305	dacarbazine	borrowed	False	False	42.3	51.6	33.1	1.0	50.71951219512195
 TCGA-BLCA	Sorafenib	BRD-K23984367	sorafenib	borrowed	False	False	45.9	44.1	45.6	0.8181818181818182	50.1390243902439
 TCGA-COAD	Thioguanine	BRD-K49350383	thioguanine	matched	False	False	43.0	36.6	25.0	1.0	54.69024390243903
@@ -5002,12 +4999,13 @@ TCGA-THCA	Dacomitinib	BRD-K57169635	dacomitinib	borrowed	False	False	41.5	35.1	2
 TCGA-PRAD	Sunitinib	BRD-K42828737	sunitinib	matched	False	True	41.0	6.6	34.0	0.9	59.26829268292683
 TCGA-COAD	Teniposide	BRD-A35588707	teniposide	matched	False	False	40.8	38.0	23.0	1.0	58.6219512195122
 TCGA-PRAD	Raloxifene	BRD-K63828191	raloxifene	borrowed	False	False	40.9	30.9	38.4	0.5	7.003703703703703
+ESCA-AD	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	46.6	22.6	82.2	1.0	51.802439024390246
 CESC-AD	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	43.3	43.2	33.0	1.0	50.15365853658537
 TCGA-LUSC	Ranitidine	BRD-K70505054	ranitidine	matched	False	False	1.4	47.8	33.4	1.0	1.16
 TCGA-KIRC	Pazopanib	BRD-K74514084	pazopanib	borrowed	True	True	47.9	43.3	45.5	1.0	54.18292682926829
 BRCA-Basal	Binimetinib	BRD-K82244583	MEK-162	matched	False	False	45.4	50.3	60.2	1.0	56.50975609756098
 SARC-DDLPS	Colchicine	BRD-K00259736	colchicine	borrowed	False	False	38.9	25.6	12.4	0.6111111111111112	54.96341463414634
-TCGA-THCA	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	41.4	53.0	43.4	1.0	64.9560975609756
+TCGA-THCA	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	41.4	53.0	43.4	1.0	65.03414634146341
 SARC-UPS	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	1.0	46.6	60.1	0.8333333333333334	9.065853658536586
 TCGA-BLCA	Colchicine	BRD-K00259736	colchicine	borrowed	False	False	44.1	33.7	18.0	0.5555555555555556	54.96341463414634
 LGG-IDHmut-noncodel	Vemurafenib	BRD-K56343971	vemurafenib	borrowed	False	False	49.3	47.2	57.9	1.0	56.30975609756097
@@ -5058,7 +5056,7 @@ TCGA-STAD	Phenytoin	BRD-K55930204	phenytoin	borrowed	False	False	1.1	31.6	29.3	0
 BRCA-LumA	Trifluoperazine	BRD-K89732114	trifluoperazine	matched	False	False	1.7	39.6	26.7	0.5	2.9146341463414633
 TGCT-NSGCT	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	38.8	14.7	22.6	1.0	58.775609756097566
 TCGA-KIRP	Cobimetinib	BRD-K03390685	cobimetinib	borrowed	False	False	46.7	20.2	41.9	1.0	56.519512195121955
-TCGA-KIRC	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	47.3	44.4	48.6	1.0	64.51951219512196
+TCGA-KIRC	Cyclosporine	BRD-A69815203	cyclosporin-a	borrowed	False	False	47.3	44.4	48.6	1.0	65.96585365853659
 TCGA-OV	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	41.7	36.7	28.4	1.0	56.76829268292683
 SARC-DDLPS	Menadione	BRD-K78126613	menadione	borrowed	False	False	37.4	38.8	25.5	0.7142857142857143	27.151219512195123
 TCGA-LUAD	Zafirlukast	BRD-K71289571	zafirlukast	borrowed	False	True	38.3	35.1	16.3	1.0	20.237837837837837
@@ -5143,6 +5141,7 @@ BRCA-LumB	Isotretinoin	BRD-K76723084	isotretinoin	matched	False	True	45.0	39.9	3
 BRCA-Basal	Ingenol mebutate	BRD-K93779381	ingenol-mebutate	matched	False	False	43.2	56.3	73.7	0.8	46.27804878048781
 TCGA-READ	Fluticasone	BRD-K62310379	fluticasone-propionate	borrowed	False	False	39.8	37.4	28.9	0.75	53.18536585365853
 TCGA-LIHC	Alectinib	BRD-K11267252	alectinib	borrowed	False	False	2.9	37.2	32.4	0.5	4.104878048780488
+TCGA-STAD	Atorvastatin	BRD-K69726342	atorvastatin	borrowed	False	False	38.5	56.3	93.1	1.0	51.802439024390246
 TCGA-LUSC	Dabrafenib	BRD-K09951645	dabrafenib	matched	False	False	37.8	53.3	70.3	1.0	61.22926829268293
 TCGA-PRAD	Clofazimine	BRD-K56614220	clofazimine	matched	False	False	38.5	43.8	67.9		55.356097560975606
 TGCT-NSGCT	Masoprocol	BRD-A87130939	masoprocol	borrowed	False	False	36.8	34.2	28.5	1.0	50.72682926829269
@@ -5220,7 +5219,7 @@ CESC-SCC	Nilotinib	BRD-K81528515	nilotinib	matched	False	False	39.2	45.8	51.3	1.
 CESC-AD	Norethindrone	BRD-A09349126	norethindrone	matched	False	False	3.0	38.1	10.6	1.0	1.75
 TCGA-OV	Mebendazole	BRD-K77987382	mebendazole	borrowed	False	False	39.8	39.7	30.0	1.0	54.951219512195124
 TCGA-LUSC	Prazosin	BRD-K49111258	prazosin	matched	False	False	1.1	19.4	10.3	0.4444444444444444	1.1666666666666667
-SARC-DDLPS	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	35.1	16.6	3.8	1.0	64.9560975609756
+SARC-DDLPS	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	35.1	16.6	3.8	1.0	65.03414634146341
 TCGA-KICH	Ixazomib	BRD-A66419424	MLN-9708	borrowed	False	False	46.2	41.7	16.0		50.20975609756098
 TCGA-PRAD	Vandetanib	BRD-K77625799	vandetanib	borrowed	False	False	37.3	19.5	37.4	0.8846153846153846	57.50975609756098
 BRCA-Her2	Simvastatin	BRD-K22134346	simvastatin	matched	False	False	40.6	64.1	90.6	1.0	55.88780487804878
@@ -5237,7 +5236,7 @@ TCGA-BLCA	Disulfiram	BRD-K32744045	disulfiram	borrowed	False	False	40.6	42.8	33.
 SARC-UPS	Sorafenib	BRD-K23984367	sorafenib	borrowed	False	False	35.9	38.2	42.7	0.8181818181818182	50.1390243902439
 TCGA-LUAD	Albendazole	BRD-K79131256	albendazole	matched	False	False	35.2	28.0	26.7	1.0	54.87560975609756
 TCGA-OV	Paroxetine	BRD-K37991163	paroxetine	borrowed	False	False	2.0	35.3	35.7	0.125	2.7153846153846155
-BRCA-Basal	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	42.0	21.8	14.0	1.0	54.073170731707314
+BRCA-Basal	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	42.0	21.8	14.0	1.0	54.21463414634147
 SARC-DDLPS	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	34.4	42.1	60.1	1.0	38.44878048780488
 SARC-UPS	Alectinib	BRD-K11267252	alectinib	borrowed	False	False	0.9	29.0	36.7	0.5	4.104878048780488
 TGCT-SEM	Dexamethasone	BRD-A93424738	dexamethasone-acetate	borrowed	False	False	39.6	36.7	36.6	1.0	61.40731707317073
@@ -5260,7 +5259,7 @@ ESCA-AD	Alpelisib	BRD-K54997624	alpelisib	borrowed	False	False	41.7	49.3	47.6	1.
 TCGA-OV	Fidaxomicin	BRD-K57371763	fidaxomicin	borrowed	False	False	39.2	30.7	19.3		44.885365853658534
 TCGA-PAAD	Tivozanib	BRD-K53414658	tivozanib	matched	False	False	38.7	50.0	78.0	1.0	56.800000000000004
 BRCA-Basal	Troglitazone	BRD-A13084692	troglitazone	borrowed	False	False	41.5	41.2	53.9	0.5	37.03170731707317
-TCGA-PAAD	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	38.6	43.5	26.1	1.0	64.9560975609756
+TCGA-PAAD	Vincristine	BRD-A60414806	vincristine	borrowed	False	False	38.6	43.5	26.1	1.0	65.03414634146341
 ESCA-SCC	Vinblastine	BRD-A22783572	vinblastine	borrowed	False	False	41.1	52.0	35.7	1.0	62.302439024390246
 TCGA-PRAD	Vemurafenib	BRD-K56343971	vemurafenib	matched	False	False	36.5	48.9	50.3	1.0	56.30975609756097
 TCGA-LUAD	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	34.7	24.3	23.4	1.0	49.582926829268295
@@ -5378,14 +5377,14 @@ BRCA-LumA	Emtricitabine	BRD-K61452026	emtricitabine	matched	False	False	38.4	44.
 TCGA-COAD	Fluticasone	BRD-K62310379	fluticasone-propionate	borrowed	False	False	33.0	32.3	27.7	0.75	53.18536585365853
 PCPG-PHEO	Oxiconazole	BRD-K56104152	oxiconazole	borrowed	False	False	41.7	29.2	35.7		55.37560975609756
 TCGA-STAD	Fluphenazine	BRD-K55127134	fluphenazine	borrowed	False	False	0.7	39.5	63.3	0.25	2.575609756097561
-TCGA-KICH	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	44.1	37.8	37.9	1.0	64.51951219512196
+TCGA-KICH	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	44.1	37.8	37.9	1.0	65.96585365853659
 ESCA-AD	Triclosan	BRD-K41731458	triclosan	borrowed	False	False	39.4	32.7	24.2	1.0	46.6609756097561
 TCGA-BLCA	Clofarabine	BRD-A82371568	clofarabine	borrowed	False	False	38.4	37.2	40.4	1.0	66.43170731707316
 TCGA-KIRP	Vandetanib	BRD-K77625799	vandetanib	borrowed	False	False	40.5	19.9	30.8	0.6923076923076923	57.50975609756098
 UCEC-EEC	Menadione	BRD-K78126613	menadione	borrowed	False	False	2.8	48.3	21.6	0.6428571428571429	27.151219512195123
 BRCA-Basal	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	38.6	34.7	48.8		52.27317073170731
 TGCT-NSGCT	Dexamethasone	BRD-A93424738	dexamethasone-acetate	borrowed	False	False	31.0	32.7	34.9	1.0	61.40731707317073
-TCGA-BLCA	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	38.1	28.8	8.4	1.0	54.073170731707314
+TCGA-BLCA	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	38.1	28.8	8.4	1.0	54.21463414634147
 TCGA-LUSC	Fludarabine	BRD-K71106091	fludarabine-phosphate	matched	False	False	32.0	16.5	12.4	1.0	53.94878048780488
 TCGA-COAD	Afatinib	BRD-A58767537	afatinib	borrowed	False	False	32.6	32.1	14.2	0.6666666666666666	51.00975609756098
 CESC-SCC	Pyrvinium	BRD-M86331534	pyrvinium-pamoate	borrowed	False	False	35.8	32.6	27.5	1.0	55.1551724137931
@@ -5421,8 +5420,8 @@ TGCT-SEM	Disulfiram	BRD-K32744045	disulfiram	borrowed	False	False	35.0	38.1	26.7
 LGG-IDHmut-noncodel	Neratinib	BRD-K85606544	neratinib	borrowed	False	False	43.3	41.0	51.1	1.0	49.71707317073171
 LGG-IDHmut-codel	Pazopanib	BRD-K74514084	pazopanib	borrowed	False	False	43.2	38.9	41.7	0.9166666666666666	54.18292682926829
 TARGET-NBL	Fingolimod	BRD-K88025533	fingolimod	borrowed	False	False	39.8	33.4	36.6	1.0	53.84390243902439
-SARC-UPS	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	32.3	22.2	4.4	1.0	64.9560975609756
-LGG-IDHwt	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	42.0	27.0	36.4	1.0	66.54878048780488
+SARC-UPS	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	32.3	22.2	4.4	1.0	65.03414634146341
+LGG-IDHwt	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	42.0	27.0	36.4	1.0	66.76829268292683
 TCGA-OV	Menadione	BRD-K78126613	menadione	borrowed	False	False	1.8	35.5	21.0	0.7142857142857143	27.151219512195123
 BRCA-LumB	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	40.8	36.7	43.7		52.27317073170731
 TGCT-NSGCT	Artesunate	BRD-A47829399	artesunate	borrowed	False	False	30.4	18.0	20.8		56.85853658536585
@@ -5458,7 +5457,7 @@ TCGA-LUSC	Medrysone	BRD-K56515112	medrysone	matched	False	False	30.6	18.1	13.1	1
 TCGA-KICH	Lovastatin	BRD-K09416995	lovastatin	borrowed	False	False	43.1	38.2	41.8	0.75	67.70975609756097
 TCGA-LUSC	Regorafenib	BRD-K16730910	regorafenib	matched	False	False	30.3	47.3	53.6	0.9444444444444444	54.400000000000006
 BRCA-Basal	Alitretinoin	BRD-K35483542	alitretinoin	matched	False	False	37.9	39.2	24.0	0.8333333333333334	45.875
-ESCA-SCC	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	37.2	41.1	20.0	1.0	64.9560975609756
+ESCA-SCC	Vincristine	BRD-A76528577	vincristine	borrowed	False	False	37.2	41.1	20.0	1.0	65.03414634146341
 BRCA-Her2	Omacetaxine mepesuccinate	BRD-K76674262	BRD-K76674262	matched	False	False	36.2	19.5	18.2	1.0	48.48048780487805
 TCGA-KIRC	Dabrafenib	BRD-K09951645	dabrafenib	borrowed	False	False	41.2	28.1	39.8	1.0	61.22926829268293
 TGCT-SEM	Fluticasone	BRD-K62310379	fluticasone-propionate	borrowed	False	False	33.7	39.6	46.9	0.5	53.18536585365853
@@ -5577,7 +5576,7 @@ TCGA-KIRP	Pioglitazone	BRD-A48430263	pioglitazone	borrowed	False	False	37.3	44.1
 TCGA-LUAD	Pyrimethamine	BRD-K88429204	pyrimethamine	borrowed	False	False	26.8	30.1	55.7	1.0	55.580487804878054
 TCGA-HNSC	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	31.4	24.0	38.5		52.27317073170731
 TCGA-KIRC	Fidaxomicin	BRD-K57371763	fidaxomicin	borrowed	False	False	39.7	37.0	12.3		44.885365853658534
-TCGA-KICH	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	42.0	35.2	11.0	1.0	54.073170731707314
+TCGA-KICH	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	42.0	35.2	11.0	1.0	54.21463414634147
 PCPG-PGL	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	40.6	35.9	18.9	1.0	56.12926829268293
 TCGA-LUAD	Pacritinib	BRD-K19034817	pacritinib	matched	False	False	26.8	46.4	33.6	0.75	53.46341463414634
 BRCA-LumB	Pimozide	BRD-K01292756	pimozide	matched	False	False	1.4	37.5	48.6	0.25	3.0365853658536586
@@ -5586,8 +5585,8 @@ TCGA-BLCA	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	34.2	36.4	2
 TCGA-LIHC	Valrubicin	BRD-K72951360	valrubicin	borrowed	False	False	36.2	33.2	41.6	1.0	54.546341463414635
 LGG-IDHmut-codel	Pioglitazone	BRD-A48430263	pioglitazone	borrowed	False	False	1.0	35.5	12.1	1.0	34.665853658536584
 TCGA-THCA	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	32.1	14.8	35.1	1.0	56.62439024390244
-TCGA-STAD	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	29.6	21.7	11.0	1.0	64.9560975609756
-TCGA-HNSC	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	31.3	32.6	12.3	1.0	54.073170731707314
+TCGA-STAD	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	29.6	21.7	11.0	1.0	65.03414634146341
+TCGA-HNSC	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	31.3	32.6	12.3	1.0	54.21463414634147
 CESC-SCC	Floxuridine	BRD-K73088654	floxuridine	matched	False	False	32.2	38.9	63.8		61.78536585365853
 TCGA-ACC	Decitabine	BRD-K79254416	decitabine	borrowed	False	False	38.2	40.9	34.4	1.0	56.76829268292683
 BRCA-LumB	Tazarotene	BRD-K76841105	tazarotene	matched	False	False	38.3	34.7	39.8	1.0	52.78292682926829
@@ -5627,7 +5626,7 @@ LGG-IDHmut-codel	Alpelisib	BRD-K54997624	alpelisib	borrowed	False	False	40.4	33.
 TCGA-BLCA	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	1.7	40.3	48.3	0.8333333333333334	9.065853658536586
 TCGA-HNSC	Ruxolitinib	BRD-K53972329	ruxolitinib	borrowed	False	False	30.0	27.0	23.6	1.0	55.67560975609756
 CESC-SCC	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	2.4	27.2	34.5		23.536585365853657
-CESC-SCC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	31.6	22.5	28.7	1.0	71.76585365853659
+CESC-SCC	Pitavastatin	BRD-K30097969	pitavastatin	borrowed	False	False	31.6	22.5	28.7	1.0	72.20243902439024
 CESC-SCC	Thioguanine	BRD-K49350383	thioguanine	matched	False	False	31.6	15.7	2.8	1.0	54.69024390243903
 TCGA-PRAD	Lonafarnib	BRD-K41599323	lonafarnib	matched	False	False	30.5	14.6	58.2	1.0	46.86829268292683
 TCGA-SKCM	Meloxicam	BRD-A84174393	meloxicam	borrowed	False	False	2.2	47.6	23.4	1.0	31.67560975609756
@@ -5647,7 +5646,7 @@ TCGA-PAAD	Clofarabine	BRD-A82371568	clofarabine	borrowed	False	False	32.4	29.5	2
 LGG-IDHmut-codel	Ixazomib	BRD-A66419424	MLN-9708	borrowed	False	False	39.9	34.0	14.2		50.20975609756098
 ESCA-AD	Nelfinavir	BRD-K74117820	nelfinavir	borrowed	False	False	34.2	24.4	51.0		50.34634146341463
 TCGA-STAD	Lonafarnib	BRD-K41599323	lonafarnib	borrowed	False	False	28.5	42.1	34.7	1.0	46.86829268292683
-TCGA-LUSC	Azacitidine	BRD-K55026842	azacitidine	matched	False	False	27.8	8.2	2.5	1.0	54.073170731707314
+TCGA-LUSC	Azacitidine	BRD-K55026842	azacitidine	matched	False	False	27.8	8.2	2.5	1.0	54.21463414634147
 CESC-SCC	Drospirenone	BRD-A00938334	drospirenone	matched	False	False	2.3	24.1	5.3	0.5	4.25
 TCGA-ACC	Olmesartan medoxomil	BRD-K78485176	olmesartan-medoxomil	borrowed	False	False	6.9	35.0	21.3	1.0	7.870833333333333
 SARC-UPS	Colchicine	BRD-K00259736	colchicine	borrowed	False	False	27.4	17.3	9.1	0.6111111111111112	54.96341463414634
@@ -5806,7 +5805,7 @@ TCGA-LUSC	Talazoparib	BRD-K95142244	talazoparib	matched	False	False	24.3	56.1	87
 TCGA-LIHC	Menadione	BRD-K78126613	menadione	borrowed	False	False	32.8	32.7	19.1	1.0	27.151219512195123
 TCGA-LIHC	Bosutinib	BRD-K99964838	bosutinib	borrowed	False	False	32.8	30.5	36.2	0.9473684210526315	51.517073170731706
 ESCA-AD	Pimozide	BRD-K01292756	pimozide	borrowed	False	False	0.7	24.2	43.5	0.4166666666666667	3.0365853658536586
-TGCT-NSGCT	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	22.2	7.1	4.5	1.0	54.073170731707314
+TGCT-NSGCT	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	22.2	7.1	4.5	1.0	54.21463414634147
 TCGA-KIRP	Triflupromazine	BRD-K63675182	triflupromazine	borrowed	False	False	1.3	38.1	43.7	0.2	2.531578947368421
 SARC-DDLPS	Albendazole	BRD-K79131256	albendazole	borrowed	False	False	23.8	20.2	18.3	1.0	54.87560975609756
 CESC-AD	Clofarabine	BRD-A82371568	clofarabine	borrowed	False	False	32.7	27.4	26.7	1.0	66.43170731707316
@@ -5910,7 +5909,7 @@ TCGA-READ	Dipyridamole	BRD-K86301799	dipyridamole	matched	False	False	24.1	22.0	
 TCGA-SKCM	Talazoparib	BRD-K95142244	talazoparib	matched	False	False	31.3	15.8	11.9	1.0	52.62439024390244
 TCGA-PRAD	Triclosan	BRD-K41731458	triclosan	borrowed	False	False	25.4	22.9	15.7	1.0	46.6609756097561
 TCGA-READ	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	24.0	20.6	36.1		52.27317073170731
-BRCA-Basal	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	30.6	35.3	64.5	1.0	64.51951219512196
+BRCA-Basal	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	30.6	35.3	64.5	1.0	65.96585365853659
 UCEC-SER	Afatinib	BRD-A58767537	afatinib	borrowed	False	False	32.4	33.7	8.9	1.0	51.00975609756098
 TCGA-UCS	Quizartinib	BRD-K93918653	quizartinib	borrowed	False	False	33.9	33.3	21.5	0.8333333333333334	42.46341463414634
 BRCA-LumA	Digitoxin	BRD-A93236127	digitoxin	matched	False	False	28.9	36.7	28.8	1.0	51.72682926829269
@@ -5930,7 +5929,7 @@ TGCT-SEM	Methylene blue	BRD-K16406336	methylene-blue	borrowed	False	False	23.9	2
 CESC-SCC	Masoprocol	BRD-A87130939	masoprocol	borrowed	False	False	27.4	21.1	19.7	1.0	50.72682926829269
 TCGA-SKCM	Masoprocol	BRD-A87130939	masoprocol	borrowed	False	False	30.9	30.9	16.9	1.0	50.72682926829269
 TCGA-ACC	Fostamatinib	BRD-K20285085	fostamatinib	borrowed	False	False	2.3	28.3	57.6	0.5	55.517073170731706
-LGG-IDHmut-noncodel	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	37.1	29.1	44.4	1.0	66.54878048780488
+LGG-IDHmut-noncodel	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	37.1	29.1	44.4	1.0	66.76829268292683
 BRCA-Basal	Estramustine	BRD-A70858459	estramustine	matched	False	False	30.3	27.6	24.5	0.75	49.421951219512195
 SARC-UPS	Floxuridine	BRD-K73088654	floxuridine	borrowed	False	False	22.8	14.2	16.7		61.78536585365853
 TCGA-HNSC	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	25.0	15.3	42.0	1.0	51.50731707317074
@@ -5974,7 +5973,7 @@ CESC-SCC	Testosterone	BRD-A55393291	testosterone	matched	False	False	1.9	17.0	3.
 TCGA-COAD	Bortezomib	BRD-K50691590	bortezomib	matched	False	False	21.5	8.5	8.3	1.0	52.97560975609756
 TARGET-NBL	Defactinib	BRD-K43578482	defactinib	borrowed	False	False	33.3	31.2	21.9	1.0	51.93658536585366
 TCGA-READ	Aminolevulinic acid	BRD-K57631554	aminolevulinic-acid	matched	False	False	22.9	16.7	3.0	1.0	43.96341463414634
-LGG-IDHmut-codel	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	35.1	33.2	39.0	1.0	64.51951219512196
+LGG-IDHmut-codel	Cyclosporine	BRD-A64290322	cyclosporin-a	borrowed	False	False	35.1	33.2	39.0	1.0	65.96585365853659
 SARC-UPS	Sitagliptin	BRD-K19416115	sitagliptin	borrowed	False	False	22.3	24.4	7.0	1.0	36.015789473684215
 TCGA-OV	Oxiconazole	BRD-K56104152	oxiconazole	borrowed	False	False	28.5	28.6	27.1		55.37560975609756
 TCGA-LUSC	Moxifloxacin	BRD-K66615216	moxifloxacin	matched	False	False	21.4	8.4	10.8	1.0	18.25
@@ -6011,6 +6010,7 @@ TCGA-HNSC	Rosiglitazone	BRD-A97437073	rosiglitazone	borrowed	False	False	0.8	22.
 TCGA-READ	Pentobarbital	BRD-A44448661	pentobarbital	matched	False	False	22.2	11.1	8.7	0.25	48.20487804878049
 UCEC-EEC	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	30.5	29.2	42.4	0.3333333333333333	60.975
 TCGA-LIHC	Raloxifene	BRD-K63828191	raloxifene	borrowed	False	False	1.6	26.0	42.4	0.5	7.003703703703703
+TCGA-LIHC	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	29.6	22.7	50.7	1.0	66.76829268292683
 TARGET-WT	Osimertinib	BRD-K42805893	AZD-9291	borrowed	False	False	0.9	34.6	69.4	1.0	43.05853658536586
 PCPG-PHEO	Etoposide	BRD-A18419789	etoposide	borrowed	False	False	32.6	31.3	32.9	1.0	65.85853658536585
 TCGA-KIRP	Raloxifene	BRD-K63828191	raloxifene	borrowed	False	False	1.0	24.3	23.3	0.5	7.003703703703703
@@ -6031,7 +6031,7 @@ BRCA-LumB	Osimertinib	BRD-K42805893	AZD-9291	matched	False	False	0.9	34.3	77.6	1
 TCGA-ACC	Floxuridine	BRD-K73088654	floxuridine	borrowed	False	False	33.5	26.9	20.1		61.78536585365853
 BRCA-LumA	Pimozide	BRD-K01292756	pimozide	matched	False	False	1.1	23.4	32.0	0.3333333333333333	3.0365853658536586
 UCEC-EEC	Olaparib	BRD-K02113016	olaparib	borrowed	False	True	30.2	25.3	31.9	1.0	50.40243902439025
-TCGA-STAD	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	18.7	6.8	2.2	1.0	54.073170731707314
+TCGA-STAD	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	18.7	6.8	2.2	1.0	54.21463414634147
 ESCA-SCC	Podofilox	BRD-K47869605	BRD-K47869605	borrowed	False	False	28.8	32.0	14.9	1.0	52.163414634146335
 TCGA-KIRC	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	borrowed	False	False	33.5	35.7	40.6	1.0	60.00975609756098
 PCPG-PGL	Midostaurin	BRD-K13646352	midostaurin	borrowed	False	False	35.4	29.9	32.6	0.3333333333333333	60.975
@@ -6052,7 +6052,7 @@ BRCA-Her2	Trifluoperazine	BRD-K89732114	trifluoperazine	matched	False	False	0.7	
 LGG-IDHmut-noncodel	Pimozide	BRD-K01292756	pimozide	borrowed	False	False	4.2	34.4	43.4	0.6666666666666666	3.0365853658536586
 TCGA-BLCA	Afatinib	BRD-K66175015	afatinib	borrowed	False	False	27.4	21.2	18.5	0.6666666666666666	51.00975609756098
 PCPG-PGL	Sirolimus	BRD-K84937637	sirolimus	borrowed	False	False	35.2	24.8	41.7	1.0	65.83170731707317
-TCGA-KIRC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	33.3	29.2	10.0	1.0	54.073170731707314
+TCGA-KIRC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	33.3	29.2	10.0	1.0	54.21463414634147
 TCGA-SKCM	Sorafenib	BRD-K23984367	sorafenib	matched	False	True	29.1	18.7	9.1	0.8181818181818182	50.1390243902439
 TGCT-SEM	Aminolevulinic acid	BRD-K57631554	aminolevulinic-acid	borrowed	False	False	21.6	26.2	13.3	1.0	43.96341463414634
 LGG-IDHmut-codel	Paroxetine	BRD-K37991163	paroxetine	borrowed	False	False	0.7	31.0	23.6	0.5	2.7153846153846155
@@ -6115,7 +6115,7 @@ UCEC-SER	Gefitinib	BRD-K64052750	gefitinib	borrowed	False	False	1.7	23.8	35.9	1.
 TARGET-WT	Ciclopirox	BRD-K13044802	ciclopirox	borrowed	False	False	34.3	34.4	62.9	1.0	47.29512195121951
 LGG-IDHwt	Defactinib	BRD-K43578482	defactinib	borrowed	False	False	31.7	23.9	24.9	1.0	51.93658536585366
 TCGA-KIRC	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	32.1	29.0	16.3	1.0	49.582926829268295
-LGG-IDHmut-codel	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	33.3	26.0	39.2	1.0	66.54878048780488
+LGG-IDHmut-codel	Temsirolimus	BRD-A62025033	temsirolimus	borrowed	False	False	33.3	26.0	39.2	1.0	66.76829268292683
 TCGA-UCS	Cabazitaxel	BRD-K06858286	cabazitaxel	borrowed	False	False	31.1	26.2	19.0		57.43658536585366
 BRCA-Basal	Fostamatinib	BRD-K20285085	fostamatinib	matched	False	False	29.1	31.2	41.0	1.0	55.517073170731706
 UCEC-EEC	Ixabepilone	BRD-K03601870	ixabepilone	borrowed	False	True	29.5	34.8	12.1	1.0	56.18536585365853
@@ -6171,7 +6171,7 @@ TCGA-OV	Triflupromazine	BRD-K63675182	triflupromazine	borrowed	False	False	0.9	2
 TCGA-READ	Hexachlorophene	BRD-K99792991	hexachlorophene	borrowed	False	False	19.3	16.9	28.3	1.0	46.03414634146341
 TCGA-KIRP	Niclosamide	BRD-K35960502	niclosamide	borrowed	False	False	27.3	25.8	27.5	1.0	44.05609756097561
 TCGA-LUSC	Triamcinolone	BRD-K77554836	triamcinolone	matched	False	True	18.0	14.8	11.2	1.0	38.4
-TCGA-KIRP	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	27.1	46.8	25.0	1.0	54.073170731707314
+TCGA-KIRP	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	27.1	46.8	25.0	1.0	54.21463414634147
 SARC-UPS	Ceritinib	BRD-K22149900	ceritinib	borrowed	False	True	0.3	18.4	47.2	0.4	4.341463414634147
 BRCA-Her2	Artesunate	BRD-A47829399	artesunate	matched	False	False	23.7	34.6	47.8		56.85853658536585
 TCGA-COAD	Defactinib	BRD-K43578482	defactinib	borrowed	False	False	17.9	12.0	25.1	1.0	51.93658536585366
@@ -6372,7 +6372,7 @@ CESC-SCC	Dacarbazine	BRD-K35520305	dacarbazine	matched	False	False	21.0	20.7	27.
 TCGA-KIRP	Triclabendazole	BRD-K81916719	triclabendazole	borrowed	False	False	23.8	22.3	15.0	1.0	49.582926829268295
 TCGA-ACC	Trifluridine	BRD-A64485570	trifluridine	borrowed	False	False	29.0	18.4	22.4	1.0	60.90487804878049
 BRCA-LumB	Ruxolitinib	BRD-K53972329	ruxolitinib	matched	False	False	26.0	17.5	9.1	1.0	55.67560975609756
-BRCA-Her2	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	20.1	39.6	70.4	1.0	64.51951219512196
+BRCA-Her2	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	20.1	39.6	70.4	1.0	65.96585365853659
 LGG-IDHmut-codel	Halcinonide	BRD-K81709173	halcinonide	borrowed	False	False	29.2	25.9	21.0	1.0	50.15365853658537
 TCGA-OV	Floxuridine	BRD-K73088654	floxuridine	borrowed	False	False	22.5	19.7	14.8		61.78536585365853
 CESC-SCC	Carfilzomib	BRD-K15179879	carfilzomib	matched	False	False	20.8	22.6	34.6	0.8947368421052632	48.456097560975614
@@ -6481,7 +6481,7 @@ TCGA-BLCA	Penicillin g	BRD-K55191674	benzylpenicillin	borrowed	False	False	21.5	
 TCGA-STAD	Digoxin	BRD-A75144621	digoxin	borrowed	False	False	11.4	6.2	26.4	1.0	58.775609756097566
 TCGA-PAAD	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	21.8	16.5	31.4	1.0	52.5609756097561
 TCGA-SKCM	Irinotecan	BRD-K08547377	irinotecan	matched	False	False	23.9	7.9	5.5	1.0	58.84390243902439
-TCGA-HNSC	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	17.0	14.5	9.8	1.0	64.9560975609756
+TCGA-HNSC	Vincristine	BRD-K82109576	vincristine	borrowed	False	False	17.0	14.5	9.8	1.0	65.03414634146341
 TCGA-LUAD	Eptifibatide	BRD-A90547603	eptifibatide	borrowed	False	False	3.8	4.5	2.7	1.0	18.765
 TCGA-OV	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	21.4	16.9	35.6	1.0	52.5609756097561
 TCGA-BLCA	Meloxicam	BRD-A84174393	meloxicam	borrowed	False	False	21.2	12.3	11.1	1.0	31.67560975609756
@@ -6519,7 +6519,7 @@ TCGA-KIRC	Bazedoxifene	BRD-K90195324	bazedoxifene	borrowed	False	False	3.1	18.2	
 TCGA-KIRC	Belumosudil	BRD-K88506063	KD-025	borrowed	False	False	25.5	22.9	6.7	1.0	45.8
 LGG-IDHwt	Simeprevir	BRD-A68493689	simeprevir	borrowed	False	False	25.1	39.9	51.4		48.514634146341464
 TCGA-OV	Meloxicam	BRD-A84174393	meloxicam	borrowed	False	False	0.4	20.8	8.9	1.0	31.67560975609756
-TCGA-COAD	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	12.2	3.6	2.9	1.0	54.073170731707314
+TCGA-COAD	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	12.2	3.6	2.9	1.0	54.21463414634147
 TCGA-COAD	Pioglitazone	BRD-A48430263	pioglitazone	borrowed	False	False	12.0	8.0	3.9	1.0	34.665853658536584
 TCGA-THCA	Paroxetine	BRD-K37991163	paroxetine	borrowed	False	False	0.8	15.2	11.6	0.125	2.7153846153846155
 TCGA-PRAD	Mycophenolate mofetil	BRD-K92428153	mycophenolate-mofetil	matched	False	False	18.1	11.5	40.1	1.0	60.00975609756098
@@ -6663,7 +6663,7 @@ TCGA-GBM	Albendazole	BRD-K79131256	albendazole	borrowed	False	False	14.4	18.5	25
 TCGA-OV	Epirubicin	BRD-K56844688	epirubicin	borrowed	False	False	18.7	17.9	11.0	1.0	63.58536585365854
 PCPG-PHEO	Ifosfamide	BRD-A67097164	ifosfamide	borrowed	False	True	25.5	17.8	34.4	1.0	55.18780487804877
 TCGA-GBM	Menadione	BRD-K78126613	menadione	borrowed	False	False	14.3	20.4	8.7	0.7142857142857143	27.151219512195123
-TCGA-READ	Azacitidine	BRD-K55026842	azacitidine	matched	False	False	11.4	4.6	7.8	1.0	54.073170731707314
+TCGA-READ	Azacitidine	BRD-K55026842	azacitidine	matched	False	False	11.4	4.6	7.8	1.0	54.21463414634147
 TCGA-THCA	Pralatrexate	BRD-A74914197	pralatrexate	borrowed	False	False	19.1	16.5	29.8	1.0	61.599999999999994
 TCGA-PAAD	Rilpivirine	BRD-K06240250	rilpivirine	matched	False	False	19.5	19.6	16.1	0.5	19.5
 TCGA-PAAD	Masoprocol	BRD-A87130939	masoprocol	matched	False	False	19.4	29.2	16.9	1.0	50.72682926829269
@@ -6691,7 +6691,7 @@ TCGA-ACC	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	25.2	20.3	19.1
 SARC-LMS	Gemcitabine	BRD-K15108141	gemcitabine	borrowed	False	True	26.0	1.7	2.3	1.0	58.980487804878045
 SARC-UPS	Cabazitaxel	BRD-K06858286	cabazitaxel	borrowed	False	False	11.6	4.3	5.2		57.43658536585366
 PCPG-PGL	Lapatinib	BRD-K19687926	lapatinib	borrowed	False	False	1.0	27.5	29.2	1.0	45.853658536585364
-ESCA-SCC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	17.2	9.4	2.4	1.0	54.073170731707314
+ESCA-SCC	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	17.2	9.4	2.4	1.0	54.21463414634147
 TCGA-PAAD	Fluvastatin	BRD-K66296774	fluvastatin	borrowed	False	False	19.1	6.3	24.2	1.0	56.62439024390244
 TARGET-WT	Pyrvinium	BRD-M86331534	pyrvinium-pamoate	borrowed	False	False	25.8	18.7	13.0	1.0	55.1551724137931
 TARGET-WT	Elvitegravir	BRD-K54472332	elvitegravir	borrowed	False	False	25.5	21.1	37.4		52.27317073170731
@@ -6710,7 +6710,7 @@ TCGA-SKCM	Dacarbazine	BRD-K35520305	dacarbazine	matched	True	True	20.6	14.0	2.5	
 TCGA-PAAD	Floxuridine	BRD-K73088654	floxuridine	matched	False	False	18.8	18.6	8.4		61.78536585365853
 UCEC-SER	Teniposide	BRD-A35588707	teniposide	borrowed	False	False	22.5	19.6	12.0	1.0	58.6219512195122
 ESCA-AD	Digoxin	BRD-A94756469	digoxin	borrowed	False	False	15.9	36.1	15.8	1.0	58.775609756097566
-BRCA-LumB	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	21.3	19.3	42.9	1.0	64.51951219512196
+BRCA-LumB	Cyclosporine	BRD-A69815203	cyclosporin-a	matched	False	False	21.3	19.3	42.9	1.0	65.96585365853659
 TCGA-OV	Lapatinib	BRD-K19687926	lapatinib	matched	False	False	18.2	13.5	11.1	1.0	45.853658536585364
 TCGA-THCA	Lapatinib	BRD-K19687926	lapatinib	borrowed	False	False	18.4	11.8	14.4	1.0	45.853658536585364
 TCGA-UCS	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	3.8	16.2	18.7	0.75	9.065853658536586
@@ -6797,7 +6797,7 @@ TCGA-PRAD	Acitretin	BRD-K62012036	acitretin	matched	False	False	14.4	4.0	1.7	0.8
 TCGA-LUSC	Simeprevir	BRD-A68493689	simeprevir	borrowed	False	False	9.1	8.6	24.1		48.514634146341464
 TCGA-LIHC	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	18.9	18.8	16.7	1.0	53.94878048780488
 TCGA-LUAD	Hexachlorophene	BRD-K99792991	hexachlorophene	matched	False	False	7.7	4.8	39.0	1.0	46.03414634146341
-BRCA-LumA	Cyclosporine	BRD-A64290322	cyclosporin-a	matched	False	False	16.0	12.2	27.8	1.0	64.51951219512196
+BRCA-LumA	Cyclosporine	BRD-A64290322	cyclosporin-a	matched	False	False	16.0	12.2	27.8	1.0	65.96585365853659
 TCGA-UCS	Nintedanib	BRD-K49075727	nintedanib	borrowed	False	False	22.2	19.2	17.8	1.0	55.52439024390244
 BRCA-Her2	Chlorhexidine	BRD-K52256627	chlorhexidine	matched	False	False	15.1	6.2	16.4		9.1
 BRCA-Basal	Artesunate	BRD-A47829399	artesunate	matched	False	False	17.8	17.7	28.1		56.85853658536585
@@ -6861,7 +6861,7 @@ CESC-SCC	Ciclesonide	BRD-K35245662	ciclesonide	matched	False	False	15.4	8.0	15.3
 LGG-IDHwt	Niclosamide	BRD-K35960502	niclosamide	borrowed	False	False	18.5	19.8	28.1	1.0	44.05609756097561
 SARC-UPS	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	9.1	5.6	30.0	1.0	52.5609756097561
 PCPG-PGL	Ceritinib	BRD-K22149900	ceritinib	borrowed	False	False	5.8	22.0	17.2	0.6	4.341463414634147
-CESC-SCC	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	15.2	5.8	0.3	1.0	54.073170731707314
+CESC-SCC	Azacitidine	BRD-K03406345	azacitidine	matched	False	False	15.2	5.8	0.3	1.0	54.21463414634147
 TGCT-NSGCT	Olmesartan medoxomil	BRD-K78485176	olmesartan-medoxomil	borrowed	False	False	0.3	5.2	6.7	1.0	7.870833333333333
 TCGA-THCA	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	16.5	10.5	5.2	0.8333333333333334	9.065853658536586
 BRCA-Her2	Fostamatinib	BRD-K20285085	fostamatinib	matched	False	False	14.3	14.4	25.1	1.0	55.517073170731706
@@ -6998,7 +6998,7 @@ TCGA-PAAD	Ciclopirox	BRD-K13044802	ciclopirox	borrowed	False	False	14.7	9.4	16.4
 TCGA-BLCA	Mepivacaine	BRD-A03216249	mepivacaine	borrowed	False	False	0.4	8.7	24.5		23.536585365853657
 TCGA-LUAD	Ingenol mebutate	BRD-K93779381	ingenol-mebutate	borrowed	False	False	6.2	1.9	9.8	0.8	46.27804878048781
 TCGA-HNSC	Sumatriptan	BRD-K50938287	sumatriptan	borrowed	False	False	0.3	3.9	8.9	0.125	6.492000000000001
-ESCA-AD	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	10.8	5.9	0.2	1.0	54.073170731707314
+ESCA-AD	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	10.8	5.9	0.2	1.0	54.21463414634147
 TARGET-WT	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	20.4	15.2	31.9	0.75	60.582926829268295
 TCGA-LIHC	Meloxicam	BRD-A84174393	meloxicam	borrowed	False	False	0.5	12.1	5.8	0.5	31.67560975609756
 LGG-IDHmut-noncodel	Fedratinib	BRD-K12502280	TG-101348	borrowed	False	False	20.7	17.0	33.1	0.8333333333333334	60.15853658536585
@@ -7166,7 +7166,7 @@ TCGA-HNSC	Ciclopirox	BRD-K13044802	ciclopirox	borrowed	False	False	7.7	4.7	29.3	
 UCEC-SER	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	15.9	18.7	18.2	1.0	53.94878048780488
 CESC-SCC	Valrubicin	BRD-K72951360	valrubicin	matched	False	False	11.5	4.5	21.0	1.0	54.546341463414635
 UCEC-SER	Bosutinib	BRD-K99964838	bosutinib	borrowed	False	False	15.8	9.4	14.9	0.9473684210526315	51.517073170731706
-TARGET-NBL	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	18.3	8.9	39.0	1.0	66.54878048780488
+TARGET-NBL	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	18.3	8.9	39.0	1.0	66.76829268292683
 TCGA-PRAD	Bosutinib	BRD-K99964838	bosutinib	matched	False	False	8.5	0.4	2.8	0.9473684210526315	51.517073170731706
 TCGA-OV	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	True	4.7	7.4	10.2	0.9166666666666666	9.065853658536586
 LGG-IDHmut-codel	Digitoxin	BRD-A93236127	digitoxin	borrowed	False	False	17.4	8.0	8.1	1.0	51.72682926829269
@@ -7199,7 +7199,7 @@ BRCA-LumB	Niclosamide	BRD-K35960502	niclosamide	matched	False	False	12.9	7.3	8.4
 UCEC-EEC	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	15.5	7.9	28.0	0.9333333333333333	60.76341463414634
 CESC-AD	Dexamethasone	BRD-A93424738	dexamethasone-acetate	matched	False	False	15.6	7.8	6.6	1.0	61.40731707317073
 TCGA-SKCM	Lapatinib	BRD-K19687926	lapatinib	matched	False	False	13.1	11.6	20.0	1.0	45.853658536585364
-TGCT-SEM	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	6.6	1.5	0.2	1.0	54.073170731707314
+TGCT-SEM	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	6.6	1.5	0.2	1.0	54.21463414634147
 UCEC-EEC	Cladribine	BRD-K93034159	cladribine	borrowed	False	False	15.3	10.7	14.2	1.0	55.20243902439025
 PCPG-PHEO	Dacarbazine	BRD-K35520305	dacarbazine	borrowed	False	False	18.2	12.4	7.0	1.0	50.71951219512195
 UCEC-EEC	Dacarbazine	BRD-K35520305	dacarbazine	borrowed	False	False	15.0	10.5	5.6	1.0	50.71951219512195
@@ -7372,9 +7372,9 @@ CESC-SCC	Clobetasol	BRD-A26095496	clobetasol	matched	False	False	8.9	2.0	5.4	1.0
 LGG-IDHwt	Tretinoin	BRD-K71879491	tretinoin	borrowed	False	False	8.9	3.3	2.8	0.9285714285714286	57.98048780487805
 LGG-IDHmut-codel	Copanlisib	BRD-K24666289	copanlisib	borrowed	False	False	12.2	6.0	14.4	0.75	60.582926829268295
 TARGET-NBL	Ibrutinib	BRD-K70301465	ibrutinib	borrowed	False	False	13.6	9.7	28.1	1.0	53.2925
-PCPG-PGL	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	16.7	9.5	24.4	1.0	66.54878048780488
+PCPG-PGL	Temsirolimus	BRD-K08177763	BRD-K08177763	borrowed	False	False	16.7	9.5	24.4	1.0	66.76829268292683
 BRCA-Her2	Pioglitazone	BRD-A48430263	pioglitazone	matched	False	False	6.4	1.5	1.3	1.0	34.665853658536584
-TARGET-WT	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	11.5	3.4	1.1	1.0	54.073170731707314
+TARGET-WT	Azacitidine	BRD-K03406345	azacitidine	borrowed	False	False	11.5	3.4	1.1	1.0	54.21463414634147
 UCEC-EEC	Tamoxifen	BRD-K93754473	tamoxifen	borrowed	False	False	5.0	6.3	9.4	0.75	9.065853658536586
 TCGA-PAAD	Valdecoxib	BRD-K12994359	valdecoxib	matched	False	False	7.4	3.8	4.8	1.0	33.7425
 LGG-IDHmut-codel	Tretinoin	BRD-K71879491	tretinoin	borrowed	False	False	12.0	5.2	4.0	0.8571428571428571	57.98048780487805
@@ -7466,7 +7466,7 @@ TARGET-NBL	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	11.7	5.0	2
 CESC-AD	Epirubicin	BRD-K56844688	epirubicin	matched	False	False	11.2	5.1	4.7	1.0	63.58536585365854
 TCGA-BLCA	Pacritinib	BRD-K19034817	pacritinib	borrowed	False	False	6.6	2.9	25.6	0.75	53.46341463414634
 UCEC-SER	Axitinib	BRD-K29905972	axitinib	borrowed	False	False	11.2	3.1	10.2	1.0	51.50731707317074
-TCGA-GBM	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	5.2	3.2	4.7	1.0	54.073170731707314
+TCGA-GBM	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	5.2	3.2	4.7	1.0	54.21463414634147
 TCGA-LIHC	Auranofin	BRD-K45995181	auranofin	borrowed	False	False	8.8	3.7	4.3	0.6666666666666666	56.380487804878044
 PCPG-PGL	Deoxycholic acid	BRD-K41170226	BRD-K41170226	borrowed	False	False	14.1	10.5	13.1	0.5	52.5609756097561
 TCGA-PAAD	Trifluridine	BRD-A64485570	trifluridine	matched	False	False	6.1	3.4	4.0	1.0	60.90487804878049
@@ -7501,12 +7501,12 @@ CESC-AD	Bosutinib	BRD-K99964838	bosutinib	matched	False	False	9.5	3.1	4.0	0.9473
 TCGA-BLCA	Irinotecan	BRD-K08547377	irinotecan	borrowed	False	False	6.0	2.0	7.3	1.0	58.84390243902439
 TCGA-PAAD	Pralatrexate	BRD-A74914197	pralatrexate	matched	False	False	5.4	1.8	3.8	1.0	61.599999999999994
 PCPG-PHEO	Auranofin	BRD-K45995181	auranofin	borrowed	False	False	11.1	6.7	4.8	0.6666666666666666	56.380487804878044
-LGG-IDHwt	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	6.8	2.2	3.1	1.0	54.073170731707314
+LGG-IDHwt	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	6.8	2.2	3.1	1.0	54.21463414634147
 TCGA-SKCM	Deoxycholic acid	BRD-K41170226	BRD-K41170226	matched	False	False	7.4	1.3	1.2	1.0	52.5609756097561
 TCGA-ACC	Sonidegib	BRD-K19796430	sonidegib	borrowed	False	False	10.4	1.1	0.6	1.0	51.43170731707317
 TCGA-ACC	Romidepsin	BRD-K61397605	romidepsin	borrowed	False	False	10.3	4.5	1.6	1.0	56.12926829268293
 TCGA-UCS	Fludarabine	BRD-K72238567	fludarabine	borrowed	False	False	10.8	6.6	5.9	1.0	53.94878048780488
-LGG-IDHmut-codel	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	8.9	3.1	1.0	1.0	54.073170731707314
+LGG-IDHmut-codel	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	8.9	3.1	1.0	1.0	54.21463414634147
 TCGA-PAAD	Podofilox	BRD-K47869605	BRD-K47869605	matched	False	False	5.2	0.3	1.4	1.0	52.163414634146335
 PCPG-PHEO	Ponatinib	BRD-K44227013	ponatinib	borrowed	False	False	10.8	5.9	12.5	0.8	60.76341463414634
 UCEC-EEC	Dactinomycin	BRD-K70578146	dactinomycin	borrowed	False	True	10.1	5.9	9.6	1.0	58.300000000000004
@@ -7537,7 +7537,7 @@ TCGA-ACC	Pacritinib	BRD-K19034817	pacritinib	borrowed	False	False	9.3	2.5	6.4	0.
 CESC-AD	Sonidegib	BRD-K19796430	sonidegib	borrowed	False	False	8.5	3.9	2.4	1.0	51.43170731707317
 TCGA-UCS	Dactinomycin	BRD-K70578146	dactinomycin	borrowed	False	True	9.8	5.7	6.6	1.0	58.300000000000004
 TCGA-UCS	Daunorubicin	BRD-K43389675	daunorubicin	borrowed	False	False	9.7	5.4	4.5	1.0	61.99512195121952
-LGG-IDHmut-noncodel	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	7.9	2.4	1.0	1.0	54.073170731707314
+LGG-IDHmut-noncodel	Azacitidine	BRD-K55026842	azacitidine	borrowed	False	False	7.9	2.4	1.0	1.0	54.21463414634147
 PCPG-PGL	Sonidegib	BRD-K19796430	sonidegib	borrowed	False	False	0.3	0.6	0.1	1.0	51.43170731707317
 LGG-IDHmut-noncodel	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	7.7	2.4	19.1	1.0	58.65853658536585
 LGG-IDHmut-codel	Gedatolisib	BRD-K07955840	PF-05212384	borrowed	False	False	8.0	2.0	9.3	1.0	58.65853658536585

@@ -176,6 +176,9 @@ flowchart LR
   rev > 0, not target_absent / receptor_mismatch / local_route / D109 weak); 79p ranks eligible compounds and `fda_rows`
   (pages, literature, evaluations) picks the best eligible compound of each ingredient, else the best overall with its
   flags. Both now agree on every ranked row.
+- **inactive_matched_line per drug (D116, 2026-11-08):** a borrowed row is flagged when any compound of the drug (same
+  FDA ingredient, else cmap_name) has an is_hiq signature in a matched line and none is active there; the per-compound
+  value is `inactive_matched_line_own`. 79f3 STAGE=flags must be followed by 79f4 and STAGE=exposure.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

@@ -810,6 +810,9 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - D115 in production (11-08): one eligibility test (`fda_rows.eligible`) for the FDA lists and the pages; pages,
   literature and evaluations now use the same LINCS compound per drug as the FDA lists (110 rows had shown a
   borrowed or flagged sibling). FDA lists unchanged; known-use Hub 0.635, ChEMBL 0.554 (reported only).
+- D116 in production (11-08): 'inactive on matched cells' is judged over all compounds of a drug. 132 rows newly
+  flagged, 118 cleared (a sibling is active there). Osimertinib enters the LUAD top 10 (temsirolimus out); also PAAD,
+  PRAD, SKCM changes. 26 new trials read for the new pairs. Evaluations unchanged.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
