@@ -30,7 +30,7 @@ from evidence_flags import apply_evidence  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 FDA = ROOT / "data/raw/drugsatfda/extracted"
-from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2)
+from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name, eligible  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2; D115)
 
 
 def norm(s):
@@ -88,11 +88,8 @@ def main():
     summ = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
 
     def rank(df, unit, order, extra):
-        ok = df[df.passes_gate & ~df.unmatched_lines & ~df.low_transfer & (df.rev > 0) & (~df.get("target_absent", pd.Series(False, index=df.index)).astype(str).str.lower().eq("true")) & ~df.get("receptor_status", pd.Series("", index=df.index)).eq("receptor_mismatch")]   # D102c / D104c demotions excluded
-        ok = apply_route(ok, unit)
-        ok = ok[~ok.local_route]   # D107: no systemic formulation
-        ok = apply_evidence(ok, unit)
-        ok = ok[~ok.weak_d109]   # D109: dose_inconsistent / inactive_matched_line / low_exposure
+        ok = apply_evidence(apply_route(df, unit), unit)
+        ok = ok[eligible(ok, unit)]   # D115: shared test (D102c / D104c demotions, D107 local_route, D109 weak flags excluded)
         x = ok.merge(m.drop(columns=["cmap_name", "local_route"]), on="pert_id").join(keep_ann, on="pert_id")
         x = x.sort_values(order, ascending=False).drop_duplicates([unit, "fda_ingredient"])
         x["fda_rank"] = x.groupby(unit).cumcount() + 1

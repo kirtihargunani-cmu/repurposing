@@ -2,7 +2,8 @@
 
 Rows: drugs that pass the target gate (79b) and are matched to a Drugs@FDA ingredient (79p, fda_matches.tsv; marketed
 or discontinued). Several LINCS ids of one ingredient -> the best on the cohort's lead score (diseases: spec_mech, then
-spec, rev; subgroups: spec_sib_mech, then spec_mech, rev), as 79p does. Unlike 79p, flagged (incl. D107 local_route) and non-reversing drugs are
+spec, rev; subgroups: spec_sib_mech, then spec_mech, rev), among the compounds 79p would rank (eligible(); D115), else
+among all. Unlike 79p, flagged (incl. D107 local_route) and non-reversing drugs are
 kept (the page shows them, weak evidence hidden by default). `drug` = FDA ingredient with salt words removed (79p rule).
 """
 from pathlib import Path
@@ -41,6 +42,14 @@ def drug_name(ingredient):
     return " ".join(w.strip(",") for w in str(ingredient).split() if w.strip(",").upper() not in SALTS).strip(" ,").capitalize()   # D112: "GRISEOFULVIN, ULTRAMICROSIZE"
 
 
+def eligible(df, unit="group_id"):
+    """D115: the 79p eligibility test, one definition for 79p and fda_rows. Needs apply_route / apply_evidence columns."""
+    t = lambda c: df[c].map(truthy) if c in df else pd.Series(False, index=df.index)
+    rs = df["receptor_status"] if "receptor_status" in df else pd.Series("", index=df.index)
+    return (df.passes_gate.map(truthy) & ~t("unmatched_lines") & ~t("low_transfer") & (df.rev > 0) & ~t("target_absent")
+            & ~rs.eq("receptor_mismatch") & ~t("local_route") & ~t("weak_d109"))   # D102c / D104c / D107 / D109
+
+
 def fda_rows():
     """(diseases, subgroups) DataFrames from the split tables, FDA drugs only, one row per cohort x ingredient;
     subgroups have group_id = stratum and parent_group."""
@@ -52,6 +61,9 @@ def fda_rows():
         df = df[df.passes_gate.map(truthy) & df.pert_id.isin(fm.index)].copy()
         df["fda_ingredient"] = df.pert_id.map(fm)
         df["drug"] = df.fda_ingredient.map(drug_name)
-        df = df.sort_values(order, ascending=False).drop_duplicates(["group_id", "fda_ingredient"])
-        out.append(apply_evidence(apply_route(df)))   # D107 / D109 flags (kept, shown on the pages)
+        df = apply_evidence(apply_route(df))   # D107 / D109 flags (kept, shown on the pages)
+        df["eligible"] = eligible(df)
+        # D115: best eligible compound of the ingredient (= the one 79p ranks); else the best compound overall, with its flags
+        df = df.sort_values(["eligible"] + order, ascending=False).drop_duplicates(["group_id", "fda_ingredient"])
+        out.append(df)
     return out[0], out[1]

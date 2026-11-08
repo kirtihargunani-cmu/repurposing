@@ -73,6 +73,10 @@ follow-up questions:
    griseofulvin and pentamidine. For all five, the lab doses that worked are within reach of patients' blood
    levels, so none is marked. Thioguanine and clomiphene have no blood level in their FDA documents and stay
    unchecked.)
+   (Fix D115, 2026-11-08: some drugs were tested as more than one lab sample. The FDA list used the best sample
+   that passed all checks, but the web pages sometimes showed a different sample of the same drug that had failed
+   one, so a drug could look weaker on the page than in the list. Both now use the same sample; the lists did
+   not change.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

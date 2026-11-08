@@ -11,8 +11,8 @@
   }
  },
  "chembl": {
-  "compounds": 1203,
-  "with_chembl": 1047,
+  "compounds": 1201,
+  "with_chembl": 1045,
   "molecules": 1038,
   "mechanisms": 637,
   "activities": 122635,
@@ -23,18 +23,18 @@
  "validation": [
   {
    "set": "accepted stand-ins",
-   "n": 307,
+   "n": 309,
    "spearman": 0.633,
-   "ci_lo": 0.548,
-   "ci_hi": 0.711,
+   "ci_lo": 0.546,
+   "ci_hi": 0.707,
    "mae_pct": 18.2
   },
   {
    "set": "random shared-target pairs (median of 200)",
    "n": 587,
-   "spearman": 0.483,
-   "ci_lo": 0.436,
-   "ci_hi": 0.529,
+   "spearman": 0.484,
+   "ci_lo": 0.444,
+   "ci_hi": 0.539,
    "mae_pct": NaN
   },
   {
@@ -47,7 +47,7 @@
   },
   {
    "set": "shared lines >= 3",
-   "n": 255,
+   "n": 257,
    "spearman": 0.602,
    "ci_lo": NaN,
    "ci_hi": NaN,
@@ -63,8 +63,8 @@
   },
   {
    "set": "similarity >= 0.6",
-   "n": 194,
-   "spearman": 0.691,
+   "n": 196,
+   "spearman": 0.692,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 15.4
@@ -73,16 +73,16 @@
    "set": "subgroup: accepted stand-ins",
    "n": 68,
    "spearman": 0.831,
-   "ci_lo": 0.716,
-   "ci_hi": 0.904,
+   "ci_lo": 0.723,
+   "ci_hi": 0.908,
    "mae_pct": 14.4
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
    "n": 125,
-   "spearman": 0.434,
-   "ci_lo": 0.324,
-   "ci_hi": 0.55,
+   "spearman": 0.441,
+   "ci_lo": 0.327,
+   "ci_hi": 0.558,
    "mae_pct": NaN
   },
   {
@@ -118,14 +118,14 @@
    "mae_pct": 10.9
   }
  ],
- "pairs": 2693,
- "fda_rows_needing": 8596,
- "fda_rows_with_standin": 269,
+ "pairs": 2691,
+ "fda_rows_needing": 8590,
+ "fda_rows_with_standin": 268,
  "fda_rows_with_standin_by_level": {
   "disease": 231,
-  "subgroup": 38
+  "subgroup": 37
  },
  "cohorts_with_standins": 20,
- "matched_compounds_with_close_fda": 1091,
+ "matched_compounds_with_close_fda": 1087,
  "seconds": 22
 }
