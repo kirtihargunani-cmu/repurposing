@@ -1,23 +1,29 @@
 {
+ "rule": "D118",
  "rows": 7570,
  "drugs": 391,
  "cohorts": 41,
- "chembl_indication_records": 8268,
+ "eligible_rows": 2404,
+ "anticancer_drugs": 112,
  "sources": {
   "hub": {
-   "labelled_rows": 152,
+   "labelled_rows": 131,
    "labelled_drugs": 51,
-   "cohorts_with_labels": 31
+   "cohorts_with_labels": 28,
+   "subtype_removed_rows": 21
   },
   "chembl": {
-   "labelled_rows": 398,
-   "labelled_drugs": 89,
-   "cohorts_with_labels": 40
+   "labelled_rows": 468,
+   "labelled_drugs": 97,
+   "cohorts_with_labels": 41,
+   "subtype_removed_rows": 30
   }
  },
  "min_lab": 3,
  "min_unlab": 20,
  "n_perm": 1000,
  "n_boot": 1000,
- "seed": 0
+ "seed": 0,
+ "chembl_indication_records": 10349,
+ "chembl_ids_newly_fetched": 25
 }

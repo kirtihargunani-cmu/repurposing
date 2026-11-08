@@ -154,11 +154,11 @@ def main():
     # D3 known-use labelled drugs vs unlabelled (C28 labels)
     lab = RES / "known_use/labels.tsv"
     if lab.exists():
-        L = pd.read_csv(lab, sep="\t")[["cohort", "pert_id", "lab_hub", "lab_chembl"]]
-        M = D.merge(L, left_on=["group_id", "pert_id"], right_on=["cohort", "pert_id"], how="left")
+        L = pd.read_csv(lab, sep="\t")[["cohort", "fda_ingredient", "lab_hub", "lab_chembl", "excl_hub", "excl_chembl"]]   # D118: drug level
+        M = D.merge(L, left_on=["group_id", "fda_ingredient"], right_on=["cohort", "fda_ingredient"], how="left")
         for src in ("hub", "chembl"):
             diffs, nulls = [], []
-            for coh, d in M.dropna(subset=["dep_max"]).groupby("group_id"):
+            for coh, d in M[~M[f"excl_{src}"].fillna(False).astype(bool)].dropna(subset=["dep_max"]).groupby("group_id"):
                 k = d[f"lab_{src}"].fillna(False).astype(bool)
                 if k.sum() < 3 or (~k).sum() < MIN_DRUGS:
                     continue

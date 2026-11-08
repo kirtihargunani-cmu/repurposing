@@ -3,6 +3,14 @@
 # (case-insensitive regex, matched against the Repurposing Hub `indication` field and ChEMBL drug_indication
 # mesh_heading / efo_term). Subgroups inherit their parent disease's labels.
 # Labels come from the sources only; nothing here is derived from our scores.
+# D118 (2026-11-08): each indication term is matched on its own (Hub pipe entries; ChEMBL mesh_heading and efo_term
+# separately) and must also match cancer_term; labels are per drug (all LINCS compounds of an FDA ingredient); the subtype
+# table restricts some drug classes to some subtypes (rows in the other siblings are left out of the tests).
+cancer_term: "cancer|carcinoma|neoplas|tumou?r|malignan|metasta|sarcoma|melanoma|glioma|blastoma|astrocytoma|seminoma|germ cell|paraganglioma|pheochromocytoma|phaeochromocytoma|mesothelioma|nsclc|hnscc"
+subtype:
+  - {name: endocrine, main_targets: [ESR1, ESR2, CYP19A1], siblings: [BRCA-Basal, BRCA-Her2, BRCA-LumA, BRCA-LumB], allowed: [BRCA-LumA, BRCA-LumB]}
+  - {name: her2, main_targets: [ERBB2], siblings: [BRCA-Basal, BRCA-Her2, BRCA-LumA, BRCA-LumB], allowed: [BRCA-Her2]}
+  - {name: lung_driver, main_targets: [EGFR, ALK, ROS1, RET, MET], drugs: [Pemetrexed], siblings: [TCGA-LUAD, TCGA-LUSC], allowed: [TCGA-LUAD]}
 sources:
   hub:      # data/raw/repurposing_hub/repurposing_drugs_20200324.txt (2020-03-24 snapshot)
     phases: [Launched]          # marketed drugs only; the indication field is filled for these
@@ -17,20 +25,20 @@ cohorts:
   CESC-SCC:            {include: "cervi(x|cal)"}
   ESCA-AD:             {include: "[oe]sophag"}
   ESCA-SCC:            {include: "[oe]sophag"}
-  LGG-IDHmut-codel:    {include: "glioma|astrocytoma|oligodendroglioma", exclude: "glioblastoma"}
-  LGG-IDHmut-noncodel: {include: "glioma|astrocytoma|oligodendroglioma", exclude: "glioblastoma"}
-  LGG-IDHwt:           {include: "glioma|astrocytoma|oligodendroglioma", exclude: "glioblastoma"}
+  LGG-IDHmut-codel:    {include: "\\bglioma|astrocytoma|oligodendroglioma", exclude: "glioblastoma|subependymal"}
+  LGG-IDHmut-noncodel: {include: "\\bglioma|astrocytoma|oligodendroglioma", exclude: "glioblastoma|subependymal"}
+  LGG-IDHwt:           {include: "\\bglioma|astrocytoma|oligodendroglioma", exclude: "glioblastoma|subependymal"}
   PCPG-PGL:            {include: "paraganglioma|pheochromocytoma|phaeochromocytoma"}
   PCPG-PHEO:           {include: "paraganglioma|pheochromocytoma|phaeochromocytoma"}
-  SARC-DDLPS:          {include: "sarcoma", exclude: "osteosarcoma|ewing|kaposi|rhabdomyosarcoma|carcinosarcoma"}
-  SARC-LMS:            {include: "sarcoma", exclude: "osteosarcoma|ewing|kaposi|rhabdomyosarcoma|carcinosarcoma"}
-  SARC-UPS:            {include: "sarcoma", exclude: "osteosarcoma|ewing|kaposi|rhabdomyosarcoma|carcinosarcoma"}
+  SARC-DDLPS:          {include: "sarcoma", exclude: "osteosarcoma|ewing|kaposi|rhabdomyosarcoma|carcinosarcoma|myeloid sarcoma|granulocytic"}
+  SARC-LMS:            {include: "sarcoma", exclude: "osteosarcoma|ewing|kaposi|rhabdomyosarcoma|carcinosarcoma|myeloid sarcoma|granulocytic"}
+  SARC-UPS:            {include: "sarcoma", exclude: "osteosarcoma|ewing|kaposi|rhabdomyosarcoma|carcinosarcoma|myeloid sarcoma|granulocytic"}
   TARGET-NBL:          {include: "neuroblastoma"}
   TARGET-WT:           {include: "wilm|nephroblastoma"}
   TCGA-ACC:            {include: "adrenocortical|adrenal cortex|adrenal cortical"}
-  TCGA-BLCA:           {include: "bladder|urotheli"}
+  TCGA-BLCA:           {include: "(?<!gall)bladder|urotheli"}
   TCGA-COAD:           {include: "colorectal|colon (cancer|carcinoma|neoplasm)|colonic neoplasm"}
-  TCGA-GBM:            {include: "glioblastoma|glioma"}
+  TCGA-GBM:            {include: "glioblastoma|\\bglioma"}
   TCGA-HNSC:           {include: "head and neck|hnscc|oral cavity|laryn|oropharyn|hypopharyn|tongue|nasopharyn"}
   TCGA-KICH:           {include: "renal cell|kidney (cancer|carcinoma|neoplasm)|renal (cancer|carcinoma)"}
   TCGA-KIRC:           {include: "renal cell|kidney (cancer|carcinoma|neoplasm)|renal (cancer|carcinoma)"}
@@ -44,9 +52,9 @@ cohorts:
   TCGA-READ:           {include: "colorectal|rectal|rectum|colon (cancer|carcinoma|neoplasm)"}
   TCGA-SKCM:           {include: "melanoma", exclude: "uveal"}
   TCGA-STAD:           {include: "gastric|stomach|gastro.?[oe]sophageal"}
-  TCGA-THCA:           {include: "thyroid", exclude: "hypothyroid|hyperthyroid|thyroiditis"}
-  TCGA-UCS:            {include: "uter(us|ine)|endometri|carcinosarcoma"}
+  TCGA-THCA:           {include: "(?<!para)thyroid", exclude: "hypothyroid|hyperthyroid|thyroiditis"}
+  TCGA-UCS:            {include: "uter(us|ine)|endometri|carcinosarcoma", exclude: "cervi"}
   TGCT-NSGCT:          {include: "testicular|testis|germ cell"}
   TGCT-SEM:            {include: "testicular|testis|germ cell|seminoma"}
-  UCEC-EEC:            {include: "uter(us|ine)|endometri"}
-  UCEC-SER:            {include: "uter(us|ine)|endometri"}
+  UCEC-EEC:            {include: "uter(us|ine)|endometri", exclude: "cervi"}
+  UCEC-SER:            {include: "uter(us|ine)|endometri", exclude: "cervi"}
