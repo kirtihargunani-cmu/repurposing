@@ -1,0 +1,45 @@
+cmap_name	fda_name	ann_ids	resolved	via	mode	note	applied
+BRD-K08177763	TEMSIROLIMUS		CHEMBL1201182:TEMSIROLIMUS	pref_name	replace		True
+MLN-9708	IXAZOMIB	CHEMBL1813256:-	CHEMBL2141296:IXAZOMIB	pref_name	replace		True
+aprepitant	APREPITANT	CHEMBL4303169:-	CHEMBL1471:APREPITANT	pref_name	add		True
+beclomethasone-dipropionate	BECLOMETHASONE	CHEMBL1319520:-	CHEMBL1586:BECLOMETHASONE	pref_name	replace	no mechanism record for the resolved parent (amendment): unchanged	False
+benazepril	BENAZEPRIL	CHEMBL1604571:-	CHEMBL838:BENAZEPRIL	pref_name	add		True
+cantharidin	CANTHARIDIN	CHEMBL48449:CANTHARIDIN	CHEMBL48449:CANTHARIDIN	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+carbidopa	CARBIDOPA	CHEMBL1179357:-	CHEMBL1201236:CARBIDOPA ANHYDROUS	pref_name	add		True
+clobetasol	CLOBETASOL	CHEMBL1603582:-	CHEMBL1201362:CLOBETASOL	pref_name	replace	no mechanism record for the resolved parent (amendment): unchanged	False
+cyclosporin-a	CYCLOSPORINE	CHEMBL406352:-	CHEMBL160:CYCLOSPORINE	pref_name	add		True
+desoxycortone	DESOXYCORTICOSTERONE	CHEMBL1498:DESOXYCORTICOSTERONE	CHEMBL1498:DESOXYCORTICOSTERONE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+dorzolamide	DORZOLAMIDE	CHEMBL276679:-	CHEMBL218490:DORZOLAMIDE	pref_name	add		True
+edoxaban	EDOXABAN	CHEMBL4303203:-	CHEMBL1269025:EDOXABAN	pref_name	add		True
+eltrombopag	ELTROMBOPAG	CHEMBL478463:-	CHEMBL461101:ELTROMBOPAG	pref_name	add		True
+estramustine	ESTRAMUSTINE	CHEMBL1575:ESTRAMUSTINE	CHEMBL1575:ESTRAMUSTINE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+fludarabine	FLUDARABINE	CHEMBL290077:-;CHEMBL1568:FLUDARABINE	CHEMBL1568:FLUDARABINE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+fludrocortisone-acetate	FLUDROCORTISONE	CHEMBL3039360:-	CHEMBL1201388:FLUDROCORTISONE	pref_name	replace	no mechanism record for the resolved parent (amendment): unchanged	False
+flumetasone	FLUMETHASONE	CHEMBL1201392:FLUMETHASONE	CHEMBL1201392:FLUMETHASONE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+fluocinolone-acetonide	FLUOCINOLONE ACETONIDE	CHEMBL3039305:-;CHEMBL5486311:-	CHEMBL989:FLUOCINOLONE ACETONIDE	pref_name	add		True
+fluticasone	FLUTICASONE	CHEMBL1201396:FLUTICASONE	CHEMBL1201396:FLUTICASONE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+fluvastatin	FLUVASTATIN	CHEMBL1078:-	CHEMBL2220442:FLUVASTATIN	pref_name	add		True
+formoterol	FORMOTEROL	CHEMBL1433762:-	CHEMBL1256786:FORMOTEROL	pref_name	add		True
+hydrocortisone	HYDROCORTISONE	CHEMBL74042:-	CHEMBL389621:HYDROCORTISONE	pref_name	add		True
+hydrocortisone-acetate	HYDROCORTISONE	CHEMBL306147:-	CHEMBL389621:HYDROCORTISONE	pref_name	replace		True
+iopanoic-acid	IOPANOIC ACID	CHEMBL867:IOPANOIC ACID	CHEMBL867:IOPANOIC ACID	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+ivermectin	IVERMECTIN	CHEMBL1699565:-	CHEMBL6067487:IVERMECTIN	pref_name	replace		True
+ketoconazole	KETOCONAZOLE	CHEMBL102043:-	CHEMBL157101:KETOCONAZOLE	pref_name	add		True
+masoprocol	MASOPROCOL	CHEMBL52:NORDIHYDROGUAIARETIC ACID	CHEMBL313972:MASOPROCOL	pref_name	add		True
+medrysone	MEDRYSONE	CHEMBL3039316:-	CHEMBL1201173:MEDRYSONE	pref_name	add		True
+meloxicam	MELOXICAM	CHEMBL1698351:-	CHEMBL599:MELOXICAM	pref_name	replace		True
+menadione	MENADIONE	CHEMBL590:MENADIONE	CHEMBL590:MENADIONE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+methylprednisolone	METHYLPREDNISOLONE	CHEMBL3039450:-	CHEMBL650:METHYLPREDNISOLONE	pref_name	add		True
+naltrexone	NALTREXONE	CHEMBL36504:-	CHEMBL19019:NALTREXONE	pref_name	add		True
+nandrolone	NANDROLONE	CHEMBL757:NANDROLONE	CHEMBL757:NANDROLONE	pref_name	add	no mechanism record for the resolved parent (amendment): unchanged	False
+nizatidine	NIZATIDINE	CHEMBL2358532:-	CHEMBL3183075:NIZATIDINE	pref_name	add		True
+norgestrel	NORGESTREL	CHEMBL4571597:-	CHEMBL2107797:NORGESTREL	pref_name	add		True
+prednisolone	PREDNISOLONE	CHEMBL416516:-	CHEMBL131:PREDNISOLONE	pref_name	add		True
+prednisone	PREDNISONE	CHEMBL3039452:-	CHEMBL635:PREDNISONE	pref_name	add		True
+progesterone	PROGESTERONE	CHEMBL36400:-	CHEMBL103:PROGESTERONE	pref_name	add		True
+rivaroxaban	RIVAROXABAN	CHEMBL3183768:-	CHEMBL198362:RIVAROXABAN	pref_name	add		True
+thiothixene	THIOTHIXENE	CHEMBL1336727:-	CHEMBL1201:THIOTHIXENE	pref_name	add		True
+timolol	TIMOLOL	CHEMBL1744069:-	CHEMBL499:TIMOLOL	pref_name	add		True
+tioguanine	THIOGUANINE	CHEMBL283078:THIOGUANOSINE	CHEMBL727:THIOGUANINE	pref_name	replace		True
+vincristine	VINCRISTINE	CHEMBL499458:-	CHEMBL90555:VINCRISTINE	pref_name	add		True
+vinorelbine	VINORELBINE	CHEMBL508875:-	CHEMBL553025:VINORELBINE	pref_name	add		True

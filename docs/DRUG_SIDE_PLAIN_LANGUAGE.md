@@ -253,6 +253,10 @@ measure.
   are not checked against human proteins. This gave the biggest improvement so far in finding drugs already used for
   each cancer (0.623 -> 0.660). A separate page now shows only drugs whose main target is actually made by the
   cancer's tumors.
+  (Fix D113, 2026-11-08: 32 FDA drugs, among them vincristine, prednisone and thioguanine, had been linked to a
+  duplicate or wrong ChEMBL record that has no curated mechanism, so they were judged on their listed targets
+  instead. They are now looked up by their FDA name; 325 of 422 FDA drugs now use the curated mechanism. The
+  top-10 lists did not change; meloxicam, whose curated target is COX-2 only, now drops where tumors lack COX-2.)
 - **Some drug classes still show up everywhere.** Anthracyclines (doxorubicin, daunorubicin, epirubicin) and
   topotecan top the FDA lists of many cancers. Odd hits such as metronidazole, pentobarbital and cardiac glycosides
   need checking.

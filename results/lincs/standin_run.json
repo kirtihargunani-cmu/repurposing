@@ -1,5 +1,5 @@
 {
- "date": "2026-11-07",
+ "date": "2026-11-08",
  "config": {
   "min_shared_lines": 2,
   "min_similarity": 0.4,
@@ -56,10 +56,10 @@
   {
    "set": "similarity 0.4-0.6",
    "n": 113,
-   "spearman": 0.531,
+   "spearman": 0.529,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 23.0
+   "mae_pct": 22.9
   },
   {
    "set": "similarity >= 0.6",
@@ -127,5 +127,5 @@
  },
  "cohorts_with_standins": 20,
  "matched_compounds_with_close_fda": 1091,
- "seconds": 21
+ "seconds": 22
 }

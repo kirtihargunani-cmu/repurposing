@@ -163,6 +163,12 @@ flowchart LR
   binds (`config/drug_gate.yaml` `chimeric_kinase`: Bcr/Abl -> ABL1, EML4-ALK and NPM/ALK -> ALK; an unmapped one stops
   the run). Before, the fusion partners (EML4, NPM1, made everywhere) kept ALK inhibitors 'present' in every cohort.
   Target-absent rows 2,184 (groups), 687 (subgroups); receptor_mismatch 395 / 127. Known-use Hub 0.631 (was 0.660).
+- **ChEMBL ids of FDA drugs (D113, 2026-11-08):** an FDA drug none of whose ChEMBL ids has a mechanism record gets its
+  id from the FDA ingredient name (salt words removed; exact preferred name, else synonym; parent compound). Same InChIKey
+  skeleton as the annotated entry -> added, else replaces; kept only if the resolved parent has a mechanism record
+  (`scripts/d113/d113_resolve.py` -> `d105_all/d113_ids.json`, applied by `79w.chembl`; table
+  `results/lincs/d113_chembl_ids.tsv`). 32 drugs; curated-mechanism FDA drugs 295 -> 325 of 422. Target-absent rows
+  2,204 / 694; receptor_mismatch 393 / 127; no top-10 change.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

@@ -3,7 +3,7 @@ accepted stand-ins	307	0.633	0.548	0.711	18.2
 random shared-target pairs (median of 200)	587	0.483	0.436	0.529	
 shared lines = 2	52	0.739			17.6
 shared lines >= 3	255	0.602			18.3
-similarity 0.4-0.6	113	0.531			23.0
+similarity 0.4-0.6	113	0.529			22.9
 similarity >= 0.6	194	0.691			15.4
 subgroup: accepted stand-ins	68	0.831	0.716	0.904	14.4
 subgroup: random shared-target pairs (median of 200)	125	0.434	0.324	0.55	
