@@ -813,6 +813,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - D116 in production (11-08): 'inactive on matched cells' is judged over all compounds of a drug. 132 rows newly
   flagged, 118 cleared (a sibling is active there). Osimertinib enters the LUAD top 10 (temsirolimus out); also PAAD,
   PRAD, SKCM changes. 26 new trials read for the new pairs. Evaluations unchanged.
+- D117 in production (11-08): the runbook now runs every gate and flag step in a fixed order (fda_matches ->
+  target_presence -> receptor_lines -> evidence_flags -> plate_confined -> exposure -> tiers); a rerun of the chain
+  reproduces the FDA lists byte for byte. A flags-only rerun now stops instead of dropping flags. Tiers and evidence
+  status are recomputed after all gates (evidence status unchanged everywhere). Fixed a hash-seed dependence in the
+  79i2 carrier count.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

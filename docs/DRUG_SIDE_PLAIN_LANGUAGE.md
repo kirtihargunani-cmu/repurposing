@@ -80,6 +80,9 @@ follow-up questions:
    (Fix D116, 2026-11-08: a drug borrowed from other cancers is now marked weak when any lab sample of it was tested
    on this cancer's own cells and did nothing, not only the same sample. In lung adenocarcinoma this moves
    temsirolimus out of the top 10 and osimertinib, a standard EGFR lung cancer drug, in.)
+   (Housekeeping D117, 2026-11-08: every step that applies a check now runs from one script in a fixed order, and
+   rerunning it gives exactly the same lists. One display count, how many tumors carry a missing target, could
+   come out differently from run to run; that is fixed. The lists did not change.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

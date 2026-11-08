@@ -179,6 +179,13 @@ flowchart LR
 - **inactive_matched_line per drug (D116, 2026-11-08):** a borrowed row is flagged when any compound of the drug (same
   FDA ingredient, else cmap_name) has an is_hiq signature in a matched line and none is active there; the per-compound
   value is `inactive_matched_line_own`. 79f3 STAGE=flags must be followed by 79f4 and STAGE=exposure.
+- **Runbook order and final tiers (D117, 2026-11-08):** `run_v2_drug.sh` steps after `split` / `receptor_gate`:
+  `fda_matches`, `target_presence` (79i2 x 3 timing variants), `receptor_lines` (79i3 x 3), `timing_decision`,
+  `evidence_flags`, `plate_confined`, `fda_docs`, `exposure`, `tiers` (79i4), `data_gaps`, literature, `fda_ranking`,
+  `trials_fetch`, `trials_merge`, stand-ins, pages, evaluations. Cmax and trial readings remain manual subagent passes
+  between `fda_docs` / `exposure` and `trials_fetch` / `trials_merge`. 79i4 recomputes tier_mech / tier_spec_mech /
+  tier_spec_sib_mech from the final percentiles and every flag, and evidence_status / evidence_note from the lead-score
+  tier (79e values kept as *_79e). `apply_evidence` stops if plate_confined / low_exposure are missing.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

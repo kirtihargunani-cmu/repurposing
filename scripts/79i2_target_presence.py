@@ -284,7 +284,8 @@ def apply(f, unit, P, E, pct_cols):
         pm = pres_fda if d in FDA_NAMES else pres
         absent.append(not any(pm.get((g, t), True) for t in e))
         evs.append(";".join(f"{t}:{med.get((g, t), np.nan):.2f}/{R.get((g, t), np.nan):.1f}" for t in sorted(e)))
-        best = max(e, key=lambda t: nc.get((g, t), -1))
+        cnt = lambda t: nc.get((g, t), -1) if nc.get((g, t), -1) == nc.get((g, t), -1) else -1   # NaN -> -1
+        best = max(sorted(e), key=cnt)   # D117: deterministic (a set with NaN keys depended on the hash seed)
         n = nc.get((g, best), np.nan)
         ncar.append(n); share.append(n / nt[(g, best)] if n == n and nt.get((g, best)) else np.nan)
     df["target_absent"], df["evidence_targets"] = absent, evs
