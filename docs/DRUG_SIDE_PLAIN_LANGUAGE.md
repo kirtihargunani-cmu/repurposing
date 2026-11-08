@@ -86,6 +86,15 @@ follow-up questions:
    (Fixes D119, 2026-11-08: seven small scoring and bookkeeping errors from the audit were corrected. The scores
    barely moved, eight top-10 lists swapped one drug, and the checks against known uses and against measured cell
    killing came out the same as before: the fixes made the numbers correct, not better.)
+   (New score D120, 2026-11-08, shown beside the list, not used to rank: instead of asking whether the drug's
+   whole effect on the cell undoes the cancer's pattern, it asks whether the drug's own target matters in this
+   cancer, in three ways that are shown separately: do this cancer's cells need it, is it mutated or amplified in
+   the patients' tumors, and is it turned up compared with normal tissue. This simpler question does pick out each
+   cancer's approved drugs (about 62-67 times in 100 against 50 by chance, where the main list is at about 47-49),
+   and the breast cancer checks come out right: anti-estrogens rank high in hormone-driven breast cancer and low in
+   basal. Limits: about half of it comes from some drugs scoring well in every cancer; drugs with many targets get
+   an unfair boost; it misses chemotherapy aimed at things every cell needs; and much of its top 10 rests on
+   mutations that only a minority of patients carry.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

@@ -198,6 +198,15 @@ flowchart LR
   literature_fda_all_v2.tsv; 79k reads the v2 tables (`sensitivity_validation_v2/`, null); 79o2 drops negated cause
   clauses before the efficacy / safety stop rules. 79o caches every PubMed / trial / title answer
   (`data/interim/lincs/literature_query_*.jsonl`; `LIT_REFRESH=1` to refetch).
+- **Target-role score (`target_role`, 79t; D120, 2026-11-08; reported only, never ranks, gates or tiers):** per group x
+  gene, three within-group percentiles: D = 79n dependency (weighted mean -z Chronos over in-key lines), A = share of
+  TCGA tumors with an MC3 PASS missense / in-frame indel at a recurrent position (>= 3 tumors pan-cancer) or GISTIC +2
+  (< 5% -> 0), minus its median over groups, O = mean NES (ARACNe TF v2, CollecTRI v2) for regulators, else logFC vs
+  GTEx (adjacent if skipped). ChEMBL action raising activity -> D, O = 100 - pct, A unscored; unknown -> lowering,
+  flagged. T = mean of available parts; drug row = best main target (D105b); drug level = mean over gate-passing
+  compounds. Known use (anticancer, gate-passing): Hub 0.674, ChEMBL 0.617 vs spec 0.489 / 0.474. Caveats: half the
+  signal is drug-level, best-of-N inflation with many targets, common-essential targets not recovered, minority
+  alterations conflict with the typical-tumor rule, tumor fusions missing.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,
