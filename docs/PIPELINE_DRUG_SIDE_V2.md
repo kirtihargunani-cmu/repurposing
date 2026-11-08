@@ -172,6 +172,10 @@ flowchart LR
 - **Cmax for drugs matched later (D114, 2026-11-08):** the D109 / D109b reading process is rerun for FDA drugs without a
   Cmax answer (label queue via 79f3 `label_queue`, then 79f5 documents for unread (drug, url) pairs only); 79f5 keeps
   earlier queue entries. 152 FDA drugs with a verified Cmax; low_exposure 721 rows (unchanged).
+- **One compound per FDA drug (D115, 2026-11-08):** `fda_rows.eligible()` is the 79p test (gate, matched lines, transfer,
+  rev > 0, not target_absent / receptor_mismatch / local_route / D109 weak); 79p ranks eligible compounds and `fda_rows`
+  (pages, literature, evaluations) picks the best eligible compound of each ingredient, else the best overall with its
+  flags. Both now agree on every ranked row.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

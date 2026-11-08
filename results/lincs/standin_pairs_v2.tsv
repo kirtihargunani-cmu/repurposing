@@ -431,7 +431,7 @@ disease	BRCA-LumB		BRD-K62310379	Fluticasone	direct	True	False	41.5	65.5	69.5		T
 disease	BRCA-LumB		BRD-K20285085	Fostamatinib	direct	False	False	82.0	70.2	68.6		False	BRD-K47598052	PP-1	False	0.6297	61.2	27.8	28.4		0.404	3	RET	1	1
 disease	BRCA-LumB		BRD-K20285085	Fostamatinib	direct	False	False	82.0	70.2	68.6		False	BRD-K51544265	cabozantinib	True	0.6297	91.7	82.5	80.2		0.402	6	RET	2	3
 disease	BRCA-LumB		BRD-A85667082	Fulvestrant	direct	False	False	71.7	42.7	44.3		False	BRD-K93754473	tamoxifen	True	0.6297	61.4	26.4	25.5		0.415	2	ESR1|ESR2	1	1
-disease	BRCA-LumB		BRD-A85667082	Fulvestrant	direct	False	False	71.7	42.7	44.3		False	BRD-K63828191	raloxifene	True	0.6297	60.6	30.3	30.2		0.409	2	ESR1|ESR2	2	3
+disease	BRCA-LumB		BRD-A85667082	Fulvestrant	direct	False	False	71.7	42.7	44.3		False	BRD-K63828191	raloxifene	True	0.6297	60.6	30.3	30.2		0.409	2	ESR1|ESR2	2	2
 disease	BRCA-LumB		BRD-K07955840	Gedatolisib	borrowed	False	False	74.4	48.8	47.0		True	BRD-K12184916	NVP-BEZ235	False	0.6297	91.9	75.3	71.8		0.731	7	MTOR|PIK3CA	1	1
 disease	BRCA-LumB		BRD-K07955840	Gedatolisib	borrowed	False	False	74.4	48.8	47.0		True	BRD-K52911425	GDC-0941	False	0.6297	67.9	40.0	39.9		0.605	4	PIK3CA	2	3
 disease	BRCA-LumB		BRD-K07955840	Gedatolisib	borrowed	False	False	74.4	48.8	47.0		True	BRD-K44844162	taselisib	False	0.6297	86.4	56.0	50.8		0.421	7	PIK3CA	3	3
@@ -506,7 +506,7 @@ disease	BRCA-LumB		BRD-K88429204	Pyrimethamine	borrowed	False	False	84.0	80.9	81
 disease	BRCA-LumB		BRD-K93918653	Quizartinib	direct	False	False	32.4	54.2	60.6		False	BRD-K81528515	nilotinib	True	0.6297	43.3	75.5	79.6		0.589	4	KIT	1	1
 disease	BRCA-LumB		BRD-K63828191	Raloxifene	direct	False	False	60.6	30.3	30.2		False	BRD-K90195324	bazedoxifene	True	0.6297	68.4	43.7	45.7		0.632	2	ESR1|ESR2	1	1
 disease	BRCA-LumB		BRD-K63828191	Raloxifene	direct	False	False	60.6	30.3	30.2		False	BRD-K04210847	tamoxifen	True	0.6297	84.5	59.0	59.5		0.546	2	ESR1|ESR2	2	2
-disease	BRCA-LumB		BRD-K63828191	Raloxifene	direct	False	False	60.6	30.3	30.2		False	BRD-A85667082	fulvestrant	True	0.6297	71.7	42.7	44.3		0.409	2	ESR1|ESR2	3	1
+disease	BRCA-LumB		BRD-K63828191	Raloxifene	direct	False	False	60.6	30.3	30.2		False	BRD-A85667082	fulvestrant	True	0.6297	71.7	42.7	44.3		0.409	2	ESR1|ESR2	3	2
 disease	BRCA-LumB		BRD-K16730910	Regorafenib	direct	False	False	89.7	81.9	79.8		False	BRD-K05804044	AZ-628	False	0.6297	46.9	25.0	24.4		0.453	6	BRAF	1	2
 disease	BRCA-LumB		BRD-K61397605	Romidepsin	direct	False	False	81.8	88.4	89.6		False	BRD-K56957086	dacinostat	False	0.6297	70.0	74.5	78.1		0.869	11	HDAC1|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC8	1	1
 disease	BRCA-LumB		BRD-K61397605	Romidepsin	direct	False	False	81.8	88.4	89.6		False	BRD-K02130563	panobinostat	True	0.6297	73.0	82.4	84.4		0.834	6	HDAC1|HDAC2|HDAC3|HDAC4|HDAC6|HDAC8	2	2
@@ -549,8 +549,7 @@ disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.3		Fa
 disease	BRCA-LumB		BRD-K42828737	Sunitinib	direct	False	False	94.6	74.8	72.3		False	BRD-K77625799	vandetanib	True	0.6297	84.6	69.8	67.4		0.417	5	FLT1|FLT4|KDR|RET	7	7
 disease	BRCA-LumB		BRD-K95142244	Talazoparib	direct	False	False	83.6	58.1	58.5		False	BRD-K11853856	PJ-34	False	0.6297	64.0	52.7	56.3		0.541	2	PARP1	1	1
 disease	BRCA-LumB		BRD-K95142244	Talazoparib	direct	False	False	83.6	58.1	58.5		False	BRD-K02113016	olaparib	True	0.6297	46.5	29.0	32.4		0.54	2	PARP1|PARP2	2	1
-disease	BRCA-LumB		BRD-K04210847	Tamoxifen	direct	False	False	84.5	59.0	59.5		False	BRD-K90195324	bazedoxifene	True	0.6297	68.4	43.7	45.7		0.596	2	ESR1|ESR2	1	2
-disease	BRCA-LumB		BRD-K04210847	Tamoxifen	direct	False	False	84.5	59.0	59.5		False	BRD-K63828191	raloxifene	True	0.6297	60.6	30.3	30.2		0.546	2	ESR1|ESR2	2	2
+disease	BRCA-LumB		BRD-K93754473	Tamoxifen	direct	False	False	61.4	26.4	25.5		False	BRD-A85667082	fulvestrant	True	0.6297	71.7	42.7	44.3		0.415	2	ESR1|ESR2	1	1
 disease	BRCA-LumB		BRD-A84481105	Thioridazine	direct	False	False	59.9	61.7	2.9		False	BRD-K01292756	pimozide	True	0.6297	48.6	37.5	1.4		0.615	2	DRD1|DRD2|DRD3|DRD4|HTR1A|HTR2A	1	1
 disease	BRCA-LumB		BRD-A84481105	Thioridazine	direct	False	False	59.9	61.7	2.9		False	BRD-K89732114	trifluoperazine	True	0.6297	40.2	51.6	2.3		0.587	6	DRD2|HRH1|HTR2A	2	2
 disease	BRCA-LumB		BRD-K53414658	Tivozanib	direct	False	False	86.9	63.9	60.0		False	BRD-K51544265	cabozantinib	True	0.6297	91.7	82.5	80.2		0.662	6	KDR|KIT	1	1
@@ -687,6 +686,7 @@ disease	CESC-AD		BRD-K02130563	Panobinostat	borrowed	False	False	12.6	12.7	20.0	
 disease	CESC-AD		BRD-K02130563	Panobinostat	borrowed	False	False	12.6	12.7	20.0		True	BRD-K56957086	dacinostat	False	0.2114	62.9	47.7	66.9		0.758	9	HDAC1|HDAC2|HDAC3|HDAC4|HDAC6|HDAC7|HDAC8|HDAC9	6	4
 disease	CESC-AD		BRD-K02130563	Panobinostat	borrowed	False	False	12.6	12.7	20.0		True	BRD-K86797399	SB-939	False	0.2114	77.3	46.3	66.2		0.717	6	HDAC1|HDAC2|HDAC3|HDAC4|HDAC6|HDAC9	7	3
 disease	CESC-AD		BRD-K02130563	Panobinostat	borrowed	False	False	12.6	12.7	20.0		True	BRD-K28822270	resminostat	False	0.2114	61.8	54.0	65.1		0.582	5	HDAC1|HDAC6	8	4
+disease	CESC-AD		BRD-K75958547	Pitavastatin	direct	False	False	67.3	15.1	22.2		False	BRD-K69726342	atorvastatin	True	0.2114	70.1	17.7	25.6		0.799	6	HMGCR	1	1
 disease	CESC-AD		BRD-K44227013	Ponatinib	direct	False	False	42.2	15.3	22.5		False	BRD-K03449891	foretinib	False	0.2114	89.0	49.7	63.8		0.456	7	KDR	1	1
 disease	CESC-AD		BRD-K88429204	Pyrimethamine	borrowed	False	False	10.1	5.8	12.5		True	BRD-A74914197	pralatrexate	True	0.2114	57.9	30.8	37.4		0.549	3	DHFR	1	1
 disease	CESC-AD		BRD-K93918653	Quizartinib	borrowed	False	False	13.5	19.2	22.1		True	BRD-K81528515	nilotinib	True	0.2114	50.5	51.2	43.9		0.589	4	KIT	1	1
@@ -702,7 +702,7 @@ disease	CESC-AD		BRD-K57080016	Selumetinib	borrowed	False	False	60.2	37.9	44.1		
 disease	CESC-AD		BRD-K57080016	Selumetinib	borrowed	False	False	60.2	37.9	44.1		True	BRD-K64538373	Ro-4987655	False	0.2114	88.9	34.8	38.6		0.823	5	MAP2K1	2	4
 disease	CESC-AD		BRD-K57080016	Selumetinib	borrowed	False	False	60.2	37.9	44.1		True	BRD-K05104363	PD-184352	False	0.2114	56.2	53.8	56.0		0.77	7	MAP2K1	3	2
 disease	CESC-AD		BRD-K22134346	Simvastatin	borrowed	False	False	94.4	69.3	71.0		True	BRD-K75958547	pitavastatin	True	0.2114	67.3	15.1	22.2		0.804	3	HMGCR	1	1
-disease	CESC-AD		BRD-K22134346	Simvastatin	borrowed	False	False	94.4	69.3	71.0		True	BRD-K69726342	atorvastatin	True	0.2114	70.1	17.7	25.6		0.758	3	HMGCR	2	1
+disease	CESC-AD		BRD-K22134346	Simvastatin	borrowed	False	False	94.4	69.3	71.0		True	BRD-K69726342	atorvastatin	True	0.2114	70.1	17.7	25.6		0.758	3	HMGCR	2	2
 disease	CESC-AD		BRD-K84937637	Sirolimus	borrowed	False	False	82.0	74.6	76.3		True	BRD-K67868012	PI-103	False	0.2114	90.2	88.4	87.5		0.512	4	MTOR	1	1
 disease	CESC-AD		BRD-K84937637	Sirolimus	borrowed	False	False	82.0	74.6	76.3		True	BRD-K99113996	AZD-2014	False	0.2114	98.4	96.4	96.5		0.468	3	MTOR	2	1
 disease	CESC-AD		BRD-K84937637	Sirolimus	borrowed	False	False	82.0	74.6	76.3		True	BRD-A28467416	PKI-179	False	0.2114	99.8	98.7	99.3		0.433	2	MTOR	3	1
@@ -1203,6 +1203,8 @@ disease	TCGA-LUAD		BRD-K47635719	Dexamethasone	direct	False	False	75.7	84.4	84.3
 disease	TCGA-LUAD		BRD-K92093830	Doxorubicin	direct	False	False	76.9	79.8	73.3		False	BRD-K43389675	daunorubicin	True	0.1984	75.6	74.2	63.3		0.785	7	TOP2A	1	1
 disease	TCGA-LUAD		BRD-K92093830	Doxorubicin	direct	False	False	76.9	79.8	73.3		False	BRD-K04548931	epirubicin	True	0.1984	61.7	46.6	31.4		0.404	7	TOP2A	2	2
 disease	TCGA-LUAD		BRD-K93468883	Duvelisib	borrowed	False	True	97.6	97.5	97.7		True	BRD-K12184916	NVP-BEZ235	False	0.1984	98.0	97.9	97.1		0.555	3	PIK3CD|PIK3CG	1	2
+disease	TCGA-LUAD		BRD-K04548931	Epirubicin	direct	False	False	61.7	46.6	31.4		False	BRD-K43389675	daunorubicin	True	0.1984	75.6	74.2	63.3		0.595	7	TOP2A	1	2
+disease	TCGA-LUAD		BRD-K04548931	Epirubicin	direct	False	False	61.7	46.6	31.4		False	BRD-K92093830	doxorubicin	True	0.1984	76.9	79.8	73.3		0.404	7	TOP2A	2	3
 disease	TCGA-LUAD		BRD-K12502280	Fedratinib	direct	False	False	91.0	93.1	95.9		False	BRD-K39841531	TG-101209	False	0.1984	79.6	86.2	91.1		0.692	5	JAK2|JAK3	1	1
 disease	TCGA-LUAD		BRD-K12502280	Fedratinib	direct	False	False	91.0	93.1	95.9		False	BRD-K36363294	I-BET-151	False	0.1984	73.7	75.3	84.1		0.544	11	BRD4	2	1
 disease	TCGA-LUAD		BRD-K12502280	Fedratinib	direct	False	False	91.0	93.1	95.9		False	BRD-K08109215	I-BET-762	False	0.1984	66.2	67.5	74.7		0.522	16	BRD4	3	1
@@ -1285,7 +1287,7 @@ disease	TCGA-LUAD		BRD-K12343256	Trametinib	direct	False	False	90.9	65.4	57.6		F
 disease	TCGA-LUAD		BRD-K12343256	Trametinib	direct	False	False	90.9	65.4	57.6		False	BRD-K05104363	PD-184352	False	0.1984	96.0	94.3	91.0		0.833	5	MAP2K1	2	1
 disease	TCGA-LUAD		BRD-K12343256	Trametinib	direct	False	False	90.9	65.4	57.6		False	BRD-K49865102	PD-0325901	True	0.1984	92.5	77.8	69.9		0.781	8	MAP2K1	3	3
 disease	TCGA-LUAD		BRD-K72951360	Valrubicin	direct	True	False	94.1	87.0	85.5		True	BRD-K92093830	doxorubicin	True	0.1984	76.9	79.8	73.3		0.729	7	TOP2A	1	2
-disease	TCGA-LUAD		BRD-K72951360	Valrubicin	direct	True	False	94.1	87.0	85.5		True	BRD-K43389675	daunorubicin	True	0.1984	75.6	74.2	63.3		0.498	5	TOP2A	2	2
+disease	TCGA-LUAD		BRD-K72951360	Valrubicin	direct	True	False	94.1	87.0	85.5		True	BRD-K43389675	daunorubicin	True	0.1984	75.6	74.2	63.3		0.498	5	TOP2A	2	3
 disease	TCGA-LUAD		BRD-K77625799	Vandetanib	direct	True	False	81.8	72.0	60.8		True	BRD-K72420232	WZ-4002	False	0.1984	91.9	83.4	79.3		0.673	2	EGFR	1	1
 disease	TCGA-LUAD		BRD-K77625799	Vandetanib	direct	True	False	81.8	72.0	60.8		True	BRD-K49328571	dasatinib	True	0.1984	97.3	98.3	97.8		0.645	6	SRC	2	1
 disease	TCGA-LUAD		BRD-K77625799	Vandetanib	direct	True	False	81.8	72.0	60.8		True	BRD-K68488863	ENMD-2076	False	0.1984	80.0	70.4	67.4		0.574	6	KDR|SRC	3	1
@@ -2619,10 +2621,6 @@ subgroup	COAD-MSI-like	TCGA-COAD	BRD-K57080016	Selumetinib	direct	False	False	97
 subgroup	COAD-MSI-like	TCGA-COAD	BRD-K57080016	Selumetinib	direct	False	False	97.9	98.4	98.5	97.1	False	BRD-K85751432	refametinib	False	0.2135	99.6	99.9	99.6	96.9	0.69	7	MAP2K1	9	1
 subgroup	COAD-MSI-like	TCGA-COAD	BRD-K57080016	Selumetinib	direct	False	False	97.9	98.4	98.5	97.1	False	BRD-K18787491	U-0126	False	0.2135	79.5	89.8	90.6	76.1	0.659	6	MAP2K1	10	1
 subgroup	COAD-MSI-like	TCGA-COAD	BRD-K22134346	Simvastatin	borrowed	False	False	94.8	72.9	71.4	15.3	True	BRD-K75958547	pitavastatin	True	0.2135	74.1	77.7	81.4	54.3	0.804	3	HMGCR	1	1
-subgroup	COAD-MSI-like	TCGA-COAD	BRD-K84937637	Sirolimus	borrowed	False	False	81.3	72.6	74.5	60.0	True	BRD-K67566344	KU-0063794	False	0.2135	96.5	93.3	91.0	51.3	0.488	4	MTOR	1	1
-subgroup	COAD-MSI-like	TCGA-COAD	BRD-K84937637	Sirolimus	borrowed	False	False	81.3	72.6	74.5	60.0	True	BRD-K99113996	AZD-2014	False	0.2135	84.5	81.2	80.7	75.0	0.468	3	MTOR	2	1
-subgroup	COAD-MSI-like	TCGA-COAD	BRD-K84937637	Sirolimus	borrowed	False	False	81.3	72.6	74.5	60.0	True	BRD-K69932463	AZD-8055	False	0.2135	98.4	98.2	98.1	93.8	0.46	4	MTOR	3	1
-subgroup	COAD-MSI-like	TCGA-COAD	BRD-K84937637	Sirolimus	borrowed	False	False	81.3	72.6	74.5	60.0	True	BRD-K59317601	MLN-0128	False	0.2135	99.0	95.3	94.3	78.3	0.421	3	MTOR	4	1
 subgroup	COAD-MSI-like	TCGA-COAD	BRD-K42828737	Sunitinib	direct	False	False	94.2	93.9	88.4	91.9	False	BRD-K80700417	SGI-1776	False	0.2135	88.1	87.0	87.7	92.5	0.529	8	FLT3	1	1
 subgroup	COAD-MSI-like	TCGA-COAD	BRD-K42828737	Sunitinib	direct	False	False	94.2	93.9	88.4	91.9	False	BRD-K87947369	tozasertib	False	0.2135	95.0	94.4	95.4	98.6	0.484	3	FLT3	2	2
 subgroup	COAD-MSI-like	TCGA-COAD	BRD-K42828737	Sunitinib	direct	False	False	94.2	93.9	88.4	91.9	False	BRD-K12502280	TG-101348	True	0.2135	81.7	66.3	62.9	69.6	0.465	10	FLT3	3	1
