@@ -295,7 +295,7 @@ def main():
         o["rev"] = rev.round(3)
         o["rev_raw"] = (-(D_raw[:, ci] * s).sum(1) / norm).round(3) if A_raw is not None and D_raw is not None else np.nan  # consensus: no raw score (v2)
         o["r_rev"] = r_rev.round(3)
-        o["rev_pct"] = (pd.Series(rev).rank(method="max").values - 1) / len(rev) * 100
+        o["rev_pct"] = pd.Series(rev).rank(method="max").values / len(rev) * 100   # D119: rank(max) / n, as every other percentile
         o["rev_pct"] = o.rev_pct.round(1)
         o["approved"] = (o.chembl_max_phase == 4) | (o.hub_clinical_phase == "Launched")
         o["multi_target"] = o.n_targets > MULTI_TARGET
@@ -308,14 +308,17 @@ def main():
         for g2 in sorted(ok_ref):
             if g2 == g or gkey[g2] == gkey[P(g)]:
                 continue
-            m2 = sel(consensus(D0, regs0, mr_ref[(mr_ref.group_id == g2) & mr_ref.regulator.isin(regs0)])[2] if CONS
-                     else mr_ref[(mr_ref.group_id == g2) & mr_ref.regulator.isin(regs)])
+            if CONS:   # D119: the reference's drug activity averaged over the reference's own sets, like its NES (as 79i)
+                D2, regs2, m2 = consensus(D0, regs0, mr_ref[(mr_ref.group_id == g2) & mr_ref.regulator.isin(regs0)])
+                m2 = sel(m2)
+            else:
+                D2, regs2, m2 = D, regs, mr_ref[(mr_ref.group_id == g2) & mr_ref.regulator.isin(regs)]
             m2 = m2[m2.regulator.isin(regs)]
             if len(m2) < MIN_MRS_REF:
                 continue
-            c2 = regs.get_indexer(m2.regulator)
+            c2 = regs2.get_indexer(m2.regulator)
             w2 = wt(m2)
-            refz.append(rz(-(D[:, c2] * w2).sum(1) / np.sqrt((w2 ** 2).sum())))
+            refz.append(rz(-(D2[:, c2] * w2).sum(1) / np.sqrt((w2 ** 2).sum())))
         o["n_ref_diseases"] = len(refz)
         o["spec"] = (o.rev_z.values - np.mean(refz, axis=0)).round(3) if len(refz) >= MIN_REF else np.nan
         o["spec_pct"] = (o.spec.rank(method="max", pct=True) * 100).round(1)
@@ -324,11 +327,14 @@ def main():
             for g2 in sorted(set(mr.group_id) - {g}):
                 if P(g2) != P(g):
                     continue
-                m2 = sel(consensus(D0, regs0, mr[(mr.group_id == g2) & mr.regulator.isin(regs0)])[2] if CONS
-                         else mr[(mr.group_id == g2) & mr.regulator.isin(regs)])
+                if CONS:   # D119: same sets on both sides
+                    D2, regs2, m2 = consensus(D0, regs0, mr[(mr.group_id == g2) & mr.regulator.isin(regs0)])
+                    m2 = sel(m2)
+                else:
+                    D2, regs2, m2 = D, regs, mr[(mr.group_id == g2) & mr.regulator.isin(regs)]
                 m2 = m2[m2.regulator.isin(regs)]
                 if len(m2) >= 2:
-                    w2 = wt(m2); sibz.append(rz(-(D[:, regs.get_indexer(m2.regulator)] * w2).sum(1) / np.sqrt((w2 ** 2).sum())))
+                    w2 = wt(m2); sibz.append(rz(-(D2[:, regs2.get_indexer(m2.regulator)] * w2).sum(1) / np.sqrt((w2 ** 2).sum())))
             o.insert(1, "parent_group", P(g))
             o["siblings"] = ";".join(sorted({x for x in mr.group_id if P(x) == P(g)} - {g}))
             o["spec_sib"] = (o.rev_z.values - np.mean(sibz, axis=0)).round(3) if sibz else np.nan

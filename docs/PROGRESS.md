@@ -822,6 +822,10 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   = pooled AUC among eligible anticancer drugs, next to the drug-class baseline). Result: Hub 0.462, ChEMBL 0.430
   (chance 0.5; class baseline 0.66). Within cancer drugs the lead score does not recover each cancer's own drugs; the
   earlier 0.63 came from the gates and from drugs that score high everywhere.
+- D119 (11-08): scoring corrections (subgroup regulators in 79d, consistent reference sets, one percentile definition,
+  NES-weighted prolif_share, literature counts in the FDA lists, 79k on v2, stop-reason negations). Scores move by
+  Spearman >= 0.993; 8 top-10 lists change by one drug. Known use unchanged (0.462 / 0.429); PRISM / GDSC on v2 null.
+  Literature lookups are now cached for every mode (a rerun fetches only new pairs).
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

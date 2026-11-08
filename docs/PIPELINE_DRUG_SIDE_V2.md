@@ -192,6 +192,12 @@ flowchart LR
   Primary = pooled within-cohort AUC on eligible rows of anticancer drugs (ATC L01 / L02 or Hub oncology): Hub 0.462,
   ChEMBL 0.430; class baseline 0.663 / 0.652; pre-gate 0.509 / 0.476. Known-use AUCs quoted above this line (D85-D113)
   are the old metric (median per-cohort AUC, best compound, pert-level labels) and are not comparable.
+- **Scoring corrections (D119, 2026-11-08):** 79d also scores the subgroup filter's regulators in the parent network; 79e
+  averages each reference disease's drug activity over its own regulon sets (spec, spec_sib) and uses rank(max) / n for
+  rev_pct; 79i's prolif_share weights each part by sqrt(sum NES^2); 79p takes literature columns from
+  literature_fda_all_v2.tsv; 79k reads the v2 tables (`sensitivity_validation_v2/`, null); 79o2 drops negated cause
+  clauses before the efficacy / safety stop rules. 79o caches every PubMed / trial / title answer
+  (`data/interim/lincs/literature_query_*.jsonl`; `LIT_REFRESH=1` to refetch).
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

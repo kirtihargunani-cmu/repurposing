@@ -25,25 +25,25 @@
    "set": "accepted stand-ins",
    "n": 309,
    "spearman": 0.633,
-   "ci_lo": 0.546,
-   "ci_hi": 0.707,
+   "ci_lo": 0.543,
+   "ci_hi": 0.705,
    "mae_pct": 18.2
   },
   {
    "set": "random shared-target pairs (median of 200)",
    "n": 587,
-   "spearman": 0.484,
-   "ci_lo": 0.444,
+   "spearman": 0.486,
+   "ci_lo": 0.44,
    "ci_hi": 0.539,
    "mae_pct": NaN
   },
   {
    "set": "shared lines = 2",
    "n": 52,
-   "spearman": 0.739,
+   "spearman": 0.741,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 17.6
+   "mae_pct": 17.5
   },
   {
    "set": "shared lines >= 3",
@@ -56,7 +56,7 @@
   {
    "set": "similarity 0.4-0.6",
    "n": 113,
-   "spearman": 0.529,
+   "spearman": 0.53,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 22.9
@@ -73,16 +73,16 @@
    "set": "subgroup: accepted stand-ins",
    "n": 68,
    "spearman": 0.831,
-   "ci_lo": 0.723,
+   "ci_lo": 0.724,
    "ci_hi": 0.908,
-   "mae_pct": 14.4
+   "mae_pct": 14.6
   },
   {
    "set": "subgroup: random shared-target pairs (median of 200)",
    "n": 125,
-   "spearman": 0.441,
-   "ci_lo": 0.327,
-   "ci_hi": 0.558,
+   "spearman": 0.438,
+   "ci_lo": 0.343,
+   "ci_hi": 0.55,
    "mae_pct": NaN
   },
   {
@@ -91,7 +91,7 @@
    "spearman": 0.909,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 12.4
+   "mae_pct": 12.3
   },
   {
    "set": "subgroup: shared lines >= 3",
@@ -99,27 +99,27 @@
    "spearman": 0.789,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 15.0
+   "mae_pct": 15.3
   },
   {
    "set": "subgroup: similarity 0.4-0.6",
    "n": 17,
-   "spearman": 0.397,
+   "spearman": 0.387,
    "ci_lo": NaN,
    "ci_hi": NaN,
-   "mae_pct": 25.1
+   "mae_pct": 25.9
   },
   {
    "set": "subgroup: similarity >= 0.6",
    "n": 51,
-   "spearman": 0.906,
+   "spearman": 0.91,
    "ci_lo": NaN,
    "ci_hi": NaN,
    "mae_pct": 10.9
   }
  ],
  "pairs": 2695,
- "fda_rows_needing": 8596,
+ "fda_rows_needing": 8597,
  "fda_rows_with_standin": 269,
  "fda_rows_with_standin_by_level": {
   "disease": 231,
@@ -127,5 +127,5 @@
  },
  "cohorts_with_standins": 20,
  "matched_compounds_with_close_fda": 1091,
- "seconds": 22
+ "seconds": 21
 }

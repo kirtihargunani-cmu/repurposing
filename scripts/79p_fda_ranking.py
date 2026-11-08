@@ -83,8 +83,9 @@ def main():
           f"79e 'approved' (anywhere) but not in Drugs@FDA: "
           f"{int(((ann.chembl_max_phase == 4) | (ann.hub_clinical_phase == 'Launched')).sum() - ann.pert_id.isin(m.pert_id[m.pert_id.isin(ann.pert_id[(ann.chembl_max_phase == 4) | (ann.hub_clinical_phase == 'Launched')])]).sum())}")
     keep_ann = ann.set_index("pert_id")[["approved_indications", "hub_indication"]]
-    lit = RES / "literature_v2_consensus.tsv"
+    lit = RES / "literature_fda_all_v2.tsv"   # D119: every FDA row (79o MODE=fda_all), was the top-10 table
     lit = pd.read_csv(lit, sep="\t") if lit.exists() else None
+    LITC = ["pubmed_count", "pubmed_search_url", "trial_count", "trials_search_url"]
     summ = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
 
     def rank(df, unit, order, extra):
@@ -106,11 +107,14 @@ def main():
     gr = rank(g, "group_id", ["spec_mech", "spec"], [])
     gr.insert(1, "evidence_status", gr.group_id.map(summ.evidence_status))
     if lit is not None:
-        gr = gr.merge(lit[["group_id", "cmap_name", "pubmed_count", "pubmed_search_url", "trial_count", "trials_search_url"]],
-                      on=["group_id", "cmap_name"], how="left")
+        L = lit[lit.level == "disease"].drop_duplicates(["unit", "drug"]).rename(columns={"unit": "group_id"})
+        gr = gr.merge(L[["group_id", "drug"] + LITC], on=["group_id", "drug"], how="left")
     gr.to_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t", index=False)
     s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
     sr = rank(s, "stratum", ["spec_sib_mech", "spec_mech"], ["parent_group"])
+    if lit is not None:
+        L = lit[lit.level == "subgroup"].drop_duplicates(["unit", "drug"]).rename(columns={"unit": "stratum"})
+        sr = sr.merge(L[["stratum", "drug"] + LITC], on=["stratum", "drug"], how="left")
     sr.to_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t", index=False)
     print(gr.groupby("group_id").fda_rank.size().describe().round(0).to_dict())
     for gid, d in gr.groupby("group_id"):

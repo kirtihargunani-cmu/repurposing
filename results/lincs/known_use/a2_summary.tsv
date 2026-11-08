@@ -1,3 +1,3 @@
 source	n_drugs	median_diff	frac_higher_in_own_cohort	p_sign
 hub	46	6.025	0.565	0.23069559106838256
-chembl	81	-1.2	0.469	0.7473817796165321
+chembl	81	-1.33	0.469	0.7473817796165321
