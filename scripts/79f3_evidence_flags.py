@@ -153,6 +153,7 @@ def flags():
 def label_queue(ann):
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
+    import evidence_flags; evidence_flags.STRICT = False   # D117: this script builds the flags
     from fda_rows import fda_rows
     g, s = fda_rows()
     drugs = pd.concat([g, s]).drop_duplicates("fda_ingredient")[["drug", "fda_ingredient", "pert_id"]]
@@ -206,6 +207,7 @@ def exposure():
                 ans[a["drug"]] = a
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
+    import evidence_flags; evidence_flags.STRICT = False   # D117: this script builds the flags
     from fda_rows import fda_rows, drug_name
     g, s = fda_rows()
     fd = pd.concat([g, s])[["group_id", "pert_id", "drug"]]
