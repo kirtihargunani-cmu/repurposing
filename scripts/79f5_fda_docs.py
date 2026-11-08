@@ -4,7 +4,7 @@
 Drugs: 79p eligible set (fda_ranking_v2_consensus / strata) minus drugs with cmax_uM in results/lincs/d109/cmax.tsv.
 Documents: ApplicationDocs of the drug's NDA / BLA applications (fda_matches.tsv fda_appl_nda_bla), type 2 (Label,
 most recent) and 3 (Review; table-of-contents pages followed to clinical pharmacology / biopharmaceutics PDFs).
-Text by pdftotext, cached in data/interim/lincs/d109_docs/. Queue: results/lincs/d109/doc_queue.jsonl
+Text by pdftotext, cached in data/interim/lincs/d109_docs/. Queue (existing entries kept on a rerun, D114): results/lincs/d109/doc_queue.jsonl
 ({drug, doc_type, url, passages}); passages = +-700 characters around Cmax / peak / maximum concentration mentions.
 """
 import hashlib
@@ -93,7 +93,13 @@ def main():
     docs = pd.read_csv(FDA / "ApplicationDocs.txt", sep="\t", dtype=str, encoding="latin-1", on_bad_lines="skip")
     print(f"drugs needing Cmax {len(drugs)}", flush=True)
     n = 0
-    with open(RES / "d109/doc_queue.jsonl", "w") as fh:
+    # D114: keep earlier queue entries (exposure needs them to verify the quotes of answers already read); a rerun only adds
+    qf = RES / "d109/doc_queue.jsonl"
+    old = [json.loads(x) for x in open(qf)] if qf.exists() else []
+    seen = {(q["drug"], q["url"]) for q in old}
+    with open(qf, "w") as fh:
+        for q in old:
+            fh.write(json.dumps(q) + "\n")
         for r in drugs.itertuples(index=False):
             appl = [a for a in str(fm.get(r.fda_ingredient, "")).split(";") if a and a != "nan"]
             d = docs[docs.ApplNo.isin(appl)].sort_values("ApplicationDocsDate", ascending=False)
@@ -104,8 +110,9 @@ def main():
             for typ, u in cands:
                 t = text_of(u)
                 ps = passages(t)
-                if ps:
+                if ps and (r.drug, u) not in seen:
                     fh.write(json.dumps(dict(drug=r.drug, doc_type=typ, url=u, passages=ps)) + "\n"); fh.flush()
+                if ps:
                     got = True
                     if typ == "label":
                         break

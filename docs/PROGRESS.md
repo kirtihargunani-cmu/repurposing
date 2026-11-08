@@ -803,6 +803,10 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   name (44 resolved, 32 applied). FDA drugs on a curated mechanism 295 -> 325 of 422; 'unverified binding' 35 -> 8.
   Tioguanine -> IMPDH1/2 (was annotated as thioguanosine), vincristine -> tubulins, cyclosporine -> PPIA. Meloxicam
   (COX-2 only) now target-absent in 16 groups / 7 subgroups. No top-10 list changed.
+- D114 in production (11-08): Cmax read for the FDA drugs added under D112 (cyclosporine 1.5 uM, lapatinib 4.2,
+  rucaparib 6.0, griseofulvin 5.7, pentamidine 1.8; 152 drugs now). None reaches the 10x low-exposure cut; no
+  ranking change. Thioguanine and clomiphene remain unassessed (no Cmax in label or FDA documents). 79f5 now keeps
+  earlier queue entries on a rerun (it would have dropped 50 verified document readings).
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

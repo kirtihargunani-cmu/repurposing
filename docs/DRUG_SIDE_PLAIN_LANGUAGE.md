@@ -69,6 +69,10 @@ follow-up questions:
    compounds now match, among them lapatinib, a standard HER2 breast cancer drug, which now ranks 6th of 20 FDA
    drugs in HER2 breast cancer. Cyclosporine, an immune-suppressing transplant drug, also appears and lands in ten
    top-10 lists; whether lab doses are reachable in patients has not been checked for it yet.)
+   (Check D114, 2026-11-08: blood levels were then read from the FDA labels of cyclosporine, lapatinib, rucaparib,
+   griseofulvin and pentamidine. For all five, the lab doses that worked are within reach of patients' blood
+   levels, so none is marked. Thioguanine and clomiphene have no blood level in their FDA documents and stay
+   unchecked.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).
