@@ -118,14 +118,14 @@
    "mae_pct": 10.9
   }
  ],
- "pairs": 2691,
- "fda_rows_needing": 8590,
- "fda_rows_with_standin": 268,
+ "pairs": 2695,
+ "fda_rows_needing": 8596,
+ "fda_rows_with_standin": 269,
  "fda_rows_with_standin_by_level": {
   "disease": 231,
-  "subgroup": 37
+  "subgroup": 38
  },
  "cohorts_with_standins": 20,
- "matched_compounds_with_close_fda": 1087,
+ "matched_compounds_with_close_fda": 1091,
  "seconds": 22
 }
