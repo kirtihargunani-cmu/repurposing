@@ -1,0 +1,63 @@
+source	rows	score	auc	n_cohorts	n_pos	n_neg	pairs	p_perm	ci_lo	ci_hi
+hub	primary: anticancer, gate-passing, T present	T (target role, primary)	0.6742	28	121	2252	9441	0.001	0.6064	0.7306
+hub	primary: anticancer, gate-passing, T present	spec_mech_pct_pregate (same rows)	0.4893	28	121	2252	9441	0.6414	0.4334	0.5348
+hub	D118 primary rows (eligible), T present	T	0.6781	18	58	574	1945	0.001	0.5498	0.7773
+hub	D118 primary rows (eligible), T present	spec_mech_pct (same rows)	0.4339	18	58	574	1945	0.9371	0.3678	0.504
+hub	primary rows	(a) D alone	0.6908	28	121	2252	9441	0.001	0.6285	0.7518
+hub	primary rows	(a) A alone	0.6209	27	120	2134	9142	0.001	0.5596	0.683
+hub	primary rows	(a) O alone	0.6299	26	107	1940	7773	0.001	0.5739	0.6886
+hub	primary rows	(b) T without D	0.6358	28	121	2246	9435	0.001	0.5789	0.6847
+hub	primary rows	(b) T without A	0.6596	28	121	2252	9441	0.001	0.5936	0.7195
+hub	primary rows	(b) T without O	0.7073	28	121	2252	9441	0.001	0.6543	0.7563
+hub	primary rows	(c) T unsigned	0.6786	28	121	2252	9441	0.001	0.601	0.7393
+hub	primary rows	(h) mean of T and spec_mech_pct_pregate pct	0.6081	28	121	2252	9441	0.001	0.5448	0.6532
+hub	anticancer, gate-passing, D_alone present	(a) D alone, own rows	0.6908	28	121	2252	9441			
+hub	anticancer, gate-passing, D_alone present	spec_mech_pct_pregate, same rows	0.4893	28	121	2252	9441			
+hub	anticancer, gate-passing, A_alone present	(a) A alone, own rows	0.6209	27	120	2134	9142			
+hub	anticancer, gate-passing, A_alone present	spec_mech_pct_pregate, same rows	0.482	27	120	2134	9142			
+hub	anticancer, gate-passing, O_alone present	(a) O alone, own rows	0.6299	26	107	1940	7773			
+hub	anticancer, gate-passing, O_alone present	spec_mech_pct_pregate, same rows	0.5051	26	107	1940	7773			
+hub	(f) primary rows, common-essential main target	T	0.4624	16	24	274	399			
+hub	(f) primary rows, other main target	T	0.7119	23	97	1440	5976			
+hub	(i) split half: groups odd (sorted)	T	0.6762	13	48	1051	3752			
+hub	(i) split half: groups even (sorted)	T	0.6729	15	73	1201	5689			
+hub	primary rows (post hoc)	(j) drug's mean T over all groups (no cohort information)	0.5856	28	121	2252	9441	0.004	0.5309	0.6443
+hub	primary rows (post hoc)	(j) T minus the drug's mean T (cohort-specific part)	0.6217	28	121	2252	9441	0.001	0.5371	0.6958
+hub	primary rows (post hoc)	(j) D minus drug mean	0.6165	28	121	2252	9441	0.001	0.5309	0.6947
+hub	primary rows (post hoc)	(j) A minus drug mean	0.6181	27	120	2134	9142	0.001	0.5148	0.697
+hub	primary rows (post hoc)	(j) O minus drug mean	0.5774	26	107	1940	7773	0.006	0.5093	0.6247
+hub	primary rows (post hoc)	(k) number of main targets as the score	0.5503	28	121	2252	9441	0.04	0.5095	0.5946
+hub	(k) primary rows, 1 main targets (post hoc)	T	0.7203	18	38	456	951			
+hub	(k) primary rows, 2-3 main targets (post hoc)	T	0.7781	12	28	296	685			
+hub	(k) primary rows, >3 main targets (post hoc)	T	0.5562	23	55	665	1549			
+chembl	primary: anticancer, gate-passing, T present	T (target role, primary)	0.6174	40	361	3005	25428	0.001	0.5767	0.6584
+chembl	primary: anticancer, gate-passing, T present	spec_mech_pct_pregate (same rows)	0.4742	40	361	3005	25428	0.9481	0.4449	0.5003
+chembl	D118 primary rows (eligible), T present	T	0.5964	40	158	1254	4858	0.001	0.5344	0.6528
+chembl	D118 primary rows (eligible), T present	spec_mech_pct (same rows)	0.4171	40	158	1254	4858	1.0	0.3746	0.4609
+chembl	primary rows	(a) D alone	0.5994	39	360	2923	25346	0.001	0.5538	0.642
+chembl	primary rows	(a) A alone	0.5519	38	349	2803	24168	0.001	0.5211	0.5828
+chembl	primary rows	(a) O alone	0.6405	37	313	2581	20681	0.001	0.6114	0.6708
+chembl	primary rows	(b) T without D	0.6101	40	359	2995	25254	0.001	0.5824	0.6402
+chembl	primary rows	(b) T without A	0.6251	40	361	2999	25422	0.001	0.5843	0.6681
+chembl	primary rows	(b) T without O	0.6007	40	361	3004	25427	0.001	0.5603	0.6438
+chembl	primary rows	(c) T unsigned	0.6194	40	361	3005	25428	0.001	0.5799	0.662
+chembl	primary rows	(h) mean of T and spec_mech_pct_pregate pct	0.5693	40	361	3005	25428	0.001	0.5401	0.5994
+chembl	anticancer, gate-passing, D_alone present	(a) D alone, own rows	0.5994	39	360	2923	25346			
+chembl	anticancer, gate-passing, D_alone present	spec_mech_pct_pregate, same rows	0.474	39	360	2923	25346			
+chembl	anticancer, gate-passing, A_alone present	(a) A alone, own rows	0.5519	38	349	2803	24168			
+chembl	anticancer, gate-passing, A_alone present	spec_mech_pct_pregate, same rows	0.4728	38	349	2803	24168			
+chembl	anticancer, gate-passing, O_alone present	(a) O alone, own rows	0.6405	37	313	2581	20681			
+chembl	anticancer, gate-passing, O_alone present	spec_mech_pct_pregate, same rows	0.4738	37	313	2581	20681			
+chembl	(f) primary rows, common-essential main target	T	0.4428	33	94	531	1468			
+chembl	(f) primary rows, other main target	T	0.6576	36	267	2097	14725			
+chembl	(i) split half: groups odd (sorted)	T	0.6096	21	165	1594	11766			
+chembl	(i) split half: groups even (sorted)	T	0.6241	19	196	1411	13662			
+chembl	primary rows (post hoc)	(j) drug's mean T over all groups (no cohort information)	0.5716	40	361	3005	25428	0.001	0.5457	0.5981
+chembl	primary rows (post hoc)	(j) T minus the drug's mean T (cohort-specific part)	0.5782	40	361	3005	25428	0.001	0.5271	0.6307
+chembl	primary rows (post hoc)	(j) D minus drug mean	0.5664	39	360	2923	25346	0.001	0.5084	0.6209
+chembl	primary rows (post hoc)	(j) A minus drug mean	0.5428	38	349	2803	24168	0.003	0.5011	0.5837
+chembl	primary rows (post hoc)	(j) O minus drug mean	0.5746	37	313	2581	20681	0.001	0.5354	0.6076
+chembl	primary rows (post hoc)	(k) number of main targets as the score	0.5028	40	361	3005	25428	0.4366	0.4786	0.5273
+chembl	(k) primary rows, 1 main targets (post hoc)	T	0.6255	34	125	799	2801			
+chembl	(k) primary rows, 2-3 main targets (post hoc)	T	0.7405	30	107	676	2266			
+chembl	(k) primary rows, >3 main targets (post hoc)	T	0.5503	34	129	929	3358			

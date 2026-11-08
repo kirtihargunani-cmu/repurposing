@@ -826,6 +826,12 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   NES-weighted prolif_share, literature counts in the FDA lists, 79k on v2, stop-reason negations). Scores move by
   Spearman >= 0.993; 8 top-10 lists change by one drug. Known use unchanged (0.462 / 0.429); PRISM / GDSC on v2 null.
   Literature lookups are now cached for every mode (a rerun fetches only new pairs).
+- D120 (11-08): target-role score, reported beside the ranking (79t). Per cancer x drug: is the drug's main target
+  needed by the matched lines (D, CRISPR), altered in the tumors (A, TCGA hotspot mutations / amplifications), or
+  turned up (O, regulator activity or expression vs normal), signed by the drug's action; each part shown. Known use:
+  Hub 0.674, ChEMBL 0.617 (spec on the same rows 0.489 / 0.474); split halves agree. Roughly half the signal is
+  drug-level (0.586 / 0.572 with no cancer information). It rises with the number of targets (best-of-N) and does not
+  work for drugs whose target every cell needs (0.46 / 0.44); 194 of 410 top-10 rows rest on minority alterations.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

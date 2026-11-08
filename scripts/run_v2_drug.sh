@@ -57,6 +57,7 @@ STEPS=(
   "standin_page|Browsable LINCS compounds tested in each cohort's lines with their closest FDA drugs (standin_compounds_v2.html)|$PY scripts/79z_standin_page.py"
   "known_use|Known-use recovery: do a cancer's approved drugs rank high for it? Hub + ChEMBL indications (79l, C28)|$PY scripts/79l_known_use.py"
   "dependency|CRISPR dependency of the drugs' targets in each cohort's lines: yardstick, gate test (79n, C29)|$PY scripts/79n_dependency.py"
+  "target_role|Target-role score (dependency, alteration, over-activity of the main target), decoded; known-use analysis (79t, D120; reported only)|$PY scripts/79t_target_role.py"
   "gate_sensitivity|PRISM / GDSC selective killing vs the gated rankings: gate, matched vs borrowed, stand-ins (79m, C28)|$PY scripts/79m_gate_sensitivity.py"
 )
 

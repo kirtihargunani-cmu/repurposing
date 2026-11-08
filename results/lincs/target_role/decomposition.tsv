@@ -1,0 +1,39 @@
+item	value
+FDA drug rows (gate-passing, labels table)	7570.0
+rows with a protein main target	6156.0
+rows with T	6156.0
+rows with D on the best target	5979.0
+rows with D on any main target	6019.0
+rows with A on the best target	5216.0
+rows with A on any main target	5225.0
+rows with O on the best target	5356.0
+rows with O on any main target	5744.0
+rows with 1 component(s)	108.0
+rows with 2 component(s)	1703.0
+rows with 3 component(s)	4345.0
+rows scored as lower	5468.0
+rows scored as raise	690.0
+rows flagged direction_assumed	293.0
+rows flagged mixed	0.0
+median within-group Spearman D vs A	0.077
+median within-group Spearman D vs O	0.085
+median within-group Spearman A vs O	0.096
+median within-group Spearman D vs T	0.715
+(d) D: median share of T's within-group variance (rho^2)	0.511
+median within-group Spearman A vs T	0.466
+(d) A: median share of T's within-group variance (rho^2)	0.217
+median within-group Spearman O vs T	0.667
+(d) O: median share of T's within-group variance (rho^2)	0.444
+median within-group Spearman T vs spec_mech_pct_pregate	-0.018
+median within-group Spearman T vs spec_mech_pct	0.118
+(e) top-10 by T kept by T_noD (median of groups, of 10)	3.0
+(e) top-10 by T kept by T_noA (median of groups, of 10)	4.0
+(e) top-10 by T kept by T_noO (median of groups, of 10)	6.0
+(e) top-10 by T kept by T_unsigned (median of groups, of 10)	9.0
+top-10 rows where D is the highest component	143.0
+top-10 rows where A is the highest component	149.0
+top-10 rows where O is the highest component	118.0
+top-10 rows with A > 90 and alteration share < 50% (minority-carrier driven)	194.0
+top-10 rows with a common-essential main target	51.0
+top-10 rows total	410.0
+(k) median within-group Spearman T vs number of main targets (post hoc)	0.475
