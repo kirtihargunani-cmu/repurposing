@@ -53,20 +53,29 @@ FIELDS = ("NCTId,BriefTitle,OverallStatus,WhyStopped,Phase,HasResults,Interventi
 RULES = [
     ("efficacy", r"futil|(lack|absence|insufficient|no|limited|poor|low)\s+(of\s+)?(clinical\s+)?(efficacy|benefit|activity|response|effect)|"
                  r"interim analys|did not meet|not meet (the|its)|ineffective|negative (result|outcome|data)|efficacy (was |is )?(not|insufficient)"),
-    ("safety", r"toxicit|adverse (event|effect|reaction)|safety (concern|issue|signal|reason)|side effect|death|not tolerat|intolerab|unacceptable risk"),
+    ("safety", r"toxicit|adverse (event|effect|reaction)|safety (concern|issue|signal|reason)|side effect|death|not tolera[tb]|intolerab|unacceptable risk"),
     ("accrual", r"accru|enrol|recruit|participant|subjects? (were|was) (not|difficult)|patient availability"),
     ("business", r"sponsor|fund|financ|business|compan|commercial|strateg|portfolio|drug (supply|availab)|supply|investigator (left|leaving|relocat)|PI (left|leaving)"),
 ]
 NO_SAFETY = re.compile(r"no (safety|toxicity) (issue|concern|signal)|not (due|related) to safety|without safety", re.I)
 
 
+# D119: negated clauses ("not due to any safety concern", "Not related to safety concerns or lack of efficacy") and the death
+# of a study person are removed before the efficacy / safety rules
+NEG = re.compile(r"\b(?:not|no|non|without|unrelated)\b(?:\s+\w+){0,2}?\s+(?:due|related|relat\w*|based|driven|a consequence|consequence|"
+                 r"because|any|major|new|efficacy analys\w*)\b[^.;,]*", re.I)   # negation introducing a cause ("not due to ...")
+STAFF_DEATH = re.compile(r"death of (the |a |our |an )?(co-?)?(principal |study |lead )?(investigator|PI|physician|staff|sponsor|coordinator)\w*", re.I)
+
+
 def stop_class(why):
     if not isinstance(why, str) or not why.strip():
         return "not_given"
+    clean = NEG.sub(" ", STAFF_DEATH.sub(" ", why))
     for name, pat in RULES:
+        text = clean if name in ("efficacy", "safety") else why
         if name == "safety" and NO_SAFETY.search(why):
             continue
-        if re.search(pat, why, re.I):
+        if re.search(pat, text, re.I):
             return name
     return "other"
 

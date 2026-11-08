@@ -62,6 +62,16 @@ if (REGULON == "aracne_project") {
       fread(file.path(Sys.getenv("MR_OVERRIDE"), "regulator_filter.tsv"))[keep == TRUE & group_id %in% nm$group_id], fill = TRUE)
   }
   filt[, net := net_of[group_id]]
+  # D119: subgroup regulators (Step 6 strata filter) are candidates in their parent's network too
+  sff <- paste0("results/step6/aracne_project", SFX, TFX, "_strata/regulator_filter.tsv")
+  if (file.exists(sff) && file.exists(paste0("results/step10", SFX, "/strata.tsv"))) {
+    st <- unique(fread(paste0("results/step10", SFX, "/strata.tsv"))[, .(stratum, group_id)])
+    sf <- fread(sff)[keep == TRUE][st, on = .(group_id = stratum), nomatch = 0]
+    sf[, net := net_of[i.group_id]]
+    n0 <- nrow(unique(filt[, .(net, regulator)]))
+    filt <- rbind(filt, sf[, .(regulator, group_id, net)], fill = TRUE)
+    cat(sprintf("D119: subgroup filter adds %d network x regulator candidates\n", nrow(unique(filt[, .(net, regulator)])) - n0))
+  }
 } else {
   arac <- list(ALL = readRDS("results/step5/regulons_core.rds")[[REGULON]])
   filt <- data.table(net = "ALL", regulator = names(arac$ALL))

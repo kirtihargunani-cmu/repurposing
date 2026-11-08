@@ -3,7 +3,7 @@
 
 Question: do drugs that score high for a cancer kill that cancer's cell lines more, beyond being generally potent?
 Independent of LINCS (viability, not expression). Protocol fixed before looking at results (user 2026-10-12):
-Observed sensitivity per unit (41 groups and 31 Step 10 strata) x drug, per dataset (scripts/79j):
+Observed sensitivity per unit (41 groups and the Step 10 v2 subgroups; D119: v2 consensus tables) x drug, per dataset (scripts/79j):
   lines    the unit's own in-key lines (strict tissue key), weighted by its Celligner weights (groups: scripts/74,
            strata: 74b), renormalized over the lines screened for that drug; >= MIN_LINES lines and >= MIN_WCOV of the
            unit's in-key weight on screened lines, else missing
@@ -40,7 +40,7 @@ from scipy.stats import rankdata
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 SENS = ROOT / "data/processed/sensitivity"
-VAL = RES / "sensitivity_validation"
+VAL = RES / "sensitivity_validation_v2"   # D119: v2 consensus tables (v1 results stay in sensitivity_validation/)
 DATASETS = ["prism_sec", "prism_pri", "gdsc1", "gdsc2"]
 SCORES = ["rev", "rev_prolif", "rev_nonprolif", "rev_mech", "prolif_effect", "spec", "spec_mech", "target_frac"]
 SSCORES = SCORES + ["spec_sib", "spec_sib_mech"]
@@ -91,11 +91,11 @@ def unit_obs(X, Z, w):
 def main():
     rng = np.random.default_rng(SEED)
     VAL.mkdir(parents=True, exist_ok=True)
-    g = pd.read_csv(RES / "drug_reversal_split.tsv", sep="\t", low_memory=False)
-    s = pd.read_csv(RES / "stratum_reversal_split.tsv", sep="\t", low_memory=False)
+    g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False,
                      usecols=["group_id", "pert_id", "n_targets", "targets_expressed"])
-    sd = pd.read_csv(RES / "stratum_drugs.tsv", sep="\t", low_memory=False,
+    sd = pd.read_csv(RES / "stratum_drugs_v2.tsv", sep="\t", low_memory=False,
                      usecols=["group_id", "pert_id", "n_targets", "targets_expressed"])
     nexp = lambda d: d.targets_expressed.fillna("").map(lambda x: len([t for t in str(x).split("|") if t]))
     for d in (dd, sd):
@@ -110,7 +110,7 @@ def main():
     sc = sc[~sc.parent.isin(low)]
 
     gw = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
-    sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long.tsv", sep="\t")
+    sw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long_v2.tsv", sep="\t")
     W = {u: d.set_index("ModelID").weight for u, d in gw[gw.in_key].groupby("group_id")}
     W.update({u: d.set_index("ModelID").weight for u, d in sw[sw.in_key].groupby("stratum")})
     parents = sorted(sc.parent.unique())

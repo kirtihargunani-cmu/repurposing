@@ -104,17 +104,73 @@ def names(drug):
     return sorted(v)
 
 
+# Persistent answer cache for every mode (user 2026-11-08): PubMed by exact query, ClinicalTrials.gov by (drug, condition),
+# titles by PMID; seeded from the MODE=fda_all caches. LIT_REFRESH=1 ignores stored answers (and overwrites them).
+LC = Path(__file__).resolve().parent.parent / "data/interim/lincs"
+REFRESH = os.environ.get("LIT_REFRESH") == "1"
+_PM, _CT = {}, {}
+
+
+def _load_caches():
+    if _PM or _CT:
+        return
+    LC.mkdir(parents=True, exist_ok=True)
+    for f, kind in ((LC / "literature_fda_all_pubmed.jsonl", "pm_all"), (LC / "literature_fda_all_trials.jsonl", "ct_all"),
+                    (LC / "literature_query_pubmed.jsonl", "pm"), (LC / "literature_query_trials.jsonl", "ct")):
+        if not f.exists():
+            continue
+        for line in open(f):
+            r = json.loads(line)
+            if kind == "pm_all":
+                _PM[r["v"]["q"]] = (r["v"]["n"], r["v"]["ids"])
+            elif kind == "ct_all":
+                _CT[(r["k"][1], r["v"]["cond"])] = (r["v"]["n"], [tuple(x) for x in r["v"]["st"]])
+            elif kind == "pm":
+                _PM[r["q"]] = (r["n"], r["ids"])
+            else:
+                _CT[(r["drug"], r["cond"])] = (r["n"], [tuple(x) for x in r["st"]])
+
+
+def titles_cache():
+    f = LC / "literature_fda_all_titles.json"
+    return f, (json.load(open(f)) if f.exists() else {})
+
+
 def pubmed(drug, terms, extra=()):
     q = "(" + " OR ".join(f'"{n}"[tiab]' for n in sorted(set(names(drug)) | set(extra))) + ") AND (" + " OR ".join(f'"{t}"[tiab]' for t in terms) + ")"
+    _load_caches()
+    if q in _PM and not REFRESH:
+        return q, _PM[q][0], _PM[q][1]
+    n, ids = _pubmed_live(q)
+    if n is not None:
+        _PM[q] = (n, ids)
+        with open(LC / "literature_query_pubmed.jsonl", "a") as fh:
+            fh.write(json.dumps(dict(q=q, n=n, ids=ids)) + "\n")
+    return q, n, ids
+
+
+def _pubmed_live(q):
     r = get(f"{EUTILS}/esearch.fcgi?db=pubmed&retmode=json&sort=relevance&retmax={RETMAX}&term=" + urllib.parse.quote(q))
     time.sleep(0.35)
     if not r or "count" not in r.get("esearchresult", {}):   # NCBI error answer (e.g. rate limit): count as failed
         time.sleep(2)
-        return q, None, []
-    return q, int(r["esearchresult"]["count"]), r["esearchresult"]["idlist"]
+        return None, []
+    return int(r["esearchresult"]["count"]), r["esearchresult"]["idlist"]
 
 
 def trials(drug, cond):
+    _load_caches()
+    if (drug, cond) in _CT and not REFRESH:
+        return _CT[(drug, cond)]
+    n, out = _trials_live(drug, cond)
+    if n is not None:
+        _CT[(drug, cond)] = (n, out)
+        with open(LC / "literature_query_trials.jsonl", "a") as fh:
+            fh.write(json.dumps(dict(drug=drug, cond=cond, n=n, st=out)) + "\n")
+    return n, out
+
+
+def _trials_live(drug, cond):
     url = ("https://clinicaltrials.gov/api/v2/studies?countTotal=true&pageSize=%d&fields=NCTId,BriefTitle,Phase,OverallStatus"
            "&query.intr=%s&query.cond=%s" % (RETMAX, urllib.parse.quote(drug), urllib.parse.quote(cond)))
     r = get(url)
@@ -157,8 +213,8 @@ def main():
         rows.append(dict(r._asdict(), pubmed_count=n_pm, pmids=ids, trial_count=n_ct, trials=st, pubmed_query=q))
         if i % 50 == 0:
             print(f"{i}/{len(sel)} pairs ({time.time() - t0:.0f}s)", flush=True)
-    titles = {}
-    ids = sorted(pmids)
+    tf, titles = titles_cache()   # shared title cache (PMID -> title); only missing PMIDs are fetched
+    ids = sorted(i for i in pmids if REFRESH or i not in titles)
     for k in range(0, len(ids), 150):
         r = get(f"{EUTILS}/esummary.fcgi?db=pubmed&retmode=json&id=" + ",".join(ids[k:k + 150]))
         time.sleep(0.35)
@@ -166,6 +222,7 @@ def main():
             for pid in r["result"].get("uids", []):
                 d = r["result"][pid]
                 titles[pid] = f'{d.get("title", "").rstrip(".")} ({d.get("source", "")} {d.get("pubdate", "")[:4]})'
+    json.dump(titles, open(tf, "w"))
     out = []
     for r in rows:
         d = {k: v for k, v in r.items() if k not in ("pmids", "trials")}
@@ -210,8 +267,8 @@ def main_fda():
         rows.append(dict(unit=r.unit, level=r.level, parent_group=r.parent_group, fda_rank=r.fda_rank, drug=r.drug,
                          cmap_name=r.cmap_name, pubmed_count=n_pm, pmids=ids, trial_count=n_ct, trials=st, pubmed_query=q,
                          trial_cond=cond))
-    titles = {}
-    ids = sorted(pmids)
+    tf, titles = titles_cache()   # shared title cache (PMID -> title); only missing PMIDs are fetched
+    ids = sorted(i for i in pmids if REFRESH or i not in titles)
     for k in range(0, len(ids), 150):
         r = get(f"{EUTILS}/esummary.fcgi?db=pubmed&retmode=json&id=" + ",".join(ids[k:k + 150]))
         time.sleep(0.35)
@@ -219,6 +276,7 @@ def main_fda():
             for pid in r["result"].get("uids", []):
                 d = r["result"][pid]
                 titles[pid] = f'{d.get("title", "").rstrip(".")} ({d.get("source", "")} {d.get("pubdate", "")[:4]})'
+    json.dump(titles, open(tf, "w"))
     out = []
     for r in rows:
         d = {k: v for k, v in r.items() if k not in ("pmids", "trials", "trial_cond")}

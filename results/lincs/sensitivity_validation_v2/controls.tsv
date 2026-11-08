@@ -1,0 +1,117 @@
+dataset	unit	drug	in_data	obs_sel_pct	obs_sel	rev_pct	rev_mech_pct
+prism_sec	BRCA-LumA	fulvestrant	True	95.5	0.455	49.1	36.3
+prism_sec	BRCA-LumA	tamoxifen	True	96.7	0.488	40.1	27.3
+prism_sec	BRCA-LumA	raloxifene	True	93.5	0.409	39.3	25.2
+prism_sec	BRCA-LumA	palbociclib	True	56.5	-0.179	61.2	40.2
+prism_sec	BRCA-LumB	fulvestrant	True	98.0	0.624	71.7	40.8
+prism_sec	BRCA-LumB	tamoxifen	True	95.9	0.465	61.4	30.4
+prism_sec	BRCA-LumB	raloxifene	True	76.6	0.074	60.6	30.0
+prism_sec	BRCA-LumB	palbociclib	True	51.4	-0.193	85.1	48.9
+prism_sec	BRCA-Her2	lapatinib	True	90.8	0.298	99.5	91.4
+prism_sec	BRCA-Her2	neratinib	True	97.7	0.562	87.8	59.8
+prism_sec	BRCA-Her2	afatinib	True	97.1	0.485	71.6	60.6
+prism_sec	TCGA-PRAD	bicalutamide	False				
+prism_sec	TCGA-PRAD	enzalutamide	False				
+prism_sec	TCGA-PRAD	flutamide	True	81.6	0.691	85.5	84.6
+prism_sec	TCGA-PRAD	nilutamide	False				
+prism_sec	TCGA-COAD	fluorouracil	True	7.0	-0.621	80.6	66.1
+prism_sec	TCGA-COAD	irinotecan	True	54.3	0.008	62.7	68.4
+prism_sec	TCGA-COAD	oxaliplatin	False				
+prism_sec	TCGA-LUAD	erlotinib	True	84.5	0.214	96.3	93.8
+prism_sec	TCGA-LUAD	gefitinib	True	38.4	-0.005	86.6	78.3
+prism_sec	TCGA-LUAD	afatinib	True	87.5	0.238	17.2	38.0
+prism_sec	TCGA-LUAD	osimertinib	False				
+prism_sec	TCGA-SKCM	vemurafenib	True	97.2	0.842	80.1	64.8
+prism_sec	TCGA-SKCM	dabrafenib	True	100.0	1.315	68.6	53.7
+prism_sec	TCGA-SKCM	trametinib	True	98.0	0.886	35.9	30.8
+prism_sec	TCGA-SKCM	cobimetinib	True	99.6	1.086	82.9	82.5
+prism_sec	BRCA-Basal	fulvestrant	True	4.5	-1.527	96.7	72.8
+prism_sec	BRCA-Basal	tamoxifen	True	35.7	-0.333	97.1	75.4
+prism_sec	BRCA-Basal	raloxifene	True	99.4	1.138	96.2	71.1
+prism_pri	BRCA-LumA	fulvestrant	True	80.6	0.148	49.1	36.3
+prism_pri	BRCA-LumA	tamoxifen	True	57.1	-0.182	40.1	27.3
+prism_pri	BRCA-LumA	raloxifene	True	81.0	0.154	39.3	25.2
+prism_pri	BRCA-LumA	palbociclib	True	50.8	-0.261	61.2	40.2
+prism_pri	BRCA-LumB	fulvestrant	True	73.4	0.054	71.7	40.8
+prism_pri	BRCA-LumB	tamoxifen	True	65.4	-0.049	61.4	30.4
+prism_pri	BRCA-LumB	raloxifene	True	72.4	0.041	60.6	30.0
+prism_pri	BRCA-LumB	palbociclib	True	58.2	-0.143	85.1	48.9
+prism_pri	BRCA-Her2	lapatinib	True	88.3	0.371	99.5	91.4
+prism_pri	BRCA-Her2	neratinib	True	98.4	0.902	87.8	59.8
+prism_pri	BRCA-Her2	afatinib	True	91.2	0.501	71.6	60.6
+prism_pri	TCGA-PRAD	bicalutamide	False				
+prism_pri	TCGA-PRAD	enzalutamide	False				
+prism_pri	TCGA-PRAD	flutamide	True	93.2	1.185	85.5	84.6
+prism_pri	TCGA-PRAD	nilutamide	False				
+prism_pri	TCGA-COAD	fluorouracil	True	91.4	0.468	80.6	66.1
+prism_pri	TCGA-COAD	irinotecan	True	63.0	0.082	62.7	68.4
+prism_pri	TCGA-COAD	oxaliplatin	False				
+prism_pri	TCGA-LUAD	erlotinib	True	60.0	0.043	96.3	93.8
+prism_pri	TCGA-LUAD	gefitinib	True	24.7	-0.135	86.6	78.3
+prism_pri	TCGA-LUAD	afatinib	True	40.8	-0.046	17.2	38.0
+prism_pri	TCGA-LUAD	osimertinib	False				
+prism_pri	TCGA-SKCM	vemurafenib	True	99.9	1.706	80.1	64.8
+prism_pri	TCGA-SKCM	dabrafenib	True	99.3	1.462	68.6	53.7
+prism_pri	TCGA-SKCM	trametinib	True	94.6	0.685	35.9	30.8
+prism_pri	TCGA-SKCM	cobimetinib	True	94.9	0.697	82.9	82.5
+prism_pri	BRCA-Basal	fulvestrant	True	23.5	-0.629	96.7	72.8
+prism_pri	BRCA-Basal	tamoxifen	True	59.7	-0.083	97.1	75.4
+prism_pri	BRCA-Basal	raloxifene	True	66.4	0.016	96.2	71.1
+gdsc1	BRCA-LumA	fulvestrant	True	99.0	1.895	78.0	63.2
+gdsc1	BRCA-LumA	tamoxifen	True	89.7	0.439	92.0	87.9
+gdsc1	BRCA-LumA	raloxifene	False				
+gdsc1	BRCA-LumA	palbociclib	True	52.9	-0.254	61.2	40.2
+gdsc1	BRCA-LumB	fulvestrant	True	98.9	2.319	83.3	56.7
+gdsc1	BRCA-LumB	tamoxifen	True	94.5	0.718	84.6	71.4
+gdsc1	BRCA-LumB	raloxifene	False				
+gdsc1	BRCA-LumB	palbociclib	True	53.6	-0.175	85.1	48.9
+gdsc1	BRCA-Her2	lapatinib	False				
+gdsc1	BRCA-Her2	neratinib	False				
+gdsc1	BRCA-Her2	afatinib	True	92.2	0.685	71.6	60.6
+gdsc1	TCGA-PRAD	bicalutamide	False				
+gdsc1	TCGA-PRAD	enzalutamide	False				
+gdsc1	TCGA-PRAD	flutamide	False				
+gdsc1	TCGA-PRAD	nilutamide	False				
+gdsc1	TCGA-COAD	fluorouracil	False				
+gdsc1	TCGA-COAD	irinotecan	False				
+gdsc1	TCGA-COAD	oxaliplatin	False				
+gdsc1	TCGA-LUAD	erlotinib	False				
+gdsc1	TCGA-LUAD	gefitinib	True	80.2	0.134	86.6	78.3
+gdsc1	TCGA-LUAD	afatinib	True	91.6	0.283	17.2	38.0
+gdsc1	TCGA-LUAD	osimertinib	False				
+gdsc1	TCGA-SKCM	vemurafenib	False				
+gdsc1	TCGA-SKCM	dabrafenib	True	98.8	2.846	68.6	53.7
+gdsc1	TCGA-SKCM	trametinib	True	96.5	1.712	35.9	30.8
+gdsc1	TCGA-SKCM	cobimetinib	False				
+gdsc1	BRCA-Basal	fulvestrant	True	83.6	0.068	98.8	88.1
+gdsc1	BRCA-Basal	tamoxifen	True	62.2	-0.134	98.3	91.5
+gdsc1	BRCA-Basal	raloxifene	False				
+gdsc2	BRCA-LumA	fulvestrant	True	98.6	1.538	78.0	63.2
+gdsc2	BRCA-LumA	tamoxifen	True	81.9	0.297	92.0	87.9
+gdsc2	BRCA-LumA	raloxifene	False				
+gdsc2	BRCA-LumA	palbociclib	True	55.1	-0.234	61.2	40.2
+gdsc2	BRCA-LumB	fulvestrant	True	98.6	2.016	83.3	56.7
+gdsc2	BRCA-LumB	tamoxifen	True	86.2	0.386	84.6	71.4
+gdsc2	BRCA-LumB	raloxifene	False				
+gdsc2	BRCA-LumB	palbociclib	True	55.1	-0.257	85.1	48.9
+gdsc2	BRCA-Her2	lapatinib	True	94.2	0.898	99.5	91.4
+gdsc2	BRCA-Her2	neratinib	False				
+gdsc2	BRCA-Her2	afatinib	True	85.9	0.606	71.6	60.6
+gdsc2	TCGA-PRAD	bicalutamide	False				
+gdsc2	TCGA-PRAD	enzalutamide	False				
+gdsc2	TCGA-PRAD	flutamide	False				
+gdsc2	TCGA-PRAD	nilutamide	False				
+gdsc2	TCGA-COAD	fluorouracil	False				
+gdsc2	TCGA-COAD	irinotecan	True	13.4	-0.575	62.7	68.4
+gdsc2	TCGA-COAD	oxaliplatin	False				
+gdsc2	TCGA-LUAD	erlotinib	True	95.4	0.363	96.3	93.8
+gdsc2	TCGA-LUAD	gefitinib	True	99.2	0.534	86.6	78.3
+gdsc2	TCGA-LUAD	afatinib	True	88.9	0.276	17.2	38.0
+gdsc2	TCGA-LUAD	osimertinib	False				
+gdsc2	TCGA-SKCM	vemurafenib	False				
+gdsc2	TCGA-SKCM	dabrafenib	True	100.0	2.619	68.6	53.7
+gdsc2	TCGA-SKCM	trametinib	True	96.6	1.781	35.9	30.8
+gdsc2	TCGA-SKCM	cobimetinib	False				
+gdsc2	BRCA-Basal	fulvestrant	True	72.5	0.007	98.8	88.1
+gdsc2	BRCA-Basal	tamoxifen	True	97.1	0.555	98.3	91.5
+gdsc2	BRCA-Basal	raloxifene	False				

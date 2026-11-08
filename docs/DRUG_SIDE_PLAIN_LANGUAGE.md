@@ -83,6 +83,9 @@ follow-up questions:
    (Housekeeping D117, 2026-11-08: every step that applies a check now runs from one script in a fixed order, and
    rerunning it gives exactly the same lists. One display count, how many tumors carry a missing target, could
    come out differently from run to run; that is fixed. The lists did not change.)
+   (Fixes D119, 2026-11-08: seven small scoring and bookkeeping errors from the audit were corrected. The scores
+   barely moved, eight top-10 lists swapped one drug, and the checks against known uses and against measured cell
+   killing came out the same as before: the fixes made the numbers correct, not better.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

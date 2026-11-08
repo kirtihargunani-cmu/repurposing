@@ -25,5 +25,5 @@
  "n_boot": 1000,
  "seed": 0,
  "chembl_indication_records": 10349,
- "chembl_ids_newly_fetched": 25
+ "chembl_ids_newly_fetched": 0
 }

@@ -272,7 +272,8 @@ def main():
         isp = m.regulator.isin(linked)
         mp, mn = m[isp], m[~isp]
         rp, rn, rm = mr_rev(D, regs, mp), mr_rev(D, regs, mn), mr_rev(Da, regs, mn)
-        a, b = np.abs(rp) * np.sqrt(len(mp)), np.abs(rn) * np.sqrt(len(mn))
+        # D119: a part's summed reversal = |rev_part| x sqrt(sum of squared weights) (NES weighting), not x sqrt(count)
+        a, b = np.abs(rp) * np.sqrt((wts(mp) ** 2).sum()), np.abs(rn) * np.sqrt((wts(mn) ** 2).sum())
         return dict(rev_prolif=rp, rev_nonprolif=rn, rev_mech=rm, prolif_share=a / (a + b + 1e-12),
                     n_mrs_prolif=len(mp), n_mrs_nonprolif=len(mn)), mn
 
