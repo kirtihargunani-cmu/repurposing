@@ -169,6 +169,9 @@ flowchart LR
   (`scripts/d113/d113_resolve.py` -> `d105_all/d113_ids.json`, applied by `79w.chembl`; table
   `results/lincs/d113_chembl_ids.tsv`). 32 drugs; curated-mechanism FDA drugs 295 -> 325 of 422. Target-absent rows
   2,204 / 694; receptor_mismatch 393 / 127; no top-10 change.
+- **Cmax for drugs matched later (D114, 2026-11-08):** the D109 / D109b reading process is rerun for FDA drugs without a
+  Cmax answer (label queue via 79f3 `label_queue`, then 79f5 documents for unread (drug, url) pairs only); 79f5 keeps
+  earlier queue entries. 152 FDA drugs with a verified Cmax; low_exposure 721 rows (unchanged).
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,
