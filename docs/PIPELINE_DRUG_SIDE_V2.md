@@ -288,7 +288,7 @@ flowchart LR
   ranked by `spec_mech`, per subgroup by `spec_sib_mech`. Outputs `results/lincs/fda_ranking_v2_consensus.tsv`,
   `fda_ranking_strata_v2_consensus.tsv`, `fda_matches.tsv`.
 - **Page (`79q`):** `results/lincs/fda_rankings_v2.html`, self-contained (template `scripts/templates/fda_rankings.html`);
-  published copy https://claude.ai/artifact/4UVF5F6SxD639VKKJEZenw (private).
+  published copy https://claude.ai/artifact/AMk5E9yEXv1JhN8qf3FG96 (private).
 - **Receptor evidence gate (`79w`, step `receptor_gate`; C26):** per cohort / subgroup x drug x expressed receptor
   target (HGNC receptor families): ChEMBL 37 binding evidence (curated mechanism, or pChEMBL >= 6; kinases >= 7, also
   when mechanism-listed; no family credit), complexes judged as assembled, and the receptor present in >= half of the
