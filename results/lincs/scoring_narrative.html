@@ -63,8 +63,8 @@ svg .fnew { fill: var(--new); } svg .fold { fill: var(--old); } svg .fsoft { fil
   <p class="dek">Replacing a signature-reversal objective with a three-layered scoring objective, grounded in target biology and drug–target engagement, substantially improved concordance with established clinical indications.</p>
   <div class="tiles">
     <div class="tile old"><span class="k">Signature-reversal objective</span><span class="v num">0.46 / 0.43</span><span class="k">Hub / ChEMBL AUC; chance = 0.50</span></div>
-    <div class="tile new"><span class="k">Three-layered scoring objective</span><span class="v num">0.62 / 0.63</span><span class="k">current implementation</span></div>
-    <div class="tile new"><span class="k">With proliferation-based scoring of essential targets</span><span class="v num">0.67 / 0.65</span><span class="k">evaluated; under review</span></div>
+    <div class="tile new"><span class="k">Three-layered scoring objective</span><span class="v num">0.62 / 0.63</span><span class="k">target relevance and engagement</span></div>
+    <div class="tile new"><span class="k">With proliferation-weighted essential targets</span><span class="v num">0.67 / 0.65</span><span class="k">current implementation</span></div>
   </div>
 </header>
 
@@ -133,7 +133,7 @@ spec = z(rev, this cancer) − mean z(rev, cancers of other tissues), proliferat
     <div class="step"><h3>Target engagement</h3><span class="res"><b class="num">0.64 / 0.62</b> · target families counted once and weighted by binding affinity, removing the multi-target bias</span></div>
     <div class="step"><h3>Learned component weights</h3><span class="res">Weights fitted on one reference failed to generalise to the other; equal weighting was retained and reversal received zero weight</span></div>
     <div class="step"><h3>Three-layered scoring objective</h3><span class="res"><b class="num">0.62 / 0.63</b> vs 0.49 / 0.48 for reversal on the identical drug set; applied to cancers and molecular subgroups</span></div>
-    <div class="step"><h3>Proliferation-based scoring of essential targets</h3><span class="res"><b class="num">0.67 / 0.65</b> · evaluated; see section 7</span></div>
+    <div class="step"><h3>Proliferation-weighted scoring of essential targets</h3><span class="res"><b class="num">0.67 / 0.65</b> · cytotoxic targets scored by tumour proliferation, weighted by each target’s coupling to it; current implementation</span></div>
   </div>
   <div class="fig">
     <svg viewBox="0 0 860 280" role="img" aria-label="Concordance with approved indications at each stage, Hub and ChEMBL">
@@ -146,7 +146,7 @@ spec = z(rev, this cancer) − mean z(rev, cancers of other tissues), proliferat
         <circle cx="440" cy="74" r="7" class="fnew"/><rect x="433" y="84" width="14" height="14" class="fnew" opacity=".7"/>
         <circle cx="590" cy="86" r="7" class="fnew"/><rect x="583" y="76" width="14" height="14" class="fnew" opacity=".7"/>
         <circle cx="740" cy="57" r="7" class="fnew"/><rect x="733" y="65" width="14" height="14" class="fnew" opacity=".7"/>
-        <text x="140" y="250" text-anchor="middle">Reversal</text><text x="290" y="250" text-anchor="middle">Target role</text><text x="440" y="250" text-anchor="middle">Engagement</text><text x="590" y="250" text-anchor="middle">Three-layered</text><text x="740" y="250" text-anchor="middle">+ proliferation</text>
+        <text x="140" y="250" text-anchor="middle">Reversal</text><text x="290" y="250" text-anchor="middle">Target role</text><text x="440" y="250" text-anchor="middle">Engagement</text><text x="590" y="250" text-anchor="middle">Three-layered</text><text x="740" y="250" text-anchor="middle">+ proliferation (current)</text>
         <circle cx="80" cy="20" r="6" class="fnew"/><text x="92" y="25">Hub</text><rect x="134" y="14" width="12" height="12" class="fnew" opacity=".7"/><text x="152" y="25">ChEMBL</text>
       </g>
     </svg>
@@ -208,13 +208,14 @@ Layer 3: percentile of S within the cancer</div>
 
 <section>
   <div class="eyebrow">7 · Essential targets</div>
-  <h2>Cytotoxic agents are best characterised by tumour proliferation</h2>
+  <h2>Cytotoxic agents are characterised by proliferation, weighted by target coupling</h2>
   <ul>
     <li>Targets required by all proliferating cells (e.g. tubulin, topoisomerase II) carry no cancer-specific dependency signal, and approvals of the corresponding cytotoxic agents instead track the proliferative rate of the cancer (between-cancer AUC 0.63 / 0.57).</li>
     <li>Scoring these targets by a PAM50-derived proliferation index raised overall concordance to 0.67 / 0.65 and improved between-cancer discrimination for these agents from 0.51 / 0.46 to 0.60 / 0.60.</li>
-    <li>Because proliferation is a property of the cancer rather than the drug, all agents acting on essential targets receive the same score within a cancer.</li>
-    <li>Cell-culture essentiality also includes targets outside cytotoxic chemotherapy (HMGCR, the statin target; PPIA, the cyclosporine target), which consequently rise in rapidly proliferating cancers.</li>
+    <li>Because proliferation is a property of the cancer, an unweighted index assigns every such agent the same score and credits targets that are essential only in cell culture (HMGCR, the statin target; PPIA, the cyclosporine target).</li>
+    <li>Weighting by each target’s within-tumour correlation with proliferation (ρ: TOP2A 0.79, RRM2 0.77, HMGCR 0.29) preserves the signal for cytotoxic targets, removes statins and cyclosporine from every top 10, and separates agents with different targets.</li>
   </ul>
-  <p class="note">The method of resolving within-cancer ties and restricting essential targets to cytotoxic mechanisms is under review. Remaining limitations: alterations carried by a minority of tumours inflate some targets (e.g. EGFR in lung adenocarcinoma), and cell-line sensitivity data (PRISM, GDSC) do not yet provide independent support for either objective.</p>
+  <div class="formula">T = 50 + ρ · (P − 50)      P = cancer’s proliferation percentile (PAM50 index), ρ = target’s coupling to proliferation</div>
+  <p class="note">Remaining limitations: agents sharing a target still share a score (e.g. glucocorticoids), alterations carried by a minority of tumours inflate some targets (e.g. EGFR in lung adenocarcinoma), and cell-line sensitivity data (PRISM, GDSC) do not yet provide independent support.</p>
 </section>
 </div>
