@@ -1,6 +1,7 @@
 # Spec: graph-metric reversal scoring (D125) and the mechanism-consistency filter (D126)
 
-Status: **drafted 2026-11-09, not run.** Two linked proposals from the scoring review of 2026-11-09. Decisions D125
+Status: **drafted 2026-11-09, amended the same day (user: layer-3 refit reported not decision-bearing on the
+first run; CARNIVAL on breast; the noise ceiling feeds the metrics rather than sitting beside them); not run.** Two linked proposals from the scoring review of 2026-11-09. Decisions D125
 and D126 in [`DECISIONS.md`](DECISIONS.md) once the rules below are fixed. Background: the methods review in
 [`LITERATURE_SCORING.md`](LITERATURE_SCORING.md), the drug side in
 [`PIPELINE_DRUG_SIDE_V2.md`](PIPELINE_DRUG_SIDE_V2.md).
@@ -34,6 +35,39 @@ which is a separate source.
 `K -> I / lambda` as `lambda -> inf`, and the normalization is scale-free, so `rev_L -> rev` in the limit. The
 current score is nested inside the proposed one. Any loss is from variance at finite `lambda`, not from a different
 claim, which is why `lambda` must be fixed on data independent of the adoption criteria (below).
+
+## A0. The noise ceiling, and reporting against it (user 2026-11-09)
+
+Runs first, and its output is used in the metrics rather than quoted beside them.
+
+**Estimate.** Split the LINCS replicate-level signatures of each (drug, line) at random into two halves, collapse
+each half to its own level-5-style consensus, and run the whole scoring path twice to two independent copies of
+`spec_mech_pct`. Reliability `r` = the median across cohorts of the Spearman correlation between the two copies over
+gate-passing drugs. Repeat over 20 random splits and report the median and spread. Lim & Pavlidis 2021 (17%
+cross-phase compound recovery) and issue 2 of `LITERATURE_SCORING.md` both imply `r` is low.
+
+**Use.** Convert AUC to Somers' D (`D = 2*AUC - 1`), which is the rank-correlation form, and report
+
+    ceiling     AUC_max = (1 + sqrt(r)) / 2
+    attainment  D_observed / sqrt(r)
+
+`sqrt(r)` is the classical attenuation bound on the correlation any score can reach with truth when the score is
+measured at reliability `r`. Attainment is the fraction of the attainable signal a scoring arm actually gets, and it
+is the quantity criterion 3 is stated in. Worked example: at `r = 0.3`, `AUC_max` is about 0.77, so `spec_mech` at
+D118's Hub 0.462 is attainment ~ -0.14 — i.e. below chance against an attainable 0.77, which would say the problem
+is the score and not the ceiling. At `r = 0.05`, `AUC_max` is about 0.61 and the same number reads very differently.
+
+**Assumptions, stated because they are load-bearing.** It treats the indication labels as noiseless (they are not;
+repoDB and Hub coverage per cancer is thin, which depresses the observed AUC for reasons the split-half does not
+see), and the AUC-to-D conversion assumes the attenuation bound carries over to a rank statistic on a binary
+outcome, which is an approximation. So `AUC_max` is an upper bound on what the drug-side noise permits, not a
+prediction of achievable performance. Report both raw and attainment-corrected numbers; never report attainment
+alone.
+
+**Consequence for this spec.** If `AUC_max` sits near where `spec_mech` already scores, Part A can only be justified
+on controls and dominance, and Part B becomes the more valuable half. The estimate also gives the first honest
+answer to how much of the pipeline's measured performance is capped by L1000 reproducibility, which is worth having
+independently of D125.
 
 ## Part A: graph-metric reversal (D125)
 
@@ -93,16 +127,21 @@ Arms: CUR (production) vs D125 at the frozen `lambda`. Criteria fixed before any
    tolerance as D92 / D93.
 2. **Dominance.** Drugs scored in >= 33 of 41 groups with `rev > 0` in >= 80% of them: rises by <= 0.5 points vs
    CUR. Standing tolerance from D93 / D94.
-3. **Known use, non-inferiority only.** D118 metric (pooled within-cohort AUC, anticancer, gate-passing eligible
-   rows): Hub and ChEMBL each fall by <= 0.01. Treated as a floor, not as evidence of benefit, because D90 and C28
-   record that this yardstick cannot resolve changes of this size.
-4. **Layer-3 refit (the informative test).** Refit the D121 within-cohort conditional logit with `spec_mech_L_pregate`
-   in place of `spec_mech_pct_pregate`. D125 is informative if the fitted `v` exceeds 0.05 **and** drug-held-out
-   within-cohort AUC rises by >= 0.01 on the fitting label set, with the other label set and the breast controls
-   holding (the test D121 itself failed).
+3. **Known use, non-inferiority, ceiling-relative.** D118 metric (pooled within-cohort AUC, anticancer,
+   gate-passing eligible rows), reported as **attainment** against the noise ceiling of section A0: Hub and ChEMBL
+   attainment each fall by <= 0.02. Stated as a floor, not as evidence of benefit, because D90 and C28 record that
+   this yardstick cannot resolve changes of this size; the ceiling is what makes "cannot resolve" a number rather
+   than a judgement.
+4. **Layer-3 refit — reported, not decision-bearing on this run (user 2026-11-09).** Refit the D121 within-cohort
+   conditional logit with `spec_mech_L_pregate` in place of `spec_mech_pct_pregate`, and report the fitted `v`, the
+   drug-held-out within-cohort AUC on both label sets, and the breast controls. Reason it is not decision-bearing:
+   the fit would run on the same Hub labels whose D121 version failed to transfer to ChEMBL and to the breast
+   controls, so one arm of evidence should not carry a change on its first run. Making it decision-bearing needs its
+   own rule, with the bar (`v` and the held-out AUC gain) fixed in advance.
 
-**Adopt** as the reported reversal score if 1, 2 and 3 are met. Changing the **lead** score requires criterion 4 as
-well, and is a separate decision (D122 put the lead on `layered_pct`; this spec does not propose to move it).
+**Adopt** as the reported reversal score if 1, 2 and 3 are met. Criterion 4 is reported alongside and informs
+whether a later decision on the **lead** score is worth writing; it does not affect adoption here (D122 put the lead
+on `layered_pct`, and this spec does not propose to move it).
 
 The D84 benchmark is the `lambda` selection set and therefore **is not** an adoption criterion. Report its value,
 do not score the decision on it.
@@ -132,9 +171,18 @@ excluded from the denominator and counted separately as `mechanism_coverage`.
 Chosen as primary over CARNIVAL because the ILP would run over ~1,100 drugs x lines x 41 groups and needs a
 commercial solver for interactome-scale instances; HiGHS or CBC at that size is not realistic.
 
-**Secondary arm (reported only, one cohort):** CARNIVAL proper on breast, target as the perturbation node of known
-sign, measurements = the drug's regulator NES, to check whether the path heuristic agrees with the full causal
-reconstruction. If they disagree materially, the heuristic is not a stand-in and B must be rethought.
+**Breast arm: CARNIVAL proper (user 2026-11-09).** Run on the breast cohorts, where the controls are and where the
+known failure lives: target as the perturbation node of known sign (inhibitor -1, agonist +1), measurements = the
+drug's regulator NES in the scoring lines, signed prior as the network. Scope fixed to keep the ILP tractable:
+gate-passing FDA drugs with a curated ChEMBL mechanism target (D105b) in the four breast groups, one instance per
+(drug, group). Solver: CPLEX or Gurobi under an academic licence if available, else the instance is reduced by
+restricting the prior to the k-hop neighbourhood of the target (k = 3) before falling back to HiGHS; if neither
+runs, record the arm as not executable rather than substituting the heuristic silently.
+
+Read-out: agreement between CARNIVAL's per-drug consistency and `mechanism_consistent_frac` (Spearman, and
+concordance on the flag). This is what licenses the heuristic outside breast. If they disagree materially
+(Spearman < 0.5, or the flag disagrees on > 25% of drugs), the heuristic is not a stand-in, and either B runs on
+CARNIVAL only where it is affordable or the flag is confined to breast.
 
 ### B3. Pre-registered rule
 
@@ -157,16 +205,6 @@ statement about the prior, not proof the drug does not work.
 `results/lincs/d126/`, columns `mechanism_consistent_frac`, `mechanism_coverage`, `mechanism_inconsistent` joined
 to the split tables; `scripts/d126/`.
 
-## Prerequisite: the noise ceiling
-
-Before either part, estimate the attainable ceiling: split the LINCS replicate-level signatures in half, run the
-scoring path on each half, and compute the known-use AUC one half reaches against the other. Lim & Pavlidis 2021
-(17% cross-phase compound recovery) and our own issue 2 in `LITERATURE_SCORING.md` imply this ceiling is low. It
-decides how to read criterion 3, and whether a metric change can be expected to show up at all.
-
-If the ceiling is near where `spec_mech` already scores, Part A can only be justified on controls and dominance,
-and Part B becomes the more valuable half of this spec.
-
 ## Risks
 
 - **Whitening removes signal.** The D86 / latent-factor prior. Mitigated by the nested `lambda -> inf` limit and the
@@ -181,7 +219,12 @@ and Part B becomes the more valuable half of this spec.
 
 ## Open questions for the user
 
-- Does criterion A5.4 (`v > 0.05`) read as the right bar, or should the layer-3 refit be reported rather than
-  decision-bearing on its first run?
-- Which signed prior for Part B, and does adding it need its own entry in `config/datasets.yaml` review?
-- Should the noise ceiling run as its own numbered decision before D125, or inside it?
+- Which signed prior for Part B (OmniPath vs SIGNOR), and whether adding it needs its own `config/datasets.yaml`
+  review before the breast CARNIVAL arm runs.
+- Whether an academic CPLEX or Gurobi licence is available, since it decides whether the breast arm runs on the full
+  prior or on the 3-hop reduction.
+- Whether 20 random splits is enough for A0's reliability estimate, or whether it should run to a target precision
+  on the median `r`.
+
+Settled 2026-11-09: layer-3 refit reported, not decision-bearing (A5.4); CARNIVAL runs on breast (B2); the noise
+ceiling runs first and feeds the metrics (A0).
