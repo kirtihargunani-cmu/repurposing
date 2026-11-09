@@ -101,6 +101,8 @@ follow-up questions:
    three parts keep equal weight. Adding the main list's score did not help, and neither did how tightly the drug
    binds its targets in lab tests; how much of the target the drug covers at patients' blood levels helped a little
    where that is known.)
+   (Decision D121a: binding strength stays in the score anyway. A drug that only weakly grabs a target should not
+   get full credit for that target, even if the check against approved uses cannot see the difference.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

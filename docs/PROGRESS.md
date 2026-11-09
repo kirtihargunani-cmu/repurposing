@@ -837,6 +837,8 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   (passes the label-free check). Learned weights (alteration-heavy) won on Hub held-out (0.669 vs 0.643) but lost
   on ChEMBL (0.563 vs 0.615) and on the breast controls: baseline (equal weights) stays. Reversal and relative
   binding add nothing; occupancy at Cmax helps where a Cmax exists. Spec doc with flowchart (Claude Docs).
+- D121a (11-08, user): lab binding strength stays in the score (gamma 1) even though it does not raise accuracy;
+  later fits keep it fixed.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
