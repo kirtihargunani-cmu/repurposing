@@ -1,0 +1,29 @@
+source	drugs	score	auc	pairs	n_drugs	n_approved_pairs	p_perm
+hub	all	layered_pct	0.464	1766	19	63	0.7832
+hub	all	layered_D	0.5536	1716	19	63	0.1209
+hub	all	layered_A	0.372	1640	19	63	0.999
+hub	all	layered_O	0.5391	1610	19	63	0.2298
+hub	all	proliferation	0.6263	2146	19	63	0.001
+hub	DNA-damaging (no protein target)	SLFN11	0.4368	380	4	10	0.7453
+hub	DNA-damaging (no protein target)	hr_loss	0.4693	326	4	10	0.6294
+hub	TOP2 poison	SLFN11	0.5051	396	4	11	0.4965
+hub	TOP2 poison	TOP2A	0.5505	396	4	11	0.3067
+hub	TOP1 inhibitor	SLFN11	0.4872	156	2	4	0.5365
+hub	TOP1 inhibitor	hr_loss	0.8378	148	2	4	0.014
+hub	TYMS antimetabolite	TYMS (inverse)	0.75	4	1	1	0.3756
+hub	tubulin binder	TUBB3 (inverse)	0.5827	798	6	25	0.0939
+hub	nucleotide / polymerase	SLFN11	0.7424	264	1	8	0.014
+chembl	all	layered_pct	0.5071	4128	27	215	0.4136
+chembl	all	layered_D	0.5212	3970	27	215	0.2587
+chembl	all	layered_A	0.3788	3770	27	215	1.0
+chembl	all	layered_O	0.5767	3518	27	215	0.012
+chembl	all	proliferation	0.5694	5592	27	215	0.005
+chembl	DNA-damaging (no protein target)	SLFN11	0.6076	1464	6	51	0.022
+chembl	DNA-damaging (no protein target)	hr_loss	0.4737	1310	6	51	0.7313
+chembl	TOP2 poison	SLFN11	0.5794	1020	5	44	0.0869
+chembl	TOP2 poison	TOP2A	0.5451	1020	5	44	0.2228
+chembl	TOP1 inhibitor	SLFN11	0.6762	610	2	22	0.012
+chembl	TOP1 inhibitor	hr_loss	0.7858	530	2	22	0.001
+chembl	TYMS antimetabolite	TYMS (inverse)	0.75	4	1	1	0.4056
+chembl	tubulin binder	TUBB3 (inverse)	0.5392	1174	6	54	0.2507
+chembl	nucleotide / polymerase	SLFN11	0.7663	704	3	25	0.001

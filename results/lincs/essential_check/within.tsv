@@ -1,0 +1,11 @@
+source	test	score	auc	n_cohorts	n_pos	n_neg	pairs
+hub	W: essential-target drugs vs each other, within cancer	layered_pct	0.4799	19	53	504	1316
+hub	W: essential-target drugs vs each other, within cancer	layered_D	0.4707	19	53	504	1316
+hub	W: essential-target drugs vs each other, within cancer	layered_A	0.521	18	52	476	1288
+hub	W: essential-target drugs vs each other, within cancer	layered_O	0.4301	15	49	344	1052
+hub	W: all anticancer drugs (reference)	layered_pct	0.6224	28	107	2039	7502
+chembl	W: essential-target drugs vs each other, within cancer	layered_pct	0.5109	37	163	913	3726
+chembl	W: essential-target drugs vs each other, within cancer	layered_D	0.4666	36	162	885	3698
+chembl	W: essential-target drugs vs each other, within cancer	layered_A	0.4928	35	158	860	3598
+chembl	W: essential-target drugs vs each other, within cancer	layered_O	0.4715	37	141	823	2873
+chembl	W: all anticancer drugs (reference)	layered_pct	0.6284	40	336	2720	21272

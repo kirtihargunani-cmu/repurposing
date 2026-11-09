@@ -847,6 +847,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   BRAF / MEK). 457 more trials read for the new top 10s. PRISM / GDSC still null.
 - D123 (11-08): free fraction read from FDA labels for 196 drugs, 8 new Cmax; free occupancy for 86 drugs (24 below
   50%). It does not beat relative binding on known use; reported, not used.
+- Check (11-08, reported, post hoc; `scripts/checks/essential_check.py`): drugs on targets every cell needs
+  (chemotherapy). Within a cancer no component separates the approved ones (0.43-0.52). Between cancers, per drug,
+  the cancer's proliferation index separates where they are approved (Hub 0.63, ChEMBL 0.57, p <= 0.005);
+  alteration points the wrong way (0.37 / 0.38); SLFN11 suggestive for DNA-damaging and nucleotide drugs (few drugs).
+  Basis for a possible rule: for these targets drop A, use proliferation for O.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
