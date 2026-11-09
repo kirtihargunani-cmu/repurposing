@@ -94,14 +94,48 @@ svg .fnew { fill: var(--new); } svg .fold { fill: var(--old); } svg .fsoft { fil
   <div class="formula">rev  = − Σ<sub>i</sub> w<sub>i</sub> · a<sub>i</sub> / √(Σ w<sub>i</sub>²)        w = tumour regulator activity, a = drug-induced regulator activity
 spec = z(rev, this cancer) − mean z(rev, cancers of other tissues), proliferation-linked regulators excluded</div>
   <ul>
-    <li>Concordance was at or below chance (0.46 / 0.43) and was insensitive to correction of seven implementation errors, indicating a limitation of the objective rather than of its implementation.</li>
+    <li>Concordance was at or below chance (0.46 / 0.43) and was insensitive to correction of seven implementation errors, indicating a limitation of the objective rather than of its implementation; section 3 shows it is not a limitation of the data either.</li>
     <li>Tumour signatures are dominated by programmes shared across cancers, so broadly acting compounds reverse most cancers alike.</li>
     <li>Drug signatures derive from cell lines that are often poor surrogates for the tumour of interest.</li>
   </ul>
 </section>
 
 <section>
-  <div class="eyebrow">3 · Eligibility criteria</div>
+  <div class="eyebrow">3 · Measurement ceiling</div>
+  <h2>Reversal fails because of the objective, not the reproducibility of the data</h2>
+  <ul>
+    <li><b>Reliability.</b> Each drug was scored twice from independent experiments in the same cell line (a different dose or time point), counting only drugs whose every experiment was replaced. The two within-cancer rankings agree at a median Spearman r = 0.80 across the 41 cancers (0.43–0.91; lowest where scores rest on a single matched line, e.g. prostate, melanoma, breast).</li>
+    <li><b>Ceiling.</b> By the classical attenuation bound, a score measured at this reliability can reach at most AUC 0.95 against the approved indications.</li>
+    <li><b>Attainment.</b> The reversal objective attains essentially none of that signal: −0.09 / −0.16 of the attainable signal at 0.46 / 0.43, and +0.03 / −0.04 at 0.51 / 0.48 on the drug set of the three-layered objective (Hub / ChEMBL).</li>
+    <li>The three-layered objective does not use the transcriptional (LINCS) data, so this ceiling does not apply to it.</li>
+  </ul>
+  <div class="formula">D          = 2 · AUC − 1          <b>Somers’ D, the rank-correlation form of the AUC</b>
+AUC_max    = (1 + √r) / 2         <b>ceiling at reliability r</b>
+attainment = D / √r               <b>share of the attainable signal</b></div>
+  <div class="fig">
+    <svg viewBox="0 0 860 230" role="img" aria-label="Concordance of reversal and the three-layered objective against chance and the reversal ceiling">
+      <g font-size="14">
+        <line x1="353" y1="30" x2="353" y2="175" class="chance" stroke-width="1.5"/><text x="353" y="22" text-anchor="middle" class="mut" font-size="13">chance 0.50</text>
+        <line x1="773" y1="30" x2="773" y2="175" class="snew" stroke-width="2" stroke-dasharray="6 4"/><text x="773" y="22" text-anchor="middle" font-size="13" class="fnew">reversal ceiling 0.95</text>
+        <text x="240" y="65" text-anchor="end">Reversal (own drug set)</text>
+        <line x1="287" y1="60" x2="773" y2="60" class="axis" stroke-width="6" opacity=".6"/>
+        <circle cx="318" cy="60" r="7" class="fold"/><rect x="280" y="53" width="14" height="14" class="fold" opacity=".7"/>
+        <text x="240" y="110" text-anchor="end">Reversal (same drugs)</text>
+        <line x1="335" y1="105" x2="773" y2="105" class="axis" stroke-width="6" opacity=".6"/>
+        <circle cx="365" cy="105" r="7" class="fold"/><rect x="328" y="98" width="14" height="14" class="fold" opacity=".7"/>
+        <text x="240" y="155" text-anchor="end">Three-layered</text>
+        <circle cx="515" cy="150" r="7" class="fnew"/><rect x="488" y="143" width="14" height="14" class="fnew" opacity=".7"/>
+        <line x1="260" y1="182" x2="820" y2="182" class="axis"/>
+        <text x="260" y="200" text-anchor="middle" class="mut num" font-size="13">0.4</text><text x="353" y="200" text-anchor="middle" class="mut num" font-size="13">0.5</text><text x="447" y="200" text-anchor="middle" class="mut num" font-size="13">0.6</text><text x="540" y="200" text-anchor="middle" class="mut num" font-size="13">0.7</text><text x="633" y="200" text-anchor="middle" class="mut num" font-size="13">0.8</text><text x="727" y="200" text-anchor="middle" class="mut num" font-size="13">0.9</text><text x="820" y="200" text-anchor="middle" class="mut num" font-size="13">1.0</text>
+        <circle cx="270" cy="220" r="6" class="mut" style="fill:var(--muted)"/><text x="282" y="225" font-size="13">Hub</text><rect x="324" y="214" width="12" height="12" style="fill:var(--muted)"/><text x="342" y="225" font-size="13">ChEMBL</text><text x="420" y="225" font-size="13" class="mut">grey band: signal attainable but not captured</text>
+      </g>
+    </svg>
+  </div>
+  <p class="note">The ceiling treats approved indications as error-free and carries a correlation bound over to a rank statistic, so it is an upper bound rather than an achievable target. Counting dose and time differences as noise lowers r and therefore the ceiling, so the true attainment of reversal is, if anything, lower. A stricter split-half estimate on the most replicated drugs is in progress; the figures are provisional.</p>
+</section>
+
+<section>
+  <div class="eyebrow">4 · Eligibility criteria</div>
   <h2>Exclusion is reserved for pharmacological and biological implausibility</h2>
   <div class="fig">
     <svg viewBox="0 0 860 300" role="img" aria-label="Number of FDA drug by cancer pairs retained after each exclusion criterion">
@@ -134,7 +168,7 @@ spec = z(rev, this cancer) − mean z(rev, cancers of other tissues), proliferat
 </section>
 
 <section>
-  <div class="eyebrow">4 · Development of the objective</div>
+  <div class="eyebrow">5 · Development of the objective</div>
   <h2>Each revision targeted a specific failure of the previous objective</h2>
   <div class="steps">
     <div class="step old"><h3>Transcriptional reversal</h3><span class="res"><b class="num">0.46 / 0.43</b> · captured pan-cancer programmes rather than cancer-specific biology</span></div>
@@ -164,7 +198,7 @@ spec = z(rev, this cancer) − mean z(rev, cancers of other tissues), proliferat
 </section>
 
 <section>
-  <div class="eyebrow">5 · The three-layered scoring objective</div>
+  <div class="eyebrow">6 · The three-layered scoring objective</div>
   <h2>Target relevance, modulated by drug–target engagement</h2>
   <div class="two">
     <div class="card"><h3>Layer 1 · target relevance in the cancer</h3>
@@ -198,7 +232,7 @@ Layer 3: percentile of S within the cancer</div>
 </section>
 
 <section>
-  <div class="eyebrow">6 · Biological validity</div>
+  <div class="eyebrow">7 · Biological validity</div>
   <h2>Endocrine therapies segregate correctly by breast cancer subtype</h2>
   <div class="fig">
     <svg viewBox="0 0 860 210" role="img" aria-label="Median percentile of anti-estrogens under each objective, by breast cancer subtype">
@@ -216,7 +250,7 @@ Layer 3: percentile of S within the cancer</div>
 </section>
 
 <section>
-  <div class="eyebrow">7 · Recall by cancer</div>
+  <div class="eyebrow">8 · Recall by cancer</div>
   <h2>About one third of approved drugs fall in the top quarter of each ranking</h2>
   <ul>
     <li>Across 41 cancers and 468 approved cancer–drug pairs (ChEMBL), 36% rank in the top quarter (expected by chance: 25%) and 13% in the top 10; the Hub reference gives 36% and 18%.</li>
@@ -274,7 +308,7 @@ Layer 3: percentile of S within the cancer</div>
   <p class="cap">ChEMBL reference; ranking lists contain 106–151 FDA-approved drugs per cancer. Greyed rows have three or fewer approved drugs, so their percentages are unstable. “Ranked” excludes drugs removed by the eligibility criteria and drugs without a protein or nucleic-acid target.</p>
 </section>
 <section>
-  <div class="eyebrow">8 · Essential targets</div>
+  <div class="eyebrow">9 · Essential targets</div>
   <h2>Cytotoxic agents are characterised by proliferation, weighted by target coupling</h2>
   <ul>
     <li>Targets required by all proliferating cells (e.g. tubulin, topoisomerase II) carry no cancer-specific dependency signal, and approvals of the corresponding cytotoxic agents instead track the proliferative rate of the cancer (between-cancer AUC 0.63 / 0.57).</li>
