@@ -368,8 +368,8 @@ not proof the drug does not work.
 - ~~Which level-5 index fields define an independent stratum for A0a.~~ Settled 11-09 (D125-A0): the (dose, time) cell.
   The same decision fixes A0.0 / A0b on active level-5 signatures (level-4 profiles are not on disk), the drugs entering
   r_c, and the spliced-profile implementation.
-- A0b stopping rule: "until the SE of the median r_c stabilises" / "SE small relative to 0.05" has no numeric criterion.
-  Blocks A0b execution (not its dry run).
+- ~~A0b stopping rule.~~ Settled 11-09 (D125-A0.1): SE(median r_c) <= 0.01 after >= 20 splits. The same amendment
+  restricts r_c, for both estimators, to drugs whose every scoring line changes between the passes.
 - Whether the OmniPath release needs a `config/datasets.yaml` review entry of its own, given it is a service rather
   than a fixed file. Blocks B0.
 - Gurobi academic licence availability (expected yes at CMU). Decides whether the breast CARNIVAL arm runs on the

@@ -6,8 +6,9 @@ with >= A00_MIN_REPLICATES active level-5 signatures. A0.0 says cohort-level (>=
 the cohort-level path; the line-level path is not implemented (it stops if A0.0 ever says line-level).
 Split s (seed A0B_SEED + s): each eligible pair's signatures shuffled and halved (floor(n/2) / rest); half 1 and half 2
 are two passes of the production path (a0_common, as A0a); per cohort r_c^s = Spearman of spec_mech_pct between the
-halves over gate-passing drugs drawing on >= 1 eligible pair. Batches of A0B_BATCH splits; after >= A0B_FLOOR splits stop
-when SE(median r_c) <= A0B_SE_STABLE, else at A0B_CAP (then the ceiling is indicative only). SE(median r_c) = sd over
+halves over gate-passing drugs whose every scoring line is an
+eligible pair (D125-A0.1; >= 1 eligible pair reported as r_c_any). Batches of A0B_BATCH splits; after >= A0B_FLOOR splits stop
+when SE(median r_c) <= A0B_SE_STABLE (0.01, D125-A0.1), else at A0B_CAP (then the ceiling is indicative only). SE(median r_c) = sd over
 splits of the median-across-cohorts r_c^s / sqrt(splits). Per cohort: r_c = mean over splits, SE = sd / sqrt(splits),
 CI = split percentiles; covered (r_optimistic False) when the cohort's in-key LINCS lines hold >= 1 eligible pair.
 
@@ -182,7 +183,8 @@ def execute(g, cols):
     q = (1 - CI_LEVEL) / 2
     agg = done.groupby(["kind", "cohort"]).agg(
         r_c=("r_c", "mean"), sd=("r_c", "std"), ci_lo=("r_c", lambda v: v.quantile(q)), ci_hi=("r_c", lambda v: v.quantile(1 - q)),
-        n_drugs=("n_drugs", "median"), n_gate=("n_gate", "median"), n_splits=("split", "nunique")).reset_index()
+        n_drugs=("n_drugs", "median"), n_drugs_direct=("n_drugs_direct", "median"), n_gate=("n_gate", "median"),
+        n_splits=("split", "nunique"), r_c_any=("r_c_any", "mean"), n_drugs_any=("n_drugs_any", "median")).reset_index()
     agg["se"] = agg.sd / np.sqrt(agg.n_splits)
     agg, medr = C.finish_reliability(agg, "A0b")
     cov = coverage(cols)
@@ -191,8 +193,8 @@ def execute(g, cols):
     se_med = float(med.std(ddof=1) / np.sqrt(n))
     agg["stabilised"] = se_med <= A0B_SE_STABLE and n >= A0B_FLOOR
     agg["indicative_only"] = ~agg.stabilised
-    cols_out = ["kind", "cohort", "estimator", "r_c", "ci_lo", "ci_hi", "n_drugs", "n_gate", "n_splits", "se",
-                "r_pooled", "r_used", "r_optimistic", "stabilised", "indicative_only"]
+    cols_out = ["kind", "cohort", "estimator", "r_c", "ci_lo", "ci_hi", "n_drugs", "n_drugs_direct", "n_gate", "n_splits",
+                "se", "r_pooled", "r_used", "r_optimistic", "stabilised", "indicative_only", "r_c_any", "n_drugs_any"]
     agg[cols_out].to_csv(C.OUT / "reliability_a0b.tsv", sep="\t", index=False, float_format="%.4f")
     run.update(n_splits=n, se_median_r_c=se_med, median_r_c=medr, stabilised=bool(agg.stabilised.iloc[0]))
     C.write_json(C.OUT / "a0b_run.json", run)

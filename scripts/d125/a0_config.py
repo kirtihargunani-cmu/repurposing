@@ -22,10 +22,12 @@ A0A_SEED = 125                # draws the two cells per pair
 A0B_BATCH = 10                # splits per batch
 A0B_FLOOR = 20                # minimum splits
 A0B_CAP = 100                 # maximum splits; reached without stabilising -> ceiling indicative only
-A0B_SE_STABLE = None          # NOT pre-registered: the spec says "until the SE of the median r_c stabilises" /
-                              # "SE small relative to 0.05" without a number. Execution refuses while None; set it only
-                              # through a recorded decision (D125-A0 amendment), never after seeing results.
+A0B_SE_STABLE = 0.01          # D125-A0.1 (user 11-09): stop when SE(median r_c) <= 0.01 after >= A0B_FLOOR splits
 A0B_SEED = 1250               # split s uses seed A0B_SEED + s
+
+# --- drugs in r_c (D125-A0.1, both estimators) -----------------------------------------------------------------------
+R_C_DRUGS = "all_changed"     # primary: every line the score uses changes between the passes; the D125-A0 (3) version
+                              # (>= 1 changed line) is reported as r_c_any
 
 # --- A0c / A0d reporting --------------------------------------------------------------------------------------------
 R_POOLED_MIN_DRUGS = 50       # fewer drugs in a cohort's r_c -> corrected with the median, flagged r_pooled
