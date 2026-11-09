@@ -71,6 +71,9 @@ drug's rank-sorted activity profile, models combined by Fisher's). D73 ruled out
 different object from a fixed top-k. A fixed-k aREA arm is a small code change and would give a direct comparison
 against the one validated precedent; it needs its own rule if it is to be more than reported.
 
+Both options are specced as D125 (graph-metric reversal, `d^T (L + lambda I)^-1 g`) and D126 (mechanism-consistency
+filter) in [`SPEC_graph_metric_scoring.md`](SPEC_graph_metric_scoring.md), 2026-11-09; not run.
+
 ## Links
 
 - Samart et al. 2021, Brief Bioinform 22:bbab161, Reconciling multiple connectivity scores: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8597919/ ; https://arxiv.org/abs/2009.09317
