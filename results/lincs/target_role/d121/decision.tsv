@@ -1,0 +1,15 @@
+item	value
+layer-2 mode (label-free acceptance)	mean
+Hub-fitted parameters	w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0 beta 2.5
+(a) LOCO Hub AUC fitted vs baseline	0.6690 vs 0.6425 -> met
+(b) ChEMBL minus Hub-approved AUC fitted vs baseline	0.5633 vs 0.6153 -> not met
+(c) breast controls fitted vs baseline (lum median, basal median)	(74.4, 25.0) vs (78.7, 17.1) -> not met
+DECISION	baseline stays (equal w, gamma 1, v 0): w(D,A,O)=(0.33,0.33,0.33) gamma 1.0 v 0.0
+ChEMBL-fitted parameters (reverse, reported)	w(D,A,O)=(0.33,0.33,0.33) gamma 0.0 v 0.0
+pooled-fitted parameters (reported)	w(D,A,O)=(0.33,0.33,0.33) gamma 0.0 v 0.0
+LOCO choices (cohort: parameters)	BRCA-Basal: w(D,A,O)=(0.30,0.70,0.00) gamma 0.0 v 0.0; BRCA-Her2: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; BRCA-LumA: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; BRCA-LumB: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; CESC-AD: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; CESC-SCC: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; SARC-DDLPS: w(D,A,O)=(0.30,0.70,0.00) gamma 0.0 v 0.0; SARC-LMS: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; SARC-UPS: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TARGET-WT: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-BLCA: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-COAD: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-HNSC: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-KICH: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-KIRC: w(D,A,O)=(0.40,0.60,0.00) gamma 0.0 v 0.0; TCGA-KIRP: w(D,A,O)=(0.30,0.60,0.10) gamma 0.0 v 0.0; TCGA-LIHC: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-LUAD: w(D,A,O)=(0.40,0.60,0.00) gamma 0.0 v 0.0; TCGA-LUSC: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-OV: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-PAAD: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-PRAD: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-READ: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-SKCM: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TCGA-STAD: w(D,A,O)=(0.30,0.70,0.00) gamma 0.0 v 0.0; TCGA-THCA: w(D,A,O)=(0.30,0.70,0.00) gamma 0.0 v 0.0; TGCT-NSGCT: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0; TGCT-SEM: w(D,A,O)=(0.20,0.80,0.00) gamma 0.0 v 0.0
+bootstrap wD (2.5 / 50 / 97.5%)	0.10 / 0.30 / 0.50
+bootstrap wA (2.5 / 50 / 97.5%)	0.40 / 0.60 / 0.90
+bootstrap wO (2.5 / 50 / 97.5%)	0.00 / 0.00 / 0.30
+bootstrap gamma (2.5 / 50 / 97.5%)	0.00 / 0.00 / 0.00
+bootstrap v (2.5 / 50 / 97.5%)	0.00 / 0.00 / 0.10

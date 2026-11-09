@@ -1,0 +1,30 @@
+test	rows	score	auc	n_cohorts	n_pos	n_neg	pairs
+(a) Hub leave-one-cohort-out	hub	fitted (held-out choice per cohort)	0.669	28	121	2252	9441
+(a) Hub leave-one-cohort-out	hub	baseline	0.6425	28	121	2252	9441
+(b) ChEMBL minus Hub-approved	chembl_minus_hub	Hub-fitted	0.5633	40	241	3004	17238
+(b) ChEMBL minus Hub-approved	chembl_minus_hub	baseline	0.6153	40	241	3004	17238
+binding effect (equal w, v 0)	hub	gamma 0.0	0.6599	28	121	2252	9441
+binding effect (equal w, v 0)	chembl_minus_hub	gamma 0.0	0.6137	40	241	3004	17238
+binding effect (equal w, v 0)	hub	gamma 1.0	0.6425	28	121	2252	9441
+binding effect (equal w, v 0)	chembl_minus_hub	gamma 1.0	0.6153	40	241	3004	17238
+reversal effect (Hub-fitted w, gamma)	chembl_minus_hub	v 0	0.5633	40	241	3004	17238
+reversal effect (Hub-fitted w, gamma)	chembl_minus_hub	v 0.0	0.5633	40	241	3004	17238
+reversal alone	chembl_minus_hub	v 1 (spec only)	0.4718	40	241	3004	17238
+D120 T on the same rows	hub	D120 T	0.6743	28	121	2252	9441
+D120 T on the same rows	chembl_minus_hub	D120 T	0.5889	40	241	3004	17238
+layer-2 mode chance (equal w, gamma 1)	hub	spearman n_units -0.12	0.6254	28	121	2252	9441
+layer-2 mode chance (equal w, gamma 1)	chembl_minus_hub	spearman n_units -0.12	0.599	40	241	3004	17238
+layer-2 mode best (equal w, gamma 1)	hub	spearman n_units 0.187	0.6266	28	121	2252	9441
+layer-2 mode best (equal w, gamma 1)	chembl_minus_hub	spearman n_units 0.187	0.5685	40	241	3004	17238
+layer-2 mode mean (equal w, gamma 1)	hub	spearman n_units -0.092	0.6425	28	121	2252	9441
+layer-2 mode mean (equal w, gamma 1)	chembl_minus_hub	spearman n_units -0.092	0.6153	40	241	3004	17238
+layer-2 mode d120 (equal w, gamma 1)	hub	spearman n_units 0.116	0.6743	28	121	2252	9441
+layer-2 mode d120 (equal w, gamma 1)	chembl_minus_hub	spearman n_units 0.116	0.5889	40	241	3004	17238
+reverse fit (ChEMBL -> Hub minus ChEMBL-approved)	hub_minus_chembl	ChEMBL-fitted ((0.3333333333333333, 0.3333333333333333, 0.3333333333333333), 0.0, 0.0)	0.975	1	1	80	80
+reverse fit (ChEMBL -> Hub minus ChEMBL-approved)	hub_minus_chembl	baseline	0.975	1	1	80	80
+pooled fit (in-sample)	pooled	pooled-fitted ((0.3333333333333333, 0.3333333333333333, 0.3333333333333333), 0.0, 0.0)	0.6315	40	362	3004	25507
+pooled fit (in-sample)	pooled	baseline	0.6263	40	362	3004	25507
+occupancy subset (drugs with Cmax; equal w, gamma 1)	hub	occupancy at Cmax	0.6573	21	69	921	2886
+occupancy subset (drugs with Cmax; equal w, gamma 1)	chembl	occupancy at Cmax	0.6119	38	194	1596	7583
+occupancy subset (drugs with Cmax; equal w, gamma 1)	hub	relative binding	0.6249	21	69	921	2886
+occupancy subset (drugs with Cmax; equal w, gamma 1)	chembl	relative binding	0.6041	38	194	1596	7583

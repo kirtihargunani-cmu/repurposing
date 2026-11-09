@@ -832,6 +832,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   Hub 0.674, ChEMBL 0.617 (spec on the same rows 0.489 / 0.474); split halves agree. Roughly half the signal is
   drug-level (0.586 / 0.572 with no cancer information). It rises with the number of targets (best-of-N) and does not
   work for drugs whose target every cell needs (0.46 / 0.44); 194 of 410 top-10 rows rest on minority alterations.
+- D121 (11-08): three-layer score (layer 1 target role, layer 2 units / direction / binding, layer 3 mix with
+  reversal, weights learned on Hub, tested on ChEMBL minus Hub's pairs). Many-target fix: mean over target units
+  (passes the label-free check). Learned weights (alteration-heavy) won on Hub held-out (0.669 vs 0.643) but lost
+  on ChEMBL (0.563 vs 0.615) and on the breast controls: baseline (equal weights) stays. Reversal and relative
+  binding add nothing; occupancy at Cmax helps where a Cmax exists. Spec doc with flowchart (Claude Docs).
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
