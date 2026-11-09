@@ -1,0 +1,228 @@
+<title>From Reversal to Target Role</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~68ch) with full-width figures; sections in story order; charts are inline SVG drawn from tokens */
+:root {
+  --bg: #f4f6f5; --panel: #ffffff; --ink: #172420; --muted: #55635e; --line: #d9e1dd; --soft: #e9efec;
+  --new: #1d5fa8; --new-soft: #dce8f6; --old: #b5651d; --old-soft: #f6e6d6; --good: #2e7a45; --warn: #9a6a00;
+  --f-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111816; --panel: #18211e; --ink: #e4ece8; --muted: #9eaca7; --line: #2b3733; --soft: #1f2a26;
+  --new: #79aef0; --new-soft: #1c2f45; --old: #e7a467; --old-soft: #3a2a1a; --good: #7fcb93; --warn: #e5bb5c; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111816; --panel: #18211e; --ink: #e4ece8; --muted: #9eaca7; --line: #2b3733; --soft: #1f2a26;
+  --new: #79aef0; --new-soft: #1c2f45; --old: #e7a467; --old-soft: #3a2a1a; --good: #7fcb93; --warn: #e5bb5c; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16.5px; line-height: 1.6; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 40px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 56px; }
+header { display: grid; gap: 18px; }
+.eyebrow { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--new); }
+h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(34px, 6vw, 54px); line-height: 1.05; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--f-display); font-weight: 600; font-size: clamp(26px, 4vw, 34px); line-height: 1.15; margin: 0; text-wrap: balance; }
+h3 { font-size: 16px; margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.dek { font-size: 19px; color: var(--muted); max-width: 62ch; }
+section { display: grid; gap: 18px; }
+.num { font-variant-numeric: tabular-nums; }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 70ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 4px; min-width: 0; }
+.tile .k { font-size: 13px; color: var(--muted); }
+.tile .v { font-family: var(--f-display); font-size: 36px; font-weight: 600; line-height: 1.1; }
+.tile.old .v { color: var(--old); } .tile.new .v { color: var(--new); }
+.formula { font-family: var(--f-mono); font-size: 15px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; white-space: pre; line-height: 1.7; }
+.formula b { color: var(--new); font-weight: 500; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card h3 { display: flex; align-items: center; gap: 8px; }
+.tag { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; }
+.tag.gate { background: var(--old-soft); color: var(--old); } .tag.flag { background: var(--new-soft); color: var(--new); }
+.fig { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; overflow-x: auto; }
+.fig svg { display: block; width: 100%; height: auto; min-width: 560px; }
+.cap { font-size: 13.5px; color: var(--muted); max-width: 72ch; }
+svg text { font-family: var(--f-body); fill: var(--ink); }
+svg .mut { fill: var(--muted); } svg .axis { stroke: var(--line); } svg .chance { stroke: var(--muted); stroke-dasharray: 5 5; }
+svg .fnew { fill: var(--new); } svg .fold { fill: var(--old); } svg .fsoft { fill: var(--soft); } svg .snew { stroke: var(--new); } svg .sold { stroke: var(--old); }
+.steps { display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 8px; }
+.step { position: relative; padding: 0 0 22px 24px; display: grid; gap: 4px; }
+.step::before { content: ""; position: absolute; left: -8px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--panel); border: 2px solid var(--new); }
+.step.old::before { border-color: var(--old); }
+.step .res { font-size: 14px; color: var(--muted); }
+.step .res b { color: var(--ink); }
+.note { font-size: 14px; color: var(--muted); border-left: 3px solid var(--warn); padding: 4px 0 4px 12px; max-width: 72ch; }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Drug repurposing pipeline · drug side · November 2026</div>
+  <h1>From reversal to target role</h1>
+  <p class="dek">How we went from a score that could not find each cancer’s approved drugs to one that does, what we filter out along the way, and how binding strength enters the score.</p>
+  <div class="tiles">
+    <div class="tile old"><span class="k">Old lead score (reversal)</span><span class="v num">0.46 / 0.43</span><span class="k">Hub / ChEMBL, chance is 0.50</span></div>
+    <div class="tile new"><span class="k">New lead score (target role + binding)</span><span class="v num">0.62 / 0.63</span><span class="k">in production</span></div>
+    <div class="tile new"><span class="k">With the chemotherapy rule (tested)</span><span class="v num">0.67 / 0.65</span><span class="k">criteria met, held for review</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="eyebrow">1 · The yardstick</div>
+  <h2>A good ranking puts each cancer’s approved drugs near the top</h2>
+  <ul>
+    <li><b>Repurposing Hub</b> (Broad Institute): a curated list of launched drugs with their approved indications. Strict, so few labels: 107 approved cancer × drug pairs in our drugs.</li>
+    <li><b>ChEMBL</b> (EMBL-EBI): drug indications gathered from labels, regulators and late-stage trials (phase 3 or approved). Broader, so more labels: 336 pairs. The two lists overlap heavily.</li>
+    <li>A pair counts as known use when an indication names that cancer (or its subtype) and a cancer word.</li>
+    <li>The test compares, inside each cancer, every approved cancer drug with every other cancer drug.</li>
+  </ul>
+  <div class="formula">AUC = Σ<sub>cancers</sub> U<sub>c</sub> / Σ<sub>cancers</sub> (approved<sub>c</sub> × others<sub>c</sub>)
+    = share of approved-vs-other pairs where the approved drug ranks higher   <b>(0.5 = chance)</b></div>
+</section>
+
+<section>
+  <div class="eyebrow">2 · Where we started</div>
+  <h2>The reversal score asked the wrong question</h2>
+  <p>It scored whether a drug’s lab gene-expression signature undoes the tumor’s signature, measured as regulator activity.</p>
+  <div class="formula">rev       = − Σ<sub>i</sub> w<sub>i</sub> · a<sub>i</sub> / √(Σ w<sub>i</sub>²)       w = tumor-vs-normal regulator activity (NES), a = drug’s effect on regulator i
+spec      = z(rev in this cancer) − mean z(rev in cancers of other tissues)
+spec_mech = spec after removing proliferation-linked regulators     <b>→ ranked within each cancer</b></div>
+  <ul>
+    <li>Result: 0.46 (Hub) and 0.43 (ChEMBL), at or below chance. Fixing seven scoring errors left both unchanged.</li>
+    <li>Tumors share most of their signature (growth, proliferation), so the same broad drugs reverse every cancer.</li>
+    <li>The signature comes from cell lines that often match the cancer poorly, and is measured once per line.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow">3 · Filtering</div>
+  <h2>Four checks remove a drug; lab-signature checks became flags</h2>
+  <div class="fig">
+    <svg viewBox="0 0 860 300" role="img" aria-label="Funnel of FDA drug by cancer pairs through the four exclusion checks">
+      <text x="0" y="16" font-size="13" class="mut">FDA drug × cancer pairs (41 cancers)</text>
+      <g font-size="14">
+        <rect x="300" y="32" width="520" height="30" class="fsoft"/><rect x="300" y="32" width="520" height="30" class="fnew" opacity=".25"/>
+        <text x="290" y="52" text-anchor="end">Drugs with LINCS profiles</text><text x="828" y="52" class="num" text-anchor="end">7,992</text>
+        <rect x="300" y="72" width="493" height="30" class="fnew" opacity=".35"/>
+        <text x="290" y="92" text-anchor="end">Targets made in the cancer</text><text x="801" y="92" class="num">7,570</text>
+        <rect x="300" y="112" width="442" height="30" class="fnew" opacity=".5"/>
+        <text x="290" y="132" text-anchor="end">Main target in the typical tumor</text><text x="750" y="132" class="num">6,797</text>
+        <rect x="300" y="152" width="398" height="30" class="fnew" opacity=".65"/>
+        <text x="290" y="172" text-anchor="end">Systemic formulation</text><text x="706" y="172" class="num">6,123</text>
+        <rect x="300" y="192" width="380" height="30" class="fnew" opacity=".8"/>
+        <text x="290" y="212" text-anchor="end">Lab dose reachable in blood</text><text x="688" y="212" class="num">5,846</text>
+        <rect x="300" y="232" width="308" height="30" class="fnew"/>
+        <text x="290" y="252" text-anchor="end">Scored (acts on a protein)</text><text x="616" y="252" class="num">4,734</text>
+        <rect x="300" y="272" width="156" height="20" class="fold" opacity=".8"/>
+        <text x="290" y="287" text-anchor="end" class="mut">Old rules kept</text><text x="464" y="287" class="num mut">2,404</text>
+      </g>
+    </svg>
+  </div>
+  <p class="cap">Bars to scale. The 1,112 pairs that pass the checks but do not act on a protein (for example alkylating chemotherapy) are listed separately. The old rules also removed drugs for lab-signature reasons, which is why they kept less than half as many.</p>
+  <div class="two">
+    <div class="card"><h3><span class="tag gate">Removes</span> about the patient and the target</h3>
+      <ul><li>Target not made in the cancer</li><li>Main target missing in the typical tumor</li><li>Only topical, inhaled or eye forms</li><li>Lab dose above what blood reaches</li></ul></div>
+    <div class="card"><h3><span class="tag flag">Flags</span> about the lab signature</h3>
+      <ul><li>Cell lines poorly matched or borrowed</li><li>Effect not reproduced</li><li>No effect on the cancer’s own cells (warning)</li><li>Signature does not reverse the tumor’s</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">4 · Scoring progression</div>
+  <h2>Each step asked a simpler question about the drug’s target</h2>
+  <div class="steps">
+    <div class="step old"><h3>Reversal of the tumor signature</h3><span class="res">Known use <b class="num">0.46 / 0.43</b></span></div>
+    <div class="step"><h3>Does the drug’s best target matter in this cancer?</h3><span class="res">Needed, altered, turned up · <b class="num">0.67 / 0.62</b> · inflated for drugs with many targets</span></div>
+    <div class="step"><h3>Count each target family once and weight by binding</h3><span class="res">Average over target units · <b class="num">0.64 / 0.62</b> · fair to multi-target drugs</span></div>
+    <div class="step"><h3>Learn the weights from approvals</h3><span class="res">Did not hold up on the second label set, so all parts count equally; the reversal score earned weight 0</span></div>
+    <div class="step"><h3>Make it the lead ranking, for cancers and subgroups</h3><span class="res">Same drugs, same test: <b class="num">0.62 / 0.63</b> vs reversal 0.49 / 0.48</span></div>
+    <div class="step"><h3>Score chemotherapy targets by how fast the cancer divides</h3><span class="res"><b class="num">0.67 / 0.65</b> · tested, held for review (see section 7)</span></div>
+  </div>
+  <div class="fig">
+    <svg viewBox="0 0 860 280" role="img" aria-label="Known-use AUC at each stage for Hub and ChEMBL labels">
+      <g font-size="13">
+        <line x1="70" y1="40" x2="840" y2="40" class="axis"/><line x1="70" y1="100" x2="840" y2="100" class="axis"/><line x1="70" y1="160" x2="840" y2="160" class="axis"/><line x1="70" y1="220" x2="840" y2="220" class="axis"/>
+        <text x="60" y="44" text-anchor="end" class="mut num">0.70</text><text x="60" y="104" text-anchor="end" class="mut num">0.60</text><text x="60" y="164" text-anchor="end" class="mut num">0.50</text><text x="60" y="224" text-anchor="end" class="mut num">0.40</text>
+        <line x1="70" y1="160" x2="840" y2="160" class="chance" stroke-width="1.5"/><text x="836" y="154" text-anchor="end" class="mut">chance</text>
+        <!-- y = 160 - (auc - 0.5) * 600 ; x stages at 140, 290, 440, 590, 740 -->
+        <circle cx="140" cy="183" r="7" class="fold"/><rect x="133" y="195" width="14" height="14" class="fold" opacity=".7"/>
+        <circle cx="290" cy="56" r="7" class="fnew"/><rect x="283" y="83" width="14" height="14" class="fnew" opacity=".7"/>
+        <circle cx="440" cy="74" r="7" class="fnew"/><rect x="433" y="84" width="14" height="14" class="fnew" opacity=".7"/>
+        <circle cx="590" cy="86" r="7" class="fnew"/><rect x="583" y="76" width="14" height="14" class="fnew" opacity=".7"/>
+        <circle cx="740" cy="57" r="7" class="fnew"/><rect x="733" y="65" width="14" height="14" class="fnew" opacity=".7"/>
+        <text x="140" y="250" text-anchor="middle">Reversal</text><text x="290" y="250" text-anchor="middle">Best target</text><text x="440" y="250" text-anchor="middle">Units + binding</text><text x="590" y="250" text-anchor="middle">Lead (production)</text><text x="740" y="250" text-anchor="middle">+ chemo rule</text>
+        <circle cx="80" cy="20" r="6" class="fnew"/><text x="92" y="25">Hub</text><rect x="134" y="14" width="12" height="12" class="fnew" opacity=".7"/><text x="152" y="25">ChEMBL</text>
+      </g>
+    </svg>
+  </div>
+  <p class="cap">Each stage was measured on its own eligible drugs, and the units + binding ChEMBL value leaves out Hub’s pairs, so read the trend rather than small gaps. The like-for-like comparison is the production step: same drugs, 0.62 / 0.63 against 0.49 / 0.48.</p>
+</section>
+
+<section>
+  <div class="eyebrow">5 · How the score works</div>
+  <h2>Target role, weighted by how strongly the drug binds</h2>
+  <div class="two">
+    <div class="card"><h3>Layer 1 · does the gene matter in this cancer?</h3>
+      <div class="formula">D = Σ w·(−z) / Σ w
+A = f − median(f over cancers)
+O = regulator NES, or log2 fold change vs normal
+T = mean(D, A, O)   each as a percentile 0–100</div>
+      <ul><li><b>D</b>: CRISPR knockout hurts the matched cell lines (z) more than cancer lines in general; w = how well each line matches</li><li><b>A</b>: share f of tumors with a recurrent activating mutation or amplification</li><li><b>O</b>: turned up in the tumor</li></ul></div>
+    <div class="card"><h3>Layer 2 · how does the drug engage it?</h3>
+      <div class="formula">r = 10^(p − p_best)
+E = 50 + r · (T − 50)
+S = mean of E over the drug’s targets
+lead = percentile of S in the cancer</div>
+      <ul><li><b>p</b>: measured potency (pChEMBL); the strongest target has r = 1</li><li>Agonists flip D and O; a gene family or complex counts once</li><li>75% of targets have a measured potency; the rest count as r = 1</li></ul></div>
+  </div>
+  <div class="fig">
+    <svg viewBox="0 0 860 200" role="img" aria-label="Credit E for a target with role 90 at three binding strengths">
+      <g font-size="14">
+        <text x="0" y="18" class="mut" font-size="13">Credit E for a target with role T = 90 (scale 0–100)</text>
+        <text x="210" y="56" text-anchor="end">Strongest target (r = 1)</text><rect x="220" y="38" width="540" height="28" class="fnew"/><text x="768" y="58" class="num">90</text>
+        <text x="210" y="102" text-anchor="end">10× weaker (r = 0.1)</text><rect x="220" y="84" width="324" height="28" class="fnew" opacity=".6"/><text x="552" y="104" class="num">54</text>
+        <text x="210" y="148" text-anchor="end">100× weaker (r = 0.01)</text><rect x="220" y="130" width="302" height="28" class="fnew" opacity=".35"/><text x="530" y="150" class="num">50.4</text>
+        <line x1="520" y1="30" x2="520" y2="170" class="chance" stroke-width="1.5"/><text x="520" y="190" text-anchor="middle" class="mut" font-size="13">50 = no information</text>
+      </g>
+    </svg>
+  </div>
+  <ul>
+    <li>Binding does not change accuracy (with vs without it, held out: 0.64 vs 0.66 on Hub, 0.62 vs 0.61 on ChEMBL). We keep it so a weak binder never gets full credit for a target.</li>
+    <li>Occupancy at patients’ free blood level, Cmax·fu / (Cmax·fu + Kd), is shown for 86 drugs (24 below 50%). It is not scored, because it did not improve the test either.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="eyebrow">6 · Sanity check</div>
+  <h2>Anti-estrogens moved from wrong to right</h2>
+  <div class="fig">
+    <svg viewBox="0 0 860 210" role="img" aria-label="Median percentile of anti-estrogens before and after, by breast cancer subtype">
+      <g font-size="14">
+        <!-- x = 300 + pct * 5 -->
+        <line x1="300" y1="170" x2="800" y2="170" class="axis"/>
+        <text x="300" y="192" text-anchor="middle" class="mut num" font-size="13">0</text><text x="425" y="192" text-anchor="middle" class="mut num" font-size="13">25</text><text x="550" y="192" text-anchor="middle" class="mut num" font-size="13">50</text><text x="675" y="192" text-anchor="middle" class="mut num" font-size="13">75</text><text x="800" y="192" text-anchor="middle" class="mut num" font-size="13">100</text>
+        <text x="280" y="45" text-anchor="end">Luminal A (should be high)</text><line x1="475" y1="40" x2="685" y2="40" class="snew" stroke-width="3"/><circle cx="475" cy="40" r="8" class="fold"/><circle cx="685" cy="40" r="8" class="fnew"/>
+        <text x="280" y="95" text-anchor="end">Luminal B (should be high)</text><line x1="485" y1="90" x2="630" y2="90" class="snew" stroke-width="3"/><circle cx="485" cy="90" r="8" class="fold"/><circle cx="630" cy="90" r="8" class="fnew"/>
+        <text x="280" y="145" text-anchor="end">Basal (should be low)</text><line x1="385" y1="140" x2="635" y2="140" class="snew" stroke-width="3"/><circle cx="635" cy="140" r="8" class="fold"/><circle cx="385" cy="140" r="8" class="fnew"/>
+        <circle cx="560" cy="14" r="6" class="fold"/><text x="572" y="19" font-size="13">reversal</text><circle cx="660" cy="14" r="6" class="fnew"/><text x="672" y="19" font-size="13">new lead</text>
+      </g>
+    </svg>
+  </div>
+  <p class="cap">Median within-cancer percentile of fulvestrant, tamoxifen and raloxifene: luminal A 35 → 77, luminal B 37 → 66, basal 67 → 17. The estrogen receptor drives it: luminal lines depend on it and it is active in luminal tumors.</p>
+</section>
+
+<section>
+  <div class="eyebrow">7 · Still open</div>
+  <h2>Three questions before the lists are acted on</h2>
+  <div class="two">
+    <div class="card"><h3>Chemotherapy targets</h3>
+      <ul><li>Genes every cell needs (tubulin, TOP2A) carry no cancer-specific signal; where chemotherapy is approved tracks how fast the cancer divides.</li><li>Scoring them on proliferation raised the test to 0.67 / 0.65.</li><li>But every such drug in a cancer then ties, and statins and cyclosporine count as “essential” in cell lines. Needs a curated target list or a tiebreak before release.</li></ul></div>
+    <div class="card"><h3>Minority alterations</h3>
+      <ul><li>EGFR is mutated in about 13% of lung adenocarcinomas, yet scores near the top for all of them.</li><li>74 of 410 top-10 rows rest on a change most tumors lack, against the typical-tumor rule.</li><li>Options: count only common alterations, weight by share, or list biomarker-defined drugs separately.</li></ul></div>
+    <div class="card"><h3>Drugs that share a target</h3>
+      <ul><li>Drugs on the same target score alike, so a top 10 can fill with one class (glucocorticoids, statins).</li><li>Decision pending on whether to keep one or two per class.</li></ul></div>
+  </div>
+  <p class="note">Independent validation is still missing: cell-line killing data (PRISM, GDSC) show no signal for either score, and the approved-drug test is the only one that moved.</p>
+</section>
+</div>
