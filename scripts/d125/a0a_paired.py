@@ -5,8 +5,8 @@ Stratum = (dose, time) cell of a drug x line pair; a cell's profile = mean of it
 >= A0A_MIN_STRATA cells: two cells drawn at random (seed A0A_SEED) give pass A and pass B; every other pair keeps its
 production profile in both passes. Each pass runs the production path (a0_common: 79c rules with the production g_l,
 79d on the changed columns spliced into the production VIPER, 79e groups + subgroups, 79i STRATA=1) in the sandbox.
-r_c = per cohort (41 groups, 14 subgroups) Spearman of spec_mech_pct between the passes over gate-passing drugs that draw
-on >= 1 changed pair; CI Fisher z (Bonett-Wright); < R_POOLED_MIN_DRUGS drugs -> r_pooled (corrected with the median).
+r_c = per cohort (41 groups, 14 subgroups) Spearman of spec_mech_pct between the passes over gate-passing drugs whose every
+scoring line is a changed pair (D125-A0.1; the >= 1 changed pair version is reported as r_c_any); CI Fisher z (Bonett-Wright); < R_POOLED_MIN_DRUGS drugs -> r_pooled (corrected with the median).
 Checks before any pass is read (stop on failure): (1) the rebuilt production profiles of the changed pairs equal 79c's;
 (2) 79d on them equals the production VIPER columns; (3) the sandbox scoring of unchanged production inputs equals the
 production spec_mech_pct_pregate (groups and subgroups).
@@ -117,10 +117,10 @@ def main():
     r, med = C.finish_reliability(r, "A0a")
     r["n_splits"], r["se"] = np.nan, np.nan     # A0a: no resampling loop (spec A0a)
     r["r_optimistic"] = True                     # A0a alone; A0e sets the final flag against A0b's coverage
-    cols_out = ["kind", "cohort", "estimator", "r_c", "ci_lo", "ci_hi", "n_drugs", "n_gate", "n_splits", "se",
-                "r_pooled", "r_used", "r_optimistic"]
+    cols_out = ["kind", "cohort", "estimator", "r_c", "ci_lo", "ci_hi", "n_drugs", "n_drugs_direct", "n_gate", "n_splits",
+                "se", "r_pooled", "r_used", "r_optimistic", "r_c_any", "n_drugs_any"]
     r[cols_out].to_csv(C.OUT / "reliability_a0a.tsv", sep="\t", index=False, float_format="%.4f")
-    run.update(median_r_c=med, median_r_c_groups=float(r[r.kind == "group"].r_c.median()),
+    run.update(r_c_drugs="all_changed (D125-A0.1)", median_r_c_any=float(r.r_c_any.median()), median_r_c=med, median_r_c_groups=float(r[r.kind == "group"].r_c.median()),
                median_r_c_subgroups=float(r[r.kind == "subgroup"].r_c.median()),
                n_r_pooled=int(r.r_pooled.sum()), r_pooled_min_drugs=R_POOLED_MIN_DRUGS,
                minutes=round((time.time() - t0) / 60, 1))

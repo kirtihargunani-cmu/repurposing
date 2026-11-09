@@ -387,18 +387,22 @@ def spearman_ci(r, n):
 
 
 def r_by_cohort(a, b, changed_cols, used):
-    """Per cohort: Spearman of spec_mech_pct between passes a and b over gate-passing drugs whose score draws on >= 1
-    changed column (D125-A0 (3)). `used` = pairs_used() output for the cohort rows."""
+    """Per cohort: Spearman of spec_mech_pct between passes a and b over gate-passing drugs.
+    r_c (D125-A0.1, primary): drugs whose every used line is a changed column; r_c_any (D125-A0 (3), reported): drugs
+    with >= 1 changed column. `used` = pairs_used() output for the cohort rows."""
     ch = set(int(c) for c in changed_cols)
-    u = used.assign(touched=[bool(ch.intersection(map(int, cs))) for cs in used.cols_used])
+    frac = [np.mean([int(c) in ch for c in cs]) if len(cs) else 0.0 for cs in used.cols_used]
+    u = used.assign(frac_changed=frac)
     m = a.merge(b[["kind", "cohort", "pert_id", "spec_mech_pct"]], on=["kind", "cohort", "pert_id"], suffixes=("_a", "_b"))
-    m = m.merge(u[["kind", "cohort", "pert_id", "touched"]], on=["kind", "cohort", "pert_id"], how="left")
+    m = m.merge(u[["kind", "cohort", "pert_id", "frac_changed"]], on=["kind", "cohort", "pert_id"], how="left")
+    sp = lambda x: x.spec_mech_pct_a.corr(x.spec_mech_pct_b, method="spearman") if len(x) >= 3 else np.nan  # noqa: E731
     rows = []
     for (kind, c), d in m.groupby(["kind", "cohort"], sort=True):
         gate = d[d.passes_gate.astype(bool)]
-        x = gate[gate.touched.fillna(False) & gate.spec_mech_pct_a.notna() & gate.spec_mech_pct_b.notna()]
-        r = x.spec_mech_pct_a.corr(x.spec_mech_pct_b, method="spearman") if len(x) >= 3 else np.nan
-        rows.append(dict(kind=kind, cohort=c, n_gate=len(gate), n_drugs=len(x), r_c=r))
+        ok = gate[gate.spec_mech_pct_a.notna() & gate.spec_mech_pct_b.notna()]
+        full, anyc = ok[ok.frac_changed.fillna(0) == 1], ok[ok.frac_changed.fillna(0) > 0]
+        rows.append(dict(kind=kind, cohort=c, n_gate=len(gate), n_drugs=len(full), r_c=sp(full),
+                         n_drugs_direct=int((full.source == "direct").sum()), n_drugs_any=len(anyc), r_c_any=sp(anyc)))
     return pd.DataFrame(rows)
 
 
