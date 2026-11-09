@@ -6,6 +6,7 @@ exclusions from known_use/labels.tsv. Essential-unit drugs = ingredients whose b
 any group (implementation of 'drugs with an essential unit'). Outputs results/lincs/d124/{criteria.tsv, between.tsv, top10.tsv}.
 """
 import importlib.util
+import os
 import sys
 from pathlib import Path
 
@@ -14,7 +15,9 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 RES = ROOT / "results/lincs"
-OUT = RES / "d124"
+NEW = os.environ.get("NEW", "_d124")
+OUT = RES / NEW.lstrip("_")
+TIE_MAX = 3   # D124a criterion (4)
 sys.path.insert(0, str(ROOT / "scripts"))
 _s = importlib.util.spec_from_file_location("ku", ROOT / "scripts/79l_known_use.py"); KU = importlib.util.module_from_spec(_s); _s.loader.exec_module(KU)
 _c = importlib.util.spec_from_file_location("ec", ROOT / "scripts/checks/essential_check.py"); EC = importlib.util.module_from_spec(_c); _c.loader.exec_module(EC)
@@ -31,6 +34,7 @@ def drug_level(f):
     for c in ("essential_unit", "dna_acting", "essential_target"):
         if c in x:
             agg[c] = (c, lambda v: bool(pd.Series(v).astype(str).eq("True").any()))
+    agg["statin_cyclo"] = ("layered_genes", lambda v: bool(pd.Series(v).astype(str).str.contains(r"\bHMGCR\b|\bPPIA\b").any()))
     return x.groupby(["cohort", "fda_ingredient"]).agg(**agg).reset_index()
 
 
@@ -41,10 +45,11 @@ def between(D, score, drugs):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    old, new = drug_level(RES / "layered_score_v2.tsv"), drug_level(RES / "layered_score_v2_d124.tsv")
+    old, new = drug_level(RES / "layered_score_v2.tsv"), drug_level(RES / f"layered_score_v2{NEW}.tsv")
+    old = old.rename(columns={"statin_cyclo": "statin_cyclo_old"})
     lab = pd.read_csv(RES / "known_use/labels.tsv", sep="\t")[["cohort", "fda_ingredient", "drug", "anticancer", "eligible", "lab_hub",
                                                                   "lab_chembl", "excl_hub", "excl_chembl"]]
-    D = lab.merge(old[["cohort", "fda_ingredient", "pct"]].rename(columns={"pct": "old"}), how="left").merge(
+    D = lab.merge(old[["cohort", "fda_ingredient", "pct", "statin_cyclo_old"]].rename(columns={"pct": "old"}), how="left").merge(
         new.rename(columns={"pct": "new"}), how="left")
     ess_drugs = set(D[D.essential_unit.fillna(False).astype(bool)].fda_ingredient)
     dna_drugs = set(D[D.dna_acting.fillna(False).astype(bool)].fda_ingredient)
@@ -82,8 +87,29 @@ def main():
     ok1 = k["chembl"].new >= k["chembl"].old + 0.03 and k["hub"].new >= k["hub"].old
     ok2 = all(q[s].new >= q[s].old - 0.01 for s in ("hub", "chembl"))
     ok3 = cn[0] >= co[0] and cn[1] <= co[1]
-    C.loc[len(C)] = dict(source="DECISION", test="adopt D124" if ok1 and ok2 and ok3 else "D122 stays",
-                         old=f"(1) {'met' if ok1 else 'not met'}; (2) {'met' if ok2 else 'not met'}; (3) {'met' if ok3 else 'not met'}")
+    # (4) ties among non-DNA-acting drugs in each group's top 10 (eligible, drug level)
+    ties = []
+    for coh, d in D[D.eligible.astype(bool) & D.new.notna()].groupby("cohort"):
+        t10 = d.nlargest(10, "new", keep="all")
+        nd = t10[~t10.dna_acting.fillna(False).astype(bool)]
+        ties.append(dict(cohort=coh, largest_tie=int(nd.new.round(6).value_counts().max()) if len(nd) else 0,
+                         statin_cyclo_top10_new=int(t10.statin_cyclo.fillna(False).astype(bool).sum())))
+    for coh, d in D[D.eligible.astype(bool) & D.old.notna()].groupby("cohort"):
+        t10o = d.nlargest(10, "old")
+        for r in ties:
+            if r["cohort"] == coh:
+                r["statin_cyclo_top10_old"] = int(t10o.statin_cyclo_old.fillna(False).astype(bool).sum())
+    TI = pd.DataFrame(ties); TI.to_csv(OUT / "ties.tsv", sep="\t", index=False)
+    ok4 = bool((TI.largest_tie <= TIE_MAX).all())
+    crit.append(dict(source="both", test=f"(4) largest non-DNA tie in a top 10 (max over groups; <= {TIE_MAX})", old="", new=str(int(TI.largest_tie.max()))))
+    crit.append(dict(source="both", test="statin / cyclosporine rows in top 10s (reported)", old=str(int(TI.get("statin_cyclo_top10_old", pd.Series(dtype=int)).sum())),
+                     new=str(int(TI.statin_cyclo_top10_new.sum()))))
+    C = pd.DataFrame(crit)
+    use4 = NEW != "_d124"
+    allok = ok1 and ok2 and ok3 and (ok4 or not use4)
+    C.loc[len(C)] = dict(source="DECISION", test=("adopt " + NEW.lstrip("_").upper()) if allok else "current objective stays",
+                         old=f"(1) {'met' if ok1 else 'not met'}; (2) {'met' if ok2 else 'not met'}; (3) {'met' if ok3 else 'not met'}"
+                             + (f"; (4) {'met' if ok4 else 'not met'}" if use4 else ""))
     C.to_csv(OUT / "criteria.tsv", sep="\t", index=False)
     pd.DataFrame(btw).to_csv(OUT / "between.tsv", sep="\t", index=False)
     # top 10 (eligible drugs)

@@ -1,0 +1,9 @@
+source	test	old	new	n_pos_old	n_pos_new	ci_new	pairs
+hub	(2) known use, primary rows	0.6227	0.6731	107.0	117.0	0.6216-0.7148	
+hub	(1) between cancers, essential-unit drugs	0.5129	0.6247				738.0
+chembl	(2) known use, primary rows	0.6286	0.6517	336.0	383.0	0.6109-0.6892	
+chembl	(1) between cancers, essential-unit drugs	0.4579	0.6132				2222.0
+both	(3) anti-estrogens (luminal median, basal median)	(78.7, 17.1)	(86.2, 16.4)				
+both	(4) largest non-DNA tie in a top 10 (max over groups; <= 3)		7				
+both	statin / cyclosporine rows in top 10s (reported)	54	0				
+DECISION	current objective stays	(1) met; (2) met; (3) met; (4) not met					
