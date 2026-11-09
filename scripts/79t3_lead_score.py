@@ -35,7 +35,55 @@ N79 = load("n79", "scripts/79n_dependency.py")
 COLS = ["layered_S", "layered_pct", "layered_n_units", "layered_genes", "layered_D", "layered_A", "layered_O", "layered_T",
         "layered_r", "no_protein_target", "minority_alteration", "essential_target", "layered_P", "essential_unit", "dna_acting"]
 ESSENTIAL = os.environ.get("ESSENTIAL", "0") == "1"   # D124: essential units and DNA-acting drugs scored on proliferation P
-SANDBOX = os.environ.get("SANDBOX", "0") == "1"       # D124 test: write layered_score_v2_d124.tsv only, no split tables
+SANDBOX = os.environ.get("SANDBOX", "0") == "1"       # D124 test: write layered_score_v2{OUT_SFX}.tsv only, no split tables
+OUT_SFX = os.environ.get("OUT_SFX", "_d124")
+PROLIF_WEIGHT = os.environ.get("PROLIF_WEIGHT", "0") == "1"   # D124a: T = 50 + rho (P - 50)
+CYTO = lambda g: g in {"TOP1", "TOP2A", "TOP2B", "TYMS", "RRM1", "RRM2"} or g.startswith(("TUBA", "TUBB"))
+
+
+def gene_rho(symbols, groups):
+    """D124a: per gene, Spearman of log2(TPM + 1) with the PAM50 proliferation index (gene left out of the index when in
+    it) within each group's primary tumors, averaged over groups weighted by tumor count. Cached in results/lincs/d124a."""
+    cf = RES / "d124a/rho_genes.tsv"
+    cache = pd.read_csv(cf, sep="\t").set_index("symbol").rho.to_dict() if cf.exists() else {}
+    need = sorted(set(symbols) - set(cache))
+    if need:
+        idm = pd.read_csv(ROOT / "results/step5/id_map.tsv", sep="\t").query("primary_for_hgnc").drop_duplicates("symbol")
+        s2g = dict(zip(idm.symbol, idm.gene_id)); g2s = {v: k for k, v in s2g.items()}
+        ids = {s2g[x] for x in set(need) | set(PAM50_PROLIF) if x in s2g}
+        cov = pd.read_csv(ROOT / "results/step3/covariates_toil.tsv", sep="\t", low_memory=False)
+        tum = cov[(cov.role == "tumor") & (cov.primary_per_patient == True) & cov.group_id.isin(groups)].drop_duplicates("sample")
+        f = ROOT / "data/raw/solid_toil/TcgaTargetGtex_rsem_gene_tpm.gz"
+        header = pd.read_csv(f, sep="\t", nrows=0).columns
+        use = sorted(set(tum["sample"]) & set(header))
+        parts = []
+        for ch in pd.read_csv(f, sep="\t", usecols=[header[0]] + use, chunksize=5000, index_col=0):
+            ch.index = ch.index.str.split(".").str[0]
+            parts.append(ch[ch.index.isin(ids)])
+        X = np.log2(np.power(2.0, pd.concat(parts)) - 0.001 + 1).clip(lower=0)
+        X.index = X.index.map(g2s)
+        X = X[~X.index.duplicated()]
+        prol = [x for x in PAM50_PROLIF if x in X.index]
+        g2t = tum.set_index("sample").group_id
+        for sym in need:
+            if sym not in X.index:
+                cache[sym] = np.nan; continue
+            idx_genes = [x for x in prol if x != sym]
+            num = den = 0.0
+            for grp, smp in g2t[g2t.index.isin(use)].groupby(g2t[g2t.index.isin(use)]):
+                cols = list(smp.index)
+                if len(cols) < 10:
+                    continue
+                y = X.loc[sym, cols]; ix = X.loc[idx_genes, cols].mean(0)
+                if y.std() == 0:
+                    continue
+                r = y.rank().corr(ix.rank())
+                if np.isfinite(r):
+                    num += r * len(cols); den += len(cols)
+            cache[sym] = num / den if den else np.nan
+        (RES / "d124a").mkdir(parents=True, exist_ok=True)
+        pd.Series(cache, name="rho").rename_axis("symbol").reset_index().to_csv(cf, sep="\t", index=False, float_format="%.4f")
+    return {k: cache.get(k, np.nan) for k in symbols}
 PAM50_PROLIF = ["BIRC5", "CCNB1", "CDC20", "NUF2", "CEP55", "NDC80", "MKI67", "PTTG1", "RRM2", "TYMS", "UBE2C"]   # Nielsen 2010
 
 
@@ -117,6 +165,8 @@ def score(x, unit, Pd, Pa, Po, Fr, UT, ess, P=None):
                 if not np.isfinite(pv):
                     continue
                 T = pv if t.orient != "raise" else 100 - pv
+                if PROLIF_WEIGHT:   # D124a
+                    T = 50 + t.rho * (T - 50)
                 E = 50 + t.r_u * (T - 50)
                 Es.append(E)
                 if best is None or E > best[0]:
@@ -175,6 +225,19 @@ def main():
             ut.append(dict(cmap_name=d, genes="|".join(sorted(u["genes"])), orient=o, r_u=10 ** (pv - pbest) if np.isfinite(pv) else 1.0,
                            ess_frac=len(u["genes"] & ESS) / len(u["genes"])))
     UT = pd.DataFrame(ut)
+    UT["rho"] = 1.0
+    RHO_DNA = 1.0
+    if ESSENTIAL and PROLIF_WEIGHT:   # D124a: rho per essential unit, floored at 0; DNA-acting = median over cytotoxic units
+        eu = UT.ess_frac > 0.5
+        genes_e = sorted({x for gs in UT[eu].genes for x in gs.split("|")})
+        rg = gene_rho(genes_e, sorted(g.group_id.unique()))
+        def urho(gs):
+            v = [rg.get(x) for x in gs.split("|") if rg.get(x) is not None and np.isfinite(rg.get(x))]
+            return max(0.0, float(np.mean(v))) if v else 0.0
+        UT.loc[eu, "rho"] = UT.loc[eu, "genes"].map(urho)
+        cyto = eu & UT.genes.map(lambda gs: any(CYTO(x) for x in gs.split("|")))
+        RHO_DNA = float(UT.loc[cyto].drop_duplicates("genes").rho.median())
+        print(f"D124a: essential units {int(eu.sum())}, genes {len(genes_e)}, rho median {UT.loc[eu, 'rho'].median():.3f}; DNA-acting rho {RHO_DNA:.3f}", flush=True)
     ess = set(pd.read_csv(ROOT / "data/raw/depmap_24q4/CRISPRInferredCommonEssentials.csv").iloc[:, 0].str.split(" ").str[0])
     run = {}
     allrows = []
@@ -198,6 +261,8 @@ def main():
         if ESSENTIAL:   # D124: DNA-acting drugs without a protein target: S = P, flag dna_acting
             dn = fda & df.target_source.eq("non_protein_mechanism") & df.cmap_name.isin(DNA)
             pv = df.loc[dn, unit].map(P)
+            if PROLIF_WEIGHT:   # D124a
+                pv = 50 + RHO_DNA * (pv - 50)
             df.loc[dn, "layered_S"] = pv; df.loc[dn, "layered_T"] = pv; df.loc[dn, "layered_P"] = pv
             df.loc[dn, "layered_r"] = 1.0; df.loc[dn, "layered_n_units"] = 1; df.loc[dn, "layered_genes"] = "DNA"
             df["dna_acting"] = dn
@@ -218,7 +283,9 @@ def main():
                          minority_alteration=int(df.minority_alteration.sum()), essential_target=int((df.essential_target & has).sum()))
         allrows.append(df[fda][[unit, "pert_id", "cmap_name"] + COLS].rename(columns={unit: "unit"}).assign(level=unit))
         print(unit, run[unit], flush=True)
-    sfx = "_d124" if SANDBOX else ""
+    sfx = OUT_SFX if SANDBOX else ""
+    if ESSENTIAL and PROLIF_WEIGHT:
+        run["rho_dna_acting"] = RHO_DNA
     pd.concat(allrows).to_csv(RES / f"layered_score_v2{sfx}.tsv", sep="\t", index=False, float_format="%.3f")
     json.dump(run, open(RES / f"lead_score_run{sfx}.json", "w"), indent=1)
 

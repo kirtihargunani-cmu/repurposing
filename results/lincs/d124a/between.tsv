@@ -1,0 +1,7 @@
+source	drugs	auc	pairs	n_drugs	score
+hub	DNA-acting (new only)	0.6711	380	13.0	
+hub	DNA-acting	0.4368	380		SLFN11
+hub	DNA-acting	0.7605	380		proliferation
+chembl	DNA-acting (new only)	0.5578	1316	13.0	
+chembl	DNA-acting	0.6227	1316		SLFN11
+chembl	DNA-acting	0.4894	1316		proliferation
