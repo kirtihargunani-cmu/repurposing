@@ -9,7 +9,7 @@ where that pair was searched.
 Inputs: results/lincs/fda_ranking_v2_consensus.tsv, fda_ranking_strata_v2_consensus.tsv, literature_fda_top_v2.tsv,
         literature_v2_consensus.tsv, drug_reversal_summary_v2_consensus.tsv, stratum_reversal_summary_v2_consensus.tsv,
         results/step10_v2/strata.tsv; template scripts/templates/fda_rankings.html (placeholder __DATA__)
-Output: results/lincs/fda_rankings_v2.html (published copy: https://claude.ai/artifact/4UVF5F6SxD639VKKJEZenw)
+Output: results/lincs/fda_rankings_v2.html (published copy since D122: https://claude.ai/artifact/AMk5E9yEXv1JhN8qf3FG96; the pre-D122 copy 4UVF5F6SxD639VKKJEZenw is in another organization)
 """
 import json
 import math
