@@ -54,6 +54,15 @@ svg .fnew { fill: var(--new); } svg .fold { fill: var(--old); } svg .fsoft { fil
 .step .res { font-size: 14.5px; color: var(--muted); max-width: 70ch; }
 .step .res b { color: var(--ink); }
 .note { font-size: 14.5px; color: var(--muted); border-left: 3px solid var(--warn); padding: 4px 0 4px 12px; max-width: 72ch; }
+.tbl { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow-x: auto; max-height: 560px; overflow-y: auto; }
+.tbl table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px; }
+.tbl th, .tbl td { padding: 7px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.tbl th { position: sticky; top: 0; background: var(--soft); font-size: 12.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.tbl .n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl .hits { color: var(--muted); }
+.tbl tr.few td { color: var(--muted); }
+.bar { display: inline-block; width: 64px; height: 8px; background: var(--soft); border-radius: 4px; margin-right: 8px; vertical-align: middle; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--new); }
 </style>
 
 <div class="wrap">
@@ -207,7 +216,65 @@ Layer 3: percentile of S within the cancer</div>
 </section>
 
 <section>
-  <div class="eyebrow">7 · Essential targets</div>
+  <div class="eyebrow">7 · Recall by cancer</div>
+  <h2>About one third of approved drugs fall in the top quarter of each ranking</h2>
+  <ul>
+    <li>Across 41 cancers and 468 approved cancer–drug pairs (ChEMBL), 36% rank in the top quarter (expected by chance: 25%) and 13% in the top 10; the Hub reference gives 36% and 18%.</li>
+    <li>Recall is highest where targeted agents act on dominant drivers or dependencies (head and neck, melanoma, thyroid, bladder, clear-cell kidney) and lowest where approvals rest on minority alterations or few agents (lung, glioblastoma, pheochromocytoma).</li>
+    <li>Missed approvals are mostly excluded by the typical-tumour criterion (e.g. ALK inhibitors in lung adenocarcinoma, PARP and PI3K inhibitors in breast), ranked just outside the top 10 (EGFR inhibitors in lung adenocarcinoma, ranks 17–19), or approved for supportive indications (e.g. amifostine).</li>
+  </ul>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Cancer</th><th class="n">Approved</th><th class="n">Ranked</th><th class="n">Top 10</th><th class="n">Top quarter</th><th>Approved drugs in the top 10</th></tr></thead>
+      <tbody>
+        <tr class="few"><td>WT</td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:100%"></i></span>100%</td><td class="hits">–</td></tr>
+        <tr class="few"><td>ACC</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:100%"></i></span>100%</td><td class="hits">Etoposide</td></tr>
+        <tr><td>HNSC</td><td class="n">10</td><td class="n">10</td><td class="n">4</td><td class="n"><span class="bar"><i style="width:80%"></i></span>80%</td><td class="hits">Erlotinib, Fluorouracil, Gefitinib, Lapatinib</td></tr>
+        <tr><td>CESC-AD</td><td class="n">7</td><td class="n">6</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:71%"></i></span>71%</td><td class="hits">Fluorouracil</td></tr>
+        <tr><td>BLCA</td><td class="n">9</td><td class="n">9</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:67%"></i></span>67%</td><td class="hits">Doxorubicin, Valrubicin</td></tr>
+        <tr><td>SKCM</td><td class="n">12</td><td class="n">12</td><td class="n">5</td><td class="n"><span class="bar"><i style="width:58%"></i></span>58%</td><td class="hits">Binimetinib, Dabrafenib, Selumetinib, Trametinib, Vemurafenib</td></tr>
+        <tr><td>CESC-SCC</td><td class="n">7</td><td class="n">6</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:57%"></i></span>57%</td><td class="hits">–</td></tr>
+        <tr><td>UCS</td><td class="n">7</td><td class="n">7</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:57%"></i></span>57%</td><td class="hits">Doxorubicin</td></tr>
+        <tr><td>UCEC-SER</td><td class="n">7</td><td class="n">7</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:57%"></i></span>57%</td><td class="hits">Doxorubicin, Ifosfamide</td></tr>
+        <tr><td>KIRC</td><td class="n">13</td><td class="n">13</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:54%"></i></span>54%</td><td class="hits">Everolimus, Temsirolimus</td></tr>
+        <tr><td>SARC-UPS</td><td class="n">17</td><td class="n">16</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:53%"></i></span>53%</td><td class="hits">Doxorubicin, Idarubicin</td></tr>
+        <tr class="few"><td>LGG-IDHmut-codel</td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:50%"></i></span>50%</td><td class="hits">–</td></tr>
+        <tr class="few"><td>LGG-IDHmut-noncodel</td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:50%"></i></span>50%</td><td class="hits">–</td></tr>
+        <tr class="few"><td>LGG-IDHwt</td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:50%"></i></span>50%</td><td class="hits">–</td></tr>
+        <tr><td>SARC-LMS</td><td class="n">17</td><td class="n">16</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:47%"></i></span>47%</td><td class="hits">Doxorubicin, Idarubicin</td></tr>
+        <tr><td>THCA</td><td class="n">7</td><td class="n">7</td><td class="n">3</td><td class="n"><span class="bar"><i style="width:43%"></i></span>43%</td><td class="hits">Dabrafenib, Selumetinib, Trametinib</td></tr>
+        <tr><td>UCEC-EEC</td><td class="n">7</td><td class="n">7</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:43%"></i></span>43%</td><td class="hits">–</td></tr>
+        <tr><td>PAAD</td><td class="n">10</td><td class="n">10</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:40%"></i></span>40%</td><td class="hits">Fluorouracil</td></tr>
+        <tr><td>BRCA-LumA</td><td class="n">32</td><td class="n">27</td><td class="n">4</td><td class="n"><span class="bar"><i style="width:38%"></i></span>38%</td><td class="hits">Fluorouracil, Fulvestrant, Palbociclib, Prednisone</td></tr>
+        <tr><td>OV</td><td class="n">13</td><td class="n">12</td><td class="n">3</td><td class="n"><span class="bar"><i style="width:38%"></i></span>38%</td><td class="hits">Defactinib, Olaparib, Rucaparib</td></tr>
+        <tr><td>READ</td><td class="n">14</td><td class="n">11</td><td class="n">3</td><td class="n"><span class="bar"><i style="width:36%"></i></span>36%</td><td class="hits">Etoposide, Floxuridine, Fluorouracil</td></tr>
+        <tr><td>BRCA-Basal</td><td class="n">27</td><td class="n">24</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:33%"></i></span>33%</td><td class="hits">Doxorubicin, Epirubicin</td></tr>
+        <tr><td>BRCA-Her2</td><td class="n">31</td><td class="n">26</td><td class="n">4</td><td class="n"><span class="bar"><i style="width:32%"></i></span>32%</td><td class="hits">Etoposide, Fluorouracil, Palbociclib, Prednisone</td></tr>
+        <tr><td>BRCA-LumB</td><td class="n">31</td><td class="n">27</td><td class="n">4</td><td class="n"><span class="bar"><i style="width:32%"></i></span>32%</td><td class="hits">Etoposide, Fulvestrant, Palbociclib, Prednisone</td></tr>
+        <tr><td>PRAD</td><td class="n">22</td><td class="n">18</td><td class="n">3</td><td class="n"><span class="bar"><i style="width:32%"></i></span>32%</td><td class="hits">Estradiol, Flutamide, Rosiglitazone</td></tr>
+        <tr><td>LIHC</td><td class="n">13</td><td class="n">12</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:31%"></i></span>31%</td><td class="hits">Fluorouracil</td></tr>
+        <tr><td>COAD</td><td class="n">14</td><td class="n">11</td><td class="n">2</td><td class="n"><span class="bar"><i style="width:29%"></i></span>29%</td><td class="hits">Floxuridine, Fluorouracil</td></tr>
+        <tr><td>TGCT-NSGCT</td><td class="n">4</td><td class="n">4</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:25%"></i></span>25%</td><td class="hits">Ifosfamide</td></tr>
+        <tr><td>KICH</td><td class="n">13</td><td class="n">12</td><td class="n">3</td><td class="n"><span class="bar"><i style="width:23%"></i></span>23%</td><td class="hits">Etoposide, Everolimus, Temsirolimus</td></tr>
+        <tr><td>KIRP</td><td class="n">13</td><td class="n">13</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:23%"></i></span>23%</td><td class="hits">Etoposide</td></tr>
+        <tr><td>STAD</td><td class="n">9</td><td class="n">9</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:22%"></i></span>22%</td><td class="hits">Fluorouracil</td></tr>
+        <tr><td>LUAD</td><td class="n">30</td><td class="n">26</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:20%"></i></span>20%</td><td class="hits">–</td></tr>
+        <tr><td>ESCA-AD</td><td class="n">5</td><td class="n">4</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:20%"></i></span>20%</td><td class="hits">Fluorouracil</td></tr>
+        <tr><td>ESCA-SCC</td><td class="n">5</td><td class="n">4</td><td class="n">1</td><td class="n"><span class="bar"><i style="width:20%"></i></span>20%</td><td class="hits">Fluorouracil</td></tr>
+        <tr><td>SARC-DDLPS</td><td class="n">17</td><td class="n">16</td><td class="n">3</td><td class="n"><span class="bar"><i style="width:18%"></i></span>18%</td><td class="hits">Etoposide, Nilotinib, Palbociclib</td></tr>
+        <tr><td>NBL</td><td class="n">7</td><td class="n">7</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:14%"></i></span>14%</td><td class="hits">–</td></tr>
+        <tr><td>LUSC</td><td class="n">17</td><td class="n">16</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:12%"></i></span>12%</td><td class="hits">–</td></tr>
+        <tr><td>TGCT-SEM</td><td class="n">4</td><td class="n">4</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:0%"></i></span>0%</td><td class="hits">–</td></tr>
+        <tr class="few"><td>PCPG-PGL</td><td class="n">3</td><td class="n">3</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:0%"></i></span>0%</td><td class="hits">–</td></tr>
+        <tr class="few"><td>PCPG-PHEO</td><td class="n">3</td><td class="n">3</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:0%"></i></span>0%</td><td class="hits">–</td></tr>
+        <tr class="few"><td>GBM</td><td class="n">2</td><td class="n">2</td><td class="n">0</td><td class="n"><span class="bar"><i style="width:0%"></i></span>0%</td><td class="hits">–</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cap">ChEMBL reference; ranking lists contain 106–151 FDA-approved drugs per cancer. Greyed rows have three or fewer approved drugs, so their percentages are unstable. “Ranked” excludes drugs removed by the eligibility criteria and drugs without a protein or nucleic-acid target.</p>
+</section>
+<section>
+  <div class="eyebrow">8 · Essential targets</div>
   <h2>Cytotoxic agents are characterised by proliferation, weighted by target coupling</h2>
   <ul>
     <li>Targets required by all proliferating cells (e.g. tubulin, topoisomerase II) carry no cancer-specific dependency signal, and approvals of the corresponding cytotoxic agents instead track the proliferative rate of the cancer (between-cancer AUC 0.63 / 0.57).</li>
