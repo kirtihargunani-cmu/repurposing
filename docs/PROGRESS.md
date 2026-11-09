@@ -852,6 +852,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   the cancer's proliferation index separates where they are approved (Hub 0.63, ChEMBL 0.57, p <= 0.005);
   alteration points the wrong way (0.37 / 0.38); SLFN11 suggestive for DNA-damaging and nucleotide drugs (few drugs).
   Basis for a possible rule: for these targets drop A, use proliferation for O.
+- D124 / D124a / D124b (11-08): targets every cell needs (most genes DepMap common essential) and 13 DNA-acting drugs are
+  scored on the cancer's proliferation (PAM50 index), weighted by how closely each target tracks proliferation in
+  tumors (rho: TOP2A 0.79, RRM2 0.77, HMGCR 0.29). Known use Hub 0.673, ChEMBL 0.652 (was 0.623 / 0.629); statins and
+  cyclosporine leave the top 10s. The tie criterion failed on shared-target ties (glucocorticoids), which the previous
+  objective had too; adopted by user decision. In production.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

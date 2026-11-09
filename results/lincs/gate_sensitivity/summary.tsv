@@ -1,13 +1,13 @@
 test	dataset	n_cohorts	estimate	ci_lo	ci_hi	p	detail
-B1_gate_pass_vs_fail	prism_sec	34	-0.0321	-0.1201	0.0415	0.8311688311688312	median obs_sel difference, drugs with a passing receptor minus the rest
-B2_rho_matched	prism_sec	8	0.101	0.0145	0.2113		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
-B2_rho_borrowed	prism_sec	8	0.1671	-0.0538	0.3315		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
-B2_matched_minus_borrowed	prism_sec	8	-0.0542	-0.2975	0.1662		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
+B1_gate_pass_vs_fail	prism_sec	34	-0.0321	-0.1201	0.0415	0.8361638361638362	median obs_sel difference, drugs with a passing receptor minus the rest
+B2_rho_matched	prism_sec	8	0.0888	-0.1753	0.2572		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
+B2_rho_borrowed	prism_sec	8	0.13	-0.0788	0.2526		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
+B2_matched_minus_borrowed	prism_sec	8	-0.0534	-0.1725	0.2268		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
 B3_average_minus_own	prism_sec	13	-0.0344	-0.1095	0.0392		Spearman with obs_sel: average -0.021 vs own borrowed 0.014, 260 rows
-B1_gate_pass_vs_fail	prism_pri	36	0.0444	0.0242	0.1215	0.025974025974025976	median obs_sel difference, drugs with a passing receptor minus the rest
-B2_rho_matched	prism_pri	12	-0.0075	-0.0641	0.1094		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
-B2_rho_borrowed	prism_pri	12	0.1024	-0.1026	0.3299		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
-B2_matched_minus_borrowed	prism_pri	12	-0.1127	-0.3001	0.0771		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
+B1_gate_pass_vs_fail	prism_pri	36	0.0444	0.0242	0.1215	0.016983016983016984	median obs_sel difference, drugs with a passing receptor minus the rest
+B2_rho_matched	prism_pri	12	0.0314	-0.0501	0.0627		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
+B2_rho_borrowed	prism_pri	12	0.0064	-0.0751	0.209		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
+B2_matched_minus_borrowed	prism_pri	12	-0.0874	-0.2093	0.1542		within-cohort Spearman of the lead score with obs_sel (paired cohorts)
 B3_average_minus_own	prism_pri	13	-0.0471	-0.1308	0.0276		Spearman with obs_sel: average -0.062 vs own borrowed -0.015, 279 rows
 B1_gate_pass_vs_fail	gdsc1	18	-0.0972	-0.1476	-0.0031	0.978021978021978	median obs_sel difference, drugs with a passing receptor minus the rest
 B3_average_minus_own	gdsc1	14	-0.0444	-0.1615	0.0809		Spearman with obs_sel: average 0.174 vs own borrowed 0.218, 121 rows

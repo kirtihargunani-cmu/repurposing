@@ -225,6 +225,13 @@ flowchart LR
   No-protein-target FDA drugs: `fda_ranking[_strata]_noprotein_v2_consensus.tsv`, by the reversal lead.
 - **Free fraction and occupancy (D123; reported only):** `scripts/d123/d123_fu.py` (STAGE=fetch / merge; readings by
   subagents with `results/lincs/d123/fu_prompt.md`, quotes checked); free occupancy = Cmax x fu / (Cmax x fu + Kd).
+- **Essential targets and DNA-acting drugs (D124, D124a, D124b; in production):** in 79t3 (ESSENTIAL=1 PROLIF_WEIGHT=1),
+  a target unit with most genes in DepMap's common essentials gets T = 50 + rho (P - 50): P = the cancer's percentile of
+  the PAM50 proliferation index among the 41 groups (subgroups placed among them), rho = the unit's mean within-cancer
+  Spearman of gene expression with that index (floored at 0; `results/lincs/d124a/rho_genes.tsv`). FDA drugs whose
+  ChEMBL mechanism target is a nucleic acid join the ranking with T = 50 + rho_DNA (P - 50) (rho_DNA = median of the
+  cytotoxic units). Columns layered_P, layered_rho, essential_unit, dna_acting; pages show 'scored on proliferation' /
+  'DNA-acting'.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

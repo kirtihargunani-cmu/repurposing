@@ -30,6 +30,9 @@ def decode(r):
     if clean(getattr(r, "layered_genes", None)) is None:
         return ""
     b = "" if clean(r.layered_r) is None else f"{r.layered_r:.2f}"
+    if str(getattr(r, "essential_unit", "")) == "True" or str(getattr(r, "dna_acting", "")) == "True":   # D124b
+        rho = clean(getattr(r, "layered_rho", None))
+        return f"{r.layered_genes}: proliferation {r1(r.layered_P)}, rho {'' if rho is None else f'{rho:.2f}'}, binding {b}"
     return f"{r.layered_genes}: D {r1(r.layered_D)} A {r1(r.layered_A)} O {r1(r.layered_O)}, binding {b}"
 
 
@@ -74,7 +77,9 @@ def main():
                                 dec=decode(r),
                                 fl=", ".join(x.replace("_", " ") for x in [*(str(r.lincs_flags).split("|") if clean(r.lincs_flags) else []),
                                      *(["minority alteration"] if str(r.minority_alteration) == "True" else []),
-                                     *(["essential target"] if str(r.essential_target) == "True" else [])]),
+                                     *(["essential target"] if str(r.essential_target) == "True" else []),
+                                     *(["scored on proliferation"] if str(getattr(r, "essential_unit", "")) == "True" else []),
+                                     *(["DNA-acting"] if str(getattr(r, "dna_acting", "")) == "True" else [])]),
                                 fda=clean(r.drugsatfda_url) or "", **L))
             out[u] = lst
         return out

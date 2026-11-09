@@ -1,37 +1,37 @@
 source	subset	test	score	auc	n_cohorts	n_pos	n_neg	pairs	p_perm	ci_lo	ci_hi
-hub	all	primary: anticancer, eligible, lead score	layered_pct	0.6226	28	107	2039	7502	0.001	0.5513	0.6888
-hub	all	baseline: anticancer 0/1, all eligible	onc	0.7245	28	117	3911	16397	0.001	0.7112	0.7348
-hub	all	lead score, all eligible	layered_pct	0.5997	28	107	3142	12007	0.001	0.5372	0.657
-hub	all	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.5086	28	131	2472	11229	0.3736	0.4544	0.5532
-hub	all	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.4619	20	65	730	2504	0.8402	0.3867	0.5467
-hub	all	reversal lead on the D122 primary rows	spec_mech_pct	0.4896	28	107	2039	7502	0.6533	0.4328	0.5331
-hub	matched	primary: anticancer, eligible, lead score	layered_pct	0.6514	11	65	596	3679	0.001	0.5927	0.7035
+hub	all	primary: anticancer, eligible, lead score	layered_pct	0.673	28	117	2192	8802	0.001	0.6221	0.7169
+hub	all	baseline: anticancer 0/1, all eligible	onc	0.7245	28	117	3911	16397	0.001	0.7112	0.7346
+hub	all	lead score, all eligible	layered_pct	0.643	28	117	3302	13756	0.001	0.5988	0.686
+hub	all	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.5086	28	131	2472	11229	0.3736	0.4613	0.5563
+hub	all	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.4619	20	65	730	2504	0.8472	0.3876	0.5444
+hub	all	reversal lead on the D122 primary rows	spec_mech_pct	0.5121	28	117	2192	8802	0.3347	0.46	0.5601
+hub	matched	primary: anticancer, eligible, lead score	layered_pct	0.6768	11	70	632	4192	0.001	0.6208	0.7288
 hub	matched	baseline: anticancer 0/1, all eligible	onc	0.7317	11	70	1221	8074			
-hub	matched	lead score, all eligible	layered_pct	0.6102	11	65	979	6049			
+hub	matched	lead score, all eligible	layered_pct	0.6309	11	70	1022	6798			
 hub	matched	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.5376	11	84	749	6067			
 hub	matched	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.4753	9	38	223	1213			
-hub	matched	reversal lead on the D122 primary rows	spec_mech_pct	0.5262	11	65	596	3679			
-hub	borrowed	primary: anticancer, eligible, lead score	layered_pct	0.5498	18	42	1181	2901	0.1558	0.4363	0.6831
+hub	matched	reversal lead on the D122 primary rows	spec_mech_pct	0.5419	11	70	632	4192			
+hub	borrowed	primary: anticancer, eligible, lead score	layered_pct	0.6634	18	47	1266	3521	0.001	0.5826	0.7421
 hub	borrowed	baseline: anticancer 0/1, all eligible	onc	0.6979	18	47	2135	5971			
-hub	borrowed	lead score, all eligible	layered_pct	0.5482	18	42	1740	4282			
+hub	borrowed	lead score, all eligible	layered_pct	0.6539	18	47	1825	5083			
 hub	borrowed	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.461	18	47	1396	3882			
 hub	borrowed	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.4411	12	27	481	1163			
-hub	borrowed	reversal lead on the D122 primary rows	spec_mech_pct	0.4361	18	42	1181	2901			
-chembl	all	primary: anticancer, eligible, lead score	layered_pct	0.6285	40	336	2720	21272	0.001	0.5869	0.6724
-chembl	all	baseline: anticancer 0/1, all eligible	onc	0.6733	41	435	5388	56295	0.001	0.6542	0.6911
-chembl	all	lead score, all eligible	layered_pct	0.6152	41	379	4332	38838	0.001	0.5778	0.6544
-chembl	all	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.4754	40	412	3280	31979	0.9331	0.4449	0.5017
-chembl	all	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.429	40	180	1366	6166	0.997	0.3879	0.4731
-chembl	all	reversal lead on the D122 primary rows	spec_mech_pct	0.4806	40	336	2720	21272	0.8751	0.4499	0.5069
-chembl	matched	primary: anticancer, eligible, lead score	layered_pct	0.6121	14	164	593	7392	0.001	0.5474	0.6701
+hub	borrowed	reversal lead on the D122 primary rows	spec_mech_pct	0.4732	18	47	1266	3521			
+chembl	all	primary: anticancer, eligible, lead score	layered_pct	0.6516	40	383	2908	26076	0.001	0.6121	0.6866
+chembl	all	baseline: anticancer 0/1, all eligible	onc	0.6733	41	435	5388	56295	0.001	0.6534	0.6901
+chembl	all	lead score, all eligible	layered_pct	0.6215	41	426	4533	45734	0.001	0.5868	0.6542
+chembl	all	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.4754	40	412	3280	31979	0.9241	0.4439	0.5037
+chembl	all	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.429	40	180	1366	6166	0.997	0.39	0.4775
+chembl	all	reversal lead on the D122 primary rows	spec_mech_pct	0.4804	40	383	2908	26076	0.9141	0.4521	0.5095
+chembl	matched	primary: anticancer, eligible, lead score	layered_pct	0.662	14	172	640	8268	0.001	0.5962	0.708
 chembl	matched	baseline: anticancer 0/1, all eligible	onc	0.6645	14	206	1277	20392			
-chembl	matched	lead score, all eligible	layered_pct	0.6197	14	191	998	14888			
+chembl	matched	lead score, all eligible	layered_pct	0.6286	14	199	1052	16227			
 chembl	matched	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.5035	14	193	769	11382			
 chembl	matched	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.4242	12	78	224	2025			
-chembl	matched	reversal lead on the D122 primary rows	spec_mech_pct	0.5005	14	164	593	7392			
-chembl	borrowed	primary: anticancer, eligible, lead score	layered_pct	0.6344	35	172	2055	10834	0.001	0.5835	0.6862
+chembl	matched	reversal lead on the D122 primary rows	spec_mech_pct	0.5041	14	172	640	8268			
+chembl	borrowed	primary: anticancer, eligible, lead score	layered_pct	0.6444	35	211	2190	14157	0.001	0.5894	0.6985
 chembl	borrowed	baseline: anticancer 0/1, all eligible	onc	0.6826	40	229	4043	26599			
-chembl	borrowed	lead score, all eligible	layered_pct	0.6107	40	188	3275	17521			
+chembl	borrowed	lead score, all eligible	layered_pct	0.6174	40	227	3420	22253			
 chembl	borrowed	primary on pre-gate percentiles (anticancer, gate-passing)	spec_mech_pct_pregate	0.4512	35	219	2429	16235			
 chembl	borrowed	D118 primary: reversal lead, D115-eligible anticancer rows	spec_mech_pct	0.424	32	102	1087	3795			
-chembl	borrowed	reversal lead on the D122 primary rows	spec_mech_pct	0.4661	35	172	2055	10834			
+chembl	borrowed	reversal lead on the D122 primary rows	spec_mech_pct	0.4619	35	211	2190	14157			
