@@ -161,7 +161,28 @@ drug most strongly moved, whose net sign matches the observed direction?
 
 Output per (drug, group): `mechanism_consistent_frac`, and the flag `mechanism_inconsistent`.
 
-### B2. Primary method: signed path consistency (no solver)
+### B2. The prior (user 2026-11-09)
+
+**OmniPath, filtered to signed and directed interactions**, with SIGNOR alone as a sensitivity arm.
+
+Filter fixed before use: `consensus_direction` and `consensus_sign` true, and >= 2 supporting resources or >= 2
+references. Where per-source signs disagree, the consensus sign is taken and the disagreement recorded per edge
+(`sign_disputed`), so a later arm can drop disputed edges without a re-pull. Release pinned in
+`config/datasets.yaml`; the signed-and-directed subset is a fraction of OmniPath's headline interaction count, so
+the pinned record states the subset size, not the total.
+
+Why not SIGNOR as primary: it is the better resource edge-for-edge (sign is the primary curated annotation, not a
+derived one, and each entry is mechanism-level and PubMed-backed), but its coverage is the binding constraint here.
+B3's floor is on `mechanism_coverage`, and signed *path* consistency needs the whole chain present, so a sparse
+prior shrinks the denominator until the flag rests on a handful of regulators per drug. SIGNOR is contained in
+OmniPath, so this is a filter setting rather than a different resource, and the sensitivity arm is the same code
+path with a stricter filter — it buys the precision-vs-coverage comparison for one extra run.
+
+What this costs: provenance is heterogeneous and aggregation compounds publication bias rather than correcting it,
+because hubs accumulate edges across resources. Expect B3 criterion 2 to be harder to pass here than on SIGNOR, not
+easier. The contingency below exists for that.
+
+### B2a. Primary method: signed path consistency (no solver)
 
 For the top 25 regulators by `|activity|` in the drug's scoring-line consensus profile, find the shortest signed
 path from the main target to that regulator in the prior, propagate the sign (drug action x product of edge signs),
@@ -183,6 +204,18 @@ Read-out: agreement between CARNIVAL's per-drug consistency and `mechanism_consi
 concordance on the flag). This is what licenses the heuristic outside breast. If they disagree materially
 (Spearman < 0.5, or the flag disagrees on > 25% of drugs), the heuristic is not a stand-in, and either B runs on
 CARNIVAL only where it is affordable or the flag is confined to breast.
+
+### B2b. Degree-correction contingency (fixed now, applied only if B3.2 fails)
+
+If flag rate correlates with the main target's degree at `|rho| >= 0.3`, tightening the filter toward SIGNOR is
+**not** the remedy — curated resources are degree-biased too, so it would trade coverage for no gain on the
+confound. Instead, score consistency against a degree-matched null: for each (target, regulator) pair, count the
+signed paths of the same length from 100 nodes sampled to match the target's degree within +/- 20%, and report
+`mechanism_consistent_frac` as the target's consistency minus the null mean, in null SD units. The flag then fires
+on the corrected quantity.
+
+Fixed in advance so the choice is not made after seeing which direction it moves the results. Applied only on a
+B3.2 failure, and its own re-check is B3.2 re-run on the corrected score.
 
 ### B3. Pre-registered rule
 
@@ -219,12 +252,13 @@ to the split tables; `scripts/d126/`.
 
 ## Open questions for the user
 
-- Which signed prior for Part B (OmniPath vs SIGNOR), and whether adding it needs its own `config/datasets.yaml`
-  review before the breast CARNIVAL arm runs.
 - Whether an academic CPLEX or Gurobi licence is available, since it decides whether the breast arm runs on the full
-  prior or on the 3-hop reduction.
+  prior or on the 3-hop reduction (B2).
 - Whether 20 random splits is enough for A0's reliability estimate, or whether it should run to a target precision
   on the median `r`.
+- Whether the OmniPath release needs a `config/datasets.yaml` review entry of its own before the breast arm runs,
+  given it is a service over moving upstream resources rather than a fixed file.
 
 Settled 2026-11-09: layer-3 refit reported, not decision-bearing (A5.4); CARNIVAL runs on breast (B2); the noise
-ceiling runs first and feeds the metrics (A0).
+ceiling runs first and feeds the metrics (A0); OmniPath signed-and-directed as the prior with SIGNOR as a
+sensitivity arm, and the degree-correction contingency fixed in advance (B2, B2b).
