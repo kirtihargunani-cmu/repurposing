@@ -95,6 +95,12 @@ follow-up questions:
    basal. Limits: about half of it comes from some drugs scoring well in every cancer; drugs with many targets get
    an unfair boost; it misses chemotherapy aimed at things every cell needs; and much of its top 10 rests on
    mutations that only a minority of patients carry.)
+   (Follow-up D121, 2026-11-08: the target score was rebuilt in three layers (does the target matter, how does
+   the drug act on it, how is that combined with the main list's score) and we let the data choose how much each
+   part counts. The weights it learned from one list of approved uses did not hold up on the other list, so all
+   three parts keep equal weight. Adding the main list's score did not help, and neither did how tightly the drug
+   binds its targets in lab tests; how much of the target the drug covers at patients' blood levels helped a little
+   where that is known.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

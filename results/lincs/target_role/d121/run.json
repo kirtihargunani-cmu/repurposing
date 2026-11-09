@@ -1,0 +1,22 @@
+{
+ "seed": 0,
+ "n_rand": 2000,
+ "n_boot": 200,
+ "margin": 0.01,
+ "n_combos": 3685,
+ "coverage": {
+  "drug_units": 497,
+  "measured_units": 372,
+  "unmeasured_units": 125,
+  "multi_gene_units": 122,
+  "multi_gene_unmeasured": 39,
+  "raise_units": 80,
+  "direction_assumed_units": 31,
+  "compounds": 409,
+  "drug_rows_scored": 6156,
+  "occupancy_rows": 2918
+ },
+ "layer2_mode": "mean",
+ "adopted": false,
+ "final": "w(D,A,O)=(0.33,0.33,0.33) gamma 1.0 v 0.0"
+}

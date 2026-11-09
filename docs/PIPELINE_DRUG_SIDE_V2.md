@@ -207,6 +207,13 @@ flowchart LR
   compounds. Known use (anticancer, gate-passing): Hub 0.674, ChEMBL 0.617 vs spec 0.489 / 0.474. Caveats: half the
   signal is drug-level, best-of-N inflation with many targets, common-essential targets not recovered, minority
   alterations conflict with the typical-tumor rule, tumor fusions missing.
+- **Three-layer score (`layers`, 79t2; D121, 2026-11-08; reported only):** layer 1 = D120 gene components; layer 2 =
+  target units (each ChEMBL mechanism target record, family / complex collapsed, its genes among the main targets;
+  other main targets single-gene), direction per record, relative binding r = 10^(pChEMBL - best) (unmeasured 1),
+  engaged E = 50 + r^gamma (T - 50); drug S = mean E over units (chosen by the label-free check over chance-corrected
+  best and plain best); layer 3 = (1 - v) pct(S) + v pct(spec_mech_pct_pregate), w / gamma / v fitted on Hub by
+  within-group conditional logit. Result: equal weights, gamma 1, v 0 kept (the Hub fit failed on ChEMBL and the
+  breast controls). Spec: https://claude.ai/artifact/NKuinVRBVc7cczzhDiHcsf
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,
