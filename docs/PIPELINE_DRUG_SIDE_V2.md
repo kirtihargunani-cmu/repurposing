@@ -214,6 +214,7 @@ flowchart LR
   best and plain best); layer 3 = (1 - v) pct(S) + v pct(spec_mech_pct_pregate), w / gamma / v fitted on Hub by
   within-group conditional logit. Result: equal weights, gamma 1, v 0 kept (the Hub fit failed on ChEMBL and the
   breast controls). Spec: https://claude.ai/artifact/NKuinVRBVc7cczzhDiHcsf
+  D121a (user): lab binding stays at gamma 1 by design, never fitted away.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,
