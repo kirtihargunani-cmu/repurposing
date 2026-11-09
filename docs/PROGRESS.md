@@ -870,6 +870,9 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
 - Ceiling: AUC_max 0.97 at r 0.90 (0.89 at r 0.61); reversal known-use AUCs 0.43-0.51 sit near zero attainment
   (-0.15 to +0.03). The reversal score's failure is not the assay noise. A0b dry run: ~3-15 h; waits for a numeric
   stopping rule.
+- D125-A0.1 (user): r_c only over drugs whose every scoring line changes between passes (the shared unchanged lines
+  inflated borrowed drugs); A0b stops at SE <= 0.01. A0a r_c now 0.81 (old version 0.90 kept as r_c_any); AUC_max 0.95;
+  reversal attainment -0.16 to +0.03. A0b running.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
