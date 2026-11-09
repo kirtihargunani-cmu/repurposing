@@ -37,7 +37,7 @@ for arm, sfx in ARMS.items():
     o = {"ctl_pos": float(np.nanmedian([best(g, d) for g, d in POS])), "ctl_neg": float(np.nanmedian([best(g, d) for g, d in NEG]))}
     dd = KU.drug_table(sp).merge(lab, on=["cohort", "fda_ingredient"])
     for src in ["hub", "chembl"]:
-        X = dd[dd.eligible & dd.anticancer & ~dd[f"excl_{src}"]]
+        X = dd[dd.eligible_reversal & dd.anticancer & ~dd[f"excl_{src}"]]   # D122: d100 stays on the reversal-era rows
         o[f"auc_lab_{src}"] = float(KU.pooled_auc(X, f"lab_{src}", "spec_mech_pct")["auc"])
     r = pd.read_csv(RES / f"drug_reversal{sfx}.tsv", sep="\t", usecols=["group_id", "pert_id", "rev"])
     t = r.groupby("pert_id").agg(n=("group_id", "nunique"), pos=("rev", lambda x: (x > 0).mean())); t = t[t.n >= 33]

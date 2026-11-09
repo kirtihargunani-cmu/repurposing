@@ -25,6 +25,14 @@ def clean(v):
     return None if v is None or (isinstance(v, float) and math.isnan(v)) else v
 
 
+def decode(r):
+    """D122: the layered score's parts for the best target unit."""
+    if clean(getattr(r, "layered_genes", None)) is None:
+        return ""
+    b = "" if clean(r.layered_r) is None else f"{r.layered_r:.2f}"
+    return f"{r.layered_genes}: D {r1(r.layered_D)} A {r1(r.layered_A)} O {r1(r.layered_O)}, binding {b}"
+
+
 def r1(v):
     v = clean(v)
     return None if v is None else round(float(v), 1)
@@ -62,12 +70,16 @@ def main():
                 appr = clean(r.first_fda_approval)
                 lst.append(dict(k=int(r.fda_rank), d=r.drug, c=r.cmap_name, st=r.fda_status[0], y=str(appr)[:4] if appr else "",
                                 moa=clean(r.hub_moa) or "", ind=ind[:160], src=r.source[0], tc=r1(r.transfer_conf),
-                                s1=r1(getattr(r, scorecol)), sp=r1(r.spec_mech_pct), rv=r1(r.rev_pct),
+                                s1=r1(r.layered_pct), sp=r1(getattr(r, scorecol)), rv=r1(r.rev_pct),
+                                dec=decode(r),
+                                fl=", ".join(x.replace("_", " ") for x in [*(str(r.lincs_flags).split("|") if clean(r.lincs_flags) else []),
+                                     *(["minority alteration"] if str(r.minority_alteration) == "True" else []),
+                                     *(["essential target"] if str(r.essential_target) == "True" else [])]),
                                 fda=clean(r.drugsatfda_url) or "", **L))
             out[u] = lst
         return out
 
-    G, S = rows(g, "group_id", "spec_mech"), rows(s, "stratum", "spec_sib_mech")
+    G, S = rows(g, "group_id", "spec_mech_pct"), rows(s, "stratum", "spec_sib_mech_pct")   # D122: lead = layered_pct (s1); sp = the former lead
     meta = {u: dict(kind="group", parent="", status=gs.loc[u, "evidence_status"], note=gs.loc[u, "evidence_note"],
                     bl=clean(gs.loc[u, "best_line"]) or "", desc="") for u in G}
     meta.update({u: dict(kind="subgroup", parent=st.loc[u, "group_id"], status=ss.loc[u, "evidence_status"],

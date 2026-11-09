@@ -364,6 +364,24 @@ def main():
         dl = drug_level(S_, nv_).set_index(["cohort", "fda_ingredient"]).S.reindex(pd.MultiIndex.from_frame(B[["cohort", "fda_ingredient"]])).values
         for p_, yc in (("hub", "lab_hub"), ("chembl", "lab_chembl")):
             add("occupancy subset (drugs with Cmax; equal w, gamma 1)", p_, nm, dl, pops[p_] & msub, yc)
+    # D123 (reported only): free-drug occupancy (Cmax x fu) in place of relative binding, drugs with it for every measured unit
+    ou = RES / "d123/occupancy_units.tsv"
+    if ou.exists():
+        OU = pd.read_csv(ou, sep="\t")
+        key = dict(zip(zip(OU.cmap_name, OU.genes), OU.occ_free))
+        ug = UT.genes.values[U.unit.values]
+        of = np.array([key.get((c, g), np.nan) for c, g in zip(U.cmap_name, ug)], dtype=float)
+        meas = ~UT.binding_unmeasured.values[U.unit.values]
+        okc = np.where(meas, ~np.isnan(of), True)
+        has_f = np.logical_and.reduceat(okc, starts) & (np.add.reduceat((meas & ~np.isnan(of)).astype(int), starts) > 0)
+        r_free = np.where(np.isnan(of), 1.0, of)
+        S_f, nv_f, _ = S_of(EQ, 1.0, chosen if chosen != "d120" else "best", r=r_free)
+        subf = CK.assign(hf=has_f).groupby(["group_id", "fda_ingredient"]).hf.all()
+        mf = B.set_index(["cohort", "fda_ingredient"]).index.map(lambda k: bool(subf.get(k, False))).values.astype(bool)
+        for nm, S_, nv_ in (("free occupancy (D123)", S_f, nv_f), ("relative binding", S_r, nv_r)):
+            dl = drug_level(S_, nv_).set_index(["cohort", "fda_ingredient"]).S.reindex(pd.MultiIndex.from_frame(B[["cohort", "fda_ingredient"]])).values
+            for p_, yc in (("hub", "lab_hub"), ("chembl", "lab_chembl")):
+                add("free-occupancy subset (D123; equal w, gamma 1)", p_, nm, dl, pops[p_] & mf, yc)
     R = pd.DataFrame(res)
     R.to_csv(OUT / "eval.tsv", sep="\t", index=False)
 

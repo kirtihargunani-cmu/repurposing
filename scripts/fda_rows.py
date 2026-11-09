@@ -3,7 +3,7 @@
 Rows: drugs that pass the target gate (79b) and are matched to a Drugs@FDA ingredient (79p, fda_matches.tsv; marketed
 or discontinued). Several LINCS ids of one ingredient -> the best on the cohort's lead score (diseases: spec_mech, then
 spec, rev; subgroups: spec_sib_mech, then spec_mech, rev), among the compounds 79p would rank (eligible(); D115), else
-among all. Unlike 79p, flagged (incl. D107 local_route) and non-reversing drugs are
+among all. D122: the lead is layered_pct (79t3), then the reversal order; eligible() = the D122 gates. Unlike 79p, flagged (incl. D107 local_route) and non-reversing drugs are
 kept (the page shows them, weak evidence hidden by default). `drug` = FDA ingredient with salt words removed (79p rule).
 """
 from pathlib import Path
@@ -42,12 +42,36 @@ def drug_name(ingredient):
     return " ".join(w.strip(",") for w in str(ingredient).split() if w.strip(",").upper() not in SALTS).strip(" ,").capitalize()   # D112: "GRISEOFULVIN, ULTRAMICROSIZE"
 
 
+LEAD = "layered_pct"   # D122: the layered score (79t3) is the lead ranking
+ORDER = {"group_id": [LEAD, "spec_mech", "spec", "rev"], "stratum": [LEAD, "spec_sib_mech", "spec_mech", "rev"]}
+ORDER_REVERSAL = {"group_id": ["spec_mech", "spec", "rev"], "stratum": ["spec_sib_mech", "spec_mech", "rev"]}
+LINCS_FLAGS = ["unmatched_lines", "low_transfer", "plate_confined", "inactive_matched_line", "receptor_mismatch", "no_reversal"]
+
+
 def eligible(df, unit="group_id"):
-    """D115: the 79p eligibility test, one definition for 79p and fda_rows. Needs apply_route / apply_evidence columns."""
+    """D122: lead-list eligibility. Gates: passes_gate (79b), target_absent (D102c), local_route (D107), low_exposure
+    (D109b). The LINCS-only evidence (unmatched_lines, low_transfer, plate_confined, receptor_mismatch, rev <= 0) and
+    inactive_matched_line are flags (`lincs_flags`), not gates. Needs apply_route / apply_evidence columns."""
+    t = lambda c: df[c].map(truthy) if c in df else pd.Series(False, index=df.index)
+    return df.passes_gate.map(truthy) & ~t("target_absent") & ~t("local_route") & ~t("low_exposure")
+
+
+def eligible_reversal(df, unit="group_id"):
+    """D115 test (the reversal-lead era, before D122): kept for reported comparisons."""
     t = lambda c: df[c].map(truthy) if c in df else pd.Series(False, index=df.index)
     rs = df["receptor_status"] if "receptor_status" in df else pd.Series("", index=df.index)
     return (df.passes_gate.map(truthy) & ~t("unmatched_lines") & ~t("low_transfer") & (df.rev > 0) & ~t("target_absent")
             & ~rs.eq("receptor_mismatch") & ~t("local_route") & ~t("weak_d109"))   # D102c / D104c / D107 / D109
+
+
+def lincs_flags(df):
+    """D122: the former gates shown as flags, '|'-joined (empty = none)."""
+    t = lambda c: df[c].map(truthy) if c in df else pd.Series(False, index=df.index)
+    rs = df["receptor_status"] if "receptor_status" in df else pd.Series("", index=df.index)
+    F = pd.DataFrame({"unmatched_lines": t("unmatched_lines"), "low_transfer": t("low_transfer"), "plate_confined": t("plate_confined"),
+                      "inactive_matched_line": t("inactive_matched_line"), "receptor_mismatch": rs.eq("receptor_mismatch"),
+                      "no_reversal": ~(df.rev > 0)}, index=df.index)
+    return F.apply(lambda r: "|".join(c for c in LINCS_FLAGS if r[c]), axis=1)
 
 
 def fda_rows():
@@ -57,12 +81,13 @@ def fda_rows():
     g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
     s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False).rename(columns={"stratum": "group_id"})
     out = []
-    for df, order in ((g, ["spec_mech", "spec", "rev"]), (s, ["spec_sib_mech", "spec_mech", "rev"])):
+    for df, order in ((g, ORDER["group_id"]), (s, ORDER["stratum"])):   # D122: layered_pct first
         df = df[df.passes_gate.map(truthy) & df.pert_id.isin(fm.index)].copy()
         df["fda_ingredient"] = df.pert_id.map(fm)
         df["drug"] = df.fda_ingredient.map(drug_name)
         df = apply_evidence(apply_route(df))   # D107 / D109 flags (kept, shown on the pages)
         df["eligible"] = eligible(df)
+        df["lincs_flags"] = lincs_flags(df)
         # D115: best eligible compound of the ingredient (= the one 79p ranks); else the best compound overall, with its flags
         df = df.sort_values(["eligible"] + order, ascending=False).drop_duplicates(["group_id", "fda_ingredient"])
         out.append(df)

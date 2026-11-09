@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Known-use recovery: are drugs already used for a cancer ranked high for it? (C28; redesigned D118, 2026-11-08). Reported only.
 
+D122 (2026-11-08): the lead score is layered_pct (79t3) and eligible = the D122 gates; the D118 metric on the reversal lead
+(spec_mech_pct, D115-eligible rows) is kept as a companion test.
 Unit (D118): cohort (disease) x FDA ingredient. Score = mean post-gate spec_mech_pct over the ingredient's LINCS compounds that pass
 the target gate in the cohort (fda_matches; was: the best compound). Eligible = any compound passes the D115 test (fda_rows.eligible).
 Labels (config/known_use.yaml), per drug: a drug is a known use of a cohort when one of its indication terms (Repurposing Hub
@@ -30,7 +32,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import chembl_lib as C  # noqa: E402
-from fda_rows import eligible, truthy, drug_name  # noqa: E402
+from fda_rows import eligible, eligible_reversal, truthy, drug_name  # noqa: E402
 from route_flag import apply_route  # noqa: E402
 from evidence_flags import apply_evidence  # noqa: E402
 
@@ -40,8 +42,8 @@ OUT = RES / "known_use"
 CH = ROOT / "data/raw/chembl/ChEMBL_37"
 CFG = yaml.safe_load(open(ROOT / "config/known_use.yaml"))
 CANCER = re.compile(CFG["cancer_term"], re.I)
-SCORES = ["spec_mech_pct", "spec_pct", "rev_pct", "target_frac", "mean_pct"]
-LEAD = "spec_mech_pct"
+SCORES = ["layered_pct", "spec_mech_pct", "spec_pct", "rev_pct", "target_frac", "mean_pct"]
+LEAD = "layered_pct"   # D122 (was spec_mech_pct, D118)
 MIN_LAB, MIN_UNLAB, MIN_COH, N_PERM, N_BOOT, SEED = 3, 20, 10, 1000, 1000, 0
 
 
@@ -76,12 +78,14 @@ def drug_table(sp, unit="group_id"):
     x = sp[sp.pert_id.isin(fm.index) & sp.passes_gate.map(truthy)].copy()
     x["fda_ingredient"] = x.pert_id.map(fm)
     x = apply_evidence(apply_route(x, unit), unit)
-    x["elig"] = eligible(x, unit)
+    x["elig"] = eligible(x, unit)   # D122 gates
+    x["elig_rev"] = eligible_reversal(x, unit)   # D115 (reversal-era) test, for the D118 companion and d100
     x["direct"] = x.source.eq("direct")
     agg = dict(spec_mech_pct=("spec_mech_pct", "mean"), n_compounds=("pert_id", "nunique"), eligible=("elig", "any"),
+               eligible_reversal=("elig_rev", "any"),
                any_direct_elig=("direct", lambda s: bool((s & x.loc[s.index, "elig"]).any())), any_direct=("direct", "any"),
                cmap_names=("cmap_name", lambda s: "|".join(sorted(set(s)))), pert_ids=("pert_id", lambda s: "|".join(sorted(set(s)))))
-    for c in ("spec_mech_pct_pregate", "spec_pct", "rev_pct", "target_frac"):
+    for c in ("spec_mech_pct_pregate", "spec_pct", "rev_pct", "target_frac", "layered_pct"):
         if c in x:
             agg[c] = (c, "mean")
     D = x.groupby([unit, "fda_ingredient"]).agg(**agg).reset_index().rename(columns={unit: "cohort"})
@@ -329,7 +333,9 @@ def main():
             runs = [("primary: anticancer, eligible, lead score", sel(keep(E[E.anticancer])), LEAD, True),
                     ("baseline: anticancer 0/1, all eligible", sel(keep(E.assign(onc=E.anticancer.astype(float)))), "onc", subset == "all"),
                     ("lead score, all eligible", sel(keep(E)), LEAD, subset == "all"),
-                    ("primary on pre-gate percentiles (anticancer, gate-passing)", sel(keep(D[D.anticancer])), "spec_mech_pct_pregate", subset == "all")]
+                    ("primary on pre-gate percentiles (anticancer, gate-passing)", sel(keep(D[D.anticancer])), "spec_mech_pct_pregate", subset == "all"),
+                    ("D118 primary: reversal lead, D115-eligible anticancer rows", sel(keep(D[D.eligible_reversal & D.anticancer])), "spec_mech_pct", subset == "all"),
+                    ("reversal lead on the D122 primary rows", sel(keep(E[E.anticancer & E.layered_pct.notna()])), "spec_mech_pct", subset == "all")]
             for name, X, score, full in runs:
                 if score not in X:
                     continue

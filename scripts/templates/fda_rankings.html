@@ -89,7 +89,7 @@ details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-dire
 <div class="wrap">
   <header class="top">
     <h1>Cohort FDA Drug Rankings</h1>
-    <div class="sub">FDA-approved drugs ranked per TCGA / TARGET cohort and subgroup by disease specificity (v2 pipeline, consensus regulons, proliferation removed). Click a drug for papers and trials.</div>
+    <div class="sub">FDA-approved drugs ranked per TCGA / TARGET cohort and subgroup by the layered target score: does the drug's target matter in this cancer (needed, altered, turned up), and how strongly does the drug bind it (D122). Click a drug for its parts, papers and trials.</div>
   </header>
   <div class="grid">
     <aside aria-label="Cohorts">
@@ -117,7 +117,7 @@ details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-dire
       <details class="about">
         <summary>How to read this page</summary>
         <ul>
-          <li><b>Rank</b> orders the cohort's FDA-approved drugs by disease specificity with proliferation removed (<code>spec_mech</code>): how much more the drug reverses this cohort's regulator changes than those of cancers from other tissues, after taking out the part explained by slowing cell division. Subgroups are ranked against their sibling subgroup (<code>spec_sib_mech</code>).</li>
+          <li><b>Rank</b> orders the cohort's FDA-approved drugs by the layered score (<code>layered_pct</code>, D122): for each of the drug's targets, whether this cancer's cell lines need it (D), whether it is mutated or amplified in the patients' tumors (A) and whether it is turned up versus normal tissue (O), weighted by how strongly the drug binds that target. <b>Specificity %ile</b> is the former lead, how much more the drug reverses this cohort's regulator changes than other cancers' (<code>spec_mech</code>; subgroups vs the sibling, <code>spec_sib_mech</code>). Flags such as a borrowed or unmatched LINCS profile are shown, not used to exclude. Drugs without a protein target are listed in a separate table file, not here.</li>
           <li>Only drugs that pass the target check, reverse the cohort overall, and carry no data-quality flag are listed: drugs tested only in unrelated cell lines, and borrowed drugs with transfer confidence below 0.5, are left out.</li>
           <li><b>Evidence status</b>: <i>matched</i> means at least one top drug was measured in a cell line resembling the cohort; <i>borrowed only</i> means the candidates were measured in other tissues' lines and rest on the drug acting consistently across lines.</li>
           <li><b>Literature</b>: PubMed counts need the drug and the disease in a title or abstract. The top 3 FDA drugs of every disease and subgroup were searched by their FDA ingredient name; other rows use the earlier search by LINCS name (each disease's top 10 overall) where one was run. Every row links to PubMed review articles about the drug itself. Trial counts come from ClinicalTrials.gov, whose search also matches related drugs and terms, so read the linked trials. Rows without a search show only the drug link.</li>
@@ -152,7 +152,7 @@ function renderCohort() {
 }
 function head() {
   const sub = DATA.meta[current].kind === "subgroup";
-  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th><th>FDA</th><th class="num">${sub ? "vs sibling" : "Specificity %ile"}</th>${sub ? '<th class="num">Specificity %ile</th>' : ""}<th class="num">Reversal %ile</th><th>Data source</th><th>Literature</th>`;
+  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th><th>FDA</th><th class="num">Target score %ile</th><th class="num">${sub ? "Specificity vs sibling %ile" : "Specificity %ile"}</th><th class="num">Reversal %ile</th><th>Data source</th><th>Literature</th>`;
 }
 function row(r, sub) {
   const bar = v => v == null ? "" : `<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, v))}%"></i></span>`;
@@ -163,9 +163,9 @@ function row(r, sub) {
     <td class="num">${r.k}</td>
     <td><div class="drug">${esc(r.d)}</div>${r.c.toLowerCase() !== r.d.toLowerCase() ? `<div class="lincs">${esc(r.c)}</div>` : ""}<div class="moa">${esc(r.moa)}</div><a class="about-drug" href="${reviewUrl(r.d)}" target="_blank" rel="noopener">About this drug (PubMed reviews)</a></td>
     <td><span class="st ${r.st}">${r.st === "m" ? "Marketed" : "Discontinued"}</span><br><span class="src">${r.y ? "since " + r.y : ""}</span></td>
-    <td class="num">${sub ? (r.s1 ?? "") : (r.sp ?? "") + bar(r.sp)}</td>${sub ? `<td class="num">${r.sp ?? ""}${bar(r.sp)}</td>` : ""}
+    <td class="num">${(r.s1 ?? "") + bar(r.s1)}<div class="src">${esc(r.dec || "")}</div></td><td class="num">${r.sp ?? ""}${r.fl ? `<div class="src">${esc(r.fl)}</div>` : ""}</td>
     <td class="num">${r.rv ?? ""}</td><td class="src">${src}</td><td class="lit">${lit}</td></tr>` +
-    (open.has(r.k) ? `<tr class="detail"><td colspan="${sub ? 8 : 7}"><div class="det">
+    (open.has(r.k) ? `<tr class="detail"><td colspan="8"><div class="det">
       <div><h4>Papers on this drug in this disease</h4>${r.by ? `<p style="margin-bottom:6px;color:var(--muted);font-size:0.82rem">${r.by === "fda" ? "Searched by FDA ingredient name" : "Searched by LINCS name"} · <a href="${esc(r.pmu)}" target="_blank" rel="noopener">all ${r.pm} on PubMed</a></p>` : ""}${r.pa.length ? `<ul>${r.pa.map(p => `<li><a href="${esc(p[0])}" target="_blank" rel="noopener">${esc(p[1] || p[0])}</a></li>`).join("")}</ul>` : `<p>${r.pm == null ? "Not searched for this pair." : "No PubMed paper names this drug with this disease."}</p>`}
         ${r.pm == null ? `<p><a href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent('"' + r.d + '"[tiab] AND cancer')}" target="_blank" rel="noopener">Search PubMed for ${esc(r.d)}</a></p>` : ""}</div>
       <div><h4>Clinical trials</h4>${r.tr.length ? `<ul>${r.tr.map(t => `<li><a href="${esc(t[0])}" target="_blank" rel="noopener">${esc(t[0].split("/").pop())}</a> ${esc(t[1])}</li>`).join("")}</ul>` : `<p>${r.pm == null ? "Not searched for this pair." : "No matching trials."}</p>`}</div>

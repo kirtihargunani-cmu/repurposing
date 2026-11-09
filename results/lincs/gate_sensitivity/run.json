@@ -5,7 +5,7 @@
   "gdsc1",
   "gdsc2"
  ],
- "lead": "spec_mech_pct",
+ "lead": "layered_pct",
  "min_lines": 2,
  "min_wcov": 0.25,
  "min_drugs": 20,
@@ -14,5 +14,5 @@
  "n_boot": 1000,
  "seed": 0,
  "fda_rows": 7570,
- "gate_known": 2714
+ "gate_known": 2708
 }

@@ -25,7 +25,7 @@ from fda_rows import fda_rows
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 OUT = RES / "dependency"
-LEAD = "spec_mech_pct"
+LEAD = "layered_pct"   # D122 lead (was spec_mech_pct)
 MIN_LINES, MIN_WCOV, MIN_DRUGS, MIN_SIDE, N_PERM, N_BOOT, SEED = 2, 0.25, 20, 5, 1000, 1000, 0
 YARDSTICK = [("TCGA-LUAD", "EGFR"), ("BRCA-Her2", "ERBB2"), ("BRCA-LumA", "ESR1"), ("BRCA-LumB", "ESR1"),
              ("TCGA-PRAD", "AR"), ("TCGA-SKCM", "BRAF"), ("TCGA-STAD", "KIT"), ("TCGA-LIHC", "CTNNB1")]

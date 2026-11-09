@@ -839,6 +839,14 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   binding add nothing; occupancy at Cmax helps where a Cmax exists. Spec doc with flowchart (Claude Docs).
 - D121a (11-08, user): lab binding strength stays in the score (gamma 1) even though it does not raise accuracy;
   later fits keep it fixed.
+- D122 (11-08): **the layered score is the lead ranking** (groups and the 14 subgroups, subgroup layer 1 on their own
+  lines, tumors and normals). Gates: targets expressed, target absent, local route, low exposure; LINCS evidence and
+  no reversal are flags; drugs without a protein target listed separately. Known use Hub 0.623, ChEMBL 0.629 (the
+  reversal lead on the same rows 0.49 / 0.48); anti-estrogens high in luminal, low in basal. Top 10s almost entirely
+  new (median 1 of 10 kept); they cluster by target class (glucocorticoids, statins, glitazones, anthracyclines, EGFR,
+  BRAF / MEK). 457 more trials read for the new top 10s. PRISM / GDSC still null.
+- D123 (11-08): free fraction read from FDA labels for 196 drugs, 8 new Cmax; free occupancy for 86 drugs (24 below
+  50%). It does not beat relative binding on known use; reported, not used.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials

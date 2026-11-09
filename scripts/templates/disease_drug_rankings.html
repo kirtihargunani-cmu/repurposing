@@ -161,11 +161,12 @@ const DATA = __DATA__;
 const STATUS = { "matched": ["matched", "Matched lines"], "borrowed only": ["borrowed", "Borrowed only"], "no adequate compound": ["none", "No adequate compound"] };
 // row layout (79x): 0 drug, 1 source, 2 rev, 3 rev%, 4 spec, 5 spec%, 6 spec_mech, 7 spec_mech%, 8 prolif share, 9 transfer conf,
 // 10 line match, 11 flag bits, 12 literature index, 13 receptors, 14 lines used; subgroups add 15 spec_sib, 16 %, 17 spec_sib_mech, 18 %
+// 29 layered_pct (D122 lead), 30 layered_S, 31 its parts (best unit genes, D / A / O, binding), 32 D122 flags (LINCS evidence, minority alteration, essential target)
 // 19 stand-ins, 20 average of own lead %ile and best stand-in's (null without one), 21 that average or own lead %ile
-const SORTS = { group: [["spec_mech", 7, "Mechanism specificity", 6], ["avg", 21, "Mechanism specificity, stand-in averaged"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]],
-  subgroup: [["spec_sib_mech", 18, "Vs sibling (mechanism)", 17], ["avg", 21, "Vs sibling (mech), stand-in averaged"], ["spec_sib", 15, "Vs sibling"], ["spec_mech", 7, "Mechanism specificity", 6], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]] };
+const SORTS = { group: [["lead", 29, "Target score (lead, D122)", 30], ["spec_mech", 7, "Mechanism specificity", 6], ["avg", 21, "Mechanism specificity, stand-in averaged"], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]],
+  subgroup: [["lead", 29, "Target score (lead, D122)", 30], ["spec_sib_mech", 18, "Vs sibling (mechanism)", 17], ["avg", 21, "Vs sibling (mech), stand-in averaged"], ["spec_sib", 15, "Vs sibling"], ["spec_mech", 7, "Mechanism specificity", 6], ["spec", 4, "Specificity"], ["rev", 2, "Reversal"]] };
 const FL = { unmatched_lines: ["Unmatched lines", "bad"], low_transfer: ["Low transfer", "bad"], multi_target: ["Multi-target", "warn"], prolif_driven: ["Proliferation-driven", "warn"], low_mrs: ["Few regulators", "plain"], target_absent: ["Target absent", "bad"], minority_target: ["Minority target", "warn"], receptor_mismatch: ["Receptor absent in tested lines", "bad"], tumor_environment: ["Acts on tumor environment", "warn"], unverified_binding: ["Unverified binding", "plain"], local_route: ["Local use only", "bad"], plate_confined: ["Not reproduced on 2nd plate", "bad"], inactive_matched_line: ["No effect in matched line", "bad"], low_exposure: ["Above patient exposure", "bad"], generic_mechanism: ["Generic mechanism", "warn"] };
-const HIDE = ["unmatched_lines", "low_transfer", "target_absent", "receptor_mismatch", "local_route", "plate_confined", "inactive_matched_line", "low_exposure"].map(f => 1 << DATA.flags.indexOf(f)).reduce((a, b) => a | b, 0);
+const HIDE = ["target_absent", "local_route", "low_exposure"].map(f => 1 << DATA.flags.indexOf(f)).reduce((a, b) => a | b, 0);
 const EVID = { mechanism: "curated mechanism", potent: "measured affinity", weak: "weaker than cut-off", annotation_only: "annotation only", no_chembl_id: "not in ChEMBL", kinase_mechanism_below_100nM: "kinase, weaker than 100 nM", kinase_mechanism_unmeasured: "kinase, no affinity data" };
 const GATE = { p: "passes", a: "absent in matched lines", s: "complex incomplete in tumors", n: "no binding evidence" };
 const el = id => document.getElementById(id);
@@ -207,7 +208,7 @@ function renderCohort() {
 function head() {
   const sub = isSub(), c = sortCol();
   const th = (label, col) => `<th class="num sort" data-col="${col}" aria-sort="${col === c ? "descending" : "none"}" title="Rank by this score">${label}</th>`;
-  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th>${sub ? th("Vs sibling (mech)", 18) : ""}${th("Mechanism specificity", 7)}${th("Specificity", 4)}${th("Reversal", 2)}<th>Data</th><th title="Early (6 h) vs late (24 h) drug response, D100">Timing</th><th title="Main targets (D105b) and their median TPM in this cancer's tumors">Target in tumor</th><th>Receptors</th><th>Literature</th>`;
+  el("thead").innerHTML = `<th class="num">Rank</th><th>Drug</th>${th("Target score", 29)}${sub ? th("Vs sibling (mech)", 18) : ""}${th("Mechanism specificity", 7)}${th("Specificity", 4)}${th("Reversal", 2)}<th>Data</th><th title="Early (6 h) vs late (24 h) drug response, D100">Timing</th><th title="Main targets (D105b) and their median TPM in this cancer's tumors">Target in tumor</th><th>Receptors</th><th>Literature</th>`;
 }
 const bar = v => v == null ? "" : `<span class="bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, v))}%"></i></span>`;
 const score = (pct, raw, avg) => `<td class="num score">${pct == null ? "–" : pct.toFixed(1)}${bar(pct)}<span class="raw">${fmt(raw)}</span>${avg != null ? `<span class="avg" title="Average of this drug's own percentile and its best stand-in's">with stand-in ${avg.toFixed(1)}</span>` : ""}</td>`;
@@ -233,11 +234,12 @@ function litCell(r, d) {
 function detail(r, d, sub) {
   const L = r[12] >= 0 ? DATA.lit[r[12]] : null;
   const srch = `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent('"' + (d.fda ? d.fda[0] : d.c) + '"[tiab] AND (cancer OR tumor OR neoplasm)')}`;
-  const scores = [["Reversal", r[2], r[3]], ["Specificity", r[4], r[5]], ["Mechanism specificity", r[6], r[7]]].concat(r[22] ? [["Mech. specificity, early (6 h)", null, r[23]], ["Mech. specificity, late (24 h)", null, r[24]]] : []).concat(sub ? [["Vs sibling", r[15], r[16]], ["Vs sibling (mechanism)", r[17], r[18]]] : []);
+  const scores = [["Target score (layered, lead)", r[30], r[29]], ["Reversal", r[2], r[3]], ["Specificity", r[4], r[5]], ["Mechanism specificity", r[6], r[7]]].concat(r[22] ? [["Mech. specificity, early (6 h)", null, r[23]], ["Mech. specificity, late (24 h)", null, r[24]]] : []).concat(sub ? [["Vs sibling", r[15], r[16]], ["Vs sibling (mechanism)", r[17], r[18]]] : []);
   const rec = r[13].length ? `<table class="mini"><thead><tr><th>Receptor</th><th>Class</th><th>Binding evidence</th><th class="num">pChEMBL</th><th class="num">Window</th><th class="num">Matched lines expressing</th><th>Gate</th></tr></thead><tbody>${r[13].map(x =>
       `<tr><td><b>${esc(x[0])}</b></td><td>${esc(x[1])}</td><td>${esc(EVID[x[2]] || x[2])}</td><td class="num">${fmt(x[3])}</td><td class="num">${fmt(x[4])}</td><td class="num">${x[5] == null ? "–" : Math.round(100 * x[5]) + "% of " + x[6]}</td><td><span class="rec ${x[7]}">${GATE[x[7]]}</span>${x[8] ? ' <span class="flag plain">1 line</span>' : ""}</td></tr>`).join("")}</tbody></table>` : "<p>No annotated receptor target expressed in this cohort.</p>";
-  return `<tr class="detail"><td colspan="${sub ? 10 : 9}"><div class="det">
+  return `<tr class="detail"><td colspan="${sub ? 11 : 10}"><div class="det">
     <div><h4>Scores</h4><table class="mini"><thead><tr><th>Score</th><th class="num">Raw</th><th class="num">Percentile</th></tr></thead><tbody>${scores.map(s => `<tr><td>${s[0]}</td><td class="num">${fmt(s[1])}</td><td class="num">${s[2] == null ? "–" : s[2].toFixed(1)}</td></tr>`).join("")}</tbody></table>
+      <p style="margin-top:6px">Target score parts (best target unit; D needed by lines, A altered in tumors, O turned up, binding vs the drug's strongest target): ${esc(r[31] || "–")}</p>${r[32] ? `<p style="margin-top:6px">Flags (shown, not used to exclude, D122): ${esc(r[32])}</p>` : ""}
       <p style="margin-top:6px">Proliferation share of reversal: ${r[8] == null ? "–" : Math.round(100 * r[8]) + "%"}</p></div>
     <div><h4>Data behind the score</h4><p>${r[1] === "d" ? "Tested in this tissue's lines" : "Borrowed from other tissues' lines"} · ${r[14]} line${r[14] === 1 ? "" : "s"} used${r[1] === "d" && r[10] != null ? ` · best line match ${fmt(r[10])}` : ""}${r[1] === "b" && r[9] != null ? ` · transfer confidence ${fmt(r[9])}` : ""}</p>
       <p style="margin-top:6px">${flags(r) || "No flags."}</p>
@@ -269,10 +271,10 @@ function renderTable() {
     const r = all[i], d = DATA.drugs[r[0]], name = d.fda ? d.fda[0] : d.c;
     return `<tr class="row" tabindex="0" data-i="${i}" aria-expanded="${open.has(i)}"><td class="num">${ranks.get(i)}</td>
       <td><div class="drug">${esc(name)}</div>${name.toLowerCase() !== d.c.toLowerCase() ? `<div class="lincs">${esc(d.c)}</div>` : ""}<div class="moa">${esc(d.moa)}</div>${d.fda ? `<span class="flag ${d.fda[1] === "m" ? "ok" : "plain"}">${d.fda[1] === "m" ? "Marketed" : "Discontinued"}${d.fda[2] ? " · " + d.fda[2] : ""}</span>` : ""}${flags(r)}</td>
-      ${sub ? score(r[18], r[17], r[20]) : ""}${score(r[7], r[6], sub ? null : r[20])}${score(r[5], r[4])}${score(r[3], r[2])}
+      ${score(r[29], r[30])}${sub ? score(r[18], r[17], r[20]) : ""}${score(r[7], r[6], sub ? null : r[20])}${score(r[5], r[4])}${score(r[3], r[2])}
       <td class="src">${r[1] === "d" ? "Direct" : "Borrowed"}${r[1] === "b" && r[9] != null ? `<br>conf ${fmt(r[9])}` : ""}<br>${r[14]} line${r[14] === 1 ? "" : "s"}${r[19].length ? `<br><span class="si" title="Closest compound tested in this cohort's own lines (similarity ${fmt(r[19][0][1])})">Stand-in: ${esc(r[19][0][0])}</span>` : ""}</td>
       <td>${timingCell(r)}</td><td>${tgtCell(r)}</td><td>${recChips(r)}</td><td class="lit">${litCell(r, d)}</td></tr>` + (open.has(i) ? detail(r, d, sub) : "");
-  }).join("") || `<tr><td colspan="10">No drugs match these filters.</td></tr>`;
+  }).join("") || `<tr><td colspan="11">No drugs match these filters.</td></tr>`;
   el("count").textContent = `${lim} of ${total} drugs`;
   el("more").hidden = lim >= total; el("more").textContent = `Show ${Math.min(100, total - lim)} more`;
 }

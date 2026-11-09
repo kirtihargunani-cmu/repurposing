@@ -196,13 +196,17 @@ def main():
     from evidence_flags import apply_evidence
     ok = apply_evidence(ok)
     ok = ok[~ok.weak_d109]   # D109
-    a = ok.sort_values("spec_mech", ascending=False).groupby("group_id").head(TOP_N).assign(top_spec_mech=True)
+    # D122: 'by lead' (layered_pct, D122 gates) replaces 'by specificity'; 'by reversal' keeps the reversal-era filters
+    from fda_rows import eligible
+    lo = apply_evidence(apply_route(o[~o.cmap_name.str.startswith("BRD-")]))
+    lo = lo[eligible(lo) & lo.get("layered_pct", pd.Series(float("nan"), index=lo.index)).notna()] if "layered_pct" in lo else lo.iloc[0:0]
+    a = lo.sort_values("layered_pct", ascending=False).groupby("group_id").head(TOP_N).assign(top_lead=True)
     b = ok.sort_values("rev", ascending=False).groupby("group_id").head(TOP_N).assign(top_rev=True)
     sel = pd.concat([a, b]).groupby(["group_id", "cmap_name"], as_index=False).agg(
         source=("source", "first"), approved=("approved", "first"), hub_moa=("hub_moa", "first"),
         spec_mech=("spec_mech", "max"), spec_mech_pct=("spec_mech_pct", "max"), rev=("rev", "max"), rev_pct=("rev_pct", "max"),
-        transfer_conf=("transfer_conf", "first"), top_spec_mech=("top_spec_mech", "any"), top_rev=("top_rev", "any"))
-    sel[["top_spec_mech", "top_rev"]] = sel[["top_spec_mech", "top_rev"]].fillna(False)
+        layered_pct=("layered_pct", "max"), transfer_conf=("transfer_conf", "first"), top_lead=("top_lead", "any"), top_rev=("top_rev", "any"))
+    sel[["top_lead", "top_rev"]] = sel[["top_lead", "top_rev"]].fillna(False)
     rows, pmids = [], set()
     t0 = time.time()
     for i, r in enumerate(sel.itertuples(index=False)):
@@ -238,11 +242,11 @@ def main():
             d[f"trial{j + 1}"] = f"https://clinicaltrials.gov/study/{t[0]}" if t else ""
             d[f"trial{j + 1}_info"] = f"{t[1]}, {t[2]}: {t[3]}" if t else ""
         out.append(d)
-    out = pd.DataFrame(out).sort_values(["group_id", "spec_mech"], ascending=[True, False])
+    out = pd.DataFrame(out).sort_values(["group_id", "layered_pct", "spec_mech"], ascending=[True, False, False])
     out.to_csv(RES / "literature_v2_consensus.tsv", sep="\t", index=False)
     sm = out.groupby("group_id").agg(pairs=("cmap_name", "size"), with_pubmed=("pubmed_count", lambda v: int((v > 0).sum())),
                                      with_trials=("trial_count", lambda v: int((v > 0).sum())),
-                                     top_spec_mech_with_pubmed=("pubmed_count", lambda v: int((v[out.loc[v.index, "top_spec_mech"]] > 0).sum())))
+                                     top_lead_with_pubmed=("pubmed_count", lambda v: int((v[out.loc[v.index, "top_lead"]] > 0).sum())))
     sm.to_csv(RES / "literature_v2_summary.tsv", sep="\t")
     print(sm.to_string()); print(f"pairs {len(out)}; with PubMed hits {int((out.pubmed_count > 0).sum())}; with trials {int((out.trial_count > 0).sum())}")
 

@@ -5,7 +5,7 @@
  "yardstick_above_80pct": 6,
  "yardstick_n": 8,
  "fda_rows": 7570,
- "rows_with_dep": 6668,
+ "rows_with_dep": 6663,
  "min_lines": 2,
  "min_wcov": 0.25,
  "min_drugs": 20,
