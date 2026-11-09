@@ -119,7 +119,7 @@ details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-dire
         <ul>
           <li><b>Rank</b> orders the cohort's FDA-approved drugs by the layered score (<code>layered_pct</code>, D122): for each of the drug's targets, whether this cancer's cell lines need it (D), whether it is mutated or amplified in the patients' tumors (A) and whether it is turned up versus normal tissue (O), weighted by how strongly the drug binds that target. <b>Specificity %ile</b> is the former lead, how much more the drug reverses this cohort's regulator changes than other cancers' (<code>spec_mech</code>; subgroups vs the sibling, <code>spec_sib_mech</code>). Flags such as a borrowed or unmatched LINCS profile are shown, not used to exclude. Drugs without a protein target are listed in a separate table file, not here.</li>
           <li>Only drugs that pass the target check, reverse the cohort overall, and carry no data-quality flag are listed: drugs tested only in unrelated cell lines, and borrowed drugs with transfer confidence below 0.5, are left out.</li>
-          <li><b>Evidence status</b>: <i>matched</i> means at least one top drug was measured in a cell line resembling the cohort; <i>borrowed only</i> means the candidates were measured in other tissues' lines and rest on the drug acting consistently across lines.</li>
+          <li><b>Evidence status</b>: <i>candidates</i> means at least one drug is in the cohort's top 10% on the target score and passes the exclusion checks; <i>no adequate compound</i> means none does. The note under the cohort name lists which target-role data (D dependency, A alteration, O over-activity) the cohort has.</li>
           <li><b>Literature</b>: PubMed counts need the drug and the disease in a title or abstract. The top 3 FDA drugs of every disease and subgroup were searched by their FDA ingredient name; other rows use the earlier search by LINCS name (each disease's top 10 overall) where one was run. Every row links to PubMed review articles about the drug itself. Trial counts come from ClinicalTrials.gov, whose search also matches related drugs and terms, so read the linked trials. Rows without a search show only the drug link.</li>
           <li>FDA status from Drugs@FDA (fetched 2026-10-29): <i>marketed</i> has a current prescription or OTC product; <i>discontinued</i> was approved but has no current product. Scores are computational predictions, not validated against drug-sensitivity data.</li>
         </ul>
@@ -130,7 +130,7 @@ details.about ul { max-width: 95ch; padding-left: 20px; display: flex; flex-dire
 
 <script>
 const DATA = __DATA__;
-const STATUS = { "matched": ["matched", "Matched lines"], "borrowed only": ["borrowed", "Borrowed only"], "no adequate compound": ["none", "No adequate compound"] };
+const STATUS = { "candidates": ["matched", "Candidates"], "matched": ["matched", "Matched lines"], "borrowed only": ["borrowed", "Borrowed only"], "no adequate compound": ["none", "No adequate compound"] };
 const el = id => document.getElementById(id);
 const reviewUrl = d => "https://pubmed.ncbi.nlm.nih.gov/?sort=relevance&term=" + encodeURIComponent('"' + d + '"[tiab] AND review[pt]');
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
