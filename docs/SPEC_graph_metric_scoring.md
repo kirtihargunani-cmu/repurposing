@@ -42,9 +42,21 @@ Runs first, and its output is used in the metrics rather than quoted beside them
 
 **Estimate.** Split the LINCS replicate-level signatures of each (drug, line) at random into two halves, collapse
 each half to its own level-5-style consensus, and run the whole scoring path twice to two independent copies of
-`spec_mech_pct`. Reliability `r` = the median across cohorts of the Spearman correlation between the two copies over
-gate-passing drugs. Repeat over 20 random splits and report the median and spread. Lim & Pavlidis 2021 (17%
-cross-phase compound recovery) and issue 2 of `LITERATURE_SCORING.md` both imply `r` is low.
+`spec_mech_pct`. Split at the replicate-collapse stage, not earlier, so the VIPER step is shared across splits.
+Lim & Pavlidis 2021 (17% cross-phase compound recovery) and issue 2 of `LITERATURE_SCORING.md` both imply `r` is low.
+
+**Reliability is per cohort, not pooled (user 2026-11-09).** `r_c` = the Spearman correlation between the two copies
+over the cohort's gate-passing drugs, reported for each of the 41 groups and the 14 subgroups, with the median
+across cohorts given as a summary only. Reason: cohorts differ by an order of magnitude in how many LINCS-tested
+matched lines they have (D78: 14 of 41 `matched`), so reliability almost certainly varies with that, and a single
+pooled `r` would over-correct the data-rich cohorts and under-correct the thin ones — the cohorts whose results are
+already least trustworthy. Any per-cohort metric is corrected with that cohort's own `r_c`; a pooled metric uses the
+median and says so.
+
+**Split count, adaptive (user 2026-11-09).** Run splits in batches of 10 until the standard error of the median `r_c`
+stabilises, floor 20, cap 100; report the final count and the SE with every `r`. Target: SE small relative to 0.05
+in `r`, since `r` enters the metrics through `sqrt(r)` and 0.05 is roughly the resolution the attainment comparison
+needs. If the cap is reached without stabilising, report the SE and treat the ceiling as indicative only.
 
 **Use.** Convert AUC to Somers' D (`D = 2*AUC - 1`), which is the rank-correlation form, and report
 
@@ -62,7 +74,8 @@ repoDB and Hub coverage per cancer is thin, which depresses the observed AUC for
 see), and the AUC-to-D conversion assumes the attenuation bound carries over to a rank statistic on a binary
 outcome, which is an approximation. So `AUC_max` is an upper bound on what the drug-side noise permits, not a
 prediction of achievable performance. Report both raw and attainment-corrected numbers; never report attainment
-alone.
+alone. Per-cohort `r_c` from few drugs is itself noisy, so a cohort with fewer than 50 gate-passing drugs gets its
+`r_c` reported with its CI and is corrected with the median instead, flagged `r_pooled`.
 
 **Consequence for this spec.** If `AUC_max` sits near where `spec_mech` already scores, Part A can only be justified
 on controls and dominance, and Part B becomes the more valuable half. The estimate also gives the first honest
@@ -167,9 +180,14 @@ Output per (drug, group): `mechanism_consistent_frac`, and the flag `mechanism_i
 
 Filter fixed before use: `consensus_direction` and `consensus_sign` true, and >= 2 supporting resources or >= 2
 references. Where per-source signs disagree, the consensus sign is taken and the disagreement recorded per edge
-(`sign_disputed`), so a later arm can drop disputed edges without a re-pull. Release pinned in
-`config/datasets.yaml`; the signed-and-directed subset is a fraction of OmniPath's headline interaction count, so
-the pinned record states the subset size, not the total.
+(`sign_disputed`), so a later arm can drop disputed edges without a re-pull. **Pinning: cache the edge table, do not pin a version string (user 2026-11-09).** OmniPath is a service over moving
+upstream resources, so a release label is a weaker guarantee than it is for a downloaded file. The filtered
+signed-and-directed edge table is written to `data/raw/omnipath/` with a checksum and registered in
+`config/datasets.yaml` alongside the OmniPath package version, the exact query parameters, and the retrieval date.
+The analysis then depends on a file we hold, not on a service that answers differently next quarter. The registered
+record states the **signed-and-directed subset size**, not OmniPath's headline interaction count. This is a stronger
+guarantee than the other sources get, which is appropriate: it is the one curated dependency Part B introduces into
+an otherwise measured-tier pipeline. The SIGNOR sensitivity arm is cached the same way.
 
 Why not SIGNOR as primary: it is the better resource edge-for-edge (sign is the primary curated annotation, not a
 derived one, and each entry is mechanism-level and PubMed-backed), but its coverage is the binding constraint here.
@@ -254,11 +272,10 @@ to the split tables; `scripts/d126/`.
 
 - Whether an academic CPLEX or Gurobi licence is available, since it decides whether the breast arm runs on the full
   prior or on the 3-hop reduction (B2).
-- Whether 20 random splits is enough for A0's reliability estimate, or whether it should run to a target precision
-  on the median `r`.
-- Whether the OmniPath release needs a `config/datasets.yaml` review entry of its own before the breast arm runs,
-  given it is a service over moving upstream resources rather than a fixed file.
+- Whether the cap of 100 splits is affordable once the scoring path is timed; if not, whether to drop the cap or
+  widen the 0.05 target.
 
 Settled 2026-11-09: layer-3 refit reported, not decision-bearing (A5.4); CARNIVAL runs on breast (B2); the noise
 ceiling runs first and feeds the metrics (A0); OmniPath signed-and-directed as the prior with SIGNOR as a
-sensitivity arm, and the degree-correction contingency fixed in advance (B2, B2b).
+sensitivity arm, and the degree-correction contingency fixed in advance (B2, B2b); reliability per cohort with an
+adaptive split count (A0); the OmniPath edge table cached with a checksum rather than pinned by version (B2).
