@@ -40,23 +40,58 @@ claim, which is why `lambda` must be fixed on data independent of the adoption c
 
 Runs first, and its output is used in the metrics rather than quoted beside them.
 
-**Estimate.** Split the LINCS replicate-level signatures of each (drug, line) at random into two halves, collapse
-each half to its own level-5-style consensus, and run the whole scoring path twice to two independent copies of
-`spec_mech_pct`. Split at the replicate-collapse stage, not earlier, so the VIPER step is shared across splits.
 Lim & Pavlidis 2021 (17% cross-phase compound recovery) and issue 2 of `LITERATURE_SCORING.md` both imply `r` is low.
 
-**Reliability is per cohort, not pooled (user 2026-11-09).** `r_c` = the Spearman correlation between the two copies
-over the cohort's gate-passing drugs, reported for each of the 41 groups and the 14 subgroups, with the median
-across cohorts given as a summary only. Reason: cohorts differ by an order of magnitude in how many LINCS-tested
-matched lines they have (D78: 14 of 41 `matched`), so reliability almost certainly varies with that, and a single
-pooled `r` would over-correct the data-rich cohorts and under-correct the thin ones — the cohorts whose results are
-already least trustworthy. Any per-cohort metric is corrected with that cohort's own `r_c`; a pooled metric uses the
-median and says so.
+**Two estimators, both run (user 2026-11-09).** The original single estimator (random split-half of the
+replicate-level signatures of every drug x line pair) does not survive a depth check: `cell_coverage.tsv` gives 126k
+high-quality signatures over 48k scored compound x line pairs, a mean of **2.6 signatures per pair**. A pair needs
+>= 6 replicates before two halves are each stable enough to correlate, so for most pairs the split is undefined, and
+where it is defined on 2-3 signatures the halves measure the split procedure rather than the assay. That bites
+hardest in the thin cohorts, which are exactly the ones per-cohort correction was introduced to protect. So:
 
-**Split count, adaptive (user 2026-11-09).** Run splits in batches of 10 until the standard error of the median `r_c`
+**A0a. Paired-signature reliability (primary, covers every cohort).** For each drug x line pair with >= 2
+independent high-quality level-5 signatures at different dose or time, score each signature separately through the
+path and correlate the resulting `spec_mech_pct`. `r_c` = the per-cohort Spearman over gate-passing drugs. Material
+already exists: `79c` collapses across these signatures today, so A0a needs one scoring pass per signature stratum
+and **no profile or VIPER rebuild**. Pre-register which strata count as independent (dose and time fields of the
+level-5 index) before running.
+
+**A0b. Split-half on deep pairs (bound, partial coverage).** Restricted to drug x line pairs with >= 6 replicate-level
+high-quality signatures, which exist mainly in the deep lines (MCF7 3,540 compounds, PC3 3,760, A375 3,565, A549
+2,900, HA1E 3,154). This is the clean estimator, and it does require `79c` and `79d` to rerun per half — see the cost
+note below — but only over the restricted subset.
+
+**A0.0 gate, measured first.** Count the pairs and lines meeting A0b's >= 6 threshold from the level-4 index. If
+fewer than 500 pairs qualify, or they fall in fewer than 3 lines, A0b is confined to the lines that do qualify and
+reported as a line-level bound, not a cohort-level one.
+
+**Reading the two together.** `r_A0b - r_A0a`, where both exist, is the dose-and-time share of the apparent noise.
+Direction matters and runs against us: A0a conflates dose and time variation with noise, so it **under**estimates
+`r`, which lowers `AUC_max` and therefore **inflates** attainment — it flatters the pipeline. A0b is the stricter
+test. Rule fixed in advance: where A0b covers a cohort's scoring lines, its `r` sets the ceiling; elsewhere A0a's
+value is used and flagged `r_optimistic`. If the two differ by >= 0.1 in `r`, say so wherever a ceiling-relative
+number is reported.
+
+**Reliability is per cohort, not pooled (user 2026-11-09).** `r_c` reported for each of the 41 groups and the 14
+subgroups, with the median across cohorts as a summary only. Reason: cohorts differ by an order of magnitude in how
+many LINCS-tested matched lines they have (D78: 14 of 41 `matched`), so reliability almost certainly varies with
+that, and a single pooled `r` would over-correct the data-rich cohorts and under-correct the thin ones — the cohorts
+whose results are already least trustworthy. Any per-cohort metric is corrected with that cohort's own `r_c`; a
+pooled metric uses the median and says so.
+
+**Split count for A0b, adaptive (user 2026-11-09).** Batches of 10 until the standard error of the median `r_c`
 stabilises, floor 20, cap 100; report the final count and the SE with every `r`. Target: SE small relative to 0.05
-in `r`, since `r` enters the metrics through `sqrt(r)` and 0.05 is roughly the resolution the attainment comparison
-needs. If the cap is reached without stabilising, report the SE and treat the ceiling as indicative only.
+in `r`, since `r` enters the metrics through `sqrt(r)`. If the cap is reached without stabilising, report the SE and
+treat the ceiling as indicative only. A0a has no resampling loop and so no cap.
+
+**Cost (measured 2026-11-09, corrected).** An earlier draft claimed the split could share the VIPER step. It cannot:
+`79d` consumes `drug_line_profiles_bing_specific.f32` from `79c`, so two half-consensuses mean `79c` and `79d` rerun
+per half — 2n full passes, not n cheap re-scorings. Timed at the real dimensions (48,274 drug x line profiles, 38
+networks, median 990 scored regulators per network) the aREA core is ~2 min per pass, so 200 passes is ~7 core-hours,
+under an hour on 8 cores, with ~1 TB read and ~1.5 TB written if intermediates are kept rather than streamed into
+scoring. Those figures are an optimised-BLAS **floor**: R's `viper` carries per-regulator overhead not captured, so
+scale up before planning. The cap therefore survives on compute; it was the replicate depth, not the timing, that
+forced the two-estimator design.
 
 **Use.** Convert AUC to Somers' D (`D = 2*AUC - 1`), which is the rank-correlation form, and report
 
@@ -75,7 +110,8 @@ see), and the AUC-to-D conversion assumes the attenuation bound carries over to 
 outcome, which is an approximation. So `AUC_max` is an upper bound on what the drug-side noise permits, not a
 prediction of achievable performance. Report both raw and attainment-corrected numbers; never report attainment
 alone. Per-cohort `r_c` from few drugs is itself noisy, so a cohort with fewer than 50 gate-passing drugs gets its
-`r_c` reported with its CI and is corrected with the median instead, flagged `r_pooled`.
+`r_c` reported with its CI and is corrected with the median instead, flagged `r_pooled`; this applies to both
+estimators independently, so a cohort can be `r_pooled` on A0b and not on A0a.
 
 **Consequence for this spec.** If `AUC_max` sits near where `spec_mech` already scores, Part A can only be justified
 on controls and dominance, and Part B becomes the more valuable half. The estimate also gives the first honest
@@ -265,6 +301,11 @@ to the split tables; `scripts/d126/`.
   flag-only and by the degree-confound check; the secondary arm of Part A is reported for the same reason.
 - **Publication bias.** Both the prior and CollecTRI are biased to well-studied nodes. Criterion B2 tests this
   directly for Part B; Part A's primary arm avoids it by not using a curated graph.
+- **A0a flatters the pipeline.** It conflates dose and time variation with assay noise, so `r` comes out low,
+  `AUC_max` low, and attainment high. Wherever A0b does not cover a cohort, its ceiling is optimistic and flagged
+  `r_optimistic`. Do not read an attainment number from A0a alone as evidence the score is close to its ceiling.
+- **A0b may not reach cohort level at all.** It depends on the A0.0 count of pairs with >= 6 replicates, which is
+  unmeasured; if those sit in a handful of deep lines, A0b is a line-level bound and most cohorts fall back to A0a.
 - **Criterion 1 is a single drug class in a single tissue.** Anti-estrogens in breast are the only control where we
   know the right answer. Passing it is necessary, not sufficient.
 
@@ -272,10 +313,12 @@ to the split tables; `scripts/d126/`.
 
 - Whether an academic CPLEX or Gurobi licence is available, since it decides whether the breast arm runs on the full
   prior or on the 3-hop reduction (B2).
-- Whether the cap of 100 splits is affordable once the scoring path is timed; if not, whether to drop the cap or
-  widen the 0.05 target.
+- Which level-5 index fields define an independent stratum for A0a (dose only, time only, or both), fixed before
+  the run.
 
 Settled 2026-11-09: layer-3 refit reported, not decision-bearing (A5.4); CARNIVAL runs on breast (B2); the noise
 ceiling runs first and feeds the metrics (A0); OmniPath signed-and-directed as the prior with SIGNOR as a
 sensitivity arm, and the degree-correction contingency fixed in advance (B2, B2b); reliability per cohort with an
-adaptive split count (A0); the OmniPath edge table cached with a checksum rather than pinned by version (B2).
+adaptive split count (A0); the OmniPath edge table cached with a checksum rather than pinned by version (B2); both
+reliability estimators run, A0a primary and A0b as the stricter bound, after the replicate-depth check killed
+split-half as a sole estimator (A0). The 100-split cap survives on compute (timed 2026-11-09).
