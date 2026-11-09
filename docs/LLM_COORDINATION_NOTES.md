@@ -62,6 +62,10 @@ scores, the implied `AUC_max = (1 + sqrt(r)) / 2`, and attainment `D_observed / 
 (definitions and assumptions in [`SPEC_graph_metric_scoring.md`](SPEC_graph_metric_scoring.md) section A0).
 - Raw and ceiling-relative numbers are both shown; attainment is never shown alone, because the ceiling treats the
   indication labels as noiseless and they are not.
+- **Drug side (implemented 2026-11-09, A0a only so far):** `results/lincs/d125/a0/ceiling.tsv`, one row per reported
+  known-use metric with auc, D_obs, r, r_estimator, r_optimistic, auc_max, attainment and a note; `ceiling_applies` is
+  False for scores not built from LINCS (the lead layered_pct), which keep their raw AUC only. Until A0b runs every row is
+  r_optimistic, and the A0a r mixes direct (~0.61) and borrowed (~0.9) drugs (`a0a_by_source.tsv`): say so.
 - Where a comparison between pipeline arms is below the resolution the ceiling implies, the layer says the yardstick
   cannot resolve a change of that size (the existing finding in D90 / C28) instead of reporting the difference as a
   result.

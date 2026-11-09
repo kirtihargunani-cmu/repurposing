@@ -232,6 +232,12 @@ flowchart LR
   ChEMBL mechanism target is a nucleic acid join the ranking with T = 50 + rho_DNA (P - 50) (rho_DNA = median of the
   cytotoxic units). Columns layered_P, layered_rho, essential_unit, dna_acting; pages show 'scored on proliferation' /
   'DNA-acting'.
+- **Noise ceiling (D125 section A0; reported only, `scripts/d125/`):** `a00_eligible_pairs.py` (A0.0 gate),
+  `a0a_paired.py` (paired dose x time signatures, every cohort), `a0b_splithalf.py` (split halves of the deep pairs;
+  DRY_RUN=1 default), `a0e_ceiling.py` (AUC_max = (1 + sqrt r) / 2, attainment = (2 AUC - 1) / sqrt r beside each raw
+  AUC). A pass rebuilds only the changed pairs' profiles with the production line vectors, runs 79d on those columns
+  (new option INDEX_FILE) and splices them into the production VIPER, then runs 79e / 79i unchanged in a sandbox
+  (`data/processed/lincs/d125_a0/sbx`); thresholds in `a0_config.py`. Outputs `results/lincs/d125/a0/`.
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

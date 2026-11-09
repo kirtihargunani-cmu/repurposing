@@ -1,0 +1,49 @@
+{
+ "a00": {
+  "n_pairs": 1019,
+  "n_lines": 32,
+  "scope": "cohort-level"
+ },
+ "splits": {
+  "batch": 10,
+  "floor": 20,
+  "cap": 100,
+  "se_stable": null,
+  "stopping_rule_set": false
+ },
+ "passes": {
+  "per_split": 2,
+  "min": 40,
+  "max": 200,
+  "viper_columns_per_pass": 1019,
+  "viper_columns_of_production": 9678,
+  "parallel_passes": 2,
+  "threads_per_pass": 4
+ },
+ "timing_basis": {
+  "viper_seconds_per_column_at_threads": 0.0582,
+  "viper_runs_measured": 4,
+  "score_pass_seconds": 421.1,
+  "score_runs_measured": 2,
+  "source": "/home/kirti/projects/repurposing/data/processed/lincs/d125_a0/timings.tsv"
+ },
+ "est_minutes": {
+  "per_pass": 9.0,
+  "floor_wall": 180.0,
+  "cap_wall": 900.0
+ },
+ "disk_gb": {
+  "transient_per_pass": 2.42,
+  "transient_peak": 4.83,
+  "kept_per_pass": 0.0007,
+  "kept_at_cap": 0.15,
+  "written_at_cap": 0.48,
+  "written_at_cap_unit": "TB (streamed: each pass's files are removed once its scores are saved)",
+  "free_now": 135.8
+ },
+ "caveats": [
+  "VIPER time scaled linearly from the A0a subset runs (same networks, more or fewer columns)",
+  "per-pass scoring time from the A0a / baseline sandbox passes (79e groups + subgroups, 79i)",
+  "estimates exclude profile building (seconds) and splicing I/O (~1.5 GB written per pass)"
+ ]
+}

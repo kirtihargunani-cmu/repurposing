@@ -858,6 +858,19 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   cyclosporine leave the top 10s. The tie criterion failed on shared-target ties (glucocorticoids), which the previous
   objective had too; adopted by user decision. In production.
 
+## 2026-11-09: noise ceiling for the reversal score (D125 section A0)
+- Spec `docs/SPEC_graph_metric_scoring.md` (D125 graph-metric reversal, D126 mechanism flag); A0 implemented
+  (`scripts/d125/`, outputs `results/lincs/d125/a0/`), Parts A and B not started. Choices before running (D125-A0):
+  dose x time cells as A0a strata, active level-5 signatures as replicates (no level-4 profiles on disk), r_c over drugs
+  that use a changed pair, production line vectors kept and only changed VIPER columns rerun (spliced).
+- The spec's sizing was off: 9,678 drug x line profiles and 40 networks, not 48,274 and 38 (spec annotated).
+- Sandbox reproduces production exactly (profiles, VIPER, all 67,174 spec_mech_pct_pregate rows).
+- A0.0: 1,019 deep pairs in 32 lines, A0b cohort-level. A0a: r_c median 0.90, but direct (matched-line) drugs 0.61 and
+  borrowed drugs 0.905 (inflated: half their lines are unchanged between passes).
+- Ceiling: AUC_max 0.97 at r 0.90 (0.89 at r 0.61); reversal known-use AUCs 0.43-0.51 sit near zero attainment
+  (-0.15 to +0.03). The reversal score's failure is not the assay noise. A0b dry run: ~3-15 h; waits for a numeric
+  stopping rule.
+
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
   read from linked abstracts by subagents (631 trials, quotes verified), drug role (single agent / combination /
