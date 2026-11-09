@@ -103,6 +103,17 @@ follow-up questions:
    where that is known.)
    (Decision D121a: binding strength stays in the score anyway. A drug that only weakly grabs a target should not
    get full credit for that target, even if the check against approved uses cannot see the difference.)
+   (Switch D122, 2026-11-08: **the lists are now ordered by the target score**, not by how well a drug's lab
+   signature undoes the cancer's pattern. The old score is still shown beside it, and the lab-data warnings (cells
+   not well matched, effect not reproduced, drug did nothing in this cancer's own cells) are shown as flags instead
+   of removing drugs. Drugs that do not act on a protein, such as many classic chemotherapies, are listed in a separate
+   table. On the check against approved uses the new order does clearly better (about 62-63 times in 100 against
+   about 48-49 for the old order on the same drugs), and anti-hormone drugs come out high in hormone-driven breast
+   cancer and low in basal breast cancer. Almost every top 10 changed. Drugs that share a target now sit together,
+   for example steroid hormones, cholesterol drugs (statins) and diabetes drugs (glitazones), which deserves a close
+   look before anything is acted on.)
+   (D123: how much of each drug circulates unbound in the blood was read from the FDA labels for 196 drugs. Using it to
+   estimate how much of the target the drug occupies in patients did not improve the check, so it is reported only.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

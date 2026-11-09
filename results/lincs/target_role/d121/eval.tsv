@@ -28,3 +28,7 @@ occupancy subset (drugs with Cmax; equal w, gamma 1)	hub	occupancy at Cmax	0.657
 occupancy subset (drugs with Cmax; equal w, gamma 1)	chembl	occupancy at Cmax	0.6119	38	194	1596	7583
 occupancy subset (drugs with Cmax; equal w, gamma 1)	hub	relative binding	0.6249	21	69	921	2886
 occupancy subset (drugs with Cmax; equal w, gamma 1)	chembl	relative binding	0.6041	38	194	1596	7583
+free-occupancy subset (D123; equal w, gamma 1)	hub	free occupancy (D123)	0.6605	19	44	670	1523
+free-occupancy subset (D123; equal w, gamma 1)	chembl	free occupancy (D123)	0.6064	35	132	1175	4258
+free-occupancy subset (D123; equal w, gamma 1)	hub	relative binding	0.6694	19	44	670	1523
+free-occupancy subset (D123; equal w, gamma 1)	chembl	relative binding	0.619	35	132	1175	4258

@@ -212,6 +212,13 @@ def main():
                 row += [clean(getattr(r, "target_source", "")) or "", clean(getattr(r, "evidence_targets", "")) or "",
                         clean(getattr(r, "secondary_targets", "")) or ""]   # 25-27: main-target source, main targets, secondary (D105b)
                 row.append(TO.get((u, r.drug)))   # 28: D108 trial outcomes (top 10 per cohort) or null
+                lg = clean(getattr(r, "layered_genes", None))
+                rr_ = clean(getattr(r, "layered_r", None))
+                dec = (f"{lg}: D {rnd(r.layered_D, 1)}, A {rnd(r.layered_A, 1)}, O {rnd(r.layered_O, 1)}, binding {rr_:.2f}, "
+                       f"{int(r.layered_n_units)} target unit(s)") if lg else ""
+                fl2 = [x.replace("_", " ") for x in (str(r.lincs_flags).split("|") if clean(getattr(r, "lincs_flags", None)) else [])]
+                fl2 += ["minority alteration"] * truthy(getattr(r, "minority_alteration", False)) + ["essential target"] * truthy(getattr(r, "essential_target", False))
+                row += [rnd(getattr(r, "layered_pct", None), 1), rnd(getattr(r, "layered_S", None), 1), dec, ", ".join(fl2)]   # 29-32: D122 lead
                 lst.append(row)
             out[u] = lst
         return out

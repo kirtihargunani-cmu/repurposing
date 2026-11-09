@@ -50,10 +50,9 @@ def comp_dependency(groups):
     return {c: G[c].dropna() for c in groups if c in G}, {c: pct(G[c].dropna()) for c in groups if c in G}
 
 
-def comp_alteration(groups):
-    sg = pd.read_csv(ROOT / "results/step1/sample_groups_toil.tsv", sep="\t")
-    sg = sg[(sg.role == "tumor") & sg.group_id.isin(groups)]
-    s2g = dict(zip(sg["sample"], sg.group_id))
+def alteration_pairs():
+    """(gene, sample) pairs with an activating alteration in TCGA (MC3 recurrent missense / in-frame, GISTIC +2), and
+    the set of profiled samples (in MC3 or GISTIC). Shared by groups (79t) and subgroups (79t3)."""
     maf = pd.read_csv(ROOT / "data/raw/tcga_pancan/mc3.v0.2.8.PUBLIC.maf.gz", sep="\t", low_memory=False,
                       usecols=["Hugo_Symbol", "Variant_Classification", "Tumor_Sample_Barcode", "Protein_position", "FILTER"])
     maf["sample"] = maf.Tumor_Sample_Barcode.str[:15]
@@ -68,41 +67,52 @@ def comp_alteration(groups):
     for ch in pd.read_csv(ROOT / "data/raw/tcga_pancan/Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz", sep="\t",
                           index_col=0, chunksize=2000):
         prof_cn |= set(ch.columns)
-        keep = [c for c in ch.columns if c in s2g]
-        v = ch[keep].values
+        v = ch.values
         r, k = np.nonzero(v == 2)
-        amp.append(pd.DataFrame({"gene": ch.index.values[r], "sample": np.array(keep)[k]}))
+        amp.append(pd.DataFrame({"gene": ch.index.values[r], "sample": np.array(ch.columns)[k]}))
     amp = pd.concat(amp)
     alt = pd.concat([mut, amp]).drop_duplicates()
-    alt["group_id"] = alt["sample"].map(s2g)
-    alt = alt.dropna(subset=["group_id"])
-    prof = (prof_mut | prof_cn)
-    den = sg[sg["sample"].isin(prof)].groupby("group_id")["sample"].nunique()
-    cnt = alt.groupby(["group_id", "gene"])["sample"].nunique().unstack(0).fillna(0)
+    return alt, prof_mut | prof_cn, dict(recurrent_positions=int(len(rec)), mutation_pairs=int(len(mut)), amp_pairs=int(len(amp)))
+
+
+def alteration_shares(alt, prof, members):
+    """members {unit: set(samples)} -> DataFrame genes x units of alteration shares (units with >= 10 profiled tumors)."""
+    s2u = [(smp, u) for u, ss in members.items() for smp in ss if smp in prof]
+    S = pd.DataFrame(s2u, columns=["sample", "unit"])
+    den = S.groupby("unit")["sample"].nunique()
     den = den[den >= 10]
-    F = cnt.reindex(columns=den.index).fillna(0) / den
+    cnt = alt.merge(S, on="sample").groupby(["unit", "gene"])["sample"].nunique().unstack(0).fillna(0)
+    return cnt.reindex(columns=den.index).fillna(0) / den, den
+
+
+def comp_alteration(groups):
+    sg = pd.read_csv(ROOT / "results/step1/sample_groups_toil.tsv", sep="\t")
+    sg = sg[(sg.role == "tumor") & sg.group_id.isin(groups)]
+    alt, prof, info = alteration_pairs()
+    F, den = alteration_shares(alt, prof, {g: set(d["sample"]) for g, d in sg.groupby("group_id")})
     genes_all = set(pd.read_csv(RES / "dependency/gene_dep.tsv.gz", sep="\t", usecols=[0]).iloc[:, 0]) | set(F.index)
     F = F.reindex(sorted(genes_all)).fillna(0)
     F0 = F.where(F >= MIN_F, 0)
     A = F0.sub(F0.median(1), axis=0)
-    info = dict(recurrent_positions=int(len(rec)), tumors_profiled=den.to_dict(), mutation_pairs=int(len(mut)), amp_pairs=int(len(amp)))
+    info["tumors_profiled"] = den.to_dict()
     return {c: F[c] for c in F}, {c: pct(A[c]) for c in A}, info
 
 
-def comp_overactivity(groups):
+def comp_overactivity(groups, mr_dirs=("aracne_project_v2_tf", "collectri_v2"), summary="results/step4_v2/signature_summary.tsv",
+                      proc="data/processed/step4_v2"):
     nes = []
-    for d in ("aracne_project_v2_tf", "collectri_v2"):
+    for d in mr_dirs:
         x = pd.read_csv(ROOT / f"results/step6/{d}/group_mr.tsv", sep="\t", usecols=["group_id", "regulator", "nes"])
         nes.append(x)
     N = pd.concat(nes).groupby(["group_id", "regulator"]).nes.mean()
     raw, P, src = {}, {}, {}
-    ss = pd.read_csv(ROOT / "results/step4_v2/signature_summary.tsv", sep="\t")
+    ss = pd.read_csv(ROOT / summary, sep="\t")
     for c in groups:
         p, r, s = pd.Series(dtype=float), pd.Series(dtype=float), pd.Series(dtype=object)
         ok = ss[(ss.group_id == c) & (ss.status == "ok")].contrast.tolist()
         con = "gtex" if "gtex" in ok else ("adjacent" if "adjacent" in ok else None)
         if con:
-            e = pd.read_csv(ROOT / f"data/processed/step4_v2/{c}__{con}.tsv.gz", sep="\t", usecols=["symbol", "logFC"])
+            e = pd.read_csv(ROOT / f"{proc}/{c}__{con}.tsv.gz", sep="\t", usecols=["symbol", "logFC"])
             e = e.dropna().drop_duplicates("symbol").set_index("symbol").logFC
             p, r, s = pct(e), e, pd.Series(f"logFC_vs_{con}", index=e.index)
         if c in N.index.get_level_values(0):

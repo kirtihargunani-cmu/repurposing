@@ -215,6 +215,16 @@ flowchart LR
   within-group conditional logit. Result: equal weights, gamma 1, v 0 kept (the Hub fit failed on ChEMBL and the
   breast controls). Spec: https://claude.ai/artifact/NKuinVRBVc7cczzhDiHcsf
   D121a (user): lab binding stays at gamma 1 by design, never fitted away.
+- **Lead ranking = layered score (`lead_score`, 79t3; D122, 2026-11-08):** `layered_pct` (within-cohort percentile of S
+  over gate-passing FDA compounds with a protein main target) leads 79p, fda_rows, 79i4 (`tier_lead`; summaries:
+  evidence_status candidates / no adequate compound with layer1_coverage, reversal-era status kept), 79o (top 10 by
+  lead and by reversal), 79o2, 79q, 79x, 79l (primary score), 79n, 79m. Subgroups: layer 1 from
+  `stratum_line_weights_long_v2.tsv`, `stratum_patients.tsv`, the strata MR tables and step 10 v2 contrasts.
+  `fda_rows.eligible` = passes_gate, not target_absent / local_route / low_exposure; the D115 test is
+  `eligible_reversal` (d100 uses it); LINCS evidence = `lincs_flags`; new flags minority_alteration, essential_target.
+  No-protein-target FDA drugs: `fda_ranking[_strata]_noprotein_v2_consensus.tsv`, by the reversal lead.
+- **Free fraction and occupancy (D123; reported only):** `scripts/d123/d123_fu.py` (STAGE=fetch / merge; readings by
+  subagents with `results/lincs/d123/fu_prompt.md`, quotes checked); free occupancy = Cmax x fu / (Cmax x fu + Kd).
 - 79p (FDA lists) and 79o (literature pairs) exclude target-absent and receptor-mismatch rows.
 - **Flag `local_route` (D107, 2026-11-06; `scripts/route_flag.py`):** the drug has no systemic formulation. FDA drugs:
   every Drugs@FDA product of the ingredient has only local routes (topical, ophthalmic, otic, nasal, inhalation,

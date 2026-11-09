@@ -10,7 +10,9 @@ non-alphanumerics removed. fda_status = "marketed" if any product of the ingredi
 "discontinued" (only discontinued products; still FDA-approved historically). fda_routes = all routes of the
 ingredient's products; local_route = none of them systemic (D107). first_fda_approval = earliest original
 (ORIG) approval of an NDA / BLA containing the ingredient.
-Ranking (D80: specificity first): per disease, FDA-approved drugs that pass the target gate, are not flagged
+Ranking (D122, 2026-11-08: the layered score layered_pct (79t3) leads; FDA drugs without a protein main target are
+listed separately by the reversal lead in fda_ranking[_strata]_noprotein_v2_consensus.tsv; gates passes_gate / target_absent /
+local_route / low_exposure, the LINCS evidence shown as lincs_flags). Before D122 (D80: specificity first): per disease, FDA-approved drugs that pass the target gate, are not flagged
 (unmatched_lines / low_transfer / local_route, D107: no systemic formulation, scripts/route_flag.py; D109: dose_inconsistent / inactive_matched_line / low_exposure, scripts/evidence_flags.py), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
 spec_sib_mech (vs the sibling), with spec_mech. A drug listed under several LINCS ids keeps its best row. Literature /
 trial counts are joined from 79o where that pair was searched.
@@ -30,7 +32,7 @@ from evidence_flags import apply_evidence  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 FDA = ROOT / "data/raw/drugsatfda/extracted"
-from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name, eligible  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2; D115)
+from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name, eligible, lincs_flags, ORDER, ORDER_REVERSAL  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2; D115)
 
 
 def norm(s):
@@ -88,9 +90,14 @@ def main():
     LITC = ["pubmed_count", "pubmed_search_url", "trial_count", "trials_search_url"]
     summ = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
 
-    def rank(df, unit, order, extra):
+    def rank(df, unit, order, extra, section="lead"):
+        if "layered_pct" not in df:   # early runbook pass (fda_matches) before 79t3: provisional, overwritten by fda_ranking
+            df = df.assign(layered_pct=float("nan"), no_protein_target=False)
         ok = apply_evidence(apply_route(df, unit), unit)
-        ok = ok[eligible(ok, unit)]   # D115: shared test (D102c / D104c demotions, D107 local_route, D109 weak flags excluded)
+        ok = ok[eligible(ok, unit)]   # D122 gates (passes_gate, target_absent, local_route, low_exposure); LINCS evidence = flags
+        ok["lincs_flags"] = lincs_flags(ok)
+        # D122: lead list = drugs with a layered score; separate section = FDA drugs without a protein main target
+        ok = ok[ok.layered_pct.notna()] if section == "lead" else ok[ok.no_protein_target.map(lambda v: str(v) == "True")]
         x = ok.merge(m.drop(columns=["cmap_name", "local_route"]), on="pert_id").join(keep_ann, on="pert_id")
         x = x.sort_values(order, ascending=False).drop_duplicates([unit, "fda_ingredient"])
         x["fda_rank"] = x.groupby(unit).cumcount() + 1
@@ -99,19 +106,22 @@ def main():
         x["drugsatfda_url"] = x.fda_appl_nda_bla.fillna("").str.split(";").str[0].map(
             lambda a: f"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo={a}" if a else "")
         cols = [unit] + extra + ["fda_rank", "n_fda_eligible", "drug", "cmap_name", "fda_ingredient", "fda_status", "first_fda_approval",
-                "hub_moa", "approved_indications", "source", "transfer_conf"] + order + ["rev", "rev_pct", "spec_mech_pct",
-                "drugsatfda_url"]
+                "hub_moa", "approved_indications", "source", "transfer_conf"] + order + ["layered_S", "layered_n_units", "layered_genes",
+                "layered_D", "layered_A", "layered_O", "layered_T", "layered_r", "minority_alteration", "essential_target", "lincs_flags",
+                "rev", "rev_pct", "spec_mech_pct", "spec_sib_mech_pct", "drugsatfda_url"]
         return x[[c for c in dict.fromkeys(cols) if c in x]].sort_values([unit, "fda_rank"])
 
     g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
-    gr = rank(g, "group_id", ["spec_mech", "spec"], [])
+    gr = rank(g, "group_id", ORDER["group_id"], [])
+    rank(g, "group_id", ORDER_REVERSAL["group_id"], [], "noprotein").to_csv(RES / "fda_ranking_noprotein_v2_consensus.tsv", sep="\t", index=False)
     gr.insert(1, "evidence_status", gr.group_id.map(summ.evidence_status))
     if lit is not None:
         L = lit[lit.level == "disease"].drop_duplicates(["unit", "drug"]).rename(columns={"unit": "group_id"})
         gr = gr.merge(L[["group_id", "drug"] + LITC], on=["group_id", "drug"], how="left")
     gr.to_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t", index=False)
     s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
-    sr = rank(s, "stratum", ["spec_sib_mech", "spec_mech"], ["parent_group"])
+    sr = rank(s, "stratum", ORDER["stratum"], ["parent_group"])
+    rank(s, "stratum", ORDER_REVERSAL["stratum"], ["parent_group"], "noprotein").to_csv(RES / "fda_ranking_strata_noprotein_v2_consensus.tsv", sep="\t", index=False)
     if lit is not None:
         L = lit[lit.level == "subgroup"].drop_duplicates(["unit", "drug"]).rename(columns={"unit": "stratum"})
         sr = sr.merge(L[["stratum", "drug"] + LITC], on=["stratum", "drug"], how="left")

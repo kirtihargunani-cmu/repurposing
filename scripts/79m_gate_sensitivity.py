@@ -32,7 +32,7 @@ RES = ROOT / "results/lincs"
 SENS = ROOT / "data/processed/sensitivity"
 OUT = RES / "gate_sensitivity"
 DATASETS = ["prism_sec", "prism_pri", "gdsc1", "gdsc2"]
-LEAD = "spec_mech_pct"
+LEAD = "layered_pct"   # D122 lead (was spec_mech_pct)
 MIN_LINES, MIN_WCOV, MIN_DRUGS, MIN_SIDE, N_PERM, N_BOOT, SEED = 2, 0.25, 20, 5, 1000, 1000, 0
 
 

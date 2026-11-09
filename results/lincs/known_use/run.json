@@ -3,7 +3,7 @@
  "rows": 7570,
  "drugs": 391,
  "cohorts": 41,
- "eligible_rows": 2404,
+ "eligible_rows": 5846,
  "anticancer_drugs": 112,
  "sources": {
   "hub": {
