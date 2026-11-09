@@ -33,11 +33,11 @@ T79 = load("t79", "scripts/79t_target_role.py")
 T2 = load("t2", "scripts/79t2_layers.py")
 N79 = load("n79", "scripts/79n_dependency.py")
 COLS = ["layered_S", "layered_pct", "layered_n_units", "layered_genes", "layered_D", "layered_A", "layered_O", "layered_T",
-        "layered_r", "no_protein_target", "minority_alteration", "essential_target", "layered_P", "essential_unit", "dna_acting"]
-ESSENTIAL = os.environ.get("ESSENTIAL", "0") == "1"   # D124: essential units and DNA-acting drugs scored on proliferation P
+        "layered_r", "no_protein_target", "minority_alteration", "essential_target", "layered_P", "essential_unit", "dna_acting", "layered_rho"]
+ESSENTIAL = os.environ.get("ESSENTIAL", "1") == "1"   # D124b: on in production   # D124: essential units and DNA-acting drugs scored on proliferation P
 SANDBOX = os.environ.get("SANDBOX", "0") == "1"       # D124 test: write layered_score_v2{OUT_SFX}.tsv only, no split tables
 OUT_SFX = os.environ.get("OUT_SFX", "_d124")
-PROLIF_WEIGHT = os.environ.get("PROLIF_WEIGHT", "0") == "1"   # D124a: T = 50 + rho (P - 50)
+PROLIF_WEIGHT = os.environ.get("PROLIF_WEIGHT", "1") == "1"   # D124b: on in production   # D124a: T = 50 + rho (P - 50)
 CYTO = lambda g: g in {"TOP1", "TOP2A", "TOP2B", "TYMS", "RRM1", "RRM2"} or g.startswith(("TUBA", "TUBB"))
 
 
@@ -170,7 +170,7 @@ def score(x, unit, Pd, Pa, Po, Fr, UT, ess, P=None):
                 E = 50 + t.r_u * (T - 50)
                 Es.append(E)
                 if best is None or E > best[0]:
-                    best = (E, t.genes, np.nan, np.nan, np.nan, T, t.r_u, np.nan, True)
+                    best = (E, t.genes, np.nan, np.nan, np.nan, T, t.r_u, np.nan, True, t.rho)
                 continue
             comp = []
             for PC, k in ((Pd, "D"), (Pa, "A"), (Po, "O")):
@@ -186,12 +186,12 @@ def score(x, unit, Pd, Pa, Po, Fr, UT, ess, P=None):
             Es.append(E)
             fmax = max([Fr.get(u, pd.Series(dtype=float)).get(g, np.nan) for g in genes], default=np.nan)
             if best is None or E > best[0]:
-                best = (E, t.genes, *comp, T, t.r_u, fmax, False)
+                best = (E, t.genes, *comp, T, t.r_u, fmax, False, np.nan)
         if not Es:
             out.append(None); continue
-        E, genes, cD, cA, cO, T, rr, fmax, eu = best
+        E, genes, cD, cA, cO, T, rr, fmax, eu, rho = best
         out.append(dict(layered_S=float(np.mean(Es)), layered_n_units=len(Es), layered_genes=genes, layered_D=cD, layered_A=cA,
-                        layered_O=cO, layered_T=T, layered_r=rr, essential_unit=eu, layered_P=P.get(u, np.nan) if P else np.nan,
+                        layered_O=cO, layered_T=T, layered_r=rr, essential_unit=eu, layered_rho=rho if PROLIF_WEIGHT else np.nan, layered_P=P.get(u, np.nan) if P else np.nan,
                         minority_alteration=bool(np.isfinite(cA) and cA >= 90 and np.isfinite(fmax) and fmax < 0.5),
                         essential_target=bool(set(UT[UT.cmap_name == d].genes.str.split("|").explode()) & ess)))
     return out
@@ -265,6 +265,8 @@ def main():
                 pv = 50 + RHO_DNA * (pv - 50)
             df.loc[dn, "layered_S"] = pv; df.loc[dn, "layered_T"] = pv; df.loc[dn, "layered_P"] = pv
             df.loc[dn, "layered_r"] = 1.0; df.loc[dn, "layered_n_units"] = 1; df.loc[dn, "layered_genes"] = "DNA"
+            if PROLIF_WEIGHT:
+                df.loc[dn, "layered_rho"] = RHO_DNA
             df["dna_acting"] = dn
         df["no_protein_target"] = fda & df["layered_S"].isna()
         for c in COLS:

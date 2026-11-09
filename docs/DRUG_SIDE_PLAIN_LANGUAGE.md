@@ -114,6 +114,10 @@ follow-up questions:
    look before anything is acted on.)
    (D123: how much of each drug circulates unbound in the blood was read from the FDA labels for 196 drugs. Using it to
    estimate how much of the target the drug occupies in patients did not improve the check, so it is reported only.)
+   (D124: drugs aimed at things every dividing cell needs, like classic chemotherapy, are now scored by how fast the
+   cancer divides, weighted by how closely the drug's target follows cell division in patients' tumors. Chemotherapy now
+   rises in fast-growing cancers, cholesterol drugs (statins) and cyclosporine no longer reach any top 10, and the check
+   against approved uses improved to about 65-67 in 100.)
 12. **Why did trials fail?** For each cancer's top 10 FDA drugs we look up the trials of that drug in that cancer,
     read why stopped trials stopped and what the published results of finished trials said (with a quote), and
     count a failure only when the trial actually tested the drug (D108).

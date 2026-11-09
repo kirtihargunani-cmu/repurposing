@@ -107,7 +107,8 @@ def main():
             lambda a: f"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo={a}" if a else "")
         cols = [unit] + extra + ["fda_rank", "n_fda_eligible", "drug", "cmap_name", "fda_ingredient", "fda_status", "first_fda_approval",
                 "hub_moa", "approved_indications", "source", "transfer_conf"] + order + ["layered_S", "layered_n_units", "layered_genes",
-                "layered_D", "layered_A", "layered_O", "layered_T", "layered_r", "minority_alteration", "essential_target", "lincs_flags",
+                "layered_D", "layered_A", "layered_O", "layered_T", "layered_r", "layered_P", "layered_rho", "essential_unit", "dna_acting",
+                "minority_alteration", "essential_target", "lincs_flags",
                 "rev", "rev_pct", "spec_mech_pct", "spec_sib_mech_pct", "drugsatfda_url"]
         return x[[c for c in dict.fromkeys(cols) if c in x]].sort_values([unit, "fda_rank"])
 

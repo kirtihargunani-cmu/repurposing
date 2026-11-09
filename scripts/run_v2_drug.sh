@@ -42,7 +42,7 @@ STEPS=(
   "plate_confined|Plate-confined activity flag (79f4, D109a); must follow evidence_flags|$PY scripts/79f4_plate_confined.py"
   "fda_docs|Drugs@FDA label / review passages for drugs without a label Cmax (79f5; readings are a manual subagent pass, cmax_docs/)|$PY scripts/79f5_fda_docs.py"
   "exposure|Cmax from verified label / document readings -> low_exposure (79f3, D109b, D111); must follow plate_confined|STAGE=exposure $PY scripts/79f3_evidence_flags.py"
-  "lead_score|Layered score as the lead ranking (79t3, D122): layer 1 for groups and subgroups, target units, binding; writes layered_pct into the split tables|$PY scripts/79t3_lead_score.py"
+  "lead_score|Three-layered scoring objective (79t3, D122; essential targets and DNA-acting drugs on rho-weighted proliferation, D124a/b): writes layered_pct into the split tables|ESSENTIAL=1 PROLIF_WEIGHT=1 $PY scripts/79t3_lead_score.py"
   "tiers|Final tiers and evidence status after all gates and flags (79i4, D117; tier_lead and lead evidence status, D122)|$PY scripts/79i4_tiers.py"
   "data_gaps|Where good-quality lineage-matched data run out, per group and subgroup (C24)|$PY scripts/79r_data_gaps.py"
   "literature|PubMed / trial links for each disease's top 10 by specificity and by reversal|$PY scripts/79o_literature.py"
