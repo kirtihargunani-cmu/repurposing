@@ -1,0 +1,39 @@
+{
+ "stratum": [
+  "pert_dose",
+  "pert_dose_unit",
+  "pert_time"
+ ],
+ "seed": 125,
+ "n_changed_pairs": 3653,
+ "profile_identity": {
+  "n_cols": 3653,
+  "max_diff_raw": 4.76837158203125e-07,
+  "max_diff_specific": 9.536415159772105e-07
+ },
+ "viper_identity": {
+  "n_cols": 3653,
+  "max_diff_viper": 0.0,
+  "unused_production_only_networks": {
+   "drug_viper_specific_v2_tf": [
+    "ESCA",
+    "LGG"
+   ],
+   "drug_viper_specific_collectri": []
+  }
+ },
+ "score_identity": {
+  "rows_sandbox": 67174,
+  "rows_production": 67174,
+  "rows_only_one_side": 0,
+  "max_abs_diff": 0.0,
+  "rows_diff_gt_tol": 0,
+  "nan_mismatch": 0
+ },
+ "median_r_c": 0.9025956099028603,
+ "median_r_c_groups": 0.9000986502628885,
+ "median_r_c_subgroups": 0.9048594333280628,
+ "n_r_pooled": 0,
+ "r_pooled_min_drugs": 50,
+ "minutes": 32.3
+}

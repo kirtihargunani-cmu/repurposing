@@ -55,6 +55,21 @@ data-quality check, its output gives the step and the reason.
   Step 4 signature `status` (not ok = no signature); Step 6/7 `low_mrs` (too few master regulators to rank drugs);
   Step 8 keep rule D71 (subgroup not kept); drug side `unmatched_lines` / `low_transfer` per drug.
 
+### R4. Report performance against the noise ceiling (user 2026-11-09; D125 section A0)
+Any reported accuracy of the drug-side scoring (known-use AUC, Spearman against response, recovery@k) must be shown
+with the attainable ceiling beside it, not as a bare number: the split-half reliability `r` of the LINCS-derived
+scores, the implied `AUC_max = (1 + sqrt(r)) / 2`, and attainment `D_observed / sqrt(r)` where `D = 2*AUC - 1`
+(definitions and assumptions in [`SPEC_graph_metric_scoring.md`](SPEC_graph_metric_scoring.md) section A0).
+- Raw and ceiling-relative numbers are both shown; attainment is never shown alone, because the ceiling treats the
+  indication labels as noiseless and they are not.
+- **Drug side (implemented 2026-11-09, A0a only so far):** `results/lincs/d125/a0/ceiling.tsv`, one row per reported
+  known-use metric with auc, D_obs, r, r_estimator, r_optimistic, auc_max, attainment and a note; `ceiling_applies` is
+  False for scores not built from LINCS (the lead layered_pct), which keep their raw AUC only. Until A0b runs every row is
+  r_optimistic, and the A0a r mixes direct (~0.61) and borrowed (~0.9) drugs (`a0a_by_source.tsv`): say so.
+- Where a comparison between pipeline arms is below the resolution the ceiling implies, the layer says the yardstick
+  cannot resolve a change of that size (the existing finding in D90 / C28) instead of reporting the difference as a
+  result.
+
 ## Related rules the layer should respect
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
   reports them and does not tune them.

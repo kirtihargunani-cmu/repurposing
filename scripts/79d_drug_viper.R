@@ -36,7 +36,9 @@ proc <- "data/processed/lincs"; out_dir <- file.path(proc, paste0("drug_viper_",
 dir.create(out_dir, showWarnings = FALSE)
 
 genes <- fread(file.path(proc, "drug_line_profiles_genes.tsv"))
-idx <- fread(file.path(proc, "drug_line_profiles_index.tsv"))
+# INDEX_FILE (D125-A0, 2026-11-09): index of a column subset (79c index layout) laid out in PROFILE_FILE; outputs then hold
+#   only those columns. Default: the production index.
+idx <- fread(if (nzchar(Sys.getenv("INDEX_FILE"))) Sys.getenv("INDEX_FILE") else file.path(proc, "drug_line_profiles_index.tsv"))
 pfile <- if (PROFILE == "raw") "drug_line_profiles_bing.f32" else "drug_line_profiles_bing_specific.f32"
 # PROFILE_FILE (D90, 2026-11-03): another profile file with the 79c layout (same index and genes), path from the repo root
 if (nzchar(Sys.getenv("PROFILE_FILE"))) { pfile <- normalizePath(Sys.getenv("PROFILE_FILE")); proc_p <- "" } else proc_p <- proc

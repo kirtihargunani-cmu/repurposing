@@ -16,6 +16,8 @@ or step names. Check outputs with `Rscript scripts/00_status.R`.
 
 Also: decisions and open items [`docs/DECISIONS.md`](docs/DECISIONS.md) · run log [`docs/PROGRESS.md`](docs/PROGRESS.md) ·
 drug-side caveats [`docs/notes/drug_side_decisions_and_caveats.md`](docs/notes/drug_side_decisions_and_caveats.md) ·
+scoring-method review [`docs/LITERATURE_SCORING.md`](docs/LITERATURE_SCORING.md) · graph-metric scoring spec
+[`docs/SPEC_graph_metric_scoring.md`](docs/SPEC_graph_metric_scoring.md) ·
 v2 terms [`docs/GLOSSARY_V2.md`](docs/GLOSSARY_V2.md) · reporting requirements
 [`docs/LLM_COORDINATION_NOTES.md`](docs/LLM_COORDINATION_NOTES.md) · v2 rebuild spec
 [`docs/SPEC_rebuild_v2.md`](docs/SPEC_rebuild_v2.md) · animated-deck kit [`presentation/`](presentation/) · v1 and

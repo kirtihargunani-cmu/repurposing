@@ -33,7 +33,9 @@ proliferation-linked regulators, activity adjusted for proliferation), tiers, an
    truths (IC50, approved indications, PRISM).
 4. **Activity-space reversal has little public benchmarking.** OncoTreat is the main validated activity-space method
    (prospective disease control, in vivo MR inversion for 15 of 18 drugs), but with purpose-built drug screens in
-   matched lines and small cohorts. No large benchmark of VIPER-based reversal on L1000 was found. The identity
+   matched lines and small cohorts. No large benchmark of VIPER-based reversal on L1000 was found; the closest public
+   ground truth is PANACEA (below), which is purpose-built for MR-based inference but is a few dozen drugs, not
+   L1000-scale. The identity
    confound we traced (tumor-built regulons reading late identity shifts as regulator activity) is not discussed
    in the papers read.
 5. **Normalization against the drug's behaviour elsewhere is standard in CMap.** Tau ranks a connection against the
@@ -42,6 +44,35 @@ proliferation-linked regulators, activity adjusted for proliferation), tiers, an
    closer to tau's idea for the drug axis.
 6. **Ground truth is weak everywhere.** Validations use IC50, PRISM viability, or indication lists; viability-based
    truths reward exactly the generic anti-proliferation that issue 1 warns about.
+
+## Checked, not in use (2026-11-09)
+
+Two options noted after a repo review; neither is implemented and neither has a pre-registered rule yet. Citations
+below were not fetched in-session and need checking against the papers and the current releases.
+
+**PANACEA** — perturbational profiles of clinical oncology drugs across a panel of cancer cell lines, assembled for
+the DREAM drug mechanism-of-action challenge (Douglass et al.). Relevance: it is ground truth for the
+activity-space step specifically (does VIPER on a drug profile recover the drug's known mechanism), and it is
+independent of GDSC, so it does not inherit the circularity that rules GDSC out as a validation set for us. Scale is
+tens of drugs in ~10 lines, so it can check the regulator reading, not the ranking. Would address issue 4 above and
+sits alongside the D84 / D87 knockdown and overexpression benchmarks rather than replacing them.
+
+**CARNIVAL** (and PHONEMeS, CausalPath) — takes TF activities plus a signed prior signaling network and infers which
+upstream nodes could produce the observed TF state. Relevance: it consumes the disease side's output natively
+(regulator NES) and returns candidate upstream druggable proteins, i.e. a route from the regulon arm into target
+selection rather than a second score competing with it. Since D122 moved the lead ranking to target engagement
+(`layered_pct`) and D121 fitted the reversal term to zero weight (v = 0), this is the way the regulon arm could still
+inform the lead score instead of being bypassed by it. Open question before any work: whether the signaling prior is
+any less literature-biased than CollecTRI, which is the limit that already bites us.
+
+Also noted on the scoring function itself: our `rev` (normalized signed dot product over every tested regulator, no
+MR cutoff, D73) is not the statistic OncoTreat validated (two-tail aREA of a fixed top 25 up / 25 down MR set in the
+drug's rank-sorted activity profile, models combined by Fisher's). D73 ruled out an FDR-cut MR list, which is a
+different object from a fixed top-k. A fixed-k aREA arm is a small code change and would give a direct comparison
+against the one validated precedent; it needs its own rule if it is to be more than reported.
+
+Both options are specced as D125 (graph-metric reversal, `d^T (L + lambda I)^-1 g`) and D126 (mechanism-consistency
+filter) in [`SPEC_graph_metric_scoring.md`](SPEC_graph_metric_scoring.md), 2026-11-09; not run.
 
 ## Links
 
@@ -57,3 +88,8 @@ proliferation-linked regulators, activity adjusted for proliferation), tiers, an
 - Woo et al. 2015, Cell 162:441 (DeMAND): https://pmc.ncbi.nlm.nih.gov/articles/PMC4506491
 - Szalai et al. 2019, Nucleic Acids Res (viability signature): https://www.biorxiv.org/content/10.1101/454348v2.full-text
 - DoRothEA / PROGENy cross-species footprints: https://www.biorxiv.org/content/10.1101/532739.full.pdf
+- Douglass et al. (PANACEA / DREAM MoA challenge), drug mechanism inference from perturbational profiles - citation
+  and dataset release to verify: https://www.synapse.org/ (challenge portal); search "PANACEA perturbational
+  profiles oncology"
+- Liu et al. 2019, npj Syst Biol Appl (CARNIVAL, causal network contextualization from TF activity):
+  https://saezlab.github.io/CARNIVAL/ ; PHONEMeS: https://saezlab.github.io/PHONEMeS/

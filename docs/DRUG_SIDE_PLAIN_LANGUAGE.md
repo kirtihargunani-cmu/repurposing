@@ -253,6 +253,17 @@ approved drugs stand out somewhat more in their own cancer. The cost is slightly
 growth blockers. The evidence for a gain is concrete only in breast; elsewhere the change is neutral as far as we can
 measure.
 
+### Is the old reversal score limited by noisy lab data? No (2026-11-09)
+
+Before trying a new version of the reversal score, we measured how repeatable the lab data behind it are. We scored
+every drug twice, each time from a different experiment on the same drug and cell line (another dose or time), and
+compared the two rankings. For drugs measured in a matching cell line the two rankings agree with a correlation of
+about 0.6; for drugs borrowed from other tissues about 0.9, though that number is flattered because those scores
+average several cell lines. Even at 0.6, the data would allow a score to put a cancer's approved drug above another
+cancer drug about 89 times in 100. The reversal score does it about 43-51 times in 100, which is chance. So the
+problem is the score, not the noise in the data. The current lead ranking (target role) does not use these lab data,
+so this limit does not apply to it.
+
 ### What it gets wrong, honestly
 
 - **Anti-estrogens in luminal A breast cancer ranked low** because the tumor-learned map misread them (C18). Removing
