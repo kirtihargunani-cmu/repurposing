@@ -141,6 +141,13 @@ and dominance, and Part B becomes the more valuable half.
 
 ## A0f Cost
 
+**Correction (11-09, D125-A0), measured on disk:** production has 9,678 drug x line profiles (29,812 active level-5
+signatures; `drug_line_profiles_index.tsv`) and 40 ARACNe v2 TF networks plus CollecTRI, not 48,274 profiles and 38
+networks; the 126k / 48k figures below count all high-quality signatures before the TAS >= 0.4 filter that `79c`
+applies. Only level-5 data are on disk. A0 rebuilds only the changed pairs with each line's production g_l and splices
+their VIPER columns into the production matrices (D125-A0 (4)); the dry run of `scripts/d125/a0b_splithalf.py`
+reports the measured cost. The paragraph below is kept as drafted.
+
 `79d` consumes `drug_line_profiles_bing_specific.f32` from `79c`, so two half-consensuses mean both rerun per half:
 2n full passes for A0b, not n cheap re-scorings. (An earlier draft wrongly claimed VIPER could be shared.)
 
@@ -358,7 +365,11 @@ not proof the drug does not work.
 
 # Open items
 
-- Which level-5 index fields define an independent stratum for A0a (dose only, time only, or both). Blocks A0a.
+- ~~Which level-5 index fields define an independent stratum for A0a.~~ Settled 11-09 (D125-A0): the (dose, time) cell.
+  The same decision fixes A0.0 / A0b on active level-5 signatures (level-4 profiles are not on disk), the drugs entering
+  r_c, and the spliced-profile implementation.
+- A0b stopping rule: "until the SE of the median r_c stabilises" / "SE small relative to 0.05" has no numeric criterion.
+  Blocks A0b execution (not its dry run).
 - Whether the OmniPath release needs a `config/datasets.yaml` review entry of its own, given it is a service rather
   than a fixed file. Blocks B0.
 - Gurobi academic licence availability (expected yes at CMU). Decides whether the breast CARNIVAL arm runs on the
