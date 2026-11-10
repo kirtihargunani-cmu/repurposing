@@ -266,6 +266,22 @@ in 100, and even at the pessimistic 0.6 about 89 times in 100. The reversal scor
 which is chance. So the problem is the score, not the noise in the data. The current lead ranking (target role) does not use these lab data,
 so this limit does not apply to it.
 
+### Why "is it already approved?" is a weak way to check the rankings (2026-11-09)
+
+Until now the main check was whether approved drugs rank highly in the cancers they are approved for. That test has a
+built-in flaw: a drug can go unapproved for a cancer for reasons that have nothing to do with whether it works, such as
+patents, the cost of a trial, too few patients to make one worthwhile, or simply that nobody tried. Those drugs count
+as failures in the test even when they might work, which is exactly the kind of drug this project exists to find. The
+test also rewards being a cancer drug at all: simply labelling every cancer drug as a hit scores higher than our
+ranking does.
+
+So we are changing the main check. The new one compares a drug against itself in two groups of patients where biology
+says the answer: BRAF drugs should rank higher in BRAF-driven thyroid cancer than in the RAS-driven kind, EGFR drugs
+higher in lung adenocarcinoma than in squamous lung cancer, HER2 drugs higher in HER2-positive breast cancer than in
+the other subtypes. Because it is the same drug on both sides, patents, company decisions and market size cancel out.
+Approval data is still reported, but it no longer decides anything. The honest limit of the new check is that it
+confirms the rankings carry biology we already know; it cannot show they find biology nobody knows yet.
+
 ### What it gets wrong, honestly
 
 - **Anti-estrogens in luminal A breast cancer ranked low** because the tumor-learned map misread them (C18). Removing

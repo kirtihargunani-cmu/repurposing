@@ -858,6 +858,22 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   cyclosporine leave the top 10s. The tie criterion failed on shared-target ties (glucocorticoids), which the previous
   objective had too; adopted by user decision. In production.
 
+## 2026-11-09: validation changed (D127, D125.1) — approval is no longer the primary yardstick
+- User: approval status confounds efficacy with patents, market size, rare-cancer economics and sponsor strategy, so
+  an unapproved drug-cancer pair is not a negative. The class baseline (anticancer 0/1) already beats the lead score
+  on Hub (0.724 vs 0.673), i.e. the metric largely measures drug class.
+- **D127 (specified, not run):** biomarker-expectation test. The same drug is compared against itself in two cohorts of
+  a biomarker pair, so drug-level confounders cancel. 7 pairs, 4 classes, 49 instances (BRAF/MEK thyroid and melanoma,
+  EGFR lung and head/neck, HER2 breast, PARP ovarian). Pass = >= 70% in the expected direction, sign test p < 0.05,
+  median gap >= 10 percentile points.
+  - Scored on `layered_pct`, which ranks over gate-passing scored FDA compounds and is unaffected by target_absent /
+    local_route / low_exposure: the gates otherwise delete the negatives (only 1 of 7 anti-estrogens is eligible in
+    Basal), the same trap as the first D124 breast check.
+  - Breast anti-estrogens, ALK lung and CDK4/6 are excluded from the primary set and reported separately: their values
+    are already known or prior decisions were taken on them. AR PRAD vs BLCA is not computable.
+  - Stated limit: it checks that known biology reaches the ranking, not that the objective finds unknown biology.
+- **D125.1:** D125's known-use criterion becomes reported only; the controls criterion widens to D127 and leads.
+
 ## 2026-11-09: noise ceiling for the reversal score (D125 section A0)
 - Spec `docs/SPEC_graph_metric_scoring.md` (D125 graph-metric reversal, D126 mechanism flag); A0 implemented
   (`scripts/d125/`, outputs `results/lincs/d125/a0/`), Parts A and B not started. Choices before running (D125-A0):

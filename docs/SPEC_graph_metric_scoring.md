@@ -220,12 +220,18 @@ beside the existing VIPER runs.
 
 Arms: CUR (production) vs D125 at the frozen `lambda`.
 
-1. **Controls (lead criterion).** Anti-estrogens in Basal (negative control) median `spec_mech` percentile falls by
-   >= 10 points vs CUR, and breast positive controls (anti-estrogens in LumA / LumB) do not fall. Same form and
+**Amended 11-09 by D125.1:** criterion 3 is reported only and no longer gates adoption; criterion 1 is widened to the
+D127 biomarker-expectation test and remains the lead criterion. Criteria 2 and 4 are unchanged. The text below is as
+drafted, with the amendment noted in place.
+
+1. **Controls (lead criterion).** *(D125.1: widened.)* The **D127** pass rule is met on its primary set (49 instances,
+   7 biomarker pairs: share >= 70% in the expected direction, sign test p < 0.05, median gap >= 10 percentile points),
+   **and** the breast control does not regress: anti-estrogens in Basal (negative control) median `spec_mech` percentile
+   falls by >= 10 points vs CUR, and breast positive controls (anti-estrogens in LumA / LumB) do not fall. Same form and
    tolerance as D92 / D93.
 2. **Dominance.** Drugs scored in >= 33 of 41 groups with `rev > 0` in >= 80% of them: rises by <= 0.5 points vs
    CUR. Standing tolerance from D93 / D94.
-3. **Known use, non-inferiority, ceiling-relative.** D118 metric (pooled within-cohort AUC, anticancer,
+3. **Known use — reported only (D125.1); it does not gate adoption.** D118 metric (pooled within-cohort AUC, anticancer,
    gate-passing eligible rows), reported as attainment against A0's ceiling: Hub and ChEMBL attainment each fall by
    <= 0.02. A floor, not evidence of benefit, because D90 and C28 record that this yardstick cannot resolve changes
    of this size; the ceiling is what makes "cannot resolve" a number rather than a judgement.
@@ -235,7 +241,7 @@ Arms: CUR (production) vs D125 at the frozen `lambda`.
    the same Hub labels whose D121 version failed to transfer to ChEMBL and to the breast controls, so one arm of
    evidence should not carry a change on its first run. Promotion needs its own rule with the bar fixed in advance.
 
-**Adopt** as the reported reversal score if 1, 2 and 3 are met. Criterion 4 informs whether a later decision on the
+**Adopt** as the reported reversal score if 1 and 2 are met (D125.1: criterion 3 is reported, not required). Criterion 4 informs whether a later decision on the
 **lead** score is worth writing; it does not affect adoption here (D122 put the lead on `layered_pct`, and this spec
 does not propose to move it).
 

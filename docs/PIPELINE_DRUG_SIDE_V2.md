@@ -232,6 +232,12 @@ flowchart LR
   ChEMBL mechanism target is a nucleic acid join the ranking with T = 50 + rho_DNA (P - 50) (rho_DNA = median of the
   cytotoxic units). Columns layered_P, layered_rho, essential_unit, dna_acting; pages show 'scored on proliferation' /
   'DNA-acting'.
+- **Validation (D127, specified 11-09, not yet run):** the primary check is the biomarker-expectation test, not
+  known use. Same drug, two cohorts of a biomarker pair (BRAF/MEK in BRAF-like vs RAS-like thyroid and melanoma vs
+  squamous lung; EGFR in adenocarcinoma vs squamous lung and head/neck; HER2 in Her2 vs basal / luminal A breast;
+  PARP in ovarian vs squamous lung), scored on `layered_pct` with flagged rows kept, since in the low cohort they are
+  the expected-low cases. Pass = >= 70% in the expected direction, sign test p < 0.05, median gap >= 10 points.
+  Known use (79l) stays reported, with its A0 ceiling beside it (D125.1, R4).
 - **Noise ceiling (D125 section A0; reported only, `scripts/d125/`):** `a00_eligible_pairs.py` (A0.0 gate),
   `a0a_paired.py` (paired dose x time signatures, every cohort), `a0b_splithalf.py` (split halves of the deep pairs;
   DRY_RUN=1 default), `a0e_ceiling.py` (AUC_max = (1 + sqrt r) / 2, attainment = (2 AUC - 1) / sqrt r beside each raw
