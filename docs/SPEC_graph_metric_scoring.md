@@ -271,7 +271,9 @@ Output per (drug, group): `mechanism_consistent_frac`, `mechanism_coverage`, and
 **OmniPath, filtered to signed and directed interactions**, with SIGNOR alone as a sensitivity arm.
 
 Filter fixed before use: `consensus_direction` and `consensus_sign` true, and >= 2 supporting resources or >= 2
-references. Where per-source signs disagree, the consensus sign is taken and the disagreement recorded per edge
+references. *(Corrected 2026-11-10, D126-B0: the service has no `consensus_sign` field. It returns
+`consensus_stimulation` and `consensus_inhibition`, so the condition is implemented as exactly one of those two
+being true. The intended filter is unchanged.)* Where per-source signs disagree, the consensus sign is taken and the disagreement recorded per edge
 (`sign_disputed`), so a later arm can drop disputed edges without a re-pull.
 
 **Pinning: cache the edge table, do not pin a version string.** OmniPath is a service over moving upstream
@@ -382,7 +384,8 @@ not proof the drug does not work.
   r_c, and the spliced-profile implementation.
 - ~~A0b stopping rule.~~ Settled 11-09 (D125-A0.1): SE(median r_c) <= 0.01 after >= 20 splits. The same amendment
   restricts r_c, for both estimators, to drugs whose every scoring line changes between the passes.
-- Whether the OmniPath release needs a `config/datasets.yaml` review entry of its own, given it is a service rather
-  than a fixed file. Blocks B0.
+- ~~Whether the OmniPath release needs a `config/datasets.yaml` review entry of its own, given it is a service rather
+  than a fixed file.~~ Settled 11-10 (D126-B0): yes, with a `review:` key recording that the resource carries no
+  upstream release label, that the cached file is the dependency, and that a re-pull is a new decision.
 - Gurobi academic licence availability (expected yes at CMU). Decides whether the breast CARNIVAL arm runs on the
   full prior, on HiGHS with a reported gap, or on the 3-hop reduction.
