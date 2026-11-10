@@ -103,6 +103,10 @@ if SCORE == "fdr" and SFX.startswith("_v2"):
 #   (79d with the same RUN_TAG); outputs get RUN_TAG plus "_raw" for raw (e.g. drug_reversal_v2_consensus_d85_raw.tsv)
 PROFILE = os.environ.get("PROFILE", "specific"); assert PROFILE in ("specific", "raw")
 RUN_TAG = os.environ.get("RUN_TAG", "")
+# D126-B1 (2026-11-10): with D126_ACT_DIR set, dump the per-group consensus drug activity and write nothing else.
+ACT_DIR = Path(os.environ["D126_ACT_DIR"]) if os.environ.get("D126_ACT_DIR") else None
+if ACT_DIR:
+    ACT_DIR.mkdir(parents=True, exist_ok=True)
 SFX += RUN_TAG + ("_raw" if PROFILE == "raw" else "")
 STRATA = os.environ.get("STRATA", "0") == "1"
 assert not STRATA or SFX.startswith("_v2"), "STRATA=1 needs VERSION=v2"
@@ -262,6 +266,12 @@ def main():
             regs0, D0 = regs, D
             D, regs, m = consensus(D0, regs0, m)
             D_raw = None
+        if ACT_DIR:   # D126-B1: dump the consensus drug activity and go on to the next group (no score, no output)
+            np.asarray(D, dtype=np.float32).tofile(ACT_DIR / f"{g}.f32")
+            (ACT_DIR / f"{g}.regulators.txt").write_text("\n".join(map(str, regs)))
+            gd[["pert_id", "cmap_name", "source"]].to_csv(ACT_DIR / f"{g}.drugs.tsv", sep="\t", index=False)
+            print(f"{g:<20} activity dumped: {D.shape[0]} drugs x {D.shape[1]} regulators", flush=True)
+            continue
         mrs = sel(m)
         tested = regs.get_indexer(m.regulator)
         ci = regs.get_indexer(mrs.regulator)
@@ -352,6 +362,9 @@ def main():
         print(f"{g:<20} MRs {n:>4}  drugs {len(o):>5}  reversing {int(reversing.sum()):>4}  tier1 {len(t1):>3}  "
               f"{summ[-1]['top_tier1_rev'][:90]}", flush=True)
 
+    if ACT_DIR:   # D126-B1: the dump is the whole run; nothing production is written
+        print("D126 ACTIVITY DUMP DONE")
+        return
     out = pd.concat(rows, ignore_index=True)
     summ = pd.DataFrame(summ)
 

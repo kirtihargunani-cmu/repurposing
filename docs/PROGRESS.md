@@ -858,6 +858,33 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   cyclosporine leave the top 10s. The tie criterion failed on shared-target ties (glucocorticoids), which the previous
   objective had too; adopted by user decision. In production.
 
+## 2026-11-10: D126 closed — the mechanism-consistency filter fails its own known-failure control
+- **B1 ran on all 55 cohorts** (`scripts/d126/b1_consistency.py`; drug activity dumped from 79e itself through a new
+  off-by-default `D126_ACT_DIR`, so the vector is production's by construction). 5,914 (drug, cohort) rows, 203 drugs
+  with a curated main target and a known action direction.
+- **B5.1 fails and D126 is closed, as the spec says it must be.** The flag fires on **0 of 22** scorable
+  anti-estrogen rows in the four MCF7 breast cohorts, and on only 7 of 22 even with the coverage precondition
+  removed. It does worse than stay silent: in the cohorts where the ESR1 misread lives it calls tamoxifen,
+  toremifene and raloxifene **1.00 consistent** in LumA, 0.83 in LumB.
+- **Why, and this is the part worth keeping.** ESR1 is reached in **none** of the 22 control rows, because it is
+  never among the top 25 regulators by |activity| — those are FOXM1, MXD3, PA2G4, E2F2, MYC, TEAD4, the
+  proliferation block. B3's selection rule aims the mechanism check at growth arrest rather than at the drug's own
+  axis, and an ESR1 antagonist genuinely does explain lowering FOXM1 and MYC, so the check passes it. The
+  proliferation dominance D80 and D85 found in the *score* turns up again inside the diagnostic built to audit it.
+- **B5.3 fails by a wide margin:** `mechanism_coverage` median **0.08** (2 of 25 regulators), max 0.48; 37 of 5,914
+  rows reach the 0.4 floor and no drug reaches it on its median. The curated signed prior does not connect drug
+  targets to tumor-network TFs — this was visible in B0 (46% of targets have an outgoing edge) and is worse in
+  practice. **B5.2 passes** (rho 0.165 vs main-target out-degree), so B4 is not triggered, but with coverage this
+  low the degree check has little to bite on.
+- **Run-order B2 (CARNIVAL, breast): not executable as configured** — no CARNIVAL package, no Gurobi, no CPLEX, no
+  highspy (`scipy.optimize.milp` exists but CARNIVAL does not interface with it). Recorded as not executable per
+  B3 rather than substituting the heuristic. Moot regardless: its only job was to license a heuristic that has
+  failed its own control.
+- Nothing in production changed; the flag was reported-only by design and is not emitted. **With Part A closed at
+  A1 and Part B closed here, all of `SPEC_graph_metric_scoring.md` is resolved.** A revived D126 would need a
+  different regulator-selection rule — the drug's target-proximal regulators rather than its 25 largest shifts —
+  which is a new decision with its own control.
+
 ## 2026-11-10: D126 B0 — the signed signaling prior is pulled, filtered, cached and registered
 - `scripts/d126/b0_omnipath.py`. **Primary prior: 16,518 signed and directed edges over 5,493 nodes** from 86,189 raw
   OmniPath interactions (literature-curated core, organism 9606, retrieved 2026-11-10); 11,662 activating, 4,856

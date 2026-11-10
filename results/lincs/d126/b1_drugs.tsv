@@ -1,0 +1,204 @@
+drug	cohorts	n_targets	coverage	consistency	flag_rate	out_degree
+nilotinib	55	1	0.28	0.2857	0.1273	132
+PD-0325901	54	2	0.16	0.5	0.07407	10
+quizartinib	52	6	0.24	0.2361	0.03846	23
+selumetinib	55	2	0.12	0.5	0.03636	10
+AZD-9291	37	1	0.24	0.5	0.02703	82
+trametinib	55	2	0.16	0.5	0.01818	10
+lacosamide	15	10	0		0	0
+olaparib	55	3	0.12	0	0	19
+orphenadrine	2	19	0.14	0.7084	0	2
+oxaprozin	1	2	0		0	1
+oxymetholone	1	1	0.2	0.8	0	42
+paclitaxel	55	15	0		0	0
+pacritinib	55	4	0.04	1	0	34
+palbociclib	55	3	0.24	0.7143	0	21
+panobinostat	55	11	0.08	1	0	9
+paricalcitol	1	1	0.2	0.2	0	8
+pazopanib	55	11	0.2	0.75	0	68
+ixazomib	28	38	0.1	0.5	0	2
+pentobarbital	53	16	0		0	0
+perampanel	9	4	0		0	0
+phenytoin	24	10	0		0	0
+pimozide	17	6	0.2	0.3333	0	6
+pioglitazone	43	1	0.08	0.5	0	16
+piroxicam	4	2	0		0	1
+pitavastatin	55	1	0		0	0
+ponatinib	44	1	0.08	0.6667	0	132
+prednisolone	2	1	0.08	0.8334	0	14
+prednisone	8	1	0.1	1	0	14
+olmesartan-medoxomil	17	1	0.16	0.4	0	4
+nortriptyline	2	2	0		0	0
+lapatinib	49	2	0.12	0.5357	0	82
+methylprednisolone	8	1	0.16	0.7333	0	14
+lidocaine	1	10	0		0	0
+lisinopril	5	1	0.12	0.6667	0	1
+lonafarnib	55	2	0.2	0.4	0	2
+macitentan	53	2	0.16	0.4	0	8
+maraviroc	2	1	0.32	0.127	0	4
+mefenamic-acid	1	2	0		0	1
+meloxicam	29	1	0		0	1
+ketorolac	2	2	0		0	1
+mepivacaine	24	10	0		0	0
+midostaurin	54	16	0.12	0.6667	0	226
+nintedanib	55	9	0.12	0.3333	0	19
+mifepristone	1	2	0.2	0.2	0	14
+minoxidil	2	2	0		0	0
+mirtazapine	1	5	0.12	1	0	3
+mitoxantrone	54	1	0		0	0
+mycophenolate-mofetil	55	2	0		0	0
+nabumetone	1	1	0		0	1
+nandrolone	3	5	0.12	0.6667	0	42
+protriptyline	2	2	0		0	0
+ketoprofen	1	2	0		0	1
+neratinib	49	3	0.2	0.8	0	82
+AZD-5363	6	3	0.12	0.5834	0	181
+ixabepilone	55	15	0		0	0
+razoxane	1	2	0		0	0
+tofacitinib	55	4	0.08	0.5	0	34
+topotecan	55	1	0		0	2
+toremifene	4	2	0.14	0.9166	0	27
+tretinoin	55	3	0.04	0.5	0	12
+triamcinolone	8	1	0.16	0.5834	0	14
+triamterene	1	3	0		0	0
+trifluoperazine	17	5	0.24	0.4	0	4
+triflupromazine	10	1	0.16	0.5	0	4
+trimipramine	2	8	0.12	0.375	0	4
+troglitazone	43	1	0.16	0.5	0	16
+valdecoxib	23	1	0		0	1
+valrubicin	3	1	0		0	0
+valsartan	1	1	0.12	0.3333	0	4
+vandetanib	55	25	0.16	0.6	0	251
+vemurafenib	55	1	0.16	0.6667	0	7
+verapamil	1	4	0		0	0
+vinblastine	55	15	0		0	0
+vincristine	55	15	0		0	0
+vinorelbine	7	15	0		0	0
+voapaxar	5	1	0.08	0.5	0	6
+vorinostat	55	4	0.08	0.6667	0	9
+tivozanib	47	5	0.16	0.6	0	19
+tioguanine	29	2	0		0	0
+thioridazine	17	5	0.2	0.4	0	4
+simvastatin	55	1	0		0	0
+regorafenib	55	18	0.12	1	0	132
+ritodrine	1	1	0.16	0.75	0	6
+rivaroxaban	3	1	0.2	0.6	0	2
+romidepsin	55	11	0.08	1	0	9
+rosiglitazone	43	1	0.08	0.6667	0	16
+rosuvastatin	2	1	0		0	0
+rucaparib	55	3	0.16	0.3333	0	19
+ruxolitinib	55	4	0.08	0.8334	0	34
+sildenafil	2	1	0		0	0
+sirolimus	54	1	0.12	0.6667	0	2
+thioguanine	26	2	0		0	0
+sitagliptin	38	1	0		0	0
+sonidegib	49	1	0.2	0.375	0	18
+sorafenib	55	9	0.16	0.75	0	23
+sumatriptan	11	2	0.12	0.8333	0	1
+sunitinib	55	9	0.2	0.5	0	23
+tamoxifen	26	3	0.08	1	0	27
+temsirolimus	26	1	0.16	0.55	0	2
+teniposide	55	2	0		0	0
+testosterone	1	1	0.16	0	0	42
+raloxifene	15	2	0.12	0.75	0	27
+irinotecan	55	1	0		0	2
+isotretinoin	4	3	0.26	0.5714	0	12
+brompheniramine	2	1	0.04	1	0	2
+axitinib	52	3	0.08	0.3333	0	7
+azacitidine	55	2	0.08	0.07145	0	1
+azilsartan-medoxomil	1	1	0.16	0.5	0	4
+bazedoxifene	14	2	0.12	0	0	27
+belinostat	55	11	0.04	1	0	9
+benazepril	2	1	0.24	0.4857	0	1
+betamethasone	2	1	0.08	0	0	14
+bexarotene	4	3	0.22	0.6333	0	12
+bortezomib	55	38	0.08	0.5	0	2
+bosutinib	48	4	0.08	0	0	251
+budesonide	2	1	0.18	0.1	0	14
+irbesartan	17	1	0.2	0.75	0	4
+cabazitaxel	55	15	0		0	0
+cabozantinib	55	2	0.12	0.5	0	13
+caffeine	1	4	0.16	0.75	0	5
+carbamazepine	1	10	0		0	0
+carbidopa	1	1	0		0	0
+carfilzomib	55	38	0.12	0.3333	0	2
+ceritinib	10	1	0.04	0.5834	0	8
+cerivastatin	3	1	0		0	0
+clemastine	4	1	0.24	0.1667	0	2
+clofarabine	55	14	0		0	1
+atrasentan	4	1	0.2	0.6	0	8
+atorvastatin	55	1	0		0	0
+anagrelide	1	2	0		0	0
+amlodipine	9	4	0		0	0
+BRD-A04553218	2	1	0.18	0	0	2
+BRD-K08177763	29	1	0.08	0.5	0	2
+CYT-387	55	3	0.28	0.5556	0	34
+EMD-1214063	4	1	0.12	0.6667	0	13
+GDC-0199	50	1	0.04	0	0	7
+IPI-145	53	2	0.04	0.5	0	5
+KD-025	55	2	0.16	0.6	0	34
+KPT-330	55	1	0.12	0.6667	0	2
+LY-2835219	1	2	0.2	0.6	0	21
+MEK-162	55	2	0.12	0.5	0	10
+MLN-2480	4	3	0.22	0.8035	0	11
+MLN-9708	27	38	0.08	0.5	0	2
+PF-05212384	55	9	0.12	0.6667	0	34
+TG-101348	54	2	0.2	0.8	0	34
+acamprosate	4	23	0.26	0.5	0	2
+acitretin	3	6	0.08	1	0	12
+afatinib	49	3	0.12	0.5	0	82
+alectinib	21	2	0.24	0.4286	0	23
+alpelisib	51	1	0.12	0.6667	0	8
+alprazolam	1	16	0		0	0
+amitriptyline	2	2	0		0	0
+clomifene	15	1	0.12	0.75	0	27
+clonazepam	1	16	0		0	0
+cobimetinib	55	2	0.12	0.45	0	10
+estradiol	3	1	0.16	0.75	0	27
+etodolac	6	1	0		0	1
+etoposide	55	2	0		0	0
+everolimus	51	1	0.12	0.5	0	2
+fingolimod	55	5	0.16	0.6	0	7
+fludarabine	54	5	0.08	0.4166	0	1
+fludarabine-phosphate	1	14	0		0	1
+fludrocortisone-acetate	1	1	0.24	0.6667	0	1
+fluphenazine	10	1	0.22	0.25	0	4
+flutamide	1	1	0.12	0.6667	0	42
+fluvastatin	55	1	0		0	0
+fostamatinib	52	1	0.12	0.3333	0	44
+fulvestrant	3	1	0.24	0.8333	0	27
+gefitinib	37	1	0.2	0.5	0	82
+gemcitabine	55	14	0		0	1
+givinostat	55	11	0.04	0.5	0	9
+hydrocortisone	4	1	0.28	0.8571	0	14
+hydrocortisone-acetate	3	1	0.12	0.75	0	14
+ibrutinib	45	1	0.12	0.5	0	15
+idarubicin	54	1	0		0	0
+idelalisib	53	1	0		0	0
+imatinib	4	3	0.08	0.6667	0	132
+estramustine	51	4	0.12	0	0	27
+erlotinib	37	1	0.16	0.5	0	82
+colchicine	49	15	0		0	0
+eptifibatide	42	2	0.12	0.6667	0	2
+copanlisib	55	2	0.04	0.5	0	8
+crizotinib	47	4	0.24	0.6905	0	13
+cyproheptadine	8	1	0.16	0.325	0	2
+cytarabine	55	11	0		0	0
+dabrafenib	55	1	0.16	0.6667	0	7
+dantrolene	1	2	0		0	0
+dasatinib	53	14	0.24	0.6667	0	251
+daunorubicin	54	1	0		0	0
+decitabine	49	2	0.16	0.2	0	1
+defactinib	55	2	0.08	0.5	0	19
+desoxycortone	1	2	0.2	0.4	0	14
+dexamethasone	24	1	0.2	0.45	0	14
+dexamethasone-acetate	30	1	0.08	0	0	14
+digitoxin	55	8	0		0	0
+digoxin	55	8	0		0	0
+dipyridamole	5	24	0		0	1
+disulfiram	55	1	0		0	0
+docetaxel	55	15	0		0	0
+doxorubicin	54	1	0		0	0
+doxycycline	1	4	0		0	4
+eplerenone	4	1	0.12	0.6667	0	1
+zileuton	1	1	0		0	0
