@@ -242,6 +242,11 @@ flowchart LR
   reversal 0.612 (p 0.076). Known limitation it surfaced: `layered_A` is a within-cohort percentile over genes, so a
   target ranked top in both cohorts of a pair cannot separate them (thyroid BRAF, 86.8% vs 15.9% of tumors, both at
   percentile ~100).
+- **Signed signaling prior (D126 B0, built 11-10; `scripts/d126/b0_omnipath.py`):** OmniPath literature-curated
+  core, filtered to `consensus_direction` plus a resolved consensus sign plus >= 2 resources or >= 2 references
+  (the spec's `consensus_sign` does not exist as a field; D126-B0). 16,518 edges over 5,493 nodes, SIGNOR arm 10,346
+  over 4,364. Cached in `data/raw/omnipath/`, checksummed, registered in `config/datasets.yaml` with a `review:` key
+  saying a re-pull is a new decision. The mechanism-consistency flag itself (B1-B3) is not implemented.
 - **Graph-metric reversal (D125 Part A): tested and not adopted (11-10).** `rev_L = -(d'Kg)/sqrt(d'Kd)`,
   `K = (L + lambda I)^-1` over the regulon-overlap Laplacian, would have replaced `rev` at the one place it enters.
   A1 (`scripts/d125/a1_sweep.py`, outputs `results/lincs/d125/a1/`) swept lambda on the D84 perturbation benchmark:

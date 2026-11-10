@@ -403,6 +403,18 @@ with paper and trial links, are on the FDA rankings page.
   drugs, and that the target checks push some drugs down; simply knowing whether a drug is a cancer drug scores 0.66.
   The scores also do not predict which cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
   scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
+- **A signalling map was downloaded to check drug mechanisms (D126, step 1 of 4, 2026-11-10).** The plan: when a
+  drug moves a set of regulators, ask whether a signal could actually travel from the drug's own target to those
+  regulators, in the right direction. That needs a map of which protein switches which other protein on or off. We
+  pulled one (OmniPath), kept only the links where the curators agree on both the direction and the on/off sign and
+  where at least two sources or two papers back it, and saved our own copy with a fingerprint, so the result cannot
+  change under us: **16,518 links between 5,493 proteins.**
+  Two things worth knowing before the check is built. First, what shrank the map was not disagreement about
+  direction or sign but thin evidence: about two thirds of the starting links rest on a single paper from a single
+  database. Second, the check may not reach far enough -- only 46% of the drug targets we score have any outgoing
+  link in the map, and a drug whose target is a dead end cannot be checked at all. The rule written in advance
+  requires the check to cover at least 40% of the regulators for at least 60% of drugs, and that is now in doubt.
+  Nothing is flagged yet; this step only built and pinned the map.
 - **A smarter way of comparing the two maps was tried and did not work (D125, 2026-11-10).** When we compare a
   tumor's regulator pattern with a drug's, we currently treat every regulator as a separate piece of evidence. That
   is not true: many regulators control overlapping sets of genes, so a block of twenty that largely share targets is
