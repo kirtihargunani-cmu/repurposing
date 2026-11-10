@@ -403,6 +403,20 @@ with paper and trial links, are on the FDA rankings page.
   drugs, and that the target checks push some drugs down; simply knowing whether a drug is a cancer drug scores 0.66.
   The scores also do not predict which cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
   scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
+- **A smarter way of comparing the two maps was tried and did not work (D125, 2026-11-10).** When we compare a
+  tumor's regulator pattern with a drug's, we currently treat every regulator as a separate piece of evidence. That
+  is not true: many regulators control overlapping sets of genes, so a block of twenty that largely share targets is
+  counted twenty times. The fix was to build a map of which regulators overlap, and down-weight evidence that is
+  shared. It is a one-knob change: turn the knob all the way down and you get exactly today's score back.
+  We tested the knob on a dataset where the answer is known - thousands of experiments where a single regulator was
+  switched off or forced on, so the right reading is not in doubt. **Every setting read the experiments either no
+  better or worse than today's score**, and the more weight we gave the overlap map, the worse it got: the cleanest
+  experiments (forcing a regulator on) lost up to 10 points. The rule written before the test required a gain of at
+  least 1 point to go on; the best was 0.17. So the idea was stopped there and nothing in the ranking changed.
+  Worth knowing: the overlap is genuinely there (the typical regulator shares targets with about fifty others), so
+  the answer is not "nothing to fix" - it is that the overlap carries real signal, not just repetition. This is the
+  third different attempt to strip out shared structure (the others used tumor expression patterns) and the third to
+  remove signal along with it.
 - **An independent check with a different kind of map (PROGENy pathways, D99).** Good news: the drug data are sound.
   Drugs that block a pathway (PI3K, MAPK, EGFR, p53 activators) move that pathway the right way in 75% of profiles.
   Revealing news: PROGENy reads every anti-estrogen profile as switching estrogen signalling off, while all our

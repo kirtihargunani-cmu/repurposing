@@ -1,6 +1,6 @@
 # Spec: graph-metric reversal scoring (D125) and the mechanism-consistency filter (D126)
 
-Status: **specified, not run.** Drafted and settled 2026-11-09 (scoring review; all decisions below taken by the
+Status (2026-11-10): **Part A is closed as not met; Part B is specified, not run.** A0 ran 11-09 (ceiling r 0.873, AUC_max 0.967; D125-A0, D125-A0.1). **A1 ran 11-10 and fired the early stop below: best gain +0.17 points against the +1.0 bar, so D125 is recorded as not met and A2 never ran** (D125-A1, D125-A1.1, D125-A1 result). B0-B3 (D126) are untouched. Originally: **specified, not run.** Drafted and settled 2026-11-09 (scoring review; all decisions below taken by the
 user in that session). Consolidated from the drafting thread into run order; this file is the implementation
 contract. Decisions D125 and D126 in [`DECISIONS.md`](DECISIONS.md). Background: the methods review in
 [`LITERATURE_SCORING.md`](LITERATURE_SCORING.md), the drug side in
@@ -203,6 +203,12 @@ improve, and it shares no labels with the known-use, control or dominance criter
 
 **Early stop:** if no `lambda` beats the `lambda = inf` limit on that benchmark by >= 1.0 points, record D125 as not
 met and do not run the pipeline arm.
+
+> **Result 2026-11-10 — the early stop fired.** Consensus read, D84 main analysis, 1,774 signatures over 329 TFs:
+> `lambda = inf` 0.6077; lambda 0.1 0.5727, 0.25 0.5958, 0.5 0.6037, 1 0.6048, 2 0.6094, 4 0.6077, 8 0.6065. Best
+> **+0.17 points at lambda = 2**, bar +1.0. Monotone in the wrong direction; overexpression loses 10.3 points at
+> lambda = 0.1 and never recovers the limit. CollecTRI's optimum is the limit itself. **A2 does not run.**
+> Implementation choices and the identity amendment: D125-A1 and D125-A1.1. Outputs `results/lincs/d125/a1/`.
 
 The D84 benchmark is the selection set and therefore **is not** an adoption criterion. Report its value; do not
 score the decision on it.

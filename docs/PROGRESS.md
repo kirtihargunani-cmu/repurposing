@@ -858,6 +858,29 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   cyclosporine leave the top 10s. The tie criterion failed on shared-target ties (glucocorticoids), which the previous
   objective had too; adopted by user decision. In production.
 
+## 2026-11-10: D125 graph-metric reversal — not met, A2 does not run (A1 early stop)
+- The question (D125): `rev` compares the disease and drug regulator vectors as a plain signed dot product, which
+  treats regulators as independent when D91 found 7-30% of a network's regulators identity-linked. The proposal
+  replaced the identity metric with a graph one, `rev_L = -(d'Kg)/sqrt(d'Kd)` with `K = (L + lambda I)^-1` and `L`
+  the normalized Laplacian of the regulon-overlap graph. `K -> I/lambda` as `lambda -> inf`, so the production score
+  is nested inside the proposal and only `lambda` had to be chosen.
+- **A1 (`scripts/d125/a1_sweep.py`, outputs `results/lincs/d125/a1/`): the sweep says no.** On the D84 perturbation
+  benchmark (1,774 signatures, 329 TFs, consensus read) the correct-direction rate is 0.6077 at the `lambda = inf`
+  limit and never clears it: 0.573 / 0.596 / 0.604 / 0.605 / **0.609** / 0.608 / 0.607 at lambda 0.1 to 8. Best gain
+  **+0.17 points at lambda = 2, against the pre-registered bar of +1.0**, so the spec's early stop fires: D125 is
+  recorded as not met and the full-pipeline arm A2 never runs.
+- The shape matters more than the verdict. The rate falls monotonically as the graph gains weight, and it falls
+  hardest where the benchmark is cleanest: overexpression loses 10.3 points at lambda = 0.1 and is still below the
+  limit at lambda = 8. CollecTRI's optimum *is* the limit (+0.00). Per TF, 18 better and 16 worse out of 131.
+- The redundancy is real -- 42 graphs, 472-1,266 regulators, median degree 50 after the 0.1 edge cut -- so this is
+  not "no overlap to remove". Down-weighting shared-target evidence costs more signal than it removes noise, the
+  same way the pnet work (D86) and the latent-factor attempts failed, now on a third kind of input.
+- **D125-A1.1, found by the identity check:** the published D84 numbers predate the 2026-11-03 ARACNe v2 TF rebuild
+  that added the 12 subtype networks, so ARACNe's benchmark numbers moved (kd 0.597 -> 0.594, oe 0.690 -> 0.694)
+  while CollecTRI and DoRothEA reproduce to 1e-15. The sweep reproduces 79n on current inputs at 3.9e-07. D84's own
+  `keep_consensus` decision was taken on the old build and is left standing, recorded as open.
+- Part B (D126, the mechanism-consistency filter) is untouched and still specified, not run.
+
 ## 2026-11-09: validation changed (D127, D125.1) — approval is no longer the primary yardstick
 - User: approval status confounds efficacy with patents, market size, rare-cancer economics and sponsor strategy, so
   an unapproved drug-cancer pair is not a negative. The class baseline (anticancer 0/1) already beats the lead score

@@ -242,6 +242,12 @@ flowchart LR
   reversal 0.612 (p 0.076). Known limitation it surfaced: `layered_A` is a within-cohort percentile over genes, so a
   target ranked top in both cohorts of a pair cannot separate them (thyroid BRAF, 86.8% vs 15.9% of tumors, both at
   percentile ~100).
+- **Graph-metric reversal (D125 Part A): tested and not adopted (11-10).** `rev_L = -(d'Kg)/sqrt(d'Kd)`,
+  `K = (L + lambda I)^-1` over the regulon-overlap Laplacian, would have replaced `rev` at the one place it enters.
+  A1 (`scripts/d125/a1_sweep.py`, outputs `results/lincs/d125/a1/`) swept lambda on the D84 perturbation benchmark:
+  best gain +0.17 points at lambda = 2 against a pre-registered bar of +1.0, and the rate falls monotonically as the
+  graph gains weight. The spec's early stop fired, so A2 never ran and nothing in production changed. `79n` keeps an
+  off-by-default `D125_NES_DIR` that dumps full NES matrices and pruned target sets for this kind of check.
 - **Noise ceiling (D125 section A0; reported only, `scripts/d125/`):** `a00_eligible_pairs.py` (A0.0 gate),
   `a0a_paired.py` (paired dose x time signatures, every cohort), `a0b_splithalf.py` (split halves of the deep pairs;
   DRY_RUN=1 default), `a0e_ceiling.py` (AUC_max = (1 + sqrt r) / 2, attainment = (2 AUC - 1) / sqrt r beside each raw
