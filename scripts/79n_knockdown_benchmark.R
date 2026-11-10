@@ -88,15 +88,25 @@ prep <- function(rg) {
     list(tfmode = tm[k], likelihood = lk[k]) })
   names(r) <- names(rg); r <- Filter(Negate(is.null), r); class(r) <- "regulon"; r
 }
-score <- function(reg, cols) {  # TF NES and percentile in each signature
+# D125-A1 (2026-11-10): with D125_NES_DIR set, also write the full regulator x signature NES and the pruned target
+# sets per (set, network), for the graph-metric sweep. Default off; nothing else changes.
+NES_DIR <- Sys.getenv("D125_NES_DIR", "")
+dump_nes <- function(tag, reg, v) {
+  if (!nzchar(NES_DIR) || is.null(tag)) return(invisible(NULL))
+  dir.create(NES_DIR, showWarnings = FALSE, recursive = TRUE)
+  saveRDS(list(nes = v, targets = lapply(reg, function(r) names(r$tfmode))),
+          file.path(NES_DIR, paste0(tag, ".rds")), compress = FALSE)
+}
+score <- function(reg, cols, tag = NULL) {  # TF NES and percentile in each signature
   v <- viper(X[, cols, drop = FALSE], reg, method = "none", minsize = MIN_TARGETS, verbose = FALSE)
+  dump_nes(tag, reg, v)
   m <- meta[match(cols, sig_id)]; i <- match(m$cmap_name, rownames(v)); ok <- !is.na(i)
   pct <- apply(v, 2, function(x) (rank(x) - 1) / (length(x) - 1))
   data.table(sig_id = cols[ok], nes = v[cbind(i[ok], which(ok))], pct = pct[cbind(i[ok], which(ok))], n_reg = nrow(v))
 }
 
 core <- readRDS("results/step5/regulons_core.rds")
-cur <- rbindlist(lapply(c("collectri", "dorothea_ABC"), function(s) cbind(set = s, score(prep(core[[s]]), meta$sig_id))))
+cur <- rbindlist(lapply(c("collectri", "dorothea_ABC"), function(s) cbind(set = s, score(prep(core[[s]]), meta$sig_id, s))))
 
 CMP <- Filter(nzchar, strsplit(Sys.getenv("COMPARE_SETS", ""), ",")[[1]])
 arac_for <- function(set) readRDS(sprintf("data/processed/step5/regulons_aracne_project_v2_%s.rds", set))
@@ -108,7 +118,7 @@ ln <- unique(keys[group_id %in% names(net_of), .(lineage = unlist(strsplit(linea
 ln <- unique(ln[net %in% names(arac)])
 lin <- fread("data/raw/depmap_24q4/Model.csv")[, .(ModelID, lineage = OncotreeLineage)]
 meta <- merge(meta, lin, by = "ModelID", all.x = TRUE)
-ar <- rbindlist(mclapply(names(arac), function(n) cbind(net = n, score(prep(arac[[n]]), meta$sig_id)), mc.cores = N_CORES))
+ar <- rbindlist(mclapply(names(arac), function(n) cbind(net = n, score(prep(arac[[n]]), meta$sig_id, paste0("aracne_v2_tf__", n))), mc.cores = N_CORES))
 ar <- merge(ar, meta[, .(sig_id, lineage)], by = "sig_id")
 ar[, matched := paste(lineage, net) %in% ln[, paste(lineage, net)]]
 ar <- ar[, if (any(matched)) .(nes = mean(nes[matched]), pct = mean(pct[matched]), n_reg = round(mean(n_reg[matched])), aracne_matched = TRUE, nets = paste(net[matched], collapse = ";"))
@@ -131,7 +141,9 @@ if (length(CMP)) {   # D83 comparison: every listed ARACNe set, same signatures 
 sg <- rbind(cbind(set = "aracne_v2_tf", ar), cur, fill = TRUE)
 if (PERTURB == "d84") {
   sg <- merge(meta[, .(sig_id, technology, direction, own_ok, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")
-  fwrite(sg, file.path(res, if (PROJECT) "perturbation_benchmark_d85_projected_signatures.tsv.gz" else "perturbation_benchmark_d84_signatures.tsv.gz"), sep = "\t")
+  out_sg <- if (nzchar(NES_DIR)) file.path(NES_DIR, "d84_signatures.tsv.gz")   # D125-A1: never overwrite the production table
+            else file.path(res, if (PROJECT) "perturbation_benchmark_d85_projected_signatures.tsv.gz" else "perturbation_benchmark_d84_signatures.tsv.gz")
+  fwrite(sg, out_sg, sep = "\t")
   print(sg[, .(signatures = .N, tfs = uniqueN(cmap_name)), by = .(set, technology)]); message("D84 SIGNATURES DONE"); quit(save = "no")
 }
 sg <- merge(meta[, .(sig_id, technology, cmap_name, cell_iname, lineage, pert_time, expr, own_z)], sg, by = "sig_id")
