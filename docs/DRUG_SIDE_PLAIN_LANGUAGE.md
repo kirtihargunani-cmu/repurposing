@@ -258,11 +258,12 @@ measure.
 Before trying a new version of the reversal score, we measured how repeatable the lab data behind it are. We scored
 every drug twice, each time from a different experiment on the same drug and cell line (another dose or time), and
 compared the two rankings. For drugs measured in a matching cell line the two rankings agree with a correlation of
-about 0.6. Across all cancers the typical agreement is about 0.8, counted only over drugs whose every experiment was
-swapped (a first count of about 0.9 was flattered by drugs scored partly from the same, unswapped experiments both
-times). Even at 0.6, the data would allow a score to put a cancer's approved drug above another
-cancer drug about 89 times in 100. The reversal score does it about 43-51 times in 100, which is chance. So the
-problem is the score, not the noise in the data. The current lead ranking (target role) does not use these lab data,
+about 0.6. We then ran a stricter version that splits each drug's experiments into two halves and compares the two
+rankings, repeated twenty times: across cancers the typical agreement is about 0.87. The gap between the two methods
+shows that most of what the first one counted as noise is really the drug behaving differently at different doses and
+times. At 0.87 the data would allow a score to put a cancer's approved drug above another cancer drug about 97 times
+in 100, and even at the pessimistic 0.6 about 89 times in 100. The reversal score does it about 43-51 times in 100,
+which is chance. So the problem is the score, not the noise in the data. The current lead ranking (target role) does not use these lab data,
 so this limit does not apply to it.
 
 ### What it gets wrong, honestly
