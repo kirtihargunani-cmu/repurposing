@@ -104,9 +104,9 @@ spec = z(rev, this cancer) − mean z(rev, cancers of other tissues), proliferat
   <div class="eyebrow">3 · Measurement ceiling</div>
   <h2>Reversal fails because of the objective, not the reproducibility of the data</h2>
   <ul>
-    <li><b>Reliability.</b> Each drug was scored twice from independent experiments in the same cell line (a different dose or time point), counting only drugs whose every experiment was replaced. The two within-cancer rankings agree at a median Spearman r = 0.80 across the 41 cancers (0.43–0.91; lowest where scores rest on a single matched line, e.g. prostate, melanoma, breast).</li>
-    <li><b>Ceiling.</b> By the classical attenuation bound, a score measured at this reliability can reach at most AUC 0.95 against the approved indications.</li>
-    <li><b>Attainment.</b> The reversal objective attains essentially none of that signal: −0.09 / −0.16 of the attainable signal at 0.46 / 0.43, and +0.03 / −0.04 at 0.51 / 0.48 on the drug set of the three-layered objective (Hub / ChEMBL).</li>
+    <li><b>Reliability.</b> Each drug was scored twice from independent experiments and the two within-cancer rankings compared, counting only drugs whose every experiment was replaced. Splitting each drug’s experiments into halves, repeated twenty times, gives a median Spearman r = 0.87 (breast 0.89–0.93, lung 0.82, prostate 0.76, melanoma 0.72). Comparing single dose–time conditions instead gives 0.80; the gap of 0.23 is dose- and time-dependent drug behaviour, not assay noise.</li>
+    <li><b>Ceiling.</b> By the classical attenuation bound, a score measured at this reliability can reach at most AUC 0.97 against the approved indications.</li>
+    <li><b>Attainment.</b> The reversal objective attains essentially none of that signal: −0.08 / −0.15 of the attainable signal at 0.46 / 0.43, and +0.03 / −0.04 at 0.51 / 0.48 on the drug set of the three-layered objective (Hub / ChEMBL).</li>
     <li>The three-layered objective does not use the transcriptional (LINCS) data, so this ceiling does not apply to it.</li>
   </ul>
   <div class="formula">D          = 2 · AUC − 1          <b>Somers’ D, the rank-correlation form of the AUC</b>
@@ -116,12 +116,12 @@ attainment = D / √r               <b>share of the attainable signal</b></div>
     <svg viewBox="0 0 860 230" role="img" aria-label="Concordance of reversal and the three-layered objective against chance and the reversal ceiling">
       <g font-size="14">
         <line x1="353" y1="30" x2="353" y2="175" class="chance" stroke-width="1.5"/><text x="353" y="22" text-anchor="middle" class="mut" font-size="13">chance 0.50</text>
-        <line x1="773" y1="30" x2="773" y2="175" class="snew" stroke-width="2" stroke-dasharray="6 4"/><text x="773" y="22" text-anchor="middle" font-size="13" class="fnew">reversal ceiling 0.95</text>
+        <line x1="789" y1="30" x2="789" y2="175" class="snew" stroke-width="2" stroke-dasharray="6 4"/><text x="789" y="22" text-anchor="middle" font-size="13" class="fnew">reversal ceiling 0.97</text>
         <text x="240" y="65" text-anchor="end">Reversal (own drug set)</text>
-        <line x1="287" y1="60" x2="773" y2="60" class="axis" stroke-width="6" opacity=".6"/>
+        <line x1="287" y1="60" x2="789" y2="60" class="axis" stroke-width="6" opacity=".6"/>
         <circle cx="318" cy="60" r="7" class="fold"/><rect x="280" y="53" width="14" height="14" class="fold" opacity=".7"/>
         <text x="240" y="110" text-anchor="end">Reversal (same drugs)</text>
-        <line x1="335" y1="105" x2="773" y2="105" class="axis" stroke-width="6" opacity=".6"/>
+        <line x1="335" y1="105" x2="789" y2="105" class="axis" stroke-width="6" opacity=".6"/>
         <circle cx="365" cy="105" r="7" class="fold"/><rect x="328" y="98" width="14" height="14" class="fold" opacity=".7"/>
         <text x="240" y="155" text-anchor="end">Three-layered</text>
         <circle cx="515" cy="150" r="7" class="fnew"/><rect x="488" y="143" width="14" height="14" class="fnew" opacity=".7"/>
@@ -131,7 +131,7 @@ attainment = D / √r               <b>share of the attainable signal</b></div>
       </g>
     </svg>
   </div>
-  <p class="note">The ceiling treats approved indications as error-free and carries a correlation bound over to a rank statistic, so it is an upper bound rather than an achievable target. Counting dose and time differences as noise lowers r and therefore the ceiling, so the true attainment of reversal is, if anything, lower. A stricter split-half estimate on the most replicated drugs is in progress; the figures are provisional.</p>
+  <p class="note">The ceiling treats approved indications as error-free and carries a correlation bound over to a rank statistic, so it is an upper bound rather than an achievable target. Counting dose and time differences as noise lowers r and therefore the ceiling, so the true attainment of reversal is, if anything, lower. The split-half estimate covers 21 of 55 cancers directly; the rest carry the dose–time estimate, which is the more conservative of the two. A split-half correlation describes half the data, so the standard Spearman–Brown correction would raise r to 0.93 and the ceiling to 0.98; it is not applied here, leaving the ceiling conservative.</p>
 </section>
 
 <section>
