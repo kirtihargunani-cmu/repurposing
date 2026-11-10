@@ -403,6 +403,20 @@ with paper and trial links, are on the FDA rankings page.
   drugs, and that the target checks push some drugs down; simply knowing whether a drug is a cancer drug scores 0.66.
   The scores also do not predict which cell lines a drug kills. A published check of this whole family of methods (Koudijs 2023) found the same: reversal
   scores mostly pick up general anti-growth effects. These remain ranked hypotheses, not validated predictions.
+- **The mechanism check was built, tested and dropped (D126, 2026-11-10).** Using the signalling map below, we
+  asked of every drug: could a signal actually travel from the drug's own target to the regulators it moved, in the
+  right direction? The test we had written in advance was whether it catches a failure we already know about —
+  anti-estrogens in luminal breast cancer, where our maps read the drug as switching ESR1 *on* when it switches it
+  off. **It did not catch it. It did the opposite**, calling tamoxifen and toremifene fully consistent there. The
+  reason is worth keeping: the check looks at the 25 regulators each drug moves most, and those are almost always
+  the growth regulators, not the drug's own target. ESR1 never appeared in the list at all, so the question being
+  answered was "can this drug explain slowing growth?" — to which the honest answer is yes, and which tells us
+  nothing about mechanism. The same growth-signal dominance we have been fighting in the ranking turned up inside
+  the tool built to audit it.
+  It also could not reach far enough: on average the map connected a drug's target to only 2 of the 25 regulators,
+  against the 10 the rule required. Nothing was added to the rankings, and the idea is closed. Reviving it would
+  mean looking at regulators near the drug's target instead of the ones it moves hardest — a different test, which
+  would need its own advance rule.
 - **A signalling map was downloaded to check drug mechanisms (D126, step 1 of 4, 2026-11-10).** The plan: when a
   drug moves a set of regulators, ask whether a signal could actually travel from the drug's own target to those
   regulators, in the right direction. That needs a map of which protein switches which other protein on or off. We

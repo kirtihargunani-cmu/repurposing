@@ -1,6 +1,6 @@
 # Spec: graph-metric reversal scoring (D125) and the mechanism-consistency filter (D126)
 
-Status (2026-11-10): **Part A is closed as not met; Part B is specified, not run.** A0 ran 11-09 (ceiling r 0.873, AUC_max 0.967; D125-A0, D125-A0.1). **A1 ran 11-10 and fired the early stop below: best gain +0.17 points against the +1.0 bar, so D125 is recorded as not met and A2 never ran** (D125-A1, D125-A1.1, D125-A1 result). B0-B3 (D126) are untouched. Originally: **specified, not run.** Drafted and settled 2026-11-09 (scoring review; all decisions below taken by the
+Status (2026-11-10): **Both parts are closed. Part A is not met (A1 early stop); Part B is closed by its own B5.1 control.** B0 built and registered the prior (D126-B0); B1 ran on all 55 cohorts and the flag fires on 0 of 22 anti-estrogen control rows, so D126 is closed (D126-B1 result); the CARNIVAL arm is recorded as not executable. Nothing from this spec entered production. A0 ran 11-09 (ceiling r 0.873, AUC_max 0.967; D125-A0, D125-A0.1). **A1 ran 11-10 and fired the early stop below: best gain +0.17 points against the +1.0 bar, so D125 is recorded as not met and A2 never ran** (D125-A1, D125-A1.1, D125-A1 result). B0-B3 (D126) are untouched. Originally: **specified, not run.** Drafted and settled 2026-11-09 (scoring review; all decisions below taken by the
 user in that session). Consolidated from the drafting thread into run order; this file is the implementation
 contract. Decisions D125 and D126 in [`DECISIONS.md`](DECISIONS.md). Background: the methods review in
 [`LITERATURE_SCORING.md`](LITERATURE_SCORING.md), the drug side in
@@ -339,6 +339,12 @@ re-run on the corrected score.
 
 1. **Known-failure control.** The flag must fire on anti-estrogens in MCF7, where the ARACNe reading of ESR1 is
    known to be wrong (C18, C25, D85). If it does not fire there, the filter does not work and D126 is closed.
+
+   > **Result 2026-11-10 — failed; D126 closed.** 0 of 22 scorable anti-estrogen rows in the four MCF7 breast
+   > cohorts are flagged (7 of 22 without the coverage precondition). ESR1 is reached in none of them: it is never
+   > among the top 25 regulators by |activity|, which are FOXM1, MXD3, PA2G4, E2F2, MYC, TEAD4. The check reads
+   > growth arrest, not mechanism, and so endorses the failure it was built to catch. B5.3 also fails (coverage
+   > median 0.08); B5.2 passes (rho 0.165).
 2. **Degree confound.** Flag rate vs the main target's degree in the prior, Spearman `|rho| < 0.3`. At or above
    that, B4 applies.
 3. **Coverage floor.** `mechanism_coverage >= 0.4` for >= 60% of gate-passing FDA drugs, else the flag is too

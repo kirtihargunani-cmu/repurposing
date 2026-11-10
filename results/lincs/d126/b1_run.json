@@ -1,0 +1,65 @@
+{
+ "top_k": 25,
+ "flag": {
+  "coverage_min": 0.4,
+  "consistent_max": 0.5
+ },
+ "criteria": [
+  {
+   "criterion": "B5.1 known-failure control (anti-estrogens, MCF7 breast cohorts)",
+   "value": "flag fires on 0 of 22 rows (0.000)",
+   "threshold": "> 0.5",
+   "met": false
+  },
+  {
+   "criterion": "B5.2 degree confound (flag rate vs main-target out-degree)",
+   "value": "Spearman rho 0.165 over 203 drugs",
+   "threshold": "|rho| < 0.3",
+   "met": true
+  },
+  {
+   "criterion": "B5.3 coverage floor",
+   "value": "median coverage >= 0.4 for 0 of 203 scorable drugs (0.000)",
+   "threshold": ">= 0.6",
+   "met": false
+  }
+ ],
+ "detail": {
+  "control_rows": 22,
+  "control_share": 0.0,
+  "rho": 0.16509973577211884,
+  "coverage_share": 0.0,
+  "mcf7_models": [
+   "ACH-000019"
+  ],
+  "breast_groups": [
+   "BRCA-Basal",
+   "BRCA-Her2",
+   "BRCA-LumA",
+   "BRCA-LumB"
+  ]
+ },
+ "hops": {
+  "0": 24,
+  "1": 670,
+  "2": 3447,
+  "3": 4909,
+  "4": 3629,
+  "5": 1222,
+  "6": 170,
+  "7": 79,
+  "8": 18
+ },
+ "single_target": {
+  "n": 1903,
+  "coverage": 0.08,
+  "consistency": 0.5,
+  "flag": 0.004203888596952181
+ },
+ "multi_target": {
+  "n": 4011,
+  "coverage": 0.08,
+  "consistency": 0.5,
+  "flag": 0.002243829468960359
+ }
+}

@@ -1,0 +1,4 @@
+criterion	value	threshold	met
+B5.1 known-failure control (anti-estrogens, MCF7 breast cohorts)	flag fires on 0 of 22 rows (0.000)	> 0.5	False
+B5.2 degree confound (flag rate vs main-target out-degree)	Spearman rho 0.165 over 203 drugs	|rho| < 0.3	True
+B5.3 coverage floor	median coverage >= 0.4 for 0 of 203 scorable drugs (0.000)	>= 0.6	False

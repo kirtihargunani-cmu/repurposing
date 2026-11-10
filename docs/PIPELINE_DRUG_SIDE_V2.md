@@ -242,6 +242,12 @@ flowchart LR
   reversal 0.612 (p 0.076). Known limitation it surfaced: `layered_A` is a within-cohort percentile over genes, so a
   target ranked top in both cohorts of a pair cannot separate them (thyroid BRAF, 86.8% vs 15.9% of tumors, both at
   percentile ~100).
+- **Mechanism-consistency filter (D126): tested and closed (11-10).** `scripts/d126/b1_consistency.py` asked whether
+  a signed path runs from each drug's curated main target to the 25 regulators it moves hardest, with the propagated
+  sign matching. It fails its own known-failure control (0 of 22 anti-estrogen rows flagged in the MCF7 breast
+  cohorts; tamoxifen and toremifene come out 1.00 consistent in LumA) because ESR1 is never in the top 25 — those
+  are the proliferation regulators — and it fails the coverage floor (median 0.08 of 25). The CARNIVAL breast arm is
+  recorded as not executable (no solver, no package). No flag is emitted and nothing in production changed.
 - **Signed signaling prior (D126 B0, built 11-10; `scripts/d126/b0_omnipath.py`):** OmniPath literature-curated
   core, filtered to `consensus_direction` plus a resolved consensus sign plus >= 2 resources or >= 2 references
   (the spec's `consensus_sign` does not exist as a field; D126-B0). 16,518 edges over 5,493 nodes, SIGNOR arm 10,346
