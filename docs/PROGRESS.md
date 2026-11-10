@@ -858,6 +858,27 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   cyclosporine leave the top 10s. The tie criterion failed on shared-target ties (glucocorticoids), which the previous
   objective had too; adopted by user decision. In production.
 
+## 2026-11-10: D126 B0 — the signed signaling prior is pulled, filtered, cached and registered
+- `scripts/d126/b0_omnipath.py`. **Primary prior: 16,518 signed and directed edges over 5,493 nodes** from 86,189 raw
+  OmniPath interactions (literature-curated core, organism 9606, retrieved 2026-11-10); 11,662 activating, 4,856
+  inhibiting, 1,199 `sign_disputed`. **SIGNOR sensitivity arm: 10,346 edges over 4,364 nodes.** Cached under
+  `data/raw/omnipath/`, checksummed in `data/raw/checksums.sha256`, registered in `config/datasets.yaml`.
+- **The open item that blocked B0 is settled (D126-B0):** OmniPath gets its own registry entry, with a `review:` key
+  recording that the service publishes no data release label (`/about` returns the server build, 0.1.5), that the
+  cached file is the dependency, and that a re-pull is a new decision rather than a refresh.
+- **A spec field name was wrong, found by querying the service first as the risks section asked:** there is no
+  `consensus_sign` field. The service returns `consensus_stimulation` and `consensus_inhibition`, so B2's condition
+  is read as exactly one of the two being true. The intended filter is unchanged; the spec is annotated in place.
+- **The support clause, not the sign clause, defines this prior.** 14,939 raw edges fail `consensus_direction` and
+  15,073 carry no consensus sign, but **54,598 are dropped for resting on a single resource and a single reference**.
+  About two thirds of OmniPath's curated core is single-citation.
+- **B2's reason for preferring OmniPath to SIGNOR is weaker than stated.** It chose OmniPath because "coverage is
+  the binding constraint"; measured, SIGNOR keeps 63% of the edges and 79% of the nodes. The sensitivity arm is a
+  near-equal alternative. The primary arm is left as written.
+- **Reported, not acted on:** of the 387 D105b evidence targets on scored FDA rows, 67% are in the prior and only
+  **46% have an outgoing signed edge**, which is what a path from the target needs. B5.3's coverage floor is at real
+  risk before B1 runs. The B5.1 control is computable: ESR1 and the other control targets are all source nodes.
+
 ## 2026-11-10: D125 graph-metric reversal — not met, A2 does not run (A1 early stop)
 - The question (D125): `rev` compares the disease and drug regulator vectors as a plain signed dot product, which
   treats regulators as independent when D91 found 7-30% of a network's regulators identity-linked. The proposal
