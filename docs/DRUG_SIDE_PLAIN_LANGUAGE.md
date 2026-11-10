@@ -282,6 +282,15 @@ the other subtypes. Because it is the same drug on both sides, patents, company 
 Approval data is still reported, but it no longer decides anything. The honest limit of the new check is that it
 confirms the rankings carry biology we already know; it cannot show they find biology nobody knows yet.
 
+**First result (2026-11-09): the rankings pass, and the new check immediately found something.** Across 49 drug
+comparisons the ranking put the drug higher in the group where biology says it should be 36 times, about 73%, which is
+unlikely to happen by chance. The old reversal score managed 61%, no better than a coin toss. One comparison failed
+badly: BRAF drugs in thyroid cancer, where the ranking gives almost exactly the same score to both patient groups even
+though BRAF is altered in 87% of one group and only 16% of the other. The reason is that the score ranks a drug's
+target against all other genes in that cancer rather than measuring how much the target differs between the two groups
+of patients, so a target that comes top in both groups looks identical in both. The approval-based check could never
+have shown this. How to fix it is not yet decided.
+
 ### What it gets wrong, honestly
 
 - **Anti-estrogens in luminal A breast cancer ranked low** because the tumor-learned map misread them (C18). Removing
