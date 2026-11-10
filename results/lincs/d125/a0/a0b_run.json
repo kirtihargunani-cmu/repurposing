@@ -1,0 +1,27 @@
+{
+ "n_pairs": 1019,
+ "n_lines": 32,
+ "se_stable": 0.01,
+ "floor": 20,
+ "cap": 100,
+ "profile_identity": {
+  "n_cols": 1019,
+  "max_diff_raw": 4.76837158203125e-07,
+  "max_diff_specific": 9.345215161715714e-07
+ },
+ "viper_identity": {
+  "n_cols": 1019,
+  "max_diff_viper": 0.0,
+  "unused_production_only_networks": {
+   "drug_viper_specific_v2_tf": [
+    "ESCA",
+    "LGG"
+   ],
+   "drug_viper_specific_collectri": []
+  }
+ },
+ "n_splits": 20,
+ "se_median_r_c": 0.004538881811460488,
+ "median_r_c": 0.8814977238113818,
+ "stabilised": true
+}

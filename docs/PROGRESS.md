@@ -872,7 +872,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   stopping rule.
 - D125-A0.1 (user): r_c only over drugs whose every scoring line changes between passes (the shared unchanged lines
   inflated borrowed drugs); A0b stops at SE <= 0.01. A0a r_c now 0.81 (old version 0.90 kept as r_c_any); AUC_max 0.95;
-  reversal attainment -0.16 to +0.03. A0b running.
+  reversal attainment -0.16 to +0.03.
+- A0b (complete, 11-09 21:26): stopped at the 20-split floor, SE 0.0045. r_c median 0.881; A0b - A0a = +0.234 in every
+  cohort, so dose and time variation is most of what A0a called noise. Only 14 of 55 cohorts have >= 50 drugs under the
+  all-lines-changed rule; 41 are r_pooled, 34 keep A0a's r. Final ceiling r 0.873, AUC_max 0.967; reversal attainment
+  -0.15 to +0.03. The conclusion holds on the stricter estimator.
 
 ## 2026-11-06: trial failure reasons (D108) and evidence flags (D109, D109a, D109b)
 - D108: for each cohort's top 10 FDA drugs, trials that list the drug; stop reasons by keyword rule, completed trials
