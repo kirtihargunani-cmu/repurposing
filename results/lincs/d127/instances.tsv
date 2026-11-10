@@ -1,0 +1,68 @@
+pair_set	drug_class	high	low	drug	hi_pct	lo_pct	hi_excluded	lo_excluded	hi_flags	lo_flags	gap	correct	correct_e2e	spec_mech_pct_pregate_gap	target_role_pct_gap
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	MEK-162	96.68508287292818	97.26775956284152	False	False			-0.6	False	False	27.2	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	PD-0325901	92.26519337016576	91.8032786885246	False	False			0.5	True	True	16.4	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	cobimetinib	93.37016574585635	92.89617486338798	False	False			0.5	True	True	46.0	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	dabrafenib	100.0	100.0	False	False			0.0	False	False	29.9	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	regorafenib	61.32596685082873	68.85245901639344	False	False			-7.5	False	False	41.4	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	selumetinib	93.92265193370166	93.44262295081968	False	False			0.5	True	True	36.1	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	sorafenib	73.48066298342542	75.95628415300546	False	False			-2.5	False	False	23.9	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	trametinib	96.13259668508287	96.72131147540983	False	False			-0.6	False	False	30.2	
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	vemurafenib	100.0	100.0	False	False			0.0	False	False	32.7	
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	MEK-162	92.57425742574256	9.623430962343097	False	False			83.0	True	True	-42.0	
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	PD-0325901	89.10891089108911	12.552301255230123	False	False			76.6	True	True	-26.5	
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	cobimetinib	89.60396039603961	12.133891213389122	False	False			77.5	True	True	9.3	78.9
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	dabrafenib	95.04950495049503	4.184100418410042	False	False			90.9	True	True	-3.8	82.4
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	regorafenib	39.10891089108911	29.288702928870293	False	False			9.8	True	True	-5.0	2.9
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	selumetinib	90.5940594059406	11.715481171548117	False	False			78.9	True	True	-63.2	78.9
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	sorafenib	22.27722772277228	31.38075313807532	False	False			-9.1	False	False	1.2	12.4
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	trametinib	92.07920792079209	7.949790794979079	False	False			84.1	True	True	-34.8	78.9
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	vemurafenib	95.04950495049503	4.184100418410042	False	False			90.9	True	True	-28.1	82.4
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	AZD-9291	84.23236514522821	84.93723849372385	False	False			-0.7	False	False	13.4	
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	afatinib	70.95435684647303	43.93305439330544	False	False			27.0	True	True	-13.1	-10.0
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	dacomitinib	72.61410788381743	50.62761506276152	True	True	low_exposure	low_exposure	22.0	True	True	-2.0	-10.0
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	erlotinib	84.23236514522821	84.93723849372385	False	False			-0.7	False	False	1.3	-10.0
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	gefitinib	84.23236514522821	84.93723849372385	False	False			-0.7	False	False	-2.1	-10.0
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	lapatinib	79.66804979253112	66.94560669456067	False	False			12.7	True	True	11.8	-10.0
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	neratinib	72.19917012448133	46.02510460251046	False	False			26.2	True	True	-6.2	-10.0
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	vandetanib	65.97510373443983	37.65690376569037	False	False			28.3	True	True	32.7	12.8
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	AZD-9291	100.0	84.93723849372385	False	False			15.1	True	True	4.0	
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	afatinib	75.13812154696133	43.93305439330544	False	False			31.2	True	True	15.9	39.4
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	dacomitinib	76.79558011049724	50.62761506276152	True	True	low_exposure	low_exposure	26.2	True	True	50.0	39.4
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	erlotinib	100.0	84.93723849372385	False	False			15.1	True	True	-0.5	39.4
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	gefitinib	100.0	84.93723849372385	False	False			15.1	True	True	-12.7	39.4
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	lapatinib	90.60773480662984	66.94560669456067	False	False			23.7	True	True	28.0	39.4
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	neratinib	76.24309392265194	46.02510460251046	False	False			30.2	True	True	27.7	39.4
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	vandetanib	45.30386740331492	37.65690376569037	False	False			7.6	True	True	68.7	17.8
+primary	HER2	BRCA-Her2	BRCA-Basal	afatinib	24.22907488986784	46.69603524229075	False	False			-22.5	False	False	23.8	47.6
+primary	HER2	BRCA-Her2	BRCA-Basal	dacomitinib	66.07929515418502	50.22026431718062	True	True	low_exposure	low_exposure	15.9	True	True	-3.5	47.6
+primary	HER2	BRCA-Her2	BRCA-Basal	lapatinib	54.62555066079295	53.74449339207048	False	False			0.9	True	True	0.9	47.6
+primary	HER2	BRCA-Her2	BRCA-Basal	masoprocol	85.46255506607929	49.77973568281938	True	True	local_route	local_route	35.7	True	True	-0.7	47.6
+primary	HER2	BRCA-Her2	BRCA-Basal	neratinib	61.67400881057269	48.458149779735685	False	False			13.2	True	True	20.4	47.6
+primary	HER2	BRCA-Her2	BRCA-Basal	vandetanib	65.19823788546255	47.136563876651984	False	False			18.1	True	True	-3.6	22.9
+primary	HER2	BRCA-Her2	BRCA-LumA	afatinib	24.22907488986784	26.63755458515284	False	False			-2.4	False	False	7.1	0.6
+primary	HER2	BRCA-Her2	BRCA-LumA	dacomitinib	66.07929515418502	46.2882096069869	True	True	low_exposure	low_exposure	19.8	True	True	-25.5	0.6
+primary	HER2	BRCA-Her2	BRCA-LumA	lapatinib	54.62555066079295	16.593886462882097	False	False			38.0	True	True	12.2	0.6
+primary	HER2	BRCA-Her2	BRCA-LumA	masoprocol	85.46255506607929	90.82969432314412	True	True	local_route	local_route	-5.4	False	False	-12.0	0.6
+primary	HER2	BRCA-Her2	BRCA-LumA	neratinib	61.67400881057269	36.24454148471616	False	False			25.4	True	True	19.1	0.6
+primary	HER2	BRCA-Her2	BRCA-LumA	vandetanib	65.19823788546255	64.19213973799127	False	False			1.0	True	True	16.1	0.6
+primary	PARP	TCGA-OV	TCGA-LUSC	olaparib	87.5	40.1673640167364	False	False			47.3	True	True	14.0	45.3
+primary	PARP	TCGA-OV	TCGA-LUSC	rucaparib	87.5	40.1673640167364	False	False			47.3	True	True	-30.4	45.3
+primary	PARP	TCGA-OV	TCGA-LUSC	talazoparib	96.19565217391305	50.2092050209205	True	True	low_exposure	low_exposure	46.0	True	True	0.2	45.3
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	bazedoxifene	76.85589519650655	3.9647577092511015	False	True		target_absent	72.9	True	True	-32.9	72.5
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	clomifene	95.19650655021834	11.45374449339207	False	True		target_absent	83.7	True	True	-10.1	
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	estramustine	67.24890829694323	16.740088105726873	False	False			50.5	True	True	52.6	31.3
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	fulvestrant	95.19650655021834	11.45374449339207	False	True		target_absent;low_exposure	83.7	True	True	-39.3	72.5
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	raloxifene	86.8995633187773	22.46696035242291	False	True		target_absent	64.4	True	True	-44.7	72.5
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	tamoxifen	86.46288209606988	15.859030837004406	False	True		target_absent;low_exposure	70.6	True	True	-69.8	41.3
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	toremifene	76.85589519650655	3.9647577092511015	False	True		target_absent	72.9	True	True	-42.8	72.5
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	bazedoxifene	67.55555555555556	3.9647577092511015	False	True		target_absent	63.6	True	True	-29.8	63.0
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	clomifene	94.2222222222222	11.45374449339207	False	True		target_absent	82.8	True	True	-11.7	
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	estramustine	28.88888888888889	16.740088105726873	False	False			12.1	True	True	35.4	21.8
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	fulvestrant	94.2222222222222	11.45374449339207	False	True		target_absent;low_exposure	82.8	True	True	-35.7	63.0
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	raloxifene	82.66666666666667	22.46696035242291	False	True		target_absent	60.2	True	True	-38.0	63.0
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	tamoxifen	84.0	15.859030837004406	False	True		target_absent;low_exposure	68.1	True	True	-65.6	31.8
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	toremifene	67.55555555555556	3.9647577092511015	False	True		target_absent	63.6	True	True	-24.2	63.0
+seen	ALK	TCGA-LUAD	TCGA-LUSC	alectinib	78.00829875518673	71.1297071129707	True	True	target_absent	target_absent	6.9	True	True	21.5	-28.8
+seen	ALK	TCGA-LUAD	TCGA-LUSC	ceritinib	82.15767634854771	76.56903765690377	True	True	target_absent	target_absent	5.6	True	True	-19.5	-6.0
+seen	ALK	TCGA-LUAD	TCGA-LUSC	crizotinib	67.63485477178423	30.543933054393307	False	False			37.1	True	True	19.6	8.3
+seen	CDK4/6	BRCA-LumA	BRCA-Basal	palbociclib	91.26637554585152	44.05286343612335	False	False			47.2	True	True	-28.9	65.9

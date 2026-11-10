@@ -1,0 +1,17 @@
+{
+ "score": "layered_pct",
+ "share_min": 0.7,
+ "p_max": 0.05,
+ "gap_min": 10.0,
+ "primary": {
+  "n": 49,
+  "n_correct": 36,
+  "share": 0.7347,
+  "p": 0.0007,
+  "median_gap": 15.1
+ },
+ "verdict": true,
+ "ties": 2,
+ "n_pairs_primary": 7,
+ "per_pair_median_share": 0.8333
+}

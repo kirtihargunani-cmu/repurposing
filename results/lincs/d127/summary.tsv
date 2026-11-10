@@ -1,0 +1,16 @@
+item	value
+PRIMARY: instances	49
+PRIMARY: correct (high > low)	36
+PRIMARY: share (pass >= 0.7)	0.7347
+PRIMARY: sign-test p (pass < 0.05)	0.0007
+PRIMARY: median gap (pass >= 10.0)	15.1
+PRIMARY VERDICT	PASS
+  criteria met	share True, p True, gap True
+ties (gap == 0), counted as not-correct	2
+sign test excluding ties	0.766 (n=47, p=0.00017)
+per-pair median of the share	0.8333
+end-to-end share (reported)	0.7347
+reported: spec_mech_pct_pregate	share 0.6122 (n=49, p=0.0762, median gap 7.1)
+reported: target_role_pct	share 0.8333 (n=36, p=3e-05, median gap 39.4)
+previously seen pairs (reported, not primary)	share 1.0 (n=18, median gap 64.0)
+not computable: AR antagonist TCGA-PRAD vs TCGA-BLCA	no AR drug is scored in BLCA

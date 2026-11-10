@@ -873,6 +873,15 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
     are already known or prior decisions were taken on them. AR PRAD vs BLCA is not computable.
   - Stated limit: it checks that known biology reaches the ranking, not that the objective finds unknown biology.
 - **D125.1:** D125's known-use criterion becomes reported only; the controls criterion widens to D127 and leads.
+- **D127 run on production (11-09): PASS.** 36 of 49 instances correct (0.735), sign p 0.0007, median gap 15.1.
+  Reversal on the same instances 0.612 (p 0.076) and 0.528 on the layer-1 subset: at chance, as everywhere else.
+  Layer 1 alone matches the full score's direction (30/36 both) with a much wider gap (39.4 vs 22.8), so layer 2
+  compresses separation without reversing it.
+- **First finding the new test produced that known use could not:** the thyroid pair fails 3/9 with a median gap of
+  exactly 0. BRAF alteration is 86.8% in BRAF-like vs 15.9% in RAS-like thyroid, but layered_A is 100.000 vs 99.996
+  and both BRAF inhibitors sit at percentile 100 in both subgroups. The A component is a within-cohort percentile over
+  genes, so a top-ranked target cannot discriminate two cohorts however far apart the raw shares are. Open: whether A
+  should carry magnitude (raw share or cross-cohort scaling). Needs its own decision; nothing changed.
 
 ## 2026-11-09: noise ceiling for the reversal score (D125 section A0)
 - Spec `docs/SPEC_graph_metric_scoring.md` (D125 graph-metric reversal, D126 mechanism flag); A0 implemented
