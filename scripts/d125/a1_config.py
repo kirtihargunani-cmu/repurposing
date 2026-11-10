@@ -22,10 +22,13 @@ SETS = ["aracne_v2_tf", "collectri"]    # the D75 consensus; dorothea_ABC is sco
 PRIMARY_ANALYSIS = "main"               # D84 main analysis (own_ok): the selection slice
 PRIMARY_READ = "consensus"              # mean of the two sets where both score the TF, else the one (D85 criterion 1)
 
-# --- identity check against the published D84 numbers (results/lincs/d84_summary.tsv, main analysis) ---------------
+# --- identity check (D125-A1.1): the lambda = inf arm must reproduce 79n's own output on the CURRENT inputs ---------
+IDENTITY_TOL = 1e-4         # max |diff| in NES and in percentile vs the d84_signatures table of the same 79n run
+# Reported only, not a gate: the published D84 main-analysis numbers (results/lincs/d84_summary.tsv). They predate the
+# 2026-11-03 rebuild of regulons_aracne_project_v2_tf.rds, which added the 12 subtype networks, so ARACNe no longer
+# matches them (kd 0.597 -> 0.594, oe 0.690 -> 0.694); CollecTRI, unchanged since 10-01, still does.
 D84_PUBLISHED = {("aracne_v2_tf", "kd"): 0.597, ("aracne_v2_tf", "oe"): 0.690,
                  ("collectri", "kd"): 0.604, ("collectri", "oe"): 0.701}
-IDENTITY_TOL = 0.0015       # the published values are rounded to 3 decimals
 
 # --- paths and compute --------------------------------------------------------------------------------------------
 NES_DIR = ROOT / "data/processed/lincs/d125_a1"     # 79n D125_NES_DIR dump; nothing at the top of results/lincs
