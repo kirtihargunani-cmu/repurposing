@@ -1,0 +1,724 @@
+<title>Graph-Metric Scoring Trial</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single measured column of prose, with full-bleed figure bands that break out of it. */
+:root{
+  color-scheme: light;
+  --plane:#f5f5f3; --surface:#fcfcfb; --sunk:#eeeeea;
+  --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --rule:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --crit:#d03b3b; --good:#0ca30c; --warn:#fab219;
+  --crit-wash:rgba(208,59,59,.10); --s1-wash:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme: dark;
+  --plane:#0d0d0d; --surface:#1a1a19; --sunk:#111110;
+  --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+  --rule:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --crit:#e36a6a; --good:#0ca30c; --warn:#fab219;
+  --crit-wash:rgba(227,106,106,.14); --s1-wash:rgba(57,135,229,.14);
+}}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --plane:#0d0d0d; --surface:#1a1a19; --sunk:#111110;
+  --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781;
+  --rule:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --crit:#e36a6a; --good:#0ca30c; --warn:#fab219;
+  --crit-wash:rgba(227,106,106,.14); --s1-wash:rgba(57,135,229,.14);
+}
+*{box-sizing:border-box}
+body{background:var(--plane);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;margin:0}
+.wrap{max-width:1060px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));}
+.col{max-width:660px}
+h1,h2,h3{font-family:var(--sans);text-wrap:balance;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:700;line-height:1.05}
+h2{font-size:clamp(1.35rem,3.4vw,1.75rem);font-weight:600;line-height:1.2}
+h3{font-size:1.02rem;font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+a{color:var(--s1)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:clamp(1.05rem,2.3vw,1.2rem);color:var(--ink2);line-height:1.55}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.small{font-size:.86rem;color:var(--ink2)}
+.tiny{font-size:.78rem;color:var(--muted)}
+
+header.top{border-bottom:1px solid var(--rule);background:var(--surface)}
+header.top .wrap{padding-block:clamp(40px,7vw,72px);display:flex;flex-direction:column;gap:22px}
+.verdictrow{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--ring);border-radius:999px;
+  padding:5px 12px 5px 10px;font-size:.8rem;font-weight:500;background:var(--plane);color:var(--ink2)}
+.chip .dot{width:8px;height:8px;border-radius:50%;flex:none}
+.dot.fail{background:var(--crit)} .dot.pass{background:var(--good)} .dot.halt{background:var(--warn)} .dot.n{background:var(--muted)}
+
+section{padding-block:clamp(36px,6vw,60px);border-bottom:1px solid var(--rule)}
+section.alt{background:var(--surface)}
+.stack{display:flex;flex-direction:column;gap:18px}
+.hd{display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
+
+ul.pts{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+ul.pts li{position:relative;padding-left:20px;color:var(--ink2)}
+ul.pts li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:2px;background:var(--axis)}
+ul.pts li strong{color:var(--ink);font-weight:600}
+ul.pts li.bad::before{background:var(--crit);height:3px;top:.6em}
+ul.pts li.ok::before{background:var(--good);height:3px;top:.6em}
+
+.formula{background:var(--sunk);border:1px solid var(--rule);border-radius:6px;padding:18px 20px;overflow-x:auto;
+  font-family:var(--mono);font-size:.95rem;line-height:2;color:var(--ink)}
+.formula .c{color:var(--muted)}
+dl.gloss{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;font-size:.9rem}
+dl.gloss dt{font-family:var(--mono);font-weight:600;color:var(--s1);white-space:nowrap}
+dl.gloss dd{margin:0;color:var(--ink2)}
+
+/* pipeline */
+.pipe{display:flex;flex-direction:column;gap:26px}
+.lane{display:flex;flex-direction:column;gap:10px}
+.lane .lname{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+.step{flex:1 1 170px;min-width:0;background:var(--surface);border:1px solid var(--rule);border-radius:5px;
+  padding:12px 13px;display:flex;flex-direction:column;gap:5px;position:relative}
+section.alt .step{background:var(--plane)}
+.step .id{font-family:var(--mono);font-size:.74rem;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.step .nm{font-size:.9rem;font-weight:600;line-height:1.3}
+.step .st{font-size:.78rem;display:flex;align-items:center;gap:6px;color:var(--ink2)}
+.step.f{border-color:var(--crit);box-shadow:inset 3px 0 0 var(--crit)}
+.step.h{box-shadow:inset 3px 0 0 var(--warn)}
+.step.d{box-shadow:inset 3px 0 0 var(--good)}
+.step.x{opacity:.62}
+
+/* figures */
+figure{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 18px 14px}
+section.alt figure{background:var(--plane)}
+figcaption{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+figcaption .ft{font-weight:600;font-size:.98rem;letter-spacing:-.01em}
+figcaption .fs{font-size:.84rem;color:var(--ink2)}
+.figgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.chart{width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:.82rem;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:3px;border-radius:2px;display:inline-block}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:14px 15px;display:flex;flex-direction:column;gap:3px}
+section.alt .tile{background:var(--plane)}
+.tile .v{font-size:1.7rem;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.tile .k{font-size:.78rem;color:var(--muted);line-height:1.35}
+.tile.fail .v{color:var(--crit)}
+.tile.pass .v{color:var(--good)}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+section.alt .tablewrap{background:var(--plane)}
+table{border-collapse:collapse;width:100%;font-size:.87rem;min-width:540px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.verdict{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.82rem}
+.verdict.f{color:var(--crit)} .verdict.p{color:var(--good)}
+
+.callout{border:1px solid var(--ring);border-left:3px solid var(--crit);background:var(--crit-wash);
+  border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.callout.blue{border-left-color:var(--s1);background:var(--s1-wash)}
+.callout .ct{font-weight:600;font-size:.95rem}
+.callout p{font-size:.92rem;color:var(--ink2)}
+
+footer{padding-block:34px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+.prov{font-family:var(--mono);font-size:.76rem;color:var(--muted);line-height:1.9;word-break:break-word}
+
+#tip{position:fixed;z-index:50;pointer-events:none;opacity:0;transition:opacity .1s;background:var(--ink);
+  color:var(--plane);font-size:.78rem;font-family:var(--mono);padding:6px 9px;border-radius:4px;
+  white-space:nowrap;transform:translate(-50%,-125%)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div id="tip" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap col">
+    <div class="eyebrow">D125 &middot; D126 &middot; pre-registered spec &middot; closed 10 Nov 2026</div>
+    <h1>A scoring function that put drugs and diseases in one shared space</h1>
+    <p class="lede">The proposal was to stop scoring drugs against diseases regulator-by-regulator and instead score them inside a geometry built from the regulatory network itself — so that two regulators controlling the same genes would stop counting twice. Both halves of the spec were run against their own pre-registered bars. Both failed, and nothing in the production pipeline changed.</p>
+    <div class="verdictrow">
+      <span class="chip"><span class="dot fail"></span>Part A — best gain +0.17 pts, bar was +1.0</span>
+      <span class="chip"><span class="dot fail"></span>Part B — known-failure control fired on 0 of 22</span>
+      <span class="chip"><span class="dot n"></span>Production ranking unchanged</span>
+    </div>
+  </div>
+</header>
+
+<section class="alt">
+  <div class="wrap col stack">
+    <div class="hd">
+      <div class="eyebrow">The idea</div>
+      <h2>What was proposed, in plain language</h2>
+    </div>
+    <ul class="pts">
+      <li><strong>Today's score is a dot product.</strong> A disease has a vector of regulator activities (which transcription factors are switched on in the tumour). A drug has one too (which it pushes up or down). The current score, called <em>reversal</em>, is essentially: how much does the drug's vector point opposite to the disease's vector.</li>
+      <li><strong>The flaw it was meant to fix: regulators are not independent.</strong> E2F1, E2F2, E2F7, E2F8, FOXM1 and MYBL2 all drive roughly the same proliferation genes. A dot product treats them as six separate pieces of evidence. They are closer to one.</li>
+      <li><strong>The fix: change the ruler, not the vectors.</strong> Build a graph where two regulators are connected if their target genes overlap. Then measure agreement in a geometry where moving along a heavily-connected cluster counts for less than moving along a lone regulator. That is the "shared representation space" — drug and disease are measured with the same, network-aware ruler.</li>
+      <li><strong>One knob, <span class="mono">λ</span>, controls how much shaping happens.</strong> Small λ means the network dominates. Large λ means the network is ignored. Crucially, at λ = ∞ the new score becomes <em>exactly</em> the score already in production — so the thing being tested contains today's method as a special case.</li>
+      <li><strong>The second half, Part B, was a different kind of fix.</strong> Rather than reweighting, it asked: can we check whether a drug's effect is mechanistically plausible — does a signed path exist from the drug's actual protein target to the regulators it appears to move, with the right sign at the end?</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap col stack">
+    <div class="hd">
+      <div class="eyebrow">The maths</div>
+      <h2>The scoring function</h2>
+    </div>
+    <div class="formula">
+<span class="c">// the graph-metric reversal score</span><br>
+rev<sub>L</sub>(d, g) = &minus; (d<sup>T</sup> K g) / &radic;(d<sup>T</sup> K d)<br><br>
+<span class="c">// the metric, from the regulator-overlap graph</span><br>
+K = (L + λI)<sup>&minus;1</sup><br>
+L<sub>sym</sub> = I &minus; D<sup>&minus;1/2</sup> A D<sup>&minus;1/2</sup><br>
+A<sub>ij</sub> = |T<sub>i</sub> &cap; T<sub>j</sub>| / min(|T<sub>i</sub>|, |T<sub>j</sub>|) &nbsp;<span class="c">// dropped below 0.1</span>
+    </div>
+    <dl class="gloss">
+      <dt>d</dt><dd>disease regulator-activity vector — the tumour's TF profile</dd>
+      <dt>g</dt><dd>drug regulator-activity vector — what the compound moves</dd>
+      <dt>A</dt><dd>overlap between two regulators' target gene sets (Szymkiewicz–Simpson); edges under 0.1 dropped, no self-loops, direction of regulation ignored</dd>
+      <dt>L</dt><dd>symmetric normalised Laplacian — the graph's "roughness" operator</dd>
+      <dt>K</dt><dd>the metric. As λ grows, K → I/λ and the score collapses back to ordinary reversal</dd>
+      <dt>λ</dt><dd>the single knob: 0.1 (network dominates) through ∞ (network ignored)</dd>
+    </dl>
+    <div class="callout blue">
+      <div class="ct">Why the λ = ∞ nesting mattered</div>
+      <p>Because production is a special case of the proposal, the test needed no separate baseline and no re-implementation. Running the sweep down from ∞ asks one question with no wiggle room: does shaping the space by the network ever beat not shaping it? A reimplementation that merely matched production would have left room to argue about the comparison. This left none.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap stack">
+    <div class="hd col">
+      <div class="eyebrow">The pipeline</div>
+      <h2>How it was run</h2>
+      <p class="small">Every stage's pass/fail rule was written down and committed to the repository before the stage ran. A stage that fails its own bar stops the branch — no stage was re-run with a softened threshold.</p>
+    </div>
+    <div class="pipe">
+      <div class="lane">
+        <div class="lname">Part A — the graph metric (D125)</div>
+        <div class="steps">
+          <div class="step d"><span class="id">A0.0 / A0a / A0b</span><span class="nm">Dump benchmark scores &amp; check identity</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot pass"></span>reproduced to 4&times;10<sup>&minus;7</sup></span></span></div>
+          <div class="step f"><span class="id">A1</span><span class="nm">λ sweep on 1,774 knockdown / overexpression signatures</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot fail"></span>best gain +0.17 pts vs +1.0 bar</span></span></div>
+          <div class="step x"><span class="id">A2</span><span class="nm">Wire the metric into the live drug ranking</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot n"></span>never ran — A1 stopped it</span></span></div>
+        </div>
+      </div>
+      <div class="lane">
+        <div class="lname">Part B — the mechanism filter (D126)</div>
+        <div class="steps">
+          <div class="step d"><span class="id">B0</span><span class="nm">Pull &amp; register a signed signalling prior from OmniPath</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot pass"></span>16,518 edges, checksummed</span></span></div>
+          <div class="step d"><span class="id">B1</span><span class="nm">Signed-path consistency for 203 drugs &times; 55 cohorts</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot pass"></span>5,914 rows scored</span></span></div>
+          <div class="step h"><span class="id">B2</span><span class="nm">CARNIVAL network inference, breast arm</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot halt"></span>no solver available — recorded, not substituted</span></span></div>
+          <div class="step f"><span class="id">B3</span><span class="nm">Check the three pre-registered criteria</span><span class="st"><span class="chip" style="padding:1px 8px;font-size:.72rem"><span class="dot fail"></span>2 of 3 failed, including the decisive one</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <div class="hd col">
+      <div class="eyebrow">Part A result</div>
+      <h2>Shaping the space made the score worse</h2>
+      <p class="small">The benchmark: 1,774 LINCS experiments where one transcription factor was knocked down or overexpressed on purpose. A score is <em>correct</em> when it moves that factor in the expected direction. The bar, fixed in advance, was a 1.0-point gain over production.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile"><span class="v mono">0.6077</span><span class="k">production correct rate (λ = ∞)</span></div>
+      <div class="tile fail"><span class="v mono">+0.17</span><span class="k">best gain, in points, at λ = 2</span></div>
+      <div class="tile"><span class="v mono">1.0</span><span class="k">points needed, set before the run</span></div>
+      <div class="tile fail"><span class="v mono">&minus;3.5</span><span class="k">points at λ = 0.1, the most network shaping</span></div>
+    </div>
+    <div class="figgrid">
+      <figure>
+        <figcaption>
+          <span class="ft">Correct rate falls as the network takes over</span>
+          <span class="fs">Right edge is production. Every step leftward gives the graph more say — and the rate drops.</span>
+        </figcaption>
+        <div class="chart" id="c-sweep"></div>
+        <div class="legend" id="l-sweep"></div>
+      </figure>
+      <figure>
+        <figcaption>
+          <span class="ft">Gain over production, in percentage points</span>
+          <span class="fs">Consensus read. The dashed line is the bar that was set before any number existed.</span>
+        </figcaption>
+        <div class="chart" id="c-gain"></div>
+      </figure>
+    </div>
+    <div class="figgrid">
+      <figure>
+        <figcaption>
+          <span class="ft">Overexpression pays the whole price</span>
+          <span class="fs">Knockdown barely moves. Overexpression loses 10.3 points at λ = 0.1 and never gets back to the production line.</span>
+        </figcaption>
+        <div class="chart" id="c-kdoe"></div>
+        <div class="legend" id="l-kdoe"></div>
+      </figure>
+      <div class="stack">
+        <ul class="pts">
+          <li class="bad"><strong>Monotone in the wrong direction.</strong> The score improves as the graph is turned <em>off</em>. Three of the seven λ values are worse than production; the best is inside noise.</li>
+          <li class="bad"><strong>For CollecTRI, the optimum is production itself</strong> — λ = 8 and λ = ∞ give the identical 0.6220. There was no interior best to find.</li>
+          <li class="bad"><strong>Per transcription factor it is a wash.</strong> Of 131 factors with at least 6 signatures: 18 better, 16 worse, 97 unchanged. Median change 0.000.</li>
+          <li><strong>The graphs themselves were healthy</strong> — 42 of them, 472–1,266 regulators each, median mean-degree 50.2, 0–11 isolated nodes. The redundancy the method targets is real and measurable.</li>
+          <li class="bad"><strong>So the conclusion is not "the graph was broken".</strong> Down-weighting redundant regulators removes more signal than noise. The duplicated proliferation factors carry information, not just repetition.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap col stack">
+    <div class="hd">
+      <div class="eyebrow">Part B</div>
+      <h2>The mechanism filter, and the prior it ran on</h2>
+    </div>
+    <ul class="pts">
+      <li><strong>The question it asked.</strong> For each drug, take its real protein target and walk outward through a network of signed, directed signalling edges. If a regulator the drug appears to move is reachable, the path's signs predict which way it should move. Compare prediction against what the data says.</li>
+      <li><strong>What it would have bought.</strong> Not a better ranking — a flag. Drugs whose apparent effect has no mechanistic story would be marked, never silently rescored.</li>
+      <li><strong>The prior was built from scratch and pinned.</strong> OmniPath has no data release number, so the cached files are the dependency: both tables are checksummed and registered, with a note that re-pulling is a new decision rather than a refresh.</li>
+    </ul>
+    <div class="figgrid">
+      <figure>
+        <figcaption>
+          <span class="ft">86,189 interactions in, 16,518 out</span>
+          <span class="fs">Edges failing each clause, counted over the raw set. The clauses overlap, so these do not sum to the drop.</span>
+        </figcaption>
+        <div class="chart" id="c-funnel"></div>
+      </figure>
+      <figure>
+        <figcaption>
+          <span class="ft">Most paths are 2 to 4 hops long</span>
+          <span class="fs">14,168 drug-target-to-regulator paths found across all cohorts. No hop cap was imposed, because the spec set none.</span>
+        </figcaption>
+        <div class="chart" id="c-hops"></div>
+      </figure>
+    </div>
+    <div class="callout blue">
+      <div class="ct">Three things the build corrected about the written spec</div>
+      <p><strong>1.</strong> The field the spec named, <span class="mono">consensus_sign</span>, does not exist in OmniPath; the real fields are <span class="mono">consensus_stimulation</span> and <span class="mono">consensus_inhibition</span>, so "signed" was implemented as exactly one of them being true. <strong>2.</strong> The literature-support clause drops 54,598 edges against roughly 15,000 each for direction and sign — support, not sign, is what defines this prior. <strong>3.</strong> SIGNOR alone keeps 63% of the edges and 79% of the nodes, so the spec's coverage argument for preferring OmniPath is weaker than it claimed.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <div class="hd col">
+      <div class="eyebrow">Part B result</div>
+      <h2>The filter endorsed the exact failure it was built to catch</h2>
+      <p class="small">The decisive test, written into the spec in advance: anti-oestrogens in the breast cohorts are a <em>known</em> misread of the pipeline. If the mechanism flag does not fire there, the filter does not work and D126 closes. It fired on none of them.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile fail"><span class="v mono">0 / 22</span><span class="k">control rows flagged — more than 11 were needed</span></div>
+      <div class="tile fail"><span class="v mono">1.00</span><span class="k">consistency the filter gave tamoxifen in LumA</span></div>
+      <div class="tile fail"><span class="v mono">0 / 22</span><span class="k">control rows where ESR1 was even reachable</span></div>
+      <div class="tile pass"><span class="v mono">0.165</span><span class="k">degree-confound ρ — the one criterion that passed</span></div>
+    </div>
+    <div class="figgrid">
+      <figure>
+        <figcaption>
+          <span class="ft">Every anti-oestrogen control row, and the empty flag box</span>
+          <span class="fs">The flag fires only in the shaded corner: enough coverage, and a mechanism story that does not hold up. No row gets anywhere near it — and most sit in the top band, where the filter is actively saying "this makes mechanistic sense".</span>
+        </figcaption>
+        <div class="chart" id="c-ctrl"></div>
+      </figure>
+      <figure>
+        <figcaption>
+          <span class="ft">What the filter actually looked at — and what it never saw</span>
+          <span class="fs">How often each regulator was among a drug's top 25 by absolute activity, across the 22 control rows. ESR1, the oestrogen receptor these drugs target, is at zero.</span>
+        </figcaption>
+        <div class="chart" id="c-regs"></div>
+      </figure>
+    </div>
+    <div class="callout">
+      <div class="ct">The cause, and why it matters beyond this experiment</div>
+      <p>The filter examines each drug's 25 largest activity shifts. For anti-oestrogens in breast cohorts those 25 are the proliferation block — E2F7, E2F8, ZNF367, CENPA, E2F1, FOXM1, MXD3, PA2G4, E2F2 — because that is what dominates the signal. ESR1 never makes the list, so the oestrogen axis is never tested. And an ESR1 antagonist genuinely <em>does</em> explain lowering FOXM1 and MYC, so every path checks out and the drug passes.</p>
+      <p>This is the same proliferation dominance found earlier in D80 and D85, reappearing <em>inside the diagnostic built to audit it</em>. The check was aimed at growth arrest, not at mechanism.</p>
+    </div>
+    <figure>
+      <figcaption>
+        <span class="ft">The second failure: there is almost never enough network to check</span>
+        <span class="fs">Mechanism coverage across all 5,914 drug × cohort rows — the share of a drug's 25 regulators reachable from its target. Median 2 of 25.</span>
+      </figcaption>
+      <div class="chart" id="c-cov"></div>
+    </figure>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap stack">
+    <div class="hd col">
+      <div class="eyebrow">Scorecard</div>
+      <h2>The three pre-registered criteria</h2>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Criterion</th><th>Measured</th><th>Bar</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>B5.1</strong> &mdash; known-failure control<br><span class="tiny">anti-oestrogens, MCF7 breast cohorts</span></td>
+            <td class="num">0 of 22 rows (0.000)<br><span class="tiny">7 of 22 without the coverage precondition</span></td>
+            <td class="num">&gt; 0.5</td>
+            <td><span class="verdict f">Fail &mdash; closes D126</span></td>
+          </tr>
+          <tr>
+            <td><strong>B5.2</strong> &mdash; degree confound<br><span class="tiny">flag rate vs target out-degree</span></td>
+            <td class="num">Spearman ρ 0.165<br><span class="tiny">over 203 drugs</span></td>
+            <td class="num">|ρ| &lt; 0.3</td>
+            <td><span class="verdict p">Pass</span></td>
+          </tr>
+          <tr>
+            <td><strong>B5.3</strong> &mdash; coverage floor<br><span class="tiny">enough network to judge on</span></td>
+            <td class="num">0 of 203 drugs (0.000)<br><span class="tiny">37 of 5,914 rows reach 0.4</span></td>
+            <td class="num">&ge; 0.6 of drugs</td>
+            <td><span class="verdict f">Fail</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small col">Two notes on what did <em>not</em> happen. The λ = 2 result of +0.17 points was not rounded up, re-weighted, or re-run on a different read; the +1.0 bar was written and committed before the sweep started. And when the CARNIVAL arm turned out to need a MILP solver that is not installed, it was recorded as not executable rather than quietly replaced with the heuristic it was supposed to license.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap col stack">
+    <div class="hd">
+      <div class="eyebrow">What it means</div>
+      <h2>Reading the result</h2>
+    </div>
+    <ul class="pts">
+      <li class="ok"><strong>The shared representation space did not beat reversal.</strong> It is a clean negative: production is nested inside the proposal, so the comparison has no implementation gap to argue about, and the correct rate went the wrong way at every setting but one.</li>
+      <li><strong>This is the third attempt of its kind to fail</strong>, after the pnet work (D86) and the latent-factor attempts. The pattern is consistent: regulator redundancy is genuinely there, and removing it costs more than it saves.</li>
+      <li class="bad"><strong>Part B failed for a more interesting reason than Part A.</strong> Not "the idea is wrong" but "the thing being inspected was chosen badly". Selecting a drug's 25 biggest shifts guarantees you inspect proliferation, whatever the drug does.</li>
+      <li><strong>Nothing reached production.</strong> The flag was reported-only by design and is not emitted; the live drug ranking is byte-for-byte what it was. With Part A closed at A1 and Part B closed at B3, the whole specification is now resolved and none of it changed the pipeline.</li>
+      <li><strong>If D126 were revived, one thing has to change first:</strong> pick <em>target-proximal</em> regulators — the ones actually downstream of the drug's protein — instead of the 25 largest shifts. That is a different test and would need its own rule fixed in advance, plus its own control. The 46% of drug targets with no outgoing signed edge at all would still cap how far it can go.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap col">
+    <div class="prov">
+      spec &nbsp;docs/SPEC_graph_metric_scoring.md &nbsp;·&nbsp; decisions &nbsp;D125, D125-A1, D125-A1.1, D126-B0, D126-B1<br>
+      part A &nbsp;results/lincs/d125/a1/{rates,graph,per_tf,run}.{tsv,json} &nbsp;·&nbsp; scripts/d125/a1_{config.py,export.R,sweep.py}<br>
+      part B &nbsp;results/lincs/d126/{b0_summary,b1_rows,b1_paths,b1_drugs,b3_criteria}.tsv &nbsp;·&nbsp; scripts/d126/{b0_omnipath.py,b1_consistency.py}<br>
+      prior &nbsp;OmniPath retrieved 2026-11-10, checksummed in config/datasets.yaml &nbsp;·&nbsp; benchmark D84, 1,774 signatures over 329 TFs
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var NS="http://www.w3.org/2000/svg";
+function E(n,a){var e=document.createElementNS(NS,n);if(a)for(var k in a)e.setAttribute(k,a[k]);return e;}
+function T(x,y,s,o){var t=E("text",{x:x,y:y});t.textContent=s;if(o)for(var k in o)t.setAttribute(k,o[k]);return t;}
+function cv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
+var tip=document.getElementById("tip");
+function hook(node,label){
+  node.addEventListener("mouseenter",function(ev){tip.textContent=label;tip.style.opacity="1";});
+  node.addEventListener("mousemove",function(ev){tip.style.left=ev.clientX+"px";tip.style.top=ev.clientY+"px";});
+  node.addEventListener("mouseleave",function(){tip.style.opacity="0";});
+  node.style.cursor="crosshair";
+}
+function svg(host,w,h){
+  var s=E("svg",{viewBox:"0 0 "+w+" "+h,role:"img"});
+  host.innerHTML="";host.appendChild(s);return s;
+}
+var INK="var(--ink)",INK2="var(--ink2)",MUT="var(--muted)",GRID="var(--rule)",AX="var(--axis)",
+    S1="var(--s1)",S2="var(--s2)",S3="var(--s3)",CRIT="var(--crit)",SURF="var(--surface)";
+var FS={font:"12px var(--sans)"};
+function axText(x,y,s,anchor,size,fill){
+  return T(x,y,s,{fill:fill||MUT,"font-size":(size||11.5)+"px","text-anchor":anchor||"middle",
+    "font-family":"IBM Plex Mono, monospace","font-variant-numeric":"tabular-nums"});
+}
+function lbl(x,y,s,anchor,size,fill,weight){
+  return T(x,y,s,{fill:fill||INK2,"font-size":(size||12)+"px","text-anchor":anchor||"start",
+    "font-family":"IBM Plex Sans, sans-serif","font-weight":weight||400});
+}
+
+/* ---------- 1. lambda sweep ---------- */
+var LAM=["0.1","0.25","0.5","1","2","4","8","∞"];
+var SW=[
+ {n:"ARACNe",c:S2,v:[0.5847,0.6005,0.6078,0.6078,0.6137,0.6117,0.6071,0.6104]},
+ {n:"Consensus",c:S1,v:[0.5727,0.5958,0.6037,0.6048,0.6094,0.6077,0.6065,0.6077]},
+ {n:"CollecTRI",c:S3,v:[0.5713,0.5930,0.6051,0.6075,0.6159,0.6208,0.6220,0.6220]}
+];
+function sweep(){
+  var w=560,h=330,L=46,R=108,Tp=18,B=46;
+  var s=svg(document.getElementById("c-sweep"),w,h);
+  var y0=0.5650,y1=0.6280;
+  var X=function(i){return L+i*(w-L-R)/(LAM.length-1);};
+  var Y=function(v){return Tp+(y1-v)*(h-Tp-B)/(y1-y0);};
+  [0.57,0.58,0.59,0.60,0.61,0.62].forEach(function(t){
+    s.appendChild(E("line",{x1:L,x2:w-R,y1:Y(t),y2:Y(t),stroke:GRID,"stroke-width":1}));
+    s.appendChild(axText(L-8,Y(t)+4,t.toFixed(2),"end"));
+  });
+  // separator before infinity
+  var sx=(X(6)+X(7))/2;
+  s.appendChild(E("line",{x1:sx,x2:sx,y1:Tp-4,y2:h-B+6,stroke:AX,"stroke-width":1,"stroke-dasharray":"3 4"}));
+  s.appendChild(lbl(sx-6,Tp+8,"network shaping","end",10.5,MUT));
+  s.appendChild(lbl(sx+6,Tp+8,"production","start",10.5,MUT));
+  s.appendChild(E("line",{x1:L,x2:w-R,y1:h-B,y2:h-B,stroke:AX,"stroke-width":1}));
+  LAM.forEach(function(t,i){s.appendChild(axText(X(i),h-B+18,t));});
+  s.appendChild(lbl((L+w-R)/2,h-B+38,"λ  —  larger means the network matters less","middle",11.5,MUT));
+  s.appendChild(lbl(L-34,Tp-4,"correct rate","start",11,MUT));
+  SW.forEach(function(se){
+    var d=se.v.map(function(v,i){return (i?"L":"M")+X(i)+" "+Y(v);}).join(" ");
+    s.appendChild(E("path",{d:d,fill:"none",stroke:se.c,"stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"}));
+    se.v.forEach(function(v,i){
+      var c=E("circle",{cx:X(i),cy:Y(v),r:3.6,fill:se.c,stroke:SURF,"stroke-width":2});
+      hook(c,se.n+"  λ="+LAM[i]+"  "+v.toFixed(4));
+      s.appendChild(c);
+    });
+    s.appendChild(lbl(X(7)+10,Y(se.v[7])+4,se.n,"start",12,se.c,600));
+  });
+  document.getElementById("l-sweep").innerHTML=SW.map(function(se){
+    return '<span><i style="background:'+se.c+'"></i>'+se.n+'</span>';}).join("")+
+    '<span style="color:var(--muted)">1,774 signatures · main analysis</span>';
+}
+
+/* ---------- 2. gain bars ---------- */
+function gain(){
+  var g=[{l:"0.1",v:-3.50},{l:"0.25",v:-1.19},{l:"0.5",v:-0.40},{l:"1",v:-0.29},
+         {l:"2",v:0.17},{l:"4",v:0.00},{l:"8",v:-0.12}];
+  var w=560,h=330,L=52,R=28,Tp=26,B=48;
+  var s=svg(document.getElementById("c-gain"),w,h);
+  var x0=-4.0,x1=1.45;
+  var X=function(v){return L+(v-x0)*(w-L-R)/(x1-x0);};
+  var rowh=(h-Tp-B)/g.length;
+  [-4,-3,-2,-1,0,1].forEach(function(t){
+    s.appendChild(E("line",{x1:X(t),x2:X(t),y1:Tp-6,y2:h-B,stroke:t===0?AX:GRID,"stroke-width":1}));
+    s.appendChild(axText(X(t),h-B+18,(t>0?"+":"")+t));
+  });
+  s.appendChild(E("line",{x1:X(1),x2:X(1),y1:Tp-6,y2:h-B,stroke:CRIT,"stroke-width":1.5,"stroke-dasharray":"5 4"}));
+  s.appendChild(lbl(X(1),Tp-12,"bar: +1.0","middle",11,CRIT,600));
+  g.forEach(function(d,i){
+    var y=Tp+i*rowh+rowh*0.22,bh=rowh*0.52;
+    var pos=d.v>=0,x=pos?X(0):X(d.v),ww=Math.max(1.5,Math.abs(X(d.v)-X(0)));
+    var r=E("rect",{x:x,y:y,width:ww,height:bh,rx:2,fill:pos?S1:CRIT});
+    hook(r,"λ="+d.l+"   "+(d.v>0?"+":"")+d.v.toFixed(2)+" pts");
+    s.appendChild(r);
+    s.appendChild(axText(L-10,y+bh/2+4,"λ "+d.l,"end",11.5,INK2));
+    var tx=pos?X(d.v)+6:X(d.v)-6;
+    s.appendChild(axText(tx,y+bh/2+4,(d.v>0?"+":"")+d.v.toFixed(2),pos?"start":"end",11,INK2));
+  });
+  s.appendChild(lbl((L+w-R)/2,h-B+38,"gain over production, percentage points","middle",11.5,MUT));
+}
+
+/* ---------- 3. kd vs oe ---------- */
+function kdoe(){
+  var SE=[
+   {n:"Overexpression",c:S2,v:[0.5878,0.6527,0.6450,0.6603,0.6794,0.6832,0.6870,0.6908]},
+   {n:"Knockdown",c:S1,v:[0.5701,0.5860,0.5966,0.5952,0.5972,0.5946,0.5926,0.5933]}
+  ];
+  var w=560,h=300,L=46,R=118,Tp=18,B=46;
+  var s=svg(document.getElementById("c-kdoe"),w,h);
+  var y0=0.555,y1=0.705;
+  var X=function(i){return L+i*(w-L-R)/(LAM.length-1);};
+  var Y=function(v){return Tp+(y1-v)*(h-Tp-B)/(y1-y0);};
+  [0.56,0.59,0.62,0.65,0.68,0.70].forEach(function(t){
+    s.appendChild(E("line",{x1:L,x2:w-R,y1:Y(t),y2:Y(t),stroke:GRID,"stroke-width":1}));
+    s.appendChild(axText(L-8,Y(t)+4,t.toFixed(2),"end"));
+  });
+  var sx=(X(6)+X(7))/2;
+  s.appendChild(E("line",{x1:sx,x2:sx,y1:Tp-4,y2:h-B+6,stroke:AX,"stroke-width":1,"stroke-dasharray":"3 4"}));
+  s.appendChild(E("line",{x1:L,x2:w-R,y1:h-B,y2:h-B,stroke:AX,"stroke-width":1}));
+  LAM.forEach(function(t,i){s.appendChild(axText(X(i),h-B+18,t));});
+  s.appendChild(lbl((L+w-R)/2,h-B+38,"λ","middle",11.5,MUT));
+  SE.forEach(function(se){
+    s.appendChild(E("line",{x1:X(0),x2:X(7),y1:Y(se.v[7]),y2:Y(se.v[7]),stroke:se.c,
+      "stroke-width":1,"stroke-dasharray":"2 5",opacity:.7}));
+    var d=se.v.map(function(v,i){return (i?"L":"M")+X(i)+" "+Y(v);}).join(" ");
+    s.appendChild(E("path",{d:d,fill:"none",stroke:se.c,"stroke-width":2,"stroke-linejoin":"round"}));
+    se.v.forEach(function(v,i){
+      var c=E("circle",{cx:X(i),cy:Y(v),r:3.4,fill:se.c,stroke:SURF,"stroke-width":2});
+      hook(c,se.n+"  λ="+LAM[i]+"  "+v.toFixed(4));s.appendChild(c);
+    });
+    s.appendChild(lbl(X(7)+10,Y(se.v[7])+4,se.n,"start",11.5,se.c,600));
+  });
+  document.getElementById("l-kdoe").innerHTML=SE.map(function(se){
+    return '<span><i style="background:'+se.c+'"></i>'+se.n+'</span>';}).join("")+
+    '<span style="color:var(--muted)">dotted line = that arm’s production level</span>';
+}
+
+/* ---------- 4. omnipath funnel ---------- */
+function funnel(){
+  var d=[{l:"Fails literature support",v:54598,c:MUT},
+         {l:"No consensus sign",v:15073,c:MUT},
+         {l:"No consensus direction",v:14939,c:MUT},
+         {l:"Kept: signed + directed",v:16518,c:S1}];
+  var w=560,h=280,L=168,R=70,Tp=28,B=42;
+  var s=svg(document.getElementById("c-funnel"),w,h);
+  var max=60000,X=function(v){return L+v*(w-L-R)/max;};
+  [0,20000,40000,60000].forEach(function(t){
+    s.appendChild(E("line",{x1:X(t),x2:X(t),y1:Tp-8,y2:h-B,stroke:t===0?AX:GRID,"stroke-width":1}));
+    s.appendChild(axText(X(t),h-B+18,t===0?"0":(t/1000)+"k"));
+  });
+  s.appendChild(lbl(L,Tp-16,"86,189 raw interactions pulled 2026-11-10","start",11.5,INK2,600));
+  var rowh=(h-Tp-B)/d.length;
+  d.forEach(function(r,i){
+    var y=Tp+i*rowh+rowh*0.2,bh=rowh*0.54;
+    var rc=E("rect",{x:X(0),y:y,width:Math.max(2,X(r.v)-X(0)),height:bh,rx:2,fill:r.c,
+      opacity:r.c===MUT?0.55:1});
+    hook(rc,r.l+": "+r.v.toLocaleString()+" edges");
+    s.appendChild(rc);
+    s.appendChild(lbl(L-10,y+bh/2+4,r.l,"end",11.5,i===3?INK:INK2,i===3?600:400));
+    s.appendChild(axText(X(r.v)+7,y+bh/2+4,r.v.toLocaleString(),"start",11,i===3?S1:MUT));
+  });
+  s.appendChild(lbl((L+w-R)/2,h-B+36,"edges · 5,493 nodes survive","middle",11.5,MUT));
+}
+
+/* ---------- 5. hops ---------- */
+function hops(){
+  var d=[[0,24],[1,670],[2,3447],[3,4909],[4,3629],[5,1222],[6,170],[7,79],[8,18]];
+  var w=560,h=280,L=52,R=20,Tp=22,B=50;
+  var s=svg(document.getElementById("c-hops"),w,h);
+  var max=5200,Y=function(v){return Tp+(1-v/max)*(h-Tp-B);};
+  [0,1000,2000,3000,4000,5000].forEach(function(t){
+    s.appendChild(E("line",{x1:L,x2:w-R,y1:Y(t),y2:Y(t),stroke:t===0?AX:GRID,"stroke-width":1}));
+    s.appendChild(axText(L-8,Y(t)+4,t===0?"0":(t/1000)+"k","end"));
+  });
+  var bw=(w-L-R)/d.length;
+  d.forEach(function(r){
+    var x=L+r[0]*bw+bw*0.16,ww=bw*0.68;
+    var rc=E("rect",{x:x,y:Y(r[1]),width:ww,height:Math.max(1.5,Y(0)-Y(r[1])),rx:2,fill:S1});
+    hook(rc,r[0]+" hop"+(r[0]===1?"":"s")+": "+r[1].toLocaleString()+" paths");
+    s.appendChild(rc);
+    s.appendChild(axText(x+ww/2,h-B+18,r[0]));
+  });
+  s.appendChild(lbl((L+w-R)/2,h-B+38,"signed hops from drug target to regulator","middle",11.5,MUT));
+}
+
+/* ---------- 6. control scatter ---------- */
+var CTRL=[
+ ["BRCA-Basal","estramustine",0.20,0.000],["BRCA-Her2","bazedoxifene",0.16,0.000],
+ ["BRCA-Her2","clomifene",0.16,0.250],["BRCA-Her2","estramustine",0.04,0.000],
+ ["BRCA-Her2","fulvestrant",0.08,0.500],["BRCA-Her2","raloxifene",0.08,1.000],
+ ["BRCA-Her2","tamoxifen",0.16,1.000],["BRCA-Her2","toremifene",0.08,1.000],
+ ["BRCA-LumA","bazedoxifene",0.12,0.000],["BRCA-LumA","clomifene",0.16,0.750],
+ ["BRCA-LumA","fulvestrant",0.24,1.000],["BRCA-LumA","raloxifene",0.20,1.000],
+ ["BRCA-LumA","tamoxifen",0.20,1.000],["BRCA-LumA","toremifene",0.20,1.000],
+ ["BRCA-LumB","bazedoxifene",0.24,0.000],["BRCA-LumB","clomifene",0.08,1.000],
+ ["BRCA-LumB","estramustine",0.08,0.000],["BRCA-LumB","fulvestrant",0.24,0.833],
+ ["BRCA-LumB","raloxifene",0.24,0.833],["BRCA-LumB","tamoxifen",0.24,0.833],
+ ["BRCA-LumB","toremifene",0.24,0.833]
+];
+function ctrl(){
+  var w=560,h=340,L=54,R=22,Tp=24,B=52;
+  var s=svg(document.getElementById("c-ctrl"),w,h);
+  var X=function(v){return L+(v/0.52)*(w-L-R);};
+  var Y=function(v){return Tp+(1-v)*(h-Tp-B);};
+  // bands
+  s.appendChild(E("rect",{x:X(0),y:Y(1),width:X(0.52)-X(0),height:Y(0.5)-Y(1),
+    fill:S1,opacity:.07}));
+  s.appendChild(lbl(X(0.515),Y(0.97)+4,"filter says: mechanism holds up","end",10.5,MUT));
+  // flag box
+  s.appendChild(E("rect",{x:X(0.4),y:Y(0.5),width:X(0.52)-X(0.4),height:Y(0)-Y(0.5),
+    fill:CRIT,opacity:.12,stroke:CRIT,"stroke-width":1,"stroke-dasharray":"4 3"}));
+  s.appendChild(lbl(X(0.46),Y(0.28),"flag fires","middle",11,CRIT,600));
+  s.appendChild(lbl(X(0.46),Y(0.28)+14,"here only","middle",11,CRIT,600));
+  [0,0.25,0.5,0.75,1].forEach(function(t){
+    s.appendChild(E("line",{x1:L,x2:w-R,y1:Y(t),y2:Y(t),stroke:t===0?AX:GRID,"stroke-width":1}));
+    s.appendChild(axText(L-8,Y(t)+4,t.toFixed(2),"end"));
+  });
+  [0,0.1,0.2,0.3,0.4,0.5].forEach(function(t){
+    s.appendChild(axText(X(t),h-B+18,t.toFixed(1)));
+    if(t>0)s.appendChild(E("line",{x1:X(t),x2:X(t),y1:Tp,y2:h-B,stroke:GRID,"stroke-width":1,opacity:.6}));
+  });
+  s.appendChild(E("line",{x1:L,x2:w-R,y1:Y(0.5),y2:Y(0.5),stroke:AX,"stroke-width":1.4,"stroke-dasharray":"5 4"}));
+  s.appendChild(lbl(L+6,Y(0.5)-6,"no information","start",10.5,MUT));
+  s.appendChild(E("line",{x1:X(0.4),x2:X(0.4),y1:Tp,y2:h-B,stroke:CRIT,"stroke-width":1.2,"stroke-dasharray":"4 3"}));
+  s.appendChild(lbl(X(0.4)-6,Tp+10,"coverage floor 0.40","end",10.5,CRIT));
+  // jitter identical points apart deterministically
+  var seen={};
+  CTRL.forEach(function(r){
+    var k=r[2]+"|"+r[3],n=seen[k]=(seen[k]||0)+1;
+    var off=(n-1)*7-((n-1)?3:0);
+    var cx=X(r[2])+off*0.9, cy=Y(r[3])+((n-1)%2?4:-4)*((n-1)?1:0);
+    var c=E("circle",{cx:cx,cy:cy,r:5,fill:S1,"fill-opacity":.82,stroke:SURF,"stroke-width":2});
+    hook(c,r[1]+" · "+r[0]+"  cov "+r[2].toFixed(2)+"  consistent "+r[3].toFixed(2));
+    s.appendChild(c);
+  });
+  s.appendChild(lbl((L+w-R)/2,h-B+38,"mechanism coverage  —  share of the drug’s 25 regulators reachable from its target","middle",11,MUT));
+  s.appendChild(T(14,(Tp+h-B)/2,"consistency",{fill:MUT,"font-size":"11px","text-anchor":"middle",
+    "font-family":"IBM Plex Sans, sans-serif",transform:"rotate(-90 14 "+((Tp+h-B)/2)+")"}));
+  s.appendChild(lbl(X(0.02),Y(0.07),"21 of 22 rows shown — one had no reachable regulator at all","start",10.5,MUT));
+}
+
+/* ---------- 7. regulator frequency ---------- */
+function regs(){
+  var d=[["E2F7",19],["ZNF367",18],["E2F8",16],["CENPA",16],["E2F1",15],["ZNF467",14],
+         ["PHF19",13],["FOXM1",13],["MSANTD3",12],["ZNF146",12],["MXD3",12],["PA2G4",11],
+         ["MYBL1",10],["E2F2",10],["ESR1",0]];
+  var w=560,h=400,L=92,R=48,Tp=24,B=44;
+  var s=svg(document.getElementById("c-regs"),w,h);
+  var max=22,X=function(v){return L+v*(w-L-R)/max;};
+  [0,5,10,15,20].forEach(function(t){
+    s.appendChild(E("line",{x1:X(t),x2:X(t),y1:Tp-8,y2:h-B,stroke:t===0?AX:GRID,"stroke-width":1}));
+    s.appendChild(axText(X(t),h-B+18,t));
+  });
+  s.appendChild(E("line",{x1:X(22),x2:X(22),y1:Tp-8,y2:h-B,stroke:AX,"stroke-width":1,"stroke-dasharray":"3 4"}));
+  s.appendChild(lbl(X(22),Tp-12,"all 22","middle",10.5,MUT));
+  var rowh=(h-Tp-B)/d.length;
+  d.forEach(function(r,i){
+    var y=Tp+i*rowh+rowh*0.18,bh=rowh*0.6,last=r[0]==="ESR1";
+    var rc=E("rect",{x:X(0),y:y,width:Math.max(last?0:2,X(r[1])-X(0)),height:bh,rx:2,
+      fill:last?CRIT:S1,opacity:last?1:.9});
+    hook(rc,r[0]+": top-25 in "+r[1]+" of 22 control rows");
+    s.appendChild(rc);
+    s.appendChild(axText(L-10,y+bh/2+4,r[0],"end",11,last?CRIT:INK2));
+    s.appendChild(axText(X(r[1])+7,y+bh/2+4,last?"0  — never looked at":String(r[1]),"start",11,last?CRIT:MUT));
+  });
+  s.appendChild(lbl((L+w-R)/2,h-B+36,"control rows (of 22) where the regulator was in the drug’s top 25","middle",11,MUT));
+}
+
+/* ---------- 8. coverage histogram ---------- */
+function cov(){
+  var bins=[["0.00",2036],["0.04",520],["0.08",770],["0.12",806],["0.16",610],["0.20",516],
+            ["0.24",282],["0.28",170],["0.32",100],["0.36",67],["0.40+",37]];
+  var w=880,h=300,L=58,R=30,Tp=30,B=54;
+  var s=svg(document.getElementById("c-cov"),w,h);
+  var max=2200,Y=function(v){return Tp+(1-v/max)*(h-Tp-B);};
+  [0,500,1000,1500,2000].forEach(function(t){
+    s.appendChild(E("line",{x1:L,x2:w-R,y1:Y(t),y2:Y(t),stroke:t===0?AX:GRID,"stroke-width":1}));
+    s.appendChild(axText(L-8,Y(t)+4,t===0?"0":t.toLocaleString(),"end"));
+  });
+  var bw=(w-L-R)/bins.length;
+  bins.forEach(function(r,i){
+    var last=i===bins.length-1;
+    var x=L+i*bw+bw*0.14,ww=bw*0.72;
+    var rc=E("rect",{x:x,y:Y(r[1]),width:ww,height:Math.max(2,Y(0)-Y(r[1])),rx:2,fill:last?CRIT:S1});
+    hook(rc,"coverage "+r[0]+": "+r[1].toLocaleString()+" rows");
+    s.appendChild(rc);
+    s.appendChild(axText(x+ww/2,h-B+18,r[0]));
+    if(last)s.appendChild(axText(x+ww/2,Y(r[1])-8,"37",void 0,11,CRIT));
+  });
+  var fx=L+(bins.length-1)*bw+bw*0.02;
+  s.appendChild(E("line",{x1:fx,x2:fx,y1:Tp-10,y2:h-B,stroke:CRIT,"stroke-width":1.4,"stroke-dasharray":"5 4"}));
+  s.appendChild(lbl(fx-8,Tp-14,"B5.3 floor: coverage ≥ 0.40","end",11.5,CRIT,600));
+  s.appendChild(lbl(L,Tp-14,"median 0.08  —  2 of 25 regulators reachable","start",11.5,INK2,600));
+  s.appendChild(lbl((L+w-R)/2,h-B+38,"mechanism coverage, all 5,914 drug × cohort rows","middle",11.5,MUT));
+}
+
+function draw(){sweep();gain();kdoe();funnel();hops();ctrl();regs();cov();}
+draw();
+var mq=window.matchMedia("(prefers-color-scheme: dark)");
+if(mq.addEventListener)mq.addEventListener("change",draw);
+})();
+</script>

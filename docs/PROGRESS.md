@@ -884,6 +884,11 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   A1 and Part B closed here, all of `SPEC_graph_metric_scoring.md` is resolved.** A revived D126 would need a
   different regulator-selection rule — the drug's target-proximal regulators rather than its 25 largest shifts —
   which is a new decision with its own control.
+- **Plain-language write-up (2026-11-11):** `docs/REPORT_graph_metric_scoring.html` — a standalone page covering the
+  proposed scoring function, the run order, and both failures, with charts drawn from the committed result tables
+  (lambda sweep and gain vs the +1.0 bar; the OmniPath filter; path lengths; the B5.1 control scatter with its empty
+  flag box; top-25 regulator frequency with ESR1 at zero; the coverage histogram against the 0.4 floor). Also
+  published privately at https://claude.ai/artifact/4cXy1rRbMjZE2Y3Kw2qb5K. Report only; no numbers are produced here.
 
 ## 2026-11-10: D126 B0 — the signed signaling prior is pulled, filtered, cached and registered
 - `scripts/d126/b0_omnipath.py`. **Primary prior: 16,518 signed and directed edges over 5,493 nodes** from 86,189 raw
