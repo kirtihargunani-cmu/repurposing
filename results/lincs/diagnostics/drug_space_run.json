@@ -1,0 +1,42 @@
+{
+ "n_cohorts": 55,
+ "common_drugs": 1144,
+ "common_regulators": 571,
+ "center": true,
+ "scale": false,
+ "own": {
+  "effective_dim_median": 6.04,
+  "effective_dim_min": 4.63,
+  "effective_dim_max": 9.89,
+  "pc1_var_median": 0.335
+ },
+ "common": {
+  "effective_dim_median": 5.2,
+  "effective_dim_min": 4.09,
+  "effective_dim_max": 8.34,
+  "pc1_var_median": 0.392,
+  "pcs_to_80_median": 8.0,
+  "pcs_to_90_median": 23.0,
+  "coherence_median": 0.114,
+  "pc1_amplitude_rho_median": 0.717
+ },
+ "own_pc1_amplitude_rho_median": 0.685,
+ "esr1_pc1_rank": {
+  "n_cohorts_scoring_esr1": 33,
+  "median_rank": 744.0,
+  "best_rank": 280.0
+ },
+ "pc1_alignment": {
+  "median_abs_cos": 0.8235,
+  "min_abs_cos": 0.6416,
+  "frac_pairs_above_0_8": 0.6781
+ },
+ "patient_side_for_comparison": {
+  "source": "results/step10_v2/variability.tsv",
+  "n": 41,
+  "effective_dim_median": 7.99,
+  "eff_dim_n30_median": 6.51,
+  "pc1_var_median": 0.284,
+  "note": "across patients within a cohort, 41 cohorts; the drug-side numbers are across drugs"
+ }
+}
