@@ -884,6 +884,37 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   A1 and Part B closed here, all of `SPEC_graph_metric_scoring.md` is resolved.** A revived D126 would need a
   different regulator-selection rule — the drug's target-proximal regulators rather than its 25 largest shifts —
   which is a new decision with its own control.
+## 2026-11-12: precursor — gene-level reversal inside the ESR1 regulon does NOT recover the anti-estrogen axis
+- Reported only. `scripts/precursor/{export_regulons.R,esr1_regulon_reversal.py}`, outputs
+  `results/lincs/diagnostics/precursor_esr1_regulon/`. No threshold, no pass/fail, no D-number, nothing written to
+  production. Premise under test: D126-B1 found anti-estrogens are never examined on their own axis because ESR1 is
+  not among a drug's 25 largest regulator shifts, and the dimension diagnostic put ESR1 at median rank #744 on PC1.
+  Does keeping the regulon's per-target weights and scoring on its own GENES recover it?
+- Quantity, one level below production's `rev = -sum_i w_i a_i / sqrt(sum_i w_i^2)`: `w_ij = |tfmode_ij| *
+  likelihood_ij * d_j` over regulator i's targets, `rev_i = -(sum_j w_ij g_kj) / sqrt(sum_j w_ij^2)`. `d` is the
+  Step 4 tumor-vs-GTEx z; `g` is the 79c line-specific profile consensused over the cohort's lines exactly as 79e
+  builds drug activity. (The signed construction is the same product: `tfmode` cancels in `d_j * g_j`, leaving only
+  `tfmode` vs `tfmode^2` as the weight.) Four breast cohorts, 1,511 drugs, ARACNe subtype networks and CollecTRI.
+- **Polarity verified first:** the same construction over ALL genes reproduces production's regulator-level `rev` at
+  Spearman 0.74-0.80 per cohort, so the restricted numbers are a finding and not an orientation bug.
+- **ARACNe arm: inverted.** ESR1-restricted reversal puts the anti-estrogens at the BOTTOM of the cohort's drugs in
+  the three ER-relevant cohorts - ESR1 ranks **1082 of 1082** regulons in BRCA-Her2, **1124 of 1134** in LumB, **930
+  of 1093** in LumA by how highly it ranks them (median percentile 0.137). It ranks them high only in **BRCA-Basal**
+  (ESR1 rank 55 of 1146, mean percentile 0.87) - the ER-negative cohort where 79e's own NEG_CONTROLS say they should
+  not be specific. Production meanwhile gives these drugs rev_pct 78-99 in Her2 / LumA / LumB.
+- **CollecTRI arm: no inversion, but no lift.** ESR1 is an unremarkable regulon - rank 241 / 484 (Her2), 305 (LumA),
+  194 (LumB), median percentile 0.544 - and again its best cohort is BRCA-Basal (rank 55).
+- **The regulons that do rank anti-estrogens highest are incoherent** (KDM2B, NKRF, ZNF132, MYC, SSRP1, POU1F1), so
+  this is not "a different regulon found it".
+- **Reading: this is a reference-choice problem, not a resolution problem.** `d` is tumor vs GTEx normal breast, and
+  normal breast is ER-active, so ESR1's targets do not read as up-in-tumor at gene level; an anti-estrogen's push on
+  them agrees with the tumor-vs-normal direction instead of opposing it. The aggregate msviper NES is a rank
+  enrichment over the whole ranking, not a weighted dot product on the same genes, which is why the sign differs
+  when you drop a level. This touches the open item on using TCGA adjacent normals in drug ranking (D48, D57-D60).
+- **Not covered:** the raw (non-line-specific) profile arm; estradiol as an agonist anti-control is not among the
+  scored drugs; one weighting only. A spec for regulon-level scoring would have to answer the reference question
+  first - going finer exposes it rather than fixing it.
+
 ## 2026-11-12: drug-side dimension diagnostic — the drug space is ~5 effective dimensions, and its leading axis is potency
 - Reported only. `scripts/diagnostics/drug_space_dimension.py`, outputs `results/lincs/diagnostics/`. No threshold, no
   pass/fail, no D-number; nothing in production is read or written. Input is the 79e consensus drug activity dumped
