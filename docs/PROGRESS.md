@@ -884,6 +884,32 @@ Summary in one paragraph: the v2 pipeline now runs end to end on the TF-only ARA
   A1 and Part B closed here, all of `SPEC_graph_metric_scoring.md` is resolved.** A revived D126 would need a
   different regulator-selection rule — the drug's target-proximal regulators rather than its 25 largest shifts —
   which is a new decision with its own control.
+## 2026-11-12: drug-side dimension diagnostic — the drug space is ~5 effective dimensions, and its leading axis is potency
+- Reported only. `scripts/diagnostics/drug_space_dimension.py`, outputs `results/lincs/diagnostics/`. No threshold, no
+  pass/fail, no D-number; nothing in production is read or written. Input is the 79e consensus drug activity dumped
+  by D126-B1, i.e. the quantity the score actually uses. Method mirrors `86_subgroup_variability.R` so the drug-side
+  and patient-side numbers are comparable (participation ratio of the PCA eigenvalues, regulators centered).
+- Two arms, because cohorts differ in drug count (1,144-1,871) and regulator count (1,003-1,223) and both shift a
+  spectrum on their own. **1,144 pert_ids and 571 regulators are present in all 55 cohorts**, so the comparable arm
+  is an exact common frame — no subsampling and no RNG, which 86 could not manage on the patient side.
+- **Effective dimension: median 5.20 (4.09-8.34) in the common frame, 6.04 in each cohort's own space.** PC1 takes a
+  median 39% of the variance; 2 PCs reach half, 8 reach 80%, 23 reach 90%. For comparison the patient side is 7.99
+  (6.51 at fixed n=30). **The drug space is more collapsed than the tumor space, not less.**
+- **The cohorts largely share one leading axis:** pairwise |cos| between cohorts' PC1 loadings has median 0.82, min
+  0.64, and 68% of pairs exceed 0.8. It is not cohort-specific biology.
+- **And that axis is mostly potency, not direction.** |PC1 score| against the drug's own activity magnitude:
+  Spearman **0.685** median in own space, **0.717** in the common frame (range 0.54-0.80). Its top loadings are broad
+  chromatin / zinc-finger regulators — PRDM10 (top 25 in 51 of 55 cohorts), ZFP91 (48), ADNP (48), ZBTB11 (46),
+  ZBTB1 (42), RLF (40) — **not** the E2F / FOXM1 proliferation block that dominates per-drug |activity| (D126-B1).
+- **The number that settles the condensing question: ESR1 ranks median #744 on PC1 by |loading|** (33 cohorts score
+  it; best #280). In breast: BRCA-Basal #663/1052, BRCA-Her2 #686/1003, BRCA-LumA #867/1038, BRCA-LumB #937/1054.
+  Truncating to the top PCs would delete the target-specific axes outright, and whitening is A1's small-lambda arm,
+  which lost monotonically. So the space condenses easily and condensing it for scoring remains the wrong move.
+- **What this does open, and it is new:** PC1 looks like a nuisance amplitude axis shared across cohorts rather than
+  a biological direction. Removing it is confound removal, not dimension reduction, and is a different proposal from
+  D125. It would need its own D-number, the D84 benchmark, and the 22-row anti-estrogen control, because drug potency
+  may be real efficacy signal — this diagnostic does not show that removing it helps.
+
 - **Plain-language write-up (2026-11-11):** `docs/REPORT_graph_metric_scoring.html` — a standalone page covering the
   proposed scoring function, the run order, and both failures, with charts drawn from the committed result tables
   (lambda sweep and gain vs the +1.0 bar; the OmniPath filter; path lengths; the B5.1 control scatter with its empty
