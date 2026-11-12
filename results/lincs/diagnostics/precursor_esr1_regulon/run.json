@@ -1,0 +1,111 @@
+{
+ "weight": "abs_tfmode_x_likelihood",
+ "min_targets": 10,
+ "signature": "z_tumor_vs_gtex.tsv",
+ "cohorts": {
+  "BRCA-Basal|aracne": {
+   "cohort": "BRCA-Basal",
+   "arm": "aracne",
+   "net": "BRCA_BAS",
+   "n_drugs": 1511,
+   "n_regulons": 1146,
+   "polarity_rho_vs_production": 0.803,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 55,
+   "esr1_mean_ae_pct": 0.8728,
+   "best_regulon": "KDM2B",
+   "best_regulon_mean_ae_pct": 0.9355
+  },
+  "BRCA-Basal|collectri": {
+   "cohort": "BRCA-Basal",
+   "arm": "collectri",
+   "net": "collectri",
+   "n_drugs": 1511,
+   "n_regulons": 484,
+   "polarity_rho_vs_production": 0.803,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 55,
+   "esr1_mean_ae_pct": 0.8215,
+   "best_regulon": "MYC",
+   "best_regulon_mean_ae_pct": 0.9286
+  },
+  "BRCA-Her2|aracne": {
+   "cohort": "BRCA-Her2",
+   "arm": "aracne",
+   "net": "BRCA",
+   "n_drugs": 1511,
+   "n_regulons": 1082,
+   "polarity_rho_vs_production": 0.738,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 1082,
+   "esr1_mean_ae_pct": 0.0386,
+   "best_regulon": "NKRF",
+   "best_regulon_mean_ae_pct": 0.9116
+  },
+  "BRCA-Her2|collectri": {
+   "cohort": "BRCA-Her2",
+   "arm": "collectri",
+   "net": "collectri",
+   "n_drugs": 1511,
+   "n_regulons": 484,
+   "polarity_rho_vs_production": 0.738,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 241,
+   "esr1_mean_ae_pct": 0.4951,
+   "best_regulon": "POU1F1",
+   "best_regulon_mean_ae_pct": 0.8703
+  },
+  "BRCA-LumA|aracne": {
+   "cohort": "BRCA-LumA",
+   "arm": "aracne",
+   "net": "BRCA_LUMA",
+   "n_drugs": 1511,
+   "n_regulons": 1093,
+   "polarity_rho_vs_production": 0.792,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 930,
+   "esr1_mean_ae_pct": 0.262,
+   "best_regulon": "ZNF132",
+   "best_regulon_mean_ae_pct": 0.9468
+  },
+  "BRCA-LumA|collectri": {
+   "cohort": "BRCA-LumA",
+   "arm": "collectri",
+   "net": "collectri",
+   "n_drugs": 1511,
+   "n_regulons": 484,
+   "polarity_rho_vs_production": 0.792,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 305,
+   "esr1_mean_ae_pct": 0.4073,
+   "best_regulon": "SSRP1",
+   "best_regulon_mean_ae_pct": 0.9189
+  },
+  "BRCA-LumB|aracne": {
+   "cohort": "BRCA-LumB",
+   "arm": "aracne",
+   "net": "BRCA_LUMB",
+   "n_drugs": 1511,
+   "n_regulons": 1134,
+   "polarity_rho_vs_production": 0.76,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 1124,
+   "esr1_mean_ae_pct": 0.1051,
+   "best_regulon": "MYC",
+   "best_regulon_mean_ae_pct": 0.9093
+  },
+  "BRCA-LumB|collectri": {
+   "cohort": "BRCA-LumB",
+   "arm": "collectri",
+   "net": "collectri",
+   "n_drugs": 1511,
+   "n_regulons": 484,
+   "polarity_rho_vs_production": 0.76,
+   "esr1_in_network": true,
+   "esr1_rank_by_mean_ae_pct": 194,
+   "esr1_mean_ae_pct": 0.5751,
+   "best_regulon": "SSRP1",
+   "best_regulon_mean_ae_pct": 0.9102
+  }
+ }
+}
