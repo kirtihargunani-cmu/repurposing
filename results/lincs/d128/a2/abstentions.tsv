@@ -1,0 +1,27 @@
+gene_arm	M_abstain_reason	R_abstain_reason	n
+all_bing		below_floor_R:4<10	226
+all_bing		below_floor_R:5<10	262
+all_bing		below_floor_R:6<10	575
+all_bing		below_floor_R:7<10	1483
+all_bing		below_floor_R:8<10	1232
+all_bing		below_floor_R:9<10	1169
+all_bing	ambiguous_action:direction_assumed		1241
+all_bing	no_footprint	no_footprint	31404
+landmark_only		below_floor_R:6<10	18
+landmark_only		below_floor_R:7<10	46
+landmark_only		below_floor_R:8<10	63
+landmark_only		below_floor_R:9<10	210
+landmark_only	ambiguous_action:direction_assumed		1240
+landmark_only	ambiguous_action:direction_assumed	below_floor_R:8<10	1
+landmark_only	below_floor_M:6<10	below_floor_R:2<10	342
+landmark_only	below_floor_M:6<10	below_floor_R:3<10	706
+landmark_only	below_floor_M:6<10	below_floor_R:4<10	2011
+landmark_only	below_floor_M:6<10	below_floor_R:5<10	1892
+landmark_only	below_floor_M:6<10	below_floor_R:6<10	51
+landmark_only	below_floor_M:8<10	below_floor_R:3<10	2
+landmark_only	below_floor_M:8<10	below_floor_R:4<10	88
+landmark_only	below_floor_M:8<10	below_floor_R:5<10	230
+landmark_only	below_floor_M:8<10	below_floor_R:6<10	285
+landmark_only	below_floor_M:8<10	below_floor_R:7<10	507
+landmark_only	below_floor_M:8<10	below_floor_R:8<10	324
+landmark_only	no_footprint	no_footprint	31404

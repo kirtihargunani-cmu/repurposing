@@ -180,3 +180,28 @@ def test_null_scoring_does_not_alter_the_real_target():
 def test_null_summary_percentile():
     s = N.summarise([0.0, 0.1, 0.2, 0.3], 0.25)
     assert s["n_null"] == 4 and s["percentile"] == pytest.approx(75.0)
+
+
+# --- D128-A3: the vectorised null fast path must be the SAME number, not an approximation -------------------------
+def test_fast_nulls_equal_score_mechanism():
+    """nulls.m_null_* must reproduce the per-draw score_mechanism path exactly where the shortcut applies."""
+    rng = np.random.default_rng(7)
+    n = 60
+    e = rng.choice([-1.0, 1.0], n)
+    z = rng.normal(0, 2, n)
+    lm = rng.random(n) < 0.3
+    assert N.exact_shortcut_ok(e, z)
+    fz = S.bounded(z)
+    slow = [S.score_mechanism(list(range(n)), N.shuffled_edge_signs(e, i), 1, z, landmark_mask=lm).value
+            for i in range(25)]
+    assert np.allclose(N.m_null_sign_shuffle(e, fz, 25), slow, atol=1e-12)
+    slow = [S.score_mechanism(list(range(n)), e, 1, N.gene_label_permutation(z, lm, i), landmark_mask=lm).value
+            for i in range(25)]
+    assert np.allclose(N.m_null_gene_label(e, fz, lm, 25), slow, atol=1e-12)
+
+
+def test_fast_null_shortcut_refused_when_not_exact():
+    """A zero expected sign or a missing response must send the caller back to the per-draw path."""
+    assert not N.exact_shortcut_ok([1.0, 0.0, -1.0], [1.0, 1.0, 1.0])
+    assert not N.exact_shortcut_ok([1.0, -1.0], [1.0, np.nan])
+    assert not N.exact_shortcut_ok([], [])

@@ -1,0 +1,11 @@
+case	n_rows	share_of_drug_rows	what_it_is
+missing_network_path	5044	0.4979	the annotated target reaches no regulator in the frozen OmniPath prior at 0-2 hops, so there is no footprint to score
+below_floor	0	0.0	a footprint exists but holds fewer than the P10 floor of 10 sign-resolved genes
+ambiguous_action	207	0.0204	ChEMBL gives no unambiguous direction for the drug on the target (MODULATOR, mixed), and P11 forbids assuming one for M
+inferred_only_genes	0	0.0	every gene behind the score is inferred by the L1000 model; none of it was physically measured
+sign_contradiction	1723	0.1701	at least half of the genes the target reaches are excluded from the signed numerator because the routes to them disagree
+cytotoxic_signature	484	0.0478	production already reads the drug's transcriptional response as proliferation-driven, and M is positive anyway
+line_mismatch	4278	0.4223	the drug has no profiled line inside the disease's tissue key, so its response is borrowed from other tissues (or the best matched line is a poor match)
+polypharmacology	1232	0.1216	the drug's own annotated target units disagree: at least one gives a positive M and another a negative one, and P13 averages them
+absent_target_expression	1748	0.1725	the annotated target is not expressed (log2(TPM+1) < 1.0 in every source line the profile came from), so the drug cannot have engaged it there
+unknown_genotype	50	0.0049	a control row whose source line carries none of the audited alterations for its wave: neither the sensitising genotype nor the resistance one

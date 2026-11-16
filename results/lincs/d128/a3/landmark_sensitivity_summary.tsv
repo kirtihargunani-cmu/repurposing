@@ -1,0 +1,7 @@
+subset	score	n_units_both_arms	spearman_rho	crit_i_rho_ge_090	sign_flip_pct	crit_ii_flip_le_5pct	n_drug_rows_pct	median_abs_delta_pct	crit_iii_median_delta_le_5	median_delta_raw	interchangeable	n_floor_lost_in_landmark	n_floor_gained_in_landmark
+all units	M	10141	0.6766	False	24.998	False	4766	9.873	False	-0.00096	False	567	0
+all units	R	10509	0.74	False	21.049	False	5034	10.112	False	0.00617	False	567	0
+landmark fraction <= 0.125 (lowest 25%)	M	2723	0.4228	False	37.349	False	1619	13.366	False	-0.00084	False	0	0
+landmark fraction <= 0.125 (lowest 25%)	R	2723	0.795	False	18.766	False	1619	8.988	False	0.00806	False	0	0
+landmark fraction < 0.150 (below the A0 median)	M	6985	0.5507	False	30.007	False	3053	11.824	False	-0.00111	False	0	0
+landmark fraction < 0.150 (below the A0 median)	R	6985	0.7417	False	21.26	False	3053	9.524	False	0.00554	False	0	0

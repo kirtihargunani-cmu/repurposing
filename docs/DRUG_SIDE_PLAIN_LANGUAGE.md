@@ -529,6 +529,52 @@ as currently measured.
   highest in the one breast cancer that lacks the receptor entirely. That is the normal-tissue comparison problem
   resurfacing, not a reason to give the drug to those patients, and we changed nothing to make it look better.
 
+  **The whole thing was then run, on every drug and cancer it could be run on (2026-11-16), and the honest summary
+  is that it does not yet work well enough to be trusted.** Four results matter, and none of them was tuned.
+
+  *First, half the measurement may be an artefact of how the data are made.* The machine that measures drug
+  responses only measures about a thousand genes directly; the other nine thousand are **guessed by a model** from
+  those thousand. We asked, for the first time, whether the new score survives if we keep only the genes that were
+  really measured. It does not. **One drug-target pair in four flips sign** — the drug goes from "doing what its
+  target predicts" to "doing the opposite" — depending only on whether the guessed genes are included. The question
+  and the pass mark were written down before we looked. The pass mark was missed on all three parts, and badly. We
+  changed nothing: both versions are now reported side by side, and the choice of which to trust is a decision for
+  the whole project, not just for this score, because every score in the pipeline is built on the same guessed
+  genes.
+
+  *Second, the one control that works is measuring the wrong thing.* Melanoma drugs that target BRAF were the
+  richest test case, and they behave as they should: the score is positive in the two cell lines that carry the BRAF
+  mutation, and the same drugs in cells **without** it never reach the confidence bar. That is a real pass. But when
+  we opened up where the score comes from, **65% of the genes behind it are controlled by MYC**, a master switch for
+  cell growth that almost every effective drug disturbs, and those genes carry 69-95% of the actual number. So the
+  score is mostly reading "this drug slowed the cells down", dressed up as "this drug hit BRAF". We are reporting
+  that as a finding rather than patching it.
+
+  *Third, the score cannot tell the two halves of a biomarker pair apart.* The project's main fairness test takes
+  one drug and asks whether it ranks higher in the cancer that should respond than in the cancer that should not.
+  The existing ranking gets that right about three times in four. The new score gets it right once in three — and
+  the reason is built into it: it contains **nothing about the disease at all**, so when a drug's cell-line evidence
+  is the same for both cancers, the two answers are **identical by construction**. That happened in 15 of the 49
+  comparisons, including every thyroid one. On the rest it was right 47% of the time, which is a coin toss.
+
+  *Fourth, a check that needs no outside data, and the score only just survives it.* If a drug's target is **not
+  switched on at all** in the cells the measurement came from, the drug cannot have hit it there, so the score
+  should be flat. It is still positive 57% of the time, against 60% when the target is present. The typical value is
+  eight times smaller when the target is absent, which is the right direction, but the two cases overlap so heavily
+  that no single result can be told apart.
+
+  Two further things worth knowing. The score is **smaller than the disagreement between the cell lines it is
+  averaged over** — the spread across lines is larger than the typical score — so a cohort-level number is thinner
+  than it looks. And the "is this specific to this target?" check we built turns out to have almost nothing to
+  compare against: **95% of targets have fewer than ten genuinely different alternatives** in our list, and a tenth
+  have none, so that particular reassurance is largely unavailable. For the oestrogen-receptor case there was
+  exactly one alternative (the androgen receptor), which is why that check came back blank.
+
+  What this does not say: the new score is not wrong, and it is not finished. It is near-independent of the ranking
+  we already use, which is what we wanted — but "different" is not "better", and nothing here can tell the two apart
+  because no outcome data was looked at. That test exists, and it is deliberately **not** run yet: it needs its own
+  written-in-advance design, and until that is written no drug-sensitivity data is opened.
+
 ### Threads that run through the whole history
 
 1. **The anti-estrogen case is the project's canary.** Almost every phase was triggered by it, and D128's first gate

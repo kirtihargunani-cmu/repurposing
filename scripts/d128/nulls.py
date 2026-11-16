@@ -71,3 +71,28 @@ def summarise(values, observed):
     return dict(n_null=len(v), null_median=float(np.median(v)), null_sd=sd,
                 percentile=float((v < observed).mean() * 100) if np.isfinite(observed) else np.nan,
                 z=float((observed - v.mean()) / sd) if np.isfinite(observed) and sd and np.isfinite(sd) else np.nan)
+
+
+# --- fast paths (D128-A3) -------------------------------------------------------------------------------------------
+# A3 scores the whole comparison population, so a null that calls score_mechanism once per draw is not affordable
+# (16 M calls). These helpers compute the SAME number by the SAME permutations and are only used where the shortcut is
+# exact: every expected sign non-zero and every response finite, so `usable` is the whole gene set and the weighted
+# mean of score.py reduces to a plain mean. tanh is element-wise, so permuting f(z) equals f(permuted z).
+# tests/d128/test_scores.py asserts element-wise equality with score_mechanism. Otherwise the caller must use the
+# per-draw path.
+
+def exact_shortcut_ok(expected, z):
+    e = np.asarray(expected, dtype=float)
+    return bool(len(e)) and bool(np.all(e != 0)) and bool(np.all(np.isfinite(np.asarray(z, dtype=float))))
+
+
+def m_null_sign_shuffle(expected, fz, n):
+    e = np.asarray(expected, dtype=float)
+    fz = np.asarray(fz, dtype=float)
+    return np.array([float((shuffled_edge_signs(e, i) * fz).mean()) for i in range(n)])
+
+
+def m_null_gene_label(expected, fz, landmark_mask, n):
+    e = np.asarray(expected, dtype=float)
+    fz = np.asarray(fz, dtype=float)
+    return np.array([float((e * gene_label_permutation(fz, landmark_mask, i)).mean()) for i in range(n)])
