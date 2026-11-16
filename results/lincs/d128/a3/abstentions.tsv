@@ -13,7 +13,7 @@ group_id	eligible	unscorable	abstained	ambiguous_action:direction_assumed	eligib
 stratum	unscorable	unscorable	abstained	no_footprint	unscorable	abstained	M:ambiguous_action;R:R_below_floor	662
 stratum	unscorable	unscorable	not_run		unscorable	not_run	no_target_unit	621
 stratum	eligible	unscorable	abstained	ambiguous_action:direction_assumed	eligible	scored	M:ambiguous_action	283
-group_id	eligible	unscorable	scored		eligible	scored	M:below_floor	267
-stratum	eligible	unscorable	scored		eligible	scored	M:below_floor	110
+group_id	eligible	unscorable	abstained	below_floor_M_unit:tf=0,signaling=173/1tf<10/2	eligible	scored	M:below_floor	267
+stratum	eligible	unscorable	abstained	below_floor_M_unit:tf=0,signaling=173/1tf<10/2	eligible	scored	M:below_floor	110
 group_id	eligible	unscorable	abstained	no_footprint	eligible	abstained	M:below_floor	104
 stratum	eligible	unscorable	abstained	no_footprint	eligible	abstained	M:below_floor	38

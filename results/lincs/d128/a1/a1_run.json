@@ -1,6 +1,6 @@
 {
  "stage": "D128-A1",
- "git_sha": "1bf03642a4468ad76432093358043fd41ffde62e",
+ "git_sha": "ff115f2f15a44a42c04b2a3d3fc57050ef1b1e60",
  "frozen": true,
  "network": "collectri",
  "max_hops": 2,
@@ -21,10 +21,10 @@
   "ambiguous_route": 67810
  },
  "log": [
-  "[    0.5s] regulon_edges: 42432 edges, 1178 regulators, 31440 in the LINCS gene space",
-  "[    0.7s] target_tf_paths: 31769 rows for 387 target genes; omnipath 21725 (8795 ambiguous, 25 zero-hop anchors)",
-  "[    1.5s] target_gene_footprints: 367942 (unit, gene) rows, 257 units; 220073 resolved, 80059 conflicted, 67810 via an ambiguous route",
-  "[    1.5s] ambiguity: median TF-ambiguity fraction 0.091, median gene-ambiguity fraction 0.247"
+  "[    0.3s] regulon_edges: 42432 edges, 1178 regulators, 31440 in the LINCS gene space",
+  "[    0.5s] target_tf_paths: 31769 rows for 387 target genes; omnipath 21725 (8795 ambiguous, 25 zero-hop anchors)",
+  "[    1.2s] target_gene_footprints: 367942 (unit, gene) rows, 257 units; 220073 resolved, 80059 conflicted, 67810 via an ambiguous route",
+  "[    1.2s] ambiguity: median TF-ambiguity fraction 0.091, median gene-ambiguity fraction 0.247"
  ],
- "seconds": 1.6
+ "seconds": 1.2
 }

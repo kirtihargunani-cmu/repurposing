@@ -9,7 +9,8 @@ move. Expected gene signs are given UP TO the drug's action: the action sign is 
 Outputs results/lincs/d128/a1/:
   regulon_edges.parquet          network, regulator, gene_id, sign, confidence, source
   target_tf_paths.parquet        target_gene, network, tf, hops, path_sign, path_status (resolved / ambiguous)
-  target_gene_footprints.parquet unit_id, gene_id, subset, expected_sign_pre_action, n_tfs, status, feature_space
+  target_gene_footprints.parquet unit_id, gene_id, subset (tf / signaling / both), expected_sign_pre_action,
+                                 status, feature_space
   path_ambiguity.tsv             per target gene and unit: ambiguity and hub concentration
   a1_run.json                    manifest: git SHA, input checksums, counts, timings
 """
@@ -110,7 +111,12 @@ def main():
             for g, e in fp["gene_exp"].items():
                 if g in exp and exp[g][0] != e:
                     exp[g] = (0, exp[g][1] + "+" + sub)
-                elif g not in exp:
+                elif g in exp:
+                    # D128-A2.1: a gene reached by BOTH subsets with the SAME expected sign is labelled `both`,
+                    # not by whichever subset was walked first. The label is what the engine floors on (P10 as
+                    # frozen by D128-A0.1 counts such a gene in each subset's own floor), so it has to be lossless.
+                    exp[g] = (e, "both")
+                else:
                     exp[g] = (e, sub)
         for g, (e, sub) in exp.items():
             fprows.append((r.unit_id, r.cmap_name, kind, sub, g, e,
@@ -124,6 +130,12 @@ def main():
         hub = sig_fp if sig_fp is not None else tf_fp
         amb.append(dict(unit_id=r.unit_id, cmap_name=r.cmap_name, unit_kind=kind, genes=r.genes_str,
                         n_anchored_tfs=n_anch, n_ambiguous_tfs=n_amb_tf,
+                        # D128-A2.1: the signalling subset's resolved-TF count, which the frozen P10 floor needs
+                        # (>= FLOOR_TFS anchored TFs for that subset); A0's coverage.tsv carries the same number as
+                        # `n_sig_subset_tfs`.
+                        n_sig_subset_tfs=(sig_fp["n_resolved_tfs"] if sig_fp else 0),
+                        n_tf_subset_resolved=(len(tf_fp["genes_resolved"]) if tf_fp else 0),
+                        n_sig_subset_resolved=(len(sig_fp["genes_resolved"]) if sig_fp else 0),
                         tf_ambiguity_fraction=round(n_amb_tf / n_anch, 3) if n_anch else np.nan,
                         n_genes_any=len(g_any), n_resolved=len(g_res), n_conflicted=len(g_conf),
                         n_ambiguous_route=len(g_any - set(exp)),

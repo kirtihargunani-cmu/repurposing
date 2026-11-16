@@ -71,6 +71,9 @@ def load_inputs(arm="specific"):
         FP[uid] = dict(
             genes=g.tolist(), cols=np.array([col[x] for x in g], dtype=np.int64),
             expected=res.expected_sign_pre_action.to_numpy().astype(float),
+            # D128-A2.1: how each gene anchors (tf / signaling / both), so the engine can apply P10 as frozen by
+            # D128-A0.1 - each subset floored on its own genes, the unit admitted if either clears.
+            subset=res.subset.to_numpy().astype(str),
             lm=np.array([x in land for x in g], dtype=bool), n_unresolved=int((d.status != "resolved").sum()),
             all_genes=d.gene_id.to_numpy().tolist(),
             # D128-A3: identity of the resolved footprint, so a degree-matched null does not draw the same target
@@ -81,8 +84,13 @@ def load_inputs(arm="specific"):
         k = FP[uid]["lm"]
         FP[uid].update(lm_genes=[x for x, t in zip(FP[uid]["genes"], k) if t], lm_cols=FP[uid]["cols"][k],
                        lm_expected=FP[uid]["expected"][k], lm_mask=np.ones(int(k.sum()), bool),
+                       lm_subset=FP[uid]["subset"][k],
                        all_genes_landmark=[x for x in d.gene_id.to_numpy().tolist() if x in land])
     inp["FP"] = FP
+    # D128-A2.1: the signalling subset's resolved-TF count per unit, the second half of the frozen P10 floor
+    if "n_sig_subset_tfs" not in amb.columns:           # a pre-A2.1 A1 output cannot carry the frozen floor
+        raise SystemExit("a1/path_ambiguity.tsv has no n_sig_subset_tfs column: re-run a1_build_paths.py (D128-A2.1)")
+    inp["n_sig_tfs"] = dict(zip(amb.unit_id, amb.n_sig_subset_tfs))
     inp["U_by_id"] = {r.unit_id: r for r in U.itertuples(index=False)}
     inp["prow"] = {(p_, m_): i for i, (p_, m_) in enumerate(zip(idx.pert_id, idx.ModelID))}
     inp["cand_cache"] = {}
@@ -124,10 +132,10 @@ def score_one(inp, pert_id, model_id, unit_id, de_sign=None, want_nulls=0, cov=N
         return (SC.Score(np.nan, "abstained", "no_footprint"), SC.Score(np.nan, "abstained", "no_footprint"), [], {})
     if gene_arm == "landmark_only":
         gids, z, lm, expected = fp["lm_genes"], zrow[fp["lm_cols"]], fp["lm_mask"], fp["lm_expected"]
-        r_universe = fp["all_genes_landmark"]
+        subset, r_universe = fp["lm_subset"], fp["all_genes_landmark"]
     else:
         gids, z, lm, expected = fp["genes"], zrow[fp["cols"]], fp["lm"], fp["expected"]
-        r_universe = fp["all_genes"]
+        subset, r_universe = fp["subset"], fp["all_genes"]
     if not len(gids):
         return (SC.Score(np.nan, "abstained", "no_landmark_gene_in_footprint"),
                 SC.Score(np.nan, "abstained", "no_landmark_gene_in_footprint"), [], {})
@@ -135,7 +143,8 @@ def score_one(inp, pert_id, model_id, unit_id, de_sign=None, want_nulls=0, cov=N
     action = 1 if u.orient == "raise" else -1
 
     m = SC.score_mechanism(gids, expected, action, z, landmark_mask=lm,
-                           n_unresolved=fp["n_unresolved"], action_flag=u.action_flag, tf_of_gene=None)
+                           n_unresolved=fp["n_unresolved"], action_flag=u.action_flag, tf_of_gene=None,
+                           subset=subset, n_signaling_tfs=inp["n_sig_tfs"].get(unit_id, 0))
     # R: the same footprint genes (resolved or not: sign ambiguity blocks M, not direction), restricted to the
     # cohort's significant genes (P8)
     if de_sign:

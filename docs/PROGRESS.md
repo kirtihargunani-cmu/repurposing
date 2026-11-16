@@ -1287,3 +1287,33 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
 - **Not run, deliberately:** A5, and no CTRP / PRISM / GDSC value was read. **Open for the user:** whether
   `landmark_only` becomes the primary gene space pipeline-wide, and a 55-row regorafenib mismatch where the engine's
   floor is looser than the frozen P10 per-subset floor.
+
+### 2026-11-16 (later the same day) - D128-A2.1: the engine is made to obey the frozen floor
+
+- **The defect A3 flagged is fixed, and it was the engine, not the rule.** P10 as frozen by D128-A0.1 floors each
+  subset of a target unit on its own genes (a direct-TF subset on >= 10 zero-hop regulon genes; a signalling subset
+  on >= 10 resolved genes **and** >= 2 anchored TFs) and admits the unit if either clears. `score.py` applied only
+  the >= 10-gene half, to the merged footprint, and so scored `regorafenib::CHEMBL5122` (DDR2: 173 resolved genes
+  behind a single anchored TF). `score.py` now calls the same `graph.floors()` A0 used, `a1_build_paths.py` labels a
+  gene reached by both subsets `both` so the subset label is lossless, and `path_ambiguity.tsv` carries the
+  signalling subset's TF count. **No frozen value changed and `config.py` is untouched.**
+- **The stop rule written before the re-run held.** A2: exactly 754 of 227,376 rows (377 per gene arm, all that one
+  unit) moved from scored to abstained with reason `below_floor_M_unit:tf=0,signaling=173/1tf<10/2`; every other
+  row's M, R, statuses and coverage counts are bit-identical. A3: the mismatch counter is 0 (was 377 unit rows /
+  55 drug rows); 55 drug rows change M, all regorafenib, **none becomes NA** because P13's unit mean simply drops
+  DDR2; **R is unchanged on all 10,131 drug rows.**
+- **Everything else that moved is mechanical re-ranking:** 138 of 4,940 M percentiles shift by at most 1.18 points
+  because those rows left their cohort's ranking. In the D127 replay 4 of 67 rows change - 2 regorafenib (own M),
+  lapatinib and olaparib in percentile columns only - and **no instance verdict changes**; the 16/49 and 25/49
+  headlines stand. The `absent_target_expression` case report drops 1,748 -> 1,734 rows, which are **exactly** the
+  14 regorafenib DDR2 rows.
+- **The controls reproduce exactly.** `esr1_control*.tsv`, `esr1_breast_R.tsv`, `control_results.tsv`,
+  `control_summary.tsv`, `braf_hub_dominance.tsv` and `braf_hub_genes_all_bing.tsv` are byte-identical, so **the
+  BRAF hub numbers do not change and the vemurafenib/dabrafenib positives are untouched** (regorafenib appears in
+  that table on its BRAF unit, a different unit that was never below the floor).
+- **Landmark sensitivity after the fix:** 10,086 units in both arms (was 10,141), rho 0.674, sign-flip 25.13%,
+  median |delta percentile| 9.80 - still **NOT MET** on all three parts. 57 tests pass in `tests/d128/`.
+- **Recorded for review:** the engine floors the genes that actually enter the numerator rather than A0's footprint
+  count. They coincide today (0 missing responses) but the engine is the stricter of the two if a profile matrix
+  ever has gaps.
+

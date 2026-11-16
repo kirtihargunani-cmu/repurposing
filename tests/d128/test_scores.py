@@ -205,3 +205,50 @@ def test_fast_null_shortcut_refused_when_not_exact():
     assert not N.exact_shortcut_ok([1.0, 0.0, -1.0], [1.0, 1.0, 1.0])
     assert not N.exact_shortcut_ok([1.0, -1.0], [1.0, np.nan])
     assert not N.exact_shortcut_ok([], [])
+
+
+# --- D128-A2.1: the frozen P10 floor, applied per subset (A0.1) ------------------------------------------------
+G200 = [f"h{i}" for i in range(200)]
+
+
+def test_signaling_subset_needs_two_anchored_tfs_however_many_genes():
+    """The regorafenib::CHEMBL5122 (DDR2) shape: 173 resolved genes reached through ONE anchored TF.
+
+    P10 as frozen by D128-A0.1 floors the signalling subset on >= 10 genes AND >= 2 anchored TFs, so this unit is
+    not M-eligible however large its gene count is. The engine scored it before this fix (A3 flagged 55 drug rows).
+    """
+    g = G200[:173]
+    m = S.score_mechanism(g, [1] * 173, -1, [-2.0] * 173, subset=["signaling"] * 173, n_signaling_tfs=1)
+    assert m.status == "abstained" and m.abstain_reason.startswith("below_floor_M_unit:")
+    assert "signaling=173/1tf" in m.abstain_reason
+    ok = S.score_mechanism(g, [1] * 173, -1, [-2.0] * 173, subset=["signaling"] * 173, n_signaling_tfs=2)
+    assert ok.status == "scored" and ok.value == pytest.approx(np.tanh(1.0))
+
+
+def test_tf_subset_is_floored_on_its_own_genes_and_needs_no_tf_count():
+    """A direct-TF subset clears on >= 10 zero-hop regulon genes alone; the >= 2 TF part is signalling-only."""
+    m = S.score_mechanism(G200[:12], [1] * 12, 1, [2.0] * 12, subset=["tf"] * 12, n_signaling_tfs=0)
+    assert m.status == "scored"
+    m2 = S.score_mechanism(G200[:9], [1] * 9, 1, [2.0] * 9, subset=["tf"] * 9, n_signaling_tfs=0)
+    assert m2.status == "abstained" and "tf=9" in m2.abstain_reason
+
+
+def test_either_subset_may_clear_and_a_both_gene_counts_in_each_floor():
+    """Union rule: 12 signalling genes through 1 TF fail, but 10 zero-hop TF genes in the same unit admit it.
+
+    A gene reached by both subsets with the same sign counts towards EACH subset's floor (as A0's unit_floor does)
+    and still only once in the score itself.
+    """
+    sub = ["tf"] * 6 + ["both"] * 4 + ["signaling"] * 12
+    m = S.score_mechanism(G200[:22], [1] * 22, 1, [2.0] * 22, subset=sub, n_signaling_tfs=1)
+    assert m.status == "scored" and m.n_genes == 22          # 6 + 4 = 10 clears the tf floor; scored on all 22
+    sub2 = ["tf"] * 5 + ["both"] * 4 + ["signaling"] * 12    # tf side 9, signalling side 16 but only 1 TF
+    m2 = S.score_mechanism(G200[:21], [1] * 21, 1, [2.0] * 21, subset=sub2, n_signaling_tfs=1)
+    assert m2.status == "abstained" and "tf=9" in m2.abstain_reason and "signaling=16/1tf" in m2.abstain_reason
+
+
+def test_subset_floor_counts_only_genes_that_enter_the_numerator():
+    """A footprint gene with no measured response cannot hold the unit above its floor."""
+    z = [2.0] * 8 + [np.nan] * 4
+    m = S.score_mechanism(G200[:12], [1] * 12, 1, z, subset=["tf"] * 12, n_signaling_tfs=0)
+    assert m.status == "abstained" and "tf=8" in m.abstain_reason and m.n_missing_response == 4
