@@ -570,6 +570,17 @@ as currently measured.
   have none, so that particular reassurance is largely unavailable. For the oestrogen-receptor case there was
   exactly one alternative (the androgen receptor), which is why that check came back blank.
 
+  **A rule the program was not obeying, fixed (2026-11-16).** Before any of this is taken further, one bookkeeping
+  error was corrected. There is a written minimum for how much evidence a target needs before we are willing to
+  score it at all: ten genes reached, and - for targets reached indirectly, through a signalling chain - at least
+  two switches at the end of that chain. The program was only checking the ten-gene half. One target (the DDR2
+  protein, reached by the drug regorafenib) had 173 genes but only **one** switch behind all of them, so it was
+  being scored when the rule says it should not be. The rule was right and the program was wrong, so the program
+  was changed, not the rule. Re-running everything moved exactly what was predicted in writing beforehand and
+  nothing else: those rows now abstain with a stated reason, regorafenib's own score changes in 55 cancer-drug
+  rows, a hundred-odd other drugs shift by at most one percentile place because the ranking renumbers, and every
+  control - the anti-estrogen test, the BRAF melanoma test and its MYC finding - comes back byte for byte identical.
+
   What this does not say: the new score is not wrong, and it is not finished. It is near-independent of the ranking
   we already use, which is what we wanted — but "different" is not "better", and nothing here can tell the two apart
   because no outcome data was looked at. That test exists, and it is deliberately **not** run yet: it needs its own

@@ -1,6 +1,6 @@
 {
  "stage": "D128-A2",
- "git_sha": "bfb0088e1c184b98c2475d2c905b2f493ef30d31",
+ "git_sha": "ff115f2f15a44a42c04b2a3d3fc57050ef1b1e60",
  "frozen": true,
  "arm": "specific",
  "gene_arms": [
@@ -17,47 +17,47 @@
  "nulls": 0,
  "counts": {
   "rows": 227376,
-  "M_scored": 155648,
+  "M_scored": 154894,
   "R_scored": 152845,
   "by_gene_arm": {
    "all_bing": {
     "rows": 113688,
-    "M_scored": 81043,
+    "M_scored": 80666,
     "R_scored": 77337
    },
    "landmark_only": {
     "rows": 113688,
-    "M_scored": 74605,
+    "M_scored": 74228,
     "R_scored": 75508
    }
   }
  },
  "log": [
   "[    1.2s] profile arm specific; gene arms ['all_bing', 'landmark_only']; scoring 113688 (cohort, pert_id, line, unit) rows over 55 cohorts, 409 compounds, 63 lines",
-  "[    8.1s] scored 5000/113688",
-  "[    9.7s] scored 10000/113688",
-  "[   13.2s] scored 15000/113688",
-  "[   29.4s] scored 20000/113688",
-  "[   48.7s] scored 25000/113688",
-  "[   61.5s] scored 30000/113688",
-  "[   75.0s] scored 35000/113688",
-  "[   90.1s] scored 40000/113688",
-  "[  101.4s] scored 45000/113688",
-  "[  110.4s] scored 50000/113688",
-  "[  122.6s] scored 55000/113688",
-  "[  135.5s] scored 60000/113688",
-  "[  151.0s] scored 65000/113688",
-  "[  165.3s] scored 70000/113688",
-  "[  182.2s] scored 75000/113688",
-  "[  201.8s] scored 80000/113688",
-  "[  210.5s] scored 85000/113688",
-  "[  225.4s] scored 90000/113688",
-  "[  233.2s] scored 95000/113688",
-  "[  240.0s] scored 100000/113688",
-  "[  259.2s] scored 105000/113688",
-  "[  265.1s] scored 110000/113688",
-  "[  277.9s] scored 113688/113688",
-  "[  281.6s] M scored 155648 / 227376; R scored 152845"
+  "[    7.5s] scored 5000/113688",
+  "[    8.8s] scored 10000/113688",
+  "[   11.7s] scored 15000/113688",
+  "[   25.7s] scored 20000/113688",
+  "[   42.5s] scored 25000/113688",
+  "[   53.6s] scored 30000/113688",
+  "[   64.6s] scored 35000/113688",
+  "[   77.9s] scored 40000/113688",
+  "[   87.6s] scored 45000/113688",
+  "[   95.7s] scored 50000/113688",
+  "[  106.7s] scored 55000/113688",
+  "[  118.0s] scored 60000/113688",
+  "[  131.4s] scored 65000/113688",
+  "[  143.3s] scored 70000/113688",
+  "[  157.9s] scored 75000/113688",
+  "[  175.3s] scored 80000/113688",
+  "[  183.0s] scored 85000/113688",
+  "[  195.8s] scored 90000/113688",
+  "[  202.7s] scored 95000/113688",
+  "[  208.6s] scored 100000/113688",
+  "[  225.4s] scored 105000/113688",
+  "[  230.4s] scored 110000/113688",
+  "[  241.3s] scored 113688/113688",
+  "[  244.9s] M scored 154894 / 227376; R scored 152845"
  ],
- "seconds": 281.7
+ "seconds": 244.9
 }

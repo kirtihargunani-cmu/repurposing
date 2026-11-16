@@ -1,498 +1,498 @@
-unit_id	cmap_name	unit_kind	genes	n_anchored_tfs	n_ambiguous_tfs	tf_ambiguity_fraction	n_genes_any	n_resolved	n_conflicted	n_ambiguous_route	gene_ambiguity_fraction	hub_tf	hub_fraction
-mycophenolate-mofetil::CHEMBL2111369	mycophenolate-mofetil	signaling	IMPDH1|IMPDH2	0	0		0	0	0	0			
-prednisolone::CHEMBL2034	prednisolone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-phenytoin::CHEMBL2331043	phenytoin	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-eplerenone::CHEMBL1994	eplerenone	tf	NR3C2	1	0	0.0	44	44	0	0	0.0	NR3C2	1.0
-regorafenib::CHEMBL1862	regorafenib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-regorafenib::CHEMBL1906	regorafenib	signaling	RAF1	13	8	0.615	928	156	10	762	0.832	HSF1	0.449
-regorafenib::CHEMBL1936	regorafenib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-regorafenib::CHEMBL3650	regorafenib	signaling	FGFR1	2	0	0.0	180	168	12	0	0.067	SMAD3	0.786
-regorafenib::CHEMBL3961	regorafenib	signaling	MAPK11	57	13	0.228	3122	1738	729	655	0.443	MYC	0.247
-regorafenib::CHEMBL4142	regorafenib	signaling	FGFR2	0	0		0	0	0	0			
-regorafenib::CHEMBL4223	regorafenib	signaling	FRK	17	6	0.353	2071	962	172	937	0.535	ESR1	0.385
-regorafenib::CHEMBL5122	regorafenib	signaling	DDR2	1	0	0.0	173	173	0	0	0.0	FOXO3	1.0
-regorafenib::CHEMBL5145	regorafenib	signaling	BRAF	15	0	0.0	1131	1063	68	0	0.06	MYC	0.651
-regorafenib::CHEMBL4128	regorafenib	signaling	TEK	11	1	0.091	1493	805	192	496	0.461	RELA	0.363
-regorafenib::CHEMBL2095189	regorafenib	signaling	PDGFRA|PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-regorafenib::CHEMBL2095227	regorafenib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-regorafenib::CHEMBL2041	regorafenib	signaling	RET	163	38	0.233	3730	1907	1192	631	0.489	SP1	0.23
-regorafenib::CHEMBL2068	regorafenib	signaling	EPHA2	2	0	0.0	180	179	1	0	0.006	FOXO3	0.961
-regorafenib::CHEMBL2815	regorafenib	signaling	NTRK1	44	6	0.136	2354	1737	327	290	0.262	MYC	0.328
-tretinoin::CHEMBL2363069	tretinoin	tf	RARA|RARB|RARG	3	0	0.0	164	160	4	0	0.024	RARA	0.806
-KX-2391::CHEMBL267	KX-2391	signaling	SRC	208	57	0.274	3878	1797	1445	636	0.537	SP1	0.138
-BRD-K45330754::CHEMBL206	BRD-K45330754	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-digitoxin::CHEMBL2095186	digitoxin	signaling	ATP1A1|ATP1A2|ATP1A3|ATP1A4|ATP1B1|ATP1B2|ATP1B3|FXYD2	0	0		0	0	0	0			
-paclitaxel::CHEMBL2095182	paclitaxel	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-flunisolide::CHEMBL2034	flunisolide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-pemetrexed::CHEMBL202	pemetrexed	signaling	DHFR	0	0		0	0	0	0			
-pemetrexed::CHEMBL1952	pemetrexed	signaling	TYMS	0	0		0	0	0	0			
-pemetrexed::CHEMBL3972	pemetrexed	signaling	GART	0	0		0	0	0	0			
-metoclopramide::CHEMBL217	metoclopramide	signaling	DRD2	0	0		0	0	0	0			
-metoclopramide::CHEMBL1899	metoclopramide	signaling	HTR3A	0	0		0	0	0	0			
-metoclopramide::CHEMBL1875	metoclopramide	signaling	HTR4	0	0		0	0	0	0			
-zileuton::CHEMBL215	zileuton	signaling	ALOX5	0	0		0	0	0	0			
-everolimus::CHEMBL1902	everolimus	signaling	FKBP1A	6	3	0.5	561	408	31	122	0.273	CREB1	0.775
-MLN-2480::CHEMBL3559685	MLN-2480	signaling	ARAF|BRAF|RAF1	103	27	0.262	3381	2025	933	423	0.401	SP1	0.257
-fluorouracil::CHEMBL1952	fluorouracil	signaling	TYMS	0	0		0	0	0	0			
-voapaxar::CHEMBL3974	voapaxar	signaling	F2R	0	0		0	0	0	0			
-carbidopa::CHEMBL1843	carbidopa	signaling	DDC	0	0		0	0	0	0			
-ketorolac::CHEMBL2094253	ketorolac	signaling	PTGS1|PTGS2	0	0		0	0	0	0			
-gemcitabine::CHEMBL2095215	gemcitabine	signaling	RRM1|RRM2|RRM2B	0	0		0	0	0	0			
-gemcitabine::CHEMBL2363042	gemcitabine	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0		0	0	0	0			
-atrasentan::CHEMBL252	atrasentan	signaling	EDNRA	0	0		0	0	0	0			
-disulfiram::CHEMBL1935	disulfiram	signaling	ALDH2	0	0		0	0	0	0			
-cyproheptadine::CHEMBL231	cyproheptadine	signaling	HRH1	0	0		0	0	0	0			
-IPI-145::CHEMBL3130	IPI-145	signaling	PIK3CD	0	0		0	0	0	0			
-IPI-145::CHEMBL3267	IPI-145	signaling	PIK3CG	27	1	0.037	1947	1387	454	106	0.288	TP53	0.347
-mercaptopurine::CHEMBL2362992	mercaptopurine	signaling	PPAT	0	0		0	0	0	0			
-maraviroc::CHEMBL274	maraviroc	signaling	CCR5	9	0	0.0	896	829	67	0	0.075	STAT3	0.347
-ivacaftor::CHEMBL4051	ivacaftor	signaling	CFTR	0	0		0	0	0	0			
-olmesartan-medoxomil::CHEMBL227	olmesartan-medoxomil	signaling	AGTR1	0	0		0	0	0	0			
-ibrutinib::CHEMBL5251	ibrutinib	signaling	BTK	34	18	0.529	2066	924	285	857	0.553	RELA	0.299
-nortriptyline::CHEMBL228	nortriptyline	signaling	SLC6A4	0	0		0	0	0	0			
-nortriptyline::CHEMBL222	nortriptyline	signaling	SLC6A2	0	0		0	0	0	0			
-rosiglitazone::CHEMBL235	rosiglitazone	tf	PPARG	1	0	0.0	273	273	0	0	0.0	PPARG	1.0
-brompheniramine::CHEMBL231	brompheniramine	signaling	HRH1	0	0		0	0	0	0			
-pentobarbital::CHEMBL2093872	pentobarbital	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0		0	0	0	0			
-AZD-9291::CHEMBL203	AZD-9291	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-nizatidine::CHEMBL1941	nizatidine	signaling	HRH2	0	0		0	0	0	0			
-fluticasone::annot:NR3C1	fluticasone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-orlistat::CHEMBL1796	orlistat	signaling	LIPF	0	0		0	0	0	0			
-orlistat::CHEMBL1812	orlistat	signaling	PNLIP	0	0		0	0	0	0			
-tamoxifen::CHEMBL2093866	tamoxifen	tf	ESR1|ESR2	2	0	0.0	531	503	28	0	0.053	ESR1	0.895
-tamoxifen::CHEMBL4245	tamoxifen	tf	ESRRG	1	0	0.0	18	18	0	0	0.0	ESRRG	1.0
-tamoxifen::CHEMBL206	tamoxifen	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-topotecan::CHEMBL1781	topotecan	signaling	TOP1	0	0		0	0	0	0			
-etacrynic-acid::CHEMBL1874	etacrynic-acid	signaling	SLC12A1	0	0		0	0	0	0			
-floxuridine::CHEMBL1952	floxuridine	signaling	TYMS	0	0		0	0	0	0			
-sertraline::CHEMBL228	sertraline	signaling	SLC6A4	0	0		0	0	0	0			
-fludrocortisone-acetate::annot:NR3C2	fludrocortisone-acetate	tf	NR3C2	1	0	0.0	44	44	0	0	0.0	NR3C2	1.0
-crizotinib::CHEMBL3717	crizotinib	signaling	MET	81	15	0.185	3092	1383	700	1009	0.553	ESR1	0.149
-crizotinib::CHEMBL4247	crizotinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-crizotinib::CHEMBL3883330	crizotinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-crizotinib::CHEMBL2111387	crizotinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-crizotinib::CHEMBL5568	crizotinib	signaling	ROS1	0	0		0	0	0	0			
-crizotinib::CHEMBL2689	crizotinib	signaling	MST1R	3	1	0.333	423	288	0	135	0.319	E2F1	0.944
-fluocinolone-acetonide::CHEMBL2034	fluocinolone-acetonide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-aripiprazole::CHEMBL217	aripiprazole	signaling	DRD2	0	0		0	0	0	0			
-aripiprazole::CHEMBL214	aripiprazole	signaling	HTR1A	0	0		0	0	0	0			
-aripiprazole::CHEMBL224	aripiprazole	signaling	HTR2A	0	0		0	0	0	0			
-leflunomide::CHEMBL1966	leflunomide	signaling	DHODH	0	0		0	0	0	0			
-cabazitaxel::CHEMBL2095182	cabazitaxel	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-quinidine::CHEMBL2331043	quinidine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-lovastatin::CHEMBL402	lovastatin	signaling	HMGCR	0	0		0	0	0	0			
-nintedanib::CHEMBL2095189	nintedanib	signaling	PDGFRA|PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-nintedanib::CHEMBL2095227	nintedanib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-nintedanib::CHEMBL2095217	nintedanib	signaling	FGFR1|FGFR2|FGFR3|FGFR4	25	2	0.08	2004	1070	410	524	0.466	HIF1A	0.173
-pimozide::CHEMBL224	pimozide	signaling	HTR2A	0	0		0	0	0	0			
-pimozide::CHEMBL2096905	pimozide	signaling	DRD1|DRD2|DRD3|DRD4|DRD5	0	0		0	0	0	0			
-fludarabine-phosphate::CHEMBL2095215	fludarabine-phosphate	signaling	RRM1|RRM2|RRM2B	0	0		0	0	0	0			
-fludarabine-phosphate::CHEMBL2363042	fludarabine-phosphate	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0		0	0	0	0			
-diphenylpyraline::CHEMBL231	diphenylpyraline	signaling	HRH1	0	0		0	0	0	0			
-flumetasone::annot:NR3C1	flumetasone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-flumetasone::annot:PLA2G1B	flumetasone	signaling	PLA2G1B	0	0		0	0	0	0			
-sonidegib::CHEMBL5971	sonidegib	signaling	SMO	36	33	0.917	1968	180	3	1785	0.909	NFE2L2	0.917
-progesterone::CHEMBL208	progesterone	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-flumazenil::CHEMBL2093872	flumazenil	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0		0	0	0	0			
-oxymetholone::CHEMBL1871	oxymetholone	tf	AR	1	0	0.0	399	399	0	0	0.0	AR	1.0
-bosutinib::CHEMBL1862	bosutinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-bosutinib::CHEMBL267	bosutinib	signaling	SRC	208	57	0.274	3878	1797	1445	636	0.537	SP1	0.138
-bosutinib::CHEMBL3234	bosutinib	signaling	HCK	44	6	0.136	2352	1571	526	255	0.332	MYC	0.325
-bosutinib::CHEMBL3905	bosutinib	signaling	LYN	147	53	0.361	3731	1677	895	1159	0.551	AR	0.106
-bosutinib::CHEMBL2096618	bosutinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-pimavanserin::CHEMBL224	pimavanserin	signaling	HTR2A	0	0		0	0	0	0			
-quizartinib::CHEMBL1844	quizartinib	signaling	CSF1R	0	0		0	0	0	0			
-quizartinib::CHEMBL1974	quizartinib	signaling	FLT3	21	3	0.143	1134	877	144	113	0.227	CTNNB1	0.234
-quizartinib::CHEMBL1936	quizartinib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-quizartinib::CHEMBL2095189	quizartinib	signaling	PDGFRA|PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-quizartinib::CHEMBL2041	quizartinib	signaling	RET	163	38	0.233	3730	1907	1192	631	0.489	SP1	0.23
-perampanel::CHEMBL2096670	perampanel	signaling	GRIA1|GRIA2|GRIA3|GRIA4	0	0		0	0	0	0			
-pacritinib::CHEMBL2971	pacritinib	signaling	JAK2	64	15	0.234	2996	1475	688	833	0.508	ESR1	0.138
-pacritinib::CHEMBL1974	pacritinib	signaling	FLT3	21	3	0.143	1134	877	144	113	0.227	CTNNB1	0.234
-pacritinib::CHEMBL5903	pacritinib	signaling	ACVR1	4	0	0.0	209	198	11	0	0.053	SMAD4	0.475
-pacritinib::CHEMBL3357	pacritinib	signaling	IRAK1	12	0	0.0	1560	1279	281	0	0.18	TP53	0.464
-triflupromazine::CHEMBL217	triflupromazine	signaling	DRD2	0	0		0	0	0	0			
-BRD-K82216340::CHEMBL208	BRD-K82216340	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-trifluoperazine::CHEMBL224	trifluoperazine	signaling	HTR2A	0	0		0	0	0	0			
-trifluoperazine::CHEMBL225	trifluoperazine	signaling	HTR2C	0	0		0	0	0	0			
-trifluoperazine::CHEMBL2331075	trifluoperazine	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-hydrocortisone::CHEMBL2034	hydrocortisone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-razoxane::CHEMBL2094255	razoxane	signaling	TOP2A|TOP2B	0	0		0	0	0	0			
-dacomitinib::CHEMBL203	dacomitinib	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-dacomitinib::CHEMBL1824	dacomitinib	signaling	ERBB2	90	27	0.3	3344	1894	1050	400	0.434	SP1	0.228
-dacomitinib::CHEMBL3009	dacomitinib	signaling	ERBB4	31	18	0.581	2335	1322	154	859	0.434	MYC	0.49
-MEK-162::CHEMBL3587	MEK-162	signaling	MAP2K1	145	29	0.2	3668	1714	1081	873	0.533	SP1	0.266
-MEK-162::CHEMBL2964	MEK-162	signaling	MAP2K2	88	19	0.216	3293	2081	966	246	0.368	SP1	0.247
-azilsartan-medoxomil::CHEMBL227	azilsartan-medoxomil	signaling	AGTR1	0	0		0	0	0	0			
-sorafenib::CHEMBL1906	sorafenib	signaling	RAF1	13	8	0.615	928	156	10	762	0.832	HSF1	0.449
-sorafenib::CHEMBL1913	sorafenib	signaling	PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-sorafenib::CHEMBL1936	sorafenib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-sorafenib::CHEMBL1974	sorafenib	signaling	FLT3	21	3	0.143	1134	877	144	113	0.227	CTNNB1	0.234
-sorafenib::CHEMBL5145	sorafenib	signaling	BRAF	15	0	0.0	1131	1063	68	0	0.06	MYC	0.651
-sorafenib::CHEMBL2095227	sorafenib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-sorafenib::CHEMBL2041	sorafenib	signaling	RET	163	38	0.233	3730	1907	1192	631	0.489	SP1	0.23
-lisinopril::CHEMBL1808	lisinopril	signaling	ACE	0	0		0	0	0	0			
-quetiapine::CHEMBL224	quetiapine	signaling	HTR2A	0	0		0	0	0	0			
-quetiapine::CHEMBL225	quetiapine	signaling	HTR2C	0	0		0	0	0	0			
-quetiapine::CHEMBL217	quetiapine	signaling	DRD2	0	0		0	0	0	0			
-amrinone::CHEMBL241	amrinone	signaling	PDE3A	0	0		0	0	0	0			
-alitretinoin::CHEMBL2363071	alitretinoin	tf	RARA|RARB|RARG|RXRA|RXRB|RXRG	6	0	0.0	207	197	10	0	0.048	RARA	0.629
-midostaurin::CHEMBL1974	midostaurin	signaling	FLT3	21	3	0.143	1134	877	144	113	0.227	CTNNB1	0.234
-midostaurin::CHEMBL1936	midostaurin	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-midostaurin::CHEMBL2095189	midostaurin	signaling	PDGFRA|PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-midostaurin::CHEMBL2093867	midostaurin	signaling	PRKCA|PRKCB|PRKCD|PRKCE|PRKCG|PRKCH|PRKCI|PRKCQ|PRKCZ|PRKD1|PRKD3	297	140	0.471	4045	1821	1041	1183	0.55	SP1	0.26
-midostaurin::CHEMBL279	midostaurin	signaling	KDR	2	0	0.0	205	202	3	0	0.015	FOXO3	0.842
-valsartan::CHEMBL227	valsartan	signaling	AGTR1	0	0		0	0	0	0			
-prazosin::CHEMBL2094251	prazosin	signaling	ADRA1A|ADRA1B|ADRA1D	0	0		0	0	0	0			
-rimexolone::CHEMBL2034	rimexolone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-carvedilol::CHEMBL2094118	carvedilol	signaling	ADRB1|ADRB2|ADRB3	0	0		0	0	0	0			
-carvedilol::CHEMBL2094251	carvedilol	signaling	ADRA1A|ADRA1B|ADRA1D	0	0		0	0	0	0			
-acitretin::CHEMBL2363071	acitretin	tf	RARA|RARB|RARG|RXRA|RXRB|RXRG	6	0	0.0	207	197	10	0	0.048	RARA	0.629
-alectinib::CHEMBL4247	alectinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-alectinib::CHEMBL2041	alectinib	signaling	RET	163	38	0.233	3730	1907	1192	631	0.489	SP1	0.23
-alectinib::CHEMBL3883330	alectinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-doxycycline::CHEMBL4073	doxycycline	signaling	MMP7	0	0		0	0	0	0			
-doxycycline::CHEMBL4588	doxycycline	signaling	MMP8	0	0		0	0	0	0			
-doxycycline::CHEMBL280	doxycycline	signaling	MMP13	0	0		0	0	0	0			
-doxycycline::CHEMBL332	doxycycline	signaling	MMP1	0	0		0	0	0	0			
-edoxaban::CHEMBL244	edoxaban	signaling	F10	0	0		0	0	0	0			
-mirtazapine::CHEMBL224	mirtazapine	signaling	HTR2A	0	0		0	0	0	0			
-mirtazapine::CHEMBL225	mirtazapine	signaling	HTR2C	0	0		0	0	0	0			
-mirtazapine::CHEMBL2095158	mirtazapine	signaling	ADRA2A|ADRA2B|ADRA2C	0	0		0	0	0	0			
-vorinostat::CHEMBL325	vorinostat	tf	HDAC1	1	0	0.0	73	73	0	0	0.0	HDAC1	1.0
-vorinostat::CHEMBL1829	vorinostat	tf	HDAC3	1	0	0.0	18	18	0	0	0.0	HDAC3	1.0
-vorinostat::CHEMBL1865	vorinostat	signaling	HDAC6	9	1	0.111	1759	1121	221	417	0.363	TP53	0.548
-vorinostat::CHEMBL1937	vorinostat	signaling	HDAC2	15	3	0.2	1212	1016	191	5	0.162	RELA	0.31
-fluvastatin::CHEMBL402	fluvastatin	signaling	HMGCR	0	0		0	0	0	0			
-idarubicin::CHEMBL1806	idarubicin	signaling	TOP2A	0	0		0	0	0	0			
-KD-025::CHEMBL2973	KD-025	signaling	ROCK2	2	0	0.0	99	97	2	0	0.02	NKX3-1	0.608
-KD-025::CHEMBL2111459	KD-025	signaling	ROCK1|ROCK2	19	1	0.053	2130	1512	579	39	0.29	SP1	0.384
-benazepril::CHEMBL1808	benazepril	signaling	ACE	0	0		0	0	0	0			
-KPT-330::CHEMBL5661	KPT-330	signaling	XPO1	28	7	0.25	1710	1022	201	487	0.402	TP53	0.606
-cyclosporin-a::CHEMBL1949	cyclosporin-a	signaling	PPIA	0	0		0	0	0	0			
-methylene-blue::CHEMBL2111348	methylene-blue	signaling	GUCY1A1|GUCY1A2|GUCY1B1|GUCY1B2	0	0		0	0	0	0			
-oxaprozin::CHEMBL2094253	oxaprozin	signaling	PTGS1|PTGS2	0	0		0	0	0	0			
-methotrexate::CHEMBL202	methotrexate	signaling	DHFR	0	0		0	0	0	0			
-sumatriptan::CHEMBL1898	sumatriptan	signaling	HTR1B	0	0		0	0	0	0			
-sumatriptan::CHEMBL1983	sumatriptan	signaling	HTR1D	0	0		0	0	0	0			
-idelalisib::CHEMBL3130	idelalisib	signaling	PIK3CD	0	0		0	0	0	0			
-halcinonide::CHEMBL2034	halcinonide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-lonafarnib::CHEMBL2094108	lonafarnib	signaling	FNTA|FNTB	0	0		0	0	0	0			
-netupitant::CHEMBL249	netupitant	signaling	TACR1	0	0		0	0	0	0			
-mometasone::CHEMBL2034	mometasone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-ranitidine::CHEMBL1941	ranitidine	signaling	HRH2	0	0		0	0	0	0			
-perphenazine::CHEMBL217	perphenazine	signaling	DRD2	0	0		0	0	0	0			
-vinblastine::CHEMBL2095182	vinblastine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-raloxifene::CHEMBL206	raloxifene	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-raloxifene::CHEMBL242	raloxifene	tf	ESR2	1	0	0.0	163	163	0	0	0.0	ESR2	1.0
-cabozantinib::CHEMBL279	cabozantinib	signaling	KDR	2	0	0.0	205	202	3	0	0.015	FOXO3	0.842
-cabozantinib::CHEMBL3717	cabozantinib	signaling	MET	81	15	0.185	3092	1383	700	1009	0.553	ESR1	0.149
-beclomethasone-dipropionate::annot:NR3C1	beclomethasone-dipropionate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-prednisone::CHEMBL2034	prednisone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-doxorubicin::CHEMBL1806	doxorubicin	signaling	TOP2A	0	0		0	0	0	0			
-zafirlukast::CHEMBL1798	zafirlukast	signaling	CYSLTR1	0	0		0	0	0	0			
-lapatinib::CHEMBL1824	lapatinib	signaling	ERBB2	90	27	0.3	3344	1894	1050	400	0.434	SP1	0.228
-lapatinib::CHEMBL203	lapatinib	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-clobetasol::annot:NR3C1	clobetasol	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-dantrolene::CHEMBL1846	dantrolene	signaling	RYR1	0	0		0	0	0	0			
-dantrolene::CHEMBL2062	dantrolene	signaling	RYR3	0	0		0	0	0	0			
-diflorasone::CHEMBL2034	diflorasone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-sildenafil::CHEMBL1827	sildenafil	signaling	PDE5A	0	0		0	0	0	0			
-ixabepilone::CHEMBL2095182	ixabepilone	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-formoterol::CHEMBL210	formoterol	signaling	ADRB2	0	0		0	0	0	0			
-azacitidine::CHEMBL1992	azacitidine	tf	DNMT3A	1	0	0.0	47	47	0	0	0.0	DNMT3A	1.0
-azacitidine::CHEMBL1993	azacitidine	tf	DNMT1	1	0	0.0	146	146	0	0	0.0	DNMT1	1.0
-cimetidine::CHEMBL1941	cimetidine	signaling	HRH2	0	0		0	0	0	0			
-levonorgestrel::CHEMBL208	levonorgestrel	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-hydrocortisone-acetate::CHEMBL2034	hydrocortisone-acetate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-MLN-9708::CHEMBL2364701	MLN-9708	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	0.25	247	186	24	37	0.247	SMAD3	0.645
-copanlisib::CHEMBL4005	copanlisib	signaling	PIK3CA	14	1	0.071	1048	785	88	175	0.251	ESR1	0.52
-copanlisib::CHEMBL3130	copanlisib	signaling	PIK3CD	0	0		0	0	0	0			
-erlotinib::CHEMBL203	erlotinib	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-tolcapone::CHEMBL2023	tolcapone	signaling	COMT	0	0		0	0	0	0			
-ciclesonide::CHEMBL2034	ciclesonide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-PD-0325901::CHEMBL3587	PD-0325901	signaling	MAP2K1	145	29	0.2	3668	1714	1081	873	0.533	SP1	0.266
-PD-0325901::CHEMBL2964	PD-0325901	signaling	MAP2K2	88	19	0.216	3293	2081	966	246	0.368	SP1	0.247
-mitoxantrone::CHEMBL1806	mitoxantrone	signaling	TOP2A	0	0		0	0	0	0			
-fludarabine::annot:ADA	fludarabine	signaling	ADA	0	0		0	0	0	0			
-fludarabine::annot:DCK	fludarabine	signaling	DCK	0	0		0	0	0	0			
-fludarabine::annot:POLA1	fludarabine	signaling	POLA1	0	0		0	0	0	0			
-fludarabine::annot:RRM1	fludarabine	signaling	RRM1	0	0		0	0	0	0			
-fludarabine::annot:RRM2	fludarabine	signaling	RRM2	0	0		0	0	0	0			
-toremifene::CHEMBL2093866	toremifene	tf	ESR1|ESR2	2	0	0.0	531	503	28	0	0.053	ESR1	0.895
-fluticasone-propionate::CHEMBL2034	fluticasone-propionate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-chlortalidone::CHEMBL1876	chlortalidone	signaling	SLC12A3	0	0		0	0	0	0			
-tazarotene::CHEMBL2363069	tazarotene	tf	RARA|RARB|RARG	3	0	0.0	164	160	4	0	0.024	RARA	0.806
-estramustine::annot:ESR1	estramustine	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-estramustine::annot:ESR2	estramustine	tf	ESR2	1	0	0.0	163	163	0	0	0.0	ESR2	1.0
-estramustine::annot:MAP1A	estramustine	signaling	MAP1A	0	0		0	0	0	0			
-estramustine::annot:MAP2	estramustine	signaling	MAP2	0	0		0	0	0	0			
-verapamil::CHEMBL2095229	verapamil	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0		0	0	0	0			
-simvastatin::CHEMBL402	simvastatin	signaling	HMGCR	0	0		0	0	0	0			
-vemurafenib::CHEMBL5145	vemurafenib	signaling	BRAF	15	0	0.0	1131	1063	68	0	0.06	MYC	0.651
-palbociclib::CHEMBL2111455	palbociclib	mixed	CCND1|CDK6	39	27	0.692	2038	886	150	1002	0.565	ESR1	0.414
-palbociclib::CHEMBL1907601	palbociclib	mixed	CCND1|CDK4	57	11	0.193	3030	1781	850	399	0.412	MYC	0.225
-colchicine::CHEMBL2095182	colchicine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-desoxycortone::annot:NR3C1	desoxycortone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-desoxycortone::annot:NR3C2	desoxycortone	tf	NR3C2	1	0	0.0	44	44	0	0	0.0	NR3C2	1.0
-estradiol::CHEMBL206	estradiol	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-rivaroxaban::CHEMBL244	rivaroxaban	signaling	F10	0	0		0	0	0	0			
-AZD-5363::CHEMBL2111353	AZD-5363	signaling	AKT1|AKT2|AKT3	259	130	0.502	4052	1582	691	1779	0.61	ESR1	0.15
-alprazolam::CHEMBL2093872	alprazolam	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0		0	0	0	0			
-prochlorperazine::CHEMBL217	prochlorperazine	signaling	DRD2	0	0		0	0	0	0			
-triamterene::CHEMBL2107836	triamterene	signaling	SCNN1A|SCNN1B|SCNN1G	0	0		0	0	0	0			
-pindolol::CHEMBL213	pindolol	signaling	ADRB1	0	0		0	0	0	0			
-pindolol::CHEMBL210	pindolol	signaling	ADRB2	0	0		0	0	0	0			
-selumetinib::CHEMBL3587	selumetinib	signaling	MAP2K1	145	29	0.2	3668	1714	1081	873	0.533	SP1	0.266
-selumetinib::CHEMBL2964	selumetinib	signaling	MAP2K2	88	19	0.216	3293	2081	966	246	0.368	SP1	0.247
-betamethasone::CHEMBL2034	betamethasone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-troglitazone::CHEMBL235	troglitazone	tf	PPARG	1	0	0.0	273	273	0	0	0.0	PPARG	1.0
-BRD-K92073408::CHEMBL208	BRD-K92073408	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-norgestrel::CHEMBL208	norgestrel	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-romidepsin::CHEMBL2093865	romidepsin	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	0.118	2551	1432	689	430	0.439	TP53	0.277
-salmeterol::CHEMBL210	salmeterol	signaling	ADRB2	0	0		0	0	0	0			
-pralatrexate::CHEMBL202	pralatrexate	signaling	DHFR	0	0		0	0	0	0			
-rucaparib::CHEMBL3390820	rucaparib	signaling	PARP1|PARP2|PARP3	40	8	0.2	2105	1513	437	155	0.281	MYC	0.323
-donepezil::CHEMBL220	donepezil	signaling	ACHE	0	0		0	0	0	0			
-temsirolimus::CHEMBL1902	temsirolimus	signaling	FKBP1A	6	3	0.5	561	408	31	122	0.273	CREB1	0.775
-norethynodrel::CHEMBL208	norethynodrel	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-fingolimod::CHEMBL2363041	fingolimod	signaling	S1PR1|S1PR2|S1PR3|S1PR4|S1PR5	0	0		0	0	0	0			
-warfarin::CHEMBL1930	warfarin	signaling	VKORC1	0	0		0	0	0	0			
-BRD-A04553218::CHEMBL231	BRD-A04553218	signaling	HRH1	0	0		0	0	0	0			
-ponatinib::CHEMBL2096618	ponatinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-menadione::annot:AOX1	menadione	signaling	AOX1	0	0		0	0	0	0			
-tacrolimus::CHEMBL1902	tacrolimus	signaling	FKBP1A	6	3	0.5	561	408	31	122	0.273	CREB1	0.775
-vinorelbine::CHEMBL2095182	vinorelbine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-lacosamide::CHEMBL2331043	lacosamide	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-piroxicam::CHEMBL2094253	piroxicam	signaling	PTGS1|PTGS2	0	0		0	0	0	0			
-clomifene::CHEMBL206	clomifene	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-thioridazine::CHEMBL224	thioridazine	signaling	HTR2A	0	0		0	0	0	0			
-thioridazine::CHEMBL225	thioridazine	signaling	HTR2C	0	0		0	0	0	0			
-thioridazine::CHEMBL2331075	thioridazine	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-gefitinib::CHEMBL203	gefitinib	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-amcinonide::CHEMBL2034	amcinonide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-protriptyline::CHEMBL228	protriptyline	signaling	SLC6A4	0	0		0	0	0	0			
-protriptyline::CHEMBL222	protriptyline	signaling	SLC6A2	0	0		0	0	0	0			
-ritodrine::CHEMBL210	ritodrine	signaling	ADRB2	0	0		0	0	0	0			
-sirolimus::CHEMBL1902	sirolimus	signaling	FKBP1A	6	3	0.5	561	408	31	122	0.273	CREB1	0.775
-valrubicin::CHEMBL1806	valrubicin	signaling	TOP2A	0	0		0	0	0	0			
-olaparib::CHEMBL3390820	olaparib	signaling	PARP1|PARP2|PARP3	40	8	0.2	2105	1513	437	155	0.281	MYC	0.323
-calcitriol::CHEMBL1977	calcitriol	tf	VDR	1	0	0.0	105	105	0	0	0.0	VDR	1.0
-macitentan::CHEMBL2096678	macitentan	signaling	EDNRA|EDNRB	0	0		0	0	0	0			
-paroxetine::CHEMBL228	paroxetine	signaling	SLC6A4	0	0		0	0	0	0			
-etoposide::CHEMBL2094255	etoposide	signaling	TOP2A|TOP2B	0	0		0	0	0	0			
-decitabine::CHEMBL1992	decitabine	tf	DNMT3A	1	0	0.0	47	47	0	0	0.0	DNMT3A	1.0
-decitabine::CHEMBL1993	decitabine	tf	DNMT1	1	0	0.0	146	146	0	0	0.0	DNMT1	1.0
-minoxidil::CHEMBL2095198	minoxidil	signaling	ABCC9|KCNJ11	0	0		0	0	0	0			
-loperamide::CHEMBL233	loperamide	signaling	OPRM1	0	0		0	0	0	0			
-irbesartan::CHEMBL227	irbesartan	signaling	AGTR1	0	0		0	0	0	0			
-dipyridamole::CHEMBL1997	dipyridamole	signaling	SLC29A1	0	0		0	0	0	0			
-dipyridamole::CHEMBL2363066	dipyridamole	signaling	PDE10A|PDE1A|PDE1B|PDE1C|PDE2A|PDE3A|PDE3B|PDE4A|PDE4B|PDE4C|PDE4D|PDE5A|PDE6A|PDE6B|PDE6C|PDE6D|PDE6G|PDE6H|PDE7A|PDE7B|PDE8A|PDE8B|PDE9A	0	0		0	0	0	0			
-clocortolone-pivalate::CHEMBL2034	clocortolone-pivalate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-ixazomib::CHEMBL2364701	ixazomib	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	0.25	247	186	24	37	0.247	SMAD3	0.645
-anagrelide::CHEMBL2094125	anagrelide	signaling	PDE3A|PDE3B	0	0		0	0	0	0			
-talazoparib::CHEMBL3105	talazoparib	signaling	PARP1	40	8	0.2	2105	1513	437	155	0.281	MYC	0.323
-talazoparib::CHEMBL5366	talazoparib	signaling	PARP2	0	0		0	0	0	0			
-nicardipine::CHEMBL2095229	nicardipine	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0		0	0	0	0			
-PF-05212384::CHEMBL2842	PF-05212384	signaling	MTOR	80	8	0.1	3199	2155	774	270	0.326	SP1	0.28
-PF-05212384::CHEMBL3559703	PF-05212384	signaling	PIK3CA|PIK3CB|PIK3CD|PIK3CG|PIK3R1|PIK3R2|PIK3R3|PIK3R5	155	26	0.168	3498	1609	946	943	0.54	TP53	0.233
-givinostat::CHEMBL2093865	givinostat	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	0.118	2551	1432	689	430	0.439	TP53	0.277
-levomepromazine::CHEMBL2331075	levomepromazine	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-panobinostat::CHEMBL2093865	panobinostat	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	0.118	2551	1432	689	430	0.439	TP53	0.277
-thioguanine::CHEMBL2111369	thioguanine	signaling	IMPDH1|IMPDH2	0	0		0	0	0	0			
-pheniramine::CHEMBL231	pheniramine	signaling	HRH1	0	0		0	0	0	0			
-tegaserod::CHEMBL1875	tegaserod	signaling	HTR4	0	0		0	0	0	0			
-axitinib::CHEMBL2095227	axitinib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-bazedoxifene::CHEMBL2093866	bazedoxifene	tf	ESR1|ESR2	2	0	0.0	531	503	28	0	0.053	ESR1	0.895
-irinotecan::CHEMBL1781	irinotecan	signaling	TOP1	0	0		0	0	0	0			
-danazol::CHEMBL208	danazol	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-danazol::CHEMBL1871	danazol	tf	AR	1	0	0.0	399	399	0	0	0.0	AR	1.0
-amitriptyline::CHEMBL228	amitriptyline	signaling	SLC6A4	0	0		0	0	0	0			
-amitriptyline::CHEMBL222	amitriptyline	signaling	SLC6A2	0	0		0	0	0	0			
-nabumetone::CHEMBL230	nabumetone	signaling	PTGS2	0	0		0	0	0	0			
-bromocriptine::CHEMBL2331075	bromocriptine	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-neratinib::CHEMBL203	neratinib	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-neratinib::CHEMBL1824	neratinib	signaling	ERBB2	90	27	0.3	3344	1894	1050	400	0.434	SP1	0.228
-neratinib::CHEMBL3009	neratinib	signaling	ERBB4	31	18	0.581	2335	1322	154	859	0.434	MYC	0.49
-BRD-K89997465::CHEMBL224	BRD-K89997465	signaling	HTR2A	0	0		0	0	0	0			
-BRD-K89997465::CHEMBL2331075	BRD-K89997465	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-docetaxel::CHEMBL2095182	docetaxel	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-afatinib::CHEMBL203	afatinib	signaling	EGFR	110	32	0.291	3436	1749	886	801	0.491	SP1	0.293
-afatinib::CHEMBL1824	afatinib	signaling	ERBB2	90	27	0.3	3344	1894	1050	400	0.434	SP1	0.228
-afatinib::CHEMBL3009	afatinib	signaling	ERBB4	31	18	0.581	2335	1322	154	859	0.434	MYC	0.49
-masoprocol::CHEMBL1824	masoprocol	signaling	ERBB2	90	27	0.3	3344	1894	1050	400	0.434	SP1	0.228
-masoprocol::CHEMBL1957	masoprocol	signaling	IGF1R	6	0	0.0	977	862	115	0	0.118	TP53	0.784
-ceritinib::CHEMBL4247	ceritinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-ceritinib::CHEMBL3883330	ceritinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-ceritinib::CHEMBL2111387	ceritinib	signaling	ALK	15	2	0.133	1288	949	244	95	0.263	RELA	0.318
-drospirenone::CHEMBL1994	drospirenone	tf	NR3C2	1	0	0.0	44	44	0	0	0.0	NR3C2	1.0
-drospirenone::CHEMBL208	drospirenone	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-meloxicam::CHEMBL230	meloxicam	signaling	PTGS2	0	0		0	0	0	0			
-caffeine::CHEMBL2111329	caffeine	signaling	ADORA1|ADORA2A|ADORA2B|ADORA3	0	0		0	0	0	0			
-ketoprofen::CHEMBL2094253	ketoprofen	signaling	PTGS1|PTGS2	0	0		0	0	0	0			
-dexamethasone-acetate::CHEMBL2034	dexamethasone-acetate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-losartan::CHEMBL227	losartan	signaling	AGTR1	0	0		0	0	0	0			
-pioglitazone::CHEMBL235	pioglitazone	tf	PPARG	1	0	0.0	273	273	0	0	0.0	PPARG	1.0
-latanoprost::CHEMBL1987	latanoprost	signaling	PTGFR	0	0		0	0	0	0			
-mefenamic-acid::CHEMBL2094253	mefenamic-acid	signaling	PTGS1|PTGS2	0	0		0	0	0	0			
-testosterone::CHEMBL1871	testosterone	tf	AR	1	0	0.0	399	399	0	0	0.0	AR	1.0
-flutamide::CHEMBL1871	flutamide	tf	AR	1	0	0.0	399	399	0	0	0.0	AR	1.0
-prednicarbate::CHEMBL2034	prednicarbate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-imatinib::CHEMBL1862	imatinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-imatinib::CHEMBL1913	imatinib	signaling	PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-imatinib::CHEMBL1936	imatinib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-imatinib::CHEMBL2096618	imatinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-fulvestrant::CHEMBL206	fulvestrant	tf	ESR1	1	0	0.0	478	478	0	0	0.0	ESR1	1.0
-dorzolamide::CHEMBL205	dorzolamide	signaling	CA2	0	0		0	0	0	0			
-amlodipine::CHEMBL2095229	amlodipine	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0		0	0	0	0			
-calcipotriol::CHEMBL1977	calcipotriol	tf	VDR	1	0	0.0	105	105	0	0	0.0	VDR	1.0
-reserpine::CHEMBL1893	reserpine	signaling	SLC18A2	0	0		0	0	0	0			
-trimipramine::CHEMBL231	trimipramine	signaling	HRH1	0	0		0	0	0	0			
-trimipramine::CHEMBL217	trimipramine	signaling	DRD2	0	0		0	0	0	0			
-trimipramine::CHEMBL224	trimipramine	signaling	HTR2A	0	0		0	0	0	0			
-trimipramine::CHEMBL225	trimipramine	signaling	HTR2C	0	0		0	0	0	0			
-trimipramine::CHEMBL222	trimipramine	signaling	SLC6A2	0	0		0	0	0	0			
-trimipramine::CHEMBL2094251	trimipramine	signaling	ADRA1A|ADRA1B|ADRA1D	0	0		0	0	0	0			
-valdecoxib::CHEMBL230	valdecoxib	signaling	PTGS2	0	0		0	0	0	0			
-nilotinib::CHEMBL1862	nilotinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-nilotinib::CHEMBL2096618	nilotinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-BRD-K72166146::CHEMBL1983	BRD-K72166146	signaling	HTR1D	0	0		0	0	0	0			
-disopyramide::CHEMBL2331043	disopyramide	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-ziprasidone::CHEMBL224	ziprasidone	signaling	HTR2A	0	0		0	0	0	0			
-ziprasidone::CHEMBL225	ziprasidone	signaling	HTR2C	0	0		0	0	0	0			
-ziprasidone::CHEMBL217	ziprasidone	signaling	DRD2	0	0		0	0	0	0			
-amiodarone::CHEMBL240	amiodarone	signaling	KCNH2	0	0		0	0	0	0			
-fluphenazine::CHEMBL217	fluphenazine	signaling	DRD2	0	0		0	0	0	0			
-carfilzomib::CHEMBL2364701	carfilzomib	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	0.25	247	186	24	37	0.247	SMAD3	0.645
-hydroflumethiazide::CHEMBL1876	hydroflumethiazide	signaling	SLC12A3	0	0		0	0	0	0			
-lurasidone::CHEMBL224	lurasidone	signaling	HTR2A	0	0		0	0	0	0			
-lurasidone::CHEMBL217	lurasidone	signaling	DRD2	0	0		0	0	0	0			
-bortezomib::CHEMBL2364701	bortezomib	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	0.25	247	186	24	37	0.247	SMAD3	0.645
-cobimetinib::CHEMBL3587	cobimetinib	signaling	MAP2K1	145	29	0.2	3668	1714	1081	873	0.533	SP1	0.266
-cobimetinib::CHEMBL2964	cobimetinib	signaling	MAP2K2	88	19	0.216	3293	2081	966	246	0.368	SP1	0.247
-noretynodrel::CHEMBL208	noretynodrel	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-allopurinol::CHEMBL1929	allopurinol	signaling	XDH	0	0		0	0	0	0			
-CYT-387::CHEMBL2835	CYT-387	signaling	JAK1	37	14	0.378	2281	1048	300	933	0.541	ESR1	0.293
-CYT-387::CHEMBL2971	CYT-387	signaling	JAK2	64	15	0.234	2996	1475	688	833	0.508	ESR1	0.138
-CYT-387::CHEMBL5903	CYT-387	signaling	ACVR1	4	0	0.0	209	198	11	0	0.053	SMAD4	0.475
-atorvastatin::CHEMBL402	atorvastatin	signaling	HMGCR	0	0		0	0	0	0			
-trametinib::CHEMBL2111289	trametinib	signaling	MAP2K1|MAP2K2	145	29	0.2	3668	1714	1081	873	0.533	SP1	0.266
-trametinib::CHEMBL2964	trametinib	signaling	MAP2K2	88	19	0.216	3293	2081	966	246	0.368	SP1	0.247
-trametinib::CHEMBL3587	trametinib	signaling	MAP2K1	145	29	0.2	3668	1714	1081	873	0.533	SP1	0.266
-lomitapide::CHEMBL2364681	lomitapide	signaling	MTTP|P4HB	0	0		0	0	0	0			
-promazine::CHEMBL224	promazine	signaling	HTR2A	0	0		0	0	0	0			
-promazine::CHEMBL2331075	promazine	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-EMD-1214063::CHEMBL3717	EMD-1214063	signaling	MET	81	15	0.185	3092	1383	700	1009	0.553	ESR1	0.149
-BRD-K08177763::CHEMBL1902	BRD-K08177763	signaling	FKBP1A	6	3	0.5	561	408	31	122	0.273	CREB1	0.775
-clemastine::CHEMBL231	clemastine	signaling	HRH1	0	0		0	0	0	0			
-isotretinoin::CHEMBL2363069	isotretinoin	tf	RARA|RARB|RARG	3	0	0.0	164	160	4	0	0.024	RARA	0.806
-dexamethasone::CHEMBL2034	dexamethasone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-digoxin::CHEMBL2095186	digoxin	signaling	ATP1A1|ATP1A2|ATP1A3|ATP1A4|ATP1B1|ATP1B2|ATP1B3|FXYD2	0	0		0	0	0	0			
-pazopanib::CHEMBL1844	pazopanib	signaling	CSF1R	0	0		0	0	0	0			
-pazopanib::CHEMBL1936	pazopanib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-pazopanib::CHEMBL258	pazopanib	signaling	LCK	121	17	0.14	3587	1735	1255	597	0.516	TP53	0.173
-pazopanib::CHEMBL2742	pazopanib	signaling	FGFR3	19	2	0.105	1844	979	304	561	0.469	HIF1A	0.202
-pazopanib::CHEMBL3650	pazopanib	signaling	FGFR1	2	0	0.0	180	168	12	0	0.067	SMAD3	0.786
-pazopanib::CHEMBL2095189	pazopanib	signaling	PDGFRA|PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-pazopanib::CHEMBL2095227	pazopanib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-pazopanib::CHEMBL2959	pazopanib	signaling	ITK	5	0	0.0	474	406	68	0	0.143	STAT3	0.665
-LY-2835219::CHEMBL331	LY-2835219	signaling	CDK4	56	11	0.196	3030	1781	850	399	0.412	MYC	0.225
-LY-2835219::CHEMBL2508	LY-2835219	signaling	CDK6	38	27	0.711	2038	886	150	1002	0.565	ESR1	0.414
-metoprolol::CHEMBL213	metoprolol	signaling	ADRB1	0	0		0	0	0	0			
-cerivastatin::CHEMBL402	cerivastatin	signaling	HMGCR	0	0		0	0	0	0			
-mepivacaine::CHEMBL2331043	mepivacaine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-tivozanib::CHEMBL2095227	tivozanib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-tivozanib::CHEMBL1936	tivozanib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-tivozanib::CHEMBL1913	tivozanib	signaling	PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-norethindrone::CHEMBL208	norethindrone	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-methylprednisolone::CHEMBL2034	methylprednisolone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-sunitinib::CHEMBL1844	sunitinib	signaling	CSF1R	0	0		0	0	0	0			
-sunitinib::CHEMBL279	sunitinib	signaling	KDR	2	0	0.0	205	202	3	0	0.015	FOXO3	0.842
-sunitinib::CHEMBL1936	sunitinib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-sunitinib::CHEMBL1913	sunitinib	signaling	PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-sunitinib::CHEMBL2007	sunitinib	signaling	PDGFRA	29	1	0.034	2000	1403	492	105	0.298	TP53	0.336
-sunitinib::CHEMBL1868	sunitinib	signaling	FLT1	0	0		0	0	0	0			
-sunitinib::CHEMBL1955	sunitinib	signaling	FLT4	10	0	0.0	1524	1352	172	0	0.113	TP53	0.481
-sunitinib::CHEMBL1974	sunitinib	signaling	FLT3	21	3	0.143	1134	877	144	113	0.227	CTNNB1	0.234
-sunitinib::CHEMBL2041	sunitinib	signaling	RET	163	38	0.233	3730	1907	1192	631	0.489	SP1	0.23
-sunitinib::CHEMBL2095189	sunitinib	signaling	PDGFRA|PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-sunitinib::CHEMBL2095227	sunitinib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-etodolac::CHEMBL230	etodolac	signaling	PTGS2	0	0		0	0	0	0			
-fluoxetine::CHEMBL228	fluoxetine	signaling	SLC6A4	0	0		0	0	0	0			
-naltrexone::CHEMBL2095181	naltrexone	signaling	OPRD1|OPRK1|OPRM1	0	0		0	0	0	0			
-maprotiline::CHEMBL222	maprotiline	signaling	SLC6A2	0	0		0	0	0	0			
-teniposide::CHEMBL2094255	teniposide	signaling	TOP2A|TOP2B	0	0		0	0	0	0			
-nandrolone::annot:AR	nandrolone	tf	AR	1	0	0.0	399	399	0	0	0.0	AR	1.0
-nandrolone::annot:CYP19A1	nandrolone	signaling	CYP19A1	0	0		0	0	0	0			
-nandrolone::annot:MAOA	nandrolone	signaling	MAOA	0	0		0	0	0	0			
-nandrolone::annot:MAOB	nandrolone	signaling	MAOB	0	0		0	0	0	0			
-nandrolone::annot:NISCH	nandrolone	signaling	NISCH	0	0		0	0	0	0			
-orphenadrine::CHEMBL231	orphenadrine	signaling	HRH1	0	0		0	0	0	0			
-orphenadrine::CHEMBL222	orphenadrine	signaling	SLC6A2	0	0		0	0	0	0			
-orphenadrine::CHEMBL2094124	orphenadrine	signaling	GRIN1|GRIN2A|GRIN2B|GRIN2C|GRIN2D|GRIN3A|GRIN3B	0	0		0	0	0	0			
-orphenadrine::CHEMBL2331043	orphenadrine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-lidocaine::CHEMBL2331043	lidocaine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-acamprosate::CHEMBL2094124	acamprosate	signaling	GRIN1|GRIN2A|GRIN2B|GRIN2C|GRIN2D|GRIN3A|GRIN3B	0	0		0	0	0	0			
-acamprosate::CHEMBL2093872	acamprosate	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0		0	0	0	0			
-ropinirole::CHEMBL2331075	ropinirole	signaling	DRD2|DRD3|DRD4	0	0		0	0	0	0			
-dabrafenib::CHEMBL5145	dabrafenib	signaling	BRAF	15	0	0.0	1131	1063	68	0	0.06	MYC	0.651
-eptifibatide::CHEMBL2093869	eptifibatide	signaling	ITGA2B|ITGB3	1	1	1.0	39	0	0	39	1.0		
-bexarotene::CHEMBL2363070	bexarotene	tf	RXRA|RXRB|RXRG	3	0	0.0	75	74	1	0	0.013	RXRA	0.892
-pitavastatin::CHEMBL402	pitavastatin	signaling	HMGCR	0	0		0	0	0	0			
-brexpiprazole::CHEMBL217	brexpiprazole	signaling	DRD2	0	0		0	0	0	0			
-brexpiprazole::CHEMBL214	brexpiprazole	signaling	HTR1A	0	0		0	0	0	0			
-brexpiprazole::CHEMBL224	brexpiprazole	signaling	HTR2A	0	0		0	0	0	0			
-dasatinib::CHEMBL1862	dasatinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-dasatinib::CHEMBL1913	dasatinib	signaling	PDGFRB	35	5	0.143	2141	1380	483	278	0.355	TP53	0.344
-dasatinib::CHEMBL1936	dasatinib	signaling	KIT	43	8	0.186	2316	1285	512	519	0.445	ESR1	0.2
-dasatinib::CHEMBL2068	dasatinib	signaling	EPHA2	2	0	0.0	180	179	1	0	0.006	FOXO3	0.961
-dasatinib::CHEMBL2363074	dasatinib	signaling	BLK|FGR|FRK|FYN|HCK|LCK|LYN|SRC|SRMS|YES1	280	106	0.379	4082	1846	1218	1018	0.548	TP53	0.146
-dasatinib::CHEMBL2096618	dasatinib	tf	ABL1	1	0	0.0	10	10	0	0	0.0	ABL1	1.0
-lorazepam::CHEMBL2093872	lorazepam	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0		0	0	0	0			
-sitagliptin::CHEMBL284	sitagliptin	signaling	DPP4	0	0		0	0	0	0			
-carbamazepine::CHEMBL2331043	carbamazepine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0		0	0	0	0			
-GDC-0199::CHEMBL4860	GDC-0199	signaling	BCL2	0	0		0	0	0	0			
-dutasteride::CHEMBL2363075	dutasteride	signaling	SRD5A1|SRD5A2|SRD5A3	0	0		0	0	0	0			
-ticlopidine::CHEMBL2001	ticlopidine	signaling	P2RY12	0	0		0	0	0	0			
-paricalcitol::CHEMBL1977	paricalcitol	tf	VDR	1	0	0.0	105	105	0	0	0.0	VDR	1.0
-clofarabine::CHEMBL2095215	clofarabine	signaling	RRM1|RRM2|RRM2B	0	0		0	0	0	0			
-clofarabine::CHEMBL2363042	clofarabine	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0		0	0	0	0			
-mifepristone::CHEMBL2034	mifepristone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-mifepristone::CHEMBL208	mifepristone	tf	PGR	1	0	0.0	106	106	0	0	0.0	PGR	1.0
-vincristine::CHEMBL2095182	vincristine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0		0	0	0	0			
-ruxolitinib::CHEMBL2835	ruxolitinib	signaling	JAK1	37	14	0.378	2281	1048	300	933	0.541	ESR1	0.293
-ruxolitinib::CHEMBL2971	ruxolitinib	signaling	JAK2	64	15	0.234	2996	1475	688	833	0.508	ESR1	0.138
-ruxolitinib::CHEMBL2148	ruxolitinib	signaling	JAK3	49	7	0.143	2486	1493	496	497	0.399	AR	0.167
-ruxolitinib::CHEMBL3553	ruxolitinib	signaling	TYK2	22	3	0.136	1859	995	303	561	0.465	HIF1A	0.196
-daunorubicin::CHEMBL1806	daunorubicin	signaling	TOP2A	0	0		0	0	0	0			
-alpelisib::CHEMBL4005	alpelisib	signaling	PIK3CA	14	1	0.071	1048	785	88	175	0.251	ESR1	0.52
-nifedipine::CHEMBL2095229	nifedipine	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0		0	0	0	0			
-defactinib::CHEMBL2695	defactinib	signaling	PTK2	78	13	0.167	3122	1446	792	884	0.537	ESR1	0.13
-defactinib::CHEMBL5469	defactinib	signaling	PTK2B	15	0	0.0	1160	958	202	0	0.174	RELA	0.333
-tioguanine::CHEMBL2111369	tioguanine	signaling	IMPDH1|IMPDH2	0	0		0	0	0	0			
-medrysone::CHEMBL2034	medrysone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-telmisartan::CHEMBL227	telmisartan	signaling	AGTR1	0	0		0	0	0	0			
-nicotine::CHEMBL1907589	nicotine	signaling	CHRNA4|CHRNB2	0	0		0	0	0	0			
-triamcinolone::CHEMBL2034	triamcinolone	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-tofacitinib::CHEMBL2363062	tofacitinib	signaling	JAK1|JAK2|JAK3|TYK2	84	28	0.333	3164	1487	582	1095	0.53	ESR1	0.139
-pilocarpine::CHEMBL245	pilocarpine	signaling	CHRM3	0	0		0	0	0	0			
-pilocarpine::CHEMBL216	pilocarpine	signaling	CHRM1	0	0		0	0	0	0			
-TG-101348::CHEMBL1974	TG-101348	signaling	FLT3	21	3	0.143	1134	877	144	113	0.227	CTNNB1	0.234
-TG-101348::CHEMBL2971	TG-101348	signaling	JAK2	64	15	0.234	2996	1475	688	833	0.508	ESR1	0.138
-vandetanib::CHEMBL267	vandetanib	signaling	SRC	208	57	0.274	3878	1797	1445	636	0.537	SP1	0.138
-vandetanib::CHEMBL4601	vandetanib	signaling	PTK6	72	10	0.139	2468	1515	639	314	0.386	ESR1	0.162
-vandetanib::CHEMBL4128	vandetanib	signaling	TEK	11	1	0.091	1493	805	192	496	0.461	RELA	0.363
-vandetanib::CHEMBL2095227	vandetanib	signaling	FLT1|FLT4|KDR	11	0	0.0	1539	1361	178	0	0.116	TP53	0.474
-vandetanib::CHEMBL2041	vandetanib	signaling	RET	163	38	0.233	3730	1907	1192	631	0.489	SP1	0.23
-vandetanib::CHEMBL2363043	vandetanib	signaling	EPHA1|EPHA10|EPHA2|EPHA3|EPHA4|EPHA5|EPHA6|EPHA7|EPHA8|EPHB1|EPHB2|EPHB3|EPHB4|EPHB6	41	5	0.122	2274	1498	595	181	0.341	TP53	0.286
-vandetanib::CHEMBL2363049	vandetanib	signaling	EGFR|ERBB2|ERBB3|ERBB4	152	53	0.349	3682	1660	775	1247	0.549	ESR1	0.139
-fluocinonide::CHEMBL2034	fluocinonide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-cytarabine::CHEMBL2363042	cytarabine	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0		0	0	0	0			
-azathioprine::CHEMBL2362992	azathioprine	signaling	PPAT	0	0		0	0	0	0			
-fostamatinib::CHEMBL2599	fostamatinib	signaling	SYK	39	4	0.103	2228	1466	649	113	0.342	TP53	0.304
-spironolactone::CHEMBL1994	spironolactone	tf	NR3C2	1	0	0.0	44	44	0	0	0.0	NR3C2	1.0
-budesonide::CHEMBL2034	budesonide	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-hydrocortisone-valerate::CHEMBL2034	hydrocortisone-valerate	tf	NR3C1	1	0	0.0	210	210	0	0	0.0	NR3C1	1.0
-rosuvastatin::CHEMBL402	rosuvastatin	signaling	HMGCR	0	0		0	0	0	0			
-clonazepam::CHEMBL2093872	clonazepam	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0		0	0	0	0			
-belinostat::CHEMBL2093865	belinostat	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	0.118	2551	1432	689	430	0.439	TP53	0.277
+unit_id	cmap_name	unit_kind	genes	n_anchored_tfs	n_ambiguous_tfs	n_sig_subset_tfs	n_tf_subset_resolved	n_sig_subset_resolved	tf_ambiguity_fraction	n_genes_any	n_resolved	n_conflicted	n_ambiguous_route	gene_ambiguity_fraction	hub_tf	hub_fraction
+mycophenolate-mofetil::CHEMBL2111369	mycophenolate-mofetil	signaling	IMPDH1|IMPDH2	0	0	0	0	0		0	0	0	0			
+prednisolone::CHEMBL2034	prednisolone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+phenytoin::CHEMBL2331043	phenytoin	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+eplerenone::CHEMBL1994	eplerenone	tf	NR3C2	1	0	0	44	0	0.0	44	44	0	0	0.0	NR3C2	1.0
+regorafenib::CHEMBL1862	regorafenib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+regorafenib::CHEMBL1906	regorafenib	signaling	RAF1	13	8	5	0	156	0.615	928	156	10	762	0.832	HSF1	0.449
+regorafenib::CHEMBL1936	regorafenib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+regorafenib::CHEMBL3650	regorafenib	signaling	FGFR1	2	0	2	0	168	0.0	180	168	12	0	0.067	SMAD3	0.786
+regorafenib::CHEMBL3961	regorafenib	signaling	MAPK11	57	13	44	0	1738	0.228	3122	1738	729	655	0.443	MYC	0.247
+regorafenib::CHEMBL4142	regorafenib	signaling	FGFR2	0	0	0	0	0		0	0	0	0			
+regorafenib::CHEMBL4223	regorafenib	signaling	FRK	17	6	11	0	962	0.353	2071	962	172	937	0.535	ESR1	0.385
+regorafenib::CHEMBL5122	regorafenib	signaling	DDR2	1	0	1	0	173	0.0	173	173	0	0	0.0	FOXO3	1.0
+regorafenib::CHEMBL5145	regorafenib	signaling	BRAF	15	0	15	0	1063	0.0	1131	1063	68	0	0.06	MYC	0.651
+regorafenib::CHEMBL4128	regorafenib	signaling	TEK	11	1	10	0	805	0.091	1493	805	192	496	0.461	RELA	0.363
+regorafenib::CHEMBL2095189	regorafenib	signaling	PDGFRA|PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+regorafenib::CHEMBL2095227	regorafenib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+regorafenib::CHEMBL2041	regorafenib	signaling	RET	163	38	125	0	1907	0.233	3730	1907	1192	631	0.489	SP1	0.23
+regorafenib::CHEMBL2068	regorafenib	signaling	EPHA2	2	0	2	0	179	0.0	180	179	1	0	0.006	FOXO3	0.961
+regorafenib::CHEMBL2815	regorafenib	signaling	NTRK1	44	6	38	0	1737	0.136	2354	1737	327	290	0.262	MYC	0.328
+tretinoin::CHEMBL2363069	tretinoin	tf	RARA|RARB|RARG	3	0	0	160	0	0.0	164	160	4	0	0.024	RARA	0.806
+KX-2391::CHEMBL267	KX-2391	signaling	SRC	208	57	151	0	1797	0.274	3878	1797	1445	636	0.537	SP1	0.138
+BRD-K45330754::CHEMBL206	BRD-K45330754	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+digitoxin::CHEMBL2095186	digitoxin	signaling	ATP1A1|ATP1A2|ATP1A3|ATP1A4|ATP1B1|ATP1B2|ATP1B3|FXYD2	0	0	0	0	0		0	0	0	0			
+paclitaxel::CHEMBL2095182	paclitaxel	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+flunisolide::CHEMBL2034	flunisolide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+pemetrexed::CHEMBL202	pemetrexed	signaling	DHFR	0	0	0	0	0		0	0	0	0			
+pemetrexed::CHEMBL1952	pemetrexed	signaling	TYMS	0	0	0	0	0		0	0	0	0			
+pemetrexed::CHEMBL3972	pemetrexed	signaling	GART	0	0	0	0	0		0	0	0	0			
+metoclopramide::CHEMBL217	metoclopramide	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+metoclopramide::CHEMBL1899	metoclopramide	signaling	HTR3A	0	0	0	0	0		0	0	0	0			
+metoclopramide::CHEMBL1875	metoclopramide	signaling	HTR4	0	0	0	0	0		0	0	0	0			
+zileuton::CHEMBL215	zileuton	signaling	ALOX5	0	0	0	0	0		0	0	0	0			
+everolimus::CHEMBL1902	everolimus	signaling	FKBP1A	6	3	3	0	408	0.5	561	408	31	122	0.273	CREB1	0.775
+MLN-2480::CHEMBL3559685	MLN-2480	signaling	ARAF|BRAF|RAF1	103	27	76	0	2025	0.262	3381	2025	933	423	0.401	SP1	0.257
+fluorouracil::CHEMBL1952	fluorouracil	signaling	TYMS	0	0	0	0	0		0	0	0	0			
+voapaxar::CHEMBL3974	voapaxar	signaling	F2R	0	0	0	0	0		0	0	0	0			
+carbidopa::CHEMBL1843	carbidopa	signaling	DDC	0	0	0	0	0		0	0	0	0			
+ketorolac::CHEMBL2094253	ketorolac	signaling	PTGS1|PTGS2	0	0	0	0	0		0	0	0	0			
+gemcitabine::CHEMBL2095215	gemcitabine	signaling	RRM1|RRM2|RRM2B	0	0	0	0	0		0	0	0	0			
+gemcitabine::CHEMBL2363042	gemcitabine	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0	0	0	0		0	0	0	0			
+atrasentan::CHEMBL252	atrasentan	signaling	EDNRA	0	0	0	0	0		0	0	0	0			
+disulfiram::CHEMBL1935	disulfiram	signaling	ALDH2	0	0	0	0	0		0	0	0	0			
+cyproheptadine::CHEMBL231	cyproheptadine	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+IPI-145::CHEMBL3130	IPI-145	signaling	PIK3CD	0	0	0	0	0		0	0	0	0			
+IPI-145::CHEMBL3267	IPI-145	signaling	PIK3CG	27	1	26	0	1387	0.037	1947	1387	454	106	0.288	TP53	0.347
+mercaptopurine::CHEMBL2362992	mercaptopurine	signaling	PPAT	0	0	0	0	0		0	0	0	0			
+maraviroc::CHEMBL274	maraviroc	signaling	CCR5	9	0	9	0	829	0.0	896	829	67	0	0.075	STAT3	0.347
+ivacaftor::CHEMBL4051	ivacaftor	signaling	CFTR	0	0	0	0	0		0	0	0	0			
+olmesartan-medoxomil::CHEMBL227	olmesartan-medoxomil	signaling	AGTR1	0	0	0	0	0		0	0	0	0			
+ibrutinib::CHEMBL5251	ibrutinib	signaling	BTK	34	18	16	0	924	0.529	2066	924	285	857	0.553	RELA	0.299
+nortriptyline::CHEMBL228	nortriptyline	signaling	SLC6A4	0	0	0	0	0		0	0	0	0			
+nortriptyline::CHEMBL222	nortriptyline	signaling	SLC6A2	0	0	0	0	0		0	0	0	0			
+rosiglitazone::CHEMBL235	rosiglitazone	tf	PPARG	1	0	0	273	0	0.0	273	273	0	0	0.0	PPARG	1.0
+brompheniramine::CHEMBL231	brompheniramine	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+pentobarbital::CHEMBL2093872	pentobarbital	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0	0	0	0		0	0	0	0			
+AZD-9291::CHEMBL203	AZD-9291	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+nizatidine::CHEMBL1941	nizatidine	signaling	HRH2	0	0	0	0	0		0	0	0	0			
+fluticasone::annot:NR3C1	fluticasone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+orlistat::CHEMBL1796	orlistat	signaling	LIPF	0	0	0	0	0		0	0	0	0			
+orlistat::CHEMBL1812	orlistat	signaling	PNLIP	0	0	0	0	0		0	0	0	0			
+tamoxifen::CHEMBL2093866	tamoxifen	tf	ESR1|ESR2	2	0	0	503	0	0.0	531	503	28	0	0.053	ESR1	0.895
+tamoxifen::CHEMBL4245	tamoxifen	tf	ESRRG	1	0	0	18	0	0.0	18	18	0	0	0.0	ESRRG	1.0
+tamoxifen::CHEMBL206	tamoxifen	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+topotecan::CHEMBL1781	topotecan	signaling	TOP1	0	0	0	0	0		0	0	0	0			
+etacrynic-acid::CHEMBL1874	etacrynic-acid	signaling	SLC12A1	0	0	0	0	0		0	0	0	0			
+floxuridine::CHEMBL1952	floxuridine	signaling	TYMS	0	0	0	0	0		0	0	0	0			
+sertraline::CHEMBL228	sertraline	signaling	SLC6A4	0	0	0	0	0		0	0	0	0			
+fludrocortisone-acetate::annot:NR3C2	fludrocortisone-acetate	tf	NR3C2	1	0	0	44	0	0.0	44	44	0	0	0.0	NR3C2	1.0
+crizotinib::CHEMBL3717	crizotinib	signaling	MET	81	15	66	0	1383	0.185	3092	1383	700	1009	0.553	ESR1	0.149
+crizotinib::CHEMBL4247	crizotinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+crizotinib::CHEMBL3883330	crizotinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+crizotinib::CHEMBL2111387	crizotinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+crizotinib::CHEMBL5568	crizotinib	signaling	ROS1	0	0	0	0	0		0	0	0	0			
+crizotinib::CHEMBL2689	crizotinib	signaling	MST1R	3	1	2	0	288	0.333	423	288	0	135	0.319	E2F1	0.944
+fluocinolone-acetonide::CHEMBL2034	fluocinolone-acetonide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+aripiprazole::CHEMBL217	aripiprazole	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+aripiprazole::CHEMBL214	aripiprazole	signaling	HTR1A	0	0	0	0	0		0	0	0	0			
+aripiprazole::CHEMBL224	aripiprazole	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+leflunomide::CHEMBL1966	leflunomide	signaling	DHODH	0	0	0	0	0		0	0	0	0			
+cabazitaxel::CHEMBL2095182	cabazitaxel	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+quinidine::CHEMBL2331043	quinidine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+lovastatin::CHEMBL402	lovastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+nintedanib::CHEMBL2095189	nintedanib	signaling	PDGFRA|PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+nintedanib::CHEMBL2095227	nintedanib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+nintedanib::CHEMBL2095217	nintedanib	signaling	FGFR1|FGFR2|FGFR3|FGFR4	25	2	23	0	1070	0.08	2004	1070	410	524	0.466	HIF1A	0.173
+pimozide::CHEMBL224	pimozide	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+pimozide::CHEMBL2096905	pimozide	signaling	DRD1|DRD2|DRD3|DRD4|DRD5	0	0	0	0	0		0	0	0	0			
+fludarabine-phosphate::CHEMBL2095215	fludarabine-phosphate	signaling	RRM1|RRM2|RRM2B	0	0	0	0	0		0	0	0	0			
+fludarabine-phosphate::CHEMBL2363042	fludarabine-phosphate	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0	0	0	0		0	0	0	0			
+diphenylpyraline::CHEMBL231	diphenylpyraline	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+flumetasone::annot:NR3C1	flumetasone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+flumetasone::annot:PLA2G1B	flumetasone	signaling	PLA2G1B	0	0	0	0	0		0	0	0	0			
+sonidegib::CHEMBL5971	sonidegib	signaling	SMO	36	33	3	0	180	0.917	1968	180	3	1785	0.909	NFE2L2	0.917
+progesterone::CHEMBL208	progesterone	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+flumazenil::CHEMBL2093872	flumazenil	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0	0	0	0		0	0	0	0			
+oxymetholone::CHEMBL1871	oxymetholone	tf	AR	1	0	0	399	0	0.0	399	399	0	0	0.0	AR	1.0
+bosutinib::CHEMBL1862	bosutinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+bosutinib::CHEMBL267	bosutinib	signaling	SRC	208	57	151	0	1797	0.274	3878	1797	1445	636	0.537	SP1	0.138
+bosutinib::CHEMBL3234	bosutinib	signaling	HCK	44	6	38	0	1571	0.136	2352	1571	526	255	0.332	MYC	0.325
+bosutinib::CHEMBL3905	bosutinib	signaling	LYN	147	53	94	0	1677	0.361	3731	1677	895	1159	0.551	AR	0.106
+bosutinib::CHEMBL2096618	bosutinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+pimavanserin::CHEMBL224	pimavanserin	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+quizartinib::CHEMBL1844	quizartinib	signaling	CSF1R	0	0	0	0	0		0	0	0	0			
+quizartinib::CHEMBL1974	quizartinib	signaling	FLT3	21	3	18	0	877	0.143	1134	877	144	113	0.227	CTNNB1	0.234
+quizartinib::CHEMBL1936	quizartinib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+quizartinib::CHEMBL2095189	quizartinib	signaling	PDGFRA|PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+quizartinib::CHEMBL2041	quizartinib	signaling	RET	163	38	125	0	1907	0.233	3730	1907	1192	631	0.489	SP1	0.23
+perampanel::CHEMBL2096670	perampanel	signaling	GRIA1|GRIA2|GRIA3|GRIA4	0	0	0	0	0		0	0	0	0			
+pacritinib::CHEMBL2971	pacritinib	signaling	JAK2	64	15	49	0	1475	0.234	2996	1475	688	833	0.508	ESR1	0.138
+pacritinib::CHEMBL1974	pacritinib	signaling	FLT3	21	3	18	0	877	0.143	1134	877	144	113	0.227	CTNNB1	0.234
+pacritinib::CHEMBL5903	pacritinib	signaling	ACVR1	4	0	4	0	198	0.0	209	198	11	0	0.053	SMAD4	0.475
+pacritinib::CHEMBL3357	pacritinib	signaling	IRAK1	12	0	12	0	1279	0.0	1560	1279	281	0	0.18	TP53	0.464
+triflupromazine::CHEMBL217	triflupromazine	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+BRD-K82216340::CHEMBL208	BRD-K82216340	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+trifluoperazine::CHEMBL224	trifluoperazine	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+trifluoperazine::CHEMBL225	trifluoperazine	signaling	HTR2C	0	0	0	0	0		0	0	0	0			
+trifluoperazine::CHEMBL2331075	trifluoperazine	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+hydrocortisone::CHEMBL2034	hydrocortisone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+razoxane::CHEMBL2094255	razoxane	signaling	TOP2A|TOP2B	0	0	0	0	0		0	0	0	0			
+dacomitinib::CHEMBL203	dacomitinib	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+dacomitinib::CHEMBL1824	dacomitinib	signaling	ERBB2	90	27	63	0	1894	0.3	3344	1894	1050	400	0.434	SP1	0.228
+dacomitinib::CHEMBL3009	dacomitinib	signaling	ERBB4	31	18	13	0	1322	0.581	2335	1322	154	859	0.434	MYC	0.49
+MEK-162::CHEMBL3587	MEK-162	signaling	MAP2K1	145	29	116	0	1714	0.2	3668	1714	1081	873	0.533	SP1	0.266
+MEK-162::CHEMBL2964	MEK-162	signaling	MAP2K2	88	19	69	0	2081	0.216	3293	2081	966	246	0.368	SP1	0.247
+azilsartan-medoxomil::CHEMBL227	azilsartan-medoxomil	signaling	AGTR1	0	0	0	0	0		0	0	0	0			
+sorafenib::CHEMBL1906	sorafenib	signaling	RAF1	13	8	5	0	156	0.615	928	156	10	762	0.832	HSF1	0.449
+sorafenib::CHEMBL1913	sorafenib	signaling	PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+sorafenib::CHEMBL1936	sorafenib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+sorafenib::CHEMBL1974	sorafenib	signaling	FLT3	21	3	18	0	877	0.143	1134	877	144	113	0.227	CTNNB1	0.234
+sorafenib::CHEMBL5145	sorafenib	signaling	BRAF	15	0	15	0	1063	0.0	1131	1063	68	0	0.06	MYC	0.651
+sorafenib::CHEMBL2095227	sorafenib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+sorafenib::CHEMBL2041	sorafenib	signaling	RET	163	38	125	0	1907	0.233	3730	1907	1192	631	0.489	SP1	0.23
+lisinopril::CHEMBL1808	lisinopril	signaling	ACE	0	0	0	0	0		0	0	0	0			
+quetiapine::CHEMBL224	quetiapine	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+quetiapine::CHEMBL225	quetiapine	signaling	HTR2C	0	0	0	0	0		0	0	0	0			
+quetiapine::CHEMBL217	quetiapine	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+amrinone::CHEMBL241	amrinone	signaling	PDE3A	0	0	0	0	0		0	0	0	0			
+alitretinoin::CHEMBL2363071	alitretinoin	tf	RARA|RARB|RARG|RXRA|RXRB|RXRG	6	0	0	197	0	0.0	207	197	10	0	0.048	RARA	0.629
+midostaurin::CHEMBL1974	midostaurin	signaling	FLT3	21	3	18	0	877	0.143	1134	877	144	113	0.227	CTNNB1	0.234
+midostaurin::CHEMBL1936	midostaurin	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+midostaurin::CHEMBL2095189	midostaurin	signaling	PDGFRA|PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+midostaurin::CHEMBL2093867	midostaurin	signaling	PRKCA|PRKCB|PRKCD|PRKCE|PRKCG|PRKCH|PRKCI|PRKCQ|PRKCZ|PRKD1|PRKD3	297	140	157	0	1821	0.471	4045	1821	1041	1183	0.55	SP1	0.26
+midostaurin::CHEMBL279	midostaurin	signaling	KDR	2	0	2	0	202	0.0	205	202	3	0	0.015	FOXO3	0.842
+valsartan::CHEMBL227	valsartan	signaling	AGTR1	0	0	0	0	0		0	0	0	0			
+prazosin::CHEMBL2094251	prazosin	signaling	ADRA1A|ADRA1B|ADRA1D	0	0	0	0	0		0	0	0	0			
+rimexolone::CHEMBL2034	rimexolone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+carvedilol::CHEMBL2094118	carvedilol	signaling	ADRB1|ADRB2|ADRB3	0	0	0	0	0		0	0	0	0			
+carvedilol::CHEMBL2094251	carvedilol	signaling	ADRA1A|ADRA1B|ADRA1D	0	0	0	0	0		0	0	0	0			
+acitretin::CHEMBL2363071	acitretin	tf	RARA|RARB|RARG|RXRA|RXRB|RXRG	6	0	0	197	0	0.0	207	197	10	0	0.048	RARA	0.629
+alectinib::CHEMBL4247	alectinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+alectinib::CHEMBL2041	alectinib	signaling	RET	163	38	125	0	1907	0.233	3730	1907	1192	631	0.489	SP1	0.23
+alectinib::CHEMBL3883330	alectinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+doxycycline::CHEMBL4073	doxycycline	signaling	MMP7	0	0	0	0	0		0	0	0	0			
+doxycycline::CHEMBL4588	doxycycline	signaling	MMP8	0	0	0	0	0		0	0	0	0			
+doxycycline::CHEMBL280	doxycycline	signaling	MMP13	0	0	0	0	0		0	0	0	0			
+doxycycline::CHEMBL332	doxycycline	signaling	MMP1	0	0	0	0	0		0	0	0	0			
+edoxaban::CHEMBL244	edoxaban	signaling	F10	0	0	0	0	0		0	0	0	0			
+mirtazapine::CHEMBL224	mirtazapine	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+mirtazapine::CHEMBL225	mirtazapine	signaling	HTR2C	0	0	0	0	0		0	0	0	0			
+mirtazapine::CHEMBL2095158	mirtazapine	signaling	ADRA2A|ADRA2B|ADRA2C	0	0	0	0	0		0	0	0	0			
+vorinostat::CHEMBL325	vorinostat	tf	HDAC1	1	0	0	73	0	0.0	73	73	0	0	0.0	HDAC1	1.0
+vorinostat::CHEMBL1829	vorinostat	tf	HDAC3	1	0	0	18	0	0.0	18	18	0	0	0.0	HDAC3	1.0
+vorinostat::CHEMBL1865	vorinostat	signaling	HDAC6	9	1	8	0	1121	0.111	1759	1121	221	417	0.363	TP53	0.548
+vorinostat::CHEMBL1937	vorinostat	signaling	HDAC2	15	3	12	0	1016	0.2	1212	1016	191	5	0.162	RELA	0.31
+fluvastatin::CHEMBL402	fluvastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+idarubicin::CHEMBL1806	idarubicin	signaling	TOP2A	0	0	0	0	0		0	0	0	0			
+KD-025::CHEMBL2973	KD-025	signaling	ROCK2	2	0	2	0	97	0.0	99	97	2	0	0.02	NKX3-1	0.608
+KD-025::CHEMBL2111459	KD-025	signaling	ROCK1|ROCK2	19	1	18	0	1512	0.053	2130	1512	579	39	0.29	SP1	0.384
+benazepril::CHEMBL1808	benazepril	signaling	ACE	0	0	0	0	0		0	0	0	0			
+KPT-330::CHEMBL5661	KPT-330	signaling	XPO1	28	7	21	0	1022	0.25	1710	1022	201	487	0.402	TP53	0.606
+cyclosporin-a::CHEMBL1949	cyclosporin-a	signaling	PPIA	0	0	0	0	0		0	0	0	0			
+methylene-blue::CHEMBL2111348	methylene-blue	signaling	GUCY1A1|GUCY1A2|GUCY1B1|GUCY1B2	0	0	0	0	0		0	0	0	0			
+oxaprozin::CHEMBL2094253	oxaprozin	signaling	PTGS1|PTGS2	0	0	0	0	0		0	0	0	0			
+methotrexate::CHEMBL202	methotrexate	signaling	DHFR	0	0	0	0	0		0	0	0	0			
+sumatriptan::CHEMBL1898	sumatriptan	signaling	HTR1B	0	0	0	0	0		0	0	0	0			
+sumatriptan::CHEMBL1983	sumatriptan	signaling	HTR1D	0	0	0	0	0		0	0	0	0			
+idelalisib::CHEMBL3130	idelalisib	signaling	PIK3CD	0	0	0	0	0		0	0	0	0			
+halcinonide::CHEMBL2034	halcinonide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+lonafarnib::CHEMBL2094108	lonafarnib	signaling	FNTA|FNTB	0	0	0	0	0		0	0	0	0			
+netupitant::CHEMBL249	netupitant	signaling	TACR1	0	0	0	0	0		0	0	0	0			
+mometasone::CHEMBL2034	mometasone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+ranitidine::CHEMBL1941	ranitidine	signaling	HRH2	0	0	0	0	0		0	0	0	0			
+perphenazine::CHEMBL217	perphenazine	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+vinblastine::CHEMBL2095182	vinblastine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+raloxifene::CHEMBL206	raloxifene	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+raloxifene::CHEMBL242	raloxifene	tf	ESR2	1	0	0	163	0	0.0	163	163	0	0	0.0	ESR2	1.0
+cabozantinib::CHEMBL279	cabozantinib	signaling	KDR	2	0	2	0	202	0.0	205	202	3	0	0.015	FOXO3	0.842
+cabozantinib::CHEMBL3717	cabozantinib	signaling	MET	81	15	66	0	1383	0.185	3092	1383	700	1009	0.553	ESR1	0.149
+beclomethasone-dipropionate::annot:NR3C1	beclomethasone-dipropionate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+prednisone::CHEMBL2034	prednisone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+doxorubicin::CHEMBL1806	doxorubicin	signaling	TOP2A	0	0	0	0	0		0	0	0	0			
+zafirlukast::CHEMBL1798	zafirlukast	signaling	CYSLTR1	0	0	0	0	0		0	0	0	0			
+lapatinib::CHEMBL1824	lapatinib	signaling	ERBB2	90	27	63	0	1894	0.3	3344	1894	1050	400	0.434	SP1	0.228
+lapatinib::CHEMBL203	lapatinib	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+clobetasol::annot:NR3C1	clobetasol	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+dantrolene::CHEMBL1846	dantrolene	signaling	RYR1	0	0	0	0	0		0	0	0	0			
+dantrolene::CHEMBL2062	dantrolene	signaling	RYR3	0	0	0	0	0		0	0	0	0			
+diflorasone::CHEMBL2034	diflorasone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+sildenafil::CHEMBL1827	sildenafil	signaling	PDE5A	0	0	0	0	0		0	0	0	0			
+ixabepilone::CHEMBL2095182	ixabepilone	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+formoterol::CHEMBL210	formoterol	signaling	ADRB2	0	0	0	0	0		0	0	0	0			
+azacitidine::CHEMBL1992	azacitidine	tf	DNMT3A	1	0	0	47	0	0.0	47	47	0	0	0.0	DNMT3A	1.0
+azacitidine::CHEMBL1993	azacitidine	tf	DNMT1	1	0	0	146	0	0.0	146	146	0	0	0.0	DNMT1	1.0
+cimetidine::CHEMBL1941	cimetidine	signaling	HRH2	0	0	0	0	0		0	0	0	0			
+levonorgestrel::CHEMBL208	levonorgestrel	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+hydrocortisone-acetate::CHEMBL2034	hydrocortisone-acetate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+MLN-9708::CHEMBL2364701	MLN-9708	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	3	0	186	0.25	247	186	24	37	0.247	SMAD3	0.645
+copanlisib::CHEMBL4005	copanlisib	signaling	PIK3CA	14	1	13	0	785	0.071	1048	785	88	175	0.251	ESR1	0.52
+copanlisib::CHEMBL3130	copanlisib	signaling	PIK3CD	0	0	0	0	0		0	0	0	0			
+erlotinib::CHEMBL203	erlotinib	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+tolcapone::CHEMBL2023	tolcapone	signaling	COMT	0	0	0	0	0		0	0	0	0			
+ciclesonide::CHEMBL2034	ciclesonide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+PD-0325901::CHEMBL3587	PD-0325901	signaling	MAP2K1	145	29	116	0	1714	0.2	3668	1714	1081	873	0.533	SP1	0.266
+PD-0325901::CHEMBL2964	PD-0325901	signaling	MAP2K2	88	19	69	0	2081	0.216	3293	2081	966	246	0.368	SP1	0.247
+mitoxantrone::CHEMBL1806	mitoxantrone	signaling	TOP2A	0	0	0	0	0		0	0	0	0			
+fludarabine::annot:ADA	fludarabine	signaling	ADA	0	0	0	0	0		0	0	0	0			
+fludarabine::annot:DCK	fludarabine	signaling	DCK	0	0	0	0	0		0	0	0	0			
+fludarabine::annot:POLA1	fludarabine	signaling	POLA1	0	0	0	0	0		0	0	0	0			
+fludarabine::annot:RRM1	fludarabine	signaling	RRM1	0	0	0	0	0		0	0	0	0			
+fludarabine::annot:RRM2	fludarabine	signaling	RRM2	0	0	0	0	0		0	0	0	0			
+toremifene::CHEMBL2093866	toremifene	tf	ESR1|ESR2	2	0	0	503	0	0.0	531	503	28	0	0.053	ESR1	0.895
+fluticasone-propionate::CHEMBL2034	fluticasone-propionate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+chlortalidone::CHEMBL1876	chlortalidone	signaling	SLC12A3	0	0	0	0	0		0	0	0	0			
+tazarotene::CHEMBL2363069	tazarotene	tf	RARA|RARB|RARG	3	0	0	160	0	0.0	164	160	4	0	0.024	RARA	0.806
+estramustine::annot:ESR1	estramustine	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+estramustine::annot:ESR2	estramustine	tf	ESR2	1	0	0	163	0	0.0	163	163	0	0	0.0	ESR2	1.0
+estramustine::annot:MAP1A	estramustine	signaling	MAP1A	0	0	0	0	0		0	0	0	0			
+estramustine::annot:MAP2	estramustine	signaling	MAP2	0	0	0	0	0		0	0	0	0			
+verapamil::CHEMBL2095229	verapamil	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0	0	0	0		0	0	0	0			
+simvastatin::CHEMBL402	simvastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+vemurafenib::CHEMBL5145	vemurafenib	signaling	BRAF	15	0	15	0	1063	0.0	1131	1063	68	0	0.06	MYC	0.651
+palbociclib::CHEMBL2111455	palbociclib	mixed	CCND1|CDK6	39	27	11	0	886	0.692	2038	886	150	1002	0.565	ESR1	0.414
+palbociclib::CHEMBL1907601	palbociclib	mixed	CCND1|CDK4	57	11	45	0	1781	0.193	3030	1781	850	399	0.412	MYC	0.225
+colchicine::CHEMBL2095182	colchicine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+desoxycortone::annot:NR3C1	desoxycortone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+desoxycortone::annot:NR3C2	desoxycortone	tf	NR3C2	1	0	0	44	0	0.0	44	44	0	0	0.0	NR3C2	1.0
+estradiol::CHEMBL206	estradiol	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+rivaroxaban::CHEMBL244	rivaroxaban	signaling	F10	0	0	0	0	0		0	0	0	0			
+AZD-5363::CHEMBL2111353	AZD-5363	signaling	AKT1|AKT2|AKT3	259	130	129	0	1582	0.502	4052	1582	691	1779	0.61	ESR1	0.15
+alprazolam::CHEMBL2093872	alprazolam	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0	0	0	0		0	0	0	0			
+prochlorperazine::CHEMBL217	prochlorperazine	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+triamterene::CHEMBL2107836	triamterene	signaling	SCNN1A|SCNN1B|SCNN1G	0	0	0	0	0		0	0	0	0			
+pindolol::CHEMBL213	pindolol	signaling	ADRB1	0	0	0	0	0		0	0	0	0			
+pindolol::CHEMBL210	pindolol	signaling	ADRB2	0	0	0	0	0		0	0	0	0			
+selumetinib::CHEMBL3587	selumetinib	signaling	MAP2K1	145	29	116	0	1714	0.2	3668	1714	1081	873	0.533	SP1	0.266
+selumetinib::CHEMBL2964	selumetinib	signaling	MAP2K2	88	19	69	0	2081	0.216	3293	2081	966	246	0.368	SP1	0.247
+betamethasone::CHEMBL2034	betamethasone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+troglitazone::CHEMBL235	troglitazone	tf	PPARG	1	0	0	273	0	0.0	273	273	0	0	0.0	PPARG	1.0
+BRD-K92073408::CHEMBL208	BRD-K92073408	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+norgestrel::CHEMBL208	norgestrel	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+romidepsin::CHEMBL2093865	romidepsin	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	39	120	1432	0.118	2551	1432	689	430	0.439	TP53	0.277
+salmeterol::CHEMBL210	salmeterol	signaling	ADRB2	0	0	0	0	0		0	0	0	0			
+pralatrexate::CHEMBL202	pralatrexate	signaling	DHFR	0	0	0	0	0		0	0	0	0			
+rucaparib::CHEMBL3390820	rucaparib	signaling	PARP1|PARP2|PARP3	40	8	32	0	1513	0.2	2105	1513	437	155	0.281	MYC	0.323
+donepezil::CHEMBL220	donepezil	signaling	ACHE	0	0	0	0	0		0	0	0	0			
+temsirolimus::CHEMBL1902	temsirolimus	signaling	FKBP1A	6	3	3	0	408	0.5	561	408	31	122	0.273	CREB1	0.775
+norethynodrel::CHEMBL208	norethynodrel	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+fingolimod::CHEMBL2363041	fingolimod	signaling	S1PR1|S1PR2|S1PR3|S1PR4|S1PR5	0	0	0	0	0		0	0	0	0			
+warfarin::CHEMBL1930	warfarin	signaling	VKORC1	0	0	0	0	0		0	0	0	0			
+BRD-A04553218::CHEMBL231	BRD-A04553218	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+ponatinib::CHEMBL2096618	ponatinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+menadione::annot:AOX1	menadione	signaling	AOX1	0	0	0	0	0		0	0	0	0			
+tacrolimus::CHEMBL1902	tacrolimus	signaling	FKBP1A	6	3	3	0	408	0.5	561	408	31	122	0.273	CREB1	0.775
+vinorelbine::CHEMBL2095182	vinorelbine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+lacosamide::CHEMBL2331043	lacosamide	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+piroxicam::CHEMBL2094253	piroxicam	signaling	PTGS1|PTGS2	0	0	0	0	0		0	0	0	0			
+clomifene::CHEMBL206	clomifene	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+thioridazine::CHEMBL224	thioridazine	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+thioridazine::CHEMBL225	thioridazine	signaling	HTR2C	0	0	0	0	0		0	0	0	0			
+thioridazine::CHEMBL2331075	thioridazine	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+gefitinib::CHEMBL203	gefitinib	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+amcinonide::CHEMBL2034	amcinonide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+protriptyline::CHEMBL228	protriptyline	signaling	SLC6A4	0	0	0	0	0		0	0	0	0			
+protriptyline::CHEMBL222	protriptyline	signaling	SLC6A2	0	0	0	0	0		0	0	0	0			
+ritodrine::CHEMBL210	ritodrine	signaling	ADRB2	0	0	0	0	0		0	0	0	0			
+sirolimus::CHEMBL1902	sirolimus	signaling	FKBP1A	6	3	3	0	408	0.5	561	408	31	122	0.273	CREB1	0.775
+valrubicin::CHEMBL1806	valrubicin	signaling	TOP2A	0	0	0	0	0		0	0	0	0			
+olaparib::CHEMBL3390820	olaparib	signaling	PARP1|PARP2|PARP3	40	8	32	0	1513	0.2	2105	1513	437	155	0.281	MYC	0.323
+calcitriol::CHEMBL1977	calcitriol	tf	VDR	1	0	0	105	0	0.0	105	105	0	0	0.0	VDR	1.0
+macitentan::CHEMBL2096678	macitentan	signaling	EDNRA|EDNRB	0	0	0	0	0		0	0	0	0			
+paroxetine::CHEMBL228	paroxetine	signaling	SLC6A4	0	0	0	0	0		0	0	0	0			
+etoposide::CHEMBL2094255	etoposide	signaling	TOP2A|TOP2B	0	0	0	0	0		0	0	0	0			
+decitabine::CHEMBL1992	decitabine	tf	DNMT3A	1	0	0	47	0	0.0	47	47	0	0	0.0	DNMT3A	1.0
+decitabine::CHEMBL1993	decitabine	tf	DNMT1	1	0	0	146	0	0.0	146	146	0	0	0.0	DNMT1	1.0
+minoxidil::CHEMBL2095198	minoxidil	signaling	ABCC9|KCNJ11	0	0	0	0	0		0	0	0	0			
+loperamide::CHEMBL233	loperamide	signaling	OPRM1	0	0	0	0	0		0	0	0	0			
+irbesartan::CHEMBL227	irbesartan	signaling	AGTR1	0	0	0	0	0		0	0	0	0			
+dipyridamole::CHEMBL1997	dipyridamole	signaling	SLC29A1	0	0	0	0	0		0	0	0	0			
+dipyridamole::CHEMBL2363066	dipyridamole	signaling	PDE10A|PDE1A|PDE1B|PDE1C|PDE2A|PDE3A|PDE3B|PDE4A|PDE4B|PDE4C|PDE4D|PDE5A|PDE6A|PDE6B|PDE6C|PDE6D|PDE6G|PDE6H|PDE7A|PDE7B|PDE8A|PDE8B|PDE9A	0	0	0	0	0		0	0	0	0			
+clocortolone-pivalate::CHEMBL2034	clocortolone-pivalate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+ixazomib::CHEMBL2364701	ixazomib	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	3	0	186	0.25	247	186	24	37	0.247	SMAD3	0.645
+anagrelide::CHEMBL2094125	anagrelide	signaling	PDE3A|PDE3B	0	0	0	0	0		0	0	0	0			
+talazoparib::CHEMBL3105	talazoparib	signaling	PARP1	40	8	32	0	1513	0.2	2105	1513	437	155	0.281	MYC	0.323
+talazoparib::CHEMBL5366	talazoparib	signaling	PARP2	0	0	0	0	0		0	0	0	0			
+nicardipine::CHEMBL2095229	nicardipine	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0	0	0	0		0	0	0	0			
+PF-05212384::CHEMBL2842	PF-05212384	signaling	MTOR	80	8	72	0	2155	0.1	3199	2155	774	270	0.326	SP1	0.28
+PF-05212384::CHEMBL3559703	PF-05212384	signaling	PIK3CA|PIK3CB|PIK3CD|PIK3CG|PIK3R1|PIK3R2|PIK3R3|PIK3R5	155	26	129	0	1609	0.168	3498	1609	946	943	0.54	TP53	0.233
+givinostat::CHEMBL2093865	givinostat	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	39	120	1432	0.118	2551	1432	689	430	0.439	TP53	0.277
+levomepromazine::CHEMBL2331075	levomepromazine	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+panobinostat::CHEMBL2093865	panobinostat	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	39	120	1432	0.118	2551	1432	689	430	0.439	TP53	0.277
+thioguanine::CHEMBL2111369	thioguanine	signaling	IMPDH1|IMPDH2	0	0	0	0	0		0	0	0	0			
+pheniramine::CHEMBL231	pheniramine	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+tegaserod::CHEMBL1875	tegaserod	signaling	HTR4	0	0	0	0	0		0	0	0	0			
+axitinib::CHEMBL2095227	axitinib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+bazedoxifene::CHEMBL2093866	bazedoxifene	tf	ESR1|ESR2	2	0	0	503	0	0.0	531	503	28	0	0.053	ESR1	0.895
+irinotecan::CHEMBL1781	irinotecan	signaling	TOP1	0	0	0	0	0		0	0	0	0			
+danazol::CHEMBL208	danazol	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+danazol::CHEMBL1871	danazol	tf	AR	1	0	0	399	0	0.0	399	399	0	0	0.0	AR	1.0
+amitriptyline::CHEMBL228	amitriptyline	signaling	SLC6A4	0	0	0	0	0		0	0	0	0			
+amitriptyline::CHEMBL222	amitriptyline	signaling	SLC6A2	0	0	0	0	0		0	0	0	0			
+nabumetone::CHEMBL230	nabumetone	signaling	PTGS2	0	0	0	0	0		0	0	0	0			
+bromocriptine::CHEMBL2331075	bromocriptine	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+neratinib::CHEMBL203	neratinib	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+neratinib::CHEMBL1824	neratinib	signaling	ERBB2	90	27	63	0	1894	0.3	3344	1894	1050	400	0.434	SP1	0.228
+neratinib::CHEMBL3009	neratinib	signaling	ERBB4	31	18	13	0	1322	0.581	2335	1322	154	859	0.434	MYC	0.49
+BRD-K89997465::CHEMBL224	BRD-K89997465	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+BRD-K89997465::CHEMBL2331075	BRD-K89997465	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+docetaxel::CHEMBL2095182	docetaxel	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+afatinib::CHEMBL203	afatinib	signaling	EGFR	110	32	78	0	1749	0.291	3436	1749	886	801	0.491	SP1	0.293
+afatinib::CHEMBL1824	afatinib	signaling	ERBB2	90	27	63	0	1894	0.3	3344	1894	1050	400	0.434	SP1	0.228
+afatinib::CHEMBL3009	afatinib	signaling	ERBB4	31	18	13	0	1322	0.581	2335	1322	154	859	0.434	MYC	0.49
+masoprocol::CHEMBL1824	masoprocol	signaling	ERBB2	90	27	63	0	1894	0.3	3344	1894	1050	400	0.434	SP1	0.228
+masoprocol::CHEMBL1957	masoprocol	signaling	IGF1R	6	0	6	0	862	0.0	977	862	115	0	0.118	TP53	0.784
+ceritinib::CHEMBL4247	ceritinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+ceritinib::CHEMBL3883330	ceritinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+ceritinib::CHEMBL2111387	ceritinib	signaling	ALK	15	2	13	0	949	0.133	1288	949	244	95	0.263	RELA	0.318
+drospirenone::CHEMBL1994	drospirenone	tf	NR3C2	1	0	0	44	0	0.0	44	44	0	0	0.0	NR3C2	1.0
+drospirenone::CHEMBL208	drospirenone	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+meloxicam::CHEMBL230	meloxicam	signaling	PTGS2	0	0	0	0	0		0	0	0	0			
+caffeine::CHEMBL2111329	caffeine	signaling	ADORA1|ADORA2A|ADORA2B|ADORA3	0	0	0	0	0		0	0	0	0			
+ketoprofen::CHEMBL2094253	ketoprofen	signaling	PTGS1|PTGS2	0	0	0	0	0		0	0	0	0			
+dexamethasone-acetate::CHEMBL2034	dexamethasone-acetate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+losartan::CHEMBL227	losartan	signaling	AGTR1	0	0	0	0	0		0	0	0	0			
+pioglitazone::CHEMBL235	pioglitazone	tf	PPARG	1	0	0	273	0	0.0	273	273	0	0	0.0	PPARG	1.0
+latanoprost::CHEMBL1987	latanoprost	signaling	PTGFR	0	0	0	0	0		0	0	0	0			
+mefenamic-acid::CHEMBL2094253	mefenamic-acid	signaling	PTGS1|PTGS2	0	0	0	0	0		0	0	0	0			
+testosterone::CHEMBL1871	testosterone	tf	AR	1	0	0	399	0	0.0	399	399	0	0	0.0	AR	1.0
+flutamide::CHEMBL1871	flutamide	tf	AR	1	0	0	399	0	0.0	399	399	0	0	0.0	AR	1.0
+prednicarbate::CHEMBL2034	prednicarbate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+imatinib::CHEMBL1862	imatinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+imatinib::CHEMBL1913	imatinib	signaling	PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+imatinib::CHEMBL1936	imatinib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+imatinib::CHEMBL2096618	imatinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+fulvestrant::CHEMBL206	fulvestrant	tf	ESR1	1	0	0	478	0	0.0	478	478	0	0	0.0	ESR1	1.0
+dorzolamide::CHEMBL205	dorzolamide	signaling	CA2	0	0	0	0	0		0	0	0	0			
+amlodipine::CHEMBL2095229	amlodipine	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0	0	0	0		0	0	0	0			
+calcipotriol::CHEMBL1977	calcipotriol	tf	VDR	1	0	0	105	0	0.0	105	105	0	0	0.0	VDR	1.0
+reserpine::CHEMBL1893	reserpine	signaling	SLC18A2	0	0	0	0	0		0	0	0	0			
+trimipramine::CHEMBL231	trimipramine	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+trimipramine::CHEMBL217	trimipramine	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+trimipramine::CHEMBL224	trimipramine	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+trimipramine::CHEMBL225	trimipramine	signaling	HTR2C	0	0	0	0	0		0	0	0	0			
+trimipramine::CHEMBL222	trimipramine	signaling	SLC6A2	0	0	0	0	0		0	0	0	0			
+trimipramine::CHEMBL2094251	trimipramine	signaling	ADRA1A|ADRA1B|ADRA1D	0	0	0	0	0		0	0	0	0			
+valdecoxib::CHEMBL230	valdecoxib	signaling	PTGS2	0	0	0	0	0		0	0	0	0			
+nilotinib::CHEMBL1862	nilotinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+nilotinib::CHEMBL2096618	nilotinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+BRD-K72166146::CHEMBL1983	BRD-K72166146	signaling	HTR1D	0	0	0	0	0		0	0	0	0			
+disopyramide::CHEMBL2331043	disopyramide	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+ziprasidone::CHEMBL224	ziprasidone	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+ziprasidone::CHEMBL225	ziprasidone	signaling	HTR2C	0	0	0	0	0		0	0	0	0			
+ziprasidone::CHEMBL217	ziprasidone	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+amiodarone::CHEMBL240	amiodarone	signaling	KCNH2	0	0	0	0	0		0	0	0	0			
+fluphenazine::CHEMBL217	fluphenazine	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+carfilzomib::CHEMBL2364701	carfilzomib	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	3	0	186	0.25	247	186	24	37	0.247	SMAD3	0.645
+hydroflumethiazide::CHEMBL1876	hydroflumethiazide	signaling	SLC12A3	0	0	0	0	0		0	0	0	0			
+lurasidone::CHEMBL224	lurasidone	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+lurasidone::CHEMBL217	lurasidone	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+bortezomib::CHEMBL2364701	bortezomib	signaling	ADRM1|PSMA1|PSMA2|PSMA3|PSMA4|PSMA5|PSMA6|PSMA7|PSMA8|PSMB1|PSMB10|PSMB11|PSMB2|PSMB3|PSMB4|PSMB5|PSMB6|PSMB7|PSMB8|PSMB9|PSMC1|PSMC2|PSMC3|PSMC4|PSMC5|PSMC6|PSMD1|PSMD11|PSMD12|PSMD13|PSMD14|PSMD2|PSMD3|PSMD4|PSMD6|PSMD7|PSMD8|SEM1	4	1	3	0	186	0.25	247	186	24	37	0.247	SMAD3	0.645
+cobimetinib::CHEMBL3587	cobimetinib	signaling	MAP2K1	145	29	116	0	1714	0.2	3668	1714	1081	873	0.533	SP1	0.266
+cobimetinib::CHEMBL2964	cobimetinib	signaling	MAP2K2	88	19	69	0	2081	0.216	3293	2081	966	246	0.368	SP1	0.247
+noretynodrel::CHEMBL208	noretynodrel	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+allopurinol::CHEMBL1929	allopurinol	signaling	XDH	0	0	0	0	0		0	0	0	0			
+CYT-387::CHEMBL2835	CYT-387	signaling	JAK1	37	14	23	0	1048	0.378	2281	1048	300	933	0.541	ESR1	0.293
+CYT-387::CHEMBL2971	CYT-387	signaling	JAK2	64	15	49	0	1475	0.234	2996	1475	688	833	0.508	ESR1	0.138
+CYT-387::CHEMBL5903	CYT-387	signaling	ACVR1	4	0	4	0	198	0.0	209	198	11	0	0.053	SMAD4	0.475
+atorvastatin::CHEMBL402	atorvastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+trametinib::CHEMBL2111289	trametinib	signaling	MAP2K1|MAP2K2	145	29	116	0	1714	0.2	3668	1714	1081	873	0.533	SP1	0.266
+trametinib::CHEMBL2964	trametinib	signaling	MAP2K2	88	19	69	0	2081	0.216	3293	2081	966	246	0.368	SP1	0.247
+trametinib::CHEMBL3587	trametinib	signaling	MAP2K1	145	29	116	0	1714	0.2	3668	1714	1081	873	0.533	SP1	0.266
+lomitapide::CHEMBL2364681	lomitapide	signaling	MTTP|P4HB	0	0	0	0	0		0	0	0	0			
+promazine::CHEMBL224	promazine	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+promazine::CHEMBL2331075	promazine	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+EMD-1214063::CHEMBL3717	EMD-1214063	signaling	MET	81	15	66	0	1383	0.185	3092	1383	700	1009	0.553	ESR1	0.149
+BRD-K08177763::CHEMBL1902	BRD-K08177763	signaling	FKBP1A	6	3	3	0	408	0.5	561	408	31	122	0.273	CREB1	0.775
+clemastine::CHEMBL231	clemastine	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+isotretinoin::CHEMBL2363069	isotretinoin	tf	RARA|RARB|RARG	3	0	0	160	0	0.0	164	160	4	0	0.024	RARA	0.806
+dexamethasone::CHEMBL2034	dexamethasone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+digoxin::CHEMBL2095186	digoxin	signaling	ATP1A1|ATP1A2|ATP1A3|ATP1A4|ATP1B1|ATP1B2|ATP1B3|FXYD2	0	0	0	0	0		0	0	0	0			
+pazopanib::CHEMBL1844	pazopanib	signaling	CSF1R	0	0	0	0	0		0	0	0	0			
+pazopanib::CHEMBL1936	pazopanib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+pazopanib::CHEMBL258	pazopanib	signaling	LCK	121	17	104	0	1735	0.14	3587	1735	1255	597	0.516	TP53	0.173
+pazopanib::CHEMBL2742	pazopanib	signaling	FGFR3	19	2	17	0	979	0.105	1844	979	304	561	0.469	HIF1A	0.202
+pazopanib::CHEMBL3650	pazopanib	signaling	FGFR1	2	0	2	0	168	0.0	180	168	12	0	0.067	SMAD3	0.786
+pazopanib::CHEMBL2095189	pazopanib	signaling	PDGFRA|PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+pazopanib::CHEMBL2095227	pazopanib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+pazopanib::CHEMBL2959	pazopanib	signaling	ITK	5	0	5	0	406	0.0	474	406	68	0	0.143	STAT3	0.665
+LY-2835219::CHEMBL331	LY-2835219	signaling	CDK4	56	11	45	0	1781	0.196	3030	1781	850	399	0.412	MYC	0.225
+LY-2835219::CHEMBL2508	LY-2835219	signaling	CDK6	38	27	11	0	886	0.711	2038	886	150	1002	0.565	ESR1	0.414
+metoprolol::CHEMBL213	metoprolol	signaling	ADRB1	0	0	0	0	0		0	0	0	0			
+cerivastatin::CHEMBL402	cerivastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+mepivacaine::CHEMBL2331043	mepivacaine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+tivozanib::CHEMBL2095227	tivozanib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+tivozanib::CHEMBL1936	tivozanib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+tivozanib::CHEMBL1913	tivozanib	signaling	PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+norethindrone::CHEMBL208	norethindrone	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+methylprednisolone::CHEMBL2034	methylprednisolone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+sunitinib::CHEMBL1844	sunitinib	signaling	CSF1R	0	0	0	0	0		0	0	0	0			
+sunitinib::CHEMBL279	sunitinib	signaling	KDR	2	0	2	0	202	0.0	205	202	3	0	0.015	FOXO3	0.842
+sunitinib::CHEMBL1936	sunitinib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+sunitinib::CHEMBL1913	sunitinib	signaling	PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+sunitinib::CHEMBL2007	sunitinib	signaling	PDGFRA	29	1	28	0	1403	0.034	2000	1403	492	105	0.298	TP53	0.336
+sunitinib::CHEMBL1868	sunitinib	signaling	FLT1	0	0	0	0	0		0	0	0	0			
+sunitinib::CHEMBL1955	sunitinib	signaling	FLT4	10	0	10	0	1352	0.0	1524	1352	172	0	0.113	TP53	0.481
+sunitinib::CHEMBL1974	sunitinib	signaling	FLT3	21	3	18	0	877	0.143	1134	877	144	113	0.227	CTNNB1	0.234
+sunitinib::CHEMBL2041	sunitinib	signaling	RET	163	38	125	0	1907	0.233	3730	1907	1192	631	0.489	SP1	0.23
+sunitinib::CHEMBL2095189	sunitinib	signaling	PDGFRA|PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+sunitinib::CHEMBL2095227	sunitinib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+etodolac::CHEMBL230	etodolac	signaling	PTGS2	0	0	0	0	0		0	0	0	0			
+fluoxetine::CHEMBL228	fluoxetine	signaling	SLC6A4	0	0	0	0	0		0	0	0	0			
+naltrexone::CHEMBL2095181	naltrexone	signaling	OPRD1|OPRK1|OPRM1	0	0	0	0	0		0	0	0	0			
+maprotiline::CHEMBL222	maprotiline	signaling	SLC6A2	0	0	0	0	0		0	0	0	0			
+teniposide::CHEMBL2094255	teniposide	signaling	TOP2A|TOP2B	0	0	0	0	0		0	0	0	0			
+nandrolone::annot:AR	nandrolone	tf	AR	1	0	0	399	0	0.0	399	399	0	0	0.0	AR	1.0
+nandrolone::annot:CYP19A1	nandrolone	signaling	CYP19A1	0	0	0	0	0		0	0	0	0			
+nandrolone::annot:MAOA	nandrolone	signaling	MAOA	0	0	0	0	0		0	0	0	0			
+nandrolone::annot:MAOB	nandrolone	signaling	MAOB	0	0	0	0	0		0	0	0	0			
+nandrolone::annot:NISCH	nandrolone	signaling	NISCH	0	0	0	0	0		0	0	0	0			
+orphenadrine::CHEMBL231	orphenadrine	signaling	HRH1	0	0	0	0	0		0	0	0	0			
+orphenadrine::CHEMBL222	orphenadrine	signaling	SLC6A2	0	0	0	0	0		0	0	0	0			
+orphenadrine::CHEMBL2094124	orphenadrine	signaling	GRIN1|GRIN2A|GRIN2B|GRIN2C|GRIN2D|GRIN3A|GRIN3B	0	0	0	0	0		0	0	0	0			
+orphenadrine::CHEMBL2331043	orphenadrine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+lidocaine::CHEMBL2331043	lidocaine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+acamprosate::CHEMBL2094124	acamprosate	signaling	GRIN1|GRIN2A|GRIN2B|GRIN2C|GRIN2D|GRIN3A|GRIN3B	0	0	0	0	0		0	0	0	0			
+acamprosate::CHEMBL2093872	acamprosate	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0	0	0	0		0	0	0	0			
+ropinirole::CHEMBL2331075	ropinirole	signaling	DRD2|DRD3|DRD4	0	0	0	0	0		0	0	0	0			
+dabrafenib::CHEMBL5145	dabrafenib	signaling	BRAF	15	0	15	0	1063	0.0	1131	1063	68	0	0.06	MYC	0.651
+eptifibatide::CHEMBL2093869	eptifibatide	signaling	ITGA2B|ITGB3	1	1	0	0	0	1.0	39	0	0	39	1.0		
+bexarotene::CHEMBL2363070	bexarotene	tf	RXRA|RXRB|RXRG	3	0	0	74	0	0.0	75	74	1	0	0.013	RXRA	0.892
+pitavastatin::CHEMBL402	pitavastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+brexpiprazole::CHEMBL217	brexpiprazole	signaling	DRD2	0	0	0	0	0		0	0	0	0			
+brexpiprazole::CHEMBL214	brexpiprazole	signaling	HTR1A	0	0	0	0	0		0	0	0	0			
+brexpiprazole::CHEMBL224	brexpiprazole	signaling	HTR2A	0	0	0	0	0		0	0	0	0			
+dasatinib::CHEMBL1862	dasatinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+dasatinib::CHEMBL1913	dasatinib	signaling	PDGFRB	35	5	30	0	1380	0.143	2141	1380	483	278	0.355	TP53	0.344
+dasatinib::CHEMBL1936	dasatinib	signaling	KIT	43	8	35	0	1285	0.186	2316	1285	512	519	0.445	ESR1	0.2
+dasatinib::CHEMBL2068	dasatinib	signaling	EPHA2	2	0	2	0	179	0.0	180	179	1	0	0.006	FOXO3	0.961
+dasatinib::CHEMBL2363074	dasatinib	signaling	BLK|FGR|FRK|FYN|HCK|LCK|LYN|SRC|SRMS|YES1	280	106	174	0	1846	0.379	4082	1846	1218	1018	0.548	TP53	0.146
+dasatinib::CHEMBL2096618	dasatinib	tf	ABL1	1	0	0	10	0	0.0	10	10	0	0	0.0	ABL1	1.0
+lorazepam::CHEMBL2093872	lorazepam	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0	0	0	0		0	0	0	0			
+sitagliptin::CHEMBL284	sitagliptin	signaling	DPP4	0	0	0	0	0		0	0	0	0			
+carbamazepine::CHEMBL2331043	carbamazepine	signaling	SCN10A|SCN11A|SCN1A|SCN2A|SCN3A|SCN4A|SCN5A|SCN7A|SCN8A|SCN9A	0	0	0	0	0		0	0	0	0			
+GDC-0199::CHEMBL4860	GDC-0199	signaling	BCL2	0	0	0	0	0		0	0	0	0			
+dutasteride::CHEMBL2363075	dutasteride	signaling	SRD5A1|SRD5A2|SRD5A3	0	0	0	0	0		0	0	0	0			
+ticlopidine::CHEMBL2001	ticlopidine	signaling	P2RY12	0	0	0	0	0		0	0	0	0			
+paricalcitol::CHEMBL1977	paricalcitol	tf	VDR	1	0	0	105	0	0.0	105	105	0	0	0.0	VDR	1.0
+clofarabine::CHEMBL2095215	clofarabine	signaling	RRM1|RRM2|RRM2B	0	0	0	0	0		0	0	0	0			
+clofarabine::CHEMBL2363042	clofarabine	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0	0	0	0		0	0	0	0			
+mifepristone::CHEMBL2034	mifepristone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+mifepristone::CHEMBL208	mifepristone	tf	PGR	1	0	0	106	0	0.0	106	106	0	0	0.0	PGR	1.0
+vincristine::CHEMBL2095182	vincristine	signaling	TUBA1A|TUBA1B|TUBA1C|TUBA3C|TUBA3E|TUBA4A|TUBB|TUBB1|TUBB2A|TUBB2B|TUBB3|TUBB4A|TUBB4B|TUBB6|TUBB8	0	0	0	0	0		0	0	0	0			
+ruxolitinib::CHEMBL2835	ruxolitinib	signaling	JAK1	37	14	23	0	1048	0.378	2281	1048	300	933	0.541	ESR1	0.293
+ruxolitinib::CHEMBL2971	ruxolitinib	signaling	JAK2	64	15	49	0	1475	0.234	2996	1475	688	833	0.508	ESR1	0.138
+ruxolitinib::CHEMBL2148	ruxolitinib	signaling	JAK3	49	7	42	0	1493	0.143	2486	1493	496	497	0.399	AR	0.167
+ruxolitinib::CHEMBL3553	ruxolitinib	signaling	TYK2	22	3	19	0	995	0.136	1859	995	303	561	0.465	HIF1A	0.196
+daunorubicin::CHEMBL1806	daunorubicin	signaling	TOP2A	0	0	0	0	0		0	0	0	0			
+alpelisib::CHEMBL4005	alpelisib	signaling	PIK3CA	14	1	13	0	785	0.071	1048	785	88	175	0.251	ESR1	0.52
+nifedipine::CHEMBL2095229	nifedipine	signaling	CACNA1C|CACNA1D|CACNA1F|CACNA1S	0	0	0	0	0		0	0	0	0			
+defactinib::CHEMBL2695	defactinib	signaling	PTK2	78	13	65	0	1446	0.167	3122	1446	792	884	0.537	ESR1	0.13
+defactinib::CHEMBL5469	defactinib	signaling	PTK2B	15	0	15	0	958	0.0	1160	958	202	0	0.174	RELA	0.333
+tioguanine::CHEMBL2111369	tioguanine	signaling	IMPDH1|IMPDH2	0	0	0	0	0		0	0	0	0			
+medrysone::CHEMBL2034	medrysone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+telmisartan::CHEMBL227	telmisartan	signaling	AGTR1	0	0	0	0	0		0	0	0	0			
+nicotine::CHEMBL1907589	nicotine	signaling	CHRNA4|CHRNB2	0	0	0	0	0		0	0	0	0			
+triamcinolone::CHEMBL2034	triamcinolone	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+tofacitinib::CHEMBL2363062	tofacitinib	signaling	JAK1|JAK2|JAK3|TYK2	84	28	56	0	1487	0.333	3164	1487	582	1095	0.53	ESR1	0.139
+pilocarpine::CHEMBL245	pilocarpine	signaling	CHRM3	0	0	0	0	0		0	0	0	0			
+pilocarpine::CHEMBL216	pilocarpine	signaling	CHRM1	0	0	0	0	0		0	0	0	0			
+TG-101348::CHEMBL1974	TG-101348	signaling	FLT3	21	3	18	0	877	0.143	1134	877	144	113	0.227	CTNNB1	0.234
+TG-101348::CHEMBL2971	TG-101348	signaling	JAK2	64	15	49	0	1475	0.234	2996	1475	688	833	0.508	ESR1	0.138
+vandetanib::CHEMBL267	vandetanib	signaling	SRC	208	57	151	0	1797	0.274	3878	1797	1445	636	0.537	SP1	0.138
+vandetanib::CHEMBL4601	vandetanib	signaling	PTK6	72	10	62	0	1515	0.139	2468	1515	639	314	0.386	ESR1	0.162
+vandetanib::CHEMBL4128	vandetanib	signaling	TEK	11	1	10	0	805	0.091	1493	805	192	496	0.461	RELA	0.363
+vandetanib::CHEMBL2095227	vandetanib	signaling	FLT1|FLT4|KDR	11	0	11	0	1361	0.0	1539	1361	178	0	0.116	TP53	0.474
+vandetanib::CHEMBL2041	vandetanib	signaling	RET	163	38	125	0	1907	0.233	3730	1907	1192	631	0.489	SP1	0.23
+vandetanib::CHEMBL2363043	vandetanib	signaling	EPHA1|EPHA10|EPHA2|EPHA3|EPHA4|EPHA5|EPHA6|EPHA7|EPHA8|EPHB1|EPHB2|EPHB3|EPHB4|EPHB6	41	5	36	0	1498	0.122	2274	1498	595	181	0.341	TP53	0.286
+vandetanib::CHEMBL2363049	vandetanib	signaling	EGFR|ERBB2|ERBB3|ERBB4	152	53	99	0	1660	0.349	3682	1660	775	1247	0.549	ESR1	0.139
+fluocinonide::CHEMBL2034	fluocinonide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+cytarabine::CHEMBL2363042	cytarabine	signaling	POLA1|POLA2|POLD1|POLD2|POLD3|POLD4|POLE|POLE2|POLE3|PRIM1|PRIM2	0	0	0	0	0		0	0	0	0			
+azathioprine::CHEMBL2362992	azathioprine	signaling	PPAT	0	0	0	0	0		0	0	0	0			
+fostamatinib::CHEMBL2599	fostamatinib	signaling	SYK	39	4	35	0	1466	0.103	2228	1466	649	113	0.342	TP53	0.304
+spironolactone::CHEMBL1994	spironolactone	tf	NR3C2	1	0	0	44	0	0.0	44	44	0	0	0.0	NR3C2	1.0
+budesonide::CHEMBL2034	budesonide	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+hydrocortisone-valerate::CHEMBL2034	hydrocortisone-valerate	tf	NR3C1	1	0	0	210	0	0.0	210	210	0	0	0.0	NR3C1	1.0
+rosuvastatin::CHEMBL402	rosuvastatin	signaling	HMGCR	0	0	0	0	0		0	0	0	0			
+clonazepam::CHEMBL2093872	clonazepam	signaling	GABRA1|GABRA2|GABRA3|GABRA4|GABRA5|GABRA6|GABRB1|GABRB2|GABRB3|GABRD|GABRE|GABRG1|GABRG2|GABRG3|GABRP|GABRQ	0	0	0	0	0		0	0	0	0			
+belinostat::CHEMBL2093865	belinostat	mixed	HDAC1|HDAC10|HDAC11|HDAC2|HDAC3|HDAC4|HDAC5|HDAC6|HDAC7|HDAC8|HDAC9	51	6	39	120	1432	0.118	2551	1432	689	430	0.439	TP53	0.277
