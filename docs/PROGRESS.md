@@ -1167,3 +1167,29 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   at the freeze.
 - Open and blocking the freeze: D0.1 (reference for R in breast), D0.2 (SERMs), the unit-kind/floor question, and what
   A5 can use for a functional label if not PRISM.
+
+## 2026-11-15: D128-A0.1 — the unit-kind/floor rule corrected (per-gene typing), A0 re-run
+- The open item flagged in D128-A0 is fixed and the audit re-run end to end (144 s). Still label-blind: no M or R
+  value, nothing frozen, no `d128-a0-freeze` tag, D0.1 and D0.2 still the user's decisions.
+- **Was:** a target unit counted as TF-anchored as soon as *any* of its genes was a CollecTRI regulator, and the whole
+  unit was then floored on zero-hop genes alone. **Now:** each gene is typed by how it actually anchors — a regulator
+  contributes its own regulon at zero hops, a non-regulator contributes a 0-2 hop signed-path footprint — each subset
+  is floored on its own genes, and the unit clears if either subset does. Genes are deduplicated across subsets, and a
+  gene the two subsets disagree about counts as conflicting. `unit_kind` is now `tf`, `signaling` or `mixed`, with
+  per-subset counts and `cleared_by` reported.
+- **Why it mattered:** palbociclib (CCND1|CDK4) was below the floor with 0 zero-hop genes although CDK4 resolves 1,781
+  genes through signaling, which blocked wave B2 on a typing artefact while 29 in-context signatures exist. B2's unit
+  status goes from `below_floor|below_floor` to `eligible|eligible`.
+- **Deltas:** units M-eligible 225 → 238; below floor 15 → 2; unit kinds 98 TF → 92 TF + 6 mixed; M-eligible rows
+  73,336 → 80,666; rows blocked by the floor 7,849 → 519; M-admitted pairs 4,775 → 4,940. The landmark-only arm gains
+  most (185 → 226 units), because per-subset floors no longer import conflicts from TFs a unit reaches only at 1-2
+  hops. **No unit lost eligibility**, which is the check the union rule has to pass.
+- Of the 13 units admitted, 2 are palbociclib's (cleared by signaling) and 11 are TF-anchored units — imatinib,
+  dasatinib, nilotinib, ponatinib, bosutinib, regorafenib, vorinostat — that clear on their own regulon of 10-18 genes
+  now that other TFs' conflicting expectations no longer suppress them. The 2 still below the floor fail on data:
+  one has a single anchored TF, the other no resolved genes.
+- **Correction to a number reported in D128-A0:** fulvestrant's ESR1 unit resolves **478 genes (89 landmark)** on its
+  own regulon, not the 294 reported then, which had been intersected with the globally resolved set and lost genes to
+  conflicts from TFs reached at 1-2 hops. The conclusion is unchanged and stronger. Cohort × compound pair totals are
+  unchanged (3,931 group, 1,270 subgroup).
+- `tests/d128/` now 13 tests (2 added for the union rule).

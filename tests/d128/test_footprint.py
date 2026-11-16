@@ -64,3 +64,38 @@ def test_hop_arm_filters_without_rewalking():
 def test_sign_mask_product():
     assert A.mul(A.PLUS, A.MINUS) == A.MINUS and A.mul(A.MINUS, A.MINUS) == A.PLUS
     assert A.mul(A.BOTH, A.PLUS) == A.BOTH
+
+
+# --- D128-A0.1: per-gene typing, floors per subset, union for the unit -------------------------------------------
+def test_mixed_unit_clears_on_its_signaling_gene():
+    """A unit of one regulator with a tiny regulon and one kinase must not be floored on the regulator alone."""
+    regs = {"TFSMALL", "TF1", "TF2", "TF3"}
+    reg_genes = dict(REG_GENES, TFSMALL=(("x1",), (1,)))      # 1 regulon gene: below the floor of 10
+    big = {f"b{i}" for i in range(12)}
+    reg_genes["TF1"] = (tuple(sorted(big)), tuple([1] * 12))   # reached from KIN at 1 hop
+    r = FakeReach("t_mixed", EDGES, max_hops=2)
+    r_regs = regs
+
+    def reach(gene):
+        return A.reach_regulators(r.graph, gene, 2, r_regs)
+    reach.name, reach.max_hops = "t_mixed_fn", 2
+    kind, tf_fp, sig_fp = A.unit_subsets(["TFSMALL", "KIN"], reach, reg_genes, regs, 2)
+    assert kind == "mixed"
+    assert len(tf_fp["genes_resolved"]) == 1                   # the tf subset alone is below the floor
+    ok, which = A.unit_floor(tf_fp, sig_fp, 1.0)
+    assert ok and which == "signaling"                         # the signaling subset carries it
+    any_g, res, conf = A.merge_subsets(tf_fp, sig_fp)
+    assert "x1" in res and big <= res                           # union, each gene once
+    assert len(res) == len(set(res))
+
+
+def test_union_never_loses_a_pure_subset_unit():
+    regs = {"ESR1", "TF1", "TF2", "TF3"}
+    r = FakeReach("t_pure", EDGES, max_hops=2)
+
+    def reach(gene):
+        return A.reach_regulators(r.graph, gene, 2, regs)
+    reach.name, reach.max_hops = "t_pure_fn", 2
+    kind, tf_fp, sig_fp = A.unit_subsets(["ESR1"], reach, REG_GENES, regs, 2)
+    assert kind == "tf" and sig_fp is None
+    assert A.unit_floor(tf_fp, sig_fp, 0.1)[1] == "tf"         # clears on its own regulon at a low floor

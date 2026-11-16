@@ -169,6 +169,7 @@ def unit_footprint(genes, reach, reg_genes, max_hops, _cache={}):
     hop0 = [t for t, h in tf_hop.items() if h == 0 and t in per_tf]
     hop0_resolved = set().union(*[per_tf[t] for t in hop0]) & resolved if hop0 else set()
     out = dict(
+        gene_exp=gene_exp,
         tf_hop=tf_hop, n_tfs={h: sum(1 for x in tf_hop.values() if x <= h) for h in C.HOP_ARMS},
         n_anchored_tfs=len(tf_hop), n_resolved_tfs=sum(1 for m in tf_mask.values() if m != BOTH),
         n_ambiguous_tfs=sum(1 for m in tf_mask.values() if m == BOTH),
@@ -179,11 +180,54 @@ def unit_footprint(genes, reach, reg_genes, max_hops, _cache={}):
     return out
 
 
+def unit_subsets(genes, reach, reg_genes, regs, max_hops):
+    """D128-A0.1: type and floor PER GENE, then take the union.
+
+    A unit gene that is itself a CollecTRI regulator anchors its own regulon at zero hops (the `tf` subset); a gene
+    that is not anchors through the signed signaling prior at 0-`max_hops` (the `signaling` subset). The earlier rule
+    typed the whole unit `tf` as soon as any one gene was a regulator and then floored the unit on zero-hop genes
+    alone, which floored palbociclib (CCND1|CDK4) at 0 zero-hop genes although CDK4 resolved 1,758 through signaling.
+    """
+    tf_genes = [g for g in genes if g in regs]
+    sig_genes = [g for g in genes if g not in regs]
+    tf_fp = unit_footprint(tf_genes, reach, reg_genes, 0) if tf_genes else None
+    sig_fp = unit_footprint(sig_genes, reach, reg_genes, max_hops) if sig_genes else None
+    kind = "mixed" if tf_genes and sig_genes else ("tf" if tf_genes else "signaling")
+    return kind, tf_fp, sig_fp
+
+
+def merge_subsets(tf_fp, sig_fp):
+    """Union of the two subsets, each unique gene counted once (plan 3.4); disagreement between them is conflicting."""
+    exp = {}
+    for fp in (tf_fp, sig_fp):
+        if fp is None:
+            continue
+        for g, e in fp["gene_exp"].items():
+            exp[g] = e if g not in exp else (exp[g] if exp[g] == e else 0)
+    resolved = {g for g, e in exp.items() if e}
+    any_genes = set().union(*[fp["genes_any"] for fp in (tf_fp, sig_fp) if fp is not None]) if (tf_fp or sig_fp) else set()
+    return any_genes, resolved, {g for g, e in exp.items() if not e}
+
+
 def floors(kind, n_res, n_res_tfs, n_hop0, mult):
+    """Floor for one subset: `tf` on its own regulon genes, `signaling` on resolved genes and anchored TFs."""
     fg, ft = C.FLOOR_GENES * mult, C.FLOOR_TFS * mult
     if kind == "tf":
         return n_hop0 >= fg
     return n_res >= fg and n_res_tfs >= ft
+
+
+def unit_floor(tf_fp, sig_fp, mult, space=None):
+    """D128-A0.1: the unit clears if EITHER subset clears its own floor. Returns (passes, which)."""
+    def n(fp, key):
+        if fp is None:
+            return 0
+        s = fp[key]
+        return len(s & space) if space is not None else len(s)
+    tf_ok = tf_fp is not None and floors("tf", 0, 0, n(tf_fp, "genes_resolved"), mult)
+    sig_ok = sig_fp is not None and floors("signaling", n(sig_fp, "genes_resolved"), sig_fp["n_resolved_tfs"], 0, mult)
+    which = "both" if (tf_ok and sig_ok) else ("tf" if tf_ok else ("signaling" if sig_ok else ""))
+    return (tf_ok or sig_ok), which
 
 
 # ------------------------------------------------------------------------------------------------------------------
@@ -294,29 +338,46 @@ def main():
             el = time.time() - t_fp
             log(f"footprints {n_done}/{len(U)} units, {el:.0f}s elapsed, ETA {el / n_done * (len(U) - n_done):.0f}s "
                 f"(reach cache hits {sum(v.hits for v in REACH.values())}, misses {sum(v.misses for v in REACH.values())})")
-        fp[r.unit_id] = prim
-        kind = "tf" if any(g in regs for g in r.genes) else "signaling"
-        res_l = prim["genes_resolved"] & land
+        # D128-A0.1: per-gene typing, floors per subset, union for the unit
+        kind, tf_fp, sig_fp = unit_subsets(r.genes, REACH["omnipath"], reg_genes, regs, C.MAX_HOPS)
+        g_any, g_res, g_conf = merge_subsets(tf_fp, sig_fp)
+        n_anch = (tf_fp["n_anchored_tfs"] if tf_fp else 0) + (sig_fp["n_anchored_tfs"] if sig_fp else 0)
+        n_res_tfs = (tf_fp["n_resolved_tfs"] if tf_fp else 0) + (sig_fp["n_resolved_tfs"] if sig_fp else 0)
+        n_amb_tfs = (tf_fp["n_ambiguous_tfs"] if tf_fp else 0) + (sig_fp["n_ambiguous_tfs"] if sig_fp else 0)
+        hub_src = sig_fp if sig_fp is not None else tf_fp
+        hub_frac = round(hub_src["hub_fraction"], 3) if hub_src and hub_src["hub_fraction"] == hub_src["hub_fraction"] else np.nan
+        hub_tf = hub_src["hub_tf"] if hub_src else ""
+        tf_res = tf_fp["genes_resolved"] if tf_fp else set()
+        sig_res = sig_fp["genes_resolved"] if sig_fp else set()
+        fp[r.unit_id] = dict(genes_any=g_any, genes_resolved=g_res)
+        res_l = g_res & land
         d = dict(unit_id=r.unit_id, cmap_name=r.cmap_name, tid=r.tid, ttype=r.ttype, genes="|".join(r.genes), k=r.k,
-                 orient=r.orient, action_flag=r.action_flag, actions=r.actions, kind=kind,
+                 orient=r.orient, action_flag=r.action_flag, actions=r.actions, unit_kind=kind,
                  genes_in_omnipath=sum(1 for g in r.genes if g in G_om),
-                 n_anchored_tfs=prim["n_anchored_tfs"], n_resolved_tfs=prim["n_resolved_tfs"],
-                 n_ambiguous_tfs=prim["n_ambiguous_tfs"], ambiguous_fraction=round(prim["n_ambiguous_tfs"] / prim["n_anchored_tfs"], 3) if prim["n_anchored_tfs"] else np.nan,
-                 n_genes_total=len(prim["genes_any"]), n_genes_total_landmark=len(prim["genes_any"] & land),
-                 n_sign_resolved=len(prim["genes_resolved"]), n_resolved_landmark=len(res_l),
-                 n_resolved_inferred=len(prim["genes_resolved"]) - len(res_l), n_conflicted=len(prim["genes_conflicted"]),
-                 n_hop0_resolved=len(prim["hop0_resolved"]), n_hop0_resolved_landmark=len(prim["hop0_resolved"] & land),
-                 hub_fraction=round(prim["hub_fraction"], 3) if prim["hub_fraction"] == prim["hub_fraction"] else np.nan,
-                 hub_tf=prim["hub_tf"],
+                 n_tf_anchor_genes=sum(1 for g in r.genes if g in regs),
+                 n_signaling_genes=sum(1 for g in r.genes if g not in regs),
+                 n_tf_subset_resolved=len(tf_res), n_tf_subset_resolved_landmark=len(tf_res & land),
+                 n_sig_subset_resolved=len(sig_res), n_sig_subset_resolved_landmark=len(sig_res & land),
+                 n_sig_subset_tfs=sig_fp["n_resolved_tfs"] if sig_fp else 0,
+                 n_anchored_tfs=n_anch, n_resolved_tfs=n_res_tfs, n_ambiguous_tfs=n_amb_tfs,
+                 ambiguous_fraction=round(n_amb_tfs / n_anch, 3) if n_anch else np.nan,
+                 n_genes_total=len(g_any), n_genes_total_landmark=len(g_any & land),
+                 n_sign_resolved=len(g_res), n_resolved_landmark=len(res_l),
+                 n_resolved_inferred=len(g_res) - len(res_l), n_conflicted=len(g_conf),
+                 n_hop0_resolved=len(tf_res), n_hop0_resolved_landmark=len(tf_res & land),
+                 hub_fraction=hub_frac, hub_tf=hub_tf,
+                 # reported only, unchanged definition: every unit gene walked 0-2 / 0-3 hops, for continuity
+                 n_sign_resolved_allgenes=len(prim["genes_resolved"]),
                  **{f"tfs_le{h}hop_omnipath": out["omnipath"]["n_tfs"][h] for h in C.HOP_ARMS},
                  **{f"tfs_le{h}hop_signor": out["signor"]["n_tfs"][h] for h in C.HOP_ARMS},
                  n_sign_resolved_signor=len(out["signor"]["genes_resolved"]))
         for m in C.FLOOR_MULTIPLIERS:
-            d[f"floor_x{m:g}"] = floors(kind, d["n_sign_resolved"], d["n_resolved_tfs"], d["n_hop0_resolved"], m)
-            d[f"floor_x{m:g}_landmark"] = floors(kind, d["n_resolved_landmark"],
-                                                d["n_resolved_tfs"], d["n_hop0_resolved_landmark"], m)
+            d[f"floor_x{m:g}"], w = unit_floor(tf_fp, sig_fp, m)
+            d[f"floor_x{m:g}_landmark"], wl = unit_floor(tf_fp, sig_fp, m, space=land)
+            if m == 1.0:
+                d["cleared_by"], d["cleared_by_landmark"] = w, wl
         d["M_unit_status"] = ("ambiguous_action" if r.action_flag in C.M_AMBIGUOUS_FLAGS else
-                              "no_anchored_tf" if not prim["n_anchored_tfs"] else
+                              "no_anchored_tf" if not n_anch else
                               "below_floor" if not d["floor_x1"] else "eligible")
         cov_rows.append(d)
         for g in r.genes:
@@ -411,7 +472,7 @@ def main():
                 else:
                     status = "eligible" if (M_s == "eligible" or R_s == "eligible") else "unscorable"
                 out.append(dict(base, ModelID=l, line_weight=round(float(w), 4), n_sig=nsig.get((r.pert_id, l)),
-                                unit_id=u, unit_kind=cu.kind, action_flag=cu.action_flag, n_sign_resolved=cu.n_sign_resolved,
+                                unit_id=u, unit_kind=cu.unit_kind, action_flag=cu.action_flag, n_sign_resolved=cu.n_sign_resolved,
                                 n_anchored_tfs=cu.n_anchored_tfs, n_R_genes=nR, n_R_genes_landmark=nR_l,
                                 M_status=M_s, R_status=R_s, status=status, reason=";".join(reasons)))
     E = pd.DataFrame(out)
@@ -518,7 +579,7 @@ def main():
                             n_sig_in_context=int(d[d.ModelID.isin(in_ctx)].n_sig.sum()),
                             in_lead_population=n in inpop or n.lower() in {x.lower() for x in inpop if isinstance(x, str)},
                             units="|".join(f"{x.genes}:{x.orient}{'/' + x.action_flag if x.action_flag else ''}" for x in us.itertuples()),
-                            unit_kind="|".join(us.kind), n_sign_resolved="|".join(map(str, us.n_sign_resolved)),
+                            unit_kind="|".join(us.unit_kind), n_sign_resolved="|".join(map(str, us.n_sign_resolved)),
                             n_resolved_landmark="|".join(map(str, us.n_resolved_landmark)),
                             n_anchored_tfs="|".join(map(str, us.n_anchored_tfs)), M_unit_status="|".join(us.M_unit_status)))
     CT = pd.DataFrame(ctl)

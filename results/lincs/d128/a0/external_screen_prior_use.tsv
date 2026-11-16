@@ -1,5 +1,6 @@
 kind	where	n_mentions	screens	first_line_of_docstring	example
 script	scripts/09b_download_drug_sensitivity.sh	16	gdsc|prism		# expression). PRISM Repurposing 20Q2 (Figshare 20564034; Broad IDs = LINCS pert_id, DepMap IDs = ModelID):
+script	scripts/09c_download_ctrp.sh	10	ctrp|gdsc|prism		# CTRPv2 cell-line drug sensitivity, as a functional label that this project has NOT previously read.
 script	scripts/79j_sensitivity_matrices.py	23	gdsc|prism	Drug x cell-line sensitivity matrices from PRISM and GDSC, mapped to LINCS drugs and DepMap lines (runs in `celligner`).	"""""""Drug x cell-line sensitivity matrices from PRISM and GDSC, mapped to LINCS drugs and DepMap lines (runs in `celligner`)."
 script	scripts/79k_sensitivity_validation.py	2	gdsc|prism	Validate the drug scores against measured drug sensitivity (PRISM, GDSC) (runs in `celligner`).	"""""""Validate the drug scores against measured drug sensitivity (PRISM, GDSC) (runs in `celligner`)."
 script	scripts/79m_gate_sensitivity.py	3	gdsc|prism	Measured drug sensitivity vs the gated v2 rankings: receptor gate, evidence, stand-ins (protocol C28, `celligner`).	C16 tested the v1 scores against PRISM / GDSC before the receptor gate (79w), the FDA filter (79p), the matched /

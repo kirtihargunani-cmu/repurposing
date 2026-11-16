@@ -507,10 +507,13 @@ as currently measured.
   against, turns out to have been used repeatedly in earlier decisions, so it can no longer serve as an independent
   check.
 
-  Two problems with our own rules surfaced while there were still no results to bias them. One was a cut-off that
-  mislabelled a strongly HER2-amplified cell line as ordinary; correcting it is what made the HER2 comparison possible
-  at all. The other, still open, is that a drug such as palbociclib is being judged by too narrow a slice of its
-  evidence. A first attempt at the run also had to be abandoned after 43 minutes for being too slow; caching the
+  Two problems with our own rules surfaced while there were still no results to bias them, and both are now fixed.
+  One was a cut-off that mislabelled a strongly HER2-amplified cell line as ordinary; correcting it is what made the
+  HER2 comparison possible at all. The other was that a drug such as palbociclib was being judged on too narrow a
+  slice of its evidence: because one of its two targets happens to be a switch, the whole drug was judged on that
+  switch alone and failed, even though its other target reaches nearly 1,800 genes. Each target is now judged on its
+  own terms and the drug counts if either one suffices, which admitted 13 more targets and unblocked the CDK4/6
+  comparison without taking anything away. A first attempt at the run also had to be abandoned after 43 minutes for being too slow; caching the
   repeated graph searches brought it down to about two minutes, and both the failure and the fix are in the record.
 
 ### Threads that run through the whole history
