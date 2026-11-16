@@ -581,6 +581,22 @@ as currently measured.
   rows, a hundred-odd other drugs shift by at most one percentile place because the ranking renumbers, and every
   control - the anti-estrogen test, the BRAF melanoma test and its MYC finding - comes back byte for byte identical.
 
+  **Why one pair in four flipped, worked out (2026-11-16).** The sign-flip finding above needed an explanation
+  before anyone decides which version of the gene list to trust, so we tested four possible causes, all written
+  down in advance. Two survive. First, flipping happens almost entirely where the score is close to zero: below
+  0.005 it flips half the time, above 0.05 it essentially stops - but **only about one row in eight is ever above
+  0.05**, so for most of the list the sign is not something to read. Second, and more important: we counted how
+  many genuinely *independent* measurements a list of genes actually contains, and the answer is about **45,
+  whatever the length of the list**. A 478-gene footprint carries 45; a 1,900-gene one still carries 45; the entire
+  ten-thousand-gene space carries 41. The genes move together, so adding more of them adds almost no new
+  information - it only dilutes the average and, worse, makes our chance comparisons look more impressive than
+  they are, because those comparisons shuffle genes as though each were a separate experiment. **That is a caution
+  about every score in this project that counts genes, not just this one.** The two causes we did NOT find: it is
+  not the guessed genes (a random slice of the same size is just as unstable as the measured slice - so switching
+  to measured-only would not fix it), and it is not the MYC hub problem (once you compare like with like, the hub
+  makes no difference). Nothing was changed in response; the two things the evidence asks for - a minimum size
+  below which a sign is not reported, and a fairer chance comparison - are decisions for the user.
+
   What this does not say: the new score is not wrong, and it is not finished. It is near-independent of the ranking
   we already use, which is what we wanted — but "different" is not "better", and nothing here can tell the two apart
   because no outcome data was looked at. That test exists, and it is deliberately **not** run yet: it needs its own
