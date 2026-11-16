@@ -1,0 +1,7 @@
+multiplier	feature_space	units_M_admitted	units_total	rows_M_admitted	rows_R_admitted	rows_gate_with_unit	pairs_M_admitted	pairs_R_admitted
+0.5	all	226	497	73713	82426	113688	4775	5201
+0.5	landmark	218	497	70684	82380	113688	4550	5201
+1.0	all	225	497	73336	82411	113688	4775	5201
+1.0	landmark	185	497	67856	82243	113688	4012	5190
+2.0	all	201	497	62028	82265	113688	4036	5200
+2.0	landmark	147	497	57200	82011	113688	3032	5147

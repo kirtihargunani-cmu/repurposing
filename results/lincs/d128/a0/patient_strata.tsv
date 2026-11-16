@@ -1,0 +1,22 @@
+cohort	stratum	n_patients	n_base	note
+SKCM	BRAF_V600	209	466	
+SKCM	NRAS_hotspot_BRAF_wt	124	466	
+SKCM	BRAF_wt_RAS_wt	121	466	neither BRAF V600 nor RAS hotspot
+LUAD	EGFR_activating	52	515	
+LUAD	EGFR_T790M	2	515	
+LUAD	KRAS_hotspot_EGFR_wt	146	515	
+LUAD	EGFR_wt_KRAS_wt	317	515	
+THCA	BRAF_V600	287	492	
+THCA	RAS_hotspot	59	492	
+BRCA	ERBB2_amp_GISTIC	133	1079	
+BRCA	RB1_loss(deep_del_or_truncating)	59	1093	
+BRCA	PAM50_LumA:ERBB2_amp	43	330	
+BRCA	PAM50_LumA:RB1_loss	14	331	
+BRCA	PAM50_LumB:ERBB2_amp	15	139	
+BRCA	PAM50_LumB:RB1_loss	5	140	
+BRCA	PAM50_Her2:ERBB2_amp	3	50	
+BRCA	PAM50_Her2:RB1_loss	4	51	
+BRCA	PAM50_Basal:ERBB2_amp	10	120	
+BRCA	PAM50_Basal:RB1_loss	8	120	
+BRCA	PAM50_Normal:ERBB2_amp	10	93	
+BRCA	PAM50_Normal:RB1_loss	5	97	

@@ -1,0 +1,17 @@
+level	status	M_status	R_status	reason_main	n_rows
+group_id	eligible	eligible	eligible	eligible	52089
+group_id	eligible	eligible	unscorable	R:R_below_floor	9
+group_id	eligible	unscorable	eligible	M:ambiguous_action	958
+group_id	eligible	unscorable	eligible	M:below_floor	5523
+group_id	unscorable	unscorable	unscorable	M:ambiguous_action	1707
+group_id	unscorable	unscorable	unscorable	M:no_anchored_tf	20861
+group_id	unscorable	unscorable	unscorable	no_protein_target	5936
+group_id	unscorable	unscorable	unscorable	no_target_unit	1639
+stratum	eligible	eligible	eligible	eligible	21232
+stratum	eligible	eligible	unscorable	R:R_below_floor	6
+stratum	eligible	unscorable	eligible	M:ambiguous_action	283
+stratum	eligible	unscorable	eligible	M:below_floor	2326
+stratum	unscorable	unscorable	unscorable	M:ambiguous_action	662
+stratum	unscorable	unscorable	unscorable	M:no_anchored_tf	8032
+stratum	unscorable	unscorable	unscorable	no_protein_target	2284
+stratum	unscorable	unscorable	unscorable	no_target_unit	621
