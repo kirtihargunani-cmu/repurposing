@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 import numpy as np
 
 import config as C
+from graph import floors as subset_floor
 
 
 @dataclass
@@ -44,7 +45,7 @@ def bounded(z, divisor=None):
 
 
 def _aggregate(gene_ids, expected, z, weights, landmark_mask, min_genes, kind_label,
-               n_unresolved=0, tf_of_gene=None):
+               n_unresolved=0, tf_of_gene=None, floor=None):
     """Shared core: signed weighted mean of expected x f(z) over unique, usable genes."""
     gene_ids = np.asarray(gene_ids)
     expected = np.asarray(expected, dtype=float)
@@ -60,7 +61,12 @@ def _aggregate(gene_ids, expected, z, weights, landmark_mask, min_genes, kind_la
     if not usable.any():
         return Score(np.nan, "abstained", "no_usable_genes", n_excluded_unresolved=n_unresolved,
                      n_missing_response=n_missing)
-    if usable.sum() < min_genes:
+    if floor is not None:                                   # D128-A2.1: the frozen per-subset floor (P10 / A0.1)
+        ok, why = floor(usable)
+        if not ok:
+            return Score(np.nan, "abstained", why, n_genes=int(usable.sum()),
+                         n_excluded_unresolved=n_unresolved, n_missing_response=n_missing)
+    elif usable.sum() < min_genes:
         return Score(np.nan, "abstained", f"below_floor_{kind_label}:{int(usable.sum())}<{min_genes}",
                      n_genes=int(usable.sum()), n_excluded_unresolved=n_unresolved, n_missing_response=n_missing)
 
@@ -85,21 +91,53 @@ def _aggregate(gene_ids, expected, z, weights, landmark_mask, min_genes, kind_la
                  hub_fraction=hub, contributions=dict(zip(g.tolist(), contrib.tolist())))
 
 
+def m_unit_floor(subset, usable, n_signaling_tfs=0, mult=1.0):
+    """P10 exactly as frozen by D128-A0.1: each SUBSET of a target unit is floored on ITS OWN genes, and the unit
+    is M-eligible if EITHER subset clears.
+
+    `subset` labels every footprint gene by how it actually anchors: `tf` (zero-hop regulon of a unit gene that is
+    itself a CollecTRI regulator), `signaling` (0-`MAX_HOPS` signed path from a non-regulator unit gene) or `both`
+    (reached either way, same expected sign). A `both` gene counts in each subset's floor, as it does in A0's
+    `unit_floor()`, and still once in the score itself (plan 3.4).
+
+    The engine applies the floor to the genes that actually enter the numerator, so it can only ever be stricter
+    than A0's footprint-level count; with no missing responses in the LINCS gene space the two coincide.
+    Returns (passes, reason-if-not).
+    """
+    sub = np.asarray(subset)
+    u = np.asarray(usable, bool)
+    n_tf = int(((sub == "tf") | (sub == "both"))[u].sum())
+    n_sig = int(((sub == "signaling") | (sub == "both"))[u].sum())
+    n_tfs = int(n_signaling_tfs or 0)
+    tf_ok = subset_floor("tf", 0, 0, n_tf, mult)
+    sig_ok = subset_floor("signaling", n_sig, n_tfs, 0, mult)
+    if tf_ok or sig_ok:
+        return True, ""
+    return False, (f"below_floor_M_unit:tf={n_tf},signaling={n_sig}/{n_tfs}tf"
+                   f"<{C.FLOOR_GENES * mult:g}/{C.FLOOR_TFS * mult:g}")
+
+
 def score_mechanism(gene_ids, expected_pre_action, action_sign, z, weights=None, landmark_mask=None,
-                    min_genes=None, n_unresolved=0, tf_of_gene=None, action_flag=""):
+                    min_genes=None, n_unresolved=0, tf_of_gene=None, action_flag="",
+                    subset=None, n_signaling_tfs=0, floor_mult=1.0):
     """M: does the observed response match the route from the annotated target? (plan 3.2)
 
     `expected_pre_action` is A1's sign (path x tfmode); `action_sign` is +1 raise / -1 lower. An ambiguous or assumed
     action gives no expectation at all under P11, so M abstains rather than guessing a direction.
+
+    When `subset` is given, the P10 floor is the frozen per-subset rule (`m_unit_floor`, D128-A0.1). It is omitted
+    only by the hand-calculated fixtures and by the null draws, which score an already-admitted footprint; every
+    production caller passes it.
     """
     if action_flag in C.M_AMBIGUOUS_FLAGS:
         return Score(np.nan, "abstained", f"ambiguous_action:{action_flag}")
     if action_sign not in (1, -1):
         return Score(np.nan, "abstained", "unknown_action_sign")
     e = np.asarray(expected_pre_action, dtype=float) * action_sign
+    floor = None if subset is None else (lambda u: m_unit_floor(subset, u, n_signaling_tfs, floor_mult))
     return _aggregate(gene_ids, e, z, weights, landmark_mask,
                       C.FLOOR_GENES if min_genes is None else min_genes, "M",
-                      n_unresolved=n_unresolved, tf_of_gene=tf_of_gene)
+                      n_unresolved=n_unresolved, tf_of_gene=tf_of_gene, floor=floor)
 
 
 def score_rescue(gene_ids, disease_sign, z, weights=None, landmark_mask=None, min_genes=None,
