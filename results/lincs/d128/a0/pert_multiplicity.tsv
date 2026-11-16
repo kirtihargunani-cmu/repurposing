@@ -1,0 +1,156 @@
+cmap_name	n_pert_ids	n_lines	n_sig	in_lead_population	max_pert_ids_per_cohort_in_population
+etoposide	5	7	28	True	4.0
+daunorubicin	5	15	181	True	5.0
+vinblastine	4	8	49	True	4.0
+docetaxel	4	16	41	True	3.0
+doxorubicin	4	19	166	True	4.0
+digoxin	4	12	69	True	4.0
+dexamethasone	4	4	20	True	4.0
+cyclosporin-a	4	9	37	True	4.0
+artesunate	4	6	19	True	4.0
+vincristine	4	5	11	True	4.0
+testosterone	4	2	9	True	4.0
+ouabain	4	7	45	False	
+alvespimycin	3	3	30	False	
+emetine	3	19	62	False	
+danazol	3	2	10	True	3.0
+U-0126	3	11	18	False	
+AZD-7762	3	13	74	False	
+GSK-1059615	3	17	107	False	
+HG-6-64-01	3	8	12	False	
+NSC-632839	3	18	39	False	
+OSI-027	3	7	19	False	
+toremifene	3	3	5	True	2.0
+tretinoin	3	4	8	True	2.0
+simvastatin	3	4	16	True	2.0
+vinorelbine	3	3	4	True	2.0
+forskolin	3	2	3	False	
+fulvestrant	3	2	20	True	3.0
+wortmannin	3	20	301	False	
+triciribine	3	6	24	False	
+linsitinib	3	6	28	False	
+parthenolide	3	16	38	False	
+atorvastatin	3	6	18	True	3.0
+WZ-4-145	3	7	11	False	
+tamoxifen	3	4	13	True	3.0
+triptolide	3	21	72	False	
+lovastatin	3	6	10	True	3.0
+paclitaxel	3	18	73	True	3.0
+brefeldin-a	3	8	36	False	
+everolimus	3	16	63	True	3.0
+QL-XII-47	2	10	32	False	
+QL-X-138	2	8	21	False	
+SN-38	2	18	64	False	
+SB-590885	2	3	12	False	
+A-443654	2	18	62	False	
+EX-527	2	2	3	False	
+BI-2536	2	25	171	False	
+GDC-0068	2	9	17	False	
+CD-1530	2	11	22	False	
+AT-CSC-18	2	3	7	False	
+PIK-75	2	16	53	False	
+PAC-1	2	6	12	False	
+OBAA	2	2	2	False	
+NVP-AUY922	2	12	103	False	
+NVP-AEW541	2	5	8	False	
+JW-7-24-1	2	8	17	False	
+HG-5-113-01	2	10	22	False	
+GDC-0980	2	11	55	False	
+GSK-690693	2	7	9	False	
+H-9	2	3	4	False	
+TTNPB	2	2	3	False	
+SU-11274	2	2	2	False	
+curcumin	2	16	45	False	
+clomifene	2	5	9	True	2.0
+clobetasol	2	2	14	True	2.0
+clofarabine	2	9	72	True	2.0
+celastrol	2	8	15	False	
+camptothecin	2	11	94	False	
+bucladesine	2	2	2	False	
+calmidazolium	2	3	3	False	
+calcitriol	2	2	3	True	1.0
+digitoxigenin	2	5	10	False	
+digoxigenin	2	3	3	False	
+epirubicin	2	13	78	True	2.0
+dactinomycin	2	6	10	True	2.0
+deforolimus	2	6	30	False	
+cytarabine	2	8	57	True	2.0
+cycloheximide	2	10	40	False	
+azacitidine	2	11	37	True	2.0
+betamethasone	2	1	2	True	2.0
+budesonide	2	2	2	True	2.0
+auranofin	2	18	28	True	2.0
+bortezomib	2	22	1940	True	2.0
+ZG-10	2	8	11	False	
+altrenogest	2	2	3	False	
+afatinib	2	22	64	True	2.0
+amlodipine	2	3	5	True	1.0
+amsacrine	2	10	39	False	
+antimycin-a	2	2	6	False	
+anisomycin	2	7	9	False	
+YM-155	2	12	90	False	
+WHI-P154	2	3	4	False	
+halcinonide	2	4	9	True	2.0
+griseofulvin	2	2	3	True	1.0
+granisetron	2	2	2	False	
+gestrinone	2	2	8	False	
+genistein	2	5	6	False	
+geldanamycin	2	17	475	False	
+fluocinolone-acetonide	2	5	23	True	2.0
+fluvastatin	2	6	16	True	2.0
+fludarabine	2	3	4	True	2.0
+floxuridine	2	8	68	True	2.0
+flunisolide	2	2	3	True	2.0
+flumetasone	2	1	2	True	1.0
+fenretinide	2	2	3	False	
+exemestane	2	2	3	False	
+etodolac	2	3	3	True	1.0
+estradiol	2	2	3	True	1.0
+methotrexate	2	2	5	True	2.0
+metergoline	2	2	4	False	
+medrysone	2	3	6	True	1.0
+methylprednisolone	2	3	10	True	1.0
+niguldipine	2	5	6	False	
+ivermectin	2	2	4	True	2.0
+ibrutinib	2	10	25	True	1.0
+idarubicin	2	11	61	True	2.0
+lasalocid	2	9	31	False	
+lapatinib	2	11	17	True	2.0
+levonorgestrel	2	2	5	True	2.0
+lestaurtinib	2	10	56	False	
+manumycin-a	2	18	54	False	
+lanatoside-c	2	3	3	False	
+indirubin	2	1	7	False	
+itraconazole	2	2	2	True	1.0
+pitavastatin	2	10	34	True	2.0
+paroxetine	2	4	8	True	1.0
+oligomycin-a	2	5	26	False	
+oxiconazole	2	4	5	True	2.0
+nutlin-3	2	8	31	False	
+norethindrone	2	2	4	True	1.0
+noretynodrel	2	1	2	True	2.0
+norgestrel	2	2	2	True	1.0
+naltrexone	2	3	3	True	1.0
+minoxidil	2	1	2	True	2.0
+mevastatin	2	3	5	False	
+puromycin	2	7	13	False	
+saracatinib	2	13	38	False	
+sertraline	2	6	6	True	2.0
+rottlerin	2	7	17	False	
+radicicol	2	11	71	False	
+thiostrepton	2	5	9	False	
+thapsigargin	2	10	57	False	
+temsirolimus	2	10	61	True	2.0
+tanespimycin	2	30	379	False	
+staurosporine	2	8	52	False	
+tacrolimus	2	2	2	True	1.0
+sirolimus	2	25	253	True	2.0
+sorafenib	2	9	33	True	2.0
+triamcinolone	2	3	4	True	1.0
+tozasertib	2	16	56	False	
+tofacitinib	2	4	29	True	2.0
+topotecan	2	7	49	True	2.0
+thiothixene	2	3	3	False	
+trifluridine	2	9	29	True	2.0
+ursolic-acid	2	5	6	False	
+withaferin-a	2	15	262	False	

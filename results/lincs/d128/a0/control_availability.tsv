@@ -1,0 +1,36 @@
+cls	compound	n_pert_ids	pert_ids	n_lines	n_sig_total	in_context_lines	n_sig_in_context	in_lead_population	units	unit_kind	n_sign_resolved	n_resolved_landmark	n_anchored_tfs	M_unit_status
+ESR1	fulvestrant	3	BRD-A17828570|BRD-A85667082|BRD-A90490067	2	20	MCF7(18)	18	True	ESR1:lower	tf	1744	230	38	eligible
+ESR1	tamoxifen	3	BRD-K04210847|BRD-K43744935|BRD-K93754473	4	13	MCF7(10)	10	True	ESR1|ESR2:lower/direction_assumed|ESRRG:lower|ESR1:lower/direction_assumed	tf|tf|tf	1744|18|1744	230|6|230	38|1|38	ambiguous_action|eligible|ambiguous_action
+ESR1	raloxifene	1	BRD-K63828191	5	36	MCF7(27)	27	True	ESR1:lower/direction_assumed|ESR2:lower/direction_assumed	tf|tf	1744|346	230|65	38|17	ambiguous_action|ambiguous_action
+ESR1	bazedoxifene	1	BRD-K90195324	3	7	MCF7(5)	5	True	ESR1|ESR2:lower/direction_assumed	tf	1744	230	38	ambiguous_action
+ESR1	toremifene	3	BRD-K51350053|BRD-K63460351|BRD-K67174588	3	5	MCF7(3)	3	True	ESR1|ESR2:lower/direction_assumed	tf	1744	230	38	ambiguous_action
+ESR1	clomifene	2	BRD-K04218075|BRD-K29950728	5	9	MCF7(4)	4	True	ESR1:lower/direction_assumed	tf	1744	230	38	ambiguous_action
+ESR1	estradiol	2	BRD-A18917088|BRD-K18910433	2	3		0	True	ESR1:raise	tf	1744	230	38	eligible
+ERBB2	lapatinib	2	BRD-K19687926|BRD-M07438658	11	17	SKBR3(3)	3	True	ERBB2:lower|EGFR:lower	signaling|signaling	1894|1749	214|229	90|110	eligible|eligible
+ERBB2	neratinib	1	BRD-K85606544	15	41	SKBR3(3)	3	True	EGFR:lower|ERBB2:lower|ERBB4:lower	signaling|signaling|signaling	1749|1894|1322	229|214|197	110|90|31	eligible|eligible|eligible
+ERBB2	afatinib	2	BRD-A58767537|BRD-K66175015	22	64	SKBR3(4)	4	True	EGFR:lower|ERBB2:lower|ERBB4:lower	signaling|signaling|signaling	1749|1894|1322	229|214|197	110|90|31	eligible|eligible|eligible
+ERBB2	canertinib	1	BRD-K50168500	14	20	SKBR3(2)	2	False						
+ERBB2	tucatinib	0		0	0		0	False						
+BRAF	vemurafenib	1	BRD-K56343971	9	48	A375(18)|HT29(18)	36	True	BRAF:lower	signaling	1063	153	15	eligible
+BRAF	dabrafenib	1	BRD-K09951645	6	47	A375(26)|HT29(11)	37	True	BRAF:lower	signaling	1063	153	15	eligible
+BRAF	encorafenib	0		0	0		0	False						
+BRAF	PLX-4720	1	BRD-K16478699	6	27	A375(15)|HT29(7)	22	False						
+BRAF	SB-590885	2	BRD-K01253243|BRD-K24496482	3	12	A375(4)|HT29(5)	9	False						
+MEK	trametinib	1	BRD-K12343256	12	77	A375(13)|A549(21)|HCC515(10)|HEPG2(5)|HT29(4)|MDAMB231(9)|SKMEL5(5)|THP1(4)	71	True	MAP2K1|MAP2K2:lower|MAP2K2:lower|MAP2K1:lower	signaling|signaling|signaling	1714|2081|1714	190|238|190	145|88|145	eligible|eligible|eligible
+MEK	selumetinib	1	BRD-K57080016	13	85	A375(17)|A549(14)|HCC515(4)|HEPG2(6)|HT29(19)|MDAMB231(10)|SKMEL5(5)|THP1(4)|YAPC(2)	81	True	MAP2K1:lower|MAP2K2:lower	signaling|signaling	1714|2081	190|238	145|88	eligible|eligible
+MEK	cobimetinib	1	BRD-K03390685	9	47	A375(8)|A549(10)|HT29(1)|SKMEL5(6)|THP1(11)|YAPC(3)	39	True	MAP2K1:lower|MAP2K2:lower	signaling|signaling	1714|2081	190|238	145|88	eligible|eligible
+MEK	binimetinib	0		0	0		0	False						
+MEK	PD-0325901	1	BRD-K49865102	12	183	A375(33)|A549(30)|HCC515(14)|HEPG2(10)|HT29(22)|MDAMB231(20)|THP1(24)|YAPC(22)	175	True	MAP2K1:lower|MAP2K2:lower	signaling|signaling	1714|2081	190|238	145|88	eligible|eligible
+EGFR	gefitinib	1	BRD-K64052750	7	8		0	True	EGFR:lower	signaling	1749	229	110	eligible
+EGFR	erlotinib	1	BRD-K70401845	13	26		0	True	EGFR:lower	signaling	1749	229	110	eligible
+EGFR	afatinib	2	BRD-A58767537|BRD-K66175015	22	64		0	True	EGFR:lower|ERBB2:lower|ERBB4:lower	signaling|signaling|signaling	1749|1894|1322	229|214|197	110|90|31	eligible|eligible|eligible
+EGFR	osimertinib	0		0	0		0	False						
+EGFR	dacomitinib	1	BRD-K57169635	9	11		0	True	EGFR:lower|ERBB2:lower|ERBB4:lower	signaling|signaling|signaling	1749|1894|1322	229|214|197	110|90|31	eligible|eligible|eligible
+CDK4/6	palbociclib	1	BRD-K51313569	12	107	BT20(3)|MCF7(17)|MDAMB231(9)	29	True	CCND1|CDK6:lower|CCND1|CDK4:lower	tf|tf	971|1758	154|214	46|58	below_floor|below_floor
+CDK4/6	ribociclib	0		0	0		0	False						
+CDK4/6	abemaciclib	0		0	0		0	False						
+PARP	olaparib	1	BRD-K02113016	4	5		0	True	PARP1|PARP2|PARP3:lower	signaling	1513	192	40	eligible
+PARP	niraparib	0		0	0		0	False						
+PARP	rucaparib	1	BRD-K88560311	4	11		0	True	PARP1|PARP2|PARP3:lower	signaling	1513	192	40	eligible
+PARP	talazoparib	1	BRD-K95142244	3	4		0	True	PARP1:lower|PARP2:lower	signaling|signaling	1513|0	192|0	40|0	eligible|no_anchored_tf
+PARP	veliparib	1	BRD-K87142802	5	7		0	False						

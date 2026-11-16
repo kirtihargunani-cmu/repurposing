@@ -1132,3 +1132,38 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   - (5) Generic-response removal may remove ER/proliferation signal in MCF7.
   - (6) `wD` is undefined.
   - (7) The holdouts are new patient groups but reuse D127's drug profiles; PRISM was already read in 79j/79k/79m.
+
+## 2026-11-15: D128-A0 label-blind feasibility audit — run, with one failed run recorded
+- `scripts/d128/{config,d128io,a0_audit}.py`, `tests/d128/` (11 pass, pytest added to the env), outputs
+  `results/lincs/d128/a0/`, log `logs/d128_a0.log`. Choices fixed first in `DECISIONS.md` (D128-A0). **No M or R value
+  computed, no outcome label read, nothing frozen, no `d128-a0-freeze` tag.**
+- **The first run failed on performance and is part of the record.** Killed after 43 min without finishing. Diagnostics
+  taken while it ran: one core at 100%, CPU time equal to wall time, RSS 1.74 GB, state R — compute-bound and
+  single-threaded, not deadlocked or I/O bound. Only `profile_value_audit.tsv` had been written (~3 min in), so
+  execution sat in the footprint loop for ~40 min. Cause: `reach()` re-walked the same breadth-first search for target
+  genes shared across many drugs and units, and a pandas `.isin()` filter ran once per reached transcription factor
+  inside that loop. Progress was invisible because stdout was piped through `tail`, which buffers.
+- **Fixed by:** sign bitmasks instead of Python sets; one cached BFS per gene at the largest hop arm, with smaller arms
+  filtered from the same result (shortest-path signs do not depend on the cap); regulon gene lists pre-restricted to
+  the LINCS gene space so no pandas runs in the inner loop; a reachability cache persisted under
+  `results/lincs/d128/a0/cache/` keyed by the OmniPath/SIGNOR checksum, as the plan's A1 section asks; a progress line
+  every 25 units with an ETA; and the job run under `nohup` to a real log file. **43+ min unfinished → 141 s**, 202 s
+  for the full run including the DepMap and TCGA sections.
+- **Feasibility.** 12,283 cohort × compound pairs over 55 cohorts, 113,688 gate-passing (cohort, compound, line, unit)
+  rows; 3,931 of 9,288 group pairs and 1,270 of 2,995 subgroup pairs are eligible for at least one of M or R, and every
+  other row carries a reason. Of 497 target units, 225 are M-eligible, 226 have no anchored regulator within two hops.
+- **The ESR1 control is feasible, which is the point D126 failed on.** Fulvestrant's ESR1 unit resolves 294 genes
+  (40 landmark) at zero hops, against a floor of 10. Tamoxifen's ESR1 unit is annotated MODULATOR and is therefore
+  ambiguous for M, so only fulvestrant is scorable until D0.2 is decided.
+- **A4 (EGFR) confirmed not computable in a matched line** (0 signatures); A2 (ERBB2) is executable but thin, 12
+  signatures in SKBR3; A3 (BRAF) has 104 in A375 and HT29; B3 (PARP) has no BRCA1/2-damaging LINCS line.
+- **PRISM is not a clean independent label:** it is already read by `79j`, `79k`, `79m` and `d94_decide.py` and cited in
+  D94, D97, D102c, D119, D120, D122 and A43. GDSC appears only alongside it.
+- **Two rule problems, both found before any score existed.** The ERBB2-amplification rule used a 99th-percentile cut
+  and missed SKBR3 at copy number 11.0 (98.7th percentile); it is now an absolute relative-copy-number cut at 2.0,
+  where the distribution is bimodal, and the re-run is what made A2 executable. Unsettled: a unit counts as
+  TF-anchored when any of its genes is a CollecTRI regulator and is then floored on zero-hop genes alone, so
+  palbociclib is below the floor with 0 zero-hop genes despite 1,758 resolved through signaling. That needs a decision
+  at the freeze.
+- Open and blocking the freeze: D0.1 (reference for R in breast), D0.2 (SERMs), the unit-kind/floor question, and what
+  A5 can use for a functional label if not PRISM.

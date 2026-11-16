@@ -1,0 +1,232 @@
+{
+ "stage": "D128-A0",
+ "git_sha": "931fb172adbbeb3416670dd975345f66f507ca70",
+ "scripts_dirty": true,
+ "frozen": false,
+ "threads": 8,
+ "inputs": {
+  "data/processed/lincs/drug_line_profiles_bing_specific.f32": {
+   "sha256": "1f8d742c8d1589f6d9b2db0fc5f433a9140a46a05bcd44009ea1149f3583f4be",
+   "bytes": 391455744
+  },
+  "data/processed/lincs/drug_line_profiles_bing.f32": {
+   "sha256": "db4e0a3c72b0b428bd0c5521f92fb30d4882de7a4480997c4e8878a40b3a419e",
+   "bytes": 391455744
+  },
+  "data/processed/lincs/drug_line_profiles_index.tsv": {
+   "sha256": "d7a2660a18df28434475e255b31ae84036b12e8ea14c58ebcae94e80e143babb",
+   "bytes": 261800
+  },
+  "data/processed/lincs/drug_line_profiles_genes.tsv": {
+   "sha256": "4a7f5c4e72e55a4e3a774b4c5371b905f5f424c3ded88e0006d6fc41a1d5758b",
+   "bytes": 361333
+  },
+  "results/lincs/drug_annotations.tsv": {
+   "sha256": "7b7080fa125daac80b9b108c4f91a617ba6f82b132da0d0e132bab6adf6dc44d",
+   "bytes": 540108
+  },
+  "results/lincs/layered_score_v2.tsv": {
+   "sha256": "6ce36309228969a164dfd9360e5091c2bcea5e18c1f1d3c168347e3d0a1cdcd5",
+   "bytes": 1822189
+  },
+  "results/lincs/drug_reversal_split_v2_consensus.tsv": {
+   "sha256": "248adf590e9bad46ff20d9dfa87f761d5273aab2028428d76360b28b4fbee933",
+   "bytes": 16907571
+  },
+  "results/lincs/stratum_reversal_split_v2_consensus.tsv": {
+   "sha256": "a8b4d7de6f4dd801e6222883af01c1ac1bf7b29c109de8d1cf7ae0c00995c397",
+   "bytes": 6500146
+  },
+  "results/lincs/target_role/d121/units.tsv": {
+   "sha256": "e41e25947b8dac7a31929cf43ee647b698251e4690f4b4f7ed97cb83f8adf6b0",
+   "bytes": 44490
+  },
+  "results/celligner/disease_line_weights_long.tsv": {
+   "sha256": "1ded952b232542438d93f865736f90922b664002c597a8cf215436cb3541b079",
+   "bytes": 1240223
+  },
+  "results/celligner/stratum_line_weights_long_v2.tsv": {
+   "sha256": "4691c2e3d7c2a24b8ddbbcec5441f75e00fab6391c7bc346ce5af409fdb91c92",
+   "bytes": 269442
+  },
+  "data/processed/lincs/precursor_regulons/collectri.tsv.gz": {
+   "sha256": "b29c2625061854e859f478da5efb989dc6c754e7f33346ccaed5eb1241e9a2cc",
+   "bytes": 190080
+  },
+  "data/raw/omnipath/omnipath_signed_directed.tsv.gz": {
+   "sha256": "6447df18031e48f5fbcb9eb9261d58a2b65127a818a581949ee27a9febf6b75c",
+   "bytes": 1099319
+  },
+  "data/raw/omnipath/signor_signed_directed.tsv.gz": {
+   "sha256": "e68e5f45e1fb67e0eafd9539156537309955f9e9966d3a2235f1e85400c25e20",
+   "bytes": 829557
+  }
+ },
+ "config": {
+  "FROZEN": false,
+  "DE_GROUPS": [
+   "/home/kirti/projects/repurposing/data/processed/step4_v2",
+   "/home/kirti/projects/repurposing/results/step4_v2/signature_summary.tsv"
+  ],
+  "DE_STRATA": [
+   "/home/kirti/projects/repurposing/data/processed/step10_v2",
+   "/home/kirti/projects/repurposing/results/step10_v2/signature_summary.tsv"
+  ],
+  "DE_SIGN_COL": "logFC",
+  "DE_WEIGHT_COL": "z",
+  "DE_P_COL": "adj.P.Val",
+  "CONTRAST_ORDER": [
+   "gtex",
+   "adjacent"
+  ],
+  "NETWORK": "collectri",
+  "FEATURE_SPACE": "all",
+  "PROFILE_ARM": "specific",
+  "MAX_HOPS": 2,
+  "HOP_ARMS": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "WM": "unweighted",
+  "R_P_MAX": 0.05,
+  "F_DIVISOR": 2.0,
+  "FLOOR_GENES": 10,
+  "FLOOR_TFS": 2,
+  "FLOOR_MULTIPLIERS": [
+   0.5,
+   1.0,
+   2.0
+  ],
+  "M_AMBIGUOUS_FLAGS": [
+   "direction_assumed",
+   "mixed"
+  ],
+  "PANEL": [
+   "BRAF",
+   "EGFR",
+   "KRAS",
+   "NRAS",
+   "ERBB2",
+   "ESR1",
+   "PIK3CA",
+   "RB1",
+   "BRCA1",
+   "BRCA2"
+  ],
+  "Z_QUANTILES": [
+   0.5,
+   0.75,
+   0.9,
+   0.95,
+   0.99,
+   0.999
+  ],
+  "Z_THRESHOLDS": [
+   1.0,
+   2.0,
+   4.0
+  ],
+  "CONTROLS": {
+   "ESR1": [
+    "fulvestrant",
+    "tamoxifen",
+    "raloxifene",
+    "bazedoxifene",
+    "toremifene",
+    "clomifene",
+    "estradiol"
+   ],
+   "ERBB2": [
+    "lapatinib",
+    "neratinib",
+    "afatinib",
+    "canertinib",
+    "tucatinib"
+   ],
+   "BRAF": [
+    "vemurafenib",
+    "dabrafenib",
+    "encorafenib",
+    "PLX-4720",
+    "SB-590885"
+   ],
+   "MEK": [
+    "trametinib",
+    "selumetinib",
+    "cobimetinib",
+    "binimetinib",
+    "PD-0325901"
+   ],
+   "EGFR": [
+    "gefitinib",
+    "erlotinib",
+    "afatinib",
+    "osimertinib",
+    "dacomitinib"
+   ],
+   "CDK4/6": [
+    "palbociclib",
+    "ribociclib",
+    "abemaciclib"
+   ],
+   "PARP": [
+    "olaparib",
+    "niraparib",
+    "rucaparib",
+    "talazoparib",
+    "veliparib"
+   ]
+  },
+  "SEED": 128,
+  "THREADS": 8
+ },
+ "counts": {
+  "population_pairs": 12283,
+  "eligibility_rows": 124168,
+  "status": {
+   "eligible": 82426,
+   "unscorable": 41742
+  },
+  "units": 497,
+  "source_prod_vs_a0": {
+   "borrowed->borrowed": 9399,
+   "direct->direct": 2884
+  }
+ },
+ "log": [
+  "[    0.1s] profile index 9678 rows (3058 pert_ids, 73 lines); genes 10112",
+  "[   21.3s] profile audit done; same-row r median 0.882 vs shifted 0.202",
+  "[   22.1s] CollecTRI 1178 regulators, 42432 edges (31440 in the LINCS gene space, 1108 regulators); OmniPath 16518 edges; SIGNOR 10346 edges; reach cache omnipath: 387 genes preloaded, signor: 387 genes preloaded",
+  "[   22.3s] footprints 25/497 units, 0s elapsed, ETA 4s (reach cache hits 180, misses 0)",
+  "[   22.4s] footprints 50/497 units, 0s elapsed, ETA 3s (reach cache hits 297, misses 0)",
+  "[   22.5s] footprints 75/497 units, 0s elapsed, ETA 2s (reach cache hits 393, misses 0)",
+  "[   22.5s] footprints 100/497 units, 0s elapsed, ETA 2s (reach cache hits 450, misses 0)",
+  "[   22.7s] footprints 125/497 units, 1s elapsed, ETA 2s (reach cache hits 507, misses 0)",
+  "[   22.8s] footprints 150/497 units, 1s elapsed, ETA 2s (reach cache hits 588, misses 0)",
+  "[   22.8s] footprints 175/497 units, 1s elapsed, ETA 1s (reach cache hits 657, misses 0)",
+  "[   22.8s] footprints 200/497 units, 1s elapsed, ETA 1s (reach cache hits 684, misses 0)",
+  "[   22.9s] footprints 225/497 units, 1s elapsed, ETA 1s (reach cache hits 831, misses 0)",
+  "[   22.9s] footprints 250/497 units, 1s elapsed, ETA 1s (reach cache hits 882, misses 0)",
+  "[   23.0s] footprints 275/497 units, 1s elapsed, ETA 1s (reach cache hits 948, misses 0)",
+  "[   23.0s] footprints 300/497 units, 1s elapsed, ETA 1s (reach cache hits 1077, misses 0)",
+  "[   23.1s] footprints 325/497 units, 1s elapsed, ETA 1s (reach cache hits 1083, misses 0)",
+  "[   23.1s] footprints 350/497 units, 1s elapsed, ETA 0s (reach cache hits 1104, misses 0)",
+  "[   23.1s] footprints 375/497 units, 1s elapsed, ETA 0s (reach cache hits 1113, misses 0)",
+  "[   23.2s] footprints 400/497 units, 1s elapsed, ETA 0s (reach cache hits 1140, misses 0)",
+  "[   23.2s] footprints 425/497 units, 1s elapsed, ETA 0s (reach cache hits 1161, misses 0)",
+  "[   23.3s] footprints 450/497 units, 1s elapsed, ETA 0s (reach cache hits 1236, misses 0)",
+  "[   23.3s] footprints 475/497 units, 1s elapsed, ETA 0s (reach cache hits 1272, misses 0)",
+  "[   23.4s] footprints 497/497 units, 1s elapsed, ETA 0s (reach cache hits 1350, misses 0)",
+  "[   23.4s] reach cache omnipath: 387 genes, 900 hits / 0 misses -> reach_omnipath_6447df18031e_h3.pkl",
+  "[   23.4s] reach cache signor: 387 genes, 450 hits / 0 misses -> reach_signor_e68e5f45e1fb_h3.pkl",
+  "[   23.4s] coverage: 497 units; M-eligible at x1 225",
+  "[   30.3s] DE gene sets: 55 of 55 cohorts",
+  "[   58.9s] eligibility rows 124168; status {'eligible': 82426, 'unscorable': 41742}; source prod->a0 {'borrowed->borrowed': 9399, 'direct->direct': 2884}",
+  "[   64.2s] cohort feasibility written",
+  "[   87.5s] source-line context: 73 lines; RB1-null candidates 4; ERBB2-amp candidates 3; EGFR sensitizing 1",
+  "[  201.5s] patient strata written"
+ ],
+ "seconds": 202.5
+}

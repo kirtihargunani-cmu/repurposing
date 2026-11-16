@@ -13,3 +13,7 @@ omnipathr-log/
 
 # editing backups: git history is the record
 *.bak-pre-*
+
+# D128 sandbox: large per-row tables and the reachability cache stay on the server
+results/lincs/d128/**/*.parquet
+results/lincs/d128/**/cache/

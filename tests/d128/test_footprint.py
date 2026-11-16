@@ -1,0 +1,66 @@
+"""D128 A0 footprint counting (E01, E03, E04, E05): zero-hop TF anchor, sign composition, ambiguity, unique genes."""
+import sys
+from pathlib import Path
+
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts/d128"))
+import a0_audit as A  # noqa: E402
+
+EDGES = pd.DataFrame(dict(
+    src=["KIN", "KIN", "MID", "KIN", "MID2", "KIN"],
+    dst=["TF1", "MID", "TF2", "MID2", "TF3", "TF3"],
+    sign=[1, -1, 1, 1, 1, -1],
+    sign_disputed=[False, False, False, False, False, False]))
+REGS = {"TF1", "TF2", "TF3", "ESR1"}
+# regulon genes, already restricted to the measured gene space (as a0_audit precomputes them)
+REG_GENES = {"TF1": (("g1", "g2"), (1, -1)), "TF2": (("g1",), (1,)), "TF3": (("g3",), (1,)),
+             "ESR1": (("g4", "g5"), (1, -1))}
+
+
+class FakeReach:
+    """Stands in for the persisted Reach cache: same call signature, no disk."""
+
+    def __init__(self, name, edges, max_hops=2):
+        self.name, self.graph, self.max_hops = name, A.build_graph(edges), max_hops
+
+    def __call__(self, gene):
+        return A.reach_regulators(self.graph, gene, self.max_hops, REGS)
+
+
+def test_zero_hop_tf_anchor():                      # E01: a TF target is its own anchor
+    fp = A.unit_footprint(["ESR1"], FakeReach("t_zero", EDGES), REG_GENES, 2)
+    assert fp["tf_hop"] == {"ESR1": 0}
+    assert fp["genes_resolved"] == {"g4", "g5"} and fp["hop0_resolved"] == {"g4", "g5"}
+
+
+def test_sign_composition_and_conflict():         # E03 composition; E05 g1 counted once; conflicting signs
+    fp = A.unit_footprint(["KIN"], FakeReach("t_sign", EDGES), REG_GENES, 2)
+    # TF1 at 1 hop (+), TF2 at 2 hops via MID (- x + = -) -> g1 expected + from TF1 and - from TF2 -> conflicted
+    assert fp["tf_hop"]["TF1"] == 1 and fp["tf_hop"]["TF2"] == 2
+    assert "g1" in fp["genes_conflicted"] and "g1" not in fp["genes_resolved"]
+    assert "g2" in fp["genes_resolved"]
+
+
+def test_opposite_paths_same_hop_are_ambiguous():  # E04: KIN->TF3 at 1 hop with both signs
+    e = pd.concat([EDGES, pd.DataFrame(dict(src=["KIN"], dst=["TF3"], sign=[1], sign_disputed=[False]))])
+    fp = A.unit_footprint(["KIN"], FakeReach("t_amb", e), REG_GENES, 2)
+    assert fp["n_ambiguous_tfs"] >= 1
+    assert "g3" in fp["genes_any"] and "g3" not in fp["genes_resolved"]   # kept in coverage, out of the signed set
+
+
+def test_disputed_edge_is_ambiguous():
+    e = EDGES.copy(); e.loc[0, "sign_disputed"] = True
+    fp = A.unit_footprint(["KIN"], FakeReach("t_disp", e), REG_GENES, 1)
+    assert fp["n_ambiguous_tfs"] >= 1
+
+
+def test_hop_arm_filters_without_rewalking():
+    r = FakeReach("t_hop", EDGES, max_hops=3)
+    assert A.unit_footprint(["KIN"], r, REG_GENES, 1)["n_anchored_tfs"] == 2      # TF1, TF3 at 1 hop
+    assert A.unit_footprint(["KIN"], r, REG_GENES, 2)["n_anchored_tfs"] == 3      # + TF2 at 2 hops
+
+
+def test_sign_mask_product():
+    assert A.mul(A.PLUS, A.MINUS) == A.MINUS and A.mul(A.MINUS, A.MINUS) == A.PLUS
+    assert A.mul(A.BOTH, A.PLUS) == A.BOTH

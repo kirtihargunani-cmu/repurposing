@@ -491,6 +491,28 @@ as currently measured.
   Plan: [`IMPLEMENTATION_target_mechanism_scoring.md`](IMPLEMENTATION_target_mechanism_scoring.md); issues found
   before it starts: [`notes/d128_plan_review.md`](notes/d128_plan_review.md).
 
+  **First step done (2026-11-15): the stock-take, before any scoring.** Nothing was scored and no answer was looked
+  at. The question was only: for which cancers and drugs could this be worked out at all? Of about 12,300
+  cancer-and-drug pairs, roughly 5,200 can be scored on at least one of the two new measures; every one of the rest
+  now carries a stated reason, most often that no route could be traced from the drug's target to any switch.
+
+  The encouraging part is the anti-estrogen test case. Starting from ESR1 itself, we reach **294 of its own genes**,
+  where ten would have been enough, so the footprint that the earlier path check (D126) could never find is clearly
+  there. The catch is that only fulvestrant counts for now: the other anti-estrogens are recorded as "modulators",
+  which does not say whether they raise or lower the receptor's activity, so they are set aside until that is decided.
+
+  Three limits were confirmed rather than assumed. There is **no lung cell line carrying the EGFR mutation** that the
+  matching drugs were made for, so that comparison cannot be done honestly and is marked as such. The HER2 comparison
+  survives on one cell line and twelve experiments. And **PRISM**, the drug-sensitivity data we had hoped to validate
+  against, turns out to have been used repeatedly in earlier decisions, so it can no longer serve as an independent
+  check.
+
+  Two problems with our own rules surfaced while there were still no results to bias them. One was a cut-off that
+  mislabelled a strongly HER2-amplified cell line as ordinary; correcting it is what made the HER2 comparison possible
+  at all. The other, still open, is that a drug such as palbociclib is being judged by too narrow a slice of its
+  evidence. A first attempt at the run also had to be abandoned after 43 minutes for being too slow; caching the
+  repeated graph searches brought it down to about two minutes, and both the failure and the fix are in the record.
+
 ### Threads that run through the whole history
 
 1. **The anti-estrogen case is the project's canary.** Almost every phase was triggered by it, and D128's first gate
