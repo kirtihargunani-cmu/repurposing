@@ -1126,7 +1126,7 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
     normal breast; the reference for breast R needs a decision. M is unaffected.
   - (2) No EGFR-sensitizing-mutant LINCS line exists (H1975 only: T790M, 3 profiles), so A4 is expected to be
     not computable in context.
-  - (3) Fulvestrant is the only pure ER antagonist (1 MCF7 profile); whether SERMs count as antagonists needs a
+  - (3) Fulvestrant is the only pure ER antagonist (3 pert_ids, 18 MCF7 signatures; corrected from "1 profile"); whether SERMs count as antagonists needs a
     decision; no estradiol profile in MCF7.
   - (4) No primary arm is named; network, gene set, profile arm, hop limit and weights should be frozen together.
   - (5) Generic-response removal may remove ER/proliferation signal in MCF7.
