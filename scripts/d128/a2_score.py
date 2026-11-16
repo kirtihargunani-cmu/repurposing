@@ -58,7 +58,29 @@ def load_inputs(arm="specific"):
         U.loc[dup, "unit_id"] = U.unit_id[dup] + "#" + U[dup].groupby("unit_id").cumcount().add(1).astype(str)
     # which TF carries each gene, for the hub diagnostic
     P = pd.read_parquet(C.OUT / "a1/target_tf_paths.parquet")
-    return dict(idx=idx, genes=genes, M=M, col=col, land=land, F=F, amb=amb, U=U, P=P, arm=arm, path=path)
+    inp = dict(idx=idx, genes=genes, M=M, col=col, land=land, F=F, amb=amb, U=U, P=P, arm=arm, path=path)
+
+    # --- D128-A3 indexes: the same values, looked up instead of re-scanned ------------------------------------------
+    # A3 scores ~114k rows. The first version filtered the 368k-row footprint frame and the unit table once per row,
+    # which is O(rows x frame) and dominates everything else. Nothing below changes a score: it is the same gene list,
+    # the same expected signs and the same unit record, prepared once.
+    FP = {}
+    for uid, d in F.groupby("unit_id", sort=False):
+        res = d[d.status == "resolved"]
+        g = res.gene_id.to_numpy()
+        FP[uid] = dict(
+            genes=g.tolist(), cols=np.array([col[x] for x in g], dtype=np.int64),
+            expected=res.expected_sign_pre_action.to_numpy().astype(float),
+            lm=np.array([x in land for x in g]), n_unresolved=int((d.status != "resolved").sum()),
+            all_genes=d.gene_id.to_numpy().tolist(),
+            # D128-A3: identity of the resolved footprint, so a degree-matched null does not draw the same target
+            # unit several times under different drug names (the 497-unit pool is full of such repeats).
+            sig=hash(tuple(sorted(zip(g.tolist(), res.expected_sign_pre_action.to_numpy().tolist())))))
+    inp["FP"] = FP
+    inp["U_by_id"] = {r.unit_id: r for r in U.itertuples(index=False)}
+    inp["prow"] = {(p_, m_): i for i, (p_, m_) in enumerate(zip(idx.pert_id, idx.ModelID))}
+    inp["cand_cache"] = {}
+    return inp
 
 
 def disease_genes(cohort, level):
@@ -77,65 +99,88 @@ def disease_genes(cohort, level):
     return con, dict(zip(sig.gene_id, np.sign(sig[C.DE_SIGN_COL])))
 
 
-def score_one(inp, pert_id, model_id, unit_id, de_sign=None, want_nulls=0, cov=None):
+def score_one(inp, pert_id, model_id, unit_id, de_sign=None, want_nulls=0, cov=None, gene_contrib=True):
     """M and R for one (drug, line, unit). Returns (Score_M, Score_R, per-gene rows, null summaries)."""
-    row = inp["idx"].index[(inp["idx"].pert_id == pert_id) & (inp["idx"].ModelID == model_id)]
-    if not len(row):
+    i_row = inp["prow"].get((pert_id, model_id))
+    if i_row is None:
         return (SC.Score(np.nan, "abstained", "no_profile_for_line"),
                 SC.Score(np.nan, "abstained", "no_profile_for_line"), [], {})
-    zrow = np.asarray(inp["M"][int(row[0])], dtype=float)
+    zrow = np.asarray(inp["M"][i_row], dtype=float)
 
-    f = inp["F"][(inp["F"].unit_id == unit_id)]
-    if not len(f):
+    fp = inp["FP"].get(unit_id)
+    if fp is None or not len(fp["genes"]):
         return (SC.Score(np.nan, "abstained", "no_footprint"), SC.Score(np.nan, "abstained", "no_footprint"), [], {})
-    res = f[f.status == "resolved"]
-    n_unres = int((f.status != "resolved").sum())
-    gids = res.gene_id.tolist()
-    z = np.array([zrow[inp["col"][g]] if g in inp["col"] else np.nan for g in gids])
-    lm = np.array([g in inp["land"] for g in gids])
-    u = inp["U"][inp["U"].unit_id == unit_id].iloc[0]
+    gids, z, lm = fp["genes"], zrow[fp["cols"]], fp["lm"]
+    u = inp["U_by_id"][unit_id]
     action = 1 if u.orient == "raise" else -1
 
-    m = SC.score_mechanism(gids, res.expected_sign_pre_action.to_numpy(), action, z, landmark_mask=lm,
-                           n_unresolved=n_unres, action_flag=u.action_flag)
-    # R: the same footprint genes, restricted to the cohort's significant genes (P8)
+    m = SC.score_mechanism(gids, fp["expected"], action, z, landmark_mask=lm,
+                           n_unresolved=fp["n_unresolved"], action_flag=u.action_flag, tf_of_gene=None)
+    # R: the same footprint genes (resolved or not: sign ambiguity blocks M, not direction), restricted to the
+    # cohort's significant genes (P8)
     if de_sign:
-        rg = [g for g in f.gene_id.tolist() if g in de_sign]
+        rg = [g for g in fp["all_genes"] if g in de_sign]
         rz = np.array([zrow[inp["col"][g]] if g in inp["col"] else np.nan for g in rg])
         rlm = np.array([g in inp["land"] for g in rg])
         r = SC.score_rescue(rg, [de_sign[g] for g in rg], rz, landmark_mask=rlm,
-                            n_unresolved=len(f) - len(rg))
+                            n_unresolved=len(fp["all_genes"]) - len(rg))
     else:
         r = SC.Score(np.nan, "abstained", "no_de_contrast")
 
     grows = []
-    for g, c in m.contributions.items():
-        grows.append(dict(unit_id=unit_id, pert_id=pert_id, ModelID=model_id, gene_id=g, score="M",
-                          expected_sign=float(res.expected_sign_pre_action.to_numpy()[gids.index(g)] * action),
-                          z=float(zrow[inp["col"][g]]), f_z=float(SC.bounded(zrow[inp["col"][g]])),
-                          contribution=float(c), feature_space="landmark" if g in inp["land"] else "best inferred"))
+    if gene_contrib:
+        e_signed = fp["expected"] * action
+        pos = {g: k for k, g in enumerate(gids)}
+        for g, c in m.contributions.items():
+            k = pos[g]
+            grows.append(dict(unit_id=unit_id, pert_id=pert_id, ModelID=model_id, gene_id=g, score="M",
+                              expected_sign=float(e_signed[k]), z=float(z[k]), f_z=float(SC.bounded(z[k])),
+                              contribution=float(c), feature_space="landmark" if lm[k] else "best inferred"))
 
     nsum = {}
     if want_nulls and m.scored:
-        e = res.expected_sign_pre_action.to_numpy() * action
-        vals = [SC.score_mechanism(gids, NU.shuffled_edge_signs(e, i), 1, z, landmark_mask=lm).value
-                for i in range(want_nulls)]
-        nsum["sign_shuffle"] = NU.summarise(vals, m.value)
-        vals = [SC.score_mechanism(gids, e, 1, NU.gene_label_permutation(z, lm, i), landmark_mask=lm).value
-                for i in range(want_nulls)]
-        nsum["gene_label"] = NU.summarise(vals, m.value)
+        e = fp["expected"] * action
+        if NU.exact_shortcut_ok(e, z):                       # the fast path is exact here (see nulls.py)
+            fz = SC.bounded(z)
+            nsum["sign_shuffle"] = NU.summarise(NU.m_null_sign_shuffle(e, fz, want_nulls), m.value)
+            nsum["gene_label"] = NU.summarise(NU.m_null_gene_label(e, fz, lm, want_nulls), m.value)
+        else:
+            nsum["sign_shuffle"] = NU.summarise(
+                [SC.score_mechanism(gids, NU.shuffled_edge_signs(e, i), 1, z, landmark_mask=lm).value
+                 for i in range(want_nulls)], m.value)
+            nsum["gene_label"] = NU.summarise(
+                [SC.score_mechanism(gids, e, 1, NU.gene_label_permutation(z, lm, i), landmark_mask=lm).value
+                 for i in range(want_nulls)], m.value)
         if cov is not None:
-            cand = NU.degree_matched_units(unit_id, cov, int(m.n_genes),
-                                           int(cov.loc[cov.unit_id == unit_id, "n_resolved_tfs"].iloc[0])
-                                           if (cov.unit_id == unit_id).any() else 0,
-                                           k=min(want_nulls, 20), exclude_genes=str(u.genes_str).split("|"))
+            cand = inp["cand_cache"].get(unit_id)
+            if cand is None:
+                ntf = int(cov.loc[cov.unit_id == unit_id, "n_resolved_tfs"].iloc[0]) if (cov.unit_id == unit_id).any() else 0
+                raw = list(NU.degree_matched_units(unit_id, cov, int(m.n_genes), ntf, k=min(want_nulls, 20),
+                                                   exclude_genes=str(u.genes_str).split("|")).unit_id)
+                seen, cand = set(), []                      # D128-A3: one draw per distinct footprint
+                for cu in raw:
+                    cf = inp["FP"].get(cu)
+                    if cf is None or not len(cf["genes"]) or cf["sig"] in seen:
+                        continue
+                    seen.add(cf["sig"]); cand.append(cu)
+                inp["cand_cache"][unit_id] = cand
             dvals = []
-            for cu in cand.unit_id:
-                cf = inp["F"][(inp["F"].unit_id == cu) & (inp["F"].status == "resolved")]
-                cg = cf.gene_id.tolist()
-                cz = np.array([zrow[inp["col"][g]] if g in inp["col"] else np.nan for g in cg])
-                dvals.append(SC.score_mechanism(cg, cf.expected_sign_pre_action.to_numpy(), action, cz).value)
-            nsum["degree_matched_target"] = NU.summarise(dvals, m.value)
+            for cu in cand:
+                cf = inp["FP"].get(cu)
+                if cf is None or not len(cf["genes"]):
+                    continue
+                cz = zrow[cf["cols"]]
+                ce = cf["expected"] * action
+                if NU.exact_shortcut_ok(ce, cz):
+                    dvals.append(float((ce * SC.bounded(cz)).mean()))
+                else:
+                    dvals.append(SC.score_mechanism(cf["genes"], cf["expected"], action, cz).value)
+            d_summ = NU.summarise(dvals, m.value)
+            # D128-A3 reporting rule: fewer than 3 distinct alternative footprints is a degenerate null, not a number
+            d_summ["degenerate"] = bool(d_summ["n_null"] < 3)
+            if d_summ["degenerate"]:
+                d_summ["z"] = np.nan
+            nsum["degree_matched_target"] = d_summ
     return m, r, grows, nsum
 
 
@@ -147,6 +192,10 @@ def main():
     ap.add_argument("--lines", default="")
     ap.add_argument("--arm", default=C.PROFILE_ARM, choices=["specific", "raw"])
     ap.add_argument("--nulls", type=int, default=0)
+    ap.add_argument("--gene-contrib", default="none", choices=["none", "all", "sample"],
+                    help="write gene_contributions.parquet: none, all (small runs only), or a seeded sample")
+    ap.add_argument("--gene-contrib-n", type=int, default=2000)
+    ap.add_argument("--status", default="", help="restrict to eligibility rows with these a0 status values")
     ap.add_argument("--out", default="a2")
     a = ap.parse_args()
     for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
@@ -167,6 +216,15 @@ def main():
     if a.lines:
         E = E[E.ModelID.isin(a.lines.split(","))]
     E = E[E.ModelID.notna() & (E.ModelID != "")]
+    if a.status:
+        E = E[E.status.isin(a.status.split(","))]
+    E = E.sort_values(["pert_id", "ModelID"], kind="stable").reset_index(drop=True)
+    gc_rows = set()
+    if a.gene_contrib == "all":
+        gc_rows = set(range(len(E)))
+    elif a.gene_contrib == "sample":
+        n_gc = min(a.gene_contrib_n, len(E))
+        gc_rows = set(np.random.default_rng(C.SEED).choice(len(E), n_gc, replace=False).tolist())
     log(f"arm {a.arm}; scoring {len(E)} (cohort, pert_id, line, unit) rows over {E.cohort.nunique()} cohorts, "
         f"{E.pert_id.nunique()} compounds, {E.ModelID.nunique()} lines")
 
@@ -176,8 +234,9 @@ def main():
         if r.cohort not in de_cache:
             de_cache[r.cohort] = disease_genes(r.cohort, r.level)
         con, dsign = de_cache[r.cohort]
-        m, rr, gr, ns = score_one(inp, r.pert_id, r.ModelID, r.unit_id, dsign, a.nulls, cov)
-        u = inp["U"][inp["U"].unit_id == r.unit_id].iloc[0]
+        m, rr, gr, ns = score_one(inp, r.pert_id, r.ModelID, r.unit_id, dsign, a.nulls, cov,
+                                  gene_contrib=(n - 1) in gc_rows)
+        u = inp["U_by_id"][r.unit_id]
         rows.append(dict(cohort=r.cohort, level=r.level, pert_id=r.pert_id, cmap_name=r.cmap_name,
                          ModelID=r.ModelID, line_weight=r.line_weight, source=r.source_a0, unit_id=r.unit_id,
                          unit_genes=u.genes_str, unit_kind=r.unit_kind, action=u.orient, action_flag=u.action_flag,
@@ -192,7 +251,7 @@ def main():
         for k, v in ns.items():
             nrows.append(dict(cohort=r.cohort, pert_id=r.pert_id, ModelID=r.ModelID, unit_id=r.unit_id,
                               null=k, observed=m.value, **v))
-        if n % 200 == 0 or n == len(E):
+        if n % 5000 == 0 or n == len(E):
             log(f"scored {n}/{len(E)}")
 
     S = pd.DataFrame(rows)
