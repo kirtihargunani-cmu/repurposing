@@ -191,6 +191,14 @@ def main():
         n=("flip", "size"), flip_rate=("flip", "mean"), n_units=("unit_id", "nunique"),
         median_absM=("absM", "median")).reset_index().rename(columns={"hub_fraction": "bin"})
     log("H1 - flip rate by largest-regulator share:\n" + H1.to_string())
+    # H1 is confounded with |M| (hub-dominated units have larger |M|), so the same cut is repeated WITHIN |M|
+    # strata. Added after seeing the marginal table, as a confound control, not as a tuning step: the hypothesis and
+    # the measure were both fixed in the decision row.
+    both["absM_stratum"] = bins_of(both.absM, [0, 0.01, 0.03, 1.0]).astype(str)
+    both["hub_stratum"] = bins_of(both.hub_fraction, [0, 0.3, 0.5, 1.0]).astype(str)
+    H1b = both.dropna(subset=["hub_fraction"]).groupby(["absM_stratum", "hub_stratum"], observed=True).agg(
+        n=("flip", "size"), flip_rate=("flip", "mean"), n_units=("unit_id", "nunique")).reset_index()
+    log("H1 - flip rate by hub share WITHIN |M| strata (confound control):\n" + H1b.to_string())
 
     # --- H2: effective number of independent genes ------------------------------------------------------------------
     sel = sorted(set(rng.choice(sorted(FP), min(N_NEFF_UNITS, len(FP)), replace=False).tolist())
@@ -218,6 +226,20 @@ def main():
             off = (np.abs(Cm).sum() - p) / (p * (p - 1)) if p > 1 else np.nan
             neff_rows.append(dict(unit_id=uid, cmap_name=U_by_id[uid].cmap_name, space=space, n_genes=p,
                                   n_eff=neff, n_eff_per_gene=neff / p, mean_abs_offdiag_corr=float(off)))
+    # reference points for H2: the whole measured gene space, and a random footprint-sized gene set
+    for label, cols in (("whole BING space", np.arange(len(genes))),
+                        ("random 478 genes", rng.choice(len(genes), 478, replace=False)),
+                        ("all 978 landmarks", np.flatnonzero(genes.feature_space.to_numpy() == "landmark"))):
+        Z = X[:, np.sort(cols)].astype(np.float64)
+        Z = Z - Z.mean(0)
+        sd = Z.std(0, ddof=1)
+        Z = Z[:, sd > 0] / sd[sd > 0]
+        pp = Z.shape[1]
+        Cm = (Z.T @ Z) / (len(Z) - 1)
+        neff_rows.append(dict(unit_id=f"REFERENCE: {label}", cmap_name="(reference)", space="reference",
+                              n_genes=pp, n_eff=float(pp ** 2 / np.square(Cm).sum()),
+                              n_eff_per_gene=float(pp / np.square(Cm).sum()),
+                              mean_abs_offdiag_corr=float((np.abs(Cm).sum() - pp) / (pp * (pp - 1)))))
     NE = pd.DataFrame(neff_rows)
     NE.to_csv(A3 / "landmark_flip_diagnostic_neff.tsv", sep="\t", index=False)
     log("H2 - effective independent genes (median over the sampled units):\n"
@@ -277,7 +299,8 @@ def main():
                        units_landmark_worse=int((per_unit.gap_landmark_minus_random > 0.05).sum()),
                        units_landmark_better=int((per_unit.gap_landmark_minus_random < -0.05).sum()),
                        units=int(len(per_unit))),
-        h1_hub=H1.to_dict("records"),
+        h1_hub=H1.to_dict("records"), h1_hub_within_absM=H1b.to_dict("records"),
+        h2_reference=NE[NE.space == "reference"].to_dict("records"),
         h2_neff=NE.groupby("space").agg(units=("unit_id", "nunique"), median_n_genes=("n_genes", "median"),
                                         median_n_eff=("n_eff", "median"),
                                         median_n_eff_per_gene=("n_eff_per_gene", "median"),

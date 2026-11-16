@@ -1317,3 +1317,31 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   count. They coincide today (0 missing responses) but the engine is the stricter of the two if a profile matrix
   ever has gaps.
 
+### 2026-11-16 - D128-A3.1: why M flips sign between the gene arms (diagnostic; nothing changed)
+
+- **The question A3 left open had four candidate answers, written down before the run. Two are supported.**
+  Population: 1,852 (unit, `pert_id`, line) rows over 226 units scored in both arms (the cohort does not enter M);
+  overall flip rate 27.9%.
+- **Control A: flipping is confined to small |M| - but small |M| is where nearly everything lives.** 46.9% flips at
+  |M| <= 0.005, 24.2% at 0.02-0.03, 3.3% at 0.05-0.08, 0% above 0.12, so by the pre-stated rule flipping stops at
+  |M| >= 0.05. **Only 11.9% of rows, and 12.0% of the 4,940 scored drug rows, get there.** On the conservative
+  max(|M_all|, |M_landmark|) measure flipping persists to 15.6% even at 0.08-0.12.
+- **Control B: it is NOT imputation.** Random same-size subsets of the all-BING footprint flip 26.0% of the time
+  against the landmark split's 28.8%; per unit the gap has median +0.008 (IQR -0.113 to +0.142), with 92 units worse
+  and **85 better** on the landmark split. Switching arms would not fix the flipping.
+- **H2 is the mechanism, and it is bigger than D128.** Effective independent genes (participation ratio of the
+  gene-gene correlation matrix over 2,000 profiles): a median 905-gene footprint carries **n_eff 44**; its inferred
+  part 42; its 140 landmark genes 41. The **whole 10,112-gene BING space carries n_eff 41**; all 978 landmarks, 57.
+  **A footprint cannot carry more than ~40-55 independent measurements however many genes it lists.** This explains
+  the dilution of M, the 2.5x larger landmark-only M on fulvestrant, and - the part that matters beyond D128 - that
+  **the gene-label null, which permutes genes as if independent, is too narrow, so its percentiles and z values are
+  over-confident wherever LINCS gene counts are treated as sample sizes.**
+- **H1 (hub dominance) is not supported once |M| is controlled:** within |M| > 0.03 the flip rate is 9.0% / 9.2% /
+  9.6% across hub shares < 0.3 / 0.3-0.5 / > 0.5. The marginal association was a |M| confound.
+- **H3:** the median row has 78% of its footprint genes at |z| < 1 and they carry 54% of the absolute numerator, so
+  M's sign is decided mostly by near-boundary responses.
+- **ESR1 / fulvestrant:** landmark flip rate **0.000** against 14.8% for random 89-gene subsets; n_eff 46 (all) /
+  38 (landmark), i.e. the 389 inferred genes add about 8 effective measurements.
+- **Nothing was changed:** no arm chosen, no parameter moved, nothing re-ranked, P4 still frozen. Open for the user:
+  a minimum-|M| rule before a sign is read, and whether the gene-label null must be replaced project-wide.
+

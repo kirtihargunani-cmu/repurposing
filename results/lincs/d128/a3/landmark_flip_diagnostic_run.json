@@ -1,0 +1,480 @@
+{
+ "stage": "D128-A3.1",
+ "git_sha": "6db2dbb4e972d230e2a262f1b284b5e20409045f",
+ "frozen": true,
+ "seed": 128,
+ "n_draw": 200,
+ "n_profiles_per_unit": 15,
+ "n_corr_profiles": 2000,
+ "n_neff_units": 69,
+ "rows_both_arms": 1852,
+ "units_both_arms": 226,
+ "overall_flip_rate": 0.2786177105831533,
+ "flip_rate_by_absM": [
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(-0.001, 0.005]",
+   "n": 309,
+   "flip_rate": 0.4692556634304207,
+   "median_absM": 0.0024339862057349794,
+   "n_units": 130
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.005, 0.01]",
+   "n": 243,
+   "flip_rate": 0.43209876543209874,
+   "median_absM": 0.007396395044837402,
+   "n_units": 115
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.01, 0.02]",
+   "n": 427,
+   "flip_rate": 0.3255269320843091,
+   "median_absM": 0.01482114669595192,
+   "n_units": 153
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.02, 0.03]",
+   "n": 306,
+   "flip_rate": 0.24183006535947713,
+   "median_absM": 0.02471542153194546,
+   "n_units": 130
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.03, 0.05]",
+   "n": 346,
+   "flip_rate": 0.1329479768786127,
+   "median_absM": 0.036854234415459104,
+   "n_units": 134
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.05, 0.08]",
+   "n": 152,
+   "flip_rate": 0.03289473684210526,
+   "median_absM": 0.06080393562594984,
+   "n_units": 78
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.08, 0.12]",
+   "n": 45,
+   "flip_rate": 0.044444444444444446,
+   "median_absM": 0.09326345951957203,
+   "n_units": 32
+  },
+  {
+   "control": "A",
+   "measure": "|M| (all_bing)",
+   "bin": "(0.12, 0.2]",
+   "n": 24,
+   "flip_rate": 0.0,
+   "median_absM": 0.14442478521079738,
+   "n_units": 17
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(-0.001, 0.005]",
+   "n": 43,
+   "flip_rate": 0.4186046511627907,
+   "median_absM": 0.002787840201391988,
+   "n_units": 32
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.005, 0.01]",
+   "n": 72,
+   "flip_rate": 0.4722222222222222,
+   "median_absM": 0.007715159606345827,
+   "n_units": 48
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.01, 0.02]",
+   "n": 271,
+   "flip_rate": 0.4317343173431734,
+   "median_absM": 0.015409231273997981,
+   "n_units": 118
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.02, 0.03]",
+   "n": 280,
+   "flip_rate": 0.4035714285714286,
+   "median_absM": 0.024799939912980545,
+   "n_units": 128
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.03, 0.05]",
+   "n": 435,
+   "flip_rate": 0.28735632183908044,
+   "median_absM": 0.03764164276955899,
+   "n_units": 151
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.05, 0.08]",
+   "n": 357,
+   "flip_rate": 0.17647058823529413,
+   "median_absM": 0.06211651635727189,
+   "n_units": 145
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.08, 0.12]",
+   "n": 256,
+   "flip_rate": 0.15625,
+   "median_absM": 0.09398124772234012,
+   "n_units": 112
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.12, 0.2]",
+   "n": 109,
+   "flip_rate": 0.045871559633027525,
+   "median_absM": 0.14438158670237908,
+   "n_units": 59
+  },
+  {
+   "control": "A",
+   "measure": "max(|M_all|, |M_lm|)",
+   "bin": "(0.2, 1.0]",
+   "n": 29,
+   "flip_rate": 0.034482758620689655,
+   "median_absM": 0.24505977827257736,
+   "n_units": 18
+  }
+ ],
+ "absM_above_which_flipping_stops": 0.05,
+ "control_b": {
+  "row_level_landmark_flip": 0.2878228782287823,
+  "row_level_random_flip": 0.2596740467404674,
+  "per_unit_gap_median": 0.007752525252525247,
+  "per_unit_gap_q25": -0.1126736111111111,
+  "per_unit_gap_q75": 0.14237500000000003,
+  "units_landmark_worse": 92,
+  "units_landmark_better": 85,
+  "units": 226
+ },
+ "h1_hub": [
+  {
+   "bin": "(0.1, 0.2]",
+   "n": 276,
+   "flip_rate": 0.322463768115942,
+   "n_units": 30,
+   "median_absM": 0.010518159178566973
+  },
+  {
+   "bin": "(0.2, 0.3]",
+   "n": 527,
+   "flip_rate": 0.3396584440227704,
+   "n_units": 51,
+   "median_absM": 0.01248425917940449
+  },
+  {
+   "bin": "(0.3, 0.4]",
+   "n": 315,
+   "flip_rate": 0.2920634920634921,
+   "n_units": 34,
+   "median_absM": 0.019412291812361527
+  },
+  {
+   "bin": "(0.4, 0.5]",
+   "n": 173,
+   "flip_rate": 0.2254335260115607,
+   "n_units": 19,
+   "median_absM": 0.02457591127075369
+  },
+  {
+   "bin": "(0.5, 0.65]",
+   "n": 126,
+   "flip_rate": 0.2222222222222222,
+   "n_units": 11,
+   "median_absM": 0.027135742247881144
+  },
+  {
+   "bin": "(0.65, 1.0]",
+   "n": 435,
+   "flip_rate": 0.2045977011494253,
+   "n_units": 81,
+   "median_absM": 0.032378415111496264
+  }
+ ],
+ "h1_hub_within_absM": [
+  {
+   "absM_stratum": "(-0.001, 0.01]",
+   "hub_stratum": "(-0.001, 0.3]",
+   "n": 360,
+   "flip_rate": 0.475,
+   "n_units": 74
+  },
+  {
+   "absM_stratum": "(-0.001, 0.01]",
+   "hub_stratum": "(0.3, 0.5]",
+   "n": 110,
+   "flip_rate": 0.39090909090909093,
+   "n_units": 39
+  },
+  {
+   "absM_stratum": "(-0.001, 0.01]",
+   "hub_stratum": "(0.5, 1.0]",
+   "n": 82,
+   "flip_rate": 0.43902439024390244,
+   "n_units": 37
+  },
+  {
+   "absM_stratum": "(0.01, 0.03]",
+   "hub_stratum": "(-0.001, 0.3]",
+   "n": 332,
+   "flip_rate": 0.2620481927710843,
+   "n_units": 77
+  },
+  {
+   "absM_stratum": "(0.01, 0.03]",
+   "hub_stratum": "(0.3, 0.5]",
+   "n": 215,
+   "flip_rate": 0.3395348837209302,
+   "n_units": 47
+  },
+  {
+   "absM_stratum": "(0.01, 0.03]",
+   "hub_stratum": "(0.5, 1.0]",
+   "n": 186,
+   "flip_rate": 0.2849462365591398,
+   "n_units": 53
+  },
+  {
+   "absM_stratum": "(0.03, 1.0]",
+   "hub_stratum": "(-0.001, 0.3]",
+   "n": 111,
+   "flip_rate": 0.09009009009009009,
+   "n_units": 46
+  },
+  {
+   "absM_stratum": "(0.03, 1.0]",
+   "hub_stratum": "(0.3, 0.5]",
+   "n": 163,
+   "flip_rate": 0.09202453987730061,
+   "n_units": 39
+  },
+  {
+   "absM_stratum": "(0.03, 1.0]",
+   "hub_stratum": "(0.5, 1.0]",
+   "n": 293,
+   "flip_rate": 0.09556313993174062,
+   "n_units": 80
+  }
+ ],
+ "h2_reference": [
+  {
+   "unit_id": "REFERENCE: whole BING space",
+   "cmap_name": "(reference)",
+   "space": "reference",
+   "n_genes": 10112,
+   "n_eff": 41.011939769898135,
+   "n_eff_per_gene": 0.004055769360156065,
+   "mean_abs_offdiag_corr": 0.12144067112083695
+  },
+  {
+   "unit_id": "REFERENCE: random 478 genes",
+   "cmap_name": "(reference)",
+   "space": "reference",
+   "n_genes": 478,
+   "n_eff": 38.649236930952966,
+   "n_eff_per_gene": 0.08085614420701458,
+   "mean_abs_offdiag_corr": 0.12095792370638012
+  },
+  {
+   "unit_id": "REFERENCE: all 978 landmarks",
+   "cmap_name": "(reference)",
+   "space": "reference",
+   "n_genes": 978,
+   "n_eff": 56.81609743431112,
+   "n_eff_per_gene": 0.058094169155737334,
+   "mean_abs_offdiag_corr": 0.10042342514387288
+  }
+ ],
+ "h2_neff": [
+  {
+   "space": "all",
+   "units": 66,
+   "median_n_genes": 905.0,
+   "median_n_eff": 44.121957956352446,
+   "median_n_eff_per_gene": 0.05140746510535611,
+   "median_abs_corr": 0.1139913243047893
+  },
+  {
+   "space": "inferred",
+   "units": 63,
+   "median_n_genes": 807.0,
+   "median_n_eff": 41.78100195249471,
+   "median_n_eff_per_gene": 0.05361986347422645,
+   "median_abs_corr": 0.11717652070552478
+  },
+  {
+   "space": "landmark",
+   "units": 66,
+   "median_n_genes": 140.5,
+   "median_n_eff": 41.26774160154041,
+   "median_n_eff_per_gene": 0.2990637775016891,
+   "median_abs_corr": 0.10064082927249796
+  },
+  {
+   "space": "reference",
+   "units": 3,
+   "median_n_genes": 978.0,
+   "median_n_eff": 41.011939769898135,
+   "median_n_eff_per_gene": 0.058094169155737334,
+   "median_abs_corr": 0.12095792370638012
+  }
+ ],
+ "h3": {
+  "median_share_genes_small_z": 0.7803847553210843,
+  "median_share_numerator_small_z": 0.5425391096714645
+ },
+ "named_cases": [
+  {
+   "unit_id": "fulvestrant::CHEMBL206",
+   "cmap_name": "fulvestrant",
+   "genes": "ESR1",
+   "n_footprint": 478,
+   "n_landmark": 89,
+   "hub_fraction": 1.0,
+   "hub_tf": "ESR1",
+   "median_absM": 0.039811777785630685,
+   "landmark_flip_rate": 0.0,
+   "random_subset_flip_rate": 0.14833333333333334,
+   "share_numerator_small_z": 0.5471816441378827,
+   "n_eff_all": 45.99188378737133,
+   "n_eff_landmark": 38.042304357748684,
+   "n_eff_inferred": 41.78100195249471
+  },
+  {
+   "unit_id": "lapatinib::CHEMBL1824",
+   "cmap_name": "lapatinib",
+   "genes": "ERBB2",
+   "n_footprint": 1894,
+   "n_landmark": 214,
+   "hub_fraction": 0.228,
+   "hub_tf": "SP1",
+   "median_absM": 0.009852366244260018,
+   "landmark_flip_rate": 0.09090909090909091,
+   "random_subset_flip_rate": 0.3054545454545455,
+   "share_numerator_small_z": 0.5998935026083427,
+   "n_eff_all": 45.03339062098338,
+   "n_eff_landmark": 45.0450189249848,
+   "n_eff_inferred": 43.04899979907799
+  },
+  {
+   "unit_id": "lapatinib::CHEMBL203",
+   "cmap_name": "lapatinib",
+   "genes": "EGFR",
+   "n_footprint": 1749,
+   "n_landmark": 229,
+   "hub_fraction": 0.293,
+   "hub_tf": "SP1",
+   "median_absM": 0.025043600762397665,
+   "landmark_flip_rate": 0.18181818181818182,
+   "random_subset_flip_rate": 0.17409090909090907,
+   "share_numerator_small_z": 0.6029759020922186,
+   "n_eff_all": 45.72612736002047,
+   "n_eff_landmark": 47.83829950454817,
+   "n_eff_inferred": 43.26489081453597
+  },
+  {
+   "unit_id": "vemurafenib::CHEMBL5145",
+   "cmap_name": "vemurafenib",
+   "genes": "BRAF",
+   "n_footprint": 1063,
+   "n_landmark": 153,
+   "hub_fraction": 0.651,
+   "hub_tf": "MYC",
+   "median_absM": 0.017371362222408065,
+   "landmark_flip_rate": 0.1111111111111111,
+   "random_subset_flip_rate": 0.22055555555555553,
+   "share_numerator_small_z": 0.6055233850787926,
+   "n_eff_all": 45.56493839738993,
+   "n_eff_landmark": 41.25623413494033,
+   "n_eff_inferred": 43.02690334043578
+  },
+  {
+   "unit_id": "palbociclib::CHEMBL2111455",
+   "cmap_name": "palbociclib",
+   "genes": "CCND1|CDK6",
+   "n_footprint": 886,
+   "n_landmark": 144,
+   "hub_fraction": 0.414,
+   "hub_tf": "ESR1",
+   "median_absM": 0.03248314020401956,
+   "landmark_flip_rate": 0.0,
+   "random_subset_flip_rate": 0.16,
+   "share_numerator_small_z": 0.48201746786919464,
+   "n_eff_all": 46.88621759792287,
+   "n_eff_landmark": 41.92823047224572,
+   "n_eff_inferred": 44.205077857893485
+  },
+  {
+   "unit_id": "palbociclib::CHEMBL1907601",
+   "cmap_name": "palbociclib",
+   "genes": "CCND1|CDK4",
+   "n_footprint": 1781,
+   "n_landmark": 218,
+   "hub_fraction": 0.225,
+   "hub_tf": "MYC",
+   "median_absM": 0.007959005175671777,
+   "landmark_flip_rate": 0.5,
+   "random_subset_flip_rate": 0.3420833333333333,
+   "share_numerator_small_z": 0.5520608393438666,
+   "n_eff_all": 44.05134847249773,
+   "n_eff_landmark": 48.69774369710745,
+   "n_eff_inferred": 41.3247901159793
+  },
+  {
+   "unit_id": "dabrafenib::CHEMBL5145",
+   "cmap_name": "dabrafenib",
+   "genes": "BRAF",
+   "n_footprint": 1063,
+   "n_landmark": 153,
+   "hub_fraction": 0.651,
+   "hub_tf": "MYC",
+   "median_absM": 0.0190545662437291,
+   "landmark_flip_rate": 0.3333333333333333,
+   "random_subset_flip_rate": 0.26999999999999996,
+   "share_numerator_small_z": 0.5575031188885099,
+   "n_eff_all": 45.56493839738993,
+   "n_eff_landmark": 41.25623413494033,
+   "n_eff_inferred": 43.02690334043578
+  }
+ ],
+ "log": [
+  "[    0.5s] (unit, pert_id, line) rows scored in both arms: 1852; overall sign-flip rate 0.279 over 226 units",
+  "[    0.6s] Control A - flip rate by |M| bin:\n   control               measure              bin    n  flip_rate  median_absM  n_units\n0        A        |M| (all_bing)  (-0.001, 0.005]  309   0.469256     0.002434      130\n1        A        |M| (all_bing)    (0.005, 0.01]  243   0.432099     0.007396      115\n2        A        |M| (all_bing)     (0.01, 0.02]  427   0.325527     0.014821      153\n3        A        |M| (all_bing)     (0.02, 0.03]  306   0.241830     0.024715      130\n4        A        |M| (all_bing)     (0.03, 0.05]  346   0.132948     0.036854      134\n5        A        |M| (all_bing)     (0.05, 0.08]  152   0.032895     0.060804       78\n6        A        |M| (all_bing)     (0.08, 0.12]   45   0.044444     0.093263       32\n7        A        |M| (all_bing)      (0.12, 0.2]   24   0.000000     0.144425       17\n8        A  max(|M_all|, |M_lm|)  (-0.001, 0.005]   43   0.418605     0.002788       32\n9        A  max(|M_all|, |M_lm|)    (0.005, 0.01]   72   0.472222     0.007715       48\n10       A  max(|M_all|, |M_lm|)     (0.01, 0.02]  271   0.431734     0.015409      118\n11       A  max(|M_all|, |M_lm|)     (0.02, 0.03]  280   0.403571     0.024800      128\n12       A  max(|M_all|, |M_lm|)     (0.03, 0.05]  435   0.287356     0.037642      151\n13       A  max(|M_all|, |M_lm|)     (0.05, 0.08]  357   0.176471     0.062117      145\n14       A  max(|M_all|, |M_lm|)     (0.08, 0.12]  256   0.156250     0.093981      112\n15       A  max(|M_all|, |M_lm|)      (0.12, 0.2]  109   0.045872     0.144382       59\n16       A  max(|M_all|, |M_lm|)       (0.2, 1.0]   29   0.034483     0.245060       18",
+  "[    0.6s] Control B / H3 sample: 1626 (unit, pert_id, line) rows over 226 units, 200 seeded draws each",
+  "[    7.8s] Control B - landmark flip rate 0.288 vs random same-size subsets 0.260 (row level, n = 1626); per unit the gap has median +0.008, IQR -0.113 to +0.142",
+  "[    7.8s] H1 - flip rate by largest-regulator share:\n           bin    n  flip_rate  n_units  median_absM\n0   (0.1, 0.2]  276   0.322464       30     0.010518\n1   (0.2, 0.3]  527   0.339658       51     0.012484\n2   (0.3, 0.4]  315   0.292063       34     0.019412\n3   (0.4, 0.5]  173   0.225434       19     0.024576\n4  (0.5, 0.65]  126   0.222222       11     0.027136\n5  (0.65, 1.0]  435   0.204598       81     0.032378",
+  "[    7.8s] H1 - flip rate by hub share WITHIN |M| strata (confound control):\n     absM_stratum    hub_stratum    n  flip_rate  n_units\n0  (-0.001, 0.01]  (-0.001, 0.3]  360   0.475000       74\n1  (-0.001, 0.01]     (0.3, 0.5]  110   0.390909       39\n2  (-0.001, 0.01]     (0.5, 1.0]   82   0.439024       37\n3    (0.01, 0.03]  (-0.001, 0.3]  332   0.262048       77\n4    (0.01, 0.03]     (0.3, 0.5]  215   0.339535       47\n5    (0.01, 0.03]     (0.5, 1.0]  186   0.284946       53\n6     (0.03, 1.0]  (-0.001, 0.3]  111   0.090090       46\n7     (0.03, 1.0]     (0.3, 0.5]  163   0.092025       39\n8     (0.03, 1.0]     (0.5, 1.0]  293   0.095563       80",
+  "[   14.1s] H2 - effective independent genes (median over the sampled units):\n           units  median_n_genes  median_n_eff  median_n_eff_per_gene  median_abs_corr\nspace                                                                                 \nall           66           905.0     44.121958               0.051407         0.113991\ninferred      63           807.0     41.781002               0.053620         0.117177\nlandmark      66           140.5     41.267742               0.299064         0.100641\nreference      3           978.0     41.011940               0.058094         0.120958",
+  "[   14.1s] named cases:\n                      unit_id    cmap_name       genes  n_footprint  n_landmark  hub_fraction hub_tf  median_absM  landmark_flip_rate  random_subset_flip_rate  share_numerator_small_z  n_eff_all  n_eff_landmark  n_eff_inferred\n0      fulvestrant::CHEMBL206  fulvestrant        ESR1          478          89         1.000   ESR1     0.039812            0.000000                 0.148333                 0.547182  45.991884       38.042304       41.781002\n1       lapatinib::CHEMBL1824    lapatinib       ERBB2         1894         214         0.228    SP1     0.009852            0.090909                 0.305455                 0.599894  45.033391       45.045019       43.049000\n2        lapatinib::CHEMBL203    lapatinib        EGFR         1749         229         0.293    SP1     0.025044            0.181818                 0.174091                 0.602976  45.726127       47.838300       43.264891\n3     vemurafenib::CHEMBL5145  vemurafenib        BRAF         1063         153         0.651    MYC     0.017371            0.111111                 0.220556                 0.605523  45.564938       41.256234       43.026903\n4  palbociclib::CHEMBL2111455  palbociclib  CCND1|CDK6          886         144         0.414   ESR1     0.032483            0.000000                 0.160000                 0.482017  46.886218       41.928230       44.205078\n5  palbociclib::CHEMBL1907601  palbociclib  CCND1|CDK4         1781         218         0.225    MYC     0.007959            0.500000                 0.342083                 0.552061  44.051348       48.697744       41.324790\n6      dabrafenib::CHEMBL5145   dabrafenib        BRAF         1063         153         0.651    MYC     0.019055            0.333333                 0.270000                 0.557503  45.564938       41.256234       43.026903"
+ ],
+ "seconds": 14.2
+}
