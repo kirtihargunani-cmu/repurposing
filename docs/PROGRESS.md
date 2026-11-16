@@ -1345,3 +1345,88 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
 - **Nothing was changed:** no arm chosen, no parameter moved, nothing re-ranked, P4 still frozen. Open for the user:
   a minimum-|M| rule before a sign is read, and whether the gene-label null must be replaced project-wide.
 
+
+## 2026-11-16: D129 — per-gene quality table for the BING gene set (diagnostic only)
+
+`scripts/96_bing_gene_quality.py`, 101 s on 24 threads, log `logs/96_bing_gene_quality.log`, outputs
+`results/lincs/gene_quality/bing_gene_quality.tsv` (10,174 rows), `bing_gene_quality_summary.tsv`,
+`bing_gene_quality_run.json`. **Nothing was filtered, dropped, re-weighted or curated; no scoring code was touched
+and no gene set was chosen.** Every definition was fixed in D129 before anything ran, and every statistic is
+label-free: only `level5_bing_hiq.npy` (90,988 signatures x 10,174 genes) and the experiment metadata
+(`pert_id`, `cell_iname`, `pert_dose`, `pert_time`) were read. All four statistics came out for all 10,174 genes;
+`missing_reason` is empty everywhere.
+
+- **The question D128 raised is answered the same way by every statistic: the inferred genes are not mainly noisy,
+  they are mainly redundant and compressed.** Held-out R^2 on the 978 landmarks of the same signature, with the
+  split taken by perturbation so replicates cannot leak: **best inferred median 0.875** (p10 0.834, p90 0.917,
+  range 0.437-0.964), against the control of each landmark regressed on the other 977, **median 0.630** (p10 0.418,
+  p90 0.796). 98.5% of inferred genes are above R^2 0.8 against 9.4% of landmarks; 22.9% above 0.9 against 0.4%.
+  No gene reaches 0.95 in the control and only 28 inferred genes do, so the inferred values are not *exactly*
+  deterministic functions of the landmarks - they are about seven-eighths of one.
+- **The decisive comparison is R^2 against ICC.** For **100.0% of inferred genes the landmarks predict the gene
+  better than the gene's own replicate does** (R^2 0.875 vs ICC 0.544 at the medians); for landmarks the same
+  comparison is a coin flip (50.9%, 0.630 vs 0.617). Arithmetic on those two pre-registered columns (derived after
+  the fact, not a new measurement) says that **at least 73% of an inferred gene's replicate-to-replicate noise is
+  itself a function of the same signature's landmark values** (median of the per-gene bound 0.725), against 0.8%
+  for landmarks. Inferred genes therefore do not average their noise away against each other the way independent
+  measurements would - which is the mechanism that would make permutation nulls too narrow.
+- **Reproducibility (ICC(1) over 5,345 replicate groups, 14,906 signatures, k0 = 2.63).** Landmark median 0.617
+  (IQR 0.523-0.710), best inferred 0.544 (0.487-0.600); split-half r 0.624 vs 0.551. The inferred distribution is
+  shifted down but **narrower**, and it overlaps the landmarks heavily. By the strict reading, **989 of 9,196
+  inferred genes (10.8%) fall below the landmarks' 10th percentile of ICC (0.443)**, 273 (3.0%) below the 5th and
+  19 (0.2%) below the 1st; by split-half r, 721 (7.8%), 137 (1.5%) and 8 (0.1%). Against the landmark *median*,
+  81% of inferred genes are below - but so are 489 landmarks by construction. **There is no large population of
+  inferred genes that is simply noise.**
+- **Variance compression is present and large.** Median sd over all signatures 0.918 (best inferred) vs 1.569
+  (landmark), a factor of **0.585**; p01-p99 range 4.80 vs 9.20 (0.52); mean |z| 0.681 vs 1.039 (0.66); IQR 1.048
+  vs 1.331 (0.79, the smallest gap, because level 5 values are z-like near the centre and the compression is in the
+  tails). Both parts of the variance shrink by about the same factor - reproducible signal `sd_between` 0.758 vs
+  1.383 (0.55) and replicate noise `sd_within` 0.693 vs 1.091 (0.64) - so the *ratio* `sd_between / sd_all` barely
+  moves (0.821 vs 0.889) and ICC barely moves with it. **The inference model shrinks the whole response toward the
+  mean, it does not add noise.** On signal amplitude the two sets barely overlap: 8,153 of 9,196 inferred genes
+  (88.7%) have less reproducible signal than the landmarks' 10th percentile. Level 5 clips at +/-10, which 962 of
+  978 landmarks reach but only 818 of 9,196 inferred genes.
+- **Effective independent information: adding 9,196 inferred genes does not add effective dimensions, it
+  concentrates the ones already there.** Participation ratio of the gene x gene correlation matrix over all 90,988
+  signatures: **BING (10,174 genes) 25.1; the 978 landmarks alone 35.8**; best inferred alone 23.6. Entropy
+  effective rank 177 vs 215 vs 159; components to 80% of the variance 203 (of 10,174) vs 328 (of 978); to 95%,
+  602 vs 699. The sampling-noise reference for the same number of *independent* genes at this sample size
+  (Marchenko-Pastur, p / (1 + p/n)) is 9,151 for BING and 968 for the landmarks, so the concentration is real and
+  not a small-sample artefact. The covariance version (86's center-only convention) says the same: 23.2 vs 28.5.
+  **Read correctly, this does not mean BING holds less information than the landmarks - BING contains them, so its
+  span cannot shrink. It means the variance of the 10,174-gene set lies along fewer effective directions than the
+  variance of the 978-gene set, because the added genes are copies of directions that already existed.**
+- **Per gene, the independent-variance numbers agree.** `uniqueness_all_bing` (1 - R^2 on all 10,173 other genes,
+  correlation matrix with a 1e-6 ridge, so an over-estimate of independence): landmark median 0.048, best inferred
+  0.0054, nine-fold apart. Summed, the whole BING set is **113.9 independent gene-equivalents, of which the 978
+  landmarks hold 50.4 and the 9,196 inferred genes add 63.5.** The marginal number - summing 1 - R^2 on the
+  landmarks alone, which ignores that the inferred residuals are correlated with each other - is 1,157, so the
+  honest statement is that the 9,196 inferred genes add somewhere between ~60 and ~1,160 gene-equivalents, and the
+  conditional measure says the low end.
+- **What that means for a footprint, arithmetically.** On the conditional measure a 478-gene inferred footprint is
+  worth on the order of 478 x 0.0054 ~ 2.6 gene-equivalents of independent variance, against 478 x 0.048 ~ 23 if
+  those genes were landmarks. Both hypotheses D128 raised are therefore supported, but not equally: redundancy is
+  the dominant effect by a wide margin, noise is a real but small secondary one confined to ~10% of inferred genes.
+- **The surprise, and the thing a filter design has to face: redundancy and reliability are positively correlated
+  among inferred genes, not negatively.** Spearman R^2 vs ICC = +0.770; R^2 vs sd 0.852; ICC vs `sd_between` 0.980.
+  There is a single amplitude axis - genes with large responses are both well predicted by the landmarks and
+  reproducible; genes with small responses are neither. **So the inferred genes that carry the most independent
+  information are the least reliable ones, and there is almost no gene that is both.** Of the 9,196 inferred genes
+  only 36 have R^2 <= 0.7, and **not one of those has an ICC at or above the landmark median**; 24 of them clear
+  even the landmark 10th percentile. The median ICC of the 500 least redundant inferred genes is 0.423, of the 500
+  most redundant 0.668. In the other direction, 0 genes have R^2 >= 0.9 together with an ICC below the landmark
+  10th percentile. The least redundant inferred genes (RPS4Y1 0.437, HBB 0.511, MAL 0.528, GDF15
+  0.543, VIM 0.548) are cell-identity and stress genes with ICC 0.26-0.50, at or below the bottom of the landmark
+  distribution. The most redundant are the proliferation and immediate-early block (PPP1R15A 0.964, HSPA6 0.959,
+  ASPM 0.959, ATF3 0.957, BUB1/MAD2L1/DLGAP5/CDCA3 ~0.957), all with ICC 0.75-0.81.
+- **Assumptions and limits, stated in D129 before the run.** Only linear/second-order dependence is visible, so a
+  gene that is a non-linear function of the landmarks still counts here as independent (CMap's inference is a
+  linear model, so this is a mild assumption for this particular use). Signatures are treated as exchangeable
+  draws, which they are not exactly - compounds repeat across plates - so the effective-dimension numbers describe
+  this signature set, not L1000 in general. The ridge on the correlation matrix biases `uniqueness_all_bing`
+  upward, so every redundancy statement here is conservative. ICC and split-half r deliberately conflate signal
+  with noise: a gene that never responds reproducibly scores low whether the cause is measurement noise or
+  genuinely flat biology, and the landmark set is itself enriched for high-variance genes by CMap's own selection,
+  which is why the landmarks are used only as an internal benchmark and not as an absolute standard.
+- **Not done, deliberately:** no filter proposed, no threshold recommended, no gene set chosen, nothing scored
+  twice, no D128 output read. The table is the evidence base; the filter design is the user's separate decision.

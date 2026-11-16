@@ -330,7 +330,8 @@ def main():
         for fs in ["landmark", "best inferred"]:
             v = tab.loc[tab.feature_space == fs, st].astype(float).values
             v = v[np.isfinite(v)]
-            rows_out.append(dict(statistic=st, feature_space=fs, n=len(v), mean=v.mean(), sd=v.std(ddof=1),
+            rows_out.append(dict(block="distribution", statistic=st, feature_space=fs, n=len(v),
+                                 mean=v.mean(), sd=v.std(ddof=1),
                                  **{f"p{p:02d}": np.percentile(v, p) for p in (1, 5, 10, 25, 50, 75, 90, 95, 99)}))
     summ = pd.DataFrame(rows_out)
     # how many inferred genes fall below the landmark distribution on each reproducibility statistic
@@ -340,7 +341,7 @@ def main():
         inf = tab.loc[~is_lm, st].astype(float).values
         for p in (1, 5, 10, 25, 50):
             thr = np.percentile(lm, p)
-            below.append(dict(statistic=st, landmark_percentile=p, threshold=thr,
+            below.append(dict(block="below_landmark", statistic=st, landmark_percentile=p, threshold=thr,
                               n_best_inferred_below=int((inf < thr).sum()),
                               frac_best_inferred_below=float((inf < thr).mean()),
                               n_landmark_below=int((lm < thr).sum())))
