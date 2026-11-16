@@ -58,8 +58,8 @@ What the other waves have (DepMap 24Q4 hotspot calls):
 
 ### 3. The ESR1 positive control is thin (needs a decision)
 
-- Fulvestrant is the only pure antagonist, and it has one MCF7 profile.
-- The other anti-estrogens are SERMs, i.e. partial agonists. Under E07 (no default inhibitor sign) they abstain
+- Fulvestrant is the only pure antagonist (`ANTAGONIST|DEGRADER` on ESR1). In MCF7 it has 3 `pert_id`s with 18 signatures in total (corrected 2026-11-15; an earlier count of one profile was wrong).
+- The other anti-estrogens are SERMs, i.e. partial agonists, annotated `MODULATOR` on ESR1 (production orients them "lower" with a `direction_assumed` flag; tamoxifen's one `ANTAGONIST` row is on ESRRG). Under E07 (no default inhibitor sign) they abstain
   unless we decide to treat SERMs as antagonists in breast tissue. That should be a written decision.
 - Estradiol is not profiled in MCF7, so there is no agonist control that should flip the sign.
 
@@ -105,3 +105,11 @@ parquet). The implementation follows the plan. pyarrow 25.0.0 is in the `repurpo
 1. Merge the spec branch into main (standing workflow: work on main, push after each step).
 2. A0: loaders, the audit, and the gaps above recorded as data.
 3. ESR1 M check early. It needs no disease term, so it is the cheapest test of whether D128 can work at all.
+
+## Resolution (2026-11-15)
+
+The plan now has a Section 0 that names a primary arm for every free choice (P1-P14) and sets out the two user
+decisions (D0.1 reference for breast R; D0.2 SERMs) with recommended options. The workflow has been aligned with
+the project's practice: commits on main, a D128-<stage> entry before each run, and a freeze tag. Issues 1, 3, 4, 5
+and 6 are addressed by Section 0; issue 2 by the Section 5 status table; issue 7 by A0 action 7 and A5 action 5;
+issue 8 by Section 1. The spec branch is merged into main. DECISIONS: row D128 (proposed; nothing run).

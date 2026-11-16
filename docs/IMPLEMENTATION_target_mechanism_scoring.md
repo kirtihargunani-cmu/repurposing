@@ -2,7 +2,7 @@
 title: "Target-Mechanism Scoring: Full Implementation Plan"
 subtitle: "D128 candidate | Repurposing project | Engineering and experimental validation"
 author: "Implementation plan based on the D128 target-mechanism scoring specification"
-date: "15 November 2026"
+date: "15 November 2026 (revised 15 November 2026: Section 0 added; workflow aligned with the project's main-branch practice)"
 lang: en-US
 geometry: "margin=0.85in"
 fontsize: 10pt
@@ -38,6 +38,8 @@ The first release reports **T, M, R, and evidence coverage separately**. No new 
 
 **Key previous results.** The D126 shortest-path check failed to flag 22/22 anti-estrogen/MCF7 control rows and had low mechanism coverage, so the new method anchors at the annotated target rather than the top 25 changed regulators. D127's current layered score passed 36/49 preselected biomarker-pair instances (73.47%), but the thyroid BRAF-like versus RAS-like pair was only 3/9. These are **seen development benchmarks**, not independent holdouts for D128.
 
+**Precursor that bears directly on R (2026-11-12, commit `55c80d7`, `docs/PROGRESS.md`).** Gene-level reversal restricted to ESR1's regulon, with `tfmode`/`likelihood` kept, *inverted* the anti-estrogens in the ARACNe arm (ESR1 ranked them last in BRCA-Her2, LumB and LumA, and high only in ER-negative Basal); the CollecTRI arm showed no inversion but no lift. The diagnosed cause is the reference, not resolution: GTEx normal breast is ER-active, so ESR1 targets do not read as up in tumor. R (Section 3.3) is essentially that construction, so its behavior in breast is **predicted before any D128 run**. Section 0 (D0.1) and the A4 gate are written so that this prediction is recorded, not rediscovered and then tuned away.
+
 ## Deliverables at a glance
 
 | Artifact | Required contents | Acceptance signal |
@@ -49,11 +51,53 @@ The first release reports **T, M, R, and evidence coverage separately**. No new 
 | Controlled benchmark | Matched positive/negative mechanisms, D127 replay and molecular holdouts | Results compared fairly against current production score |
 | Robustness + decision | Assay, network, dose/time, degree-null and functional-screen analyses | Clear promote / retain as diagnostic / reject verdict |
 
+# 0. Primary arm, frozen defaults and open decisions (revision 2026-11-15)
+
+The first draft listed many sensitivity arms but named no primary arm, and left several weights undefined. That leaves room to report whichever arm passes. This section names **one primary arm** for every free choice. Everything else in the plan is a sensitivity arm, reported beside the primary and never substituted for it. The issues behind each entry are in `docs/notes/d128_plan_review.md`.
+
+**How these become binding.** As with D125-A0, the choices are written into `docs/DECISIONS.md` as a **D128-A0** entry ("implementation choices, fixed before running"), together with any value A0 measures label-blind, such as coverage floors. That entry is committed and pushed **before** any M or R value is computed. Rows marked *user decision* stay open until the user decides them in that entry. Until then, A0 and A1 code may be written and run, because they compute no scores, but A2 does not run.
+
+| ID | Choice | Primary arm | Sensitivity arms (reported only) | Basis | Status |
+|:--|:--|:--|:--|:--|:--|
+| P1 | Disease gene effect | Production Step 4 limma + voomByGroup (D69) columns of `data/processed/step4_v2/<group>__<contrast>.tsv.gz`: sign from `logFC`, magnitude from `z`, `adj.P.Val` for the gene set | `*_voom` columns (check C12) | Step 6 VIPER reads the `z` matrix (`50_viper.R:80`); `79t_target_role.py:115` reads `logFC` | Settled |
+| P2 | Contrast per cohort | 79t's rule: `gtex` if its `signature_summary.tsv` status is `ok`, else `adjacent` | Breast: see D0.1 | Same rule as the production target-role score | Settled |
+| P3 | Regulon network | **CollecTRI** (context-free, curated signs) for both M and R | ARACNe v2 TF cohort networks (`aracne_project_v2_tf`, subtype networks where production uses them) | ARACNe `tfmode` is a co-expression sign learned in tumors, not in the drug's line; the precursor's ARACNe ESR1 arm inverted | Proposed |
+| P4 | Gene feature space | All 10,112 BING genes in the `79c` profiles (978 landmark + 9,134 best inferred) | Landmark-only; must agree in sign for promotion (Section 7.3) | Production 79c/79d use BING; landmark-only coverage is too thin for most footprints, and A0 measures by how much | Proposed |
+| P5 | Drug profile | `79c` line-specific profiles (`drug_line_profiles_bing_specific.f32`) | Raw profiles (`drug_line_profiles_bing.f32`), required for the ESR1 control | Production uses specific profiles. If specific fails and raw passes, the verdict is "generic removal removes the target signal", **not** a pass | Proposed |
+| P6 | Signaling hops | 0-2 hops, OmniPath primary (D126 cache) | 0, 1, 3 hops; SIGNOR-only | Cap from the draft; frozen here before any outcome is read | Proposed |
+| P7 | M gene weight `wM` | **Unweighted:** each unique sign-resolved gene weighs 1 within a target unit | Edge-confidence weighted (ARACNe `likelihood`; CollecTRI weights where not ±1) | The draft's composite of confidence, assay reliability and annotation support had no definition; an unweighted primary has nothing to tune | Proposed |
+| P8 | R gene set and `wD` | `G_ct` = target-linked genes with `adj.P.Val < 0.05` in the cohort's P2 contrast, weight 1 each (`sign(logFC)` therefore carries only significant genes) | `|z|` weight, capped at 10; all target-linked genes with `|z|` weight | Removes the full ±1 vote of null genes; label-free | Proposed |
+| P9 | Bounded transform | `f(z) = tanh(z/2)` | `tanh(z/1)`, `tanh(z/3)` | A0 audits the distribution of the specific-profile values (they are residuals, not raw MODZ). The divisor may change **only** on label-blind distributional grounds, in the D128-A0 entry | Proposed |
+| P10 | Minimum coverage | Kinase/receptor unit: >= 10 unique sign-resolved genes and >= 2 anchored TFs; direct TF unit: >= 10 regulon genes. Otherwise `NA` + `abstain_reason` | Floors x0.5 and x2 | Spec's suggested guards; A0 reports how many rows each floor admits before it is frozen | Proposed |
+| P11 | Drug action sign | Reuse `79t_target_role.py`'s `LOWER`/`RAISE` sets and `orient()`. Rows `orient()` flags `direction_assumed` (e.g. `MODULATOR`) or `mixed` are **ambiguous for M** (E07), except under D0.2 | Production behavior (`direction_assumed` -> lower) | One action vocabulary across the project; E07 forbids a default inhibitor sign in M | Proposed; ESR1 SERMs: D0.2 |
+| P12 | Compound key | `pert_id`, as in production (79e/79t rows). A0 lists compounds with several `pert_id`s (e.g. fulvestrant: 3 in MCF7); controls report each `pert_id` and their mean | | Never silently merge `pert_id`s | Proposed |
+| P13 | Multi-unit drugs | Mean over scorable target units, unweighted | Potency-weighted (D121 units) | Draft Section 3.4; no best-unit selection | Proposed |
+| P14 | Line aggregation | 79e's lines and Celligner weights, unchanged (direct/borrowed) | Direct-only; leave-one-line-out | Draft Section 3.4 | Settled |
+
+## 0.1 Decisions that need the user (recorded in D128-A0)
+
+**D0.1 - Reference for R in breast.** The P2 contrast for BRCA-LumA/LumB/Her2 is tumor vs GTEx normal breast, and the precursor shows ESR1 targets inverted against it. Options:
+
+- **(a) Recommended: keep P2 for R everywhere and record a prediction.** The D128-A0 entry states in advance that R is expected to rank anti-estrogens low in the ER-positive cohorts against GTEx. The mandatory ESR1 control is then gated on **M only**, and R in breast is reported, with that prediction beside it. Rationale: R stays on the same reference as every production score, and the choice is not made after seeing which reference works.
+- (b) Use adjacent normals for breast R (LumA 62, LumB 22; Her2 has only 9 and is skipped). Adjacent normal breast is also ER-active, so it may not fix the problem.
+- (c) Use a within-tissue subtype contrast (LumA/LumB vs Basal) as the breast disease direction. This changes R's meaning in breast from "toward normal" to "away from the other subtype".
+
+Under every option, (b) and (c) are computed as reported-only arms for breast.
+
+**D0.2 - SERMs in the ESR1 control.** ChEMBL annotates fulvestrant on ESR1 as `ANTAGONIST|DEGRADER`. Tamoxifen, raloxifene, clomifene, toremifene and bazedoxifene are `MODULATOR` on ESR1 (production: lower, `direction_assumed`). Tamoxifen's one clean `ANTAGONIST` row is on ESRRG, not ESR1. MCF7 coverage is 18 fulvestrant signatures (3 `pert_id`s) and 3-27 per SERM (raloxifene 27, tamoxifen 10 across 3 `pert_id`s, bazedoxifene 5, clomifene 4, toremifene 3). Options:
+
+- **(a) Recommended:** the **primary positive set is fulvestrant**. A second, separately reported positive set is the SERMs scored as ESR1 antagonists **in breast-lineage lines only**, under a written tissue-context rule (well established in breast). Elsewhere `MODULATOR` stays ambiguous under P11.
+- (b) Fulvestrant only; SERMs abstain everywhere.
+- (c) SERMs treated as antagonists everywhere, as production does.
+
+There is no agonist sign-flip control: estradiol is not profiled in MCF7. A0 records this as a gap.
+
 # 1. Current repository interfaces and reuse strategy
 
 **Repository:** [kirtihargunani-cmu/repurposing](https://github.com/kirtihargunani-cmu/repurposing)  
-**Parent specification:** `docs/SPEC_target_mechanism_scoring_benchmark.md` (draft PR #2)  
-**Implementation location (proposed):** `scripts/d128/`, `tests/d128/`, `config/d128.yaml`, `results/lincs/d128/`.
+**Parent specification:** `docs/SPEC_target_mechanism_scoring_benchmark.md` (draft PR #2, merged into main 2026-11-15). Where the spec and this plan number stages differently (in the spec `a1_score` is scoring; here A1 is the graph), **this plan's numbering is authoritative**.  
+**Implementation location:** `scripts/d128/` (code and configuration; configuration is a Python module, `scripts/d128/config.py`, as in `scripts/d125/a0_config.py`), `tests/d128/`, `results/lincs/d128/`.  
+**Review notes:** `docs/notes/d128_plan_review.md` (issues found before A0; Section 0 resolves them).
 
 The existing data transformations are the source of truth. Rebuilding them increases computational cost and risks changing the definition of an experiment while claiming a like-for-like comparison.
 
@@ -61,7 +105,8 @@ The existing data transformations are the source of truth. Rebuilding them incre
 |:--|:--|:--|
 | `scripts/79c_drug_profiles.py` | Drug-by-line LINCS gene signatures, generic-response-removed | `drug_line_profiles_bing_specific.f32`, profile-major float32; index has `pert_id`, `ModelID`, `n_sig` |
 | `scripts/79d_drug_viper.R` | Actual drug VIPER activities | Per-network `.f32` with `.regulators.txt`; verify layout and value alignment |
-| `results/step4_v2/` | Disease gene differential expression | Tumor-vs-normal contrast, gene ID, signed effect, uncertainty |
+| `data/processed/step4_v2/<group>__<contrast>.tsv.gz`, `results/step4_v2/signature_summary.tsv` | Disease gene differential expression | Columns `gene_id, symbol, logFC, t, adj.P.Val, z` (limma + voomByGroup, primary); `*_voom` columns are check C12 only. Contrast chosen per P2 |
+| `scripts/precursor/esr1_regulon_reversal.py`, `results/lincs/diagnostics/precursor_esr1_regulon/` | 11-12 ESR1 regulon gene-level reversal | Prior result that predicts R's breast behavior (D0.1); its consensus-over-lines code is a cross-check for A3 |
 | `results/step6/` | Disease master-regulator NES | Match network, regulator and cohort exactly |
 | `data/processed/step5/` and `results/step5/` | ARACNe, CollecTRI/DoRothEA regulons | Keep TF-to-gene sign (`tfmode`) and confidence (`likelihood`) separately |
 | `scripts/79i2_target_presence.py` and ChEMBL cache | Main targets, compound mapping, mechanism targets | Preserve target units, complexes, annotations and unknown action |
@@ -103,7 +148,7 @@ $$
 
 | Table | Minimum fields / shape | Primary check |
 |:--|:--|:--|
-| `disease_genes.parquet` | `group_id,gene_id,logFC,stat,padj,contrast` | Contrast unique per unit; signed nonnull effect |
+| `disease_genes.parquet` | `group_id,gene_id,logFC,z,t,adj_p,contrast` (P1, P2) | Contrast unique per unit; signed nonnull effect; values equal the step4_v2 files exactly |
 | `disease_regulators.parquet` | `group_id,network,regulator,nes` | Aligned with drug network |
 | `regulon_edges.parquet` | `network,regulator,gene_id,sign,confidence,source` | Sign ±1; confidence finite, positive |
 | `drug_profiles_index.parquet` | `profile_idx,pert_id,ModelID,n_sig` | Number of rows equals binary matrix rows |
@@ -148,13 +193,13 @@ $$
  f(z) = \tanh(z / 2), \quad -1 \le f(z) \le 1.
 $$
 
-The divisor `2` is **not validated**; check its distribution in a label-blind A0 audit and freeze it before evaluating controls. For each drug-line-target unit with sign-resolved genes:
+The divisor `2` is **not validated**; check its distribution in a label-blind A0 audit and freeze it before evaluating controls (P9). For each drug-line-target unit with sign-resolved genes:
 
 $$
  M(d,l,t) = \frac{\sum_{g\in G_{dt}^{resolved}} w^M_{gt}\; e_{dtg}\;f(z(d,l,g))}{\sum_{g\in G_{dt}^{resolved}}w^M_{gt}}.
 $$
 
-`wM` incorporates bounded signed-network confidence, assayed-gene reliability and independent target annotation support. A gene linked through multiple TFs is counted **once per target unit**. Conflicting expectations are excluded from the signed numerator but counted in the ambiguity and coverage denominators. Empty or inadequately covered footprints produce `NA` with an explicit `abstain_reason`, not zero.
+In the primary arm `wM = 1` for every unique sign-resolved gene (P7); edge-confidence weighting is a sensitivity arm. Assay reliability enters through the landmark-only arm (P4), not through a weight. A gene linked through multiple TFs is counted **once per target unit**. Conflicting expectations are excluded from the signed numerator but counted in the ambiguity and coverage denominators. Empty or inadequately covered footprints produce `NA` with an explicit `abstain_reason`, not zero.
 
 M is a measure of **transcriptional consistency with an annotated route**, **not** direct binding, pharmacological occupancy, or proof of causal engagement.
 
@@ -166,10 +211,11 @@ $$
  R(d,c,l,t) = -\frac{\sum_{g\in G_{ct}} w^R_{cgt}\;s(c,g)\;f(z(d,l,g))}{\sum_{g\in G_{ct}}w^R_{cgt}}.
 $$
 
-Positive R means the target-linked gene response tends to oppose the disease direction. The gene set is chosen from the **precomputed footprint and disease data**, not after reading positive drug responses. Sign ambiguity can prevent M while a gene remains usable for directional R; record distinct coverage denominators for each score.
+Positive R means the target-linked gene response tends to oppose the disease direction. The gene set is chosen from the **precomputed footprint and disease data**, not after reading positive drug responses. Primary arm (P8): `G_ct` = target-linked genes with `adj.P.Val < 0.05` in the cohort's P2 contrast, `wR = 1`; `|z|`-weighted arms are sensitivity only. The reference for breast follows D0.1. Sign ambiguity can prevent M while a gene remains usable for directional R; record distinct coverage denominators for each score.
 
 ## 3.4 Aggregate without double counting
 
+0. The drug key is `pert_id` (P12). Compounds with several `pert_id`s are reported per `pert_id`, and their mean is shown in controls; they are never merged silently.
 1. Compute gene contributions once per `(drug, line, cohort, target unit, gene)`; a gene present in five TF regulons is not five independent observations.
 2. Preserve per-regulator rows for explanation, but derive an *independently defined* unique-gene aggregate for each target unit.
 3. For multi-target drugs, compute and retain each target-unit score. **Primary proposal:** mean over scorable units with unit weights fixed without outcome labels; use binding-potency weights only as a sensitivity arm. Do not select the best unit after observing rescue.
@@ -184,9 +230,18 @@ Use seeded nulls that preserve important structures: target-degree-matched alter
 
 All phases are **gated**. A later stage must not conceal a failing earlier stage. Tasks A0-A3 can be implemented modularly and developed in parallel after the shared schema is fixed, but biological results should be interpreted in order.
 
+**Per-stage routine (the project's standing workflow; applies to every stage below):**
+
+1. Before running a stage, add a `D128-<stage>` row to `docs/DECISIONS.md` recording the implementation choices, fixed before running. Commit and push.
+2. Run the stage in the sandbox, with thread counts set explicitly and < 32 in total.
+3. Add a `D128-<stage> result (date)` row to `DECISIONS.md` and a dated `docs/PROGRESS.md` entry, including failures and abstentions.
+4. Update the plain-language drug-side doc (`docs/DRUG_SIDE_PLAIN_LANGUAGE.md`) and, where a reporting requirement arises, `docs/LLM_COORDINATION_NOTES.md`.
+5. Commit and push to main, then merge main into `celligner` and push.
+6. When a decision changes the drug-side design, bring the Claude Docs drug-side spec into step with the repo.
+
 ## A0 - Environment inventory and label-blind feasibility audit
 
-**Files:** `config.py`, `io.py`, `a0_audit.py`, and optionally `a0_genotypes.py` (all under `scripts/d128/`).
+**Files:** `config.py` (all Section 0 values, in one place), `io.py`, `a0_audit.py`, and optionally `a0_genotypes.py` (all under `scripts/d128/`).
 
 **Actions**
 
@@ -195,11 +250,21 @@ All phases are **gated**. A later stage must not conceal a failing earlier stage
 3. Build all cohort x drug-class x compound x line x target-unit candidate rows, without consulting new functional outcomes.
 4. Enumerate target/line molecular-state evidence (BRAF V600, EGFR activating mutations, ERBB2 copy number, RB1 loss); distinguish **known positive**, **known negative**, **unknown** and **mismatched**.
 5. Quantify target-to-TF path and gene assay coverage on landmark-only and BING arms.
-6. Freeze minimum scoreable coverage and the set of executable cohort contrasts only **after this label-blind audit**, in a dated config commit.
+6. Report the label-blind quantities that Section 0 depends on:
+   - the distribution of specific-profile values (P9);
+   - the number of rows each coverage floor admits (P10);
+   - landmark vs inferred share of each footprint (P4);
+   - `orient()` flags per control compound (P11, D0.2);
+   - `pert_id` multiplicity (P12);
+   - SKBR3 ERBB2 copy number;
+   - an RB1-null LINCS line, if one exists;
+   - the A4 in-context status (Section 5).
+7. Audit prior use of the external screens. List every script and decision that has read PRISM 20Q2 or GDSC 8.5 (known: `79j`, `79k`, `79m`; check D94) and whether that use touched cohort, compound or parameter choice. The A5 validation source is fixed from this list.
+8. Freeze minimum scoreable coverage, the executable cohort contrasts and all Section 0 rows (including the user's D0.1/D0.2 calls) **only after this label-blind audit**, in the D128-A0 entry of `DECISIONS.md` plus a matching `scripts/d128/config.py` commit, tagged `d128-a0-freeze` and pushed.
 
-**Outputs:** `coverage.tsv`, `eligibility.tsv`, `unmatched_ids.tsv`, `source_line_context.tsv`, `cohort_feasibility.tsv`, `run_manifest.json`.
+**Outputs:** `coverage.tsv`, `eligibility.tsv`, `unmatched_ids.tsv`, `source_line_context.tsv`, `cohort_feasibility.tsv`, `profile_value_audit.tsv`, `external_screen_prior_use.tsv`, `run_manifest.json`.
 
-**Pass gate:** 100% of candidate rows are labeled eligible, excluded or unscorable with a reason; no silent indexing ambiguities; proposed positive/negative controls have verified data availability. **If a drug or cohort is absent, do not invent a substitute.**
+**Pass gate:** 100% of candidate rows are labeled eligible, excluded or unscorable with a reason; no silent indexing ambiguities; proposed positive/negative controls have verified data availability; the D128-A0 entry is pushed with every Section 0 row marked settled. **If a drug or cohort is absent, do not invent a substitute.** No M or R value is computed before this gate.
 
 ## A1 - Regulatory graph construction and signed route indexing
 
@@ -255,7 +320,7 @@ All phases are **gated**. A later stage must not conceal a failing earlier stage
 
 **Actions**
 
-1. Run the mandatory **MCF7 anti-estrogen** positive mechanism test. D128 must explicitly include ESR1 target anchoring even where its drug VIPER activity is not in the top 25. Compare raw and generic-removed profiles and matched cytostatic controls.
+1. Run the mandatory **MCF7 anti-estrogen** positive mechanism test. D128 must explicitly include ESR1 target anchoring even where its drug VIPER activity is not in the top 25. Compare raw and generic-removed profiles and matched cytostatic controls. The positive set follows D0.2 (primary: fulvestrant, each of its 3 `pert_id`s). **The ESR1 gate is on M.** R in breast is reported against the prediction recorded under D0.1, not gated, unless the user's D0.1 call says otherwise. If M passes only on raw profiles (P5), record "generic removal removes the target signal", not a pass. Run this control first, before any other A4 item: it is the cheapest test of whether D128 can work at all.
 2. Include eligible HER2-, BRAF- and EGFR-targeted compounds only after their LINCS line/genotype eligibility is confirmed.
 3. Run mutation-/line-context negatives; especially RAF inhibitor paradox and inappropriate EGFR-wild-type/KRAS-active comparisons.
 4. Replay exact D127 development pairs using their exact compound and cohort definitions. Report candidate M, R and coverage beside existing production lead percentile and target-role/reversal baselines.
@@ -275,7 +340,8 @@ All phases are **gated**. A later stage must not conceal a failing earlier stage
 2. Rebuild only the **required molecular-stratum disease contrast and regulator scores** using existing Steps 4/6 functions as needed, carefully distinguishing patient strata from previously scored broad cohorts. No silent all-SKCM/all-LUAD substitution.
 3. Compare the **same drug** across positive and negative strata, with identical scoring populations. Report raw M/R, percentile gaps, valid score coverage and evidence types.
 4. Validate on independent drug sensitivity where matched compound/line/genotype data exist (PRISM, GDSC or CTRP). Use compound-by-line response and drug/class-aware resampling, not tumor-normal expression as a surrogate for functional sensitivity.
-5. Keep functional data completely outside parameter fitting and cohort selection. Report cases where M or R cannot predict sensitivity (e.g. PARP/HRD synthetic lethality) as model-domain limitations, not discarded outliers.
+5. **Label the independence honestly.** A genotype holdout is new on the patient side only: the drug-side evidence (e.g. RAF inhibitors in A375) is the same set of profiles D127 and the earlier development work already read. Report these as "new patient strata, seen drug profiles", never as fully independent validation. The external screen follows the A0 prior-use audit: a screen whose earlier use touched cohort, compound or parameter choice is reported as development evidence, not as an independent label.
+6. Keep functional data completely outside parameter fitting and cohort selection. Report cases where M or R cannot predict sensitivity (e.g. PARP/HRD synthetic lethality) as model-domain limitations, not discarded outliers.
 
 **Outputs:** `genotype_holdout_instances.tsv`, `genotype_holdout_summary.tsv`, `external_viability.tsv`, `external_joins.tsv`, `holdout_manifest.json`.
 
@@ -312,6 +378,19 @@ These are **candidate cohorts**, not a claim that all required drug signatures, 
 | B2 | RB1-intact vs RB1-deficient breast | CDK4/6 pathway bypass | CDK4/6 drugs and resistance controls |
 | B3 | BRCA/HRD-high vs HR-proficient ovarian | PARP synthetic lethality | PARP drugs; low transcriptomic R may coexist with efficacy |
 | C | AR-driven prostate; ALK-fusion lung | Lineage and fusion requirements | Only if valid target, genotype and LINCS coverage |
+
+**Data check made before A0 (2026-11-15, DepMap 24Q4 hotspot calls and the 79c profile index; A0 confirms and supersedes this):**
+
+| Wave | In-context LINCS lines | Expected A0 status |
+|:--|:--|:--|
+| A1 | MCF7 (PIK3CA): fulvestrant, tamoxifen, raloxifene, bazedoxifene, toremifene, clomifene | Executable. No estradiol in MCF7 (no agonist sign-flip control) |
+| A2 | SKBR3: lapatinib, neratinib, afatinib, canertinib, erlotinib | Executable if A0 confirms ERBB2 amplification in SKBR3 |
+| A3 | A375, SKMEL5 (BRAF): vemurafenib, dabrafenib, PLX-4720, SB-590885; KRAS-mutant A549, HCC515 for the paradox negative | Executable on the drug side; the patient strata need MC3-based Step 4/6 rebuilds |
+| A4 | No EGFR-sensitizing-mutant line (no HCC827, PC9 or HCC4006). H1975 (L858R + T790M, resistant to first-generation TKIs) has 3 profiles (afatinib, neratinib) | **Expected not computable in context.** EGFR positives are borrowed or mismatched (E16), so they are reported only and cannot pass a gate |
+| B2 | MCF7 (RB1-intact): palbociclib | Needs an RB1-null LINCS line, which A0 looks for |
+| B3 | MCF7: olaparib, rucaparib, talazoparib, veliparib | Descriptive (E11) |
+
+TCGA genotype inputs on disk: `data/raw/tcga_pancan/` (MC3 MAF, GISTIC2 thresholded copy number, TCGA subtypes).
 
 **First biological execution:** start with A1 (MCF7/ESR1) to establish basic target anchoring, then A2 for one-hop receptor signaling. Proceed to A3/A4 only when genotype-specific patient and source-line evidence has passed A0. B1 is a **deliberate failure/stress case**, not the primary calibration cohort. Do not collapse selective RAF and MEK inhibitors into one assumed identical mechanism.
 
@@ -354,7 +433,7 @@ Recommended test module layout:
 - `tests/d128/test_nulls.py`: permutation reproducibility, degree preservation, null scoring does not alter real target set.
 - `tests/d128/test_d127_compat.py`: exact D127 `(compound, high, low)` identity match and original production baseline columns.
 
-At minimum each test includes a synthetic expected outcome, a fixed random seed where stochastic, and a failure message that names the dataset key being misinterpreted. Pipeline smoke tests should run on a tiny on-disk fixture without R, LINCS downloads, GitHub credentials or a GPU.
+pytest is not yet in the `repurposing` environment. Installing it (conda-forge, pinned and added to `environment.lock.yml`) is part of A0. At minimum each test includes a synthetic expected outcome, a fixed random seed where stochastic, and a failure message that names the dataset key being misinterpreted. Pipeline smoke tests should run on a tiny on-disk fixture without R, LINCS downloads, GitHub credentials or a GPU.
 
 # 7. Evaluation design and decision thresholds
 
@@ -386,7 +465,8 @@ All variants should report **coverage**; comparing a strict new method's 20 scor
 
 Do **not** hard-code a numerical improvement threshold as though it was already validated. Stage A0 may set coverage floors based on input completeness (without opening outcomes); the final independent holdout design must then freeze an effect-size bar, uncertainty criterion, and cohort list. The following qualitative conditions are mandatory:
 
-- Known high-information controls have interpretable target-linked footprints; failed ESR1 detection despite adequate data blocks promotion.
+- Known high-information controls have interpretable target-linked footprints; failed ESR1 detection **by M on the primary arm** (Section 0) despite adequate data blocks promotion.
+- The landmark-only arm agrees in sign with the primary (all-gene) arm on the controls (P4).
 - Context-specific negatives (RAF paradox, target absence and resistance where measurable) do not rise merely from broad proliferation suppression.
 - There is demonstrable value **beyond** target annotations and the actual production `layered_pct`, on genuinely independent molecular/functional data.
 - Results are not driven solely by inferred genes, the largest signaling hub, one source line, one dose, one drug class or one permissive prior.
@@ -408,44 +488,49 @@ Possible verdicts: **promote as side metric**, **study further**, **insufficient
 
 **Critical path:** input access and integrity -> footprint graph/coverage -> score correctness -> baseline-equivalent cohort aggregation -> mandatory controls -> independent holdout -> decision. GPU access is not necessarily the bottleneck; RAM, source files, correct mappings and experimental annotations matter more for sparse scoring. Use a GPU only if profiling demonstrates a benefit or for a later learned cross-line predictor.
 
-**Suggested PR decomposition:**
+**Commit sequence (main branch, the project's standing workflow; replaces the earlier PR decomposition):**
 
-- PR A: `config/d128.yaml`, `io.py`, `a0_audit.py`, manifests and input fixtures (no scoring).
-- PR B: network exporter, signed graph, `a1_build_paths.py` and graph tests.
-- PR C: M/R scoring, nulls, per-gene explanations, score tests.
-- PR D: aggregation/baseline comparison and mandatory controls.
-- PR E: molecular/functional holdouts, robustness and final report.
+Work is committed directly to `main` and pushed after each step, then `main` is merged into `celligner` and pushed. Each block below is one or more commits, each preceded by its `D128-<stage>` entry in `DECISIONS.md` (Section 4, per-stage routine):
 
-Do not merge experimental outcome-specific tweaks back into earlier methodological commits. Tag a **frozen evaluation commit** before a new holdout is accessed.
+- A0: `scripts/d128/config.py`, `io.py`, `a0_audit.py`, manifests and input fixtures (no scoring); then the D128-A0 freeze (tag `d128-a0-freeze`).
+- A1: network exporter, signed graph, `a1_build_paths.py` and graph tests.
+- A2: M/R scoring, nulls, per-gene explanations, score tests.
+- A3-A4: aggregation, baseline comparison and mandatory controls (ESR1 first).
+- A5-A6: molecular and functional holdouts, robustness and final report (tag `d128-eval-freeze` before any holdout outcome is read).
+
+Do not fold outcome-specific tweaks back into earlier methodological commits. A change after a freeze is a new, dated `DECISIONS.md` amendment (as D125-A0.1 did), never an edit of the frozen entry. Adoption into production (`79t3`) is a separate decision with its own entry and is outside this plan.
 
 # 9. Command-line interface and output tree (proposed)
 
 The following are **planned interfaces**; they are not executable commands in the repository yet.
 
+All values come from `scripts/d128/config.py`; scripts take no configuration flags except the thread count. Run from the repo root with the `repurposing` environment, keeping total threads < 32.
+
 ```bash
+PY=~/miniforge3/envs/repurposing/bin/python
+
 # Initial audit, no new efficacy labels
-python scripts/d128/a0_audit.py \
-  --config config/d128.yaml --out results/lincs/d128/a0
+$PY scripts/d128/a0_audit.py --threads 8
 
 # Build/cached target-to-regulator-to-gene graph
-Rscript scripts/d128/export_edges.R --config config/d128.yaml
-python scripts/d128/a1_build_paths.py --config config/d128.yaml
+~/miniforge3/envs/repurposing/bin/Rscript scripts/d128/export_edges.R
+$PY scripts/d128/a1_build_paths.py --threads 8
 
-# Mechanistic scores and source-line aggregation
-python scripts/d128/a2_score.py --config config/d128.yaml
-python scripts/d128/a3_aggregate.py --config config/d128.yaml
+# Mechanistic scores and source-line aggregation (only after the d128-a0-freeze tag)
+$PY scripts/d128/a2_score.py --threads 16
+$PY scripts/d128/a3_aggregate.py --threads 8
 
-# Already-seen development controls (NOT independent validation)
-python scripts/d128/a4_controls.py --config config/d128.yaml
-python scripts/d128/a4_d127_compat.py --config config/d128.yaml
+# Already-seen development controls (NOT independent validation); ESR1 first
+$PY scripts/d128/a4_controls.py --threads 8
+$PY scripts/d128/a4_d127_compat.py
 
-# Only after the holdout criteria are frozen
-python scripts/d128/a5_genotype_pairs.py --config config/d128.yaml
-python scripts/d128/a5_external.py --config config/d128.yaml
-python scripts/d128/a6_robustness.py --config config/d128.yaml
+# Only after the d128-eval-freeze tag
+$PY scripts/d128/a5_genotype_pairs.py --threads 8
+$PY scripts/d128/a5_external.py
+$PY scripts/d128/a6_robustness.py --threads 16
 
 # Offline software tests
-pytest -q tests/d128
+$PY -m pytest -q tests/d128
 ```
 
 Expected output structure:
@@ -494,15 +579,18 @@ Separate wide explanations are insufficient: export the per-gene and per-path ev
 - **Logging:** every stage logs elapsed time, matrix shapes, coverage/abstention counts and its upstream manifest fingerprint.
 - **Idempotency:** rerunning on identical manifest yields identical files/summary; changed source hashes invalidate dependent caches.
 - **Diagnostics before speed:** fail loudly on row-order errors; run a small source-line smoke test, then scale by chunking. Avoid a silent full RAM load of multigigabyte arrays.
+- **Compute budget:** fewer than 32 threads in total across concurrent jobs (half the server's 64), set explicitly (`--threads`, `N_CORES`, `OMP_NUM_THREADS`).
+- **What is committed:** code, `DECISIONS`/`PROGRESS`/plain-language docs, manifests and small summary tables (`.tsv`, `.json`). Large per-gene or per-path tables (`*.parquet`, `*.tsv.gz`) stay on the server: `*.gz` is already gitignored, and A0 adds `results/lincs/d128/**/*.parquet` to `.gitignore`.
 - **Review cadence:** inspect the coverage audit before thresholds; inspect synthetic tests before biology; inspect mandatory controls before interpreting unseen holdouts; only then consider a production integration proposal.
 
 # 11. Immediate next actions
 
-1. **Pull the D128 spec branch** and confirm access to the compute server's processed LINCS, VIPER, regulon RDS, disease contrasts, and cached OmniPath/ChEMBL files.
-2. Implement and run **A0 only**, exporting the complete cohort-by-drug-by-line target feasibility matrix, plus explicit data gaps.
-3. Review A0's measured assay coverage and the source-line molecular matches. Freeze scoreability thresholds and the executable control list *without opening held-out outcome labels*.
-4. Build the **ESR1 zero-hop footprint** and its synthetic test suite first; use that to validate graph semantics before adding receptor/kinase pathways.
-5. Only after the A1/A2 software gates pass, execute the MCF7 control and the staged cohort benchmarks.
+1. ~~Pull the D128 spec branch~~ Done 2026-11-15: the spec is merged into main, and the input files named in Section 1 were confirmed on the server.
+2. **User:** decide D0.1 (reference for breast R) and D0.2 (SERMs in the ESR1 control), and confirm or amend the proposed rows of Section 0.
+3. Implement and run **A0 only** (the code may be written while step 2 is open), exporting the complete cohort-by-drug-by-line target feasibility matrix, plus explicit data gaps and the label-blind quantities in A0 action 6.
+4. Review A0's measured coverage and source-line molecular matches. Write and push the D128-A0 entry, freezing every Section 0 row, then tag `d128-a0-freeze`, *without opening held-out outcome labels*.
+5. Build the **ESR1 zero-hop footprint** and its synthetic test suite first; use that to validate graph semantics before adding receptor/kinase pathways.
+6. Only after the A1/A2 software gates pass, execute the MCF7 control (M-gated; Section 0) and then the staged cohort benchmarks.
 
 **Success at the end of this project is not a visually compelling ranked drug list; it is a calibrated, interpretable and falsifiable answer to whether target-anchored regulatory footprints improve mechanism fidelity and biomarker-specific drug prioritization over the existing layered score.**
 
