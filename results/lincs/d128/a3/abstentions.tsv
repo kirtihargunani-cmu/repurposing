@@ -1,0 +1,19 @@
+level	status	a0_predicted_M	engine_M	engine_M_reason	a0_predicted_R	engine_R	reason	n_rows
+group_id	eligible	eligible	scored		eligible	scored		53781
+stratum	eligible	eligible	scored		eligible	scored		21938
+group_id	unscorable	unscorable	abstained	no_footprint	unscorable	abstained	M:no_anchored_tf;R:R_below_floor	20861
+stratum	unscorable	unscorable	abstained	no_footprint	unscorable	abstained	M:no_anchored_tf;R:R_below_floor	8032
+group_id	unscorable	unscorable	not_run		unscorable	not_run	no_protein_target	5936
+group_id	eligible	eligible	scored		unscorable	abstained	R:R_below_floor	3469
+stratum	unscorable	unscorable	not_run		unscorable	not_run	no_protein_target	2284
+group_id	unscorable	unscorable	abstained	no_footprint	unscorable	abstained	M:ambiguous_action;R:R_below_floor	1707
+group_id	unscorable	unscorable	not_run		unscorable	not_run	no_target_unit	1639
+stratum	eligible	eligible	scored		unscorable	abstained	R:R_below_floor	1478
+group_id	eligible	unscorable	abstained	ambiguous_action:direction_assumed	eligible	scored	M:ambiguous_action	958
+stratum	unscorable	unscorable	abstained	no_footprint	unscorable	abstained	M:ambiguous_action;R:R_below_floor	662
+stratum	unscorable	unscorable	not_run		unscorable	not_run	no_target_unit	621
+stratum	eligible	unscorable	abstained	ambiguous_action:direction_assumed	eligible	scored	M:ambiguous_action	283
+group_id	eligible	unscorable	scored		eligible	scored	M:below_floor	267
+stratum	eligible	unscorable	scored		eligible	scored	M:below_floor	110
+group_id	eligible	unscorable	abstained	no_footprint	eligible	abstained	M:below_floor	104
+stratum	eligible	unscorable	abstained	no_footprint	eligible	abstained	M:below_floor	38

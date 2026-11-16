@@ -1235,3 +1235,55 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   uninformative in the ER-positive cohorts (LumA 0.010, LumB 0.004, Her2 0.001) exactly as recorded, but highest in
   ER-negative Basal (0.049) — the same ordering the 11-12 precursor found. That is the GTEx-normal-breast reference
   problem reappearing, not evidence for fulvestrant in Basal. Nothing was adjusted in response.
+
+## 2026-11-16: D128 A3 (full scoring, aggregation, baselines) and A4 actions 2-5 (controls)
+- **The first full A2 run happened.** 113,688 (cohort, drug, source line, target unit) rows, scored twice (two gene
+  arms), 227,376 rows in 282 s on 8 threads. The engine was re-indexed first - footprints, units and profile rows
+  are looked up instead of re-scanned - and the refactor reproduces the committed A4 ESR1 control **byte for byte**,
+  so nothing moved. The two permutation nulls gained a vectorised path used only where it is provably exact, with a
+  test asserting element-wise equality against `score_mechanism`.
+- **A3's join gate is met.** 10,131 drug-level rows in and out of four production joins with no loss or duplication;
+  P14 re-asserted at 12,283 / 12,283 pairs; `layered_pct`'s two independent copies agree to 5e-4 (a 3-dp storage
+  difference); the 16 target-role `T` disagreements are the two FDA ingredients that carry two `cmap_name`s each, so
+  `target_role_pct` is a drug-level number shared by both `pert_id`s and is now labelled that way. Abstentions
+  account for 100% of the 124,168 A0 candidate rows.
+- **The scores are small and noisier than they are large.** M median 0.0049 (IQR -0.0089 to 0.0194). Across source
+  lines, the weighted sd of M has median 0.0170 against a median |M| of 0.0147: **the disagreement between the lines
+  a cohort score is averaged over is larger than the score itself.** 76.7% of unit rows are borrowed.
+- **M is nearly independent of the production lead score** (Spearman 0.17 against `layered_pct`); R overlaps VIPER
+  reversal (0.43). That means M measures something else, not that the something else is real. **A3 has no outcome
+  label and cannot settle whether M/R add value.** That is A5/A6's question and it is open.
+- **The landmark sensitivity amendment failed its pre-stated criterion on all three parts, and not marginally.**
+  rho(M_all, M_landmark) = 0.677 (needed 0.90), sign flips 25.0% (needed <= 5%), median |delta percentile| 9.87
+  (needed <= 5). On the quarter of units with the lowest landmark share, rho 0.423 and flips 37.3%. 567 units clear
+  the floor on all BING genes and fall below it on measured genes alone. Fulvestrant's ESR1 M is 2.5x larger on the
+  89 measured genes than on all 478, with weaker nulls. **Under the rule written before the result: one unit in
+  four changes the SIGN of its mechanism score depending on whether L1000-imputed genes are included, so signal
+  cannot be separated from imputation.** Nothing was changed in response - P4 stays frozen, both arms are reported -
+  and the conditional population-wide null spend was not made, as the amendment required.
+- **The degree-matched-target null is thinly powered nearly everywhere.** Measured structurally, without running a
+  null: 95.0% of M-eligible units have fewer than 10 distinct candidate footprints, 27.7% fewer than 3, 9.7% none.
+  ESR1's pool collapses to a single distinct footprint (AR), which is why its z came back blank. Only the two
+  permutation nulls carry weight.
+- **BRAF is the one informative control wave, and its M is MYC-hub-dominated.** Positives (vemurafenib, dabrafenib
+  in A375 and HT29) M 0.025-0.041, 3 of 4 confident; the RAF-paradox negatives (BRAF-WT, RAS-active) produce **0**
+  confident positives. The negative control passes. But **692 of the BRAF unit's 1,063 footprint genes (65.1%) are
+  MYC-regulated and carry 66-69% of the absolute numerator and 69-95% of the signed numerator in the four positive
+  rows**; 610 of them are reached by MYC and by nothing else. By the threshold fixed in advance this is hub
+  dominance: BRAF's M is largely a MYC-driven proliferation read-out routed through the BRAF anchor.
+- **HER2 fails the negative rule** (14.9% confident positives among ERBB2-non-amplified rows against 0% among the
+  four SKBR3 positives) on a positive set far too small to carry a verdict - exactly the thinness A0 flagged.
+  **EGFR stayed a documented gap:** the only sensitising-mutation line also carries T790M, and no substitute was
+  used. Five control compounds have no D121 target unit at all.
+- **The D127 replay (descriptive only) does not reproduce the production discrimination.** M points the right way in
+  16 of 49 primary instances against `layered_pct`'s 36 of 49 - and the reason is structural: M has no disease term,
+  so **15 of 49 instances are exact ties**, including all nine THCA BRAF-like vs RAS-like ones. Among the 34 where M
+  can differ at all it is right 47.1% of the time. M as built cannot separate a biomarker pair for a borrowed drug.
+- **Failures were analysed by mechanism, not rank.** Missing network path 49.8% of drug rows, line mismatch 42.2%,
+  absent target expression 17.3%, sign contradiction 17.0%, disagreeing target units 12.2%. The cleanest internal
+  negative control is the one needing no label: where the annotated target is **not expressed in any source line**,
+  M is still positive 56.9% of the time (median 0.0006) against 59.8% (median 0.0046) where it is expressed.
+  Eight-fold apart in the medians, almost completely overlapping in distribution.
+- **Not run, deliberately:** A5, and no CTRP / PRISM / GDSC value was read. **Open for the user:** whether
+  `landmark_only` becomes the primary gene space pipeline-wide, and a 55-row regorafenib mismatch where the engine's
+  floor is looser than the frozen P10 per-subset floor.

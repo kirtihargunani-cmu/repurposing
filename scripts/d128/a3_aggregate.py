@@ -78,6 +78,18 @@ def main():
             f"{len(dr)} drug rows (M {int(dr.M.notna().sum())}, R {int(dr.R.notna().sum())})")
     S = S[S.gene_arm == "all_bing"]           # everything downstream is the frozen primary arm (P4)
     UN = arms["all_bing"][0]
+    # Engine-vs-frozen-floor audit. P10 as frozen by D128-A0.1 floors each SUBSET of a unit separately (a direct-TF
+    # subset on its zero-hop regulon genes, a signalling subset on resolved genes AND >= 2 anchored TFs). score.py
+    # applies only the >= 10 usable genes part, to the merged footprint. A unit that fails the frozen per-subset
+    # floor can therefore still clear the engine's. These rows are FLAGGED, not silently kept or silently dropped.
+    a0u = E.dropna(subset=["unit_id"]).drop_duplicates(["cohort", "pert_id", "unit_id"])[
+        ["cohort", "pert_id", "unit_id", "M_status"]].rename(columns={"M_status": "a0_M_unit_status"})
+    UN = UN.merge(a0u, on=["cohort", "pert_id", "unit_id"], how="left")
+    UN["scored_below_a0_floor"] = UN.M.notna() & (UN.a0_M_unit_status == "unscorable")
+    log(f"engine vs frozen P10 floor: {int(UN.scored_below_a0_floor.sum())} unit rows scored by the engine although "
+        f"the frozen per-subset floor marks the unit unscorable "
+        f"({UN.loc[UN.scored_below_a0_floor, 'cmap_name'].nunique()} compounds)")
+    arms["all_bing"] = (UN, arms["all_bing"][1])
     log(f"unit level: {len(UN)} (cohort, pert_id, unit) rows; M {int(UN.M.notna().sum())}, R {int(UN.R.notna().sum())}")
 
     # line heterogeneity, with the source line's genotype so spread from genotype mismatch is visible
@@ -98,7 +110,14 @@ def main():
     log(f"line_heterogeneity: {len(H)} rows; M sd defined on {int(H.M_sd.notna().sum())}")
 
     # --- step 2: target units -> drug ------------------------------------------------------------------------------
-    D = arms["all_bing"][1]
+    D = arms["all_bing"][1].merge(
+        UN.groupby(["cohort", "level", "pert_id"]).scored_below_a0_floor.sum()
+          .rename("n_units_scored_below_a0_floor").reset_index(),
+        on=["cohort", "level", "pert_id"], how="left", validate="one_to_one")
+    D["n_units_scored_below_a0_floor"] = D.n_units_scored_below_a0_floor.fillna(0).astype(int)
+    log(f"drug-level rows affected by the floor mismatch: "
+        f"{int((D.n_units_scored_below_a0_floor > 0).sum())} of {len(D)} "
+        f"(M scored on at least one unit the frozen floor would not admit)")
     log(f"drug level: {len(D)} (cohort, pert_id) rows; M {int(D.M.notna().sum())}, R {int(D.R.notna().sum())}")
 
     # --- baselines, read not recomputed ----------------------------------------------------------------------------
@@ -183,6 +202,7 @@ def main():
                         "gene_label_n", "degree_matched_target_pct", "degree_matched_target_z",
                         "degree_matched_target_n",
                         "n_units_annotated", "n_units_in_run", "n_units_M", "n_units_R", "unit_scored_fraction",
+                        "n_units_scored_below_a0_floor",
                         "M_unit_sd", "M_unit_min", "M_unit_max", "R_unit_sd", "M_line_sd_max",
                         "n_lines_M", "n_lines_R", "M_n_genes", "M_n_landmark", "R_n_genes",
                         "hub_fraction_structural", "hub_tf", "units", "unit_kinds",

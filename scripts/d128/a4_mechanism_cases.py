@@ -54,6 +54,8 @@ def main():
     cov = pd.read_csv(C.OUT / "a0/coverage.tsv", sep="\t")
     ctx = pd.read_csv(C.OUT / "a0/source_line_context.tsv", sep="\t", low_memory=False)
     ctl = pd.read_csv(C.OUT / "a4/control_results.tsv", sep="\t", low_memory=False)
+    for c in ("BRAF_V600", "EGFR_sensitizing", "EGFR_T790M", "KRAS_NRAS", "ERBB2_amp"):
+        ctl[c] = ctl[c].map({True: True, "True": True}).fillna(False).astype(bool)
 
     N = len(S)
     cases, index = {}, []
