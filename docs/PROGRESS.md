@@ -1117,3 +1117,18 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   tracks expression); D3 positive - drugs approved for a cancer target genes that cancer depends on (+0.24 Hub /
   +0.13 ChEMBL SD, p 0.001), which also shows the C28 labels are sound. 154 rows pair an approved drug with a
   target >= 2 SD depended on and the ranking does not favour them (median percentile 60 vs 53).
+
+## 2026-11-15: D128 implementation plan reviewed against the repo, before A0 (nothing run)
+- Notes: `docs/notes/d128_plan_review.md`. Disease effect settled: production limma + voomByGroup `logFC` / `z`
+  (the `*_voom` columns are check C12 only), with 79t's contrast rule (GTEx, else adjacent).
+- Open, to settle before A0 freezes anything:
+  - (1) R as specified repeats the 11-12 precursor calculation, which inverted the anti-estrogens against GTEx
+    normal breast; the reference for breast R needs a decision. M is unaffected.
+  - (2) No EGFR-sensitizing-mutant LINCS line exists (H1975 only: T790M, 3 profiles), so A4 is expected to be
+    not computable in context.
+  - (3) Fulvestrant is the only pure ER antagonist (1 MCF7 profile); whether SERMs count as antagonists needs a
+    decision; no estradiol profile in MCF7.
+  - (4) No primary arm is named; network, gene set, profile arm, hop limit and weights should be frozen together.
+  - (5) Generic-response removal may remove ER/proliferation signal in MCF7.
+  - (6) `wD` is undefined.
+  - (7) The holdouts are new patient groups but reuse D127's drug profiles; PRISM was already read in 79j/79k/79m.
