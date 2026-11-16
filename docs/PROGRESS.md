@@ -1193,3 +1193,19 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   conflicts from TFs reached at 1-2 hops. The conclusion is unchanged and stronger. Cohort × compound pair totals are
   unchanged (3,931 group, 1,270 subgroup).
 - `tests/d128/` now 13 tests (2 added for the union rule).
+
+## 2026-11-15: D128 Section 0 frozen, and A1 (signed route index) built
+- **Freeze.** All Section 0 rows P1-P14 settled in the `D128-A0 freeze` entry, `scripts/d128/config.py` carries them
+  with `FROZEN = True`, tag `d128-a0-freeze` pushed. Two rows changed in application rather than value: P4 (landmark
+  genes are a median 15.0% of a resolved footprint after the A0.1 correction; a landmark-only floor admits 226 of 497
+  units) and P10 (floors applied per subset, 238 units admitted, 2 below floor on data). P9 was explicitly conditional
+  on the audit and is kept: `tanh(z/2)` saturates above 0.9 on only 1.3% of specific-arm values. P14 verified exactly:
+  the sandbox reproduces production's direct/borrowed split on 12,283 of 12,283 pairs.
+- **A1 built and gated.** `graph.py` (factored from the audited A0 code) and `a1_build_paths.py`; 1.6 s. 14
+  hand-calculated path/sign fixtures pass, 27 tests in all. Outputs: 42,432 regulon edges, 31,769 target-to-TF path
+  rows over 387 target genes, 367,942 (unit, gene) footprint rows over 257 units.
+- Ambiguity is kept rather than resolved: median per-unit TF ambiguity 0.091, gene ambiguity 0.247.
+- **The ESR1 footprint is clean**: 478 resolved genes (89 landmark), none conflicted or ambiguous, 405 expected up and
+  73 down before the drug's action sign.
+- A latent bug surfaced while writing the fixtures and is fixed: the footprint memo was keyed on the network name, so
+  two graphs sharing a name could collide. The key now carries the graph checksum.
