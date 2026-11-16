@@ -393,6 +393,115 @@ Subgroups, against their sibling:
 The LGG and seminoma subgroups barely differ in drug response, so report one list per parent cancer. All rankings,
 with paper and trial links, are on the FDA rankings page.
 
+## How the decisions developed, D81 to D128 (added 2026-11-15)
+
+One story in four phases: the project kept trying to fix one score, gradually realised the problem was the question
+that score asks, and changed the question.
+
+**In one sentence:** the pipeline started by ranking drugs on whether they push a tumor's switch activity back toward
+normal ("reversal"). The anti-estrogen test case kept showing that reversal misreads the biology. Patching the
+networks, timing and profiles did not fix it, so the project (1) tightened which cancers a drug is even eligible for,
+(2) switched the lead ranking to "does this cancer need the drug's target?", and (3) is now testing whether reversal
+can be rebuilt in a narrower, more honest form (D128).
+
+### Phase 1: can reversal be made to read the right biology? (D81-D101)
+
+**The problem everything revolved around.** Anti-estrogens shut down estrogen signalling in MCF7 breast cancer cells.
+That is unambiguous, and it is the easiest test a drug-ranking method could face. Yet the tumor-trained network
+(ARACNe) read ESR1, the estrogen receptor, as going *up* under these drugs. If the method cannot get this case right,
+it cannot be trusted on harder ones.
+
+| What was tried | What happened, plainly |
+|:--|:--|
+| Narrower tumor maps; drop links that just mark the subtype (D81-D83) | Barely helped. Within luminal tumors, "being luminal" and "ESR1 active" travel together, so deleting obvious markers cannot untangle them. |
+| Pick the better network (D84) | Neither ARACNe nor CollecTRI won clearly. The blend of the two was kept. |
+| Learn network links from drug experiments instead (D86-D87) | No better than the existing networks, sometimes worse. Fixing ESR1 tended to break other things. |
+| Raw vs "generic response removed" profiles (D85) | Removing each cell line's generic response is essential. Without it, 82% of drugs "reverse" 80% of cancers, because general growth arrest looks like reversal everywhere. Raw profiles helped ESR1 a little but not overall. |
+| Early timepoints (D88-D90, D100) | **The key insight of this phase:** at 6 hours, estrogen genes have already dropped. By 24 hours the cells shift toward a luminal identity, and *that* is what the network misread as ESR1 rising. Timing explained the misread better than dose. But most anti-estrogen 6-hour profiles were too weak to use, so early and late became reporting columns only. |
+| Separate "identity" from "reversal" (D91, D98) | Helped luminal controls, but anti-estrogens still looked great in Basal breast cancer, which has no estrogen receptor. A "cells going quiet" program made them look good there. |
+| Separate tumor maps per cancer type (D92-D97) | The biggest win of the phase. The Basal anti-estrogen false positive fell from the 97th to the 76th percentile, and real breast positive controls rose from 25 to 41. Adopted by explicit decision despite slightly missing one tolerance. It improved the *ranking* more than it fixed ESR1 itself. |
+| Independent pathway readout, PROGENy (D99, D101) | PROGENy got it right: estrogen signalling down in 15 of 15 profiles. Swapping it in barely moved the ranks, because the misleading luminal signal is spread across many switches. |
+
+**What Phase 1 taught:** the misread was not one bad link or one bad setting. It is built into how a tumor-trained
+network sees a cell changing identity. Many patches each helped a little; none fixed it.
+
+### Phase 2: stop the obvious mistakes, whatever the score says (D102-D119)
+
+Since the score could not be made to read the biology, the project put guardrails around it: rules for when a drug
+is even eligible in a cancer.
+
+- **The target must be present in the typical tumor (D102).** This alone dropped the Basal anti-estrogen false
+  positive from about 76 to about 3. The trade-off: rankings describe the *typical* tumor, and rare carriers get a
+  flag, not a rescue.
+- **The target must be present in the test cells (D104).** Done carefully: a too-strict comparison unfairly punished
+  flutamide, and anti-angiogenic drugs whose targets sit in blood vessels the cell assay does not have. Exceptions
+  were added for the tumor environment.
+- **Use each drug's real main target (D105, D110).** The old "strongest binder" rule assigned wrong targets, and ALK
+  inhibitors got false credit through fusion partners.
+- **Clean up the evidence (D107-D114).** Creams and other local-only drugs were removed from systemic rankings; a
+  dose rule that flagged 45% of profiles was dropped; profiles that do not reproduce are caught; exposure, name and
+  salt-form problems were fixed.
+- **Make everything consistent and reproducible (D103, D106, D115-D119).** The FDA lists now reproduce byte for
+  byte. The D119 corrections barely changed the rankings, and that mattered: it showed **the reversal failure was not
+  a bug**.
+
+### Phase 3: change what is measured, and how it is judged (D118-D127)
+
+This is the turning point.
+
+1. **The yardstick was flattering reversal (D118).** Once the "known use" benchmark was cleaned up, reversal scored
+   0.46 and 0.43, where 0.50 is a coin flip. The earlier ~0.63 was an artefact.
+2. **Ask a different question: does this cancer need the drug's target? (D120)** Is the target essential, altered, or
+   overactive? This scored 0.67 and 0.62 on the same rows and recovered the right patterns, such as ESR1 in luminal
+   breast and BRAF in melanoma.
+3. **Make it fair across drugs (D121).** Families and complexes count as one target, so drugs with long target lists
+   do not get more chances. Equal weights were kept, and **reversal got zero weight**.
+4. **Promote it (D122).** The layered score became the lead ranking for all 41 cancer groups and 14 subgroups.
+   Weaknesses in the LINCS evidence became flags rather than vetoes.
+5. **Handle chemo-like drugs (D124).** Weighting proliferation by how closely a target tracks cell division lifted
+   TOP2A-type drugs and dropped statins from the top 10s. This was confirmed on the data it was developed on, so it is
+   a seen-data gain.
+6. **Change the judge (D127).** Approval history mixes biology with commercial history, so the test became "does the
+   same drug rank higher in the cohort that carries its biomarker?" Production passed 36 of 49 comparisons
+   (p = 0.0007). The clear miss was **thyroid**: BRAF alterations were far more common in one group (87% vs 16%), but
+   converting to a within-cohort percentile erased that difference.
+
+**What Phase 3 taught:** "is the target relevant?" works. "Does the drug reverse the tumor?" does not, at least not
+as currently measured.
+
+### Phase 4: is reversal dead, or just measured badly? (D125-D128)
+
+- **Ceiling test (D125 A0).** The measurements are repeatable enough that a good score *could* reach an accuracy
+  (AUC) of about 0.97. Reversal sits near chance anyway, so **the problem is the scoring, not noisy data**. This is
+  the most important finding of this phase.
+- **Discount switches that overlap (D125 A1).** Did not work: +0.17 points against the +1.0 threshold. The shared
+  targets were real signal.
+- **Trace the path from a drug's target (D126).** Failed its own control: 0 of 22 anti-estrogens flagged. It looked
+  only at each drug's 25 biggest switch changes, and ESR1 is never among them; growth-arrest switches are.
+- **Score only ESR1's own target genes (2026-11-12).** The anti-estrogens came out *backwards*: worst in ER-positive
+  cancers, best in Basal. The likely reason is that **normal breast tissue already has estrogen activity**, so
+  comparing a tumor with normal breast points the wrong way for estrogen blocking. Not yet tested with another
+  reference.
+- **D128 (2026-11-15, planned, nothing run).** Built directly on those lessons:
+  - start from the drug's annotated target, not its biggest changes (fixes D126);
+  - keep **M** ("is the drug doing what its target predicts?") separate from **R** ("does it push disease genes
+    back?");
+  - write down in advance that R is expected to fail in breast because of the reference problem.
+
+  Plan: [`IMPLEMENTATION_target_mechanism_scoring.md`](IMPLEMENTATION_target_mechanism_scoring.md); issues found
+  before it starts: [`notes/d128_plan_review.md`](notes/d128_plan_review.md).
+
+### Threads that run through the whole history
+
+1. **The anti-estrogen case is the project's canary.** Almost every phase was triggered by it, and D128's first gate
+   is still that test.
+2. **Patches that help the ranking do not necessarily fix the mechanism.** The cell-type maps (D92-D97) and the
+   PROGENy swap (D99, D101) both showed this.
+3. **When the benchmark cannot separate cause from coincidence, change the benchmark:** known use, then cleaned known
+   use, then biomarker pairs.
+4. **Decisions are rule-first, and failures get recorded.** Several approaches (early-only timepoints, D125 A1, D126)
+   were closed by their own pre-set rules rather than rescued.
+
 ## What is not done yet
 
 - **Tests against measured drug killing of cell lines (PRISM / GDSC), known drug uses and gene dependencies** have
