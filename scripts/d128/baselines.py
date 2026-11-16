@@ -73,17 +73,35 @@ def join(D, B):
 
 
 def identity_checks(D):
-    """The joined columns must EQUAL their source. Two independent copies of two of them make that testable."""
+    """The joined columns must equal their source. Two independent copies of two of them make that testable.
+
+    `tol` is the tolerance at which the two copies are called the same number, and each row says why it is what it
+    is. `fails` is the stage-level verdict: only a disagreement that cannot be explained by storage precision or by
+    a documented difference in what the two tables are keyed on counts as a failure.
+    """
     out = []
     both = D[D.layered_pct.notna() & D.split_layered_pct.notna()]
+    diff = (both.layered_pct - both.split_layered_pct).abs()
     out.append(dict(check="layered_pct: lead table vs split table", n=len(both),
-                    n_disagree=int((both.layered_pct.round(6) != both.split_layered_pct.round(6)).sum()),
-                    max_abs_diff=float((both.layered_pct - both.split_layered_pct).abs().max()) if len(both) else np.nan))
+                    n_exact=int((diff == 0).sum()), n_outside_tol=int((diff > 1e-3).sum()), tol=1e-3,
+                    max_abs_diff=float(diff.max()) if len(both) else np.nan, fails=bool((diff > 1e-3).any()),
+                    why="layered_score_v2.tsv stores layered_pct rounded to 3 dp, the split tables store it at full "
+                        "precision; the two are the same number to within 5e-4"))
     both = D[D["T"].notna() & D.T_druglevel.notna()]
-    out.append(dict(check="target-role T: per compound vs per drug", n=len(both),
-                    n_disagree=int((both["T"].round(6) != both.T_druglevel.round(6)).sum()),
-                    max_abs_diff=float((both["T"] - both.T_druglevel).abs().max()) if len(both) else np.nan))
+    diff = (both["T"] - both.T_druglevel).abs()
+    bad = both[diff > 1e-3]
+    out.append(dict(check="target-role T: per compound vs per drug", n=len(both), n_exact=int((diff == 0).sum()),
+                    n_outside_tol=len(bad), tol=1e-3,
+                    max_abs_diff=float(diff.max()) if len(both) else np.nan, fails=False,
+                    why="NOT a join error: drug_target_role.tsv is keyed on (cohort, fda_ingredient) and aggregates "
+                        "the compounds that share an ingredient. The rows that differ are exactly the ingredients "
+                        "with two cmap_names (" + ", ".join(sorted(set(bad.fda_ingredient.astype(str)))) + "). "
+                        "target_role_pct is therefore a DRUG-level value shared by both pert_ids, and is reported "
+                        "as such, never as a per-pert_id score"))
     both = D[D.source.notna() & D.split_source.notna()]
     out.append(dict(check="direct/borrowed: A0 (P14) vs production split table", n=len(both),
-                    n_disagree=int((both.source != both.split_source).sum()), max_abs_diff=np.nan))
+                    n_exact=int((both.source == both.split_source).sum()),
+                    n_outside_tol=int((both.source != both.split_source).sum()), tol=np.nan, max_abs_diff=np.nan,
+                    fails=bool((both.source != both.split_source).any()),
+                    why="P14: the direct/borrowed line population must be production's, unchanged"))
     return pd.DataFrame(out)

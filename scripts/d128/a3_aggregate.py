@@ -27,6 +27,7 @@ import pandas as pd  # noqa: E402
 import aggregate as AG  # noqa: E402
 import baselines as BL  # noqa: E402
 import config as C  # noqa: E402
+import landmark as LM  # noqa: E402
 
 A3 = C.OUT / "a3"
 T0 = time.time()
@@ -42,6 +43,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--threads", type=int, default=C.THREADS)
     ap.add_argument("--a2", default="a2")
+    ap.add_argument("--nulls-run", default="a2_nulls",
+                    help="directory of the gated null pass (D128-A3 landmark amendment); used if present")
     a = ap.parse_args()
     for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
         os.environ[v] = str(a.threads)
@@ -63,7 +66,18 @@ def main():
         sys.exit(f"P14 broken: {len(pairs) - agree} pairs disagree with the production split table")
 
     # --- step 1: source lines -> target unit -----------------------------------------------------------------------
-    UN = AG.lines_to_unit(S)
+    if "gene_arm" not in S.columns:
+        S["gene_arm"] = "all_bing"
+    n_units_ann = U.groupby("cmap_name").size().to_dict()
+    arms = {}
+    for ga, d in S.groupby("gene_arm"):
+        un = AG.lines_to_unit(d)
+        dr = AG.units_to_drug(un, n_units_ann)
+        arms[ga] = (un, dr)
+        log(f"gene arm {ga}: {len(un)} unit rows (M {int(un.M.notna().sum())}, R {int(un.R.notna().sum())}); "
+            f"{len(dr)} drug rows (M {int(dr.M.notna().sum())}, R {int(dr.R.notna().sum())})")
+    S = S[S.gene_arm == "all_bing"]           # everything downstream is the frozen primary arm (P4)
+    UN = arms["all_bing"][0]
     log(f"unit level: {len(UN)} (cohort, pert_id, unit) rows; M {int(UN.M.notna().sum())}, R {int(UN.R.notna().sum())}")
 
     # line heterogeneity, with the source line's genotype so spread from genotype mismatch is visible
@@ -84,8 +98,7 @@ def main():
     log(f"line_heterogeneity: {len(H)} rows; M sd defined on {int(H.M_sd.notna().sum())}")
 
     # --- step 2: target units -> drug ------------------------------------------------------------------------------
-    n_units_ann = U.groupby("cmap_name").size().to_dict()
-    D = AG.units_to_drug(UN, n_units_ann)
+    D = arms["all_bing"][1]
     log(f"drug level: {len(D)} (cohort, pert_id) rows; M {int(D.M.notna().sum())}, R {int(D.R.notna().sum())}")
 
     # --- baselines, read not recomputed ----------------------------------------------------------------------------
@@ -102,13 +115,73 @@ def main():
     AU = pd.concat([AU, ID.assign(source="value identity")], ignore_index=True)
     AU.to_csv(A3 / "baseline_join_audit.tsv", sep="\t", index=False)
     log("baseline join audit:\n" + AU.to_string())
-    bad = ID[(ID.n_disagree > 0)]
+    bad = ID[ID.fails]
     if len(bad):
-        log("WARNING: a baseline value-identity check disagrees:\n" + bad.to_string())
+        sys.exit("a baseline value-identity check FAILED:\n" + bad.to_string())
+    noted = ID[(ID.n_outside_tol > 0) & ~ID.fails]
+    if len(noted):
+        log("baseline copies differ but the difference is explained (recorded, not a failure):\n"
+            + noted[["check", "n", "n_exact", "n_outside_tol", "max_abs_diff", "why"]].to_string())
+
+    # --- D128-A3 landmark sensitivity (amendment 2026-11-16): pre-stated criterion, evaluated here ----------------
+    if "landmark_only" in arms:
+        # the landmark arm is ranked in exactly the same population as the primary arm, so a percentile gap is a
+        # gap in the score and not in the denominator
+        dr_lm = arms["landmark_only"][1].merge(
+            D[["cohort", "level", "pert_id", "in_comparison_population"]], on=["cohort", "level", "pert_id"],
+            how="left", validate="one_to_one")
+        dr_lm["in_comparison_population"] = dr_lm.in_comparison_population.fillna(False).astype(bool)
+        dr_lm = AG.add_percentiles(dr_lm, mask=dr_lm.in_comparison_population)
+        T, P = LM.compare(arms["all_bing"][0], arms["landmark_only"][0], D, dr_lm)
+        T.to_csv(A3 / "landmark_sensitivity.tsv", sep="\t", index=False)
+        SUM = LM.summary(T, P)
+        SUM.to_csv(A3 / "landmark_sensitivity_summary.tsv", sep="\t", index=False)
+        log("landmark sensitivity (pre-stated criterion: rho >= 0.90, flips <= 5%, median |dpct| <= 5):\n"
+            + SUM.to_string())
+        crit_met = bool(SUM.loc[(SUM.subset == "all units") & (SUM.score == "M"), "interchangeable"].iloc[0])
+        log(f"CRITERION for M over all units: {'MET' if crit_met else 'NOT MET'} "
+            f"-> population-wide nulls are {'run' if crit_met else 'NOT run'} (decision row, fixed in advance)")
+        D = D.merge(arms["landmark_only"][1][["cohort", "level", "pert_id", "M", "R", "n_units_M"]].rename(
+            columns={"M": "M_landmark", "R": "R_landmark", "n_units_M": "n_units_M_landmark"}),
+            on=["cohort", "level", "pert_id"], how="left", validate="one_to_one")
+        D = D.merge(P[["cohort", "level", "pert_id", "M_pct_landmark", "R_pct_landmark"]].drop_duplicates(
+            ["cohort", "level", "pert_id"]), on=["cohort", "level", "pert_id"], how="left", validate="one_to_one")
+    else:
+        crit_met = None
+
+    # --- null power: how many degree-matched candidates actually survive (user question, A3 amendment) ------------
+    npath = C.OUT / a.a2 / "nulls.parquet"
+    nullp = C.OUT / a.nulls_run / "nulls.parquet"
+    src = nullp if nullp.exists() else npath
+    NP = None
+    if src.exists():
+        N = pd.read_parquet(src)
+        NP = N.groupby(["gene_arm", "null"] if "gene_arm" in N.columns else ["null"]).agg(
+            n_rows=("n_null", "size"), n_null_min=("n_null", "min"), n_null_median=("n_null", "median"),
+            n_null_max=("n_null", "max"), frac_lt_10=("n_null", lambda x: round(float((x < 10).mean()), 4)),
+            frac_lt_3=("n_null", lambda x: round(float((x < 3).mean()), 4)),
+            median_pct=("percentile", "median"), median_z=("z", "median"),
+            frac_pct_ge_95=("percentile", lambda x: round(float((x >= 95).mean()), 4))).reset_index()
+        NP.to_csv(A3 / "null_power.tsv", sep="\t", index=False)
+        log("null power:\n" + NP.to_string())
+        nn = N[N.null == "degree_matched_target"].drop_duplicates(["unit_id"])
+        log(f"degree-matched null: {len(nn)} distinct units; "
+            f"{int((nn.n_null < 10).sum())} with < 10 surviving candidates, "
+            f"{int((nn.n_null < 3).sum())} degenerate (< 3)")
+        for k in ("sign_shuffle", "gene_label", "degree_matched_target"):
+            sub = N[N.null == k]
+            if len(sub):
+                D = D.merge(sub.groupby(["cohort", "pert_id"]).agg(
+                    **{f"{k}_pct": ("percentile", "mean"), f"{k}_z": ("z", "mean"),
+                       f"{k}_n": ("n_null", "median")}).reset_index(), on=["cohort", "pert_id"], how="left")
 
     cols = [c for c in ["cohort", "level", "pert_id", "cmap_name", "fda_ingredient", "source", "split_source",
                         "contrast", "in_comparison_population", "passes_gate", "a0_status",
                         "M", "M_pct", "R", "R_pct", "n_M_ranked", "n_R_ranked",
+                        "M_landmark", "M_pct_landmark", "R_landmark", "R_pct_landmark", "n_units_M_landmark",
+                        "sign_shuffle_pct", "sign_shuffle_z", "sign_shuffle_n", "gene_label_pct", "gene_label_z",
+                        "gene_label_n", "degree_matched_target_pct", "degree_matched_target_z",
+                        "degree_matched_target_n",
                         "n_units_annotated", "n_units_in_run", "n_units_M", "n_units_R", "unit_scored_fraction",
                         "M_unit_sd", "M_unit_min", "M_unit_max", "R_unit_sd", "M_line_sd_max",
                         "n_lines_M", "n_lines_R", "M_n_genes", "M_n_landmark", "R_n_genes",
@@ -132,12 +205,17 @@ def main():
     Sk = S[key].assign(entered_a2=True)
     Ek = Ek.merge(Sk, on=key, how="left")
     Ek["entered_a2"] = Ek.entered_a2.fillna(False)
-    Sm = S[key + ["M_status", "M_abstain_reason", "R_status", "R_abstain_reason"]]
-    Ek = Ek.merge(Sm, on=key, how="left", suffixes=("_a0", "_engine"))
-    Ek["engine_M"] = Ek.M_status.fillna("not_run")
-    Ek["engine_M_reason"] = Ek.M_abstain_reason.fillna("")
-    AB = (Ek.groupby(["level", "status", "M_status_a0" if "M_status_a0" in Ek.columns else "M_status",
-                      "engine_M", "engine_M_reason", "reason"], dropna=False).size().rename("n_rows")
+    Sm = S[key + ["M_status", "M_abstain_reason", "R_status", "R_abstain_reason"]].rename(
+        columns={"M_status": "engine_M", "M_abstain_reason": "engine_M_reason",
+                 "R_status": "engine_R", "R_abstain_reason": "engine_R_reason"})
+    Ek = Ek.merge(Sm, on=key, how="left")
+    for c in ("engine_M", "engine_R"):
+        Ek[c] = Ek[c].fillna("not_run")
+    for c in ("engine_M_reason", "engine_R_reason"):
+        Ek[c] = Ek[c].fillna("")
+    AB = (Ek.rename(columns={"M_status": "a0_predicted_M", "R_status": "a0_predicted_R"})
+          .groupby(["level", "status", "a0_predicted_M", "engine_M", "engine_M_reason", "a0_predicted_R",
+                    "engine_R", "reason"], dropna=False).size().rename("n_rows")
           .reset_index().sort_values("n_rows", ascending=False))
     AB.to_csv(A3 / "abstentions.tsv", sep="\t", index=False)
     assert int(AB.n_rows.sum()) == len(E), "abstentions.tsv does not account for every A0 candidate row"
@@ -152,6 +230,9 @@ def main():
                     drug_rows_in_population=int(D.in_comparison_population.sum()),
                     M_scored=int(D.M.notna().sum()), R_scored=int(D.R.notna().sum()),
                     M_ranked=int(D.M_pct.notna().sum()), R_ranked=int(D.R_pct.notna().sum())),
+        gene_arms=sorted(arms), landmark_criterion_met=crit_met,
+        landmark_summary=SUM.to_dict("records") if "landmark_only" in arms else None,
+        null_power=NP.to_dict("records") if NP is not None else None,
         identity_checks=ID.to_dict("records"), log=LOG, seconds=round(time.time() - T0, 1)), indent=1, default=str))
     log("done")
 
