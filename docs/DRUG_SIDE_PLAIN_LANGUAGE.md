@@ -516,6 +516,19 @@ as currently measured.
   comparison without taking anything away. A first attempt at the run also had to be abandoned after 43 minutes for being too slow; caching the
   repeated graph searches brought it down to about two minutes, and both the failure and the fix are in the record.
 
+  **The first real test is in (2026-11-15).** The scoring machinery now exists, and the anti-estrogen case that the
+  whole project keeps returning to was the first thing run through it. Starting from ESR1 itself, fulvestrant's
+  measured response does line up with the direction its target predicts — in all three independent experiments, and
+  more than it does for 200 scrambled versions of the same footprint. The earlier path-tracing attempt found nothing
+  at all here, so this is real progress on the question that mattered.
+
+  Two honest qualifications. The agreement is **weak**: about 4% of the strongest possible match, averaged over 478
+  genes. It is consistent and clearly better than chance, but small, and whether it adds anything to the ranking we
+  already have is a later question we have not answered. And the drug-versus-disease half of the new scoring behaved
+  in breast exactly as we predicted in writing beforehand: uninformative in the oestrogen-driven cancers, and
+  highest in the one breast cancer that lacks the receptor entirely. That is the normal-tissue comparison problem
+  resurfacing, not a reason to give the drug to those patients, and we changed nothing to make it look better.
+
 ### Threads that run through the whole history
 
 1. **The anti-estrogen case is the project's canary.** Almost every phase was triggered by it, and D128's first gate

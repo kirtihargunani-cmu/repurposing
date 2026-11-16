@@ -1193,3 +1193,45 @@ Status 2026-10-31. Full list with owners: [`DECISIONS.md`](DECISIONS.md) section
   conflicts from TFs reached at 1-2 hops. The conclusion is unchanged and stronger. Cohort × compound pair totals are
   unchanged (3,931 group, 1,270 subgroup).
 - `tests/d128/` now 13 tests (2 added for the union rule).
+
+## 2026-11-15: D128 Section 0 frozen, and A1 (signed route index) built
+- **Freeze.** All Section 0 rows P1-P14 settled in the `D128-A0 freeze` entry, `scripts/d128/config.py` carries them
+  with `FROZEN = True`, tag `d128-a0-freeze` pushed. Two rows changed in application rather than value: P4 (landmark
+  genes are a median 15.0% of a resolved footprint after the A0.1 correction; a landmark-only floor admits 226 of 497
+  units) and P10 (floors applied per subset, 238 units admitted, 2 below floor on data). P9 was explicitly conditional
+  on the audit and is kept: `tanh(z/2)` saturates above 0.9 on only 1.3% of specific-arm values. P14 verified exactly:
+  the sandbox reproduces production's direct/borrowed split on 12,283 of 12,283 pairs.
+- **A1 built and gated.** `graph.py` (factored from the audited A0 code) and `a1_build_paths.py`; 1.6 s. 14
+  hand-calculated path/sign fixtures pass, 27 tests in all. Outputs: 42,432 regulon edges, 31,769 target-to-TF path
+  rows over 387 target genes, 367,942 (unit, gene) footprint rows over 257 units.
+- Ambiguity is kept rather than resolved: median per-unit TF ambiguity 0.091, gene ambiguity 0.247.
+- **The ESR1 footprint is clean**: 478 resolved genes (89 landmark), none conflicted or ambiguous, 405 expected up and
+  73 down before the drug's action sign.
+- A latent bug surfaced while writing the fixtures and is fixed: the footprint memo was keyed on the network name, so
+  two graphs sharing a name could collide. The key now carries the graph checksum.
+
+## 2026-11-15: D128 A2 (M/R engine) and the mandatory ESR1 control
+- **A2 built and gated.** `score.py` (pure `score_mechanism` / `score_rescue`), `nulls.py`, `a2_score.py`. 51 tests
+  pass, 24 of them A2 fixtures with hand-calculated values. Gate items all met: every defined score in [-1, 1]; a
+  score of 0 is distinguishable from NA (0.0 + `scored` vs NaN + `abstained` with a reason); no confident score for a
+  unit with no genes; a duplicated gene raises rather than double-counting; nulls seeded, reproducible and
+  non-mutating.
+- **A null was contaminated and is fixed.** The degree-matched-target null returned a median exactly equal to the
+  observation, because the candidate pool held other drugs' units against the *same* target — every ESR1 drug has an
+  identical footprint and therefore an identical score. Candidates sharing a target gene are now excluded. Found and
+  fixed before the control ran.
+- **The ESR1 control is met on the primary arm.** Fulvestrant in MCF7, all three `pert_id`s positive: M = 0.048,
+  0.040, 0.025 on the full 478-gene footprint (89 landmark, 0 missing), at the 93rd–100th percentile of both the
+  sign-shuffle and gene-label nulls. D126 flagged 0 of 22 anti-estrogen rows; anchoring at the annotated target
+  recovers the footprint.
+- **The effect is small and we say so:** M ≈ 0.04 on a [-1, 1] scale. It is consistent and reproducible across three
+  independently profiled `pert_id`s and clears its nulls, but whether it adds anything over the production layered
+  score is an A6 question this control does not answer.
+- **The raw-profile arm does not rescue M** (mean 0.0035, one negative), so the plan's "passes only on raw" failure
+  mode does not occur: removing each line's generic response helps rather than hides the target signal.
+- **SERMs, reported separately (D0.2):** 11 of 12 rows positive on the specific arm; clomifene's single-signature
+  profile is the exception at −0.059. No agonist sign-flip control exists (estradiol has 0 MCF7 signatures).
+- **Breast R behaved as predicted in advance (D0.1), and the known reference problem reproduced.** R is
+  uninformative in the ER-positive cohorts (LumA 0.010, LumB 0.004, Her2 0.001) exactly as recorded, but highest in
+  ER-negative Basal (0.049) — the same ordering the 11-12 precursor found. That is the GTEx-normal-breast reference
+  problem reappearing, not evidence for fulvestrant in Basal. Nothing was adjusted in response.

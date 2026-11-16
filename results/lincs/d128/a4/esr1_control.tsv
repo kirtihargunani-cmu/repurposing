@@ -1,0 +1,31 @@
+set	cmap_name	pert_id	n_sig	arm	unit_id	unit_genes	action	action_flag	serm_rule_applied	M	M_status	M_abstain_reason	M_n_genes	M_n_landmark	M_n_inferred	M_n_excluded_unresolved	M_n_missing	sign_shuffle_null_median	sign_shuffle_pct	sign_shuffle_z	gene_label_null_median	gene_label_pct	gene_label_z	degree_matched_target_null_median	degree_matched_target_pct	degree_matched_target_z
+primary_fulvestrant	fulvestrant	BRD-A17828570	2	specific	fulvestrant::CHEMBL206	ESR1	lower		False	0.04765905123296086	scored		478	89	389	0	0	0.01119	100.0	2.81	0.01145	100.0	2.69	-0.00997	100.0	
+primary_fulvestrant	fulvestrant	BRD-A85667082	6	specific	fulvestrant::CHEMBL206	ESR1	lower		False	0.039811777785630685	scored		478	89	389	0	0	0.00426	100.0	2.92	0.00304	100.0	2.79	-0.02138	100.0	
+primary_fulvestrant	fulvestrant	BRD-A90490067	10	specific	fulvestrant::CHEMBL206	ESR1	lower		False	0.025364592926493526	scored		478	89	389	0	0	0.0078	93.0	1.52	0.00643	94.0	1.56	-0.01816	100.0	
+serm_set	tamoxifen	BRD-K04210847	1	specific	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.048256674819029045	scored		503	94	409	0	0	0.00836	100.0	2.86	0.00885	99.5	3.21			
+serm_set	tamoxifen	BRD-K43744935	1	specific	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.02742069331944381	scored		503	94	409	0	0	0.01647	77.5	0.92	0.01487	85.5	1.01			
+serm_set	tamoxifen	BRD-K93754473	8	specific	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.0338443823784147	scored		503	94	409	0	0	0.00449	100.0	4.04	0.00483	100.0	3.65			
+serm_set	tamoxifen	BRD-K04210847	1	specific	tamoxifen::CHEMBL206	ESR1	lower	direction_assumed	True	0.052930938847471805	scored		478	89	389	0	0	0.01997	99.5	2.45	0.01545	100.0	2.85			
+serm_set	tamoxifen	BRD-K43744935	1	specific	tamoxifen::CHEMBL206	ESR1	lower	direction_assumed	True	0.03723617642286301	scored		478	89	389	0	0	0.02867	75.5	0.75	0.02548	83.5	1.0			
+serm_set	tamoxifen	BRD-K93754473	8	specific	tamoxifen::CHEMBL206	ESR1	lower	direction_assumed	True	0.03875151501103031	scored		478	89	389	0	0	0.01334	100.0	3.16	0.01127	100.0	3.29			
+serm_set	raloxifene	BRD-K63828191	27	specific	raloxifene::CHEMBL206	ESR1	lower	direction_assumed	True	0.054699118536123525	scored		478	89	389	0	0	0.02623	100.0	3.3	0.02605	100.0	3.35			
+serm_set	bazedoxifene	BRD-K90195324	5	specific	bazedoxifene::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.037966288002328465	scored		503	94	409	0	0	0.00749	99.5	2.59	0.00787	99.5	2.57			
+serm_set	toremifene	BRD-K51350053	2	specific	toremifene::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.07513729125561552	scored		503	94	409	0	0	0.04305	100.0	2.93	0.04177	100.0	2.88			
+serm_set	toremifene	BRD-K63460351	1	specific	toremifene::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.09226224321864637	scored		503	94	409	0	0	0.04609	100.0	3.66	0.0464	100.0	3.64			
+serm_set	clomifene	BRD-K04218075	1	specific	clomifene::CHEMBL206	ESR1	lower	direction_assumed	True	-0.05903561953415835	scored		478	89	389	0	0	-0.05291	32.0	-0.53	-0.05721	43.0	-0.16			
+serm_set	clomifene	BRD-K29950728	3	specific	clomifene::CHEMBL206	ESR1	lower	direction_assumed	True	0.03220630232403013	scored		478	89	389	0	0	0.00633	98.0	2.46	0.0057	100.0	2.55			
+primary_fulvestrant	fulvestrant	BRD-A17828570	2	raw	fulvestrant::CHEMBL206	ESR1	lower		False	0.018687882572064655	scored		478	89	389	0	0	-0.03393	100.0	3.53	-0.03103	100.0	3.63	-0.02896	100.0	
+primary_fulvestrant	fulvestrant	BRD-A85667082	6	raw	fulvestrant::CHEMBL206	ESR1	lower		False	0.0008315194554065776	scored		478	89	389	0	0	-0.04862	100.0	3.64	-0.04611	100.0	3.4	-0.03787	100.0	
+primary_fulvestrant	fulvestrant	BRD-A90490067	10	raw	fulvestrant::CHEMBL206	ESR1	lower		False	-0.008899098951971711	scored		478	89	389	0	0	-0.04605	100.0	2.68	-0.04364	99.5	2.76	-0.04198	100.0	
+serm_set	tamoxifen	BRD-K04210847	1	raw	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.01912408390260668	scored		503	94	409	0	0	-0.03127	100.0	3.64	-0.03076	100.0	3.81			
+serm_set	tamoxifen	BRD-K43744935	1	raw	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.007727719361429019	scored		503	94	409	0	0	-0.01004	91.0	1.49	-0.0109	93.0	1.52			
+serm_set	tamoxifen	BRD-K93754473	8	raw	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.014616206909171174	scored		503	94	409	0	0	-0.0233	100.0	4.59	-0.02164	100.0	4.36			
+serm_set	tamoxifen	BRD-K04210847	1	raw	tamoxifen::CHEMBL206	ESR1	lower	direction_assumed	True	0.029429652769095805	scored		478	89	389	0	0	-0.01983	100.0	3.39	-0.02259	100.0	3.77			
+serm_set	tamoxifen	BRD-K43744935	1	raw	tamoxifen::CHEMBL206	ESR1	lower	direction_assumed	True	0.02294347812583673	scored		478	89	389	0	0	0.00323	92.0	1.62	0.00131	96.5	1.79			
+serm_set	tamoxifen	BRD-K93754473	8	raw	tamoxifen::CHEMBL206	ESR1	lower	direction_assumed	True	0.024554892803254215	scored		478	89	389	0	0	-0.01376	100.0	4.09	-0.01276	100.0	4.34			
+serm_set	raloxifene	BRD-K63828191	27	raw	raloxifene::CHEMBL206	ESR1	lower	direction_assumed	True	0.03929820180090144	scored		478	89	389	0	0	0.00023	100.0	4.1	0.00235	100.0	4.02			
+serm_set	bazedoxifene	BRD-K90195324	5	raw	bazedoxifene::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.004304883629718194	scored		503	94	409	0	0	-0.03354	100.0	3.07	-0.03325	99.5	3.06			
+serm_set	toremifene	BRD-K51350053	2	raw	toremifene::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.05459753224666589	scored		503	94	409	0	0	0.01533	100.0	3.34	0.01575	100.0	3.34			
+serm_set	toremifene	BRD-K63460351	1	raw	toremifene::CHEMBL2093866	ESR1|ESR2	lower	direction_assumed	True	0.07062237262991027	scored		503	94	409	0	0	0.01719	100.0	4.17	0.01929	100.0	4.22			
+serm_set	clomifene	BRD-K04218075	1	raw	clomifene::CHEMBL206	ESR1	lower	direction_assumed	True	-0.06104747972550088	scored		478	89	389	0	0	-0.0615	52.5	-0.02	-0.06423	61.0	0.29			
+serm_set	clomifene	BRD-K29950728	3	raw	clomifene::CHEMBL206	ESR1	lower	direction_assumed	True	0.016367700660207575	scored		478	89	389	0	0	-0.02623	100.0	3.37	-0.02537	100.0	3.44			

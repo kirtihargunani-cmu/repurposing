@@ -74,7 +74,9 @@ The first draft listed many sensitivity arms but named no primary arm, and left 
 | P13 | Multi-unit drugs | Mean over scorable target units, unweighted | Potency-weighted (D121 units) | Draft Section 3.4; no best-unit selection | Proposed |
 | P14 | Line aggregation | 79e's lines and Celligner weights, unchanged (direct/borrowed) | Direct-only; leave-one-line-out | Draft Section 3.4 | Settled |
 
-## 0.1 Decisions that need the user (recorded in D128-A0)
+## 0.1 Decisions that needed the user — SETTLED 2026-11-15 (row `D128-D0.1 / D0.2`)
+
+**Both were decided as option (a).** D0.1: the production contrast (P2) is kept for R everywhere, including breast; the expected result is recorded in advance (uninformative on the CollecTRI primary, inverted on the ARACNe arm) and the mandatory anti-estrogen control is gated on **M alone**. D0.2: fulvestrant is the primary positive set, and the SERMs are a second, separately reported set scored as ESR1 antagonists in breast-lineage lines only. The options below are retained as the record of what was weighed; (b) and (c) under D0.1 are computed as reported-only arms.
 
 **D0.1 - Reference for R in breast.** The P2 contrast for BRCA-LumA/LumB/Her2 is tumor vs GTEx normal breast, and the precursor shows ESR1 targets inverted against it. Options:
 

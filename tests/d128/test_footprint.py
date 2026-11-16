@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts/d128"))
-import a0_audit as A  # noqa: E402
+import graph as A  # noqa: E402
 
 EDGES = pd.DataFrame(dict(
     src=["KIN", "KIN", "MID", "KIN", "MID2", "KIN"],

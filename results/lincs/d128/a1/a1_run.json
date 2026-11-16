@@ -1,0 +1,30 @@
+{
+ "stage": "D128-A1",
+ "git_sha": "1bf03642a4468ad76432093358043fd41ffde62e",
+ "frozen": true,
+ "network": "collectri",
+ "max_hops": 2,
+ "inputs": {
+  "data/processed/lincs/precursor_regulons/collectri.tsv.gz": "b29c2625061854e859f478da5efb989dc6c754e7f33346ccaed5eb1241e9a2cc",
+  "data/raw/omnipath/omnipath_signed_directed.tsv.gz": "6447df18031e48f5fbcb9eb9261d58a2b65127a818a581949ee27a9febf6b75c",
+  "data/raw/omnipath/signor_signed_directed.tsv.gz": "e68e5f45e1fb67e0eafd9539156537309955f9e9966d3a2235f1e85400c25e20",
+  "results/lincs/target_role/d121/units.tsv": "e41e25947b8dac7a31929cf43ee647b698251e4690f4b4f7ed97cb83f8adf6b0"
+ },
+ "counts": {
+  "regulon_edges": 42432,
+  "target_genes": 387,
+  "tf_paths": 31769,
+  "footprint_rows": 367942,
+  "units": 497,
+  "resolved": 220073,
+  "conflicted": 80059,
+  "ambiguous_route": 67810
+ },
+ "log": [
+  "[    0.5s] regulon_edges: 42432 edges, 1178 regulators, 31440 in the LINCS gene space",
+  "[    0.7s] target_tf_paths: 31769 rows for 387 target genes; omnipath 21725 (8795 ambiguous, 25 zero-hop anchors)",
+  "[    1.5s] target_gene_footprints: 367942 (unit, gene) rows, 257 units; 220073 resolved, 80059 conflicted, 67810 via an ambiguous route",
+  "[    1.5s] ambiguity: median TF-ambiguity fraction 0.091, median gene-ambiguity fraction 0.247"
+ ],
+ "seconds": 1.6
+}
