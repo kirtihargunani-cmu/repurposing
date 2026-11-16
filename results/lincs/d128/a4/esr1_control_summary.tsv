@@ -1,0 +1,5 @@
+set	arm	n_pert_ids	n_compounds	M_mean	M_min	M_max	all_positive	median_sign_shuffle_pct	median_gene_label_pct	n_genes	n_landmark
+primary_fulvestrant	raw	3	1	0.0035	-0.0089	0.0187	False	100.0	100.0	478	89
+primary_fulvestrant	specific	3	1	0.0376	0.0254	0.0477	True	100.0	100.0	478	89
+serm_set	raw	12	5	0.0202	-0.061	0.0706	False	100.0	100.0	503	94
+serm_set	specific	12	5	0.0393	-0.059	0.0923	False	99.8	100.0	503	94
