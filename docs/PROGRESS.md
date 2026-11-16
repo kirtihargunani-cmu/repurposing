@@ -1370,7 +1370,7 @@ label-free: only `level5_bing_hiq.npy` (90,988 signatures x 10,174 genes) and th
   itself a function of the same signature's landmark values** (median of the per-gene bound 0.725), against 0.8%
   for landmarks. Inferred genes therefore do not average their noise away against each other the way independent
   measurements would - which is the mechanism that would make permutation nulls too narrow.
-- **Reproducibility (ICC(1) over 5,345 replicate groups, 14,906 signatures, k0 = 2.63).** Landmark median 0.617
+- **Reproducibility (ICC(1) over 5,345 replicate groups, 14,906 signatures, k0 = 2.789).** Landmark median 0.617
   (IQR 0.523-0.710), best inferred 0.544 (0.487-0.600); split-half r 0.624 vs 0.551. The inferred distribution is
   shifted down but **narrower**, and it overlaps the landmarks heavily. By the strict reading, **989 of 9,196
   inferred genes (10.8%) fall below the landmarks' 10th percentile of ICC (0.443)**, 273 (3.0%) below the 5th and
