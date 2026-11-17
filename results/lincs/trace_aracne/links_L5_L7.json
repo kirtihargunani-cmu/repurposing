@@ -1,0 +1,395 @@
+[
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "The 131 frozen genes (47 expected UP, 84 expected DOWN, from 1 BRCA_LUMA regulators) should move in the predicted direction in MCF7 more often than not, and the whole-footprint mean should sit high against the other compounds profiled in that line. If this is a real mechanism the chain should hold here.",
+  "observed": "line MCF7 (ACH-000019), pert_id BRD-A90490067, 10 signature(s), drug-specific profile arm. 131 of 131 frozen genes have a response value. Whole-footprint sign concordance 50.4%. Mean expected-signed f(z) = -0.0184; against the 1221 compounds profiled in this line that is the 39.7th percentile (concordance the 49.2th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 49.1% (n=116), landmark 60.0% (n=15).",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/drug_line_profiles_bing_specific.f32 (drug-specific arm); frozen footprint from results/lincs/trace_aracne/",
+  "independence": "L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together. The ARACNe regulon is learned from the cohort's TUMOUR co-expression while the response is a CELL LINE perturbation, so L5 is not self-confirming, but the expected direction still encodes a tumour co-expression axis rather than a measured regulatory direction.",
+  "concentration": "largest single gene's share of |contribution|: 0.0306; effective number of contributing genes 81 of 131.",
+  "alternatives": [
+   "generic response: the same frozen footprint sits at the 39.7th percentile of all 1221 compounds profiled in MCF7. Not ruled out - many other compounds move these genes the same way.",
+   "amplitude: this drug-line's mean |z| is at the 13.4th percentile of the line; across the line's compounds the footprint mean correlates r=+0.16 with overall response magnitude. Weakly supported as a confound at this link.",
+   "off-target: concordance cannot separate the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L6",
+  "question": "Is the evidence concentrated in one regulator, and is that regulator a proliferation proxy?",
+  "expected": "L4's structure put the largest regulator at 1.0 of the predicted genes over 1 regulators. If the observed signal is distributed like the structure, roughly that share of observed |contribution| should sit with one regulator. A footprint that is really one regulon is one piece of evidence, not 131.",
+  "observed": "1 contributing regulators. Largest observed share of |contribution|: ESR1 at 1.000 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 1.00 of 1. ESR1 proliferation correlation in the BRCA_LUMA ARACNe set: r_prolif=-0.357, prolif_linked=False. 0 of 1 contributing regulators are proliferation-linked, carrying 0.000 of the non-disjoint share mass. Top regulators: ESR1(1.000,131g)",
+  "verdict": "breaks",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network BRCA_LUMA); results/lincs/prolif_regulators_p2_v2_consensus.tsv (BRCA_LUMA / aracne)",
+  "independence": "this link is an AUDIT of L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. The proliferation annotation is the one outside input, and it shares the ARACNe regulon with L4.",
+  "concentration": "ESR1 1.000; effective regulators 1.00 of 1",
+  "alternatives": [
+   "proliferation: ESR1 is not flagged proliferation-linked in BRCA_LUMA (r_prolif=-0.357); but 0 other contributing regulators are, carrying 0.000 of the share mass.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so these are upper bounds per regulator.",
+   "D130/D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in BRCA-LumA vs its normal reference and vice versa, for a clear majority of the significant footprint genes. ",
+  "observed": "contrast BRCA-LumA vs gtex. 131 frozen+covered genes in the contrast, 117 at adj.P.Val < 0.05. The drug's predicted direction opposes the tumour's for 85.5% of them (89.2% weighted by |z|). The target itself: ESR1 logFC +3.75, z +24.27, adj.P 3.21e-128",
+  "verdict": "holds",
+  "provenance": "data/processed/step4_v2/BRCA-LumA__gtex.tsv.gz (limma + voomByGroup; P1 logFC sign, z weight; P8 adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source L5 does not use. BUT the ARACNe regulon that selected these genes was itself learned from this cohort's tumour expression, so L4 and L7 share a data source (D133.1) - unlike the CollecTRI trace, where the regulon was literature-curated. L7 is NOT an independent closure here.",
+  "concentration": "largest single gene's share of the |z| weight: 0.0524; effective number of genes 62 of 117",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is +3.75. Target expression is higher in tumour, so this inversion is not active, but the reference remains bulk normal tissue of different composition.",
+   "composition: GTEx normal and tumour differ in cell composition; a programme can look dysregulated because the mixture changed.",
+   "ENTANGLEMENT: the gene set asked about here was selected by a regulon learned from this same tumour cohort's co-expression, so agreement is partly guaranteed by construction."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "The 1223 frozen genes (88 expected UP, 1135 expected DOWN, from 11 SKCM regulators) should move in the predicted direction in A375 more often than not, and the whole-footprint mean should sit high against the other compounds profiled in that line. If this is a real mechanism the chain should hold here.",
+  "observed": "line A375 (ACH-000219), pert_id BRD-K56343971, 18 signature(s), drug-specific profile arm. 1223 of 1223 frozen genes have a response value. Whole-footprint sign concordance 45.6%. Mean expected-signed f(z) = -0.0232; against the 1081 compounds profiled in this line that is the 26.5th percentile (concordance the 16.6th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 44.4% (n=1098), landmark 56.0% (n=125).",
+  "verdict": "breaks",
+  "provenance": "data/processed/lincs/drug_line_profiles_bing_specific.f32 (drug-specific arm); frozen footprint from results/lincs/trace_aracne/",
+  "independence": "L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together. The ARACNe regulon is learned from the cohort's TUMOUR co-expression while the response is a CELL LINE perturbation, so L5 is not self-confirming, but the expected direction still encodes a tumour co-expression axis rather than a measured regulatory direction.",
+  "concentration": "largest single gene's share of |contribution|: 0.0027; effective number of contributing genes 788 of 1223.",
+  "alternatives": [
+   "generic response: the same frozen footprint sits at the 26.5th percentile of all 1081 compounds profiled in A375. Not ruled out - many other compounds move these genes the same way.",
+   "amplitude: this drug-line's mean |z| is at the 52.5th percentile of the line; across the line's compounds the footprint mean correlates r=-0.28 with overall response magnitude. Weakly supported as a confound at this link.",
+   "off-target: concordance cannot separate the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L6",
+  "question": "Is the evidence concentrated in one regulator, and is that regulator a proliferation proxy?",
+  "expected": "L4's structure put the largest regulator at 0.2036 of the predicted genes over 11 regulators. If the observed signal is distributed like the structure, roughly that share of observed |contribution| should sit with one regulator. A footprint that is really one regulon is one piece of evidence, not 1223.",
+  "observed": "11 contributing regulators. Largest observed share of |contribution|: MEF2D at 0.201 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 8.00 of 11. MEF2D proliferation correlation in the SKCM ARACNe set: r_prolif=-0.529, prolif_linked=True. 1 of 11 contributing regulators are proliferation-linked, carrying 0.201 of the non-disjoint share mass. Top regulators: MEF2D(0.201,249g); HSF1(0.176,182g); MEOX2(0.136,204g); PAX3(0.131,160g); MYC(0.124,118g); MEOX1(0.123,195g); ELK4(0.055,59g); NR4A1(0.048,46g)",
+  "verdict": "holds",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network SKCM); results/lincs/prolif_regulators_p2_v2_consensus.tsv (SKCM / aracne)",
+  "independence": "this link is an AUDIT of L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. The proliferation annotation is the one outside input, and it shares the ARACNe regulon with L4.",
+  "concentration": "MEF2D 0.201; effective regulators 8.00 of 11",
+  "alternatives": [
+   "proliferation: MEF2D is proliferation-linked in the SKCM ARACNe set (r_prolif=-0.529), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so these are upper bounds per regulator.",
+   "D130/D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in TCGA-SKCM vs its normal reference and vice versa, for a clear majority of the significant footprint genes. ",
+  "observed": "contrast TCGA-SKCM vs gtex. 1223 frozen+covered genes in the contrast, 1105 at adj.P.Val < 0.05. The drug's predicted direction opposes the tumour's for 54.1% of them (60.1% weighted by |z|). The target itself: BRAF logFC -0.62, z -9.60, adj.P 2.01e-21",
+  "verdict": "weak",
+  "provenance": "data/processed/step4_v2/TCGA-SKCM__gtex.tsv.gz (limma + voomByGroup; P1 logFC sign, z weight; P8 adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source L5 does not use. BUT the ARACNe regulon that selected these genes was itself learned from this cohort's tumour expression, so L4 and L7 share a data source (D133.1) - unlike the CollecTRI trace, where the regulon was literature-curated. L7 is NOT an independent closure here.",
+  "concentration": "largest single gene's share of the |z| weight: 0.0098; effective number of genes 519 of 1105",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -0.62. NOT ruled out - the normal reference already runs the programme.",
+   "composition: GTEx normal and tumour differ in cell composition; a programme can look dysregulated because the mixture changed.",
+   "ENTANGLEMENT: the gene set asked about here was selected by a regulon learned from this same tumour cohort's co-expression, so agreement is partly guaranteed by construction."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "The 4286 frozen genes (1069 expected UP, 3217 expected DOWN, from 85 LUAD regulators) should move in the predicted direction in HCC515 more often than not, and the whole-footprint mean should sit high against the other compounds profiled in that line. THIS IS A NEGATIVE CONTROL - target not expressed in the source line; L5 must break",
+  "observed": "line HCC515 (ACH-000872), pert_id BRD-K16730910, 1 signature(s), drug-specific profile arm. 4286 of 4286 frozen genes have a response value. Whole-footprint sign concordance 52.3%. Mean expected-signed f(z) = +0.0202; against the 628 compounds profiled in this line that is the 76.0th percentile (concordance the 71.8th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 52.4% (n=3841), landmark 51.9% (n=445).",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/drug_line_profiles_bing_specific.f32 (drug-specific arm); frozen footprint from results/lincs/trace_aracne/",
+  "independence": "L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together. The ARACNe regulon is learned from the cohort's TUMOUR co-expression while the response is a CELL LINE perturbation, so L5 is not self-confirming, but the expected direction still encodes a tumour co-expression axis rather than a measured regulatory direction.",
+  "concentration": "largest single gene's share of |contribution|: 0.0007; effective number of contributing genes 2889 of 4286.",
+  "alternatives": [
+   "generic response: the same frozen footprint sits at the 76.0th percentile of all 628 compounds profiled in HCC515. Not ruled out - many other compounds move these genes the same way.",
+   "amplitude: this drug-line's mean |z| is at the 63.4th percentile of the line; across the line's compounds the footprint mean correlates r=-0.35 with overall response magnitude. Weakly supported as a confound at this link.",
+   "off-target: concordance cannot separate the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L6",
+  "question": "Is the evidence concentrated in one regulator, and is that regulator a proliferation proxy?",
+  "expected": "L4's structure put the largest regulator at 0.0621 of the predicted genes over 85 regulators. If the observed signal is distributed like the structure, roughly that share of observed |contribution| should sit with one regulator. A footprint that is really one regulon is one piece of evidence, not 4286.",
+  "observed": "85 contributing regulators. Largest observed share of |contribution|: E2F1 at 0.073 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 51.26 of 85. E2F1 proliferation correlation in the LUAD ARACNe set: r_prolif=0.808, prolif_linked=True. 12 of 85 contributing regulators are proliferation-linked, carrying 0.397 of the non-disjoint share mass. Top regulators: E2F1(0.073,228g); ELK1(0.068,264g); SP3(0.056,266g); DDIT3(0.055,192g); SPI1(0.051,253g); IRF8(0.038,185g); MAZ(0.038,148g); STAT1(0.037,149g)",
+  "verdict": "holds",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network LUAD); results/lincs/prolif_regulators_p2_v2_consensus.tsv (LUAD / aracne)",
+  "independence": "this link is an AUDIT of L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. The proliferation annotation is the one outside input, and it shares the ARACNe regulon with L4.",
+  "concentration": "E2F1 0.073; effective regulators 51.26 of 85",
+  "alternatives": [
+   "proliferation: E2F1 is proliferation-linked in the LUAD ARACNe set (r_prolif=0.808), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so these are upper bounds per regulator.",
+   "D130/D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in TCGA-LUAD vs its normal reference and vice versa, for a clear majority of the significant footprint genes. THIS IS A NEGATIVE CONTROL - target not expressed in the source line; L5 must break",
+  "observed": "contrast TCGA-LUAD vs gtex. 4286 frozen+covered genes in the contrast, 3617 at adj.P.Val < 0.05. The drug's predicted direction opposes the tumour's for 56.2% of them (57.1% weighted by |z|). The target itself: RET logFC +1.51, z +6.26, adj.P 7.60e-10",
+  "verdict": "weak",
+  "provenance": "data/processed/step4_v2/TCGA-LUAD__gtex.tsv.gz (limma + voomByGroup; P1 logFC sign, z weight; P8 adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source L5 does not use. BUT the ARACNe regulon that selected these genes was itself learned from this cohort's tumour expression, so L4 and L7 share a data source (D133.1) - unlike the CollecTRI trace, where the regulon was literature-curated. L7 is NOT an independent closure here.",
+  "concentration": "largest single gene's share of the |z| weight: 0.0031; effective number of genes 1945 of 3617",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is +1.51. Target expression is higher in tumour, so this inversion is not active, but the reference remains bulk normal tissue of different composition.",
+   "composition: GTEx normal and tumour differ in cell composition; a programme can look dysregulated because the mixture changed.",
+   "ENTANGLEMENT: the gene set asked about here was selected by a regulon learned from this same tumour cohort's co-expression, so agreement is partly guaranteed by construction."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "The 1038 frozen genes (64 expected UP, 974 expected DOWN, from 12 BRCA_BAS regulators) should move in the predicted direction in MDA-MB-231 more often than not, and the whole-footprint mean should sit high against the other compounds profiled in that line. THIS IS A NEGATIVE CONTROL - RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "observed": "line MDA-MB-231 (ACH-000768), pert_id BRD-K56343971, 1 signature(s), drug-specific profile arm. 1038 of 1038 frozen genes have a response value. Whole-footprint sign concordance 45.3%. Mean expected-signed f(z) = -0.0380; against the 203 compounds profiled in this line that is the 23.2th percentile (concordance the 20.2th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 44.8% (n=937), landmark 49.5% (n=101).",
+  "verdict": "breaks",
+  "provenance": "data/processed/lincs/drug_line_profiles_bing_specific.f32 (drug-specific arm); frozen footprint from results/lincs/trace_aracne/",
+  "independence": "L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together. The ARACNe regulon is learned from the cohort's TUMOUR co-expression while the response is a CELL LINE perturbation, so L5 is not self-confirming, but the expected direction still encodes a tumour co-expression axis rather than a measured regulatory direction.",
+  "concentration": "largest single gene's share of |contribution|: 0.0041; effective number of contributing genes 658 of 1038.",
+  "alternatives": [
+   "generic response: the same frozen footprint sits at the 23.2th percentile of all 203 compounds profiled in MDA-MB-231. Not ruled out - many other compounds move these genes the same way.",
+   "amplitude: this drug-line's mean |z| is at the 3.4th percentile of the line; across the line's compounds the footprint mean correlates r=-0.21 with overall response magnitude. Weakly supported as a confound at this link.",
+   "off-target: concordance cannot separate the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L6",
+  "question": "Is the evidence concentrated in one regulator, and is that regulator a proliferation proxy?",
+  "expected": "L4's structure put the largest regulator at 0.1888 of the predicted genes over 12 regulators. If the observed signal is distributed like the structure, roughly that share of observed |contribution| should sit with one regulator. A footprint that is really one regulon is one piece of evidence, not 1038.",
+  "observed": "12 contributing regulators. Largest observed share of |contribution|: MYC at 0.173 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 9.22 of 12. MYC proliferation correlation in the BRCA_BAS ARACNe set: r_prolif=0.393, prolif_linked=True. 1 of 12 contributing regulators are proliferation-linked, carrying 0.173 of the non-disjoint share mass. Top regulators: MYC(0.173,196g); MEF2D(0.155,151g); HSF1(0.148,140g); MEF2A(0.110,111g); MEF2C(0.106,113g); MEOX1(0.099,109g); MEOX2(0.091,86g); ETS1(0.091,107g)",
+  "verdict": "holds",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network BRCA_BAS); results/lincs/prolif_regulators_p2_v2_consensus.tsv (BRCA_BAS / aracne)",
+  "independence": "this link is an AUDIT of L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. The proliferation annotation is the one outside input, and it shares the ARACNe regulon with L4.",
+  "concentration": "MYC 0.173; effective regulators 9.22 of 12",
+  "alternatives": [
+   "proliferation: MYC is proliferation-linked in the BRCA_BAS ARACNe set (r_prolif=0.393), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so these are upper bounds per regulator.",
+   "D130/D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in BRCA-Basal vs its normal reference and vice versa, for a clear majority of the significant footprint genes. THIS IS A NEGATIVE CONTROL - RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "observed": "contrast BRCA-Basal vs gtex. 1038 frozen+covered genes in the contrast, 906 at adj.P.Val < 0.05. The drug's predicted direction opposes the tumour's for 50.6% of them (50.7% weighted by |z|). The target itself: BRAF logFC -0.39, z -6.08, adj.P 2.23e-09",
+  "verdict": "weak",
+  "provenance": "data/processed/step4_v2/BRCA-Basal__gtex.tsv.gz (limma + voomByGroup; P1 logFC sign, z weight; P8 adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source L5 does not use. BUT the ARACNe regulon that selected these genes was itself learned from this cohort's tumour expression, so L4 and L7 share a data source (D133.1) - unlike the CollecTRI trace, where the regulon was literature-curated. L7 is NOT an independent closure here.",
+  "concentration": "largest single gene's share of the |z| weight: 0.0094; effective number of genes 495 of 906",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -0.39. NOT ruled out - the normal reference already runs the programme.",
+   "composition: GTEx normal and tumour differ in cell composition; a programme can look dysregulated because the mixture changed.",
+   "ENTANGLEMENT: the gene set asked about here was selected by a regulon learned from this same tumour cohort's co-expression, so agreement is partly guaranteed by construction."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "The 3695 frozen genes (991 expected UP, 2704 expected DOWN, from 48 COADREAD regulators) should move in the predicted direction in HT-29 more often than not, and the whole-footprint mean should sit high against the other compounds profiled in that line. THIS IS A NEGATIVE CONTROL - drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "observed": "line HT-29 (ACH-000552), pert_id BRD-K82244583, 9 signature(s), drug-specific profile arm. 3695 of 3695 frozen genes have a response value. Whole-footprint sign concordance 57.5%. Mean expected-signed f(z) = +0.0779; against the 894 compounds profiled in this line that is the 99.9th percentile (concordance the 99.3th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 57.6% (n=3262), landmark 56.8% (n=433).",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/drug_line_profiles_bing_specific.f32 (drug-specific arm); frozen footprint from results/lincs/trace_aracne/",
+  "independence": "L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together. The ARACNe regulon is learned from the cohort's TUMOUR co-expression while the response is a CELL LINE perturbation, so L5 is not self-confirming, but the expected direction still encodes a tumour co-expression axis rather than a measured regulatory direction.",
+  "concentration": "largest single gene's share of |contribution|: 0.0007; effective number of contributing genes 2571 of 3695.",
+  "alternatives": [
+   "generic response: the same frozen footprint sits at the 99.9th percentile of all 894 compounds profiled in HT-29. Largely ruled out at this link.",
+   "amplitude: this drug-line's mean |z| is at the 86.7th percentile of the line; across the line's compounds the footprint mean correlates r=-0.33 with overall response magnitude. Weakly supported as a confound at this link.",
+   "off-target: concordance cannot separate the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L6",
+  "question": "Is the evidence concentrated in one regulator, and is that regulator a proliferation proxy?",
+  "expected": "L4's structure put the largest regulator at 0.1199 of the predicted genes over 48 regulators. If the observed signal is distributed like the structure, roughly that share of observed |contribution| should sit with one regulator. A footprint that is really one regulon is one piece of evidence, not 3695.",
+  "observed": "48 contributing regulators. Largest observed share of |contribution|: E2F1 at 0.139 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 25.47 of 48. E2F1 proliferation correlation in the COADREAD ARACNe set: r_prolif=0.598, prolif_linked=True. 3 of 48 contributing regulators are proliferation-linked, carrying 0.292 of the non-disjoint share mass. Top regulators: E2F1(0.139,443g); MYC(0.080,252g); MAZ(0.073,247g); RELA(0.066,231g); SREBF1(0.062,216g); NR3C2(0.053,188g); ELK1(0.052,182g); SP3(0.044,175g)",
+  "verdict": "holds",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network COADREAD); results/lincs/prolif_regulators_p2_v2_consensus.tsv (COADREAD / aracne)",
+  "independence": "this link is an AUDIT of L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. The proliferation annotation is the one outside input, and it shares the ARACNe regulon with L4.",
+  "concentration": "E2F1 0.139; effective regulators 25.47 of 48",
+  "alternatives": [
+   "proliferation: E2F1 is proliferation-linked in the COADREAD ARACNe set (r_prolif=0.598), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so these are upper bounds per regulator.",
+   "D130/D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in TCGA-READ vs its normal reference and vice versa, for a clear majority of the significant footprint genes. THIS IS A NEGATIVE CONTROL - drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "observed": "contrast TCGA-READ vs gtex. 3695 frozen+covered genes in the contrast, 3097 at adj.P.Val < 0.05. The drug's predicted direction opposes the tumour's for 64.2% of them (67.5% weighted by |z|). The target itself: MAP2K2 logFC -0.50, z -6.88, adj.P 1.43e-11",
+  "verdict": "holds",
+  "provenance": "data/processed/step4_v2/TCGA-READ__gtex.tsv.gz (limma + voomByGroup; P1 logFC sign, z weight; P8 adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source L5 does not use. BUT the ARACNe regulon that selected these genes was itself learned from this cohort's tumour expression, so L4 and L7 share a data source (D133.1) - unlike the CollecTRI trace, where the regulon was literature-curated. L7 is NOT an independent closure here.",
+  "concentration": "largest single gene's share of the |z| weight: 0.0032; effective number of genes 1582 of 3097",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -0.50. NOT ruled out - the normal reference already runs the programme.",
+   "composition: GTEx normal and tumour differ in cell composition; a programme can look dysregulated because the mixture changed.",
+   "ENTANGLEMENT: the gene set asked about here was selected by a regulon learned from this same tumour cohort's co-expression, so agreement is partly guaranteed by construction."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "The 397 frozen genes (18 expected UP, 379 expected DOWN, from 4 BRCA_LUMB regulators) should move in the predicted direction in MCF7 more often than not, and the whole-footprint mean should sit high against the other compounds profiled in that line. THIS IS A NEGATIVE CONTROL - cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "observed": "line MCF7 (ACH-000019), pert_id BRD-A70858459, 1 signature(s), drug-specific profile arm. 397 of 397 frozen genes have a response value. Whole-footprint sign concordance 57.4%. Mean expected-signed f(z) = +0.0496; against the 1221 compounds profiled in this line that is the 73.4th percentile (concordance the 76.6th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 59.6% (n=344), landmark 43.4% (n=53).",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/drug_line_profiles_bing_specific.f32 (drug-specific arm); frozen footprint from results/lincs/trace_aracne/",
+  "independence": "L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together. The ARACNe regulon is learned from the cohort's TUMOUR co-expression while the response is a CELL LINE perturbation, so L5 is not self-confirming, but the expected direction still encodes a tumour co-expression axis rather than a measured regulatory direction.",
+  "concentration": "largest single gene's share of |contribution|: 0.0086; effective number of contributing genes 269 of 397.",
+  "alternatives": [
+   "generic response: the same frozen footprint sits at the 73.4th percentile of all 1221 compounds profiled in MCF7. Not ruled out - many other compounds move these genes the same way.",
+   "amplitude: this drug-line's mean |z| is at the 44.6th percentile of the line; across the line's compounds the footprint mean correlates r=+0.05 with overall response magnitude. Weakly supported as a confound at this link.",
+   "off-target: concordance cannot separate the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L6",
+  "question": "Is the evidence concentrated in one regulator, and is that regulator a proliferation proxy?",
+  "expected": "L4's structure put the largest regulator at 0.3678 of the predicted genes over 4 regulators. If the observed signal is distributed like the structure, roughly that share of observed |contribution| should sit with one regulator. A footprint that is really one regulon is one piece of evidence, not 397.",
+  "observed": "4 contributing regulators. Largest observed share of |contribution|: RARA at 0.361 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 3.42 of 4. RARA proliferation correlation in the BRCA_LUMB ARACNe set: r_prolif=-0.142, prolif_linked=False. 0 of 4 contributing regulators are proliferation-linked, carrying 0.000 of the non-disjoint share mass. Top regulators: RARA(0.361,140g); THRA(0.340,146g); RARG(0.332,129g); NR4A1(0.080,32g)",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network BRCA_LUMB); results/lincs/prolif_regulators_p2_v2_consensus.tsv (BRCA_LUMB / aracne)",
+  "independence": "this link is an AUDIT of L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. The proliferation annotation is the one outside input, and it shares the ARACNe regulon with L4.",
+  "concentration": "RARA 0.361; effective regulators 3.42 of 4",
+  "alternatives": [
+   "proliferation: RARA is not flagged proliferation-linked in BRCA_LUMB (r_prolif=-0.142); but 0 other contributing regulators are, carrying 0.000 of the share mass.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so these are upper bounds per regulator.",
+   "D130/D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in BRCA-LumB vs its normal reference and vice versa, for a clear majority of the significant footprint genes. THIS IS A NEGATIVE CONTROL - cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "observed": "contrast BRCA-LumB vs gtex. 397 frozen+covered genes in the contrast, 322 at adj.P.Val < 0.05. The drug's predicted direction opposes the tumour's for 59.3% of them (63.8% weighted by |z|). The target itself: ESR2 logFC -2.94, z -17.26, adj.P 2.86e-65",
+  "verdict": "weak",
+  "provenance": "data/processed/step4_v2/BRCA-LumB__gtex.tsv.gz (limma + voomByGroup; P1 logFC sign, z weight; P8 adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source L5 does not use. BUT the ARACNe regulon that selected these genes was itself learned from this cohort's tumour expression, so L4 and L7 share a data source (D133.1) - unlike the CollecTRI trace, where the regulon was literature-curated. L7 is NOT an independent closure here.",
+  "concentration": "largest single gene's share of the |z| weight: 0.0344; effective number of genes 144 of 322",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -2.94. NOT ruled out - the normal reference already runs the programme.",
+   "composition: GTEx normal and tumour differ in cell composition; a programme can look dysregulated because the mixture changed.",
+   "ENTANGLEMENT: the gene set asked about here was selected by a regulon learned from this same tumour cohort's co-expression, so agreement is partly guaranteed by construction."
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "L3 reached no regulator and L4 produced no footprint, so there is nothing to test.",
+  "observed": "no frozen footprint; L5 cannot be evaluated.",
+  "verdict": "not evaluable",
+  "provenance": "results/lincs/trace_aracne/predicted_footprint_NC5_no_anchored_tf.tsv (empty)",
+  "independence": "not applicable",
+  "concentration": "not applicable",
+  "alternatives": [
+   "nothing was predicted, so nothing is explained."
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L6",
+  "question": "(downstream of an empty footprint)",
+  "expected": "nothing to concentrate / nothing to close on.",
+  "observed": "not evaluable: the footprint is empty.",
+  "verdict": "not evaluable",
+  "provenance": "-",
+  "independence": "-",
+  "concentration": "-",
+  "alternatives": [
+   "-"
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L7",
+  "question": "(downstream of an empty footprint)",
+  "expected": "nothing to concentrate / nothing to close on.",
+  "observed": "not evaluable: the footprint is empty.",
+  "verdict": "not evaluable",
+  "provenance": "-",
+  "independence": "-",
+  "concentration": "-",
+  "alternatives": [
+   "-"
+  ]
+ }
+]

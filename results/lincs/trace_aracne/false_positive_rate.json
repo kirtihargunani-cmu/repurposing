@@ -1,0 +1,33 @@
+{
+ "definition": "a negative control 'closes' when no link in L1..L7 has verdict 'breaks' or 'not evaluable'; stated before the numbers were computed",
+ "n_controls": 5,
+ "n_closed": 3,
+ "false_positive_rate": 0.6,
+ "per_control": {
+  "NC1_target_not_expressed": {
+   "closes": true,
+   "break_point": "L4",
+   "verdict": "weak"
+  },
+  "NC2_raf_paradox": {
+   "closes": false,
+   "break_point": "L5",
+   "verdict": "breaks"
+  },
+  "NC3_random_pairing": {
+   "closes": true,
+   "break_point": "L2",
+   "verdict": "weak"
+  },
+  "NC4_cytotoxic": {
+   "closes": true,
+   "break_point": "L1",
+   "verdict": "weak"
+  },
+  "NC5_no_anchored_tf": {
+   "closes": false,
+   "break_point": "L3",
+   "verdict": "not evaluable"
+  }
+ }
+}
