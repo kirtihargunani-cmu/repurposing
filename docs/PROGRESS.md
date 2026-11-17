@@ -1592,3 +1592,24 @@ covariance null, rescaled to the observed response magnitude. Both are reported 
   inventory magnitudes are structural readings, not measurements; the `degree_matched_target` null stays
   degenerate and CRP does not fix it; CGN assumes Gaussianity given the covariance, which heavy-tailed LINCS z
   violate; `R_hat` is second-order only, so non-linear gene dependence is still under-corrected.
+
+### 2026-11-16 - D130 population addendum: the naive null is ~3.5x too liberal, the corrected ones are near nominal
+
+The A3 population-wide nulls were never run (the landmark criterion was not met), so a seeded sample stands in:
+1,000 of the 2,017 distinct (unit, `pert_id`, line) M-scored rows of the frozen `all_bing` arm, 215 units, 1,000
+draws per null -> `results/lincs/d130/population_sample_corrected.tsv`. Every M reproduced; 0 rows skipped.
+
+- **Share of rows at |z| >= 1.96** (should sit near 5% two-sided under a calibrated null): naive sign-shuffle
+  **18.0%**, naive gene-label **17.1%**; corrected **CRP sign 1.8%, CGN 6.9%, CRP gene-label 7.9%**. CGN and the
+  corrected gene-label land near nominal; the corrected sign-shuffle lands below it, exactly as D130(1b) warned
+  in advance that rank-mapping a +-1 vector would. **The correction is a calibration fix, not a blanket
+  deflation** — that is a stronger claim than "the z's fell".
+- Median correction factors: sign-shuffle **2.52x**, gene-label **1.25x**, CGN **1.34x**. The sign null is again
+  the worse of the two.
+- Footprints: median 1,070 genes, `n_eff` 45.6, `n/n_eff` 22.7.
+- **The two estimation methods disagree as predicted:** median VIF factor **4.76** vs analytic **1.68**, ratio
+  **1.81** (IQR 1.48–2.96); `e'Re/n` median 2.95. Both under-state the surviving z (median |CGN z| **0.772** vs
+  0.467 analytic and 0.248 VIF) while tracking it in rank (r 0.780 / 0.713). **Use the measured corrected null;
+  `sqrt(n/n_eff)` is wrong in form for a signed statistic and too harsh in practice, and must not be used to
+  rescale a published z.** 2 of 1,000 rows had a non-finite factor and are excluded from the correlations only.
+- Nothing was gated, ranked or promoted.
