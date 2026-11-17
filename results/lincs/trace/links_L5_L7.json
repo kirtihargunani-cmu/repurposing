@@ -1,0 +1,128 @@
+[
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "If the chain holds, the 478 frozen genes should move in the predicted direction in MCF7 under fulvestrant more often than not: concordance well above 50%, carried by the 405 expected-DOWN genes (ESR1-activated targets losing their activator). Two sub-predictions that can fail independently: (a) landmark (directly measured) genes should be at least as concordant as inferred genes; (b) the 8.6% of genes uniquely claimed by ESR1 should be at least as concordant as the 91.4% that other regulators also claim - if they are not, the movement is not specifically ESR1's.",
+  "observed": "line MCF7 (ACH-000019), pert_id BRD-A90490067, 10 signature(s), specific (drug-specific) profile arm. 478 of 478 frozen genes have a response value. Replicate profiles for this drug in this line: BRD-A90490067 (10 sig); BRD-A85667082 (6 sig); BRD-A17828570 (2 sig); the one with most signatures is used. Sign concordance with the frozen prediction: 51.7%. By feature space: best inferred 51.2% (n=389), landmark 53.9% (n=89). Uniquely attributable genes 39.0% (n=41) vs shared-attribution 52.9% (n=437). Mean expected-signed f(z) over the footprint = +0.0254; the same frozen footprint under the 1221 compounds profiled in this line puts it at the 64.0th percentile (concordance at the 52.7th). Reproduction checks: A2 did not sample this unit x line (see note above); no gene-level check; mean rebuilt contribution +0.025365 vs D128-A2 M +0.025365 (difference 0.00e+00, 478 genes in A2).",
+  "subpredictions": [
+   {
+    "id": "a",
+    "statement": "landmark (directly measured) genes at least as concordant as inferred",
+    "value": "53.9% vs 51.2%",
+    "passed": true
+   },
+   {
+    "id": "b",
+    "statement": "genes uniquely claimed by this unit's regulators at least as concordant as shared-attribution genes; failing means the movement is not specifically this target's (Section 5)",
+    "value": "39.0% (n=41) vs 52.9% (n=437)",
+    "passed": false
+   }
+  ],
+  "verdict": "weak",
+  "provenance": "results/lincs/d128/a2/gene_contributions.parquet (D128-A2, arm 'specific'); data/processed/lincs/drug_line_profiles_bing_specific.f32 for the generic-response and amplitude controls; results/celligner/disease_line_weights_long.tsv for the line match",
+  "independence": "MCF7 is a DIRECT tissue match for BRCA-LumA (celligner key Breast, in_key=True), not a borrowed line, so by Section 3 L5 and L7 are NOT independent: the same tissue biology sets both the cell line's baseline and the tumour contrast. The line carries only 2.99% of this cohort's celligner weight, so it is one line's response standing for the cohort. L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together.",
+  "concentration": "largest single gene's share of |contribution| over the covered footprint: 0.0077; effective number of contributing genes (participation ratio) 290 of 478.",
+  "alternatives": [
+   "generic response: the same frozen footprint scores at the 64.0th percentile of all 1221 compounds profiled in MCF7. Not ruled out - a large share of compounds in this line move these genes the same way.",
+   "amplitude (D131/D133): this drug-line's mean |z| is at the 13.4th percentile of the line; across the line's compounds the footprint mean correlates r=-0.33 with overall response magnitude. Weakly supported as a confound at this link.",
+   "cytotoxicity: dna_acting=False for this drug in the ranking row, and the proliferation check is carried at L6 through the regulators, not here.",
+   "off-target: concordance cannot distinguish the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L6",
+  "question": "Is the signal carried by many independent pieces of evidence, or one?",
+  "expected": "Structurally this link is already pinned: L3 found exactly ONE regulator, so 100% of the predicted evidence is one regulon and the only question L6 can still ask is how concentrated the OBSERVED signal is across genes. Expect the gene-level participation ratio to be a large fraction of the covered genes (no single gene should carry the link), while the regulator-level concentration is 1.00 by construction. The honest reading is that this trace has one mechanistic source whatever the genes do.",
+  "observed": "1 regulator(s) contribute. Largest single regulator by observed |contribution|: ESR1, carrying 100.0% of the link's signal (100.0% exclusively, i.e. through genes no other regulator of this unit claims); structurally it claims 100.0% of the frozen genes. Effective number of independent regulators (participation ratio over regulator shares) = 1.00 of 1. Effective number of contributing genes = 290 of 478. Dropping ESR1's genes entirely leaves NOTHING - the hub is the unit's only regulator, so the leave-one-out test is not evaluable and the link is, by construction, a single piece of evidence. ESR1 proliferation correlation in the CollecTRI set: r_prolif=0.411, prolif_linked=False.",
+  "verdict": "weak",
+  "provenance": "computed in this script from results/lincs/d128/a1/regulon_edges.parquet, the frozen footprint and results/lincs/d128/a2/gene_contributions.parquet; proliferation link from results/lincs/prolif_regulators_p2_v2_consensus.tsv (collectri / ALL). No D128-A4 output was read before this record was written.",
+  "independence": "this link is an audit OF L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. It cannot add evidence, only remove the appearance of it. The proliferation annotation is the one outside input, and it shares the CollecTRI regulon with L4.",
+  "concentration": "1.000 - ESR1's share of the observed signal; effective regulators 1.00.",
+  "alternatives": [
+   "the hub regulator ESR1 is not flagged proliferation-linked in the CollecTRI set (r_prolif 0.411), which weakens but does not exclude a proliferation explanation.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so the exclusive share is the conservative reading.",
+   "D130 / D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count even before the hub is considered."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "If the chain closes, the genes the drug is predicted to push DOWN should be UP in BRCA-LumA vs its normal reference, and vice versa - i.e. expected_sign == -sign(logFC) for a clear majority of the significant footprint genes. ESR1's own O component is a positive NES in this cohort, so the luminal-A tumour is predicted to be running the ESR1 programme that fulvestrant removes.",
+  "observed": "contrast BRCA-LumA vs gtex (P2 order: gtex first). 455 frozen+covered genes present in the contrast, 413 with adj.P.Val < 0.05 (P8). The drug's predicted direction opposes the tumour's direction for 52.1% of them (57.0% when weighted by |z|). Split by the L6 hub: ESR1-claimed genes 52.1% (n=413), other genes nan% (n=0). The target itself: ESR1 logFC +3.75, z +24.27, adj.P 3.21e-128",
+  "verdict": "weak",
+  "provenance": "data/processed/step4_v2/BRCA-LumA__gtex.tsv.gz (limma + voomByGroup, P1: logFC sign, z weight; P8: adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source neither L5 nor L4 uses, so L7 is the one genuinely new measurement after L2. But its gene set is the frozen footprint, so a regulon error still selects which genes are asked about; and the normal reference here is the same GTEx reference L2's O component used (for this pair O came from a VIPER NES over the same regulon instead, which is worse: L2's O, L4 and L7's gene selection then all rest on one regulon).",
+  "concentration": "largest single gene's share of the |z| weight used here: 0.0303; effective number of genes 185 of 413. ESR1-claimed genes are 100.0% of the closure evidence.",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue, and the target's own expression is +3.75 logFC in this contrast. A negative value means the normal reference already runs the programme and the closure direction can invert for reasons that have nothing to do with the drug. Target expression is higher in tumour, so this particular inversion is not active, but the reference remains bulk normal tissue of different composition.",
+   "composition: GTEx normal tissue and the tumour differ in cell composition; a programme can appear dysregulated because the mixture changed.",
+   "the closure is a cohort-level statement; only 1.07% of patients carry an alteration of the target (L2), and the trace says nothing about which patients these dysregulated genes belong to."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L5",
+  "question": "Did those genes move as predicted, in which cell line, matched how?",
+  "expected": "If the chain holds, the 1063 frozen genes should move in the predicted direction in A375 under vemurafenib more often than not, carried by the 903 expected-DOWN genes. Same two sub-predictions: (a) landmark >= inferred; (b) the 17.0% uniquely attributable genes >= the 83.0% shared ones. A375 is BRAF-V600E, so this is the permissive case: if concordance fails here it fails everywhere.",
+  "observed": "line A375 (ACH-000219), pert_id BRD-K56343971, 18 signature(s), specific (drug-specific) profile arm. 1063 of 1063 frozen genes have a response value. Replicate profiles for this drug in this line: BRD-K56343971 (18 sig); the one with most signatures is used. Sign concordance with the frozen prediction: 52.6%. By feature space: best inferred 52.0% (n=910), landmark 56.2% (n=153). Uniquely attributable genes 51.9% (n=181) vs shared-attribution 52.7% (n=882). Mean expected-signed f(z) over the footprint = +0.0340; the same frozen footprint under the 1081 compounds profiled in this line puts it at the 82.3th percentile (concordance at the 69.8th). Reproduction checks: 1063 genes checked against the A2 sample, max |z| difference 0.00e+00, 0 sign disagreements; mean rebuilt contribution +0.033969 vs D128-A2 M +0.033969 (difference 0.00e+00, 1063 genes in A2).",
+  "subpredictions": [
+   {
+    "id": "a",
+    "statement": "landmark (directly measured) genes at least as concordant as inferred",
+    "value": "56.2% vs 52.0%",
+    "passed": true
+   },
+   {
+    "id": "b",
+    "statement": "genes uniquely claimed by this unit's regulators at least as concordant as shared-attribution genes; failing means the movement is not specifically this target's (Section 5)",
+    "value": "51.9% (n=181) vs 52.7% (n=882)",
+    "passed": false
+   }
+  ],
+  "verdict": "weak",
+  "provenance": "results/lincs/d128/a2/gene_contributions.parquet (D128-A2, arm 'specific'); data/processed/lincs/drug_line_profiles_bing_specific.f32 for the generic-response and amplitude controls; results/celligner/disease_line_weights_long.tsv for the line match",
+  "independence": "A375 is a DIRECT tissue match for TCGA-SKCM (celligner key Skin, in_key=True), not a borrowed line, so by Section 3 L5 and L7 are NOT independent: the same tissue biology sets both the cell line's baseline and the tumour contrast. The line carries only 0.84% of this cohort's celligner weight, so it is one line's response standing for the cohort. L5 shares the footprint with L3/L4, so a regulon error moves the prediction and the test of it together.",
+  "concentration": "largest single gene's share of |contribution| over the covered footprint: 0.0030; effective number of contributing genes (participation ratio) 695 of 1063.",
+  "alternatives": [
+   "generic response: the same frozen footprint scores at the 82.3th percentile of all 1081 compounds profiled in A375. Not ruled out - a large share of compounds in this line move these genes the same way.",
+   "amplitude (D131/D133): this drug-line's mean |z| is at the 52.5th percentile of the line; across the line's compounds the footprint mean correlates r=-0.27 with overall response magnitude. Weakly supported as a confound at this link.",
+   "cytotoxicity: dna_acting=False for this drug in the ranking row, and the proliferation check is carried at L6 through the regulators, not here.",
+   "off-target: concordance cannot distinguish the annotated target from any off-target that converges on the same regulators."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L6",
+  "question": "Is the signal carried by many independent pieces of evidence, or one?",
+  "expected": "L4 already shows one regulator claiming 65.1% of the predicted genes. If the observed signal is distributed like the structure, the same regulator should carry roughly that share of the observed |contribution| too, and removing it should move the link's mean contribution substantially. If it does, 1063 genes are not 1063 pieces of evidence and L6 breaks the appearance of breadth.",
+  "observed": "14 regulator(s) contribute. Largest single regulator by observed |contribution|: MYC, carrying 68.1% of the link's signal (58.2% exclusively, i.e. through genes no other regulator of this unit claims); structurally it claims 65.1% of the frozen genes. Effective number of independent regulators (participation ratio over regulator shares) = 2.73 of 14. Effective number of contributing genes = 695 of 1063. Dropping MYC's genes entirely leaves 371 genes, concordance 48.8% (vs 52.6% with them) and mean expected-signed f(z) +0.0137 (vs +0.0340). MYC proliferation correlation in the CollecTRI set: r_prolif=0.251, prolif_linked=True.",
+  "verdict": "breaks",
+  "provenance": "computed in this script from results/lincs/d128/a1/regulon_edges.parquet, the frozen footprint and results/lincs/d128/a2/gene_contributions.parquet; proliferation link from results/lincs/prolif_regulators_p2_v2_consensus.tsv (collectri / ALL). No D128-A4 output was read before this record was written.",
+  "independence": "this link is an audit OF L3-L5, not a new source: it shares the regulon with L3/L4 and the response with L5. It cannot add evidence, only remove the appearance of it. The proliferation annotation is the one outside input, and it shares the CollecTRI regulon with L4.",
+  "concentration": "0.681 - MYC's share of the observed signal; effective regulators 2.73.",
+  "alternatives": [
+   "the hub regulator MYC is proliferation-linked in the CollecTRI set (r_prolif 0.251), so a general slow-down of a proliferating line reproduces most of this link's evidence. The cytotoxicity / generic-response alternative is NOT ruled out.",
+   "the regulator shares are not disjoint: a gene claimed by two of the unit's regulators is counted in both, so the exclusive share is the conservative reading.",
+   "D130 / D133: within a cohort the regulator activities behave as ~10 independent terms and a ~1000-gene footprint as ~44; a gene count is not an evidence count even before the hub is considered."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L7",
+  "question": "Are those same genes dysregulated in the tumour in the direction the drug reverses?",
+  "expected": "Same closure test. But L2 already recorded a warning that must be carried here: BRAF's expression logFC vs GTEx normal skin is NEGATIVE (-0.62, O percentile 35.9), so the normal reference may already run the programme, and the D128-A3.2 reference artefact is live for this pair. Expect closure to be weaker than fulvestrant's, or inverted.",
+  "observed": "contrast TCGA-SKCM vs gtex (P2 order: gtex first). 1005 frozen+covered genes present in the contrast, 874 with adj.P.Val < 0.05 (P8). The drug's predicted direction opposes the tumour's direction for 58.2% of them (61.7% when weighted by |z|). Split by the L6 hub: MYC-claimed genes 65.2% (n=555), other genes 46.1% (n=319). The target itself: BRAF logFC -0.62, z -9.60, adj.P 2.01e-21",
+  "verdict": "weak",
+  "provenance": "data/processed/step4_v2/TCGA-SKCM__gtex.tsv.gz (limma + voomByGroup, P1: logFC sign, z weight; P8: adj.P.Val < 0.05)",
+  "independence": "the tumour contrast is a source neither L5 nor L4 uses, so L7 is the one genuinely new measurement after L2. But its gene set is the frozen footprint, so a regulon error still selects which genes are asked about; and the normal reference here is the same GTEx reference L2's O component used.",
+  "concentration": "largest single gene's share of the |z| weight used here: 0.0132; effective number of genes 413 of 874. MYC-claimed genes are 63.5% of the closure evidence.",
+  "alternatives": [
+   "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue, and the target's own expression is -0.62 logFC in this contrast. A negative value means the normal reference already runs the programme and the closure direction can invert for reasons that have nothing to do with the drug. NOT ruled out.",
+   "composition: GTEx normal tissue and the tumour differ in cell composition; a programme can appear dysregulated because the mixture changed.",
+   "the closure is a cohort-level statement; only 49.79% of patients carry an alteration of the target (L2), and the trace says nothing about which patients these dysregulated genes belong to."
+  ]
+ }
+]
