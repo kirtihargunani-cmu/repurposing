@@ -191,3 +191,58 @@ and whether the two traces break at different links.** If both produce the same
 verdict, the procedure adds nothing over the score and should be abandoned.
 
 Then the five negative controls of §7, before any positive trace is reported.
+
+## 11. Result of §7 — the procedure's false-positive rate (D137, 2026-11-17)
+
+The five negative controls were run for the first time, on cohort-matched ARACNe
+regulons. Pre-stated before any number was computed: a control **closes** when no
+link L1–L7 has verdict `breaks` or `not evaluable`, and the fraction that closes
+is the procedure's false-positive rate.
+
+| | pair | network | break | closes |
+|---|---|---|---|---|
+| real | fulvestrant / ESR1 / BRCA-LumA | BRCA_LUMA | L6 | no |
+| real | vemurafenib / BRAF / TCGA-SKCM | SKCM | L5 | no |
+| NC1 | regorafenib / RET / TCGA-LUAD — target not expressed | LUAD | L4 | **YES** |
+| NC2 | vemurafenib / BRAF / BRCA-Basal — RAF paradox | BRCA_BAS | L5 | no |
+| NC3 | MEK-162 / MAP2K2 / TCGA-READ — random pairing | COADREAD | L2 | **YES** |
+| NC4 | estramustine / ESR2 / BRCA-LumB — cytotoxic | BRCA_LUMB | L1 | **YES** |
+| NC5 | midostaurin / KDR / TCGA-LIHC — no anchored TF | LIHC | L3 | no |
+
+**False-positive rate 3 / 5 = 0.60, and both real pairs break.** The procedure is
+not merely noisy on ARACNe; it is anti-correlated with the thing it is meant to
+detect. The random pairing scores at the **99.9th percentile** of all compounds in
+its line — the strongest apparent mechanism of anything tested.
+
+Per §7 this is binding: **no trace produced by this procedure, on either network,
+counts as a positive.** That includes the two CollecTRI traces of §10, whose
+surviving findings are hereby reported as uncalibrated.
+
+### What the controls established about the procedure itself
+
+1. **The footprint is a property of the network, not of the drug or the target.**
+   The same target in the same cohort gives nearly disjoint gene sets under the two
+   regulons — fulvestrant/ESR1 shares 6 genes between a 478-gene CollecTRI and a
+   131-gene ARACNe footprint — and the mean signed response flips sign for both real
+   pairs. L4 has no network-agnostic definition, so §4's "weakest link" verdict is
+   reading the regulon choice.
+2. **L6's concentration test was partly measuring CollecTRI's regulon-size skew.**
+   CollecTRI's MYC claims 881 genes against a median regulon of 9; ARACNe's median
+   is ~100. On SKCM the BRAF footprint's hub is MEF2D at 20.4% over 11 regulators
+   (8.0 effective), not MYC at 65.1%. The §10 claim that L6 "surfaced the MYC
+   dominance unprompted" is withdrawn: it surfaced a property of the network.
+3. **L6 is undefined for a zero-hop TF anchor.** Hub share is 1.00 by construction
+   when L3 reaches one regulator, so fulvestrant breaks at L6 on both networks for a
+   structural reason rather than an observed one.
+4. **Classical chemotherapy is outside the procedure's domain.** TOP1, TOP2A, TYMS,
+   DHFR, GART, RRM1 and TUBB have zero OmniPath route rows, so a cytotoxic acting
+   through its own effector is `not evaluable` at L3 — not a verdict about the drug.
+5. **NC3 is a weak control and its closure is partly our fault.** The shuffle
+   randomised the *cohort*, then chose a celligner-matched line for it; MEK
+   inhibition in BRAF-V600E HT-29 is real pharmacology. A stronger version must
+   randomise the drug–target–line triple together. The other two closures (NC1, NC4)
+   carry no such excuse.
+
+**Not supported on checking:** that ARACNe's ESR1 regulon is noise for want of
+variance in a subtype cohort. ESR1's sd in BRCA_LUMA is 1.282, the 95.2nd
+percentile of all genes.
