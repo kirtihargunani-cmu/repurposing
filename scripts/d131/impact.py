@@ -61,8 +61,9 @@ def main():
 
     split = {"group_id": pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False),
              "stratum": pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)}
-    par = split["stratum"].drop_duplicates("group_id").set_index("group_id").parent_group.to_dict() \
-        if "parent_group" in split["stratum"].columns else {}
+    # the subgroup table keys the cohort as `stratum`; rename so both levels share one key name
+    split["stratum"] = split["stratum"].rename(columns={"stratum": "group_id"})
+    par = split["stratum"].drop_duplicates("group_id").set_index("group_id").parent_group.to_dict()
 
     # ---- (1) exact inflation + (2) invariance, from the shipped tables only -------------------------------------
     rows, inv_fail = [], 0
@@ -140,19 +141,28 @@ def main():
             out[tag] = (raw, float(np.sqrt((w ** 2).sum())), sd_cov, int(mask.sum()))
         a, b = out["p"][0], out["n"][0]
         share_cur = a / (a + b + 1e-12)
-        share_cov = (a / out["p"][2]) / (a / out["p"][2] + b / out["n"][2] + 1e-12)
+        # The covariance-aware share is applied to the SHIPPED prolif_share, not to the reconstruction, so the
+        # reconstruction's small weight error cannot leak into the impact count. With r = b/a,
+        # share_cur = 1/(1+r) and share_cov = 1/(1 + r*k), k = sd_cov_prolif / sd_cov_nonprolif - one constant per
+        # cohort, a ratio of two SDs over ~1,000 regulators and insensitive to a small error in the weights.
+        k = out["p"][2] / out["n"][2]
         S = split[lvl]
         S = S[S.group_id == g]
-        j = drugs[["pert_id"]].assign(share_cur=share_cur, share_cov=share_cov).merge(
+        j = drugs[["pert_id"]].assign(share_cur=share_cur).merge(
             S[["pert_id", "prolif_share", "prolif_driven", "rev_pct", "rev_mech_pct", "n_mrs_prolif"]],
             on="pert_id", how="inner")
         if not len(j):
             continue
+        ps = j.prolif_share.to_numpy(float).clip(1e-9, 1 - 1e-9)
+        r = (1 - ps) / ps
+        j["share_cov"] = 1.0 / (1.0 + r * k)
         drv_cov = (j.share_cov > 0.5) & (j.rev_pct >= 100 - TOP_PCT) & (j.rev_mech_pct < 100 - TOP_PCT)
         prows.append(dict(cohort=g, level=lvl, n_drugs=len(j), n_prolif_regs=out["p"][3],
                           n_nonprolif_regs=out["n"][3],
                           published_n_mrs_prolif=float(j.n_mrs_prolif.iloc[0]),
                           recon_vs_published_share_maxdiff=float((j.share_cur - j.prolif_share).abs().max()),
+                          recon_vs_published_share_meddiff=float((j.share_cur - j.prolif_share).abs().median()),
+                          k_sd_ratio_prolif_over_nonprolif=float(k),
                           median_share_published=float(j.prolif_share.median()),
                           median_share_cov=float(j.share_cov.median()),
                           n_cross_half=int(((j.prolif_share > 0.5) != (j.share_cov > 0.5)).sum()),
@@ -166,8 +176,11 @@ def main():
     if len(P):
         log(f"(3) prolif_share on {len(P)} cohorts, {int(P.n_drugs.sum())} cohort x drug rows. "
             f"Reconstruction check vs the shipped prolif_share: max |diff| "
-            f"{P.recon_vs_published_share_maxdiff.max():.4f}; regulator-count check "
+            f"{P.recon_vs_published_share_maxdiff.max():.4f}, median per cohort "
+            f"{P.recon_vs_published_share_meddiff.median():.4f}; regulator-count check "
             f"{int((P.n_prolif_regs == P.published_n_mrs_prolif).sum())}/{len(P)} cohorts match exactly")
+        log(f"    k = sd_cov(prolif)/sd_cov(nonprolif): median {P.k_sd_ratio_prolif_over_nonprolif.median():.3f}, "
+            f"range {P.k_sd_ratio_prolif_over_nonprolif.min():.3f}-{P.k_sd_ratio_prolif_over_nonprolif.max():.3f}")
         log(f"    median prolif_share published {P.median_share_published.median():.3f} -> "
             f"covariance-aware {P.median_share_cov.median():.3f}")
         log(f"    rows crossing the 0.5 line: {int(P.n_cross_half.sum())} of {int(P.n_drugs.sum())} "
