@@ -32,7 +32,24 @@ A gene-level BMD is then interpretable in a unit that means something: **the dos
 
 **This also solves the compression problem for free.** Inferred genes have lower replicate noise (0.693 vs 1.091) because their whole scale is compressed (D129: sd_all 0.918 vs 1.569). A per-gene noise-scaled threshold rescales each gene by its own variability, so no separate correction for feature space is needed and none should be added.
 
-`k` is **not chosen here** - S1 fixes it, having costed candidates (1.0, 1.5, 2.0) at S0.
+### `k` is not fixed in advance, and the reason matters
+
+An earlier draft of this section named candidate values (1.0, 1.5, 2.0). **That was wrong**: those numbers came from nothing, and if `k = 2` censors 99% of genes the whole analysis is dead on arrival with the threshold already committed. We do not yet know what these numbers look like, so a value chosen blind is not discipline, it is guessing with extra steps.
+
+**The distinction that keeps the pre-registration meaningful:**
+
+- *Fitting to an outcome* - choosing `k` because some value makes a control pass. This is what the discipline exists to prevent, and it stays forbidden.
+- *Calibrating to measurement range* - choosing `k` so the instrument has usable dynamic range. This is legitimate, provided the quantity it is calibrated on **cannot encode the answer**.
+
+**The safeguard.** `k` is selected from the **pooled crossing rate across all genes and all drugs** - the fraction of (drug, line, gene) curves that cross `k x sd_within_g` at any tested dose, as a continuous function of `k`. That quantity involves no target annotation, no regulon, no expected direction and no null. It describes the instrument, not the result.
+
+**So what is pre-registered is the PROCEDURE, not the value:**
+
+1. S0 measures the crossing-rate and censoring curves over a continuous range of `k`, pooled, with **no target-specific quantity computed**.
+2. S1 fixes `k` from that curve by a rule stated in advance - the value giving a median censored fraction nearest the middle of the usable band - and tags it.
+3. **No target, regulon or null quantity is computed at any `k` before step 2 is committed.**
+
+**Better still, and the primary reporting mode: do not rely on one `k`.** Every headline result is reported as a profile across the `k` range, and a conclusion counts only if it **holds throughout**. If potency or coherence versus the intrinsic null flips sign with `k`, that instability is itself the finding and must be reported as such rather than resolved by picking a favourable value.
 
 ## 4. The nested structure
 
