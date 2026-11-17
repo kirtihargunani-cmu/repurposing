@@ -1848,3 +1848,46 @@ D128-A3.2 reference artefact is live for the melanoma trace and is carried into 
 **Not done, and it matters:** the five negative controls of Section 7 were not run, so the procedure's
 false-positive rate is unmeasured and **neither trace counts as a positive**. Section 10's own
 instruction is that the controls come before any positive trace is reported.
+
+### The negative controls were run, on ARACNe (D137, 2026-11-17)
+
+They now are. The answer is that **the procedure does not work.**
+
+Pre-stated before any number: a control "closes" when no link L1–L7 is `breaks` or
+`not evaluable`, and the fraction of the five that closes is the false-positive rate.
+**Three of five closed (0.60) — and both real pairs broke.** The random drug–cohort
+pairing scored at the **99.9th percentile** of every compound profiled in its line,
+the strongest apparent mechanism of anything tested, real pairs included. A
+procedure whose negative controls outscore its positives is not a weak instrument;
+it is reading something other than mechanism.
+
+**Why switching to ARACNe mattered so much.** The same target in the same cohort
+gets a nearly disjoint footprint from the two networks. Fulvestrant/ESR1 shares
+**6 genes** between a 478-gene CollecTRI footprint and a 131-gene ARACNe one;
+vemurafenib/BRAF shares 159 of 1063 vs 1223. The whole-footprint response flips
+sign for both: fulvestrant +0.025 (64th percentile) on CollecTRI, −0.018 (40th) on
+ARACNe; vemurafenib +0.034 (82nd) vs −0.023 (27th). The same code reproduces the
+published CollecTRI numbers exactly, so this is the regulon, not a bug. **The
+footprint is a property of the network, not of the drug or the target.**
+
+**Two earlier claims are withdrawn.** First, "BRAF is ~65% MYC dependent" was
+substantially an artefact of CollecTRI's regulon-size skew — its MYC claims 881
+genes against a median regulon of 9, while ARACNe's median is ~100. On SKCM the
+BRAF hub is MEF2D at 20.4% over 11 regulators (8.0 effective). Second, and
+consequently, L6 did not "surface the MYC dominance unprompted"; it surfaced a
+property of the network it was given.
+
+**A domain limit found by the controls:** TOP1, TOP2A, TYMS, DHFR, GART, RRM1 and
+TUBB have **zero** OmniPath route rows, so a classical chemotherapeutic acting
+through its own effector cannot be traced at all.
+
+**One control is weaker than it should have been.** The random pairing shuffled the
+*cohort* and then picked a celligner-matched line for it, and MEK inhibition in
+BRAF-V600E HT-29 is real pharmacology. A stronger version randomises the
+drug–target–line triple together. The other two closures — a drug whose target is
+not expressed in the line, and an alkylator annotated to a nuclear receptor — carry
+no such excuse.
+
+**Checked and not supported:** that ARACNe's ESR1 regulon is noise for want of
+variance within a subtype cohort. ESR1's sd in BRCA_LUMA is 1.282, the 95.2nd
+percentile of all genes.
