@@ -1430,3 +1430,53 @@ label-free: only `level5_bing_hiq.npy` (90,988 signatures x 10,174 genes) and th
   which is why the landmarks are used only as an internal benchmark and not as an absolute standard.
 - **Not done, deliberately:** no filter proposed, no threshold recommended, no gene set chosen, nothing scored
   twice, no D128 output read. The table is the evidence base; the filter design is the user's separate decision.
+
+### 2026-11-16 - D128-A3.2: the reference-activity flag (computed for every target unit x cohort; one of four checks FAILED)
+
+- **What it is.** `M_disease(unit, cohort, contrast)` is M's own formula fed the disease contrast instead of the
+  drug profile - same footprint, same expected signs, same weights, same `tanh(z/2)`, same frozen P10 floor, with
+  the P1 columns (`logFC` sign, `z` magnitude). Positive means the tumor ALREADY looks target-inhibited against the
+  reference, so R penalises the mechanistically correct drug; negative means the drug reverses the tumor toward
+  normal and R is interpretable. Significance from the two well-powered nulls (200 seeded draws each, both must
+  clear 97.5 / 2.5); the degenerate degree-matched null was not used. **20,046 (unit, cohort, contrast) rows** over
+  257 units, 55 cohorts and 78 disease tables, 296 s. Reporting only: nothing gated, filtered or re-ranked, and M,
+  R and every A3/A4 value are unchanged.
+- **V2 discrimination: PASSES.** gtex: neutral 70.0%, aligned 14.3%, inverted 4.4%, unavailable 11.3%; eligible-only
+  78.9 / 16.2 / 5.0. adjacent: 71.0 / 12.2 / 5.5 / 11.3, eligible-only 80.0 / 13.7 / 6.2. No level over 80%.
+- **V4 (expected, not required): PASSES.** ERBB2 x BRCA-Her2 -> **neutral** (M_disease -0.0051, percentiles
+  35.5 / 31.0). BRAF x TCGA-SKCM -> **aligned, strongly** (M_disease -0.1424, both percentiles 0.0): the melanoma
+  looks BRAF-active against normal skin, so inhibiting BRAF moves toward normal. Both are tumour-acquired events, as
+  the pre-statement expected.
+- **V3 does the flag predict R? PARTIAL.** On R's level the effect is **weak**: median R 0.0049 (inverted, n = 543)
+  vs 0.0100 (aligned, n = 1,691), **Cliff's delta -0.148** (p 2.0e-07); cohort-centred delta -0.140 (p 9.1e-07).
+  **The clean evidence is the sign reversal of the M-R relationship within levels: Spearman rho(M, R) = -0.460
+  (inverted), +0.393 (aligned), +0.116 (neutral).** Two caveats: that reversal is partly definitional (stated in
+  advance - R and M_disease share the disease direction), and a confound control added afterwards shows the flag
+  separates **M** more strongly than R (delta -0.351) while the R-level gap **reverses** within units (21 units in
+  both kinds of cohort; paired difference +0.0072, 8 of 21 negative). Most of the pooled R gap is composition.
+- **V1 ESR1 x breast: FAILED.** BRCA-LumA passes (fulvestrant -> **neutral**, M_disease -0.0322, percentiles
+  4.5 / 3.0). **BRCA-LumB FAILS: fulvestrant -> `reference_aligned`** (M_disease -0.0419, sign-shuffle 1.5), which
+  asserts R IS readable there - the one verdict the pre-registered criterion forbade. Her2 and Basal: neutral.
+  **Nothing was redefined, retuned or reworded.** Two readings are recorded in DECISIONS and neither is chosen; the
+  second (that the criterion may have tested the sign of R when the real breast problem was the ordering across
+  cohorts) was constructed after the result and is labelled a post-hoc rationalisation.
+- **Design limitation the failure exposed, deliberately NOT fixed now.** M_disease carries the drug's annotated
+  action sign, so on identical reference data fulvestrant (`lower`) is `aligned` at -0.0419 while estradiol
+  (`raise`) is `inverted` at +0.0419. The question "is this pathway active in this reference tissue" belongs to the
+  (target, cohort, contrast) triple and must not depend on which drug asks. Proposed fix for the user: compute it on
+  a fixed inhibition convention and apply each drug's orientation only when the flag is read.
+- **Abstentions (2,262 rows): 1,326 `ambiguous_action`, 858 `below_floor_M_unit`, 78 `no_usable_genes`.** The first
+  group is **every SERM row** (tamoxifen 156; raloxifene, bazedoxifene, toremifene, clomifene, estramustine 78
+  each), so **the flag abstains on exactly the drug class where the inversion was first noticed.** Coverage gap,
+  stated not worked around.
+- **Cohort R baselines (companion 1): Basal is high.** Median R per cohort: median over 55 cohorts 0.0068, top
+  TCGA-LUSC 0.0245, **BRCA-Basal 0.0167 (4th of 55)**, bottom TCGA-SKCM -0.0082. Breast: Basal 0.0167, Her2 0.0079,
+  LumB 0.0068, LumA 0.0050 - Basal's baseline is 3.3x LumA's. Fulvestrant centred: Basal +0.0325, LumA +0.0048, so
+  the baseline explains part of the backwards breast ordering, not all of it. `R_centred` now travels on every row.
+- **Reference-tissue specificity tau (companion 2):** median +0.105 (IQR -0.057 to +0.235); aligned 0.149, inverted
+  0.101, neutral 0.093; breast cohorts 0.347 and the ESR1 footprint itself 0.49, BRAF/SKCM 0.277, ERBB2/Her2 0.224.
+  Reported as a column; nothing is gated on it.
+- **Property to read the numbers by:** the disease z is much larger than a LINCS z, so the frozen `tanh(z/2)`
+  saturates on a median 73.5% of footprint genes and M_disease is close to a signed sign-concordance.
+- **Not run:** A5; no CTRP / PRISM / GDSC value was read.
+

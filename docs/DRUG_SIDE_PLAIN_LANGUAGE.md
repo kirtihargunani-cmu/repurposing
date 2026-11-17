@@ -597,6 +597,29 @@ as currently measured.
   makes no difference). Nothing was changed in response; the two things the evidence asks for - a minimum size
   below which a sign is not reported, and a fairer chance comparison - are decisions for the user.
 
+  **Can the "pushes it back toward normal" score even be read? Now computed, and it fails one of its own tests
+  (2026-11-16).** The second half of the new scoring compares the tumor with healthy tissue and asks whether the
+  drug moves it back. That question only makes sense if the healthy tissue is not already running the pathway the
+  drug blocks - the breast/oestrogen problem this project keeps hitting. Until now that caution was a handwritten
+  note about one drug. It is now a number computed for **every target and every cancer**: we feed the *disease*
+  comparison through exactly the same machinery that scores the *drug*, which tells us whether the tumor already
+  looks as though the target were switched off. Three verdicts come out - "do not read this one", "safe to read",
+  and "no signal either way" - plus an honest "cannot tell" where the data is missing. **Three checks of four came
+  out well.** The verdicts are spread sensibly (no single answer swallows more than 80% of cases). Melanoma versus
+  normal skin reads "safe to read" for BRAF drugs, and HER2 in HER2 breast cancer reads "no signal", both of which
+  are what you would expect for faults the tumor acquires rather than features of healthy tissue. And where the flag
+  says "do not read", the relationship between the two halves of the score genuinely turns upside down (-0.46
+  against +0.39 where it says "safe"). **The fourth check failed.** We had written down beforehand that the
+  oestrogen case in luminal-B breast cancer must *not* come back "safe to read", because we know from experience
+  that it is not. It came back "safe to read". We have not touched the definition or the threshold to make that go
+  away. The failure also exposed a real design flaw: the answer currently depends on which drug is asking - the
+  blocker and the hormone itself get opposite verdicts from the same data - when it should be a property of the
+  tissue alone. That fix is written down for the user to approve rather than applied now, because changing a
+  definition after seeing it fail is how you fool yourself. Two further honest notes: the flag **abstains on every
+  SERM** (tamoxifen and its relatives), which is precisely the class where the problem was first seen; and some
+  cancers simply sit further from healthy tissue than others - basal breast cancer's typical drug scores three
+  times higher than luminal-A's whatever the drug does - so every score now carries its cohort's baseline beside it.
+
   What this does not say: the new score is not wrong, and it is not finished. It is near-independent of the ranking
   we already use, which is what we wanted — but "different" is not "better", and nothing here can tell the two apart
   because no outcome data was looked at. That test exists, and it is deliberately **not** run yet: it needs its own
