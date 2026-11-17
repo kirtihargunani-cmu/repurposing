@@ -1,0 +1,52 @@
+case	cohort	unit	genes	action	M_disease	flag	sign_shuffle_pct	gene_label_pct	n_genes	tau	abstain_reason
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	BRD-K45330754::CHEMBL206	ESR1	raise	0.032193587480619255	reference_neutral	95.5	97.0	455	0.48887835164835164	
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	tamoxifen::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	raloxifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	toremifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	estramustine::annot:ESR1	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	estradiol::CHEMBL206	ESR1	raise	0.032193587480619255	reference_neutral	95.5	97.0	455	0.48887835164835164	
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	clomifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	bazedoxifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumA (validation 1: must NOT be aligned)	BRCA-LumA	fulvestrant::CHEMBL206	ESR1	lower	-0.032193587480619255	reference_neutral	4.5	3.0	455	0.48887835164835164	
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	BRD-K45330754::CHEMBL206	ESR1	raise	0.04185596531966612	reference_inverted	98.5	98.0	454	0.4901638766519824	
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	tamoxifen::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	raloxifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	toremifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	estramustine::annot:ESR1	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	estradiol::CHEMBL206	ESR1	raise	0.04185596531966612	reference_inverted	98.5	98.0	454	0.4901638766519824	
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	clomifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	bazedoxifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-LumB (validation 1: must NOT be aligned)	BRCA-LumB	fulvestrant::CHEMBL206	ESR1	lower	-0.04185596531966612	reference_aligned	1.5	2.0	454	0.4901638766519824	
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	BRD-K45330754::CHEMBL206	ESR1	raise	0.008778616561781836	reference_neutral	91.5	91.0	450	0.4988936666666666	
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	tamoxifen::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	raloxifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	toremifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	estramustine::annot:ESR1	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	estradiol::CHEMBL206	ESR1	raise	0.008778616561781836	reference_neutral	91.5	91.0	450	0.4988936666666666	
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	clomifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	bazedoxifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Her2 (reported)	BRCA-Her2	fulvestrant::CHEMBL206	ESR1	lower	-0.008778616561781836	reference_neutral	8.5	9.0	450	0.4988936666666666	
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	BRD-K45330754::CHEMBL206	ESR1	raise	0.0005753067982645671	reference_neutral	60.0	63.5	452	0.4927328539823009	
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	tamoxifen::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	tamoxifen::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	raloxifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	toremifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	estramustine::annot:ESR1	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	estradiol::CHEMBL206	ESR1	raise	0.0005753067982645671	reference_neutral	60.0	63.5	452	0.4927328539823009	
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	clomifene::CHEMBL206	ESR1	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	bazedoxifene::CHEMBL2093866	ESR1|ESR2	lower		reference_unavailable			0		ambiguous_action:direction_assumed
+ESR1 x BRCA-Basal (reported)	BRCA-Basal	fulvestrant::CHEMBL206	ESR1	lower	-0.0005753067982645671	reference_neutral	40.0	36.5	452	0.4927328539823009	
+ERBB2 x BRCA-Her2 (validation 4: expected aligned/neutral)	BRCA-Her2	dacomitinib::CHEMBL1824	ERBB2	lower	-0.005137867978552653	reference_neutral	35.5	31.0	1795	0.22412459610027854	
+ERBB2 x BRCA-Her2 (validation 4: expected aligned/neutral)	BRCA-Her2	lapatinib::CHEMBL1824	ERBB2	lower	-0.005137867978552653	reference_neutral	35.5	31.0	1795	0.22412459610027854	
+ERBB2 x BRCA-Her2 (validation 4: expected aligned/neutral)	BRCA-Her2	neratinib::CHEMBL1824	ERBB2	lower	-0.005137867978552653	reference_neutral	35.5	31.0	1795	0.22412459610027854	
+ERBB2 x BRCA-Her2 (validation 4: expected aligned/neutral)	BRCA-Her2	afatinib::CHEMBL1824	ERBB2	lower	-0.005137867978552653	reference_neutral	35.5	31.0	1795	0.22412459610027854	
+ERBB2 x BRCA-Her2 (validation 4: expected aligned/neutral)	BRCA-Her2	masoprocol::CHEMBL1824	ERBB2	lower	-0.005137867978552653	reference_neutral	35.5	31.0	1795	0.22412459610027854	
+ERBB2 x BRCA-Her2 (validation 4: expected aligned/neutral)	BRCA-Her2	vandetanib::CHEMBL2363049	EGFR|ERBB2|ERBB3|ERBB4	lower	-0.0039897972780423485	reference_neutral	68.5	69.0	1577	0.271199365884591	
+BRAF x SKCM (validation 4: expected aligned/neutral)	TCGA-SKCM	regorafenib::CHEMBL5145	BRAF	lower	-0.142356825833814	reference_aligned	0.0	0.0	1005	0.27739223880597014	
+BRAF x SKCM (validation 4: expected aligned/neutral)	TCGA-SKCM	MLN-2480::CHEMBL3559685	ARAF|BRAF|RAF1	lower	-0.08670644721755494	reference_aligned	0.0	0.0	1930	0.25979626943005185	
+BRAF x SKCM (validation 4: expected aligned/neutral)	TCGA-SKCM	sorafenib::CHEMBL5145	BRAF	lower	-0.142356825833814	reference_aligned	0.0	0.0	1005	0.27739223880597014	
+BRAF x SKCM (validation 4: expected aligned/neutral)	TCGA-SKCM	vemurafenib::CHEMBL5145	BRAF	lower	-0.142356825833814	reference_aligned	0.0	0.0	1005	0.27739223880597014	
+BRAF x SKCM (validation 4: expected aligned/neutral)	TCGA-SKCM	dabrafenib::CHEMBL5145	BRAF	lower	-0.142356825833814	reference_aligned	0.0	0.0	1005	0.27739223880597014	

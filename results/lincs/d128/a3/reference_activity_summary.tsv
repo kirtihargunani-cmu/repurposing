@@ -1,0 +1,15 @@
+contrast	r_reference_flag	n	share_of_contrast	table	share_of_eligible
+adjacent	reference_aligned	815	0.12196947021849745	all (unit, cohort, contrast) pairs	
+adjacent	reference_inverted	368	0.055073331337922776	all (unit, cohort, contrast) pairs	
+adjacent	reference_neutral	4745	0.7101167315175098	all (unit, cohort, contrast) pairs	
+adjacent	reference_unavailable	754	0.11284046692607004	all (unit, cohort, contrast) pairs	
+gtex	reference_aligned	1917	0.14344507632445375	all (unit, cohort, contrast) pairs	
+gtex	reference_inverted	589	0.04407363064950614	all (unit, cohort, contrast) pairs	
+gtex	reference_neutral	9350	0.69964082609997	all (unit, cohort, contrast) pairs	
+gtex	reference_unavailable	1508	0.11284046692607004	all (unit, cohort, contrast) pairs	
+adjacent	reference_aligned	815		eligible pairs only (M_disease scored)	0.13748313090418354
+adjacent	reference_inverted	368		eligible pairs only (M_disease scored)	0.0620782726045884
+adjacent	reference_neutral	4745		eligible pairs only (M_disease scored)	0.8004385964912281
+gtex	reference_aligned	1917		eligible pairs only (M_disease scored)	0.1616902834008097
+gtex	reference_inverted	589		eligible pairs only (M_disease scored)	0.049679487179487176
+gtex	reference_neutral	9350		eligible pairs only (M_disease scored)	0.7886302294197031
