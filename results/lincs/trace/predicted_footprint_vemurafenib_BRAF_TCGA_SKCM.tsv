@@ -1,0 +1,1132 @@
+unit_id	cmap_name	unit_kind	subset	gene_id	symbol	expected_sign_pre_action	expected_sign	status	feature_space	n_regulators_claiming	n_unit_regulators_claiming	uniquely_attributable
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115657	ABCB6	1	-1	resolved	landmark	4	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000097007	ABL1	1	-1	resolved	landmark	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117054	ACADM	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000159640	ACE	1	-1	resolved	best inferred	15	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000087085	ACHE	1	-1	resolved	best inferred	49	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000144476	ACKR3	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100412	ACO2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161533	ACOX1	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000014257	ACPP	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107796	ACTA2	1	-1	resolved	best inferred	37	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000075624	ACTB	1	-1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163017	ACTG2	1	-1	resolved	best inferred	29	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136518	ACTL6A	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170634	ACYP2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162104	ADCY9	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156110	ADK	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000043591	ADRB1	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000239900	ADSL	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000092847	AGO1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000144891	AGTR1	1	-1	resolved	best inferred	23	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106546	AHR	1	-1	resolved	best inferred	31	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106305	AIMP2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000121057	AKAP1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117448	AKR1A1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198074	AKR1B10	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142208	AKT1	1	-1	resolved	landmark	72	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111275	ALDH2	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164904	ALDH7A1	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149925	ALDOA	1	-1	resolved	landmark	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109107	ALDOC	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182858	ALG12	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120697	ALG5	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123505	AMD1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116337	AMPD2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133805	AMPD3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000214274	ANG	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167772	ANGPTL4	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166825	ANPEP	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134982	APC	1	-1	resolved	best inferred	28	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100823	APEX1	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142192	APP	1	-1	resolved	landmark	49	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000021776	AQR	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169083	AR	1	-1	resolved	best inferred	99	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143761	ARF1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168374	ARF4	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149182	ARFGAP2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111348	ARHGDIB	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113273	ARSB	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139352	ASCL1	1	-1	resolved	best inferred	27	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198363	ASPH	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000130707	ASS1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162772	ATF3	1	-1	resolved	best inferred	21	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128272	ATF4	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197548	ATG7	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138363	ATIC	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149311	ATM	1	-1	resolved	best inferred	23	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000018625	ATP1A2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000174437	ATP2A2	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000074370	ATP2A3	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147416	ATP6V1B2	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124788	ATXN1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204842	ATXN2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000087586	AURKA	1	-1	resolved	landmark	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000103126	AXIN1	1	-1	resolved	landmark	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167601	AXL	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166710	B2M	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000086062	B4GALT1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000158470	B4GALT5	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000186318	BACE1	1	-1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112208	BAG2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151929	BAG3	1	-1	resolved	landmark	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000043039	BARX2	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176788	BASP1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105327	BBC3	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000060982	BCAT1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000153094	BCL2L11	1	-1	resolved	best inferred	25	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000069399	BCL3	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113916	BCL6	1	-1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000186716	BCR	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176697	BDNF	1	-1	resolved	best inferred	36	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000023445	BIRC3	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136573	BLK	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168283	BMI1	1	-1	resolved	best inferred	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125845	BMP2	1	-1	resolved	best inferred	49	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000012048	BRCA1	1	-1	resolved	landmark	67	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141867	BRD4	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166167	BTRC	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156970	BUB1B	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000082153	BZW1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108561	C1QBP	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000099991	CABIN1	1	-1	resolved	best inferred	5	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000084774	CAD	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179218	CALR	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000070808	CAMK2A	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162545	CAMK2N1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000152495	CAMK4	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137752	CASP1	1	-1	resolved	best inferred	17	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000064012	CASP8	1	-1	resolved	best inferred	23	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132906	CASP9	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000067955	CBFB	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160200	CBS	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000122565	CBX3	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110148	CCKBR	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118523	CCN2	1	-1	resolved	best inferred	49	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136999	CCN3	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134057	CCNB1	1	-1	resolved	landmark	40	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000157456	CCNB2	1	-1	resolved	landmark	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118971	CCND2	1	-1	resolved	best inferred	60	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105173	CCNE1	1	-1	resolved	best inferred	51	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113328	CCNG1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000183813	CCR4	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160791	CCR5	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163468	CCT3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000150753	CCT5	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000146731	CCT6A	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156261	CCT8	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170458	CD14	1	-1	resolved	best inferred	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000174059	CD34	1	-1	resolved	best inferred	24	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167286	CD3D	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198851	CD3E	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000010610	CD4	1	-1	resolved	best inferred	38	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000026508	CD44	1	-1	resolved	landmark	78	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110448	CD5	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000013725	CD6	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135404	CD63	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105369	CD79A	1	-1	resolved	best inferred	29	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000007312	CD79B	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000153563	CD8A	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117399	CDC20	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164045	CDC25A	1	-1	resolved	landmark	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101224	CDC25B	1	-1	resolved	landmark	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000158402	CDC25C	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000099804	CDC34	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134371	CDC73	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170558	CDH2	1	-1	resolved	best inferred	36	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170312	CDK1	1	-1	resolved	landmark	33	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008128	CDK11A	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123374	CDK2	1	-1	resolved	landmark	28	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135446	CDK4	1	-1	resolved	landmark	36	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164885	CDK5	1	-1	resolved	best inferred	10	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105810	CDK6	1	-1	resolved	landmark	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132964	CDK8	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129757	CDKN1C	1	-1	resolved	best inferred	39	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149554	CHEK1	1	-1	resolved	landmark	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000183765	CHEK2	1	-1	resolved	landmark	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133048	CHI3L1	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110721	CHKA	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170175	CHRNB1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000213341	CHUK	1	-1	resolved	best inferred	17	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114737	CISH	1	-1	resolved	best inferred	34	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164442	CITED2	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123975	CKS2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000011021	CLCN6	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169504	CLIC4	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113282	CLINT1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000074201	CLNS1A	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134852	CLOCK	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172409	CLP1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120885	CLU	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000079101	CLUL1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111726	CMAS	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118432	CNR1	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187498	COL4A1	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131143	COX4I1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111775	COX6A1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161281	COX7A1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115944	COX7A2L	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000080819	CPOX	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110090	CPT1A	1	-1	resolved	best inferred	13	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000203710	CR1	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117322	CR2	1	-1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000095321	CRAT	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000005339	CREBBP	1	-1	resolved	best inferred	91	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147571	CRH	1	-1	resolved	best inferred	33	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119878	CRIPT	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008405	CRY1	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109846	CRYAB	1	-1	resolved	best inferred	24	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112297	CRYBG1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184371	CSF1	1	-1	resolved	best inferred	36	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164400	CSF2	1	-1	resolved	best inferred	49	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108342	CSF3	1	-1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119535	CSF3R	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160213	CSTB	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175029	CTBP2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168036	CTNNB1	1	-1	resolved	best inferred	51	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171793	CTPS1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164733	CTSB	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000174080	CTSF	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000055130	CUL1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163739	CXCL1	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145824	CXCL14	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000081041	CXCL2	1	-1	resolved	landmark	24	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163734	CXCL3	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163735	CXCL5	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169429	CXCL8	1	-1	resolved	best inferred	103	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000121966	CXCR4	1	-1	resolved	landmark	52	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000154832	CXXC1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140459	CYP11A1	1	-1	resolved	best inferred	31	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138109	CYP2C9	1	-1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204209	DAXX	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000071626	DAZAP1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156136	DCK	1	-1	resolved	landmark	6	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162733	DDR2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000013573	DDX11	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000088205	DDX18	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108654	DDX5	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000165507	DEPP1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175084	DES	1	-1	resolved	best inferred	13	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160049	DFFA	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000228716	DHFR	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102967	DHODH	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000211448	DIO2	1	-1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000130826	DKC1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000091140	DLD	1	-1	resolved	landmark	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000075711	DLG1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105880	DLX5	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125375	DMAC2L	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132002	DNAJB1	1	-1	resolved	landmark	3	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112667	DNPH1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000254986	DPP3	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000188641	DPYD	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000092964	DPYSL2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139318	DUSP6	1	-1	resolved	landmark	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000004975	DVL2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101412	E2F1	1	-1	resolved	best inferred	54	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112242	E2F3	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145088	EAF2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117395	EBNA1BP2	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147155	EBP	1	-1	resolved	landmark	23	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117298	ECE1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167658	EEF2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138798	EGF	1	-1	resolved	landmark	44	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000146648	EGFR	1	-1	resolved	landmark	90	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179388	EGR3	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149547	EI24	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000055332	EIF2AK2	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106263	EIF3B	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161960	EIF4A1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000063046	EIF4B	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151247	EIF4E	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148730	EIF4EBP2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114867	EIF4G1	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100664	EIF5	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163577	EIF5A2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000066044	ELAVL1	1	-1	resolved	landmark	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134531	EMP1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000158636	EMSY	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111405	ENDOU	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000074800	ENO1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108515	ENO3	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198018	ENTPD7	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142627	EPHA2	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116106	EPHA4	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133216	EPHB2	1	-1	resolved	landmark	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143819	EPHX1	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136628	EPRS	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141736	ERBB2	1	-1	resolved	landmark	63	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105722	ERF	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139684	ESD	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000091831	ESR1	1	-1	resolved	best inferred	110	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000157557	ETS2	1	-1	resolved	best inferred	15	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120699	EXOSC8	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104313	EYA1	1	-1	resolved	best inferred	8	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000064655	EYA2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106462	EZH2	1	-1	resolved	landmark	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000092820	EZR	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126218	F10	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124491	F13A1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117525	F3	1	-1	resolved	best inferred	25	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164434	FABP7	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000103876	FAH	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169710	FASN	1	-1	resolved	best inferred	35	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164896	FASTK	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109670	FBXW7	1	-1	resolved	best inferred	6	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104870	FCGRT	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000066926	FECH	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138685	FGF2	1	-1	resolved	best inferred	58	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102678	FGF9	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137440	FGFBP1	1	-1	resolved	best inferred	14	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160867	FGFR4	1	-1	resolved	landmark	7	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000004478	FKBP4	1	-1	resolved	landmark	6	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151702	FLI1	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000037280	FLT4	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102081	FMR1	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175592	FOSL1	1	-1	resolved	landmark	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111206	FOXM1	1	-1	resolved	best inferred	21	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118689	FOXO3	1	-1	resolved	landmark	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184481	FOXO4	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000049768	FOXP3	1	-1	resolved	best inferred	64	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136877	FPGS	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162998	FRZB	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105255	FSD1	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000174951	FUT1	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171124	FUT3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000165060	FXN	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114416	FXR1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166206	GABRB3	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000099860	GADD45B	1	-1	resolved	landmark	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179271	GADD45GIP1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000069482	GAL	1	-1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000213930	GALT	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111640	GAPDH	1	-1	resolved	landmark	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000159131	GART	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179348	GATA2	1	-1	resolved	landmark	25	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131979	GCH1	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000001084	GCLC	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000152661	GJA1	1	-1	resolved	best inferred	40	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102393	GLA	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170266	GLB1	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111087	GLI1	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000074047	GLI2	1	-1	resolved	landmark	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115419	GLS	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163938	GNL3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113384	GOLPH3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000178732	GP5	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000177464	GPR4	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167701	GPT	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176884	GRIN1	1	-1	resolved	best inferred	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125388	GRK4	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000082701	GSK3B	1	-1	resolved	best inferred	32	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000084207	GSTP1	1	-1	resolved	best inferred	39	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000006704	GTF2IRD1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164032	H2AFZ	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000049239	H6PD	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164107	HAND2	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170961	HAS2	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105856	HBP1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101336	HCK	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116478	HDAC1	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196591	HDAC2	1	-1	resolved	landmark	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171720	HDAC3	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000061273	HDAC7	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000048052	HDAC9	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115677	HDLBP	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138646	HERC5	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000051108	HERPUD1	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100644	HIF1A	1	-1	resolved	landmark	43	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169567	HINT1	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000273802	HIST1H2BG	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000159399	HK2	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000206503	HLA-A	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204525	HLA-C	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179344	HLA-DQB1	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196126	HLA-DRB1	1	-1	resolved	best inferred	30	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204592	HLA-E	1	-1	resolved	best inferred	52	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204642	HLA-F	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000256269	HMBS	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137309	HMGA1	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198830	HMGN2	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100292	HMOX1	1	-1	resolved	landmark	64	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135486	HNRNPA1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000122566	HNRNPA2B1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138668	HNRNPD	1	-1	resolved	best inferred	4	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000152795	HNRNPDL	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105323	HNRNPUL1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171476	HOPX	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120093	HOXB3	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128652	HOXD3	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000257017	HP	1	-1	resolved	best inferred	45	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164120	HPGD	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176387	HSD11B2	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000025156	HSF2	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000080824	HSP90AA1	1	-1	resolved	best inferred	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000096384	HSP90AB1	1	-1	resolved	best inferred	13	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204389	HSPA1A	1	-1	resolved	landmark	26	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170606	HSPA4	1	-1	resolved	landmark	41	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000044574	HSPA5	1	-1	resolved	best inferred	40	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173110	HSPA6	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109971	HSPA8	1	-1	resolved	landmark	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113013	HSPA9	1	-1	resolved	best inferred	14	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106211	HSPB1	1	-1	resolved	landmark	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000144381	HSPD1	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115541	HSPE1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120694	HSPH1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000090339	ICAM1	1	-1	resolved	landmark	53	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125968	ID1	1	-1	resolved	best inferred	30	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115738	ID2	1	-1	resolved	landmark	45	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117318	ID3	1	-1	resolved	best inferred	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172201	ID4	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160888	IER2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000214706	IFRD2	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109083	IFT20	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000017427	IGF1	1	-1	resolved	best inferred	72	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140443	IGF1R	1	-1	resolved	landmark	33	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197081	IGF2R	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104365	IKBKB	1	-1	resolved	landmark	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137070	IL11RA	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115008	IL1A	1	-1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136689	IL1RN	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162892	IL24	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100385	IL2RB	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104432	IL7	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168685	IL7R	1	-1	resolved	best inferred	21	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166333	ILK	1	-1	resolved	landmark	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141401	IMPA2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106348	IMPDH1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000178035	IMPDH2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111653	ING4	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125629	INSIG2	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000248099	INSL3	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173404	INSM1	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171105	INSR	1	-1	resolved	best inferred	29	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117408	IPO13	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000205339	IPO7	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136381	IREB2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168310	IRF2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126456	IRF3	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137265	IRF4	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172183	ISG20	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143127	ITGA10	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000005884	ITGA3	1	-1	resolved	best inferred	7	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161638	ITGA5	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138448	ITGAV	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140678	ITGAX	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160255	ITGB2	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000259207	ITGB3	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000150995	ITPR1	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105639	JAK3	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132465	JCHAIN	1	-1	resolved	best inferred	6	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149596	JPH2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000177606	JUN	1	-1	resolved	landmark	95	7	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173801	JUP	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114166	KAT2B	1	-1	resolved	best inferred	43	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172977	KAT5	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000130037	KCNA5	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143603	KCNN3	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000127528	KLF2	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136826	KLF4	1	-1	resolved	best inferred	30	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129451	KLK10	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110066	KMT5B	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000186847	KRT14	1	-1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170421	KRT8	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167613	LAIR1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172037	LAMB2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134248	LAMTOR5	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133424	LARGE1	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143815	LBR	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000213398	LCAT	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182866	LCK	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136167	LCP1	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134333	LDHA	1	-1	resolved	best inferred	9	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111716	LDHB	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138795	LEF1	1	-1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000174697	LEP	1	-1	resolved	best inferred	44	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139292	LGR5	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104972	LILRB1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160789	LMNA	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143013	LMO4	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000070018	LRP6	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111144	LTA4H	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000227507	LTB	1	-1	resolved	best inferred	13	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000090382	LYZ	1	-1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161021	MAML1	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196547	MAN2A2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000189221	MAOA	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000069535	MAOB	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169032	MAP2K1	1	-1	resolved	best inferred	17	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104814	MAP4K1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100030	MAPK1	1	-1	resolved	best inferred	58	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112062	MAPK14	1	-1	resolved	best inferred	25	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102882	MAPK3	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166484	MAPK7	1	-1	resolved	best inferred	5	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107643	MAPK8	1	-1	resolved	best inferred	43	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125952	MAX	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198125	MB	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141644	MBD1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143384	MCL1	1	-1	resolved	best inferred	37	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166508	MCM7	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198625	MDM4	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151376	ME3	1	-1	resolved	best inferred	46	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000085276	MECOM	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169057	MECP2	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000068305	MEF2A	1	-1	resolved	best inferred	15	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134138	MEIS2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133895	MEN1	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106511	MEOX2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105976	MET	1	-1	resolved	best inferred	32	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111142	METAP2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000037897	METTL1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140259	MFAP1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204520	MICA	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204516	MICB	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000240972	MIF	1	-1	resolved	landmark	14	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187098	MITF	1	-1	resolved	best inferred	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000009950	MLXIPL	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196549	MME	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000087245	MMP2	1	-1	resolved	landmark	86	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149968	MMP3	1	-1	resolved	best inferred	27	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000146085	MMUT	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000070444	MNT	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000130675	MNX1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000158887	MPZ	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000095002	MSH2	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147649	MTDH	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000127989	MTERF1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100714	MTHFD1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124275	MTRR	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185499	MUC1	1	-1	resolved	landmark	30	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117983	MUC5B	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132781	MUTYH	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000059728	MXD1	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119950	MXI1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185697	MYBL1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101057	MYBL2	1	-1	resolved	landmark	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000214114	MYCBP	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116990	MYCL	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120279	MYCT1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111049	MYF5	1	-1	resolved	best inferred	19	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133026	MYH10	1	-1	resolved	best inferred	13	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133392	MYH11	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105357	MYH14	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000078814	MYH7B	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101605	MYOM1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000036448	MYOM2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000177791	MYOZ1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172399	MYOZ2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138744	NAAA	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187109	NAP1L1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171428	NAT1	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135372	NAT10	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104320	NBN	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000069869	NEDD4	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104722	NEFM	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132688	NES	1	-1	resolved	best inferred	35	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171532	NEUROD2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000072736	NFATC3	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116044	NFE2L2	1	-1	resolved	landmark	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000165030	NFIL3	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109320	NFKB1	1	-1	resolved	best inferred	43	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100906	NFKBIA	1	-1	resolved	landmark	34	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204498	NFKBIL1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134259	NGF	1	-1	resolved	best inferred	41	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000064300	NGFR	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116962	NID1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000158793	NIT1	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106100	NOD1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000048162	NOP16	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101361	NOP56	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164867	NOS3	1	-1	resolved	landmark	43	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148400	NOTCH1	1	-1	resolved	landmark	58	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000074181	NOTCH3	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204301	NOTCH4	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000181163	NPM1	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169418	NPR1	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131408	NR1H2	1	-1	resolved	landmark	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000177463	NR2C2	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175745	NR2F1	1	-1	resolved	best inferred	9	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185551	NR2F2	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113580	NR3C1	1	-1	resolved	landmark	41	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000213281	NRAS	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106459	NRF1	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000099250	NRP1	1	-1	resolved	best inferred	17	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000065057	NTHL1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113569	NUP155	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132661	NXT1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104044	OCA2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115758	ODC1	1	-1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198408	OGA	1	-1	resolved	best inferred	26	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000081087	OSTM1	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172818	OVOL1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128050	PAICS	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129116	PALLD	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143799	PARP1	1	-1	resolved	landmark	14	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135903	PAX3	1	-1	resolved	best inferred	30	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124253	PCK1	1	-1	resolved	best inferred	52	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175426	PCSK1	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140479	PCSK6	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161217	PCYT1A	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114209	PDCD10	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000150593	PDCD4	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197461	PDGFA	1	-1	resolved	landmark	19	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100311	PDGFB	1	-1	resolved	best inferred	28	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170962	PDGFD	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131828	PDHA1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000152256	PDK1	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196923	PDLIM7	1	-1	resolved	best inferred	38	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162493	PDPN	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000089220	PEBP1	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141456	PELP1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179094	PER1	1	-1	resolved	best inferred	26	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112378	PERP	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142655	PEX14	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000034693	PEX3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000178921	PFAS	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204220	PFDN6	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000152556	PFKM	1	-1	resolved	best inferred	2	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102144	PGK1	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167085	PHB	1	-1	resolved	best inferred	9	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000215021	PHB2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139289	PHLDA1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124102	PI3	1	-1	resolved	best inferred	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000033800	PIAS1	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000078043	PIAS2	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151665	PIGF	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162896	PIGR	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145675	PIK3R1	1	-1	resolved	best inferred	39	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000127445	PIN1	1	-1	resolved	landmark	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164093	PITX2	1	-1	resolved	best inferred	15	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008710	PKD1	1	-1	resolved	best inferred	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000067225	PKM	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000081277	PKP1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116711	PLA2G4A	1	-1	resolved	landmark	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118495	PLAGL1	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000122861	PLAU	1	-1	resolved	best inferred	49	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162407	PLPP3	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196576	PLXNB2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141682	PMAIP1	1	-1	resolved	landmark	25	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140464	PML	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101868	POLA1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000070501	POLB	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106628	POLD2	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148229	POLE3	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140521	POLG	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000256525	POLG2	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100142	POLR2F	1	-1	resolved	best inferred	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168495	POLR3D	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104356	POP1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184486	POU3F2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000186951	PPARA	1	-1	resolved	best inferred	30	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000109819	PPARGC1A	1	-1	resolved	best inferred	55	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128059	PPAT	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163736	PPBP	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171497	PPID	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108179	PPIF	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170836	PPM1D	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172531	PPP1CA	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115685	PPP1R7	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113575	PPP2CA	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137713	PPP2R1B	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112640	PPP2R5D	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102103	PQBP1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000165672	PRDX3	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000180644	PRF1	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162409	PRKAA2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000072062	PRKACA	1	-1	resolved	landmark	47	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000005249	PRKAR2B	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126583	PRKCG	1	-1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000065675	PRKCQ	1	-1	resolved	landmark	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000253729	PRKDC	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185345	PRKN	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126457	PRMT1	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000007062	PROM1	1	-1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184500	PROS1	1	-1	resolved	landmark	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101911	PRPS2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116132	PRRX1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197746	PSAP	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000080815	PSEN1	1	-1	resolved	best inferred	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143801	PSEN2	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143106	PSMA5	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008018	PSMB1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100804	PSMB5	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101843	PSMD10	1	-1	resolved	landmark	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000183527	PSMG1	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000011304	PTBP1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125384	PTGER2	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000095303	PTGS1	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000073756	PTGS2	1	-1	resolved	landmark	110	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160801	PTH1R	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169398	PTK2	1	-1	resolved	landmark	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101213	PTK6	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187514	PTMA	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184489	PTP4A3	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196396	PTPN1	1	-1	resolved	landmark	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179950	PUF60	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151552	QDPR	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169750	RAC3	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164754	RAD21	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113522	RAD50	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000051180	RAD51	1	-1	resolved	best inferred	13	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182185	RAD51B	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108384	RAD51C	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132341	RAN	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000099901	RANBP1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131759	RARA	1	-1	resolved	best inferred	28	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000068028	RASSF1	1	-1	resolved	best inferred	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139687	RB1	1	-1	resolved	landmark	72	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162521	RBBP4	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100320	RBFOX2	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102317	RBM3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131051	RBM39	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000265241	RBM8A	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114115	RBP1	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000180198	RCC1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000122707	RECK	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162924	REL	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000049541	RFC2	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129667	RHBDF2	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000067560	RHOA	1	-1	resolved	landmark	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143878	RHOB	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000155366	RHOC	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000177105	RHOG	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132541	RIDA	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170854	RIOX2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135828	RNASEL	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000022840	RNF10	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000092098	RNF31	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147403	RPL10	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142676	RPL11	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197958	RPL12	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167526	RPL13	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142541	RPL13A	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108298	RPL19	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116251	RPL22	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161970	RPL26	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131469	RPL27	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166441	RPL27A	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100316	RPL3	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156482	RPL30	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000144713	RPL32	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136942	RPL35	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000229117	RPL41	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000122406	RPL5	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000089009	RPL6	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147604	RPL7	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137818	RPLP1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112306	RPS12	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110700	RPS13	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164587	RPS14	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134419	RPS15A	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105193	RPS16	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105372	RPS19	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008988	RPS20	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000186468	RPS23	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137154	RPS6	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117676	RPS6KA1	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000072133	RPS6KA6	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171863	RPS7	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170889	RPS9	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124813	RUNX2	1	-1	resolved	best inferred	69	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000020633	RUNX3	1	-1	resolved	best inferred	12	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000183207	RUVBL2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163785	RYK	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170989	S1PR1	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000142230	SAE1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000075856	SART3	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000073060	SCARB1	1	-1	resolved	landmark	29	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101310	SEC23B	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000007908	SELE	1	-1	resolved	best inferred	27	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000188404	SELL	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000206075	SERPINB5	1	-1	resolved	best inferred	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106366	SERPINE1	1	-1	resolved	landmark	81	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149257	SERPINH1	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163536	SERPINI1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143379	SETDB1	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168066	SF1	1	-1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163935	SFMBT1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107819	SFXN3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108823	SGCA	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118515	SGK1	1	-1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000183918	SH2D1A	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160691	SHC1	1	-1	resolved	landmark	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176974	SHMT1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182199	SHMT2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000068903	SIRT2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145604	SKP2	1	-1	resolved	best inferred	31	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000155926	SLA	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163950	SLBP	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173638	SLC19A1	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110436	SLC1A2	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197375	SLC22A5	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100075	SLC25A1	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000155287	SLC25A28	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000075415	SLC25A3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151729	SLC25A4	1	-1	resolved	landmark	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000005022	SLC25A5	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117394	SLC2A1	1	-1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164889	SLC4A2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131389	SLC6A6	1	-1	resolved	best inferred	9	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000065054	SLC9A3R2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187122	SLIT1	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101665	SMAD7	1	-1	resolved	best inferred	32	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102038	SMARCA1	1	-1	resolved	best inferred	14	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000127616	SMARCA4	1	-1	resolved	landmark	36	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173473	SMARCC1	1	-1	resolved	landmark	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124216	SNAI1	1	-1	resolved	best inferred	37	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173267	SNCG	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125835	SNRPB	1	-1	resolved	best inferred	2	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125870	SNRPB2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100028	SNRPD3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000028528	SNX1	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171243	SOSTDC1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100146	SOX10	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125398	SOX9	1	-1	resolved	best inferred	41	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185591	SP1	1	-1	resolved	best inferred	59	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000172845	SP3	1	-1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000021574	SPAST	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136158	SPRY2	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000161011	SQSTM1	1	-1	resolved	landmark	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145545	SRD5A1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112658	SRF	1	-1	resolved	best inferred	18	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116649	SRM	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136450	SRSF1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008513	ST3GAL1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110080	ST3GAL4	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147465	STAR	1	-1	resolved	best inferred	35	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115415	STAT1	1	-1	resolved	landmark	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168610	STAT3	1	-1	resolved	landmark	28	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166888	STAT6	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168439	STIP1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113387	SUB1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116030	SUMO1	1	-1	resolved	best inferred	24	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148290	SURF1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148291	SURF2	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108639	SYNGR2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000006128	TAC1	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120656	TAF12	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141384	TAF4B	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000121068	TBX2	1	-1	resolved	landmark	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135111	TBX3	1	-1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000006638	TBXA2R	1	-1	resolved	landmark	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140262	TCF12	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000071564	TCF3	1	-1	resolved	best inferred	20	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100721	TCL1A	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108064	TFAM	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137203	TFAP2A	1	-1	resolved	landmark	36	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000090447	TFAP4	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105825	TFPI2	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163235	TGFA	1	-1	resolved	best inferred	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105329	TGFB1	1	-1	resolved	best inferred	77	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119699	TGFB3	1	-1	resolved	landmark	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106799	TGFBR1	1	-1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163513	TGFBR2	1	-1	resolved	landmark	40	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000168286	THAP11	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113296	THBS4	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000054118	THRAP3	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000154096	THY1	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156299	TIAM1	1	-1	resolved	landmark	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134375	TIMM17A	1	-1	resolved	best inferred	12	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105197	TIMM50	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102265	TIMP1	1	-1	resolved	best inferred	38	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119139	TJP2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163931	TKT	1	-1	resolved	best inferred	28	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000106829	TLE4	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000121210	TMEM131L	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000249992	TMEM158	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000041982	TNC	1	-1	resolved	best inferred	29	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118503	TNFAIP3	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120889	TNFRSF10B	1	-1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125735	TNFSF14	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145901	TNIP1	1	-1	resolved	landmark	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129991	TNNI3	1	-1	resolved	best inferred	7	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116783	TNNI3K	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105048	TNNT1	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118194	TNNT2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173726	TOMM20	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198900	TOP1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000067369	TP53BP1	1	-1	resolved	landmark	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000078900	TP73	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111669	TPI1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198467	TPM2	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115705	TPO	1	-1	resolved	best inferred	22	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136527	TRA2B	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175104	TRAF6	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182606	TRAK1	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126602	TRAP1	1	-1	resolved	landmark	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196367	TRRAP	1	-1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000157514	TSC22D3	1	-1	resolved	landmark	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123297	TSFM	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100300	TSPO	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000258947	TUBB3	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000037042	TUBG2	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136810	TXN	1	-1	resolved	best inferred	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176890	TYMS	1	-1	resolved	best inferred	12	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000077498	TYR	1	-1	resolved	best inferred	22	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107165	TYRP1	1	-1	resolved	best inferred	15	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163714	U2SURP	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000221983	UBA52	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182179	UBA7	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170315	UBB	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175063	UBE2C	1	-1	resolved	landmark	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108106	UBE2S	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114062	UBE3A	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108312	UBTF	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175564	UCP3	1	-1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000076248	UNG	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126088	UROD	1	-1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124422	USP22	1	-1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126756	UXT	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141968	VAV1	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162692	VCAM1	1	-1	resolved	best inferred	36	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112715	VEGFA	1	-1	resolved	best inferred	142	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128564	VGF	1	-1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134086	VHL	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000163159	VPS72	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110799	VWF	1	-1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000015285	WAS	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162552	WNT4	1	-1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000165392	WRN	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184937	WT1	1	-1	resolved	best inferred	33	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000082898	XPO1	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000152422	XRCC4	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000065978	YBX1	1	-1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000060138	YBX3	1	-1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000127337	YEATS4	1	-1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108953	YWHAE	1	-1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148516	ZEB1	1	-1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167635	ZNF146	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105497	ZNF175	1	-1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000263002	ZNF234	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000174652	ZNF266	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131845	ZNF304	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112200	ZNF451	1	-1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137185	ZSCAN9	1	-1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000085563	ABCB1	0	0	conflicted	best inferred	91	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000091879	ANGPT2	0	0	conflicted	best inferred	21	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000087088	BAX	0	0	conflicted	landmark	63	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171791	BCL2	0	0	conflicted	landmark	135	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171552	BCL2L1	0	0	conflicted	best inferred	68	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000089685	BIRC5	0	0	conflicted	landmark	57	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125378	BMP4	0	0	conflicted	landmark	74	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171860	C3AR1	0	0	conflicted	best inferred	3	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164305	CASP3	0	0	conflicted	landmark	37	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000094916	CBX5	0	0	conflicted	best inferred	13	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108691	CCL2	0	0	conflicted	landmark	85	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145386	CCNA2	0	0	conflicted	landmark	55	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110092	CCND1	0	0	conflicted	landmark	174	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000112576	CCND3	0	0	conflicted	landmark	37	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000062038	CDH3	0	0	conflicted	landmark	18	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000179776	CDH5	0	0	conflicted	best inferred	24	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124762	CDKN1A	0	0	conflicted	landmark	254	8	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000111276	CDKN1B	0	0	conflicted	landmark	107	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147889	CDKN2A	0	0	conflicted	landmark	154	6	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108821	COL1A1	0	0	conflicted	landmark	40	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101266	CSNK2A1	0	0	conflicted	best inferred	10	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175197	DDIT3	0	0	conflicted	best inferred	36	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120738	EGR1	0	0	conflicted	landmark	52	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100393	EP300	0	0	conflicted	best inferred	31	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000157554	ERG	0	0	conflicted	best inferred	10	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000026103	FAS	0	0	conflicted	landmark	44	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000077782	FGFR1	0	0	conflicted	best inferred	84	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102755	FLT1	0	0	conflicted	best inferred	29	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115414	FN1	0	0	conflicted	best inferred	65	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170345	FOS	0	0	conflicted	landmark	85	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116717	GADD45A	0	0	conflicted	landmark	43	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136574	GATA4	0	0	conflicted	best inferred	33	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114315	HES1	0	0	conflicted	landmark	53	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136634	IL10	0	0	conflicted	best inferred	91	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136244	IL6	0	0	conflicted	best inferred	136	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171223	JUNB	0	0	conflicted	best inferred	21	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000004487	KDM1A	0	0	conflicted	best inferred	21	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128052	KDR	0	0	conflicted	best inferred	58	4	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133703	KRAS	0	0	conflicted	best inferred	52	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135363	LMO2	0	0	conflicted	best inferred	14	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135679	MDM2	0	0	conflicted	best inferred	68	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000081189	MEF2C	0	0	conflicted	landmark	27	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196611	MMP1	0	0	conflicted	landmark	73	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100985	MMP9	0	0	conflicted	best inferred	87	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118513	MYB	0	0	conflicted	best inferred	41	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134323	MYCN	0	0	conflicted	best inferred	31	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167034	NKX3-1	0	0	conflicted	best inferred	16	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123358	NR4A1	0	0	conflicted	best inferred	28	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119508	NR4A3	0	0	conflicted	best inferred	8	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132646	PCNA	0	0	conflicted	landmark	48	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000078142	PIK3C3	0	0	conflicted	landmark	22	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120899	PTK2B	0	0	conflicted	landmark	7	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000119383	PTPA	0	0	conflicted	best inferred	11	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000077092	RARB	0	0	conflicted	best inferred	35	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116741	RGS2	0	0	conflicted	landmark	6	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000159216	RUNX1	0	0	conflicted	best inferred	28	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000096717	SIRT1	0	0	conflicted	best inferred	54	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000181449	SOX2	0	0	conflicted	landmark	33	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118785	SPP1	0	0	conflicted	landmark	74	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113532	ST8SIA4	0	0	conflicted	best inferred	4	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000117632	STMN1	0	0	conflicted	landmark	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164362	TERT	0	0	conflicted	landmark	95	3	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000072274	TFRC	0	0	conflicted	best inferred	14	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000092969	TGFB2	0	0	conflicted	best inferred	30	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000035862	TIMP2	0	0	conflicted	landmark	14	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000232810	TNF	0	0	conflicted	best inferred	159	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000141510	TP53	0	0	conflicted	landmark	140	5	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000140416	TPM1	0	0	conflicted	landmark	3	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138443	ABI2	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000102575	ACP5	-1	1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000068366	ACSL4	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138031	ADCY3	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000148926	ADM	-1	1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128918	ALDH1A2	-1	1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143149	ALDH9A1	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116748	AMPD1	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133794	ARNTL	-1	1	resolved	best inferred	26	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000099889	ARVCF	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000158019	BABAM2	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000136717	BIN1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000139618	BRCA2	-1	1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204256	BRD2	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166164	BRD7	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185024	BRF1	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133639	BTG1	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107159	CA9	-1	1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000153113	CAST	-1	1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105974	CAV1	-1	1	resolved	best inferred	32	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129993	CBFA2T3	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138764	CCNG2	-1	1	resolved	best inferred	17	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000129315	CCNT1	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000105383	CD33	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000101017	CD40	-1	1	resolved	landmark	34	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173762	CD7	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000019582	CD74	-1	1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000039068	CDH1	-1	1	resolved	best inferred	132	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147883	CDKN2B	-1	1	resolved	best inferred	60	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000245848	CEBPA	-1	1	resolved	landmark	55	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000221869	CEBPD	-1	1	resolved	landmark	22	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000003402	CFLAR	-1	1	resolved	landmark	23	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000090539	CHRD	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171310	CHST11	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164692	COL1A2	-1	1	resolved	best inferred	59	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000108582	CPD	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000009307	CSDE1	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000182578	CSF1R	-1	1	resolved	best inferred	23	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000070770	CSNK2A2	-1	1	resolved	landmark	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000204435	CSNK2B	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107562	CXCL12	-1	1	resolved	best inferred	34	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137869	CYP19A1	-1	1	resolved	best inferred	65	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000160868	CYP3A4	-1	1	resolved	best inferred	38	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164825	DEFB1	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107984	DKK1	-1	1	resolved	best inferred	38	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176124	DLEU1	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197635	DPP4	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134762	DSC3	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000120129	DUSP1	-1	1	resolved	best inferred	29	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187840	EIF4EBP1	-1	1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000126767	ELK1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000187266	EPOR	-1	1	resolved	best inferred	13	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166147	FBN1	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000189283	FHIT	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000122025	FLT3	-1	1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000054598	FOXC1	-1	1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176692	FOXC2	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000176165	FOXG1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171049	FPR2	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000167996	FTH1	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162613	FUBP1	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000180447	GAS1	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000089154	GCN1	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131095	GFAP	-1	1	resolved	best inferred	36	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162676	GFI1	-1	1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000196743	GM2A	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147437	GNRH1	-1	1	resolved	best inferred	32	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147257	GPC3	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000244734	HBB	-1	1	resolved	best inferred	59	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173064	HECTD4	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135547	HEY2	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000064393	HIPK2	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000234745	HLA-B	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000169045	HNRNPH1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000025423	HSD17B6	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137331	IER3	-1	1	resolved	landmark	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000125538	IL1B	-1	1	resolved	landmark	84	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000154059	IMPACT	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143493	INTS7	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000091409	ITGA6	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135424	ITGA7	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000150093	ITGB1	-1	1	resolved	best inferred	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000157404	KIT	-1	1	resolved	landmark	21	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000049130	KITLG	-1	1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000118263	KLF7	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000135480	KRT7	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171403	KRT9	-1	1	resolved	best inferred	22	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185896	LAMP1	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000107929	LARP4B	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198728	LDB1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000166407	LMO1	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000164109	MAD2L1	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000095015	MAP3K1	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000085511	MAP3K4	-1	1	resolved	landmark	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000197971	MBP	-1	1	resolved	best inferred	31	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116604	MEF2D	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000143995	MEIS1	-1	1	resolved	best inferred	18	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000170430	MGMT	-1	1	resolved	best inferred	24	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000147065	MSN	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173531	MST1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000198417	MT1F	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123933	MXD4	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000005810	MYCBP2	-1	1	resolved	landmark	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000157483	MYO1E	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000151779	NBAS	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000149294	NCAM1	-1	1	resolved	best inferred	31	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104419	NDRG1	-1	1	resolved	best inferred	20	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000165795	NDRG2	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123405	NFE2	-1	1	resolved	best inferred	12	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000008441	NFIX	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104805	NUCB1	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145730	PAM	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000007372	PAX6	-1	1	resolved	best inferred	41	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000134853	PDGFRA	-1	1	resolved	best inferred	25	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000113721	PDGFRB	-1	1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000133401	PDZD2	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162366	PDZK1IP1	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000162735	PEX19	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000011422	PLAUR	-1	1	resolved	best inferred	27	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000124181	PLCG1	-1	1	resolved	best inferred	5	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000023902	PLEKHO1	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185664	PMEL	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156475	PPP2R2B	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000138814	PPP3CA	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000100033	PRODH	-1	1	resolved	best inferred	7	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000171862	PTEN	-1	1	resolved	best inferred	52	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000060656	PTPRU	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000173039	RELA	-1	1	resolved	best inferred	43	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000114125	RNF7	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000145425	RPS3A	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000079102	RUNX1T1	-1	1	resolved	best inferred	11	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000064932	SBNO2	-1	1	resolved	best inferred	4	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000104332	SFRP1	-1	1	resolved	best inferred	16	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000018280	SLC11A1	-1	1	resolved	best inferred	15	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000091137	SLC26A4	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000175387	SMAD2	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185338	SOCS1	-1	1	resolved	best inferred	19	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000184557	SOCS3	-1	1	resolved	best inferred	37	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000066336	SPI1	-1	1	resolved	best inferred	40	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000072310	SREBF1	-1	1	resolved	best inferred	34	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000123473	STIL	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000266173	STRADA	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000116266	STXBP3	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000067715	SYT1	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000059377	TBXAS1	-1	1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000110719	TCIRG1	-1	1	resolved	best inferred	9	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000137801	THBS1	-1	1	resolved	best inferred	35	2	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000121858	TNFSF10	-1	1	resolved	best inferred	39	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000076554	TPD52	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000131323	TRAF3	-1	1	resolved	best inferred	2	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000071575	TRIB2	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000103197	TSC2	-1	1	resolved	best inferred	8	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000186591	UBE2H	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000115464	USP34	-1	1	resolved	best inferred	1	1	True
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000038427	VCAN	-1	1	resolved	best inferred	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000156076	WIF1	-1	1	resolved	best inferred	10	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000132530	XAF1	-1	1	resolved	best inferred	6	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000079246	XRCC5	-1	1	resolved	best inferred	3	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000128016	ZFP36	-1	1	resolved	landmark	13	1	False
+vemurafenib::CHEMBL5145	vemurafenib	signaling	signaling	ENSG00000185650	ZFP36L1	-1	1	resolved	best inferred	3	1	False
