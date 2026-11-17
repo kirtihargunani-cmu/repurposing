@@ -1,0 +1,86 @@
+{
+ "seed": 20261117,
+ "hop_cap_non_tf": 2,
+ "pool_rows": 1184,
+ "controls": {
+  "NC1_target_not_expressed": {
+   "control": "target not expressed in the source line; L5 must break",
+   "cmap_name": "sunitinib",
+   "target": "RET",
+   "group_id": "BRCA-LumB",
+   "net": "BRCA_LUMB",
+   "ModelID": "ACH-000768",
+   "line": "MDA-MB-231",
+   "unit_id": "sunitinib::CHEMBL2041",
+   "orient": "lower",
+   "n_aracne_regulators": 83
+  },
+  "NC2_raf_paradox": {
+   "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+   "cmap_name": "vemurafenib",
+   "target": "BRAF",
+   "group_id": "BRCA-Basal",
+   "net": "BRCA_BAS",
+   "ModelID": "ACH-000768",
+   "line": "MDA-MB-231",
+   "unit_id": "vemurafenib::CHEMBL5145",
+   "orient": "lower",
+   "n_aracne_regulators": 12
+  },
+  "NC3_random_pairing": {
+   "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+   "cmap_name": "bosutinib",
+   "target": "HCK",
+   "group_id": "BRCA-LumA",
+   "net": "BRCA_LUMA",
+   "ModelID": "ACH-000019",
+   "line": "MCF7",
+   "unit_id": "bosutinib::CHEMBL3234",
+   "orient": "lower",
+   "n_aracne_regulators": 22
+  },
+  "NC4_cytotoxic": {
+   "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+   "cmap_name": "estramustine",
+   "target": "ESR2",
+   "group_id": "BRCA-LumB",
+   "net": "BRCA_LUMB",
+   "ModelID": "ACH-000019",
+   "line": "MCF7",
+   "unit_id": "estramustine::nan",
+   "orient": "lower",
+   "n_aracne_regulators": 4,
+   "moa": "DNA alkylating agent",
+   "effectors_unroutable": [
+    "TOP1",
+    "TOP2A",
+    "TYMS",
+    "DHFR",
+    "GART",
+    "RRM1",
+    "TUBB"
+   ]
+  },
+  "NC5_no_anchored_tf": {
+   "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+   "cmap_name": "brexpiprazole",
+   "target": "HTR2A",
+   "group_id": "BRCA-LumB",
+   "net": "BRCA_LUMB",
+   "ModelID": "ACH-000019",
+   "line": "MCF7",
+   "unit_id": "brexpiprazole::CHEMBL224",
+   "orient": "lower",
+   "n_aracne_regulators": 0
+  }
+ },
+ "why": {
+  "NC1_target_not_expressed": "RET log2(TPM+1) = 0.000 in MDA-MB-231 (DepMap 24Q4), i.e. not expressed, while the target still reaches 83 ARACNe regulators in BRCA_LUMB so L1-L4 can run. Chosen as the candidate with the most reachable regulators among 234 rows with TPM<0.25 and >=3 regulators -- deliberately the HARDEST such case for the procedure.",
+  "NC2_raf_paradox": "MDA-MB-231 carries no BRAF V600 mutation and a hotspot KRAS p.G13D (DepMap 24Q4 somatic calls), the paradoxical-activation context in which a RAF inhibitor activates rather than inhibits ERK signalling. The predicted footprint sign is therefore expected to be WRONG, not merely weak. 3 candidate rows; most reachable regulators chosen.",
+  "NC3_random_pairing": "seed 20261117, first draw satisfying: cohort != the drug's own matched cohort (BRCA-LumB), the drug has a profile in a celligner line of the drawn cohort, and the target reaches >=1 ARACNe regulator there. No property of BRCA-LumA was used to pick it.",
+  "NC4_cytotoxic": "STRUCTURAL FINDING FIRST: TOP1, TOP2A, TYMS, DHFR, GART, RRM1, TUBB have zero OmniPath route rows, so a classical chemotherapeutic acting through its own effector cannot be traced at all - it would be 'not evaluable' at L3, which is NC5's test, not a cytotoxicity test. The cytotoxicity control therefore uses a drug whose MOA is purely cytotoxic ('DNA alkylating agent') but whose annotated unit (ESR2) does route to 4 ARACNe regulators in BRCA_LUMB: estramustine in MCF7. The chain is able to close here, and if it does, the procedure cannot tell a targeted mechanism from cell death. 8 such rows in the pool; most reachable regulators chosen.",
+  "NC5_no_anchored_tf": "HTR2A has 97 OmniPath route rows but none that resolves to a regulator with an ARACNe regulon in BRCA_LUMB within the frozen hop cap. 320 such rows in the pool; the highest-celligner-weight line chosen. The correct behaviour is an empty footprint and a 'not evaluable' L3, NOT a footprint assembled from ambiguous routes."
+ },
+ "reads_no_response_data": true,
+ "reads_no_outcome_label": true
+}
