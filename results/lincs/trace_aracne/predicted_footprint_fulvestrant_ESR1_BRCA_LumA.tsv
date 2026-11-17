@@ -1,0 +1,132 @@
+gene_id	symbol	feature_space	expected_sign_pre_action	n_unit_regulators_claiming	mean_likelihood	expected_sign	n_regulators_claiming	uniquely_attributable	unit_id	cmap_name
+ENSG00000117528	ABCD3	best inferred	1	1	0.246099291228288	-1	2	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000159346	ADIPOR1	best inferred	1	1	0.217925939484231	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000159461	AMFR	best inferred	1	1	0.201008104814336	-1	22	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000143412	ANXA9	best inferred	1	1	0.157262706866904	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000138660	AP1AR	best inferred	1	1	0.276283453540164	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000138613	APH1B	best inferred	1	1	0.226189495823021	-1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000120805	ARL1	best inferred	1	1	0.231425175118854	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000146476	ARMT1	best inferred	1	1	0.260939692158182	-1	8	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000171791	BCL2	landmark	1	1	0.241295416445066	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000166167	BTRC	best inferred	1	1	0.251743185115273	-1	5	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000154040	CABYR	best inferred	1	1	0.179579633018867	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000007402	CACNA2D2	best inferred	1	1	0.173223517267446	-1	23	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000120262	CCDC170	best inferred	1	1	0.28358856962505	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000090661	CERS4	best inferred	1	1	0.144972328684095	-1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000111481	COPZ1	best inferred	1	1	0.2055858966157	-1	14	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000114395	CYB561D2	best inferred	1	1	0.147247444090548	-1	20	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000276644	DACH1	best inferred	1	1	0.201232621056069	-1	8	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000035664	DAPK2	best inferred	1	1	0.144271916307429	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000132912	DCTN4	best inferred	1	1	0.291771075337414	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000197977	ELOVL2	best inferred	1	1	0.153181439826541	-1	19	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000125037	EMC3	best inferred	1	1	0.220012565834161	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000125746	EML2	best inferred	1	1	0.201336670085531	-1	21	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000196405	EVL	landmark	1	1	0.148823017930471	-1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000084444	FAM234B	best inferred	1	1	0.193084846055066	-1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000136068	FLNB	best inferred	1	1	0.17889415880415	-1	23	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000131781	FMO5	best inferred	1	1	0.202113791438502	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000129514	FOXA1	best inferred	1	1	0.306235748471589	-1	22	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000198380	GFPT1	landmark	1	1	0.24427239105278	-1	1	True	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000103365	GGA2	best inferred	1	1	0.263752935025578	-1	4	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000109738	GLRB	best inferred	1	1	0.224526274299714	-1	18	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000125166	GOT2	best inferred	1	1	0.196226075069177	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000186088	GSAP	best inferred	1	1	0.228727798551691	-1	8	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000272047	GTF2H5	best inferred	1	1	0.122771566727524	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000105707	HPN	best inferred	1	1	0.150027340177884	-1	16	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000005700	IBTK	best inferred	1	1	0.248256367556982	-1	4	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000171385	KCND3	best inferred	1	1	0.189892218262226	-1	14	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000198954	KIF1BP	landmark	1	1	0.295211276192439	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000171017	LRRC8E	best inferred	1	1	0.239954353778852	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000151690	MFSD6	best inferred	1	1	0.207527735979102	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000111341	MGP	best inferred	1	1	0.140216709174472	-1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000143409	MINDY1	landmark	1	1	0.213572839920685	-1	6	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000108852	MPP2	best inferred	1	1	0.173776939374258	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000112996	MRPS30	best inferred	1	1	0.198609291654527	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000118513	MYB	best inferred	1	1	0.239162419275656	-1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000114904	NEK4	best inferred	1	1	0.29078421144738	-1	6	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000169599	NFU1	best inferred	1	1	0.168314975327396	-1	18	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000172818	OVOL1	best inferred	1	1	0.183137097044956	-1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000065989	PDE4A	best inferred	1	1	0.173416338904855	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000168291	PDHB	best inferred	1	1	0.212524544387664	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000089220	PEBP1	best inferred	1	1	0.160321413023004	-1	18	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000114757	PEX5L	best inferred	1	1	0.20365362638449	-1	4	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000112357	PEX7	best inferred	1	1	0.223613895861196	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000010318	PHF7	best inferred	1	1	0.222165073662653	-1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000100564	PIGH	best inferred	1	1	0.217663114776661	-1	29	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000124155	PIGT	best inferred	1	1	0.179846668248334	-1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000051382	PIK3CB	best inferred	1	1	0.268475324134017	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000123739	PLA2G12A	best inferred	1	1	0.250153294951677	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000163636	PSMD6	best inferred	1	1	0.203238261589365	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000029725	RABEP1	best inferred	1	1	0.279032718040343	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000108384	RAD51C	landmark	1	1	0.151622820842792	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000171174	RBKS	landmark	1	1	0.163675082867467	-1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000154153	RETREG1	best inferred	1	1	0.1980681044146	-1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000155906	RMND1	best inferred	1	1	0.162750624329298	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000141425	RPRD1A	best inferred	1	1	0.256916208841171	-1	8	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000211456	SACM1L	landmark	1	1	0.27025620676263	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000152700	SAR1B	best inferred	1	1	0.218123979012045	-1	3	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000120742	SERP1	best inferred	1	1	0.226384383157826	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000181788	SIAH2	best inferred	1	1	0.155174822127186	-1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000110436	SLC1A2	best inferred	1	1	0.182209666325554	-1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000144659	SLC25A38	best inferred	1	1	0.181668927103492	-1	21	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000141424	SLC39A6	best inferred	1	1	0.225275204017674	-1	6	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000211584	SLC48A1	best inferred	1	1	0.191350347344693	-1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000114902	SPCS1	best inferred	1	1	0.192623675847183	-1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000109436	TBC1D9	best inferred	1	1	0.25474953003884	-1	6	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000164124	TMEM144	best inferred	1	1	0.2397346586885	-1	3	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000174292	TNK1	best inferred	1	1	0.172847621228638	-1	19	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000106537	TSPAN13	best inferred	1	1	0.187852354488638	-1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000140391	TSPAN3	landmark	1	1	0.17222929187791	-1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000168785	TSPAN5	best inferred	1	1	0.155399174238219	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000133985	TTC9	best inferred	1	1	0.179202526851232	-1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000176834	VSIG10	best inferred	1	1	0.19350305379262	-1	7	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000182093	WRB	landmark	1	1	0.209111483959916	-1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000100219	XBP1	landmark	1	1	0.237552037464671	-1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000181704	YIPF6	best inferred	1	1	0.277106104453863	-1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000181790	ADGRB1	best inferred	-1	1	0.146150061017629	1	14	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000123685	BATF3	best inferred	-1	1	0.196111867513326	1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000177469	CAVIN1	best inferred	-1	1	0.202186685544687	1	32	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000159228	CBR1	landmark	-1	1	0.159258966615849	1	5	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000105369	CD79A	best inferred	-1	1	0.18416170819272	1	6	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000105472	CLEC11A	best inferred	-1	1	0.197487127856995	1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000114270	COL7A1	best inferred	-1	1	0.173857669779631	1	15	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000176092	CRYBG2	best inferred	-1	1	0.149964408700653	1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000138080	EMILIN1	best inferred	-1	1	0.214237403864008	1	27	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000106123	EPHB6	best inferred	-1	1	0.200759333868797	1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000160867	FGFR4	landmark	-1	1	0.125334213144706	1	22	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000196924	FLNA	best inferred	-1	1	0.199295254610546	1	23	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000090554	FLT3LG	best inferred	-1	1	0.187290262778498	1	25	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000162882	HAAO	best inferred	-1	1	0.178180533995893	1	22	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000177374	HIC1	best inferred	-1	1	0.187025264286728	1	30	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000008517	IL32	best inferred	-1	1	0.193690048438096	1	19	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000104783	KCNN4	best inferred	-1	1	0.180134224187114	1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000167748	KLK1	best inferred	-1	1	0.191899867921612	1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000135480	KRT7	best inferred	-1	1	0.148966638544095	1	24	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000007264	MATK	best inferred	-1	1	0.171014442994861	1	9	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000187193	MT1X	best inferred	-1	1	0.14994658853295	1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000162576	MXRA8	best inferred	-1	1	0.186589008767784	1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000101335	MYL9	landmark	-1	1	0.200163033205297	1	18	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000166741	NNMT	best inferred	-1	1	0.219107733086435	1	23	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000107833	NPM3	best inferred	-1	1	0.179621670232849	1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000117385	P3H1	best inferred	-1	1	0.193385835402929	1	13	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000166289	PLEKHF1	best inferred	-1	1	0.188295423806986	1	10	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000023902	PLEKHO1	best inferred	-1	1	0.1919176460574	1	22	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000186654	PRR5	best inferred	-1	1	0.175263692742372	1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000167157	PRRX2	best inferred	-1	1	0.200591694337422	1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000160801	PTH1R	best inferred	-1	1	0.174153518162674	1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000106538	RARRES2	best inferred	-1	1	0.206685337006023	1	25	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000142552	RCN3	best inferred	-1	1	0.217290303399403	1	21	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000142676	RPL11	best inferred	-1	1	0.160775312894691	1	19	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000105372	RPS19	best inferred	-1	1	0.223463737162492	1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000171858	RPS21	best inferred	-1	1	0.199770788402789	1	3	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000188015	S100A3	best inferred	-1	1	0.199015032790924	1	8	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000063127	SLC6A16	best inferred	-1	1	0.153368174655397	1	11	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000183963	SMTN	best inferred	-1	1	0.200807150643044	1	18	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000116649	SRM	best inferred	-1	1	0.197890967905461	1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000149591	TAGLN	best inferred	-1	1	0.209797916280102	1	17	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000136842	TMOD1	best inferred	-1	1	0.168289028112982	1	12	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000034510	TMSB10	best inferred	-1	1	0.213766911599077	1	22	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000118194	TNNT2	best inferred	-1	1	0.157437682204956	1	8	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000198467	TPM2	best inferred	-1	1	0.179228823849726	1	14	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000176014	TUBB6	landmark	-1	1	0.204513003024039	1	21	False	fulvestrant::CHEMBL206	fulvestrant
+ENSG00000168899	VAMP5	best inferred	-1	1	0.226155296981658	1	22	False	fulvestrant::CHEMBL206	fulvestrant

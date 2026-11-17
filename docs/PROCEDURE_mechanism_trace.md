@@ -36,7 +36,9 @@ stops the chain being fitted to its endpoint.
 
 L6 is not a step in the biology. It is the audit that the BRAF case showed we need:
 an apparently healthy L4-L5 that rests entirely on one hub is not five hundred
-pieces of evidence, it is one.
+pieces of evidence, it is one. **L6 counts; it does not subtract** - see §5. Report
+the effective number of regulators carrying the footprint, never a score recomputed
+with a regulator's genes removed.
 
 ## 2. Every link carries the same seven fields
 
@@ -81,15 +83,40 @@ broken link is a **broken chain**, and the report leads with the break.
 This is the whole reason for tracing. A score of 0.03 averages a dead link into a
 live one and returns a number that looks mildly encouraging.
 
-## 5. Attribution ambiguity is reported at L4, always
+## 5. Attribution is DESCRIBED, never used to subset the response
 
-A gene in ESR1's regulon may sit in fifteen other regulons. Attributing its
-movement to ESR1 is a **choice**, not an observation.
+**Withdrawn 2026-11-17 (user).** An earlier version of this section told the trace
+to compare "uniquely attributable" genes against shared ones, and to recompute the
+score with a dominant regulator's genes removed. **Both operations are withdrawn,
+and results produced by them are not to be cited.**
 
-For every gene in L4 record how many other regulators in the same analysis also
-claim it. Report the fraction of the link's signal carried by genes that are
-uniquely attributable. A link whose evidence is entirely shared-attribution genes
-is marked `weak` regardless of how well the genes moved.
+**Why the unique-vs-shared test was confounded.** A gene is "uniquely attributable"
+because no other regulator claims it. Where the median gene is claimed by ~12
+regulators, being claimed by one is unusual - and what makes a gene unusual that way
+is a small regulon with thin evidence, not biological specificity. The first
+application found fulvestrant's 41 unique genes 39.0% concordant against 52.9% for
+437 shared ones, and read it as "the ESR1-specific genes move the wrong way". It is
+at least as likely to be **well-annotated genes versus poorly-annotated genes** -
+a property of how CollecTRI was built, not of ESR1.
+
+**Why leave-one-out subtraction is worse.** BRAF reaches transcription *through*
+MEK-ERK-MYC. Removing MYC's genes and recomputing does not give a purer BRAF signal;
+it gives BRAF with its principal effector deleted. The same holds for any cascade:
+shared structure is real biology (D133 established the overlap pairs are obligate
+complexes and close paralogs - NFKB1/RELA, RFX5/RFXANK/RFXAP, BMAL1/CLOCK), so
+subtracting it removes mechanism, not confound.
+
+**What is kept.** The *structural* description, which counts rather than tests:
+how many regulators claim each gene, and how many **effective** regulators the
+footprint represents. "1,063 genes arrive through ~2.7 effective regulators" is a
+statement about how much independent evidence exists. It requires no subsetting,
+no removal and no comparison between gene subsets.
+
+**The standing rule: the transcriptional response is holistic.** Do not carve a
+subset out of it and judge the subset. Where the question is whether the response
+is consistent with the mechanism, compare **whole response to whole response** -
+against the target's genetic perturbation (`SPEC_drug_genetic_concordance.md`) or
+across the drug's own dose series (`SPEC_dose_response_bmd.md`).
 
 ## 6. Alternatives are enumerated at each link, not at the end
 

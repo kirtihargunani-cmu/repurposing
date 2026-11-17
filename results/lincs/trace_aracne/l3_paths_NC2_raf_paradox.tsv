@@ -1,0 +1,13 @@
+target_gene	network	tf	hops	path_sign	path_status	tf_has_regulon	tf_regulon_genes	has_aracne_regulon	aracne_regulon_genes
+BRAF	omnipath	PAX3	1	1	resolved	True	81	True	13
+BRAF	omnipath	MYC	2	1	resolved	True	741	True	199
+BRAF	omnipath	MEF2D	2	1	resolved	True	20	True	151
+BRAF	omnipath	HSF1	2	1	resolved	True	75	True	143
+BRAF	omnipath	MEOX1	2	1	resolved	True	7	True	124
+BRAF	omnipath	MEF2C	2	1	resolved	True	49	True	120
+BRAF	omnipath	MEF2A	2	1	resolved	True	77	True	112
+BRAF	omnipath	ETS1	2	1	resolved	True	180	True	107
+BRAF	omnipath	MEOX2	2	1	resolved	True	6	True	100
+BRAF	omnipath	NR4A1	2	1	resolved	True	74	True	62
+BRAF	omnipath	TAL1	2	-1	resolved	True	71	True	56
+BRAF	omnipath	ELK4	2	1	resolved	True	6	True	23

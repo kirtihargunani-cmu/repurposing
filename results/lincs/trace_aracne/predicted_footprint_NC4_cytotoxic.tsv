@@ -1,0 +1,398 @@
+gene_id	symbol	feature_space	expected_sign_pre_action	n_unit_regulators_claiming	mean_likelihood	expected_sign	n_regulators_claiming	uniquely_attributable	unit_id	cmap_name
+ENSG00000128274	A4GALT	best inferred	1	1	0.168172531495363	-1	9	False	estramustine::nan	estramustine
+ENSG00000131043	AAR2	best inferred	1	1	0.207668070721434	-1	22	False	estramustine::nan	estramustine
+ENSG00000266967	AARSD1	best inferred	1	1	0.209667928883212	-1	18	False	estramustine::nan	estramustine
+ENSG00000275700	AATF	best inferred	1	1	0.176164602300481	-1	13	False	estramustine::nan	estramustine
+ENSG00000167972	ABCA3	best inferred	1	1	0.190093635495862	-1	7	False	estramustine::nan	estramustine
+ENSG00000033050	ABCF2	best inferred	1	1	0.182959350802344	-1	7	False	estramustine::nan	estramustine
+ENSG00000278540	ACACA	best inferred	1	1	0.188179747657895	-1	2	False	estramustine::nan	estramustine
+ENSG00000181513	ACBD4	best inferred	1	1	0.231027031325866	-1	21	False	estramustine::nan	estramustine
+ENSG00000130402	ACTN4	best inferred	1	1	0.22409151184038	-1	22	False	estramustine::nan	estramustine
+ENSG00000204310	AGPAT1	best inferred	1	1	0.194089493955341	-1	12	False	estramustine::nan	estramustine
+ENSG00000126705	AHDC1	best inferred	1	1	0.183511778741862	-1	17	False	estramustine::nan	estramustine
+ENSG00000106992	AK1	best inferred	1	1	0.183629288400126	-1	14	False	estramustine::nan	estramustine
+ENSG00000053371	AKR7A2	landmark	1	1	0.229319198893774	-1	15	False	estramustine::nan	estramustine
+ENSG00000142208	AKT1	landmark	1	1	0.21304908938124	-1	15	False	estramustine::nan	estramustine
+ENSG00000148218	ALAD	best inferred	1	1	0.226096687560683	-1	13	False	estramustine::nan	estramustine
+ENSG00000182858	ALG12	best inferred	1	1	0.219619933714337	-1	7	False	estramustine::nan	estramustine
+ENSG00000160746	ANO10	landmark	1	1	0.196620584561677	-1	2	False	estramustine::nan	estramustine
+ENSG00000143412	ANXA9	best inferred	1	1	0.176858490104308	-1	13	False	estramustine::nan	estramustine
+ENSG00000137074	APTX	best inferred	1	1	0.193746751674528	-1	10	False	estramustine::nan	estramustine
+ENSG00000149182	ARFGAP2	best inferred	1	1	0.201943902488445	-1	12	False	estramustine::nan	estramustine
+ENSG00000130762	ARHGEF16	best inferred	1	1	0.230532439175827	-1	17	False	estramustine::nan	estramustine
+ENSG00000110237	ARHGEF17	best inferred	1	1	0.179443289886116	-1	13	False	estramustine::nan	estramustine
+ENSG00000135931	ARMC9	best inferred	1	1	0.194920193541311	-1	7	False	estramustine::nan	estramustine
+ENSG00000100299	ARSA	best inferred	1	1	0.200384812561992	-1	13	False	estramustine::nan	estramustine
+ENSG00000018625	ATP1A2	best inferred	1	1	0.171329911190435	-1	8	False	estramustine::nan	estramustine
+ENSG00000071553	ATP6AP1	best inferred	1	2	0.19234205791501952	-1	13	False	estramustine::nan	estramustine
+ENSG00000033627	ATP6V0A1	best inferred	1	1	0.232706267708124	-1	6	False	estramustine::nan	estramustine
+ENSG00000117410	ATP6V0B	landmark	1	1	0.159831341317904	-1	9	False	estramustine::nan	estramustine
+ENSG00000136888	ATP6V1G1	best inferred	1	1	0.206869863250974	-1	17	False	estramustine::nan	estramustine
+ENSG00000235863	B3GALT4	best inferred	1	1	0.186032808884397	-1	17	False	estramustine::nan	estramustine
+ENSG00000174684	B4GAT1	landmark	1	1	0.189562780113171	-1	5	False	estramustine::nan	estramustine
+ENSG00000140320	BAHD1	best inferred	1	2	0.211144160041043	-1	14	False	estramustine::nan	estramustine
+ENSG00000175866	BAIAP2	best inferred	1	1	0.20144102749275	-1	19	False	estramustine::nan	estramustine
+ENSG00000163930	BAP1	best inferred	1	1	0.195915166303518	-1	11	False	estramustine::nan	estramustine
+ENSG00000141376	BCAS3	best inferred	1	1	0.213009842577302	-1	6	False	estramustine::nan	estramustine
+ENSG00000105552	BCAT2	best inferred	1	1	0.182281233700776	-1	13	False	estramustine::nan	estramustine
+ENSG00000103507	BCKDK	best inferred	1	1	0.195626438127518	-1	13	False	estramustine::nan	estramustine
+ENSG00000126581	BECN1	landmark	1	1	0.220494370447767	-1	7	False	estramustine::nan	estramustine
+ENSG00000134107	BHLHE40	landmark	1	1	0.189283791448857	-1	12	False	estramustine::nan	estramustine
+ENSG00000106605	BLVRA	landmark	1	1	0.178376381339895	-1	7	False	estramustine::nan	estramustine
+ENSG00000028310	BRD9	best inferred	1	1	0.211103345122342	-1	18	False	estramustine::nan	estramustine
+ENSG00000133243	BTBD2	best inferred	1	1	0.216768802858431	-1	15	False	estramustine::nan	estramustine
+ENSG00000100802	C14orf93	best inferred	1	1	0.20867781637823	-1	19	False	estramustine::nan	estramustine
+ENSG00000140688	C16orf58	best inferred	1	1	0.225435530673795	-1	15	False	estramustine::nan	estramustine
+ENSG00000108666	C17orf75	best inferred	1	2	0.218784614371072	-1	8	False	estramustine::nan	estramustine
+ENSG00000131094	C1QL1	best inferred	1	1	0.170186239434342	-1	10	False	estramustine::nan	estramustine
+ENSG00000088543	C3orf18	best inferred	1	1	0.173336667705077	-1	20	False	estramustine::nan	estramustine
+ENSG00000138172	CALHM2	best inferred	1	1	0.179873465912607	-1	12	False	estramustine::nan	estramustine
+ENSG00000160014	CALM3	landmark	1	1	0.160746857909458	-1	13	False	estramustine::nan	estramustine
+ENSG00000100065	CARD10	best inferred	1	2	0.1828759722542325	-1	13	False	estramustine::nan	estramustine
+ENSG00000108349	CASC3	landmark	1	1	0.242789112354446	-1	10	False	estramustine::nan	estramustine
+ENSG00000177303	CASKIN2	best inferred	1	1	0.223855915614884	-1	18	False	estramustine::nan	estramustine
+ENSG00000141582	CBX4	best inferred	1	1	0.207226672532372	-1	11	False	estramustine::nan	estramustine
+ENSG00000100307	CBX7	best inferred	1	1	0.223954150768477	-1	23	False	estramustine::nan	estramustine
+ENSG00000173581	CCDC106	best inferred	1	1	0.200207985555512	-1	18	False	estramustine::nan	estramustine
+ENSG00000179604	CDC42EP4	best inferred	1	2	0.1922920677327045	-1	16	False	estramustine::nan	estramustine
+ENSG00000167258	CDK12	best inferred	1	2	0.2510466929100925	-1	12	False	estramustine::nan	estramustine
+ENSG00000164885	CDK5	best inferred	1	1	0.172034861020762	-1	16	False	estramustine::nan	estramustine
+ENSG00000136807	CDK9	best inferred	1	1	0.230620013728159	-1	18	False	estramustine::nan	estramustine
+ENSG00000124762	CDKN1A	landmark	1	1	0.164015108140759	-1	9	False	estramustine::nan	estramustine
+ENSG00000143126	CELSR2	best inferred	1	1	0.192531697569295	-1	14	False	estramustine::nan	estramustine
+ENSG00000111642	CHD4	best inferred	1	1	0.18737969827287	-1	22	False	estramustine::nan	estramustine
+ENSG00000189143	CLDN4	best inferred	1	1	0.205144196079316	-1	14	False	estramustine::nan	estramustine
+ENSG00000139182	CLSTN3	best inferred	1	1	0.186848122031605	-1	8	False	estramustine::nan	estramustine
+ENSG00000183978	COA3	best inferred	1	1	0.164766788842617	-1	10	False	estramustine::nan	estramustine
+ENSG00000068120	COASY	landmark	1	2	0.19537318644796	-1	18	False	estramustine::nan	estramustine
+ENSG00000181789	COPG1	best inferred	1	1	0.147642264237279	-1	5	False	estramustine::nan	estramustine
+ENSG00000167113	COQ4	best inferred	1	1	0.224631652157733	-1	19	False	estramustine::nan	estramustine
+ENSG00000106789	CORO2A	best inferred	1	1	0.193297882678697	-1	10	False	estramustine::nan	estramustine
+ENSG00000064601	CTSA	best inferred	1	1	0.165942929292828	-1	5	False	estramustine::nan	estramustine
+ENSG00000257923	CUX1	best inferred	1	1	0.166630200148371	-1	22	False	estramustine::nan	estramustine
+ENSG00000273559	CWC25	best inferred	1	2	0.2370165844951945	-1	6	False	estramustine::nan	estramustine
+ENSG00000008283	CYB561	landmark	1	2	0.1886387188033595	-1	13	False	estramustine::nan	estramustine
+ENSG00000105516	DBP	best inferred	1	1	0.178894151904041	-1	7	False	estramustine::nan	estramustine
+ENSG00000174243	DDX23	best inferred	1	1	0.233597437256862	-1	16	False	estramustine::nan	estramustine
+ENSG00000205593	DENND6B	best inferred	1	1	0.202475180795387	-1	11	False	estramustine::nan	estramustine
+ENSG00000100150	DEPDC5	best inferred	1	1	0.208847867132261	-1	16	False	estramustine::nan	estramustine
+ENSG00000145214	DGKQ	best inferred	1	1	0.210358632047026	-1	23	False	estramustine::nan	estramustine
+ENSG00000278535	DHRS11	best inferred	1	1	0.17928747730718	-1	4	False	estramustine::nan	estramustine
+ENSG00000132153	DHX30	best inferred	1	1	0.219837300120947	-1	15	False	estramustine::nan	estramustine
+ENSG00000067596	DHX8	best inferred	1	1	0.189447658685058	-1	11	False	estramustine::nan	estramustine
+ENSG00000132535	DLG4	best inferred	1	1	0.196644621660681	-1	15	False	estramustine::nan	estramustine
+ENSG00000151208	DLG5	best inferred	1	1	0.230073051359524	-1	6	False	estramustine::nan	estramustine
+ENSG00000187775	DNAH17	best inferred	1	1	0.16207922013856	-1	5	False	estramustine::nan	estramustine
+ENSG00000148719	DNAJB12	best inferred	1	1	0.21856441541073	-1	10	False	estramustine::nan	estramustine
+ENSG00000168259	DNAJC7	best inferred	1	2	0.2007316089781285	-1	17	False	estramustine::nan	estramustine
+ENSG00000100246	DNAL4	best inferred	1	1	0.220249310265352	-1	13	False	estramustine::nan	estramustine
+ENSG00000013563	DNASE1L1	best inferred	1	1	0.20629152650363	-1	10	False	estramustine::nan	estramustine
+ENSG00000115325	DOK1	best inferred	1	1	0.182362282180203	-1	11	False	estramustine::nan	estramustine
+ENSG00000120129	DUSP1	best inferred	1	1	0.278108593958442	-1	8	False	estramustine::nan	estramustine
+ENSG00000101210	EEF1A2	best inferred	1	1	0.172072434421807	-1	14	False	estramustine::nan	estramustine
+ENSG00000120738	EGR1	landmark	1	1	0.367061005995081	-1	11	False	estramustine::nan	estramustine
+ENSG00000114867	EIF4G1	landmark	1	1	0.204021169204917	-1	13	False	estramustine::nan	estramustine
+ENSG00000102890	ELMO3	best inferred	1	1	0.208589135260238	-1	13	False	estramustine::nan	estramustine
+ENSG00000066322	ELOVL1	best inferred	1	1	0.192560030046411	-1	5	False	estramustine::nan	estramustine
+ENSG00000170522	ELOVL6	landmark	1	1	0.1677417037131	-1	3	False	estramustine::nan	estramustine
+ENSG00000125746	EML2	best inferred	1	1	0.172710716881724	-1	18	False	estramustine::nan	estramustine
+ENSG00000149218	ENDOD1	best inferred	1	1	0.169661881336958	-1	10	False	estramustine::nan	estramustine
+ENSG00000167280	ENGASE	best inferred	1	1	0.220702055224712	-1	18	False	estramustine::nan	estramustine
+ENSG00000111674	ENO2	best inferred	1	1	0.176397623717956	-1	14	False	estramustine::nan	estramustine
+ENSG00000197586	ENTPD6	best inferred	1	1	0.199051739799592	-1	10	False	estramustine::nan	estramustine
+ENSG00000088367	EPB41L1	best inferred	1	1	0.201626655566846	-1	10	False	estramustine::nan	estramustine
+ENSG00000049283	EPN3	best inferred	1	1	0.165922100221766	-1	19	False	estramustine::nan	estramustine
+ENSG00000141736	ERBB2	landmark	1	2	0.265175680540099	-1	15	False	estramustine::nan	estramustine
+ENSG00000065361	ERBB3	landmark	1	1	0.221915045155409	-1	8	False	estramustine::nan	estramustine
+ENSG00000135476	ESPL1	best inferred	1	1	0.221384686602308	-1	19	False	estramustine::nan	estramustine
+ENSG00000081177	EXD2	best inferred	1	1	0.225250217691458	-1	7	False	estramustine::nan	estramustine
+ENSG00000180104	EXOC3	best inferred	1	1	0.216319107007215	-1	17	False	estramustine::nan	estramustine
+ENSG00000108799	EZH1	best inferred	1	2	0.230716468110802	-1	13	False	estramustine::nan	estramustine
+ENSG00000117480	FAAH	best inferred	1	1	0.176441482202905	-1	13	False	estramustine::nan	estramustine
+ENSG00000167106	FAM102A	best inferred	1	2	0.20858917630614549	-1	14	False	estramustine::nan	estramustine
+ENSG00000005238	FAM214B	best inferred	1	1	0.197562366646523	-1	13	False	estramustine::nan	estramustine
+ENSG00000169710	FASN	best inferred	1	1	0.17760062444799	-1	9	False	estramustine::nan	estramustine
+ENSG00000165140	FBP1	best inferred	1	1	0.182216255696503	-1	14	False	estramustine::nan	estramustine
+ENSG00000104870	FCGRT	best inferred	1	1	0.201401056608509	-1	10	False	estramustine::nan	estramustine
+ENSG00000161513	FDXR	best inferred	1	1	0.21669128100275	-1	13	False	estramustine::nan	estramustine
+ENSG00000004478	FKBP4	landmark	1	2	0.1868757600876855	-1	14	False	estramustine::nan	estramustine
+ENSG00000136068	FLNB	best inferred	1	2	0.17868475147003549	-1	13	False	estramustine::nan	estramustine
+ENSG00000132589	FLOT2	best inferred	1	1	0.205843550357049	-1	10	False	estramustine::nan	estramustine
+ENSG00000125740	FOSB	best inferred	1	1	0.379743167128512	-1	11	False	estramustine::nan	estramustine
+ENSG00000129245	FXR2	best inferred	1	1	0.182127480595164	-1	15	False	estramustine::nan	estramustine
+ENSG00000187730	GABRD	best inferred	1	1	0.176446376022155	-1	8	False	estramustine::nan	estramustine
+ENSG00000141013	GAS8	best inferred	1	1	0.198900935216808	-1	17	False	estramustine::nan	estramustine
+ENSG00000089154	GCN1	best inferred	1	1	0.240766855452268	-1	23	False	estramustine::nan	estramustine
+ENSG00000104381	GDAP1	best inferred	1	1	0.191334388420945	-1	8	False	estramustine::nan	estramustine
+ENSG00000130513	GDF15	best inferred	1	1	0.149816648002851	-1	12	False	estramustine::nan	estramustine
+ENSG00000164949	GEM	best inferred	1	1	0.249647900560757	-1	17	False	estramustine::nan	estramustine
+ENSG00000141098	GFOD2	best inferred	1	1	0.182762166003588	-1	12	False	estramustine::nan	estramustine
+ENSG00000278311	GGNBP2	best inferred	1	1	0.210937909928367	-1	13	False	estramustine::nan	estramustine
+ENSG00000108262	GIT1	best inferred	1	1	0.201342087107095	-1	16	False	estramustine::nan	estramustine
+ENSG00000128266	GNAZ	best inferred	1	1	0.194925662782137	-1	19	False	estramustine::nan	estramustine
+ENSG00000171723	GPHN	best inferred	1	1	0.179846578130778	-1	9	False	estramustine::nan	estramustine
+ENSG00000141738	GRB7	landmark	1	2	0.23741396446376	-1	14	False	estramustine::nan	estramustine
+ENSG00000137106	GRHPR	best inferred	1	1	0.207188924085338	-1	16	False	estramustine::nan	estramustine
+ENSG00000176884	GRIN1	best inferred	1	1	0.156916748240855	-1	4	False	estramustine::nan	estramustine
+ENSG00000109519	GRPEL1	best inferred	1	1	0.19390428539037	-1	11	False	estramustine::nan	estramustine
+ENSG00000139835	GRTP1	best inferred	1	1	0.180024299080052	-1	8	False	estramustine::nan	estramustine
+ENSG00000073605	GSDMB	best inferred	1	1	0.212893276394627	-1	10	False	estramustine::nan	estramustine
+ENSG00000100983	GSS	best inferred	1	1	0.186919106346974	-1	12	False	estramustine::nan	estramustine
+ENSG00000172534	HCFC1	best inferred	1	1	0.228100592087153	-1	22	False	estramustine::nan	estramustine
+ENSG00000116478	HDAC1	best inferred	1	1	0.193659239309501	-1	11	False	estramustine::nan	estramustine
+ENSG00000108840	HDAC5	best inferred	1	2	0.2375067688522965	-1	26	False	estramustine::nan	estramustine
+ENSG00000061273	HDAC7	best inferred	1	1	0.216429778414597	-1	25	False	estramustine::nan	estramustine
+ENSG00000184678	HIST2H2BE	landmark	1	1	0.164645011597524	-1	8	False	estramustine::nan	estramustine
+ENSG00000117305	HMGCL	best inferred	1	1	0.189389094822183	-1	9	False	estramustine::nan	estramustine
+ENSG00000169813	HNRNPF	best inferred	1	1	0.229596220604286	-1	11	False	estramustine::nan	estramustine
+ENSG00000204390	HSPA1L	best inferred	1	1	0.182070972818922	-1	8	False	estramustine::nan	estramustine
+ENSG00000173641	HSPB7	best inferred	1	1	0.181114088598269	-1	9	False	estramustine::nan	estramustine
+ENSG00000102241	HTATSF1	landmark	1	1	0.206824178726914	-1	10	False	estramustine::nan	estramustine
+ENSG00000137331	IER3	landmark	1	1	0.188898930007833	-1	10	False	estramustine::nan	estramustine
+ENSG00000187535	IFT140	best inferred	1	2	0.2284040393661175	-1	14	False	estramustine::nan	estramustine
+ENSG00000100360	IFT27	best inferred	1	1	0.192282779810457	-1	10	False	estramustine::nan	estramustine
+ENSG00000140443	IGF1R	landmark	1	1	0.202993926131744	-1	11	False	estramustine::nan	estramustine
+ENSG00000141753	IGFBP4	best inferred	1	1	0.193660063221294	-1	10	False	estramustine::nan	estramustine
+ENSG00000111653	ING4	best inferred	1	1	0.197347224460276	-1	15	False	estramustine::nan	estramustine
+ENSG00000124313	IQSEC2	best inferred	1	1	0.210593814381109	-1	12	False	estramustine::nan	estramustine
+ENSG00000169047	IRS1	best inferred	1	1	0.178942886057191	-1	7	False	estramustine::nan	estramustine
+ENSG00000176842	IRX5	best inferred	1	1	0.183059598086442	-1	12	False	estramustine::nan	estramustine
+ENSG00000005884	ITGA3	best inferred	1	1	0.203173811244162	-1	8	False	estramustine::nan	estramustine
+ENSG00000135424	ITGA7	best inferred	1	1	0.192163547809209	-1	14	False	estramustine::nan	estramustine
+ENSG00000100605	ITPK1	best inferred	1	1	0.223377230280966	-1	11	False	estramustine::nan	estramustine
+ENSG00000043143	JADE2	landmark	1	1	0.214387964297466	-1	19	False	estramustine::nan	estramustine
+ENSG00000177606	JUN	landmark	1	1	0.220291255914461	-1	16	False	estramustine::nan	estramustine
+ENSG00000171223	JUNB	best inferred	1	1	0.229648000054658	-1	13	False	estramustine::nan	estramustine
+ENSG00000173801	JUP	best inferred	1	2	0.2141229660530125	-1	19	False	estramustine::nan	estramustine
+ENSG00000124249	KCNK15	best inferred	1	1	0.180462666979497	-1	9	False	estramustine::nan	estramustine
+ENSG00000088247	KHSRP	best inferred	1	1	0.239164385259892	-1	22	False	estramustine::nan	estramustine
+ENSG00000142687	KIAA0319L	best inferred	1	1	0.233827553131166	-1	8	False	estramustine::nan	estramustine
+ENSG00000186185	KIF18B	best inferred	1	1	0.202379553646451	-1	14	False	estramustine::nan	estramustine
+ENSG00000099910	KLHL22	best inferred	1	1	0.22030591848301	-1	21	False	estramustine::nan	estramustine
+ENSG00000183655	KLHL25	best inferred	1	2	0.221714844618942	-1	22	False	estramustine::nan	estramustine
+ENSG00000186395	KRT10	best inferred	1	1	0.159969777375577	-1	8	False	estramustine::nan	estramustine
+ENSG00000111057	KRT18	best inferred	1	1	0.167093502581836	-1	12	False	estramustine::nan	estramustine
+ENSG00000171345	KRT19	best inferred	1	2	0.189112269883276	-1	12	False	estramustine::nan	estramustine
+ENSG00000171097	KYAT1	best inferred	1	1	0.187124076469616	-1	7	False	estramustine::nan	estramustine
+ENSG00000002834	LASP1	best inferred	1	2	0.225361494616558	-1	6	False	estramustine::nan	estramustine
+ENSG00000239998	LILRA2	best inferred	1	1	0.178555719583131	-1	4	False	estramustine::nan	estramustine
+ENSG00000073350	LLGL2	best inferred	1	1	0.206409875860144	-1	19	False	estramustine::nan	estramustine
+ENSG00000169223	LMAN2	best inferred	1	1	0.204271866973624	-1	14	False	estramustine::nan	estramustine
+ENSG00000103227	LMF1	best inferred	1	2	0.1688831835428815	-1	10	False	estramustine::nan	estramustine
+ENSG00000198589	LRBA	best inferred	1	1	0.218557657131359	-1	11	False	estramustine::nan	estramustine
+ENSG00000110514	MADD	best inferred	1	1	0.239151175489474	-1	20	False	estramustine::nan	estramustine
+ENSG00000090316	MAEA	best inferred	1	1	0.235539920981928	-1	16	False	estramustine::nan	estramustine
+ENSG00000105695	MAG	best inferred	1	2	0.16122085892959398	-1	7	False	estramustine::nan	estramustine
+ENSG00000102316	MAGED2	best inferred	1	1	0.200313468012347	-1	12	False	estramustine::nan	estramustine
+ENSG00000102882	MAPK3	best inferred	1	1	0.204516586231072	-1	9	False	estramustine::nan	estramustine
+ENSG00000162889	MAPKAPK2	landmark	1	1	0.169054605165608	-1	9	False	estramustine::nan	estramustine
+ENSG00000007047	MARK4	best inferred	1	1	0.208720550949279	-1	9	False	estramustine::nan	estramustine
+ENSG00000086015	MAST2	landmark	1	1	0.218214610227931	-1	17	False	estramustine::nan	estramustine
+ENSG00000198125	MB	best inferred	1	1	0.147587562438667	-1	6	False	estramustine::nan	estramustine
+ENSG00000141644	MBD1	best inferred	1	1	0.2084582469511	-1	20	False	estramustine::nan	estramustine
+ENSG00000125505	MBOAT7	landmark	1	1	0.209881602786588	-1	8	False	estramustine::nan	estramustine
+ENSG00000140943	MBTPS1	landmark	1	1	0.180901109403788	-1	6	False	estramustine::nan	estramustine
+ENSG00000187778	MCRS1	best inferred	1	1	0.207519678763624	-1	22	False	estramustine::nan	estramustine
+ENSG00000169057	MECP2	best inferred	1	1	0.205332818857535	-1	10	False	estramustine::nan	estramustine
+ENSG00000125686	MED1	best inferred	1	1	0.262052364774623	-1	9	False	estramustine::nan	estramustine
+ENSG00000148297	MED22	best inferred	1	1	0.226237554662475	-1	17	False	estramustine::nan	estramustine
+ENSG00000008838	MED24	best inferred	1	1	0.230622619148377	-1	13	False	estramustine::nan	estramustine
+ENSG00000104973	MED25	best inferred	1	1	0.205796264509706	-1	12	False	estramustine::nan	estramustine
+ENSG00000116604	MEF2D	best inferred	1	1	0.190760273412571	-1	18	False	estramustine::nan	estramustine
+ENSG00000182544	MFSD5	best inferred	1	1	0.200955567347108	-1	11	False	estramustine::nan	estramustine
+ENSG00000128268	MGAT3	best inferred	1	1	0.164488203050298	-1	12	False	estramustine::nan	estramustine
+ENSG00000170430	MGMT	best inferred	1	1	0.189691578194924	-1	7	False	estramustine::nan	estramustine
+ENSG00000099812	MISP	best inferred	1	1	0.176855718031575	-1	11	False	estramustine::nan	estramustine
+ENSG00000173269	MMRN2	best inferred	1	1	0.204423237566831	-1	9	False	estramustine::nan	estramustine
+ENSG00000108852	MPP2	best inferred	1	1	0.212878938591129	-1	14	False	estramustine::nan	estramustine
+ENSG00000171861	MRM3	best inferred	1	1	0.190779570951269	-1	13	False	estramustine::nan	estramustine
+ENSG00000188895	MSL1	best inferred	1	2	0.2815220677756175	-1	8	False	estramustine::nan	estramustine
+ENSG00000090432	MUL1	best inferred	1	2	0.19848497581660302	-1	17	False	estramustine::nan	estramustine
+ENSG00000100345	MYH9	best inferred	1	1	0.213082095911225	-1	14	False	estramustine::nan	estramustine
+ENSG00000278259	MYO19	best inferred	1	1	0.185189115582734	-1	9	False	estramustine::nan	estramustine
+ENSG00000196132	MYT1	best inferred	1	1	0.18805859475316	-1	26	False	estramustine::nan	estramustine
+ENSG00000166886	NAB2	best inferred	1	1	0.204956703126872	-1	11	False	estramustine::nan	estramustine
+ENSG00000198951	NAGA	best inferred	1	1	0.202375123212213	-1	8	False	estramustine::nan	estramustine
+ENSG00000108784	NAGLU	best inferred	1	2	0.19367200053268852	-1	13	False	estramustine::nan	estramustine
+ENSG00000105402	NAPA	best inferred	1	1	0.165940264604628	-1	18	False	estramustine::nan	estramustine
+ENSG00000188554	NBR1	best inferred	1	1	0.227857950597414	-1	8	False	estramustine::nan	estramustine
+ENSG00000196498	NCOR2	best inferred	1	2	0.22225784772298451	-1	23	False	estramustine::nan	estramustine
+ENSG00000185049	NELFA	best inferred	1	1	0.219337731601676	-1	15	False	estramustine::nan	estramustine
+ENSG00000188986	NELFB	best inferred	1	1	0.233815836283192	-1	20	False	estramustine::nan	estramustine
+ENSG00000123405	NFE2	best inferred	1	1	0.16975632366226	-1	4	False	estramustine::nan	estramustine
+ENSG00000082641	NFE2L1	best inferred	1	2	0.2152930677239545	-1	9	False	estramustine::nan	estramustine
+ENSG00000168256	NKIRAS2	best inferred	1	2	0.22049386406216248	-1	18	False	estramustine::nan	estramustine
+ENSG00000073536	NLE1	best inferred	1	1	0.197612214560419	-1	17	False	estramustine::nan	estramustine
+ENSG00000119508	NR4A3	best inferred	1	1	0.262848864677072	-1	10	False	estramustine::nan	estramustine
+ENSG00000170502	NUDT9	landmark	1	1	0.193953778745293	-1	8	False	estramustine::nan	estramustine
+ENSG00000172818	OVOL1	best inferred	1	1	0.200578569717694	-1	7	False	estramustine::nan	estramustine
+ENSG00000178467	P4HTM	landmark	1	1	0.236977312353801	-1	24	False	estramustine::nan	estramustine
+ENSG00000099864	PALM	best inferred	1	1	0.182208562143111	-1	9	False	estramustine::nan	estramustine
+ENSG00000116288	PARK7	best inferred	1	1	0.166117445527758	-1	10	False	estramustine::nan	estramustine
+ENSG00000197111	PCBP2	best inferred	1	1	0.22812602991668	-1	8	False	estramustine::nan	estramustine
+ENSG00000277258	PCGF2	best inferred	1	2	0.206718911822602	-1	10	False	estramustine::nan	estramustine
+ENSG00000160299	PCNT	best inferred	1	1	0.186738509666261	-1	10	False	estramustine::nan	estramustine
+ENSG00000100311	PDGFB	best inferred	1	1	0.19777369967903	-1	24	False	estramustine::nan	estramustine
+ENSG00000186862	PDZD7	best inferred	1	1	0.193704882850046	-1	10	False	estramustine::nan	estramustine
+ENSG00000133027	PEMT	best inferred	1	1	0.154403190099916	-1	5	False	estramustine::nan	estramustine
+ENSG00000139197	PEX5	best inferred	1	1	0.210264675560587	-1	23	False	estramustine::nan	estramustine
+ENSG00000161395	PGAP3	best inferred	1	2	0.25320083409012	-1	14	False	estramustine::nan	estramustine
+ENSG00000174307	PHLDA3	best inferred	1	1	0.179447883327462	-1	12	False	estramustine::nan	estramustine
+ENSG00000165282	PIGO	best inferred	1	1	0.201577719311535	-1	2	False	estramustine::nan	estramustine
+ENSG00000124155	PIGT	best inferred	1	1	0.176566025513055	-1	9	False	estramustine::nan	estramustine
+ENSG00000133056	PIK3C2B	landmark	1	1	0.234688949341932	-1	4	False	estramustine::nan	estramustine
+ENSG00000276293	PIP4K2B	landmark	1	1	0.271935618540247	-1	15	False	estramustine::nan	estramustine
+ENSG00000241878	PISD	best inferred	1	1	0.211773017498552	-1	15	False	estramustine::nan	estramustine
+ENSG00000143850	PLEKHA6	best inferred	1	1	0.198254884815819	-1	15	False	estramustine::nan	estramustine
+ENSG00000068137	PLEKHH3	best inferred	1	1	0.177674314100367	-1	13	False	estramustine::nan	estramustine
+ENSG00000130827	PLXNA3	best inferred	1	1	0.2175432906292	-1	3	False	estramustine::nan	estramustine
+ENSG00000100417	PMM1	best inferred	1	1	0.179720194758355	-1	14	False	estramustine::nan	estramustine
+ENSG00000141744	PNMT	best inferred	1	1	0.161151799410872	-1	5	False	estramustine::nan	estramustine
+ENSG00000100227	POLDIP3	best inferred	1	1	0.217785874083352	-1	17	False	estramustine::nan	estramustine
+ENSG00000099817	POLR2E	best inferred	1	1	0.188029662258686	-1	11	False	estramustine::nan	estramustine
+ENSG00000100034	PPM1F	best inferred	1	1	0.202781793806139	-1	9	False	estramustine::nan	estramustine
+ENSG00000115241	PPM1G	best inferred	1	1	0.208537212799177	-1	19	False	estramustine::nan	estramustine
+ENSG00000196422	PPP1R26	best inferred	1	1	0.215700171982505	-1	33	False	estramustine::nan	estramustine
+ENSG00000012211	PRICKLE3	best inferred	1	1	0.215829243458953	-1	17	False	estramustine::nan	estramustine
+ENSG00000163932	PRKCD	landmark	1	1	0.203835128413047	-1	3	False	estramustine::nan	estramustine
+ENSG00000132600	PRMT7	best inferred	1	1	0.203013222582554	-1	16	False	estramustine::nan	estramustine
+ENSG00000126460	PRRG2	best inferred	1	2	0.208689597052254	-1	16	False	estramustine::nan	estramustine
+ENSG00000105227	PRX	best inferred	1	1	0.214589483471379	-1	17	False	estramustine::nan	estramustine
+ENSG00000159792	PSKH1	best inferred	1	1	0.229723305371956	-1	23	False	estramustine::nan	estramustine
+ENSG00000131470	PSMC3IP	best inferred	1	1	0.183745511180309	-1	17	False	estramustine::nan	estramustine
+ENSG00000108344	PSMD3	best inferred	1	2	0.30177443088056755	-1	20	False	estramustine::nan	estramustine
+ENSG00000110801	PSMD9	landmark	1	1	0.201151943200213	-1	13	False	estramustine::nan	estramustine
+ENSG00000131467	PSME3	best inferred	1	1	0.200270035550382	-1	8	False	estramustine::nan	estramustine
+ENSG00000174915	PTDSS2	best inferred	1	1	0.193201908259495	-1	14	False	estramustine::nan	estramustine
+ENSG00000119383	PTPA	best inferred	1	1	0.226212871988382	-1	12	False	estramustine::nan	estramustine
+ENSG00000176894	PXMP2	landmark	1	2	0.19823704266471298	-1	11	False	estramustine::nan	estramustine
+ENSG00000104524	PYCR3	best inferred	1	1	0.185798092919873	-1	12	False	estramustine::nan	estramustine
+ENSG00000100994	PYGB	best inferred	1	1	0.179673448221993	-1	9	False	estramustine::nan	estramustine
+ENSG00000151552	QDPR	best inferred	1	1	0.173005644573765	-1	11	False	estramustine::nan	estramustine
+ENSG00000100228	RAB36	best inferred	1	1	0.190202476202759	-1	8	False	estramustine::nan	estramustine
+ENSG00000108774	RAB5C	best inferred	1	1	0.224540534587479	-1	8	False	estramustine::nan	estramustine
+ENSG00000136933	RABEPK	best inferred	1	1	0.178513083923413	-1	8	False	estramustine::nan	estramustine
+ENSG00000185379	RAD51D	best inferred	1	1	0.220520171133827	-1	8	False	estramustine::nan	estramustine
+ENSG00000076864	RAP1GAP	landmark	1	1	0.194896773846646	-1	12	False	estramustine::nan	estramustine
+ENSG00000079337	RAPGEF3	best inferred	1	1	0.199198102456858	-1	12	False	estramustine::nan	estramustine
+ENSG00000108352	RAPGEFL1	best inferred	1	1	0.20498355800976	-1	9	False	estramustine::nan	estramustine
+ENSG00000131759	RARA	best inferred	1	1	0.260487978032004	-1	12	False	estramustine::nan	estramustine
+ENSG00000101773	RBBP8	best inferred	1	1	0.190145239541366	-1	9	False	estramustine::nan	estramustine
+ENSG00000132819	RBM38	best inferred	1	1	0.182146967405793	-1	21	False	estramustine::nan	estramustine
+ENSG00000274523	RCC1L	best inferred	1	1	0.200378554502004	-1	12	False	estramustine::nan	estramustine
+ENSG00000144567	RETREG2	best inferred	1	1	0.202478238027959	-1	10	False	estramustine::nan	estramustine
+ENSG00000141699	RETREG3	best inferred	1	1	0.217458553707846	-1	10	False	estramustine::nan	estramustine
+ENSG00000148300	REXO4	best inferred	1	1	0.200453813460274	-1	16	False	estramustine::nan	estramustine
+ENSG00000143878	RHOB	best inferred	1	1	0.167602030739049	-1	8	False	estramustine::nan	estramustine
+ENSG00000155366	RHOC	best inferred	1	1	0.185505832696522	-1	15	False	estramustine::nan	estramustine
+ENSG00000039523	RIPOR1	best inferred	1	1	0.199386675048167	-1	20	False	estramustine::nan	estramustine
+ENSG00000145916	RMND5B	best inferred	1	1	0.235893015527975	-1	8	False	estramustine::nan	estramustine
+ENSG00000187147	RNF220	best inferred	1	1	0.221880218130508	-1	21	False	estramustine::nan	estramustine
+ENSG00000108298	RPL19	best inferred	1	1	0.213784823952853	-1	8	False	estramustine::nan	estramustine
+ENSG00000131469	RPL27	best inferred	1	1	0.157894842386887	-1	9	False	estramustine::nan	estramustine
+ENSG00000186350	RXRA	best inferred	1	2	0.227822412753828	-1	18	False	estramustine::nan	estramustine
+ENSG00000189334	S100A14	best inferred	1	1	0.171134528614156	-1	10	False	estramustine::nan	estramustine
+ENSG00000227500	SCAMP4	best inferred	1	1	0.191448696613433	-1	9	False	estramustine::nan	estramustine
+ENSG00000114650	SCAP	best inferred	1	1	0.21269083757947	-1	12	False	estramustine::nan	estramustine
+ENSG00000073060	SCARB1	landmark	1	1	0.166099669911129	-1	9	False	estramustine::nan	estramustine
+ENSG00000105711	SCN1B	best inferred	1	2	0.19351795078011602	-1	10	False	estramustine::nan	estramustine
+ENSG00000132581	SDF2	best inferred	1	3	0.17083029711162168	-1	10	False	estramustine::nan	estramustine
+ENSG00000001617	SEMA3F	best inferred	1	2	0.2148929137189045	-1	17	False	estramustine::nan	estramustine
+ENSG00000010319	SEMA3G	best inferred	1	1	0.163817822582368	-1	13	False	estramustine::nan	estramustine
+ENSG00000135622	SEMA4F	best inferred	1	1	0.208008020765337	-1	6	False	estramustine::nan	estramustine
+ENSG00000167680	SEMA6B	best inferred	1	1	0.192116623176026	-1	14	False	estramustine::nan	estramustine
+ENSG00000106366	SERPINE1	landmark	1	1	0.268614174664102	-1	8	False	estramustine::nan	estramustine
+ENSG00000178188	SH2B1	best inferred	1	1	0.193001130751379	-1	19	False	estramustine::nan	estramustine
+ENSG00000148341	SH3GLB2	best inferred	1	1	0.213532636644986	-1	27	False	estramustine::nan	estramustine
+ENSG00000108528	SLC25A11	best inferred	1	1	0.187026175437498	-1	10	False	estramustine::nan	estramustine
+ENSG00000143554	SLC27A3	landmark	1	1	0.174946276835318	-1	6	False	estramustine::nan	estramustine
+ENSG00000109062	SLC9A3R1	best inferred	1	1	0.210591250964414	-1	12	False	estramustine::nan	estramustine
+ENSG00000197818	SLC9A8	best inferred	1	1	0.220228113429605	-1	12	False	estramustine::nan	estramustine
+ENSG00000139613	SMARCC2	best inferred	1	1	0.238665650324274	-1	14	False	estramustine::nan	estramustine
+ENSG00000073584	SMARCE1	best inferred	1	2	0.28112256067375696	-1	6	False	estramustine::nan	estramustine
+ENSG00000174446	SNAPC5	best inferred	1	1	0.166968331255924	-1	2	False	estramustine::nan	estramustine
+ENSG00000120896	SORBS3	landmark	1	1	0.171063083936663	-1	17	False	estramustine::nan	estramustine
+ENSG00000167182	SP2	best inferred	1	1	0.21947733131581	-1	9	False	estramustine::nan	estramustine
+ENSG00000124664	SPDEF	landmark	1	2	0.167919580913312	-1	13	False	estramustine::nan	estramustine
+ENSG00000157350	ST3GAL2	best inferred	1	1	0.211143027327037	-1	9	False	estramustine::nan	estramustine
+ENSG00000131748	STARD3	best inferred	1	2	0.241846010341218	-1	11	False	estramustine::nan	estramustine
+ENSG00000166888	STAT6	best inferred	1	1	0.201244915141964	-1	7	False	estramustine::nan	estramustine
+ENSG00000090372	STRN4	best inferred	1	1	0.237303041516165	-1	16	False	estramustine::nan	estramustine
+ENSG00000088002	SULT2B1	best inferred	1	1	0.167177770526046	-1	5	False	estramustine::nan	estramustine
+ENSG00000139531	SUOX	best inferred	1	2	0.20275455296641348	-1	9	False	estramustine::nan	estramustine
+ENSG00000213246	SUPT4H1	best inferred	1	1	0.183926146329896	-1	14	False	estramustine::nan	estramustine
+ENSG00000109111	SUPT6H	best inferred	1	1	0.257672469924172	-1	6	False	estramustine::nan	estramustine
+ENSG00000125755	SYMPK	best inferred	1	1	0.214342671220325	-1	9	False	estramustine::nan	estramustine
+ENSG00000106290	TAF6	best inferred	1	1	0.21308549042421	-1	12	False	estramustine::nan	estramustine
+ENSG00000109436	TBC1D9	best inferred	1	1	0.202750123435767	-1	19	False	estramustine::nan	estramustine
+ENSG00000105254	TBCB	best inferred	1	1	0.169729625788109	-1	10	False	estramustine::nan	estramustine
+ENSG00000184058	TBX1	best inferred	1	1	0.169509617156025	-1	13	False	estramustine::nan	estramustine
+ENSG00000172171	TEFM	best inferred	1	1	0.215120665233545	-1	4	False	estramustine::nan	estramustine
+ENSG00000168286	THAP11	landmark	1	1	0.19377629640425	-1	13	False	estramustine::nan	estramustine
+ENSG00000184436	THAP7	best inferred	1	1	0.199434064042121	-1	18	False	estramustine::nan	estramustine
+ENSG00000126351	THRA	best inferred	1	1	0.260217248425701	-1	18	False	estramustine::nan	estramustine
+ENSG00000259431	THTPA	best inferred	1	1	0.214956435345629	-1	16	False	estramustine::nan	estramustine
+ENSG00000111602	TIMELESS	landmark	1	1	0.193112867131419	-1	15	False	estramustine::nan	estramustine
+ENSG00000142910	TINAGL1	best inferred	1	1	0.16502724908773	-1	9	False	estramustine::nan	estramustine
+ENSG00000140332	TLE3	best inferred	1	2	0.217089325508184	-1	17	False	estramustine::nan	estramustine
+ENSG00000134291	TMEM106C	best inferred	1	1	0.21433918260541	-1	18	False	estramustine::nan	estramustine
+ENSG00000126062	TMEM115	best inferred	1	1	0.191995624178987	-1	20	False	estramustine::nan	estramustine
+ENSG00000144120	TMEM177	best inferred	1	1	0.211797115919014	-1	10	False	estramustine::nan	estramustine
+ENSG00000198792	TMEM184B	best inferred	1	1	0.203875964024782	-1	9	False	estramustine::nan	estramustine
+ENSG00000186501	TMEM222	best inferred	1	1	0.187606952469245	-1	16	False	estramustine::nan	estramustine
+ENSG00000137103	TMEM8B	best inferred	1	1	0.211260742847752	-1	5	False	estramustine::nan	estramustine
+ENSG00000177728	TMEM94	best inferred	1	1	0.196657707735693	-1	14	False	estramustine::nan	estramustine
+ENSG00000168591	TMUB2	best inferred	1	1	0.210285062639531	-1	9	False	estramustine::nan	estramustine
+ENSG00000145901	TNIP1	landmark	1	1	0.218801971965298	-1	20	False	estramustine::nan	estramustine
+ENSG00000131747	TOP2A	landmark	1	1	0.21387959929535	-1	11	False	estramustine::nan	estramustine
+ENSG00000101150	TPD52L2	landmark	1	1	0.21926590698134	-1	14	False	estramustine::nan	estramustine
+ENSG00000159713	TPPP3	best inferred	1	1	0.168532160803765	-1	7	False	estramustine::nan	estramustine
+ENSG00000076604	TRAF4	best inferred	1	2	0.193839748543327	-1	14	False	estramustine::nan	estramustine
+ENSG00000188917	TRMT2B	best inferred	1	1	0.191241374750705	-1	8	False	estramustine::nan	estramustine
+ENSG00000123297	TSFM	best inferred	1	1	0.20505507088863	-1	10	False	estramustine::nan	estramustine
+ENSG00000197557	TTC30A	best inferred	1	1	0.21901214347799	-1	17	False	estramustine::nan	estramustine
+ENSG00000100271	TTLL1	best inferred	1	1	0.199076138103273	-1	7	False	estramustine::nan	estramustine
+ENSG00000119685	TTLL5	best inferred	1	1	0.181988988055853	-1	6	False	estramustine::nan	estramustine
+ENSG00000037042	TUBG2	best inferred	1	1	0.191596323995275	-1	16	False	estramustine::nan	estramustine
+ENSG00000104723	TUSC3	best inferred	1	1	0.193900147400094	-1	2	False	estramustine::nan	estramustine
+ENSG00000186591	UBE2H	best inferred	1	1	0.205405536373906	-1	14	False	estramustine::nan	estramustine
+ENSG00000175931	UBE2O	best inferred	1	1	0.201343638496244	-1	14	False	estramustine::nan	estramustine
+ENSG00000108312	UBTF	best inferred	1	2	0.24176318822322052	-1	25	False	estramustine::nan	estramustine
+ENSG00000109103	UNC119	best inferred	1	1	0.161071364241362	-1	11	False	estramustine::nan	estramustine
+ENSG00000005007	UPF1	best inferred	1	1	0.212202127072238	-1	11	False	estramustine::nan	estramustine
+ENSG00000167118	URM1	best inferred	1	2	0.2047954639108795	-1	16	False	estramustine::nan	estramustine
+ENSG00000172046	USP19	best inferred	1	1	0.212679126564794	-1	19	False	estramustine::nan	estramustine
+ENSG00000111667	USP5	best inferred	1	1	0.206071653842097	-1	17	False	estramustine::nan	estramustine
+ENSG00000108828	VAT1	landmark	1	1	0.157322158635683	-1	13	False	estramustine::nan	estramustine
+ENSG00000160293	VAV2	best inferred	1	1	0.222837434892268	-1	20	False	estramustine::nan	estramustine
+ENSG00000196998	WDR45	best inferred	1	1	0.183131722613942	-1	6	False	estramustine::nan	estramustine
+ENSG00000171475	WIPF2	landmark	1	2	0.29105798059522503	-1	7	False	estramustine::nan	estramustine
+ENSG00000116213	WRAP73	best inferred	1	1	0.203744592491317	-1	15	False	estramustine::nan	estramustine
+ENSG00000073050	XRCC1	best inferred	1	1	0.234763183835161	-1	12	False	estramustine::nan	estramustine
+ENSG00000152422	XRCC4	best inferred	1	1	0.208049209807034	-1	4	False	estramustine::nan	estramustine
+ENSG00000100403	ZC3H7B	best inferred	1	1	0.239605801741678	-1	20	False	estramustine::nan	estramustine
+ENSG00000160445	ZER1	best inferred	1	1	0.240745635315588	-1	17	False	estramustine::nan	estramustine
+ENSG00000165804	ZNF219	best inferred	1	1	0.215395977873774	-1	22	False	estramustine::nan	estramustine
+ENSG00000088876	ZNF343	best inferred	1	1	0.207384092271893	-1	10	False	estramustine::nan	estramustine
+ENSG00000181444	ZNF467	best inferred	1	1	0.177576014686808	-1	14	False	estramustine::nan	estramustine
+ENSG00000103199	ZNF500	best inferred	1	1	0.247296572313447	-1	20	False	estramustine::nan	estramustine
+ENSG00000196152	ZNF79	best inferred	1	1	0.229172752587118	-1	17	False	estramustine::nan	estramustine
+ENSG00000273611	ZNHIT3	best inferred	1	2	0.1824654514765925	-1	7	False	estramustine::nan	estramustine
+ENSG00000139211	AMIGO2	best inferred	-1	1	0.153399926048004	1	11	False	estramustine::nan	estramustine
+ENSG00000081181	ARG2	best inferred	-1	1	0.180058785152495	1	7	False	estramustine::nan	estramustine
+ENSG00000241468	ATP5MF	best inferred	-1	1	0.160711944764281	1	6	False	estramustine::nan	estramustine
+ENSG00000196954	CASP4	best inferred	-1	1	0.162968436767444	1	18	False	estramustine::nan	estramustine
+ENSG00000159231	CBR3	landmark	-1	1	0.164099537395665	1	14	False	estramustine::nan	estramustine
+ENSG00000145088	EAF2	best inferred	-1	1	0.165126936059076	1	13	False	estramustine::nan	estramustine
+ENSG00000184349	EFNA5	best inferred	-1	1	0.163544412357084	1	9	False	estramustine::nan	estramustine
+ENSG00000114279	FGF12	best inferred	-1	1	0.171808948852981	1	4	False	estramustine::nan	estramustine
+ENSG00000128683	GAD1	best inferred	-1	1	0.175437780013653	1	7	False	estramustine::nan	estramustine
+ENSG00000174842	GLMN	best inferred	-1	1	0.165390352246167	1	11	False	estramustine::nan	estramustine
+ENSG00000155463	OXA1L	landmark	-1	1	0.179130888750371	1	4	False	estramustine::nan	estramustine
+ENSG00000105185	PDCD5	best inferred	-1	1	0.173499539243548	1	4	False	estramustine::nan	estramustine
+ENSG00000148459	PDSS1	best inferred	-1	1	0.15973678490239	1	12	False	estramustine::nan	estramustine
+ENSG00000079739	PGM1	landmark	-1	1	0.17434853258929	1	4	False	estramustine::nan	estramustine
+ENSG00000112306	RPS12	best inferred	-1	1	0.17145856159278	1	10	False	estramustine::nan	estramustine
+ENSG00000088826	SMOX	best inferred	-1	1	0.173636841413691	1	1	True	estramustine::nan	estramustine
+ENSG00000107165	TYRP1	best inferred	-1	1	0.165891145306535	1	8	False	estramustine::nan	estramustine
+ENSG00000152977	ZIC1	best inferred	-1	1	0.159433192142015	1	4	False	estramustine::nan	estramustine

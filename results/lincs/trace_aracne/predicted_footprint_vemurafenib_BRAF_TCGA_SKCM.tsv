@@ -1,0 +1,1230 @@
+gene_id	symbol	feature_space	expected_sign_pre_action	n_unit_regulators_claiming	mean_likelihood	expected_sign	n_regulators_claiming	uniquely_attributable	unit_id	cmap_name
+ENSG00000128274	A4GALT	best inferred	1	1	0.233773502353074	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127837	AAMP	best inferred	1	1	0.159172585172994	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154262	ABCA6	best inferred	1	1	0.239452626539938	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141338	ABCA8	best inferred	1	1	0.189530803233646	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000150967	ABCB9	best inferred	1	1	0.160522786822059	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000069431	ABCC9	best inferred	1	1	0.288835733797718	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000161204	ABCF3	landmark	1	1	0.121344596444937	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154175	ABI3BP	best inferred	1	2	0.259524287607447	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099204	ABLIM1	best inferred	1	1	0.153721341916318	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159842	ABR	best inferred	1	1	0.132969736374514	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165660	ABRAXAS2	best inferred	1	1	0.371651661149139	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166016	ABTB2	best inferred	1	1	0.17190646664643	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182827	ACBD3	landmark	1	1	0.367874551539299	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213088	ACKR1	best inferred	1	2	0.272234650925768	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144476	ACKR3	best inferred	1	1	0.259888481960659	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100412	ACO2	best inferred	1	1	0.180852866050663	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072110	ACTN1	best inferred	1	1	0.159580993832897	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000139567	ACVRL1	best inferred	1	1	0.256362443628822	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196839	ADA	best inferred	1	1	0.134540973070016	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148848	ADAM12	best inferred	1	1	0.231420219814941	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156140	ADAMTS3	best inferred	1	1	0.188337829544622	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154736	ADAMTS5	best inferred	1	1	0.248162604887571	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197859	ADAMTSL2	best inferred	1	1	0.187094012689477	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164742	ADCY1	best inferred	1	1	0.12138384399458	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162104	ADCY9	best inferred	1	1	0.18033583054249	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152990	ADGRA3	best inferred	1	2	0.1999926302682335	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000205336	ADGRG1	landmark	1	1	0.157391126160902	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162618	ADGRL4	best inferred	1	1	0.264205560731386	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196616	ADH1B	best inferred	1	2	0.1634731239815975	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159346	ADIPOR1	best inferred	1	1	0.254107512252886	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000006831	ADIPOR2	best inferred	1	1	0.216881229606987	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000150594	ADRA2A	best inferred	1	1	0.214571504618558	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184160	ADRA2C	best inferred	1	1	0.126116375233302	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000035687	ADSS	best inferred	1	1	0.348568165802016	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196526	AFAP1	best inferred	1	1	0.191372991176119	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141385	AFG3L2	best inferred	1	2	0.221879205940796	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000119844	AFTPH	best inferred	1	1	0.35706640547753	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135439	AGAP2	best inferred	1	1	0.219848285560731	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000123908	AGO2	best inferred	1	1	0.202119193561863	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204310	AGPAT1	best inferred	1	1	0.119522252474953	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101444	AHCY	best inferred	1	2	0.169865152292126	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106305	AIMP2	best inferred	1	1	0.181056636503666	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121057	AKAP1	best inferred	1	1	0.206340719303076	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151320	AKAP6	best inferred	1	1	0.175253489147961	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196139	AKR1C3	best inferred	1	2	0.212385224304262	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000053371	AKR7A2	landmark	1	1	0.184276568858925	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000149925	ALDOA	landmark	1	1	0.13682535400649	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000214160	ALG3	best inferred	1	1	0.157152235958394	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000091879	ANGPT2	best inferred	1	1	0.208949184433183	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000029534	ANK1	best inferred	1	1	0.199145671588673	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145362	ANK2	best inferred	1	1	0.191704248382625	-1	3	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154122	ANKH	best inferred	1	1	0.195672210198838	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000206560	ANKRD28	best inferred	1	1	0.229016302780054	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135299	ANKRD6	best inferred	1	1	0.186615661909096	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131620	ANO1	best inferred	1	1	0.218088302534434	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164111	ANXA5	best inferred	1	1	0.211480280702258	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131471	AOC3	best inferred	1	2	0.267125628341824	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138356	AOX1	best inferred	1	1	0.224556096080956	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100280	AP1B1	best inferred	1	1	0.164823192016253	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106367	AP1S1	best inferred	1	1	0.158875488345072	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000161203	AP2M1	best inferred	1	1	0.141764999867698	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070718	AP3M2	best inferred	1	1	0.184204741722731	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117362	APH1A	best inferred	1	1	0.276902462216106	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134817	APLNR	best inferred	1	1	0.238312113116577	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000240583	AQP1	best inferred	1	2	0.23893224747833702	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165272	AQP3	best inferred	1	1	0.211031367684407	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143761	ARF1	best inferred	1	2	0.162392957677016	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132694	ARHGEF11	best inferred	1	1	0.254778443796222	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198844	ARHGEF15	best inferred	1	1	0.246526922031137	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000150347	ARID5B	landmark	1	1	0.194178772015304	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105676	ARMC6	best inferred	1	1	0.171023400556144	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135931	ARMC9	best inferred	1	2	0.1547495443919365	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143437	ARNT	best inferred	1	1	0.277981285793935	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000006756	ARSD	best inferred	1	1	0.132635388110013	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156219	ART3	best inferred	1	1	0.154057240076447	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000088280	ASAP3	best inferred	1	1	0.10572281012895	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183475	ASB7	best inferred	1	1	0.374397822164656	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102048	ASB9	best inferred	1	1	0.181947050241094	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110881	ASIC1	best inferred	1	1	0.122071933716076	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126522	ASL	best inferred	1	2	0.15024641887926699	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115966	ATF2	best inferred	1	1	0.388260241488013	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000123395	ATG101	best inferred	1	1	0.130393840828845	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198925	ATG9A	best inferred	1	1	0.162639917963095	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111676	ATN1	best inferred	1	1	0.152845050397285	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163399	ATP1A1	best inferred	1	1	0.168442831624986	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070961	ATP2B1	best inferred	1	1	0.368919234329293	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000058668	ATP2B4	best inferred	1	1	0.232421686707477	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071553	ATP6AP1	best inferred	1	1	0.173918962905105	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159720	ATP6V0D1	best inferred	1	1	0.169706025128979	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124788	ATXN1	best inferred	1	1	0.332532640565626	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163635	ATXN7	best inferred	1	1	0.399245425443725	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117411	B4GALT2	best inferred	1	1	0.188093763786952	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158850	B4GALT3	best inferred	1	1	0.240482105673323	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182240	BACE2	landmark	1	1	0.127531607302551	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156273	BACH1	best inferred	1	1	0.388446635705806	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151929	BAG3	landmark	1	1	0.142020624033128	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140320	BAHD1	best inferred	1	1	0.198368883494788	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000176788	BASP1	best inferred	1	1	0.210005296041317	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000119866	BCL11A	best inferred	1	1	0.179825145953185	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127152	BCL11B	best inferred	1	1	0.205161497139364	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171791	BCL2	landmark	1	2	0.230669618449316	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099968	BCL2L13	best inferred	1	1	0.117807231732155	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183337	BCOR	best inferred	1	1	0.237256911473597	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132840	BHMT2	best inferred	1	2	0.18355280762951148	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000147439	BIN3	best inferred	1	1	0.122494543375208	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125378	BMP4	landmark	1	1	0.173336528789641	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153162	BMP6	best inferred	1	1	0.199740264773536	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102010	BMX	best inferred	1	1	0.145153984462655	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173068	BNC2	best inferred	1	1	0.211934158653389	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000261236	BOP1	best inferred	1	1	0.362397921603649	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132640	BTBD3	best inferred	1	1	0.309288983681371	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169814	BTD	best inferred	1	1	0.162450998125704	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112578	BYSL	best inferred	1	1	0.198174845435301	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171067	C11orf24	best inferred	1	2	0.10647481305633699	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111412	C12orf49	best inferred	1	1	0.178990875200921	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167173	C15orf39	best inferred	1	1	0.182747101716485	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152242	C18orf25	best inferred	1	1	0.358629911028485	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197223	C1D	best inferred	1	1	0.386810425530543	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162817	C1orf115	best inferred	1	1	0.116616483333734	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116667	C1orf21	best inferred	1	1	0.145936328131777	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142686	C1orf216	best inferred	1	1	0.198580732329038	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101220	C20orf27	best inferred	1	1	0.170963456130632	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125730	C3	best inferred	1	1	0.221913841515141	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112308	C6orf62	best inferred	1	1	0.378985071073445	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112936	C7	best inferred	1	1	0.192508268432108	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182307	C8orf33	best inferred	1	2	0.19965548132814298	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160325	CACFD1	best inferred	1	1	0.133774266041397	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141837	CACNA1A	best inferred	1	1	0.116208465784182	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000084774	CAD	best inferred	1	1	0.157518987050432	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105767	CADM4	best inferred	1	1	0.149291209795111	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000064989	CALCRL	best inferred	1	1	0.278830727132803	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160014	CALM3	landmark	1	1	0.176356273494487	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183049	CAMK1D	best inferred	1	1	0.235987415929119	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118200	CAMSAP2	landmark	1	1	0.443896554586198	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171302	CANT1	landmark	1	1	0.212851406733563	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127995	CASD1	best inferred	1	1	0.326784574017533	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168497	CAVIN2	best inferred	1	1	0.256387724378101	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129993	CBFA2T3	best inferred	1	1	0.226115233828147	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159228	CBR1	landmark	1	1	0.125447225997626	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159231	CBR3	landmark	1	1	0.127806297692197	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100147	CCDC134	best inferred	1	1	0.164259444084211	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101997	CCDC22	best inferred	1	1	0.157286020364199	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198624	CCDC69	best inferred	1	1	0.227030363735489	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110104	CCDC86	landmark	1	2	0.176827108592126	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172724	CCL19	best inferred	1	1	0.245140385534883	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137077	CCL21	best inferred	1	1	0.223236733782291	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102962	CCL22	best inferred	1	1	0.218931550005924	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142871	CCN1	best inferred	1	1	0.169504573049657	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118971	CCND2	best inferred	1	1	0.231338826414972	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126353	CCR7	best inferred	1	1	0.218679090177872	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163468	CCT3	best inferred	1	2	0.202891105365056	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135624	CCT7	best inferred	1	1	0.153809603761088	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177697	CD151	best inferred	1	1	0.13952917099357	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158481	CD1C	best inferred	1	1	0.229966000922934	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158488	CD1E	best inferred	1	1	0.213515636817659	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178562	CD28	best inferred	1	1	0.19021867112661	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174059	CD34	best inferred	1	2	0.2526464570045365	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000026508	CD44	landmark	1	1	0.219652518213959	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129226	CD68	best inferred	1	1	0.130804907329035	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125810	CD93	best inferred	1	1	0.286387470905058	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101224	CDC25B	landmark	1	1	0.13133754972837	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143776	CDC42BPA	best inferred	1	1	0.35204629131347	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140937	CDH11	best inferred	1	1	0.266888978768264	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179776	CDH5	best inferred	1	2	0.25424903556214495	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000089486	CDIP1	best inferred	1	1	0.140131073733646	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156345	CDK20	best inferred	1	1	0.161099701461969	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000176749	CDK5R1	landmark	1	1	0.154279405355914	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129596	CDO1	best inferred	1	1	0.19148227698767	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101290	CDS2	best inferred	1	1	0.180945287156194	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153046	CDYL	best inferred	1	1	0.224002253615388	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143126	CELSR2	best inferred	1	1	0.148292490527552	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116198	CEP104	best inferred	1	1	0.183236990709117	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135837	CEP350	best inferred	1	1	0.389667011670745	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143418	CERS2	best inferred	1	1	0.245884258531092	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000090661	CERS4	best inferred	1	1	0.136259683577339	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126759	CFP	best inferred	1	1	0.226923791158319	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138135	CH25H	best inferred	1	2	0.1989489965064115	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000123989	CHPF	best inferred	1	1	0.144853711491717	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000090539	CHRD	best inferred	1	1	0.200002617152359	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101938	CHRDL1	best inferred	1	2	0.195030543472493	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171310	CHST11	best inferred	1	1	0.136008737364581	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131873	CHSY1	best inferred	1	1	0.320593372402103	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000187288	CIDEC	best inferred	1	1	0.111174958581223	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138615	CILP	best inferred	1	1	0.203256225734598	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109572	CLCN3	best inferred	1	1	0.214772428549315	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132514	CLEC10A	best inferred	1	1	0.216019600212218	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000150048	CLEC1A	best inferred	1	2	0.223258898377458	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163815	CLEC3B	best inferred	1	2	0.1993490164739795	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169504	CLIC4	landmark	1	1	0.381200079567833	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128973	CLN6	best inferred	1	1	0.143482705060192	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182372	CLN8	best inferred	1	1	0.150802213759332	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162129	CLPB	best inferred	1	1	0.136143855468133	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171603	CLSTN1	landmark	1	1	0.166431226307316	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120885	CLU	best inferred	1	1	0.173528130229748	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000091317	CMTM6	best inferred	1	1	0.382732208871987	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148842	CNNM2	best inferred	1	1	0.172088127305552	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000155508	CNOT8	best inferred	1	1	0.338888750779329	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115649	CNPPD1	best inferred	1	1	0.153588585816466	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118432	CNR1	best inferred	1	1	0.141226386089317	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000187955	COL14A1	best inferred	1	2	0.238080884010028	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000081052	COL4A4	best inferred	1	1	0.218900554073975	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142173	COL6A2	best inferred	1	1	0.197486103823507	-1	40	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163359	COL6A3	best inferred	1	1	0.240358032959747	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171812	COL8A2	best inferred	1	1	0.183273708404746	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105664	COMP	best inferred	1	1	0.16005027424747	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122218	COPA	best inferred	1	1	0.275245590732563	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000181789	COPG1	best inferred	1	1	0.110406100527774	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163050	COQ8A	landmark	1	1	0.148495426421582	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163751	CPA3	best inferred	1	2	0.197077191929394	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109472	CPE	best inferred	1	1	0.302903679708789	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104324	CPQ	best inferred	1	1	0.134263775998326	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160917	CPSF4	landmark	1	1	0.152005533630974	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157184	CPT2	best inferred	1	1	0.182189459628169	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213145	CRIP1	best inferred	1	1	0.198145937878331	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103196	CRISPLD2	best inferred	1	1	0.237722712524315	-1	36	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165475	CRYL1	best inferred	1	1	0.170232344096784	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100368	CSF2RB	best inferred	1	1	0.230776659255258	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151292	CSNK1G3	best inferred	1	1	0.354056050579634	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000175029	CTBP2	best inferred	1	1	0.193991001369346	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117151	CTBS	best inferred	1	1	0.310108798684381	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116761	CTH	best inferred	1	1	0.159253005625625	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134030	CTIF	best inferred	1	1	0.128893820933737	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198561	CTNND1	landmark	1	1	0.202446981736456	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000064601	CTSA	best inferred	1	1	0.155566246024163	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174080	CTSF	best inferred	1	1	0.17348014102589	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107874	CUEDC2	best inferred	1	1	0.156459728066162	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107562	CXCL12	best inferred	1	1	0.232770220292585	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145824	CXCL14	best inferred	1	2	0.2099292179711845	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159348	CYB5R1	best inferred	1	1	0.185913192245932	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179091	CYC1	best inferred	1	1	0.335903759377672	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000187954	CYHR1	best inferred	1	1	0.295738703897198	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000003137	CYP26B1	best inferred	1	1	0.14982494954992	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135929	CYP27A1	best inferred	1	1	0.173059645468102	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153071	DAB2	best inferred	1	1	0.159429022869167	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196730	DAPK1	best inferred	1	3	0.194936691345576	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143164	DCAF6	best inferred	1	1	0.324105787759451	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166341	DCHS1	best inferred	1	1	0.210138035864234	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133083	DCLK1	best inferred	1	1	0.178550062853194	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000011465	DCN	best inferred	1	2	0.23481469385218	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172795	DCP2	best inferred	1	1	0.324906002298958	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153904	DDAH1	best inferred	1	1	0.224035089279267	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167986	DDB1	best inferred	1	1	0.145864175629451	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110367	DDX6	best inferred	1	1	0.26360702262157	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158796	DEDD	best inferred	1	1	0.296415028376901	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213047	DENND1B	best inferred	1	1	0.330753268441756	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174485	DENND4A	best inferred	1	1	0.379734609497496	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000175084	DES	best inferred	1	1	0.151835291376035	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121644	DESI2	best inferred	1	1	0.401976561807194	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185000	DGAT1	best inferred	1	1	0.254698923719282	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145214	DGKQ	best inferred	1	1	0.184113029971069	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172893	DHCR7	best inferred	1	1	0.12559833020875	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117682	DHDDS	landmark	1	1	0.20826907123749	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132153	DHX30	best inferred	1	1	0.20195242702073	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151240	DIP2C	best inferred	1	1	0.200644012427068	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154511	DIPK1A	landmark	1	1	0.178682021989787	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000147113	DIPK2B	best inferred	1	2	0.258187276547613	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130826	DKC1	best inferred	1	1	0.225227345096765	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000155011	DKK2	best inferred	1	1	0.182877165132707	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164741	DLC1	best inferred	1	1	0.246212223684419	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198947	DMD	best inferred	1	1	0.258529724781183	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172869	DMXL1	best inferred	1	1	0.213710209445784	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164818	DNAAF5	best inferred	1	1	0.178831894223064	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132002	DNAJB1	landmark	1	1	0.146178487075891	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163879	DNALI1	best inferred	1	1	0.160223574303814	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163687	DNASE1L3	best inferred	1	1	0.237073965335428	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197959	DNM3	best inferred	1	1	0.137147122819213	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143196	DPT	best inferred	1	1	0.262607729131197	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113657	DPYSL3	best inferred	1	1	0.248484477144746	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185721	DRG1	best inferred	1	1	0.136832707554046	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133059	DSTYK	best inferred	1	1	0.164377332749273	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110042	DTX4	best inferred	1	1	0.113377982653415	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143507	DUSP10	best inferred	1	1	0.162498424974551	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112679	DUSP22	landmark	1	2	0.20784132365602098	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107404	DVL1	best inferred	1	1	0.167566710823762	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143479	DYRK3	landmark	1	1	0.196973101930047	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134874	DZIP1	best inferred	1	1	0.219012802839768	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000221818	EBF2	best inferred	1	1	0.268641555434683	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143369	ECM1	best inferred	1	1	0.139238149304459	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106823	ECM2	best inferred	1	1	0.282409997614407	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000078401	EDN1	landmark	1	1	0.203425007462034	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124205	EDN3	best inferred	1	1	0.152818822964381	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136160	EDNRB	best inferred	1	1	0.248281173862078	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000010165	EEF1AKNMT	best inferred	1	1	0.254388499852269	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104529	EEF1D	best inferred	1	1	0.144190589287065	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115380	EFEMP1	best inferred	1	1	0.23303169576566	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142634	EFHD2	best inferred	1	1	0.119682444740823	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143590	EFNA3	best inferred	1	1	0.127971661801595	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100842	EFS	best inferred	1	1	0.197593899102317	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000146648	EGFR	landmark	1	1	0.206453397114582	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120738	EGR1	landmark	1	1	0.15508669441639	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179388	EGR3	best inferred	1	1	0.152277891298736	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106263	EIF3B	best inferred	1	1	0.1653322952033	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104131	EIF3J	best inferred	1	1	0.36449957531671	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000187840	EIF4EBP1	landmark	1	1	0.124981518853955	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120690	ELF1	best inferred	1	2	0.2302637772769795	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126767	ELK1	best inferred	1	1	0.213624955496109	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000049540	ELN	best inferred	1	2	0.24314933520666898	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000066322	ELOVL1	best inferred	1	1	0.176016249526421	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164035	EMCN	best inferred	1	2	0.2195043430026035	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102119	EMD	best inferred	1	1	0.145627746469322	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186998	EMID1	best inferred	1	1	0.165768577368615	-1	38	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138080	EMILIN1	best inferred	1	1	0.207395290814993	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134531	EMP1	best inferred	1	1	0.130545557885856	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111674	ENO2	best inferred	1	1	0.142735044731104	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000082397	EPB41L3	best inferred	1	1	0.151492066056213	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182580	EPHB3	best inferred	1	1	0.161475903796955	-1	37	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106123	EPHB6	best inferred	1	1	0.211416840022833	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143819	EPHX1	best inferred	1	1	0.139060415544534	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112425	EPM2A	best inferred	1	1	0.196489135827551	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136628	EPRS	landmark	1	1	0.244150721511918	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104884	ERCC2	best inferred	1	1	0.15976387041455	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157554	ERG	best inferred	1	2	0.25336970743897547	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104413	ESRP1	best inferred	1	1	0.181615035747923	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117036	ETV3	best inferred	1	1	0.264254456306526	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000244405	ETV5	best inferred	1	1	0.171342056412169	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072840	EVC	best inferred	1	1	0.197149468068424	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112685	EXOC2	best inferred	1	1	0.253559711419258	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178896	EXOSC4	landmark	1	1	0.243761773895652	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126218	F10	best inferred	1	1	0.181608487640803	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170323	FABP4	best inferred	1	1	0.201037515285985	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168309	FAM107A	best inferred	1	1	0.171723554821258	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197245	FAM110D	best inferred	1	1	0.228741352055663	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109794	FAM149A	best inferred	1	1	0.135125696331158	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148468	FAM171A1	best inferred	1	1	0.247207773908604	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135063	FAM189A2	best inferred	1	1	0.170026315919105	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160767	FAM189B	best inferred	1	1	0.240072794296348	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173065	FAM222B	best inferred	1	1	0.197748743875927	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197872	FAM49A	best inferred	1	1	0.242767668741703	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145945	FAM50B	best inferred	1	1	0.101730649952856	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000189319	FAM53B	best inferred	1	1	0.151576198181104	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000064763	FAR2	best inferred	1	1	0.191729774421449	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170271	FAXDC2	best inferred	1	1	0.183831087876176	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163520	FBLN2	best inferred	1	1	0.219902795516796	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140092	FBLN5	best inferred	1	1	0.187768435588394	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166147	FBN1	best inferred	1	1	0.276701949769629	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171823	FBXL14	best inferred	1	1	0.233099799242986	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000155034	FBXL18	best inferred	1	1	0.223344063494381	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182325	FBXL6	best inferred	1	1	0.18041153258665	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143756	FBXO28	best inferred	1	1	0.403259248231077	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109670	FBXW7	best inferred	1	1	0.3436757162443	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179639	FCER1A	best inferred	1	1	0.183834927847863	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162894	FCMR	best inferred	1	1	0.171551415029505	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000079459	FDFT1	landmark	1	2	0.17724668691607398	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160752	FDPS	best inferred	1	1	0.191296669312015	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000149557	FEZ1	best inferred	1	1	0.140760440158283	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102302	FGD1	best inferred	1	1	0.166818605596267	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000077782	FGFR1	best inferred	1	1	0.168868750449756	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115641	FHL2	landmark	1	1	0.120580232647566	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172500	FIBP	best inferred	1	1	0.150924749980928	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168386	FILIP1L	best inferred	1	1	0.251756646237824	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000214253	FIS1	landmark	1	1	0.114531741128037	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000004478	FKBP4	landmark	1	2	0.1725857003639225	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151702	FLI1	best inferred	1	1	0.245849998499828	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185070	FLRT2	best inferred	1	1	0.21757226166549	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000010932	FMO1	best inferred	1	1	0.149424415830874	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000007933	FMO3	best inferred	1	1	0.184243447665332	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122176	FMOD	best inferred	1	2	0.23568511113948848	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102081	FMR1	best inferred	1	1	0.388780964628652	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170345	FOS	landmark	1	1	0.159815106196966	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125740	FOSB	best inferred	1	1	0.160654582043308	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141568	FOXK2	best inferred	1	1	0.176214999098904	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170802	FOXN2	best inferred	1	1	0.398422773487073	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184481	FOXO4	landmark	1	1	0.212663526215043	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162998	FRZB	best inferred	1	1	0.15342427675679	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108592	FTSJ3	best inferred	1	1	0.135523419555929	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140564	FURIN	best inferred	1	1	0.158540736322267	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000266964	FXYD1	best inferred	1	1	0.141934498163748	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163820	FYCO1	best inferred	1	1	0.185135377226814	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157240	FZD1	landmark	1	1	0.183856120608167	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109458	GAB1	best inferred	1	2	0.2777746676835765	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158089	GALNT14	best inferred	1	1	0.12394972442995	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143641	GALNT2	best inferred	1	1	0.190104759219247	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172020	GAP43	best inferred	1	1	0.204689565456331	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185340	GAS2L1	best inferred	1	1	0.134730602798384	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179348	GATA2	landmark	1	1	0.170716430140987	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167491	GATAD2A	best inferred	1	1	0.190510692708516	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107862	GBF1	best inferred	1	1	0.217452470767342	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100116	GCAT	best inferred	1	1	0.109958172022386	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168546	GFRA2	best inferred	1	1	0.150303050191417	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198835	GJC2	best inferred	1	1	0.141536433894771	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170266	GLB1	best inferred	1	1	0.197468419375826	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138604	GLCE	best inferred	1	1	0.331849835881164	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111087	GLI1	best inferred	1	1	0.085833867031059	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000074047	GLI2	landmark	1	1	0.216575009209391	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120820	GLT8D2	best inferred	1	1	0.254087402376374	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182890	GLUD2	best inferred	1	1	0.259095637089361	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137198	GMPR	best inferred	1	1	0.167290781292826	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000146535	GNA12	best inferred	1	1	0.195169722244505	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120063	GNA13	best inferred	1	1	0.256720985884828	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156049	GNA14	best inferred	1	2	0.2108323806665745	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185838	GNB1L	best inferred	1	1	0.129222267696828	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116906	GNPAT	best inferred	1	1	0.362015889201913	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197858	GPAA1	best inferred	1	1	0.249445220992489	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000076716	GPC4	best inferred	1	1	0.179315189915044	-1	40	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167588	GPD1	best inferred	1	1	0.142627574994573	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152642	GPD1L	best inferred	1	1	0.28887440492638	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105220	GPI	best inferred	1	1	0.15496858231808	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000046653	GPM6B	best inferred	1	1	0.208650594495963	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136235	GPNMB	best inferred	1	1	0.199390782554717	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000077585	GPR137B	best inferred	1	1	0.183794317669582	-1	36	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143147	GPR161	best inferred	1	1	0.127369340616404	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198932	GPRASP1	best inferred	1	1	0.159194271855357	-1	1	True	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000075240	GRAMD4	best inferred	1	1	0.183292686689582	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166923	GREM1	best inferred	1	1	0.155201395888324	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120251	GRIA2	best inferred	1	1	0.137365102564342	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178719	GRINA	best inferred	1	1	0.348854700581058	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100077	GRK3	best inferred	1	1	0.162473508153752	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109519	GRPEL1	best inferred	1	1	0.142153688275923	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134201	GSTM5	best inferred	1	1	0.212633325496841	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197265	GTF2E2	landmark	1	1	0.140491174434563	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164116	GUCY1A1	best inferred	1	1	0.285225427687407	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144366	GULP1	best inferred	1	1	0.299442719550517	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104812	GYS1	best inferred	1	1	0.172005554528275	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099284	H2AFY2	best inferred	1	1	0.211446202918277	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165996	HACD1	best inferred	1	1	0.186272195994333	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138796	HADH	landmark	1	1	0.186230992212691	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000084754	HADHA	best inferred	1	1	0.183464383556226	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145681	HAPLN1	best inferred	1	1	0.155745391794104	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143575	HAX1	best inferred	1	1	0.17343811872629	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000061273	HDAC7	best inferred	1	1	0.181514790144215	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143321	HDGF	best inferred	1	1	0.19387044118604	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115677	HDLBP	best inferred	1	1	0.108925885917219	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000119285	HEATR1	landmark	1	1	0.398418141558743	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126107	HECTD3	best inferred	1	1	0.0987421362428281	-1	40	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164683	HEY1	best inferred	1	1	0.124242232368624	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000235173	HGH1	best inferred	1	1	0.296544013194839	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185359	HGS	best inferred	1	1	0.129318551680052	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000054392	HHAT	best inferred	1	1	0.173702398464081	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177374	HIC1	best inferred	1	1	0.247850463371237	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182952	HMGN4	best inferred	1	1	0.353009020115176	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113716	HMGXB3	best inferred	1	1	0.142436904535515	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122592	HOXA7	best inferred	1	1	0.146395262041439	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128710	HOXD10	best inferred	1	1	0.144067699323627	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164120	HPGD	best inferred	1	1	0.1291225117096	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166189	HPS6	best inferred	1	1	0.180162509419308	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168453	HR	best inferred	1	1	0.0995316579463893	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135116	HRK	best inferred	1	1	0.158417226410553	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118960	HS1BP3	best inferred	1	1	0.200002512756035	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102878	HSF4	best inferred	1	1	0.134255920679437	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109854	HTATIP2	best inferred	1	1	0.11720202988202	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197386	HTT	best inferred	1	1	0.210510942869547	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114378	HYAL1	best inferred	1	1	0.137280521209085	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000067829	IDH3G	best inferred	1	1	0.134318611198915	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197081	IGF2R	landmark	1	1	0.185039504255644	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000146674	IGFBP3	landmark	1	1	0.189041604515786	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115461	IGFBP5	best inferred	1	1	0.20697442190562	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143061	IGSF3	best inferred	1	2	0.1513874721030265	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000095574	IKZF5	best inferred	1	1	0.391748647988879	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115594	IL1R1	best inferred	1	1	0.184291736144891	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185291	IL3RA	best inferred	1	1	0.231834322020708	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134352	IL6ST	best inferred	1	1	0.342350718315103	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168685	IL7R	best inferred	1	1	0.241008043454398	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105135	ILVBL	best inferred	1	1	0.200592092237789	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136718	IMP4	best inferred	1	2	0.1561306340958165	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000149503	INCENP	best inferred	1	1	0.205341199726984	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000203485	INF2	best inferred	1	1	0.134001201406944	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204084	INPP5B	best inferred	1	1	0.280258425163631	-1	3	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143624	INTS3	landmark	1	1	0.235480515640585	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198700	IPO9	best inferred	1	1	0.223415983039681	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140968	IRF8	best inferred	1	1	0.210398621867136	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213949	ITGA1	best inferred	1	1	0.262897679022915	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000123243	ITIH5	best inferred	1	1	0.217989935393263	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143772	ITPKB	best inferred	1	1	0.178742553704026	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000043143	JADE2	landmark	1	1	0.167539080050468	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101384	JAG1	best inferred	1	1	0.168679445757372	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162434	JAK1	best inferred	1	1	0.25857959228011	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154721	JAM2	best inferred	1	2	0.2923383032823525	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166086	JAM3	best inferred	1	1	0.185999683421268	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165757	JCAD	best inferred	1	2	0.2583520224807405	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000081692	JMJD4	best inferred	1	1	0.171133352464047	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143543	JTB	best inferred	1	1	0.168554567468206	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107104	KANK1	best inferred	1	1	0.154552134211825	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186994	KANK3	best inferred	1	1	0.214204230618747	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172977	KAT5	best inferred	1	1	0.130605020747067	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000189337	KAZN	best inferred	1	1	0.184983828951301	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152049	KCNE4	best inferred	1	2	0.178560936464805	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182132	KCNIP1	best inferred	1	1	0.16724967055488	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121361	KCNJ8	best inferred	1	1	0.272744231033082	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153885	KCTD15	best inferred	1	1	0.167515156145562	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000088247	KHSRP	best inferred	1	2	0.19938688216130301	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170871	KIAA0232	best inferred	1	1	0.395131194976208	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142687	KIAA0319L	best inferred	1	1	0.232749534749529	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138688	KIAA1109	best inferred	1	1	0.398742108451834	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117245	KIF17	best inferred	1	1	0.120750739864479	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000068796	KIF2A	best inferred	1	1	0.350699742695327	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000084731	KIF3C	best inferred	1	1	0.206363572971291	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000075945	KIFAP3	best inferred	1	1	0.374438864513871	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136826	KLF4	best inferred	1	1	0.143096871920256	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000076321	KLHL20	best inferred	1	1	0.402224764309332	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118058	KMT2A	best inferred	1	1	0.27224133960833	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131650	KREMEN2	best inferred	1	1	0.132145498797636	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112769	LAMA4	best inferred	1	1	0.1773042500179	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000091136	LAMB1	best inferred	1	1	0.201211752923177	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000058085	LAMC2	best inferred	1	1	0.176149193308355	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125869	LAMP5	best inferred	1	1	0.203371422065728	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133424	LARGE1	best inferred	1	1	0.113797980726824	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129988	LBP	best inferred	1	1	0.135701161457685	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169744	LDB2	best inferred	1	1	0.261553521725808	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122367	LDB3	best inferred	1	1	0.19478822882366	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182195	LDOC1	best inferred	1	1	0.189713208870109	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174106	LEMD3	best inferred	1	1	0.380491097331461	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168924	LETM1	best inferred	1	1	0.18854174066398	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106003	LFNG	best inferred	1	1	0.221284064254125	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100079	LGALS2	best inferred	1	1	0.220368628021345	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106852	LHX6	best inferred	1	1	0.144990324238045	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113594	LIFR	best inferred	1	1	0.250170571680413	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136490	LIMD2	best inferred	1	1	0.146872016181013	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101670	LIPG	best inferred	1	1	0.181191023935583	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163431	LMOD1	best inferred	1	1	0.2232477173878	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113441	LNPEP	best inferred	1	1	0.375081083750375	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113083	LOX	best inferred	1	1	0.219240772703647	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129038	LOXL1	landmark	1	1	0.216251247790346	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198121	LPAR1	best inferred	1	1	0.277800072634662	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126243	LRFN3	best inferred	1	1	0.200818304589949	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197324	LRP10	landmark	1	1	0.211777348047626	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000081479	LRP2	best inferred	1	1	0.11122591472731	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163956	LRPAP1	landmark	1	1	0.136606497826923	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160959	LRRC14	best inferred	1	1	0.294067875639766	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128606	LRRC17	best inferred	1	1	0.257247526486063	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132128	LRRC41	landmark	1	1	0.168118122623134	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173114	LRRN3	best inferred	1	2	0.190673212196525	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111321	LTBR	best inferred	1	1	0.136642036711493	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000012223	LTF	best inferred	1	1	0.149623315445181	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160932	LY6E	best inferred	1	1	0.108732516035403	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143669	LYST	best inferred	1	1	0.238603818704928	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133800	LYVE1	best inferred	1	1	0.218161542902376	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000061337	LZTS1	best inferred	1	1	0.185058346697195	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124688	MAD2L1BP	best inferred	1	2	0.1569819213077825	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000078018	MAP2	best inferred	1	1	0.205940146961637	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169967	MAP3K2	best inferred	1	1	0.427498296249282	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198909	MAP3K3	best inferred	1	1	0.220829265603672	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000180834	MAP6D1	best inferred	1	1	0.143749213857828	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000008735	MAPK8IP2	best inferred	1	1	0.117164848629272	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162889	MAPKAPK2	landmark	1	1	0.194636684864128	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114738	MAPKAPK3	landmark	1	1	0.160995283297933	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000007047	MARK4	best inferred	1	1	0.169648010255706	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105613	MAST1	best inferred	1	1	0.118139892706753	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000069020	MAST4	best inferred	1	1	0.176620189870228	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000038274	MAT2B	best inferred	1	1	0.310692294933655	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000015479	MATR3	best inferred	1	1	0.35926773705296	-1	36	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103495	MAZ	best inferred	1	1	0.19212910674111	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125505	MBOAT7	landmark	1	1	0.156366531809938	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000076706	MCAM	best inferred	1	1	0.13451016454395	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171444	MCC	best inferred	1	1	0.280435499152514	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143384	MCL1	best inferred	1	1	0.351812382980032	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000055732	MCOLN3	best inferred	1	1	0.156754494599021	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151376	ME3	best inferred	1	1	0.199185973125686	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169057	MECP2	best inferred	1	1	0.181194955284651	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116353	MECR	best inferred	1	1	0.152641737869712	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108510	MED13	best inferred	1	1	0.409722553320517	-1	42	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099917	MED15	best inferred	1	1	0.16452803144243	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000005102	MEOX1	best inferred	1	1	0.245056931879455	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106511	MEOX2	best inferred	1	1	0.248645165217664	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106484	MEST	landmark	1	1	0.192268586292695	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171806	METTL18	best inferred	1	1	0.333466736172094	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166482	MFAP4	best inferred	1	1	0.336696971238424	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197614	MFAP5	best inferred	1	1	0.200572953114578	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100060	MFNG	best inferred	1	1	0.225898541773229	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138111	MFSD13A	best inferred	1	1	0.134885293253808	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131446	MGAT1	best inferred	1	1	0.14236548204811	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128268	MGAT3	best inferred	1	1	0.209690023854819	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111341	MGP	best inferred	1	1	0.160491551053982	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143198	MGST3	best inferred	1	1	0.1673197208154	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101871	MID1	best inferred	1	1	0.171111443292998	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000187098	MITF	best inferred	1	1	0.230961534262241	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120215	MLANA	best inferred	1	1	0.198413011505586	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167965	MLST8	best inferred	1	1	0.180373032025236	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157227	MMP14	best inferred	1	1	0.180627941713829	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156103	MMP16	best inferred	1	1	0.189805934540296	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138722	MMRN1	best inferred	1	1	0.250235081941316	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173269	MMRN2	best inferred	1	2	0.2444722995287595	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070444	MNT	best inferred	1	1	0.209796744712313	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120162	MOB3B	best inferred	1	1	0.166367114183794	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103111	MON1B	best inferred	1	1	0.207099382640068	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000079931	MOXD1	best inferred	1	1	0.170070190167114	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118242	MREG	best inferred	1	1	0.205088958625641	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137547	MRPL15	best inferred	1	1	0.194991603075587	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143314	MRPL24	best inferred	1	1	0.158366391122187	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105364	MRPL4	best inferred	1	1	0.188700678417412	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135900	MRPL44	best inferred	1	1	0.217475975180558	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128626	MRPS12	best inferred	1	1	0.15314586802632	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182180	MRPS16	landmark	1	1	0.0980191985894466	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156738	MS4A1	best inferred	1	1	0.211538685959496	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174579	MSL2	best inferred	1	1	0.401105526744831	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132613	MTSS2	best inferred	1	2	0.19700623084817298	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000090432	MUL1	best inferred	1	1	0.202087780480169	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000119950	MXI1	best inferred	1	1	0.232333275867227	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132382	MYBBP1A	best inferred	1	1	0.160305706923499	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196091	MYBPC1	best inferred	1	1	0.130408938187805	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136997	MYC	landmark	1	1	0.199296417731871	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134323	MYCN	best inferred	1	1	0.142362385397788	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120279	MYCT1	best inferred	1	1	0.326001619261211	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133392	MYH11	best inferred	1	1	0.206400965065781	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145555	MYO10	landmark	1	2	0.226532266558586	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197879	MYO1C	best inferred	1	1	0.152807676478606	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197535	MYO5A	best inferred	1	1	0.208209678666333	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128833	MYO5C	best inferred	1	2	0.1424036793232315	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177791	MYOZ1	best inferred	1	1	0.115962096722948	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138386	NAB1	best inferred	1	1	0.409553994739747	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166886	NAB2	best inferred	1	1	0.128804130243002	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136274	NACAD	best inferred	1	1	0.0985059835189112	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198951	NAGA	best inferred	1	1	0.18602895177056	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108784	NAGLU	best inferred	1	1	0.115877321715861	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071051	NCK2	landmark	1	1	0.175046800855122	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115053	NCL	best inferred	1	1	0.21452389736531	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125912	NCLN	best inferred	1	1	0.182039317428727	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107130	NCS1	best inferred	1	1	0.168710545829111	-1	34	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070614	NDST1	best inferred	1	1	0.175938173157533	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158864	NDUFS2	best inferred	1	1	0.231957190948136	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125967	NECAB3	best inferred	1	2	0.1359492765427635	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000069869	NEDD4	best inferred	1	1	0.392788605443952	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151414	NEK7	best inferred	1	1	0.39363898224393	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000188986	NELFB	best inferred	1	1	0.172695000481196	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204356	NELFE	best inferred	1	1	0.137259085279347	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204386	NEU1	best inferred	1	1	0.164292221116189	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162139	NEU3	best inferred	1	1	0.197704682107087	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131196	NFATC1	best inferred	1	1	0.129525223726634	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000147862	NFIB	best inferred	1	1	0.195792088999695	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141905	NFIC	best inferred	1	1	0.157084012116258	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170322	NFRKB	best inferred	1	1	0.252801233435489	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000064300	NGFR	best inferred	1	2	0.1697387587685295	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000187736	NHEJ1	best inferred	1	1	0.185817823340768	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116962	NID1	best inferred	1	1	0.209997415376462	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000087303	NID2	best inferred	1	1	0.296930353738568	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158793	NIT1	landmark	1	1	0.197467130490365	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000073536	NLE1	best inferred	1	2	0.182795160812567	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169760	NLGN1	best inferred	1	1	0.224493764587942	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166197	NOLC1	landmark	1	1	0.194593678047357	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000087269	NOP14	best inferred	1	1	0.203791070163591	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101361	NOP56	best inferred	1	1	0.174798539459651	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000139910	NOVA1	best inferred	1	1	0.211728405456211	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170485	NPAS2	best inferred	1	1	0.141262631185604	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182446	NPLOC4	best inferred	1	1	0.198032520956242	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103148	NPRL3	best inferred	1	1	0.164383301283134	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164128	NPY1R	best inferred	1	1	0.20175647025949	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000175745	NR2F1	best inferred	1	1	0.156111820863517	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113580	NR3C1	landmark	1	1	0.327367964474161	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153234	NR4A2	best inferred	1	1	0.152171371776173	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000119508	NR4A3	best inferred	1	2	0.1623577283582645	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158458	NRG2	best inferred	1	1	0.117982259557601	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000053702	NRIP2	best inferred	1	1	0.185928409232817	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000088833	NSFL1C	best inferred	1	1	0.157708745685496	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117697	NSL1	best inferred	1	1	0.397339682311346	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148053	NTRK2	best inferred	1	1	0.165308635938443	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157181	ODR4	best inferred	1	1	0.387884884416246	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105953	OGDH	best inferred	1	1	0.166658697664356	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000181396	OGFOD3	best inferred	1	1	0.139443598824734	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106809	OGN	best inferred	1	1	0.233083536703153	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130558	OLFM1	best inferred	1	1	0.159536189865503	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183801	OLFML1	best inferred	1	2	0.2777375060341605	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127083	OMD	best inferred	1	1	0.195022696861444	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141447	OSBPL1A	best inferred	1	1	0.252441121913955	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145623	OSMR	best inferred	1	1	0.248696295277521	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134996	OSTF1	best inferred	1	1	0.210065418146842	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135124	P2RX4	best inferred	1	1	0.137224280591282	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000089041	P2RX7	best inferred	1	1	0.233671201797337	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000078589	P2RY10	best inferred	1	1	0.179919763423609	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110811	P3H3	best inferred	1	1	0.100867448332689	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070756	PABPC1	best inferred	1	1	0.176486775782663	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100266	PACSIN2	best inferred	1	1	0.109340958240659	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165912	PACSIN3	landmark	1	1	0.136822888354874	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128050	PAICS	landmark	1	1	0.209146383511317	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130669	PAK4	landmark	1	1	0.181840193825147	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099260	PALMD	best inferred	1	2	0.233727137675599	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169116	PARM1	best inferred	1	1	0.237191226658833	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197702	PARVA	best inferred	1	1	0.1854329462881	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000188677	PARVB	best inferred	1	1	0.149141415146171	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135903	PAX3	best inferred	1	1	0.200205172067911	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163346	PBXIP1	best inferred	1	1	0.198797611343815	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166228	PCBD1	landmark	1	1	0.0975296930323791	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118946	PCDH17	best inferred	1	1	0.258315962194779	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169851	PCDH7	best inferred	1	1	0.187296387614512	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106333	PCOLCE	best inferred	1	1	0.204775178866966	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099139	PCSK5	best inferred	1	1	0.269224396609636	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148843	PDCD11	best inferred	1	1	0.174425426781305	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115252	PDE1A	best inferred	1	1	0.224176142796276	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186642	PDE2A	best inferred	1	1	0.213057328397312	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138735	PDE5A	best inferred	1	1	0.295643793785838	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171408	PDE7B	best inferred	1	1	0.214286474051191	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160191	PDE9A	best inferred	1	1	0.0988807856142999	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197461	PDGFA	landmark	1	1	0.160814276463987	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170962	PDGFD	best inferred	1	1	0.160724199864223	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134853	PDGFRA	best inferred	1	2	0.2556514669950835	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113721	PDGFRB	best inferred	1	2	0.2563758823635765	-1	36	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185615	PDIA2	best inferred	1	1	0.108647157730336	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107438	PDLIM1	landmark	1	1	0.23817972338328	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120913	PDLIM2	best inferred	1	1	0.138892054703507	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162493	PDPN	best inferred	1	1	0.17994646097601	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133401	PDZD2	best inferred	1	1	0.181113853329568	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186862	PDZD7	best inferred	1	1	0.139693579695074	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100029	PES1	best inferred	1	1	0.135563203749747	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162735	PEX19	best inferred	1	1	0.276345471902868	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178921	PFAS	best inferred	1	1	0.177958215918702	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114268	PFKFB4	best inferred	1	1	0.12632878464391	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141959	PFKL	landmark	1	1	0.155982244383339	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177614	PGBD5	best inferred	1	1	0.113286734654382	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154330	PGM5	best inferred	1	1	0.17936188034088	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164040	PGRMC2	best inferred	1	1	0.239632479027928	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134686	PHC2	best inferred	1	1	0.176319773082249	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000019144	PHLDB1	best inferred	1	1	0.161242066086485	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000081913	PHLPP1	best inferred	1	2	0.2085812355423155	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116793	PHTF1	best inferred	1	1	0.295769374767049	-1	3	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168490	PHYHIP	best inferred	1	1	0.130749636521478	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143393	PI4KB	best inferred	1	1	0.247962670331948	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000033800	PIAS1	best inferred	1	1	0.341262759128614	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000153823	PID1	best inferred	1	1	0.195691498072028	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000011405	PIK3C2A	best inferred	1	1	0.340036229924719	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133056	PIK3C2B	landmark	1	1	0.153071602653624	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145675	PIK3R1	best inferred	1	1	0.377254616680678	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000150867	PIP4K2A	best inferred	1	2	0.2127206931653095	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166908	PIP4K2C	best inferred	1	1	0.20134664626959	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198961	PJA2	best inferred	1	1	0.348946680492254	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000067225	PKM	best inferred	1	1	0.158274416008028	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165495	PKNOX2	best inferred	1	2	0.164722445969326	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000057294	PKP2	best inferred	1	1	0.143294738311954	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103066	PLA2G15	landmark	1	1	0.178470792723905	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000075651	PLD1	best inferred	1	1	0.14846695616424	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178209	PLEC	best inferred	1	2	0.1484751294384195	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143850	PLEKHA6	best inferred	1	1	0.134493147113101	-1	34	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116786	PLEKHM2	best inferred	1	1	0.164227576507363	-1	34	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000241839	PLEKHO2	best inferred	1	1	0.168708517388742	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166819	PLIN1	best inferred	1	1	0.132029513859817	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000083444	PLOD1	best inferred	1	1	0.128521938656707	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102007	PLP2	landmark	1	1	0.121256120661641	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162407	PLPP3	best inferred	1	1	0.26662887439885	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100979	PLTP	best inferred	1	1	0.105853483634558	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114554	PLXNA1	best inferred	1	2	0.1499966974786665	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000076356	PLXNA2	best inferred	1	1	0.0956716779848446	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164050	PLXNB1	best inferred	1	1	0.176986651920469	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198753	PLXNB3	best inferred	1	1	0.106577328769817	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136040	PLXNC1	best inferred	1	1	0.19528979505111	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100417	PMM1	best inferred	1	1	0.143479684972654	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100344	PNPLA3	best inferred	1	1	0.126143366876183	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108439	PNPO	best inferred	1	1	0.213880768732307	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106628	POLD2	best inferred	1	1	0.147055285553201	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171453	POLR1C	landmark	1	1	0.180660937548521	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186184	POLR1D	best inferred	1	1	0.165189824888262	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099817	POLR2E	best inferred	1	1	0.182807355195913	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168495	POLR3D	best inferred	1	1	0.157512847671993	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000085998	POMGNT1	best inferred	1	1	0.14781862606586	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121577	POPDC2	best inferred	1	1	0.213496134031806	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133110	POSTN	best inferred	1	1	0.208877166718599	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166794	PPIB	best inferred	1	1	0.125031063974453	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196422	PPP1R26	best inferred	1	1	0.119883056696171	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158528	PPP1R9A	best inferred	1	2	0.22012808340759948	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105063	PPP6R1	best inferred	1	1	0.210475494930707	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148840	PPRC1	best inferred	1	1	0.157946460356047	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122490	PQLC1	best inferred	1	1	0.151588441165921	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116690	PRG4	best inferred	1	1	0.185385761528987	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000027075	PRKCH	landmark	1	1	0.180070346153698	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105287	PRKD2	best inferred	1	1	0.165930664269161	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184838	PRR16	best inferred	1	1	0.180326499597959	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204576	PRR3	best inferred	1	1	0.181092767180696	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131188	PRR7	landmark	1	1	0.0872479599654196	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116132	PRRX1	best inferred	1	1	0.250278837507515	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143801	PSEN2	best inferred	1	1	0.179758431236778	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159377	PSMB4	best inferred	1	1	0.155072226902243	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099341	PSMD8	best inferred	1	2	0.15139786085638499	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134222	PSRC1	landmark	1	1	0.141499656625533	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156471	PTDSS1	best inferred	1	1	0.229378262211269	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000050628	PTGER3	best inferred	1	2	0.21912223542036352	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148344	PTGES	best inferred	1	1	0.144582071199842	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148334	PTGES2	best inferred	1	1	0.143131078724955	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122420	PTGFR	best inferred	1	1	0.20406097015982	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160013	PTGIR	best inferred	1	1	0.251110718415386	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169398	PTK2	landmark	1	1	0.21691321839817	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105894	PTN	best inferred	1	1	0.204133517927724	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184489	PTP4A3	best inferred	1	1	0.154359763928945	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196396	PTPN1	landmark	1	1	0.198866480072904	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072135	PTPN18	best inferred	1	1	0.140860216851744	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000080031	PTPRH	best inferred	1	1	0.11504426155493	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173482	PTPRM	best inferred	1	1	0.171087991422349	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183255	PTTG1IP	best inferred	1	1	0.152860362993397	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179950	PUF60	landmark	1	1	0.32778583079817	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000055917	PUM2	best inferred	1	1	0.402871548644195	-1	51	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160953	PWWP3A	best inferred	1	1	0.159347449909422	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130508	PXDN	best inferred	1	1	0.239239599708671	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000089159	PXN	landmark	1	1	0.178134323539883	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183010	PYCR1	landmark	1	1	0.158357990659262	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104524	PYCR3	best inferred	1	1	0.259479546485404	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100994	PYGB	best inferred	1	1	0.143912322067271	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100504	PYGL	landmark	1	1	0.141225731950947	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151552	QDPR	best inferred	1	1	0.132030821335366	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107560	RAB11FIP2	landmark	1	1	0.428413975013146	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143545	RAB13	best inferred	1	1	0.139283250542148	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000139998	RAB15	best inferred	1	1	0.0904869857228678	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000069974	RAB27A	landmark	1	1	0.170280728537993	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105649	RAB3A	best inferred	1	1	0.162531467008805	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105514	RAB3D	best inferred	1	1	0.14250196598766	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118873	RAB3GAP2	best inferred	1	1	0.421498464615395	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111540	RAB5B	best inferred	1	1	0.179267377015564	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108774	RAB5C	best inferred	1	1	0.205256910131786	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154917	RAB6B	best inferred	1	1	0.123363748096938	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000075785	RAB7A	best inferred	1	1	0.151220486210445	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169750	RAC3	best inferred	1	1	0.157321578273358	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164754	RAD21	best inferred	1	1	0.365057352489789	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179262	RAD23A	best inferred	1	1	0.173263547526152	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182185	RAD51B	best inferred	1	1	0.185049046753263	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131831	RAI2	best inferred	1	1	0.302333933340554	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125970	RALY	best inferred	1	1	0.153832522448332	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132329	RAMP1	best inferred	1	1	0.14102544247321	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131477	RAMP2	best inferred	1	1	0.154602668186076	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122679	RAMP3	best inferred	1	1	0.216505209861208	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141084	RANBP10	best inferred	1	1	0.178942061597536	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132359	RAP1GAP2	best inferred	1	1	0.161583470984569	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000091428	RAPGEF4	best inferred	1	1	0.178886070261408	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000077092	RARB	best inferred	1	2	0.2133385114206505	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145715	RASA1	landmark	1	1	0.39077682232487	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000075391	RASAL2	best inferred	1	1	0.250465954007823	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000068831	RASGRP2	best inferred	1	1	0.221305734453279	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152689	RASGRP3	best inferred	1	1	0.203135396141534	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128045	RASL11B	best inferred	1	1	0.168889656962986	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103710	RASL12	best inferred	1	2	0.257636848917363	-1	36	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144642	RBMS3	best inferred	1	1	0.180261799649109	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114115	RBP1	best inferred	1	1	0.186181656550801	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117625	RCOR3	best inferred	1	1	0.378439047725981	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160957	RECQL4	best inferred	1	1	0.166166758747995	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000088320	REM1	best inferred	1	2	0.2333673661975725	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000084093	REST	best inferred	1	1	0.425198333659173	-1	50	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144567	RETREG2	best inferred	1	2	0.18241644147938152	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131378	RFTN1	best inferred	1	1	0.242924086976769	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143390	RFX5	landmark	1	1	0.22866910367834	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000181827	RFX7	best inferred	1	1	0.375354868298668	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159788	RGS12	best inferred	1	1	0.164306727090436	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000147509	RGS20	best inferred	1	1	0.199020569462442	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143248	RGS5	best inferred	1	1	0.248359331860625	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100263	RHBDD3	best inferred	1	1	0.139411097054478	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129667	RHBDF2	best inferred	1	1	0.146016529628726	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143878	RHOB	best inferred	1	1	0.129623397750539	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000008853	RHOBTB2	best inferred	1	2	0.14790503914248398	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000155366	RHOC	best inferred	1	1	0.147927019140381	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177963	RIC8A	best inferred	1	1	0.173278678751267	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174791	RIN1	best inferred	1	1	0.133241677014229	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000039523	RIPOR1	best inferred	1	2	0.14753246827231348	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000111913	RIPOR2	best inferred	1	1	0.175473446899113	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000139405	RITA1	best inferred	1	2	0.1768865356193685	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133874	RNF122	best inferred	1	1	0.14314950244313	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168159	RNF187	best inferred	1	1	0.181519172994639	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000176393	RNPEP	best inferred	1	1	0.191954023640707	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103932	RPAP1	best inferred	1	1	0.146772382222419	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198755	RPL10A	best inferred	1	1	0.180918862967936	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000188846	RPL14	best inferred	1	1	0.127855642164732	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108298	RPL19	best inferred	1	1	0.114141709703617	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166441	RPL27A	best inferred	1	1	0.11049751467163	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100316	RPL3	best inferred	1	1	0.133557159710449	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000161016	RPL8	best inferred	1	1	0.185503734703094	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000089157	RPLP0	best inferred	1	1	0.134854086732373	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112306	RPS12	best inferred	1	1	0.141207982672281	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186468	RPS23	best inferred	1	1	0.118293240632668	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000149273	RPS3	best inferred	1	1	0.143296234251675	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198034	RPS4X	best inferred	1	1	0.107733345372351	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136643	RPS6KC1	best inferred	1	1	0.373206898528069	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170889	RPS9	best inferred	1	1	0.129289959429007	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166592	RRAD	best inferred	1	1	0.148127024833831	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125844	RRBP1	best inferred	1	1	0.133231167896057	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124782	RREB1	best inferred	1	1	0.225193533824532	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160214	RRP1	best inferred	1	1	0.172339743398552	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160208	RRP1B	landmark	1	1	0.19597718219112	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114767	RRP9	best inferred	1	1	0.174938928304035	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179041	RRS1	landmark	1	2	0.1992194449581905	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171490	RSL1D1	best inferred	1	1	0.212013760193425	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102445	RUBCNL	best inferred	1	1	0.194745010321233	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000020633	RUNX3	best inferred	1	1	0.181944919681059	-1	39	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160753	RUSC1	best inferred	1	1	0.191720241056419	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183207	RUVBL2	best inferred	1	1	0.17808799484375	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163602	RYBP	best inferred	1	1	0.381245612583684	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170989	S1PR1	best inferred	1	2	0.28798759289917397	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164764	SBSPON	best inferred	1	1	0.166716061065992	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116521	SCAMP3	best inferred	1	1	0.22290785397051	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168077	SCARA3	best inferred	1	2	0.234655017226574	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000010803	SCMH1	best inferred	1	1	0.177700912529578	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000180900	SCRIB	best inferred	1	1	0.269419260943221	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137575	SDCBP	best inferred	1	1	0.257135494865683	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143252	SDHC	best inferred	1	1	0.266237115889829	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157020	SEC13	best inferred	1	1	0.12730904319909	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000058262	SEC61A1	best inferred	1	1	0.147322521432842	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138593	SECISBP2L	best inferred	1	1	0.391933285053562	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000007908	SELE	best inferred	1	1	0.218308452887942	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000188404	SELL	best inferred	1	1	0.220914526703355	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174175	SELP	best inferred	1	1	0.339550140983754	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000075213	SEMA3A	best inferred	1	1	0.231357751475663	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168758	SEMA4C	best inferred	1	1	0.170604797572872	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135622	SEMA4F	best inferred	1	1	0.172444505897359	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184640	SEPT9	best inferred	1	1	0.195007289796632	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000099995	SF3A1	best inferred	1	1	0.236358265268853	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143368	SF3B4	best inferred	1	1	0.194662922741801	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107819	SFXN3	best inferred	1	1	0.158567167322014	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170624	SGCD	best inferred	1	1	0.234612046473441	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000131171	SH3BGRL	best inferred	1	1	0.314738649459446	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130147	SH3BP4	best inferred	1	1	0.144944475739342	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107295	SH3GL2	best inferred	1	1	0.112790478712398	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000125089	SH3TC1	best inferred	1	1	0.138299242687556	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179526	SHARPIN	best inferred	1	1	0.291689341582479	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160691	SHC1	landmark	1	1	0.189270300172769	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000108061	SHOC2	best inferred	1	1	0.374599579709448	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000147955	SIGMAR1	best inferred	1	1	0.139544409060663	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198053	SIRPA	best inferred	1	1	0.172145538932199	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124067	SLC12A4	best inferred	1	1	0.129194812596415	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168679	SLC16A4	best inferred	1	1	0.202612423424998	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173638	SLC19A1	best inferred	1	2	0.17873012960427997	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115902	SLC1A4	landmark	1	1	0.155776070568652	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000146477	SLC22A3	best inferred	1	1	0.238065034529986	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102743	SLC25A15	best inferred	1	1	0.227731135243418	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151729	SLC25A4	landmark	1	1	0.161367644520288	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160785	SLC25A44	best inferred	1	1	0.264503826640067	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143554	SLC27A3	landmark	1	1	0.135399291561014	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000181830	SLC35C1	best inferred	1	1	0.174460177999488	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213699	SLC35F6	best inferred	1	1	0.14372134923609	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000123643	SLC36A1	best inferred	1	1	0.198955204199555	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103042	SLC38A7	best inferred	1	1	0.170897545113736	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143570	SLC39A1	best inferred	1	1	0.22320969553871	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141424	SLC39A6	best inferred	1	1	0.147497923461858	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000149150	SLC43A1	best inferred	1	1	0.158380232011751	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134802	SLC43A3	best inferred	1	1	0.145370121064181	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169241	SLC50A1	best inferred	1	1	0.15699256871599	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185803	SLC52A2	best inferred	1	1	0.278361415704254	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000138074	SLC5A6	landmark	1	1	0.172103038642795	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072041	SLC6A15	best inferred	1	1	0.160316368247596	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000139514	SLC7A1	best inferred	1	2	0.1592692193836605	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103257	SLC7A5	best inferred	1	1	0.162029184568335	-1	35	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000092068	SLC7A8	best inferred	1	1	0.13382572357349	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000174640	SLCO2A1	best inferred	1	1	0.229105851934979	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000145147	SLIT2	best inferred	1	1	0.254344813434046	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184347	SLIT3	best inferred	1	1	0.231356492098218	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137776	SLTM	best inferred	1	1	0.360979860005719	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000113658	SMAD5	best inferred	1	1	0.348209899481785	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072501	SMC1A	landmark	1	1	0.276604338501571	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198952	SMG5	best inferred	1	1	0.237113554242375	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116698	SMG7	best inferred	1	1	0.276936688979428	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166311	SMPD1	best inferred	1	1	0.137758903041015	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198742	SMURF1	best inferred	1	1	0.204428874527585	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124216	SNAI1	best inferred	1	1	0.204967245056637	-1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000019549	SNAI2	best inferred	1	1	0.198304796657113	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000064692	SNCAIP	best inferred	1	2	0.2545753067963525	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173267	SNCG	best inferred	1	2	0.214194333775633	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101298	SNPH	best inferred	1	1	0.151275726388103	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163788	SNRK	best inferred	1	1	0.264381707032976	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000057252	SOAT1	best inferred	1	1	0.188385073995972	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171150	SOCS5	best inferred	1	2	0.4228389240247925	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170677	SOCS6	best inferred	1	2	0.222629228409705	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109610	SOD3	best inferred	1	1	0.17430446572027	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000095637	SORBS1	best inferred	1	1	0.129001171697449	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120896	SORBS3	landmark	1	1	0.124964004802425	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000134243	SORT1	best inferred	1	1	0.193092567498712	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115904	SOS1	best inferred	1	1	0.399202425160187	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100146	SOX10	best inferred	1	2	0.14861685719278	-1	37	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143842	SOX13	best inferred	1	1	0.143772482109082	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124766	SOX4	landmark	1	1	0.199759861008781	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172845	SP3	best inferred	1	1	0.405554819530869	-1	57	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152583	SPARCL1	best inferred	1	1	0.263441784398851	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000021574	SPAST	best inferred	1	1	0.351560105806137	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000090487	SPG21	best inferred	1	1	0.164450882175324	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000262655	SPON1	best inferred	1	1	0.2122667687805	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198917	SPOUT1	best inferred	1	1	0.160350563411603	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116096	SPR	landmark	1	1	0.112508251010327	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000164056	SPRY1	best inferred	1	1	0.184026499498066	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000161011	SQSTM1	landmark	1	1	0.15657306438823	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116649	SRM	best inferred	1	1	0.145560167235705	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000157216	SSBP3	best inferred	1	1	0.145808474434325	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110080	ST3GAL4	best inferred	1	1	0.144417314635099	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115525	ST3GAL5	landmark	1	1	0.170836559835078	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070731	ST6GALNAC2	landmark	1	1	0.196421213321977	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118007	STAG1	best inferred	1	1	0.394633332140512	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136738	STAM	best inferred	1	1	0.252636674072147	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127954	STEAP4	best inferred	1	1	0.225841724364801	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213533	STIMATE	landmark	1	1	0.169592305350376	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000168439	STIP1	best inferred	1	1	0.166620376593683	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104375	STK3	best inferred	1	1	0.339996053001604	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112079	STK38	best inferred	1	1	0.249596231201416	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104435	STMN2	best inferred	1	1	0.15982175633096	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000067221	STOML1	best inferred	1	1	0.153163531485946	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000203685	STUM	best inferred	1	1	0.101151999181508	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166900	STX3	best inferred	1	1	0.220934696477656	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000079950	STX7	best inferred	1	1	0.23305801996806	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163541	SUCLG1	best inferred	1	1	0.184492128005376	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000094975	SUCO	best inferred	1	1	0.393727363862234	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165124	SVEP1	best inferred	1	2	0.2792971705645505	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000147642	SYBU	best inferred	1	2	0.14260621664891499	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182253	SYNM	best inferred	1	1	0.207969992615539	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184292	TACSTD2	best inferred	1	1	0.170790212514786	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141384	TAF4B	best inferred	1	1	0.213471903315297	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106290	TAF6	best inferred	1	2	0.14891385790955552	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000149591	TAGLN	best inferred	1	1	0.212436943768096	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144834	TAGLN3	best inferred	1	1	0.123944316111016	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143374	TARS2	best inferred	1	1	0.258729661154099	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167291	TBC1D16	best inferred	1	1	0.17339942705603	-1	34	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136111	TBC1D4	best inferred	1	1	0.285577752444572	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183751	TBL3	best inferred	1	1	0.166423565513683	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136270	TBRG4	best inferred	1	1	0.149468393201309	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184058	TBX1	best inferred	1	1	0.201349525244355	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121068	TBX2	landmark	1	1	0.102319521246235	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140262	TCF12	best inferred	1	1	0.379870573726271	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196628	TCF4	best inferred	1	1	0.289402893423701	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000176907	TCIM	best inferred	1	1	0.273361855929163	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000042088	TDP1	best inferred	1	1	0.225746612809211	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000197905	TEAD4	best inferred	1	1	0.179614018633175	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196663	TECPR2	best inferred	1	1	0.205605341781375	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120156	TEK	best inferred	1	2	0.2764580130275025	-1	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070759	TESK2	best inferred	1	1	0.132613882014769	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137203	TFAP2A	landmark	1	2	0.202108347483306	-1	50	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000090447	TFAP4	best inferred	1	2	0.1806590699609025	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100109	TFIP11	best inferred	1	1	0.143767167826264	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000003436	TFPI	best inferred	1	1	0.264009301027684	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000119699	TGFB3	landmark	1	1	0.281261297241172	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115970	THADA	best inferred	1	1	0.146709249742096	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178726	THBD	best inferred	1	1	0.196901814012386	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130193	THEM6	best inferred	1	2	0.175844421124882	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172009	THOP1	best inferred	1	1	0.1721616057577	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000154096	THY1	best inferred	1	2	0.2590474747318455	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127666	TICAM1	landmark	1	1	0.182421237268307	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000066056	TIE1	best inferred	1	1	0.256945590906105	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105197	TIMM50	best inferred	1	1	0.134219304357802	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142910	TINAGL1	best inferred	1	1	0.213845171772561	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163931	TKT	best inferred	1	1	0.144704376684317	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000065717	TLE2	best inferred	1	1	0.158909801773735	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140332	TLE3	best inferred	1	1	0.163998346042021	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106829	TLE4	best inferred	1	1	0.207650894099283	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184277	TM2D3	best inferred	1	1	0.264172790977452	-1	2	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169908	TM4SF1	best inferred	1	1	0.159889566520814	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141524	TMC6	best inferred	1	1	0.122114705432481	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133069	TMCC2	best inferred	1	2	0.1502312989246875	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166292	TMEM100	best inferred	1	1	0.230555820955702	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109066	TMEM104	best inferred	1	1	0.197902226955161	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000188735	TMEM120B	best inferred	1	1	0.144402086332671	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135956	TMEM127	best inferred	1	1	0.208659433378624	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121210	TMEM131L	best inferred	1	1	0.228493517974395	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144120	TMEM177	best inferred	1	1	0.114460573459286	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198792	TMEM184B	best inferred	1	1	0.204174910596358	-1	31	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126106	TMEM53	best inferred	1	1	0.180969255823254	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196187	TMEM63A	best inferred	1	1	0.162427689110196	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129925	TMEM8A	best inferred	1	1	0.195467375139422	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109084	TMEM97	landmark	1	1	0.18292691808672	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136842	TMOD1	best inferred	1	1	0.149219045231459	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000041982	TNC	best inferred	1	1	0.136180582217527	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173530	TNFRSF10D	best inferred	1	1	0.180757501744372	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107854	TNKS2	best inferred	1	1	0.424284186038911	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130595	TNNT3	best inferred	1	2	0.1967104792083545	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000078902	TOLLIP	best inferred	1	1	0.17416807528872	-1	43	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100284	TOM1	best inferred	1	1	0.154122013942155	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000025772	TOMM34	landmark	1	1	0.152527983546987	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186283	TOR3A	best inferred	1	1	0.125811514921198	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000092203	TOX4	best inferred	1	1	0.219263223106139	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115129	TP53I3	best inferred	1	1	0.0994932336643159	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000186815	TPCN1	best inferred	1	1	0.169578246205236	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198467	TPM2	best inferred	1	1	0.152728341545521	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163870	TPRA1	best inferred	1	1	0.137851150195471	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000175104	TRAF6	best inferred	1	1	0.247495347590501	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115993	TRAK2	landmark	1	1	0.244478947408214	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000126602	TRAP1	landmark	1	1	0.165570500467903	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167632	TRAPPC9	best inferred	1	1	0.213018525670711	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173334	TRIB1	landmark	1	1	0.172460354551121	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071575	TRIB2	best inferred	1	1	0.163957026347459	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116525	TRIM62	best inferred	1	2	0.156225623144565	-1	33	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000183665	TRMT12	best inferred	1	1	0.21373719243969	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182463	TSHZ2	best inferred	1	2	0.2633935090745545	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106537	TSPAN13	best inferred	1	1	0.212091103350356	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000214063	TSPAN4	landmark	1	1	0.136174370890259	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156298	TSPAN7	best inferred	1	1	0.129018790143819	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127324	TSPAN8	best inferred	1	1	0.136155943415474	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000007520	TSR3	best inferred	1	1	0.172244871638287	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000104522	TSTA3	landmark	1	1	0.202616539786587	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128881	TTBK2	best inferred	1	1	0.386000044776279	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143643	TTC13	best inferred	1	1	0.31000819443759	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103852	TTC23	best inferred	1	1	0.298392523844302	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000133985	TTC9	best inferred	1	1	0.226016893620423	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100271	TTLL1	best inferred	1	1	0.100947851309298	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100304	TTLL12	best inferred	1	1	0.161629267304297	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107815	TWNK	best inferred	1	1	0.210894460167049	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100348	TXN2	best inferred	1	1	0.126921448604635	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137073	UBAP2	best inferred	1	1	0.159429236279898	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000175931	UBE2O	best inferred	1	1	0.185692866550754	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122042	UBL3	best inferred	1	1	0.250888387604031	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000144224	UBXN4	best inferred	1	1	0.381411175395711	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000116750	UCHL5	best inferred	1	1	0.402920469116286	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000143179	UCK2	best inferred	1	1	0.184273316526454	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182168	UNC5C	best inferred	1	1	0.183186109824732	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000055483	USP36	best inferred	1	1	0.192349065923684	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198382	UVRAG	best inferred	1	1	0.241677337470582	-1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117533	VAMP4	best inferred	1	1	0.372929795760188	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124333	VAMP7	best inferred	1	1	0.336456914628343	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204394	VARS	best inferred	1	1	0.163845722569757	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000038427	VCAN	best inferred	1	1	0.271620236070797	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128564	VGF	best inferred	1	1	0.114219532232774	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000114812	VIPR1	best inferred	1	1	0.20451479433256	-1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000129003	VPS13C	best inferred	1	1	0.345471902015167	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160948	VPS28	landmark	1	1	0.285107845142531	-1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167987	VPS37C	best inferred	1	1	0.147861725800213	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163159	VPS72	landmark	1	1	0.235615719579588	-1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105053	VRK3	best inferred	1	1	0.181038719010195	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165633	VSTM4	best inferred	1	1	0.282161778740046	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110799	VWF	best inferred	1	1	0.216110654997246	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132471	WBP2	best inferred	1	1	0.159982890973381	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071127	WDR1	best inferred	1	2	0.19030858669477602	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000065183	WDR3	best inferred	1	1	0.204149168767272	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000156795	WDYHV1	best inferred	1	1	0.18348580932582	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109501	WFS1	landmark	1	1	0.163057715928779	-1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000095397	WHRN	best inferred	1	1	0.157520692599728	-1	21	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158156	XKR8	best inferred	1	1	0.139792526473048	-1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000122121	XPNPEP2	best inferred	1	1	0.20935536667492	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132953	XPO4	best inferred	1	1	0.213139306765527	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000015532	XYLT2	best inferred	1	1	0.187149105489827	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000060138	YBX3	best inferred	1	1	0.122647241132696	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000180667	YOD1	best inferred	1	1	0.345285490490389	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000083896	YTHDC1	best inferred	1	1	0.402118460454102	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100426	ZBED4	best inferred	1	1	0.210031848884242	-1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000205189	ZBTB10	best inferred	1	1	0.247959526506552	-1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000198081	ZBTB14	best inferred	1	1	0.397129635959588	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000179456	ZBTB18	best inferred	1	1	0.283033853389724	-1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160685	ZBTB7B	best inferred	1	1	0.199253694256472	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000058673	ZC3H11A	best inferred	1	1	0.438498402040019	-1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000014164	ZC3H3	best inferred	1	1	0.344220295487749	-1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204160	ZDHHC18	best inferred	1	1	0.201204061247747	-1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169554	ZEB2	best inferred	1	2	0.2577851292862035	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000086666	ZFAND6	best inferred	1	1	0.347869929374756	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162300	ZFPL1	best inferred	1	1	0.160170538551637	-1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100711	ZFYVE21	best inferred	1	1	0.157846458092076	-1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072121	ZFYVE26	best inferred	1	1	0.190234620176202	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000178764	ZHX2	best inferred	1	1	0.153407032845181	-1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103994	ZNF106	best inferred	1	2	0.22742432183710998	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000152926	ZNF117	best inferred	1	1	0.18165479467123	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000163848	ZNF148	best inferred	1	1	0.428336535558367	-1	40	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170631	ZNF16	best inferred	1	1	0.232911129331334	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165804	ZNF219	best inferred	1	1	0.102691518673615	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162702	ZNF281	best inferred	1	1	0.375114226649903	-1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000109445	ZNF330	best inferred	1	1	0.195897403943566	-1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000151789	ZNF385D	best inferred	1	2	0.2034151434663565	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000102935	ZNF423	best inferred	1	2	0.224513278104085	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000181444	ZNF467	best inferred	1	1	0.192658842033579	-1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101493	ZNF516	best inferred	1	1	0.109003628127321	-1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171161	ZNF672	best inferred	1	1	0.212081360528242	-1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000185730	ZNF696	best inferred	1	1	0.250837585014073	-1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120963	ZNF706	best inferred	1	1	0.134473184422397	-1	4	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169957	ZNF768	best inferred	1	1	0.19829658393759	-1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142409	ZNF787	best inferred	1	1	0.167801337966558	-1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000121413	ZSCAN18	best inferred	1	1	0.146815730341796	-1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000184113	CLDN5	best inferred	0	2	0.178605673593227	0	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100448	CTSG	best inferred	0	2	0.122369954818348	0	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000079739	PGM1	landmark	0	3	0.13307725729250267	0	30	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106538	RARRES2	best inferred	0	2	0.17186758144394448	0	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177426	TGIF1	best inferred	0	2	0.120078316018293	0	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000070540	WIPI1	best inferred	0	2	0.1503915969546885	0	40	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000072818	ACAP1	best inferred	-1	1	0.134098495830891	1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000077522	ACTN2	best inferred	-1	1	0.091786339911392	1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105290	APLP1	best inferred	-1	1	0.139689632421659	1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000189058	APOD	best inferred	-1	1	0.115553871801118	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000171130	ATP6V0E2	best inferred	-1	1	0.117196880359281	1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105327	BBC3	best inferred	-1	1	0.138334788643362	1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159388	BTG2	best inferred	-1	1	0.127421822816205	1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071462	BUD23	best inferred	-1	2	0.1257458990180835	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173372	C1QA	best inferred	-1	1	0.132266610304707	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000173369	C1QB	best inferred	-1	1	0.149158767286656	1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000159403	C1R	best inferred	-1	1	0.13720299604367	1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000196954	CASP4	best inferred	-1	1	0.109682266002441	1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160791	CCR5	best inferred	-1	1	0.135133261324585	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000177575	CD163	best inferred	-1	1	0.146171018615303	1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105472	CLEC11A	best inferred	-1	1	0.0822968336104311	1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142675	CNKSR1	best inferred	-1	1	0.146250402209439	1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000103187	COTL1	best inferred	-1	1	0.126972479748795	1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071894	CPSF1	best inferred	-1	1	0.122909238585809	1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107175	CREB3	best inferred	-1	1	0.121131753706207	1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000182578	CSF1R	best inferred	-1	1	0.141096711656536	1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101439	CST3	best inferred	-1	1	0.140547955764655	1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000160213	CSTB	best inferred	-1	1	0.18840467173231	1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000172543	CTSW	best inferred	-1	1	0.145758504560207	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000101160	CTSZ	best inferred	-1	1	0.132303043865025	1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000162496	DHRS3	best inferred	-1	1	0.131192368478715	1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000165140	FBP1	best inferred	-1	1	0.132043425962543	1	5	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000142748	FCN3	best inferred	-1	1	0.11778165224486	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000090554	FLT3LG	best inferred	-1	1	0.139486615906868	1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000089356	FXYD3	best inferred	-1	1	0.111609015005742	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000105928	GSDME	best inferred	-1	1	0.116238531165062	1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148834	GSTO1	best inferred	-1	1	0.138552468729702	1	42	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100450	GZMH	best inferred	-1	2	0.147091523056856	1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000013583	HEBP1	landmark	-1	1	0.125609846797696	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000008517	IL32	best inferred	-1	1	0.159119750754045	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213928	IRF9	best inferred	-1	1	0.123934618296263	1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135424	ITGA7	best inferred	-1	1	0.122350294902284	1	28	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107821	KAZALD1	best inferred	-1	1	0.117229420728127	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000069424	KCNAB2	best inferred	-1	1	0.167456164791846	1	39	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000080709	KCNN2	best inferred	-1	1	0.122289018836846	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000170421	KRT8	best inferred	-1	1	0.117848718635938	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000128342	LIF	best inferred	-1	1	0.180152780995681	1	25	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110031	LPXN	best inferred	-1	1	0.121187386231914	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000204428	LY6G5C	best inferred	-1	1	0.115635859852135	1	15	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000176956	LY6H	best inferred	-1	1	0.114463264973686	1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000115648	MLPH	best inferred	-1	1	0.178851382773789	1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000100985	MMP9	best inferred	-1	1	0.149588278807602	1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158887	MPZ	best inferred	-1	1	0.112634246312984	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000124357	NAGK	best inferred	-1	1	0.152256908853549	1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000166741	NNMT	best inferred	-1	1	0.126872910814926	1	27	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169418	NPR1	best inferred	-1	1	0.122070528489816	1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000176046	NUPR1	best inferred	-1	1	0.117955196279304	1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000148832	PAOX	best inferred	-1	1	0.128989956261929	1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000135749	PCNX2	best inferred	-1	1	0.1566462185758	1	22	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000085514	PILRA	best inferred	-1	1	0.130935789817154	1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107959	PITRM1	best inferred	-1	1	0.122425916800947	1	23	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000175482	POLD4	landmark	-1	1	0.125829158607545	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000117450	PRDX1	best inferred	-1	1	0.110016817975501	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000140368	PSTPIP1	best inferred	-1	1	0.139643206446492	1	16	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000213402	PTPRCAP	best inferred	-1	1	0.149785961125686	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000118508	RAB32	best inferred	-1	1	0.144121050073415	1	32	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000167578	RAB4B	best inferred	-1	1	0.141247833138759	1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000132563	REEP2	best inferred	-1	1	0.131837355105941	1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169413	RNASE6	best inferred	-1	1	0.144781608985459	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000026297	RNASET2	best inferred	-1	1	0.136904850069146	1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000212864	RNF208	best inferred	-1	1	0.147088916776278	1	17	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000181031	RPH3AL	best inferred	-1	1	0.128924771940705	1	19	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000008988	RPS20	best inferred	-1	1	0.162121699261705	1	9	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000071242	RPS6KA2	best inferred	-1	1	0.120304535634248	1	11	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000189171	S100A13	landmark	-1	1	0.129326665223785	1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130066	SAT1	best inferred	-1	1	0.106369497352115	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000136193	SCRN1	landmark	-1	1	0.132766216180611	1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000110876	SELPLG	best inferred	-1	1	0.144512879766914	1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000107338	SHB	landmark	-1	1	0.133721255632275	1	26	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000141293	SKAP1	best inferred	-1	1	0.124196346598207	1	6	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000158714	SLAMF8	best inferred	-1	1	0.144577064977716	1	18	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000018280	SLC11A1	best inferred	-1	1	0.11067682153826	1	13	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000139508	SLC46A3	best inferred	-1	1	0.136758260570837	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000169026	SLC49A3	best inferred	-1	1	0.127928932954868	1	7	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000137767	SQOR	landmark	-1	1	0.149122412110919	1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000127952	STYXL1	best inferred	-1	1	0.120028242862174	1	10	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000088992	TESC	best inferred	-1	1	0.166559040666306	1	24	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000112561	TFEB	best inferred	-1	1	0.118032098915823	1	8	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000106565	TMEM176B	best inferred	-1	1	0.137427250569905	1	14	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000034510	TMSB10	best inferred	-1	1	0.156865019021992	1	20	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000239697	TNFSF12	best inferred	-1	1	0.127314422515246	1	29	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000161955	TNFSF13	best inferred	-1	1	0.131610658291986	1	12	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000130598	TNNI2	best inferred	-1	1	0.131367408910782	1	3	False	vemurafenib::CHEMBL5145	vemurafenib
+ENSG00000120860	WASHC3	best inferred	-1	1	0.129170397881287	1	11	False	vemurafenib::CHEMBL5145	vemurafenib

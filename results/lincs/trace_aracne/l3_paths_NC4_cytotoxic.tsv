@@ -1,0 +1,13 @@
+target_gene	network	tf	hops	path_sign	path_status	tf_has_regulon	tf_regulon_genes	has_aracne_regulon	aracne_regulon_genes
+ESR2	omnipath	RARA	1	1	resolved	True	133	True	140
+ESR2	omnipath	ESR1	1	0	ambiguous	True	478	True	54
+ESR2	omnipath	THRA	2	1	resolved	True	51	True	146
+ESR2	omnipath	GATA3	2	0	ambiguous	True	132	True	137
+ESR2	omnipath	NCOA2	2	0	ambiguous	True	48	True	133
+ESR2	omnipath	RXRA	2	0	ambiguous	True	67	True	131
+ESR2	omnipath	RARG	2	1	resolved	True	27	True	129
+ESR2	omnipath	MYC	2	0	ambiguous	True	741	True	128
+ESR2	omnipath	PPARG	2	0	ambiguous	True	273	True	105
+ESR2	omnipath	XBP1	2	0	ambiguous	True	44	True	96
+ESR2	omnipath	FOXO1	2	0	ambiguous	True	224	True	46
+ESR2	omnipath	NR4A1	2	1	resolved	True	74	True	32

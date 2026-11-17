@@ -1,0 +1,485 @@
+[
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "holds"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "weak"
+   },
+   {
+    "link": "L6",
+    "verdict": "breaks"
+   },
+   {
+    "link": "L7",
+    "verdict": "holds"
+   }
+  ],
+  "break_point": "L6",
+  "all_links_at_worst": [
+   "L6"
+  ],
+  "verdict": "breaks",
+  "chain_closes": false,
+  "why": "1 contributing regulators. Largest observed share of |contribution|: ESR1 at 1.000 (shares are NOT disjoint - a gene in two regulons counts in both). Effective number of regulators (participation ratio over the shares) 1.00 of 1. ESR1 proliferation correlation in the BRCA_LUMA ARACNe set: r_prolif=-0.357, prolif_linked=False. 0 of 1 contributing regulators are proliferation-linked, carrying 0.000 ",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint sits at the 39.7th percentile of all 1221 compounds profiled in MCF7. Not ruled out - many other compounds move these genes the same way."
+   }
+  ],
+  "summary": {
+   "network": "BRCA_LUMA",
+   "n_signed": 131,
+   "n_covered": 131,
+   "concordance": 0.5038,
+   "mean_signed_fz": -0.018377,
+   "generic_percentile": 39.7,
+   "amplitude_percentile": 13.4,
+   "r_amplitude": 0.162,
+   "n_regulators": 1,
+   "hub": "ESR1",
+   "hub_share": 1.0,
+   "n_eff_regulators": 1.0,
+   "prolif_share": 0.0,
+   "reversal": 0.8547
+  }
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "holds"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "breaks"
+   },
+   {
+    "link": "L6",
+    "verdict": "holds"
+   },
+   {
+    "link": "L7",
+    "verdict": "weak"
+   }
+  ],
+  "break_point": "L5",
+  "all_links_at_worst": [
+   "L5"
+  ],
+  "verdict": "breaks",
+  "chain_closes": false,
+  "why": "line A375 (ACH-000219), pert_id BRD-K56343971, 18 signature(s), drug-specific profile arm. 1223 of 1223 frozen genes have a response value. Whole-footprint sign concordance 45.6%. Mean expected-signed f(z) = -0.0232; against the 1081 compounds profiled in this line that is the 26.5th percentile (concordance the 16.6th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred 44.",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint sits at the 26.5th percentile of all 1081 compounds profiled in A375. Not ruled out - many other compounds move these genes the same way."
+   },
+   {
+    "link": "L6",
+    "alternative": "proliferation: MEF2D is proliferation-linked in the SKCM ARACNe set (r_prolif=-0.529), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out."
+   },
+   {
+    "link": "L7",
+    "alternative": "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -0.62. NOT ruled out - the normal reference already runs the programme."
+   }
+  ],
+  "summary": {
+   "network": "SKCM",
+   "n_signed": 1223,
+   "n_covered": 1223,
+   "concordance": 0.4563,
+   "mean_signed_fz": -0.023209,
+   "generic_percentile": 26.5,
+   "amplitude_percentile": 52.5,
+   "r_amplitude": -0.283,
+   "n_regulators": 11,
+   "hub": "MEF2D",
+   "hub_share": 0.2006,
+   "n_eff_regulators": 8.0,
+   "prolif_share": 0.2006,
+   "reversal": 0.5412
+  }
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "holds"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "weak"
+   },
+   {
+    "link": "L6",
+    "verdict": "holds"
+   },
+   {
+    "link": "L7",
+    "verdict": "weak"
+   }
+  ],
+  "break_point": "L4",
+  "all_links_at_worst": [
+   "L4",
+   "L5",
+   "L7"
+  ],
+  "verdict": "weak",
+  "chain_closes": true,
+  "why": "6001 footprint genes in the LINCS gene space; 4286 carry a signed expectation (1069 UP, 3217 DOWN), 1715 conflicted between this unit's own regulators and excluded. Attribution: median 13.0 regulators in the whole LUAD network claim each signed gene; 0.1% of signed genes are claimed by exactly one. Structural hub SP3 claims 0.062 of the signed genes over 85 contributing regulators.",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint sits at the 76.0th percentile of all 628 compounds profiled in HCC515. Not ruled out - many other compounds move these genes the same way."
+   },
+   {
+    "link": "L6",
+    "alternative": "proliferation: E2F1 is proliferation-linked in the LUAD ARACNe set (r_prolif=0.808), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out."
+   }
+  ],
+  "summary": {
+   "network": "LUAD",
+   "n_signed": 4286,
+   "n_covered": 4286,
+   "concordance": 0.5233,
+   "mean_signed_fz": 0.020179,
+   "generic_percentile": 76.0,
+   "amplitude_percentile": 63.4,
+   "r_amplitude": -0.352,
+   "n_regulators": 85,
+   "hub": "E2F1",
+   "hub_share": 0.0726,
+   "n_eff_regulators": 51.26,
+   "prolif_share": 0.3973,
+   "reversal": 0.5623
+  }
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "weak"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "breaks"
+   },
+   {
+    "link": "L6",
+    "verdict": "holds"
+   },
+   {
+    "link": "L7",
+    "verdict": "weak"
+   }
+  ],
+  "break_point": "L5",
+  "all_links_at_worst": [
+   "L5"
+  ],
+  "verdict": "breaks",
+  "chain_closes": false,
+  "why": "line MDA-MB-231 (ACH-000768), pert_id BRD-K56343971, 1 signature(s), drug-specific profile arm. 1038 of 1038 frozen genes have a response value. Whole-footprint sign concordance 45.3%. Mean expected-signed f(z) = -0.0380; against the 203 compounds profiled in this line that is the 23.2th percentile (concordance the 20.2th). DESCRIPTIVE ONLY, no verdict rests on it - by feature space: best inferred",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint sits at the 23.2th percentile of all 203 compounds profiled in MDA-MB-231. Not ruled out - many other compounds move these genes the same way."
+   },
+   {
+    "link": "L6",
+    "alternative": "proliferation: MYC is proliferation-linked in the BRCA_BAS ARACNe set (r_prolif=0.393), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out."
+   },
+   {
+    "link": "L7",
+    "alternative": "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -0.39. NOT ruled out - the normal reference already runs the programme."
+   }
+  ],
+  "summary": {
+   "network": "BRCA_BAS",
+   "n_signed": 1038,
+   "n_covered": 1038,
+   "concordance": 0.4528,
+   "mean_signed_fz": -0.038021,
+   "generic_percentile": 23.2,
+   "amplitude_percentile": 3.4,
+   "r_amplitude": -0.214,
+   "n_regulators": 12,
+   "hub": "MYC",
+   "hub_share": 0.1726,
+   "n_eff_regulators": 9.22,
+   "prolif_share": 0.1726,
+   "reversal": 0.5055
+  }
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "weak"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "weak"
+   },
+   {
+    "link": "L6",
+    "verdict": "holds"
+   },
+   {
+    "link": "L7",
+    "verdict": "holds"
+   }
+  ],
+  "break_point": "L2",
+  "all_links_at_worst": [
+   "L2",
+   "L4",
+   "L5"
+  ],
+  "verdict": "weak",
+  "chain_closes": true,
+  "why": "dep_z=-0.1959 -> D pct 26.76; alt_share=0.0000 (0.00% of patients) -> A pct 48.14; o_raw=-0.5001 (source logFC_vs_gtex) -> O pct 34.23; layered_S=52.52, layered_pct=43.81, minority_alteration=False",
+  "alternatives_carried": [
+   {
+    "link": "L6",
+    "alternative": "proliferation: E2F1 is proliferation-linked in the COADREAD ARACNe set (r_prolif=0.598), so the link cannot separate the drug's mechanism from growth arrest. NOT ruled out."
+   },
+   {
+    "link": "L7",
+    "alternative": "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -0.50. NOT ruled out - the normal reference already runs the programme."
+   }
+  ],
+  "summary": {
+   "network": "COADREAD",
+   "n_signed": 3695,
+   "n_covered": 3695,
+   "concordance": 0.5748,
+   "mean_signed_fz": 0.077942,
+   "generic_percentile": 99.9,
+   "amplitude_percentile": 86.7,
+   "r_amplitude": -0.331,
+   "n_regulators": 48,
+   "hub": "E2F1",
+   "hub_share": 0.1389,
+   "n_eff_regulators": 25.47,
+   "prolif_share": 0.2917,
+   "reversal": 0.6419
+  }
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "weak"
+   },
+   {
+    "link": "L2",
+    "verdict": "weak"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "weak"
+   },
+   {
+    "link": "L6",
+    "verdict": "weak"
+   },
+   {
+    "link": "L7",
+    "verdict": "weak"
+   }
+  ],
+  "break_point": "L1",
+  "all_links_at_worst": [
+   "L1",
+   "L2",
+   "L4",
+   "L5",
+   "L6",
+   "L7"
+  ],
+  "verdict": "weak",
+  "chain_closes": true,
+  "why": "ttype=annotation; genes=ESR2; k=1; actions=nan; orient=lower (action sign -1); pChEMBL p_u=nan; relative binding r_u=1.0; binding_unmeasured=True; units for this drug in the BRCA-LumB ranking row=4",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint sits at the 73.4th percentile of all 1221 compounds profiled in MCF7. Not ruled out - many other compounds move these genes the same way."
+   },
+   {
+    "link": "L7",
+    "alternative": "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue and the target's own logFC is -2.94. NOT ruled out - the normal reference already runs the programme."
+   }
+  ],
+  "summary": {
+   "network": "BRCA_LUMB",
+   "n_signed": 397,
+   "n_covered": 397,
+   "concordance": 0.5743,
+   "mean_signed_fz": 0.049644,
+   "generic_percentile": 73.4,
+   "amplitude_percentile": 44.6,
+   "r_amplitude": 0.049,
+   "n_regulators": 4,
+   "hub": "RARA",
+   "hub_share": 0.3612,
+   "n_eff_regulators": 3.42,
+   "prolif_share": 0.0,
+   "reversal": 0.5932
+  }
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "weak"
+   },
+   {
+    "link": "L3",
+    "verdict": "not evaluable"
+   },
+   {
+    "link": "L4",
+    "verdict": "not evaluable"
+   },
+   {
+    "link": "L5",
+    "verdict": "not evaluable"
+   },
+   {
+    "link": "L6",
+    "verdict": "not evaluable"
+   },
+   {
+    "link": "L7",
+    "verdict": "not evaluable"
+   }
+  ],
+  "break_point": "L3",
+  "all_links_at_worst": [
+   "L3",
+   "L4",
+   "L5",
+   "L6",
+   "L7"
+  ],
+  "verdict": "not evaluable",
+  "chain_closes": false,
+  "why": "network LIHC; target is an ARACNe regulator there: False; hop cap 2. 121 OmniPath route rows for this target; 0 resolved-sign regulators with an ARACNe regulon, 0 sign-ambiguous (excluded). NO regulator is reached.",
+  "alternatives_carried": [],
+  "summary": {
+   "network": "LIHC",
+   "n_signed": 0,
+   "concordance": null,
+   "mean_signed_fz": null,
+   "generic_percentile": null,
+   "reversal": null
+  }
+ }
+]

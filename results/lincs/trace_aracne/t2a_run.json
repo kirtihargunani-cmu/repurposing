@@ -1,0 +1,152 @@
+{
+ "stage": "TRACE-ARACNe T2 (L5-L7, verdicts, false-positive rate)",
+ "git_sha_at_run": "9f499d13eb4a758e99c1f05b7ba47da82f943d9d",
+ "freeze_commit_subject": "TRACE-ARACNe FREEZE: L1-L4 predicted footprints, 2 real pairs + 5 negative controls",
+ "gene_subsetting_used": false,
+ "read_d128_a4": false,
+ "read_outcome_labels": false,
+ "thresholds": {
+  "L5_concordance_holds": 0.6,
+  "L5_generic_percentile_holds": 90.0,
+  "L7_reversal_holds": 0.6
+ },
+ "summary": {
+  "fulvestrant_ESR1_BRCA_LumA": {
+   "network": "BRCA_LUMA",
+   "n_signed": 131,
+   "n_covered": 131,
+   "concordance": 0.5038,
+   "mean_signed_fz": -0.018377,
+   "generic_percentile": 39.7,
+   "amplitude_percentile": 13.4,
+   "r_amplitude": 0.162,
+   "n_regulators": 1,
+   "hub": "ESR1",
+   "hub_share": 1.0,
+   "n_eff_regulators": 1.0,
+   "prolif_share": 0.0,
+   "reversal": 0.8547
+  },
+  "vemurafenib_BRAF_TCGA_SKCM": {
+   "network": "SKCM",
+   "n_signed": 1223,
+   "n_covered": 1223,
+   "concordance": 0.4563,
+   "mean_signed_fz": -0.023209,
+   "generic_percentile": 26.5,
+   "amplitude_percentile": 52.5,
+   "r_amplitude": -0.283,
+   "n_regulators": 11,
+   "hub": "MEF2D",
+   "hub_share": 0.2006,
+   "n_eff_regulators": 8.0,
+   "prolif_share": 0.2006,
+   "reversal": 0.5412
+  },
+  "NC1_target_not_expressed": {
+   "network": "LUAD",
+   "n_signed": 4286,
+   "n_covered": 4286,
+   "concordance": 0.5233,
+   "mean_signed_fz": 0.020179,
+   "generic_percentile": 76.0,
+   "amplitude_percentile": 63.4,
+   "r_amplitude": -0.352,
+   "n_regulators": 85,
+   "hub": "E2F1",
+   "hub_share": 0.0726,
+   "n_eff_regulators": 51.26,
+   "prolif_share": 0.3973,
+   "reversal": 0.5623
+  },
+  "NC2_raf_paradox": {
+   "network": "BRCA_BAS",
+   "n_signed": 1038,
+   "n_covered": 1038,
+   "concordance": 0.4528,
+   "mean_signed_fz": -0.038021,
+   "generic_percentile": 23.2,
+   "amplitude_percentile": 3.4,
+   "r_amplitude": -0.214,
+   "n_regulators": 12,
+   "hub": "MYC",
+   "hub_share": 0.1726,
+   "n_eff_regulators": 9.22,
+   "prolif_share": 0.1726,
+   "reversal": 0.5055
+  },
+  "NC3_random_pairing": {
+   "network": "COADREAD",
+   "n_signed": 3695,
+   "n_covered": 3695,
+   "concordance": 0.5748,
+   "mean_signed_fz": 0.077942,
+   "generic_percentile": 99.9,
+   "amplitude_percentile": 86.7,
+   "r_amplitude": -0.331,
+   "n_regulators": 48,
+   "hub": "E2F1",
+   "hub_share": 0.1389,
+   "n_eff_regulators": 25.47,
+   "prolif_share": 0.2917,
+   "reversal": 0.6419
+  },
+  "NC4_cytotoxic": {
+   "network": "BRCA_LUMB",
+   "n_signed": 397,
+   "n_covered": 397,
+   "concordance": 0.5743,
+   "mean_signed_fz": 0.049644,
+   "generic_percentile": 73.4,
+   "amplitude_percentile": 44.6,
+   "r_amplitude": 0.049,
+   "n_regulators": 4,
+   "hub": "RARA",
+   "hub_share": 0.3612,
+   "n_eff_regulators": 3.42,
+   "prolif_share": 0.0,
+   "reversal": 0.5932
+  },
+  "NC5_no_anchored_tf": {
+   "network": "LIHC",
+   "n_signed": 0,
+   "concordance": null,
+   "mean_signed_fz": null,
+   "generic_percentile": null,
+   "reversal": null
+  }
+ },
+ "false_positive_rate": {
+  "definition": "a negative control 'closes' when no link in L1..L7 has verdict 'breaks' or 'not evaluable'; stated before the numbers were computed",
+  "n_controls": 5,
+  "n_closed": 3,
+  "false_positive_rate": 0.6,
+  "per_control": {
+   "NC1_target_not_expressed": {
+    "closes": true,
+    "break_point": "L4",
+    "verdict": "weak"
+   },
+   "NC2_raf_paradox": {
+    "closes": false,
+    "break_point": "L5",
+    "verdict": "breaks"
+   },
+   "NC3_random_pairing": {
+    "closes": true,
+    "break_point": "L2",
+    "verdict": "weak"
+   },
+   "NC4_cytotoxic": {
+    "closes": true,
+    "break_point": "L1",
+    "verdict": "weak"
+   },
+   "NC5_no_anchored_tf": {
+    "closes": false,
+    "break_point": "L3",
+    "verdict": "not evaluable"
+   }
+  }
+ }
+}

@@ -1,0 +1,5 @@
+pair	drug	line	network	n_signed	n_covered	concordance	mean_signed_fz	generic_percentile	overlap_with_other	sign_agreement_on_overlap
+fulvestrant_ESR1_BRCA_LumA	fulvestrant	MCF7	collectri	478	478	0.5167	0.025365	64.1	6	1.0
+fulvestrant_ESR1_BRCA_LumA	fulvestrant	MCF7	aracne	131	131	0.5038	-0.018377	39.7	6	1.0
+vemurafenib_BRAF_TCGA_SKCM	vemurafenib	A375	collectri	1063	1063	0.5259	0.033969	82.4	159	0.8742
+vemurafenib_BRAF_TCGA_SKCM	vemurafenib	A375	aracne	1223	1223	0.4563	-0.023209	26.5	159	0.8742
