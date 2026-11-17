@@ -737,3 +737,36 @@ One related number does move. When we split a drug's effect into "general slowin
 mechanism", the split compares two raw totals without allowing for the two sets being different sizes and
 differently interlinked. Comparing them fairly shifts about **27%** of drug-disease rows across the halfway line.
 That is a genuine judgement call about what the split should mean, not a bug, and nothing was changed.
+
+**Was the "ten mechanisms" finding just an artefact of our regulator lists? No (D133).**
+The previous audit found that when we add up a thousand regulator readings for a drug, the total behaves as
+though it were built from only about **ten** independent pieces rather than a thousand. The obvious objection,
+and the right one to raise, is that this may say nothing about biology: we read each regulator by looking at the
+genes it controls, and if two regulators control mostly the same genes then of course they give the same answer.
+That would mean our instrument cannot tell a thousand regulators apart — a worse problem than the one we thought
+we had. We tested it on five diseases chosen to span the whole range of the effect.
+
+The answer is no, and it is not close. Regulators that share genes *do* give near-identical readings — the
+effect is real where it happens — but **over half of all regulator pairs share no gene at all**, and those pairs
+are just as correlated as everything else (typical strength 0.21–0.26, against 0.25–0.29 for all pairs). When we
+subtract out everything that gene-sharing can predict, the "about ten pieces" figure moves only to **about
+twelve or fourteen** — nowhere near the ~550 we would expect if the readings were independent. If we go further
+and pick out a set of regulators that share *literally no gene* with each other, 40 to 53 of them, their
+readings still behave like about 11 to 15 independent pieces instead of 40 to 50.
+
+We also checked a second worry the user raised: our main regulator lists are *learned from which genes move
+together in tumours*, so they could have inherited the very correlation we are measuring. We re-ran everything
+on a hand-curated list built from published literature instead, which cannot have inherited it. It collapses too
+— about two to three times less than the learned list, so some of the worry is justified, but it still collapses
+roughly twelve-fold. And the telling detail runs the opposite way to the gene-sharing story: the curated lists
+**share more genes** with each other, yet their readings are **less** correlated.
+
+Finally, regulators that are documented as regulating each other are more correlated than regulators in general
+— but no more correlated than other pairs that share the same number of genes. So a documented link buys us
+nothing beyond gene-sharing, and we are not claiming to have seen a signalling cascade at work.
+
+**What we still cannot rule out.** Every regulator reading is taken from the same ranked list of genes for a
+given drug. If a drug's effect on the genome has one very dominant direction, every regulator will pick that up,
+whatever genes it controls. So the honest statement is not "there are only ten mechanisms" and not "our
+instrument is broken", but: **drug responses share a small number of dominant directions, and our regulator
+readings all reflect them.** Nothing was changed, re-ranked or re-scored.

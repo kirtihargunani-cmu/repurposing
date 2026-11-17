@@ -1613,3 +1613,39 @@ draws per null -> `results/lincs/d130/population_sample_corrected.tsv`. Every M 
   `sqrt(n/n_eff)` is wrong in form for a signed statistic and too harsh in practice, and must not be used to
   rescale a published z.** 2 of 1,000 rows had a non-finite factor and are excluded from the correlations only.
 - Nothing was gated, ranked or promoted.
+
+### 2026-11-17 — D133: the activity-dimensionality collapse is not regulon target overlap
+Audit only (`scripts/d133/`, `results/lincs/d133/`, `logs/d133_overlap.log`, 22 s). Five cohorts spanning the
+full D131 inflation range (PHEO-kinase-signaling 4.10, PCPG-PHEO 4.13, TCGA-LIHC 10.21 = the exact median,
+UCEC-EEC 10.26, TGCT-SEM-C1 15.46), four ARACNe networks, group and stratum levels. Decision rows D133
+(pre-registration) and D133.1 (the user's circularity amendment) were committed before anything was computed.
+- **Gate passed exactly.** The reproduction of `79e`'s per-cohort drug aggregation + `consensus()` matches the
+  shipped `d126_act` dump with **max |recon − dump| = 0.000e+00** and element-identical regulator lists, and
+  reproduces D131's `n_eff_activity` to four decimals. The consensus-regulon correspondence is confirmed, not
+  assumed, and D131's number is independently confirmed.
+- **Overlap is strongly predictive where it exists and almost never exists.** Mean activity correlation rises
+  0.01 → 0.21 → 0.49 → 0.66 → 0.78 across Jaccard bands 0 → (0.01, 0.05] → (0.05, 0.10] → (0.10, 0.20] →
+  (0.20, 0.50]. But **54–63% of all regulator pairs share zero targets** and only ~0.3% exceed Jaccard 0.05.
+- **Zero-overlap pairs are not near-uncorrelated:** mean |correlation| **0.214–0.263** against an all-pairs mean
+  of 0.247–0.288. About a tenth of them exceed |0.45|.
+- **Overlap explains a fifth to a third:** linear `R²` on the weighted cosine 0.160–0.259 (Jaccard 0.094–0.222),
+  50-bin nonparametric 0.193–0.355.
+- **Headline: removing the overlap-predicted component barely moves the dimensionality.** `n_eff` →
+  residual `n_eff`: 9.75 → 12.72, 9.70 → 12.68, 10.36 → 14.48, 9.83 → 12.47, 7.97 → 10.04, against an iid
+  reference of 531–582. Pre-registered bands were ≥ 100 (annotation redundancy) and < 30 (real structure):
+  **all five land at 10–14.5.**
+- **Cleanest form:** a maximal *literally disjoint* regulator set (40–53 regulators) still has `n_eff` 10.8–14.6
+  against an iid reference of 38.7–50.7.
+- **The circularity arm (D133.1).** On the common regulator subset, `n_eff / n_eff_iid` is ARACNe 0.030–0.037 vs
+  curated CollecTRI 0.073–0.098: the learned set collapses **2.1–2.7× more**, so some circularity is real — but
+  CollecTRI's own ratio is still a ~12-fold collapse. Inference-circularity is a factor ~2.3 of a 30–60-fold
+  collapse. And the cross-check runs the wrong way for the overlap hypothesis: **CollecTRI regulons overlap more
+  (23–26% disjoint pairs vs 65–75%) yet their activities correlate less** (mean |r| 0.13–0.17 vs 0.19–0.28).
+- **Cascade check.** OmniPath direct-edge pairs are more correlated than pairs in general (+0.12 vs +0.05 raw),
+  but **matched on overlap bin they are *less* correlated** (−0.071 to −0.094, permutation p < 0.0001; path ≤ 2
+  the same). A documented regulatory relationship buys no correlation beyond shared targets. An OmniPath edge is
+  a documented relationship, not causality in these data, and nothing here shows a cascade operating.
+- **Reading (ii) of D133(10) holds.** Not annotation redundancy. The one thing the test cannot separate is stated
+  in D133 result (11): every NES is an enrichment on the same ranked drug profile, so a dominant component in the
+  signature would also do this. That needs a gene-level comparison, not run here.
+- Nothing was changed, re-ranked, re-tiered or gated.
