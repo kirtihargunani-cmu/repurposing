@@ -1480,3 +1480,115 @@ label-free: only `level5_bing_hiq.npy` (90,988 signatures x 10,174 genes) and th
   saturates on a median 73.5% of footprint genes and M_disease is close to a signed sign-concordance.
 - **Not run:** A5; no CTRP / PRISM / GDSC value was read.
 
+
+## 2026-11-16: D131 — the reversal score's `1/sqrt(sum w^2)` normalisation, audited (nothing changed)
+
+`scripts/d131/{norm_inflation,impact}.py` -> `results/lincs/d131/`, logs `logs/d131_*.log`, 9 s + 4 s.
+Audit only: no production score changed, nothing re-ranked or re-tiered, no fix shipped. Decision rows `D131`
+and `D131 result`.
+
+**The error.** `79e_drug_reversal.py:280-285` divides the weighted sum of regulator activities by
+`sqrt(sum w_i^2)`, which is the SD of that sum only if the activities are independent unit-variance terms.
+Regulons overlap, so they are not. **The overlap is real cascade biology and is not the problem** — if TF A
+activates TF B their regulons share targets, and when both are active those shared targets moving is evidence
+for both. The fix evaluated keeps all of that in the numerator and corrects only the scaling:
+`sqrt(w' Sigma w)` in place of `sqrt(w' w)`.
+
+- **Inflation factor, exact** (it is identically the SD of the shipped `rev` across a cohort's drugs, since the
+  score is built to have SD 1 under its own assumption): over 55 cohorts, **median 10.21**, 5–95% 4.21–14.34,
+  min 4.10 (PHEO-kinase-signaling), max 15.46 (TGCT-SEM-C1). **The factor varies 3.8-fold between diseases**,
+  so a raw `rev` value was never comparable across diseases.
+- **Decomposition** (D126-B1 activity dump): correlation part median 7.12 (4.43–13.72), per-regulator spread
+  part median 1.25 (0.89–1.72). The independence assumption is the dominant cause.
+- `n_eff` of the regulator activities **9.7 of a median 1,052 master regulators**, against an iid sampling
+  reference of 555 — real structure, not a small-sample artefact. Read it as *this sum's variance behaves as if
+  it were about ten independent terms*, **not** as *there are only ten regulators' worth of information*.
+- **The shipped rankings and tiers are not affected.** `norm` is one scalar per cohort, constant across its
+  drugs, so every rank and every within-cohort robust z is unchanged. Verified by rescaling each cohort's `rev`
+  by an arbitrary positive constant: **55 of 55 cohorts identical** in `rev_pct`, `rev_z` and the
+  `(rev > 0) & (rev_pct >= 90)` tier mask. The same argument covers `spec`, `spec_sib`, `spec_pct`, `rank_rev`,
+  `rank_spec` and every `tier_*`; the only absolute test on `rev` anywhere is `rev > 0`, a sign test.
+- **Affected:** the magnitude of `rev` / `rev_raw`, `rev_sd` and `null_sd_regset` in the summary tables, the
+  printed `top_tier1_rev` strings, and any cross-disease or absolute reading of a `rev` value.
+- **`prolif_share` moves, but not through the normaliser.** 79i multiplies each part back by
+  `sqrt(sum w_part^2)` (D119), so `a` and `b` are raw summed reversals and the share is invariant to `norm`.
+  Its exposure is that it compares two raw sums over regulator sets of different size and internal correlation.
+  Under a covariance-aware comparison (`k = sd_cov(prolif)/sd_cov(nonprolif)`, median **0.419**, range
+  0.041–3.633): median share **0.301 -> 0.503**, **18,050 of 67,174 rows (26.9%) cross 0.5**, and
+  `prolif_driven` goes **968 -> 1,539** with **597 rows changing the flag**. Applied to the shipped
+  `prolif_share`, so the reconstruction cannot leak in. **Reported as a design question for the user, not a bug
+  fix** — which comparison is right is a judgement about what "share of the reversal that is proliferation"
+  should mean.
+- **VIPER pleiotropy, fact only:** `msviper()` and `viper()` default to `pleiotropy = FALSE` (installed viper
+  1.44.0), `shadow()` is a separate post-hoc call, and `50_viper.R:138,148` passes none of them, so it is off in
+  production. **Not proposed as a fix for anything here**; it addresses MR inference quality, not variance, and
+  enabling it would change production inference. A separate question for the user if wanted at all.
+- **Largest remaining exposure, found and not quantified:** `79d_drug_viper.R:96` runs
+  `viper(P, reg, method = "none", ...)` with **no `nullmodel`**, so every drug x line regulator activity is an
+  analytically normalised aREA NES standardised under the same independence assumption. The disease side (50,
+  52, 53, 64, 65, 66, 36, 95, 61) all pass an empirical normal-split null and are clean; the drug side is the
+  arm without one. Unlike the `rev` scale this does **not** cancel in a within-cohort rank, because it varies by
+  regulator and so changes the weights' relative contributions.
+- **Reconstruction honesty:** the reconstructed `rev` matches the shipped values at Spearman >= 0.9989 per
+  cohort but not exactly (max deviation 0.19–1.68 on a scale whose SD is ~10), from a small difference in which
+  set-tagged regulators enter the consensus mean. The exact inflation does not use the reconstruction at all,
+  and the `prolif_share` impact is computed from the shipped values plus a per-cohort SD ratio.
+- **Abstentions:** `rev_extra` (79i:163-166, the D91 exception, the one place the normaliser varies by drug) was
+  not evaluated. No CTRP / PRISM / GDSC value read. A5 not run. No production file written.
+
+## 2026-11-16: D130 — correlation-preserving nulls; the ESR1 control fails its own corrected null
+
+`scripts/d130/correlated_null.py` -> `results/lincs/d130/`, log `logs/d130_correlated_null.log`, seed 130,
+1,000 draws per row (200 also reported and agreeing). Reporting only: M, R, every frozen parameter and every
+production ranking are untouched; nothing was re-ranked or gated. Decision rows `D130`, `D130.1`, `D130 result`.
+
+**The method.** Every null in `scripts/d128/nulls.py` shuffles genes as exchangeable units. The corrected
+reference replaces the uniform permutation with one drawn from the empirical gene-gene correlation (CRP: draw
+`u ~ N(0, R_hat)` as `Z'g/sqrt(m-2)` over all 9,678 LINCS profiles of the same arm, excluding the profile being
+scored, and re-assign the observed values by the rank order of `u`). With independent genes it reduces exactly
+to the existing null. A self-test then showed a rank permutation is blind to any shift common to every gene —
+and that common component is most of why `n_eff` is small — so **D130.1** added CGN, the unconditional
+covariance null, rescaled to the observed response magnitude. Both are reported for every row.
+
+- **The ESR1 / fulvestrant control fails.** Specific arm, MCF7, three `pert_id`s. Sign-shuffle z
+  **2.81 / 2.92 / 1.52 -> 1.45 / 1.64 / 0.86** (CRP). Gene-label **2.69 / 2.79 / 1.56 -> 2.35 / 2.39 / 1.33**.
+  Under CGN, **1.09 / 0.83 / 0.61** (percentiles 86 / 78 / 72). The parent session predicted "roughly
+  0.9 / 0.9 / 0.5, i.e. all non-significant" — **confirmed**. Raw arm the same but harder
+  (3.53 / 3.64 / 2.68 -> CGN 0.92 / 0.57 / 0.38). **M did not change: 0.048 / 0.040 / 0.025 before and after.**
+  What was wrong was the yardstick, not the score.
+- **SERM set** (reported separately per D0.2): 7 of 12 rows had old sign-shuffle z >= 1.96; **1 of 12 does under
+  CRP**. Only toremifene keeps CGN z above 2.
+- **A4 actions 2-5, 164 scored rows.** |z| >= 1.96: sign-shuffle 9/5 -> **CRP 1/0**; gene-label 10/6 -> CRP 5/2;
+  CGN 2/1. **All 17 rows D128-A4 marked `confident_positive` lose it.** The BRAF wave D128-A4 called "the only
+  informative wave" falls from z 1.82–1.95 to CRP 0.50–0.52 / CGN 0.78–1.28.
+- **The two estimation methods disagree, and the cheap one is harsher.** `sqrt(n/n_eff)` is right for an
+  *unsigned* mean; M is sign-weighted and the correct analytic factor is `sqrt(e'Re/n)`. Median on the A4 rows:
+  VIF **3.47** vs analytic **1.57**, ratio **1.87**. The D130(2a) prediction is confirmed. On fulvestrant it
+  happens to be close (3.18 vs 2.65) because that footprint's signs are 85% one-directional (`e_bar` -0.695),
+  exactly the case where the unsigned formula is nearly right. **Both shortcuts under-state the surviving z**
+  (median |CGN z| 0.62 vs 0.45 analytic and 0.22 VIF) while tracking it in rank (r 0.871 / 0.849). **Trust the
+  empirical CGN null; neither shortcut is a substitute, and neither was kinder to ESR1.**
+- **The A3 population-wide nulls were never run** — the landmark criterion was not met, so `a3_aggregate.py`
+  skipped them by a rule fixed in advance and `a2/nulls.parquet` does not exist. There is nothing there to
+  correct. A seeded 1,000-row sample of the population stands in; see the D130 population addendum.
+- **Both D128 nulls are affected**, and the sign null worse than the gene-label null (median correction 1.98 vs
+  1.21) — the instruction not to assume only the gene-label null was hit was right.
+- **Repo-wide inventory** (reported, nothing else re-run): affected gene/module permutation nulls at
+  `79e:289-291` (diagnostic only, and already flagged in its own header), `94_replicate_brca_axes.R:61` (a GATE,
+  v1 only), `82_breast_axes.R:41` (a GATE, v1 only), `91_replicate_crc.R:81,88` and `:136` (one leg of D33/D34);
+  affected parametric-over-genes at **`79h_prolif_regulators.R:44-49`** — a hypergeometric gate (`prolif_linked`)
+  **inside the live v2 pipeline** — plus `79d_drug_viper.R:96`, `63:39`, `cameraPR` at `31:149` / `37:59`,
+  `62:103,110`, `67:40`, and `|NES| > 1.96` at `50:155`, `61:182`, `66:27` (D81) and `d93_decide.py:62-63`.
+  **Not affected:** every msviper / `viperSignature` normal-split null (50, 52, 53, 64, 65, 66, 36, 95, 61),
+  which permutes SAMPLES and was built to preserve gene-gene correlation; M3C (80, 91); all ARACNe bootstraps
+  (43, 45, d94); all plate / cluster / patient permutations; and **the entire drug-side validation layer** (79k,
+  79l, 79m, 79n, 79y, 79y2, 79t2, essential_check, d124, **d127**) — so the D127 biomarker pairs, the primary
+  check this project relies on, are **not** implicated.
+- **Naming hazard:** `drug_reversal_summary*.tsv` already has an `n_eff` column that is `(sum w^2)^2/sum w^4`
+  (~300), a weight-concentration count, not this one. And `n_eff` here means *this sum's variance behaves as if
+  it were n_eff independent terms* — **not** that the data hold only n_eff genes' worth of information. The
+  correlation is real regulatory biology, which is why the corrected null preserves it.
+- **Abstentions / gaps:** A5 not run; no CTRP / PRISM / GDSC value read; no site outside D128 re-run, so the
+  inventory magnitudes are structural readings, not measurements; the `degree_matched_target` null stays
+  degenerate and CRP does not fix it; CGN assumes Gaussianity given the covariance, which heavy-tailed LINCS z
+  violate; `R_hat` is second-order only, so non-linear gene dependence is still under-corrected.

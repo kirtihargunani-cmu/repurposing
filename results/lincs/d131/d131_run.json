@@ -1,0 +1,24 @@
+{
+ "stage": "D131-normalisation-inflation",
+ "git_sha": "27e00c94ef42e000f6c6dbaaef257aa40ead2d6a",
+ "n_cohorts": 55,
+ "log": [
+  "[   0.1s] MR rows: group 58844, stratum 19979; netmap 12 groups",
+  "[   0.3s] published drug_reversal_v2_consensus.tsv: 50760 rows, 41 cohorts",
+  "[   0.3s] published stratum_reversal_v2_consensus.tsv: 16414 rows, 14 cohorts",
+  "[   1.6s] 10 cohorts done (COAD-MSI-like)",
+  "[   3.0s] 20 cohorts done (PCPG-PGL)",
+  "[   4.8s] 30 cohorts done (TCGA-BLCA)",
+  "[   6.1s] 40 cohorts done (TCGA-OV)",
+  "[   7.9s] 50 cohorts done (TGCT-SEM-C2)",
+  "[   8.7s] cohorts: 55",
+  "[   8.7s] identity check vs the shipped rev: max |diff| = 1.677194 over 67174 matched rows; min Spearman 0.998938",
+  "[   8.7s] inflation_sqrt_wSw_over_sqrt_ww: median 10.07  (5% 4.235, 95% 14.31, min 4.076, max 15.39)",
+  "[   8.7s] corr_inflation: median 7.122  (5% 4.609, 95% 12.68, min 4.432, max 13.72)",
+  "[   8.7s] scale_per_regulator: median 1.246  (5% 0.9197, 95% 1.651, min 0.8942, max 1.715)",
+  "[   8.7s] n_eff_activity: median 9.74  (5% 7.958, 95% 12.14, min 7.887, max 13.92)",
+  "[   8.7s] n_eff_activity_per_reg: median 0.009318  (5% 0.006739, 95% 0.01206, min 0.006544, max 0.01285)",
+  "[   8.7s] n_mrs: median 1052  (5% 986.1, 95% 1174, min 882, max 1224)"
+ ],
+ "seconds": 8.7
+}

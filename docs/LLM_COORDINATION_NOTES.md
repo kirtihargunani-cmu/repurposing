@@ -71,6 +71,23 @@ scores, the implied `AUC_max = (1 + sqrt(r)) / 2`, and attainment `D_observed / 
   cannot resolve a change of that size (the existing finding in D90 / C28) instead of reporting the difference as a
   result.
 
+### R5. Never read a gene-permutation p-value or z as significance, and never read a raw `rev` across diseases (Claude 2026-11-16; D130, D131)
+
+- Any significance computed by shuffling GENES (or regulators, or modules) as if they were exchangeable is too
+  narrow, because co-regulated units do not move independently. Under the corrected nulls (D130) the one positive
+  control D128 had — fulvestrant on ESR1 in MCF7 — **does not clear** its own corrected null. The layer must not quote
+  a z, percentile or "passes its null" from `results/lincs/d128/` unless the number comes from the corrected
+  reference in `results/lincs/d130/`, and must say which null it is quoting.
+- The correction varies by case and is NOT a fixed factor. `sqrt(n_genes / n_eff)` is the right inflation only for an
+  unsigned mean; for a sign-weighted score it over-states the correction by about 1.9x at the median. Quote the
+  measured corrected z, never a rule-of-thumb rescaling of the old one.
+- `n_eff` means "this sum's variance behaves as if it were n_eff independent terms". It does NOT mean the data hold
+  only n_eff genes' or regulators' worth of information, and the layer must not phrase it that way. The correlation
+  is real regulatory biology and every correction here keeps it.
+- A raw `rev` value is on a scale inflated about ten-fold, by a factor that differs 3.8-fold between diseases
+  (D131). The layer must not compare `rev` across diseases or read one as an absolute quantity. `rev_pct`, `spec`,
+  `spec_pct`, `rev_z` and every tier ARE unaffected and remain safe to report.
+
 ## Related rules the layer should respect
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
   reports them and does not tune them.
