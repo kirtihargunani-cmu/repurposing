@@ -1480,3 +1480,58 @@ label-free: only `level5_bing_hiq.npy` (90,988 signatures x 10,174 genes) and th
   saturates on a median 73.5% of footprint genes and M_disease is close to a signed sign-concordance.
 - **Not run:** A5; no CTRP / PRISM / GDSC value was read.
 
+
+## 2026-11-16: D131 — the reversal score's `1/sqrt(sum w^2)` normalisation, audited (nothing changed)
+
+`scripts/d131/{norm_inflation,impact}.py` -> `results/lincs/d131/`, logs `logs/d131_*.log`, 9 s + 4 s.
+Audit only: no production score changed, nothing re-ranked or re-tiered, no fix shipped. Decision rows `D131`
+and `D131 result`.
+
+**The error.** `79e_drug_reversal.py:280-285` divides the weighted sum of regulator activities by
+`sqrt(sum w_i^2)`, which is the SD of that sum only if the activities are independent unit-variance terms.
+Regulons overlap, so they are not. **The overlap is real cascade biology and is not the problem** — if TF A
+activates TF B their regulons share targets, and when both are active those shared targets moving is evidence
+for both. The fix evaluated keeps all of that in the numerator and corrects only the scaling:
+`sqrt(w' Sigma w)` in place of `sqrt(w' w)`.
+
+- **Inflation factor, exact** (it is identically the SD of the shipped `rev` across a cohort's drugs, since the
+  score is built to have SD 1 under its own assumption): over 55 cohorts, **median 10.21**, 5–95% 4.21–14.34,
+  min 4.10 (PHEO-kinase-signaling), max 15.46 (TGCT-SEM-C1). **The factor varies 3.8-fold between diseases**,
+  so a raw `rev` value was never comparable across diseases.
+- **Decomposition** (D126-B1 activity dump): correlation part median 7.12 (4.43–13.72), per-regulator spread
+  part median 1.25 (0.89–1.72). The independence assumption is the dominant cause.
+- `n_eff` of the regulator activities **9.7 of a median 1,052 master regulators**, against an iid sampling
+  reference of 555 — real structure, not a small-sample artefact. Read it as *this sum's variance behaves as if
+  it were about ten independent terms*, **not** as *there are only ten regulators' worth of information*.
+- **The shipped rankings and tiers are not affected.** `norm` is one scalar per cohort, constant across its
+  drugs, so every rank and every within-cohort robust z is unchanged. Verified by rescaling each cohort's `rev`
+  by an arbitrary positive constant: **55 of 55 cohorts identical** in `rev_pct`, `rev_z` and the
+  `(rev > 0) & (rev_pct >= 90)` tier mask. The same argument covers `spec`, `spec_sib`, `spec_pct`, `rank_rev`,
+  `rank_spec` and every `tier_*`; the only absolute test on `rev` anywhere is `rev > 0`, a sign test.
+- **Affected:** the magnitude of `rev` / `rev_raw`, `rev_sd` and `null_sd_regset` in the summary tables, the
+  printed `top_tier1_rev` strings, and any cross-disease or absolute reading of a `rev` value.
+- **`prolif_share` moves, but not through the normaliser.** 79i multiplies each part back by
+  `sqrt(sum w_part^2)` (D119), so `a` and `b` are raw summed reversals and the share is invariant to `norm`.
+  Its exposure is that it compares two raw sums over regulator sets of different size and internal correlation.
+  Under a covariance-aware comparison (`k = sd_cov(prolif)/sd_cov(nonprolif)`, median **0.419**, range
+  0.041–3.633): median share **0.301 -> 0.503**, **18,050 of 67,174 rows (26.9%) cross 0.5**, and
+  `prolif_driven` goes **968 -> 1,539** with **597 rows changing the flag**. Applied to the shipped
+  `prolif_share`, so the reconstruction cannot leak in. **Reported as a design question for the user, not a bug
+  fix** — which comparison is right is a judgement about what "share of the reversal that is proliferation"
+  should mean.
+- **VIPER pleiotropy, fact only:** `msviper()` and `viper()` default to `pleiotropy = FALSE` (installed viper
+  1.44.0), `shadow()` is a separate post-hoc call, and `50_viper.R:138,148` passes none of them, so it is off in
+  production. **Not proposed as a fix for anything here**; it addresses MR inference quality, not variance, and
+  enabling it would change production inference. A separate question for the user if wanted at all.
+- **Largest remaining exposure, found and not quantified:** `79d_drug_viper.R:96` runs
+  `viper(P, reg, method = "none", ...)` with **no `nullmodel`**, so every drug x line regulator activity is an
+  analytically normalised aREA NES standardised under the same independence assumption. The disease side (50,
+  52, 53, 64, 65, 66, 36, 95, 61) all pass an empirical normal-split null and are clean; the drug side is the
+  arm without one. Unlike the `rev` scale this does **not** cancel in a within-cohort rank, because it varies by
+  regulator and so changes the weights' relative contributions.
+- **Reconstruction honesty:** the reconstructed `rev` matches the shipped values at Spearman >= 0.9989 per
+  cohort but not exactly (max deviation 0.19–1.68 on a scale whose SD is ~10), from a small difference in which
+  set-tagged regulators enter the consensus mean. The exact inflation does not use the reconstruction at all,
+  and the `prolif_share` impact is computed from the shipped values plus a per-cohort SD ratio.
+- **Abstentions:** `rev_extra` (79i:163-166, the D91 exception, the one place the normaliser varies by drug) was
+  not evaluated. No CTRP / PRISM / GDSC value read. A5 not run. No production file written.
