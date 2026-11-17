@@ -1709,3 +1709,83 @@ does not say which it means.
 **Verdict: S2 is worth running.** 71 units, 229 compounds, 37 lines, median 4 effective compounds and 6 lines
 per unit, 53 units at ≥ 3 effective compounds and 29 at ≥ 5. The premise survives its own audit. It still says
 nothing about the 111 singletons. Nothing was changed, re-ranked, re-tiered or gated.
+
+## D135-S0 — can a drug's profile be checked against a knockout of its own target? Feasibility and QC (2026-11-17)
+
+Stage S0 of [`SPEC_drug_genetic_concordance.md`](SPEC_drug_genetic_concordance.md), pre-registered as decision
+row `D135-S0` and committed before anything ran. **Feasibility and QC only: no concordance, no drug-to-
+perturbation comparison, no positive control, no AUROC, no null, no threshold chosen, nothing re-ranked.**
+Scripts `scripts/d135/s0a_extract_perturbations.py` (`celligner` env, h5py, 61 s) and
+`scripts/d135/s0b_feasibility.py` (`repurposing` env, 20 s), threads 8; outputs in `results/lincs/d135/`.
+The 6.5 GB and 11.8 GB gctx matrices were read in 10,000-column blocks and never loaded whole; `trt_sh` and
+`trt_sh.cgs` share a file and it is read once.
+
+**Spec Section 2 does not hold as written.** Its three rows are computed under three different filters. The
+CRISPR row (208 targets / 837 signatures / 8 lines) reproduces exactly under `is_hiq == 1` on the drug-matrix
+lines. The shRNA-consensus row (209 / 1,627 / 10) only reproduces with no `is_hiq` and no line restriction;
+under the CRISPR row's filter it is **174 / 515 / 9**. The raw-shRNA row (207 / 6,118 / 12) does not reproduce
+under any of sixteen readings — closest 207 / 6,136 / 13 and 207 / 6,109 / 11 — and is reported unreproduced
+rather than guessed. And **the drug matrix spans 73 cell lines, not 87**; 87 is close to the 86 lines the
+compound set has *before* `79c` applies its `tas ≥ 0.4` floor.
+
+**The paired count is much smaller than the coverage count, as expected.** For CRISPR: 377 target genes → 280
+with any `trt_xpr` signature → 279 on a drug-matrix line (8 lines) → 1,936 (gene, line) perturbation cells →
+1,049 where an annotated drug was also profiled in that same line → **2,350 paired (drug, gene, line) cells,
+201 drugs, 255 genes, 7 lines**. Consensus shRNA gives 2,250 cells / 178 genes / 9 lines, raw shRNA 2,415 /
+183 / 10. Five lines carry 389–428 CRISPR cells each; the seventh carries 22.
+
+**The genetic side is much weaker than the drug side, which nobody had written down.** Per-signature `nz2`
+(genes at |z| ≥ 2) has median 51 for CRISPR, **14** for consensus shRNA and 88 for raw shRNA; `tas` medians are
+0.14 / 0.10 / 0.24. The drug side already requires `tas ≥ 0.4` per signature, and **only 10.5% of CRISPR,
+4.2% of consensus-shRNA and 43.9% of raw-shRNA paired cells have a perturbation that would clear that same
+bar.** Candidate floors were costed, none chosen: at `nz2 ≥ 100`, CRISPR keeps 1,258 of 2,350 cells but
+consensus shRNA keeps 175 of 2,250. The arm the spec designates as the seed-effect mitigation is also the
+weakest-responding arm by a factor of six.
+
+**The target-mRNA QC finding, which is the point of the stage.** Per-signature pass rates at z ≤ −1 are
+CRISPR **22.5%**, consensus shRNA **19.0%**, raw shRNA **28.0%**. Those numbers are nearly meaningless on
+their own, because the determining variable is the L1000 feature space and not the technology. On **landmark**
+(directly measured) genes CRISPR passes **70.4%** (target z median −2.65), consensus shRNA 54.8% and raw shRNA
+54.8%. On **best-inferred** genes the perturbed gene's own z sits at zero (median +0.01) and the pass rate
+collapses to **7.6% / 2.8% / 8.8%** — at or below a shrunken null, i.e. no information at all, because that
+value is imputed from the landmarks rather than measured.
+
+The two arms were kept separate, as pre-registered. For shRNA, reduced mRNA is the direct expected readout, so
+a landmark failure is real evidence the knockdown did not take. For CRISPR, the pre-stated caution was that a
+frameshift transcript escaping nonsense-mediated decay leaves mRNA near normal while the protein is gone, so a
+CRISPR mRNA failure must never be counted as a failed perturbation. **That caution stands, but it is not what
+limits the measurement here: on measured genes CRISPR passes *more* often than shRNA, the opposite of the
+feared ordering.** NMD escape shows up in the tail (29.6% of landmark CRISPR signatures miss z ≤ −1), not in
+the bulk. Usable conclusion: mRNA QC is a legitimate perturbation filter for **28 CRISPR genes and 48 shRNA
+genes** and for nobody else; applied across the board it would delete ~90% of inferred-gene perturbations for
+an artefact of imputation. No cell was excluded on QC here.
+
+**Where the testable set sits in the exculpatory strata (CRISPR, of 2,350 cells):** common-essential target
+20.1%, target not expressed in the line 37.2%, drug with more than one annotated target gene **90.7%**, weak
+perturbation (illustrative `nz2 < 100`) 46.5%, weak drug profile 5.7%, only one drug timepoint available
+69.5%, target mRNA not on the gene space 20.1%. Limitation 2 (non-catalytic scaffolding roles) is **not
+computable** — no curated list exists in the repo — so it is reported missing and every clean count below is
+an upper bound.
+
+**The bottom line.** Cumulatively for CRISPR: 2,350 paired → 1,878 after dropping common-essential targets →
+1,003 after dropping targets not expressed in the line → **80** after dropping multi-target drugs → 70 after
+dropping weak drug profiles → **46** after an illustrative perturbation floor. **46 cells, 24 drugs, 14 genes,
+6 lines**; 121 cells / 25 genes if drugs with two annotated genes are allowed; 80 cells / 18 genes with no
+strength floors; 18–23 cells over 3 genes if the target must also be landmark and pass mRNA QC. Consensus
+shRNA ends at **4** cells, raw shRNA at 122. The single dominant cut is polypharmacology (1,003 → 80), which
+is as much definitional as biological. The surviving CRISPR set is recognisable: ABL1 (nilotinib, ponatinib),
+BRAF (vemurafenib, dabrafenib), EGFR (erlotinib, gefitinib, AZD-9291), TYMS (fluorouracil, floxuridine), ESR1
+(fulvestrant, clomifene), VDR, PPARG, AGTR1, DPP4, FKBP1A, PDE5A, HRH2, PTGFR, ACE.
+
+**A problem in the spec's own positive controls, found as a coverage count and not computed.** All three
+families are present — HDAC1/2/3/6 (104 CRISPR cells, 5 drugs), PSMB (112 cells, 4 drugs), TOP2A (39 cells,
+8 drugs) — but **TOP2A is 100% common-essential and PSMB 57–61%**, so two of the three controls sit inside the
+very stratum Section 6 marks as exculpatory. If they pass, the method may be validated by shared cytotoxicity
+rather than by mechanism, which would not license reading concordance for non-essential targets. HDAC (25%
+essential) is the only control family mostly outside it. S1 must say in advance what such a pass licenses.
+
+**Verdict: S1 and a positive-control S2 are worth running, with a narrowed claim.** CRISPR carries the scope;
+46–121 clean-positive-capable cells over 14–25 genes and 6–7 lines is enough for a per-target map of a dozen
+well-known pairs and nowhere near enough for a population statistic over 2,350 cells of which 91% are excused
+in advance. Consensus shRNA should be reporting-only unless S1 deliberately lowers its floor. Nothing was
+scored, re-ranked, re-tiered or gated.
