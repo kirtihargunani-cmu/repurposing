@@ -1,0 +1,15 @@
+step	filter	profiles_kept	compounds_kept	units_testable	units_testable_eff	pairs	compounds_in_testable	lines_in_testable	unit_line_cells_testable	profiles_dropped
+1 annotation (spec Section 2)	target unit has >= 2 annotated compounds		307	82	82	1061	247			
+2 profiled	compound has >= 1 consensus profile	1445.0	307	82	82	1061	247			
+3 shared line	pair shares >= 1 cell line	1445.0	307	71	71	651	229	37.0	563.0	
+4 shared line + analog collapse	pair shares a line AND the two compounds have different InChIKey skeletons	1445.0	307	71	71	647	229	37.0	563.0	
+5 shared line + analog collapse + candidate strength floor	nz2>=0	1445.0	307	71	71	647	229	37.0	563.0	0.0
+5 shared line + analog collapse + candidate strength floor	nz2>=50	1436.0	307	70	70	642	227	37.0	559.0	9.0
+5 shared line + analog collapse + candidate strength floor	nz2>=100	1374.0	302	70	70	606	224	35.0	520.0	71.0
+5 shared line + analog collapse + candidate strength floor	nz2>=200	1174.0	277	67	67	488	202	33.0	433.0	271.0
+5 shared line + analog collapse + candidate strength floor	nz2>=400	783.0	206	49	49	239	141	26.0	225.0	662.0
+5 shared line + analog collapse + candidate strength floor	nz2>=800	443.0	137	35	35	108	83	22.0	105.0	1002.0
+5 shared line + analog collapse + candidate strength floor	tas_max>=0.4	1445.0	307	71	71	647	229	37.0	563.0	0.0
+5 shared line + analog collapse + candidate strength floor	tas_max>=0.5	985.0	218	60	60	394	160	27.0	381.0	460.0
+5 shared line + analog collapse + candidate strength floor	tas_max>=0.6	620.0	147	48	48	206	103	24.0	225.0	825.0
+5 shared line + analog collapse + candidate strength floor	tas_max>=0.7	328.0	88	35	35	105	57	23.0	100.0	1117.0

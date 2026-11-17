@@ -770,3 +770,51 @@ given drug. If a drug's effect on the genome has one very dominant direction, ev
 whatever genes it controls. So the honest statement is not "there are only ten mechanisms" and not "our
 instrument is broken", but: **drug responses share a small number of dominant directions, and our regulator
 readings all reflect them.** Nothing was changed, re-ranked or re-scored.
+
+### Can we even tell what a drug targets, just from what it does to the genes? (first a head-count, 2026-11-17)
+
+There is a question we should have asked at the very beginning: **if you only saw what a drug did to a cell's
+genes, could you work out which protein it was built to block?** If the answer is no, then no amount of clever
+scoring on top of those gene readings can be right about mechanism, because the information simply is not
+there. We have written down how to test this properly. Before running it, we did a head-count — just counting
+what data exists, with no test performed and no result produced. The point of doing it this way round is that
+the counting cannot be bent to flatter a result, because there is no result yet.
+
+**The idea of the test.** Two different drugs that block the same protein should leave similar fingerprints on
+the genes. So, for each protein target, take the drugs that hit it and ask whether their fingerprints really do
+look alike. That needs at least two different drugs per target. On paper we have 193 targets, of which 82 have
+two or more drugs — and 111 have only one, which can never be tested at all.
+
+**What the head-count found.**
+
+- **The fingerprints have to come from the same cell line to be comparable.** Comparing a drug tested in a
+  breast cell to one tested in a lung cell mostly measures the cell, not the drug. Insisting both drugs were
+  tested in the *same* cell takes us from **82 testable targets down to 71**, and removes **39% of the drug
+  pairs**. The targets we lose are small and mostly non-cancer ones — blood-pressure channels, a few serotonin
+  receptors, the clotting target.
+- **The planned check for "these are really the same molecule in disguise" barely does anything, and that is
+  worth knowing.** Three drugs that are near-copies of each other are not three independent pieces of evidence.
+  Our plan was to spot near-copies using a standard chemical fingerprint. It turns out that fingerprint only
+  catches *the same molecule* in a different salt or mirror-image form — it does not catch, say, two different
+  statins or two different kinase drugs, which is what we actually meant by near-copies. It merged only four
+  small groups (the vitamin-A drugs, two steroids, two steroid creams, two contraceptives) and changed nothing.
+  **So that safeguard, as written, is not the safeguard we thought it was**, and we have flagged that it needs
+  a real chemical-similarity measure before the test runs rather than after.
+- **A drug that did nothing cannot be recognised.** We measured how strong each drug's gene fingerprint is. Our
+  data already throws away weak responses — three-quarters of the raw measurements were dropped long ago by an
+  existing quality rule — and among what remains, a typical fingerprint moves about 450 genes noticeably. We
+  deliberately did **not** pick a strength cut-off here; we only costed several. A gentle one is nearly free
+  (71 targets become 67). A strict one halves the set (down to 35–49). **One uncomfortable detail:** the
+  targets with the *most* drugs — the steroid receptor, two brain-signalling receptors — have some of the
+  *weakest* fingerprints, so a strict cut-off would delete exactly the targets the whole exercise leans on.
+- **How often would you be right by luck?** Usually almost never: in a typical cell line you are choosing among
+  dozens to hundreds of drugs, so luck gives you about a 0.3% chance. But **sixteen cases are hopeless**: cell
+  lines where only two or three drugs were ever tested, so "finding the right one" is arithmetically guaranteed
+  and means nothing. Those are now flagged.
+
+**The verdict: the test is worth running.** After all of the above we are left with **71 targets, 229 drugs and
+37 cell lines**, with a typical target carrying 4 independent drugs across 6 cell lines, and 29 targets carrying
+5 or more drugs. That is a genuinely useful map of where mechanism-based scoring could work. It is smaller than
+the plan assumed, and the plan's own coverage figures were about a third too optimistic, which we have
+corrected. And it still says nothing whatsoever about the 111 targets with only one drug — those stay untested,
+which is not the same as untestable. Nothing was scored, re-ranked or changed.
