@@ -695,3 +695,39 @@ as currently measured.
 - Scoring on same-cell-type lines only (instead of same-organ) is not implemented. The data-gap check reports it but
   does not change rankings.
 - The odd recurring hits above still need to be reviewed.
+
+### Two measuring errors found on 2026-11-16, and what they do and do not break
+
+Both come from the same mistake, made in two different places: treating things that move together as if they
+moved independently. Genes do not move independently — switch on one master regulator and hundreds of its
+targets move together. Regulators do not move independently either, because one regulator often controls
+another, so their target lists overlap. **That shared movement is real biology, not noise, and neither fix
+below removes any of it.** What was wrong was only the yardstick used to say how surprising a number is.
+
+**Error one: our "is this better than chance?" tests were too easy to pass (D130).**
+To ask whether a drug's effect on its target's genes is real, we compare it against shuffled versions of itself.
+The shuffling treated each gene as its own independent piece of evidence. A 478-gene list behaves more like
+about 46 independent pieces, so the shuffled comparisons were far too similar to each other and almost anything
+looked unusual beside them. We rebuilt the comparison so the shuffles keep the real pattern of which genes move
+together. The headline casualty is our one positive control: **fulvestrant, an anti-oestrogen, in a breast
+cancer cell line. It cleared the old test comfortably and does not clear the corrected one.** The effect itself
+did not change at all — it was always small — but we can no longer say it is more than chance would give. The
+same correction removes almost all the other "confident" signals in that family of tests. Nothing in the drug
+rankings was built on those tests, so no ranking moved; what changed is that a result we had been treating as
+evidence is now not evidence.
+
+**Error two: the reversal score is on a scale about ten times too big (D131).**
+The reversal score adds up how much a drug pushes back on each of a disease's master regulators, then divides by
+a figure that would be correct only if the regulators were independent. They are not, so the division is too
+small and the score comes out roughly **ten times** larger than the scale it claims to be on — and the amount of
+over-statement is different for every disease, ranging from about four times to about fifteen. **The good news,
+and it is the important part: this does not move any ranking.** The dividing figure is one number per disease,
+the same for every drug in that disease, so it cancels out of every ranking, percentile and tier we publish. We
+checked all 55 diseases and subgroups and the answer was identical in every one. What it does break is comparing
+a raw reversal number between two diseases, or reading one as though it meant something on its own. We have not
+changed the score; this is written down for the user to decide on.
+
+One related number does move. When we split a drug's effect into "general slowing of growth" and "specific
+mechanism", the split compares two raw totals without allowing for the two sets being different sizes and
+differently interlinked. Comparing them fairly shifts about **27%** of drug-disease rows across the halfway line.
+That is a genuine judgement call about what the split should mean, not a bug, and nothing was changed.
