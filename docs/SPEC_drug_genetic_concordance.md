@@ -18,15 +18,17 @@ If a drug's profile does not carry its own target's signature, then no target-an
 
 ## 2. Feasibility, measured 2026-11-17
 
-Our drug matrix spans 87 cell lines. Restricted to lines shared with it:
+Our drug matrix spans **73** cell lines (63 for the 307 annotated compounds). Restricted to lines shared with it:
 
 | perturbation | targets covered (of 377) | signatures | shared lines |
 |---|---|---|---|
 | **CRISPR knockout (`trt_xpr`)** | **208** | 837 | **8** |
-| shRNA consensus (`trt_sh.cgs`) | 209 | 1,627 | 10 |
-| shRNA raw (`trt_sh`) | 207 | 6,118 | 12 |
+| shRNA consensus (`trt_sh.cgs`) | 174 | 515 | 9 |
+| shRNA raw (`trt_sh`) | 207 | 6,109 | 11 |
 
-**The binding constraint is shared cell lines (8-12), not target coverage.** 208 testable targets is far better than D134's 71, but the line overlap is thin and power will be concentrated in a few heavily profiled lines.
+**Corrected by S0 (2026-11-17).** The draft said 87 drug-matrix lines; that was the count *before* `79c`'s TAS >= 0.4 floor, and the real figure is 73. The draft's three rows were also computed under three different filters; the table above is now consistent (`is_hiq`, restricted to drug-matrix lines), which moves the cgs row from 209/1,627/10 to 174/515/9. The raw-shRNA row did not reproduce under any of sixteen readings S0 tried and is given as S0 measured it.
+
+**Coverage is not scope.** Paired (drug, gene, line) cells - the real unit - are **2,350** for CRISPR over 255 genes, 201 drugs and **7** lines, with five lines carrying 389-428 cells each. See §6a.
 
 ## 3. Primary and secondary arms, and why
 
@@ -35,6 +37,8 @@ Our drug matrix spans 87 cell lines. Restricted to lines shared with it:
 - **Primary:** CRISPR knockout (`trt_xpr`).
 - **Secondary:** shRNA consensus (`trt_sh.cgs`) - CMap's own consensus across shRNAs for a gene, which is the published mitigation for seed effects.
 - **Reported, not relied on:** raw shRNA. **Pre-stated:** disagreement between CRISPR and raw shRNA is expected and is evidence about shRNA, not about the drug.
+
+**S0 correction to this arm ordering.** The consensus-shRNA arm designated here as the seed-effect mitigation is the **weakest-responding arm by about 6x** (median `nz2` 14, against 51 for CRISPR and 88 for raw shRNA), and a strength floor of `nz2 >= 100` leaves it just 175 of 2,250 paired cells. It is reporting-only unless S1 deliberately lowers its floor. Separately, the NMD-escape caution drafted for CRISPR did not materialise in the feared direction: on measured target genes **CRISPR passes mRNA QC more often than shRNA** (81% vs 57%), so NMD escape is a tail effect, not the bulk.
 
 ## 4. The test and its null
 
@@ -46,7 +50,11 @@ Our drug matrix spans 87 cell lines. Restricted to lines shared with it:
 
 ## 5. Validating the test itself — required before any drug result is read
 
-**Positive controls, fixed in advance:** drug-target pairs whose concordance should be unmistakable (HDAC inhibitors vs HDAC knockout; proteasome inhibitors vs PSMB knockout; topoisomerase poisons vs TOP2A). 
+**Positive controls, fixed in advance:** drug-target pairs whose concordance should be unmistakable (HDAC inhibitors vs HDAC knockout; proteasome inhibitors vs PSMB knockout; topoisomerase poisons vs TOP2A).
+
+**A flaw in that control set, found at S0 and not repaired here.** All three families have data (HDAC 104 CRISPR cells / 5 drugs; PSMB 112 / 4; TOP2A 39 / 8), but **TOP2A is 100% common-essential and PSMB 57-61%** - two of the three sit inside limitation 3's exculpatory stratum, where a knockout yields a death signature. A pass there may demonstrate shared cytotoxicity rather than shared mechanism, and would **not** license reading concordance for non-essential targets. **HDAC (25% essential) is the only mostly-clean family.** S1 must state in advance what a pass on an essential-gene control licenses, or replace those two controls.
+
+
 
 **Pre-stated rule: if the positive-control set fails, the method is reported as non-functional and no drug-level conclusion is drawn.** A failing control means the comparison is broken, not that the drugs are non-concordant.
 
@@ -62,7 +70,8 @@ Our drug matrix spans 87 cell lines. Restricted to lines shared with it:
 | 2 | **Knockout is not inhibition** | Deleting a protein removes scaffolding functions that an active-site inhibitor leaves intact. | Stratify by targets with known non-catalytic roles. | A genuine inhibitor can legitimately fail. **Excused for those targets.** |
 | 3 | **Essential targets** | Knocking out an essential gene yields a death/arrest signature, not a mechanism signature; the drug at sub-lethal dose does not. 1,842 rows already carry `essential_target`. | Stratify by DepMap common-essential. | Essential targets failing is **expected and excused**. |
 | 4 | **shRNA seed effects** | Off-target activity can exceed on-target. | CRISPR vs raw-shRNA agreement. | shRNA-only failure is evidence about shRNA. **Excused.** |
-| 5 | **Weak perturbation** | A knockout with no transcriptional consequence cannot be matched. | Perturbation signature strength; target-mRNA QC (§5). | **Excluded, not scored.** |
+| 5 | **Weak perturbation** | A knockout with no transcriptional consequence cannot be matched. | Perturbation signature strength; target-mRNA QC (§5), landmark targets only. | **Excluded, not scored.** |
+| 5b | **mRNA QC is only available for 48 of 377 targets** (28 with CRISPR) | The target's own transcript is a *measured* landmark gene for 48 targets; for the rest it is imputed, and imputed target z sits on zero (median -0.39 CRISPR, -0.02 cgs) - no information about whether the perturbation worked. On measured genes the QC is excellent (CRISPR median target z **-3.90**, 81% pass). | Feature space of the target gene. | **QC is usable for 28 CRISPR genes and nobody else.** Applied across the board it would delete ~90% of inferred-gene perturbations for an imputation artefact. Use a strength floor or DepMap gene effect elsewhere. |
 | 6 | **Weak drug response** | A drug that moved nothing cannot be matched. Note `79c` already keeps only TAS >= 0.4, removing 73% of cells. | Drug signature strength. | **Conditioned on; excused below the floor.** |
 | 7 | **Polypharmacology** | The drug hits many proteins; the knockout hits one gene. | Number of annotated targets per drug. | Multi-target drugs are **excused**. |
 | 8 | **Target not active in the line** | No concordance is possible if the target is not expressed or the pathway is not running. Literature: connectivity is expected where the target is mutated or highly expressed. | Target expression and mutation status per line. | **Excused.** |
