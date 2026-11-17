@@ -1,0 +1,200 @@
+[
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "holds"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "weak"
+   },
+   {
+    "link": "L6",
+    "verdict": "weak"
+   },
+   {
+    "link": "L7",
+    "verdict": "weak"
+   }
+  ],
+  "break_point": "L4",
+  "all_links_at_worst": [
+   "L4",
+   "L5",
+   "L6",
+   "L7"
+  ],
+  "verdict": "weak",
+  "why": "478 footprint genes in the LINCS gene space; 478 carry a signed expectation (73 expected UP, 405 expected DOWN), 0 conflicted/ambiguous and excluded. Attribution (Section 5): median 12 CollecTRI regulators claim each signed gene; only 8.6% of signed genes are claimed by exactly one regulator in the whole network. Within this unit's own regulator set, 0.0% of signed genes are claimed by more than one of its regulators.",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint scores at the 64.0th percentile of all 1221 compounds profiled in MCF7. Not ruled out - a large share of compounds in this line move these genes the same way."
+   },
+   {
+    "link": "L5",
+    "alternative": "sub-prediction b FAILED: genes uniquely claimed by this unit's regulators at least as concordant as shared-attribution genes; failing means the movement is not specifically this target's (Section 5) -> 39.0% (n=41) vs 52.9% (n=437)"
+   }
+  ],
+  "independence": {
+   "total_links": 7,
+   "source_classes": [
+    "chembl_binding",
+    "collectri_regulon",
+    "depmap_dependency",
+    "lincs_response",
+    "tcga_alterations",
+    "tcga_gtex_contrast"
+   ],
+   "links_adding_no_new_source": [
+    "L3",
+    "L4",
+    "L6"
+   ],
+   "links_adding_a_new_source": [
+    "L1",
+    "L2",
+    "L5",
+    "L7"
+   ],
+   "effective_independent_links": 3,
+   "discounts": [
+    "direct tissue match: the cell line and the tumour cohort are the same tissue, so L5 and L7 share the tissue's biology (Section 3); with a borrowed line they would not"
+   ]
+  },
+  "summary": {
+   "n_regulators": 1,
+   "hub": "ESR1",
+   "hub_structural_share": 1.0,
+   "hub_signal_share": 1.0,
+   "hub_unique_signal_share": 1.0,
+   "effective_regulators": 1.0,
+   "effective_genes": 289.5351860722037,
+   "n_covered": 478,
+   "concordance": 0.5167364016736402,
+   "concordance_without_hub": NaN,
+   "mean_with_hub": 0.025364592926493526,
+   "mean_without_hub": NaN,
+   "generic_percentile": 64.04586404586404,
+   "amplitude_percentile": 13.431613431613432,
+   "amplitude_r": -0.326354391172067,
+   "hub_r_prolif": 0.411,
+   "hub_prolif_linked": false
+  }
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "chain": [
+   {
+    "link": "L1",
+    "verdict": "holds"
+   },
+   {
+    "link": "L2",
+    "verdict": "holds"
+   },
+   {
+    "link": "L3",
+    "verdict": "holds"
+   },
+   {
+    "link": "L4",
+    "verdict": "weak"
+   },
+   {
+    "link": "L5",
+    "verdict": "weak"
+   },
+   {
+    "link": "L6",
+    "verdict": "breaks"
+   },
+   {
+    "link": "L7",
+    "verdict": "weak"
+   }
+  ],
+  "break_point": "L6",
+  "all_links_at_worst": [
+   "L6"
+  ],
+  "verdict": "breaks",
+  "why": "14 regulator(s) contribute. Largest single regulator by observed |contribution|: MYC, carrying 68.1% of the link's signal (58.2% exclusively, i.e. through genes no other regulator of this unit claims); structurally it claims 65.1% of the frozen genes. Effective number of independent regulators (participation ratio over regulator shares) = 2.73 of 14. Effective number of contributing genes = 695 of 1063. Dropping MYC's genes entirely leaves 371 genes, concordance 48.8% (vs 52.6% with them) and me",
+  "alternatives_carried": [
+   {
+    "link": "L5",
+    "alternative": "generic response: the same frozen footprint scores at the 82.3th percentile of all 1081 compounds profiled in A375. Not ruled out - a large share of compounds in this line move these genes the same way."
+   },
+   {
+    "link": "L6",
+    "alternative": "the hub regulator MYC is proliferation-linked in the CollecTRI set (r_prolif 0.251), so a general slow-down of a proliferating line reproduces most of this link's evidence. The cytotoxicity / generic-response alternative is NOT ruled out."
+   },
+   {
+    "link": "L7",
+    "alternative": "reference artefact (D128-A3.2): the comparison is tumour vs GTEx normal tissue, and the target's own expression is -0.62 logFC in this contrast. A negative value means the normal reference already runs the programme and the closure direction can invert for reasons that have nothing to do with the drug. NOT ruled out."
+   },
+   {
+    "link": "L5",
+    "alternative": "sub-prediction b FAILED: genes uniquely claimed by this unit's regulators at least as concordant as shared-attribution genes; failing means the movement is not specifically this target's (Section 5) -> 51.9% (n=181) vs 52.7% (n=882)"
+   }
+  ],
+  "independence": {
+   "total_links": 7,
+   "source_classes": [
+    "chembl_binding",
+    "collectri_regulon",
+    "depmap_dependency",
+    "lincs_response",
+    "omnipath_signed_prior",
+    "tcga_alterations",
+    "tcga_gtex_contrast"
+   ],
+   "links_adding_no_new_source": [
+    "L4",
+    "L6",
+    "L7"
+   ],
+   "links_adding_a_new_source": [
+    "L1",
+    "L2",
+    "L3",
+    "L5"
+   ],
+   "effective_independent_links": 4,
+   "discounts": []
+  },
+  "summary": {
+   "n_regulators": 14,
+   "hub": "MYC",
+   "hub_structural_share": 0.6509877704609596,
+   "hub_signal_share": 0.6814169933903137,
+   "hub_unique_signal_share": 0.5824358860335841,
+   "effective_regulators": 2.7262145166700247,
+   "effective_genes": 695.0233654888629,
+   "n_covered": 1063,
+   "concordance": 0.5258701787394168,
+   "concordance_without_hub": 0.48787061994609165,
+   "mean_with_hub": 0.03396866344622979,
+   "mean_without_hub": 0.013700514136835268,
+   "generic_percentile": 82.33117483811286,
+   "amplitude_percentile": 52.45143385753932,
+   "amplitude_r": -0.2697625240115395,
+   "hub_r_prolif": 0.251,
+   "hub_prolif_linked": true
+  }
+ }
+]

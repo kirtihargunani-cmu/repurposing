@@ -1,0 +1,2 @@
+target_gene	network	tf	hops	path_sign	path_status	tf_has_regulon	tf_regulon_genes
+ESR1	omnipath	ESR1	0	1	resolved	True	478

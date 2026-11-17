@@ -1,0 +1,126 @@
+[
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "fulvestrant binds ESR1 as a single-protein ChEMBL mechanism target with a direct, measured potency, and it is the drug's best-binding unit (r_u = 1).",
+  "observed": "ttype=SINGLE PROTEIN; genes=ESR1; k=1; actions=ANTAGONIST|DEGRADER; orient=lower (action sign -1); pChEMBL p_u=8.8; relative binding r_u=1.0; binding_unmeasured=False; units for this drug in the ranking row=1",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL mechanism records via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. Section 9: the trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source. A single ChEMBL curation error moves the whole chain.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets; ChEMBL records only what was assayed.",
+   "polypharmacology: at a 10 uM reference concentration the exposure exceeds this unit's measured affinity (10^-8.8 M) by ~6310x, so selectivity at the concentration LINCS profiles were run at is NOT established by this link. The per-signature dose is not read here."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort, in what fraction of patients?",
+  "expected": "ESR1 is relevant to BRCA-LumA through at least one of dependency (D), alteration share (A) or over-expression (O).",
+  "observed": "dep_z=3.96 -> D pct 99.98; alt_share=0.0107 (1.07% of patients) -> A pct 44.96; o_raw=2.276 (source NES) -> O pct 94.29; layered_S=79.74, layered_pct=95.20; minority_alteration=False",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120 components); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122 layered); alteration = TCGA pan-cancer; dependency = DepMap 24Q4; O source for this gene = NES",
+  "independence": "O is a VIPER NES over the SAME CollecTRI/ARACNe regulon that L3 and L4 use, so L2's strongest component and L4 are NOT independent for this pair; D is DepMap, shared with any essentiality reasoning at L6.",
+  "concentration": "largest single component's share of the three percentile components: 0.418 (D 0.418, A 0.188, O 0.394)",
+  "alternatives": [
+   "only 1.07% of patients carry an alteration - the cohort-level claim is expression/dependency-driven, not genotype-driven.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement.",
+   "reference artefact not excluded: O rests on the same normal reference L7 will use."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "zero-hop TF anchor: ESR1 is itself a CollecTRI regulator",
+  "observed": "target is a CollecTRI regulator: True; subset rule gives hop cap 0. 1 resolved-sign regulators with a regulon, 0 sign-ambiguous (excluded from the signed footprint). Resolved regulators and their regulon sizes: ESR1(h0,+1,478g)",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (D128-A1, OmniPath D126 cache + CollecTRI)",
+  "independence": "L3 and L4 both derive from the regulon (Section 3): a regulon error moves both. For a zero-hop TF anchor L3 carries no independent signalling evidence at all - it is the statement 'the target is a TF', and the whole mechanism is L4.",
+  "concentration": "largest regulator's share of the regulators' total regulon genes: 1.000 (ESR1: 478 of 478 gene slots over 1 regulators)",
+  "alternatives": [
+   "0 regulators are reached by sign-ambiguous routes and are silently dropped; if their sign were resolved the predicted directions could change.",
+   "hop cap is a frozen choice (MAX_HOPS=2, P6). At 3 hops this target reaches 143 regulators with a regulon instead of 1; the footprint is a function of that cap, not only of the biology."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the regulators of L3 imply a signed gene footprint; with the drug's action (lower, -1) each gene's expected direction is action x path sign x tfmode. Weight is unweighted (P7, w=1).",
+  "observed": "478 footprint genes in the LINCS gene space; 478 carry a signed expectation (73 expected UP, 405 expected DOWN), 0 conflicted/ambiguous and excluded. Attribution (Section 5): median 12 CollecTRI regulators claim each signed gene; only 8.6% of signed genes are claimed by exactly one regulator in the whole network. Within this unit's own regulator set, 0.0% of signed genes are claimed by more than one of its regulators.",
+  "verdict": "weak",
+  "provenance": "results/lincs/d128/a1/target_gene_footprints.parquet and regulon_edges.parquet (D128-A1, CollecTRI P3); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice (Section 3). CollecTRI is literature-curated, so it is NOT learned from the tumour co-expression L7 uses; that entanglement (D133.1) would apply to an ARACNe regulon and does not apply here. It does apply to L2's O component for this pair, which is a VIPER NES.",
+  "concentration": "structural: largest single regulator (ESR1) claims 1.000 of the 478 signed genes, over 1 contributing regulators. A footprint whose genes nearly all come from one regulon is one piece of evidence.",
+  "alternatives": [
+   "attribution: 91.4% of the signed genes are claimed by other regulators too; their movement is attributable to this target only by choice, not by observation (Section 5).",
+   "conflicted genes are dropped rather than counted against the prediction; the footprint is therefore the subset of the regulon that happens to agree with itself.",
+   "CollecTRI tfmode signs are curation, and a wrong tfmode flips a gene's expectation without any data saying so."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "vemurafenib binds BRAF as a single-protein ChEMBL mechanism target with a direct, measured potency, and it is the drug's best-binding unit (r_u = 1).",
+  "observed": "ttype=SINGLE PROTEIN; genes=BRAF; k=1; actions=INHIBITOR; orient=lower (action sign -1); pChEMBL p_u=7.18; relative binding r_u=1.0; binding_unmeasured=False; units for this drug in the ranking row=1",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL mechanism records via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. Section 9: the trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source. A single ChEMBL curation error moves the whole chain.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets; ChEMBL records only what was assayed.",
+   "polypharmacology: at a 10 uM reference concentration the exposure exceeds this unit's measured affinity (10^-7.18 M) by ~151x, so selectivity at the concentration LINCS profiles were run at is NOT established by this link. The per-signature dose is not read here."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort, in what fraction of patients?",
+  "expected": "BRAF is relevant to TCGA-SKCM through at least one of dependency (D), alteration share (A) or over-expression (O).",
+  "observed": "dep_z=2.906 -> D pct 99.99; alt_share=0.4979 (49.79% of patients) -> A pct 100.0; o_raw=-0.6226 (source logFC_vs_gtex) -> O pct 35.86; layered_S=78.62, layered_pct=95.05; minority_alteration=True",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120 components); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122 layered); alteration = TCGA pan-cancer; dependency = DepMap 24Q4; O source for this gene = logFC_vs_gtex",
+  "independence": "O is logFC vs GTEx, the same contrast family that L7 uses, so L2's O and L7 are entangled; D is DepMap, shared with any essentiality reasoning at L6. A (alteration) is independent of both the regulon and the response.",
+  "concentration": "largest single component's share of the three percentile components: 0.424 (D 0.424, A 0.424, O 0.152)",
+  "alternatives": [
+   "only 49.79% of patients carry an alteration - the cohort-level claim is carried by a large but sub-half genotype subset.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement.",
+   "reference artefact (Section 6, D128-A3.2): O vs GTEx normal skin is NEGATIVE here, so the normal reference already expresses the target more than the tumour does."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "signalling: BRAF is not a regulator, reaches TFs at 1-2 hops",
+  "observed": "target is a CollecTRI regulator: False; subset rule gives hop cap 2. 14 resolved-sign regulators with a regulon, 0 sign-ambiguous (excluded from the signed footprint). Resolved regulators and their regulon sizes: PAX3(h1,+1,81g); MYC(h2,+1,741g); ETS1(h2,+1,180g); MEF2A(h2,+1,77g); HSF1(h2,+1,75g); NR4A1(h2,+1,74g); TAL1(h2,-1,71g); MEF2C(h2,+1,49g); MEF2D(h2,+1,20g); PML(h2,-1,16g); NEUROG1(h2,+1,7g); MEOX1(h2,+1,7g); ELK4(h2,+1,6g); MEOX2(h2,+1,6g)",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (D128-A1, OmniPath D126 cache + CollecTRI)",
+  "independence": "L3 adds the OmniPath signed prior, which is a source L4 does not use; but every regulator it names is scored through its CollecTRI regulon, so L3 and L4 still share the regulon (Section 3).",
+  "concentration": "largest regulator's share of the regulators' total regulon genes: 0.526 (MYC: 741 of 1410 gene slots over 14 regulators)",
+  "alternatives": [
+   "0 regulators are reached by sign-ambiguous routes and are silently dropped; if their sign were resolved the predicted directions could change.",
+   "hop cap is a frozen choice (MAX_HOPS=2, P6). At 3 hops this target reaches 165 regulators with a regulon instead of 14; the footprint is a function of that cap, not only of the biology."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the regulators of L3 imply a signed gene footprint; with the drug's action (lower, -1) each gene's expected direction is action x path sign x tfmode. Weight is unweighted (P7, w=1).",
+  "observed": "1131 footprint genes in the LINCS gene space; 1063 carry a signed expectation (160 expected UP, 903 expected DOWN), 68 conflicted/ambiguous and excluded. Attribution (Section 5): median 6 CollecTRI regulators claim each signed gene; only 17.0% of signed genes are claimed by exactly one regulator in the whole network. Within this unit's own regulator set, 10.8% of signed genes are claimed by more than one of its regulators.",
+  "verdict": "weak",
+  "provenance": "results/lincs/d128/a1/target_gene_footprints.parquet and regulon_edges.parquet (D128-A1, CollecTRI P3); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice (Section 3). CollecTRI is literature-curated, not learned from tumour co-expression, so the D133.1 ARACNe entanglement with L7 does not apply here.",
+  "concentration": "structural: largest single regulator (MYC) claims 0.651 of the 1063 signed genes, over 14 contributing regulators. A footprint whose genes nearly all come from one regulon is one piece of evidence.",
+  "alternatives": [
+   "attribution: 83.0% of the signed genes are claimed by other regulators too; their movement is attributable to this target only by choice, not by observation (Section 5).",
+   "conflicted genes are dropped rather than counted against the prediction; the footprint is therefore the subset of the regulon that happens to agree with itself.",
+   "CollecTRI tfmode signs are curation, and a wrong tfmode flips a gene's expectation without any data saying so."
+  ]
+ }
+]

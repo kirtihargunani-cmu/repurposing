@@ -1789,3 +1789,62 @@ essential) is the only control family mostly outside it. S1 must say in advance 
 well-known pairs and nowhere near enough for a population statistic over 2,350 cells of which 91% are excused
 in advance. Consensus shRNA should be reporting-only unless S1 deliberately lowers its floor. Nothing was
 scored, re-ranked, re-tiered or gated.
+
+## 2026-11-17: Mechanism-trace procedure, first application — two traces, two different break-points
+
+`docs/PROCEDURE_mechanism_trace.md` Section 10, applied end to end to the two pairs it names:
+**fulvestrant → ESR1 → 0 hops → regulon → MCF7 (ACH-000019) → BRCA-LumA** and
+**vemurafenib → BRAF → ≤2 signalling hops → 14 regulators → A375 (ACH-000219) → TCGA-SKCM**.
+Scripts `scripts/trace/t1_predict.py` … `t4_check_a4.py`; records in `results/lincs/trace/`
+(`links_L1_L4.json`, `links_L5_L7.json`, `verdicts.json`, `trace_records.tsv`, rendered prose in
+`trace_narrative.txt`). **No DECISIONS row: nothing was decided.** Nothing scored, ranked, nulled or
+re-tiered; no production file touched. The seven-field records are the artefact and the prose is
+rendered from them (Section 0).
+
+**The freeze was real.** Commit `TRACE FREEZE` carries both predicted footprints and every expected
+per-gene direction, and was pushed before any response profile was opened; `t2_observe.py` was written
+afterwards and its `expected` strings were written from L1–L4, not from the data. The L6 concentration
+was computed from the footprint structure alone and committed **before** `results/lincs/d128/a4/` was
+opened at all.
+
+**The two traces break at different links — the Section 10 test passes.**
+
+| | fulvestrant → BRCA-LumA | vemurafenib → TCGA-SKCM |
+|---|---|---|
+| chain | L1 holds, L2 holds, L3 holds, **L4–L7 all weak** | L1 holds, L2 holds, L3 holds, L4 weak, L5 weak, **L6 breaks**, L7 weak |
+| break-point | **L4 — attribution** | **L6 — concentration** |
+| effective independent links (Section 3) | **3 of 7** | **4 of 7** |
+
+**L6 found the hub without being told, and reproduces D128-A4 exactly.** From the A1 route index alone:
+MYC claims **65.1%** of vemurafenib's 1,063 signed genes and **68.1%** of the observed |contribution|
+(58.2% through genes no other regulator of the unit claims); the effective number of independent
+regulators is **2.73 of 14**. Removing MYC's 692 genes leaves concordance at **48.8%**, i.e. below
+chance, and the mean signed f(z) falls 0.0340 → 0.0137. A4's own columns are 0.651 / 0.6814 / 0.0137 —
+identical (`results/lincs/trace/l6_agreement_with_d128_a4.tsv`). MYC is `prolif_linked=True` in the
+CollecTRI set, so the proliferation/cytotoxicity alternative survives into the verdict.
+
+**Fulvestrant breaks earlier and for a different reason.** Its footprint is one regulon (ESR1, zero
+hops), so L3 contributes no signalling evidence and L6 cannot even run a leave-one-out. Section 5 is
+what kills it: only **8.6%** of the 478 genes are claimed by ESR1 alone, a median of **12** CollecTRI
+regulators claim each gene — and the pre-stated sub-prediction that uniquely-attributable genes should
+move at least as well as shared ones **failed badly**: 39.0% (n=41) vs 52.9% (n=437). The genes that are
+specifically ESR1's are the ones moving the wrong way.
+
+**L5 is weak on both.** Sign concordance 51.7% (fulvestrant/MCF7) and 52.6% (vemurafenib/A375); the same
+frozen footprint under every compound profiled in the line puts them at the **64.0th** and **82.3th**
+percentile, so the generic-response alternative is not ruled out for either. This agrees with D130 from
+a different reference (corrected-null z 0.86/0.61 and 0.52/0.95 respectively) — read only after L5 was
+committed.
+
+**Two findings about the data, reported rather than worked around.** (1) `d128/a2/gene_contributions.parquet`
+is a **seeded 2,000-row sample** (`--gene-contrib sample`, `all_bing` only) covering 186 of 257 scored
+units; fulvestrant × MCF7 is not in it. The observation was rebuilt from the frozen footprint and the same
+profile matrix with `score.py`'s own formula and reproduces D128-A2's M to 0.00e+00 for both pairs.
+(2) **L2's O component has a different source per pair**, which changes the independence accounting:
+ESR1's O is a VIPER NES over the *same* CollecTRI regulon L3/L4 use (so L2, L3 and L4 are one source),
+while BRAF's O is `logFC_vs_gtex` — the same contrast L7 uses, and **negative** (−0.62), so the
+D128-A3.2 reference artefact is live for the melanoma trace and is carried into its verdict.
+
+**Not done, and it matters:** the five negative controls of Section 7 were not run, so the procedure's
+false-positive rate is unmeasured and **neither trace counts as a positive**. Section 10's own
+instruction is that the controls come before any positive trace is reported.

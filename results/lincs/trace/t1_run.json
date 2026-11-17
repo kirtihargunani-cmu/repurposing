@@ -1,0 +1,65 @@
+{
+ "stage": "TRACE-T1 (links L1-L4, frozen prediction)",
+ "git_sha_at_run": "ebece1fc2e9920332c5a60dbda75b943dbc60b2e",
+ "procedure": "docs/PROCEDURE_mechanism_trace.md",
+ "reads_no_response_data": true,
+ "reads_no_outcome_label": true,
+ "inputs": [
+  "results/lincs/target_role/d121/units.tsv",
+  "results/lincs/target_role/gene_components.tsv.gz",
+  "results/lincs/fda_ranking_v2_consensus.tsv",
+  "results/celligner/disease_line_weights_long.tsv",
+  "results/lincs/d128/a1/target_tf_paths.parquet",
+  "results/lincs/d128/a1/target_gene_footprints.parquet",
+  "results/lincs/d128/a1/regulon_edges.parquet",
+  "data/processed/lincs/drug_line_profiles_genes.tsv"
+ ],
+ "pairs": {
+  "fulvestrant_ESR1_BRCA_LumA": {
+   "label": "TF-anchored",
+   "cmap_name": "fulvestrant",
+   "unit_id": "fulvestrant::CHEMBL206",
+   "target": "ESR1",
+   "group_id": "BRCA-LumA",
+   "ModelID": "ACH-000019",
+   "line": "MCF7",
+   "expected_hops": 0,
+   "expected_route": "zero-hop TF anchor: ESR1 is itself a CollecTRI regulator"
+  },
+  "vemurafenib_BRAF_TCGA_SKCM": {
+   "label": "Kinase",
+   "cmap_name": "vemurafenib",
+   "unit_id": "vemurafenib::CHEMBL5145",
+   "target": "BRAF",
+   "group_id": "TCGA-SKCM",
+   "ModelID": "ACH-000219",
+   "line": "A375",
+   "expected_hops": 2,
+   "expected_route": "signalling: BRAF is not a regulator, reaches TFs at 1-2 hops"
+  }
+ },
+ "counts": {
+  "fulvestrant_ESR1_BRCA_LumA": {
+   "footprint_rows": 478,
+   "signed": 478,
+   "up": 73,
+   "down": 405,
+   "conflicted": 0,
+   "unique_fraction": 0.0858,
+   "structural_hub_tf": "ESR1",
+   "structural_hub_share": 1.0,
+   "median_regulators_claiming": 12.0
+  },
+  "vemurafenib_BRAF_TCGA_SKCM": {
+   "footprint_rows": 1131,
+   "signed": 1063,
+   "up": 160,
+   "down": 903,
+   "conflicted": 68,
+   "unique_fraction": 0.1703,
+   "structural_hub_tf": "MYC",
+   "structural_hub_share": 0.651,
+   "median_regulators_claiming": 6.0
+  }
+ }
+}

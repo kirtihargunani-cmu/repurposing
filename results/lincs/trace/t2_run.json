@@ -1,0 +1,48 @@
+{
+ "stage": "TRACE-T2 (links L5-L7, verdict)",
+ "git_sha_at_run": "9b2304bb3101315ce8d230311ab602156ad4a1f4",
+ "freeze_commit_subject": "TRACE FREEZE: predicted footprints for both mechanism-trace pairs (L1-L4)",
+ "read_d128_a4": false,
+ "read_d130_nulls": false,
+ "read_outcome_labels": false,
+ "summary": {
+  "fulvestrant_ESR1_BRCA_LumA": {
+   "n_regulators": 1,
+   "hub": "ESR1",
+   "hub_structural_share": 1.0,
+   "hub_signal_share": 1.0,
+   "hub_unique_signal_share": 1.0,
+   "effective_regulators": 1.0,
+   "effective_genes": 289.5351860722037,
+   "n_covered": 478,
+   "concordance": 0.5167364016736402,
+   "concordance_without_hub": NaN,
+   "mean_with_hub": 0.025364592926493526,
+   "mean_without_hub": NaN,
+   "generic_percentile": 64.04586404586404,
+   "amplitude_percentile": 13.431613431613432,
+   "amplitude_r": -0.326354391172067,
+   "hub_r_prolif": 0.411,
+   "hub_prolif_linked": false
+  },
+  "vemurafenib_BRAF_TCGA_SKCM": {
+   "n_regulators": 14,
+   "hub": "MYC",
+   "hub_structural_share": 0.6509877704609596,
+   "hub_signal_share": 0.6814169933903137,
+   "hub_unique_signal_share": 0.5824358860335841,
+   "effective_regulators": 2.7262145166700247,
+   "effective_genes": 695.0233654888629,
+   "n_covered": 1063,
+   "concordance": 0.5258701787394168,
+   "concordance_without_hub": 0.48787061994609165,
+   "mean_with_hub": 0.03396866344622979,
+   "mean_without_hub": 0.013700514136835268,
+   "generic_percentile": 82.33117483811286,
+   "amplitude_percentile": 52.45143385753932,
+   "amplitude_r": -0.2697625240115395,
+   "hub_r_prolif": 0.251,
+   "hub_prolif_linked": true
+  }
+ }
+}
