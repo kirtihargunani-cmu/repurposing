@@ -1,0 +1,527 @@
+[
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "fulvestrant binds ESR1 as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=SINGLE PROTEIN; genes=ESR1; k=1; actions=ANTAGONIST|DEGRADER; orient=lower (action sign -1); pChEMBL p_u=8.8; relative binding r_u=1.0; binding_unmeasured=False; units for this drug in the BRCA-LumA ranking row=1",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: at a 10 uM reference the exposure exceeds this unit's measured affinity by ~6310x, so selectivity at the profiled concentration is NOT established."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "ESR1 is relevant to BRCA-LumA through dependency, alteration share or over-expression.",
+  "observed": "dep_z=3.96 -> D pct 99.98; alt_share=0.0107 (1.07% of patients) -> A pct 44.96; o_raw=2.276 (source NES) -> O pct 94.29; layered_S=79.74, layered_pct=95.20, minority_alteration=False",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is a VIPER NES over a regulon, so L2's O and L4 share the regulon source.",
+  "concentration": "largest component's share: 0.418",
+  "alternatives": [
+   "only 1.07% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "zero-hop TF anchor: the target is itself an ARACNe regulator in this cohort",
+  "observed": "network BRCA_LUMA; target is an ARACNe regulator there: True; hop cap 0. 144 OmniPath route rows for this target; 1 resolved-sign regulators with an ARACNe regulon, 0 sign-ambiguous (excluded). Resolved regulators and regulon sizes: ESR1(h0,+1,131g)",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network BRCA_LUMA) for which of them has a regulon",
+  "independence": "L3 and L4 both derive from the ARACNe regulon: a regulon error moves both. For a zero-hop anchor L3 carries no independent signalling evidence at all.",
+  "concentration": "largest regulator's share of total regulon gene slots: 1.000 (ESR1: 131 of 131 slots over 1 regulators)",
+  "alternatives": [
+   "0 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 91 regulators with an ARACNe regulon instead of 1.",
+   "the ARACNe network is BRCA_LUMA, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "fulvestrant_ESR1_BRCA_LumA",
+  "kind": "real",
+  "control": "not a control: the TF-anchored trace, re-run on ARACNe",
+  "network": "BRCA_LUMA",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the 1 regulators of L3 imply a signed gene footprint; each gene's expected direction is action (lower, -1) x path sign x sign(tfmode). Weight unweighted (P7, w=1), as in the CollecTRI trace.",
+  "observed": "131 footprint genes in the LINCS gene space; 131 carry a signed expectation (47 UP, 84 DOWN), 0 conflicted between this unit's own regulators and excluded. Attribution: median 12.0 regulators in the whole BRCA_LUMA network claim each signed gene; 0.8% of signed genes are claimed by exactly one. Structural hub ESR1 claims 1.000 of the signed genes over 1 contributing regulators.",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network BRCA_LUMA (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "structural: largest single regulator (ESR1) claims 1.000 of the 131 signed genes, over 1 contributing regulators.",
+  "alternatives": [
+   "attribution: 99.2% of signed genes are claimed by other regulators in BRCA_LUMA too.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is BRCA_LUMA-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "vemurafenib binds BRAF as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=SINGLE PROTEIN; genes=BRAF; k=1; actions=INHIBITOR; orient=lower (action sign -1); pChEMBL p_u=7.18; relative binding r_u=1.0; binding_unmeasured=False; units for this drug in the TCGA-SKCM ranking row=1",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: at a 10 uM reference the exposure exceeds this unit's measured affinity by ~151x, so selectivity at the profiled concentration is NOT established."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "BRAF is relevant to TCGA-SKCM through dependency, alteration share or over-expression.",
+  "observed": "dep_z=2.906 -> D pct 99.99; alt_share=0.4979 (49.79% of patients) -> A pct 100.0; o_raw=-0.6226 (source logFC_vs_gtex) -> O pct 35.86; layered_S=78.62, layered_pct=95.05, minority_alteration=True",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is logFC vs GTEx, the same contrast family L7 uses, so L2's O and L7 are entangled.",
+  "concentration": "largest component's share: 0.424",
+  "alternatives": [
+   "only 49.79% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "signalling: the target is not a regulator, so it must reach regulators within 2 hops",
+  "observed": "network SKCM; target is an ARACNe regulator there: False; hop cap 2. 170 OmniPath route rows for this target; 11 resolved-sign regulators with an ARACNe regulon, 0 sign-ambiguous (excluded). Resolved regulators and regulon sizes: PAX3(h1,+1,162g); MEF2D(h2,+1,251g); MEOX2(h2,+1,206g); MEOX1(h2,+1,198g); HSF1(h2,+1,182g); MYC(h2,+1,120g); ELK4(h2,+1,59g); NR4A1(h2,+1,48g); ETS1(h2,+1,45g); MEF2A(h2,+1,42g); MEF2C(h2,+1,28g)",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network SKCM) for which of them has a regulon",
+  "independence": "L3 adds the OmniPath signed prior, a source L4 does not use; but every regulator it names is scored through its ARACNe regulon, so L3 and L4 still share that regulon.",
+  "concentration": "largest regulator's share of total regulon gene slots: 0.187 (MEF2D: 251 of 1341 slots over 11 regulators)",
+  "alternatives": [
+   "0 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 115 regulators with an ARACNe regulon instead of 11.",
+   "the ARACNe network is SKCM, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "vemurafenib_BRAF_TCGA_SKCM",
+  "kind": "real",
+  "control": "not a control: the kinase trace, re-run on ARACNe",
+  "network": "SKCM",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the 11 regulators of L3 imply a signed gene footprint; each gene's expected direction is action (lower, -1) x path sign x sign(tfmode). Weight unweighted (P7, w=1), as in the CollecTRI trace.",
+  "observed": "1229 footprint genes in the LINCS gene space; 1223 carry a signed expectation (88 UP, 1135 DOWN), 6 conflicted between this unit's own regulators and excluded. Attribution: median 16.0 regulators in the whole SKCM network claim each signed gene; 0.1% of signed genes are claimed by exactly one. Structural hub MEF2D claims 0.204 of the signed genes over 11 contributing regulators.",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network SKCM (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "structural: largest single regulator (MEF2D) claims 0.204 of the 1223 signed genes, over 11 contributing regulators.",
+  "alternatives": [
+   "attribution: 99.9% of signed genes are claimed by other regulators in SKCM too.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is SKCM-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "regorafenib binds RET as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=SINGLE PROTEIN; genes=RET; k=1; actions=INHIBITOR; orient=lower (action sign -1); pChEMBL p_u=7.53; relative binding r_u=0.066; binding_unmeasured=False; units for this drug in the TCGA-LUAD ranking row=15",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: at a 10 uM reference the exposure exceeds this unit's measured affinity by ~339x, so selectivity at the profiled concentration is NOT established."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "THIS IS A NEGATIVE CONTROL. target not expressed in the source line; L5 must break",
+  "observed": "dep_z=0.0205 -> D pct 55.98; alt_share=0.0019 (0.19% of patients) -> A pct 46.41; o_raw=1.514 (source logFC_vs_gtex) -> O pct 93.0; layered_S=46.10, layered_pct=41.08, minority_alteration=True",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is logFC vs GTEx, the same contrast family L7 uses, so L2's O and L7 are entangled.",
+  "concentration": "largest component's share: 0.476",
+  "alternatives": [
+   "only 0.19% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "THIS IS A NEGATIVE CONTROL. target not expressed in the source line; L5 must break",
+  "observed": "network LUAD; target is an ARACNe regulator there: False; hop cap 2. 396 OmniPath route rows for this target; 85 resolved-sign regulators with an ARACNe regulon, 29 sign-ambiguous (excluded). Resolved regulators and regulon sizes: STAT1(h1,+1,198g); STAT3(h1,+1,88g); SPI1(h2,+1,472g); SP3(h2,+1,339g); ELK1(h2,+1,335g); IRF8(h2,+1,330g); PPARG(h2,-1,288g); E2F1(h2,+1,283g); RARG(h2,+1,271g); CREM(h2,-1,268g); NR3C2(h2,-1,256g); DDIT3(h2,+1,253g); SKI(h2,-1,248g); CEBPA(h2,-1,244g); STAT5A(h2,+1,224g); AEBP1(h2,+1,213g); FOXA2(h2,+1,201g); MEF2C(h2,+1,187g); TFEB(h2,-1,181g); HBP1(h2,+1,180g); MAZ(h2,+1,179g); THRA(h2,+1,176g); PIN1(h2,+1,175g); MEF2A(h2,+1,171g); JDP2(h2,+1,166g) ... and 60 more",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network LUAD) for which of them has a regulon",
+  "independence": "L3 adds the OmniPath signed prior, a source L4 does not use; but every regulator it names is scored through its ARACNe regulon, so L3 and L4 still share that regulon.",
+  "concentration": "largest regulator's share of total regulon gene slots: 0.041 (SPI1: 472 of 11421 slots over 85 regulators)",
+  "alternatives": [
+   "29 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 246 regulators with an ARACNe regulon instead of 114.",
+   "the ARACNe network is LUAD, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "NC1_target_not_expressed",
+  "kind": "control",
+  "control": "target not expressed in the source line; L5 must break",
+  "network": "LUAD",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the 85 regulators of L3 imply a signed gene footprint; each gene's expected direction is action (lower, -1) x path sign x sign(tfmode). Weight unweighted (P7, w=1), as in the CollecTRI trace.",
+  "observed": "6001 footprint genes in the LINCS gene space; 4286 carry a signed expectation (1069 UP, 3217 DOWN), 1715 conflicted between this unit's own regulators and excluded. Attribution: median 13.0 regulators in the whole LUAD network claim each signed gene; 0.1% of signed genes are claimed by exactly one. Structural hub SP3 claims 0.062 of the signed genes over 85 contributing regulators.",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network LUAD (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "structural: largest single regulator (SP3) claims 0.062 of the 4286 signed genes, over 85 contributing regulators.",
+  "alternatives": [
+   "attribution: 99.9% of signed genes are claimed by other regulators in LUAD too.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is LUAD-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "vemurafenib binds BRAF as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=SINGLE PROTEIN; genes=BRAF; k=1; actions=INHIBITOR; orient=lower (action sign -1); pChEMBL p_u=7.18; relative binding r_u=1.0; binding_unmeasured=False; units for this drug in the BRCA-Basal ranking row=1",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: at a 10 uM reference the exposure exceeds this unit's measured affinity by ~151x, so selectivity at the profiled concentration is NOT established."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "THIS IS A NEGATIVE CONTROL. RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "observed": "dep_z=-0.03269 -> D pct 48.6; alt_share=0.0579 (5.79% of patients) -> A pct 85.21; o_raw=-0.3866 (source logFC_vs_gtex) -> O pct 37.1; layered_S=56.97, layered_pct=58.59, minority_alteration=False",
+  "verdict": "weak",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is logFC vs GTEx, the same contrast family L7 uses, so L2's O and L7 are entangled.",
+  "concentration": "largest component's share: 0.499",
+  "alternatives": [
+   "only 5.79% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "THIS IS A NEGATIVE CONTROL. RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "observed": "network BRCA_BAS; target is an ARACNe regulator there: False; hop cap 2. 170 OmniPath route rows for this target; 12 resolved-sign regulators with an ARACNe regulon, 0 sign-ambiguous (excluded). Resolved regulators and regulon sizes: PAX3(h1,+1,13g); MYC(h2,+1,199g); MEF2D(h2,+1,151g); HSF1(h2,+1,143g); MEOX1(h2,+1,124g); MEF2C(h2,+1,120g); MEF2A(h2,+1,112g); ETS1(h2,+1,107g); MEOX2(h2,+1,100g); NR4A1(h2,+1,62g); TAL1(h2,-1,56g); ELK4(h2,+1,23g)",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network BRCA_BAS) for which of them has a regulon",
+  "independence": "L3 adds the OmniPath signed prior, a source L4 does not use; but every regulator it names is scored through its ARACNe regulon, so L3 and L4 still share that regulon.",
+  "concentration": "largest regulator's share of total regulon gene slots: 0.164 (MYC: 199 of 1210 slots over 12 regulators)",
+  "alternatives": [
+   "0 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 116 regulators with an ARACNe regulon instead of 12.",
+   "the ARACNe network is BRCA_BAS, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "NC2_raf_paradox",
+  "kind": "control",
+  "control": "RAF inhibitor in BRAF-wild-type, RAS-active context; the chain must not close",
+  "network": "BRCA_BAS",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the 12 regulators of L3 imply a signed gene footprint; each gene's expected direction is action (lower, -1) x path sign x sign(tfmode). Weight unweighted (P7, w=1), as in the CollecTRI trace.",
+  "observed": "1066 footprint genes in the LINCS gene space; 1038 carry a signed expectation (64 UP, 974 DOWN), 28 conflicted between this unit's own regulators and excluded. Attribution: median 13.0 regulators in the whole BRCA_BAS network claim each signed gene; 0.1% of signed genes are claimed by exactly one. Structural hub MYC claims 0.189 of the signed genes over 12 contributing regulators.",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network BRCA_BAS (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "structural: largest single regulator (MYC) claims 0.189 of the 1038 signed genes, over 12 contributing regulators.",
+  "alternatives": [
+   "attribution: 99.9% of signed genes are claimed by other regulators in BRCA_BAS too.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is BRCA_BAS-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "MEK-162 binds MAP2K2 as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=SINGLE PROTEIN; genes=MAP2K2; k=1; actions=INHIBITOR; orient=lower (action sign -1); pChEMBL p_u=7.44; relative binding r_u=0.638; binding_unmeasured=False; units for this drug in the TCGA-READ ranking row=2",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: at a 10 uM reference the exposure exceeds this unit's measured affinity by ~275x, so selectivity at the profiled concentration is NOT established."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "THIS IS A NEGATIVE CONTROL. drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "observed": "dep_z=-0.1959 -> D pct 26.76; alt_share=0.0000 (0.00% of patients) -> A pct 48.14; o_raw=-0.5001 (source logFC_vs_gtex) -> O pct 34.23; layered_S=52.52, layered_pct=43.81, minority_alteration=False",
+  "verdict": "weak",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is logFC vs GTEx, the same contrast family L7 uses, so L2's O and L7 are entangled.",
+  "concentration": "largest component's share: 0.441",
+  "alternatives": [
+   "only 0.00% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "THIS IS A NEGATIVE CONTROL. drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "observed": "network COADREAD; target is an ARACNe regulator there: False; hop cap 2. 294 OmniPath route rows for this target; 48 resolved-sign regulators with an ARACNe regulon, 15 sign-ambiguous (excluded). Resolved regulators and regulon sizes: E2F1(h2,+1,513g); MYC(h2,+1,351g); NR3C2(h2,-1,298g); RELA(h2,+1,297g); SREBF1(h2,+1,294g); MAZ(h2,+1,272g); CIC(h2,-1,245g); ELK1(h2,+1,231g); CREM(h2,-1,222g); SP3(h2,+1,202g); RARA(h2,+1,202g); CEBPA(h2,-1,199g); AEBP1(h2,+1,197g); PPARG(h2,-1,193g); HNF4A(h2,-1,183g); SREBF2(h2,+1,179g); HIF1A(h2,+1,165g); SP1(h2,+1,158g); MYB(h2,-1,144g); NCOA3(h2,+1,144g); NCOA1(h2,+1,139g); ELK3(h2,+1,137g); STAT5A(h2,+1,123g); EPAS1(h2,+1,119g); ATF2(h2,+1,117g) ... and 23 more",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network COADREAD) for which of them has a regulon",
+  "independence": "L3 adds the OmniPath signed prior, a source L4 does not use; but every regulator it names is scored through its ARACNe regulon, so L3 and L4 still share that regulon.",
+  "concentration": "largest regulator's share of total regulon gene slots: 0.078 (E2F1: 513 of 6557 slots over 48 regulators)",
+  "alternatives": [
+   "15 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 193 regulators with an ARACNe regulon instead of 63.",
+   "the ARACNe network is COADREAD, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "NC3_random_pairing",
+  "kind": "control",
+  "control": "drug paired with a cohort it was not matched to; L2 or L7 must break",
+  "network": "COADREAD",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the 48 regulators of L3 imply a signed gene footprint; each gene's expected direction is action (lower, -1) x path sign x sign(tfmode). Weight unweighted (P7, w=1), as in the CollecTRI trace.",
+  "observed": "4437 footprint genes in the LINCS gene space; 3695 carry a signed expectation (991 UP, 2704 DOWN), 742 conflicted between this unit's own regulators and excluded. Attribution: median 14.0 regulators in the whole COADREAD network claim each signed gene; 0.1% of signed genes are claimed by exactly one. Structural hub E2F1 claims 0.120 of the signed genes over 48 contributing regulators.",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network COADREAD (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "structural: largest single regulator (E2F1) claims 0.120 of the 3695 signed genes, over 48 contributing regulators.",
+  "alternatives": [
+   "attribution: 99.9% of signed genes are claimed by other regulators in COADREAD too.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is COADREAD-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "estramustine binds ESR2 as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=annotation; genes=ESR2; k=1; actions=nan; orient=lower (action sign -1); pChEMBL p_u=nan; relative binding r_u=1.0; binding_unmeasured=True; units for this drug in the BRCA-LumB ranking row=4",
+  "verdict": "weak",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: no pChEMBL for this unit, so selectivity is not established at all."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "THIS IS A NEGATIVE CONTROL. cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "observed": "dep_z=-0.00939 -> D pct 48.32; alt_share=0.0095 (0.95% of patients) -> A pct 44.21; o_raw=-2.941 (source logFC_vs_gtex) -> O pct 5.675; layered_S=48.43, layered_pct=28.89, minority_alteration=False",
+  "verdict": "weak",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is logFC vs GTEx, the same contrast family L7 uses, so L2's O and L7 are entangled.",
+  "concentration": "largest component's share: 0.492",
+  "alternatives": [
+   "only 0.95% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "THIS IS A NEGATIVE CONTROL. cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "observed": "network BRCA_LUMB; target is an ARACNe regulator there: False; hop cap 2. 64 OmniPath route rows for this target; 4 resolved-sign regulators with an ARACNe regulon, 8 sign-ambiguous (excluded). Resolved regulators and regulon sizes: RARA(h1,+1,140g); THRA(h2,+1,146g); RARG(h2,+1,129g); NR4A1(h2,+1,32g)",
+  "verdict": "holds",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network BRCA_LUMB) for which of them has a regulon",
+  "independence": "L3 adds the OmniPath signed prior, a source L4 does not use; but every regulator it names is scored through its ARACNe regulon, so L3 and L4 still share that regulon.",
+  "concentration": "largest regulator's share of total regulon gene slots: 0.327 (THRA: 146 of 447 slots over 4 regulators)",
+  "alternatives": [
+   "8 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 43 regulators with an ARACNe regulon instead of 12.",
+   "the ARACNe network is BRCA_LUMB, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "NC4_cytotoxic",
+  "kind": "control",
+  "control": "cytotoxic drug with a routable targeted annotation; L6 and the cytotoxicity alternative must fire rather than the chain closing on the annotation",
+  "network": "BRCA_LUMB",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "the 4 regulators of L3 imply a signed gene footprint; each gene's expected direction is action (lower, -1) x path sign x sign(tfmode). Weight unweighted (P7, w=1), as in the CollecTRI trace.",
+  "observed": "397 footprint genes in the LINCS gene space; 397 carry a signed expectation (18 UP, 379 DOWN), 0 conflicted between this unit's own regulators and excluded. Attribution: median 12.0 regulators in the whole BRCA_LUMB network claim each signed gene; 0.3% of signed genes are claimed by exactly one. Structural hub THRA claims 0.368 of the signed genes over 4 contributing regulators.",
+  "verdict": "weak",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network BRCA_LUMB (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "structural: largest single regulator (THRA) claims 0.368 of the 397 signed genes, over 4 contributing regulators.",
+  "alternatives": [
+   "attribution: 99.7% of signed genes are claimed by other regulators in BRCA_LUMB too.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is BRCA_LUMB-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L1",
+  "question": "Does the drug bind the target, and on what evidence?",
+  "expected": "midostaurin binds KDR as a ChEMBL mechanism unit with a measured potency. This link is network-independent: it is the same evidence the CollecTRI trace used, and switching regulon cannot change it.",
+  "observed": "ttype=SINGLE PROTEIN; genes=KDR; k=1; actions=INHIBITOR; orient=lower (action sign -1); pChEMBL p_u=6.05; relative binding r_u=0.017; binding_unmeasured=False; units for this drug in the TCGA-LIHC ranking row=nan",
+  "verdict": "holds",
+  "provenance": "results/lincs/target_role/d121/units.tsv (D121 layer 2); ChEMBL via D105b",
+  "independence": "sole source is the ChEMBL annotation; shared with L2's unit definition and with L4's action sign. The trace is NOT independent of this annotation.",
+  "concentration": "1.00 - one unit, one gene, one annotation source.",
+  "alternatives": [
+   "off-target: a single-protein unit does not exclude unannotated off-targets.",
+   "polypharmacology: at a 10 uM reference the exposure exceeds this unit's measured affinity by ~11x, so selectivity at the profiled concentration is NOT established."
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L2",
+  "question": "Is the target altered, over-expressed or depended on in this cohort?",
+  "expected": "THIS IS A NEGATIVE CONTROL. target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "observed": "dep_z=0.5108 -> D pct 76.91; alt_share=0.0027 (0.27% of patients) -> A pct 46.09; o_raw=-0.1343 (source logFC_vs_gtex) -> O pct 44.48; this drug has NO ranking row in this cohort - the pairing does not exist in production, which is what a random pairing should look like",
+  "verdict": "weak",
+  "provenance": "results/lincs/target_role/gene_components.tsv.gz (D120); results/lincs/fda_ranking_v2_consensus.tsv (D121/D122); alteration = TCGA pan-cancer; dependency = DepMap 24Q4",
+  "independence": "O is logFC vs GTEx, the same contrast family L7 uses, so L2's O and L7 are entangled.",
+  "concentration": "largest component's share: 0.459",
+  "alternatives": [
+   "only 0.27% of patients carry an alteration.",
+   "the dependency component is a cell-line average (DepMap), not a patient measurement."
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L3",
+  "question": "What signed path reaches which regulators, in how many hops?",
+  "expected": "THIS IS A NEGATIVE CONTROL. target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "observed": "network LIHC; target is an ARACNe regulator there: False; hop cap 2. 121 OmniPath route rows for this target; 0 resolved-sign regulators with an ARACNe regulon, 0 sign-ambiguous (excluded). NO regulator is reached.",
+  "verdict": "not evaluable",
+  "provenance": "results/lincs/d128/a1/target_tf_paths.parquet (OmniPath D126 cache) for the routes; data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz (network LIHC) for which of them has a regulon",
+  "independence": "L3 adds the OmniPath signed prior, a source L4 does not use; but every regulator it names is scored through its ARACNe regulon, so L3 and L4 still share that regulon.",
+  "concentration": "no regulators reached",
+  "alternatives": [
+   "0 regulators are reached by sign-ambiguous routes and are silently dropped.",
+   "hop cap is frozen at 2. At 3 hops this target reaches 73 regulators with an ARACNe regulon instead of 0.",
+   "the ARACNe network is LIHC, built from that cohort's tumours; which regulators exist at all is a property of that cohort's co-expression, not of the signalling biology."
+  ]
+ },
+ {
+  "pair": "NC5_no_anchored_tf",
+  "kind": "control",
+  "control": "target reaches no regulator; L3 must return 'not evaluable' rather than a path",
+  "network": "LIHC",
+  "link": "L4",
+  "question": "Which genes, with what weight and expected direction?",
+  "expected": "L3 reached no regulator, so there is no footprint to predict.",
+  "observed": "empty footprint.",
+  "verdict": "not evaluable",
+  "provenance": "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz, network LIHC (viper::aracne2regulon on the cohort's TCGA tumour matrix, scripts/44_aracne_regulons.R); action sign from D121 units.tsv",
+  "independence": "same regulon as L3 - one source, reported twice. AND, unlike the CollecTRI trace: an ARACNe regulon IS learned from tumour co-expression, which is the source L7's tumour contrast uses and the source L2's O component uses when it is a NES. The D133.1 entanglement that did NOT apply to CollecTRI DOES apply here - L4 and L7 are not independent.",
+  "concentration": "no footprint",
+  "alternatives": [
+   "no footprint to attribute.",
+   "conflicted genes are dropped rather than counted against the prediction.",
+   "ARACNe tfmode is the SIGN OF A CORRELATION across that cohort's tumours, not a measured direction of regulation. A gene expected DOWN is a gene that co-varies positively with the regulator in tumours; a drug that moves the cell along the same axis for any reason will satisfy the prediction.",
+   "the regulon is LIHC-specific: the same target in a different cohort would get a different footprint from the same signalling route."
+  ]
+ }
+]

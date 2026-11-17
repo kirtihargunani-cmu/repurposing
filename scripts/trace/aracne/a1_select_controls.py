@@ -20,10 +20,17 @@ SEED = 20261117          # frozen: the date, not tuned
 HOP_CAP_NON_TF = 2       # same frozen P6 cap the CollecTRI trace used
 
 
+def net_for(cohort, override):
+    """Production rule (scripts/79e_drug_reversal.py:125 + D97): config/group_networks.tsv is an
+    OVERRIDE map for the subtype cohorts; every other cohort strips its source prefix."""
+    if cohort in override:
+        return override[cohort]
+    return "COADREAD" if cohort in ("TCGA-COAD", "TCGA-READ") else cohort.split("-", 1)[1]
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    gnet = pd.read_csv(ROOT / "config/group_networks.tsv", sep="\t")
-    g2n = dict(zip(gnet.iloc[:, 0], gnet.iloc[:, 1]))
+    ovr = pd.read_csv(ROOT / "config/group_networks.tsv", sep="\t").set_index("group_id").net.to_dict()
     units = pd.read_csv(ROOT / "results/lincs/target_role/d121/units.tsv", sep="\t",
                         dtype={"tid": str, "action_flag": str})
     annot = pd.read_csv(ROOT / "results/lincs/drug_annotations.tsv", sep="\t")
@@ -46,8 +53,8 @@ def main():
     lwm = lw[lw.in_key].sort_values("weight", ascending=False)
     pool = (u1.merge(best, on="cmap_name").merge(lwm[["group_id", "ModelID", "weight", "CellLineName"]],
                                                  on="ModelID"))
-    pool = pool[pool.group_id.isin(g2n)].copy()
-    pool["net"] = pool.group_id.map(g2n)
+    pool["net"] = [net_for(c, ovr) for c in pool.group_id]
+    pool = pool[pool.net.isin(regs_by_net)].copy()   # cohort must have an ARACNe network
     print(f"pool: {len(pool)} (unit x cohort x line) rows, {pool.cmap_name.nunique()} drugs, "
           f"{pool.group_id.nunique()} cohorts")
 
@@ -94,7 +101,8 @@ def main():
     braf_mut = set(bm[bm.ProteinChange.fillna("").str.contains("V600")].ModelID)
     ras = mut[mut.HugoSymbol.isin(["KRAS", "NRAS", "HRAS"]) & (mut.Hotspot.fillna(False).astype(bool) | mut.OncogeneHighImpact.fillna(False).astype(bool))]
     ras_act = set(ras.ModelID)
-    nc2c = pool[pool.cmap_name.isin(rafs) & pool.ModelID.isin(ras_act) & ~pool.ModelID.isin(braf_mut)]
+    nc2c = pool[pool.genes.isin(["BRAF", "RAF1", "ARAF"]) & pool.ModelID.isin(ras_act)
+                & ~pool.ModelID.isin(braf_mut)]
     nc2c = nc2c.copy(); nc2c["n_reg"] = [len(reach(r.genes, r.net)) for r in nc2c.itertuples()]
     nc2c = nc2c[nc2c.n_reg >= 1].sort_values(["n_reg", "weight"], ascending=False)
     assert len(nc2c), "no RAF-paradox candidate"
@@ -121,7 +129,7 @@ def main():
         row = sh.iloc[i]
         if row.group_id == c:
             continue
-        net = g2n[c]
+        net = net_for(c, ovr)
         ln = lwm[lwm.group_id == c]
         ln = ln[ln.ModelID.isin(set(best[best.cmap_name == row.cmap_name].ModelID))]
         if not len(ln) or len(reach(row.genes, net)) < 1:
@@ -193,7 +201,11 @@ def main():
     # ---------- NC5: target with no anchored TF -> L3 must say 'not evaluable' ----------
     nc5c = pool.copy()
     nc5c["n_reg"] = [len(reach(r.genes, r.net)) for r in nc5c.itertuples()]
-    nc5c = nc5c[nc5c.n_reg == 0].sort_values("weight", ascending=False)
+    # a target with ZERO OmniPath rows is trivially not evaluable; the sharp test is a target the
+    # signalling network DOES know about, which still anchors no regulator in this cohort's ARACNe net.
+    nc5c["n_routes"] = [int((P.target_gene == g).sum()) for g in nc5c.genes]
+    nc5c = nc5c[(nc5c.n_reg == 0) & (nc5c.n_routes > 0)].sort_values(
+        ["n_routes", "weight"], ascending=False)
     assert len(nc5c), "no unanchored-target candidate"
     r = nc5c.iloc[0]
     n_any = int(((P.target_gene == r.genes)).sum())
@@ -203,7 +215,7 @@ def main():
         ModelID=r.ModelID, line=r.CellLineName, unit_id=f"{r.cmap_name}::{r.tid}",
         orient=r.orient, n_aracne_regulators=0)
     notes["NC5_no_anchored_tf"] = (
-        f"{r.genes} has {n_any} OmniPath route rows but none that resolves to a regulator with an "
+        f"{r.genes} HAS {n_any} OmniPath route rows, but none resolves to a regulator with an "
         f"ARACNe regulon in {r.net} within the frozen hop cap. {len(nc5c)} such rows in the pool; the "
         f"highest-celligner-weight line chosen. The correct behaviour is an empty footprint and a "
         f"'not evaluable' L3, NOT a footprint assembled from ambiguous routes.")
