@@ -1,0 +1,9 @@
+pair	quantity	trace_L6	d128_a4	agrees	note
+vemurafenib_BRAF_TCGA_SKCM	hub share of footprint genes	0.651	0.651	True	hub identified independently as MYC by both
+vemurafenib_BRAF_TCGA_SKCM	hub share of |contribution|	0.6814	0.6814	True	hub identified independently as MYC by both
+vemurafenib_BRAF_TCGA_SKCM	M with hub	0.034	0.034	True	hub identified independently as MYC by both
+vemurafenib_BRAF_TCGA_SKCM	M without hub	0.0137	0.0137	True	hub identified independently as MYC by both
+vemurafenib_BRAF_TCGA_SKCM	hub gene count	692.0	692.0	True	hub identified independently as MYC by both
+vemurafenib_BRAF_TCGA_SKCM	hub share of SIGNED numerator		0.8592		A4 also reports the signed-numerator share (0.859), a harsher reading than the absolute share the trace used; the trace did not compute it
+fulvestrant_ESR1_BRCA_LumA	corrected null (crp_sign_1000_z / cgn_1000_z)	64.04586404586404	0.86 / 0.61		the trace's L5 reference is the same footprint under every compound in the line (percentile in trace_L6); D130's is a correlation-preserving permutation. Both put this pair below any conventional threshold, from different references.
+vemurafenib_BRAF_TCGA_SKCM	corrected null (crp_sign_1000_z / cgn_1000_z)	82.33117483811286	0.52 / 0.95		the trace's L5 reference is the same footprint under every compound in the line (percentile in trace_L6); D130's is a correlation-preserving permutation. Both put this pair below any conventional threshold, from different references.
