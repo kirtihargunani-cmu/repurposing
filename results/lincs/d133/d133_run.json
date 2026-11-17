@@ -1,0 +1,33 @@
+{
+ "cohorts": [
+  "PHEO-kinase-signaling",
+  "PCPG-PHEO",
+  "TCGA-LIHC",
+  "UCEC-EEC",
+  "TGCT-SEM-C1"
+ ],
+ "n_bins": 50,
+ "n_perm": 10000,
+ "seed": 0,
+ "collectri_rds_vs_precursor": {
+  "rds_pairs": 31440,
+  "precursor_pairs": 42432,
+  "shared": 31440,
+  "rds_only": 0,
+  "precursor_only": 10992
+ },
+ "omnipath_cols": [
+  "source",
+  "target",
+  "source_genesymbol",
+  "target_genesymbol",
+  "sign",
+  "sign_disputed",
+  "n_resources",
+  "n_references",
+  "curation_effort",
+  "sources",
+  "references"
+ ],
+ "runtime_s": 22.0
+}
