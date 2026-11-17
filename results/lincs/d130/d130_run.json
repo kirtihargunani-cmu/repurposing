@@ -1,0 +1,49 @@
+{
+ "stage": "D130-correlated-null",
+ "git_sha": "27e00c94ef42e000f6c6dbaaef257aa40ead2d6a",
+ "seed": 130,
+ "nulls_small": 50,
+ "nulls_big": 100,
+ "blocks": [
+  "esr1"
+ ],
+ "threads": 8,
+ "results": {
+  "esr1_rows": 6
+ },
+ "log": [
+  "[    0.0s] loading D128 inputs, profile arm specific",
+  "[    1.2s] ESR1 specific fulvestrant BRD-A17828570: M=0.04766 old_sign_z=2.81 crp_sign_z=1.29 old_gene_z=2.69 crp_gene_z=2.26",
+  "[    1.3s] ESR1 specific fulvestrant BRD-A85667082: M=0.03981 old_sign_z=2.92 crp_sign_z=1.31 old_gene_z=2.79 crp_gene_z=2.32",
+  "[    1.3s] ESR1 specific fulvestrant BRD-A90490067: M=0.02536 old_sign_z=1.52 crp_sign_z=0.70 old_gene_z=1.56 crp_gene_z=1.21",
+  "[    1.3s] ESR1 tamoxifen BRD-K04210847 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 tamoxifen BRD-K43744935 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 tamoxifen BRD-K93754473 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 tamoxifen BRD-K04210847 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 tamoxifen BRD-K43744935 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 tamoxifen BRD-K93754473 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 raloxifene BRD-K63828191 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 bazedoxifene BRD-K90195324 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 toremifene BRD-K51350053 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 toremifene BRD-K63460351 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 clomifene BRD-K04218075 specific: not reproducible, skipped",
+  "[    1.3s] ESR1 clomifene BRD-K29950728 specific: not reproducible, skipped",
+  "[    1.3s] loading D128 inputs, profile arm raw",
+  "[    2.7s] ESR1 raw fulvestrant BRD-A17828570: M=0.01869 old_sign_z=3.53 crp_sign_z=1.59 old_gene_z=3.63 crp_gene_z=3.06",
+  "[    2.9s] ESR1 raw fulvestrant BRD-A85667082: M=0.00083 old_sign_z=3.64 crp_sign_z=1.51 old_gene_z=3.4 crp_gene_z=2.87",
+  "[    3.1s] ESR1 raw fulvestrant BRD-A90490067: M=-0.00890 old_sign_z=2.68 crp_sign_z=1.25 old_gene_z=2.76 crp_gene_z=2.25",
+  "[    3.1s] ESR1 tamoxifen BRD-K04210847 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 tamoxifen BRD-K43744935 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 tamoxifen BRD-K93754473 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 tamoxifen BRD-K04210847 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 tamoxifen BRD-K43744935 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 tamoxifen BRD-K93754473 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 raloxifene BRD-K63828191 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 bazedoxifene BRD-K90195324 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 toremifene BRD-K51350053 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 toremifene BRD-K63460351 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 clomifene BRD-K04218075 raw: not reproducible, skipped",
+  "[    3.1s] ESR1 clomifene BRD-K29950728 raw: not reproducible, skipped"
+ ],
+ "seconds": 3.1
+}

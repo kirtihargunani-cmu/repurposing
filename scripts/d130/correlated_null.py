@@ -216,7 +216,7 @@ def summarise(v, observed, tag):
 
 
 # -------------------------------------------------------------------------------------------------------- rows ----
-def score_row(inp, cache, unit_id, pert_id, model_id, gene_arm, n_small, n_big, rng):
+def score_row(inp, cache, unit_id, pert_id, model_id, gene_arm, n_small, n_big, rng, serm_rule=False):
     """Recompute M exactly as D128 does, then the four nulls (naive / corrected) x (sign / gene-label)."""
     i_row = inp["prow"].get((pert_id, model_id))
     if i_row is None:
@@ -236,6 +236,11 @@ def score_row(inp, cache, unit_id, pert_id, model_id, gene_arm, n_small, n_big, 
     m = SC.score_mechanism(gids, expected, action, z, landmark_mask=lm, n_unresolved=fp["n_unresolved"],
                            action_flag=u.action_flag, subset=subset,
                            n_signaling_tfs=inp["n_sig_tfs"].get(unit_id, 0))
+    if not m.scored and serm_rule and "ambiguous_action" in m.abstain_reason:
+        # D0.2 exactly as a4_controls.py applies it: a SERM is an ESR1 antagonist in a breast-lineage line, so the
+        # action sign is supplied and the subset floor is not re-applied. Same code path, same arguments.
+        action = -1
+        m = SC.score_mechanism(gids, expected, action, z, landmark_mask=lm)
     if not m.scored:
         return None
     e_signed = expected * action
@@ -257,7 +262,7 @@ def score_row(inp, cache, unit_id, pert_id, model_id, gene_arm, n_small, n_big, 
     row["vif_factor_sqrt_n_over_neff"] = float(np.sqrt(row["n_over_n_eff"]))
     row["analytic_factor_sqrt_eRe_over_n"] = float(np.sqrt(max(row["eRe_over_n"], 0.0)))
 
-    for tag, nd in (("200", n_small), ("1000", n_big)):
+    for tag, nd in ((str(n_small), n_small), (str(n_big), n_big)):
         row.update(summarise(naive_sign_shuffle(e_signed, fz, nd, np.random.default_rng(SEED + 1)),
                              m.value, f"naive_sign_{tag}"))
         row.update(summarise(naive_gene_label(e_signed, fz, lm, nd, np.random.default_rng(SEED + 2)),
@@ -303,7 +308,8 @@ def main():
         for r in E.itertuples(index=False):
             inp, cache = get(r.arm)
             out = score_row(inp, cache, r.unit_id, r.pert_id, "ACH-000019", "all_bing",
-                            a.nulls_small, a.nulls_big, np.random.default_rng(SEED))
+                            a.nulls_small, a.nulls_big, np.random.default_rng(SEED),
+                            serm_rule=(r.set == "serm_set"))
             if out is None:
                 log(f"ESR1 {r.cmap_name} {r.pert_id} {r.arm}: not reproducible, skipped")
                 continue
@@ -311,8 +317,8 @@ def main():
                        old_sign_shuffle_pct=r.sign_shuffle_pct, old_gene_label_pct=r.gene_label_pct)
             rows.append(out)
             log(f"ESR1 {r.arm} {r.cmap_name} {r.pert_id}: M={out['M']:.5f} old_sign_z={r.sign_shuffle_z} "
-                f"crp_sign_z={out['crp_sign_1000_z']:.2f} old_gene_z={r.gene_label_z} "
-                f"crp_gene_z={out['crp_gene_1000_z']:.2f}")
+                f"crp_sign_z={out[f'crp_sign_{a.nulls_big}_z']:.2f} cgn_z={out[f'cgn_{a.nulls_big}_z']:.2f} "
+                f"old_gene_z={r.gene_label_z} crp_gene_z={out[f'crp_gene_{a.nulls_big}_z']:.2f}")
         D = pd.DataFrame(rows)
         D.to_csv(OUT / "esr1_control_corrected.tsv", sep="\t", index=False)
         results["esr1_rows"] = len(D)
