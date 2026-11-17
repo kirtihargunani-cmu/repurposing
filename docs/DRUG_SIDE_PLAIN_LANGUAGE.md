@@ -716,6 +716,12 @@ same correction removes almost all the other "confident" signals in that family 
 rankings was built on those tests, so no ranking moved; what changed is that a result we had been treating as
 evidence is now not evidence.
 
+We also checked the corrected test on a thousand randomly chosen drug-target-cell-line rows. Under a test that
+is working properly, about 5% of them should look "unusual" by chance. Under the old test **18%** did. Under the
+corrected tests, 7% and 8% — close to where they should be. So this was not a case of making everything look
+less impressive: the old yardstick was simply about three and a half times too easy to pass, and the new one is
+about right.
+
 **Error two: the reversal score is on a scale about ten times too big (D131).**
 The reversal score adds up how much a drug pushes back on each of a disease's master regulators, then divides by
 a figure that would be correct only if the regulators were independent. They are not, so the division is too
