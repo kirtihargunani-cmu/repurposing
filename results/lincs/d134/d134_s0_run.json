@@ -1,0 +1,615 @@
+{
+ "units_rows_total": 497,
+ "units_rows_dropped_empty_tid": 23,
+ "section2_reproduced": {
+  "compounds": 307,
+  "units": 193,
+  "genes": 377,
+  "units_ge2": 82,
+  "units_ge3": 59,
+  "units_ge5": 30,
+  "singletons": 111,
+  "compounds_in_units_ge2": 247
+ },
+ "profiles": {
+  "rows": 9678,
+  "pert_ids": 3058,
+  "compounds": 2848,
+  "lines": 73,
+  "genes": 10112
+ },
+ "already_applied_tas_floor": {
+  "definition": "79c keeps is_hiq signatures with per-signature tas >= 0.4; a (pert_id, line) cell survives if >= 1 of its signatures does",
+  "cells_hiq_only": 35793,
+  "cells_after_tas_0p4": 9678,
+  "cells_lost": 26115,
+  "frac_lost": 0.7296
+ },
+ "tas_available": {
+  "source": "level5_bing_hiq_sigs.tsv.gz (from raw/lincs2020/siginfo_beta.txt)",
+  "profiles_without_tas": 0
+ },
+ "strength_distribution": {
+  "all_profiles": {
+   "nz2": {
+    "n": 9255,
+    "mean": 770.8345,
+    "min": 19.0,
+    "p05": 115.0,
+    "p25": 252.0,
+    "median": 477.0,
+    "p75": 948.5,
+    "p95": 2512.0,
+    "max": 6320.0
+   },
+   "nz4": {
+    "n": 9255,
+    "mean": 85.7355,
+    "min": 0.0,
+    "p05": 5.0,
+    "p25": 18.0,
+    "median": 38.0,
+    "p75": 80.0,
+    "p95": 289.0,
+    "max": 3299.0
+   },
+   "mean_abs": {
+    "n": 9255,
+    "mean": 0.8637,
+    "min": 0.3527,
+    "p05": 0.5493,
+    "p25": 0.6747,
+    "median": 0.796,
+    "p75": 0.9699,
+    "p95": 1.4182,
+    "max": 3.1907
+   },
+   "nz2_specific": {
+    "n": 9255,
+    "mean": 478.5374,
+    "min": 0.0,
+    "p05": 69.0,
+    "p25": 159.0,
+    "median": 291.0,
+    "p75": 579.0,
+    "p95": 1572.3,
+    "max": 5798.0
+   },
+   "tas_max": {
+    "n": 9255,
+    "mean": 0.5642,
+    "min": 0.4,
+    "p05": 0.4113,
+    "p25": 0.4605,
+    "median": 0.5402,
+    "p75": 0.6519,
+    "p95": 0.7891,
+    "max": 0.8922
+   }
+  },
+  "target_annotated_profiles": {
+   "nz2": {
+    "n": 1445,
+    "mean": 788.701,
+    "min": 19.0,
+    "p05": 100.2,
+    "p25": 238.0,
+    "median": 445.0,
+    "p75": 984.0,
+    "p95": 2667.2,
+    "max": 5810.0
+   },
+   "nz4": {
+    "n": 1445,
+    "mean": 95.6159,
+    "min": 0.0,
+    "p05": 5.0,
+    "p25": 17.0,
+    "median": 40.0,
+    "p75": 93.0,
+    "p95": 358.0,
+    "max": 2500.0
+   },
+   "mean_abs": {
+    "n": 1445,
+    "mean": 0.8639,
+    "min": 0.3527,
+    "p05": 0.5273,
+    "p25": 0.6585,
+    "median": 0.786,
+    "p75": 0.9824,
+    "p95": 1.4741,
+    "max": 2.7396
+   },
+   "nz2_specific": {
+    "n": 1445,
+    "mean": 443.8346,
+    "min": 0.0,
+    "p05": 54.0,
+    "p25": 145.0,
+    "median": 259.0,
+    "p75": 542.0,
+    "p95": 1480.0,
+    "max": 4195.0
+   },
+   "tas_max": {
+    "n": 1445,
+    "mean": 0.5864,
+    "min": 0.4001,
+    "p05": 0.4137,
+    "p25": 0.4712,
+    "median": 0.5655,
+    "p75": 0.6855,
+    "p95": 0.8167,
+    "max": 0.8922
+   }
+  },
+  "note": "per-profile only; no profile is compared with any other profile"
+ },
+ "skeletons": {
+  "definition": "first 14 characters of inchi_key in results/lincs/drug_annotations.tsv",
+  "compounds": 307,
+  "distinct_skeletons": 302,
+  "compounds_without_inchikey": [
+   "BRD-K08177763",
+   "norethynodrel"
+  ],
+  "n_compounds_without_inchikey": 2,
+  "compounds_with_disagreeing_pert_ids": [
+   "bortezomib",
+   "daunorubicin",
+   "dexamethasone",
+   "etodolac",
+   "etoposide",
+   "fluocinolone-acetonide",
+   "lovastatin",
+   "pitavastatin",
+   "sorafenib",
+   "tacrolimus",
+   "tamoxifen",
+   "testosterone",
+   "tretinoin",
+   "vinblastine",
+   "vincristine"
+  ],
+  "handling": "a compound with no InChIKey gets its own singleton skeleton and is flagged; it is never imputed into another skeleton (D134-S0(5)/(9))",
+  "collapsed_groups": {
+   "SHGAZHPCJJPHSC": [
+    "alitretinoin",
+    "isotretinoin",
+    "tretinoin"
+   ],
+   "UREBDLICKHMUKA": [
+    "betamethasone",
+    "dexamethasone"
+   ],
+   "WJOHZNCJWYWUJD": [
+    "fluocinolone-acetonide",
+    "fluocinonide"
+   ],
+   "WWYNJERNGUHSAO": [
+    "levonorgestrel",
+    "norgestrel"
+   ]
+  },
+  "n_collapsed_groups": 4,
+  "caveat": "MEASURED LIMIT OF THE SPEC'S CONTROL 5.1 AS WRITTEN. The first 14 characters of an InChIKey are the hash of the molecular SKELETON (connectivity). Two compounds share it only when they are the same connectivity differing in salt form, stereochemistry, isotope or charge. Structural ANALOGS in the ordinary medicinal-chemistry sense - two statins, two tinibs, two taxanes - have DIFFERENT first blocks and are NOT collapsed by this rule. The compound set is already keyed by cmap_name, so near-duplicates are mostly gone before the rule is applied. The effective-compound count below is therefore a near-duplicate check, not an analog check, and it should be read as a LOWER BOUND on analog redundancy. A real analog control needs a structural fingerprint (e.g. Morgan / Tanimoto) and a similarity cut-off: a new dependency and a threshold, both of which belong to S1, not to S0."
+ },
+ "bottom_line": {
+  "no strength floor": {
+   "units_testable": 71,
+   "units_eff_ge3": 53,
+   "units_eff_ge5": 29,
+   "eff_compounds_per_unit": {
+    "n": 71,
+    "mean": 4.4366,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.5,
+    "median": 4.0,
+    "p75": 5.0,
+    "p95": 9.0,
+    "max": 22.0
+   },
+   "lines_per_unit": {
+    "n": 71,
+    "mean": 7.9296,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 4.0,
+    "median": 6.0,
+    "p75": 11.5,
+    "p95": 19.5,
+    "max": 23.0
+   },
+   "distinct_compounds": 229,
+   "distinct_lines": 37
+  },
+  "nz2>=0": {
+   "units_testable": 71,
+   "units_eff_ge3": 53,
+   "units_eff_ge5": 29,
+   "eff_compounds_per_unit": {
+    "n": 71,
+    "mean": 4.4366,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.5,
+    "median": 4.0,
+    "p75": 5.0,
+    "p95": 9.0,
+    "max": 22.0
+   },
+   "lines_per_unit": {
+    "n": 71,
+    "mean": 7.9296,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 4.0,
+    "median": 6.0,
+    "p75": 11.5,
+    "p95": 19.5,
+    "max": 23.0
+   },
+   "distinct_compounds": 229,
+   "distinct_lines": 37
+  },
+  "nz2>=50": {
+   "units_testable": 70,
+   "units_eff_ge3": 53,
+   "units_eff_ge5": 28,
+   "eff_compounds_per_unit": {
+    "n": 70,
+    "mean": 4.4571,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 3.0,
+    "median": 4.0,
+    "p75": 5.0,
+    "p95": 9.0,
+    "max": 22.0
+   },
+   "lines_per_unit": {
+    "n": 70,
+    "mean": 7.9857,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 4.0,
+    "median": 6.5,
+    "p75": 11.0,
+    "p95": 19.55,
+    "max": 23.0
+   },
+   "distinct_compounds": 227,
+   "distinct_lines": 37
+  },
+  "nz2>=100": {
+   "units_testable": 70,
+   "units_eff_ge3": 52,
+   "units_eff_ge5": 28,
+   "eff_compounds_per_unit": {
+    "n": 70,
+    "mean": 4.4,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.25,
+    "median": 4.0,
+    "p75": 5.0,
+    "p95": 8.55,
+    "max": 22.0
+   },
+   "lines_per_unit": {
+    "n": 70,
+    "mean": 7.4286,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 3.0,
+    "median": 5.5,
+    "p75": 10.75,
+    "p95": 18.0,
+    "max": 23.0
+   },
+   "distinct_compounds": 224,
+   "distinct_lines": 35
+  },
+  "nz2>=200": {
+   "units_testable": 67,
+   "units_eff_ge3": 48,
+   "units_eff_ge5": 25,
+   "eff_compounds_per_unit": {
+    "n": 67,
+    "mean": 4.2388,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.0,
+    "median": 3.0,
+    "p75": 5.0,
+    "p95": 8.7,
+    "max": 18.0
+   },
+   "lines_per_unit": {
+    "n": 67,
+    "mean": 6.4627,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 2.0,
+    "median": 5.0,
+    "p75": 9.5,
+    "p95": 16.7,
+    "max": 22.0
+   },
+   "distinct_compounds": 202,
+   "distinct_lines": 33
+  },
+  "nz2>=400": {
+   "units_testable": 49,
+   "units_eff_ge3": 35,
+   "units_eff_ge5": 14,
+   "eff_compounds_per_unit": {
+    "n": 49,
+    "mean": 3.6531,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.0,
+    "median": 3.0,
+    "p75": 5.0,
+    "p95": 6.0,
+    "max": 8.0
+   },
+   "lines_per_unit": {
+    "n": 49,
+    "mean": 4.5918,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 2.0,
+    "median": 3.0,
+    "p75": 6.0,
+    "p95": 13.6,
+    "max": 20.0
+   },
+   "distinct_compounds": 141,
+   "distinct_lines": 26
+  },
+  "nz2>=800": {
+   "units_testable": 35,
+   "units_eff_ge3": 15,
+   "units_eff_ge5": 5,
+   "eff_compounds_per_unit": {
+    "n": 35,
+    "mean": 2.9143,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.0,
+    "median": 2.0,
+    "p75": 4.0,
+    "p95": 5.0,
+    "max": 6.0
+   },
+   "lines_per_unit": {
+    "n": 35,
+    "mean": 3.0,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 1.0,
+    "median": 1.0,
+    "p75": 3.5,
+    "p95": 10.9,
+    "max": 19.0
+   },
+   "distinct_compounds": 83,
+   "distinct_lines": 22
+  },
+  "tas_max>=0.4": {
+   "units_testable": 71,
+   "units_eff_ge3": 53,
+   "units_eff_ge5": 29,
+   "eff_compounds_per_unit": {
+    "n": 71,
+    "mean": 4.4366,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.5,
+    "median": 4.0,
+    "p75": 5.0,
+    "p95": 9.0,
+    "max": 22.0
+   },
+   "lines_per_unit": {
+    "n": 71,
+    "mean": 7.9296,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 4.0,
+    "median": 6.0,
+    "p75": 11.5,
+    "p95": 19.5,
+    "max": 23.0
+   },
+   "distinct_compounds": 229,
+   "distinct_lines": 37
+  },
+  "tas_max>=0.5": {
+   "units_testable": 60,
+   "units_eff_ge3": 44,
+   "units_eff_ge5": 18,
+   "eff_compounds_per_unit": {
+    "n": 60,
+    "mean": 3.8833,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.0,
+    "median": 3.0,
+    "p75": 5.0,
+    "p95": 8.0,
+    "max": 10.0
+   },
+   "lines_per_unit": {
+    "n": 60,
+    "mean": 6.35,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 2.0,
+    "median": 5.0,
+    "p75": 10.25,
+    "p95": 15.0,
+    "max": 21.0
+   },
+   "distinct_compounds": 160,
+   "distinct_lines": 27
+  },
+  "tas_max>=0.6": {
+   "units_testable": 48,
+   "units_eff_ge3": 30,
+   "units_eff_ge5": 13,
+   "eff_compounds_per_unit": {
+    "n": 48,
+    "mean": 3.3542,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.0,
+    "median": 3.0,
+    "p75": 5.0,
+    "p95": 5.0,
+    "max": 7.0
+   },
+   "lines_per_unit": {
+    "n": 48,
+    "mean": 4.6875,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 2.0,
+    "median": 4.0,
+    "p75": 6.0,
+    "p95": 10.0,
+    "max": 21.0
+   },
+   "distinct_compounds": 103,
+   "distinct_lines": 24
+  },
+  "tas_max>=0.7": {
+   "units_testable": 35,
+   "units_eff_ge3": 14,
+   "units_eff_ge5": 7,
+   "eff_compounds_per_unit": {
+    "n": 35,
+    "mean": 2.9429,
+    "min": 2.0,
+    "p05": 2.0,
+    "p25": 2.0,
+    "median": 2.0,
+    "p75": 4.0,
+    "p95": 5.0,
+    "max": 6.0
+   },
+   "lines_per_unit": {
+    "n": 35,
+    "mean": 2.8571,
+    "min": 1.0,
+    "p05": 1.0,
+    "p25": 1.0,
+    "median": 2.0,
+    "p75": 3.0,
+    "p95": 9.9,
+    "max": 20.0
+   },
+   "distinct_compounds": 57,
+   "distinct_lines": 23
+  }
+ },
+ "bottom_line_note": "floor points are ILLUSTRATIVE and costed only; no floor is chosen at S0 (D134-S0(6)). 'eff' = distinct InChIKey skeletons among the unit's compounds that appear in at least one cross-skeleton shared-line pair.",
+ "chance": {
+  "definition": "(compounds in line L carrying T, excluding self) / (candidate compounds in L - 1); cells with >= 2 of T's compounds in L only",
+  "cells": 563,
+  "distinct_lines": 37,
+  "distinct_units": 71,
+  "candidate_pool_all": {
+   "n": 73,
+   "mean": 126.7808,
+   "min": 1.0,
+   "p05": 1.0,
+   "p25": 2.0,
+   "median": 17.0,
+   "p75": 64.0,
+   "p95": 781.8,
+   "max": 1132.0
+  },
+  "candidate_pool_annotated": {
+   "n": 63,
+   "mean": 22.9365,
+   "min": 1.0,
+   "p05": 1.0,
+   "p25": 1.5,
+   "median": 4.0,
+   "p75": 21.5,
+   "p95": 117.3,
+   "max": 147.0
+  },
+  "chance_all": {
+   "n": 563,
+   "mean": 0.0182,
+   "min": 0.0009,
+   "p05": 0.0009,
+   "p25": 0.0017,
+   "median": 0.0034,
+   "p75": 0.0096,
+   "p95": 0.0307,
+   "max": 1.0
+  },
+  "chance_annotated": {
+   "n": 563,
+   "mean": 0.0476,
+   "min": 0.0068,
+   "p05": 0.0081,
+   "p25": 0.0133,
+   "median": 0.0217,
+   "p75": 0.0435,
+   "p95": 0.125,
+   "max": 1.0
+  },
+  "n_flag_all": 16,
+  "n_flag_annotated": 115,
+  "flag_threshold": 0.05,
+  "flag_note": "reporting flag only; gates nothing, chooses nothing"
+ },
+ "coverage_crosscheck": {
+  "spec_claim": "median 4 active cell lines (IQR 1-8); 206 testable compounds active in >= 3 lines, 163 in >= 5",
+  "distinct_lines_per_compound": {
+   "median": 3.0,
+   "p25": 1.0,
+   "p75": 7.0,
+   "ge3": 131,
+   "ge5": 91,
+   "n": 247
+  },
+  "sum_n_active_lines_over_pert_ids": {
+   "median": 3.0,
+   "p25": 1.0,
+   "p75": 7.5,
+   "ge3": 137,
+   "ge5": 96,
+   "n": 247
+  },
+  "n_active_lines_per_pert_id": {
+   "median": 2.0,
+   "p25": 1.0,
+   "p75": 5.0,
+   "ge3": 152,
+   "ge5": 100,
+   "n": 333
+  },
+  "verdict": "NOT REPRODUCED",
+  "note": "The spec Section 2 coverage line matches NONE of the three readings computed here: distinct lines per cmap_name, n_active_lines summed over a compound's pert_ids, or n_active_lines per pert_id. Reported as unreproduced rather than guessed (D134-S0(9)); whoever drafted the spec should say which object was counted. The figure retrieval can actually use is DISTINCT LINES PER cmap_name, because a compound is one cmap_name and the same line profiled under two pert_ids of the same drug is one line, not two."
+ },
+ "constraints_held": [
+  "no retrieval computed",
+  "no between-compound similarity computed",
+  "no ranking",
+  "no AUROC",
+  "no permutation null",
+  "no CTRP / PRISM / GDSC or any outcome label read",
+  "no production score changed, nothing re-ranked",
+  "no threshold chosen; candidate floors costed only"
+ ],
+ "threads": 8,
+ "runtime_s": 2.9
+}

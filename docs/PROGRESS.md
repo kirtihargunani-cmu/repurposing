@@ -1649,3 +1649,63 @@ UCEC-EEC 10.26, TGCT-SEM-C1 15.46), four ARACNe networks, group and stratum leve
   in D133 result (11): every NES is an enrichment on the same ranked drug profile, so a dominant component in the
   signature would also do this. That needs a gene-level comparison, not run here.
 - Nothing was changed, re-ranked, re-tiered or gated.
+
+### 2026-11-17 — D134-S0: the target-recoverability feasibility audit (no retrieval computed)
+
+Stage S0 of [`SPEC_target_recoverability.md`](SPEC_target_recoverability.md). The question the spec asks is
+whether a drug's annotated protein target can be recovered from its transcriptional response. S0 does **not**
+answer it and does not try: it converts the spec's annotation-level counts into data-level counts and asks
+whether the test can be run at all. No similarity between two different compounds' profiles was computed, no
+ranking, no AUROC, no null, no outcome label. Definitions were fixed in `docs/DECISIONS.md` row `D134-S0`,
+committed and pushed before the script ran, so the output cannot have been fitted to a result.
+
+`scripts/d134/s0_feasibility.py` (threads 8, 2.8 s) → `results/lincs/d134/`.
+
+**Section 2 reproduces, with two corrections.** On the fixed key (unit = `tid`, 474 of 497 rows non-empty), the
+spec's headline numbers come out exactly: 307 compounds, 193 units, 82 / 59 / 30 units with ≥ 2 / 3 / 5
+compounds, 111 singletons. Distinct gene targets are **377, not 387**. The coverage line ("median 4 active cell
+lines (IQR 1–8); 206 compounds in ≥ 3 lines, 163 in ≥ 5") **does not reproduce** under any of three readings;
+the one retrieval can use — distinct lines per `cmap_name` — is median 3 (IQR 1–7), 131 of 247 in ≥ 3 lines,
+91 in ≥ 5. Coverage is about a third thinner than stated.
+
+**The attrition.**
+
+| step | testable units | pairs | compounds | lines |
+|---|---|---|---|---|
+| annotation (spec Section 2) | 82 | 1,061 | 247 | — |
+| every compound profiled | 82 | 1,061 | 247 | — |
+| **+ pair must share a cell line** | **71** | **651** | **229** | **37** |
+| + analog collapse (InChIKey skeleton) | 71 | 647 | 229 | 37 |
+| + `nz2` ≥ 200 (illustrative) | 67 | 488 | 202 | 33 |
+| + `nz2` ≥ 400 (illustrative) | 49 | 239 | 141 | 26 |
+| + `tas_max` ≥ 0.6 (illustrative) | 48 | 206 | 103 | 24 |
+
+**Shared lines are the real constraint.** Requiring that two compounds were actually profiled in the same line
+removes 11 units and **39% of the pairs**. The units lost are small and nearly all non-oncology (CACNA1C/D/F/S,
+NR3C2, ACE, HTR4, SLC12A3, HTR1D, the GRIN complex, ADRB1, HTR1A, the RAR/RXR complex, F10).
+
+**Analog collapse removes four pairs, and that is a finding about the control.** 307 compounds carry 302
+skeletons; only retinoids, betamethasone/dexamethasone, fluocinolone/fluocinonide and levonorgestrel/norgestrel
+collapse. The first 14 characters of an InChIKey hash *connectivity*, so two statins or two tinibs are **not**
+analogs by this rule — and the compound set is already keyed by `cmap_name`, so near-duplicates were gone
+already. Spec control 5.1 as written is a near-duplicate check, not an analog check, and its pre-stated reading
+cannot be run: excluding 4 pairs of 651 cannot move an AUROC. S1 must replace it or withdraw it.
+
+**Strength.** TAS is available and was used alongside the gene count. The universe already carries a floor:
+`79c` keeps only `tas ≥ 0.4` signatures, which had already cut 35,793 high-quality (compound, line) cells to
+9,678 — **73% removed before S0 saw the data**. Over the 1,445 target-annotated profiles, `nz2` (genes at
+|z| ≥ 2, raw arm) has median 445 (IQR 238–984); on the `specific` arm it falls to 259, so removing the generic
+response removes ~42% of them. `tas_max` median 0.57. Floors to `nz2` ≥ 200 are nearly free; past that the set
+halves. **No floor was chosen.** One caution for S1: the best-powered targets are the *weakest* responders —
+NR3C1 (22 effective compounds) median `nz2` 246 / `tas_max` 0.46, HTR2A (13) 295 / 0.50, DRD2 (10) 372 / 0.49,
+all below the overall medians — so a strict floor deletes the targets the map most depends on.
+
+**Chance.** 563 (line, unit) cells carry ≥ 2 of a unit's compounds. Against the full profiled pool of the line,
+chance is median 0.0034 (p95 0.031); **16 cells sit at ≥ 0.05**, including EGFR in three lines whose entire
+profiled pool is 2–3 compounds, where chance is 1.0 and retrieval is arithmetically guaranteed. Against the
+annotated-only pool, median 0.022 and 115 cells at ≥ 0.05 — the two pools differ about six-fold and the spec
+does not say which it means.
+
+**Verdict: S2 is worth running.** 71 units, 229 compounds, 37 lines, median 4 effective compounds and 6 lines
+per unit, 53 units at ≥ 3 effective compounds and 29 at ≥ 5. The premise survives its own audit. It still says
+nothing about the 111 singletons. Nothing was changed, re-ranked, re-tiered or gated.
