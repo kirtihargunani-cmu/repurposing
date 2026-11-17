@@ -19,13 +19,17 @@ Measured from `results/lincs/target_role/d121/units.tsv` and `results/lincs/drug
 |---|---|
 | FDA compounds with a D121 target unit | 307 |
 | Distinct target units | 193 |
-| Distinct gene targets | 387 |
+| Distinct gene targets | 377 |
 | **Targets with >= 2 compounds (testable)** | **82**, covering 247 compounds |
 | Targets with >= 3 compounds | 59, covering 224 compounds |
 | Targets with >= 5 compounds (well powered) | 30, covering 156 compounds |
 | **Singleton targets (untestable by retrieval)** | **111 (58% of units)** |
 
-Compound coverage: median 4 active cell lines (IQR 1-8); 206 of the testable compounds are active in >= 3 lines, 163 in >= 5.
+Compound coverage: median **3** distinct cell lines (IQR 1-7); **124** of the 247 testable compounds are profiled in >= 3 lines, **88** in >= 5.
+
+**Corrected by S0 (2026-11-17).** The draft of this section gave 387 gene targets and "median 4 active lines; 206 in >= 3, 163 in >= 5". Both were wrong: the gene count included rows with no ChEMBL target id, and the coverage figures counted (compound, target) ROWS rather than distinct compounds in a frame of 363 rows over 247 compounds. Real coverage is about 40% thinner than drafted. S0 also measured the data-level scope, which supersedes the annotation-level counts above: **71 testable units** (not 82) once a pair must share a cell line, over 229 compounds and 37 lines; median 4 effective compounds and 6 lines per unit; 53 units at >= 3 effective compounds, 29 at >= 5. Pair loss is the real cost of requiring a shared line: 1,061 -> 651 pairs, a 39% cut. See `results/lincs/d134/` and the `D134-S0 result` row.
+
+**An inherited floor that all of these counts sit on top of:** `79c` keeps only signatures at TAS >= 0.4, which reduced 35,793 high-quality (compound, line) cells to 9,678 - 73% removed before any of this was measured.
 
 **State this limit prominently in any result.** Retrieval cannot say anything about 111 of 193 targets. The domain map covers at most 82, and only 30 are well powered. A target absent from the map is untested, not undetectable.
 
@@ -54,7 +58,9 @@ Two separate things, both required.
 
 A positive result is uninterpretable without these.
 
-1. **Chemical analogy.** Drugs sharing a target are frequently structural analogs, so similarity may reflect chemistry rather than mechanism. Flag close analogs by the **first block of the InChIKey (14 characters = skeleton hash)**, which is already in `drug_annotations.tsv` and needs no new dependency. Report AUROC with analog pairs **excluded**. *Pre-stated reading: if analog-excluded AUROC drops substantially, retrieval is measuring chemistry, not mechanism.*
+1. **Chemical analogy.** Drugs sharing a target are frequently structural analogs, so similarity may reflect chemistry rather than mechanism. Report AUROC with analog pairs **excluded**. *Pre-stated reading: if analog-excluded AUROC drops substantially, retrieval is measuring chemistry, not mechanism.*
+
+   **The InChIKey rule drafted here does not work, measured at S0 and left in place as a warning.** The first 14 characters of an InChIKey hash molecular *connectivity*, so two compounds share a block only when they are the same molecule differing in salt, stereochemistry, isotope or charge. Two statins, two "-tinib" kinase inhibitors or two taxanes have different first blocks. Across 307 compounds there are 302 distinct skeletons and only four collapsing groups; excluding 4 pairs out of 651 cannot move an AUROC, so the pre-stated reading above is **not executable** under this definition. S1 must either adopt a fingerprint-based definition (Morgan + Tanimoto; `canonical_smiles` is on disk in `data/raw/lincs2020/compoundinfo_beta.txt`, but RDKit is **not installed**, so this is a new dependency plus a similarity threshold) or **withdraw the reading explicitly** and state that the chemistry confound is uncontrolled. It must not be left implicitly unaddressed: without it, a positive retrieval result cannot be distinguished from drugs sharing a target being chemically similar.
 2. **Signature strength.** A compound that produced no transcriptional response cannot be retrieved, and must not be scored as "target undetectable". Condition on a strength measure (count of genes at |z| >= 2, or TAS where available) and report a strong-signature-only arm. *This separates "the assay cannot resolve this target" from "this drug did nothing at this dose".*
 3. **Cell line.** Comparisons are within-line by construction. Additionally report whether recoverability varies by line, and whether it tracks line-level response amplitude.
 4. **Generic response.** Both arms are run. *Pre-stated reading: if retrieval works only on `raw`, it is the shared stress-and-arrest program being recovered, not target identity.*
