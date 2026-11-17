@@ -1,0 +1,1100 @@
+{
+ "scope": {
+  "unit_rows_total": 497,
+  "unit_rows_used": 474,
+  "compounds": 307,
+  "units": 193,
+  "target_genes": 377,
+  "drug_gene_pairs": 1191,
+  "drugs_with_1_gene": 154,
+  "drugs_with_ge2_genes": 153,
+  "genes_per_drug": {
+   "n": 307,
+   "mean": 3.8795,
+   "min": 1.0,
+   "p05": 1.0,
+   "p25": 1.0,
+   "median": 1.0,
+   "p75": 3.0,
+   "p95": 15.0,
+   "max": 38.0
+  }
+ },
+ "drug_universe": {
+  "profile_rows": 9678,
+  "compounds": 2848,
+  "lines": 73,
+  "genes": 10112,
+  "annotated_compounds_profiled": 307,
+  "annotated_compound_line_profiles": 1445,
+  "annotated_lines": 63,
+  "note": "already carries the 79c floor is_hiq == 1 and per-signature tas >= 0.4 (D135-S0(2))"
+ },
+ "coverage_by_filter": [
+  {
+   "arm": "trt_xpr",
+   "filter": "all_signatures",
+   "signatures": 7226,
+   "genes": 280,
+   "lines": 21
+  },
+  {
+   "arm": "trt_xpr",
+   "filter": "on_mapped_cancer_line",
+   "signatures": 6513,
+   "genes": 280,
+   "lines": 13
+  },
+  {
+   "arm": "trt_xpr",
+   "filter": "on_mapped_cancer_line_hiq",
+   "signatures": 1439,
+   "genes": 244,
+   "lines": 12
+  },
+  {
+   "arm": "trt_xpr",
+   "filter": "on_drug_matrix_line",
+   "signatures": 4396,
+   "genes": 279,
+   "lines": 8
+  },
+  {
+   "arm": "trt_xpr",
+   "filter": "on_drug_matrix_line_hiq",
+   "signatures": 837,
+   "genes": 208,
+   "lines": 8
+  },
+  {
+   "arm": "trt_sh.cgs",
+   "filter": "all_signatures",
+   "signatures": 1906,
+   "genes": 209,
+   "lines": 16
+  },
+  {
+   "arm": "trt_sh.cgs",
+   "filter": "on_mapped_cancer_line",
+   "signatures": 1627,
+   "genes": 209,
+   "lines": 10
+  },
+  {
+   "arm": "trt_sh.cgs",
+   "filter": "on_mapped_cancer_line_hiq",
+   "signatures": 528,
+   "genes": 176,
+   "lines": 10
+  },
+  {
+   "arm": "trt_sh.cgs",
+   "filter": "on_drug_matrix_line",
+   "signatures": 1602,
+   "genes": 209,
+   "lines": 9
+  },
+  {
+   "arm": "trt_sh.cgs",
+   "filter": "on_drug_matrix_line_hiq",
+   "signatures": 515,
+   "genes": 174,
+   "lines": 9
+  },
+  {
+   "arm": "trt_sh",
+   "filter": "all_signatures",
+   "signatures": 13679,
+   "genes": 210,
+   "lines": 20
+  },
+  {
+   "arm": "trt_sh",
+   "filter": "on_mapped_cancer_line",
+   "signatures": 11973,
+   "genes": 210,
+   "lines": 13
+  },
+  {
+   "arm": "trt_sh",
+   "filter": "on_mapped_cancer_line_hiq",
+   "signatures": 6136,
+   "genes": 207,
+   "lines": 13
+  },
+  {
+   "arm": "trt_sh",
+   "filter": "on_drug_matrix_line",
+   "signatures": 11782,
+   "genes": 210,
+   "lines": 11
+  },
+  {
+   "arm": "trt_sh",
+   "filter": "on_drug_matrix_line_hiq",
+   "signatures": 6109,
+   "genes": 207,
+   "lines": 11
+  },
+  {
+   "arm": "trt_oe",
+   "filter": "all_signatures",
+   "signatures": 2762,
+   "genes": 159,
+   "lines": 15
+  },
+  {
+   "arm": "trt_oe",
+   "filter": "on_mapped_cancer_line",
+   "signatures": 1861,
+   "genes": 128,
+   "lines": 10
+  },
+  {
+   "arm": "trt_oe",
+   "filter": "on_mapped_cancer_line_hiq",
+   "signatures": 472,
+   "genes": 63,
+   "lines": 10
+  },
+  {
+   "arm": "trt_oe",
+   "filter": "on_drug_matrix_line",
+   "signatures": 1861,
+   "genes": 128,
+   "lines": 10
+  },
+  {
+   "arm": "trt_oe",
+   "filter": "on_drug_matrix_line_hiq",
+   "signatures": 472,
+   "genes": 63,
+   "lines": 10
+  }
+ ],
+ "spec_section2_check": {
+  "trt_xpr": {
+   "spec_claim": {
+    "targets": 208,
+    "signatures": 837,
+    "lines": 8
+   },
+   "reproduced_by": [
+    "on_drug_matrix_line_hiq"
+   ],
+   "measured": {
+    "all_signatures": {
+     "signatures": 7226,
+     "genes": 280,
+     "lines": 21
+    },
+    "on_mapped_cancer_line": {
+     "signatures": 6513,
+     "genes": 280,
+     "lines": 13
+    },
+    "on_mapped_cancer_line_hiq": {
+     "signatures": 1439,
+     "genes": 244,
+     "lines": 12
+    },
+    "on_drug_matrix_line": {
+     "signatures": 4396,
+     "genes": 279,
+     "lines": 8
+    },
+    "on_drug_matrix_line_hiq": {
+     "signatures": 837,
+     "genes": 208,
+     "lines": 8
+    }
+   }
+  },
+  "trt_sh.cgs": {
+   "spec_claim": {
+    "targets": 209,
+    "signatures": 1627,
+    "lines": 10
+   },
+   "reproduced_by": [
+    "on_mapped_cancer_line"
+   ],
+   "measured": {
+    "all_signatures": {
+     "signatures": 1906,
+     "genes": 209,
+     "lines": 16
+    },
+    "on_mapped_cancer_line": {
+     "signatures": 1627,
+     "genes": 209,
+     "lines": 10
+    },
+    "on_mapped_cancer_line_hiq": {
+     "signatures": 528,
+     "genes": 176,
+     "lines": 10
+    },
+    "on_drug_matrix_line": {
+     "signatures": 1602,
+     "genes": 209,
+     "lines": 9
+    },
+    "on_drug_matrix_line_hiq": {
+     "signatures": 515,
+     "genes": 174,
+     "lines": 9
+    }
+   }
+  },
+  "trt_sh": {
+   "spec_claim": {
+    "targets": 207,
+    "signatures": 6118,
+    "lines": 12
+   },
+   "reproduced_by": [],
+   "measured": {
+    "all_signatures": {
+     "signatures": 13679,
+     "genes": 210,
+     "lines": 20
+    },
+    "on_mapped_cancer_line": {
+     "signatures": 11973,
+     "genes": 210,
+     "lines": 13
+    },
+    "on_mapped_cancer_line_hiq": {
+     "signatures": 6136,
+     "genes": 207,
+     "lines": 13
+    },
+    "on_drug_matrix_line": {
+     "signatures": 11782,
+     "genes": 210,
+     "lines": 11
+    },
+    "on_drug_matrix_line_hiq": {
+     "signatures": 6109,
+     "genes": 207,
+     "lines": 11
+    }
+   }
+  }
+ },
+ "perturbation_signatures_extracted": {
+  "trt_xpr": 4396,
+  "trt_sh.cgs": 1602,
+  "trt_sh": 11782,
+  "trt_oe": 1861
+ },
+ "perturbation_strength": {
+  "trt_xpr": {
+   "nz2": {
+    "n": 4396,
+    "mean": 154.0689,
+    "min": 1.0,
+    "p05": 13.0,
+    "p25": 28.0,
+    "median": 51.0,
+    "p75": 112.0,
+    "p95": 577.5,
+    "max": 7159.0
+   },
+   "nz4": {
+    "n": 4396,
+    "mean": 14.7948,
+    "min": 0.0,
+    "p05": 0.0,
+    "p25": 2.0,
+    "median": 4.0,
+    "p75": 7.0,
+    "p95": 22.0,
+    "max": 4189.0
+   },
+   "mean_abs": {
+    "n": 4396,
+    "mean": 0.5905,
+    "min": 0.3121,
+    "p05": 0.4195,
+    "p25": 0.4874,
+    "median": 0.5489,
+    "p75": 0.6405,
+    "p95": 0.8834,
+    "max": 3.783
+   },
+   "tas": {
+    "n": 4396,
+    "mean": 0.1657,
+    "min": 0.0,
+    "p05": 0.0213,
+    "p25": 0.0949,
+    "median": 0.1415,
+    "p75": 0.2128,
+    "p95": 0.3852,
+    "max": 0.7168
+   }
+  },
+  "trt_sh.cgs": {
+   "nz2": {
+    "n": 1602,
+    "mean": 33.7759,
+    "min": 0.0,
+    "p05": 1.0,
+    "p25": 6.0,
+    "median": 14.0,
+    "p75": 29.0,
+    "p95": 84.0,
+    "max": 1915.0
+   },
+   "nz4": {
+    "n": 1602,
+    "mean": 1.892,
+    "min": 0.0,
+    "p05": 0.0,
+    "p25": 0.0,
+    "median": 0.0,
+    "p75": 2.0,
+    "p95": 8.0,
+    "max": 105.0
+   },
+   "mean_abs": {
+    "n": 1602,
+    "mean": 0.4019,
+    "min": 0.1311,
+    "p05": 0.2121,
+    "p25": 0.3214,
+    "median": 0.3859,
+    "p75": 0.4617,
+    "p95": 0.6428,
+    "max": 1.2232
+   },
+   "tas": {
+    "n": 1602,
+    "mean": 0.1206,
+    "min": 0.0014,
+    "p05": 0.0066,
+    "p25": 0.0627,
+    "median": 0.1034,
+    "p75": 0.1552,
+    "p95": 0.2928,
+    "max": 0.6122
+   }
+  },
+  "trt_sh": {
+   "nz2": {
+    "n": 11782,
+    "mean": 183.2354,
+    "min": 4.0,
+    "p05": 24.0,
+    "p25": 49.0,
+    "median": 88.0,
+    "p75": 178.0,
+    "p95": 639.95,
+    "max": 6718.0
+   },
+   "nz4": {
+    "n": 11782,
+    "mean": 12.9656,
+    "min": 0.0,
+    "p05": 1.0,
+    "p25": 3.0,
+    "median": 7.0,
+    "p75": 13.0,
+    "p95": 33.0,
+    "max": 3990.0
+   },
+   "mean_abs": {
+    "n": 11782,
+    "mean": 0.6181,
+    "min": 0.3183,
+    "p05": 0.4485,
+    "p25": 0.5172,
+    "median": 0.5835,
+    "p75": 0.6744,
+    "p95": 0.9073,
+    "max": 3.7776
+   },
+   "tas": {
+    "n": 11782,
+    "mean": 0.2476,
+    "min": 0.0,
+    "p05": 0.0797,
+    "p25": 0.1738,
+    "median": 0.2388,
+    "p75": 0.3151,
+    "p95": 0.4437,
+    "max": 0.7202
+   }
+  },
+  "trt_oe": {
+   "nz2": {
+    "n": 1861,
+    "mean": 149.2945,
+    "min": 0.0,
+    "p05": 15.0,
+    "p25": 34.0,
+    "median": 59.0,
+    "p75": 121.0,
+    "p95": 517.0,
+    "max": 4097.0
+   },
+   "nz4": {
+    "n": 1861,
+    "mean": 14.1999,
+    "min": 0.0,
+    "p05": 0.0,
+    "p25": 3.0,
+    "median": 7.0,
+    "p75": 14.0,
+    "p95": 34.0,
+    "max": 1110.0
+   },
+   "mean_abs": {
+    "n": 1861,
+    "mean": 0.559,
+    "min": 0.222,
+    "p05": 0.3649,
+    "p25": 0.4591,
+    "median": 0.5285,
+    "p75": 0.6161,
+    "p95": 0.8453,
+    "max": 1.9171
+   },
+   "tas": {
+    "n": 1861,
+    "mean": 0.213,
+    "min": 0.0,
+    "p05": 0.0256,
+    "p25": 0.1231,
+    "median": 0.1867,
+    "p75": 0.283,
+    "p95": 0.4618,
+    "max": 0.7147
+   }
+  }
+ },
+ "perturbation_pert_time": {
+  "trt_xpr": {
+   "96.0": 4396
+  },
+  "trt_sh.cgs": {
+   "96.0": 1170,
+   "120.0": 219,
+   "144.0": 208,
+   "168.0": 5
+  },
+  "trt_sh": {
+   "96.0": 8538,
+   "120.0": 2234,
+   "144.0": 962,
+   "168.0": 47,
+   "72.0": 1
+  },
+  "trt_oe": {
+   "96.0": 1495,
+   "72.0": 292,
+   "24.0": 36,
+   "48.0": 36,
+   "0.0": 2
+  }
+ },
+ "target_mrna_qc_per_signature": {
+  "trt_xpr": {
+   "signatures_total": 4396,
+   "signatures_with_target_on_gene_space": 3268,
+   "signatures_target_absent": 1128,
+   "target_z": {
+    "n": 3268,
+    "mean": -0.7166,
+    "min": -10.0,
+    "p05": -5.8711,
+    "p25": -0.8763,
+    "median": -0.1685,
+    "p75": 0.3986,
+    "p95": 1.3324,
+    "max": 5.0628
+   },
+   "pass_z_le_-1": 735,
+   "pass_rate_z_le_-1": 0.2249,
+   "pass_z_le_-2": 463,
+   "pass_rate_z_le_-2": 0.1417,
+   "pass_z_lt_0": 1897,
+   "pass_rate_z_lt_0": 0.5805,
+   "landmark": {
+    "signatures": 776,
+    "target_z": {
+     "n": 776,
+     "mean": -3.1696,
+     "min": -10.0,
+     "p05": -9.155,
+     "p25": -5.1299,
+     "median": -2.6518,
+     "p75": -0.6563,
+     "p95": 0.778,
+     "max": 4.5761
+    },
+    "genes": 28,
+    "pass_rate_z_le_-1": 0.7036,
+    "pass_rate_z_le_-2": 0.5747,
+    "pass_rate_z_lt_0": 0.8608
+   },
+   "best_inferred": {
+    "signatures": 2492,
+    "target_z": {
+     "n": 2492,
+     "mean": 0.0473,
+     "min": -3.2123,
+     "p05": -1.1963,
+     "p25": -0.4678,
+     "median": 0.0115,
+     "p75": 0.5297,
+     "p95": 1.4163,
+     "max": 5.0628
+    },
+    "genes": 171,
+    "pass_rate_z_le_-1": 0.0758,
+    "pass_rate_z_le_-2": 0.0068,
+    "pass_rate_z_lt_0": 0.4932
+   }
+  },
+  "trt_sh.cgs": {
+   "signatures_total": 1602,
+   "signatures_with_target_on_gene_space": 1402,
+   "signatures_target_absent": 200,
+   "target_z": {
+    "n": 1402,
+    "mean": -0.4944,
+    "min": -9.947,
+    "p05": -3.674,
+    "p25": -0.6837,
+    "median": -0.1467,
+    "p75": 0.2666,
+    "p95": 0.88,
+    "max": 3.3318
+   },
+   "pass_z_le_-1": 266,
+   "pass_rate_z_le_-1": 0.1897,
+   "pass_z_le_-2": 137,
+   "pass_rate_z_le_-2": 0.0977,
+   "pass_z_lt_0": 831,
+   "pass_rate_z_lt_0": 0.5927,
+   "landmark": {
+    "signatures": 436,
+    "target_z": {
+     "n": 436,
+     "mean": -1.6715,
+     "min": -9.947,
+     "p05": -6.0695,
+     "p25": -2.4279,
+     "median": -1.1702,
+     "p75": -0.2948,
+     "p95": 0.5181,
+     "max": 2.0633
+    },
+    "genes": 48,
+    "pass_rate_z_le_-1": 0.5482,
+    "pass_rate_z_le_-2": 0.305,
+    "pass_rate_z_lt_0": 0.8303
+   },
+   "best_inferred": {
+    "signatures": 966,
+    "target_z": {
+     "n": 966,
+     "mean": 0.0368,
+     "min": -3.1375,
+     "p05": -0.8559,
+     "p25": -0.3031,
+     "median": 0.016,
+     "p75": 0.3656,
+     "p95": 1.0024,
+     "max": 3.3318
+    },
+    "genes": 131,
+    "pass_rate_z_le_-1": 0.028,
+    "pass_rate_z_le_-2": 0.0041,
+    "pass_rate_z_lt_0": 0.4855
+   }
+  },
+  "trt_sh": {
+   "signatures_total": 11782,
+   "signatures_with_target_on_gene_space": 10629,
+   "signatures_target_absent": 1153,
+   "target_z": {
+    "n": 10629,
+    "mean": -0.6862,
+    "min": -10.0,
+    "p05": -4.2092,
+    "p25": -1.1455,
+    "median": -0.31,
+    "p75": 0.3186,
+    "p95": 1.2216,
+    "max": 5.598
+   },
+   "pass_z_le_-1": 2980,
+   "pass_rate_z_le_-1": 0.2804,
+   "pass_z_le_-2": 1541,
+   "pass_rate_z_le_-2": 0.145,
+   "pass_z_lt_0": 6669,
+   "pass_rate_z_lt_0": 0.6274,
+   "landmark": {
+    "signatures": 4446,
+    "target_z": {
+     "n": 4446,
+     "mean": -1.661,
+     "min": -10.0,
+     "p05": -6.3173,
+     "p25": -2.5801,
+     "median": -1.1795,
+     "p75": -0.2447,
+     "p95": 0.9694,
+     "max": 5.598
+    },
+    "genes": 48,
+    "pass_rate_z_le_-1": 0.5484,
+    "pass_rate_z_le_-2": 0.3338,
+    "pass_rate_z_lt_0": 0.8104
+   },
+   "best_inferred": {
+    "signatures": 6183,
+    "target_z": {
+     "n": 6183,
+     "mean": 0.0147,
+     "min": -6.9108,
+     "p05": -1.232,
+     "p25": -0.486,
+     "median": 0.0081,
+     "p75": 0.5148,
+     "p95": 1.2991,
+     "max": 4.2411
+    },
+    "genes": 132,
+    "pass_rate_z_le_-1": 0.0877,
+    "pass_rate_z_le_-2": 0.0092,
+    "pass_rate_z_lt_0": 0.4959
+   }
+  },
+  "trt_oe": {
+   "signatures_total": 1861,
+   "signatures_with_target_on_gene_space": 1689,
+   "signatures_target_absent": 172,
+   "target_z": {
+    "n": 1689,
+    "mean": 0.6022,
+    "min": -6.2711,
+    "p05": -1.1491,
+    "p25": -0.4298,
+    "median": 0.059,
+    "p75": 0.6115,
+    "p95": 7.5661,
+    "max": 10.0
+   },
+   "pass_z_ge_1": 265,
+   "pass_rate_z_ge_1": 0.1569,
+   "pass_z_ge_2": 145,
+   "pass_rate_z_ge_2": 0.0858,
+   "pass_z_gt_0": 900,
+   "pass_rate_z_gt_0": 0.5329,
+   "landmark": {
+    "signatures": 724,
+    "target_z": {
+     "n": 724,
+     "mean": 1.3991,
+     "min": -6.2711,
+     "p05": -1.363,
+     "p25": -0.4415,
+     "median": 0.186,
+     "p75": 1.1556,
+     "p95": 10.0,
+     "max": 10.0
+    },
+    "genes": 35,
+    "pass_rate_z_ge_1": 0.2762,
+    "pass_rate_z_ge_2": 0.1975,
+    "pass_rate_z_gt_0": 0.5746
+   },
+   "best_inferred": {
+    "signatures": 965,
+    "target_z": {
+     "n": 965,
+     "mean": 0.0044,
+     "min": -2.9611,
+     "p05": -1.0458,
+     "p25": -0.4271,
+     "median": 0.0066,
+     "p75": 0.4193,
+     "p95": 1.076,
+     "max": 2.6115
+    },
+    "genes": 76,
+    "pass_rate_z_ge_1": 0.0674,
+    "pass_rate_z_ge_2": 0.0021,
+    "pass_rate_z_gt_0": 0.5016
+   }
+  }
+ },
+ "target_mrna_qc_reading": "Pre-stated in D135-S0(8), before the numbers were seen: a shRNA failure and a CRISPR failure do not mean the same thing. shRNA degrades the transcript, so reduced mRNA is the direct expected readout and a failure is evidence the knockdown did not work. CRISPR disrupts the GENE; a frameshift transcript escaping nonsense-mediated decay leaves mRNA near normal while the protein is gone, so a CRISPR perturbation can be fully effective with no mRNA movement. A CRISPR mRNA-QC failure is NOT a failed perturbation and is never scored as one. Only 48 of the 377 targets are L1000 landmark genes; for the rest the 'measured' mRNA is a best-inferred model output, which weakens the QC further.",
+ "perturbation_cells": {
+  "trt_oe": {
+   "cells": 947,
+   "genes": 128,
+   "lines": 10
+  },
+  "trt_sh": {
+   "cells": 1499,
+   "genes": 210,
+   "lines": 11
+  },
+  "trt_sh.cgs": {
+   "cells": 1376,
+   "genes": 209,
+   "lines": 9
+  },
+  "trt_xpr": {
+   "cells": 1936,
+   "genes": 279,
+   "lines": 8
+  }
+ },
+ "strata_sources": {
+  "common_essentials": 1523,
+  "target_genes_common_essential": 60,
+  "expression_genes_missing": [
+   "GUCY1B2"
+  ],
+  "damaging_genes_missing": 13,
+  "hotspot_genes_missing": 335,
+  "expression_lines_missing": [
+   "ACH-001146"
+  ],
+  "note": "a gene or line with no DepMap column/row is reported MISSING and never imputed (D135-S0(9))"
+ },
+ "bottom_line": {
+  "trt_xpr": {
+   "paired_cells": 2350,
+   "drugs": 201,
+   "genes": 255,
+   "lines": 7,
+   "structural_only_no_strength_floor": {
+    "cells": 80,
+    "drugs": 32,
+    "genes": 18,
+    "lines": 6,
+    "cells_le2_targets": 201
+   },
+   "clean_by_perturbation_floor": {
+    "pert_nz2>=0": {
+     "cells_1_target": 70,
+     "genes_1_target": 18,
+     "drugs_1_target": 31,
+     "cells_le2_targets": 187,
+     "cells_landmark_and_qc_pass": 23,
+     "genes_landmark_and_qc_pass": 3
+    },
+    "pert_nz2>=50": {
+     "cells_1_target": 66,
+     "genes_1_target": 15,
+     "drugs_1_target": 28,
+     "cells_le2_targets": 157,
+     "cells_landmark_and_qc_pass": 23,
+     "genes_landmark_and_qc_pass": 3
+    },
+    "pert_nz2>=100": {
+     "cells_1_target": 46,
+     "genes_1_target": 14,
+     "drugs_1_target": 24,
+     "cells_le2_targets": 121,
+     "cells_landmark_and_qc_pass": 18,
+     "genes_landmark_and_qc_pass": 3
+    },
+    "pert_nz2>=200": {
+     "cells_1_target": 19,
+     "genes_1_target": 7,
+     "drugs_1_target": 14,
+     "cells_le2_targets": 73,
+     "cells_landmark_and_qc_pass": 8,
+     "genes_landmark_and_qc_pass": 2
+    }
+   },
+   "cumulative_attrition": {
+    "0 paired cells": 2350,
+    "1 drop common-essential targets": 1878,
+    "2 drop targets not expressed in the line": 1003,
+    "3 drop drugs with > 1 annotated target gene": 80,
+    "4 drop weak drug profiles (nz2 < 100, illustrative)": 70,
+    "5 drop weak perturbations (nz2 < 100, illustrative)": 46
+   },
+   "cells_with_pert_tas_ge_0p4": 247,
+   "note_tas_asymmetry": "the drug side already requires per-signature tas >= 0.4; this is how many paired cells have a PERTURBATION that would clear the same bar",
+   "no_stratum_strict_1_target": {
+    "cells": 46,
+    "drugs": 24,
+    "genes": 14,
+    "lines": 6
+   },
+   "no_stratum_le2_targets": {
+    "cells": 121,
+    "drugs": 42,
+    "genes": 25,
+    "lines": 7
+   },
+   "no_stratum_strict_AND_mrna_qc": {
+    "cells": 22,
+    "genes": 6,
+    "drugs": 11
+   },
+   "cells_per_line": {
+    "ACH-000681": 428,
+    "ACH-000019": 427,
+    "ACH-000219": 422,
+    "ACH-000552": 408,
+    "ACH-000090": 389,
+    "ACH-000332": 254,
+    "ACH-000880": 22
+   },
+   "cells_per_gene_top": {
+    "PDGFRB": 45,
+    "TOP2A": 39,
+    "FLT1": 37,
+    "FLT4": 37,
+    "EGFR": 36,
+    "TUBB": 33,
+    "TUBB1": 33,
+    "TUBB6": 33,
+    "FLT3": 32,
+    "PDGFRA": 28,
+    "ERBB2": 27,
+    "RET": 27,
+    "HDAC1": 26,
+    "HDAC2": 26,
+    "HDAC3": 26
+   },
+   "orient_lower": 2215,
+   "orient_raise": 135
+  },
+  "trt_sh.cgs": {
+   "paired_cells": 2250,
+   "drugs": 215,
+   "genes": 178,
+   "lines": 9,
+   "structural_only_no_strength_floor": {
+    "cells": 140,
+    "drugs": 68,
+    "genes": 26,
+    "lines": 8,
+    "cells_le2_targets": 267
+   },
+   "clean_by_perturbation_floor": {
+    "pert_nz2>=0": {
+     "cells_1_target": 124,
+     "genes_1_target": 26,
+     "drugs_1_target": 65,
+     "cells_le2_targets": 246,
+     "cells_landmark_and_qc_pass": 42,
+     "genes_landmark_and_qc_pass": 7
+    },
+    "pert_nz2>=50": {
+     "cells_1_target": 11,
+     "genes_1_target": 6,
+     "drugs_1_target": 9,
+     "cells_le2_targets": 19,
+     "cells_landmark_and_qc_pass": 3,
+     "genes_landmark_and_qc_pass": 2
+    },
+    "pert_nz2>=100": {
+     "cells_1_target": 4,
+     "genes_1_target": 3,
+     "drugs_1_target": 4,
+     "cells_le2_targets": 8,
+     "cells_landmark_and_qc_pass": 0,
+     "genes_landmark_and_qc_pass": 0
+    },
+    "pert_nz2>=200": {
+     "cells_1_target": 3,
+     "genes_1_target": 2,
+     "drugs_1_target": 3,
+     "cells_le2_targets": 5,
+     "cells_landmark_and_qc_pass": 0,
+     "genes_landmark_and_qc_pass": 0
+    }
+   },
+   "cumulative_attrition": {
+    "0 paired cells": 2250,
+    "1 drop common-essential targets": 1692,
+    "2 drop targets not expressed in the line": 1154,
+    "3 drop drugs with > 1 annotated target gene": 140,
+    "4 drop weak drug profiles (nz2 < 100, illustrative)": 124,
+    "5 drop weak perturbations (nz2 < 100, illustrative)": 4
+   },
+   "cells_with_pert_tas_ge_0p4": 94,
+   "note_tas_asymmetry": "the drug side already requires per-signature tas >= 0.4; this is how many paired cells have a PERTURBATION that would clear the same bar",
+   "no_stratum_strict_1_target": {
+    "cells": 4,
+    "drugs": 4,
+    "genes": 3,
+    "lines": 2
+   },
+   "no_stratum_le2_targets": {
+    "cells": 8,
+    "drugs": 8,
+    "genes": 5,
+    "lines": 2
+   },
+   "no_stratum_strict_AND_mrna_qc": {
+    "cells": 2,
+    "genes": 1,
+    "drugs": 2
+   },
+   "cells_per_line": {
+    "ACH-000019": 429,
+    "ACH-000681": 380,
+    "ACH-000090": 341,
+    "ACH-000219": 334,
+    "ACH-000552": 299,
+    "ACH-000739": 169,
+    "ACH-000872": 154,
+    "ACH-000115": 131,
+    "ACH-001188": 13
+   },
+   "cells_per_gene_top": {
+    "KDR": 50,
+    "TOP2A": 49,
+    "KIT": 45,
+    "PDGFRB": 43,
+    "EGFR": 40,
+    "FLT1": 37,
+    "NR3C1": 36,
+    "FLT3": 35,
+    "TUBB3": 35,
+    "FLT4": 34,
+    "HDAC1": 34,
+    "HDAC2": 34,
+    "HDAC6": 34,
+    "TUBA1A": 34,
+    "PDGFRA": 33
+   },
+   "orient_lower": 2129,
+   "orient_raise": 121
+  },
+  "trt_sh": {
+   "paired_cells": 2415,
+   "drugs": 217,
+   "genes": 183,
+   "lines": 10,
+   "structural_only_no_strength_floor": {
+    "cells": 144,
+    "drugs": 70,
+    "genes": 26,
+    "lines": 8,
+    "cells_le2_targets": 280
+   },
+   "clean_by_perturbation_floor": {
+    "pert_nz2>=0": {
+     "cells_1_target": 128,
+     "genes_1_target": 26,
+     "drugs_1_target": 67,
+     "cells_le2_targets": 259,
+     "cells_landmark_and_qc_pass": 62,
+     "genes_landmark_and_qc_pass": 8
+    },
+    "pert_nz2>=50": {
+     "cells_1_target": 128,
+     "genes_1_target": 26,
+     "drugs_1_target": 67,
+     "cells_le2_targets": 256,
+     "cells_landmark_and_qc_pass": 62,
+     "genes_landmark_and_qc_pass": 8
+    },
+    "pert_nz2>=100": {
+     "cells_1_target": 122,
+     "genes_1_target": 26,
+     "drugs_1_target": 65,
+     "cells_le2_targets": 232,
+     "cells_landmark_and_qc_pass": 62,
+     "genes_landmark_and_qc_pass": 8
+    },
+    "pert_nz2>=200": {
+     "cells_1_target": 102,
+     "genes_1_target": 23,
+     "drugs_1_target": 56,
+     "cells_le2_targets": 183,
+     "cells_landmark_and_qc_pass": 59,
+     "genes_landmark_and_qc_pass": 7
+    }
+   },
+   "cumulative_attrition": {
+    "0 paired cells": 2415,
+    "1 drop common-essential targets": 1797,
+    "2 drop targets not expressed in the line": 1247,
+    "3 drop drugs with > 1 annotated target gene": 144,
+    "4 drop weak drug profiles (nz2 < 100, illustrative)": 128,
+    "5 drop weak perturbations (nz2 < 100, illustrative)": 122
+   },
+   "cells_with_pert_tas_ge_0p4": 1061,
+   "note_tas_asymmetry": "the drug side already requires per-signature tas >= 0.4; this is how many paired cells have a PERTURBATION that would clear the same bar",
+   "no_stratum_strict_1_target": {
+    "cells": 122,
+    "drugs": 65,
+    "genes": 26,
+    "lines": 8
+   },
+   "no_stratum_le2_targets": {
+    "cells": 232,
+    "drugs": 93,
+    "genes": 45,
+    "lines": 8
+   },
+   "no_stratum_strict_AND_mrna_qc": {
+    "cells": 89,
+    "genes": 18,
+    "drugs": 50
+   },
+   "cells_per_line": {
+    "ACH-000019": 429,
+    "ACH-000681": 382,
+    "ACH-000219": 354,
+    "ACH-000090": 349,
+    "ACH-000552": 323,
+    "ACH-000872": 212,
+    "ACH-000739": 174,
+    "ACH-000115": 150,
+    "ACH-000364": 27,
+    "ACH-001188": 15
+   },
+   "cells_per_gene_top": {
+    "KDR": 50,
+    "TOP2A": 49,
+    "KIT": 45,
+    "PDGFRB": 43,
+    "EGFR": 41,
+    "HDAC1": 38,
+    "HDAC2": 38,
+    "HDAC3": 38,
+    "HDAC6": 38,
+    "FLT1": 37,
+    "FLT4": 37,
+    "TUBB2A": 37,
+    "TUBB3": 37,
+    "TUBB6": 37,
+    "NR3C1": 36
+   },
+   "orient_lower": 2286,
+   "orient_raise": 129
+  }
+ },
+ "bottom_line_note": "'no stratum' = gene not DepMap common-essential AND target expressed (log2TPM+1 >= 1) in that line AND the drug carries exactly one annotated target gene AND perturbation nz2 >= 100 AND drug nz2 >= 100. The two nz2 numbers are ILLUSTRATIVE and are adopted by nothing; S1 chooses floors. The mRNA-QC variant is reported for CRISPR as a SEPARATE line and is not applied, per D135-S0(8). Limitation 2 (non-catalytic scaffolding roles) is NOT COMPUTABLE - no curated list exists in the repo - so it is MISSING from every count here and the clean-positive numbers are therefore an UPPER bound.",
+ "limitation_2_missing": "spec Section 6 limitation 2 (knockout removes scaffolding an inhibitor leaves intact) cannot be stratified: no curated list of targets with non-catalytic function is in the repo, and inventing one would be imputation. Reported missing, per D135-S0(9).",
+ "constraints_held": [
+  "no concordance computed",
+  "no drug-to-perturbation comparison",
+  "no positive controls",
+  "no AUROC",
+  "no null",
+  "no threshold chosen",
+  "no CTRP / PRISM / GDSC or any outcome label read",
+  "no production score changed, nothing re-ranked"
+ ],
+ "threads": 8,
+ "runtime_s": 20.3
+}

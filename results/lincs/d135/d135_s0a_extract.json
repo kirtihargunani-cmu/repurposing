@@ -1,0 +1,57 @@
+{
+ "target_genes": 377,
+ "drug_matrix_lines": 73,
+ "gene_space": {
+  "drug_space_genes": 10112,
+  "mapped_to_entrez": 10101,
+  "unmapped": [
+   "C10orf95",
+   "FCGBP",
+   "LINC00472",
+   "LINC00623",
+   "NPIPB3",
+   "OR12D2",
+   "POLR2A",
+   "RFPL1S",
+   "SAP30L-AS1",
+   "SNX29P2",
+   "TBCE"
+  ],
+  "note": "unmapped genes are dropped from the strength measures and reported, never imputed (D135-S0(4))"
+ },
+ "target_genes_on_gene_space": 279,
+ "target_genes_landmark": 48,
+ "extracted": {
+  "trt_xpr": {
+   "signatures": 4396,
+   "genes": 279,
+   "lines": 8
+  },
+  "trt_sh.cgs": {
+   "signatures": 1602,
+   "genes": 209,
+   "lines": 9
+  },
+  "trt_sh": {
+   "signatures": 11782,
+   "genes": 210,
+   "lines": 11
+  },
+  "trt_oe": {
+   "signatures": 1861,
+   "genes": 128,
+   "lines": 10
+  }
+ },
+ "scope_note": "signatures are extracted ONLY for the 73 drug-matrix lines, which is where any test could live; coverage counts outside those lines are reported from siginfo in s0b",
+ "constraints_held": [
+  "no drug profile read",
+  "no concordance",
+  "no correlation of any kind",
+  "no positive control",
+  "no threshold chosen",
+  "nothing re-ranked"
+ ],
+ "threads": 8,
+ "runtime_s": 61.0
+}
