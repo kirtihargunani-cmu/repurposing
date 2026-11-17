@@ -1,0 +1,73 @@
+arm	step	genes	lines	cells	drugs
+trt_xpr	1 target genes (annotation)	377			307.0
+trt_xpr	2 gene has any signature of this arm	280	21.0	7226.0	
+trt_xpr	3 signature on a mapped cancer line	280	13.0	6513.0	
+trt_xpr	4 signature on one of the 73 drug-matrix lines	279	8.0	4396.0	
+trt_xpr	5 (gene, line) perturbation cells	279	8.0	1936.0	
+trt_xpr	6 (gene, line) cells with >= 1 annotated drug profiled in that line	255	7.0	1049.0	
+trt_xpr	7 PAIRED (drug, gene, line) cells	255	7.0	2350.0	201.0
+trt_xpr	8 paired + CANDIDATE perturbation floor nz2 >= 0 (costed, not chosen)	255	7.0	2350.0	201.0
+trt_xpr	8 paired + CANDIDATE perturbation floor nz2 >= 50 (costed, not chosen)	242	7.0	1853.0	194.0
+trt_xpr	8 paired + CANDIDATE perturbation floor nz2 >= 100 (costed, not chosen)	212	7.0	1258.0	178.0
+trt_xpr	8 paired + CANDIDATE perturbation floor nz2 >= 200 (costed, not chosen)	151	7.0	750.0	134.0
+trt_xpr	8 paired + CANDIDATE perturbation floor nz2 >= 400 (costed, not chosen)	105	7.0	450.0	113.0
+trt_xpr	8 paired + CANDIDATE perturbation floor nz2 >= 800 (costed, not chosen)	52	7.0	237.0	79.0
+trt_xpr	9 paired + CANDIDATE perturbation floor tas >= 0.1 (costed, not chosen)	249	7.0	2127.0	199.0
+trt_xpr	9 paired + CANDIDATE perturbation floor tas >= 0.2 (costed, not chosen)	192	7.0	1197.0	171.0
+trt_xpr	9 paired + CANDIDATE perturbation floor tas >= 0.3 (costed, not chosen)	111	7.0	535.0	129.0
+trt_xpr	9 paired + CANDIDATE perturbation floor tas >= 0.4 (costed, not chosen)	57	7.0	247.0	91.0
+trt_xpr	10 paired + CANDIDATE is_hiq >= 1 signature (costed, not chosen)	152	7.0	859.0	156.0
+trt_sh.cgs	1 target genes (annotation)	377			307.0
+trt_sh.cgs	2 gene has any signature of this arm	209	16.0	1906.0	
+trt_sh.cgs	3 signature on a mapped cancer line	209	10.0	1627.0	
+trt_sh.cgs	4 signature on one of the 73 drug-matrix lines	209	9.0	1602.0	
+trt_sh.cgs	5 (gene, line) perturbation cells	209	9.0	1376.0	
+trt_sh.cgs	6 (gene, line) cells with >= 1 annotated drug profiled in that line	178	9.0	901.0	
+trt_sh.cgs	7 PAIRED (drug, gene, line) cells	178	9.0	2250.0	215.0
+trt_sh.cgs	8 paired + CANDIDATE perturbation floor nz2 >= 0 (costed, not chosen)	178	9.0	2250.0	215.0
+trt_sh.cgs	8 paired + CANDIDATE perturbation floor nz2 >= 50 (costed, not chosen)	74	9.0	418.0	83.0
+trt_sh.cgs	8 paired + CANDIDATE perturbation floor nz2 >= 100 (costed, not chosen)	32	9.0	175.0	47.0
+trt_sh.cgs	8 paired + CANDIDATE perturbation floor nz2 >= 200 (costed, not chosen)	18	7.0	116.0	30.0
+trt_sh.cgs	8 paired + CANDIDATE perturbation floor nz2 >= 400 (costed, not chosen)	10	5.0	56.0	15.0
+trt_sh.cgs	8 paired + CANDIDATE perturbation floor nz2 >= 800 (costed, not chosen)	5	5.0	34.0	7.0
+trt_sh.cgs	9 paired + CANDIDATE perturbation floor tas >= 0.1 (costed, not chosen)	154	9.0	1326.0	181.0
+trt_sh.cgs	9 paired + CANDIDATE perturbation floor tas >= 0.2 (costed, not chosen)	74	9.0	457.0	112.0
+trt_sh.cgs	9 paired + CANDIDATE perturbation floor tas >= 0.3 (costed, not chosen)	28	9.0	179.0	42.0
+trt_sh.cgs	9 paired + CANDIDATE perturbation floor tas >= 0.4 (costed, not chosen)	14	6.0	94.0	19.0
+trt_sh.cgs	10 paired + CANDIDATE is_hiq >= 1 signature (costed, not chosen)	131	9.0	917.0	154.0
+trt_sh	1 target genes (annotation)	377			307.0
+trt_sh	2 gene has any signature of this arm	210	20.0	13679.0	
+trt_sh	3 signature on a mapped cancer line	210	13.0	11973.0	
+trt_sh	4 signature on one of the 73 drug-matrix lines	210	11.0	11782.0	
+trt_sh	5 (gene, line) perturbation cells	210	11.0	1499.0	
+trt_sh	6 (gene, line) cells with >= 1 annotated drug profiled in that line	183	10.0	972.0	
+trt_sh	7 PAIRED (drug, gene, line) cells	183	10.0	2415.0	217.0
+trt_sh	8 paired + CANDIDATE perturbation floor nz2 >= 0 (costed, not chosen)	183	10.0	2415.0	217.0
+trt_sh	8 paired + CANDIDATE perturbation floor nz2 >= 50 (costed, not chosen)	183	10.0	2385.0	217.0
+trt_sh	8 paired + CANDIDATE perturbation floor nz2 >= 100 (costed, not chosen)	179	10.0	2139.0	209.0
+trt_sh	8 paired + CANDIDATE perturbation floor nz2 >= 200 (costed, not chosen)	161	10.0	1654.0	193.0
+trt_sh	8 paired + CANDIDATE perturbation floor nz2 >= 400 (costed, not chosen)	135	10.0	1080.0	150.0
+trt_sh	8 paired + CANDIDATE perturbation floor nz2 >= 800 (costed, not chosen)	96	10.0	559.0	117.0
+trt_sh	9 paired + CANDIDATE perturbation floor tas >= 0.1 (costed, not chosen)	183	10.0	2408.0	217.0
+trt_sh	9 paired + CANDIDATE perturbation floor tas >= 0.2 (costed, not chosen)	182	10.0	2317.0	217.0
+trt_sh	9 paired + CANDIDATE perturbation floor tas >= 0.3 (costed, not chosen)	170	10.0	1870.0	198.0
+trt_sh	9 paired + CANDIDATE perturbation floor tas >= 0.4 (costed, not chosen)	138	10.0	1061.0	160.0
+trt_sh	10 paired + CANDIDATE is_hiq >= 1 signature (costed, not chosen)	178	10.0	2032.0	210.0
+trt_oe	1 target genes (annotation)	377			307.0
+trt_oe	2 gene has any signature of this arm	159	15.0	2762.0	
+trt_oe	3 signature on a mapped cancer line	128	10.0	1861.0	
+trt_oe	4 signature on one of the 73 drug-matrix lines	128	10.0	1861.0	
+trt_oe	5 (gene, line) perturbation cells	128	10.0	947.0	
+trt_oe	6 (gene, line) cells with >= 1 annotated drug profiled in that line	118	9.0	603.0	
+trt_oe	7 PAIRED (drug, gene, line) cells	118	9.0	1478.0	169.0
+trt_oe	8 paired + CANDIDATE perturbation floor nz2 >= 0 (costed, not chosen)	118	9.0	1478.0	169.0
+trt_oe	8 paired + CANDIDATE perturbation floor nz2 >= 50 (costed, not chosen)	109	9.0	844.0	149.0
+trt_oe	8 paired + CANDIDATE perturbation floor nz2 >= 100 (costed, not chosen)	94	9.0	493.0	137.0
+trt_oe	8 paired + CANDIDATE perturbation floor nz2 >= 200 (costed, not chosen)	64	9.0	272.0	99.0
+trt_oe	8 paired + CANDIDATE perturbation floor nz2 >= 400 (costed, not chosen)	44	7.0	139.0	69.0
+trt_oe	8 paired + CANDIDATE perturbation floor nz2 >= 800 (costed, not chosen)	29	7.0	71.0	45.0
+trt_oe	9 paired + CANDIDATE perturbation floor tas >= 0.1 (costed, not chosen)	114	9.0	1187.0	164.0
+trt_oe	9 paired + CANDIDATE perturbation floor tas >= 0.2 (costed, not chosen)	89	9.0	541.0	127.0
+trt_oe	9 paired + CANDIDATE perturbation floor tas >= 0.3 (costed, not chosen)	58	8.0	276.0	103.0
+trt_oe	9 paired + CANDIDATE perturbation floor tas >= 0.4 (costed, not chosen)	28	6.0	105.0	62.0
+trt_oe	10 paired + CANDIDATE is_hiq >= 1 signature (costed, not chosen)	44	7.0	199.0	72.0

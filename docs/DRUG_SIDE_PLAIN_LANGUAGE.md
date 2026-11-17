@@ -818,3 +818,81 @@ two or more drugs — and 111 have only one, which can never be tested at all.
 the plan assumed, and the plan's own coverage figures were about a third too optimistic, which we have
 corrected. And it still says nothing whatsoever about the 111 targets with only one drug — those stay untested,
 which is not the same as untestable. Nothing was scored, re-ranked or changed.
+
+### Does a drug's fingerprint look like switching off its own target? A second head-count (2026-11-17)
+
+The previous head-count asked whether two drugs that hit the same protein look alike. This one asks something
+more direct, and arguably more basic: **if a drug is built to block protein X, does the mark it leaves on a
+cell's genes resemble what happens when you simply delete the gene for X?** That comparison needs no network,
+no regulon, no second drug — just two measured fingerprints side by side. CMap profiled thousands of gene
+knockouts (CRISPR) and knockdowns (shRNA) in the same way they profiled drugs, so in principle we can look.
+
+Again we counted first and tested nothing. **No drug was compared with any knockout in this step.** What
+follows is a stock-take of what could be compared, and of whether the knockouts themselves are trustworthy.
+
+**The plan's own coverage table was wrong in three ways.** It claimed our drug data spans 87 cell lines; it
+spans **73**. Its three rows (CRISPR, consensus shRNA, raw shRNA) were each counted with a different quality
+filter, so they are not comparable with one another, and one of the three cannot be reproduced at all under
+any of sixteen readings we tried. We report that as unreproduced rather than quietly substituting our own
+number. This is the second plan in a row whose feasibility table did not survive being recomputed.
+
+**The real scope is much smaller than "208 targets".** Coverage counts how many targets were knocked out
+somewhere. What the test actually needs is a *cell*: a target, a cell line, a knockout of that target in that
+line, **and** a drug for that target profiled in the same line. Counting those properly: 377 target genes →
+280 have a CRISPR knockout → 279 of those in a line we also have drugs for (only **8** such lines) → **2,350
+usable (drug, target, line) combinations**, covering 201 drugs and 255 targets. Five cell lines carry almost
+all of it.
+
+**The knockouts are far weaker than the drug profiles.** Our drug side keeps only strong signatures (a quality
+score of 0.4 or better). The knockouts mostly cannot clear that bar: only **one CRISPR knockout in ten** does,
+and only one consensus-shRNA knockdown in twenty-five. A typical CRISPR knockout moves about 51 genes
+appreciably; a typical consensus shRNA knockdown moves 14. That matters, because the arm the plan nominated as
+its *safest* source of knockdowns — the consensus shRNA, designed to cancel out shRNA's notorious off-target
+effects — turns out to be the weakest-responding arm by a factor of six.
+
+**The most important measurement: did the knockouts actually work?** The obvious check is to look at the
+target's own gene: after knocking it out, its mRNA should go down. Headline pass rates are poor — 22% for
+CRISPR, 19% for consensus shRNA, 28% for raw shRNA. **But those headline numbers are an illusion created by
+how L1000 works.** The platform physically measures about 1,000 genes and *predicts* the rest from them. On
+the genes it really measures, the check passes **70% of the time for CRISPR** and 55% for shRNA. On the
+predicted genes, the target's own value sits at zero no matter what happened, and the pass rate falls to 3–9%
+— which is no information at all, not a failed experiment.
+
+So the honest reading has two halves, and they are not the same. For **shRNA**, which works by destroying the
+transcript, reduced mRNA is the direct expected readout, so a failure on a measured gene is genuine evidence
+that the knockdown did not take. For **CRISPR**, which cuts the gene rather than the message, a broken gene
+can still produce a near-normal amount of mRNA while the protein is gone — so a CRISPR mRNA failure must never
+be counted as a failed knockout. We wrote that caution down before looking, and it still stands; what we did
+not expect is that it is not the limiting problem here, because CRISPR actually passes *more* often than
+shRNA on measured genes. The limiting problem is that **only 48 of our 377 targets are genes L1000 measures at
+all.** For the rest, this quality check simply does not exist and must not be applied.
+
+**How much of what remains could give an interpretable answer?** The plan lists ten reasons a negative result
+would be excusable — the target is essential to survival, the target is not switched on in that cell line, the
+drug hits many proteins, the knockout is too weak, and so on. If nearly everything falls into one of those
+buckets, the test can only ever confirm, never refute. Counting them: of 2,350 CRISPR combinations, 20% are
+essential targets, 37% have a target that is not expressed in that line, and **91% involve a drug with more
+than one annotated target**. Stacking the filters leaves **46 combinations** that are clean on every count we
+can compute (121 if we allow drugs with two targets, 80 if we drop the strength requirements). One of the ten
+reasons — that deleting a protein also removes its scaffolding role, which a drug would leave intact — cannot
+be checked at all, because no list of such proteins exists in our data. We report it missing rather than
+invent one, which means even the 46 is an optimistic count.
+
+**What those 46 actually are is the encouraging part.** They are the textbook pairs: ABL1 with nilotinib and
+ponatinib, BRAF with vemurafenib and dabrafenib, EGFR with erlotinib, gefitinib and osimertinib, TYMS with
+fluorouracil, ESR1 with fulvestrant, plus PPARG, VDR, DPP4 and a handful more. If the comparison works
+anywhere, it should work there.
+
+**One flaw in the plan's own safety check.** It proposed three "this must obviously work" controls: HDAC
+inhibitors, proteasome inhibitors and topoisomerase poisons. All three exist in our data — but TOP2A is
+*always* essential for survival and the proteasome subunits nearly always are, which is exactly the
+circumstance the plan itself marks as unreadable, because deleting an essential gene mainly tells you the cell
+died. If those controls pass, it may be because dying cells look like dying cells, not because the method
+recognises mechanism. HDAC is the only one of the three that is mostly clean.
+
+**The verdict: worth continuing, with a smaller claim.** The CRISPR arm is the one with real scope, and
+46–121 clean combinations across 14–25 targets is enough for a careful target-by-target map of a dozen famous
+drug–target pairs. It is nowhere near enough to make a sweeping statement about all 2,350 combinations, nine
+in ten of which are excusable in advance. And the direction of the logic is fixed from the start: this test
+can show that target signal **is** there; it can never show that it is absent. Nothing was scored, changed or
+re-ranked.

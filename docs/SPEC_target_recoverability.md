@@ -19,13 +19,17 @@ Measured from `results/lincs/target_role/d121/units.tsv` and `results/lincs/drug
 |---|---|
 | FDA compounds with a D121 target unit | 307 |
 | Distinct target units | 193 |
-| Distinct gene targets | 387 |
+| Distinct gene targets | 377 |
 | **Targets with >= 2 compounds (testable)** | **82**, covering 247 compounds |
 | Targets with >= 3 compounds | 59, covering 224 compounds |
 | Targets with >= 5 compounds (well powered) | 30, covering 156 compounds |
 | **Singleton targets (untestable by retrieval)** | **111 (58% of units)** |
 
-Compound coverage: median 4 active cell lines (IQR 1-8); 206 of the testable compounds are active in >= 3 lines, 163 in >= 5.
+Compound coverage: median **3** distinct cell lines (IQR 1-7); **124** of the 247 testable compounds are profiled in >= 3 lines, **88** in >= 5.
+
+**Corrected by S0 (2026-11-17).** The draft of this section gave 387 gene targets and "median 4 active lines; 206 in >= 3, 163 in >= 5". Both were wrong: the gene count included rows with no ChEMBL target id, and the coverage figures counted (compound, target) ROWS rather than distinct compounds in a frame of 363 rows over 247 compounds. Real coverage is about 40% thinner than drafted. S0 also measured the data-level scope, which supersedes the annotation-level counts above: **71 testable units** (not 82) once a pair must share a cell line, over 229 compounds and 37 lines; median 4 effective compounds and 6 lines per unit; 53 units at >= 3 effective compounds, 29 at >= 5. Pair loss is the real cost of requiring a shared line: 1,061 -> 651 pairs, a 39% cut. See `results/lincs/d134/` and the `D134-S0 result` row.
+
+**An inherited floor that all of these counts sit on top of:** `79c` keeps only signatures at TAS >= 0.4, which reduced 35,793 high-quality (compound, line) cells to 9,678 - 73% removed before any of this was measured.
 
 **State this limit prominently in any result.** Retrieval cannot say anything about 111 of 193 targets. The domain map covers at most 82, and only 30 are well powered. A target absent from the map is untested, not undetectable.
 
@@ -54,7 +58,20 @@ Two separate things, both required.
 
 A positive result is uninterpretable without these.
 
-1. **Chemical analogy.** Drugs sharing a target are frequently structural analogs, so similarity may reflect chemistry rather than mechanism. Flag close analogs by the **first block of the InChIKey (14 characters = skeleton hash)**, which is already in `drug_annotations.tsv` and needs no new dependency. Report AUROC with analog pairs **excluded**. *Pre-stated reading: if analog-excluded AUROC drops substantially, retrieval is measuring chemistry, not mechanism.*
+1. **Chemical analogy.** Drugs sharing a target are frequently structural analogs, so similarity may reflect chemistry rather than mechanism. Report AUROC with analog pairs **excluded**. *Pre-stated reading: if analog-excluded AUROC drops substantially, retrieval is measuring chemistry, not mechanism.*
+
+   **Adopted definition (user, 2026-11-17): Morgan fingerprints, radius 2, 2048 bits, Tanimoto similarity.** RDKit **2026.09.2** was installed into the `repurposing` environment for this (`mamba install -c conda-forge rdkit`); it is a new dependency of the drug-side analysis. Structures come from `canonical_smiles` in `data/raw/lincs2020/compoundinfo_beta.txt`, which parses for **245 of the 247** testable compounds; the 2 without a usable structure are flagged, never imputed.
+
+   **Measured before S1, so the threshold is chosen against a known distribution rather than a convention.** Over the testable set, same-target pairs (n=1,047) have median Tanimoto **0.228** (p90 0.500, p95 0.643); different-target pairs (n=20,000) median **0.095** (p90 0.147, p95 0.167). **The chemistry confound is real and graded**, not binary.
+
+   - **Primary analysis is stratified, not a cut.** Report AUROC within Tanimoto bands of same-target pairs. The question that matters is whether retrieval survives among same-target pairs that are chemically *dissimilar*: two structurally unrelated drugs hitting one target looking alike transcriptionally is the informative case, and a threshold throws that gradient away.
+   - **Secondary: binary exclusion at Tanimoto >= 0.4**, fixed here in advance. At that cut 17.8% of same-target pairs are flagged against 0.1% of different-target pairs — 186 of 1,047 pairs, a control with enough mass to move an AUROC, unlike the rule it replaces.
+   - *Pre-stated reading, now executable: if AUROC collapses in the low-Tanimoto strata, or drops substantially with analog pairs excluded, retrieval is measuring chemistry rather than mechanism.*
+
+   **A documented limit of this control.** Morgan/Tanimoto measures structural similarity, not pharmacophore similarity. Atorvastatin and simvastatin score **0.075** — no more similar than atorvastatin and dexamethasone (0.078) — because they share a binding motif, not a scaffold. So same-class drugs from different chemical series are **not** flagged. That is the right behaviour for this control, which exists to catch shared *off-target* activity tracking shared structure, but it means "analog-excluded" does not mean "same-class-excluded", and no result may be written as if it did.
+
+   **The InChIKey rule drafted earlier does not work, and is recorded here so it is not reused.** The first 14 characters of an InChIKey hash molecular connectivity, so two compounds share a block only when they are the same molecule differing in salt, stereochemistry, isotope or charge. Across 307 compounds there are 302 distinct skeletons and four collapsing groups; excluding 4 pairs of 651 cannot move an AUROC. It survives as a near-duplicate check only.
+
 2. **Signature strength.** A compound that produced no transcriptional response cannot be retrieved, and must not be scored as "target undetectable". Condition on a strength measure (count of genes at |z| >= 2, or TAS where available) and report a strong-signature-only arm. *This separates "the assay cannot resolve this target" from "this drug did nothing at this dose".*
 3. **Cell line.** Comparisons are within-line by construction. Additionally report whether recoverability varies by line, and whether it tracks line-level response amplitude.
 4. **Generic response.** Both arms are run. *Pre-stated reading: if retrieval works only on `raw`, it is the shared stress-and-arrest program being recovered, not target identity.*

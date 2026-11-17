@@ -1,0 +1,37 @@
+arm	stratum	cells	frac	drugs	genes
+trt_xpr	L3 essential target (excused)	472	0.2009	53	29
+trt_xpr	L8 target not expressed (log2TPM+1 < 1) (excused)	875	0.3723	130	160
+trt_xpr	L8 target expression MISSING	0	0.0	0	0
+trt_xpr	L7 drug has > 1 annotated target gene (excused)	2131	0.9068	122	227
+trt_xpr	L7 drug has > 1 annotated target unit	1011	0.4302	62	146
+trt_xpr	L5 weak perturbation (nz2 < 100, illustrative)	1092	0.4647	164	222
+trt_xpr	L6 weak drug response (nz2 < 100, illustrative)	135	0.0574	29	69
+trt_xpr	L1 only one drug timepoint available	1634	0.6953	194	253
+trt_xpr	target mRNA not on the gene space (QC impossible)	472	0.2009	81	73
+trt_xpr	target mRNA QC fails at z <= -1	1288	0.5481	154	166
+trt_xpr	target gene mutated (damaging)	2	0.0009	2	2
+trt_xpr	target gene mutated (hotspot)	8	0.0034	4	1
+trt_sh.cgs	L3 essential target (excused)	558	0.248	45	29
+trt_sh.cgs	L8 target not expressed (log2TPM+1 < 1) (excused)	538	0.2391	100	70
+trt_sh.cgs	L8 target expression MISSING	0	0.0	0	0
+trt_sh.cgs	L7 drug has > 1 annotated target gene (excused)	1967	0.8742	114	156
+trt_sh.cgs	L7 drug has > 1 annotated target unit	963	0.428	54	97
+trt_sh.cgs	L5 weak perturbation (nz2 < 100, illustrative)	2075	0.9222	214	177
+trt_sh.cgs	L6 weak drug response (nz2 < 100, illustrative)	140	0.0622	35	64
+trt_sh.cgs	L1 only one drug timepoint available	1449	0.644	205	177
+trt_sh.cgs	target mRNA not on the gene space (QC impossible)	184	0.0818	40	24
+trt_sh.cgs	target mRNA QC fails at z <= -1	1587	0.7053	182	142
+trt_sh.cgs	target gene mutated (damaging)	3	0.0013	3	3
+trt_sh.cgs	target gene mutated (hotspot)	8	0.0036	4	1
+trt_sh	L3 essential target (excused)	618	0.2559	45	32
+trt_sh	L8 target not expressed (log2TPM+1 < 1) (excused)	550	0.2277	103	73
+trt_sh	L8 target expression MISSING	0	0.0	0	0
+trt_sh	L7 drug has > 1 annotated target gene (excused)	2126	0.8803	114	161
+trt_sh	L7 drug has > 1 annotated target unit	1002	0.4149	54	100
+trt_sh	L5 weak perturbation (nz2 < 100, illustrative)	276	0.1143	87	75
+trt_sh	L6 weak drug response (nz2 < 100, illustrative)	140	0.058	35	64
+trt_sh	L1 only one drug timepoint available	1561	0.6464	207	182
+trt_sh	target mRNA not on the gene space (QC impossible)	191	0.0791	40	24
+trt_sh	target mRNA QC fails at z <= -1	1065	0.441	143	126
+trt_sh	target gene mutated (damaging)	3	0.0012	3	3
+trt_sh	target gene mutated (hotspot)	8	0.0033	4	1
