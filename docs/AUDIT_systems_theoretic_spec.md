@@ -263,3 +263,76 @@ from blocker to conditional. **Two of my three blocking findings are now closed.
 3. **Record §3.1's temporal numbers in §6** so S-bio's status is evidence-backed rather than assumed.
 4. **State the dossier↔production-ranking relationship** (§A1) — the one question v2 opens.
 5. Add the per-condition VIPER computation (§A3) to §9's file tree and effort estimate.
+
+---
+
+# Addendum 2 — dependencies installed, Gate F0 **passed** (2026-11-18)
+
+Blocking finding §3.2 is **closed**. All five missing dependencies are installed and the spec's first
+real gate now runs.
+
+## B1. Isolated environment, not the production ones
+
+Installed into a **new `sysval` env**, not `repurposing` or `celligner`. Those two are pinned
+(`environment.lock.yml`, `environment.celligner.lock.yml`) and production runs in them; CARNIVAL pulls
+a large R dependency tree and CBC is a C++ solver, so adding them risked moving versions production
+depends on. Lockfile committed as `environment.sysval.lock.yml` (247 packages).
+
+| package | version | gate |
+|---|---|---|
+| `bioconductor-carnival` | **2.20.0** | F-MATH / Gate F0 |
+| `coin-or-cbc` | 2.10.13 | F-MATH preferred solver |
+| `r-lpsolve` | 5.6.23 | F-MATH toy solver |
+| `sympy` | 1.14.0 | S-MATH-2 symbolic brackets |
+| `scipy` | 1.17.1 | O-MATH, S-MATH-1 |
+| `networkx` | 3.6.1 | O-MATH-1 matching |
+| `r-base` / `python` | 4.5.3 / 3.11.18 | — |
+
+Note the installed CARNIVAL is **2.20.0**, not the 2.8.0 suggested by the channel's version listing.
+This is exactly why F-MATH §2 says to confirm the installed API — see B2.
+
+## B2. Two findings about the package, for the spec
+
+1. **The spec names only CARNIVAL's legacy API.** F-MATH §2 cites
+   `runCARNIVAL(inputObj=, measObj=, netObj=)`. In 2.20.0 that function still exists, but the current
+   entry points are **`runVanillaCarnival(perturbations, measurements, priorKnowledgeNetwork, weights,
+   carnivalOptions)`** and **`runInverseCarnival(measurements, priorKnowledgeNetwork, weights,
+   carnivalOptions)`**, with solver configuration through `defaultCbcSolveCarnivalOptions()` /
+   `defaultLpSolveCarnivalOptions()`. The spec should name the modern pair; the gate script uses them.
+2. **The package's own inverse fixture is stale relative to its own validator.** `toy_network_ex2.RData`
+   ships with columns `Source/Effect/Target`, while 2.20.0's input check requires
+   `source/interaction/target` — which `toy_network_ex1.RData` already uses. The inverse toy therefore
+   **fails out of the box**. The gate renames the columns (format only; edges and signs untouched) and
+   records the original names in the manifest. Anyone reproducing Gate F0 will hit this.
+
+## B3. Gate F0 result — **PASS**
+
+`scripts/systems_validation/fault_isolation/gate_f0_carnival_toys.R` →
+`results/systems_validation/synthetic/gate_f0_carnival.json`
+
+| run | result |
+|---|---|
+| vanilla (standard) / lpSolve | OK — 6 nodes, 6 edges, 0.2 s |
+| vanilla (standard) / CBC | OK — 6 nodes, 6 edges, 0.1 s |
+| inverse / lpSolve | OK — 9 nodes, 14 edges, 0.1 s |
+| inverse / CBC | OK — 9 nodes, 14 edges, 0.1 s |
+
+Crucially this is a **comparison, not just an execution check**: the package bundles
+`toy_result_expected_ex1.RData`, and both vanilla runs match it on all 6 nodes with
+**node-activity sign agreement 1.000**. Both solvers agree with each other and with the fixture.
+
+**Gate F0 of the spec is satisfied.** F-MATH is now eligible to proceed to Gate F1 (synthetic
+adversarial fixtures: the four-node signed chain, non-identifiable two-source case, contradictory
+observations, disconnected TF, high-degree decoy, hidden cause).
+
+## B4. Revised remaining blockers
+
+| was | now |
+|---|---|
+| §3.2 dependencies missing | **CLOSED** — installed, isolated, locked, Gate F0 passed |
+| §3.1 S-bio impossible | de-blocked by v2; record the numbers in §6 |
+| §3.3 no path to output | closed by v2's §0; dossier↔ranking relationship still unstated |
+
+Next, in order: **Gate F1** (F synthetic fixtures), **Gate O0** (Kalman/matching/Gramian table),
+**Gate S0** (Angulo invariant). All three are now runnable in `sysval` and are independent of each
+other, so they can proceed in parallel.

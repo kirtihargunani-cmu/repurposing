@@ -1,0 +1,60 @@
+{
+  "gate": "F0 (CARNIVAL published-toy replication)",
+  "spec": "docs/SPEC_systems_theoretic_mechanism_validation.md",
+  "carnival_version": "2.20.0",
+  "r_version": "R version 4.5.3 (2026-03-11)",
+  "env": "/home/kirti/miniforge3/envs/sysval",
+  "cbc": "/home/kirti/miniforge3/envs/sysval/bin/cbc",
+  "ex2_fixture_columns_renamed": ["Source", "Effect", "Target"],
+  "lpSolve": "5.6.23",
+  "api_note": "installed 2.20.0 exposes runVanillaCarnival/runInverseCarnival; the legacy runCARNIVAL(inputObj=,measObj=,netObj=) also exists. The spec's F-MATH section names only the legacy form.",
+  "runs": {
+    "vanilla_lpSolve": {
+      "status": "ok",
+      "n_nodes": 6,
+      "n_edges": 6,
+      "seconds": 0.176,
+      "5": null
+    },
+    "inverse_lpSolve": {
+      "status": "ok",
+      "n_nodes": 9,
+      "n_edges": 14,
+      "seconds": 0.0755,
+      "5": null
+    },
+    "vanilla_cbc": {
+      "status": "ok",
+      "n_nodes": 6,
+      "n_edges": 6,
+      "seconds": 0.0943,
+      "5": null
+    },
+    "inverse_cbc": {
+      "status": "ok",
+      "n_nodes": 9,
+      "n_edges": 14,
+      "seconds": 0.1087,
+      "5": null
+    }
+  },
+  "expected_fixture_comparison": {
+    "vanilla_lpSolve": {
+      "comparable": true,
+      "expected_nodes": 6,
+      "got_nodes": 6,
+      "matched_nodes": 6,
+      "shared_fields": ["Node", "NodeType", "ZeroAct", "UpAct", "DownAct", "AvgAct"],
+      "node_activity_sign_agreement": 1
+    },
+    "vanilla_cbc": {
+      "comparable": true,
+      "expected_nodes": 6,
+      "got_nodes": 6,
+      "matched_nodes": 6,
+      "shared_fields": ["Node", "NodeType", "ZeroAct", "UpAct", "DownAct", "AvgAct"],
+      "node_activity_sign_agreement": 1
+    }
+  },
+  "all_runs_ok": true
+}
