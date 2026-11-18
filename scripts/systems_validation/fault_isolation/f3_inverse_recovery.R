@@ -10,16 +10,19 @@ suppressPackageStartupMessages({library(CARNIVAL); library(data.table); library(
 setwd("/home/kirti/projects/repurposing")
 args <- commandArgs(trailingOnly = TRUE)
 COHORT <- args[1]; BETA <- if (length(args) > 1) as.numeric(args[2]) else 0.2
+PKNF <- if (length(args) > 2) args[3] else "results/systems_validation/pkn/signed_pkn.tsv"
+TAG  <- if (length(args) > 3) args[4] else ""            # "" = curated arm (F-3), else F-3b
+TLIM <- if (nzchar(TAG)) 1800 else 600                    # frozen in FREEZE_F3b section 6
 REG <- fromJSON("results/systems_validation/fault_isolation/f2_registration.json")
 stopifnot(COHORT %in% names(REG$pilots))
 DRIVER <- REG$pilots[[COHORT]]$driver
 OUT <- "results/systems_validation/fault_isolation"
 D <- file.path("results/systems_validation/fault_isolation/work",
-               paste0("f3_", COHORT, "_b", BETA))   # persistent: enumeration is slow, do not redo it
+               paste0("f3", TAG, "_", COHORT, "_b", BETA))   # persistent: enumeration is slow, do not redo it
 dir.create(D, recursive = TRUE, showWarnings = FALSE)
 CBC <- "/home/kirti/miniforge3/envs/sysval/bin/cbc"
 
-pkn <- fread("results/systems_validation/pkn/signed_pkn.tsv")[, .(source, interaction, target)]
+pkn <- fread(PKNF)[, .(source, interaction, target)]
 tf <- fread(file.path(OUT, paste0("tf_activity_", COHORT, ".tsv")))
 meas_df <- tf[in_pkn == TRUE & fdr < 0.05]                      # FROZEN selection rule
 meas <- setNames(as.numeric(meas_df$nes), meas_df$regulator)    # FROZEN: continuous NES, unaltered
@@ -29,7 +32,7 @@ cat(sprintf("%s | driver %s | betaWeight %.2f | %d measured TFs | PKN %d edges\n
 o <- defaultCbcSolveCarnivalOptions()
 o$solverPath <- CBC; o$outputFolder <- D; o$workdir <- D
 o$keepLPFiles <- TRUE; o$cleanTmpFiles <- FALSE
-o$betaWeight <- BETA; o$timelimit <- 600; o$threads <- 1
+o$betaWeight <- BETA; o$timelimit <- TLIM; o$threads <- 1
 
 t0 <- Sys.time()
 gen <- tryCatch(generateLpFileCarnival(measurements = meas, priorKnowledgeNetwork = as.data.frame(pkn),
@@ -39,7 +42,7 @@ if (inherits(gen, "err")) {
   cat("LP GENERATION FAILED:", gen$msg, "\n")
   write(toJSON(list(cohort = COHORT, driver = DRIVER, betaWeight = BETA, status = "lp_generation_failed",
                     message = gen$msg), auto_unbox = TRUE, pretty = TRUE),
-        file.path(OUT, sprintf("f3_%s_b%s.json", COHORT, BETA)))
+        file.path(OUT, sprintf("f3%s_%s_b%s.json", TAG, COHORT, BETA)))
   quit(status = 0)
 }
 gen_s <- as.numeric(difftime(Sys.time(), t0, units = "secs"))
@@ -59,7 +62,7 @@ if (file.exists(enum_json)) {
 } else {
 cmd <- c("scripts/systems_validation/fault_isolation/enumerate_optima.py",
          "--lp", gen[["lpFile"]], "--cbc", CBC, "--max-solutions", "25",
-         "--seconds", "600", "--out", enum_json)
+         "--seconds", as.character(TLIM), "--out", enum_json)
 t1 <- Sys.time()
 system2("/home/kirti/miniforge3/envs/sysval/bin/python", cmd, stdout = file.path(D, "enum.log"),
         stderr = file.path(D, "enum.err"))
@@ -102,7 +105,7 @@ cat(sprintf("  driver %s in %d of %d optima; sign expected %s, observed %s\n", D
 cat(sprintf("  RECOVERY CALL: %s\n", call))
 cat(sprintf("  core nodes in every optimum: %d; union: %d\n", length(core), length(uni)))
 
-res <- list(cohort = COHORT, driver = DRIVER, betaWeight = BETA,
+res <- list(cohort = COHORT, driver = DRIVER, betaWeight = BETA, arm = ifelse(nzchar(TAG),"aracne_full","curated"), pkn_file = PKNF,
             status = REG$pilots[[COHORT]]$status,
             n_measured_tfs = length(meas), pkn_edges = nrow(pkn),
             lp_seconds = round(gen_s, 1), enum_seconds = round(enum_s, 1),
@@ -115,5 +118,5 @@ res <- list(cohort = COHORT, driver = DRIVER, betaWeight = BETA,
             frozen_by = "docs/FREEZE_F2_driver_recovery.md",
             reads_no_outcome_labels = TRUE)
 write(toJSON(res, auto_unbox = TRUE, pretty = TRUE, null = "null"),
-      file.path(OUT, sprintf("f3_%s_b%s.json", COHORT, BETA)))
-cat("wrote", file.path(OUT, sprintf("f3_%s_b%s.json", COHORT, BETA)), "\n")
+      file.path(OUT, sprintf("f3%s_%s_b%s.json", TAG, COHORT, BETA)))
+cat("wrote", file.path(OUT, sprintf("f3%s_%s_b%s.json", TAG, COHORT, BETA)), "\n")

@@ -90,3 +90,35 @@ unchanged from `FREEZE_F2_driver_recovery.md` §7.
 **Circularity note, carried into every result:** the TF activities fed in are computed by VIPER over
 ARACNe regulons, so in this arm the map and the measurements share a data source in a way the curated
 map did not. A recovery here is weaker evidence than the same recovery on the curated map.
+
+---
+
+## Addendum, 2026-11-18 — sign imbalance, measured before the first result
+
+Building the ARACNe PKNs exposed a second structural problem, recorded here before any F-3b run
+returned. **It changes no setting**; it is a prediction about why the arm may fail.
+
+| map | activating | inhibiting |
+|---|---|---|
+| curated PKN | 70% | **30%** |
+| ARACNe SKCM | 96% | **4%** |
+| ARACNe BRCA | 97% | **3%** |
+| ARACNe LUAD | 96% | **4%** |
+
+CARNIVAL explains an observation by finding a sign-consistent route. A **down**-regulated TF needs a
+route with an odd number of inhibitions. The ARACNe networks have almost none.
+
+Against that, most of the damage we ask it to explain is down:
+
+| cohort | measured TFs | UP | DOWN | share needing an inhibitory route |
+|---|---|---|---|---|
+| TCGA-SKCM | 42 | 23 | 19 | **45%** |
+| BRCA-Her2 | 73 | 25 | 48 | **66%** |
+| TCGA-LUAD | 30 | 7 | 23 | **77%** |
+
+So in LUAD, 77% of the observations require inhibitory routes from a network in which 4% of edges are
+inhibitory. **Pre-stated reading:** if F-3b fails, sign imbalance is the leading explanation and must
+be reported ahead of any claim about co-expression versus curation — the two are confounded in this
+arm. Why the imbalance exists is itself worth noting: `tfmode` is the sign of a co-expression
+correlation, and genes in a co-expression module mostly rise and fall together, so a correlation-
+derived network is structurally biased toward activation in a way a curated signalling network is not.
