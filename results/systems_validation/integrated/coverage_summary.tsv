@@ -1,0 +1,6 @@
+avenue	n_pairs	n_ok	pct_ok	main_reason_not_evaluable
+layered	1399	1167	83.4	not_evaluable:no_layered_score
+rev	1399	1399	100.0	-
+F	1399	547	39.1	not_evaluable:no_single_gene_target
+O	1399	1095	78.3	not_evaluable:no_independent_perturbation_evidence
+S	1399	469	33.5	not_evaluable:<3_timepoints_and_no_washout_data_exists

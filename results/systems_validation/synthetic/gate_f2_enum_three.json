@@ -1,0 +1,65 @@
+{
+ "lp": "/tmp/tmp.q0NbLG4gKz/three/lpFile_t16_35_16d18_11_2026n93.lp",
+ "optimum": 0.8,
+ "n_declared_binaries": 36,
+ "n_cuttable_binaries": 14,
+ "n_alternative_optima": 3,
+ "status": "exhausted",
+ "exhausted": true,
+ "core_nodes_in_every_solution": [
+  "nU4",
+  "nU6",
+  "nU7"
+ ],
+ "nodes_in_some_solution": [
+  "nU1",
+  "nU2",
+  "nU3",
+  "nU4",
+  "nU6",
+  "nU7"
+ ],
+ "n_core": 3,
+ "n_union": 6,
+ "median_pairwise_jaccard": 0.6,
+ "solutions": [
+  {
+   "index": 1,
+   "objective": 0.8,
+   "n_active_nodes": 4,
+   "active": [
+    "nU1",
+    "nU4",
+    "nU6",
+    "nU7"
+   ]
+  },
+  {
+   "index": 2,
+   "objective": 0.8,
+   "n_active_nodes": 4,
+   "active": [
+    "nU2",
+    "nU4",
+    "nU6",
+    "nU7"
+   ]
+  },
+  {
+   "index": 3,
+   "objective": 0.8,
+   "n_active_nodes": 4,
+   "active": [
+    "nU3",
+    "nU4",
+    "nU6",
+    "nU7"
+   ]
+  }
+ ],
+ "method": "no-good cuts on node binaries; CPLEX solution pooling unavailable",
+ "cut_prefixes": [
+  "nU",
+  "nD"
+ ]
+}
