@@ -181,3 +181,85 @@ The spec's own standard — *"a method that fails its mathematical replication i
 biological inference"* — currently excludes all three experiments, because none of the three source
 packages is installed. That is a fixable, half-day problem, and it is the only thing standing between
 this document and its first real gate.
+
+---
+
+# Addendum — audit of the v2 amendment (`c440c52`, 2026-11-17 23:03)
+
+**Change:** +94 / −15 lines. A new **§0** makes the primary deliverable *falsifiable new-indication
+drug-repurposing proposals with explicit why/how*, adds a structured candidate dossier (§0.1), maps
+F/O/S onto it (§0.2), adds a drug-side ARACNe arm (§0.3) and validation criteria (§0.4), plus
+nomination clauses §4.7a / §5.7a / §6.9a and a rewritten Stage 6.
+
+## A1. Effect on the three blocking findings
+
+| Finding | Status after v2 |
+|---|---|
+| **§3.3 no path to output** | **Resolved.** The dossier *is* the output; §0.4 states "no production drug rankings are changed under this draft". My objection assumed the work had to reach `layered_pct`; v2 answers that it does not. The `layered_pct` insensitivity remains worth recording in §2 as context, but it is no longer a structural gap. **One question is now open instead:** the dossier and the production ranking coexist with no stated relationship — does a supported dossier supersede, annotate or ignore a `layered_pct` rank for the same pair? |
+| **§3.1 S-bio impossible** | **De-blocked, not answered.** §0.2 makes S "conditional on longitudinal data and not a hard requirement for every candidate", and §6.9a marks S `not evaluable` "without automatically rejecting otherwise supported disease–drug mechanisms". That is the right structural fix. The measured numbers (317 quality cells with ≥3 timepoints; **no washout field exists in `siginfo_beta`**) should still be written into §6, so nobody re-audits this. Severity drops from blocking to documentation. |
+| **§3.2 dependencies missing** | **Unchanged and still blocking.** CARNIVAL, CBC, lpSolve and SymPy are installed in neither env; SciPy only in `celligner`. No math gate can run. |
+
+## A2. New finding — the new-indication requirement is feasible, and here is its denominator
+
+§0 requires a drug with a *different* established indication, proposed for a *new* disease, with
+verified source-line context. Computed from `results/lincs/known_use/labels.tsv` (7,570
+cohort × FDA-ingredient rows, 41 cohorts, 391 ingredients), where `lab_hub` / `lab_chembl` mark
+existing indications:
+
+| filter | pairs remaining |
+|---|---|
+| all cohort × FDA-ingredient rows | 7,570 |
+| minus known uses (Hub **or** ChEMBL) | 7,099 (−471) |
+| and gate-eligible | 5,408 |
+| **and source line matched, not borrowed** (§0.1) | **1,341** |
+| and the drug is not already an anticancer | 618 |
+
+**The 1,341 matched candidates span 266 drugs and 29 cohorts** — a workable denominator. The
+618 non-anticancer subset (164 drugs, 20 cohorts) is the strongest repurposing case.
+
+Two cautions the spec should carry:
+
+- **Coverage is highly skewed:** median 5 candidates per cohort, range 1–132, and **12 of 41 cohorts
+  have zero** matched non-known-use eligible pairs — SARC-DDLPS/-LMS/-UPS, TARGET-WT, TCGA-ACC,
+  -HNSC, -KICH, -KIRC, -KIRP, -THCA, TGCT-NSGCT and -SEM. For those cohorts the honest §0 output is
+  "no candidate meets the entry criteria", and that should be stated up front rather than discovered.
+- **471 known-use pairs (97 drugs, 41 cohorts) must be excluded from novelty claims.** `labels.tsv`
+  is the enforcement resource for §0's "avoid claiming a known use is novel"; name it in the spec so
+  the check is mechanical rather than editorial.
+
+## A3. New finding — the dossier's atomic grain is finer than the production pipeline's
+
+§0.1 defines the atomic record as *new disease/subgroup × drug × target unit × observed source line,
+**preserving relevant doses and times***. The production pipeline cannot supply that: `79c` keeps
+**one consensus profile per (drug, line) at TAS ≥ 0.4**, discarding the dose and time structure
+entirely (noted in `SPEC_dose_response_bmd.md` §7). §0.3 and §6.9a already say to compute VIPER per
+condition from Level 5 rather than reuse aggregated `79d` output — correct, and it means the dossier
+pipeline needs its **own** activity computation, not a join onto existing outputs. That is a real
+implementation cost and is not reflected in §9's file tree.
+
+## A4. Assessment of §0.3 (drug-side ARACNe arm)
+
+Sound, and it states the right caveats. Two additions from D139, finished after the amendment:
+
+- Switching the drug-side regulon from ARACNe+CollecTRI consensus to **ARACNe-only moves `rev` by
+  Spearman 0.9905 and `spec_mech_pct` by 0.9866** — so the *set* choice barely matters. The
+  instability that matters is across **cohort networks** (D138.1, Jaccard 0.011), which §0.3 already
+  requires reporting. The sensitivity arm should therefore vary the *cohort network*, not the
+  regulon set.
+- The drug-side VIPER floor is now `MIN_TARGETS = 25` (D139, user decision), up from 10. Any dossier
+  quoting regulator activity should record the floor, since `drug_viper_specific_v2_tf` (floor 10)
+  and `..._ms25` (floor 25) both exist on disk.
+
+## A5. Revised recommendation
+
+The v2 amendment is an improvement: it gives the programme a deliverable that does not depend on
+changing a ranking that is insensitive to the evidence being gathered, and it correctly demotes S
+from blocker to conditional. **Two of my three blocking findings are now closed.** Remaining, in order:
+
+1. **Install CARNIVAL + CBC, SymPy, and SciPy in the right envs** — still the only thing preventing
+   any gate from running (~0.5 day).
+2. **Write §A2's funnel into §0** as the entry criterion, naming `labels.tsv` as the known-use filter
+   and listing the 12 zero-candidate cohorts.
+3. **Record §3.1's temporal numbers in §6** so S-bio's status is evidence-backed rather than assumed.
+4. **State the dossier↔production-ranking relationship** (§A1) — the one question v2 opens.
+5. Add the per-condition VIPER computation (§A3) to §9's file tree and effort estimate.
