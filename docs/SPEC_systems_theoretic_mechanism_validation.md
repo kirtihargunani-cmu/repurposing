@@ -1,6 +1,11 @@
 # Research Specification: Causal Fault Isolation, Network Controllability, and Disease-State Transitions
 
 **Status:** Draft for experimental review; mathematical implementation and drug-repurposing-output amendment 2026-11-17; no new experiments performed.
+**Audit status (agent, 2026-11-18):** independently audited in `docs/AUDIT_systems_theoretic_spec.md`.
+All nine numeric claims in §2 reproduce exactly from their artifacts. Gates **F0 (4/4)**, **O0 (10/10)**
+and **S0 (8/8)** now **pass** in the isolated `sysval` environment. One substantive defect found —
+causal-ambiguity enumeration requires CPLEX; see §4.8a. Agent-inserted amendments below are marked
+**[AGENT AUDIT 2026-11-18]** for review.
 **Repository:** kirtihargunani-cmu/repurposing
 **Created:** 2026-11-17
 **Scope:** Three independently falsifiable investigations using existing tumor transcriptomics, gene-regulatory networks, LINCS drug and genetic perturbations, and drug-target annotations.
@@ -70,6 +75,25 @@ A numerical prioritization score **may** be studied later to triage laboratory f
 
 **Proposed output files:** results/systems_validation/repurposing/candidate_dossiers.jsonl, candidate_summary.tsv, frozen_predictions.jsonl, negative_controls.tsv, validation_summary.tsv, coverage.tsv and run_manifest.json. No production drug rankings are changed under this draft.
 
+> **[AGENT AUDIT 2026-11-18] §0.5 — measured entry-criteria funnel.**
+> The new-indication requirement is **feasible**, with this denominator. Computed from
+> `results/lincs/known_use/labels.tsv`, where `lab_hub` / `lab_chembl` mark existing indications:
+>
+> | filter | pairs |
+> |---|---|
+> | cohort × FDA-ingredient rows | 7,570 (41 cohorts, 391 ingredients) |
+> | minus known uses (Hub **or** ChEMBL) | 7,099 (−471) |
+> | and gate-eligible | 5,408 |
+> | **and source line matched, not borrowed** (§0.1) | **1,341** (266 drugs, 29 cohorts) |
+> | and the drug is not already an anticancer | 618 (164 drugs, 20 cohorts) |
+>
+> Two cautions: coverage is skewed (median **5** candidates per cohort, range 1–132), and
+> **12 of 41 cohorts have zero** eligible candidates — SARC-DDLPS/-LMS/-UPS, TARGET-WT, TCGA-ACC,
+> -HNSC, -KICH, -KIRC, -KIRP, -THCA, TGCT-NSGCT, TGCT-SEM. For those the correct §0 output is
+> "no candidate meets the entry criteria", stated up front. `labels.tsv` is the mechanical
+> enforcement resource for "avoid claiming a known use is novel" (471 pairs, 97 drugs).
+
+
 ---
 
 ## 1. Scientific motivation
@@ -125,6 +149,42 @@ Source: docs/SPEC_dose_response_bmd.md.
 - ARACNe-only is the current regulon decision; independently specified alternative network representations may be used *as sensitivity arms*, not cherry-picked to obtain a favorable result.
 - Avoid post hoc removal of genes uniquely or multiply attributed to TFs, or recomputing a drug score after deleting a major downstream regulator. The current trace procedure treats transcriptional response holistically; regulatory concentration is described, not subtracted.
 - Freeze test procedures before inspecting their holdout outcomes; label all existing D127/D128 controls as **seen/development**.
+
+### 2.6 Implementation audit findings (agent, 2026-11-18)
+
+> **[AGENT AUDIT 2026-11-18]** Full detail in `docs/AUDIT_systems_theoretic_spec.md`.
+>
+> **(a) Mathematical gates pass.** F0 (CARNIVAL's own standard + inverse toys, both open solvers;
+> vanilla matches the bundled `toy_result_expected_ex1` fixture at node-activity sign agreement
+> **1.000**), O0 (**10/10** hand-computable fixtures), S0 (**8/8**; the Angulo invariant is
+> symbolically **0** and numerically conserved to **<3.2e-10**). Manifests in
+> `results/systems_validation/synthetic/`.
+>
+> **(b) Dependencies are installed in an isolated environment.** `sysval`
+> (`environment.sysval.lock.yml`): CARNIVAL **2.20.0**, coin-or-cbc 2.10.13, r-lpSolve 5.6.23,
+> sympy 1.14.0, scipy 1.17.1, networkx 3.6.1, R 4.5.3, Python 3.11.18. The pinned production envs
+> `repurposing` and `celligner` were deliberately **not** modified.
+>
+> **(c) The production lead ranking is insensitive to the regulon.** D139: switching the drug side
+> to ARACNe-only moves `rev` by Spearman 0.9905 and `spec_mech_pct` by 0.9866, but **`layered_pct`
+> is bit-identical (Spearman 1.0000, all 41 groups)** — it is built from DepMap dependency, TCGA
+> alteration and ChEMBL binding, and the regulon enters only via the `O` component where
+> `o_source == NES`, **4.9%** of `gene_components` rows. §0's dossier deliverable makes this
+> non-blocking, but the dossier↔production-ranking relationship is still unstated: does a supported
+> dossier supersede, annotate, or ignore a `layered_pct` rank for the same pair?
+>
+> **(d) Temporal feasibility, measured.** From `data/raw/lincs2020/siginfo_beta.txt` (720,216
+> `trt_cp` signatures, 201,494 compound × line cells): **2,038 cells (1.0%) have ≥3 timepoints**,
+> **317** at `is_hiq` & TAS ≥ 0.4, 28 with ≥4. 97% of signatures are 6 h or 24 h. **`siginfo_beta`
+> has no washout, recovery or drug-removal field at all.** Persistence (S-H3) is therefore not
+> evaluable *by construction*, not by sample size — consistent with §0.2 and §6.9a making S
+> conditional. S-math is unaffected and passes.
+>
+> **(e) Three-way environment split is a live hazard.** `sysval` has pandas 3.1.1 / numpy 2.4.6 /
+> Python 3.11; `celligner` has pandas 1.4.4 / Python 3.10 and is the interpreter the drug-side
+> pipeline runs under; `repurposing` holds R and has no SciPy. A `79i` run failed on
+> `ModuleNotFoundError: scipy` under the wrong interpreter on 2026-11-17. Every
+> `scripts/systems_validation/` file must declare its interpreter.
 
 ## 3. Shared experimental representation
 
@@ -259,6 +319,27 @@ The D137 random-cohort control was confounded by preserving a pharmacologically 
 
 **Do not manually substitute this schematic expression for the library objective.** Record the actual CARNIVAL package version, solver, configuration, TF measurement handling, regularization and termination status. The original implementation discretizes TF signs for ILP constraints and can use continuous TF/pathway activities in its objective. Inspect the installed package API and document the exact transformation; never treat a continuous VIPER NES as a binary sign without a reproducible rule.
 
+> **[AGENT AUDIT 2026-11-18] Installed-API corrections.** Verified against CARNIVAL **2.20.0** in
+> `sysval` (the channel version listing suggested 2.8.0 — confirm, as this section already instructs):
+> 1. The entry points named below are the **legacy** interface. `runCARNIVAL(inputObj=, measObj=,
+>    netObj=)` still exists, but the current API is **`runVanillaCarnival(perturbations, measurements,
+>    priorKnowledgeNetwork, weights, carnivalOptions)`** and **`runInverseCarnival(measurements,
+>    priorKnowledgeNetwork, weights, carnivalOptions)`**, configured by
+>    `defaultLpSolveCarnivalOptions()` / `defaultCbcSolveCarnivalOptions()` /
+>    `defaultCplexCarnivalOptions()`.
+> 2. **CBC requires an absolute `solverPath`.** `Sys.which("cbc")` returns `""` when `Rscript` is
+>    invoked by absolute path (the env `bin` is not on PATH), and CARNIVAL then aborts with
+>    *"Invalid path to solver provided"*.
+> 3. **The package's own inverse fixture is stale.** `toy_network_ex2.RData` ships columns
+>    `Source/Effect/Target`; the 2.20.0 validator requires `source/interaction/target` (which
+>    `toy_network_ex1.RData` already uses). The inverse toy fails out of the box until renamed —
+>    a format-only change that must be recorded, not silently applied.
+> 4. **Pre-intersect measurements with PKN nodes before calling.** If *any* measured node is absent
+>    from the PKN, CARNIVAL aborts the whole call with *"None of your measurements are in prior
+>    knowledge networks (PKN)"* — which is **factually wrong** when some do match (verified: the
+>    matching node alone runs fine). Intersect first and log the dropped-TF count, or runs fail with
+>    a misleading message and lost coverage goes unrecorded.
+
 **Implementation choices:**
 
 1. Add an R adapter \`scripts/systems_validation/fault_isolation/run_carnival.R\` to read a frozen \`tf_activity.tsv\` and \`signed_pkn.tsv\`, validate IDs/signs, invoke the **published** CARNIVAL R package, and serialize all competing feasible/optimal subnetwork solutions permitted by the solver.
@@ -275,6 +356,7 @@ The D137 random-cohort control was confounded by preserving a pharmacologically 
 |---|---|---|
 | Four-node signed chain \`X -> A (+), A -> B (-), B -> C (+)\` | Activating X predicts \`A +, B -, C -\` | A target-constrained solution is sign-consistent; reversing the X perturbation reverses predicted effects |
 | Two sources with indistinguishable measured TF effects | Driver cannot be uniquely recovered | Inverse mode reports alternative explanations / non-identifiability, not an invented unique driver |
+| ↳ **[AGENT AUDIT 2026-11-18] TESTED — DOES NOT HOLD on open solvers** | `S1->H`, `S2->H`, `H->T1`, `H->T2`, `T1=T2=+1` | CARNIVAL inverse returned **`S1=100, S2=0`**: it picked one of two provably indistinguishable sources and reported **no** ambiguity. See §4.8a |
 | Contradictory TF observations relative to available paths | No perfectly coherent explanation | Report residual disagreement or infeasibility, never invent a path |
 | Disconnected measured TF | No connection in the frozen PKN | Do not fabricate reachability |
 | Large high-degree decoy | Fewer observations uniquely linked to decoy | Recoverability is evaluated against degree-preserving and label-matched decoys |
@@ -285,6 +367,46 @@ The D137 random-cohort control was confounded by preserving a pharmacologically 
 **Gate F0 (published math):** the installed package reproduces its standard and inverse toy examples with auditable solutions. **Gate F1 (synthetic):** signs, ambiguity and impossible cases behave correctly. **Gate F2 (biological):** on genuinely held-out perturbation outcomes the method predicts intervention effects better than the frozen simple baselines, without a misleading increase in negative-control closures. An attractive inferred network by itself is **not a pass**.
 
 **References:** [CARNIVAL paper](https://doi.org/10.1038/s41540-019-0118-z); [published package and vignettes](https://saezlab.github.io/CARNIVAL/); [R tutorial including both toy modes](https://rdrr.io/bioc/CARNIVAL/f/inst/doc/CARNIVAL.Rmd).
+
+### 4.8a [AGENT AUDIT 2026-11-18] Causal-ambiguity enumeration requires CPLEX — amendment needed
+
+> This section asserts, in several places, that alternative explanations will be enumerated:
+> F-MATH §1 ("serialize **all competing feasible/optimal subnetwork solutions**"), the fixture table
+> ("reports alternative explanations / non-identifiability"), §4.7 endpoint (iv) ("**causal ambiguity**
+> — number and diversity of comparably feasible subnetworks") and §4.7's failure mode ("multiple
+> indistinguishable explanations").
+>
+> **Solution-pool enumeration is a CPLEX-only capability in CARNIVAL 2.20.0.** Inspected the three
+> option constructors:
+>
+> | solver | pooling fields exposed |
+> |---|---|
+> | `defaultLpSolveCarnivalOptions()` | **none** |
+> | `defaultCbcSolveCarnivalOptions()` | **`poolrelGap` only** |
+> | `defaultCplexCarnivalOptions()` | `poolrelGap, limitPop, poolCap, poolIntensity, poolReplace` |
+>
+> CPLEX is commercial and is not installed. **Confirmed empirically** by the fixture row added to the
+> table above: a provably non-identifiable two-source case returned a single driver with no ambiguity
+> signal.
+>
+> This matters because it is **precisely the failure this spec was written to prevent** — D137's
+> lesson was that the procedure produced plausible explanations for negative controls, and measuring
+> ambiguity was the countermeasure.
+>
+> **Three options, one of which must be chosen before F proceeds to biology:**
+> 1. Obtain a **CPLEX academic licence** (free for academics; the only route to this spec as written).
+> 2. **Enumerate externally** — re-solve with no-good cuts excluding each solution found. This is new
+>    code and needs its own validation against a known-ambiguity fixture.
+> 3. **Amend the spec**: state that ambiguity is not measurable on open solvers, drop endpoint (iv),
+>    and label every F explanation "one of possibly many".
+>
+> **Not acceptable:** reporting CARNIVAL's single returned solution as *the* explanation.
+>
+> **Related, from the same F1 run:** contradictory observations are **silently zeroed**, not reported.
+> Fixture `X->A(+), A-|B` with `A=+1, B=+1` returned `A=1, B=0` — no path invented (the spec's "never
+> invent a path" holds), but no disagreement surfaced either. An F pipeline must detect dropped or
+> zeroed measurements itself. The signed-chain fixture passed exactly: `X=+1 → A+100, B−100, C−100`,
+> and reversing X reversed all three.
 
 ### 4.7a Candidate nomination from Experiment F
 
@@ -407,6 +529,8 @@ For measured output objectives \`H z\` (e.g., a disease-specific program subset)
 
 **O-MATH-4: Identify A, B and C only with sufficient perturbation/time information.** Implement a data-availability gate and compare a low-dimensional linear state-space fit with simple static and null models. Possible fitting methods include subspace identification or regularized state-space regression, but choose and freeze one only after an identifiability audit. A one-time LINCS endpoint or tumor differential expression alone cannot identify a continuous-time \`A\`. The current D134 target retrieval and D135 genetic concordance are *empirical evidence arms*, not estimates of Kalman matrices.
 
+> **[AGENT AUDIT 2026-11-18] All 10 verified — 10/10 behave exactly as stated** (`scripts/systems_validation/observability/gate_o0_fixtures.py`, numpy 2.4.6 / scipy 1.17.1 / networkx 3.6.1). Kalman ranks 2/2, 1 for the wrong actuator and 1 for the wrong sensor; the directed path's unmatched driver node is `[1]`; the 3-cycle has a perfect matching and no unmatched node; a non-upstream actuator leaves rank 1 of 3; weak coupling gives full rank with a 1e-8 singular value; `Wc` is singular on unreachable directions. The bipartite construction and every stated answer are correct.
+
 **Required hand-computable regression tests:**
 
 | Fixture | A, B, C or graph | Correct answer |
@@ -475,6 +599,26 @@ Prespecify progressively more complex models:
 Prefer the simplest model that predicts held-out temporal observations. A complex model must outperform simpler baselines on independent timepoints/replicates, not only fit its training observations.
 
 ### 6.6 S4 — Temporal feasibility audit
+
+> **[AGENT AUDIT 2026-11-18] This audit is already done; here is the answer.** From
+> `data/raw/lincs2020/siginfo_beta.txt` (720,216 `trt_cp` signatures, 201,494 compound × line cells):
+>
+> | distinct timepoints per (compound, line) | all cells | at `is_hiq` & TAS ≥ 0.4 |
+> |---|---|---|
+> | ≥ 2 | 47,216 | 1,811 |
+> | **≥ 3** | **2,038 (1.0%)** | **317** |
+> | ≥ 4 | 226 | 28 |
+> | ≥ 5 | 24 | — |
+>
+> 97% of signatures sit at 6 h or 24 h. **`siginfo_beta` contains no washout, recovery or
+> drug-removal field** — the only time/dose columns are `pert_time`, `pert_dose`, `pert_type`. LINCS
+> measures continuous exposure to a fixed endpoint.
+>
+> **Therefore S-H3 (persistence) is not evaluable by construction, not by sample size**, and §6.8's
+> rule forces `persistence_status = not_evaluable` for every compound. §0.2 and §6.9a already make S
+> conditional, so this is documentation rather than a blocker. S-math is unaffected and passes (8/8).
+> If temporal work is wanted, the better-powered question is the 6 h vs 24 h divergence in
+> `SPEC_dose_response_bmd.md` §8 — 1,811 usable cells rather than 317.
 
 From Level-5 metadata, inventory cell-line × compound × matched-dose time series:
 
@@ -571,6 +715,8 @@ Freeze synthetic ground truth (A/B dynamics, feedback, initial conditions, measu
 - **Clinical benefit:** independent disease-relevant functional outcome, not proximity to a reference expression vector.
 
 **S-MATH-5: Biological identification gate.** First audit actual LINCS/other time-series granularity (same drug, source line, concentration, actual elapsed time, replicates and matched controls). Hold out whole trajectories or late timepoints; compare predictive performance against linear and no-dynamics baselines. A dataset with insufficient time resolution, no independent perturbations, or unmeasured recovery must **abstain** from claims of attractor changes or persistence. Keep dose-response BMD (D136) separate from dynamical parameter identification.
+
+> **[AGENT AUDIT 2026-11-18] The Angulo rows verified — 8/8 exact** (`scripts/systems_validation/state_transitions/gate_s0_angulo.py`, sympy 1.14.0). `d(x1·x2)/dt` simplifies **symbolically to 0** under x3-only control and to **exactly `x2·u1`** with x1 actuation; numerically `|x1·x2 − 6| < 3.2e-10` from `x(0)=(2,3,1)` under constant, pulse and sinusoidal controls; the target `(1,1,1)` has product 1 and is correctly unreachable; accessibility rank is **2** with one actuator and **3** with two at `x=(2,3,1)`; `dξ` annihilates the one-actuator distribution. The stated Lie-bracket convention and ranks hold. The remaining rows (synthetic circuits, washout classification) are not yet implemented.
 
 **Required synthetic unit and property tests:**
 
@@ -729,6 +875,31 @@ The **source-method replication** and the **biological adaptation** are separate
         state_transitions/
         integrated/
 
+> **[AGENT AUDIT 2026-11-18] Files that now exist, and two gaps in the tree above.**
+>
+>     scripts/systems_validation/
+>       fault_isolation/gate_f0_carnival_toys.R    # Gate F0 - PASS (4/4)
+>       fault_isolation/gate_f1_adversarial.R      # Gate F1 - see 4.8a
+>       observability/gate_o0_fixtures.py          # Gate O0 - PASS (10/10)
+>       state_transitions/gate_s0_angulo.py        # Gate S0 - PASS (8/8)
+>     results/systems_validation/synthetic/
+>       gate_f0_carnival.json  gate_f1_adversarial.json
+>       gate_o0_fixtures.json  gate_s0_angulo.json
+>     environment.sysval.lock.yml                  # pinned env for all of the above
+>
+> **Gap 1 — no `tests/` entries for the math fixtures** that Gates F1/O0/S0 depend on; the tree lists
+> `tests/systems_validation/test_*.py` but not the gate fixtures themselves.
+> **Gap 2 — no interpreter declaration.** Three environments are in play with incompatible versions
+> (`sysval` pandas 3.1.1 / Python 3.11; `celligner` pandas 1.4.4 / Python 3.10, which is what the
+> drug-side pipeline runs under; `repurposing` for R, no SciPy). Every file in this tree must state
+> which interpreter it runs under. A `79i` run failed on `ModuleNotFoundError: scipy` under the wrong
+> Python on 2026-11-17 — this hazard is live, not theoretical.
+>
+> Also missing from the tree: the `run_carnival.R` adapter that F-MATH §1 item 1 requires, and the
+> **per-condition VIPER computation** that §0.1/§0.3/§6.9a imply. `79c` keeps one consensus profile
+> per (drug, line) at TAS ≥ 0.4 and discards the dose/time structure, so the dossier pipeline needs
+> its own activity computation from Level 5 rather than a join onto existing `79d` outputs.
+
 **Reuse** existing D134–D136 implementations and file contracts instead of forking duplicate code.
 
 ## 10. Statistical safeguards
@@ -773,6 +944,13 @@ The **source-method replication** and the **biological adaptation** are separate
 **Negative case:** Causal reconstruction adds nothing beyond supplied annotations, the drug response cannot be attributed to the predicted target, or context-matched evidence is absent. Report **no supported repurposing proposals** rather than produce convincing narratives or unvalidated scores.
 
 ## 13. Immediate recommendation
+
+> **[AGENT AUDIT 2026-11-18] Partly superseded.** Gates F0, O0 and S0 **have been run and pass**;
+> dependencies are installed and locked. The remaining order is: (1) decide the §4.8a CPLEX question,
+> which blocks F from biology; (2) answer the §2.6(c) dossier↔ranking relationship, which determines
+> whether any of this can change an output; (3) Gate F1's remaining adversarial fixtures (high-degree
+> decoy, hidden true cause) and the unimplemented S-MATH rows; (4) export the frozen `signed_pkn.tsv`
+> from `data/raw/omnipath/omnipath_signed_directed.tsv.gz`. Nothing biological should start before (2).
 
 **Start with the shared Stage 0 audit and Experiment F's known-answer synthetic benchmark.** In parallel, continue D134, D135 and D136 as the near-term evidence routes for Experiment O. Delay biological Experiment S until its longitudinal feasibility gate is satisfied.
 
