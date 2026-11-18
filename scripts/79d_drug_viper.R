@@ -20,7 +20,11 @@ suppressPackageStartupMessages({library(data.table); library(viper); library(par
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root)
-MIN_TARGETS <- 10; MIN_FRAC <- 0.5
+# MIN_TARGETS / MIN_FRAC (D139, 2026-11-17): the regulon-size floor, env-configurable so a
+#   higher floor can be tested without editing the script. Defaults are the production values
+#   (D16). VIPER's own package default is minsize = 25. Use with RUN_TAG so production is untouched.
+MIN_TARGETS <- as.integer(Sys.getenv("MIN_TARGETS", "10"))
+MIN_FRAC <- as.numeric(Sys.getenv("MIN_FRAC", "0.5"))
 PROFILE <- Sys.getenv("PROFILE", "specific"); N_CORES <- as.integer(Sys.getenv("N_CORES", "8"))
 SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
 # REGSET=tf_base | tf_sig1 | tf_sig2 (D83): the comparison target lists (main 49_signaling_regulons.R); outputs drug_viper_specific_v2_<REGSET>
