@@ -107,3 +107,66 @@ The held-out perturbation outcomes used in F-4, any CTRP/PRISM/GDSC label, and
 
 **Machine-readable copy:** `results/systems_validation/fault_isolation/f2_registration.json`
 (same values; the JSON is what the run scripts read, so the two cannot drift).
+
+---
+
+## Addendum, 2026-11-18 — PKN coverage is **study-biased**, not merely incomplete
+
+Measured **after the freeze commit but before any F-3 run**, prompted by the F-1 coverage number.
+**This changes no parameter and no success criterion above.** It changes what an F result may be
+claimed to mean, so it is recorded here rather than discovered afterwards.
+
+### The loss is not caused by our filtering
+
+| ARACNe regulators (1,420 distinct) present as a node in | n | % |
+|---|---|---|
+| our `signed_pkn.tsv` | 468 | **33.0%** |
+| `omnipath_signed_directed`, unfiltered | 471 | 33.2% |
+| **all** directed OmniPath, including unsigned edges | 601 | **42.3%** |
+| all OmniPath, directed or not | 601 | 42.3% |
+| SIGNOR | 389 | 27.4% |
+
+Dropping complexes, self-loops and sign-conflicted edges cost **3 regulators**. The ceiling is
+OmniPath itself: even using every interaction it contains, **42.3%** of ARACNe's TFs would be
+reachable, and the extra 133 appear only on **unsigned** edges, which CARNIVAL cannot use — its
+constraints are sign-consistency constraints.
+
+### The regulators we lose are not the unimportant ones
+
+Pooled over 41 cohorts, retained (14,892 rows) vs dropped (28,037):
+
+| | retained | dropped |
+|---|---|---|
+| median \|NES\| | 1.003 | 0.970 |
+| share significant at FDR < 0.05 | 12.8% | 11.2% |
+| median ARACNe regulon size | 130 | 81 |
+| **median OmniPath curation effort** | **16** | **0** |
+
+Activity and significance are **essentially identical**. What separates them is whether anyone has
+ever curated a signalling interaction for that TF: **819 of the 952 dropped regulators (86%) have
+zero curation effort in all of OmniPath.**
+
+Only **35.7%** of total |NES| mass survives, and among *significant* regulators only **37.6%** are in
+the PKN.
+
+### What this means for every F result
+
+1. **F can only find mechanisms that run through already-studied TFs.** It is structurally incapable
+   of nominating an under-studied regulator, however active that regulator is in the tumour.
+2. **Recovering a known driver is weaker evidence than it looks.** The PKN encodes curated biology,
+   so a textbook driver has, by construction, the best-connected route to the best-curated TFs. This
+   is annotation leakage at the *network* level, which §10.3 addresses only at the label level.
+3. **The degree-matched decoy control (§8) is now doing double duty** and must additionally be
+   matched on curation effort, or a "decoy" drawn from poorly-curated genes is an unfair
+   comparison that the true driver wins for bookkeeping reasons.
+
+### Amendment to §8, binding on F-3
+
+Decoys must be matched on **out-degree (±20%), 3-hop reach (±20%), and total OmniPath curation
+effort (±50%)**. A decoy set that is systematically less-curated than the true driver does not test
+degree confounding; it tests fame.
+
+### Amendment to §9, binding
+
+A fifth pre-stated failure condition: **if recovery rate correlates with curation effort across the
+candidate universe, F is reported as recovering literature, not causality.**

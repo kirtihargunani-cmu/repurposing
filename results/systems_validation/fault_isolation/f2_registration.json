@@ -82,20 +82,54 @@
   "n_decoys": 10,
   "matched_on": [
    "out_degree +/-20%",
-   "3_hop_reach +/-20%"
+   "3_hop_reach +/-20%",
+   "omnipath_curation_effort +/-50%"
   ],
-  "failure": "decoys recovered as often as true drivers -> method tracks degree"
+  "failure": "decoys recovered as often as true drivers -> method tracks degree",
+  "amendment": "curation matching added 2026-11-18: a less-curated decoy set tests fame, not degree"
  },
  "failure_conditions": [
   "decoys recovered as often as true drivers",
   "core node set empty/trivial across optima",
   "recovery depends on betaWeight",
-  "F-4 controls close near D137's 3/5"
+  "F-4 controls close near D137's 3/5",
+  "recovery rate correlates with curation effort -> F recovers literature, not causality"
  ],
  "f3_may_not_read": [
   "F-4 held-out perturbations",
   "CTRP/PRISM/GDSC labels",
   "results/lincs/d128/a4/*"
  ],
- "git_sha": "4eff955953cb57d3c190559b61ba10d3cc05bb9c"
+ "git_sha": "4eff955953cb57d3c190559b61ba10d3cc05bb9c",
+ "addendum_2026_11_18_pkn_study_bias": {
+  "measured": "after the freeze commit, before any F-3 run; changes no parameter or criterion",
+  "aracne_regulators_total": 1420,
+  "in_our_signed_pkn": 468,
+  "in_unfiltered_signed_directed": 471,
+  "in_all_directed_omnipath_incl_unsigned": 601,
+  "in_signor": 389,
+  "our_filtering_cost_regulators": 3,
+  "ceiling_note": "42.3% is the OmniPath ceiling; the extra 133 appear only on UNSIGNED edges, which CARNIVAL cannot use",
+  "retained_vs_dropped": {
+   "median_abs_nes": [
+    1.003,
+    0.97
+   ],
+   "pct_sig_fdr05": [
+    12.8,
+    11.2
+   ],
+   "median_regulon_size": [
+    130,
+    81
+   ],
+   "median_curation_effort": [
+    16,
+    0
+   ]
+  },
+  "dropped_with_zero_curation": "819 of 952 (86%)",
+  "pct_nes_mass_retained": 35.7,
+  "pct_significant_in_pkn": 37.6
+ }
 }
