@@ -1,0 +1,101 @@
+{
+ "frozen": "2026-11-18",
+ "doc": "docs/FREEZE_F2_driver_recovery.md",
+ "pilots": {
+  "TCGA-SKCM": {
+   "driver": "BRAF",
+   "status": "primary",
+   "n_tfs": 42,
+   "reaches_measured_tfs": 12
+  },
+  "BRCA-Her2": {
+   "driver": "ERBB2",
+   "status": "primary",
+   "n_tfs": 73,
+   "reaches_measured_tfs": 41
+  },
+  "BRCA-LumA": {
+   "driver": "ESR1",
+   "status": "seen_development_case",
+   "n_tfs": 74,
+   "reaches_measured_tfs": 23,
+   "caveat": "o_source=NES; regulon reads anti-estrogens backwards (D83/D85); Jaccard 0.011 (D138.1)"
+  },
+  "TCGA-LUAD": {
+   "driver": "EGFR",
+   "status": "deliberately_weak_case",
+   "n_tfs": 30,
+   "reaches_measured_tfs": 19,
+   "caveat": "dep_z=-0.025, D pct 47.7"
+  }
+ },
+ "measurements": {
+  "source": "results/systems_validation/fault_isolation/tf_activity_<cohort>.tsv",
+  "rule": "in_pkn AND fdr < 0.05",
+  "value": "continuous VIPER nes, unaltered",
+  "prebinarise": false
+ },
+ "driver_universe": {
+  "rule": "(alt_share >= 0.05 OR dep_z > 2) AND in PKN with outgoing edge",
+  "sizes": {
+   "TCGA-SKCM": 74,
+   "BRCA-Her2": 548,
+   "BRCA-LumA": 358,
+   "TCGA-LUAD": 258
+  }
+ },
+ "mode": {
+  "primary": "runInverseCarnival (no driver supplied)",
+  "secondary": "runVanillaCarnival (driver supplied) - downstream predictions only, never recovery"
+ },
+ "solver": {
+  "solver": "cbc",
+  "carnival": "2.20.0",
+  "betaWeight_primary": 0.2,
+  "betaWeight_sensitivity": [
+   0.05,
+   0.5
+  ],
+  "timelimit": 600,
+  "threads": 1,
+  "solverPath": "/home/kirti/miniforge3/envs/sysval/bin/cbc",
+  "env": "environment.sysval.lock.yml"
+ },
+ "ambiguity": {
+  "tool": "scripts/systems_validation/fault_isolation/enumerate_optima.py",
+  "max_solutions": 25,
+  "cap_means": "lower bound, not the number"
+ },
+ "recovery": {
+  "STRONG": "active with expected sign in EVERY optimum",
+  "WEAK": "active in at least one but not all optima",
+  "NOT_RECOVERED": "active in no optimum, or recovered with the wrong sign",
+  "NOT_EVALUABLE": "infeasible, timed out, or cap hit without exhaustion",
+  "expected_sign": {
+   "BRAF": "+",
+   "ERBB2": "+",
+   "EGFR": "+",
+   "ESR1": "+"
+  }
+ },
+ "degree_control": {
+  "n_decoys": 10,
+  "matched_on": [
+   "out_degree +/-20%",
+   "3_hop_reach +/-20%"
+  ],
+  "failure": "decoys recovered as often as true drivers -> method tracks degree"
+ },
+ "failure_conditions": [
+  "decoys recovered as often as true drivers",
+  "core node set empty/trivial across optima",
+  "recovery depends on betaWeight",
+  "F-4 controls close near D137's 3/5"
+ ],
+ "f3_may_not_read": [
+  "F-4 held-out perturbations",
+  "CTRP/PRISM/GDSC labels",
+  "results/lincs/d128/a4/*"
+ ],
+ "git_sha": "4eff955953cb57d3c190559b61ba10d3cc05bb9c"
+}
