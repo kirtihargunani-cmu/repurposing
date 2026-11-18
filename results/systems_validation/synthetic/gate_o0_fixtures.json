@@ -1,0 +1,86 @@
+{
+ "gate": "O0 (hand-computable O-MATH fixtures)",
+ "versions": {
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "networkx": "3.6.1"
+ },
+ "n_fixtures": 10,
+ "n_pass": 10,
+ "results": [
+  {
+   "fixture": "two-state chain, rank(Kc)",
+   "expected": 2,
+   "got": 2,
+   "pass_": true,
+   "note": ""
+  },
+  {
+   "fixture": "two-state chain, rank(Ko)",
+   "expected": 2,
+   "got": 2,
+   "pass_": true,
+   "note": ""
+  },
+  {
+   "fixture": "wrong actuator B=[1,0]^T, rank(Kc)",
+   "expected": 1,
+   "got": 1,
+   "pass_": true,
+   "note": ""
+  },
+  {
+   "fixture": "wrong sensor C=[0,1], rank(Ko)",
+   "expected": 1,
+   "got": 1,
+   "pass_": true,
+   "note": ""
+  },
+  {
+   "fixture": "directed path 1->2->3, unmatched right node(s)",
+   "expected": [
+    1
+   ],
+   "got": [
+    1
+   ],
+   "pass_": true,
+   "note": "matching size 2"
+  },
+  {
+   "fixture": "directed cycle 1->2->3->1, unmatched right node(s)",
+   "expected": [],
+   "got": [],
+   "pass_": true,
+   "note": "perfect matching size 3; >=1 input still required (spec says so)"
+  },
+  {
+   "fixture": "actuator at non-upstream node only, rank(Kc) < 3",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "rank = 1"
+  },
+  {
+   "fixture": "actuator at upstream node, rank(Kc) == 3",
+   "expected": 3,
+   "got": 3,
+   "pass_": true,
+   "note": ""
+  },
+  {
+   "fixture": "weak coupling: full numeric rank yet tiny singular value",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "singular values [1.0, 1e-08]"
+  },
+  {
+   "fixture": "Wc singular when directions unreachable (do not invert)",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "rank(Wc) = 1"
+  }
+ ]
+}
