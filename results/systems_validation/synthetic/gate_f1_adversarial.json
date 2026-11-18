@@ -1,0 +1,294 @@
+{
+  "gate": "F1 (adversarial F-MATH fixtures)",
+  "carnival": "2.20.0",
+  "results": {
+    "chain_pos": {
+      "status": "ok",
+      "n_nodes": 4,
+      "n_edges": 3,
+      "nodes": [
+        {
+          "Node": "A",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "B",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 0,
+          "DownAct": 100,
+          "AvgAct": -100
+        },
+        {
+          "Node": "C",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 0,
+          "DownAct": 100,
+          "AvgAct": -100
+        },
+        {
+          "Node": "X",
+          "NodeType": "P",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        }
+      ],
+      "sif": [
+        {
+          "Node1": "A",
+          "Sign": -1,
+          "Node2": "B",
+          "Weight": 100
+        },
+        {
+          "Node1": "B",
+          "Sign": 1,
+          "Node2": "C",
+          "Weight": 100
+        },
+        {
+          "Node1": "X",
+          "Sign": 1,
+          "Node2": "A",
+          "Weight": 100
+        }
+      ]
+    },
+    "chain_neg": {
+      "status": "ok",
+      "n_nodes": 4,
+      "n_edges": 3,
+      "nodes": [
+        {
+          "Node": "A",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 0,
+          "DownAct": 100,
+          "AvgAct": -100
+        },
+        {
+          "Node": "B",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "C",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "X",
+          "NodeType": "P",
+          "ZeroAct": 0,
+          "UpAct": 0,
+          "DownAct": 100,
+          "AvgAct": -100
+        }
+      ],
+      "sif": [
+        {
+          "Node1": "A",
+          "Sign": -1,
+          "Node2": "B",
+          "Weight": 100
+        },
+        {
+          "Node1": "B",
+          "Sign": 1,
+          "Node2": "C",
+          "Weight": 100
+        },
+        {
+          "Node1": "X",
+          "Sign": 1,
+          "Node2": "A",
+          "Weight": 100
+        }
+      ]
+    },
+    "two_sources": {
+      "status": "ok",
+      "n_nodes": 6,
+      "n_edges": 8,
+      "nodes": [
+        {
+          "Node": "H",
+          "NodeType": "",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "Perturbation",
+          "NodeType": "P",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "S1",
+          "NodeType": "",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "S2",
+          "NodeType": "",
+          "ZeroAct": 100,
+          "UpAct": 0,
+          "DownAct": 0,
+          "AvgAct": 0
+        },
+        {
+          "Node": "T1",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "T2",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        }
+      ],
+      "sif": [
+        {
+          "Node1": "H",
+          "Sign": 1,
+          "Node2": "T1",
+          "Weight": 100
+        },
+        {
+          "Node1": "H",
+          "Sign": 1,
+          "Node2": "T2",
+          "Weight": 100
+        },
+        {
+          "Node1": "Perturbation",
+          "Sign": -1,
+          "Node2": "S1",
+          "Weight": 0
+        },
+        {
+          "Node1": "Perturbation",
+          "Sign": -1,
+          "Node2": "S2",
+          "Weight": 0
+        },
+        {
+          "Node1": "Perturbation",
+          "Sign": 1,
+          "Node2": "S1",
+          "Weight": 100
+        },
+        {
+          "Node1": "Perturbation",
+          "Sign": 1,
+          "Node2": "S2",
+          "Weight": 0
+        },
+        {
+          "Node1": "S1",
+          "Sign": 1,
+          "Node2": "H",
+          "Weight": 100
+        },
+        {
+          "Node1": "S2",
+          "Sign": 1,
+          "Node2": "H",
+          "Weight": 0
+        }
+      ],
+      "both_sources_present": true,
+      "exactly_one_active": true
+    },
+    "contradiction": {
+      "status": "ok",
+      "n_nodes": 4,
+      "n_edges": 3,
+      "nodes": [
+        {
+          "Node": "A",
+          "NodeType": "M",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        },
+        {
+          "Node": "B",
+          "NodeType": "M",
+          "ZeroAct": 100,
+          "UpAct": 0,
+          "DownAct": 0,
+          "AvgAct": 0
+        },
+        {
+          "Node": "C",
+          "NodeType": "",
+          "ZeroAct": 100,
+          "UpAct": 0,
+          "DownAct": 0,
+          "AvgAct": 0
+        },
+        {
+          "Node": "X",
+          "NodeType": "P",
+          "ZeroAct": 0,
+          "UpAct": 100,
+          "DownAct": 0,
+          "AvgAct": 100
+        }
+      ],
+      "sif": [
+        {
+          "Node1": "A",
+          "Sign": -1,
+          "Node2": "B",
+          "Weight": 0
+        },
+        {
+          "Node1": "B",
+          "Sign": 1,
+          "Node2": "C",
+          "Weight": 0
+        },
+        {
+          "Node1": "X",
+          "Sign": 1,
+          "Node2": "A",
+          "Weight": 100
+        }
+      ]
+    },
+    "disconnected": {
+      "status": "error",
+      "message": "None of your measurements are in prior knowledge networks (PKN). \n                                   Check node identifiers in both measurements and PKN objects."
+    }
+  }
+}

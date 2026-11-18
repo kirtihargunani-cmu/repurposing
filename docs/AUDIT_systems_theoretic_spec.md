@@ -336,3 +336,123 @@ observations, disconnected TF, high-degree decoy, hidden cause).
 Next, in order: **Gate F1** (F synthetic fixtures), **Gate O0** (Kalman/matching/Gramian table),
 **Gate S0** (Angulo invariant). All three are now runnable in `sysval` and are independent of each
 other, so they can proceed in parallel.
+
+---
+
+# Addendum 3 — implementation audit: tool calls, installed versions, edge cases (2026-11-18)
+
+Scope: run **every hand-computable fixture the spec asserts**, against the actually installed
+packages, and check each API call the spec specifies. A fixture whose stated answer the package does
+not produce is a **spec defect**, not a code bug. Scripts under `scripts/systems_validation/`,
+manifests under `results/systems_validation/synthetic/`.
+
+## C1. Scoreboard
+
+| gate | fixtures | result |
+|---|---|---|
+| **F0** CARNIVAL published toys | 4 runs + fixture comparison | **4/4 pass**, sign agreement 1.000 |
+| **O0** O-MATH hand-computable table | 10 | **10/10 pass** |
+| **S0** Angulo invariant + accessibility | 8 | **8/8 pass** |
+| **F1** F-MATH adversarial table | 4 | **1 pass, 1 fail, 2 qualified** |
+
+The mathematics in the spec is **correct wherever it can be checked**. The failures are all in
+*behavioural claims about CARNIVAL*, which could only be found by running it.
+
+## C2. The headline defect — ambiguity reporting requires CPLEX, which is not available
+
+The spec repeatedly requires alternative-solution enumeration:
+
+- F-MATH §1: "serialize **all competing feasible/optimal subnetwork solutions** permitted by the solver"
+- F-MATH fixture: "Inverse mode reports **alternative explanations / non-identifiability**, not an invented unique driver"
+- F endpoints (iv): "**causal ambiguity** (number and diversity of comparably feasible subnetworks)"
+- §4.7 failure mode: "produces plausible explanations for negative controls"
+
+Inspected the three option constructors in CARNIVAL 2.20.0:
+
+| solver | pooling fields exposed |
+|---|---|
+| `defaultLpSolveCarnivalOptions()` | **none** — `lpFilename, outputFolder, workdir, betaWeight, cleanTmpFiles, keepLPFiles, solver` |
+| `defaultCbcSolveCarnivalOptions()` | **`poolrelGap` only** |
+| `defaultCplexCarnivalOptions()` | `poolrelGap, limitPop, poolCap, poolIntensity, poolReplace` — the full suite |
+
+**Solution-pool enumeration is a CPLEX-only capability.** CPLEX is commercial and absent
+(`sh: 1: NA/cplex: not found`). CBC exposes a pool gap but none of the population/capacity controls.
+
+**Confirmed empirically (F1-b).** Fixture: two sources `S1 -> H`, `S2 -> H`, `H -> T1`, `H -> T2`,
+with `T1 = T2 = +1` — a case where the driver is *provably* not identifiable. CARNIVAL inverse mode
+returned **`S1 = 100`, `S2 = 0`**: it selected one of two indistinguishable explanations and reported
+no ambiguity. The spec's required behaviour — "reports alternative explanations / non-identifiability,
+not an invented unique driver" — **is not what the package does on the available solvers.**
+
+**This matters because it is precisely the failure the spec was written to prevent.** D137's lesson was
+that the procedure generated plausible stories for negative controls; F was designed to measure
+causal ambiguity so that would be visible. On lpSolve/CBC that measurement is unavailable.
+
+**Options:** (a) obtain a CPLEX academic licence (free for academics, and the only path to the spec as
+written); (b) enumerate alternatives externally — re-solve with no-good cuts excluding each found
+solution, which must be built and validated as new code; (c) amend the spec to state that ambiguity is
+not measurable on open solvers, and treat every F result as "one of possibly many explanations".
+**Not acceptable: silently reporting CARNIVAL's single returned solution as the explanation.**
+
+## C3. The other three F1 fixtures
+
+| fixture | spec's required behaviour | observed | verdict |
+|---|---|---|---|
+| **F1-a** signed chain `X->A(+), A-\|B, B->C(+)` | activating X gives `A+, B-, C-`; reversing X reverses | `X=+1 → A +100, B −100, C −100`; `X=−1 → A −100, B +100, C +100` | **exact pass** |
+| **F1-c** contradictory observations | "report residual disagreement or infeasibility, **never invent a path**" | returned `A=+1, B=0` — no path invented, but **no disagreement reported**; B silently zeroed | **qualified** — the safe half holds, the reporting half does not. Any F pipeline must detect dropped/zeroed measurements itself |
+| **F1-d** measured TF disconnected from PKN | "do not fabricate reachability" | **errors out**, refusing to run | **behaviour correct, diagnostic wrong** — see below |
+
+**F1-d's error message is factually wrong and will waste someone's time.** Measuring `{A, Z}` where
+`A` is in the PKN and `Z` is not produces: *"None of your measurements are in prior knowledge networks
+(PKN)."* Verified that measuring `A` alone succeeds (4-node solution), so the claim "none" is false —
+one matched, one did not. CARNIVAL refuses the whole call when **any** measurement is missing, which is
+defensible, but it reports the cause incorrectly. **Implication for the dossier pipeline:** measurements
+must be intersected with PKN nodes *before* calling CARNIVAL, and the count of dropped TFs recorded,
+or runs will fail with a misleading message and the lost coverage will go unlogged.
+
+## C4. API and version corrections for the spec
+
+1. **Entry points** (already in Addendum 2): the spec names only the legacy
+   `runCARNIVAL(inputObj=, measObj=, netObj=)`. Current: `runVanillaCarnival(perturbations,
+   measurements, priorKnowledgeNetwork, weights, carnivalOptions)` and
+   `runInverseCarnival(measurements, priorKnowledgeNetwork, weights, carnivalOptions)`.
+2. **`solverPath` is mandatory for CBC and `Sys.which()` will not find it.** The env's `bin` is not on
+   `Rscript`'s PATH when R is invoked by absolute path; `Sys.which("cbc")` returns `""` and CARNIVAL
+   fails with *"Invalid path to solver provided"*. Pass the absolute path.
+3. **The package's own inverse fixture is stale** (Addendum 2 B2): `toy_network_ex2.RData` ships
+   `Source/Effect/Target`, the 2.20.0 validator requires `source/interaction/target`.
+4. **Installed version is 2.20.0**, not the 2.8.0 the channel listing suggested. The spec's instruction
+   to confirm the installed API is what caught items 1–3; keep it.
+5. **Three-way environment split is now a real hazard.** `sysval` has **pandas 3.1.1 / numpy 2.4.6 /
+   python 3.11**, `celligner` has **pandas 1.4.4 / python 3.10**, `repurposing` has R 4.x and no SciPy.
+   Repo artifacts read fine under pandas 3 (spot-checked, no warnings), but any
+   `scripts/systems_validation/` file must declare its interpreter in a shebang-style comment, as the
+   spec's §9 tree does not. Today's `79i` failure (`ModuleNotFoundError: scipy` under the wrong Python)
+   is the live example of this hazard.
+
+## C5. What is confirmed sound
+
+- **All 10 O-MATH fixtures** reproduce exactly: Kalman ranks (2/2, and 1 for the wrong actuator and
+  wrong sensor), the structural-matching driver node for the directed path (`[1]`) and the perfect
+  matching with no unmatched node for the 3-cycle, unreachability under a non-upstream actuator, the
+  ill-conditioning case (full rank with a 1e-8 singular value), and a singular `Wc` that must not be
+  inverted. The spec's bipartite construction and its stated answers are correct.
+- **All 8 S-MATH fixtures** reproduce exactly. `d(x1·x2)/dt` simplifies **symbolically to 0** under
+  x3-only control; with x1 actuation it is **exactly `x2·u1`**; numerically `|x1·x2 − 6| < 3.2e-10`
+  across constant, pulse and sinusoidal controls; accessibility rank is **2** with one actuator and
+  **3** with two at `x=(2,3,1)`; and `dξ` annihilates the one-actuator distribution. The spec's
+  Lie-bracket convention and rank claims hold.
+
+## C6. Revised recommendation
+
+The spec's mathematics is sound and its gates F0, O0 and S0 now **pass**. One substantive amendment is
+required before F proceeds to biology:
+
+> **Amend F-MATH to state that causal-ambiguity enumeration requires CPLEX.** Either obtain an academic
+> licence, or implement and validate external no-good-cut enumeration, or record that every F
+> explanation is "one of possibly many" and drop endpoint (iv). The F1-b fixture as written cannot pass
+> on lpSolve or CBC.
+
+Secondary: add the measurement∩PKN pre-intersection (C3), pass `solverPath` explicitly (C4.2), name
+the modern entry points (C4.1), and give each `systems_validation` script an interpreter declaration
+(C4.5).

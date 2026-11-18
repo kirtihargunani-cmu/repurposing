@@ -1,0 +1,67 @@
+{
+ "gate": "S0 (Angulo invariant + accessibility)",
+ "versions": {
+  "sympy": "1.14.0",
+  "numpy": "2.4.6"
+ },
+ "n_fixtures": 8,
+ "n_pass": 8,
+ "results": [
+  {
+   "fixture": "d(x1*x2)/dt with x3-only control simplifies to 0",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "symbolic result: 0"
+  },
+  {
+   "fixture": "with x1 actuation, d(x1*x2)/dt == x2*u1",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "symbolic result: u1*x2"
+  },
+  {
+   "fixture": "invariant conserved under all four controls (<1e-6)",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "worst deviation 3.174e-10"
+  },
+  {
+   "fixture": "target (1,1,1) product differs from initial -> unreachable by x3 alone",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "product 1 vs conserved 6"
+  },
+  {
+   "fixture": "adding x1 actuation breaks the invariant",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "product moved 6 -> 6.9519"
+  },
+  {
+   "fixture": "one actuator (x3 only): accessibility rank < 3",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "rank(span{g3,[f,g3]}) = 2"
+  },
+  {
+   "fixture": "d(xi) annihilates the one-actuator accessible directions",
+   "expected": true,
+   "got": true,
+   "pass_": true,
+   "note": "dxi\u00b7[g3, [f,g3]] = [[0], [0]]"
+  },
+  {
+   "fixture": "two actuators (x1 and x3): locally full rank 3 when x2>0",
+   "expected": 3,
+   "got": 3,
+   "pass_": true,
+   "note": "evaluated at x=(2,3,1)"
+  }
+ ]
+}
