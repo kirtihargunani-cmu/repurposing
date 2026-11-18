@@ -137,3 +137,17 @@ record needs its own activity computation from Level 5. **Real cost, not in the 
 
 **F-1 → F-2 (freeze) → F-3 → F-4**, with **O-3** in parallel from the start. Phase 3 only after at
 least one of F-4 or an O arm returns. Nothing in Phase 1 or 2 depends on decision 3.
+
+---
+
+## Revisit after implementation — open caps and constraints
+
+Recorded as we hit them, to be reopened once F, O and the dossiers are built. **None of these
+blocks implementation; all of them bound what the finished thing can claim.**
+
+| # | cap | measured | why revisit |
+|---|---|---|---|
+| **R-1** | **PKN coverage is study-biased** (D143, user flagged 2026-11-18) | only **33.0%** of 1,420 ARACNe regulators are PKN nodes; retained vs dropped are indistinguishable on activity (median \|NES\| 1.003 vs 0.970, significance 12.8% vs 11.2%) but differ entirely on curation (median effort 16 vs 0; **86% of dropped regulators have zero curation anywhere in OmniPath**). Only 35.7% of \|NES\| mass survives. | F can only reason about already-studied TFs, so a recovered driver is partly guaranteed by the PKN encoding curated biology. **Once F has run, revisit whether the result is explained by curation depth** — the fifth failure condition tests exactly this. Options to weigh then: restrict the candidate universe to well-curated genes so comparisons are like-for-like; add a non-curated network arm; or accept the cap and scope every F claim to the curated subnetwork. |
+| **R-2** | reversal and the layered score are uncorrelated | ρ = −0.0002, top-50 overlap 0/50 (D142) | revisit once F and O give a third, independent read — that may indicate which of the two, if either, tracks mechanism |
+| **R-3** | S biological is not evaluable | 317 cells with ≥3 timepoints; no washout field exists | revisit only if new longitudinal data arrives; nothing in LINCS can fix it |
+| **R-4** | ambiguity enumeration is capped | `--max-solutions 25`; a cap hit is a lower bound | revisit the cap once typical optima counts on real cohorts are known |
