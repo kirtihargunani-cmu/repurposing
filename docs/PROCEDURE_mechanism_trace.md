@@ -246,3 +246,43 @@ surviving findings are hereby reported as uncalibrated.
 **Not supported on checking:** that ARACNe's ESR1 regulon is noise for want of
 variance in a subtype cohort. ESR1's sd in BRCA_LUMA is 1.282, the 95.2nd
 percentile of all genes.
+
+## 12. ARACNe-only, and the stability test it forced (D138, 2026-11-17)
+
+CollecTRI is retired by decision; only ARACNe regulon sets are used. That removes
+the "two-network agreement" repair §11 proposed, so the equivalent test has to run
+*inside* ARACNe: rebuild the same footprint once per cohort network, change nothing
+else, replay the identical L5.
+
+| | fulvestrant / ESR1 / MCF7 | vemurafenib / BRAF / A375 |
+|---|---|---|
+| networks with a footprint | 41 | 41 |
+| footprint size | 3 – 2,295 genes | 476 – 1,451 |
+| pairwise Jaccard (median) | **0.011** | 0.112 |
+| mean signed f(z) | −0.2524 … +0.0492 | −0.0374 … +0.0986 |
+| **positive in** | **5 of 41** | 34 of 41 |
+| generic percentile | 1.3 – 72.0 | 16.1 – 97.5 |
+| **its own cohort network** | BRCA_LUMA: −0.018, 39.6th | **SKCM: −0.023, 26.6th — worst of the 41** |
+
+**The instability is internal to ARACNe.** Two ARACNe networks share ~1% of their
+ESR1 footprint. Changing which cohort network is used moves vemurafenib's answer
+from the 16th to the 97.5th percentile — and the cohort-matched network, the one we
+would defend as biologically correct, is the *worst* of the 41.
+
+**Rejected as a rescue:** that low-variance cohorts give noise regulons. Restricting
+ESR1 to the 17 networks where ESR1 is above the 75th percentile of expression
+variance leaves 3 of 17 positive; all-BRCA, the best-powered ESR1 regulon in the
+project (sd at the 99.8th percentile, 251 genes), gives −0.077 at the 18.3rd
+percentile.
+
+**This is not new.** The ARACNe ESR1 regulon reading anti-estrogens in MCF7 as ESR1
+*activation* is recorded in D83 (+2.2 to +2.7 across all 10 profiles, against
+CollecTRI's −2.4), D85, D88, D89, D90 and D92. The trace reproduced a known
+property of the regulon rather than discovering a new artefact — which is the one
+encouraging thing here, because it means the measurement is behaving consistently.
+
+**Consequence for this procedure.** Under ARACNe-only, L4 cannot be defined from a
+single cohort network: for a TF-anchored target every well-powered network reads the
+drug backwards, and for a signalling target the cohort-matched network is an
+outlier. §11's verdict stands and is now unconditional — **no trace from this
+procedure counts as a positive.**
