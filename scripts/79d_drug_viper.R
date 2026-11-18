@@ -20,10 +20,15 @@ suppressPackageStartupMessages({library(data.table); library(viper); library(par
 args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root)
-# MIN_TARGETS / MIN_FRAC (D139, 2026-11-17): the regulon-size floor, env-configurable so a
-#   higher floor can be tested without editing the script. Defaults are the production values
-#   (D16). VIPER's own package default is minsize = 25. Use with RUN_TAG so production is untouched.
-MIN_TARGETS <- as.integer(Sys.getenv("MIN_TARGETS", "10"))
+# MIN_TARGETS / MIN_FRAC (D139, 2026-11-17): the regulon-size floor, env-configurable.
+#   DEFAULT IS NOW 25, viper's own package default (user 2026-11-17), raised from the 10 of D16.
+#   Why: measured at its real size, a 10-24 target regulon reproduces itself at r = 0.515 across
+#   profiles (split-half, Spearman-Brown), against 0.682 at 25-49 and 0.924 at 200+ (D139-S1).
+#   25 is adopted as hygiene, NOT as an accuracy gain: the drug score aggregates ~1,000 regulators,
+#   so its own reproducibility is flat at ~0.99 for any floor from 10 to 150 (D139-S1), and moving
+#   10 -> 25 shifts the score by Spearman 0.999 (D139-S0). Set MIN_TARGETS=10 to reproduce
+#   pre-2026-11-17 production. Use RUN_TAG to write beside production rather than over it.
+MIN_TARGETS <- as.integer(Sys.getenv("MIN_TARGETS", "25"))
 MIN_FRAC <- as.numeric(Sys.getenv("MIN_FRAC", "0.5"))
 PROFILE <- Sys.getenv("PROFILE", "specific"); N_CORES <- as.integer(Sys.getenv("N_CORES", "8"))
 SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
