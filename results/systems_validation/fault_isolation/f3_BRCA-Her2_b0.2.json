@@ -1,0 +1,23 @@
+{
+  "cohort": "BRCA-Her2",
+  "driver": "ERBB2",
+  "betaWeight": 0.2,
+  "status": "primary",
+  "n_measured_tfs": 73,
+  "pkn_edges": 15646,
+  "lp_seconds": 15,
+  "enum_seconds": 1125,
+  "n_alternative_optima": 1,
+  "enum_status": "exhausted",
+  "optimum": 24.3933,
+  "driver_in_n_optima": 0,
+  "driver_direction": [],
+  "expected_sign": "+",
+  "recovery_call": "NOT RECOVERED",
+  "n_core_nodes": 87,
+  "n_union_nodes": 87,
+  "median_pairwise_jaccard": null,
+  "core_nodes": ["AKAP8L", "AKT1", "ATF7", "AURKA", "BACH2", "BCL6", "BHLHE41", "CASP6", "CDC5L", "CEBPD", "CEBPE", "CEBPG", "CENPA", "CIC", "CREB1", "CREB5", "CREM", "DNMT1", "E2F1", "E2F2", "E2F7", "E2F8", "EGR1", "EGR2", "ERG", "FGF3", "FOXC1", "FOXI1", "FOXK2", "FOXM1", "FOXO1", "GATA6", "GLI2", "HEY1", "HIC1", "HIPK2", "HMGB1", "HOXD9", "HSF4", "JUNB", "KCNIP3", "KDM5B", "KLF13", "KLF2", "KLF4", "MAFK", "MAP2K6", "MEIS2", "MEOX2", "MXD4", "MXI1", "MYBL1", "MYBL2", "MZF1", "NCOR2", "NFATC1", "NFYA", "NKRF", "NR2F1", "NR3C2", "OTX1", "PA2G4", "PBX1", "PHF1", "PHF20", "POU6F1", "PPARA", "PPARG", "PRP4K", "RARB", "RB1", "SATB1", "SIX1", "SMAD9", "SMARCA4", "SMYD3", "SOX17", "SOX4", "SRF", "STAT5A", "STAT6", "STK38", "TFEB", "TP53", "YY1", "ZBTB4", "ZNF521"],
+  "frozen_by": "docs/FREEZE_F2_driver_recovery.md",
+  "reads_no_outcome_labels": true
+}

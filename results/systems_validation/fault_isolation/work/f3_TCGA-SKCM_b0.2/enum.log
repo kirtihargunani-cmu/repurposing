@@ -1,0 +1,5 @@
+47298 declared binaries; cutting on 10530 matching ('nU', 'nD')
+optimum 10.63174315  alternative optima: 1  status: exhausted
+  nodes active in EVERY optimum : 53
+  nodes active in SOME optimum  : 53
+wrote results/systems_validation/fault_isolation/work/f3_TCGA-SKCM_b0.2/enum.json
