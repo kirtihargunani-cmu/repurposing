@@ -1,10 +1,76 @@
 # Research Specification: Causal Fault Isolation, Network Controllability, and Disease-State Transitions
 
-**Status:** Draft for experimental review; mathematical implementation amendment 2026-11-17; no new experiments performed.
+**Status:** Draft for experimental review; mathematical implementation and drug-repurposing-output amendment 2026-11-17; no new experiments performed.
 **Repository:** kirtihargunani-cmu/repurposing
 **Created:** 2026-11-17
 **Scope:** Three independently falsifiable investigations using existing tumor transcriptomics, gene-regulatory networks, LINCS drug and genetic perturbations, and drug-target annotations.
-**Primary deliverable:** Validated, context-specific mechanistic hypotheses and explicit limits of inference—not a numerical drug-suitability ranking.
+**Primary deliverable:** **Falsifiable, evidence-grounded proposals to repurpose existing drugs for a different disease or molecular subgroup, explicitly explaining why the disease target is relevant and how the drug could modify it.** Numerical scores are optional rather than required.
+
+## 0. Primary output: drug repurposing proposals, with explicit why and how
+
+**Research objective.** Starting from the mechanisms implicated in a **target disease**, identify an existing or previously developed drug **with a different established/development indication** whose molecular action could change one of those mechanisms. The required output is a *candidate nomination with a testable mechanism*, not a percentile or universal ranking.
+
+Each proposal must answer:
+
+1. **For what new disease and which patients?** Specify a target disease, molecular subgroup and cohort denominator. Record the fraction of patients with the candidate driver state; do not equate pathway-wide changes with a driver in every patient.
+2. **Why this drug's target?** Identify upstream disease-maintaining evidence (functional variant, dependency, causal hypothesis), distinguishing driver effects from downstream, lineage and proliferation signatures. State whether the inferred driver was supplied to or discovered by the model.
+3. **How would the drug act?** Name annotated drug target(s), mechanism (inhibition, activation, degradation, etc.), expected signed signaling/regulatory changes and the disease-associated program those changes could alter.
+4. **Does the proposed mechanism appear in a relevant experiment?** Compare frozen predictions with LINCS gene-level profiles, **drug-side ARACNe/VIPER regulator activity outputs**, genetic perturbations, dose/time response and target pharmacology where eligible. Verify source-line genotype, tissue and drug exposure, rather than silently borrowing mismatched lines.
+5. **Why might this interpretation be wrong?** Report viable alternative targets, off-target/cytotoxic effects, uncertain pathway directions, network-choice instability, context transfer, and contradictory observations.
+6. **What would test it next?** State a falsifying target-specific experiment, the expected molecular readout, independent functional outcome, appropriate negative controls and the result that would reject the candidate.
+
+### 0.1 Required structured candidate dossier
+
+The atomic record is **new disease/subgroup × drug × target unit × observed source line**, preserving relevant doses and times. Each dossier requires:
+
+| Field | Content |
+|---|---|
+| Drug and existing indication | Verified compound identifiers, approved/previously developed indications, and status; avoid claiming a known use is novel |
+| Target disease and subgroup | Exact proposed *new* indication, relevant molecular subtype, patient numerator/denominator and reference tissue |
+| Disease-driver rationale | Patient alteration prevalence, target activity, expression, dependency and limitations of causality |
+| Drug-target hypothesis | Target(s), annotated pharmacological action, assay-specific affinity/potency, selectivity and exposure information |
+| Frozen causal mechanism | Upstream target → predicted regulator/program response → proposed disease consequence |
+| Drug-side measurement | Original LINCS whole-response arm and tumor-derived **ARACNe/VIPER** drug-response arm; source network/version, line, dose and time |
+| Independent tests | Genetic-perturbation concordance, target recovery, concentration response and relevant biological phenotype when available |
+| Contradictions and alternatives | All unresolved negative controls, polypharmacology, generic response, tissue mismatch and uncertainty |
+| Falsification experiment | Explicit perturbation, controls, predicted direction and failure condition |
+| Disposition | Mechanistically supported for experimental follow-up / preliminary hypothesis / contradicted / not evaluable |
+| Optional prioritization | A score or ordered shortlist ONLY if calibrated, with stated reference population; not mandatory |
+
+**Rendering order:** proposed drug and target disease → **why the target matters in this disease** → **how the drug might affect it** → what we observed → what conflicts with that interpretation → what to test next. All prose must be derived from structured, source-linked evidence. An impressive transcriptomic correlation cannot override a broken or untestable link.
+
+**No-result is valid.** If the disease-driving target is not established, drug action or target exposure cannot be defended, relevant line evidence is lacking, or the mechanism fails prespecified negative controls, the output is **no supported repurposing proposal**. An unresolved mechanistic idea may be retained as explicitly *preliminary*, but not promoted.
+
+### 0.2 Where each mathematical experiment contributes
+
+| Experiment | Why/how contribution | Required output for a candidate | Primary falsification |
+|---|---|---|---|
+| **F — Causal fault isolation** | **Why:** distinguish upstream candidate drivers from descriptive expression abnormalities | Candidate disease mechanisms and actionable target(s), drug mapping, frozen downstream predictions | Alternative upstream causes and independent intervention results contradict the predicted mechanism |
+| **O — Observability / controllability** | **How:** evaluate drug engagement, observable target-specific effects and intervention responsiveness | Drug → target → observed regulatory/program response, contextual relevance, potency/exposure limitations | Drug fails independent target-specific perturbation/response tests or is indistinguishable from generic stress |
+| **S — Nonlinear state transitions** | **What happens after intervention:** test feedback, adaptation, reversal, persistence when temporal data exist | Predicted versus held-out trajectories, compensation and washout behavior if observed | Wrong trajectory predictions, feedback alternatives or absence of data for claimed persistence |
+
+**S is conditional on longitudinal data and is not a hard requirement for every candidate.** No persistence conclusion can be made from a single post-treatment snapshot. These three experiments must be compared to existing gene-signature matching and the failed D137 mechanism trace in their **ability to produce correct, independently testable mechanism explanations**, not simply how many candidates they return.
+
+### 0.3 Drug-side ARACNe implementation arm
+
+The existing drug side uses tumor-derived, cohort-specific **ARACNe regulons applied to LINCS profiles** through VIPER (e.g. scripts/79d_drug_viper.R and data/processed/lincs/drug_viper_specific_v2_tf/). These are estimates of *drug-associated regulator activity*, not independently measured network causal effects and not networks trained directly from drugs.
+
+- For **F**, freeze the causal mechanism and use drug-side regulator activities to test predicted TF/program changes, in parallel with the whole-gene LINCS arm and independent genetics.
+- For **O**, use those regulator activity responses as a *primary empirical representation* of how an intervention affects disease-relevant programs, benchmarking against the original gene-level responses and D134/D135 controls.
+- For **S**, when real matched time/dose profiles exist, compute VIPER separately at each sampled condition rather than treating aggregated 79d outputs as a dynamical time series.
+- Preserve the exact cohort network and version. Given D137–D139 and the ESR1 anti-estrogen discrepancy, no ARACNe-derived mechanistic interpretation is accepted merely because it gives a favorable signed path. Report sensitivity to network choice and the independently tested whole-response prediction.
+
+### 0.4 Validation criteria for a useful repurposing proposal
+
+**Primary objective:** Improve the precision and generalizability of **mechanistically justified, new-indication drug proposals**, assessed against independent molecular perturbation and disease-functional response data with disease/subgroup, drug and target-class leakage controls. A proposal is supported only if the mechanism survives the required negative controls and has genuine independent intervention evidence; without that it is preliminary or not evaluable.
+
+Report (i) nomination coverage; (ii) fraction of proposed pairs with adequately supported target, correct disease genotype and source-line context; (iii) held-out mechanistic prediction accuracy; (iv) false-positive rate on independent negative-control tuples; (v) disease-functional outcome when available; and (vi) number of candidates without enough data. Avoid using the total number of proposed candidates as a success metric.
+
+A numerical prioritization score **may** be studied later to triage laboratory follow-ups, but must be separately calibrated and must not be presented as probability of clinical benefit. The required deliverable is **the drug–new-disease rationale and falsifiable mechanism**.
+
+**Proposed output files:** results/systems_validation/repurposing/candidate_dossiers.jsonl, candidate_summary.tsv, frozen_predictions.jsonl, negative_controls.tsv, validation_summary.tsv, coverage.tsv and run_manifest.json. No production drug rankings are changed under this draft.
+
+---
 
 ## 1. Scientific motivation
 
@@ -24,7 +90,7 @@ Three complementary research questions follow:
 | **O** | Observability and controllability | Which molecular processes are measurably identifiable, and which are responsive to available interventions? |
 | **S** | Ecological restoration and nonlinear dynamics | Can an intervention alter a process that maintains the pathological state, rather than merely make a snapshot look normal? |
 
-The experiments are independent. A success in one is not evidence of success in another. No composite drug score is proposed.
+The three experiments independently contribute to **nominating, explaining, testing or rejecting drug–new-disease repurposing hypotheses**. A successful mathematical result in one experiment does not compensate for a failed intervention control in another. The final research artifact is a mechanistic candidate dossier, not a mandatory drug score. Quantitative prioritization remains an optional, separately validated research question.
 
 ## 2. Existing repository results and constraints
 
@@ -220,6 +286,10 @@ The D137 random-cohort control was confounded by preserving a pharmacologically 
 
 **References:** [CARNIVAL paper](https://doi.org/10.1038/s41540-019-0118-z); [published package and vignettes](https://saezlab.github.io/CARNIVAL/); [R tutorial including both toy modes](https://rdrr.io/bioc/CARNIVAL/f/inst/doc/CARNIVAL.Rmd).
 
+### 4.7a Candidate nomination from Experiment F
+
+Experiment F is not complete when it outputs a plausible causal graph. It must nominate actionable **disease mechanisms and corresponding existing drug-target pairs**, with verified source versus proposed new indication, patient-subgroup driver evidence, frozen target-to-program intervention predictions and independent observations. A driver supplied to CARNIVAL cannot be reported as newly discovered. Deliver F_candidate_mechanisms.tsv and F_frozen_drug_predictions.jsonl, with alternative causes and withheld test IDs.
+
 ## 5. Experiment O — Observability and controllability
 
 ### 5.1 Question and hypotheses
@@ -355,6 +425,10 @@ For measured output objectives \`H z\` (e.g., a disease-specific program subset)
 **Gate O0:** all rank/matching/toy energy checks exactly pass. **Gate O1:** structural results are stable enough under justified graph uncertainty to be meaningful as *hypotheses*. **Gate O2:** empirical D134/D135/D136 tests provide independent target specificity; a graph-only result never suffices. **Gate O3:** only identified and held-out-validated dynamic models receive numerical controllability/observability claims. If data cannot support \`A\`, \`B\`, \`C\`, record an untested dynamical claim rather than estimating arbitrary matrices.
 
 **References:** [Liu et al., Nature 2011](https://doi.org/10.1038/nature10011); [Liu et al., PNAS 2013](https://doi.org/10.1073/pnas.1215508110); [Gates & Rocha 2016](https://doi.org/10.1038/srep24456).
+
+### 5.7a Mechanistic drug-response evidence from Experiment O
+
+Experiment O must take F's proposed **drug × new-disease × target** candidates and assess how the drug could modify the nominated program in the relevant context. Compare gene-level LINCS responses with the drug-side ARACNe/VIPER response as two prespecified, non-independent representations of the *same perturbation*. Supplement with D135 genetic evidence, D134 target recovery, D136 dose-response and annotated potency/exposure when eligible. Deliver O_candidate_engagement.tsv and O_program_prediction_checks.tsv with both supportive and contradictory observations. Do not equate a measurable response with therapeutic efficacy.
 
 ## 6. Experiment S — Nonlinear disease-state transitions
 
@@ -519,7 +593,11 @@ Freeze synthetic ground truth (A/B dynamics, feedback, initial conditions, measu
 
 **References:** [Angulo et al. 2019](https://doi.org/10.1038/s41467-019-08890-y); [open-access full text, Fig. 2 and methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC6401173/).
 
-## 7. Integrated interpretation: evidence, not a scalar drug score
+### 6.9a Temporal qualifications for repurposing nominations
+
+Experiment S adds temporal predictions to **eligible** candidate dossiers: rebound, compensation, persistence, or return toward a reference program. Use per-dose/time gene data and condition-specific VIPER inference, not collapsed drug-line averages. S is marked **not evaluable** when longitudinal and washout data are insufficient, without automatically rejecting otherwise supported disease–drug mechanisms. Deliver S_candidate_trajectories.tsv and a proposed next time-course/washout test.
+
+## 7. Integrated interpretation: drug repurposing proposals and mechanism traces
 
 | Component | F: Cause | O: Response/control | S: Temporal state |
 |---|---|---|---|
@@ -534,7 +612,7 @@ Illustrative interpretation, NOT a new biological finding:
 - O finds genotype-appropriate, concentration-dependent drug effects consistent with BRAF pathway inhibition.
 - S observes a treatment trajectory but lacks recovery data.
 
-The combined report should state **mechanism supported; intervention response supported; persistence and clinical benefit not established**. It must not average these observations into a numerical suitability score.
+The combined report must **name the proposed drug and new disease/subgroup, explain why the target is disease-relevant and how the drug could change its pathological pathway, then state what independent experiment supports or falsifies that proposal**. An appropriate finding may be **mechanism supported; intervention response supported; persistence and clinical benefit not established**. Do not require or infer a numerical suitability score.
 
 ## 8. Incremental implementation
 
@@ -586,11 +664,12 @@ The combined report should state **mechanism supported; intervention response su
 
 **Exit:** Improvement generalizes across independent units and withstands relevant negative controls.
 
-### Stage 6 — Evidence integration
+### Stage 6 — New-indication candidate nomination and mechanism-evidence integration
 
-- Populate structured mechanism records with provenance, competing explanations, confidence bounds and known limitations.
-- Render scientific prose strictly from the structured evidence.
-- Make no production ranking or tier changes without a separate validated proposal.
+- Generate the §0 candidate dossier per *drug × proposed new disease/subgroup*, documenting the drug's existing indication, disease driver, annotated action, predicted route, LINCS/ARACNe and genetic observations, pharmacology, contradictions and next falsification experiment.
+- Test whether proposals survive complete negative controls and predict independently held-out interventions or functional outcomes. Report preliminary, contradicted and not-evaluable candidates without forcing positive nominations.
+- Render **why/how mechanistic explanations** strictly from structured evidence and preserve uncertainty, without suggesting clinical efficacy or treatment.
+- Optionally consider validated prioritization scores as a later separate workstream; no production ranking or tier changes are authorized by this draft.
 
 
 ### Mathematical replication checkpoints (required before the corresponding biological stage)
@@ -687,17 +766,17 @@ The **source-method replication** and the **biological adaptation** are separate
 
 ## 12. Expected outcomes
 
-**Best case:** A bounded set of mechanisms passes independent upstream-cause inference, observed target-specific perturbation, dose/time response, and relevant functional validation. The system generates falsifiable repurposing hypotheses rather than universal rankings.
+**Best case:** The system nominates existing drugs for *specific new diseases or molecular subgroups* with independently validated upstream drivers, interpretable drug-target mechanisms, experimentally observed downstream effects, plausible exposure and explicit falsification experiments. It generates scientifically defensible **why/how drug repurposing proposals**, not merely ranked compounds.
 
-**Realistic case:** Different targets pass different evidence links. Some genomically established drivers are transcriptionally difficult to observe; others yield measurable response without driver evidence. The available longitudinal data may not establish attractor changes. A valuable deliverable is the **domain of applicability**.
+**Realistic case:** A limited number of disease-specific repurposing proposals merit further experiments, while many candidates are preliminary, contradicted or lack suitable data. Some drivers are difficult to observe transcriptionally and longitudinal evidence is sparse. The valuable output is a **mechanistic domain-of-applicability map** and proposals with explicit evidence gaps.
 
-**Negative case:** Causal reconstruction adds nothing beyond supplied annotations, drug-specific observability fails, or temporal data cannot identify dynamics. Record this rather than adding an unvalidated score.
+**Negative case:** Causal reconstruction adds nothing beyond supplied annotations, the drug response cannot be attributed to the predicted target, or context-matched evidence is absent. Report **no supported repurposing proposals** rather than produce convincing narratives or unvalidated scores.
 
 ## 13. Immediate recommendation
 
 **Start with the shared Stage 0 audit and Experiment F's known-answer synthetic benchmark.** In parallel, continue D134, D135 and D136 as the near-term evidence routes for Experiment O. Delay biological Experiment S until its longitudinal feasibility gate is satisfied.
 
-**First milestone:** For BRAF-V600 melanoma and ESR1-associated breast cancer, demonstrate whether the method can (i) identify plausible upstream mechanisms, (ii) freeze predictions of their consequences, and (iii) distinguish true from convincing but incorrect explanations using independent perturbations.
+**First milestone:** Using BRAF-V600 melanoma and ESR1-associated breast cancer as *seen development mechanisms*, determine whether the approach can (i) identify disease-relevant actionable upstream targets, (ii) map these to existing drugs with potentially different indications, (iii) freeze predictions, and (iv) issue a **drug → new disease → why → how → falsifying experiment** dossier or a justified no-proposal conclusion. These seen cases are not independent proof of repurposing efficacy.
 
 ## 14. Literature foundations
 
@@ -720,6 +799,6 @@ with
 
 > Which mechanisms maintain the disease-associated state, which interventions can modify those mechanisms, and what independent evidence supports the predicted consequences?
 
-The intended output is a set of **falsifiable, context-dependent mechanism hypotheses** with explicit measurements, contradictory evidence, reproducibility requirements and limits of inference.
+**The intended output is a set of explicit, falsifiable drug-repurposing proposals for *new* diseases or molecular subgroups.** Each must explain **why** an existing drug's target matters in the new pathology and **how** its pharmacological action is expected to affect the disease-maintaining network, supported by independent measurements, competing explanations and a next experimental test. **Drug scores are not mandatory.**
 
-**Draft only.** No new experimental claim, positive mechanism verdict, production score change or drug reranking follows from this document.
+**Draft only.** No new experimental claim, positive drug-repurposing verdict, clinical treatment recommendation, production score change or drug reranking follows from this document.
