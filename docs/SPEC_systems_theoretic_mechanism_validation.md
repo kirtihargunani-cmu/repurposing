@@ -1,6 +1,6 @@
 # Research Specification: Causal Fault Isolation, Network Controllability, and Disease-State Transitions
 
-**Status:** Draft for experimental review; no new experiments performed.
+**Status:** Draft for experimental review; mathematical implementation amendment 2026-11-17; no new experiments performed.
 **Repository:** kirtihargunani-cmu/repurposing
 **Created:** 2026-11-17
 **Scope:** Three independently falsifiable investigations using existing tumor transcriptomics, gene-regulatory networks, LINCS drug and genetic perturbations, and drug-target annotations.
@@ -170,6 +170,56 @@ The D137 random-cohort control was confounded by preserving a pharmacologically 
 
 **Deliverable:** One disease fault-isolation record per cohort and candidate driver, with predicted consequences, observed test, competing causes and verdict.
 
+
+### 4.8 F-MATH — Direct implementation of CARNIVAL's integer-programming inference
+
+**Source and implementation boundary.** Implement the published **CARNIVAL** software, rather than relabeling the D128 shortest-path procedure as CARNIVAL. CARNIVAL takes a signed/directed prior-knowledge network (PKN) and measured or inferred transcription-factor (TF) activities and solves an integer-linear-programming (ILP) causal-network-contextualization problem. Its two distinct modes are (a) **inverse CARNIVAL**, with no supplied perturbation target, and (b) **standard CARNIVAL**, conditioned on a specified perturbation target and its activating/inhibiting action. Their scientific claims differ:
+
+- **F-inverse:** recover a plausible upstream cause *without giving the solver that cause*. Validate driver recovery only against withheld, independently annotated driver labels.
+- **F-target-constrained:** fix the candidate target and intervention sign; evaluate whether the inferred downstream mechanism predicts an independent perturbation signature. Supplying BRAF as a constraint is **not** evidence that CARNIVAL rediscovered BRAF.
+- Disease-side observational VIPER states and treatment-induced VIPER states are **different experimental contexts**. First reproduce the published perturbation-response use case; using tumor-versus-normal activities as CARNIVAL inputs is an explicitly labeled **adaptation**, evaluated separately.
+
+**Published mathematical structure.** CARNIVAL represents candidate node activities and whether edges/nodes are selected using integer decision variables, with sign-consistency and connectivity constraints linking upstream nodes to TF observations. The optimizer trades TF/pathway-activity agreement against solution complexity. For orientation, the following is a **schematic experimental objective, not a transcription of the CARNIVAL source code**:
+
+    min_{binary node/edge decisions, signed node activities}
+        L(TF_activity_observed, TF_activity_explained)
+        + λ * network_complexity
+        + optional prior/activity penalties
+    subject to:
+        candidate edges ∈ frozen directed/signed PKN
+        selected causal interactions obey action/sign constraints
+        activated/inhibited nodes must satisfy the package's ILP logic
+        imposed source target/sign (standard mode only)
+
+**Do not manually substitute this schematic expression for the library objective.** Record the actual CARNIVAL package version, solver, configuration, TF measurement handling, regularization and termination status. The original implementation discretizes TF signs for ILP constraints and can use continuous TF/pathway activities in its objective. Inspect the installed package API and document the exact transformation; never treat a continuous VIPER NES as a binary sign without a reproducible rule.
+
+**Implementation choices:**
+
+1. Add an R adapter \`scripts/systems_validation/fault_isolation/run_carnival.R\` to read a frozen \`tf_activity.tsv\` and \`signed_pkn.tsv\`, validate IDs/signs, invoke the **published** CARNIVAL R package, and serialize all competing feasible/optimal subnetwork solutions permitted by the solver.
+2. Use the package's own toy input, measurement and PKN fixtures as the **first replication gate**. The documented R API includes \`runCARNIVAL(inputObj=..., measObj=..., netObj=...)\` for a target-constrained toy and \`runCARNIVAL(measObj=..., netObj=...)\` for an inverse toy. Confirm the installed API/version rather than pinning unverified function signatures. Prefer open-source **CBC** for substantive runs; \`lpSolve\` is acceptable for the package toy examples.
+3. Export separate, frozen \`signed_pkn.tsv\` representations from the repo's curated signaling sources. Preserve source and target gene symbols/IDs, direction, sign (including unknown/conflicted), interaction provenance, degree, and tissue restrictions. ARACNe coexpression links must not silently become directed biochemical causal interactions.
+4. Compute TF activities using the project's established VIPER outputs, and add an independent/cross-network arm to quantify dependence on the program representation. Keep disease TF activities separate from LINCS treatment TF activities; compare them in a **new** evaluation stage, never by pooling as one training response.
+5. Predeclare the candidate upstream node universe and whether each candidate driver was supplied, hidden, or inferred. In inverse mode, prohibit the held-out label and phenotype evidence from influencing target selection, path choice, tuning or score interpretation.
+6. Freeze ILP complexity weights, allowed TF-sign handling, PKN version, time limit, relative MIP gap and seed *before* held-out perturbations. Treat infeasible, timed-out, gap-not-closed and multiple-solution cases explicitly; no solution may be silently discarded for not matching the expected driver.
+7. After committing the predicted regulator and gene consequences, evaluate them with independent, context-appropriate perturbations. All comparison genes/programs must be fixed before observing those responses.
+
+**Known-answer mathematical fixtures** (hand-check each expected sign and graph, then compare against CARNIVAL output):
+
+| Fixture | Ground truth | Required behavior |
+|---|---|---|
+| Four-node signed chain \`X -> A (+), A -> B (-), B -> C (+)\` | Activating X predicts \`A +, B -, C -\` | A target-constrained solution is sign-consistent; reversing the X perturbation reverses predicted effects |
+| Two sources with indistinguishable measured TF effects | Driver cannot be uniquely recovered | Inverse mode reports alternative explanations / non-identifiability, not an invented unique driver |
+| Contradictory TF observations relative to available paths | No perfectly coherent explanation | Report residual disagreement or infeasibility, never invent a path |
+| Disconnected measured TF | No connection in the frozen PKN | Do not fabricate reachability |
+| Large high-degree decoy | Fewer observations uniquely linked to decoy | Recoverability is evaluated against degree-preserving and label-matched decoys |
+| Hidden true cause | No driver label supplied | Recovery performance evaluated on held-out truth without any target constraint |
+
+**Baselines and primary endpoints:** versus DE magnitude, VIPER activity/centrality, D128 signed-path tracing, and randomly degree-matched candidate causes, compare (i) held-out perturbation **signed-program accuracy**, (ii) ability to discriminate true versus false intervention hypotheses, (iii) false-positive rate on complete negative-control triples, (iv) causal ambiguity (number and diversity of comparably feasible subnetworks), (v) network-choice sensitivity, and (vi) solver feasibility/coverage. Driver-label accuracy is reported **only in the inverse arm**. Use distinct target classes and independent perturbation data as sampling units; preserve gene covariance.
+
+**Gate F0 (published math):** the installed package reproduces its standard and inverse toy examples with auditable solutions. **Gate F1 (synthetic):** signs, ambiguity and impossible cases behave correctly. **Gate F2 (biological):** on genuinely held-out perturbation outcomes the method predicts intervention effects better than the frozen simple baselines, without a misleading increase in negative-control closures. An attractive inferred network by itself is **not a pass**.
+
+**References:** [CARNIVAL paper](https://doi.org/10.1038/s41540-019-0118-z); [published package and vignettes](https://saezlab.github.io/CARNIVAL/); [R tutorial including both toy modes](https://rdrr.io/bioc/CARNIVAL/f/inst/doc/CARNIVAL.Rmd).
+
 ## 5. Experiment O — Observability and controllability
 
 ### 5.1 Question and hypotheses
@@ -236,6 +286,75 @@ Per target × drug × line × context, report:
 **Failure:** Target specificity vanishes against matched nulls; response is inconsistent across relevant conditions; predictions do not generalize; or formal control claims depend on arbitrary/unidentified dynamics.
 
 **Important:** Poor transcriptomic observability does not imply that a target is therapeutically unimportant.
+
+
+### 5.8 O-MATH — Structural matching, Kalman tests and finite-horizon intervention effects
+
+**Source and implementation boundary.** The Liu–Slotine–Barabási network papers motivate **structural** control/sensing from directed topology. Classical Kalman tests apply to a **specified numerical linear dynamical model**, not directly to a transcriptomic adjacency matrix. Gates and Rocha supply the essential warning that dynamics can change a graph-only conclusion. Implement the mathematical procedures as *distinct* arms and compare them with actual perturbation data.
+
+**State-space model and dimensions:**
+
+    z_dot(t) = A z(t) + B u(t),        y(t) = C z(t) + ε(t)
+
+    z ∈ R^K  (predefined molecular programs)
+    A ∈ R^(K×K)  (program-to-program dynamics; convention A[i,j] = j -> i)
+    B ∈ R^(K×M)  (M independently actuated perturbation inputs)
+    C ∈ R^(P×K)  (observed assay outputs)
+    u ∈ R^M, y ∈ R^P
+
+The gene-to-program transformation \`W\` in §3 is **not automatically** a validated observation matrix \`C\`; specify the measurement model and its uncertainty. \`B\` is *not* defined by a ChEMBL target annotation alone. Signs and target engagement must be calibrated to the actual perturbation context where empirical control claims are intended.
+
+**O-MATH-1: Structural controllability (topology-only baseline).**
+
+1. Convert the frozen directed graph to a bipartite representation with \`K\` left (sources) and \`K\` right (destinations) copies. Add a bipartite edge \`j_left -> i_right\` for every permitted dynamical \`A[i,j]\` entry.
+2. Find a maximum-cardinality matching (e.g., NetworkX bipartite matching / Hopcroft–Karp). The right-side unmatched nodes are the candidate *minimum-driver-node* locations under the **generic structural controllability** assumptions. If every right-side node is matched, at least one external input is still required for a nonempty system.
+3. Test accessibility from proposed actuators (all relevant state nodes must be reachable through the directed input/state graph). Distinguish **input placement at arbitrarily selected nodes** from the real available drug target set. A hypothetical minimum number of unconstrained actuators is not a count of available repurposable drugs.
+4. Compute the corresponding structural-observability sensor baseline using the correctly transposed/dual graph formulation; then check it with numerical observability tests.
+5. Vary network edge definitions, unknown signs, self-loops, and source-network choice **as explicit model arms**. Structural controllability means generic feasibility for almost all choices of allowed nonzero weights under linear assumptions, not guaranteed control for the biological parameters.
+
+**O-MATH-2: Numerical Kalman rank tests for an identified linear system.**
+
+    Kc(A,B) = [ B, A B, A² B, …, A^(K-1) B ]
+    Ko(A,C) = [ C; C A; C A²; …; C A^(K-1) ]
+
+    fully controllable  <=> rank(Kc) = K
+    fully observable    <=> rank(Ko) = K
+
+Implement using small predeclared K, fixed numerical tolerances, SVD singular-value diagnostics, and a condition-number report. A full numerical rank under noise or an ill-conditioned \`Kc\` is not automatically *practical* controllability.
+
+**O-MATH-3: Finite-horizon reachability and control energy.** When A and B are identified, calculate
+
+    Wc(T) = ∫_0^T exp(A t) B Bᵀ exp(Aᵀ t) dt
+
+and on the reachable subspace, for the unconstrained LTI minimum-energy problem,
+
+    δ = z_target - exp(A T) z_initial
+    E_min = δᵀ Wc(T)^(-1) δ
+
+where the ordinary inverse is permitted only if \`Wc(T)\` is nonsingular. Otherwise report unreachable directions / the reachable-subspace condition and do **not** present a pseudoinverse energy as evidence that an unreachable target is attainable. This expression assumes unconstrained inputs and an exact LTI model; bounded drug doses, PK, irreversible pharmacology and toxicity require an additional constrained optimization.
+
+For measured output objectives \`H z\` (e.g., a disease-specific program subset), explicitly distinguish **output controllability** from controlling all K internal states. Do not interpret a large graph-theoretic driver-node set as proof that a particular therapeutic program can be steered.
+
+**O-MATH-4: Identify A, B and C only with sufficient perturbation/time information.** Implement a data-availability gate and compare a low-dimensional linear state-space fit with simple static and null models. Possible fitting methods include subspace identification or regularized state-space regression, but choose and freeze one only after an identifiability audit. A one-time LINCS endpoint or tumor differential expression alone cannot identify a continuous-time \`A\`. The current D134 target retrieval and D135 genetic concordance are *empirical evidence arms*, not estimates of Kalman matrices.
+
+**Required hand-computable regression tests:**
+
+| Fixture | A, B, C or graph | Correct answer |
+|---|---|---|
+| Two-state controllable/observable chain | \`A=[[0,1],[0,0]]\`, \`B=[[0],[1]]\`, \`C=[[1,0]]\` | \`rank(Kc)=2\`, \`rank(Ko)=2\` |
+| Wrong actuator on the same chain | \`B=[[1],[0]]\` | \`rank(Kc)=1\` |
+| Wrong sensor on the same chain | \`C=[[0,1]]\` | \`rank(Ko)=1\` |
+| Directed path of three nodes | \`1->2->3\` | Unmatched input node is 1 in the structural maximum matching |
+| Fully matched directed cycle | \`1->2->3->1\` | No unmatched node, but **at least one** input remains necessary |
+| Reachability does not imply rank | Chain with one actuator only at a non-upstream node | At least one state unreachable; full control fails |
+| Exact rank but poor conditioning | Weak inter-node coupling | Rank may pass while small singular values/control energy show impracticality |
+| Missing dynamics | Graph only; no time-series identification | Structural output permitted; numerical biological controllability **not evaluable** |
+
+**Implementation contract:** Provide \`structural_matching.py\`, \`kalman.py\`, \`gramians.py\`, \`identify_linear.py\` and \`evaluate.py\` under \`scripts/systems_validation/observability/\`. Use NumPy/SciPy/NetworkX with version-pinned environment metadata. The structural and numerical findings must have **different output fields**: \`structural_candidate_inputs\`, \`numeric_rank\`, \`min_singular_value\`, \`finite_horizon_energy\`, \`identification_status\`, and \`observed_target_response\`.
+
+**Gate O0:** all rank/matching/toy energy checks exactly pass. **Gate O1:** structural results are stable enough under justified graph uncertainty to be meaningful as *hypotheses*. **Gate O2:** empirical D134/D135/D136 tests provide independent target specificity; a graph-only result never suffices. **Gate O3:** only identified and held-out-validated dynamic models receive numerical controllability/observability claims. If data cannot support \`A\`, \`B\`, \`C\`, record an untested dynamical claim rather than estimating arbitrary matrices.
+
+**References:** [Liu et al., Nature 2011](https://doi.org/10.1038/nature10011); [Liu et al., PNAS 2013](https://doi.org/10.1073/pnas.1215508110); [Gates & Rocha 2016](https://doi.org/10.1038/srep24456).
 
 ## 6. Experiment S — Nonlinear disease-state transitions
 
@@ -310,6 +429,96 @@ A sustained expression change is not inherently beneficial. Evaluate independent
 
 **Deliverable:** A context-specific state-trajectory report with model uncertainty, reversibility evidence, compensatory pathways, functional interpretation and explicitly unanswerable questions.
 
+
+### 6.10 S-MATH — Reproduce Angulo et al.'s autonomous-element example and test nonlinear accessibility
+
+**Source and implementation boundary.** First reproduce the **published three-species generalized Lotka–Volterra (GLV) counterexample** from Angulo, Moog and Liu (2019). Its state variables are microbial population abundances, **not** gene-expression z-scores. The GLV model is a **mathematical benchmark**; any later molecular-regulatory model must have independently justified state variables and interactions. Distinguish accessibility (locally available motion directions) from global controllability, attractor stability, and persistence.
+
+**S-MATH-1: Exact three-state benchmark** (Fig. 2 of Angulo et al.).
+
+For positive species abundances \`x1,x2,x3\`, use
+
+    x1_dot = x1 * (-1 + x3)
+    x2_dot = x2 * ( 1 - x3)
+    x3_dot = x3 * (-0.5 + 1.5*x3) + u3(t)
+
+where only x3 is actuated, with the paper also considering impulsive interventions on x3. Define the **autonomous element**
+
+    ξ(x) = x1 * x2.
+
+For every admissible control \`u3(t)\` and every trajectory where the equations apply:
+
+    ξ_dot = x2*x1_dot + x1*x2_dot
+          = x1*x2*(-1+x3) + x1*x2*(1-x3) = 0.
+
+Therefore \`x1(t)*x2(t) = x1(0)*x2(0)\` and targets with a different product are unreachable by interventions acting **only** on x3. This is an **exact algebraic property**, not an estimated statistical association.
+
+Add a second control \`u1(t)\` directly to x1:
+
+    x1_dot = x1 * (-1 + x3) + u1(t)
+    ξ_dot = x2 * u1(t),
+
+so the invariant is no longer preserved; for an impulse, \`Δξ = x2 * Δx1\` at the instant of the jump. Removing this invariant is **necessary evidence of expanded accessibility**, not by itself a guarantee that every biologically relevant state is globally reachable under positivity, amplitude, dose or time constraints.
+
+**Simulation tests:** use \`scipy.integrate.solve_ivp\` and independently hand-check the invariant. For \`x(0)=(2,3,1)\`, x1*x2 remains 6 under multiple fixed, pulse and time-varying x3 controls, within tolerances established by solver convergence and time-step refinement. The nominal desired state \`x_target=(1,1,1)\` has product 1, so a controller acting only on x3 must **never** claim it is reached. Demonstrate a changed product after actuating x1. Test both continuous and impulsive control arms and positivity guards separately.
+
+**S-MATH-2: Local nonlinear accessibility via vector fields and Lie brackets.**
+
+For a control-affine system
+
+    z_dot = f(z) + Σ_j g_j(z) u_j(t)
+
+compute the span of available control directions and their successive Lie brackets; for example, under one convention
+
+    [f,g](z) = Dg(z) f(z) - Df(z) g(z).
+
+A full-rank accessibility distribution at a regular point is an appropriate **local accessibility** criterion under the relevant smoothness and control assumptions; it is not a certificate of global steering, stable-state transitions or bounded-input feasibility. State the bracket sign convention (rank does not depend on its overall sign).
+
+- Implement symbolic differentiation for the published 3-state toy using SymPy and cross-check with finite-difference Jacobians.
+- In the one-actuator toy, demonstrate the invariant's differential \`dξ\` annihilates the accessible directions; the distribution cannot have full rank on the positive domain.
+- With independent actuation of x1 and x3, show the additional field \`g1=(1,0,0)^T\` allows full local rank in the positive domain for the published toy: \`g3=(0,0,1)^T\`, \`g1\`, and \`[f,g3]\` are linearly independent when x2>0.
+- Reject conclusions based on singular points or numerical rank thresholds chosen after observing a favorable result.
+
+**S-MATH-3: Disease-regulatory adaptation, explicitly not the paper's GLV model.** Construct small causal circuits with biological meanings and known dynamics (e.g., negative feedback, positive-feedback bistability, and a compensating parallel pathway). Start with dimension 2–5. Candidate model forms include signed Boolean networks and sparse nonlinear ODEs of the form
+
+    z_dot = f(z; θ) + B(z; θ) u(t),     y(t) = C(z(t)) + ε(t).
+
+Use biologically motivated saturating regulation where appropriate. Do **not** fit \`x_i*(r_i + Σ_j a_ij*x_j)\` directly to gene expression merely because the ecology paper used GLV for abundances.
+
+Freeze synthetic ground truth (A/B dynamics, feedback, initial conditions, measurement map, perturbation schedule and noise) **before** testing a model. Compare a static baseline, a linear state-space model, a small Boolean switch and a sparse nonlinear model, with matching training/holdout protocols.
+
+**S-MATH-4: Distinguish model properties that are often conflated.**
+
+- **Equilibrium:** solve \`f(z*)=0\` under no drug (or a specified constant input), and assess local stability from Jacobian eigenvalues; a real-part-negative Jacobian spectrum supports local asymptotic stability for an isolated hyperbolic equilibrium.
+- **Bistability:** demonstrate at least two stable equilibria with distinct attraction basins in the *identified model*; multiple transcriptomic clusters do not prove this.
+- **Accessibility:** a property of allowed control fields and their Lie brackets, with stated domain.
+- **Reachability:** existence of an admissible input taking one initial state to a desired set in finite time. Show an explicit feasible trajectory or report unknown; do not infer global reachability from a local rank test.
+- **Persistence:** measured alteration after drug withdrawal. This cannot be established from continued treatment or a simulated attractor alone.
+- **Clinical benefit:** independent disease-relevant functional outcome, not proximity to a reference expression vector.
+
+**S-MATH-5: Biological identification gate.** First audit actual LINCS/other time-series granularity (same drug, source line, concentration, actual elapsed time, replicates and matched controls). Hold out whole trajectories or late timepoints; compare predictive performance against linear and no-dynamics baselines. A dataset with insufficient time resolution, no independent perturbations, or unmeasured recovery must **abstain** from claims of attractor changes or persistence. Keep dose-response BMD (D136) separate from dynamical parameter identification.
+
+**Required synthetic unit and property tests:**
+
+| Fixture | Ground truth | Required result |
+|---|---|---|
+| Angulo 3-state system, x3 control only | \`d(x1*x2)/dt=0\` exactly | Symbolic zero and numerically conserved invariant under multiple controls |
+| Desired product differs from initial product | Unreachable under x3 control | Reachability optimizer may not claim success |
+| Add x1 actuation | \`d(x1*x2)/dt=x2*u1\` | Invariant broken; confirm changed product |
+| Positive-domain Lie bracket test | One actuator rank deficient; two actuators locally full rank | Correct rank and convention |
+| Linear stable system | One known equilibrium and basin | Correct equilibrium and Jacobian stability result |
+| Double-well / positive-feedback switch | Two attractors with distinct basins | Detect both; avoid spurious third attractor |
+| Compensatory parallel pathway | Inhibit one branch, response rebounds through other | Reproduce known time course and missed effect by static baseline |
+| Sparse 2-timepoint observations | Dynamics not identifiable | Model returns **not evaluable**, not a confident attractor |
+| Time course during treatment only | Persistence unobserved | \`persistence_status=not_evaluable\` |
+| Washout trajectory | Reversible versus persistent known by design | Correctly classify response without reading training trajectory twice |
+
+**Implementation contract:** \`scripts/systems_validation/state_transitions/{angulo_glv.py,accessibility.py,synthetic_circuits.py,fit_dynamics.py,temporal_audit.py,evaluate_trajectories.py}\`; tests for exact invariants, solver convergence, local rank, equilibria and recovery. NumPy, SciPy and SymPy are proposed dependencies; pin their versions when implementing. Record numerical tolerances and solver methods in the run manifest.
+
+**Gate S0 (published math):** reproduce the exact Angulo Fig. 2 invariant with both one- and two-input arms. **Gate S1 (synthetic):** distinguish reversible, persistent and non-identifiable cases under held-out validation. **Gate S2 (biological):** run only if matched longitudinal data support state identification. **Gate S3 (persistence):** no claim of irreversible/persistent disease-state change without actual washout/recovery observations and appropriate functional context.
+
+**References:** [Angulo et al. 2019](https://doi.org/10.1038/s41467-019-08890-y); [open-access full text, Fig. 2 and methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC6401173/).
+
 ## 7. Integrated interpretation: evidence, not a scalar drug score
 
 | Component | F: Cause | O: Response/control | S: Temporal state |
@@ -382,6 +591,21 @@ The combined report should state **mechanism supported; intervention response su
 - Populate structured mechanism records with provenance, competing explanations, confidence bounds and known limitations.
 - Render scientific prose strictly from the structured evidence.
 - Make no production ranking or tier changes without a separate validated proposal.
+
+
+### Mathematical replication checkpoints (required before the corresponding biological stage)
+
+The **source-method replication** and the **biological adaptation** are separate deliverables. Passing a paper's toy benchmark does not establish that its premises hold for tumors.
+
+| Method | Source-method checkpoint | Biological applicability gate | Failure mode explicitly detected |
+|---|---|---|---|
+| CARNIVAL ILP | Run both built-in standard and inverse toy cases; record optimal network, feasibility, solver gap | Program activities and signed priors match the intended context; independent perturbations available | Inferred driver merely supplied as input; multiple indistinguishable explanations |
+| Maximum matching | Reproduce directed path and directed cycle driver-node cases | Reliable directed causal edge semantics and plausible drug-actuation sites | Topology-only control treated as observed effect |
+| Kalman matrices/Gramian | Reproduce 2-state rank and finite-horizon reachability cases | Enough time-resolved interventions to identify A/B/C | Arbitrary dynamics, ill conditioning or unreachable target |
+| Angulo GLV + accessibility | Prove & numerically test x1*x2 invariant; demonstrate breakdown with x1 actuation | Small, independently specified regulatory dynamics with adequate temporal data | Global state transition inferred from local accessibility |
+| State persistence | Washout synthetic true/false classification | Biological recovery or washout observations | Treatment-only response interpreted as persistent state change |
+
+**Test order:** source-method toy replication -> synthetic adversarial cases -> source-specific feasibility -> predictions frozen -> held-out perturbation/trajectory evaluation -> model-comparison decision. Freeze source-package versions, Git SHA, random seeds, network versions, numerical tolerances and solver options before each test. A method that fails its mathematical replication is not eligible for biological inference; a method that passes mathematics but fails biological controls remains a **negative or restricted-domain** scientific result.
 
 ## 9. Proposed repository structure
 
@@ -483,6 +707,7 @@ The combined report should state **mechanism supported; intervention response su
 - Liu, Slotine and Barabási (2013), *Observability of complex systems*, PNAS, DOI: 10.1073/pnas.1215508110.
 - Gates and Rocha (2016), *Control of complex networks requires both structure and dynamics*, Scientific Reports, DOI: 10.1038/srep24456.
 - Angulo, Moog and Liu (2019), *A theoretical framework for controlling complex microbial communities*, Nature Communications, DOI: 10.1038/s41467-019-08890-y.
+- CARNIVAL software/documentation: https://saezlab.github.io/CARNIVAL/ ; package vignette: https://rdrr.io/bioc/CARNIVAL/f/inst/doc/CARNIVAL.Rmd .
 - *Network inference from perturbation time course data* (2022), npj Systems Biology and Applications, DOI: 10.1038/s41540-022-00253-6.
 
 ## 15. Final objective
