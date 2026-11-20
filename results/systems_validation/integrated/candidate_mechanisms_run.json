@@ -1,0 +1,15 @@
+{
+ "step": "target-agnostic candidate mechanisms",
+ "top_n": 10,
+ "n_rows": 190790,
+ "n_cohorts": 25,
+ "n_drug_cohort_window": 19079,
+ "top1_prolif_linked": 0.4417,
+ "top1_annotated": 0.0001,
+ "top1_annotated_excl_prolif": 0.0001,
+ "any_top10_annotated": 0.0002,
+ "disease_direction_of_top1": {
+  "up": 13132,
+  "down": 5947
+ }
+}

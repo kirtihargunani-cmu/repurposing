@@ -1,0 +1,16 @@
+{
+ "rule": "D104b / D104c (rho 0.4)",
+ "tables": "_v2_consensus_d105",
+ "groups": {
+  "": 46487,
+  "ok": 3221,
+  "acts_on_tumor_environment": 548,
+  "receptor_mismatch": 504
+ },
+ "subgroups": {
+  "": 15059,
+  "ok": 1026,
+  "acts_on_tumor_environment": 176,
+  "receptor_mismatch": 153
+ }
+}

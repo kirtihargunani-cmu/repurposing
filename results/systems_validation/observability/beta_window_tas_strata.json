@@ -1,0 +1,20 @@
+{
+  "HIGH": {
+    "n_fits": 32762,
+    "median_beta_6h": 0.3332579847045001,
+    "median_beta_24h": 0.0780014271216969,
+    "spearman": 0.6813206554486027,
+    "median_abs_diff": 0.7131275500564104,
+    "pct_of_typical_beta": 186.96042160093543,
+    "sign_change_rate": 0.25685245101031684
+  },
+  "NEW": {
+    "n_fits": 32762,
+    "median_beta_6h": 0.17225745792885244,
+    "median_beta_24h": 0.0008468445580980222,
+    "spearman": 0.31630270190763005,
+    "median_abs_diff": 0.5857335795082885,
+    "pct_of_typical_beta": 150.98793115138574,
+    "sign_change_rate": 0.40479824186557595
+  }
+}

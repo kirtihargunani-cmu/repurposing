@@ -1,20 +1,20 @@
 {
  "test": "D153 section 10.3 - proliferation beta, 6 h vs 24 h, within-cell",
- "n_cells_both_windows": 1373,
+ "n_cells_both_windows": 2300,
  "n_regulator_rows": 32762,
  "beta_early": {
-  "median": 0.331,
-  "p10": -0.9176,
-  "p90": 2.5632
+  "median": 0.3056,
+  "p10": -0.915,
+  "p90": 2.3768
  },
  "beta_late": {
-  "median": 0.0787,
-  "p10": -0.2774,
-  "p90": 0.5935
+  "median": 0.059,
+  "p10": -0.2846,
+  "p90": 0.5656
  },
- "spearman_early_vs_late": 0.6868,
- "median_abs_difference": 0.6765,
- "frac_sign_disagreement": 0.2517,
- "median_abs_beta": 0.3759,
- "difference_relative_to_typical_beta": 1.8
+ "spearman_early_vs_late": 0.5937,
+ "median_abs_difference": 0.6834,
+ "frac_sign_disagreement": 0.2875,
+ "median_abs_beta": 0.3606,
+ "difference_relative_to_typical_beta": 1.895
 }

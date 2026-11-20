@@ -58,6 +58,28 @@ MR_FDR, TOP_PCT, MIN_MRS_REF, MIN_REF, R_MIN = 0.10, 10, 20, 10, 0.5
 #   condition-level profiles of 79c2. Default OFF so production behaviour is unchanged.
 WINDOWS = os.environ.get("WINDOWS", "0") == "1"
 MIN_WIN_N = int(os.environ.get("MIN_WIN_N", "40"))
+# PROLIF_MODE (D157, user 2026-11-20): WHICH PART of the proliferation axis to subtract.
+#   The `specific` profiles (79c2) already remove the per-(cell line, timepoint) generic response, so
+#   pi_spec is mean ~0 (-0.018 early / -0.014 late) and corr(pi_spec, group mean) = 0.026: the generic
+#   growth arrest is gone before pi is built. What `full` then subtracts is the DRUG-SPECIFIC part --
+#   the opposite of the intent. Of pi_spec's variance, 51.6% early / 40.5% late is drug-universal
+#   (the drug arrests growth in every line: caveat C4, the artifact) and 48.4% / 59.5% is line-selective
+#   (this drug arrests THIS lineage: a candidate mechanism, and for discovery a finding in its own right).
+#   full       A - beta*pi            removes both (D154 behaviour; the pre-D157 default)
+#   universal  A - beta*pi_drugmean   removes only the drug's cross-line mean within the window
+#   none       A                      no adjustment
+#   beta is fitted on the full pi either way (a well-powered per-unit slope) and applied to the chosen part.
+PROLIF_MODE = os.environ.get("PROLIF_MODE", "full"); assert PROLIF_MODE in ("full", "universal", "none")
+# BETA_TAS_MIN (D157, 2026-11-20): fit beta only on conditions whose median_tas clears this floor,
+#   then APPLY it to every condition. The D156 6 h floor (0.25) nearly doubled early coverage, but the
+#   newly admitted conditions are weaker and beta is the most noise-sensitive quantity in the pipeline:
+#   stratified over the 2,300 both-window cells, conditions at TAS >= 0.4 reproduce D154 almost exactly
+#   (Spearman(beta_6h, beta_24h) +0.681, sign flip 25.7%, vs +0.687 / 25.2%), while those below it give
+#   +0.316 / 40.5%. Pooled they give +0.594 / 28.7% - dilution, not new signal. Drug-level scores are
+#   unaffected (window discordance 37.0% -> 37.4%), so the noise is specific to the per-regulator slope.
+#   Fitting on the clean subset and applying everywhere keeps the coverage gain out of the correction.
+#   0.0 (default) = fit on everything, the pre-D157 behaviour.
+BETA_TAS_MIN = float(os.environ.get("BETA_TAS_MIN", "0"))
 SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 STRATA_V2 = os.environ.get("STRATA", "0") == "1"
@@ -210,6 +232,30 @@ def main():
     pi_spec = np.fromfile(f_spec,
                           dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1).astype(np.float64)
     print(f"proliferation genes on profiles: {pm.sum()}")
+    # D157: PA_SUB is the part of pi actually subtracted (see PROLIF_MODE).
+    _pa = pi_raw.astype(np.float64) if PROFILE == "raw" else pi_spec
+    if PROLIF_MODE == "none":
+        PA_SUB = np.zeros_like(_pa)
+    elif PROLIF_MODE == "universal":
+        _w = WIN.values if WIN is not None else np.full(len(idx), "all")
+        PA_SUB = pd.Series(_pa).groupby([idx.pert_id.values, _w]).transform("mean").values
+        _nl = idx.groupby("pert_id").ModelID.nunique()
+        _deg = (idx.pert_id.map(_nl) < 2).sum()   # 1-line drugs: drug-mean == pi, so universal == full
+        print(f"PROLIF_MODE=universal: subtracting the per-(drug, window) mean of pi; "
+              f"|PA_SUB| {np.abs(PA_SUB).mean():.3f} vs |pi| {np.abs(_pa).mean():.3f} "
+              f"(keeping {100*(1-np.var(PA_SUB)/np.var(_pa)):.1f}% of pi variance as line-selective); "
+              f"{_deg:,}/{len(idx):,} ({100*_deg/len(idx):.1f}%) conditions are single-line drugs where this "
+              f"degenerates to PROLIF_MODE=full", flush=True)
+    else:
+        PA_SUB = _pa
+    if BETA_TAS_MIN > 0:
+        assert "median_tas" in idx.columns, "BETA_TAS_MIN needs an index with median_tas (79c2 profiles)"
+        FIT = (idx.median_tas.values >= BETA_TAS_MIN)
+        print(f"BETA_TAS_MIN={BETA_TAS_MIN}: beta fitted on {FIT.sum():,}/{len(idx):,} "
+              f"({100*FIT.mean():.1f}%) conditions, applied to all", flush=True)
+    else:
+        FIT = np.ones(len(idx), dtype=bool)
+    print(f"PROLIF_MODE={PROLIF_MODE}", flush=True)
 
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
     keys = pd.read_csv(ROOT / "config/celligner_tissue_keys.tsv", sep="\t", comment="#").set_index("group_id")
@@ -253,7 +299,7 @@ def main():
             regs = pd.Index((vdir / f"{net}.regulators.txt").read_text().split())
             A = np.fromfile(vdir / f"{net}.f32",
                             dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
-            pa = pi_raw.astype(np.float64) if PROFILE == "raw" else pi_spec
+            pa = _pa          # D157: one source of truth; PA_SUB is the part of it we subtract
             # PER-WINDOW proliferation adjustment (D154, user 2026-11-19).
             # A single pooled beta was wrong by ~2x its own magnitude and changed SIGN for 24.5% of
             # regulators between 6 h and 24 h, because growth arrest itself differs by window
@@ -275,18 +321,24 @@ def main():
                     if m.sum() < MIN_WIN_N:          # too few conditions: fall back, and say so
                         continue
                     covered |= m
-                    pw = pa[m]; pcw = pw - pw.mean()
-                    Aw = A[m]; Acw = Aw - Aw.mean(0)
-                    if pcw @ pcw <= 0:
+                    mf = m & FIT                      # D157: fit on the clean subset ...
+                    if mf.sum() < MIN_WIN_N:
+                        mf = m
+                    pf = pa[mf]; pcf = pf - pf.mean()
+                    Af = A[mf]; Acf = Af - Af.mean(0)
+                    pw = pa[m]
+                    Aw = A[m]
+                    if pcf @ pcf <= 0:
                         covered &= ~m
                         continue
-                    bw = Acw.T @ pcw / (pcw @ pcw)
-                    A_adj[m] = Aw - np.outer(pw, bw)
+                    bw = Acf.T @ pcf / (pcf @ pcf)    # ... and apply to every condition in the window
+                    pcw = pcf; Acw = Acf
+                    A_adj[m] = Aw - np.outer(PA_SUB[m], bw)          # D157: chosen part of pi
                     rw = bw * pcw.std() / np.where(Acw.std(0) > 0, Acw.std(0), np.nan)
                     r = np.where(np.isnan(r), rw, np.fmax(np.abs(r), np.abs(rw)) * np.sign(
                         np.where(np.abs(r) >= np.abs(rw), r, rw)))
                 if (~covered).any():                 # conditions in no usable window: pooled beta
-                    A_adj[~covered] = A[~covered] - np.outer(pa[~covered], beta_all)
+                    A_adj[~covered] = A[~covered] - np.outer(PA_SUB[~covered], beta_all)   # D157
                     beta_pooled_flag[:] = True
                 r = np.where(np.isnan(r), r_all, r)
             else:
@@ -294,7 +346,7 @@ def main():
                 Ac = A - A.mean(0)
                 beta = Ac.T @ pc / (pc @ pc)
                 r = beta * pc.std() / Ac.std(0)
-                A_adj = A - np.outer(pa, beta)
+                A_adj = A - np.outer(PA_SUB, beta)                   # D157
                 beta_pooled_flag[:] = True
             # P2 per window: |r| is the strongest window-wise correlation, so a regulator that
             # tracks growth arrest in EITHER window is flagged rather than averaged out of it.

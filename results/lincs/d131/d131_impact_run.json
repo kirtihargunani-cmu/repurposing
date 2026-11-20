@@ -1,16 +1,16 @@
 {
  "stage": "D131-impact",
- "git_sha": "c43255ff2309a1d25e9a27bca7d5eb5736345f33",
+ "git_sha": "e4c3b5119dff42db1a076ca9172ab8b33dc7f98f",
  "n_cohorts_invariance": 55,
  "n_cohorts_prolif": 55,
  "log": [
-  "[   0.8s] (1) EXACT inflation sqrt(w'Sigma w)/sqrt(w'w) = sd(shipped rev), 55 cohorts: median 10.21, 5-95% 4.21-14.34, min 4.10, max 15.46",
-  "[   0.8s] (2) within-cohort rank / robust-z invariance under an arbitrary positive rescaling: 55/55 cohorts invariant in rev_pct, rev_z AND the tier mask (0 failures)",
-  "[   4.1s] (3) prolif_share on 55 cohorts, 67174 cohort x drug rows. Reconstruction check vs the shipped prolif_share: max |diff| 0.8405, median per cohort 0.0041; regulator-count check 54/55 cohorts match exactly",
-  "[   4.1s]     k = sd_cov(prolif)/sd_cov(nonprolif): median 0.419, range 0.041-3.633",
-  "[   4.1s]     median prolif_share published 0.301 -> covariance-aware 0.503",
-  "[   4.1s]     rows crossing the 0.5 line: 18050 of 67174 (26.9%)",
-  "[   4.1s]     prolif_driven: 968 published -> 1539 covariance-aware; 597 rows change the flag"
+  "[   1.0s] (1) EXACT inflation sqrt(w'Sigma w)/sqrt(w'w) = sd(shipped rev), 55 cohorts: median 10.21, 5-95% 4.21-14.34, min 4.10, max 15.46",
+  "[   1.0s] (2) within-cohort rank / robust-z invariance under an arbitrary positive rescaling: 55/55 cohorts invariant in rev_pct, rev_z AND the tier mask (0 failures)",
+  "[   3.4s] (3) prolif_share on 55 cohorts, 67174 cohort x drug rows. Reconstruction check vs the shipped prolif_share: max |diff| 0.8405, median per cohort 0.0041; regulator-count check 54/55 cohorts match exactly",
+  "[   3.4s]     k = sd_cov(prolif)/sd_cov(nonprolif): median 0.419, range 0.041-3.633",
+  "[   3.4s]     median prolif_share published 0.301 -> covariance-aware 0.503",
+  "[   3.4s]     rows crossing the 0.5 line: 18050 of 67174 (26.9%)",
+  "[   3.4s]     prolif_driven: 968 published -> 1539 covariance-aware; 597 rows change the flag"
  ],
- "seconds": 4.1
+ "seconds": 3.4
 }
