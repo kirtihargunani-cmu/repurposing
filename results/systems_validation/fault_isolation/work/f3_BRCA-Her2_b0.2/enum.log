@@ -1,5 +1,0 @@
-47298 declared binaries; cutting on 10530 matching ('nU', 'nD')
-optimum 24.39329237  alternative optima: 1  status: exhausted
-  nodes active in EVERY optimum : 87
-  nodes active in SOME optimum  : 87
-wrote results/systems_validation/fault_isolation/work/f3_BRCA-Her2_b0.2/enum.json

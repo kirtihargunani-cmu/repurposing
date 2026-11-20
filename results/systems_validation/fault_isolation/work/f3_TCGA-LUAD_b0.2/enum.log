@@ -1,5 +1,0 @@
-47298 declared binaries; cutting on 10530 matching ('nU', 'nD')
-optimum 8.0  alternative optima: 1  status: exhausted
-  nodes active in EVERY optimum : 40
-  nodes active in SOME optimum  : 40
-wrote results/systems_validation/fault_isolation/work/f3_TCGA-LUAD_b0.2/enum.json

@@ -1,0 +1,29 @@
+{
+ "step": "O-3 / D136-S1 regulon BMD with coherence and censoring",
+ "seed": 20261118,
+ "k_profile": [
+  1.5,
+  2.0,
+  2.5,
+  3.0
+ ],
+ "k_primary": 2.0,
+ "k_rule": "S0 crossing rate nearest 50%",
+ "n_cells": 400,
+ "n_rows": 1597159,
+ "n_regulon_rows_at_k_primary": 421865,
+ "censored_fraction": {
+  "median": 0.4375,
+  "p10": 0.1415,
+  "p90": 0.7011
+ },
+ "discordant_fraction_median": 0.2083,
+ "coherence_cv": {
+  "median": 0.9554,
+  "p10": 0.4523,
+  "p90": 1.9646
+ },
+ "km_median_resolvable": 78835,
+ "level2_implemented": false,
+ "runtime_s": 674.9
+}

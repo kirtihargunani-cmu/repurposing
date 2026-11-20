@@ -1,0 +1,174 @@
+{
+ "step": "O-3 / D136-S0 crossing and censoring curves",
+ "spec": "docs/SPEC_dose_response_bmd.md section 3",
+ "seed": 20261118,
+ "n_cells_available": 2722,
+ "n_cells_sampled": 1500,
+ "n_signatures": 7325,
+ "n_genes": 10174,
+ "source": "level5_beta_trt_cp (NOT 79c consensus)",
+ "no_target_quantity_computed": true,
+ "curves": [
+  {
+   "k": 0.25,
+   "pooled_crossing_rate": 0.99782,
+   "pooled_censored_rate": 0.00218,
+   "median_cell_crossing_rate": 0.99902,
+   "p10_cell": 0.99381,
+   "p90_cell": 1.0,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1500
+  },
+  {
+   "k": 0.5,
+   "pooled_crossing_rate": 0.98441,
+   "pooled_censored_rate": 0.01559,
+   "median_cell_crossing_rate": 0.99106,
+   "p10_cell": 0.95842,
+   "p90_cell": 0.99971,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1500
+  },
+  {
+   "k": 0.75,
+   "pooled_crossing_rate": 0.95122,
+   "pooled_censored_rate": 0.04878,
+   "median_cell_crossing_rate": 0.96501,
+   "p10_cell": 0.8825,
+   "p90_cell": 0.99794,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1500
+  },
+  {
+   "k": 1.0,
+   "pooled_crossing_rate": 0.89596,
+   "pooled_censored_rate": 0.10404,
+   "median_cell_crossing_rate": 0.91621,
+   "p10_cell": 0.77059,
+   "p90_cell": 0.99018,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1500
+  },
+  {
+   "k": 1.25,
+   "pooled_crossing_rate": 0.82185,
+   "pooled_censored_rate": 0.17815,
+   "median_cell_crossing_rate": 0.84131,
+   "p10_cell": 0.6414,
+   "p90_cell": 0.97053,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1485
+  },
+  {
+   "k": 1.5,
+   "pooled_crossing_rate": 0.73594,
+   "pooled_censored_rate": 0.26406,
+   "median_cell_crossing_rate": 0.75329,
+   "p10_cell": 0.51057,
+   "p90_cell": 0.93808,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1366
+  },
+  {
+   "k": 1.75,
+   "pooled_crossing_rate": 0.64571,
+   "pooled_censored_rate": 0.35429,
+   "median_cell_crossing_rate": 0.65274,
+   "p10_cell": 0.39139,
+   "p90_cell": 0.89289,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 1135
+  },
+  {
+   "k": 2.0,
+   "pooled_crossing_rate": 0.55767,
+   "pooled_censored_rate": 0.44233,
+   "median_cell_crossing_rate": 0.5516,
+   "p10_cell": 0.28502,
+   "p90_cell": 0.83631,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 861
+  },
+  {
+   "k": 2.25,
+   "pooled_crossing_rate": 0.47622,
+   "pooled_censored_rate": 0.52378,
+   "median_cell_crossing_rate": 0.45626,
+   "p10_cell": 0.20458,
+   "p90_cell": 0.7758,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 661
+  },
+  {
+   "k": 2.5,
+   "pooled_crossing_rate": 0.40359,
+   "pooled_censored_rate": 0.59641,
+   "median_cell_crossing_rate": 0.3676,
+   "p10_cell": 0.14099,
+   "p90_cell": 0.71666,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 506
+  },
+  {
+   "k": 2.75,
+   "pooled_crossing_rate": 0.3406,
+   "pooled_censored_rate": 0.6594,
+   "median_cell_crossing_rate": 0.29526,
+   "p10_cell": 0.09489,
+   "p90_cell": 0.65644,
+   "cells_with_under_1pct_crossing": 0,
+   "cells_with_over_50pct_crossing": 372
+  },
+  {
+   "k": 3.0,
+   "pooled_crossing_rate": 0.28704,
+   "pooled_censored_rate": 0.71296,
+   "median_cell_crossing_rate": 0.22921,
+   "p10_cell": 0.06211,
+   "p90_cell": 0.59654,
+   "cells_with_under_1pct_crossing": 1,
+   "cells_with_over_50pct_crossing": 267
+  },
+  {
+   "k": 3.25,
+   "pooled_crossing_rate": 0.24185,
+   "pooled_censored_rate": 0.75815,
+   "median_cell_crossing_rate": 0.17663,
+   "p10_cell": 0.04065,
+   "p90_cell": 0.54227,
+   "cells_with_under_1pct_crossing": 7,
+   "cells_with_over_50pct_crossing": 201
+  },
+  {
+   "k": 3.5,
+   "pooled_crossing_rate": 0.20405,
+   "pooled_censored_rate": 0.79595,
+   "median_cell_crossing_rate": 0.13549,
+   "p10_cell": 0.02604,
+   "p90_cell": 0.48443,
+   "cells_with_under_1pct_crossing": 30,
+   "cells_with_over_50pct_crossing": 131
+  },
+  {
+   "k": 3.75,
+   "pooled_crossing_rate": 0.17246,
+   "pooled_censored_rate": 0.82754,
+   "median_cell_crossing_rate": 0.10325,
+   "p10_cell": 0.0171,
+   "p90_cell": 0.43221,
+   "cells_with_under_1pct_crossing": 61,
+   "cells_with_over_50pct_crossing": 84
+  },
+  {
+   "k": 4.0,
+   "pooled_crossing_rate": 0.146,
+   "pooled_censored_rate": 0.854,
+   "median_cell_crossing_rate": 0.07898,
+   "p10_cell": 0.01121,
+   "p90_cell": 0.38523,
+   "cells_with_under_1pct_crossing": 130,
+   "cells_with_over_50pct_crossing": 58
+  }
+ ],
+ "runtime_s": 62.2
+}
