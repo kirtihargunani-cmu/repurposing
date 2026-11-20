@@ -1,0 +1,81 @@
+{
+  "n_rows": 2127,
+  "n_pairs": 542,
+  "n_drugs": 68,
+  "n_targets": 14,
+  "n_cohorts": 14,
+  "arms": {
+    "none": {
+      "n": 542,
+      "chance_at_10": 0.01146,
+      "recovery_at_10": 0.00554,
+      "lift": 0.48,
+      "recovery_at_50": 0.04244,
+      "median_rank": 420.5,
+      "median_rank_pct": 0.4745
+    },
+    "none:secondary": {
+      "n": 15,
+      "chance_at_10": 0.01148,
+      "recovery_at_10": 0.0,
+      "lift": 0.0,
+      "recovery_at_50": 0.0,
+      "median_rank": 629.0,
+      "median_rank_pct": 0.7172
+    },
+    "universal": {
+      "n": 542,
+      "chance_at_10": 0.01146,
+      "recovery_at_10": 0.00554,
+      "lift": 0.48,
+      "recovery_at_50": 0.04428,
+      "median_rank": 400.5,
+      "median_rank_pct": 0.4602
+    },
+    "universal:secondary": {
+      "n": 15,
+      "chance_at_10": 0.01148,
+      "recovery_at_10": 0.0,
+      "lift": 0.0,
+      "recovery_at_50": 0.0,
+      "median_rank": 613.0,
+      "median_rank_pct": 0.699
+    },
+    "full": {
+      "n": 542,
+      "chance_at_10": 0.01146,
+      "recovery_at_10": 0.00738,
+      "lift": 0.64,
+      "recovery_at_50": 0.04244,
+      "median_rank": 398.5,
+      "median_rank_pct": 0.4586
+    },
+    "full:secondary": {
+      "n": 15,
+      "chance_at_10": 0.01148,
+      "recovery_at_10": 0.0,
+      "lift": 0.0,
+      "recovery_at_50": 0.0,
+      "median_rank": 634.0,
+      "median_rank_pct": 0.7229
+    },
+    "full_filter": {
+      "n": 501,
+      "chance_at_10": 0.01253,
+      "recovery_at_10": 0.00399,
+      "lift": 0.32,
+      "recovery_at_50": 0.05389,
+      "median_rank": 363.0,
+      "median_rank_pct": 0.4566
+    },
+    "full_filter:secondary": {
+      "n": 15,
+      "chance_at_10": 0.0124,
+      "recovery_at_10": 0.0,
+      "lift": 0.0,
+      "recovery_at_50": 0.0,
+      "median_rank": 557.0,
+      "median_rank_pct": 0.7178
+    }
+  }
+}
