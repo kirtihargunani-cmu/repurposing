@@ -95,3 +95,30 @@ That test is the pre-registered next step, and it must run before any licence is
    not in degree. The 40.8% residual bounds what is missing from OmniPath; it does **not** promise
    IPA holds it. Only a coverage check against IPA's gene list could establish that, and that needs
    access we do not have.
+
+## Guard against a conflation (user, 2026-11-20)
+
+**The D158 3.8× result does not use the PKN, and more edges cannot improve it.** Verified directly:
+neither `route1_validation.py` nor `candidate_mechanisms.py` contains any reference to the PKN,
+OmniPath or CARNIVAL. Their inputs are the condition profiles, ARACNe VIPER activity, `group_mr.tsv`,
+celligner line weights and the ChEMBL annotations. That result would read identically against a PKN
+of zero edges.
+
+Two separate machines, and only one consumes edges:
+
+| | **A — identification** | **B — tracing** |
+|---|---|---|
+| question | which regulator does this drug move opposite to the tumour? | by what route does binding this protein cause that change? |
+| inputs | ARACNe regulons, VIPER activity, disease NES | drug target → signed directed paths → CARNIVAL ILP |
+| reads the PKN | **no** | yes |
+| status | **works: 3.84× in the top 1% for primary targets (D158)** | **0 of 4 recoveries (D144–D147)** |
+
+So a larger knowledge base is an investment in **B**, which does not currently work, not an
+improvement to **A**, which does. Any case for IPA must be argued on B's terms.
+
+**The strongest form of that case** is not "more edges, better targets". It is this: D158's secondary
+-target failure (0.88×, chance) was measured by **A**, an activity test — does the drug move that
+regulator in the opposing direction? **B** would score a secondary target by an entirely different
+criterion — is there a coherent signed *path* from it to the dysregulated regulators? That has never
+been tested on secondary targets, because tracing does not yet work at all. If B can be made to work
+it is a new line of evidence on the secondary-target problem, not a restatement of A's.
