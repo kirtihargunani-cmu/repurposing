@@ -23,7 +23,8 @@ dir.create(D, recursive = TRUE, showWarnings = FALSE)
 CBC <- "/home/kirti/miniforge3/envs/sysval/bin/cbc"
 
 pkn <- fread(PKNF)[, .(source, interaction, target)]
-tf <- fread(file.path(OUT, paste0("tf_activity_", COHORT, ".tsv")))
+TF_SFX <- Sys.getenv("TF_SFX", "")   # D160: the PKN arm's F-1 output ("" = frozen curated)
+tf <- fread(file.path(OUT, paste0("tf_activity_", COHORT, TF_SFX, ".tsv")))
 meas_df <- tf[in_pkn == TRUE & fdr < 0.05]                      # FROZEN selection rule
 meas <- setNames(as.numeric(meas_df$nes), meas_df$regulator)    # FROZEN: continuous NES, unaltered
 cat(sprintf("%s | driver %s | betaWeight %.2f | %d measured TFs | PKN %d edges\n",
