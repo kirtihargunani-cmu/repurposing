@@ -1,0 +1,67 @@
+[
+  {
+    "arm": "curated (production)",
+    "edges": 15646,
+    "nodes": 5264,
+    "pct_activating": 70.2,
+    "regulators_covered": 2291,
+    "regulators_pct": 54.1,
+    "targets_covered": 258,
+    "targets_pct": 66.7,
+    "reachable_pairs": 66340,
+    "targets_with_any": 196,
+    "max_hops": 3
+  },
+  {
+    "arm": "relaxed",
+    "edges": 19634,
+    "nodes": 6158,
+    "pct_activating": 68.5,
+    "regulators_covered": 2504,
+    "regulators_pct": 59.2,
+    "targets_covered": 289,
+    "targets_pct": 74.7,
+    "reachable_pairs": 85862,
+    "targets_with_any": 216,
+    "max_hops": 3
+  },
+  {
+    "arm": "permissive",
+    "edges": 19353,
+    "nodes": 6115,
+    "pct_activating": 70.1,
+    "regulators_covered": 2486,
+    "regulators_pct": 58.7,
+    "targets_covered": 288,
+    "targets_pct": 74.4,
+    "reachable_pairs": 100173,
+    "targets_with_any": 216,
+    "max_hops": 3
+  },
+  {
+    "arm": "curated+signor",
+    "edges": 19438,
+    "nodes": 6130,
+    "pct_activating": 68.6,
+    "regulators_covered": 2500,
+    "regulators_pct": 59.1,
+    "targets_covered": 289,
+    "targets_pct": 74.7,
+    "reachable_pairs": 84847,
+    "targets_with_any": 214,
+    "max_hops": 3
+  },
+  {
+    "arm": "relaxed+signor",
+    "edges": 19634,
+    "nodes": 6158,
+    "pct_activating": 68.5,
+    "regulators_covered": 2504,
+    "regulators_pct": 59.2,
+    "targets_covered": 289,
+    "targets_pct": 74.7,
+    "reachable_pairs": 85862,
+    "targets_with_any": 216,
+    "max_hops": 3
+  }
+]
