@@ -254,3 +254,57 @@ and the size of that distortion is the finding.
 
 This is a cheap test and it is the one that decides whether items 2 and 3 need rebuilding at all. It
 should run before any of it is implemented.
+
+---
+
+## 11. The recommendation must carry the early and late evidence (user, 2026-11-19)
+
+Keeping conditions internally is not enough: **the timing evidence has to reach the output.** A drug
+recommendation that reports one number has thrown away the distinction this whole specification
+exists to preserve, and the reader cannot tell a drug whose early and late evidence agree from one
+whose evidence reverses — which is precisely the anti-estrogen case.
+
+### 11.1 Required fields on every recommended drug × disease row
+
+| field | content |
+|---|---|
+| `score_early` / `score_late` | the mechanism score computed within each window, never averaged across them |
+| `n_conditions_early` / `n_conditions_late` | how many (dose, time) conditions each rests on — a score from one condition is not a score from six |
+| `window_coverage` | `both` / `early_only` / `late_only` / `neither` |
+| `window_agreement` | `concordant` (same sign, both windows) / `discordant` (sign reverses) / `not_evaluable` (only one window) |
+| `doses_early` / `doses_late` | the distinct doses behind each, so a one-dose score is visible as such |
+| `beta_pooled` | whether the proliferation adjustment fell back to a pooled β for this stratum (§10.2) |
+
+### 11.2 Rules for presenting them
+
+1. **No single headline score may be formed by averaging across windows.** If one number is needed
+   for ordering, it is the **within-window** score of a declared window, with the window named.
+2. **`discordant` is surfaced, never resolved.** A drug whose evidence reverses between 6 h and 24 h
+   is reported as reversing. That is a property of the drug, not missing information to be smoothed
+   away, and it is the single most informative field in the row — D152 showed all five
+   anti-estrogens reverse, and averaging is what hid that for eleven prior attempts.
+3. **`early_only` and `late_only` rows carry their window as a caveat**, per §9.3: which timepoint a
+   drug was profiled at reflects its screening campaign, so a `late_only` drug is not comparable to a
+   `both` drug without stating it.
+4. **A recommendation resting on `neither`** — no condition in a usable window — is `not evaluable`
+   and is not ranked.
+
+### 11.3 Where this lands
+
+These fields are the timing block of the candidate dossier in
+`SPEC_systems_theoretic_mechanism_validation.md` §0.1, which already requires *"source network /
+version, line, dose and time"* on the drug-side measurement row but does not yet say the early and
+late evidence must be reported **separately and compared**. §11.1 is that requirement made concrete.
+
+The existing `results/systems_validation/integrated/candidate_table.tsv` (D142) carries one score per
+avenue and gains the window columns above.
+
+### 11.4 What this changes about ranking, stated plainly
+
+Today's rankings order by a single number per drug × disease. Under this rule a drug can be **highly
+ranked early and poorly ranked late**, and both facts are shown. That is more honest and less
+convenient, and it means a ranking is no longer a total order unless a window is fixed first.
+
+Whether production adopts a window-fixed ranking, reports both, or keeps the current collapsed score
+as the lead is **a separate decision**, not made here. This specification only guarantees the
+evidence is available and visible; it changes no production ranking.
