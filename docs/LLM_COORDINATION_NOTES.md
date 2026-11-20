@@ -92,3 +92,26 @@ scores, the implied `AUC_max = (1 + sqrt(r)) / 2`, and attainment `D_observed / 
 - Thresholds and decision rules are fixed before results are looked at, and recorded in `docs/DECISIONS.md`; the layer
   reports them and does not tune them.
 - Caveats per result live in `docs/DECISIONS.md` (disease side) and `docs/notes/drug_side_decisions_and_caveats.md`; a report about a disease should carry the caveats that apply to it.
+
+### R6. Never read a gate or flag column as a verdict (Claude 2026-11-20; D168)
+
+`gate_reason = target_expressed` does **not** mean the drug's target is present in that disease. It
+means the drug was not excluded at the coarse `79b` stage, which passes a drug if **any** annotated
+non-ADME target is expressed. The mechanism question is answered later, by `79i2`, in
+`target_absent` / `evidence_targets` / `tier_spec_mech`.
+
+Worked case: tamoxifen in BRCA-Basal carries `gate_reason = target_expressed` (its PKC annotations
+are expressed) **and** `target_absent = True`, `tier_spec_mech = 3`, `spec_mech_pct = 4.1` (every
+estrogen-receptor target is absent). Both are correct; only the row is informative.
+
+Scale: 1,192 rows, 171 drugs, all 41 cohorts pass `79b` with their mechanism target absent. All
+1,192 are `tier_spec_mech = 3` and **0 of 558 FDA top-10 rows** are among them.
+
+The layer must therefore:
+1. build candidate lists from the lead ranking (`layered_pct` / `fda_rank`), never from `passes_gate`;
+2. quote `evidence_targets` and `target_absent` whenever it quotes `gate_reason`, or quote neither;
+3. report a high `rev*_pct` beside `target_absent = True` as a **suppressed false positive**, not as
+   "promising but gated";
+4. treat `passes_gate` counts as a coverage statistic, not a candidate count.
+
+Full detail and the column-by-column table: `docs/NOTE_reading_output_fields.md`.
