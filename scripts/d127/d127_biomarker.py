@@ -19,6 +19,7 @@ reading in which an exclusion flag in the low cohort counts as a correct demotio
 Outputs: results/lincs/d127/{instances,pairs,summary}.tsv, run.json.
 """
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -58,7 +59,9 @@ PAIRS = [
     ("CDK4/6", "BRCA-LumA", "BRCA-Basal", "seen"),
 ]
 NOT_COMPUTABLE = [("AR antagonist", "TCGA-PRAD", "TCGA-BLCA", "no AR drug is scored in BLCA")]
-OUT = ROOT / "results/lincs/d127"
+# OUT_SFX (D165, 2026-11-20): write beside the production d127 output instead of over it,
+# e.g. OUT_SFX=_v2_tf with SPLIT_SFX=_v2_tf for the ARACNe-only arm.
+OUT = ROOT / ("results/lincs/d127" + os.environ.get("OUT_SFX", ""))
 
 
 def target_genes(x):

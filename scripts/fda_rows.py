@@ -8,6 +8,7 @@ kept (the page shows them, weak evidence hidden by default). `drug` = FDA ingred
 """
 from pathlib import Path
 
+import os
 import sys
 
 import pandas as pd
@@ -18,6 +19,9 @@ from evidence_flags import apply_evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
+# SPLIT_SFX (D165, 2026-11-20): which split tables to read. Default is production, unchanged.
+# Set SPLIT_SFX=_v2_tf to read the ARACNe-only arm (D160) without touching production.
+SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_consensus")
 SALTS = {"HYDROCHLORIDE", "DIHYDROCHLORIDE", "HCL", "SODIUM", "DISODIUM", "POTASSIUM", "CALCIUM", "MAGNESIUM", "ZINC",
          "MESYLATE", "DIMESYLATE", "MALEATE", "TARTRATE", "BITARTRATE", "CITRATE", "SULFATE", "BISULFATE", "PHOSPHATE",
          "ACETATE", "DIACETATE", "SUCCINATE", "FUMARATE", "HEMIFUMARATE", "HYDROBROMIDE", "BROMIDE", "CHLORIDE", "TOSYLATE",
@@ -78,8 +82,8 @@ def fda_rows():
     """(diseases, subgroups) DataFrames from the split tables, FDA drugs only, one row per cohort x ingredient;
     subgroups have group_id = stratum and parent_group."""
     fm = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id").fda_ingredient
-    g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
-    s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False).rename(columns={"stratum": "group_id"})
+    g = pd.read_csv(RES / f"drug_reversal_split{SPLIT_SFX}.tsv", sep="\t", low_memory=False)
+    s = pd.read_csv(RES / f"stratum_reversal_split{SPLIT_SFX}.tsv", sep="\t", low_memory=False).rename(columns={"stratum": "group_id"})
     out = []
     for df, order in ((g, ORDER["group_id"]), (s, ORDER["stratum"])):   # D122: layered_pct first
         df = df[df.passes_gate.map(truthy) & df.pert_id.isin(fm.index)].copy()
