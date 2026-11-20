@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Per-disease drug lists with a target-presence gate and pharmacology flags (user, 2026-10-09: items 2 and 3).
 
-Drugs per disease (41 Step 4 signature groups): active (is_hiq, TAS >= 0.4) in a LINCS line of the group's strict
+Drugs per disease (41 Step 4 signature groups): active (is_hiq, TAS above the per-timepoint floor (D156: 6 h 0.25, else 0.4)) in a LINCS line of the group's strict
 tissue key ("direct"), or not direct but active in >= MIN_LINES cancer lines elsewhere ("borrowed"; cross-line
 consensus, leave-one-line-out r ~0.46 at 3-4 lines).
 Target gate (rules and thresholds in config/drug_gate.yaml; gene classes from HGNC gene groups of the pinned HGNC
@@ -30,6 +30,8 @@ import json
 import os
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import numpy as np
 import pandas as pd
 
@@ -120,7 +122,7 @@ def main():
     cov = pd.read_csv(RES / "cell_coverage.tsv", sep="\t").dropna(subset=["ModelID"])
     s = pd.read_csv(RAW / "lincs2020/siginfo_beta.txt", sep="\t", low_memory=False,
                     usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas"])
-    s = s[(s.pert_type == "trt_cp") & (s.is_hiq == 1) & (s.tas >= TAS_MIN)].merge(cov[["cell_iname", "ModelID"]])
+    s = s[(s.pert_type == "trt_cp") & (s.is_hiq == 1) & active_mask(s)].merge(cov[["cell_iname", "ModelID"]])
     act = s[s.ModelID.isin(cancer_models.index)][["pert_id", "ModelID"]].drop_duplicates()
 
     # targets -> genes

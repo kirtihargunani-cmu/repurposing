@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Evidence flags (D109, user 2026-11-06): dose_inconsistent, inactive_matched_line, generic_mechanism, low_exposure.
 
-Signatures: LINCS 2020 siginfo_beta (all, any quality); active = is_hiq and TAS >= 0.4 (as 79c). Lines behind a score
+Signatures: LINCS 2020 siginfo_beta (all, any quality); active = is_hiq and TAS above the per-timepoint floor (D156) (as 79c). Lines behind a score
 as 79e: direct = the drug's active lines in the cohort's tissue key (in_key in the Celligner weights), borrowed = its
 active lines outside the key. Matched line = in-key line with weight >= 0.1 x the cohort's top in-key weight (D76).
 (1) dose_inconsistent: per drug x line and time point with an active signature, signatures at doses >= 2x the highest
@@ -26,6 +26,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import numpy as np
 import pandas as pd
 
@@ -60,7 +62,7 @@ def load_sigs():
     s["dose"] = pd.to_numeric(s.pert_dose, errors="coerce")
     s.loc[s.pert_dose_unit.astype(str).str.lower().isin(["nm"]), "dose"] /= 1000
     s = s[s.pert_dose_unit.astype(str).str.lower().isin(["um", "nm"]) & s.dose.notna()]
-    s["active"] = (s.is_hiq == 1) & (s.tas >= TAS_MIN)
+    s["active"] = (s.is_hiq == 1) & active_mask(s)
     cl = pd.read_csv(ROOT / "data/processed/lincs/compound_line.tsv.gz", sep="\t").dropna(subset=["ModelID"])
     m = cl.drop_duplicates("cell_iname").set_index("cell_iname").ModelID
     s["ModelID"] = s.cell_iname.map(m)

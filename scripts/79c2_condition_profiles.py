@@ -18,9 +18,10 @@ Two deliberate differences from 79c, both from the spec:
     the arm D152 is about. Strata with fewer than MIN_DRUGS_FOR_G drugs are left unprojected and
     flagged `generic_removed = False`.
 
-  * TAS_MIN is a parameter. The default reproduces production (0.4). It is NOT lowered here - the
-    quality floor is a separate pre-registration (D152). This script only makes that question
-    testable by keeping the conditions.
+  * the activity floor comes from scripts/tas_floor.py, which since D156 applies 0.25 at 6 h and
+    0.4 elsewhere. TAS measures response MAGNITUDE and early responses are genuinely smaller, so a
+    uniform floor deleted 76% of 6 h signatures; the 0.25 is justified by measured drug-specific
+    signal, not by convention. TAS_FLOORS=uniform restores a single 0.4 everywhere.
 
 Outputs (data/processed/lincs/):
   drug_condition_profiles_raw.f32       conditions x genes, float32, profile-major
@@ -76,7 +77,7 @@ def main():
     idx["median_tas"] = [float(np.median(tasv[v])) for v in grp.values()]
     idx["dose_recorded"] = idx.pert_dose >= 0
     idx["time_recorded"] = idx.pert_time >= 0
-    print(f"conditions: {len(idx):,} (from {len(act):,} active signatures, TAS >= {TAS_MIN}); "
+    print(f"conditions: {len(idx):,} (from {len(act):,} active signatures); "
           f"{idx.groupby(['pert_id','ModelID']).ngroups:,} drug x line pairs")
 
     P = np.empty((len(idx), len(gpos)), dtype=np.float32)

@@ -3,7 +3,7 @@
 
 Runs in the `celligner` env. Inputs: data/processed/lincs/level5_landmark.{npy,_sigs.tsv.gz} (scripts/76),
 Celligner line x line distances (data/processed/celligner/dist_line_line.tsv.gz, scripts/74).
-1. Active signatures only: is_hiq == 1 and TAS >= 0.4 (user, 2026-10-09). One profile per drug x line = mean of its
+1. Active signatures only: is_hiq == 1 and TAS above the per-timepoint floor (D156: 6 h 0.25, else 0.4) (user, 2026-10-09). One profile per drug x line = mean of its
    active signatures over doses / times (978 landmark genes).
 2. Drug-specific effect: strong signatures share a generic response (random strong pairs r ~0.2). Per line, the
    generic response g_l = mean active profile of that line over all its drugs; specific = profile minus its
@@ -22,6 +22,8 @@ Outputs: results/lincs/extrapolation_{generic_check, lolo_pairs, lolo_summary, l
 import time
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import numpy as np
 import pandas as pd
 
@@ -56,7 +58,7 @@ def main():
     sig = pd.read_csv(PROC / "level5_landmark_sigs.tsv.gz", sep="\t")
     dist = pd.read_csv(ROOT / "data/processed/celligner/dist_line_line.tsv.gz", sep="\t", index_col=0)
 
-    act = sig[(sig.is_hiq == 1) & (sig.tas >= TAS_MIN) & sig.ModelID.isin(dist.index)]
+    act = sig[(sig.is_hiq == 1) & active_mask(sig) & sig.ModelID.isin(dist.index)]
     print(f"active signatures: {len(act)} ({act.pert_id.nunique()} drugs, {act.ModelID.nunique()} lines)")
     grp = act.groupby(["pert_id", "ModelID"]).indices
     idx = pd.DataFrame(list(grp.keys()), columns=["pert_id", "ModelID"])

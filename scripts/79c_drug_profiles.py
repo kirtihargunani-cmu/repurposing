@@ -2,7 +2,7 @@
 """Drug x cell-line consensus profiles on landmark + best-inferred genes, for regulator scoring (runs in `celligner`).
 
 Input: data/processed/lincs/level5_bing_hiq.npy (+ _sigs, genes; scripts/76b). Active signatures as everywhere on the
-drug side: is_hiq == 1 and TAS >= 0.4 (user, 2026-10-09). One profile per drug x line = mean of its active signatures
+drug side: is_hiq == 1 and TAS above the per-timepoint floor (D156: 6 h 0.25, else 0.4) (user, 2026-10-09). One profile per drug x line = mean of its active signatures
 (MODZ z-scores) over doses / times, as in scripts/77.
 Two versions:
   raw       the consensus profiles
@@ -20,6 +20,8 @@ Outputs: data/processed/lincs/drug_line_profiles_bing.f32 (raw) and drug_line_pr
 """
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import numpy as np
 import pandas as pd
 
@@ -42,7 +44,7 @@ def main():
     print(f"genes: {len(genes)}; mapped to v23 {int(v23.notna().sum())}; kept (unique) {int(keep.sum())}")
     gpos = np.where(keep.values)[0]
 
-    act = sig[sig.tas >= TAS_MIN]
+    act = sig[active_mask(sig)]
     grp = act.groupby(["pert_id", "ModelID"]).indices
     idx = pd.DataFrame(list(grp.keys()), columns=["pert_id", "ModelID"])
     idx["n_sig"] = [len(v) for v in grp.values()]

@@ -2,13 +2,15 @@
 """D109a plate-confinement flag (user 2026-11-06), drug level.
 
 Compound plate = first token of the LINCS sig_id (e.g. REP.A007). plate_confined when (a) every active signature
-(is_hiq, TAS >= 0.4) of the drug comes from one compound plate and (b) >= 1 other compound plate tested the drug at doses
+(is_hiq, TAS above the per-timepoint floor (D156: 6 h 0.25, else 0.4)) of the drug comes from one compound plate and (b) >= 1 other compound plate tested the drug at doses
 overlapping the active range (0.5 x lowest .. 2 x highest active dose) with >= 3 signatures, none active, median TAS <
 0.5 x the median TAS of the active signatures. Output results/lincs/d109/plate_confined.tsv; 79f3's
 evidence_flags_v2.tsv gets the column plate_confined.
 """
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -19,7 +21,7 @@ s = s[(s.pert_type == "trt_cp") & s.pert_dose_unit.astype(str).str.lower().isin(
 s["dose"] = pd.to_numeric(s.pert_dose, errors="coerce")
 s.loc[s.pert_dose_unit.astype(str).str.lower().eq("nm"), "dose"] /= 1000
 s["plate"] = s.sig_id.str.split("_").str[0]
-s["active"] = (s.is_hiq == 1) & (s.tas >= 0.4)
+s["active"] = (s.is_hiq == 1) & active_mask(s)
 act_drugs = set(s.pert_id[s.active])
 rows = []
 for p, d in s[s.pert_id.isin(act_drugs)].groupby("pert_id"):

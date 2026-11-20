@@ -80,7 +80,7 @@ def main():
     meta.to_csv(PROC / "level5_bing_hiq_sigs.tsv.gz", sep="\t", index=False)
     bing[["gene_id", "gene_symbol", "ensembl_id", "feature_space"]].to_csv(PROC / "level5_bing_genes.tsv", sep="\t",
                                                                           index=False)
-    info = {"n_signatures_hiq": len(meta), "n_active_tas04": int((meta.tas >= 0.4).sum()),
+    info = {"n_signatures_hiq": len(meta), "n_active_tas04": int((meta.tas >= 0.4).sum()),   # reporting only: fixed 0.4, NOT the D156 active rule
             "n_lines": meta.cell_iname.nunique(), "n_compounds": meta.pert_id.nunique(),
             "n_genes": len(gpos), "n_landmark": n_lm, "n_best_inferred": len(gpos) - n_lm,
             "n_nan": int(np.isnan(out).sum()), "landmark_max_abs_diff_vs_76": max_diff,
