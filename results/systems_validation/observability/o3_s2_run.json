@@ -1,0 +1,19 @@
+{
+ "step": "O-3 / D136-S2 intrinsic null for regulon coherence",
+ "spec": "section 6",
+ "seed": 20261118,
+ "k": 2.0,
+ "n_null": 40,
+ "matched_on": [
+  "set size",
+  "sd_within decile counts"
+ ],
+ "n_rows": 399217,
+ "obs_coherence_median": 0.9778,
+ "null_coherence_median": 1.0591,
+ "median_pct_null_tighter": 0.325,
+ "frac_rows_better_than_95pct_of_null": 0.2254,
+ "obs_censored_median": 0.4265,
+ "null_censored_median": 0.4377,
+ "runtime_s": 3030.4
+}
