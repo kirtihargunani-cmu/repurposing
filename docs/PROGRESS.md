@@ -1956,3 +1956,61 @@ Stratifying the 2,300 both-window cells on whether their early condition would h
 quirk of its cells. The drift is the weaker signatures, and it does **not** reach the drug scores
 (37.0 → 37.4%) because β is a per-regulator slope while the drug statistic aggregates hundreds of
 them. `BETA_TAS_MIN` now allows fitting β on the clean subset and applying it everywhere.
+
+## 2026-11-20 — Route 1 validates Route 2: primary targets yes, secondary targets no (D158)
+
+The full-network per-condition VIPER finished on the 7 cohorts holding 97% of the validation pairs
+(2,298–3,253 regulators scored each, 15.5–21.6 min per network). Route 1 then asked the question
+directly: when Route 2 ranks every regulator by how much it opposes the disease, where does the
+drug's *known* target land?
+
+**2,328 (cohort, drug, window, target) pairs, 169 drugs × 147 targets, 8 cohorts.** Chance@10 = 0.35%.
+
+| arm | recovery@10 | lift | primary | secondary |
+|---|---|---|---|---|
+| `none` | 1.50% | 4.3× | 2.21% | 0.13% |
+| `universal` (D157) | 1.33% | 3.8× | 1.95% | 0.13% |
+| `full` | 1.59% | 4.6× | 2.28% | 0.25% |
+| `full_filter` | 0.39% | 1.1× | 0.40% | 0.38% |
+
+### Primary targets — a real positive, the first in this project
+
+| quantile | observed | expected | ratio |
+|---|---|---|---|
+| top 1% | **59** | 15.3 | **3.84×** |
+| top 5% | 134 | 76.8 | 1.75× |
+| top 10% | 213 | 153.5 | 1.39× |
+
+It holds in both windows (early 1.69×, late 1.79×) and — the part that makes it credible — it
+**scales with the evidence behind each score**: top-5% ratio 1.10 at one condition, 2.23 at 2–4,
+**2.45 at ≥5**. Artifacts don't do that.
+
+The recoveries are textbook pharmacology and are *not* proliferation-linked: **erlotinib → EGFR at
+rank 3 of 2,806**, romidepsin → HDAC10 at 6, panobinostat → HDAC7 at 6, fludrocortisone → NR3C2 at 8
+(early), etoposide → TOP2B at 11, belinostat → HDAC1, acitretin → RARA, fingolimod → S1PR1.
+
+### Secondary targets — flat, and the hypothesis is not supported
+
+| quantile | observed | expected | ratio |
+|---|---|---|---|
+| top 1% | 7 | 7.9 | 0.88 |
+| top 5% | 31 | 39.7 | 0.78 |
+| top 10% | 75 | 79.3 | 0.95 |
+
+Median rank 1,548 of 2,853 — 53.2%, where chance is 50%. Relative binding strength does **not**
+predict rank (Spearman +0.071, if anything the wrong sign). Entries that look plausible individually
+— dasatinib → EPHA2 at rank 7, midostaurin → PRKCD at 9, regorafenib → TEK at 13 — are no more
+numerous than chance draws from 793 pairs, so they are not claimed as signal.
+
+### "Remove proliferation before or after" — measured, and neither matters here
+
+Subtracting is a near no-op on rank: paired over the same 2,328 pairs, median rank change from
+`none` to `full` is **−1 out of ~2,850**, improving 50.9% and worsening 46.4%.
+
+Filtering is actively harmful at the very top, because **81–86% of the rank ≤ 10 hits are
+proliferation-linked against a 12.9% base rate** — `full_filter` deletes them and collapses to
+chance. But the top-1% primary signal survives filtering, because those recoveries are not
+proliferation-linked. So the shallow hits are proliferation and the deep ones are mechanism.
+
+**What this licenses:** the top ~1% of a Route 2 list is trustworthy for primary mechanism.
+**What it does not:** any claim of secondary-target discovery from Route 2 as presently formulated.

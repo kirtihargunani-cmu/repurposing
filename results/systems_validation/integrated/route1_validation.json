@@ -1,81 +1,81 @@
 {
-  "n_rows": 2127,
-  "n_pairs": 542,
-  "n_drugs": 68,
-  "n_targets": 14,
-  "n_cohorts": 14,
+  "n_rows": 9011,
+  "n_pairs": 2328,
+  "n_drugs": 169,
+  "n_targets": 147,
+  "n_cohorts": 8,
   "arms": {
     "none": {
-      "n": 542,
-      "chance_at_10": 0.01146,
-      "recovery_at_10": 0.00554,
-      "lift": 0.48,
-      "recovery_at_50": 0.04244,
-      "median_rank": 420.5,
-      "median_rank_pct": 0.4745
+      "n": 2328,
+      "chance_at_10": 0.00346,
+      "recovery_at_10": 0.01503,
+      "lift": 4.34,
+      "recovery_at_50": 0.03179,
+      "median_rank": 1475.5,
+      "median_rank_pct": 0.511
     },
     "none:secondary": {
-      "n": 15,
-      "chance_at_10": 0.01148,
-      "recovery_at_10": 0.0,
-      "lift": 0.0,
-      "recovery_at_50": 0.0,
-      "median_rank": 629.0,
-      "median_rank_pct": 0.7172
+      "n": 793,
+      "chance_at_10": 0.00345,
+      "recovery_at_10": 0.00126,
+      "lift": 0.37,
+      "recovery_at_50": 0.00504,
+      "median_rank": 1541.0,
+      "median_rank_pct": 0.5425
     },
     "universal": {
-      "n": 542,
-      "chance_at_10": 0.01146,
-      "recovery_at_10": 0.00554,
-      "lift": 0.48,
-      "recovery_at_50": 0.04428,
-      "median_rank": 400.5,
-      "median_rank_pct": 0.4602
+      "n": 2328,
+      "chance_at_10": 0.00346,
+      "recovery_at_10": 0.01332,
+      "lift": 3.85,
+      "recovery_at_50": 0.03265,
+      "median_rank": 1455.5,
+      "median_rank_pct": 0.505
     },
     "universal:secondary": {
-      "n": 15,
-      "chance_at_10": 0.01148,
-      "recovery_at_10": 0.0,
-      "lift": 0.0,
-      "recovery_at_50": 0.0,
-      "median_rank": 613.0,
-      "median_rank_pct": 0.699
+      "n": 793,
+      "chance_at_10": 0.00345,
+      "recovery_at_10": 0.00126,
+      "lift": 0.37,
+      "recovery_at_50": 0.01009,
+      "median_rank": 1548.0,
+      "median_rank_pct": 0.539
     },
     "full": {
-      "n": 542,
-      "chance_at_10": 0.01146,
-      "recovery_at_10": 0.00738,
-      "lift": 0.64,
-      "recovery_at_50": 0.04244,
-      "median_rank": 398.5,
-      "median_rank_pct": 0.4586
+      "n": 2328,
+      "chance_at_10": 0.00346,
+      "recovery_at_10": 0.01589,
+      "lift": 4.59,
+      "recovery_at_50": 0.0378,
+      "median_rank": 1386.0,
+      "median_rank_pct": 0.4812
     },
     "full:secondary": {
-      "n": 15,
-      "chance_at_10": 0.01148,
-      "recovery_at_10": 0.0,
-      "lift": 0.0,
-      "recovery_at_50": 0.0,
-      "median_rank": 634.0,
-      "median_rank_pct": 0.7229
+      "n": 793,
+      "chance_at_10": 0.00345,
+      "recovery_at_10": 0.00252,
+      "lift": 0.73,
+      "recovery_at_50": 0.01261,
+      "median_rank": 1548.0,
+      "median_rank_pct": 0.5322
     },
     "full_filter": {
-      "n": 501,
-      "chance_at_10": 0.01253,
-      "recovery_at_10": 0.00399,
-      "lift": 0.32,
-      "recovery_at_50": 0.05389,
-      "median_rank": 363.0,
-      "median_rank_pct": 0.4566
+      "n": 2027,
+      "chance_at_10": 0.0037,
+      "recovery_at_10": 0.00395,
+      "lift": 1.07,
+      "recovery_at_50": 0.01825,
+      "median_rank": 1378.0,
+      "median_rank_pct": 0.5082
     },
     "full_filter:secondary": {
-      "n": 15,
-      "chance_at_10": 0.0124,
-      "recovery_at_10": 0.0,
-      "lift": 0.0,
-      "recovery_at_50": 0.0,
-      "median_rank": 557.0,
-      "median_rank_pct": 0.7178
+      "n": 781,
+      "chance_at_10": 0.0037,
+      "recovery_at_10": 0.00384,
+      "lift": 1.04,
+      "recovery_at_50": 0.01536,
+      "median_rank": 1437.0,
+      "median_rank_pct": 0.525
     }
   }
 }
