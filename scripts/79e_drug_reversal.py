@@ -95,14 +95,6 @@ MR_DIR = f"results/step6/{REGULON}_v2" if CURATED else f"results/step6/aracne_pr
 DTAG = f"_{REGULON}" if CURATED else SFX
 if CURATED or CONS:
     SFX = f"_v2_{REGULON}" + (XS if CONS else "")
-# WINDOW (D154 / SPEC_condition_level_profiles section 11): score one time window only, so early
-#   and late evidence are produced separately rather than averaged across the 6 h -> 24 h sign
-#   flip of D152. Needs an index carrying pert_time (79c2). Default "" = no filter.
-WINDOW = os.environ.get("WINDOW", "")
-assert WINDOW in ("", "early", "late"), "WINDOW must be early or late"
-if WINDOW:
-    SFX += f"_{WINDOW}"
-
 SCORE = os.environ.get("SCORE", "weighted" if MR_DIR.endswith(("_v2", "_v2_tf")) or CURATED or CONS else "fdr")
 assert SCORE in ("weighted", "fdr")
 if SCORE == "fdr" and SFX.startswith("_v2"):
@@ -170,23 +162,10 @@ def cons_read(path, k, strata=False):
 
 def main():
     rng = np.random.default_rng(SEED)
-    # INDEX_FILE (D154, 2026-11-19): index matching the profile matrix; the 79c2 condition-level
-    #   index carries pert_dose/pert_time. Default: 79c's drug x line index.
+    # INDEX_FILE (D154, 2026-11-19): index matching the profile matrix, for the 79c2
+    #   condition-level profiles. Default unchanged.
     idx = pd.read_csv(os.environ.get("INDEX_FILE") or (PROC / "drug_line_profiles_index.tsv"), sep="\t")
     idx["col"] = np.arange(len(idx))
-    # WINDOW (D154 / SPEC_condition_level_profiles section 11, 2026-11-19): restrict scoring to one
-    #   time window so early and late evidence are produced SEPARATELY rather than averaged across
-    #   the 6 h -> 24 h sign flip of D152. `col` is assigned above, before this filter, so it still
-    #   points correctly into the activity matrix. Outputs are tagged with the window.
-    #   Requires an index carrying pert_time (the 79c2 condition-level index). Default: no filter,
-    #   which reproduces current behaviour exactly.
-    if WINDOW:
-        assert "pert_time" in idx.columns, "WINDOW needs an index with pert_time (79c2 profiles)"
-        before = len(idx)
-        keep = (idx.pert_time <= 6) if WINDOW == "early" else (idx.pert_time >= 24)
-        idx = idx[keep].reset_index(drop=True)
-        print(f"WINDOW={WINDOW}: {len(idx):,} of {before:,} conditions kept, "
-              f"{idx.pert_id.nunique():,} drugs, {idx.ModelID.nunique()} lines", flush=True)
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
     if CONS:   # set-tagged regulators ("aracne|ESR1"), combined per group below
         mr = pd.concat([cons_read(ROOT / d / "group_mr.tsv", k).assign(regulator=lambda x, k=k: k + "|" + x.regulator)

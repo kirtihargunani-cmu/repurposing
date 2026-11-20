@@ -1,0 +1,15 @@
+{
+ "step": "time-response difference flag per (drug, line, network)",
+ "n_rows": 52174,
+ "n_cells_both_windows": 1373,
+ "n_networks": 38,
+ "r_median": 0.5531,
+ "r_p10": -0.0463,
+ "r_p90": 0.8634,
+ "frac_discordant": 0.1177,
+ "frac_concordant": 0.5554,
+ "thresholds": {
+  "discordant_below": 0.0,
+  "concordant_at_or_above": 0.5
+ }
+}
