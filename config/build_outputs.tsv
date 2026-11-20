@@ -1,0 +1,14 @@
+# Output directories/files whose freshness matters, audited by scripts/check_builds.py.
+# Anything carrying a .build_manifest.json is audited whether listed here or not; this
+# file exists so that outputs which have NO manifest yet are still noticed.
+#
+# expect = file count a complete build leaves (blank if it varies). For the drug VIPER
+# dirs the number is set by the network map: see scripts/79d_drug_viper.R:59-91 and
+# config/group_networks.tsv. It is 38 for the v2 TF set (D162).
+path	owner_script	expect	note
+data/processed/lincs/drug_viper_specific_v2_tf	79d_drug_viper.R	76	proliferation-adjusted arm; 38 .f32 + 38 .regulators.txt. Read by 79e via NETMAP, never globbed.
+data/processed/lincs/drug_viper_raw_v2_tf	79d_drug_viper.R	76	UNADJUSTED arm, read by 79e:220 alongside the above. D162: was 18 days stale.
+data/processed/lincs/drug_viper_specific_collectri	79d_drug_viper.R		CollecTRI arm, retired from scoring by D160; kept for attribution only.
+# NOT registered: results/lincs -- it is an accumulating results directory, not a single
+# atomic build, so a wide mtime span there is normal rather than a staleness signal.
+# Register individual tables from it if their freshness starts to matter.
