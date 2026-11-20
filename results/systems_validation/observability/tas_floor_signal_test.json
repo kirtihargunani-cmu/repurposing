@@ -1,0 +1,40 @@
+{
+  "test": "D156 acceptance test 1 (replacement): drug-specific signal in admitted 6 h signatures",
+  "note": "79n cannot serve as this guard - it scores genetic perturbations and never reads the compound TAS floor",
+  "seed": 20261120,
+  "n_signatures": 2221,
+  "bands": [
+    {
+      "band": "above current floor (TAS>=0.400)",
+      "n": 944,
+      "r_self": 0.4918,
+      "r_other": 0.1285,
+      "delta": 0.3641,
+      "pct_positive": 96.2
+    },
+    {
+      "band": "ADMITTED at anchor 0.645 (0.331-0.400)",
+      "n": 318,
+      "r_self": 0.3669,
+      "r_other": 0.0791,
+      "delta": 0.2749,
+      "pct_positive": 95.6
+    },
+    {
+      "band": "ADMITTED at anchor 0.55 (0.284-0.331)",
+      "n": 249,
+      "r_self": 0.3179,
+      "r_other": 0.0492,
+      "delta": 0.2307,
+      "pct_positive": 91.6
+    },
+    {
+      "band": "still excluded (TAS<0.284)",
+      "n": 710,
+      "r_self": 0.1718,
+      "r_other": 0.0211,
+      "delta": 0.1541,
+      "pct_positive": 88.5
+    }
+  ]
+}

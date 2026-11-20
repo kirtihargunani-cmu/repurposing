@@ -79,9 +79,18 @@ project has already run once:
 
 Lowering a quality floor is precisely how noise gets admitted, so the guards are the point.
 
-1. **Knockdown benchmark (`79n`) must not fall by more than 2 points.** This is the test that the
-   admitted signatures carry signal rather than noise. **Failing this fails the proposal**, whatever
-   the coverage gain.
+1. ~~**Knockdown benchmark (`79n`) must not fall by more than 2 points.**~~ **WITHDRAWN 2026-11-20 —
+   this guard was invalid.** `79n` scores **genetic** perturbations (`trt_sh.cgs`, `trt_xpr`) and
+   never reads a compound signature or the TAS floor, so it cannot respond to this change at all. It
+   would have passed unchanged however much noise was admitted, and would have been reported as
+   evidence the change was safe.
+
+   **REPLACEMENT (hard fail): drug-specific signal in the admitted signatures.**
+   `scripts/systems_validation/observability/tas_floor_signal_test.py`. For each 6 h signature of
+   drug *d* in line *l*, correlate it with *d*'s own accepted 24 h profile in *l* (`r_self`) and with
+   random other drugs in *l* (`r_other`). `delta = r_self − r_other` is the drug-specific signal. If
+   admitted signatures are noise, delta → 0 for them. **Pass requires the admitted band to retain
+   ≥ 50% of the accepted band's median delta and ≥ 90% of signatures with delta > 0.**
 2. **Anti-estrogen direction in MCF7 at 6 h is negative** — pre-stated from D152's direct Level-5
    measurement (−0.056 over the ESR1 regulon; cosine −0.132 against the LumA disease vector).
    Confirmation that the admitted data behaves as the raw matrix already shows, **not** independent
@@ -113,3 +122,46 @@ signature is not equivalent to a 24 h hit resting on six.
 - **Does not** address cells with no 6 h signature at all (53.7%). That is a genuine absence; see the
   user's extrapolation question, deferred pending D134, since imputing early response from chemically
   similar drugs would bake in the similarity confound D134 was written to control.
+
+---
+
+## 8. Measured: how far the 6 h floor can go (2026-11-20)
+
+The replacement guard, run on 2,221 six-hour signatures that have a same-drug 24 h reference in the
+same line. Accepted band (TAS ≥ 0.4) median `delta` = **0.364**; that is the 100% reference.
+
+| TAS band | n | delta | % positive | vs accepted |
+|---|---|---|---|---|
+| 0.700+ | 63 | 0.445 | 90.5% | **122%** |
+| 0.500–0.700 | 504 | 0.404 | 96.2% | 111% |
+| 0.400–0.500 | 377 | 0.309 | 97.1% | 85% |
+| **0.331–0.400** | 318 | 0.275 | 95.6% | **76%** |
+| **0.284–0.331** | 249 | 0.231 | 91.6% | **63%** |
+| **0.250–0.284** | 163 | 0.216 | 93.3% | **59%** |
+| 0.200–0.250 | 250 | 0.168 | 88.0% | 46% |
+| 0.150–0.200 | 187 | 0.133 | 87.7% | 37% |
+| < 0.150 | 110 | 0.098 | 83.6% | 27% |
+
+Cumulatively, a 6 h floor at X:
+
+| floor | 6 h signatures kept | median delta | % positive |
+|---|---|---|---|
+| 0.400 (current) | 42.5% | 0.364 | 96.2% |
+| 0.331 | 56.8% | 0.334 | 96.0% |
+| 0.284 | 68.0% | 0.316 | 95.3% |
+| **0.250** | **75.4%** | **0.303** | **95.1%** |
+| 0.200 | 86.6% | 0.283 | 94.2% |
+| 0.150 | 95.0% | 0.271 | 93.6% |
+
+**Signal degrades gracefully and never collapses.** Under the replacement pass rule — admitted band
+≥ 50% of accepted delta and ≥ 90% positive — bands down to **0.250** qualify (59%, 93.3%); 0.200–0.250
+fails on both counts (46%, 88.0%).
+
+**Revised proposal: a 6 h floor of 0.25**, which keeps 75.4% of 6 h signatures against 42.5% today.
+That is lower than the quantile-anchored 0.331 of §3, and it is justified by measured signal rather
+than by matching the 24 h quantile. The quantile rule remains the mechanism for the other timepoints,
+where no equivalent signal measurement has been made.
+
+**One thing the table also shows about the status quo:** TAS ≥ 0.7 carries delta 0.445, *122%* of the
+accepted band's median, so the current 0.4 floor already mixes strong and marginal signatures. It was
+never a clean separation.
