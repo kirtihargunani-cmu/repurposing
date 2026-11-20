@@ -1891,3 +1891,68 @@ no such excuse.
 **Checked and not supported:** that ARACNe's ESR1 regulon is noise for want of
 variance within a subtype cohort. ESR1's sd in BRCA_LUMA is 1.282, the 95.2nd
 percentile of all genes.
+
+---
+
+## 2026-11-20 — the proliferation adjustment was removing the wrong half (D157)
+
+The user asked: *"shouldn't we subtract the averaged out proliferation signal so that we don't
+subtract the full proliferation that is specific"*. Checking it found the adjustment doing the
+opposite of what its own header describes.
+
+`79i` removes growth arrest as `A_adj = A − β·π`. In production `π` is read off the **specific**
+profiles — the ones `79c2` builds by projecting out the generic drug response per
+`(ModelID, pert_time)`. So the generic part is already gone at the gene level before `π` exists:
+`pi_spec` has mean **−0.018 early / −0.014 late** and correlates **0.026** with the group mean. Of
+`pi_raw`'s variance, **22.4% is generic and 77.6% drug-specific** — and the drug-specific part is
+what was being subtracted.
+
+Splitting that by the drug's cross-line mean within each window:
+
+| window | drug-universal (cytostatic everywhere — caveat C4) | line-selective (candidate mechanism) |
+|---|---|---|
+| early | 51.6% | 48.4% |
+| late | 40.5% | 59.5% |
+
+About half of the discarded signal is a drug arresting growth *selectively* — which under the
+discovery goal is a finding, not a nuisance. `PROLIF_MODE` now selects which part to remove;
+`full` stays the default so nothing has moved. Full detail in
+`docs/NOTE_proliferation_decomposition.md`.
+
+### The D156 recalibration landed, and the window finding held
+
+Re-ran the window scores on the 6 h floor of 0.25:
+
+| | D155 (TAS 0.4) | D156 (6 h floor 0.25) |
+|---|---|---|
+| (cohort, drug) rows | 12,055 | **13,907** |
+| early-only | 1,946 | **3,798** |
+| both windows | 2,132 | **3,601** |
+| Spearman(early, late) | +0.388 | **+0.385** |
+| sign-discordant | 37.0% | **37.4%** |
+| hits ≥ 90th percentile | 1,351 | **1,660** |
+
+69% more both-window rows, same answer. Anti-estrogen rows went **20 → 53**, and fulvestrant in
+BRCA-LumA now reads **96.3rd percentile early vs 60.2nd late**.
+
+**Still not fixed:** across 33 BRCA anti-estrogen rows the median percentile in **basal** disease
+(69.1 early / 89.3 late) is *higher* than in **luminal** (61.3 / 53.0). These drugs still score best
+in the subtype they do not treat. The TAS floor bought coverage, not specificity — that is the D151
+target-presence gate, still specced and unbuilt.
+
+### β degraded after D156, and it turned out to be dilution
+
+The pooled per-window β check looked worse than D154 (+0.594 / 28.7% sign flips vs +0.687 / 25.2%).
+Stratifying the 2,300 both-window cells on whether their early condition would have cleared the old
+0.4 floor separates the two explanations:
+
+| stratum | cells | median early TAS | Spearman(β₆, β₂₄) | sign flip |
+|---|---|---|---|---|
+| **HIGH** | 1,336 | 0.500 | **+0.681** | **25.7%** |
+| NEW | 964 | 0.323 | +0.316 | 40.5% |
+| *D154 reference* | *1,373* | *—* | *+0.687* | *25.2%* |
+
+`HIGH` reproduces D154 almost exactly on a re-derived sample, so the original finding was not a
+quirk of its cells. The drift is the weaker signatures, and it does **not** reach the drug scores
+(37.0 → 37.4%) because β is a per-regulator slope while the drug statistic aggregates hundreds of
+them. `BETA_TAS_MIN` now allows fitting β on the clean subset and applying it everywhere.

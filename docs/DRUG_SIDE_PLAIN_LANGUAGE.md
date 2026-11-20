@@ -896,3 +896,56 @@ drug–target pairs. It is nowhere near enough to make a sweeping statement abou
 in ten of which are excusable in advance. And the direction of the logic is fixed from the start: this test
 can show that target signal **is** there; it can never show that it is absent. Nothing was scored, changed or
 re-ranked.
+
+---
+
+## Why we stopped subtracting all of "proliferation" (2026-11-20)
+
+Nearly every cancer drug slows growth. That is a problem for ranking, because if we just ask "which
+drug most reverses the tumour's gene activity", the answer is always *whichever drug is most toxic* —
+in every disease, for every patient group. So the pipeline estimates how much of each drug's effect
+is simply growth arrest and subtracts it out.
+
+The question the user asked was whether we were subtracting too much. We were — and in a way worth
+spelling out, because the fix changes what the pipeline can find.
+
+Think of a drug's effect on growth as three separate things stacked on top of each other:
+
+1. **The background.** Cells in a dish slow down for all sorts of reasons that have nothing to do
+   with the drug — the handling, the medium, the time elapsed. Every drug in the same plate shares it.
+2. **The drug's general toxicity.** Some compounds slow *every* cell line they touch. These are the
+   ones that look brilliant against every disease and treat none of them specifically.
+3. **Selective growth arrest.** This drug stops *this* kind of cancer from growing, and leaves others
+   alone.
+
+Layer 1 is noise. Layer 2 is the trap. **Layer 3 is the whole point** — a drug that selectively
+arrests one tumour type is exactly the kind of discovery this project exists to make.
+
+It turns out an earlier step already removes layer 1, at the level of individual genes, before the
+growth-arrest correction ever runs. We measured this: the growth signal going into the correction has
+an average of about **−0.015**, essentially zero, and almost no relationship to the background
+(correlation 0.03). The background was gone. So the correction, which was written to remove layer 1,
+was in practice eating layers 2 **and** 3.
+
+How much of layer 3 was being thrown away? About half — **48% early and 59% late** of the growth
+signal is a drug arresting some cell lines and not others.
+
+So there is now a switch with three settings: remove everything (what we did before, still the
+default so no result has silently changed), remove only the drug's general toxicity and keep the
+selective part, or remove nothing. Which one is right is not something to argue about — the plan is
+to run the upcoming validation under all three and see which one best recovers drug targets we
+already know about.
+
+### A smaller thing that went right
+
+Two weeks of results rested on a finding that growth arrest behaves differently at 6 hours than at
+24 hours. When we loosened a data-quality filter and let in roughly twice as much early data, that
+finding looked shakier. The worry was that we had been fooled by a small sample.
+
+We checked by splitting the new data into the part that would have passed the old filter and the part
+that only just scraped in. The old-filter part reproduced the original result almost exactly — a
+correlation of **0.681 against the original 0.687**, and a disagreement rate of **25.7% against
+25.2%**. The finding was real. The wobble came entirely from the weaker new measurements, and it
+never reached the drug rankings themselves, which barely moved (37.0% to 37.4%).
+
+More data, same answer, on a sample 69% larger. That is the outcome you want from this kind of check.
