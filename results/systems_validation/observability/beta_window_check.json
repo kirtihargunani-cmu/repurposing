@@ -1,0 +1,20 @@
+{
+ "test": "D153 section 10.3 - proliferation beta, 6 h vs 24 h, within-cell",
+ "n_cells_both_windows": 1373,
+ "n_regulator_rows": 3454,
+ "beta_early": {
+  "median": 0.2375,
+  "p10": -1.1036,
+  "p90": 2.5261
+ },
+ "beta_late": {
+  "median": 0.0689,
+  "p10": -0.299,
+  "p90": 0.5822
+ },
+ "spearman_early_vs_late": 0.7022,
+ "median_abs_difference": 0.7023,
+ "frac_sign_disagreement": 0.2452,
+ "median_abs_beta": 0.3719,
+ "difference_relative_to_typical_beta": 1.888
+}
