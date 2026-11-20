@@ -1,6 +1,6 @@
 {
  "config": "config/drug_gate.yaml",
- "config_sha256_16": "1d0a2f8719a51a48",
+ "config_sha256_16": "236109c92a9244a7",
  "rules": {
   "expression": {
    "tpm_min": 1.0,
@@ -33,6 +33,91 @@
    "enabled": false,
    "max_group_size": 15,
    "min_group_size": 2
+  },
+  "receptor_gate": {
+   "receptor_families": {
+    "GPCR": [
+     139
+    ],
+    "nuclear receptor": [
+     71
+    ],
+    "receptor tyrosine kinase": [
+     321
+    ],
+    "receptor Ser/Thr kinase": [
+     344
+    ],
+    "ligand-gated ion channel": [
+     161
+    ],
+    "cytokine / immune receptor": [
+     602,
+     599,
+     782,
+     948,
+     2120
+    ],
+    "integrin": [
+     597
+    ],
+    "other ion channel": [
+     177
+    ]
+   },
+   "kinase_family": 3432,
+   "binding": {
+    "pchembl_min": 6.0,
+    "pchembl_min_kinase": 7.0,
+    "mechanism_target_types": [
+     "SINGLE PROTEIN",
+     "PROTEIN COMPLEX",
+     "PROTEIN COMPLEX GROUP",
+     "CHIMERIC PROTEIN"
+    ]
+   },
+   "chimeric_kinase": {
+    "Bcr/Abl fusion protein": "ABL1",
+    "EML4-ALK": "ALK",
+    "NPM/ALK (Nucleophosmin/ALK tyrosine kinase receptor)": "ALK"
+   },
+   "assembly": {
+    "any_component": [
+     "Platelet-derived growth factor receptor"
+    ],
+    "groups": {
+     "GABA-A": [
+      [
+       "GABRA"
+      ],
+      [
+       "GABRB"
+      ],
+      [
+       "GABRG",
+       "GABRD",
+       "GABRE",
+       "GABRQ",
+       "GABRP"
+      ]
+     ],
+     "Glutamate receptor ionotropic AMPA": "any"
+    }
+   },
+   "assay_lines": {
+    "tpm_min": 1.0,
+    "min_weighted_fraction": 0.5
+   }
+  },
+  "standin": {
+   "min_shared_lines": 2,
+   "min_similarity": 0.4,
+   "require_shared_target": true,
+   "shared_target_evidence": "chembl",
+   "validation": {
+    "min_spearman": 0.3,
+    "n_boot": 1000
+   }
   }
  },
  "hgnc_file": "hgnc_complete_set_20261001.txt",
@@ -40,5 +125,5 @@
  "tas_min": 0.4,
  "min_lines_borrowed": 3,
  "n_adme_genes": 133,
- "n_rows": 16414
+ "n_rows": 20702
 }
