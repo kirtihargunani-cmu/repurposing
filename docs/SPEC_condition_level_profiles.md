@@ -198,3 +198,59 @@ So roughly **9,300 of 9,678 cells can be assigned to a window** — 1,818 early-
 The anti-estrogen case has 6 h and 24 h and nothing between. It is therefore sufficient to show the
 response **reverses between 6 and 24 h**, and insufficient to say when. No claim about 9 h or 18 h is
 supported, and none will be made.
+
+---
+
+## 10. Toxicity and proliferation must be removed PER TIMEPOINT (user, 2026-11-19)
+
+The project removes generic growth-arrest / toxicity signal in **three** places. Keeping conditions
+is pointless if any of them is still estimated on a pooled, timeless basis, because the magnitude of
+growth arrest is itself a function of time: at 6 h a cytostatic drug has barely arrested anything,
+at 24 h it has. A single correction applied to both windows **over-corrects early conditions and
+under-corrects late ones**, and it does so in the direction that destroys exactly the early-window
+signal D152 depends on.
+
+| # | where | what is removed | currently estimated over | required |
+|---|---|---|---|---|
+| 1 | `79c` generic-response projection | the line's mean drug response `g_l` | all of a line's profiles, pooled over time | **per `(ModelID, pert_time)`** — done in `79c2`, 121 strata, ≥ 30-drug floor |
+| 2 | `79h` `prolif_linked` flag, criterion **P2** | regulators whose activity tracks the proliferation score | all drug × line profiles, pooled | **per window** — a regulator may track growth arrest at 24 h and not at 6 h |
+| 3 | `79i` proliferation adjustment `A_adj = A − β·π` | the growth-arrest component of every regulator's activity | OLS over all profiles, one β per (network, regulator) | **β per (network, regulator, window)** |
+
+Item 1 is implemented. **Items 2 and 3 are not, and they are the larger effect**: item 1 removes a
+direction from the profile, while item 3 removes a fitted component from every regulator's activity
+and is what the mechanism score is actually built on.
+
+### 10.1 Why a pooled β is wrong, concretely
+
+`π` is the profile's proliferation score (HALLMARK_E2F_TARGETS + HALLMARK_G2M_CHECKPOINT, 303 genes
+on the LINCS profiles). Pooled over conditions, `π` is dominated by 24 h observations — 76.4% of
+single-timepoint cells and 96% of all signatures are 6 h or 24 h with 24 h in the majority. So the
+fitted `β` describes the late relationship between activity and growth arrest, and is then applied
+to 6 h conditions where the relationship has a different slope.
+
+For a drug whose mechanism signal is early and whose arrest signal is late — which is the
+pharmacology the user raised, and the anti-estrogen case specifically — this subtracts a late-fitted
+arrest component from an early profile that does not yet contain one. The residual is not
+mechanism; it is mechanism minus an artefact.
+
+### 10.2 The rule
+
+1. **`π` is computed per condition**, never per drug × line.
+2. **P2 (`79h`) is evaluated per window.** A regulator is proliferation-linked in a window if its
+   activity tracks `π` within that window. The flag becomes `(network, regulator, window)`, and a
+   regulator linked at 24 h but not 6 h is reported as such rather than flagged globally.
+3. **The adjustment regresses within window**: `β(network, regulator, window)`, with the window's own
+   `π`. Strata below a stated minimum condition count fall back to the pooled `β` and are **flagged**
+   `beta_pooled = True`, never silently.
+4. **`prolif_effect` stays on raw profiles**, as today, but is reported per window.
+
+### 10.3 Pre-stated check
+
+Fit `β` separately at 6 h and 24 h over the 1,256 cells holding both windows — the within-cell set of
+§9.3, so the same drugs and lines appear on both sides. **If the two β distributions are
+indistinguishable, the pooled adjustment was harmless and items 2–3 can stay as they are.** If they
+differ materially, the pooled correction has been distorting every mechanism score in the project,
+and the size of that distortion is the finding.
+
+This is a cheap test and it is the one that decides whether items 2 and 3 need rebuilding at all. It
+should run before any of it is implemented.
