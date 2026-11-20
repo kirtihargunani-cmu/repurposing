@@ -99,6 +99,10 @@ def main():
     import yaml
     cfg = yaml.safe_load(open(CONFIG))
     tpm_min, min_frac = cfg["expression"]["tpm_min"], cfg["expression"]["min_fraction"]
+    # D151 relative target-presence gate. 0.0 = off (production). REL_MIN overrides the config so an
+    # exploratory arm can be run without editing it; OUT_SFX writes the tables beside production.
+    rel_min = float(os.environ.get("REL_MIN", cfg["expression"].get("rel_min", 0.0)))
+    osfx = os.environ.get("OUT_SFX", "")
     fmin, fmax = cfg["family"]["min_group_size"], cfg["family"]["max_group_size"]
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t")
     sig = pd.read_csv(ROOT / "results/step4/signature_summary.tsv", sep="\t")
@@ -141,9 +145,22 @@ def main():
     targets = set(tg.gene_id.dropna()) - adme
     family = {t: set().union(*(fam_ok[g] for g in gene_grps.get(t, set()) if g in fam_ok)) - {t} for t in targets}
     expr = group_expression(targets | set().union(*family.values()), groups, tpm_min, tum)
-    expr.round(4).to_csv(PROC / (f"target_expression_strata{vs}.tsv.gz" if strata else "target_expression.tsv.gz"),
-                         sep="\t", index=False)
-    expressed = expr[expr.frac_expressed >= min_frac].groupby("group_id").gene_id.apply(set).to_dict()
+    # D151: a gene's own maximum cohort median is its reference scale. Computed over the units present in
+    # this run, so a STRATA run compares strata with strata, not strata with the 41 groups.
+    expr["max_median_tpm"] = expr.gene_id.map(expr.groupby("gene_id").median_tpm.max())
+    expr["rel_to_max"] = (expr.median_tpm / expr.max_median_tpm.replace(0, np.nan)).fillna(0.0)
+    expr["abs_ok"] = expr.frac_expressed >= min_frac
+    expr["rel_ok"] = expr.rel_to_max >= rel_min if rel_min > 0 else True
+    expr.round(4).to_csv(PROC / (f"target_expression_strata{vs}{osfx}.tsv.gz" if strata
+                                 else f"target_expression{osfx}.tsv.gz"), sep="\t", index=False)
+    # expressed = passes both tests; expressed_abs = the absolute test alone, kept so that a row blocked
+    # ONLY by the relative rule can say so instead of being reported as "not expressed".
+    expressed = expr[expr.abs_ok & expr.rel_ok].groupby("group_id").gene_id.apply(set).to_dict()
+    expressed_abs = expr[expr.abs_ok].groupby("group_id").gene_id.apply(set).to_dict()
+    if rel_min > 0:
+        nb = int((expr.abs_ok & ~expr.rel_ok).sum())
+        print(f"D151 relative gate rel_min={rel_min}: blocks {nb:,} of {int(expr.abs_ok.sum()):,} "
+              f"absolutely-passing (gene, unit) pairs ({100 * nb / max(1, int(expr.abs_ok.sum())):.1f}%)", flush=True)
     gid2sym = tg.dropna(subset=["gene_id"]).drop_duplicates("gene_id").set_index("gene_id").symbols
     drug_targets = tg.dropna(subset=["gene_id"]).groupby("pert_id").gene_id.apply(set).to_dict()
     print(f"ADME genes excluded as targets: {len(adme)} ({len(set(tg.gene_id.dropna()) & adme)} occur as drug targets); "
@@ -162,6 +179,7 @@ def main():
         ne = act[~act.ModelID.isin(km.index)].groupby("pert_id").ModelID.nunique()
         borrowed = set(ne[ne >= MIN_LINES].index) - direct
         ex = expressed.get(g, set())
+        ex_abs = expressed_abs.get(g, set())
         for d in sorted(direct | borrowed):
             t_all = drug_targets.get(d, set())
             t = t_all - adme
@@ -175,6 +193,10 @@ def main():
                 status = "adme_only"
             elif not t_all:
                 status = "no_target"
+            elif t & ex_abs:
+                # D151: the target clears the absolute floor and fails only the relative one. Reported
+                # under its own reason so the two causes are never conflated in the summaries.
+                status = "target_low_relative_to_max"
             else:
                 status = "target_not_expressed"
             rows.append(dict(group_id=g, key=k.key, pert_id=d, source="direct" if d in direct else "borrowed",
@@ -184,22 +206,23 @@ def main():
                              targets_not_expressed="|".join(sorted(gid2sym.get(x, x) for x in t - te - fam)),
                              targets_adme="|".join(sorted(gid2sym.get(x, x) for x in t_all & adme))))
     out = pd.DataFrame(rows).join(a, on="pert_id")
-    out["passes_gate"] = out.gate_reason != "target_not_expressed"
+    out["passes_gate"] = ~out.gate_reason.isin(["target_not_expressed", "target_low_relative_to_max"])
     if strata:
         out.insert(1, "parent_group", out.group_id.map(parent))
         out.insert(2, "weak", out.group_id.map(weak))
-    out.to_csv(RES / f"{pfx}_drugs{vs}.tsv", sep="\t", index=False)
+    out.to_csv(RES / f"{pfx}_drugs{vs}{osfx}.tsv", sep="\t", index=False)
 
     for g, d in out.groupby("group_id"):
         summ.append(dict(group_id=g, key=d.key.iloc[0], n_direct=int((d.source == "direct").sum()),
                          n_borrowed=int((d.source == "borrowed").sum()), n_total=len(d),
                          **{f"n_{r}": int((d.gate_reason == r).sum()) for r in
-                            ["target_expressed", "family_member_expressed", "adme_only", "no_target", "target_not_expressed"]},
+                            ["target_expressed", "family_member_expressed", "adme_only", "no_target", "target_not_expressed",
+                             "target_low_relative_to_max"]},
                          n_pass=int(d.passes_gate.sum()),
                          n_pass_flagged_local=int((d.passes_gate & d.pharmacology_flag.eq(True)).sum()),
                          n_pass_approved=int((d.passes_gate & (pd.to_numeric(d.chembl_max_phase, errors="coerce") >= 4)).sum())))
     sm = pd.DataFrame(summ).sort_values("n_pass", ascending=False)
-    sm.to_csv(RES / f"{pfx}_drugs_summary{vs}.tsv", sep="\t", index=False)
+    sm.to_csv(RES / f"{pfx}_drugs_summary{vs}{osfx}.tsv", sep="\t", index=False)
     sha = lambda f: hashlib.sha256(open(f, "rb").read()).hexdigest()[:16]
     run = {"config": str(CONFIG.relative_to(ROOT)), "config_sha256_16": sha(CONFIG), "rules": cfg,
            "hgnc_file": hgnc_file().name, "hgnc_sha256_16": sha(hgnc_file()), "tas_min": TAS_MIN,
