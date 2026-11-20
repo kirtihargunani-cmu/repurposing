@@ -1,0 +1,19 @@
+{
+ "test": "D153 acceptance test 1 - reproduction of the production artifact",
+ "tolerance": 0.0001,
+ "n_production_profiles": 9678,
+ "n_conditions": 20892,
+ "n_pairs_in_conditions": 9678,
+ "pairs_missing_from_conditions": [],
+ "pairs_extra": [],
+ "raw_weighted_max_abs_diff": 8.7e-07,
+ "raw_unweighted_max_abs_diff": 6.67451668,
+ "raw_weighted_pairs_over_tolerance": 0,
+ "worst_weighted": [],
+ "specific_relative_l2_diff": {
+  "median": 0.13649,
+  "p90": 0.31168,
+  "max": 2.18881
+ },
+ "passed": true
+}

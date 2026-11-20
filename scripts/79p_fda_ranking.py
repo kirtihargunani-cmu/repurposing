@@ -22,6 +22,7 @@ Outputs: results/lincs/fda_ranking_v2_consensus.tsv (41 groups), fda_ranking_str
 import re
 from pathlib import Path
 
+import os
 import pandas as pd
 
 import sys
@@ -31,6 +32,10 @@ from evidence_flags import apply_evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
+# SFX (D139, 2026-11-17): which reversal/split tables to rank. Default is production
+#   (_v2_consensus = ARACNe + CollecTRI). Set SFX=_v2_tf for the ARACNe-only ranking.
+SFX = os.environ.get("SFX", "_v2_consensus")
+
 FDA = ROOT / "data/raw/drugsatfda/extracted"
 from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name, eligible, lincs_flags, ORDER, ORDER_REVERSAL  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2; D115)
 
@@ -88,7 +93,7 @@ def main():
     lit = RES / "literature_fda_all_v2.tsv"   # D119: every FDA row (79o MODE=fda_all), was the top-10 table
     lit = pd.read_csv(lit, sep="\t") if lit.exists() else None
     LITC = ["pubmed_count", "pubmed_search_url", "trial_count", "trials_search_url"]
-    summ = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
+    summ = pd.read_csv(RES / f"drug_reversal_summary{SFX}.tsv", sep="\t").set_index("group_id")
 
     def rank(df, unit, order, extra, section="lead"):
         if "layered_pct" not in df:   # early runbook pass (fda_matches) before 79t3: provisional, overwritten by fda_ranking
@@ -112,21 +117,21 @@ def main():
                 "rev", "rev_pct", "spec_mech_pct", "spec_sib_mech_pct", "drugsatfda_url"]
         return x[[c for c in dict.fromkeys(cols) if c in x]].sort_values([unit, "fda_rank"])
 
-    g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    g = pd.read_csv(RES / f"drug_reversal_split{SFX}.tsv", sep="\t", low_memory=False)
     gr = rank(g, "group_id", ORDER["group_id"], [])
-    rank(g, "group_id", ORDER_REVERSAL["group_id"], [], "noprotein").to_csv(RES / "fda_ranking_noprotein_v2_consensus.tsv", sep="\t", index=False)
+    rank(g, "group_id", ORDER_REVERSAL["group_id"], [], "noprotein").to_csv(RES / f"fda_ranking_noprotein{SFX}.tsv", sep="\t", index=False)
     gr.insert(1, "evidence_status", gr.group_id.map(summ.evidence_status))
     if lit is not None:
         L = lit[lit.level == "disease"].drop_duplicates(["unit", "drug"]).rename(columns={"unit": "group_id"})
         gr = gr.merge(L[["group_id", "drug"] + LITC], on=["group_id", "drug"], how="left")
-    gr.to_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t", index=False)
-    s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    gr.to_csv(RES / f"fda_ranking{SFX}.tsv", sep="\t", index=False)
+    s = pd.read_csv(RES / f"stratum_reversal_split{SFX}.tsv", sep="\t", low_memory=False)
     sr = rank(s, "stratum", ORDER["stratum"], ["parent_group"])
-    rank(s, "stratum", ORDER_REVERSAL["stratum"], ["parent_group"], "noprotein").to_csv(RES / "fda_ranking_strata_noprotein_v2_consensus.tsv", sep="\t", index=False)
+    rank(s, "stratum", ORDER_REVERSAL["stratum"], ["parent_group"], "noprotein").to_csv(RES / f"fda_ranking_strata_noprotein{SFX}.tsv", sep="\t", index=False)
     if lit is not None:
         L = lit[lit.level == "subgroup"].drop_duplicates(["unit", "drug"]).rename(columns={"unit": "stratum"})
         sr = sr.merge(L[["stratum", "drug"] + LITC], on=["stratum", "drug"], how="left")
-    sr.to_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t", index=False)
+    sr.to_csv(RES / f"fda_ranking_strata{SFX}.tsv", sep="\t", index=False)
     print(gr.groupby("group_id").fda_rank.size().describe().round(0).to_dict())
     for gid, d in gr.groupby("group_id"):
         print(f"{gid:<20} {d.evidence_status.iloc[0]:<14} " + ", ".join(f"{a} ({b})" for a, b in zip(d.drug.head(6), d.fda_status.head(6).str[0])))
