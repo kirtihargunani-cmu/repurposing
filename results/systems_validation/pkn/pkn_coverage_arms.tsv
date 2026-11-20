@@ -1,0 +1,6 @@
+arm	edges	nodes	pct_activating	regulators_covered	regulators_pct	targets_covered	targets_pct	reachable_pairs	targets_with_any	max_hops
+curated (production)	15646	5264	70.2	2291	54.1	258	66.7	66340	196	3
+relaxed	19634	6158	68.5	2504	59.2	289	74.7	85862	216	3
+permissive	19353	6115	70.1	2486	58.7	288	74.4	100173	216	3
+curated+signor	19438	6130	68.6	2500	59.1	289	74.7	84847	214	3
+relaxed+signor	19634	6158	68.5	2504	59.2	289	74.7	85862	216	3
