@@ -53,6 +53,11 @@ ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data/processed/lincs"
 RES = ROOT / "results/lincs"
 MR_FDR, TOP_PCT, MIN_MRS_REF, MIN_REF, R_MIN = 0.10, 10, 20, 10, 0.5
+# WINDOWS (D154, 2026-11-19): fit the proliferation adjustment separately in the early (<=6 h) and
+#   late (>=24 h) windows instead of one pooled beta. Requires an index carrying pert_time, i.e. the
+#   condition-level profiles of 79c2. Default OFF so production behaviour is unchanged.
+WINDOWS = os.environ.get("WINDOWS", "0") == "1"
+MIN_WIN_N = int(os.environ.get("MIN_WIN_N", "40"))
 SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.environ.get("REGSET", "full") == "tf" else "")
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 STRATA_V2 = os.environ.get("STRATA", "0") == "1"
@@ -182,7 +187,9 @@ def consensus(Ds, regs, m, linked):
 
 
 def main():
-    idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
+    # INDEX_FILE (D154, 2026-11-19): the profile index matching PROFILE_PREFIX. Needed for the
+    #   condition-level profiles of 79c2, whose index carries pert_dose/pert_time. Default: 79c's.
+    idx = pd.read_csv(os.environ.get("INDEX_FILE") or (PROC / "drug_line_profiles_index.tsv"), sep="\t")
     idx["col"] = np.arange(len(idx))
     by_drug = idx.groupby("pert_id")
     genes = pd.read_csv(PROC / "drug_line_profiles_genes.tsv", sep="\t")
@@ -193,6 +200,13 @@ def main():
     pp = os.environ.get("PROFILE_PREFIX", "")
     f_raw, f_spec = (Path(pp + "_raw.f32"), Path(pp + "_specific.f32")) if pp else (PROC / "drug_line_profiles_bing.f32", PROC / "drug_line_profiles_bing_specific.f32")
     pi_raw = np.fromfile(f_raw, dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1)
+    WIN = None
+    if WINDOWS:
+        assert "pert_time" in idx.columns, "WINDOWS=1 needs an index with pert_time (79c2 profiles)"
+        WIN = pd.Series(np.where(idx.pert_time <= 6, "early",
+                                 np.where(idx.pert_time >= 24, "late", "other")), index=idx.index)
+        print(f"WINDOWS=1: {int((WIN=='early').sum()):,} early, {int((WIN=='late').sum()):,} late, "
+              f"{int((WIN=='other').sum()):,} other conditions", flush=True)
     pi_spec = np.fromfile(f_spec,
                           dtype=np.float32).reshape(len(idx), -1)[:, pm].mean(1).astype(np.float64)
     print(f"proliferation genes on profiles: {pm.sum()}")
@@ -240,15 +254,56 @@ def main():
             A = np.fromfile(vdir / f"{net}.f32",
                             dtype=np.float32).reshape(len(idx), len(regs)).astype(np.float64)
             pa = pi_raw.astype(np.float64) if PROFILE == "raw" else pi_spec
-            pc = pa - pa.mean()
-            Ac = A - A.mean(0)
-            beta = Ac.T @ pc / (pc @ pc)
-            r = beta * pc.std() / Ac.std(0)
-            A_adj = A - np.outer(pa, beta)
+            # PER-WINDOW proliferation adjustment (D154, user 2026-11-19).
+            # A single pooled beta was wrong by ~2x its own magnitude and changed SIGN for 24.5% of
+            # regulators between 6 h and 24 h, because growth arrest itself differs by window
+            # (pi = -0.52 early vs -1.06 late). A pooled beta is fitted on predominantly late data
+            # and then applied to early conditions, where for a quarter of regulators it subtracts
+            # the wrong sign - adding growth-arrest signal where it meant to remove it.
+            # WINDOWS=0 restores the pooled behaviour exactly.
+            A_adj = np.empty_like(A)
+            r = np.empty(A.shape[1])
+            beta_pooled_flag = np.zeros(A.shape[1], dtype=bool)
+            if WINDOWS and WIN is not None:
+                pc_all = pa - pa.mean(); Ac_all = A - A.mean(0)
+                beta_all = Ac_all.T @ pc_all / (pc_all @ pc_all)
+                r_all = beta_all * pc_all.std() / Ac_all.std(0)
+                r[:] = np.nan
+                covered = np.zeros(len(A), dtype=bool)
+                for w in ("early", "late"):
+                    m = (WIN == w).values
+                    if m.sum() < MIN_WIN_N:          # too few conditions: fall back, and say so
+                        continue
+                    covered |= m
+                    pw = pa[m]; pcw = pw - pw.mean()
+                    Aw = A[m]; Acw = Aw - Aw.mean(0)
+                    if pcw @ pcw <= 0:
+                        covered &= ~m
+                        continue
+                    bw = Acw.T @ pcw / (pcw @ pcw)
+                    A_adj[m] = Aw - np.outer(pw, bw)
+                    rw = bw * pcw.std() / np.where(Acw.std(0) > 0, Acw.std(0), np.nan)
+                    r = np.where(np.isnan(r), rw, np.fmax(np.abs(r), np.abs(rw)) * np.sign(
+                        np.where(np.abs(r) >= np.abs(rw), r, rw)))
+                if (~covered).any():                 # conditions in no usable window: pooled beta
+                    A_adj[~covered] = A[~covered] - np.outer(pa[~covered], beta_all)
+                    beta_pooled_flag[:] = True
+                r = np.where(np.isnan(r), r_all, r)
+            else:
+                pc = pa - pa.mean()
+                Ac = A - A.mean(0)
+                beta = Ac.T @ pc / (pc @ pc)
+                r = beta * pc.std() / Ac.std(0)
+                A_adj = A - np.outer(pa, beta)
+                beta_pooled_flag[:] = True
+            # P2 per window: |r| is the strongest window-wise correlation, so a regulator that
+            # tracks growth arrest in EITHER window is flagged rather than averaged out of it.
             linked = pd.Index(regs).isin(p1s.get(net, set())) | (np.abs(r) >= R_MIN)
             p2_rows.append(pd.DataFrame({"set": prefix.rstrip("|") or "aracne", "net": net, "regulator": regs, "r_prolif": r.round(3),
                                          "p1": pd.Index(regs).isin(p1s.get(net, set())),
-                                         "p2": np.abs(r) >= R_MIN, "prolif_linked": linked}))
+                                         "p2": np.abs(r) >= R_MIN, "prolif_linked": linked,
+                                         "beta_pooled": beta_pooled_flag,
+                                         "windows": bool(WINDOWS and WIN is not None)}))
             regs = pd.Index(prefix + regs)
             nets[key] = (regs, A, A_adj, set(regs[linked]))
         return nets[key]
