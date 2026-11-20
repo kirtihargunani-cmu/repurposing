@@ -162,7 +162,9 @@ def cons_read(path, k, strata=False):
 
 def main():
     rng = np.random.default_rng(SEED)
-    idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
+    # INDEX_FILE (D154, 2026-11-19): index matching the profile matrix; the 79c2 condition-level
+    #   index carries pert_dose/pert_time. Default: 79c's drug x line index.
+    idx = pd.read_csv(os.environ.get("INDEX_FILE") or (PROC / "drug_line_profiles_index.tsv"), sep="\t")
     idx["col"] = np.arange(len(idx))
     grp = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t").set_index("group_id")
     if CONS:   # set-tagged regulators ("aracne|ESR1"), combined per group below
