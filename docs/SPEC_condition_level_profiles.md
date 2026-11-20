@@ -124,3 +124,77 @@ number that is quietly wrong.
 3. `79d` run per condition for a bounded cohort set, to produce regulator activity per condition.
 4. Acceptance tests 2–4.
 5. Only then: a separate proposal for which summary, if any, production should adopt.
+
+---
+
+## 9. Time windows: how conditions are grouped once kept (added 2026-11-19)
+
+**Raised by the user:** a single continuous number for drug response is biologically wrong, because
+half-life and pharmacodynamics mean the response is not stationary. Their first proposal was fixed
+0–12 h / 12–24 h windows; their second was to locate the boundary **dynamically**, at the turning
+point where a drug's regulon response reaches a global maximum.
+
+### 9.1 What the data supports
+
+Timepoints per (drug, line), production filter (TAS ≥ 0.4), 9,678 cells:
+
+| distinct timepoints | cells | share |
+|---|---|---|
+| exactly 1 | 8,182 | **84.5%** |
+| ≥ 2 | 1,496 | 15.5% |
+| **≥ 3** | **267** | **2.8%** |
+| ≥ 4 | 7 | 0.1% |
+
+**The dynamic version cannot be primary.** Locating a turning point needs ≥ 3 timepoints, which
+exists for 2.8% of cells. For the rest it would be interpolation between two points, not estimation.
+
+A distinction worth keeping separate: the user wrote both *inflection in the dose-response curve* and
+*global max in regulon response*. Those are different axes. **Dose** structure is rich — 8,778 cells
+with ≥ 3 doses. **Time** structure is thin. If the turning point is in time, which is what half-life
+implies, the dose series cannot locate it.
+
+### 9.2 But the early/late split is well supported, and is how LINCS was designed
+
+Timepoints are not scattered — **96% of signatures are 6 h or 24 h**, and among multi-timepoint cells
+the dominant set is literally `(6, 24)` (1,025 cells), then `(6, 24, 48)` (231). There is essentially
+no 12 h data in LINCS (360 signatures in total), so a 12 h boundary is not merely arbitrary, it is
+unmeasurable. **The boundary is 6 h vs 24 h because that is the experiment that was run.**
+
+Single-timepoint cells are also **not** uniformly late:
+
+| | 6 h only | 24 h only | other |
+|---|---|---|---|
+| production filter | **1,818 (22.2%)** | 6,250 (76.4%) | 114 |
+| all `is_hiq` | 11,177 (36.8%) | 19,027 (62.6%) | 188 |
+
+A 6 h-only cell is a clean early observation, not a deficient one. The early share rising from 22% to
+37% when the TAS floor is dropped is the D152 effect again: the floor removes early signatures for
+being small.
+
+So roughly **9,300 of 9,678 cells can be assigned to a window** — 1,818 early-only, 6,250 late-only,
+1,256 with both.
+
+### 9.3 The rule
+
+1. **Every condition carries `window ∈ {early, late, other}`**, from `pert_time ≤ 6` / `≥ 24` /
+   otherwise. Recorded in the index; nothing is averaged across windows.
+2. **Primary analyses are WITHIN-CELL**: restricted to the 1,256 cells holding both an early and a
+   late condition, where the same drug in the same line is compared against itself. This is where the
+   anti-estrogen result already lives, and it is the only comparison free of selection effects.
+3. **Across-cell comparisons are reported with the window as a stated covariate, never as a free
+   comparison.** Early-only and late-only cells are *not* a random partition — which timepoint a drug
+   was profiled at reflects the screening campaign it came from, so comparing an early-only drug
+   against a late-only drug confounds the window with whatever drove that choice. Any table mixing
+   them must carry the window column.
+4. **The dynamic turning point is an arm, not the rule.** On the 267 cells with ≥ 3 timepoints,
+   locate the global maximum of regulon response and ask whether it falls between 6 and 24 h. This
+   uses the rare dense cells to *earn* the simple boundary applied to the sparse ones, rather than
+   applying a dynamic rule the data cannot support. If the maximum consistently falls before 6 h,
+   then 6 h is already a late window and the framing changes — that would be a finding, not a
+   failure.
+
+### 9.4 Limit on the known-answer control
+
+The anti-estrogen case has 6 h and 24 h and nothing between. It is therefore sufficient to show the
+response **reverses between 6 and 24 h**, and insufficient to say when. No claim about 9 h or 18 h is
+supported, and none will be made.
