@@ -29,7 +29,10 @@ import pandas as pd
 
 ROOT = Path("/home/kirti/projects/repurposing")
 OUT = ROOT / "results/systems_validation/fault_isolation"
-PKN = ROOT / "results/systems_validation/pkn/signed_pkn.tsv"
+# PKN_FILE / OUT_SFX (D160, 2026-11-20): run F-1 against a different PKN arm without touching the
+# frozen curated artifacts. Defaults reproduce the frozen behaviour exactly.
+PKN = ROOT / os.environ.get("PKN_FILE", "results/systems_validation/pkn/signed_pkn.tsv")
+SFX = os.environ.get("OUT_SFX", "")
 MR = ROOT / "results/step6/aracne_project_v2_tf/group_mr.tsv"
 MIN_TFS = 20          # plan F-1 exit criterion
 SPEC_PILOTS = {"TCGA-SKCM": "BRAF-V600 melanoma", "BRCA-Her2": "ERBB2-amplified breast",
@@ -61,7 +64,7 @@ def main():
         d["in_pkn"] = d.regulator.isin(nodes)
         d["has_outgoing_edge"] = d.regulator.isin(sources)
         kept = d[d.in_pkn]
-        f = OUT / f"tf_activity_{g}.tsv"
+        f = OUT / f"tf_activity_{g}{SFX}.tsv"
         cols = [c for c in ["regulator", "nes", "p", "fdr", "size", "in_pkn",
                             "has_outgoing_edge"] if c in d.columns]
         d.sort_values("nes", key=abs, ascending=False)[cols].to_csv(f, sep="\t", index=False)

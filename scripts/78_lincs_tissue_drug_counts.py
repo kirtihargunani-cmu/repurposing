@@ -41,7 +41,7 @@ def main():
     models = pd.read_csv(ROOT / "data/raw/depmap_24q4/Model.csv", index_col=0)
     cov = pd.read_csv(RES / "cell_coverage.tsv", sep="\t").dropna(subset=["ModelID"])
     s = pd.read_csv(RAW / "siginfo_beta.txt", sep="\t", low_memory=False,
-                    usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas"])
+                    usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas", "pert_time"])
     s = s[s.pert_type == "trt_cp"].merge(cov[["cell_iname", "ModelID"]], on="cell_iname")
     s = s.join(models[["OncotreeLineage", "OncotreePrimaryDisease"]], on="ModelID")
     s["active"] = (s.is_hiq == 1) & active_mask(s)
