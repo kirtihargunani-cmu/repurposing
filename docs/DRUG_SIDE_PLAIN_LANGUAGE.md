@@ -949,3 +949,49 @@ correlation of **0.681 against the original 0.687**, and a disagreement rate of 
 never reached the drug rankings themselves, which barely moved (37.0% to 37.4%).
 
 More data, same answer, on a sample 69% larger. That is the outcome you want from this kind of check.
+
+---
+
+## Can the pipeline find a drug's target without being told it? (2026-11-20)
+
+This was the big test, and it came back split — one clear yes and one clear no.
+
+The pipeline has a step that ignores drug labels entirely. It takes a drug, looks at everything the
+drug changes in a cancer cell, and asks: which of these changes most opposes what the tumour is
+doing? Whatever comes out on top is the pipeline's guess at how the drug works. The guess is made
+without ever being told what the drug binds.
+
+To check whether the guess is any good, we ran it on drugs whose targets we already know, and asked
+where the known target landed in a list of roughly 2,850 candidates.
+
+**For a drug's main target, it works.** Among the top 1% of each list we found **59 known targets
+where chance would give about 15** — nearly four times better than guessing. Some individual results
+are striking: for erlotinib, a lung cancer drug, its actual target EGFR came back **3rd out of
+2,806**. Romidepsin, panobinostat and belinostat all surfaced the HDAC enzymes they are designed to
+block. Etoposide surfaced TOP2B. Fingolimod surfaced S1PR1.
+
+The detail that makes this convincing is not any single hit — it's that **the method does better when
+it has more data**. Drugs measured in one experiment land 1.1× better than chance; drugs measured in
+five or more land **2.45×** better. A fluke does not improve when you feed it more evidence.
+
+**For a drug's secondary targets, it does not work.** Many drugs hit more than one protein, and the
+second or third one is often where a new use would come from. That is exactly what we hoped to
+surface. Here the result is flat: **7 known secondary targets in the top 1%, where chance gives about
+8**. Strength of binding did not help either — the secondary targets a drug grips most tightly ranked
+no better than the ones it barely touches.
+
+A few entries do look right — dasatinib finding EPHA2, midostaurin finding PRKCD — but with 793
+pairs being scored, that is about how many good-looking results you would get by luck alone. So we
+are not counting them.
+
+**And the proliferation question was settled along the way.** The worry was that growth arrest, which
+nearly every cancer drug causes, was drowning out the real secondary mechanisms. We tested that
+directly by running the whole thing four ways: no removal, partial removal, full removal, and full
+removal plus discarding every growth-related regulator. The secondary result stayed flat in all four.
+Growth arrest was not what was hiding them.
+
+One thing we did learn: the shallowest hits are mostly growth-related, while the deepest and best
+ones are not. Of the results that made the top 10, **more than 80% were growth regulators**, against
+a background rate of 13%. But the genuinely good recoveries — EGFR, the HDACs, the hormone receptors
+— sit in the top 1% and have nothing to do with growth. The lesson is to trust the very top of the
+list and be sceptical of the merely-near-the-top.
