@@ -6,6 +6,16 @@ expression:
   tpm_min: 1.0          # a tumor expresses a gene at TPM >= tpm_min (Toil TPM, primary_per_patient tumors)
   min_fraction: 0.20    # a gene is expressed in a disease if >= min_fraction of its tumors express it
                         # (subset-level: a target present in a fifth of patients keeps the drug)
+  rel_min: 0.0          # D151 relative target-presence gate. A gene counts as present only if its cohort
+                        # median TPM also reaches rel_min x its own MAXIMUM cohort median - scale-free per
+                        # gene, so no per-gene tuning. Motivation: ESR1 clears the absolute floor in
+                        # BRCA-Basal (median 0.86 TPM, 44.7% of tumours) while sitting at 0.6% of its own
+                        # maximum (LumB, 138.76), a 126-fold gap that let anti-estrogens be scored in a
+                        # disease that does not express their target (D91, D150).
+                        # 0.0 DISABLES it: production behaviour is unchanged until the rule is accepted.
+                        # The spec proposes 0.10 (blocks 21.5% of currently-passing gene x cohort pairs);
+                        # env REL_MIN overrides this for exploratory arms. See
+                        # docs/SPEC_relative_target_presence_gate.md and D151.
 
 adme:
   # Drug-handling genes (metabolism, conjugation, transport) are never used as gate targets: their absence says
