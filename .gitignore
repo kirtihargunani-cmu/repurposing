@@ -17,3 +17,6 @@ omnipathr-log/
 # D128 sandbox: large per-row tables and the reachability cache stay on the server
 results/lincs/d128/**/*.parquet
 results/lincs/d128/**/cache/
+
+# systems_validation: CARNIVAL LP/solver intermediates (regenerable, >100MB)
+results/systems_validation/**/work/

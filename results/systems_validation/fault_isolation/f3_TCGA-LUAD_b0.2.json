@@ -1,0 +1,23 @@
+{
+  "cohort": "TCGA-LUAD",
+  "driver": "EGFR",
+  "betaWeight": 0.2,
+  "status": "deliberately_weak_case",
+  "n_measured_tfs": 30,
+  "pkn_edges": 15646,
+  "lp_seconds": 14.2,
+  "enum_seconds": 1136.2,
+  "n_alternative_optima": 1,
+  "enum_status": "exhausted",
+  "optimum": 8,
+  "driver_in_n_optima": 0,
+  "driver_direction": [],
+  "expected_sign": "+",
+  "recovery_call": "NOT RECOVERED",
+  "n_core_nodes": 40,
+  "n_union_nodes": 40,
+  "median_pairwise_jaccard": null,
+  "core_nodes": ["AKAP8", "AKT3", "ATM", "AURKA", "CASP6", "CENPA", "EPAS1", "ERG", "FOS", "GATA2", "GATA6", "HEY1", "KDM5B", "KLF13", "KLF15", "KLF2", "MBD1", "MEIS1", "MPG", "MYBL2", "MZF1", "NFIB", "NFIX", "NFYA", "NR5A2", "PLAGL1", "POU6F1", "PPARG", "PRP4K", "SATB1", "SETBP1", "SOX4", "STAT5B", "STK38", "TAL1", "TBX3", "TFAP2A", "TFEB", "TP53", "YY1"],
+  "frozen_by": "docs/FREEZE_F2_driver_recovery.md",
+  "reads_no_outcome_labels": true
+}
