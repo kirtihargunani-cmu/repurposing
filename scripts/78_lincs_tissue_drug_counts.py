@@ -4,7 +4,7 @@ cross-line consensus of drugs active elsewhere (scripts/77_lincs_extrapolation_t
 
 Tissue = DepMap OncotreeLineage of LINCS lines mapped to DepMap (results/lincs/cell_coverage.tsv); cancer lines by
 default, non-cancerous LINCS lines (HA1E kidney, MCF 10A breast) counted in separate columns. Counts from siginfo
-metadata: tested = any compound signature; high_quality = is_hiq; active = is_hiq and TAS >= 0.4.
+metadata: tested = any compound signature; high_quality = is_hiq; active = is_hiq and TAS above the per-timepoint floor (D156).
 Borrowable = not active in the tissue, but active in >= k cancer lines elsewhere (k = 1, 3, 5). Leave-one-line-out
 accuracy of the cross-line mean by number of lines: 1 r 0.30, 2 0.38, 3-4 0.46, 5-8 0.53, 9+ 0.57 (ceiling 0.55).
 Diseases (41 Step 4 signature groups) use their strict tissue key (config/celligner_tissue_keys.tsv).
@@ -12,6 +12,8 @@ Outputs: results/lincs/tissue_drug_counts.tsv, disease_drug_counts.tsv
 """
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -42,7 +44,7 @@ def main():
                     usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas"])
     s = s[s.pert_type == "trt_cp"].merge(cov[["cell_iname", "ModelID"]], on="cell_iname")
     s = s.join(models[["OncotreeLineage", "OncotreePrimaryDisease"]], on="ModelID")
-    s["active"] = (s.is_hiq == 1) & (s.tas >= TAS_MIN)
+    s["active"] = (s.is_hiq == 1) & active_mask(s)
     s["cancer"] = s.OncotreePrimaryDisease != "Non-Cancerous"
     sc = s[s.cancer]
     act_lines = sc.loc[sc.active, ["pert_id", "ModelID"]].drop_duplicates()

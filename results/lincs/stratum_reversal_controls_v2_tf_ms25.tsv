@@ -1,0 +1,23 @@
+group_id	drug	expected	source
+BRCA-LumA	fulvestrant	high	not in list
+BRCA-LumA	tamoxifen	high	not in list
+BRCA-LumA	raloxifene	high	not in list
+BRCA-LumA	palbociclib	high	not in list
+BRCA-LumB	fulvestrant	high	not in list
+BRCA-LumB	tamoxifen	high	not in list
+BRCA-LumB	raloxifene	high	not in list
+BRCA-LumB	palbociclib	high	not in list
+TCGA-PRAD	bicalutamide	high	not in list
+TCGA-PRAD	enzalutamide	high	not in list
+TCGA-PRAD	flutamide	high	not in list
+TCGA-PRAD	nilutamide	high	not in list
+TCGA-COAD	fluorouracil	high	not in list
+TCGA-COAD	irinotecan	high	not in list
+TCGA-COAD	oxaliplatin	high	not in list
+TCGA-LUAD	erlotinib	high	not in list
+TCGA-LUAD	gefitinib	high	not in list
+TCGA-LUAD	afatinib	high	not in list
+TCGA-LUAD	osimertinib	high	not in list
+BRCA-Basal	fulvestrant	low	not in list
+BRCA-Basal	tamoxifen	low	not in list
+BRCA-Basal	raloxifene	low	not in list

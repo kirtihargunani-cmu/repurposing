@@ -1,17 +1,17 @@
 {
  "step": "positive-hit view of per-window reversal",
- "n_rows": 12055,
+ "n_rows": 13907,
  "n_cohorts": 25,
- "n_hits_top10pct": 1351,
+ "n_hits_top10pct": 1660,
  "hits_by_best_window": {
-  "late": 984,
-  "early": 367
+  "late": 972,
+  "early": 688
  },
  "hits_by_coverage": {
-  "late_only": 762,
-  "both": 420,
-  "early_only": 169
+  "both": 693,
+  "late_only": 581,
+  "early_only": 386
  },
- "hits_reversing": 107,
+ "hits_reversing": 213,
  "median_conditions_behind_a_hit": 1.0
 }

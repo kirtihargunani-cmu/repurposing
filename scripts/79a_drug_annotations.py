@@ -19,6 +19,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask  # D156: per-timepoint floor (6 h 0.25, else 0.4)
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -90,7 +92,7 @@ def main():
                       usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas"])
     cov = pd.read_csv(RES / "cell_coverage.tsv", sep="\t").dropna(subset=["ModelID"])
     cancer = set(cov.loc[cov.OncotreePrimaryDisease != "Non-Cancerous", "cell_iname"])
-    act = sig[(sig.pert_type == "trt_cp") & (sig.is_hiq == 1) & (sig.tas >= TAS_MIN) & sig.cell_iname.isin(cancer)]
+    act = sig[(sig.pert_type == "trt_cp") & (sig.is_hiq == 1) & active_mask(sig) & sig.cell_iname.isin(cancer)]
     nlines = act.groupby("pert_id").cell_iname.nunique()
     drugs = pd.DataFrame({"pert_id": nlines.index, "n_active_lines": nlines.values})
 

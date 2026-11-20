@@ -18,9 +18,10 @@ Two deliberate differences from 79c, both from the spec:
     the arm D152 is about. Strata with fewer than MIN_DRUGS_FOR_G drugs are left unprojected and
     flagged `generic_removed = False`.
 
-  * TAS_MIN is a parameter. The default reproduces production (0.4). It is NOT lowered here - the
-    quality floor is a separate pre-registration (D152). This script only makes that question
-    testable by keeping the conditions.
+  * the activity floor comes from scripts/tas_floor.py, which since D156 applies 0.25 at 6 h and
+    0.4 elsewhere. TAS measures response MAGNITUDE and early responses are genuinely smaller, so a
+    uniform floor deleted 76% of 6 h signatures; the 0.25 is justified by measured drug-specific
+    signal, not by convention. TAS_FLOORS=uniform restores a single 0.4 everywhere.
 
 Outputs (data/processed/lincs/):
   drug_condition_profiles_raw.f32       conditions x genes, float32, profile-major
@@ -32,6 +33,8 @@ Outputs (data/processed/lincs/):
 import json, os, sys, time
 from pathlib import Path
 import numpy as np, pandas as pd
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from tas_floor import active_mask, TAS_ANCHOR
 
 ROOT = Path(__file__).resolve().parent.parent
 PROC = ROOT / "data/processed/lincs"
@@ -57,7 +60,8 @@ def main():
     gpos = np.where(keep.values)[0]
     print(f"genes kept (unique v23): {int(keep.sum())}")
 
-    act = sig[sig.tas >= TAS_MIN]
+    # D156: per-timepoint floor when TAS_ANCHOR is set; identical to the uniform floor otherwise
+    act = sig[active_mask(sig)]
     # pandas groupby DROPS rows whose key contains NaN. 4 active signatures have a NaN pert_dose,
     # which silently lost 3 drug x line pairs (one entirely) and broke the reproduction gate.
     # Use an explicit sentinel so "dose not recorded" is its own condition rather than vanishing.
@@ -73,7 +77,7 @@ def main():
     idx["median_tas"] = [float(np.median(tasv[v])) for v in grp.values()]
     idx["dose_recorded"] = idx.pert_dose >= 0
     idx["time_recorded"] = idx.pert_time >= 0
-    print(f"conditions: {len(idx):,} (from {len(act):,} active signatures, TAS >= {TAS_MIN}); "
+    print(f"conditions: {len(idx):,} (from {len(act):,} active signatures); "
           f"{idx.groupby(['pert_id','ModelID']).ngroups:,} drug x line pairs")
 
     P = np.empty((len(idx), len(gpos)), dtype=np.float32)
@@ -103,7 +107,7 @@ def main():
     idx.to_csv(PROC / "drug_condition_profiles_index.tsv", sep="\t", index=False)
 
     strata = idx.groupby(["ModelID", "pert_time"]).ngroups
-    man = dict(script="79c2_condition_profiles.py", spec="docs/SPEC_condition_level_profiles.md",
+    man = dict(script="79c2_condition_profiles.py", tas_anchor=TAS_ANCHOR or None, spec="docs/SPEC_condition_level_profiles.md",
                tas_min=TAS_MIN, min_drugs_for_g=MIN_DRUGS_FOR_G,
                n_conditions=int(len(idx)), n_signatures=int(len(act)),
                n_drug_line_pairs=int(idx.groupby(["pert_id", "ModelID"]).ngroups),
