@@ -16,7 +16,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 s = pd.read_csv(ROOT / "data/raw/lincs2020/siginfo_beta.txt", sep="\t", low_memory=False,
-                usecols=["sig_id", "pert_id", "cmap_name", "pert_dose", "pert_dose_unit", "tas", "is_hiq", "pert_type"])
+                usecols=["sig_id", "pert_id", "cmap_name", "pert_dose", "pert_dose_unit", "tas", "is_hiq", "pert_type", "pert_time"])
 s = s[(s.pert_type == "trt_cp") & s.pert_dose_unit.astype(str).str.lower().isin(["um", "nm"])].copy()
 s["dose"] = pd.to_numeric(s.pert_dose, errors="coerce")
 s.loc[s.pert_dose_unit.astype(str).str.lower().eq("nm"), "dose"] /= 1000

@@ -121,7 +121,7 @@ def main():
     # active drug x line (cancer lines)
     cov = pd.read_csv(RES / "cell_coverage.tsv", sep="\t").dropna(subset=["ModelID"])
     s = pd.read_csv(RAW / "lincs2020/siginfo_beta.txt", sep="\t", low_memory=False,
-                    usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas"])
+                    usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas", "pert_time"])
     s = s[(s.pert_type == "trt_cp") & (s.is_hiq == 1) & active_mask(s)].merge(cov[["cell_iname", "ModelID"]])
     act = s[s.ModelID.isin(cancer_models.index)][["pert_id", "ModelID"]].drop_duplicates()
 

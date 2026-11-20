@@ -89,7 +89,7 @@ def main():
     cache = RAW / "chembl" / rel
 
     sig = pd.read_csv(RAW / "lincs2020/siginfo_beta.txt", sep="\t", low_memory=False,
-                      usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas"])
+                      usecols=["pert_id", "pert_type", "cell_iname", "is_hiq", "tas", "pert_time"])
     cov = pd.read_csv(RES / "cell_coverage.tsv", sep="\t").dropna(subset=["ModelID"])
     cancer = set(cov.loc[cov.OncotreePrimaryDisease != "Non-Cancerous", "cell_iname"])
     act = sig[(sig.pert_type == "trt_cp") & (sig.is_hiq == 1) & active_mask(sig) & sig.cell_iname.isin(cancer)]
