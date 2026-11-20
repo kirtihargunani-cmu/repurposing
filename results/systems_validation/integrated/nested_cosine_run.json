@@ -1,0 +1,48 @@
+{
+ "step": "nested regulon-level cosine, drug array vs disease array",
+ "motivation": "D149: regulon context is signal; keep gene-level structure inside each regulon",
+ "min_genes": 15,
+ "cohorts": [
+  {
+   "cohort": "BRCA-LumA",
+   "network": "BRCA_LUMA",
+   "n_regulons_usable": 1043,
+   "n_rows": 1630,
+   "cos_weighted_median": 0.00827,
+   "cos_weighted_p05": -0.12543,
+   "cos_weighted_p95": 0.1191,
+   "frac_opposing_median": 0.4851
+  },
+  {
+   "cohort": "TCGA-SKCM",
+   "network": "SKCM",
+   "n_regulons_usable": 1061,
+   "n_rows": 1147,
+   "cos_weighted_median": 0.00507,
+   "cos_weighted_p05": -0.10657,
+   "cos_weighted_p95": 0.11024,
+   "frac_opposing_median": 0.4901
+  },
+  {
+   "cohort": "BRCA-Her2",
+   "network": "BRCA_BAS",
+   "n_regulons_usable": 1104,
+   "n_rows": 1630,
+   "cos_weighted_median": 0.00081,
+   "cos_weighted_p05": -0.13006,
+   "cos_weighted_p95": 0.12052,
+   "frac_opposing_median": 0.4955
+  },
+  {
+   "cohort": "TCGA-LUAD",
+   "network": "LUAD",
+   "n_regulons_usable": 1122,
+   "n_rows": 1442,
+   "cos_weighted_median": 0.00308,
+   "cos_weighted_p05": -0.10506,
+   "cos_weighted_p95": 0.1038,
+   "frac_opposing_median": 0.4978
+  }
+ ],
+ "runtime_s": 34.5
+}

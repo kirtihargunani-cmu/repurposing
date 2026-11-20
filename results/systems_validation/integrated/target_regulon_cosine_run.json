@@ -1,0 +1,10 @@
+{
+ "step": "target-restricted nested regulon cosine",
+ "statistic": "opposing_pct = rank among all drugs scored against the SAME regulon in the SAME cohort",
+ "min_genes": 15,
+ "n_rows": 264,
+ "n_cohorts": 12,
+ "n_targets": 10,
+ "n_drugs": 60,
+ "runtime_s": 13.9
+}
