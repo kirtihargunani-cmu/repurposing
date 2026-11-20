@@ -120,7 +120,11 @@ def dna_acting(names):
                     and (T.get(m["target_chembl_id"]) or {}).get("target_type") == "NUCLEIC-ACID":
                 out.add(d)
     return out
-SPLITS = {"group_id": RES / "drug_reversal_split_v2_consensus.tsv", "stratum": RES / "stratum_reversal_split_v2_consensus.tsv"}
+# SPLIT_SFX (D139, 2026-11-17): default is production (_v2_consensus = ARACNe + CollecTRI);
+#   set SPLIT_SFX=_v2_tf to write layered_pct into the ARACNe-only split tables.
+SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_consensus")
+SPLITS = {"group_id": RES / f"drug_reversal_split{SPLIT_SFX}.tsv",
+          "stratum": RES / f"stratum_reversal_split{SPLIT_SFX}.tsv"}
 
 
 def layer1_strata(strata, F_groups):
@@ -285,7 +289,9 @@ def main():
                          minority_alteration=int(df.minority_alteration.sum()), essential_target=int((df.essential_target & has).sum()))
         allrows.append(df[fda][[unit, "pert_id", "cmap_name"] + COLS].rename(columns={unit: "unit"}).assign(level=unit))
         print(unit, run[unit], flush=True)
-    sfx = OUT_SFX if SANDBOX else ""
+    # D139: a non-default SPLIT_SFX (e.g. the ARACNe-only _v2_tf_ms25 arm) must not overwrite the
+    #   production layered_score_v2.tsv / lead_score_run.json, so it tags them too.
+    sfx = OUT_SFX if SANDBOX else ("" if SPLIT_SFX == "_v2_consensus" else SPLIT_SFX)
     if ESSENTIAL and PROLIF_WEIGHT:
         run["rho_dna_acting"] = RHO_DNA
     pd.concat(allrows).to_csv(RES / f"layered_score_v2{sfx}.tsv", sep="\t", index=False, float_format="%.3f")
