@@ -1,0 +1,12 @@
+pair_set	drug_class	high	low	n	n_correct	share	p	median_gap	n_lo_excluded	n_hi_excluded	share_e2e
+primary	BRAF/MEK	THCA-BRAF-like-classical	THCA-RAS-like-follicular	9	5	0.5556	0.5	0.9	0	0	0.5556
+primary	BRAF/MEK	TCGA-SKCM	TCGA-LUSC	9	8	0.8889	0.01953	75.3	0	0	0.8889
+primary	EGFR	TCGA-LUAD	TCGA-LUSC	8	5	0.625	0.36328	15.7	1	1	0.625
+primary	EGFR	TCGA-HNSC	TCGA-LUSC	8	8	1.0	0.00391	17.8	1	1	1.0
+primary	HER2	BRCA-Her2	BRCA-Basal	6	5	0.8333	0.10938	13.2	2	2	0.8333
+primary	HER2	BRCA-Her2	BRCA-LumA	6	4	0.6667	0.34375	10.2	2	2	0.6667
+primary	PARP	TCGA-OV	TCGA-LUSC	3	3	1.0	0.125	43.0	1	1	1.0
+seen	anti-estrogen	BRCA-LumA	BRCA-Basal	8	7	0.875	0.03516	71.2	7	0	1.0
+seen	anti-estrogen	BRCA-LumB	BRCA-Basal	8	7	0.875	0.03516	62.7	7	0	1.0
+seen	ALK	TCGA-LUAD	TCGA-LUSC	3	3	1.0	0.125	5.3	2	2	1.0
+seen	CDK4/6	BRCA-LumA	BRCA-Basal	1	1	1.0	0.5	46.3	0	0	1.0

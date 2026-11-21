@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T231251-2208827",
+ "finished_at": "2026-11-20T23:12:53-05:00",
+ "duration_s": 2,
+ "script": "79o3_band_contrast.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79o3_band_contrast.py",
+ "env": "",
+ "git_sha": "1c84ab0",
+ "git_state": "dirty",
+ "note": "D176: blind agreement check + trial-outcome band contrast",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "trial_band_contrast.tsv": {
+   "bytes": 12812,
+   "mtime": "2026-11-20T23:12:52-05:00"
+  }
+ }
+}

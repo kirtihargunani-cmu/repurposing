@@ -1,0 +1,28 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T204444-2164937",
+ "finished_at": "2026-11-20T20:44:48-05:00",
+ "duration_s": 4,
+ "script": "79j_window_scores.py",
+ "cmd": "env SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79j_window_scores.py",
+ "env": "",
+ "git_sha": "7c3afdd",
+ "git_state": "dirty",
+ "note": "D170: carry per-window early/late scores into the ranking tables",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": {
+  "run_id": "20261120T165131-2104826",
+  "finished_at": "2026-11-20T16:51:50-05:00",
+  "n_files": 1,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
+ "files": {
+  "stratum_reversal_split_v2_tf.tsv": {
+   "bytes": 8073706,
+   "mtime": "2026-11-20T20:44:48-05:00"
+  }
+ }
+}

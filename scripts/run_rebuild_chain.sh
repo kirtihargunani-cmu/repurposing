@@ -38,6 +38,13 @@ run "79e groups"  "$RES/drug_reversal_v2_tf.tsv"          -- env STRATA=0 $PY sc
 run "79e strata"  "$RES/stratum_reversal_v2_tf.tsv"       -- env STRATA=1 $PY scripts/79e_drug_reversal.py
 run "79i split"   "$RES/drug_reversal_split_v2_tf.tsv" "$RES/stratum_reversal_split_v2_tf.tsv" \
                   -- env STRATA=1 $PY scripts/79i_split_reversal.py
+# 79i2 (D102c) edits the split tables IN PLACE, adding target_source / evidence_targets /
+# target_absent and recomputing spec_mech percentiles. 79t3:218 reads target_source, so
+# skipping this stage makes 79t3 die with AttributeError. The _v2_tf arm had never been
+# taken past 79i before, which is why the gap only surfaced now (D164).
+run "79i2 presence" "$RES/drug_reversal_split_v2_tf.tsv" "$RES/stratum_reversal_split_v2_tf.tsv" \
+                  -- env SFX=_v2_tf $PY scripts/79i2_target_presence.py
+
 run "79t3 lead"   "$RES/layered_score_v2_v2_tf.tsv" \
                   -- env ESSENTIAL=1 PROLIF_WEIGHT=1 SPLIT_SFX=_v2_tf $PY scripts/79t3_lead_score.py
 run "79p fda"     "$RES/fda_ranking_v2_tf.tsv" "$RES/fda_ranking_strata_v2_tf.tsv" \
