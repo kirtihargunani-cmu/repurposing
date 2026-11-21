@@ -28,6 +28,7 @@ Where several LINCS compound ids share a `cmap_name`, the one with the most cond
 Inputs:  results/lincs/drug_ranking_by_window<SFX>.tsv (79k)
          scripts/templates/window_rankings.html (placeholder __DATA__)
 Output:  results/lincs/drug_rankings_by_window<SFX>.html
+         published copy (private): https://claude.ai/artifact/Loe6nCcucsB9m7TksExQ8j
 """
 import json
 import os
