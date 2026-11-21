@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T165150-2104971",
+ "finished_at": "2026-11-20T17:03:38-05:00",
+ "duration_s": 708,
+ "script": "79t3_lead_score.py",
+ "cmd": "env ESSENTIAL=1 PROLIF_WEIGHT=1 SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79t3_lead_score.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
+ "git_sha": "ecfb884",
+ "git_state": "dirty",
+ "note": "D156 chain resume after 79t3 crash (missing 79i2)",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "layered_score_v2_v2_tf.tsv": {
+   "bytes": 2055279,
+   "mtime": "2026-11-20T17:03:37-05:00"
+  }
+ }
+}

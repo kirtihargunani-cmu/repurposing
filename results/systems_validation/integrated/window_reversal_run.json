@@ -1,16 +1,16 @@
 {
  "step": "per-window reversal score",
  "formula": "rev = -(D . s)/||s|| as 79e:285",
- "n_rows": 13907,
- "n_cohorts": 25,
+ "n_rows": 17460,
+ "n_cohorts": 29,
  "coverage": {
-  "late_only": 6508,
-  "early_only": 3798,
-  "both": 3601
+  "late_only": 7509,
+  "early_only": 5823,
+  "both": 4128
  },
- "n_both": 3601,
- "spearman_early_late": 0.3849,
- "frac_discordant_of_both": 0.3743,
+ "n_both": 4128,
+ "spearman_early_late": 0.382,
+ "frac_discordant_of_both": 0.3752,
  "median_n_conditions": {
   "early": 1.0,
   "late": 1.0

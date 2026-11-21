@@ -1,10 +1,11 @@
 {
  "config": "config/drug_gate.yaml",
- "config_sha256_16": "236109c92a9244a7",
+ "config_sha256_16": "ed35f907b69527ff",
  "rules": {
   "expression": {
    "tpm_min": 1.0,
-   "min_fraction": 0.2
+   "min_fraction": 0.2,
+   "rel_min": 0.0
   },
   "adme": {
    "hgnc_group_ids": [

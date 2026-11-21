@@ -1,0 +1,28 @@
+{
+ "spec": "docs/SPEC_rges_benchmark.md",
+ "profile": "specific",
+ "n_set": 150,
+ "fdr": 0.05,
+ "n_rows": 30665,
+ "n_cohorts": 29,
+ "skipped": [
+  "SARC-DDLPS: no in-key lines with profiles",
+  "SARC-LMS: no in-key lines with profiles",
+  "SARC-UPS: no in-key lines with profiles",
+  "TARGET-WT: no in-key lines with profiles",
+  "TCGA-ACC: no in-key lines with profiles",
+  "TCGA-HNSC: no in-key lines with profiles",
+  "TCGA-HNSC: no in-key lines with profiles",
+  "TCGA-KICH: no in-key lines with profiles",
+  "TCGA-KICH: no in-key lines with profiles",
+  "TCGA-KIRC: no in-key lines with profiles",
+  "TCGA-KIRC: no in-key lines with profiles",
+  "TCGA-KIRP: no in-key lines with profiles",
+  "TCGA-KIRP: no in-key lines with profiles",
+  "TCGA-THCA: no in-key lines with profiles",
+  "TCGA-THCA: no in-key lines with profiles",
+  "TGCT-NSGCT: no in-key lines with profiles",
+  "TGCT-SEM: no in-key lines with profiles"
+ ],
+ "runtime_s": 16.0
+}

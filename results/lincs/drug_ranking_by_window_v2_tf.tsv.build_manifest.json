@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T210009-2169135",
+ "finished_at": "2026-11-20T21:00:11-05:00",
+ "duration_s": 2,
+ "script": "79k_window_long.py",
+ "cmd": "env SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79k_window_long.py",
+ "env": "",
+ "git_sha": "5831f44",
+ "git_state": "dirty",
+ "note": "D171: window as an explicit output dimension (early/late/pooled)",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "drug_ranking_by_window_v2_tf.tsv": {
+   "bytes": 7808693,
+   "mtime": "2026-11-20T21:00:10-05:00"
+  }
+ }
+}

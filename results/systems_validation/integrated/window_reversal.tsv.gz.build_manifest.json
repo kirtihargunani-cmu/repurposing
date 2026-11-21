@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T205806-2168484",
+ "finished_at": "2026-11-20T20:58:28-05:00",
+ "duration_s": 22,
+ "script": "window_reversal.py",
+ "cmd": "env OMP_NUM_THREADS=6 /home/kirti/miniforge3/envs/celligner/bin/python scripts/systems_validation/integrate/window_reversal.py",
+ "env": "",
+ "git_sha": "5831f44",
+ "git_state": "dirty",
+ "note": "D171: net_for uses the group's cohort field as production does; recovers BRCA-Her2 + 3",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "window_reversal.tsv.gz": {
+   "bytes": 329058,
+   "mtime": "2026-11-20T20:58:27-05:00"
+  }
+ }
+}

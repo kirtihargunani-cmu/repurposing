@@ -1,0 +1,58 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T230104-2204782",
+ "finished_at": "2026-11-20T23:01:05-05:00",
+ "duration_s": 1,
+ "script": "79o2_trial_outcomes.py",
+ "cmd": "env STAGE=fetch BANDS=top,mid,bottom TOP_N=10 /home/kirti/miniforge3/envs/celligner/bin/python scripts/79o2_trial_outcomes.py",
+ "env": "",
+ "git_sha": "1c84ab0",
+ "git_state": "dirty",
+ "note": "D176: rerun fetch with band wired through; pulls PubMed abstracts for mid/bottom completed trials",
+ "expect": null,
+ "n_files": 7,
+ "mtime_span_hours": 344.7,
+ "files_not_rewritten_by_this_run": [
+  "reading_prompt.md",
+  "stopped_role_queue.jsonl",
+  "stopped_role_queue_2.jsonl",
+  "stopped_role_queue_3.jsonl",
+  "trials_read.tsv"
+ ],
+ "supersedes": {
+  "run_id": "20261120T225816-2204016",
+  "finished_at": "2026-11-20T22:59:17-05:00",
+  "n_files": 7,
+  "env": ""
+ },
+ "files": {
+  "reading_prompt.md": {
+   "bytes": 3271,
+   "mtime": "2026-11-06T14:18:52-05:00"
+  },
+  "reading_queue.jsonl": {
+   "bytes": 5383690,
+   "mtime": "2026-11-20T23:01:05-05:00"
+  },
+  "stopped_role_queue.jsonl": {
+   "bytes": 103820,
+   "mtime": "2026-11-06T14:22:21-05:00"
+  },
+  "stopped_role_queue_2.jsonl": {
+   "bytes": 25845,
+   "mtime": "2026-11-06T15:14:35-05:00"
+  },
+  "stopped_role_queue_3.jsonl": {
+   "bytes": 9746,
+   "mtime": "2026-11-08T13:29:58-05:00"
+  },
+  "trials.tsv": {
+   "bytes": 3244976,
+   "mtime": "2026-11-20T23:01:05-05:00"
+  },
+  "trials_read.tsv": {
+   "bytes": 2854872,
+   "mtime": "2026-11-08T22:47:26-05:00"
+  }
+ }
+}

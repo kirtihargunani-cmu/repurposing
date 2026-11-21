@@ -1,0 +1,35 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T171320-2113733",
+ "finished_at": "2026-11-20T17:13:24-05:00",
+ "duration_s": 4,
+ "script": "d127_biomarker.py",
+ "cmd": "env SPLIT_SFX=_v2_tf OUT_SFX=_v2_tf OMP_NUM_THREADS=2 /home/kirti/miniforge3/envs/celligner/bin/python scripts/d127/d127_biomarker.py",
+ "env": "",
+ "git_sha": "91aff39",
+ "git_state": "dirty",
+ "note": "D127 biomarker gate on the ARACNe-only D156 rebuild arm",
+ "expect": null,
+ "n_files": 4,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "instances.tsv": {
+   "bytes": 9098,
+   "mtime": "2026-11-20T17:13:23-05:00"
+  },
+  "pairs.tsv": {
+   "bytes": 845,
+   "mtime": "2026-11-20T17:13:23-05:00"
+  },
+  "run.json": {
+   "bytes": 269,
+   "mtime": "2026-11-20T17:13:23-05:00"
+  },
+  "summary.tsv": {
+   "bytes": 721,
+   "mtime": "2026-11-20T17:13:23-05:00"
+  }
+ }
+}

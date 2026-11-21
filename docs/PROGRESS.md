@@ -2014,3 +2014,69 @@ proliferation-linked. So the shallow hits are proliferation and the deep ones ar
 
 **What this licenses:** the top ~1% of a Route 2 list is trustworthy for primary mechanism.
 **What it does not:** any claim of secondary-target discovery from Route 2 as presently formulated.
+
+## 2026-11-21 — The trial-outcome test: a 6.9× volume gradient and a flat null on outcome (D176)
+
+D175 found that `trial_outcomes_v2.tsv` only ever covered `fda_rank` 1–10, so the test everyone
+wants — *do top-ranked drugs do better in trials than bottom-ranked ones?* — had no control group.
+D176 fetched the missing bands. `79o2` gained a `BANDS` env; bands are taken **per unit**, so
+cohorts with different numbers of eligible drugs stay comparable.
+
+**550 top / 572 mid / 550 bottom candidate pairs, 55 units, 9,481 ClinicalTrials.gov records.**
+
+### Volume — a huge gradient, and it is the confound, not the result
+
+| band | mean trials per candidate pair | share with ≥1 trial |
+|---|---|---|
+| top | **11.73** | 50.4% |
+| mid | 3.65 | 41.6% |
+| bottom | 1.71 | 32.9% |
+
+Kruskal–Wallis **p = 5.1e-12**; top > bottom p = 4.9e-13. A 6.9× gradient — and it is **fame**.
+Curated targets, binding data and alteration frequency are all richer for well-studied drugs, so
+"highly ranked" and "heavily trialled" share an upstream cause. This number is not validation and
+must not be quoted as such.
+
+### Agreement — the gate that decides whether the contrast means anything
+
+The top band was classified in an earlier session and mid/bottom now, so drift between passes would
+map exactly onto the contrast being measured. **60 already-classified top-band trials were shuffled
+unlabelled into the new reading queue**, and the veto thresholds were fixed *before* reading:
+κ < 0.6, or a positive-rate difference > 0.10.
+
+| | |
+|---|---|
+| exact outcome agreement | 0.883 (53/60) |
+| binary positive-vs-not | 0.917 |
+| **Cohen's κ** | **0.834** |
+| positive rate, prior vs new pass | 0.517 vs 0.467 |
+
+**Both thresholds met.** Disagreements are boundary calls — 3 positive↔not_reported, 2
+negative→mixed, **0 positive↔negative reversals**. All 256 new readings carried a quote verified
+character-for-character against that trial's own abstracts (**256 pass, 0 discarded**), and a chunk
+integrity check found **0 foreign NCTs, 0 missing** across all four reader chunks.
+
+### Outcome — the actual test, and it is null
+
+Positive rate given ≥1 classified completed trial, with `drug_role` background/comparator excluded
+because those trials do not test the drug:
+
+| band | pairs | trials | positive rate |
+|---|---|---|---|
+| top | 136 | 803 | **0.484** |
+| mid | 90 | 302 | **0.513** |
+| bottom | 86 | 158 | **0.475** |
+
+Kruskal–Wallis **p = 0.787**; top > bottom p = 0.436; Fisher on trial counts OR = 1.21, p = 0.153.
+Not merely non-significant — **not even ordered**.
+
+**What this licenses:** nothing new. **What it refutes:** the claim that the lead ranking predicts
+clinical success. Conditional on reaching a completed trial, `layered_pct` does not.
+
+Two limits, stated as limits and not as a rescue: 136 vs 86 pairs needs roughly a **15-point** rate
+difference to detect, so a real 5-point edge is invisible; and conditioning on reaching a trial is a
+**hard filter** — those pairs already passed human judgement, so little variance survives.
+
+This does not conflict with D127, which asks whether the score tracks biomarker status *within* a
+drug (7/7 pairs). Together they bound the claim: the pipeline matches a drug to the cohort where its
+target is active; it is **not shown to pick winners**.

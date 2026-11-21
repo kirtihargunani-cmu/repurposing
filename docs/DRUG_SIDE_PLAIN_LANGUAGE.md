@@ -995,3 +995,52 @@ ones are not. Of the results that made the top 10, **more than 80% were growth r
 a background rate of 13%. But the genuinely good recoveries — EGFR, the HDACs, the hormone receptors
 — sit in the top 1% and have nothing to do with growth. The lesson is to trust the very top of the
 list and be sceptical of the merely-near-the-top.
+
+## Does our ranking predict whether a drug actually works in patients? (D176, 2026-11-21)
+
+Short answer: **no — not on the evidence we have, and we tested it properly.**
+
+Here is the test. For each cancer cohort we took the drugs we rank near the **top**, drugs near the
+**middle**, and drugs near the **bottom** of our list. We pulled every clinical trial on record for
+each of those drug-plus-disease combinations, read the published results, and asked two questions.
+
+**Question 1: are top-ranked drugs trialled more often?** Yes, enormously. Top-ranked drug-disease
+pairs have an average of **11.7 trials** on record; middle-ranked have 3.7; bottom-ranked have 1.7.
+That is a 6.9× difference and it is not a fluke.
+
+But this is **not** good news, and it is important to understand why. Our score is built from
+curated drug-target lists, laboratory binding measurements, and mutation frequencies. All of those
+sources are *much* richer for drugs that scientists have studied heavily. A famous drug gets a high
+score partly *because* it is famous — and famous drugs are also the ones that get trialled. So the
+gradient mostly measures attention, not biology. We report it, and we do not count it as a win.
+
+**Question 2: among drugs that did get trialled, do our top-ranked ones succeed more often?**
+**No.** The share of trials reporting a positive result is essentially identical in all three bands:
+
+| where we ranked the drug | share of trials that worked |
+|---|---|
+| top | 48.4% |
+| middle | 51.3% |
+| bottom | 47.5% |
+
+Not only is the difference not significant (p = 0.79) — it is not even in the right order. The
+middle band is nominally highest.
+
+**How do we know the reading was fair?** The top band was read in an earlier session and the other
+two now, so if our standard for "positive" had drifted between sessions, that drift alone could have
+produced — or erased — a difference. So we secretly mixed **60 already-read trials** back into the
+new queue, unlabelled, and checked whether we gave them the same answer twice. We did: **88% exact
+agreement, κ = 0.83**, with zero cases of a trial flipping between positive and negative. We also
+required every single reading to quote the actual abstract word-for-word, and all 256 passed. The
+thresholds for calling the check a failure were written down *before* we looked.
+
+**What this means in plain terms.** We can say the pipeline is good at pointing to the disease where
+a drug's target is actually switched on — that is what the biomarker test (D127) shows, 7 out of 7.
+We **cannot** say it picks the drugs that will survive a clinical trial. Those are different claims,
+and only the first one is supported.
+
+Two honest caveats. The test is **small**: with 136 top-band and 86 bottom-band pairs, we could only
+have detected a fairly large gap, so a modest real advantage would be invisible here. And it is a
+**hard test by design**: a drug only reaches a trial after human experts already judged it promising,
+so almost all the obviously-bad candidates have been filtered out before we start counting. Neither
+caveat changes the conclusion; they describe how strong a statement the null supports.

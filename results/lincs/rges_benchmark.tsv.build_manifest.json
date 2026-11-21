@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261120T222053-2194547",
+ "finished_at": "2026-11-20T22:21:10-05:00",
+ "duration_s": 17,
+ "script": "79n2_rges_benchmark.py",
+ "cmd": "env PROFILE=specific /home/kirti/miniforge3/envs/celligner/bin/python scripts/79n2_rges_benchmark.py",
+ "env": "",
+ "git_sha": "431aaf8",
+ "git_state": "dirty",
+ "note": "D174: RGES gene-level reversal benchmark, pre-registered",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "rges_benchmark.tsv": {
+   "bytes": 1376668,
+   "mtime": "2026-11-20T22:21:10-05:00"
+  }
+ }
+}

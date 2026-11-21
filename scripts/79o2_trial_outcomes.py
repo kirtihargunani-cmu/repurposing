@@ -38,6 +38,14 @@ RES = ROOT / "results/lincs"
 OUT = RES / "d108"
 CACHE = ROOT / "data/interim/lincs"
 TOP_N = int(os.environ.get("TOP_N", 10))
+# BANDS (D176, 2026-11-20): which slice of each unit's FDA ranking to fetch trials for.
+#   top     fda_rank <= TOP_N                      (the original behaviour, default)
+#   mid     the TOP_N ranks centred on the median rank of that unit
+#   bottom  the last TOP_N ranks of that unit
+# D175 found trial_outcomes_v2.tsv covers ranks 1-10 only, so there is NO low-rank control and the
+# "do top-ranked drugs do better in trials" test cannot be run. These bands build that control.
+# Bands are taken per unit, so cohorts with different n_fda_eligible stay comparable.
+BANDS = [b for b in os.environ.get("BANDS", "top").split(",") if b]
 STAGE = os.environ.get("STAGE", "fetch")
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -122,7 +130,17 @@ def pairs():
     g = pd.read_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t").rename(columns={"group_id": "unit"}).assign(level="disease", parent_group=None)
     s = pd.read_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t").rename(columns={"stratum": "unit"}).assign(level="subgroup")
     x = pd.concat([g, s], ignore_index=True)
-    x = x[x.fda_rank <= TOP_N].copy()
+    sel, mx = [], x.groupby("unit").fda_rank.transform("max")
+    if "top" in BANDS:
+        sel.append(x[x.fda_rank <= TOP_N].assign(band="top"))
+    if "mid" in BANDS:
+        mid = x.groupby("unit").fda_rank.transform("median")
+        sel.append(x[(x.fda_rank - mid).abs() <= TOP_N / 2].assign(band="mid"))
+    if "bottom" in BANDS:
+        sel.append(x[x.fda_rank > mx - TOP_N].assign(band="bottom"))
+    x = pd.concat(sel, ignore_index=True).drop_duplicates(["unit", "drug"]).copy()
+    print(f"pairs: {len(x):,} over {x.unit.nunique()} units; bands "
+          f"{dict(x.band.value_counts())}", flush=True)
     x["disease_key"] = x.parent_group.fillna(x.unit)
     x["condition"] = x.disease_key.map(lambda k: DISEASE[k][1])
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False).drop_duplicates("cmap_name").set_index("cmap_name")
@@ -197,7 +215,8 @@ def fetch():
             n_raw += 1
             if not is_listed(t, r.names):
                 continue
-            rows.append(dict(unit=r.unit, level=r.level, parent_group=r.parent_group, fda_rank=r.fda_rank, drug=r.drug,
+            rows.append(dict(unit=r.unit, level=r.level, parent_group=r.parent_group, fda_rank=r.fda_rank,
+                             band=getattr(r, "band", "top"), drug=r.drug,
                              condition=r.condition, nct=t["nct"], title=t["title"], phase=t["phase"], status=t["status"],
                              why_stopped=t["why_stopped"], stop_class=stop_class(t["why_stopped"]) if t["status"] in STOPPED else "",
                              has_results=t["has_results"], enrollment=t["enrollment"], start=t["start"], completion=t["completion"],
