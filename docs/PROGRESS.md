@@ -2080,3 +2080,73 @@ difference to detect, so a real 5-point edge is invisible; and conditioning on r
 This does not conflict with D127, which asks whether the score tracks biomarker status *within* a
 drug (7/7 pairs). Together they bound the claim: the pipeline matches a drug to the cohort where its
 target is active; it is **not shown to pick winners**.
+
+## 2026-11-21 — Corticosteroids in LUSC: two real defects, one unfixable assumption (D177)
+
+The user: *"i notice that corticosteriods are highly ranked for lung squamous cell carcinoma which is
+just incorrect."* They were right. LUSC's top 10 was **two genes** — 7 corticosteroids on NR3C1,
+3 glitazones on PPARG — all with byte-identical components, because `layered_S` is a property of the
+target unit, not of the drug.
+
+### Defect 1 — the dependency inversion (removed)
+
+For an agonist (`orient == "raise"`) the score used `100 − v` on the CRISPR dependency percentile.
+
+| target | true dependency percentile | what the score used |
+|---|---|---|
+| NR3C1 (LUSC) | **7.7** — raw gene effect **+0.052**, knockout slightly *helps* growth | **92.3** |
+| PPARG (LUSC) | **1.0** | **99.0** |
+
+Verified exactly: of 5,098 scored rows, **751 matched `100 − dep`, 4,383 matched `dep`, zero matched
+neither.** Knockout data cannot be inverted into activation evidence. The one dataset that could
+supply it — LINCS overexpression — covers 222 genes and 8 cell lines and contains **none** of our 41
+agonist targets, so the axis cannot be built. D is now dropped for `raise` units, not flipped.
+
+### Defect 2 — the logFC fallback (removed)
+
+`comp_overactivity` falls back to `logFC_vs_gtex` for genes absent from the master-regulator table.
+For a tissue-foreign receptor that is automatic: GABRA1 and HTR1B are "lower in lung tumour than in
+normal lung" because they are neuronal. **182 of 783 `raise` rows rested on it** — the same root
+cause as the antidepressant/CNS pattern flagged earlier, not a separate problem.
+
+### What no rescoring fixes — and a correction to my own first diagnosis
+
+I framed this as "absence of evidence inverted into evidence." That is true for the dependency axis
+and for the logFC targets. It is **false for NR3C1's overactivity: its NES in LUSC is −2.076, a
+genuine measurement.** Within the reversal framework, a suppressed regulator plus a drug that raises
+it is a legitimate hit. The framework assumes *reversing a regulator's activity reverses the
+disease*, and for a regulator suppressed as a **consequence** of dedifferentiation (GR in squamous
+epithelium) that is false. Nothing in the activity data separates the two cases.
+
+### Shipped: flag, don't demote
+
+`layered_n_axes` (1/2/3) and `layered_orient` (`lower`/`raise`) now ride on the split tables, through
+79p into the FDA rankings, and are surfaced by 79q in the decode string and as filterable flags.
+Census: **3,042 rows on 3 axes, 383 on 2, 231 on 1; 219 `raise`, 4,415 `lower`.**
+
+**LUSC top 4 is now correct** — floxuridine/fluorouracil (TYMS), alpelisib (PIK3CA), palbociclib
+(CCND1|CDK6), all 3-axis, all genuine LUSC lesions. **The corticosteroid block remains at slots
+5–10**, and across all 41 cohorts the agonist class holds **92 of 410 top-10 slots (22.4%), up from
+89 (21.7%)**. The fix did not reduce their share. That residue is expected under this choice: the
+user chose flagging over a tuned demotion, because the penalty size would have been fitted to LUSC.
+
+### The cost: D127 no longer meets its criterion
+
+**36/49 (0.7347, p = 0.0007) → 33/49 (0.6735, p = 0.0066)**, median gap 15.1 → 14.2. **VERDICT NOT
+MET** (share 0.6735 < 0.70). No threshold was retuned to recover it.
+
+The entire loss is **one pair** — BRAF/MEK, THCA-BRAF-like-classical vs THCA-RAS-like-follicular,
+3/9 → 0/9. Six of seven primary pairs are unchanged instance-for-instance. **D177 does not touch any
+drug in that pair**: all 18 rows are `layered_n_axes = 3`, `layered_orient = lower`, shrink factor
+exactly 1.0. The movement comes from percentile re-ranking as *other* drugs in those strata were
+rescored.
+
+And the pair was already failing. 3/9 is below chance (4.5/9), baseline median gap **0.0**, and the
+margins are noise — vemurafenib and dabrafenib score **100.0 vs 100.0**, exact ties, because the
+percentile saturates in both arms. So D127's headline fell without the lead score getting worse at
+what D127 measures. The criterion was pre-set and is not met, and that stands — but it also exposes
+a weakness in D127 itself: **a pair with no resolution contributes 9 of 49 instances (18%) of pure
+noise.**
+
+**Open, deliberately left to data:** whether raising a suppressed regulator ever helps is empirical,
+not a scoring question. D178's phase-progression test covers **211 agonist pairs**.

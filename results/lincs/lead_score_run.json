@@ -74,16 +74,16 @@
  "group_id": {
   "rows": 50760,
   "fda_gate_passing": 9288,
-  "scored": 8002,
-  "no_protein_target": 1286,
+  "scored": 7840,
+  "no_protein_target": 1448,
   "minority_alteration": 329,
   "essential_target": 3108
  },
  "stratum": {
   "rows": 16414,
   "fda_gate_passing": 2995,
-  "scored": 2583,
-  "no_protein_target": 412,
+  "scored": 2534,
+  "no_protein_target": 461,
   "minority_alteration": 104,
   "essential_target": 1038
  },

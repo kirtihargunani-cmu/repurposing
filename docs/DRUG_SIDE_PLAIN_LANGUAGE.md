@@ -1044,3 +1044,56 @@ have detected a fairly large gap, so a modest real advantage would be invisible 
 **hard test by design**: a drug only reaches a trial after human experts already judged it promising,
 so almost all the obviously-bad candidates have been filtered out before we start counting. Neither
 caveat changes the conclusion; they describe how strong a statement the null supports.
+
+## Why corticosteroids topped the lung-cancer list, and what we did (D177, 2026-11-21)
+
+Steroids like dexamethasone were ranking at the very top for lung squamous cell carcinoma. They do
+not treat that cancer — they are supportive care. So something was wrong, and two things were.
+
+**Problem 1: we were rewarding drugs for targeting genes the tumour doesn't need.** Our score asks,
+among other things, "does the tumour depend on this drug's target?" We measure that by deleting the
+gene in cancer cells and seeing whether they die. For most drugs — which *block* their target — more
+dependence is better. But steroids *activate* their target rather than blocking it, and for those
+the code flipped the number upside down: it treated "the tumour does **not** need this gene" as
+strong evidence. NR3C1, the steroid receptor, sits in the **bottom 8%** of dependency in lung
+squamous cancer — deleting it slightly *helps* the cells grow — and the score read that as **92 out
+of 100**. We checked this exactly: 751 of 5,098 rows were being flipped this way. Deletion
+experiments simply cannot tell you what happens when you *turn a gene up*, so we stopped using them
+for activating drugs.
+
+**Problem 2: "lower in tumour than in normal tissue" was being treated as a finding.** For genes we
+hadn't properly measured, the code substituted a cruder comparison — is this gene lower in the
+tumour than in healthy tissue? For a brain receptor in a lung tumour the answer is automatically yes,
+because brain receptors aren't in lungs. That is not a discovery. **182 rows** were resting on it,
+and it is the same thing that made antidepressants show up across unrelated cancers.
+
+Both are now fixed.
+
+**The part we cannot fix by changing the score.** The steroid receptor really *is* switched down in
+these tumours — that measurement is solid. Our whole method says: find what the tumour has pushed out
+of balance, and find a drug that pushes it back. By that logic a steroid is a reasonable suggestion.
+The flaw is in the logic itself: some things are switched down *because* a tumour has lost its normal
+identity, not because switching them down is what makes it a tumour. Pushing those back doesn't cure
+anything. Our data cannot tell those two situations apart.
+
+**So we label instead of hiding.** Every drug now carries two new pieces of information: how many
+independent lines of evidence support it (out of three), and whether it works by blocking or
+activating its target. An activating drug can only ever have **one** line of evidence, because the
+other two are impossible to collect for it. The rankings page says so in plain words next to the
+drug. The rule is: **a high rank is a position in a list, not a measure of how much evidence there
+is — always read the two together.**
+
+**What improved and what didn't.** The top four drugs for lung squamous cancer are now
+fluorouracil/floxuridine, alpelisib and palbociclib — all backed by three lines of evidence, and
+alpelisib and palbociclib target genes that are genuinely broken in this cancer. **The steroids are
+still there, at positions 5 to 10.** Across all 41 cancers, this family of drugs actually holds
+*slightly more* top-10 spots than before (22.4%, up from 21.7%). We are reporting that rather than
+claiming a win.
+
+**And it cost us something.** Our main accuracy check — does the score correctly rank a drug higher
+in the cancer that carries its biomarker? — fell from 36 out of 49 to **33 out of 49**, which is
+below the 70% bar we set in advance. We did not adjust the bar. Looking closely, the whole drop comes
+from a single comparison in thyroid cancer that was **already failing before this change** and that
+our method cannot actually resolve: two of the drugs score 100.0 in *both* groups, an exact tie. So
+the fall says more about that test than about the change. But the bar was set beforehand and it is
+not met, and that is how we are recording it.

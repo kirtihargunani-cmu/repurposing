@@ -33,7 +33,20 @@ def decode(r):
     if str(getattr(r, "essential_unit", "")) == "True" or str(getattr(r, "dna_acting", "")) == "True":   # D124b
         rho = clean(getattr(r, "layered_rho", None))
         return f"{r.layered_genes}: proliferation {r1(r.layered_P)}, rho {'' if rho is None else f'{rho:.2f}'}, binding {b}"
-    return f"{r.layered_genes}: D {r1(r.layered_D)} A {r1(r.layered_A)} O {r1(r.layered_O)}, binding {b}"
+    # D177 (2026-11-21, user chose "flag rather than demote"): say how much evidence the score rests
+    # on and which direction it was inferred in. A `raise` unit is an AGONIST: its score comes from
+    # overactivity alone, because neither alteration frequency nor CRISPR knockout dependency can
+    # speak to whether RAISING a target helps, and we have no overexpression screen covering these
+    # targets. A one-axis score is not a three-axis score and must never be read as one.
+    n = clean(getattr(r, "layered_n_axes", None))
+    ori = str(getattr(r, "layered_orient", "") or "")
+    dash = lambda v: "-" if r1(v) is None else r1(v)
+    note = [] if n is None else [f"{int(n)} of 3 axes"]
+    if ori == "raise":
+        note.append("AGONIST: direction inferred, no dependency/alteration evidence possible")
+    tail = f" [{'; '.join(note)}]" if note else ""
+    return (f"{r.layered_genes}: D {dash(r.layered_D)} A {dash(r.layered_A)} O {dash(r.layered_O)}, "
+            f"binding {b}{tail}")
 
 
 def r1(v):
@@ -79,7 +92,12 @@ def main():
                                      *(["minority alteration"] if str(r.minority_alteration) == "True" else []),
                                      *(["essential target"] if str(r.essential_target) == "True" else []),
                                      *(["scored on proliferation"] if str(getattr(r, "essential_unit", "")) == "True" else []),
-                                     *(["DNA-acting"] if str(getattr(r, "dna_acting", "")) == "True" else [])]),
+                                     *(["DNA-acting"] if str(getattr(r, "dna_acting", "")) == "True" else []),
+                                     # D177: surfaced as flags so they are filterable, not buried in `dec`
+                                     *(["agonist (direction inferred)"] if str(getattr(r, "layered_orient", "")) == "raise" else []),
+                                     *([f"{int(clean(getattr(r, 'layered_n_axes', 0)) or 0)}-axis evidence"]
+                                       if clean(getattr(r, "layered_n_axes", None)) is not None
+                                       and int(clean(r.layered_n_axes)) < 3 else [])]),
                                 fda=clean(r.drugsatfda_url) or "", **L))
             out[u] = lst
         return out
