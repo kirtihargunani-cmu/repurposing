@@ -33,11 +33,24 @@ for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR
     os.environ[v] = "8"
 
 
-def net_for(cohort, ovr, available):
-    for c in ([ovr[cohort]] if cohort in ovr else []) + \
-             (["COADREAD"] if cohort in ("TCGA-COAD", "TCGA-READ") else []) + \
-             [cohort.split("-", 1)[1], cohort.split("-", 1)[1].split("_")[0]]:
-        if c in available:
+def net_for(cohort, ovr, available, cohort_of=None):
+    """Network for a group, resolved exactly as production does (79d:62, 79e NETMAP/net_of).
+
+    D171 fix: this used to parse the GROUP ID string, so `BRCA-Her2` became `Her2`, which is not a
+    network, and the group was silently skipped. Production instead reads the group's TCGA `cohort`
+    field (`TCGA-BRCA` -> `BRCA`). That dropped 4 cohorts from the window table, BRCA-Her2 among
+    them with 5,081 condition profiles. `cohort_of` supplies group_id -> cohort; without it the old
+    string-parsing path is kept so the function still works standalone.
+    """
+    cand = [ovr[cohort]] if cohort in ovr else []
+    if cohort in ("TCGA-COAD", "TCGA-READ"):
+        cand.append("COADREAD")
+    if cohort_of and cohort in cohort_of:                     # production rule
+        tc = cohort_of[cohort]
+        cand.append("COADREAD" if tc in ("TCGA-COAD", "TCGA-READ") else tc.split("-", 1)[-1])
+    cand += [cohort.split("-", 1)[1], cohort.split("-", 1)[1].split("_")[0]]
+    for c in cand:
+        if c and c in available:
             return c
     return None
 
@@ -54,13 +67,16 @@ def main():
     mr = pd.read_csv(ROOT / "results/step6/aracne_project_v2_tf/group_mr.tsv", sep="\t")
     lw = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     ovr = pd.read_csv(ROOT / "config/group_networks.tsv", sep="\t").set_index("group_id").net.to_dict()
+    # D171: group_id -> TCGA cohort, so net_for resolves networks the way 79d:62 / 79e do.
+    cohort_of = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t") \
+        .drop_duplicates("group_id").set_index("group_id").cohort.to_dict()
     avail = {p.stem for p in VDIR.glob("*.f32")}
     print(f"{len(idx):,} conditions | {len(avail)} networks | "
           f"{int((idx.window=='early').sum()):,} early, {int((idx.window=='late').sum()):,} late")
 
     rows = []
     for cohort in sorted(mr.group_id.unique()):
-        net = net_for(cohort, ovr, avail)
+        net = net_for(cohort, ovr, avail, cohort_of)
         if net is None:
             continue
         regs = (VDIR / f"{net}.regulators.txt").read_text().split()

@@ -82,8 +82,10 @@ def annotate(path, unit):
     print(f"  {path.name}: {n:,} rows")
     for k in ("both", "early_only", "late_only"):
         print(f"      {k:<11} {int(cov.get(k, 0)):>7,}")
+    miss = sorted(set(d[unit]) - set(d.loc[d.window_coverage.notna(), unit]))
     print(f"      no window  {int(d.window_coverage.isna().sum()):>7,}  "
-          f"({100 * d.window_coverage.isna().mean():.1f}% - 16 of 41 cohorts are not in the window table)")
+          f"({100 * d.window_coverage.isna().mean():.1f}%; {len(miss)} of {d[unit].nunique()} "
+          f"{unit}s have no window data at all)")
     if both.any():
         g = d.loc[both, "window_gap_pct"].astype(float)
         dis = d.loc[both, "window_agreement"].eq("discordant")
