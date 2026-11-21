@@ -32,7 +32,7 @@ def load(name, path):
 T79 = load("t79", "scripts/79t_target_role.py")
 T2 = load("t2", "scripts/79t2_layers.py")
 N79 = load("n79", "scripts/79n_dependency.py")
-COLS = ["layered_S", "layered_pct", "layered_n_units", "layered_genes", "layered_D", "layered_A", "layered_O", "layered_T",
+COLS = ["layered_S", "layered_pct", "layered_n_units", "layered_genes", "layered_D", "layered_A", "layered_O", "layered_T", "layered_n_axes", "layered_orient",
         "layered_r", "no_protein_target", "minority_alteration", "essential_target", "layered_P", "essential_unit", "dna_acting", "layered_rho"]
 ESSENTIAL = os.environ.get("ESSENTIAL", "1") == "1"   # D124b: on in production   # D124: essential units and DNA-acting drugs scored on proliferation P
 SANDBOX = os.environ.get("SANDBOX", "0") == "1"       # D124 test: write layered_score_v2{OUT_SFX}.tsv only, no split tables
@@ -147,12 +147,12 @@ def layer1_strata(strata, F_groups):
     med = ref.where(ref >= T79.MIN_F, 0).median(1)
     A = F.where(F >= T79.MIN_F, 0).sub(med, axis=0)
     Pa = {u: T79.pct(A[u]) for u in A}
-    _, Po, _ = T79.comp_overactivity(strata, mr_dirs=("aracne_project_v2_tf_strata", "collectri_v2_strata"),
+    _, Po, Os = T79.comp_overactivity(strata, mr_dirs=("aracne_project_v2_tf_strata", "collectri_v2_strata"),
                                      summary="results/step10_v2/signature_summary.tsv", proc="data/processed/step10_v2")
-    return Pd, Pa, Po, {u: F[u] for u in F}
+    return Pd, Pa, Po, {u: F[u] for u in F}, Os
 
 
-def score(x, unit, Pd, Pa, Po, Fr, UT, ess, P=None):
+def score(x, unit, Pd, Pa, Po, Fr, UT, ess, P=None, Os=None):
     """x = split rows (FDA, gate-passing, protein target) -> per row S and decoding."""
     gidx = {}
     out = []
@@ -174,28 +174,58 @@ def score(x, unit, Pd, Pa, Po, Fr, UT, ess, P=None):
                 E = 50 + t.r_u * (T - 50)
                 Es.append(E)
                 if best is None or E > best[0]:
-                    best = (E, t.genes, np.nan, np.nan, np.nan, T, t.r_u, np.nan, True, t.rho)
+                    best = (E, t.genes, np.nan, np.nan, np.nan, T, t.r_u, np.nan, True, t.rho, np.nan, t.orient)
                 continue
             comp = []
             for PC, k in ((Pd, "D"), (Pa, "A"), (Po, "O")):
-                if k == "A" and t.orient == "raise":
+                # D177 (2026-11-21, user: "if we do not have data supporting activating this target
+                # helps, we should drop it/push it down so that we dont invent a signal"):
+                # an agonist RAISES target activity. Neither alteration frequency nor CRISPR KNOCKOUT
+                # dependency can speak to whether raising a target helps. The old rule inverted the
+                # dependency percentile (`100 - v`), which turned "this tumour does NOT depend on the
+                # gene" into top-decile evidence: NR3C1 sits at the 7.7th dependency percentile in
+                # LUSC and was scored 92.3, putting 7 corticosteroids in LUSC's top 7. Knockout data
+                # cannot be inverted into activation evidence - that needs CRISPRa/ORF, which we do
+                # not have - so D is DROPPED for `raise` units rather than flipped.
+                # Overactivity keeps its inversion: it is a directional, measured quantity, and
+                # reversal genuinely wants to raise an under-active regulator.
+                if t.orient == "raise" and k in ("A", "D"):
                     comp.append(np.nan); continue
+                # D177b: for a `raise` unit, overactivity counts ONLY when it is a real regulator
+                # measurement (VIPER NES). `comp_overactivity` falls back to logFC_vs_gtex for genes
+                # absent from the master-regulator table, and for a tissue-foreign receptor that
+                # fallback is automatic: GABRA1 and HTR1B are "lower in lung tumour than in normal
+                # lung" because they are neuronal, not because anything regulatory was measured.
+                # 182 of 783 `raise` rows rested on that fallback.
+                if k == "O" and t.orient == "raise":
+                    sv = Os.get(u) if Os else None
+                    tags = [sv[g] for g in genes if sv is not None and g in sv.index]
+                    if not tags or not all(z == "NES" for z in tags):
+                        comp.append(np.nan); continue
                 s = PC.get(u)
                 vals = [s[g] for g in genes if s is not None and g in s.index and np.isfinite(s[g])]
                 v = float(np.mean(vals)) if vals else np.nan
                 comp.append(100 - v if (t.orient == "raise" and np.isfinite(v)) else v)
             if not np.isfinite(comp).any():
                 continue
-            T = float(np.nanmean(comp)); E = 50 + t.r_u * (T - 50)
+            # D177c: shrink toward the null by how many evidence axes actually contributed. The old
+            # `np.nanmean` hid the difference, so a drug scored on ONE axis competed on the same
+            # 0-100 scale as a drug whose dependency, alteration and overactivity all agreed - which
+            # is how 7 corticosteroids (overactivity alone) outranked alpelisib and erlotinib in LUSC,
+            # where PIK3CA and EGFR are genuinely altered. Applies to the D/A/O branch only: the
+            # essential-unit and DNA-acting paths score from potency, a different evidence type.
+            n_ax = int(np.isfinite(comp).sum())
+            T = 50 + np.sqrt(n_ax / 3.0) * (float(np.nanmean(comp)) - 50)
+            E = 50 + t.r_u * (T - 50)
             Es.append(E)
             fmax = max([Fr.get(u, pd.Series(dtype=float)).get(g, np.nan) for g in genes], default=np.nan)
             if best is None or E > best[0]:
-                best = (E, t.genes, *comp, T, t.r_u, fmax, False, np.nan)
+                best = (E, t.genes, *comp, T, t.r_u, fmax, False, np.nan, n_ax, t.orient)
         if not Es:
             out.append(None); continue
-        E, genes, cD, cA, cO, T, rr, fmax, eu, rho = best
+        E, genes, cD, cA, cO, T, rr, fmax, eu, rho, nax, ori = best
         out.append(dict(layered_S=float(np.mean(Es)), layered_n_units=len(Es), layered_genes=genes, layered_D=cD, layered_A=cA,
-                        layered_O=cO, layered_T=T, layered_r=rr, essential_unit=eu, layered_rho=rho if PROLIF_WEIGHT else np.nan, layered_P=P.get(u, np.nan) if P else np.nan,
+                        layered_O=cO, layered_T=T, layered_n_axes=nax, layered_orient=ori, layered_r=rr, essential_unit=eu, layered_rho=rho if PROLIF_WEIGHT else np.nan, layered_P=P.get(u, np.nan) if P else np.nan,
                         minority_alteration=bool(np.isfinite(cA) and cA >= 90 and np.isfinite(fmax) and fmax < 0.5),
                         essential_target=bool(set(UT[UT.cmap_name == d].genes.str.split("|").explode()) & ess)))
     return out
@@ -207,8 +237,8 @@ def main():
     groups, strata = sorted(g.group_id.unique()), sorted(s.stratum.unique())
     _, PdG = T79.comp_dependency(groups)
     FrG, PaG, _ = T79.comp_alteration(groups)
-    _, PoG, _ = T79.comp_overactivity(groups)
-    PdS, PaS, PoS, FrS = layer1_strata(strata, FrG)
+    _, PoG, OsG = T79.comp_overactivity(groups)
+    PdS, PaS, PoS, FrS, OsS = layer1_strata(strata, FrG)
     print(f"layer 1: groups D {len(PdG)} A {len(PaG)} O {len(PoG)}; subgroups D {len(PdS)} A {len(PaS)} O {len(PoS)} of {len(strata)}", flush=True)
     fm = T79.KU.fda_map()
     PROT = T79.PROT_SRC
@@ -253,11 +283,11 @@ def main():
         cand = set(pd.concat([g, s]).query("pert_id in @fm.index and target_source == 'non_protein_mechanism'").cmap_name)
         DNA = dna_acting(cand)
         run["dna_acting"] = sorted(DNA)
-    for unit, df, (Pd, Pa, Po, Fr), P in (("group_id", g, (PdG, PaG, PoG, FrG), Pg), ("stratum", s, (PdS, PaS, PoS, FrS), Ps)):
+    for unit, df, (Pd, Pa, Po, Fr, Os), P in (("group_id", g, (PdG, PaG, PoG, FrG, OsG), Pg), ("stratum", s, (PdS, PaS, PoS, FrS, OsS), Ps)):
         df = df.drop(columns=[c for c in COLS if c in df])
         fda = df.pert_id.isin(fm.index) & df.passes_gate.map(truthy)
         prot = fda & df.target_source.isin(PROT)
-        res = score(df[prot], unit, Pd, Pa, Po, Fr, UT, ess, P)
+        res = score(df[prot], unit, Pd, Pa, Po, Fr, UT, ess, P, Os)
         R = pd.DataFrame([r if r else {} for r in res], index=df.index[prot])
         for c in COLS:
             if c in R:

@@ -1,0 +1,28 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261121T115652-2398616",
+ "finished_at": "2026-11-21T11:57:01-05:00",
+ "duration_s": 9,
+ "script": "79p_fda_ranking.py",
+ "cmd": "env SFX=_v2_consensus /home/kirti/miniforge3/envs/celligner/bin/python scripts/79p_fda_ranking.py",
+ "env": "",
+ "git_sha": "766377f",
+ "git_state": "dirty",
+ "note": null,
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": {
+  "run_id": "20261121T075916-2339611",
+  "finished_at": "2026-11-21T07:59:24-05:00",
+  "n_files": 1,
+  "env": ""
+ },
+ "files": {
+  "fda_ranking_v2_consensus.tsv": {
+   "bytes": 3864689,
+   "mtime": "2026-11-21T11:56:59-05:00"
+  }
+ }
+}

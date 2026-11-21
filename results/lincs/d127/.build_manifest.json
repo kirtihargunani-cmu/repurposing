@@ -1,35 +1,40 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261120T171257-2113549",
- "finished_at": "2026-11-20T17:12:59-05:00",
- "duration_s": 2,
+ "run_id": "20261121T115942-2399547",
+ "finished_at": "2026-11-21T11:59:45-05:00",
+ "duration_s": 3,
  "script": "d127_biomarker.py",
- "cmd": "env OMP_NUM_THREADS=2 /home/kirti/miniforge3/envs/celligner/bin/python scripts/d127/d127_biomarker.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/d127/d127_biomarker.py",
  "env": "",
- "git_sha": "91aff39",
+ "git_sha": "766377f",
  "git_state": "dirty",
- "note": "D127 baseline re-run on production consensus, before the _v2_tf arm",
+ "note": null,
  "expect": null,
  "n_files": 4,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
- "supersedes": null,
+ "supersedes": {
+  "run_id": "20261120T171257-2113549",
+  "finished_at": "2026-11-20T17:12:59-05:00",
+  "n_files": 4,
+  "env": ""
+ },
  "files": {
   "instances.tsv": {
-   "bytes": 8793,
-   "mtime": "2026-11-20T17:12:59-05:00"
+   "bytes": 8797,
+   "mtime": "2026-11-21T11:59:44-05:00"
   },
   "pairs.tsv": {
-   "bytes": 845,
-   "mtime": "2026-11-20T17:12:59-05:00"
+   "bytes": 836,
+   "mtime": "2026-11-21T11:59:44-05:00"
   },
   "run.json": {
-   "bytes": 270,
-   "mtime": "2026-11-20T17:12:59-05:00"
+   "bytes": 272,
+   "mtime": "2026-11-21T11:59:44-05:00"
   },
   "summary.tsv": {
-   "bytes": 723,
-   "mtime": "2026-11-20T17:12:59-05:00"
+   "bytes": 729,
+   "mtime": "2026-11-21T11:59:44-05:00"
   }
  }
 }
