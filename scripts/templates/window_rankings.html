@@ -1,0 +1,191 @@
+<title>Drug Rankings by Window</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Cohort index on the left (stacks on top at phone width), ranked drug table on the right.
+   Tokens match scripts/templates/disease_drug_rankings.html so the two pages read as one system. */
+:root {
+  --bg: #f6f7f5; --panel: #ffffff; --ink: #1d2422; --muted: #5d6965; --line: #dfe4e1; --soft: #eef2f0;
+  --accent: #1f6f63; --accent-ink: #ffffff; --accent-soft: #dcefe9;
+  --early: #1f6f63; --early-soft: #dcefe9; --late: #6b4f9e; --late-soft: #e8e1f4;
+  --ok: #2f7a3f; --ok-soft: #e1f1e3; --warn: #8a5a00; --warn-soft: #fbefd6; --bad: #a33a2b; --bad-soft: #f8e1dc;
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121715; --panel: #18201d; --ink: #e5ece9; --muted: #9aa8a3; --line: #2a3531; --soft: #1e2825;
+  --accent: #5fbfae; --accent-ink: #0d1412; --accent-soft: #1d3a34;
+  --early: #5fbfae; --early-soft: #1d3a34; --late: #b49ae0; --late-soft: #2b2340;
+  --ok: #7cc88a; --ok-soft: #1c3322; --warn: #e6b45a; --warn-soft: #3a2e14; --bad: #ec8a7b; --bad-soft: #3d201b;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121715; --panel: #18201d; --ink: #e5ece9; --muted: #9aa8a3; --line: #2a3531; --soft: #1e2825;
+  --accent: #5fbfae; --accent-ink: #0d1412; --accent-soft: #1d3a34;
+  --early: #5fbfae; --early-soft: #1d3a34; --late: #b49ae0; --late-soft: #2b2340;
+  --ok: #7cc88a; --ok-soft: #1c3322; --warn: #e6b45a; --warn-soft: #3a2e14; --bad: #ec8a7b; --bad-soft: #3d201b;
+  color-scheme: dark }
+* { box-sizing: border-box }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); line-height: 1.5 }
+header { padding: 28px 16px 14px; border-bottom: 1px solid var(--line) }
+.wrap { max-width: 1280px; margin: 0 auto }
+h1 { font-family: var(--f-display); font-weight: 640; font-size: 26px; margin: 0 0 6px }
+.sub { color: var(--muted); font-size: 14px; max-width: 76ch }
+.caveat { margin-top: 12px; background: var(--warn-soft); color: var(--warn); border-left: 3px solid var(--warn);
+          padding: 9px 12px; font-size: 13px; border-radius: 0 6px 6px 0; max-width: 88ch }
+main { display: grid; grid-template-columns: 250px 1fr; gap: 18px; padding: 18px 16px 60px }
+@media (max-width: 860px) { main { grid-template-columns: 1fr } nav { position: static !important; max-height: 220px } }
+nav { position: sticky; top: 14px; align-self: start; max-height: calc(100vh - 32px); overflow: auto;
+      background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px }
+nav button { display: block; width: 100%; text-align: left; background: none; border: 0; color: var(--ink);
+             font: inherit; font-size: 13px; padding: 6px 8px; border-radius: 6px; cursor: pointer }
+nav button:hover { background: var(--soft) }
+nav button[aria-current="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 600 }
+nav .cv { float: right; font-family: var(--f-mono); font-size: 11px; opacity: .75 }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px }
+.bar input, .bar select { font: inherit; font-size: 13px; padding: 6px 9px; border: 1px solid var(--line);
+                          border-radius: 7px; background: var(--bg); color: var(--ink) }
+.bar input { flex: 1 1 190px; min-width: 150px }
+table { width: 100%; border-collapse: collapse; font-size: 13px }
+th { text-align: left; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
+     border-bottom: 1px solid var(--line); padding: 7px 8px; white-space: nowrap; cursor: pointer; user-select: none }
+th.n, td.n { text-align: right; font-family: var(--f-mono) }
+td { padding: 7px 8px; border-bottom: 1px solid var(--soft); vertical-align: top }
+tbody tr:hover { background: var(--soft) }
+.drug { font-weight: 600 }
+.ev { display: block; color: var(--muted); font-size: 11px; font-family: var(--f-mono); margin-top: 2px;
+      overflow-wrap: anywhere }
+.badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 999px }
+.b-early { background: var(--early-soft); color: var(--early) }
+.b-late { background: var(--late-soft); color: var(--late) }
+.b-both { background: var(--accent-soft); color: var(--accent) }
+.b-pooled { background: var(--soft); color: var(--muted) }
+.flag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 1px 6px; border-radius: 4px; margin-right: 4px }
+.f-absent { background: var(--bad-soft); color: var(--bad) }
+.f-prolif { background: var(--warn-soft); color: var(--warn) }
+.gap-pos { color: var(--early); font-weight: 600 }
+.gap-neg { color: var(--late); font-weight: 600 }
+.dash { color: var(--muted) }
+.foot { color: var(--muted); font-size: 12px; margin-top: 12px; max-width: 88ch }
+.count { color: var(--muted); font-size: 12px; font-family: var(--f-mono) }
+</style>
+
+<header><div class="wrap">
+  <h1>Drug rankings by timepoint window</h1>
+  <p class="sub">Every drug is shown with the window its reversal score came from. The pipeline otherwise
+  averages 6&nbsp;h and 24&nbsp;h into one number, which can match neither: clomifene in BRCA-LumA reads
+  <strong>98.0 early</strong> and <strong>12.9 late</strong>, and pools to 46.7.</p>
+  <div class="caveat"><strong>Read the flags with the scores.</strong>
+  <code>target absent</code> means every curated mechanism target is unexpressed in that disease — a high
+  reversal percentile beside it is a <em>suppressed false positive</em>, not a lead. Early and late
+  percentiles are computed over different populations, so they compare as rankings, not magnitudes, and
+  <code>n</code> (conditions behind each window) is usually 1 — treat a large gap as a flag for inspection,
+  not an effect size. <span id="covnote"></span></div>
+</div></header>
+
+<main class="wrap">
+  <nav id="nav" aria-label="Cohorts"></nav>
+  <section class="panel">
+    <div class="bar">
+      <input id="q" type="search" placeholder="Filter drugs in this cohort…" aria-label="Filter drugs">
+      <select id="wf" aria-label="Window filter">
+        <option value="">All windows</option>
+        <option value="both">Both windows</option>
+        <option value="early">Early only</option>
+        <option value="late">Late only</option>
+        <option value="pooled">Pooled (no window data)</option>
+      </select>
+      <select id="ff" aria-label="Flag filter">
+        <option value="ok" selected>Hide target-absent (as 79p ranks)</option>
+        <option value="">All drugs, including target-absent</option>
+        <option value="absent">Target-absent only</option>
+      </select>
+      <span class="count" id="count"></span>
+    </div>
+    <table>
+      <thead><tr>
+        <th data-k="0">Drug</th>
+        <th data-k="7">Window</th>
+        <th class="n" data-k="1">Lead</th>
+        <th class="n" data-k="2">Mech</th>
+        <th class="n" data-k="3">Early</th>
+        <th class="n" data-k="4">Late</th>
+        <th class="n" data-k="6">Gap</th>
+        <th class="n" data-k="5">Pooled</th>
+      </tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+    <p class="foot" id="foot"></p>
+  </section>
+</main>
+
+<script>
+const D = __DATA__;
+const M = D.meta, R = D.rows;
+let cur = M.cohorts[0], sortK = 1, sortDir = -1;
+
+document.getElementById('covnote').textContent =
+  `${M.n_with_window.toLocaleString()} of ${M.n_rows.toLocaleString()} rows carry a real window and ` +
+  `${M.n_both.toLocaleString()} have both; 12 cohorts have no condition-level data at all, so "pooled" there is permanent.`;
+
+const nav = document.getElementById('nav');
+M.cohorts.forEach(g => {
+  const [w, n] = M.coverage[g], b = document.createElement('button');
+  b.innerHTML = `${g}<span class="cv">${Math.round(100 * w / n)}%</span>`;
+  b.title = `${w} of ${n} drugs carry a window`;
+  b.onclick = () => { cur = g; draw(); };
+  b.dataset.g = g; nav.appendChild(b);
+});
+
+const fmt = v => v === null || v === undefined ? '<span class="dash">—</span>' : v.toFixed(1);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function draw() {
+  [...nav.children].forEach(b => b.setAttribute('aria-current', b.dataset.g === cur));
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const wf = document.getElementById('wf').value, ff = document.getElementById('ff').value;
+  let rows = (R[cur] || []).filter(r =>
+    (!q || r[0].toLowerCase().includes(q)) &&
+    (!wf || r[7] === wf) &&
+    (ff === '' || (ff === 'ok' ? !r[11] : r[11])));
+  rows = rows.slice().sort((a, b) => {
+    const x = a[sortK], y = b[sortK];
+    if (x === null || x === undefined) return 1;
+    if (y === null || y === undefined) return -1;
+    return (typeof x === 'string' ? x.localeCompare(y) : x - y) * sortDir;
+  });
+  document.getElementById('count').textContent = `${rows.length.toLocaleString()} drugs`;
+  document.getElementById('tb').innerHTML = rows.map(r => {
+    const cond = (r[8] || r[9]) ? ` <span class="dash">n=${[r[8], r[9]].filter(v => v).join('/')}</span>` : '';
+    const flags = (r[11] ? '<span class="flag f-absent">target absent</span>' : '') +
+                  (r[12] ? '<span class="flag f-prolif">proliferation-driven</span>' : '');
+    const gap = r[6] === null ? '<span class="dash">—</span>'
+      : `<span class="${r[6] >= 0 ? 'gap-pos' : 'gap-neg'}">${r[6] > 0 ? '+' : ''}${r[6].toFixed(1)}</span>`;
+    return `<tr><td><span class="drug">${esc(r[0])}</span>${r[10] > 1 ? ` <span class="dash">×${r[10]} ids</span>` : ''}
+      <br>${flags}${r[13] ? `<span class="ev">${esc(r[13])}</span>` : ''}</td>
+      <td><span class="badge b-${r[7]}">${r[7]}</span>${cond}</td>
+      <td class="n">${fmt(r[1])}</td><td class="n">${fmt(r[2])}</td>
+      <td class="n">${fmt(r[3])}</td><td class="n">${fmt(r[4])}</td>
+      <td class="n">${gap}</td><td class="n">${fmt(r[5])}</td></tr>`;
+  }).join('');
+  const [w, n] = M.coverage[cur];
+  document.getElementById('foot').textContent =
+    `${cur}: ${w} of ${n} gate-passing drugs carry a window label. ` +
+    `Gap is early − late in percentile points; positive means the drug reads better early. ` +
+    `Lead is layered_pct (D122), which never reads the reversal. ` +
+    (document.getElementById('ff').value === 'ok'
+      ? 'Target-absent drugs are hidden, matching how 79p ranks; switch the filter to see them.'
+      : 'Target-absent drugs are SHOWN — 79i2 demotes them, so a high lead score beside that flag is not a candidate.');
+}
+document.querySelectorAll('th[data-k]').forEach(th => th.onclick = () => {
+  const k = +th.dataset.k;
+  sortDir = (k === sortK) ? -sortDir : (k === 0 || k === 7 ? 1 : -1);
+  sortK = k; draw();
+});
+document.getElementById('q').oninput = draw;
+document.getElementById('wf').onchange = draw;
+document.getElementById('ff').onchange = draw;
+draw();
+</script>
