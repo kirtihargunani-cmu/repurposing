@@ -99,15 +99,29 @@ parameters:
     decision: D160
     env: REGSET
     value: tf
-    records: []
-    note: ARACNe TF-only; CollecTRI / DoRothEA retired from scoring.
+    records:
+      - file: results/lincs/drug_reversal_run_v2_tf.json
+        key: regulon_set
+      - file: data/processed/lincs/drug_viper_specific_v2_tf/run.json
+        key: regulon_set
+        pending: true
+        writer: 79d_drug_viper.R
+    note: >
+      ARACNe TF-only; CollecTRI / DoRothEA retired from scoring (D160). Recorded by 79e
+      (D190) and by 79d from its next build onward.
 
   production_suffix:
     status: adopted
     decision: D186
     env: SFX
     value: _v2_tf
-    records: []
+    records:
+      - file: results/lincs/drug_reversal_run_v2_tf.json
+        key: production_suffix
+      - file: data/processed/lincs/drug_viper_specific_v2_tf/run.json
+        key: production_suffix
+        pending: true
+        writer: 79d_drug_viper.R
     note: >
       Promoted 2026-11-22. 79i2 / 79i3 / 79p / 79t3 / 79i4 default here; _v2_consensus remains
       reachable as a frozen reference arm.

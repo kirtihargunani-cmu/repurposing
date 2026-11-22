@@ -114,3 +114,22 @@ reg_tab <- mclapply(nets, function(nt) {
 bad <- vapply(reg_tab, inherits, logical(1), "try-error"); if (any(bad)) stop("failed: ", paste(nets[bad], collapse = ", "))
 if (!length(ONLY_NETS)) fwrite(rbindlist(reg_tab), if (nzchar(RUN_TAG)) file.path(out_dir, "regulators.tsv") else
                                  paste0("results/lincs/drug_viper_regulators", TAG, ".tsv"), sep = "\t")
+
+# D190: provenance for scripts/check_params.py. 79d wrote no run.json, so the regulon set that
+# defines this arm (D160: ARACNe TF-only) was unverifiable from disk. An adopted parameter that
+# nothing records is the state that let the TAS floor sit unchecked for two days.
+if (!length(ONLY_NETS)) {
+  run <- list(script = "79d_drug_viper.R",
+              regulon_set = REGSET,
+              production_suffix = TAG,
+              regulon = REGULON,
+              version = Sys.getenv("VERSION", "v1"),
+              profile = PROFILE,
+              run_tag = RUN_TAG,
+              min_targets = MIN_TARGETS,
+              n_networks = length(nets),
+              out_dir = out_dir)
+  writeLines(jsonlite::toJSON(run, auto_unbox = TRUE, pretty = TRUE),
+             file.path(out_dir, "run.json"))
+  message("wrote ", file.path(out_dir, "run.json"))
+}

@@ -61,6 +61,7 @@ VERSION=v2 [REGSET=tf]: v2 disease MRs (results/step6/aracne_project_v2[_tf]) an
 Outputs: results/lincs/drug_reversal{SFX}.tsv (disease x drug), drug_reversal_summary{SFX}.tsv (per disease),
          drug_reversal_controls{SFX}.tsv (known-mechanism drugs, sanity check)
 """
+import json
 import os
 from pathlib import Path
 
@@ -419,6 +420,25 @@ def main():
     ctl = pd.DataFrame(ctl)
     ctl.to_csv(RES / f"{PFX}_controls{SFX}.tsv", sep="\t", index=False)
     print(ctl.to_string(index=False))
+
+    # D190: provenance for scripts/check_params.py. 79e wrote no run.json at all, so the two
+    # parameters that define WHICH ARM this is - the regulon set (D160: ARACNe TF-only) and the
+    # output suffix (D186: _v2_tf is production) - were unverifiable from disk. An adopted
+    # threshold nothing records is the state that let the TAS floor sit unchecked for two days.
+    run = dict(script="79e_drug_reversal.py",
+               regulon_set=os.environ.get("REGSET", "full"),
+               production_suffix=SFX,
+               regulon=os.environ.get("REGULON", "aracne_project"),
+               version=os.environ.get("VERSION", "v1"),
+               strata=bool(STRATA), profile=PROFILE,
+               mr_fdr=MR_FDR, top_pct=TOP_PCT, n_perm=N_PERM,
+               multi_target=MULTI_TARGET, line_match_min=LINE_MATCH_MIN,
+               min_mrs_ref=MIN_MRS_REF, min_ref=MIN_REF, seed=SEED,
+               n_rows=int(len(out)),
+               n_units=int(out[next(c for c in ("stratum", "group_id") if c in out)].nunique()),
+               n_drugs=int(out.pert_id.nunique()))
+    (RES / f"{PFX}_run{SFX}.json").write_text(json.dumps(run, indent=1))
+    print(f"wrote {PFX}_run{SFX}.json")
 
 
 if __name__ == "__main__":

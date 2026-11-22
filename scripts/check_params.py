@@ -53,7 +53,16 @@ def main() -> int:
             key = rec["key"]
             checks += 1
             if not f.exists():
-                errors.append((name, "MISSING", f"{rec['file']} does not exist"))
+                # `pending: true` means the recording code is in place but the build that writes
+                # it has not been rerun yet (e.g. 79d, which is expensive and upstream of the
+                # chain). That is a gap to close, not a reason to block every run - but it stays
+                # visible as a warning so it cannot be forgotten, which is the whole point.
+                if rec.get("pending"):
+                    warns.append((name, "PENDING",
+                                  f"{rec['file']} not written yet; appears on the next build of "
+                                  f"{rec.get('writer', 'that stage')}"))
+                else:
+                    errors.append((name, "MISSING", f"{rec['file']} does not exist"))
                 continue
             try:
                 got = json.loads(f.read_text()).get(key, "__absent__")

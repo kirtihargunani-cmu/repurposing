@@ -1,0 +1,20 @@
+{
+ "script": "79e_drug_reversal.py",
+ "regulon_set": "tf",
+ "production_suffix": "_v2_tf",
+ "regulon": "aracne_project",
+ "version": "v2",
+ "strata": false,
+ "profile": "specific",
+ "mr_fdr": 0.1,
+ "top_pct": 10,
+ "n_perm": 200,
+ "multi_target": 5,
+ "line_match_min": 0.1,
+ "min_mrs_ref": 20,
+ "min_ref": 10,
+ "seed": 0,
+ "n_rows": 64094,
+ "n_units": 41,
+ "n_drugs": 3721
+}
