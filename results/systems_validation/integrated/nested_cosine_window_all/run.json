@@ -1,0 +1,149 @@
+{
+ "script": "79af_nested_cosine_window.py",
+ "spec": "docs/SPEC_nested_cosine_window.md",
+ "min_genes": 15,
+ "cohorts": [
+  "BRCA-Basal",
+  "BRCA-Her2",
+  "BRCA-LumA",
+  "BRCA-LumB",
+  "CESC-AD",
+  "CESC-SCC",
+  "ESCA-AD",
+  "ESCA-SCC",
+  "LGG-IDHmut-codel",
+  "LGG-IDHmut-noncodel",
+  "LGG-IDHwt",
+  "PCPG-PGL",
+  "PCPG-PHEO",
+  "SARC-DDLPS",
+  "SARC-LMS",
+  "SARC-UPS",
+  "TARGET-NBL",
+  "TARGET-WT",
+  "TCGA-ACC",
+  "TCGA-COAD",
+  "TCGA-GBM",
+  "TCGA-HNSC",
+  "TCGA-KICH",
+  "TCGA-KIRC",
+  "TCGA-KIRP",
+  "TCGA-LIHC",
+  "TCGA-LUAD",
+  "TCGA-LUSC",
+  "TCGA-OV",
+  "TCGA-PAAD",
+  "TCGA-PRAD",
+  "TCGA-READ",
+  "TCGA-SKCM",
+  "TCGA-STAD",
+  "TCGA-THCA",
+  "TCGA-UCS",
+  "TGCT-NSGCT",
+  "TGCT-SEM",
+  "UCEC-EEC",
+  "UCEC-SER"
+ ],
+ "mode": "all",
+ "networks_resolved": {
+  "BRCA-Basal": "BRCA_BAS",
+  "BRCA-Her2": "BRCA",
+  "BRCA-LumA": "BRCA_LUMA",
+  "BRCA-LumB": "BRCA_LUMB",
+  "CESC-AD": "CESC",
+  "CESC-SCC": "CESC_SCC",
+  "ESCA-AD": "ESCA_AD",
+  "ESCA-SCC": "ESCA_SCC",
+  "LGG-IDHmut-codel": "LGG_IDHMUT_CODEL",
+  "LGG-IDHmut-noncodel": "LGG_IDHMUT_NONCODEL",
+  "LGG-IDHwt": "LGG_IDHWT",
+  "PCPG-PGL": "PCPG",
+  "PCPG-PHEO": "PCPG_PHEO",
+  "SARC-DDLPS": "SARC",
+  "SARC-LMS": "SARC_LMS",
+  "SARC-UPS": "SARC",
+  "TARGET-NBL": "NBL",
+  "TARGET-WT": "WT",
+  "TCGA-ACC": "ACC",
+  "TCGA-COAD": "COADREAD",
+  "TCGA-GBM": "GBM",
+  "TCGA-HNSC": "HNSC",
+  "TCGA-KICH": "KICH",
+  "TCGA-KIRC": "KIRC",
+  "TCGA-KIRP": "KIRP",
+  "TCGA-LIHC": "LIHC",
+  "TCGA-LUAD": "LUAD",
+  "TCGA-LUSC": "LUSC",
+  "TCGA-OV": "OV",
+  "TCGA-PAAD": "PAAD",
+  "TCGA-PRAD": "PRAD",
+  "TCGA-READ": "COADREAD",
+  "TCGA-SKCM": "SKCM",
+  "TCGA-STAD": "STAD",
+  "TCGA-THCA": "THCA",
+  "TCGA-UCS": "UCS",
+  "TGCT-NSGCT": "TGCT",
+  "TGCT-SEM": "TGCT",
+  "UCEC-EEC": "UCEC_EEC",
+  "UCEC-SER": "UCEC"
+ },
+ "d150_mapping_bug": "BRCA-Her2 was hardcoded to BRCA_BAS; net_for() now resolves it",
+ "skipped": [
+  {
+   "cohort": "SARC-DDLPS",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "SARC-LMS",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "SARC-UPS",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TARGET-WT",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TCGA-ACC",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TCGA-HNSC",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TCGA-KICH",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TCGA-KIRC",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TCGA-KIRP",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TCGA-THCA",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TGCT-NSGCT",
+   "reason": "insufficient matched evidence: no windowed condition"
+  },
+  {
+   "cohort": "TGCT-SEM",
+   "reason": "insufficient matched evidence: no windowed condition"
+  }
+ ],
+ "acceptance": {
+  "criterion": "anti-estrogens in BRCA-LumA: median opposing pct higher EARLY than LATE, and early > 50",
+  "early": 58.98,
+  "late": 24.27,
+  "passed": true
+ },
+ "n_rows": 21587,
+ "runtime_s": 178.0
+}

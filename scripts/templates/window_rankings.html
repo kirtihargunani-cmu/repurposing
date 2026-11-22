@@ -83,6 +83,8 @@ tbody tr:hover { background: var(--soft) }
   percentiles are computed over different populations, so they compare as rankings, not magnitudes, and
   <code>n</code> (conditions behind each window) is usually 1 — treat a large gap as a flag for inspection,
   not an effect size. <span id="covnote"></span></div>
+  <div class="caveat" id="accbox" style="display:none"></div>
+  <div class="caveat" id="cosbox" style="display:none"></div>
 </div></header>
 
 <main class="wrap">
@@ -113,6 +115,8 @@ tbody tr:hover { background: var(--soft) }
         <th class="n" data-k="3">Early</th>
         <th class="n" data-k="4">Late</th>
         <th class="n" data-k="6">Gap</th>
+        <th class="n" data-k="14" title="Within-regulon cosine, disease vs drug gene contributions, EARLY. Negative = opposes gene by gene.">cos early</th>
+        <th class="n" data-k="15" title="Within-regulon cosine, disease vs drug gene contributions, LATE. Negative = opposes gene by gene.">cos late</th>
         <th class="n" data-k="5" title="No timepoint-specific score: this is the score pooled over all doses and times">Unknown timepoint</th>
       </tr></thead>
       <tbody id="tb"></tbody>
@@ -168,8 +172,72 @@ function draw() {
       <td><span class="badge b-${r[7]}">${r[7]}</span>${cond}</td>
       <td class="n">${fmt(r[1])}</td><td class="n">${fmt(r[2])}</td>
       <td class="n">${fmt(r[3])}</td><td class="n">${fmt(r[4])}</td>
-      <td class="n">${gap}</td><td class="n">${fmt(r[5])}</td></tr>`;
+      <td class="n">${gap}</td>
+      <td class="n">${r[14] === null || r[14] === undefined ? '' : r[14].toFixed(3)}</td>
+      <td class="n">${r[15] === null || r[15] === undefined ? '' : r[15].toFixed(3)}</td>
+      <td class="n">${fmt(r[5])}</td></tr>`;
   }).join('');
+  // D192 approval-recovery panel. Deliberately NOT called "accuracy" anywhere the reader sees:
+  // label_phase == 0 is not a negative, so a low value is consistent with discovery working.
+  const ab = document.getElementById('accbox'), A = (M.accuracy || {})[cur];
+  if (!A) {
+    ab.style.display = 'none';
+  } else {
+    const cell = w => {
+      const a = A[w];
+      if (!a) return `<td colspan="3" class="n">no ${w} cell (needs ≥ 10 rows and ≥ 3 approved)</td>`;
+      const sign = a[3] >= 0 ? '+' : '';
+      return `<td class="n">${a[0].toFixed(3)} ± ${a[1].toFixed(3)}</td>` +
+             `<td class="n">${a[2].toFixed(3)}</td>` +
+             `<td class="n"><strong>${sign}${a[3].toFixed(3)}</strong></td>`;
+    };
+    const n = w => A[w] ? `${A[w][4]} approved of ${A[w][5]}` : '—';
+    ab.style.display = '';
+    ab.innerHTML =
+      `<strong>Approval recovery for ${cur}</strong> — do drugs already approved for this cancer rank high? ` +
+      `<em>This is not accuracy.</em> An unlabelled drug is <em>unknown</em>, not a negative, so a low value is ` +
+      `consistent with the pipeline finding something new. Approval is weak validation; D127 biomarker pairs is ` +
+      `the primary check.` +
+      `<table style="margin-top:.5rem"><tr><th>window</th><th>AUC (window score)</th>` +
+      `<th>AUC (pooled, same rows)</th><th>difference</th><th>labels</th></tr>` +
+      `<tr><td>early</td>${cell('early')}<td class="n">${n('early')}</td></tr>` +
+      `<tr><td>late</td>${cell('late')}<td class="n">${n('late')}</td></tr></table>` +
+      `<span class="n">The pooled column is restricted to the rows that <em>have</em> that window, because the ` +
+      `drugs measured in a window are not a random subset — comparing against the all-drug pooled AUC would ` +
+      `compare two different populations. Across all 25 computable cells the window score wins in only ` +
+      `<strong>7</strong>, median difference <strong>−0.022</strong>: resolving the timepoint does not improve ` +
+      `approval recovery.</span>`;
+  }
+
+  // D194 per-regulon contribution cosine, cohort level.
+  const cb = document.getElementById('cosbox'), C = (M.cosine || {})[cur];
+  if (!C) {
+    cb.style.display = 'none';
+  } else {
+    const row = w => {
+      const c = C[w];
+      if (!c) return `<tr><td>${w}</td><td colspan="4" class="n">not scored in this window</td></tr>`;
+      return `<tr><td>${w}</td><td class="n">${c[0].toFixed(3)}</td>` +
+             `<td class="n">${(100 * c[1]).toFixed(1)}%</td>` +
+             `<td class="n">${c[3]}</td><td class="n">${c[2]}</td></tr>`;
+    };
+    cb.style.display = '';
+    cb.innerHTML =
+      `<strong>Gene-level opposition for ${cur}</strong> — within each regulon, the cosine between the ` +
+      `<em>disease</em> gene contributions and the <em>drug</em> gene contributions. Both sides carry each ` +
+      `edge's own <code>tfmode × likelihood</code>, so this is the pipeline's own weighted quantity, not a ` +
+      `z-score rebuild. <strong>Negative means the drug moves the very genes that account for that ` +
+      `regulator's dysregulation, in the opposite direction</strong> — which separates two drugs that reach ` +
+      `the same total activity change through different targets.` +
+      `<table style="margin-top:.5rem"><tr><th>window</th><th>median cosine (|NES|-weighted)</th>` +
+      `<th>regulons opposing</th><th>regulons scored</th><th>drugs</th></tr>` +
+      `${row('early')}${row('late')}</table>` +
+      `<span class="n">Per-drug values are in the <code>cos</code> columns of the table below. The full ` +
+      `granular view — one row per drug × window × regulator — is ` +
+      `<code>results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz</code> ` +
+      `(18.5M rows); it is far too large to embed here.</span>`;
+  }
+
   const [w, n] = M.coverage[cur];
   document.getElementById('foot').textContent =
     `${cur}: ${w} of ${n} gate-passing drugs carry a window label. ` +

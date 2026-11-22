@@ -73,6 +73,17 @@ def main():
                         values=["window_score_pct", "n_conditions"], aggfunc="first")
     flat = d.drop_duplicates(["group_id", "cmap_name"]).set_index(["group_id", "cmap_name"])
     rows = {}
+    # D194: per-drug contribution cosine, keyed by (cohort, DRUG NAME) because this page collapses
+    # pert_ids by name (`ids` records how many were merged). Several pert_ids under one name are
+    # combined by the median, the same way the page treats them as one drug.
+    cosn = {}
+    _cd = RES / "contribution_cosine_per_drug.tsv.gz"
+    if _cd.exists():
+        _P = pd.read_csv(_cd, sep="\t")
+        _P = _P.dropna(subset=["cmap_name"])
+        for (_c, _n, _w), _v in _P.groupby(["cohort", "cmap_name", "window"]).cos_weighted.median().items():
+            cosn.setdefault(_c, {}).setdefault(_n, {})[_w] = round(float(_v), 3)
+
     for (g, nm), r in flat.iterrows():
         def pv(k, w):
             try:
@@ -97,12 +108,37 @@ def main():
             bool(tb(pd.Series([r.get("target_absent")])).iloc[0]),   # 11
             bool(tb(pd.Series([r.get("prolif_driven")])).iloc[0]),   # 12
             (str(r.get("evidence_targets"))[:90] if pd.notna(r.get("evidence_targets")) else ""),  # 13
+            cosn.get(g, {}).get(nm, {}).get("early"),   # 14 cos early (D194)
+            cosn.get(g, {}).get(nm, {}).get("late"),    # 15 cos late
         ])
     for g in rows:
         rows[g].sort(key=lambda x: (x[1] is None, -(x[1] or 0)))
 
     cov = {g: sum(1 for r in v if r[7] != "unknown") for g, v in rows.items()}
+
+    # D192: per-cohort approval RECOVERY, per window, matched against the pooled score on the SAME
+    # rows. Optional - the page still builds without it. It is NOT accuracy: label_phase == 0 is
+    # not a negative, so a low value is consistent with discovery. See 79ag's docstring.
+    acc = {}
+    af = RES / "window_accuracy.tsv"
+    if af.exists():
+        A = pd.read_csv(af, sep="\t")
+        for r in A.itertuples():
+            acc.setdefault(r.cohort, {})[r.window] = [
+                round(float(r.auc_window), 3), round(float(r.se), 3),
+                round(float(r.auc_pooled_same_rows), 3), round(float(r.delta), 3),
+                int(r.n_pos), int(r.n)]
+    # D194: per-regulon contribution cosine, reduced by 79ah. Optional, like `accuracy`.
+    cos_sum = {}
+    cf = RES / "contribution_cosine_summary.tsv"
+    if cf.exists():
+        for r in pd.read_csv(cf, sep="\t").itertuples():
+            cos_sum.setdefault(r.cohort, {})[r.window] = [
+                round(float(r.cos_weighted_median), 4), round(float(r.frac_opposing_median), 3),
+                int(r.n_drugs), int(r.n_regulators)]
     meta = {
+        "accuracy": acc,
+        "cosine": cos_sum,
         "cohorts": sorted(rows, key=lambda g: (-cov[g] / max(1, len(rows[g])), g)),
         "n_rows": int(sum(len(v) for v in rows.values())),
         "n_cohorts": len(rows),
