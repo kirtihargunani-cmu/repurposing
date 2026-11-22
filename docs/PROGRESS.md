@@ -2249,3 +2249,30 @@ unresolvable drug can be neither labelled nor `tried_elsewhere`, so it lands sil
 
 The first run returned **zero** ChEMBL labels and 309 Hub-only ones — a plausible-looking number. Cause:
 `DataFrame.isin(dict)` keys on *column names*, not values, so the whole indication match silently matched nothing.
+
+## 2026-11-22 — Fetched the 65 missing ChEMBL ids; a coverage gap showed up instead (D181b)
+
+All **61** named drugs of the 65 resolved, by exact preferred name alone (`scripts/79ab_fetch_missing_ids.py`,
+pinned to ChEMBL_37). The other 2 are unnamed `BRD-...` codes with no ChEMBL molecule record.
+
+| | before | after |
+|---|---|---|
+| FDA-matched drugs with an id | 557 / 622 | **620 / 622** |
+| FDA-matched labelled pairs | 3,833 (25.0%) | **3,951 (25.7%)** |
+| ...at phase >= 3 | 1,171 | **1,217** |
+| `tried_elsewhere` (FDA subset) | 10,248 | 10,850 |
+
+Not only a non-oncology tail: **temozolomide, thiotepa and thalidomide** were among the unresolved.
+
+**Two more silent lookup bugs fixed.** `name_lookup.json` and `d113_ids.json` are keyed by the *raw* cmap_name
+(`CPCCOEt`, `MLN-9708`) and 79aa was looking them up *normalised*, so neither cache had ever hit. Both keys now tried.
+
+### The finding that matters more than the label count
+
+Verifying temozolomide showed it labelled only in LUAD and LUSC - because **it is not scored in any glioma cohort at
+all**, although ChEMBL gives it `Glioma` and `low grade glioma` at phase 4 and `oligodendroglioma` / `astrocytoma` at
+phase 3, all matching the LGG regex. The labelling is correct; the row it would attach to does not exist.
+
+Generally: **only 219 of 486 FDA-matched drugs are scored in all 55 units, and 158 are scored in just 1-2 units.**
+So a large share of the labels we now have can never be used. That bounds any learning layer and the known-use metric
+alike, and it is a property of drug x cell-line coverage, not of the labels.
