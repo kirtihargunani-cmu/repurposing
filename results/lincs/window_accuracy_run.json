@@ -1,0 +1,11 @@
+{
+ "script": "79ag_window_accuracy.py",
+ "split_sfx": "_v2_tf",
+ "min_rows": 10,
+ "min_pos": 3,
+ "n_cells": 25,
+ "n_cohorts": 14,
+ "window_better_cells": 7,
+ "median_delta": -0.0223,
+ "caveat": "approval recovery on positive-unlabelled data; reported, never optimised against"
+}

@@ -102,7 +102,21 @@ def main():
         rows[g].sort(key=lambda x: (x[1] is None, -(x[1] or 0)))
 
     cov = {g: sum(1 for r in v if r[7] != "unknown") for g, v in rows.items()}
+
+    # D192: per-cohort approval RECOVERY, per window, matched against the pooled score on the SAME
+    # rows. Optional - the page still builds without it. It is NOT accuracy: label_phase == 0 is
+    # not a negative, so a low value is consistent with discovery. See 79ag's docstring.
+    acc = {}
+    af = RES / "window_accuracy.tsv"
+    if af.exists():
+        A = pd.read_csv(af, sep="\t")
+        for r in A.itertuples():
+            acc.setdefault(r.cohort, {})[r.window] = [
+                round(float(r.auc_window), 3), round(float(r.se), 3),
+                round(float(r.auc_pooled_same_rows), 3), round(float(r.delta), 3),
+                int(r.n_pos), int(r.n)]
     meta = {
+        "accuracy": acc,
         "cohorts": sorted(rows, key=lambda g: (-cov[g] / max(1, len(rows[g])), g)),
         "n_rows": int(sum(len(v) for v in rows.values())),
         "n_cohorts": len(rows),
