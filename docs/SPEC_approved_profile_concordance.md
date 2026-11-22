@@ -157,3 +157,56 @@ Script: `scripts/79ad_approved_concordance.py`.
 
 Committed before the first concordance number. The git commit adding this file is the registration; later
 changes to sections 3–8 go in a new dated section, never an edit in place.
+
+
+---
+
+## 12. AMENDMENT, 2026-11-22 — window-matched only; the pooled version is withdrawn
+
+**User, after the D183 result:** *"there is no point in running D184 as pooled profiles because it dilutes all
+of the activity and we have a lot of single timepoint values so the pooled versus single timepoint would be a
+confounding factor in itself. unless we want to test the approved for that disease at only matching
+timepoints."*
+
+**This is correct and sections 3–8 are amended accordingly. Nothing has been run under the original
+version.**
+
+### Why the pooled design is withdrawn
+
+A pooled profile (D179) is the average over whatever timepoints a drug happened to be measured at. That is
+**not the same quantity for every drug**: for a 24 h-only drug the pooled profile *is* its 24 h profile,
+while for a both-window drug it is an average of two states that D183 has now shown are largely independent
+(~80% of a window's reliable variance is absent from the other). So "pooled" carries a hidden covariate —
+the timepoint composition behind it — and that covariate is not balanced between the approved set A and the
+test set T. Any concordance measured that way could be composition rather than mechanism.
+
+### The amended design
+
+Everything in sections 4–8 is unchanged **except that it runs inside a single window**. The unit becomes
+**(cohort, window)**, with `window` in {early, late}:
+
+- **Profiles:** `regulator_contributions_by_window.tsv.gz` (D182, `79e3`) instead of the pooled table.
+- **A:** approved (`label_phase >= 3`) drugs for the cohort **with a profile in that window** and `rev > 0`.
+- **T:** top `TOP_PCT` by `layered_pct`, unlabelled for the cohort, **with a profile in that window**.
+- **N:** unlabelled, non-top-ranked, `rev > 0`, **in that window**.
+- Early and late are reported **separately and never pooled**, for the same reason D183 kept its two
+  directions apart.
+
+### The coverage cost, stated before running
+
+| | pooled (withdrawn) | window-matched |
+|---|---|---|
+| cohorts with >= 3 reference drugs | 40 | **10 early / 11 late** |
+| (cohort, window) cells with >= 5 | — | **21 of 25** |
+| null pool per cell (median) | — | 167 unlabelled reversing drugs |
+
+So the amended test covers roughly a quarter of the diseases. That is the price of removing the confound and
+it is paid knowingly. **Section 8's acceptance criterion (2) is restated for the smaller n: the effect must
+be positive in >= 60% of contributing (cohort, window) cells, counted per window.** No other threshold
+changes.
+
+### Prerequisite
+
+`79e3` currently writes profiles for FDA-ranking drugs only (2,416 rows). The null set N needs vectors for
+unlabelled drugs too, so it must first be re-run with `ALL=1` over all window rows. Regulator-level output
+only; the target-level table at that scale is not needed for this test.
