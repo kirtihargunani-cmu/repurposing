@@ -2205,35 +2205,47 @@ timepoint either.
 Asked while sizing a possible learning layer. The answer matters more than the input count: inputs are abundant and
 mostly derived, labels are scarce and are the real ceiling.
 
-**`scripts/79aa_label_pairs.py`** labels the whole scored universe — every row that carries a score, not just the
-FDA-matched drugs the validation metric uses — and keeps the **clinical phase** instead of cutting it to a binary.
+**`scripts/79aa_label_pairs.py`** labels the whole scored universe and keeps the **clinical phase** rather than
+cutting it to a binary. The user then asked to lead with FDA-approved drugs, which is where the labels are.
 
-| | pairs | drugs | units | labelled |
+| subset | pairs | drugs | units | labelled |
 |---|---|---|---|---|
-| all | 84,796 | 3,721 | 55 | **4,155 (4.9%)** |
-| groups | 64,094 | 3,721 | 41 | 3,319 |
-| subgroups | 20,702 | 1,663 | 14 | 836 |
+| **FDA-matched (Drugs@FDA)** | **15,344** | **622** | **55** | **3,833 (25.0%)** |
+| …cohorts only | 11,588 | 622 | 41 | 3,009 |
+| …subgroups only | 3,756 | 300 | 14 | 824 |
+| everything scored | 84,796 | 3,721 | 55 | 5,197 (4.9%) |
 
-By phase: **4 → 367, 3 → 618, 2 → 2,219, 1 → 906, 0.5 → 45.** Every one of the 55 units has at least one label
-(median 59, range 13–186). Sources: ChEMBL 3,846, Hub 116, both 193.
+FDA-matched by phase: **4 → 373, 3 → 798, 2 → 1,954, 1 → 670, 0.5 → 38** — so **1,171 pairs at phase ≥ 3**.
+263 of 622 drugs are labelled somewhere; every unit has labels (median 62, range 15–142).
 
-That is about **8.5× the labels the validation metric sees** (79l: 599 rows, 391 FDA-matched drugs, binary at
-phase ≥ 3). Two reasons: the phase grading keeps the 3,170 phase-1/2 pairs a `≥ 3` cut throws away, and the universe
-is every scored compound. The hard bound is drug identity — only 1,948 of 3,721 scored drugs carry any ChEMBL id.
+### A resolution bug, found by the user challenging the number
 
-**Spot checks pass.** Tamoxifen and fulvestrant phase 4 in LumA/LumB and correctly *cleared* in Basal and Her2 by the
-subtype rule; lapatinib in Her2; erlotinib in LUAD; fluorouracil in COAD; vemurafenib in SKCM. Prostate's
-most-trialled labels are docetaxel, cabazitaxel, flutamide, olaparib.
+*"what do you mean that only 2K out of the 3.7K scored drugs carry any ChEMBL id"* — the challenge was right.
+
+Ids were resolved **per pert_id**. But one drug has several BRD ids, and usually only one of them carries the
+annotation: doxorubicin has 4 pert_ids and exactly one holds CHEMBL53463. So **69 of 555 approved drugs — doxorubicin,
+daunorubicin, topotecan, dactinomycin among them — were silently unresolvable.** Ids are now pooled per normalised
+drug name, the same way 79l pools an FDA ingredient's compounds:
+
+- labelled pairs **4,155 → 5,197 (+25%)**
+- ChEMBL ids 1,948 → 2,068
+- FDA-matched coverage **557 of 622**
+
+**The remaining gap is mostly not a defect.** Of 3,721 pert_ids, **1,581 are unnamed research compounds** (`BRD-...`)
+that were never developed and have no ChEMBL molecule record. Of the 2,140 *named* compounds, 1,667 resolve.
 
 ### The warning that ships with the table
 
 **`label_phase = 0` is not a negative.** It means no trial record matched. For a repurposing candidate that is the
 expected state of a *true positive nobody has tested*. Training on 0-as-negative teaches a model to reproduce what has
-already been tried — the opposite of what this project is for. The table carries `tried_elsewhere` (15,139 pairs: a
-phase ≥ 1 cancer indication in a different tissue key) as the only defensible negative pool, and it is still weak.
+already been tried — the opposite of what this project is for. `tried_elsewhere` (a phase ≥ 1 cancer indication in a
+different tissue key) is the only defensible negative pool: **6,501 such pairs inside the FDA-matched subset**.
+
+**One residual bias, and it runs the wrong way.** The 65 FDA-matched drugs still without a ChEMBL id are mostly
+*non-oncology* — acyclovir, citalopram, diclofenac, chloroquine — which is exactly the repurposing population. An
+unresolvable drug can be neither labelled nor `tried_elsewhere`, so it lands silently in the "no record" bucket.
 
 ### A bug worth recording
 
 The first run returned **zero** ChEMBL labels and 309 Hub-only ones — a plausible-looking number. Cause:
 `DataFrame.isin(dict)` keys on *column names*, not values, so the whole indication match silently matched nothing.
-Silent, plausible, and downstream of nothing that would have caught it.

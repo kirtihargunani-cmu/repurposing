@@ -81,18 +81,30 @@ def universe():
 
 
 def chembl_ids(perts, ann):
-    """pert_id -> {ChEMBL ids}: annotation id, name lookup, D113 resolved ids, and parent forms."""
+    """pert_id -> {ChEMBL ids}, POOLED BY DRUG NAME.
+
+    D181 fix: the same drug appears under several BRD ids and usually only ONE of them carries the
+    annotation (doxorubicin has 4 pert_ids, 1 with CHEMBL53463). Resolving per pert_id therefore lost
+    69 of 555 approved drugs. Ids are collected per normalised name - as 79l pools an FDA ingredient's
+    compounds - and every pert_id of that name gets the union.
+    """
     nl = json.load(open(CH / "d105_all/name_lookup.json"))
     d113 = json.load(open(CH / "d105_all/d113_ids.json")) if (CH / "d105_all/d113_ids.json").exists() else {}
     par = {f["molecule_chembl_id"]: f["parent_chembl_id"] for f in json.load(open(CH / "d105_all/forms.json"))}
     a = ann.drop_duplicates("pert_id").set_index("pert_id")
+    names_of = {p: {n for n in (a.cmap_name.get(p), a.hub_name.get(p), a.chembl_pref_name.get(p))
+                    if isinstance(n, str)} for p in perts}
+    by_name = {}
+    for p in perts:
+        ids = {a.chembl_id.get(p)}
+        for nm in names_of[p]:
+            ids |= {nl.get(norm(nm))} | set(d113.get(norm(nm), {}).get("ids", []))
+        ids = {i for i in ids if isinstance(i, str)}
+        for nm in names_of[p]:
+            by_name.setdefault(norm(nm), set()).update(ids)
     out = {}
     for p in perts:
-        names = {n for n in (a.cmap_name.get(p), a.hub_name.get(p), a.chembl_pref_name.get(p)) if isinstance(n, str)}
-        ids = {a.chembl_id.get(p)} | {nl.get(norm(n)) for n in names}
-        for n in names:
-            ids |= set(d113.get(norm(n), {}).get("ids", []))
-        ids = {i for i in ids if isinstance(i, str)}
+        ids = set().union(*[by_name.get(norm(nm), set()) for nm in names_of[p]]) if names_of[p] else set()
         out[p] = ids | {par.get(i, i) for i in ids}
     return out
 
@@ -102,6 +114,18 @@ def main():
     D = universe()
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False)
     ids = chembl_ids(sorted(D.pert_id.unique()), ann)
+    # FDA-approved subsets (user 2026-11-22: "we want to only look at fda approved drugs first").
+    # fda_matched is the strict one - a Drugs@FDA ingredient match, which is what the FDA rankings are built on.
+    # approved_anywhere is the looser ChEMBL phase 4 / Hub Launched flag 79e uses. Both are reported.
+    fm = pd.read_csv(RES / "fda_matches.tsv", sep="\t", low_memory=False)
+    fda_name = {norm(n) for n in fm.cmap_name.dropna()}
+    a1 = ann.drop_duplicates("pert_id").set_index("pert_id")
+    appr_name = {norm(n) for p, n in a1.cmap_name.items() if isinstance(n, str)
+                 and (a1.chembl_max_phase.get(p) == 4 or a1.hub_clinical_phase.get(p) == "Launched")}
+    D["fda_matched"] = D.cmap_name.map(lambda n: norm(n) in fda_name)
+    D["approved_anywhere"] = D.cmap_name.map(lambda n: norm(n) in appr_name) | D.fda_matched
+    D["fda_ingredient"] = D.cmap_name.map(
+        fm.assign(k=fm.cmap_name.map(norm)).drop_duplicates("k").set_index("k").fda_ingredient.to_dict().get)
     cohorts = {c: p for c, p in CFG["cohorts"].items()}
     keys = sorted(set(D.parent.unique()) & set(cohorts))
     missing = sorted(set(D.parent.unique()) - set(cohorts))
@@ -187,8 +211,14 @@ def main():
     f = OUT / f"pair_labels{SFX}.tsv.gz"
     D.to_csv(f, sep="\t", index=False)
     rows = []
+    gp = D[D.passes_gate.astype(str).isin(["True", "TRUE", "1"])]
     for kind, g in [("all", D), ("group", D[D.unit_kind == "group"]), ("subgroup", D[D.unit_kind == "subgroup"]),
-                    ("gate-passing", D[D.passes_gate.astype(str).isin(["True", "TRUE", "1"])])]:
+                    ("gate-passing", gp),
+                    ("fda_matched", D[D.fda_matched]),
+                    ("fda_matched+gate", gp[gp.fda_matched]),
+                    ("fda_matched group", D[D.fda_matched & D.unit_kind.eq("group")]),
+                    ("fda_matched subgroup", D[D.fda_matched & D.unit_kind.eq("subgroup")]),
+                    ("approved_anywhere", D[D.approved_anywhere])]:
         r = dict(subset=kind, pairs=len(g), drugs=g.pert_id.nunique(), units=g.unit_id.nunique(),
                  labelled=int(g.labelled.sum()), labelled_drugs=int(g[g.labelled].pert_id.nunique()),
                  units_with_label=int(g[g.labelled].unit_id.nunique()),
@@ -200,7 +230,10 @@ def main():
     cnt.to_csv(OUT / f"label_counts{SFX}.tsv", sep="\t", index=False)
     print(cnt.to_string(index=False))
     print(f"\nby source: {D[D.labelled].label_source.value_counts().to_dict()}")
-    print(f"drugs with any ChEMBL id: {D.drop_duplicates('pert_id').has_chembl_id.sum():,} of {D.pert_id.nunique():,}")
+    uq = D.drop_duplicates("pert_id")
+    print(f"drugs with any ChEMBL id: {uq.has_chembl_id.sum():,} of {len(uq):,}  "
+          f"(FDA-matched {int(uq[uq.fda_matched].has_chembl_id.sum()):,} of {int(uq.fda_matched.sum()):,}; "
+          f"approved-anywhere {int(uq[uq.approved_anywhere].has_chembl_id.sum()):,} of {int(uq.approved_anywhere.sum()):,})")
     if missing:
         print(f"units whose parent has NO label regex in known_use.yaml ({len(missing)}): {missing}")
     per_unit = (D.groupby(["unit_kind", "unit_id"])

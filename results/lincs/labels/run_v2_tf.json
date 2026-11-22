@@ -3,7 +3,7 @@
  "pairs": 84796,
  "drugs": 3721,
  "units": 55,
- "labelled": 4155,
+ "labelled": 5197,
  "chembl_indication_rows": 60055,
  "cancer_terms_matched": 265,
  "units_without_regex": []
