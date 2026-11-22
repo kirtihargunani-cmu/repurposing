@@ -31,7 +31,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 RES, PROC = ROOT / "results/lincs", ROOT / "data/processed/lincs"
 CARRIERS = RES / "d102/carriers_d102b.tsv.gz"
-SFX = os.environ.get("SFX", "_v2_consensus")
+SFX = os.environ.get("SFX", "_v2_tf")   # D186: ARACNe-only is production (D160); set SFX=_v2_consensus for the frozen reference arm
 TARGETS = os.environ.get("TARGETS", "d105a")   # production (D105b): "d105a" FDA tiered main targets; "default": D102a evidence targets; "d105": D105 test
 SOURCE, SECONDARY = {}, {}
 FDA_NAMES = set()   # D105a scope (cmap names of FDA drugs)

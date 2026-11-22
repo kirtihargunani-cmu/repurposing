@@ -29,7 +29,7 @@ from evidence_flags import apply_evidence  # noqa: E402
 
 TOP_PCT = 10            # 79i
 LINE_MATCH_MIN = 0.1    # 79e
-SFXS = os.environ.get("SFXS", "_v2_consensus _v2_consensus_d100early _v2_consensus_d100late").split()
+SFXS = os.environ.get("SFXS", "_v2_tf").split()   # D186: ARACNe-only is production (D160)
 KEEP = ["n_t12_matched", "n_t12_borrowed", "evidence_status", "evidence_note"]
 
 
