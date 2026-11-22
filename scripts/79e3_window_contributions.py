@@ -42,7 +42,7 @@ every (cohort, drug, window) of the FDA-ranking drugs by default:
       ... regulator target target_symbol tfmode likelihood drug_z activity_contrib rev_contrib
       disease_z disease_contrib_nes (the same edge on the disease side, 50b)
   window_shift.tsv  per (cohort, drug) with BOTH windows: the regulators whose contribution moves most
-      between early and late - the point of the whole exercise.
+      between early and late (`delta` = early - late) - the point of the whole exercise.
 ALL=1 scores every drug with window data; QUERY=<cohort>:<drug>[,...] writes the full array for those rows
 only (query_window_<cohort>_<drug>.tsv) and skips the bulk tables.
 
@@ -273,12 +273,12 @@ def main():
     p = R.pivot_table(index=["cohort", "pert_id", "cmap_name", "regulator", "disease_nes"],
                       columns="window", values="rev_contrib", aggfunc="first").reset_index()
     p = p[p.early.notna() & p.late.notna()].copy()
-    p["shift"] = p.early - p.late
+    p["delta"] = p.early - p.late   # not "shift": a column named shift shadows DataFrame.shift
     p["flips_sign"] = np.sign(p.early) != np.sign(p.late)
-    p["rank_shift"] = p.groupby(["cohort", "pert_id"])["shift"].transform(
+    p["rank_shift"] = p.groupby(["cohort", "pert_id"])["delta"].transform(
         lambda v: v.abs().rank(ascending=False, method="first"))
     sh = p[p.rank_shift <= SHIFT_TOP].drop(columns="rank_shift").sort_values(
-        ["cohort", "cmap_name", "shift"], ascending=[True, True, False])
+        ["cohort", "cmap_name", "delta"], ascending=[True, True, False])
     sh.to_csv(OUT / "window_shift.tsv", sep="\t", index=False, float_format="%.6g")
 
     both = p.groupby(["cohort", "pert_id"]).size()
