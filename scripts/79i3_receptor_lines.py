@@ -26,7 +26,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 RES, PROC, RAW = ROOT / "results/lincs", ROOT / "data/processed/lincs", ROOT / "data/raw"
-SFX = os.environ.get("SFX", "_v2_consensus")
+SFX = os.environ.get("SFX", "_v2_tf")   # D186: ARACNe-only is production (D160); set SFX=_v2_consensus for the frozen reference arm
 RHO_MIN, SUPPORT_MIN, INDUCE_Z = 0.4, 0.5, 2.0
 ENDO = ["PECAM1", "VWF", "CDH5"]
 RHO_FILE = PROC / "receptor_environment_rho.tsv.gz"

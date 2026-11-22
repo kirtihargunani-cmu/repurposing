@@ -52,11 +52,25 @@ SCRIPT="$(basename "$1")"; for a in "$@"; do case "$a" in *.py|*.R|*.sh|*.Rscrip
 CMD="$*"
 
 # the env vars that actually change what a build produces in this project
-ENVKEYS=(VERSION REGSET REGULON PROFILE STRATA SFX SPLIT_SFX RUN_TAG ONLY_NETS ONLY_GROUPS
+ENVKEYS=(VERSION REGSET REGULON PROFILE STRATA SFX SPLIT_SFX SFXS RUN_TAG ONLY_NETS ONLY_GROUPS
          NET_MAP MR_OVERRIDE EXTRA_RDS PKN_FILE OUT_SFX TF_SFX PROLIF_MODE BETA_TAS_MIN
+         EDGES ALL NO_TARGETS TARGETS
          ESSENTIAL PROLIF_WEIGHT CONS N_CORES THREADS)
 ENVSTR=""
 for k in "${ENVKEYS[@]}"; do [[ -n "${!k:-}" ]] && ENVSTR="$ENVSTR${ENVSTR:+ }$k=${!k}"; done
+# D187: ALSO record the `env K=V` assignments carried in the COMMAND. run_pipeline.sh sets a
+# stage's distinguishing variables that way, and `env STRATA=0 cmd` exports them to the CHILD
+# only - runlog never sees them in its own environment, so without this the ledger collapses
+# `79e` groups and strata (and `79e3` default and ALL=1) into one indistinguishable key.
+for a in "$@"; do
+  case "$a" in
+    *=*) k="${a%%=*}"
+         for kk in "${ENVKEYS[@]}"; do
+           [[ "$k" == "$kk" ]] && ENVSTR="$ENVSTR${ENVSTR:+ }$a" && break
+         done ;;
+    *) ;;
+  esac
+done
 
 tsv() { local IFS=$'\t'; printf '%s\n' "$*" >> "$LEDGER"; }
 [[ -s "$LEDGER" ]] || tsv run_id event ts script status exit_code dur_s git_sha git_state pid outputs env expect note log

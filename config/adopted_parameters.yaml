@@ -1,0 +1,113 @@
+# Adopted parameters — the single source of truth for every threshold the pipeline applies.
+#
+# WHY THIS FILE EXISTS (D188, 2026-11-22). User: "why do we keep running into the issue of not
+# using the information/thresholds that we had previously discovered."
+#
+# Because a finding and an applied setting were two different states with nothing reconciling
+# them. The TAS floor is the clean example: D156 measured a per-timepoint floor, D169 analysed
+# its consequences at length, `scripts/tas_floor.py` implements it — and it has never been
+# switched on, because `TAS_ANCHOR` defaults to unset and no runner sets it. The value
+# `"tas_anchor": null` sat in `drug_condition_profiles_run.json` the entire time. Nothing read it.
+#
+# `check_builds.py` gates on whether a build is STALE. Nothing gated on whether a build used the
+# parameters we decided on. This file plus `scripts/check_params.py` is that second gate.
+#
+# status:
+#   adopted      the pipeline MUST run with this value; a build recording anything else fails
+#   design_only  specified but deliberately NOT in force; a build recording the active value fails
+#   default      the value is the script default and no decision has overridden it
+#
+# A parameter marked `adopted` whose build does not RECORD it at all is also a failure: an
+# unrecorded threshold cannot be verified, and "probably right" is what produced this file.
+
+parameters:
+
+  tas_floors:
+    status: adopted
+    decision: D156
+    env: TAS_FLOORS            # "adopted" (default, IN FORCE) | "uniform" to disable
+    value: adopted
+    records:
+      - file: data/processed/lincs/drug_condition_profiles_run.json
+        key: tas_floors_mode
+    note: >
+      THE FLOOR ACTUALLY IN FORCE: 6 h = 0.25, every other timepoint = tas_min (0.4). On by
+      default since D156 and applied to every build since. Measured, not chosen: over 2,221 six
+      hour signatures with a same-drug 24 h reference in the same line, drug-specific delta is
+      0.216 in the 0.250-0.284 band against 0.364 in the accepted band, with 93.3% of signatures
+      positive; the pass rule holds to 0.250 and fails below. Raises active 6 h signatures from
+      4,938 to 10,889. Do NOT confuse with tas_anchor below, which is a different mechanism and
+      is NOT in force - reading `tas_anchor: null` as "no lowered 6 h floor" is exactly the
+      error this registry exists to stop.
+
+  tas_anchor:
+    status: design_only
+    decision: D156
+    spec: docs/SPEC_per_timepoint_tas_floor.md
+    env: TAS_ANCHOR
+    # SPEC_per_timepoint_tas_floor.md:3 — "design only. Nothing implemented, no threshold
+    # adopted, production unchanged." The spec pre-registers a PROFILE across anchors
+    # (0.55, 0.645, 0.75), not a single value, and forbids choosing the anchor because it makes
+    # a control pass. So no single value can be marked `adopted` without a decision that
+    # supersedes the spec.
+    design_only_value: null
+    candidate_profile: [0.55, 0.645, 0.75]
+    records:
+      - file: data/processed/lincs/drug_condition_profiles_run.json
+        key: tas_anchor
+    note: >
+      An ALTERNATIVE to tas_floors, not a complement: a per-timepoint floor set at the same
+      quantile of each timepoint's own TAS distribution. Never adopted. Measured 2026-11-22 on
+      the condition profiles, all three registered anchors give WORSE 6 h coverage than the
+      adopted 0.25 floor already in force - 6 h conditions 8,935 (adopted) vs 7,358 / 5,653 /
+      3,804 at anchors 0.55 / 0.645 / 0.75 - so adopting one would reduce early coverage, not
+      increase it.
+
+  tas_min:
+    status: adopted
+    decision: D156
+    env: TAS_MIN
+    value: 0.4
+    records:
+      - file: data/processed/lincs/drug_condition_profiles_run.json
+        key: tas_min
+      - file: results/lincs/stratum_drugs_run_v2.json
+        key: tas_min
+
+  min_drugs_for_g:
+    status: adopted
+    decision: D155
+    env: MIN_DRUGS_FOR_G
+    value: 30
+    records:
+      - file: data/processed/lincs/drug_condition_profiles_run.json
+        key: min_drugs_for_g
+
+  beta_tas_min:
+    status: design_only
+    decision: D157
+    env: BETA_TAS_MIN
+    design_only_value: 0.0
+    records: []
+    note: >
+      79i_split_reversal.py fits beta only on conditions clearing this floor. Default 0 = off.
+      Not currently recorded in any run.json, which is itself a gap — see check_params.py
+      UNRECORDED.
+
+  regulon_set:
+    status: adopted
+    decision: D160
+    env: REGSET
+    value: tf
+    records: []
+    note: ARACNe TF-only; CollecTRI / DoRothEA retired from scoring.
+
+  production_suffix:
+    status: adopted
+    decision: D186
+    env: SFX
+    value: _v2_tf
+    records: []
+    note: >
+      Promoted 2026-11-22. 79i2 / 79i3 / 79p / 79t3 / 79i4 default here; _v2_consensus remains
+      reachable as a frozen reference arm.

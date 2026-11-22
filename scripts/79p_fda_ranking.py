@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 # SFX (D139, 2026-11-17): which reversal/split tables to rank. Default is production
 #   (_v2_consensus = ARACNe + CollecTRI). Set SFX=_v2_tf for the ARACNe-only ranking.
-SFX = os.environ.get("SFX", "_v2_consensus")
+SFX = os.environ.get("SFX", "_v2_tf")   # D186: ARACNe-only is production (D160); set SFX=_v2_consensus for the frozen reference arm
 
 FDA = ROOT / "data/raw/drugsatfda/extracted"
 from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name, eligible, lincs_flags, ORDER, ORDER_REVERSAL  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2; D115)

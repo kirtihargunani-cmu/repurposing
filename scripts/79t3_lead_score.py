@@ -122,7 +122,7 @@ def dna_acting(names):
     return out
 # SPLIT_SFX (D139, 2026-11-17): default is production (_v2_consensus = ARACNe + CollecTRI);
 #   set SPLIT_SFX=_v2_tf to write layered_pct into the ARACNe-only split tables.
-SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_consensus")
+SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_tf")   # D186: ARACNe-only is production (D160)
 SPLITS = {"group_id": RES / f"drug_reversal_split{SPLIT_SFX}.tsv",
           "stratum": RES / f"stratum_reversal_split{SPLIT_SFX}.tsv"}
 
