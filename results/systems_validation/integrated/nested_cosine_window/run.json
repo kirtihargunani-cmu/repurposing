@@ -1,0 +1,27 @@
+{
+ "script": "79af_nested_cosine_window.py",
+ "spec": "docs/SPEC_nested_cosine_window.md",
+ "min_genes": 15,
+ "cohorts": [
+  "BRCA-LumA",
+  "BRCA-Her2",
+  "TCGA-SKCM",
+  "TCGA-LUAD"
+ ],
+ "networks_resolved": {
+  "BRCA-LumA": "BRCA_LUMA",
+  "BRCA-Her2": "BRCA",
+  "TCGA-SKCM": "SKCM",
+  "TCGA-LUAD": "LUAD"
+ },
+ "d150_mapping_bug": "BRCA-Her2 was hardcoded to BRCA_BAS; net_for() now resolves it",
+ "skipped": [],
+ "acceptance": {
+  "criterion": "anti-estrogens in BRCA-LumA: median opposing pct higher EARLY than LATE, and early > 50",
+  "early": 58.98,
+  "late": 24.27,
+  "passed": true
+ },
+ "n_rows": 7633,
+ "runtime_s": 38.5
+}
