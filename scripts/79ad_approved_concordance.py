@@ -14,7 +14,7 @@ unbalanced covariate between the sets.
 
 Sets, per (cohort, window), all requiring a profile in THAT window and `rev > 0`:
   A  approved for this cohort: label_phase >= 3 (D181 labels)            [secondary: label_phase == 4]
-  T  top TOP_PCT by layered_pct, with NO label for this cohort
+  T  top TOP_PCT by the WINDOW's own reversal percentile (amendment 2), with NO label for this cohort
   N  the null: unlabelled AND not in T
 Minimum sizes per spec: |A| >= 3 and |T| >= 10, else the cell is dropped and listed.
 
@@ -89,9 +89,15 @@ def cell_sets(meta):
     unl = m[m.label_phase == 0]
     if not len(unl):
         return A, [], []
-    cut = np.nanpercentile(unl.layered_pct.astype(float), 100 - TOP_PCT) if unl.layered_pct.notna().any() else np.inf
-    T = unl[unl.layered_pct >= cut].pert_id.tolist()
-    N = unl[~unl.pert_id.isin(T)].pert_id.tolist()
+    # AMENDMENT 2 (spec section 13): rank by the WINDOW'S OWN reversal percentile, not layered_pct.
+    # layered_pct needs an identified target unit and is populated for only 13.8% of window rows (17 of 357
+    # unlabelled drugs in BRCA-LumA/early), so a top-decile cut on it emptied 44 of 47 cells. rev_<window>_pct
+    # (D170) is 100% covered within its window. Percentile is taken over ALL drugs in the cell, as D170 does.
+    pct = m.rev.rank(method="max") / len(m) * 100
+    m = m.assign(_pct=pct.values)
+    cut = 100 - TOP_PCT
+    T = m[(m.label_phase == 0) & (m._pct >= cut)].pert_id.tolist()
+    N = m[(m.label_phase == 0) & (m._pct < cut)].pert_id.tolist()
     return A, T, N
 
 
@@ -156,17 +162,22 @@ def main():
         for p in A:
             A_tg |= tokens(tg.get(p))
             A_moa |= {norm_name(x) for x in tokens(ann.hub_moa.get(p))}
-        disj = {}
+        # A drug with NO annotation is UNKNOWN, not disjoint. Counting it as disjoint made 89.6% of T
+        # "disjoint" (evidence_targets is populated for 21.6% of rows) and the arm vacuous. It must be
+        # annotated AND share nothing with A.
+        disj, annotated = {}, {}
         for p in ids:
             dt = tokens(tg.get(p))
             dm = {norm_name(x) for x in tokens(ann.hub_moa.get(p))}
-            disj[p] = (not (dt & A_tg)) and (not (dm & A_moa))
+            annotated[p] = bool(dt or dm)
+            disj[p] = annotated[p] and (not (dt & A_tg)) and (not (dm & A_moa))
 
         setof = {p: ("A" if p in set(A) else "T" if p in set(T) else "N" if p in set(N) else "-") for p in ids}
         for i, p in enumerate(ids):
             rows.append(dict(cohort=cohort, window=window, pert_id=p, cmap_name=meta.cmap_name.iloc[i],
                              set=setof[p], conc=conc_raw[i], conc_pc1removed=conc_pc1[i],
-                             moa_disjoint=bool(disj[p]), layered_pct=meta.layered_pct.iloc[i],
+                             moa_disjoint=bool(disj[p]), annotated=bool(annotated[p]),
+                             layered_pct=meta.layered_pct.iloc[i],
                              rev=meta.rev.iloc[i], label_phase=meta.label_phase.iloc[i]))
 
         ti = np.array([pos[p] for p in T]); ni = np.array([pos[p] for p in N])
@@ -184,6 +195,7 @@ def main():
             rec[f"perm_{tag}"] = perm          # kept for the pooled test below
         # MOA-disjoint arm
         td = np.array([pos[p] for p in T if disj[p]])
+        rec["n_T_annotated"] = int(sum(annotated[p] for p in T))
         rec["n_T_moa_disjoint"] = len(td)
         if len(td) >= 5 and len(ni) >= 5:
             rec["effect_moa_disjoint"] = float(np.nanmedian(conc_raw[td]) - np.nanmedian(conc_raw[ni]))

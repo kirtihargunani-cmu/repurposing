@@ -1,0 +1,235 @@
+{
+ "spec": "docs/SPEC_approved_profile_concordance.md section 12 (window-matched)",
+ "top_pct": 10.0,
+ "n_perm": 10000,
+ "seed": 0,
+ "min_A": 3,
+ "min_T": 10,
+ "thresholds": {
+  "p": 0.01,
+  "breadth": 0.6,
+  "moa_p": 0.05
+ },
+ "cells_used": 21,
+ "cells_dropped": [
+  {
+   "cohort": "CESC-AD",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 3,
+   "n_N": 19,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "CESC-AD",
+   "window": "late",
+   "n_A": 1,
+   "n_T": 19,
+   "n_N": 150,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "CESC-SCC",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 2,
+   "n_N": 14,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "CESC-SCC",
+   "window": "late",
+   "n_A": 2,
+   "n_T": 18,
+   "n_N": 147,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "ESCA-AD",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 5,
+   "n_N": 38,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "ESCA-SCC",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 5,
+   "n_N": 44,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "LGG-IDHmut-codel",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "LGG-IDHmut-noncodel",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "LGG-IDHwt",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "PCPG-PGL",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 2,
+   "n_N": 12,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "PCPG-PHEO",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 2,
+   "n_N": 14,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TARGET-NBL",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 2,
+   "n_N": 14,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-BLCA",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-GBM",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 0,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-OV",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 3,
+   "n_N": 26,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-OV",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 1,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-PAAD",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 13,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-PAAD",
+   "window": "late",
+   "n_A": 1,
+   "n_T": 13,
+   "n_N": 106,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-SKCM",
+   "window": "early",
+   "n_A": 2,
+   "n_T": 37,
+   "n_N": 315,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-STAD",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 6,
+   "n_N": 41,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-UCS",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 3,
+   "n_N": 22,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "TCGA-UCS",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "UCEC-EEC",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 2,
+   "n_N": 14,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "UCEC-EEC",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "UCEC-SER",
+   "window": "early",
+   "n_A": 0,
+   "n_T": 2,
+   "n_N": 14,
+   "reason": "|A|<MIN_A"
+  },
+  {
+   "cohort": "UCEC-SER",
+   "window": "late",
+   "n_A": 0,
+   "n_T": 1,
+   "n_N": 0,
+   "reason": "|A|<MIN_A"
+  }
+ ],
+ "verdicts": [
+  {
+   "window": "early",
+   "VERDICT": "PASS"
+  },
+  {
+   "window": "late",
+   "VERDICT": "PASS"
+  }
+ ],
+ "runtime_s": 83.3
+}

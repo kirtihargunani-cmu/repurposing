@@ -210,3 +210,33 @@ changes.
 `79e3` currently writes profiles for FDA-ranking drugs only (2,416 rows). The null set N needs vectors for
 unlabelled drugs too, so it must first be re-run with `ALL=1` over all window rows. Regulator-level output
 only; the target-level table at that scale is not needed for this test.
+
+
+---
+
+## 13. AMENDMENT 2, 2026-11-22 — rank T by the window's own reversal percentile
+
+**Disclosure first: a run under section 12 was executed and is DISCARDED as uninterpretable.** It dropped
+**44 of 47 (cohort, window) cells**, leaving 2 early and 1 late, and its verdicts are not reported as a
+result. The numbers from that run are not used anywhere.
+
+**Cause, and it is a coverage fact independent of any result.** Section 3 defined T as the top `TOP_PCT` by
+`layered_pct`. The lead score requires an identified target unit, so `layered_pct` is populated for only
+**2,418 of 17,460 window rows (13.8%)** — in BRCA-LumA/early, 17 of 357 unlabelled drugs. A top-decile cut on
+a column that is 86% missing empties the test set. This was verifiable before registering and was not
+checked; it is a defect in the registration, not a finding.
+
+**The amendment.** T is ranked by the window's own reversal percentile (`rev_<window>_pct`, D170), which is
+**100% covered within its window** (9,951 early / 11,637 late). The percentile is taken over all drugs in the
+cell, as D170 computes it, and T is the unlabelled drugs above the cut. A, N and every threshold in section 8
+are unchanged.
+
+**The limitation this creates, stated plainly: the window-matched test cannot test the production LEAD
+ranking.** There is no window-resolved layered score — the window pipeline produces `rev` only. So this tests
+whether the top *reversing* drugs in a window resemble the approved ones, not whether the top *lead-scored*
+drugs do. That is a narrower claim and the write-up must make it.
+
+**The confound check of section 2 still covers this.** T now has systematically higher `rev` than N by
+construction, but profile cosine was measured to be independent of reversal **magnitude**
+(Spearman(cosine, min abs rev) = 0.010) while depending on its **sign** — and A, T and N are all restricted to
+`rev > 0`. The PC1-removal arm (section 7) remains the guard against the shared axis.

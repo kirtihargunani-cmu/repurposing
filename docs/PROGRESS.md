@@ -2342,3 +2342,47 @@ diseases. "Drug X is an early-acting drug" is not a statement this data supports
 - `unknown` (D180) is now the empirically correct label, not just the cautious one.
 - D171's decision to carry the window as an explicit output dimension rather than pool is vindicated.
 - D184 runs on pooled profiles, as its spec already states — no window-resolved profile can be imputed.
+
+## 2026-11-22 — Top-reversing drugs do share the approved mechanism profile (D184)
+
+Window-matched, as amended: the unit is (cohort, window), and early and late are never pooled.
+
+| | early | late |
+|---|---|---|
+| cells | 10 | 11 |
+| **effect (median conc T − N)** | **+0.277** | **+0.312** |
+| p (10,000 within-cell permutations) | < 1e-4 | < 1e-4 |
+| cells positive | **10/10** | **11/11** |
+| PC1 removed | +0.135 (8/10) | +0.333 (10/11) |
+| **MOA-disjoint** | **+0.263 (9/9)** | **+0.312 (11/11)** |
+| reference coherence (ceiling) | 0.277 | 0.401 |
+
+Median cosine to the approved centroid is **0.40–0.73 for the top-reversing drugs against 0.02–0.38 for the
+rank-matched null**.
+
+**The PC1 arm separates the two windows.** Removing the shared axis halves the early effect (0.277 → 0.135)
+but leaves late untouched (0.312 → 0.333). So about half the early signal is the generic proliferation-like
+axis, while the late signal is something else. That is a per-window difference the pooled design could not
+have seen.
+
+### Two process failures, both caught and recorded
+
+**The first run was uninterpretable and is discarded.** T was defined by `layered_pct`, which needs an
+identified target unit and is populated for only **13.8%** of window rows — a top-decile cut on it dropped
+44 of 47 cells. Amendment 2 ranks T by the window's own reversal percentile (100% covered). The consequence
+is a narrower claim: **this tests the reversal ranking within a window, not the production lead score**,
+which has no window-resolved version.
+
+**Criterion 4 first passed vacuously.** `evidence_targets` is populated for 21.6% of rows, and unannotated
+drugs were being counted as "shares nothing with the approved set" — making **89.6% of T "MOA-disjoint"**. A
+drug with no annotation is *unknown*, not disjoint. Requiring annotation drops that to **34%**, and the
+effect survives. Without that check the headline would have rested on missing data.
+
+### What it does and does not show
+
+26 of 47 cells were dropped, every one for fewer than 3 approved drugs; the covered diseases are breast (4),
+lung (2), colorectal (2), prostate, liver and melanoma.
+
+Per the spec's own section 1, this does **not** by itself validate the ranking — resembling an approved drug
+is not the objective. What makes it worth having is the MOA-disjoint arm: top-reversing drugs converge on the
+approved mechanism profile **without sharing their annotated targets or MOA class**.
