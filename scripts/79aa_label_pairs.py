@@ -40,6 +40,18 @@ HOW TO READ THE OUTPUT, and the one thing that must not be done with it:
   * `tried_elsewhere` = the drug has a phase >= 1 cancer indication for some OTHER cohort of a different
     tissue key. That is the only defensible negative pool here, and it is still weak.
 
+WINDOW (D182, user 2026-11-22: "the label table should carry the window columns"). A label is a
+(disease, drug) fact and does NOT depend on timepoint - it is orthogonal to the window, the target gate and
+target dependency, so nothing here is filtered by them. But the EVIDENCE behind a labelled pair may or may
+not be timepoint-resolved, and that must not be invisible when the labels are used. Carried per row from the
+split tables (79j / D180):
+  window_coverage        both | early_only | late_only | unknown
+  window_unknown_reason  no_window_run | no_condition_profile | no_condition_in_lines (unknown rows)
+  has_window             window_coverage in {both, early_only, late_only}
+Why so many labelled pairs have none: the window arm scores IN-KEY (matched) lines only, while 79e also
+scores borrowed drugs from non-matched lines, and no subgroup has window data at all. Counting rows with
+`has_window` therefore gives a much smaller - and honest - training set than the label count alone.
+
 Env: SFX (default _v2_tf). Output: results/lincs/labels/pair_labels<SFX>.tsv.gz, label_counts<SFX>.tsv, run.json
 """
 import json
@@ -208,6 +220,25 @@ def main():
         D.loc[m, ["chembl_phase", "hub_label"]] = [0.0, False]
         D.loc[m, "subtype_excluded"] = st["name"]
 
+    # ---- window evidence (D182): carried, never used to filter or to define a label
+    wcols = ["window_coverage", "window_unknown_reason"]
+    wp = []
+    for f, unit in ((RES / f"drug_reversal_split{SFX}.tsv", "group_id"),
+                    (RES / f"stratum_reversal_split{SFX}.tsv", "stratum")):
+        if not f.exists():
+            continue
+        h = pd.read_csv(f, sep="\t", nrows=0).columns
+        use = [unit, "pert_id"] + [c for c in wcols if c in h]
+        x = pd.read_csv(f, sep="\t", usecols=use, low_memory=False).rename(columns={unit: "unit_id"})
+        wp.append(x.drop_duplicates(["unit_id", "pert_id"]))
+    if wp:
+        D = D.merge(pd.concat(wp, ignore_index=True), on=["unit_id", "pert_id"], how="left")
+    for c in wcols:
+        if c not in D.columns:
+            D[c] = pd.NA
+    D["window_coverage"] = D.window_coverage.fillna("unknown")
+    D["has_window"] = D.window_coverage.isin(["both", "early_only", "late_only"])
+
     D["label_phase"] = D[["chembl_phase"]].max(axis=1)
     D.loc[D.hub_label & D.label_phase.lt(4), "label_phase"] = 4.0   # Hub Launched = approved for it
     D["labelled"] = D.label_phase > 0
@@ -230,7 +261,10 @@ def main():
         r = dict(subset=kind, pairs=len(g), drugs=g.pert_id.nunique(), units=g.unit_id.nunique(),
                  labelled=int(g.labelled.sum()), labelled_drugs=int(g[g.labelled].pert_id.nunique()),
                  units_with_label=int(g[g.labelled].unit_id.nunique()),
-                 tried_elsewhere=int(g.tried_elsewhere.sum()))
+                 tried_elsewhere=int(g.tried_elsewhere.sum()),
+                 has_window=int(g.has_window.sum()),
+                 labelled_with_window=int((g.labelled & g.has_window).sum()),
+                 labelled_both_windows=int((g.labelled & g.window_coverage.eq("both")).sum()))
         for p in (0.5, 1, 2, 3, 4):   # ChEMBL uses 0.5 for early phase 1
             r[f"phase{p}"] = int((g.label_phase == p).sum())
         rows.append(r)
@@ -238,6 +272,10 @@ def main():
     cnt.to_csv(OUT / f"label_counts{SFX}.tsv", sep="\t", index=False)
     print(cnt.to_string(index=False))
     print(f"\nby source: {D[D.labelled].label_source.value_counts().to_dict()}")
+    L = D[D.labelled]
+    print(f"window evidence behind the labels: {int(L.has_window.sum()):,} of {len(L):,} labelled rows "
+          f"({100 * L.has_window.mean():.1f}%); both windows {int(L.window_coverage.eq('both').sum()):,}")
+    print(f"  labelled rows with NO window, by reason: {L[~L.has_window].window_unknown_reason.value_counts().to_dict()}")
     uq = D.drop_duplicates("pert_id")
     print(f"drugs with any ChEMBL id: {uq.has_chembl_id.sum():,} of {len(uq):,}  "
           f"(FDA-matched {int(uq[uq.fda_matched].has_chembl_id.sum()):,} of {int(uq.fda_matched.sum()):,}; "
