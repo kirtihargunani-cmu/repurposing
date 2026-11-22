@@ -2199,3 +2199,41 @@ wrong and is now `unknown`.
 
 D179's contribution tables also carry `window = "unknown"`: they decompose the pooled score, so they cannot name a
 timepoint either.
+
+## 2026-11-22 — How many labelled (drug, disease) pairs do we actually have? (D181)
+
+Asked while sizing a possible learning layer. The answer matters more than the input count: inputs are abundant and
+mostly derived, labels are scarce and are the real ceiling.
+
+**`scripts/79aa_label_pairs.py`** labels the whole scored universe — every row that carries a score, not just the
+FDA-matched drugs the validation metric uses — and keeps the **clinical phase** instead of cutting it to a binary.
+
+| | pairs | drugs | units | labelled |
+|---|---|---|---|---|
+| all | 84,796 | 3,721 | 55 | **4,155 (4.9%)** |
+| groups | 64,094 | 3,721 | 41 | 3,319 |
+| subgroups | 20,702 | 1,663 | 14 | 836 |
+
+By phase: **4 → 367, 3 → 618, 2 → 2,219, 1 → 906, 0.5 → 45.** Every one of the 55 units has at least one label
+(median 59, range 13–186). Sources: ChEMBL 3,846, Hub 116, both 193.
+
+That is about **8.5× the labels the validation metric sees** (79l: 599 rows, 391 FDA-matched drugs, binary at
+phase ≥ 3). Two reasons: the phase grading keeps the 3,170 phase-1/2 pairs a `≥ 3` cut throws away, and the universe
+is every scored compound. The hard bound is drug identity — only 1,948 of 3,721 scored drugs carry any ChEMBL id.
+
+**Spot checks pass.** Tamoxifen and fulvestrant phase 4 in LumA/LumB and correctly *cleared* in Basal and Her2 by the
+subtype rule; lapatinib in Her2; erlotinib in LUAD; fluorouracil in COAD; vemurafenib in SKCM. Prostate's
+most-trialled labels are docetaxel, cabazitaxel, flutamide, olaparib.
+
+### The warning that ships with the table
+
+**`label_phase = 0` is not a negative.** It means no trial record matched. For a repurposing candidate that is the
+expected state of a *true positive nobody has tested*. Training on 0-as-negative teaches a model to reproduce what has
+already been tried — the opposite of what this project is for. The table carries `tried_elsewhere` (15,139 pairs: a
+phase ≥ 1 cancer indication in a different tissue key) as the only defensible negative pool, and it is still weak.
+
+### A bug worth recording
+
+The first run returned **zero** ChEMBL labels and 309 Hub-only ones — a plausible-looking number. Cause:
+`DataFrame.isin(dict)` keys on *column names*, not values, so the whole indication match silently matched nothing.
+Silent, plausible, and downstream of nothing that would have caught it.

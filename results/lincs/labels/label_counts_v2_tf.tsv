@@ -1,0 +1,5 @@
+subset	pairs	drugs	units	labelled	labelled_drugs	units_with_label	tried_elsewhere	phase0.5	phase1	phase2	phase3	phase4
+all	84796	3721	55	4155	359	55	15139	45	906	2219	618	367
+group	64094	3721	41	3319	359	41	11327	31	706	1761	514	307
+subgroup	20702	1663	14	836	172	14	3812	14	200	458	104	60
+gate-passing	81539	3622	55	4126	355	55	14682	45	902	2196	616	367
