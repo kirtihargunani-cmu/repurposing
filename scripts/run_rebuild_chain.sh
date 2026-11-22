@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# D156 rebuild, ranking half: 79e -> 79i -> 79t3 -> 79p, ARACNe-only (D160).
+# D156 rebuild, ranking half: 79e -> 79i -> 79t3 -> 79p, ARACNe-only (D160),
+# then the D179 nested arrays: 50b (disease regulator -> target) -> 79e2 (drug reversal -> regulator -> target).
 #
 # Every stage runs under scripts/runlog.sh, so a crash or a kill is recorded and each
 # output carries a .build_manifest.json (D163). The chain gates on
@@ -16,6 +17,7 @@ set -uo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 RES=results/lincs
 PY=/home/kirti/miniforge3/envs/celligner/bin/python
+R=/home/kirti/miniforge3/envs/repurposing/bin/Rscript
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 export VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6
 
@@ -49,6 +51,18 @@ run "79t3 lead"   "$RES/layered_score_v2_v2_tf.tsv" \
                   -- env ESSENTIAL=1 PROLIF_WEIGHT=1 SPLIT_SFX=_v2_tf $PY scripts/79t3_lead_score.py
 run "79p fda"     "$RES/fda_ranking_v2_tf.tsv" "$RES/fda_ranking_strata_v2_tf.tsv" \
                   -- env SFX=_v2_tf $PY scripts/79p_fda_ranking.py
+
+# D179: the nested regulator -> target arrays. Reporting only (no score changes), but they
+# must follow every rebuild or they describe the previous build: 79e2 stops if its regulator
+# terms no longer sum to the stored rev. 50b reads only step 5/6 outputs (cheap, ~2 min);
+# 79e2 reads 79p's FDA rows, so it comes last. The tables (~1.3 GB) are gitignored.
+run "50b contrib groups" "results/step6/aracne_project_v2_tf/regulon_contributions.tsv.gz" \
+                  "data/processed/step5/regulons_aracne_project_v2_tf_edges.tsv.gz" \
+                  -- env EDGES=1 STRATA=0 $R scripts/50b_regulon_contributions.R
+run "50b contrib strata" "results/step6/aracne_project_v2_tf_strata/regulon_contributions.tsv.gz" \
+                  -- env STRATA=1 $R scripts/50b_regulon_contributions.R
+run "79e2 contrib drug" "$RES/regulon_contributions_v2_tf" \
+                  -- $PY scripts/79e2_regulon_contributions.py
 
 echo; echo "== chain complete $(date +%H:%M:%S).  Audit:"
 python scripts/check_builds.py

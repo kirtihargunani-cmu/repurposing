@@ -2170,3 +2170,70 @@ Palbociclib in LUSC is the E2F program (E2F7/1/8/2, MYBL2, FOXM1, CENPA) through
 and down ~3 z under the drug: on-mechanism, but the shared proliferation axis. ESR1 in LumA has no target above 3% of its score.
 
 Docs: PIPELINE_V2 6a-bis, PIPELINE_DRUG_SIDE_V2 4a + column note, DISEASE_SIDE_PLAIN_LANGUAGE, DRUG_SIDE_PLAIN_LANGUAGE.
+
+## 2026-11-22 — "Unknown timepoint" is now a category, not a blank cell (D180)
+
+**User:** *"when a drug window/timepoint is unknown, put it in the unknown category ... we want to be able to trace
+where we can specifically say what timepoint a drug has activity at."*
+
+Before this, a drug with no timepoint evidence got an **empty** `window_coverage`, and `79k` called it `pooled`. Empty
+read as "nothing to say", which is exactly what it was not: it meant *we cannot name a timepoint for this drug here*,
+for one of three quite different reasons. Those reasons are now written down per row:
+
+| reason | groups | subgroups |
+|---|---|---|
+| `no_window_run` — the unit was never in the window run | 17,376 | 20,702 |
+| `no_condition_in_lines` — drug has condition profiles, none in this cohort's lines | 29,258 | 0 |
+| `no_condition_profile` — the drug has none at all | 0 | 0 |
+
+**What the blank was hiding: every subgroup row, 100% of them, is `no_window_run`.** The window step never covered
+the 14 subgroups at all. With a blank column that was indistinguishable from "measured, no effect".
+
+Groups: 46,634 of 64,094 rows (72.8%) unknown; 4,128 both windows, 5,823 early-only, 7,509 late-only; 29 of 41 cohorts
+carry any real window.
+
+**A latent bug fixed on the way.** `window_reversal.py` labelled a condition `early` when `pert_time <= 6`. LINCS writes
+an unrecorded time as **-666**, which satisfies that test — an unrecorded timepoint would have been scored as 6-hour
+evidence. No such row exists today (all 26,130 conditions have a recorded time), so no number moves, but the rule was
+wrong and is now `unknown`.
+
+D179's contribution tables also carry `window = "unknown"`: they decompose the pooled score, so they cannot name a
+timepoint either.
+
+## 2026-11-22 — How many labelled (drug, disease) pairs do we actually have? (D181)
+
+Asked while sizing a possible learning layer. The answer matters more than the input count: inputs are abundant and
+mostly derived, labels are scarce and are the real ceiling.
+
+**`scripts/79aa_label_pairs.py`** labels the whole scored universe — every row that carries a score, not just the
+FDA-matched drugs the validation metric uses — and keeps the **clinical phase** instead of cutting it to a binary.
+
+| | pairs | drugs | units | labelled |
+|---|---|---|---|---|
+| all | 84,796 | 3,721 | 55 | **4,155 (4.9%)** |
+| groups | 64,094 | 3,721 | 41 | 3,319 |
+| subgroups | 20,702 | 1,663 | 14 | 836 |
+
+By phase: **4 → 367, 3 → 618, 2 → 2,219, 1 → 906, 0.5 → 45.** Every one of the 55 units has at least one label
+(median 59, range 13–186). Sources: ChEMBL 3,846, Hub 116, both 193.
+
+That is about **8.5× the labels the validation metric sees** (79l: 599 rows, 391 FDA-matched drugs, binary at
+phase ≥ 3). Two reasons: the phase grading keeps the 3,170 phase-1/2 pairs a `≥ 3` cut throws away, and the universe
+is every scored compound. The hard bound is drug identity — only 1,948 of 3,721 scored drugs carry any ChEMBL id.
+
+**Spot checks pass.** Tamoxifen and fulvestrant phase 4 in LumA/LumB and correctly *cleared* in Basal and Her2 by the
+subtype rule; lapatinib in Her2; erlotinib in LUAD; fluorouracil in COAD; vemurafenib in SKCM. Prostate's
+most-trialled labels are docetaxel, cabazitaxel, flutamide, olaparib.
+
+### The warning that ships with the table
+
+**`label_phase = 0` is not a negative.** It means no trial record matched. For a repurposing candidate that is the
+expected state of a *true positive nobody has tested*. Training on 0-as-negative teaches a model to reproduce what has
+already been tried — the opposite of what this project is for. The table carries `tried_elsewhere` (15,139 pairs: a
+phase ≥ 1 cancer indication in a different tissue key) as the only defensible negative pool, and it is still weak.
+
+### A bug worth recording
+
+The first run returned **zero** ChEMBL labels and 309 Hub-only ones — a plausible-looking number. Cause:
+`DataFrame.isin(dict)` keys on *column names*, not values, so the whole indication match silently matched nothing.
+Silent, plausible, and downstream of nothing that would have caught it.

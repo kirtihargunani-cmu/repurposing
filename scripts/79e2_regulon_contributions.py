@@ -21,11 +21,14 @@ Checks (stop on failure): (1) A recomputed for CHECK_N random profiles per netwo
 drug_viper_specific<SFX>/<net>.f32 (|diff| <= 1e-4, float32 storage); (2) sum_i rev_contrib_i vs `rev` in
 drug_reversal<SFX>.tsv / stratum_reversal<SFX>.tsv for every row written (|diff| <= 1e-3, rev is stored to 3 dp).
 
+Timepoint (D180): this splits the POOLED score (79c averages every dose and time per drug x line), so every row
+carries window = "unknown": the breakdown cannot say at which timepoint the activity happens. Per-window breakdowns
+(early <= 6 h / late >= 24 h, from the condition-level profiles) are a separate, not yet built, extension.
 Scope. The full profile x regulator x target array is ~1e9 values per network, so it is not written. Written:
   - every (unit, drug) row of the FDA rankings (fda_ranking<SFX>.tsv + fda_ranking_strata<SFX>.tsv), or ALL=1 for every
     scored drug (regulator level only is then advisable: TOP_REGS=0)
   - regulator level, all tested regulators: regulator_contributions.tsv.gz
-      unit_id pert_id cmap_name source n_lines regulator disease_nes drug_activity rev_contrib rev rank_in_drug
+      unit_id pert_id cmap_name source n_lines window regulator disease_nes drug_activity rev_contrib rev rank_in_drug
   - target level for the TOP_REGS (default 25) regulators per row with the largest |rev_contrib|:
       target_contributions.tsv.gz: unit_id pert_id cmap_name regulator target target_symbol tfmode likelihood
       drug_z (weighted mean MODZ z of the target over the lines used) activity_contrib rev_contrib
@@ -167,7 +170,7 @@ def run_unit(args):
         rc = -nes * act / norm
         rev = rc[tested].sum()
         reg = pd.DataFrame({"unit_id": u, "pert_id": r.pert_id, "cmap_name": r.cmap_name, "source": r.source,
-                            "n_lines": len(cols), "regulator": N.regs, "disease_nes": nes, "drug_activity": act,
+                            "n_lines": len(cols), "window": "unknown", "regulator": N.regs, "disease_nes": nes, "drug_activity": act,
                             "rev_contrib": rc, "rev": rev, "rev_stored": r.rev})[tested]
         reg["rank_in_drug"] = reg.rev_contrib.abs().rank(ascending=False, method="first").astype(int)
         R.append(reg)

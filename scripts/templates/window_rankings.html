@@ -61,7 +61,7 @@ tbody tr:hover { background: var(--soft) }
 .b-early { background: var(--early-soft); color: var(--early) }
 .b-late { background: var(--late-soft); color: var(--late) }
 .b-both { background: var(--accent-soft); color: var(--accent) }
-.b-pooled { background: var(--soft); color: var(--muted) }
+.b-unknown { background: var(--soft); color: var(--muted) }
 .flag { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 1px 6px; border-radius: 4px; margin-right: 4px }
 .f-absent { background: var(--bad-soft); color: var(--bad) }
 .f-prolif { background: var(--warn-soft); color: var(--warn) }
@@ -95,7 +95,7 @@ tbody tr:hover { background: var(--soft) }
         <option value="both">Both windows</option>
         <option value="early">Early only</option>
         <option value="late">Late only</option>
-        <option value="pooled">Pooled (no window data)</option>
+        <option value="unknown">Unknown timepoint</option>
       </select>
       <select id="ff" aria-label="Flag filter">
         <option value="ok" selected>Hide target-absent (as 79p ranks)</option>
@@ -113,7 +113,7 @@ tbody tr:hover { background: var(--soft) }
         <th class="n" data-k="3">Early</th>
         <th class="n" data-k="4">Late</th>
         <th class="n" data-k="6">Gap</th>
-        <th class="n" data-k="5">Pooled</th>
+        <th class="n" data-k="5" title="No timepoint-specific score: this is the score pooled over all doses and times">Unknown timepoint</th>
       </tr></thead>
       <tbody id="tb"></tbody>
     </table>
@@ -128,7 +128,7 @@ let cur = M.cohorts[0], sortK = 1, sortDir = -1;
 
 document.getElementById('covnote').textContent =
   `${M.n_with_window.toLocaleString()} of ${M.n_rows.toLocaleString()} rows carry a real window and ` +
-  `${M.n_both.toLocaleString()} have both; 12 cohorts have no condition-level data at all, so "pooled" there is permanent.`;
+  `${M.n_both.toLocaleString()} have both; 12 cohorts have no condition-level data at all, so "unknown timepoint" there is permanent.`;
 
 const nav = document.getElementById('nav');
 M.cohorts.forEach(g => {
