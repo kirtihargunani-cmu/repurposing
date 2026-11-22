@@ -71,6 +71,8 @@ WIN = ROOT / "results/systems_validation/integrated/window_reversal.tsv.gz"
 MR_DIR = ROOT / f"results/step6/aracne_project{SFX}"
 OUT = RES / f"regulon_contributions{SFX}"
 TOP_REGS = int(os.environ.get("TOP_REGS", "25"))
+NO_TARGETS = os.environ.get("NO_TARGETS") == "1"   # D184: regulator vectors only; the target table at ALL=1 scale
+                                                   # would be ~95M rows and the concordance test does not use it.
 SHIFT_TOP = int(os.environ.get("SHIFT_TOP", "15"))
 CHECK_N = int(os.environ.get("CHECK_N", "200"))
 N_CORES = int(os.environ.get("N_CORES", "6"))
@@ -172,6 +174,8 @@ def run_cohort(args):
                             "rev_contrib": rc, "rev": rc[tested].sum(), "rev_stored": r.rev})[tested]
         reg["rank_in_drug"] = reg.rev_contrib.abs().rank(ascending=False, method="first").astype(int)
         R.append(reg)
+        if NO_TARGETS:
+            continue
         keep = tested.copy() if full else np.isin(
             np.arange(len(N.regs)), N.regs.get_indexer(reg.regulator[reg.rank_in_drug <= TOP_REGS]))
         e = keep[N.reg]
@@ -249,7 +253,7 @@ def main():
         jobs = [(c, g.net.iloc[0], g, bool(q)) for c, g in sel.groupby("cohort")]
         out = list(ex.map(run_cohort, jobs))
     R = pd.concat([o[0] for o in out if len(o[0])])
-    T = pd.concat([o[1] for o in out if len(o[1])])
+    T = pd.concat([o[1] for o in out if len(o[1])]) if any(len(o[1]) for o in out) else pd.DataFrame()
     u = R.drop_duplicates(["cohort", "pert_id", "window"])
     diff = (u.rev - u.rev_stored).abs()
     print(f"check 2 (regulator terms vs stored rev_<window>, {len(u):,} rows): max |diff| {diff.max():.2e}", flush=True)
@@ -266,8 +270,10 @@ def main():
             print(f"-> {f} ({len(g):,} edges)")
         return
 
-    R.to_csv(OUT / "regulator_contributions_by_window.tsv.gz", sep="\t", index=False, float_format="%.6g")
-    T.to_csv(OUT / "target_contributions_by_window.tsv.gz", sep="\t", index=False, float_format="%.6g")
+    sfx = "_all" if os.environ.get("ALL") == "1" else ""
+    R.to_csv(OUT / f"regulator_contributions_by_window{sfx}.tsv.gz", sep="\t", index=False, float_format="%.6g")
+    if len(T):
+        T.to_csv(OUT / f"target_contributions_by_window{sfx}.tsv.gz", sep="\t", index=False, float_format="%.6g")
 
     # the point of the exercise: which regulators move between windows, for drugs that have both
     p = R.pivot_table(index=["cohort", "pert_id", "cmap_name", "regulator", "disease_nes"],
