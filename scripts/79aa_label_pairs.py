@@ -11,6 +11,8 @@ UNIVERSE = every (unit, pert_id) row of drug_reversal<SFX>.tsv + stratum_reversa
 
 SOURCES (config/known_use.yaml supplies the per-cohort regex and the subtype table; nothing here is derived
 from our scores):
+  ids      pert_id -> ChEMBL ids: annotation, D105 name lookup, D113 ids, the D181b name fetch
+           (`scripts/79ab_fetch_missing_ids.py` -> d105_all/d181_ids.json), and parent forms.
   chembl   data/raw/chembl_indications/drug_indication.tsv (D178 fetch, ChEMBL 37: 60,055 molecule x
            indication rows with max_phase_for_ind and the NCT ids). A pair is labelled when any indication
            term of the drug (mesh_heading or efo_term) matches the cohort's include, not its exclude, and
@@ -88,8 +90,13 @@ def chembl_ids(perts, ann):
     69 of 555 approved drugs. Ids are collected per normalised name - as 79l pools an FDA ingredient's
     compounds - and every pert_id of that name gets the union.
     """
-    nl = json.load(open(CH / "d105_all/name_lookup.json"))
-    d113 = json.load(open(CH / "d105_all/d113_ids.json")) if (CH / "d105_all/d113_ids.json").exists() else {}
+    # D181b: these caches are keyed by the RAW cmap_name ("CPCCOEt", "MLN-9708"), so a normalised lookup
+    # silently misses. Key each one both ways and try both.
+    def bothkeys(d):
+        return {**{k: v for k, v in d.items()}, **{norm(k): v for k, v in d.items()}}
+    nl = bothkeys(json.load(open(CH / "d105_all/name_lookup.json")))
+    d113 = bothkeys(json.load(open(CH / "d105_all/d113_ids.json")) if (CH / "d105_all/d113_ids.json").exists() else {})
+    d181 = bothkeys(json.load(open(CH / "d105_all/d181_ids.json")) if (CH / "d105_all/d181_ids.json").exists() else {})
     par = {f["molecule_chembl_id"]: f["parent_chembl_id"] for f in json.load(open(CH / "d105_all/forms.json"))}
     a = ann.drop_duplicates("pert_id").set_index("pert_id")
     names_of = {p: {n for n in (a.cmap_name.get(p), a.hub_name.get(p), a.chembl_pref_name.get(p))
@@ -98,7 +105,8 @@ def chembl_ids(perts, ann):
     for p in perts:
         ids = {a.chembl_id.get(p)}
         for nm in names_of[p]:
-            ids |= {nl.get(norm(nm))} | set(d113.get(norm(nm), {}).get("ids", []))
+            for k in (nm, norm(nm)):
+                ids |= {nl.get(k)} | set(d113.get(k, {}).get("ids", [])) | set(d181.get(k, {}).get("ids", []))
         ids = {i for i in ids if isinstance(i, str)}
         for nm in names_of[p]:
             by_name.setdefault(norm(nm), set()).update(ids)
@@ -113,7 +121,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     D = universe()
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t", low_memory=False)
-    ids = chembl_ids(sorted(D.pert_id.unique()), ann)
+    ids = chembl_ids(sorted(D.pert_id.unique()), ann)   # includes the D181b name fetch (79ab)
     # FDA-approved subsets (user 2026-11-22: "we want to only look at fda approved drugs first").
     # fda_matched is the strict one - a Drugs@FDA ingredient match, which is what the FDA rankings are built on.
     # approved_anywhere is the looser ChEMBL phase 4 / Hub Launched flag 79e uses. Both are reported.
