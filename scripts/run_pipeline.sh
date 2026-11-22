@@ -55,6 +55,20 @@ if [[ "${SKIP_GATE:-0}" != 1 ]]; then
     exit 1; }
 fi
 
+# D188 parameter gate. DELIBERATELY NOT under SKIP_GATE: the staleness gate is skipped routinely
+# (d108's manual readings keep it red), and if a parameter check rode on the same switch it would
+# be skipped routinely too - which is precisely how the TAS floor's state went unverified. A stale
+# build is a bookkeeping problem; a build that used the wrong threshold is a wrong result.
+# It needs pyyaml, so it runs under $PY rather than the bare interpreter.
+if [[ "${SKIP_PARAM_GATE:-0}" != 1 ]]; then
+  echo "== pre-flight: check_params.py (adopted thresholds)"
+  $PY scripts/check_params.py || {
+    echo "ABORT: a build used a parameter that disagrees with config/adopted_parameters.yaml." >&2
+    echo "       Fix the build or the registry - do NOT run with a threshold in an unknown state." >&2
+    echo "       SKIP_PARAM_GATE=1 overrides, and should be a deliberate, stated exception." >&2
+    exit 1; }
+fi
+
 run() {  # run <label> <out...> -- <cmd...>
   local label="$1"; shift
   local outs=(); while [[ "$1" != "--" ]]; do outs+=(--out "$1"); shift; done; shift
@@ -153,3 +167,8 @@ fi
 
 echo; echo "== pipeline complete $(date +%H:%M:%S).  Audit:"
 python scripts/check_builds.py
+
+# D187: per-stage runtime, as measured, normalised per cohort and per drug so the numbers
+# transfer to a different disease set rather than only describing this one.
+echo; echo "== stage runtimes"
+python scripts/stage_timings.py --write
