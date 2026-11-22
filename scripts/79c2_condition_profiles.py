@@ -34,6 +34,7 @@ import json, os, sys, time
 from pathlib import Path
 import numpy as np, pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import tas_floor                                      # D188: for the applied-floor provenance below
 from tas_floor import active_mask, TAS_ANCHOR
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -107,7 +108,13 @@ def main():
     idx.to_csv(PROC / "drug_condition_profiles_index.tsv", sep="\t", index=False)
 
     strata = idx.groupby(["ModelID", "pert_time"]).ngroups
+    # D188: record the floors ACTUALLY APPLIED, not only the anchor. `tas_anchor` is the
+    # design-only QUANTILE variant; the floor in force is the D156 adopted pair (6 h 0.25,
+    # else TAS_MIN). Recording only `tas_anchor` made `null` read as "no lowered 6 h floor",
+    # which is the opposite of the truth and cost a wrong answer to a direct question.
     man = dict(script="79c2_condition_profiles.py", tas_anchor=TAS_ANCHOR or None, spec="docs/SPEC_condition_level_profiles.md",
+               tas_floors_mode="adopted" if tas_floor.USE_ADOPTED else "uniform",
+               tas_floors_applied={str(k): v for k, v in sorted(tas_floor.ADOPTED_FLOORS.items())} if tas_floor.USE_ADOPTED else {},
                tas_min=TAS_MIN, min_drugs_for_g=MIN_DRUGS_FOR_G,
                n_conditions=int(len(idx)), n_signatures=int(len(act)),
                n_drug_line_pairs=int(idx.groupby(["pert_id", "ModelID"]).ngroups),
