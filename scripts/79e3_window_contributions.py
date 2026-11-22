@@ -71,6 +71,9 @@ WIN = ROOT / "results/systems_validation/integrated/window_reversal.tsv.gz"
 MR_DIR = ROOT / f"results/step6/aracne_project{SFX}"
 OUT = RES / f"regulon_contributions{SFX}"
 TOP_REGS = int(os.environ.get("TOP_REGS", "25"))
+COSINE = os.environ.get("COSINE") == "1"   # D194: per-regulon cosine between the DISEASE and DRUG
+                                           # contribution vectors - the pipeline's own per-gene
+                                           # edge-weighted quantities, not a reconstruction from z.
 NO_TARGETS = os.environ.get("NO_TARGETS") == "1"   # D184: regulator vectors only; the target table at ALL=1 scale
                                                    # would be ~95M rows and the concordance test does not use it.
 SHIFT_TOP = int(os.environ.get("SHIFT_TOP", "15"))
@@ -157,6 +160,11 @@ def run_cohort(args):
     wg = lw[(lw.group_id == cohort) & lw.in_key].set_index("ModelID").weight
     sub = idx[idx.ModelID.isin(wg.index) & idx.window.isin(("early", "late"))]
     dz = G["dis"].get(cohort)
+    dvec = None
+    if COSINE and dz is not None:
+        dm = dz.drop_duplicates(["regulator", "target"]).set_index(["regulator", "target"]).disease_contrib_nes
+        dvec = np.nan_to_num(dm.reindex(
+            pd.MultiIndex.from_arrays([N.regs[N.reg], N.target])).to_numpy(dtype=np.float64))
     R, T = [], []
     for r in sel.itertuples():
         g = sub[(sub.pert_id == r.pert_id) & (sub.window == r.window)]
@@ -173,6 +181,24 @@ def run_cohort(args):
                             "regulator": N.regs, "disease_nes": nes, "drug_activity": act,
                             "rev_contrib": rc, "rev": rc[tested].sum(), "rev_stored": r.rev})[tested]
         reg["rank_in_drug"] = reg.rev_contrib.abs().rank(ascending=False, method="first").astype(int)
+
+        # D194 GRANULAR OPPOSITION VIEW. Within each regulon, the cosine between the gene-level
+        # DISEASE contributions (50b) and the gene-level DRUG contributions (this script's C).
+        # Both already carry each edge's own tfmode x likelihood - that is what a contribution IS -
+        # so the per-gene edge weights are maintained end to end rather than rebuilt from z-scores.
+        # A NEGATIVE cosine means the drug moves the very genes that account for this regulator's
+        # dysregulation, in the opposite direction, gene by gene.
+        if COSINE and dvec is not None:
+            dot = np.add.reduceat(dvec * C, N.starts)
+            nd = np.sqrt(np.add.reduceat(dvec * dvec, N.starts))
+            nx = np.sqrt(np.add.reduceat(C * C, N.starts))
+            den = nd * nx
+            cos = np.divide(dot, den, out=np.full(len(den), np.nan), where=den > 0)
+            # reduceat yields one value per regulator group, aligned with N.regs exactly as
+            # `act` above is; `reg` is already filtered to the tested regulators.
+            assert len(cos) == len(N.regs), (len(cos), len(N.regs))
+            reg["cos_contrib"] = cos[tested]
+            reg["n_genes_regulon"] = np.diff(np.r_[N.starts, len(N.reg)])[tested]
         R.append(reg)
         if NO_TARGETS:
             continue
@@ -261,8 +287,9 @@ def main():
     R = R.drop(columns="rev_stored")
 
     if q:
-        full = T.merge(R[["cohort", "pert_id", "window", "regulator", "disease_nes", "drug_activity",
-                          "rev_contrib", "rank_in_drug"]].rename(columns={"rev_contrib": "regulator_rev_contrib"}),
+        _rc = ["cohort", "pert_id", "window", "regulator", "disease_nes", "drug_activity",
+               "rev_contrib", "rank_in_drug"] + [c for c in ("cos_contrib", "n_genes_regulon") if c in R]
+        full = T.merge(R[_rc].rename(columns={"rev_contrib": "regulator_rev_contrib"}),
                        on=["cohort", "pert_id", "window", "regulator"])
         for (c, dn), g in full.groupby(["cohort", "cmap_name"]):
             f = OUT / f"query_window_{c}_{dn}.tsv"

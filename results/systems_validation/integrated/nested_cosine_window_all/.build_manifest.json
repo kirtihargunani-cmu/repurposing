@@ -1,0 +1,39 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T174222-2881664",
+ "finished_at": "2026-11-22T17:45:21-05:00",
+ "duration_s": 179,
+ "script": "79af_nested_cosine_window.py",
+ "cmd": "env ALL=1 TOP_REGS=25 /home/kirti/miniforge3/envs/celligner/bin/python scripts/79af_nested_cosine_window.py",
+ "env": "ALL=1",
+ "git_sha": "37a7d7c",
+ "git_state": "dirty",
+ "note": "D193 enrichment-weighted nested cosine, 41-cohort descriptive sweep",
+ "expect": null,
+ "n_files": 5,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "controls.tsv": {
+   "bytes": 731,
+   "mtime": "2026-11-22T17:45:20-05:00"
+  },
+  "per_drug.tsv.gz": {
+   "bytes": 933016,
+   "mtime": "2026-11-22T17:45:12-05:00"
+  },
+  "per_regulator.tsv.gz": {
+   "bytes": 9935311,
+   "mtime": "2026-11-22T17:45:20-05:00"
+  },
+  "run.json": {
+   "bytes": 3323,
+   "mtime": "2026-11-22T17:45:20-05:00"
+  },
+  "summary.tsv": {
+   "bytes": 2958,
+   "mtime": "2026-11-22T17:45:20-05:00"
+  }
+ }
+}

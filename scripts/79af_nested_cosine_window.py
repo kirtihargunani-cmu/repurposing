@@ -44,10 +44,17 @@ import pandas as pd
 
 ROOT = Path("/home/kirti/projects/repurposing")
 PROC = ROOT / "data/processed/lincs"
-OUT = ROOT / "results/systems_validation/integrated/nested_cosine_window"
+OUT = ROOT / ("results/systems_validation/integrated/nested_cosine_window"
+               + ("_all" if os.environ.get("ALL") == "1" else ""))
 
 MIN_GENES = 15                                           # unchanged from D150
-COHORTS = ["BRCA-LumA", "BRCA-Her2", "TCGA-SKCM", "TCGA-LUAD"]
+TOP_REGS = int(os.environ.get("TOP_REGS", "25"))          # D193 granular table cap; 0 = all
+# The SPEC registers these four, for a like-for-like re-run of D150. ALL=1 instead sweeps every
+# group that has a tumour-vs-normal contrast and writes to a SEPARATE directory, so the registered
+# four-cohort result is never overwritten by the descriptive sweep. The ALL run is DESCRIPTIVE:
+# section 4's acceptance applies to the registered cohorts only and is not re-evaluated over 41.
+SPEC_COHORTS = ["BRCA-LumA", "BRCA-Her2", "TCGA-SKCM", "TCGA-LUAD"]
+ALL = os.environ.get("ALL") == "1"
 ANTI_ESTROGEN = {"fulvestrant", "tamoxifen", "raloxifene", "clomifene", "bazedoxifene", "toremifene"}
 BRAF = {"vemurafenib", "dabrafenib"}
 
@@ -98,8 +105,15 @@ def main() -> int:
 
     idx["window"] = idx.pert_time.map(window_of)
 
-    per_drug, summary, nets_used, skipped = [], [], {}, []
-    for cohort in COHORTS:
+    cohorts = SPEC_COHORTS
+    if ALL:
+        cohorts = sorted(c for c in cohort_of
+                         if (ROOT / f"data/processed/step4_v2/{c}__gtex.tsv.gz").exists())
+        print(f"ALL=1: descriptive sweep over {len(cohorts)} cohorts with a contrast "
+              f"(the SPEC's acceptance covers only {SPEC_COHORTS})", flush=True)
+
+    per_drug, summary, nets_used, skipped, granular = [], [], {}, [], []
+    for cohort in cohorts:
         net = net_for(cohort, ovr, avail, cohort_of)
         nets_used[cohort] = net
         con = ROOT / f"data/processed/step4_v2/{cohort}__gtex.tsv.gz"
@@ -109,7 +123,13 @@ def main() -> int:
             continue
 
         dz = pd.read_csv(con, sep="\t")[["gene_id", "z"]].dropna().set_index("gene_id").z
-        regs = {r: list(d.gene_id) for r, d in E[E.network == net].groupby("regulator")}
+        # D193: keep each edge's OWN enrichment factor w = tfmode * likelihood, aligned to the
+        # gene list, so the cosine can be taken over the regulon's weighted contributions rather
+        # than over bare z-scores. tfmode carries the SIGN of the edge (activating / repressing)
+        # and likelihood its strength - exactly what "the regulon data point's own enrichment
+        # factor" means, and what D150 threw away before the vectors ever met.
+        regs = {r: (list(d.gene_id), (d.tfmode * d.likelihood).to_numpy(dtype=np.float64))
+                for r, d in E[E.network == net].groupby("regulator")}
         nes = mr[mr.group_id == cohort].set_index("regulator").nes
 
         # in-key matched lines and their weights, exactly as window_reversal.py uses them
@@ -141,26 +161,36 @@ def main() -> int:
         X = np.vstack(vecs)
 
         rows = []
-        for r, gl in regs.items():
-            gl = [g for g in gl if g in gpos and g in dz.index]
-            if len(gl) < MIN_GENES:
+        for r, (gl0, w0) in regs.items():
+            keep = [i for i, g in enumerate(gl0) if g in gpos and g in dz.index]
+            if len(keep) < MIN_GENES:
                 continue
+            gl = [gl0[i] for i in keep]
+            wj = w0[keep]                                   # the regulon's own enrichment factors
             vd = dz[gl].to_numpy(dtype=np.float64)
-            nd = np.linalg.norm(vd)
-            if nd == 0:
-                continue
             S = X[:, np.array([gpos[g] for g in gl])]
-            nx = np.linalg.norm(S, axis=1)
-            ok = nx > 0
-            cos = np.full(len(S), np.nan)
-            cos[ok] = (S[ok] @ vd) / (nx[ok] * nd)
-            rows.append(pd.DataFrame(dict(row=np.arange(len(S)), regulator=r, cos=cos,
+
+            def _cos(vd_, S_):
+                nd_ = np.linalg.norm(vd_)
+                nx_ = np.linalg.norm(S_, axis=1)
+                out = np.full(len(S_), np.nan)
+                ok_ = (nx_ > 0) & (nd_ > 0)
+                if nd_ > 0:
+                    out[ok_] = (S_[ok_] @ vd_) / (nx_[ok_] * nd_)
+                return out
+
+            cos_z = _cos(vd, S)                             # D150, unchanged: bare z-scores
+            cos_e = _cos(wj * vd, S * wj)                   # enrichment-weighted contributions
+            if np.all(np.isnan(cos_z)) and np.all(np.isnan(cos_e)):
+                continue
+            rows.append(pd.DataFrame(dict(row=np.arange(len(S)), regulator=r,
+                                          cos=cos_z, cos_enr=cos_e, n_genes=len(gl),
                                           nes=float(nes.get(r, np.nan)))))
         if not rows:
             skipped.append(dict(cohort=cohort, reason="no usable regulon"))
             continue
 
-        df = pd.concat(rows, ignore_index=True).dropna(subset=["cos"])
+        df = pd.concat(rows, ignore_index=True).dropna(subset=["cos", "cos_enr"], how="all")
         df["w"] = df.nes.abs().fillna(0)
         kk = pd.DataFrame(keys, columns=["pert_id", "window"])
         df["pert_id"] = kk.pert_id.to_numpy()[df.row.to_numpy()]
@@ -169,23 +199,42 @@ def main() -> int:
         # vectorised rather than groupby.apply: this pandas has no `include_groups`, and the
         # weighted mean is a ratio of two sums, so it needs no per-group Python at all.
         df["cw"] = df.cos * df.w
+        df["cwe"] = df.cos_enr * df.w
         df["neg"] = (df.cos < 0).astype(float)
+        df["neg_e"] = (df.cos_enr < 0).astype(float)
         agg = df.groupby(["pert_id", "window"]).agg(
             n_regulators=("cos", "size"), cos_mean=("cos", "mean"),
-            _cw=("cw", "sum"), _w=("w", "sum"), frac_opposing=("neg", "mean")).reset_index()
+            cos_enr_mean=("cos_enr", "mean"),
+            _cw=("cw", "sum"), _cwe=("cwe", "sum"), _w=("w", "sum"),
+            frac_opposing=("neg", "mean"), frac_opposing_enr=("neg_e", "mean")).reset_index()
         agg["cos_weighted"] = agg._cw / agg._w.clip(lower=1e-9)
-        agg = agg.drop(columns=["_cw", "_w"])
+        agg["cos_enr_weighted"] = agg._cwe / agg._w.clip(lower=1e-9)
+        agg = agg.drop(columns=["_cw", "_cwe", "_w"])
+
+        # D193 granular view: one row per (cohort, window, drug, regulator). Capped to the
+        # TOP_REGS regulators by |disease NES| so the file stays usable; TOP_REGS=0 keeps all.
+        gr = df.copy()
+        gr["cohort"], gr["network"] = cohort, net
+        gr["cmap_name"] = gr.pert_id.map(pid2name)
+        if TOP_REGS:
+            keepr = (nes.abs().sort_values(ascending=False).head(TOP_REGS).index)
+            gr = gr[gr.regulator.isin(set(keepr))]
+        granular.append(gr[["cohort", "network", "window", "pert_id", "cmap_name", "regulator",
+                            "n_genes", "nes", "cos", "cos_enr"]])
         agg["cohort"], agg["network"] = cohort, net
         agg["cmap_name"] = agg.pert_id.map(pid2name)
         # opposing percentile: within (cohort, window), rank of -cos_weighted
         agg["opposing_pct"] = agg.groupby("window").cos_weighted.rank(pct=True, ascending=False) * 100
+        agg["opposing_pct_enr"] = agg.groupby("window").cos_enr_weighted.rank(pct=True, ascending=False) * 100
         per_drug.append(agg)
 
         for win, g in agg.groupby("window"):
             summary.append(dict(cohort=cohort, network=net, window=win, n_drugs=int(len(g)),
                                 n_regulons_usable=int(df.regulator.nunique()),
                                 cos_weighted_median=round(float(g.cos_weighted.median()), 5),
-                                frac_opposing_median=round(float(g.frac_opposing.median()), 4)))
+                                cos_enr_weighted_median=round(float(g.cos_enr_weighted.median()), 5),
+                                frac_opposing_median=round(float(g.frac_opposing.median()), 4),
+                                frac_opposing_enr_median=round(float(g.frac_opposing_enr.median()), 4)))
             print(f"{cohort:11s} {net:10s} {win:5s} n={len(g):5d} "
                   f"cos_w median {g.cos_weighted.median():+.4f}  [{time.time()-t0:.0f}s]", flush=True)
 
@@ -194,6 +243,10 @@ def main() -> int:
         return 1
     D = pd.concat(per_drug, ignore_index=True)
     D.to_csv(OUT / "per_drug.tsv.gz", sep="\t", index=False, float_format="%.6g")
+    if granular:
+        G = pd.concat(granular, ignore_index=True)
+        G.to_csv(OUT / "per_regulator.tsv.gz", sep="\t", index=False, float_format="%.6g")
+        print(f"granular: {len(G):,} (cohort, window, drug, regulator) rows -> per_regulator.tsv.gz")
     S = pd.DataFrame(summary)
     S.to_csv(OUT / "summary.tsv", sep="\t", index=False)
 
@@ -206,7 +259,9 @@ def main() -> int:
             g = D[(D.cohort == coh) & (D.window == win) & D.cmap_name.isin(names)]
             ctl.append(dict(control=label, cohort=coh, window=win, n=int(len(g)),
                             median_opposing_pct=round(float(g.opposing_pct.median()), 2) if len(g) else None,
+                            median_opposing_pct_enr=round(float(g.opposing_pct_enr.median()), 2) if len(g) else None,
                             median_cos_weighted=round(float(g.cos_weighted.median()), 5) if len(g) else None,
+                            median_cos_enr_weighted=round(float(g.cos_enr_weighted.median()), 5) if len(g) else None,
                             drugs=",".join(sorted(g.cmap_name.dropna().unique()))))
     C = pd.DataFrame(ctl)
     C.to_csv(OUT / "controls.tsv", sep="\t", index=False)
@@ -224,7 +279,7 @@ def main() -> int:
 
     (OUT / "run.json").write_text(json.dumps(dict(
         script="79af_nested_cosine_window.py", spec="docs/SPEC_nested_cosine_window.md",
-        min_genes=MIN_GENES, cohorts=COHORTS, networks_resolved=nets_used,
+        min_genes=MIN_GENES, cohorts=cohorts, mode="all" if ALL else "spec", networks_resolved=nets_used,
         d150_mapping_bug="BRCA-Her2 was hardcoded to BRCA_BAS; net_for() now resolves it",
         skipped=skipped, acceptance=verdict, n_rows=int(len(D)),
         runtime_s=round(time.time() - t0, 1)), indent=1))

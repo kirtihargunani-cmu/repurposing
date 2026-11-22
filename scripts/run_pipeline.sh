@@ -131,8 +131,14 @@ run "79k window long" "$RES/drug_ranking_by_window_v2_tf.tsv" \
 # table at ALL=1 scale would be ~95M rows and no test reads it, hence NO_TARGETS.
 run "79e3 window contrib" "$RES/regulon_contributions_v2_tf/regulator_contributions_by_window.tsv.gz" \
                   -- env SFX=_v2_tf $PY scripts/79e3_window_contributions.py
+# D194: COSINE=1 adds, per (cohort, drug, window, regulator), the cosine between the gene-level
+# DISEASE contributions (50b) and the gene-level DRUG contributions. Both sides already carry each
+# edge's own tfmode x likelihood, so the per-gene weights are maintained end to end rather than
+# rebuilt from z-scores. 18.5M rows; 79ah reduces it to what the page can embed.
 run "79e3 window contrib ALL" "$RES/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz" \
-                  -- env SFX=_v2_tf ALL=1 NO_TARGETS=1 $PY scripts/79e3_window_contributions.py
+                  -- env SFX=_v2_tf ALL=1 COSINE=1 NO_TARGETS=1 $PY scripts/79e3_window_contributions.py
+run "79ah cosine summary" "$RES/contribution_cosine_per_drug.tsv.gz" "$RES/contribution_cosine_summary.tsv" \
+                  -- $PY scripts/79ah_cosine_summary.py
 fi
 
 # ---------------------------------------------------------------------------------- labels
@@ -155,6 +161,10 @@ run "79ad approved concordance (D184)" "$RES/approved_concordance" \
                   -- $PY scripts/79ad_approved_concordance.py
 run "79ae moa-disjoint shortlist (D185)" "$RES/approved_concordance/moa_disjoint_shortlist.tsv" \
                   -- $PY scripts/79ae_moa_disjoint_shortlist.py
+# D192: approval RECOVERY per (cohort, window), each window's AUC against the pooled score on the
+# SAME rows. Needs 79aa's labels and 79j's window columns, so it sits here, after both.
+run "79ag window accuracy (D192)" "$RES/window_accuracy.tsv" \
+                  -- env SPLIT_SFX=_v2_tf $PY scripts/79ag_window_accuracy.py
 fi
 
 # ------------------------------------------------------------------------------------ pages
