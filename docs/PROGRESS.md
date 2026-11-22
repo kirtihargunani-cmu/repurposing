@@ -2150,3 +2150,23 @@ noise.**
 
 **Open, deliberately left to data:** whether raising a suppressed regulator ever helps is empirical,
 not a scoring question. D178's phase-progression test covers **211 agonist pairs**.
+
+## 2026-11-22 — The nested array under every regulator score is now kept (D179)
+
+**Question (user):** are we keeping the per-target layer inside each master-regulator NES? **No, we were not.** `50_viper.R`
+wrote regulator, NES, p, size and nothing underneath; `79d`/`79e` likewise collapsed drug activity and reversal to one number.
+
+**Built, both sides, re-scoring nothing:**
+
+- `scripts/50b_regulon_contributions.R`: per (unit, regulator, target) the tumour z, mode, likelihood and additive share of the
+  enrichment score. Exact against VIPER's own ES (3.8e-15, all 55 units). NES share is a proportional allocation because the
+  stored NES used the permutation null.
+- `scripts/79e2_regulon_contributions.py`: drug activity -> per-disease activity -> `rev`, split per regulator and per target,
+  **exactly**. Reproduces the production activity (6.2e-7) and the stored `rev` of all 7,263 FDA-ranking rows (5e-4, rounding).
+  Bulk tables for the FDA rows; `QUERY=<unit>:<drug>` for any other drug in full.
+
+**First readings.** Reversal is diffuse: the 10 largest regulators carry a median 8.5% of a row's absolute regulator mass.
+Palbociclib in LUSC is the E2F program (E2F7/1/8/2, MYBL2, FOXM1, CENPA) through proliferation targets up 13-24 z in the tumour
+and down ~3 z under the drug: on-mechanism, but the shared proliferation axis. ESR1 in LumA has no target above 3% of its score.
+
+Docs: PIPELINE_V2 6a-bis, PIPELINE_DRUG_SIDE_V2 4a + column note, DISEASE_SIDE_PLAIN_LANGUAGE, DRUG_SIDE_PLAIN_LANGUAGE.

@@ -74,6 +74,17 @@ regulators**, are what the drug side later tries to push back toward healthy.
 Removing the identity links helped anti-estrogens only a little on the drug side: luminal A rose from the 9.7th to
 the 12.3rd percentile and luminal B from the 23.4th to the 26.0th. Whether to switch to these lists is still open.
 
+### Looking inside a switch's score (2026-11-22, D179)
+
+Each master-regulator score ("how far this switch is turned up or down in the tumor") is built from the genes the
+switch controls. Until now we kept only the final score. We now also keep the **breakdown underneath it**: for each
+cancer, each switch, and each gene the switch controls, how much that gene moved in the tumor and how much it adds to
+the switch's score. The pieces add back up to the score exactly, so nothing is approximated, and nothing about the
+scores themselves changed. In luminal breast cancer, for example, you can now see that the estrogen-receptor switch
+reads as "on" because of many small pieces: no single gene supplies more than 3% of the score, and the largest are
+estrogen-linked luminal genes (FOXA1, XBP1, TBC1D9, SLC39A6), all strongly up in the tumor. This lets anyone check
+whether a switch's score rests on genes that make biological sense, or on a few odd ones.
+
 ### Subgroups
 
 20 of 41 cancers show significant structure. Six pass every keep rule, and colon cancer is kept as an exception: it

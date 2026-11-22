@@ -83,6 +83,21 @@ flowchart LR
 - Outputs: `data/processed/lincs/drug_viper_specific_v2_tf/<NET>.f32`, `drug_viper_specific_collectri/ALL.f32` (not in
   git); regulator tables `results/lincs/drug_viper_regulators_*.tsv`.
 
+### 4a. Per-target breakdown of drug activity and of the reversal score (`79e2_regulon_contributions.py`; D179, 2026-11-22)
+- Keeps the nested array the ranking collapses: **reversal -> regulator -> regulon target**. Nothing is re-scored.
+  Drug activity has no null model (79d `viper(..., method="none")`), so NES = ES x w and the per-target split is
+  **exact**: `A_i = sum_j c_ij`. 79e's line weighting is linear, so the terms carry through to the drug activity per
+  disease, and `rev = -sum_i nes_i a_i / norm` splits per regulator and per target, also exactly.
+- Checks (the run stops if either fails): activity recomputed for 200 random profiles per network vs the production
+  `.f32`; the regulator terms summed vs the stored `rev` for every row written.
+- Scope: the full profile x regulator x target array is ~1e9 values per network and is not written. Written for every
+  FDA-ranking row (41 groups + 14 subgroups): `results/lincs/regulon_contributions_v2_tf/regulator_contributions.tsv.gz`
+  (every tested regulator: `disease_nes drug_activity rev_contrib rank_in_drug`) and `target_contributions.tsv.gz` (the
+  `TOP_REGS`=25 regulators with the largest |rev_contrib| per row, every target: `tfmode likelihood drug_z
+  activity_contrib rev_contrib`, joined to the same edge on the disease side, `disease_z disease_contrib_nes`).
+  Any other drug, in full: `QUERY=<unit>:<cmap_name or pert_id> python scripts/79e2_regulon_contributions.py`.
+- Needs `50b` (EDGES=1, then groups and STRATA=1) first.
+
 ### 5. Proliferation-linked regulators (`prolif_regulators_*`, `79h`)
 - Per regulon set: regulators whose targets are enriched for proliferation genes (Hallmark E2F + G2M, FDR < 0.05,
   fold >= 2). Used by the split in step 9. Outputs: `results/lincs/prolif_regulators_v2_tf.tsv`,
@@ -374,6 +389,12 @@ flowchart LR
 | `tier_rev`, `tier_spec`, `tier_mech`, `tier_spec_mech`, `tier_sib` | 1 approved + gate + top 10% + unflagged; 2 not approved; 3 rest |
 | `evidence_status`, `evidence_note` (summary files) | matched / borrowed only / no adequate compound, and the report sentence |
 | `fda_rank`, `fda_status`, `first_fda_approval`, `drugsatfda_url` (FDA files) | rank among the cohort's eligible FDA drugs; marketed or discontinued |
+
+Per-target breakdown (`regulon_contributions_v2_tf/`, D179): `rev_contrib` (regulator level) sums to `rev` over the
+regulators of a row; `rev_contrib` (target level) sums to the regulator's `rev_contrib` over its targets (top 25
+regulators per row only, so it does NOT sum to `rev` in that table); `activity_contrib` sums to `drug_activity`.
+`disease_contrib_nes` is a proportional allocation of the disease NES (see PIPELINE_V2 6a-bis); the drug-side terms are
+exact.
 
 ## Results and caveats (short)
 
