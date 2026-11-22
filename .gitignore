@@ -21,3 +21,4 @@ results/lincs/d128/**/cache/
 # systems_validation: CARNIVAL LP/solver intermediates (regenerable, >100MB)
 results/systems_validation/**/work/
 logs/runs/
+results/lincs/regulon_contributions_*/query_*
