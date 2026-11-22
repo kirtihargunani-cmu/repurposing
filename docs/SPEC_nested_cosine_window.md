@@ -108,3 +108,27 @@ Script: `scripts/79af_nested_cosine_window.py`.
 
 The git commit adding this file is the registration. Later changes to sections 1–4 go in a new
 dated section, never an edit in place.
+
+---
+
+## 7. POST-HOC, 2026-11-22 — the registered criterion was too weak to be informative
+
+**Added after the run and labelled as post-hoc; section 4 is NOT edited.**
+
+The section 4.1 criterion (anti-estrogens in BRCA-LumA: early median opposing pct > late, and
+early > 50) **passed**: early 58.98, late 24.27. But it was registered **without a null**, and a
+within-cohort permutation (20,000 draws of n drugs from the same cohort-window pool, seed 0) shows:
+
+| cohort | window | control | n | median opposing pct | p(>= by chance) |
+|---|---|---|---|---|---|
+| BRCA-LumA | early | anti-estrogen | 4 | 58.98 | **0.331** |
+| BRCA-LumA | late | anti-estrogen | 12 | 24.27 | 0.981 (i.e. **p ≈ 0.019 for being this LOW**) |
+| TCGA-SKCM | early | BRAF | 2 | 24.04 | 0.886 |
+| TCGA-SKCM | late | BRAF | 2 | 66.00 | 0.231 |
+
+**The early result is indistinguishable from chance.** Registering a directional criterion with no
+null was a spec defect, and the pass must not be read as support.
+
+**The informative result is the LATE window**, and it is significant in the *wrong* direction:
+anti-estrogens' gene-level pattern **agrees** with LumA disease at >= 24 h. That is D152's MCF7
+inversion reproduced at cohort scale, on an independent quantity.

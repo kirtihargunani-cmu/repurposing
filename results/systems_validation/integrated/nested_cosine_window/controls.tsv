@@ -1,0 +1,7 @@
+control	cohort	window	n	median_opposing_pct	median_cos_weighted	drugs
+anti_estrogen	BRCA-LumA	early	4	58.98	-0.02712	clomifene,fulvestrant,raloxifene,tamoxifen
+anti_estrogen	BRCA-LumA	late	12	24.27	0.06248	bazedoxifene,clomifene,fulvestrant,raloxifene,tamoxifen,toremifene
+anti_estrogen	BRCA-Her2	early	4	56.98	-0.0163	clomifene,fulvestrant,raloxifene,tamoxifen
+anti_estrogen	BRCA-Her2	late	12	66.82	-0.02832	bazedoxifene,clomifene,fulvestrant,raloxifene,tamoxifen,toremifene
+braf	TCGA-SKCM	early	2	24.04	0.04438	dabrafenib,vemurafenib
+braf	TCGA-SKCM	late	2	66.0	-0.02162	dabrafenib,vemurafenib
