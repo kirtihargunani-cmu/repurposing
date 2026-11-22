@@ -196,6 +196,19 @@ reasons in `genes_v2_dropped.tsv`):
   regulator rule D18. CollecTRI reaches FDR < 0.10 in few groups on the corrected null, which no longer matters for
   ranking (D74).
 
+**6a-bis. Per-target breakdown of every master-regulator NES (D179, 2026-11-22;** `VERSION=v2 REGSET=tf [STRATA=1]
+[EDGES=1] Rscript scripts/50b_regulon_contributions.R`**).** `group_mr.tsv` keeps one number per regulator. This step
+keeps the nested array under it: regulator -> each regulon target, with the target's tumour-vs-normal z, its mode and
+likelihood in the regulon, and its additive share of the score. Nothing is re-scored. It rebuilds the exact msviper input
+(same signature, regulator filter, target pruning and gene universe) and splits aREA's enrichment score as
+`ES = sum_j c_j`, `c_j = (m_j l_j t2_j + s (1-|m_j|) l_j t1_j [S2 > 0]) / sum l`. That split is exact: it reproduces
+VIPER's own ES to 4e-15 in all 55 units. The stored NES comes from the permutation null, a monotone rescaling that the
+null permutations do not let us replay exactly, so `contrib_nes = c_j * NES / ES` is a proportional allocation that sums
+to the NES. Outputs: `results/step6/aracne_project_v2_tf[_strata]/regulon_contributions.tsv.gz` (not in git; columns
+`group_id regulator nes es target target_symbol tfmode likelihood z t2 contrib_es contrib_nes share`) and
+`regulon_contributions_check.tsv`. `EDGES=1` also writes every regulon edge to
+`data/processed/step5/regulons_aracne_project_v2_tf_edges.tsv.gz` for the drug side (`79e2`).
+
 **6b. Patient level** (`VERSION=v2 REGSET=tf Rscript scripts/61_quality_correct.R`; purity part `56_purity_correct.R`):
 - Each tumor's expression is corrected for ESTIMATE purity and RNA quality; the healthy samples are corrected for
   quality and collection covariates and set to the anchor; VIPER per patient against them.

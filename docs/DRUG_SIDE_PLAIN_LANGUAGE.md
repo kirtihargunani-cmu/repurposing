@@ -1097,3 +1097,17 @@ from a single comparison in thyroid cancer that was **already failing before thi
 our method cannot actually resolve: two of the drugs score 100.0 in *both* groups, an exact tie. So
 the fall says more about that test than about the change. But the bar was set beforehand and it is
 not met, and that is how we are recording it.
+
+
+## Seeing what a drug's score is made of (2026-11-22, D179)
+
+A drug's score for a cancer is a sum over hundreds of switches (regulators), and each switch's reading is itself a sum
+over the genes it controls. We used to keep only the final number. Now we keep every layer: for a drug in a cancer, which
+switches it pushes the right way and which the wrong way, and under each switch, which genes moved. The layers add up
+exactly to the score, so this is a true breakdown, not an estimate.
+
+Example: palbociclib in lung squamous cancer scores well because it shuts down the E2F cell-division switches, through
+genes such as FOXM1, MYBL2 and MKI67 that are strongly up in the tumor. That is exactly how palbociclib is meant to
+work, and it is also the general "stop dividing" signal that many cancer drugs share. The breakdown makes that
+visible for any drug. Across drugs, scores are usually spread thin: the ten biggest switches typically carry under a
+tenth of the total.
