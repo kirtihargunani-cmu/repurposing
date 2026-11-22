@@ -1,0 +1,44 @@
+{
+ "spec": "docs/SPEC_window_imputation.md",
+ "seed": 0,
+ "n_split": 20,
+ "folds": 5,
+ "thresholds": {
+  "beat_b1": 0.1,
+  "ceiling_frac": 0.6,
+  "sign": 0.75,
+  "tissue_drop": 0.1
+ },
+ "reliability": [
+  {
+   "window": "early",
+   "n_rows": 308,
+   "n_obs": 1224,
+   "r_half": 0.5139,
+   "reliability": 0.6789,
+   "ceiling": 0.824,
+   "r_half_sd": 0.0096
+  },
+  {
+   "window": "late",
+   "n_rows": 308,
+   "n_obs": 1224,
+   "r_half": 0.6597,
+   "reliability": 0.795,
+   "ceiling": 0.8916,
+   "r_half_sd": 0.008
+  }
+ ],
+ "verdicts": [
+  {
+   "direction": "late->early",
+   "VERDICT": "CLOSED"
+  },
+  {
+   "direction": "early->late",
+   "VERDICT": "CLOSED"
+  }
+ ],
+ "n_both_rows": 4128,
+ "runtime_s": 79.2
+}

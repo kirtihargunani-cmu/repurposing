@@ -2276,3 +2276,113 @@ phase 3, all matching the LGG regex. The labelling is correct; the row it would 
 Generally: **only 219 of 486 FDA-matched drugs are scored in all 55 units, and 158 are scored in just 1-2 units.**
 So a large share of the labels we now have can never be used. That bounds any learning layer and the known-use metric
 alike, and it is a property of drug x cell-line coverage, not of the labels.
+
+## 2026-11-22 — Window imputation is closed, and that is a positive result (D183)
+
+Run exactly as pre-registered in `docs/SPEC_window_imputation.md`, which was committed before the script was
+written. No threshold was moved.
+
+### It is not that the measurement is too noisy
+
+The first thing the spec computes, before any model, is how well a window score agrees with itself —
+split-half within window, Spearman-Brown to full length:
+
+| window | reliability | attainable ceiling | sd over 20 repeats |
+|---|---|---|---|
+| early | **0.679** | 0.824 | 0.010 |
+| late | **0.795** | 0.892 | 0.008 |
+
+These are reproducible measurements, precisely estimated.
+
+### Nothing beats copying the other window across
+
+| method | late→early | early→late |
+|---|---|---|
+| **B1 identity** | **0.382** | **0.382** |
+| M1 linear | 0.380 | 0.378 |
+| M2 linear + context | 0.380 | 0.378 |
+| M3 gradient boosting + annotation | 0.336 | 0.375 |
+| B0 cohort median | 0.059 | 0.047 |
+| B3 drug's mean elsewhere | −0.048 | −0.055 |
+
+Sign agreement 0.625–0.630 against a pre-set bar of 0.75; the best model reaches 0.42–0.46 of the ceiling
+against a bar of 0.60. **CLOSED in both directions.**
+
+### The headline: ~80% of the reliable variance is non-redundant
+
+The target window has reliable variance 0.679 / 0.795. The other window explains 0.382² = 0.146 of it. So
+**78.5% (early) and 81.6% (late) of what is reliably measurable in one window is simply not present in the
+other.** That gap is the result.
+
+### The discordance is biology, and the earlier caveat was wrong
+
+When reporting D182's 37.7% regulator-level sign flip I said part of it was probably measurement noise. The
+user disagreed before this test ran — *"the discordance is not an artifact, it can be interpreted"* — and the
+data agrees with them. If it were noise it would collapse as conditions accumulate. It does not:
+
+| min conditions behind the pair | n | discordant |
+|---|---|---|
+| 1 | 2,904 | 38.8% |
+| 2 | 582 | 34.4% |
+| 3–4 | 385 | 34.0% |
+| 5+ | 257 | 35.8% |
+
+Better measurement raises agreement only slightly (ρ 0.382 → 0.449 in the ≥2-condition subset) and leaves a
+third of pairs discordant. **The caveat is retracted.**
+
+### A finding the spec did not anticipate
+
+**Window behaviour is cohort-specific, not a drug property.** The drug's mean score in its *other* cohorts
+predicts the held-out window at ρ = **−0.05** — nothing. Within-drug spread of `rev_early − rev_late` is
+**7.90** against a between-drug spread of **12.88**, so most of the variation lives *within* a drug across
+diseases. "Drug X is an early-acting drug" is not a statement this data supports.
+
+### Consequences
+
+- `unknown` (D180) is now the empirically correct label, not just the cautious one.
+- D171's decision to carry the window as an explicit output dimension rather than pool is vindicated.
+- D184 runs on pooled profiles, as its spec already states — no window-resolved profile can be imputed.
+
+## 2026-11-22 — Top-reversing drugs do share the approved mechanism profile (D184)
+
+Window-matched, as amended: the unit is (cohort, window), and early and late are never pooled.
+
+| | early | late |
+|---|---|---|
+| cells | 10 | 11 |
+| **effect (median conc T − N)** | **+0.277** | **+0.312** |
+| p (10,000 within-cell permutations) | < 1e-4 | < 1e-4 |
+| cells positive | **10/10** | **11/11** |
+| PC1 removed | +0.135 (8/10) | +0.333 (10/11) |
+| **MOA-disjoint** | **+0.263 (9/9)** | **+0.312 (11/11)** |
+| reference coherence (ceiling) | 0.277 | 0.401 |
+
+Median cosine to the approved centroid is **0.40–0.73 for the top-reversing drugs against 0.02–0.38 for the
+rank-matched null**.
+
+**The PC1 arm separates the two windows.** Removing the shared axis halves the early effect (0.277 → 0.135)
+but leaves late untouched (0.312 → 0.333). So about half the early signal is the generic proliferation-like
+axis, while the late signal is something else. That is a per-window difference the pooled design could not
+have seen.
+
+### Two process failures, both caught and recorded
+
+**The first run was uninterpretable and is discarded.** T was defined by `layered_pct`, which needs an
+identified target unit and is populated for only **13.8%** of window rows — a top-decile cut on it dropped
+44 of 47 cells. Amendment 2 ranks T by the window's own reversal percentile (100% covered). The consequence
+is a narrower claim: **this tests the reversal ranking within a window, not the production lead score**,
+which has no window-resolved version.
+
+**Criterion 4 first passed vacuously.** `evidence_targets` is populated for 21.6% of rows, and unannotated
+drugs were being counted as "shares nothing with the approved set" — making **89.6% of T "MOA-disjoint"**. A
+drug with no annotation is *unknown*, not disjoint. Requiring annotation drops that to **34%**, and the
+effect survives. Without that check the headline would have rested on missing data.
+
+### What it does and does not show
+
+26 of 47 cells were dropped, every one for fewer than 3 approved drugs; the covered diseases are breast (4),
+lung (2), colorectal (2), prostate, liver and melanoma.
+
+Per the spec's own section 1, this does **not** by itself validate the ranking — resembling an approved drug
+is not the objective. What makes it worth having is the MOA-disjoint arm: top-reversing drugs converge on the
+approved mechanism profile **without sharing their annotated targets or MOA class**.
