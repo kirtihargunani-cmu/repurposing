@@ -14,9 +14,9 @@ late** and pools to 46.7 (D170). This script makes the window an explicit dimens
     window_coverage == both        -> TWO rows, window = early and window = late
     window_coverage == early_only  -> ONE row,  window = early
     window_coverage == late_only   -> ONE row,  window = late
-    no window data                 -> ONE row,  window = pooled
+    window_coverage == unknown     -> ONE row,  window = unknown (D180; was "pooled"), with window_unknown_reason
 
-**`pooled` is a label, not a window.** It means "averaged over whatever timepoints existed, window
+**`unknown` (formerly `pooled`) is a label, not a window.** It means "averaged over whatever timepoints existed, window
 unknown" and is the honest answer where condition-level data does not exist. It is kept rather than
 dropped because dropping it would delete most of the atlas: only **29 of 41 cohorts** have any
 window data, and **12 have zero condition-level profiles in their matched cell lines** - no window
@@ -73,9 +73,10 @@ def main():
         key = pd.MultiIndex.from_arrays([r.group_id, r.pert_id])
         r["n_conditions"] = nc[f"n_conditions_{side}"].reindex(key).values
         out.append(r)
-    m = d.window_coverage.isna()
+    m = d.window_coverage.isna() | d.window_coverage.eq("unknown")
     r = base[m].copy()
-    r["window"] = "pooled"
+    r["window"] = "unknown"
+    r["window_unknown_reason"] = d.loc[m, "window_unknown_reason"].values if "window_unknown_reason" in d else pd.NA
     r["window_score"] = d.loc[m, "rev"].values
     r["window_score_pct"] = d.loc[m, "rev_pct"].values if "rev_pct" in d else pd.NA
     for c in ("window_agreement", "window_gap_pct", "n_conditions"):
@@ -93,7 +94,7 @@ def main():
     g = o[tb(o.passes_gate)]
     print(f"\ngate-passing rows {len(g):,}; drugs with BOTH windows: "
           f"{g[g.window.isin(['early','late'])].groupby(['group_id','pert_id']).size().eq(2).sum():,}")
-    print(f"cohorts with any real window: {o[o.window.ne('pooled')].group_id.nunique()} of {o.group_id.nunique()}")
+    print(f"cohorts with any real window: {o[o.window.ne('unknown')].group_id.nunique()} of {o.group_id.nunique()}")
     print(f"wrote {f.relative_to(ROOT)}")
     return 0
 

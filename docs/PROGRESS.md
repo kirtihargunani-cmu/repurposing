@@ -2170,3 +2170,32 @@ Palbociclib in LUSC is the E2F program (E2F7/1/8/2, MYBL2, FOXM1, CENPA) through
 and down ~3 z under the drug: on-mechanism, but the shared proliferation axis. ESR1 in LumA has no target above 3% of its score.
 
 Docs: PIPELINE_V2 6a-bis, PIPELINE_DRUG_SIDE_V2 4a + column note, DISEASE_SIDE_PLAIN_LANGUAGE, DRUG_SIDE_PLAIN_LANGUAGE.
+
+## 2026-11-22 — "Unknown timepoint" is now a category, not a blank cell (D180)
+
+**User:** *"when a drug window/timepoint is unknown, put it in the unknown category ... we want to be able to trace
+where we can specifically say what timepoint a drug has activity at."*
+
+Before this, a drug with no timepoint evidence got an **empty** `window_coverage`, and `79k` called it `pooled`. Empty
+read as "nothing to say", which is exactly what it was not: it meant *we cannot name a timepoint for this drug here*,
+for one of three quite different reasons. Those reasons are now written down per row:
+
+| reason | groups | subgroups |
+|---|---|---|
+| `no_window_run` — the unit was never in the window run | 17,376 | 20,702 |
+| `no_condition_in_lines` — drug has condition profiles, none in this cohort's lines | 29,258 | 0 |
+| `no_condition_profile` — the drug has none at all | 0 | 0 |
+
+**What the blank was hiding: every subgroup row, 100% of them, is `no_window_run`.** The window step never covered
+the 14 subgroups at all. With a blank column that was indistinguishable from "measured, no effect".
+
+Groups: 46,634 of 64,094 rows (72.8%) unknown; 4,128 both windows, 5,823 early-only, 7,509 late-only; 29 of 41 cohorts
+carry any real window.
+
+**A latent bug fixed on the way.** `window_reversal.py` labelled a condition `early` when `pert_time <= 6`. LINCS writes
+an unrecorded time as **-666**, which satisfies that test — an unrecorded timepoint would have been scored as 6-hour
+evidence. No such row exists today (all 26,130 conditions have a recorded time), so no number moves, but the rule was
+wrong and is now `unknown`.
+
+D179's contribution tables also carry `window = "unknown"`: they decompose the pooled score, so they cannot name a
+timepoint either.

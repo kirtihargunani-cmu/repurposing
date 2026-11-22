@@ -18,7 +18,11 @@ WHAT IT ADDS to the split tables, in place and idempotently:
   rev_early, rev_late          the per-window reversal, as computed by D155 (79e's formula)
   rev_early_pct, rev_late_pct  within-cohort percentile of each, over the drugs that HAVE that
                                window, so the two are each read against their own population
-  window_coverage              early_only | late_only | both | (blank = no window data)
+  window_coverage              early_only | late_only | both | unknown (D180: was blank)
+  window_unknown_reason        unknown rows only - why no timepoint can be named (D180):
+                                 no_window_run           the cohort / subgroup was not in the window run
+                                 no_condition_profile    the drug has no condition-level profile at all
+                                 no_condition_in_lines   it has some, none in this cohort's matched lines
   window_agreement             concordant | discordant | not_evaluable
   best_window                  for `both` rows only: which window scores higher, and by how much
   window_gap_pct               rev_early_pct - rev_late_pct (blank unless `both`)
@@ -47,7 +51,8 @@ RES = ROOT / "results/lincs"
 WIN = ROOT / "results/systems_validation/integrated/window_reversal.tsv.gz"
 SFX = os.environ.get("SPLIT_SFX", "_v2_tf")
 COLS = ["rev_early", "rev_late", "rev_early_pct", "rev_late_pct", "window_coverage",
-        "window_agreement", "best_window", "window_gap_pct"]
+        "window_agreement", "best_window", "window_gap_pct", "window_unknown_reason"]
+COND = ROOT / "data/processed/lincs/drug_condition_profiles_index.tsv"
 
 
 def annotate(path, unit):
@@ -75,6 +80,14 @@ def annotate(path, unit):
                                   ).map({True: "early", False: "late"})
     d["window_gap_pct"] = pd.NA
     d.loc[both, "window_gap_pct"] = (d.loc[both, "rev_early_pct"] - d.loc[both, "rev_late_pct"]).round(1)
+    # D180 (user 2026-11-22): a drug whose activity cannot be tied to a timepoint is "unknown", with why
+    unk = d.window_coverage.isna()
+    has_cond = d.pert_id.isin(set(pd.read_csv(COND, sep="\t", usecols=["pert_id"]).pert_id))
+    d["window_unknown_reason"] = pd.NA
+    d.loc[unk, "window_unknown_reason"] = "no_condition_in_lines"
+    d.loc[unk & ~has_cond, "window_unknown_reason"] = "no_condition_profile"
+    d.loc[unk & ~d[unit].isin(set(w[unit])), "window_unknown_reason"] = "no_window_run"
+    d.loc[unk, "window_coverage"] = "unknown"
     d.to_csv(path, sep="\t", index=False)
 
     n = len(d)
@@ -82,10 +95,11 @@ def annotate(path, unit):
     print(f"  {path.name}: {n:,} rows")
     for k in ("both", "early_only", "late_only"):
         print(f"      {k:<11} {int(cov.get(k, 0)):>7,}")
-    miss = sorted(set(d[unit]) - set(d.loc[d.window_coverage.notna(), unit]))
-    print(f"      no window  {int(d.window_coverage.isna().sum()):>7,}  "
-          f"({100 * d.window_coverage.isna().mean():.1f}%; {len(miss)} of {d[unit].nunique()} "
-          f"{unit}s have no window data at all)")
+    unk = d.window_coverage.eq("unknown")
+    miss = sorted(set(d[unit]) - set(d.loc[~unk, unit]))
+    print(f"      unknown    {int(unk.sum()):>7,}  "
+          f"({100 * unk.mean():.1f}%; {len(miss)} of {d[unit].nunique()} {unit}s have no window data at all)")
+    print("      unknown by reason: " + ", ".join(f"{k} {v:,}" for k, v in d.window_unknown_reason.value_counts().items()))
     if both.any():
         g = d.loc[both, "window_gap_pct"].astype(float)
         dis = d.loc[both, "window_agreement"].eq("discordant")

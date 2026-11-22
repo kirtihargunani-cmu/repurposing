@@ -60,8 +60,11 @@ def main():
     t0 = time.time()
     idx = pd.read_csv(PROC / "drug_condition_profiles_index.tsv", sep="\t")
     idx["col"] = np.arange(len(idx))
-    idx["window"] = np.where(idx.pert_time <= 6, "early",
-                             np.where(idx.pert_time >= 24, "late", "other"))
+    # D180: a condition whose time was not recorded (LINCS -666 / NaN) is "unknown", never early
+    # (-666 <= 6 would otherwise have put it there). None exist today (time_recorded is True for all).
+    t = idx.pert_time.where(idx.pert_time >= 0)
+    idx["window"] = np.where(t.isna(), "unknown",
+                             np.where(t <= 6, "early", np.where(t >= 24, "late", "other")))
     annot = pd.read_csv(ROOT / "results/lincs/drug_annotations.tsv", sep="\t")
     nm = dict(annot.drop_duplicates("pert_id")[["pert_id", "cmap_name"]].values)
     mr = pd.read_csv(ROOT / "results/step6/aracne_project_v2_tf/group_mr.tsv", sep="\t")

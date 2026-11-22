@@ -47,6 +47,7 @@ STEPS=(
   "data_gaps|Where good-quality lineage-matched data run out, per group and subgroup (C24)|$PY scripts/79r_data_gaps.py"
   "literature|PubMed / trial links for each disease's top 10 by specificity and by reversal|$PY scripts/79o_literature.py"
   "fda_ranking|FDA-approved drug rankings per disease and subgroup (Drugs@FDA)|$PY scripts/79p_fda_ranking.py"
+  "regulon_contrib_drug|Drug reversal -> regulator -> target breakdown for every FDA-ranking row (79e2, D179); needs run_v2.sh regulon_contrib + strata_regulon_contrib|VERSION=v2 REGSET=tf N_CORES=6 $PY scripts/79e2_regulon_contributions.py"
   "literature_fda|PubMed / trial links for each cohort's top 3 FDA drugs, by FDA name|MODE=fda $PY scripts/79o_literature.py"
   "literature_fda_all|PubMed / trial links for every FDA drug row of the rankings page, by FDA name (cached, resumable)|MODE=fda_all $PY scripts/79o_literature.py"
   "trials_fetch|Trials of each cohort's top 10 FDA drugs: stop reasons, completed-trial reading queue (79o2, D108)|STAGE=fetch $PY scripts/79o2_trial_outcomes.py"

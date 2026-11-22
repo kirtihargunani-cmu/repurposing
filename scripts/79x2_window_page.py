@@ -10,13 +10,13 @@ Every drug is shown with the TIMEPOINT WINDOW its score came from, because `79c`
 
 Per cohort, one row per drug: the lead score (`layered_pct`, D122), the mechanism-specific
 percentile, and the per-window reversal percentiles with the gap between them. Rows carry the
-window badge early / late / both / pooled, and the gate flags that must be read WITH the scores
+window badge early / late / both / unknown, and the gate flags that must be read WITH the scores
 (D168): `target_absent` means every curated mechanism target is unexpressed, so a high reversal
 percentile beside it is a suppressed false positive, not a lead.
 
 Honest limits shown on the page itself, not only here:
   * only 29 of 41 cohorts have ANY window data; 12 have zero condition-level profiles in their
-    matched cell lines, so `pooled` there is permanent, not pending
+    matched cell lines, so `unknown` there is permanent, not pending
   * `n_conditions` is usually 1, so a large early-late gap is a flag for inspection, not an
     effect size
   * early and late percentiles are computed over DIFFERENT populations (the drugs having that
@@ -80,16 +80,16 @@ def main():
             except KeyError:
                 return np.nan
         e, l_ = pv("window_score_pct", "early"), pv("window_score_pct", "late")
-        p = pv("window_score_pct", "pooled")
+        p = pv("window_score_pct", "unknown")
         ce, cl = pv("n_conditions", "early"), pv("n_conditions", "late")
         win = ("both" if pd.notna(e) and pd.notna(l_) else
-               "early" if pd.notna(e) else "late" if pd.notna(l_) else "pooled")
+               "early" if pd.notna(e) else "late" if pd.notna(l_) else "unknown")
         gap = num(e - l_) if pd.notna(e) and pd.notna(l_) else None
         rows.setdefault(g, []).append([
             nm,                                   # 0 drug
             num(r.get("layered_pct")),            # 1 lead score
             num(r.get("spec_mech_pct")),          # 2 mechanism-specific pct
-            num(e), num(l_), num(p),              # 3,4,5 early / late / pooled pct
+            num(e), num(l_), num(p),              # 3,4,5 early / late / unknown-timepoint (pooled score) pct
             gap,                                  # 6 early - late
             win,                                  # 7 badge
             num(ce, 0), num(cl, 0),               # 8,9 conditions per window
@@ -101,7 +101,7 @@ def main():
     for g in rows:
         rows[g].sort(key=lambda x: (x[1] is None, -(x[1] or 0)))
 
-    cov = {g: sum(1 for r in v if r[7] != "pooled") for g, v in rows.items()}
+    cov = {g: sum(1 for r in v if r[7] != "unknown") for g, v in rows.items()}
     meta = {
         "cohorts": sorted(rows, key=lambda g: (-cov[g] / max(1, len(rows[g])), g)),
         "n_rows": int(sum(len(v) for v in rows.values())),
