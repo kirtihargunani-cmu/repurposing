@@ -214,3 +214,45 @@ Scripts: `scripts/79am_c1_nes_ambiguity.py`, `scripts/79an_c2_program_reality.py
 
 The git commit adding this file is the registration. Any later change to sections 4–6 is a new
 dated section in this document, never an edit in place.
+
+---
+
+## 10. AMENDMENT, 2026-11-22 — two defects in section 4, found on running it
+
+**Section 4 is NOT edited; this records what it got wrong and what the corrected analysis shows.**
+
+### 10.1 Criterion 2 was partly tautological
+
+`actᵢ = Σⱼ Cᵢⱼ`, so two drugs with **opposite-sign** activity are forced to have gene contribution
+vectors pointing opposite ways. The registered Spearman therefore measured sign agreement — true by
+construction — rather than fine structure. **The tautology was identified when reporting the
+failure, before the corrected analysis was run.**
+
+Restricted to **same-sign** pairs (468 units), the non-tautological question gives:
+
+| | pooled | early | late |
+|---|---|---|---|
+| matched `s_gene` | 0.290 | 0.238 | 0.327 |
+| ceiling | 0.531 | 0.376 | 0.590 |
+| matched / ceiling (bar < 0.60) | **0.545 PASS** | 0.632 FAIL | **0.554 PASS** |
+| Spearman (bar < 0.30) | **+0.041 PASS** | +0.095 PASS | **+0.0001 PASS** |
+
+### 10.2 Section 4 registered a POOLED statistic across windows
+
+D191, D198 and D201 all required windows reported separately; section 4 did not. The two windows
+have very different reliability — ceiling **0.376 early vs 0.594 late** (85 vs 155 split-half
+cells) — so pooling mixes populations. Split, the registered criterion 1 gives **early 0.686 FAIL,
+late 0.566 PASS**; the pooled 0.605 failure was early dragging the median over the bar.
+
+### 10.3 Standing verdict
+
+**As registered, C1 is NOT SUPPORTED** (pooled 0.605 ≥ 0.60; |ρ| 0.758 ≥ 0.30). That stands.
+
+**Corrected for the tautology and split by window, the claim holds in the late window and is
+inconclusive in the early one**, where the instrument's own reliability (0.376) is close to the
+section 4.2 floor below which the spec pre-committed to calling the test inconclusive.
+
+The supportable statement is **not** "one NES means several things" but: *within a direction of
+effect, the activity value leaves ~45% of the reproducible gene pattern undetermined, and predicts
+essentially none of it (ρ ≈ 0.04).* That is weaker than the original claim and sufficient for
+everything built on it.

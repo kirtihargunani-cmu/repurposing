@@ -1,0 +1,20 @@
+{
+ "script": "79am_c1_nes_ambiguity.py",
+ "spec": "docs/SPEC_interpretation_validation.md#4",
+ "min_drugs": 8,
+ "decile": 0.1,
+ "max_pairs": 4000,
+ "seed": 0,
+ "ceiling_R": 0.5313114999999999,
+ "n_units": 1956,
+ "median_s_matched": 0.2994984480406826,
+ "median_s_unmatched": -0.35806774311729944,
+ "matched_over_ceiling": 0.6053526423755344,
+ "median_rho": -0.7578312420910447,
+ "acceptance": {
+  "c1_matched_below_ceiling": false,
+  "c2_weak_rho": false,
+  "supported": false
+ },
+ "inconclusive_low_ceiling": false
+}
