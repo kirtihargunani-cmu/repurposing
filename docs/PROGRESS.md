@@ -2477,3 +2477,12 @@ biomarker signal (BRAF/MEK inhibitors are filtered out of lung squamous); the ge
 among eligible drugs does not rank a drug higher in its biomarker cohort. 3,382 eligible pairs have
 no timepoint data and are `unknown` with a reason. Adopted as production by the user's decision;
 flagged for review.
+
+## 2026-11-23 — Audit of the perturbation incremental-value spec
+
+`docs/AUDIT_SPEC_Perturbation_Mechanistic_Incremental_Value.md`. Sound guardrails, not ready to register: written
+before D210-D212 (misses that `rev_gene` is now production), Experiment A's PRISM/GDSC outcome was already examined
+against these scores (C16, C28), its producer already exists (`79k_sensitivity_validation.py`, last built pre-D208),
+the primary outcome is not fixed, and B's uncertainty-based sign rule fails for 90% of conditions (median 1
+signature; 400 drug x line pairs with >= 2 conditions in both windows). Coverage for A passes (10-12 cohorts with
+>= 20 ingredients per dataset and window). Only coverage was computed; no proposed outcome was examined.
