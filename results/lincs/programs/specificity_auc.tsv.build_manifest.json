@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T213639-2948606",
+ "finished_at": "2026-11-22T21:36:42-05:00",
+ "duration_s": 2,
+ "script": "79al_program_specificity.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79al_program_specificity.py",
+ "env": "",
+ "git_sha": "496392d",
+ "git_state": "dirty",
+ "note": "D201 specificity-decomposed program score",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "specificity_auc.tsv": {
+   "bytes": 1663,
+   "mtime": "2026-11-22T21:36:42-05:00"
+  }
+ }
+}
