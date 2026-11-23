@@ -1,0 +1,31 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T222514-2964511",
+ "finished_at": "2026-11-22T22:37:21-05:00",
+ "duration_s": 727,
+ "script": "79am_c1_nes_ambiguity.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79am_c1_nes_ambiguity.py",
+ "env": "",
+ "git_sha": "bb3b40c",
+ "git_state": "dirty",
+ "note": "D202/C1 NES ambiguity",
+ "expect": null,
+ "n_files": 3,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "c1_nes_ambiguity.tsv": {
+   "bytes": 143628,
+   "mtime": "2026-11-22T22:37:20-05:00"
+  },
+  "c1_pairs_sample.tsv.gz": {
+   "bytes": 821601,
+   "mtime": "2026-11-22T22:37:21-05:00"
+  },
+  "c1_run.json": {
+   "bytes": 517,
+   "mtime": "2026-11-22T22:37:21-05:00"
+  }
+ }
+}

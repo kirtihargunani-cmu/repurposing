@@ -71,6 +71,12 @@ WIN = ROOT / "results/systems_validation/integrated/window_reversal.tsv.gz"
 MR_DIR = ROOT / f"results/step6/aracne_project{SFX}"
 OUT = RES / f"regulon_contributions{SFX}"
 TOP_REGS = int(os.environ.get("TOP_REGS", "25"))
+SPLITHALF = os.environ.get("SPLITHALF") == "1"  # D202/C1: the reliability CEILING. Split a drug's
+                                           # conditions in half, build the gene contribution vector
+                                           # from each half, and take the per-regulon cosine. No
+                                           # predictor can match a vector better than it matches
+                                           # itself, so this bounds every C1 comparison.
+SPLIT_SEED = int(os.environ.get("SPLIT_SEED", "0"))
 COSINE = os.environ.get("COSINE") == "1"   # D194: per-regulon cosine between the DISEASE and DRUG
                                            # contribution vectors - the pipeline's own per-gene
                                            # edge-weighted quantities, not a reconstruction from z.
@@ -165,7 +171,7 @@ def run_cohort(args):
         dm = dz.drop_duplicates(["regulator", "target"]).set_index(["regulator", "target"]).disease_contrib_nes
         dvec = np.nan_to_num(dm.reindex(
             pd.MultiIndex.from_arrays([N.regs[N.reg], N.target])).to_numpy(dtype=np.float64))
-    R, T = [], []
+    R, T, SH = [], [], []
     for r in sel.itertuples():
         g = sub[(sub.pert_id == r.pert_id) & (sub.window == r.window)]
         if not len(g):
@@ -175,6 +181,26 @@ def run_cohort(args):
         ww = ww / ww.sum()
         C = ww @ N.contrib(g.col.values)
         cos_term = None                       # D195: per-gene share of the regulon cosine
+
+        if SPLITHALF and len(g) >= 2:
+            rng = np.random.default_rng(SPLIT_SEED + abs(hash((cohort, r.pert_id, r.window))) % 10**6)
+            perm = rng.permutation(len(g))
+            ha, hb = perm[: len(g) // 2], perm[len(g) // 2:]
+
+            def _half(h):
+                w2 = ww[h]
+                w2 = w2 if w2.sum() > 0 else np.ones(len(h))
+                return (w2 / w2.sum()) @ N.contrib(g.col.values[h])
+
+            CA, CB = _half(ha), _half(hb)
+            dot = np.add.reduceat(CA * CB, N.starts)
+            na = np.sqrt(np.add.reduceat(CA * CA, N.starts))
+            nb = np.sqrt(np.add.reduceat(CB * CB, N.starts))
+            den = na * nb
+            ch = np.divide(dot, den, out=np.full(len(den), np.nan), where=den > 0)
+            SH.append(pd.DataFrame({"cohort": cohort, "pert_id": r.pert_id, "window": r.window,
+                                    "n_conditions": len(g), "n_half_a": len(ha), "n_half_b": len(hb),
+                                    "regulator": N.regs, "cos_half": ch})[tested])
         act = np.add.reduceat(C, N.starts)
         rc = -nes * act / norm
         reg = pd.DataFrame({"cohort": cohort, "pert_id": r.pert_id, "cmap_name": r.cmap_name,
@@ -228,7 +254,8 @@ def run_cohort(args):
             if dz is not None:
                 t = t.merge(dz, on=["regulator", "target"], how="left")
             T.append(t)
-    return (pd.concat(R) if R else pd.DataFrame()), (pd.concat(T) if T else pd.DataFrame())
+    return ((pd.concat(R) if R else pd.DataFrame()), (pd.concat(T) if T else pd.DataFrame()),
+            (pd.concat(SH) if SH else pd.DataFrame()))
 
 
 def check_net(net_name):
@@ -293,6 +320,15 @@ def main():
         out = list(ex.map(run_cohort, jobs))
     R = pd.concat([o[0] for o in out if len(o[0])])
     T = pd.concat([o[1] for o in out if len(o[1])]) if any(len(o[1]) for o in out) else pd.DataFrame()
+    SH = pd.concat([o[2] for o in out if len(o[2])]) if any(len(o[2]) for o in out) else pd.DataFrame()
+    if SPLITHALF and len(SH):
+        sfx2 = "_all" if os.environ.get("ALL") == "1" else ""
+        f = OUT / f"splithalf_reliability{sfx2}.tsv.gz"
+        SH.to_csv(f, sep="\t", index=False, float_format="%.6g")
+        ok = SH.cos_half.dropna()
+        print(f"D202/C1 ceiling: {len(SH):,} (drug, window, regulator) rows from "
+              f"{SH.groupby(['cohort','pert_id','window']).ngroups:,} cells with >=2 conditions; "
+              f"median split-half cosine {ok.median():.4f} -> {f.name}", flush=True)
     u = R.drop_duplicates(["cohort", "pert_id", "window"])
     diff = (u.rev - u.rev_stored).abs()
     print(f"check 2 (regulator terms vs stored rev_<window>, {len(u):,} rows): max |diff| {diff.max():.2e}", flush=True)
