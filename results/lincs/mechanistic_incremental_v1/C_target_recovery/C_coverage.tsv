@@ -1,0 +1,13 @@
+level	window	role	pairs	targets	drugs	regulator_targets	with_downstream
+group_id	early	annotated	10455	709	612	333	3098
+group_id	early	primary	5496	291	259	276	744
+group_id	early	secondary	4150	290	172	161	483
+group_id	late	annotated	13316	802	784	405	3935
+group_id	late	primary	10352	379	391	357	1025
+group_id	late	secondary	5259	360	242	150	528
+stratum	early	annotated	1546	370	224	40	462
+stratum	early	primary	856	182	85	18	76
+stratum	early	secondary	584	180	67	18	60
+stratum	late	annotated	1808	382	284	24	518
+stratum	late	primary	1354	253	120	12	116
+stratum	late	secondary	716	208	86	14	64

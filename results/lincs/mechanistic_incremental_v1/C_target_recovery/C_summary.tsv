@@ -1,0 +1,57 @@
+level	window	role	metric	n_pairs	n_targets	n_drugs	value	null	lift	ci_lo	ci_hi	p_perm	top5pct	resolved	feasibility_limited
+group_id	early	annotated	exact	333	37	68	0.4834	0.5124	0.9435	0.4369	0.5304	0.9750	0.0571	False	False
+group_id	early	annotated	down	3098	91	216	0.5101	0.5130	0.9944	0.5012	0.5204	0.8771		False	False
+group_id	early	annotated	down2	5515	191	326	0.5111	0.5125	0.9974	0.5075	0.5146	0.8521		False	False
+group_id	early	annotated	down_signor	2705	74	187	0.5050	0.5086	0.9929	0.4939	0.5154	0.9181		False	False
+group_id	early	primary	exact	276	14	72	0.5365	0.5091	1.0538	0.4763	0.5850	0.0579	0.0580	False	True
+group_id	early	primary	exact_sgn	249	12	70	0.5725	0.4985	1.1484	0.4585	0.6418	0.0260	0.0924	False	True
+group_id	early	primary	down	744	37	86	0.5126	0.5141	0.9972	0.5009	0.5230	0.5954		False	False
+group_id	early	primary	down_sgn	715	34	84	0.5036	0.4947	1.0181	0.4774	0.5235	0.2128		False	False
+group_id	early	primary	down2	1874	83	131	0.5224	0.5117	1.0209	0.5164	0.5280	0.0010		True	False
+group_id	early	primary	down_signor	519	28	66	0.5170	0.5127	1.0084	0.5024	0.5299	0.2827		False	True
+group_id	early	secondary	exact	161	15	33	0.5221	0.5213	1.0014	0.4559	0.5910	0.4825	0.0683	False	True
+group_id	early	secondary	down	483	35	62	0.5021	0.4937	1.0170	0.4778	0.5307	0.0779		False	False
+group_id	early	secondary	down2	1526	94	89	0.5052	0.5053	0.9998	0.4942	0.5166	0.5215		False	False
+group_id	early	secondary	down_signor	318	25	49	0.4890	0.4932	0.9915	0.4601	0.5252	0.7522		False	True
+group_id	late	annotated	exact	405	44	81	0.5188	0.5149	1.0076	0.4788	0.5559	0.3826	0.0889	False	False
+group_id	late	annotated	down	3935	98	275	0.5187	0.5213	0.9950	0.5088	0.5293	0.8771		False	False
+group_id	late	annotated	down2	7113	222	432	0.5158	0.5152	1.0013	0.5119	0.5199	0.2697		False	False
+group_id	late	annotated	down_signor	3399	79	239	0.5158	0.5179	0.9959	0.5049	0.5278	0.8082		False	False
+group_id	late	primary	exact	357	14	88	0.5807	0.5211	1.1144	0.5426	0.6243	0.0010	0.0812	True	True
+group_id	late	primary	exact_sgn	314	12	85	0.4794	0.4883	0.9818	0.2813	0.6203	0.5994	0.0605	False	True
+group_id	late	primary	down	1025	38	106	0.5207	0.5141	1.0129	0.5011	0.5402	0.0719		False	False
+group_id	late	primary	down_sgn	969	35	103	0.4537	0.4851	0.9352	0.4265	0.4795	1.0000		False	False
+group_id	late	primary	down2	2499	96	165	0.5200	0.5144	1.0108	0.5121	0.5286	0.0100		False	False
+group_id	late	primary	down_signor	711	29	73	0.5110	0.5093	1.0033	0.4979	0.5252	0.3816		False	True
+group_id	late	secondary	exact	150	16	37	0.5064	0.5213	0.9715	0.4319	0.5971	0.7473	0.0467	False	True
+group_id	late	secondary	down	528	39	60	0.5096	0.4999	1.0193	0.4896	0.5320	0.0360		False	False
+group_id	late	secondary	down2	1696	106	95	0.5115	0.5096	1.0037	0.5008	0.5221	0.2288		False	False
+group_id	late	secondary	down_signor	380	27	49	0.5141	0.5041	1.0197	0.4881	0.5460	0.0799		False	True
+stratum	early	annotated	exact	40	17	15	0.4823	0.5345	0.9022	0.3632	0.5993	0.8851	0.1000	False	True
+stratum	early	annotated	down	462	69	92	0.5177	0.5233	0.9892	0.4947	0.5396	0.8172		False	False
+stratum	early	annotated	down2	782	139	136	0.5173	0.5156	1.0033	0.5080	0.5264	0.2837		False	False
+stratum	early	annotated	down_signor	412	58	81	0.5250	0.5196	1.0105	0.5012	0.5492	0.2128		False	False
+stratum	early	primary	exact	18	7	7	0.7405	0.4772	1.5515	0.6815	0.7951	0.0010	0.1111	True	True
+stratum	early	primary	exact_sgn	18	7	7	0.7405	0.5053	1.4654	0.4891	0.9004	0.0559	0.3333	False	True
+stratum	early	primary	down	76	24	18	0.5372	0.5165	1.0400	0.4961	0.5802	0.1309		False	True
+stratum	early	primary	down_sgn	76	24	18	0.5155	0.4949	1.0415	0.4722	0.5570	0.3257		False	True
+stratum	early	primary	down2	202	59	31	0.5231	0.5173	1.0113	0.5088	0.5356	0.2408		False	False
+stratum	early	primary	down_signor	58	19	13	0.5333	0.5058	1.0544	0.4843	0.5832	0.0919		False	True
+stratum	early	secondary	exact	18	7	8	0.4365	0.4988	0.8751	0.2125	0.6555	0.8541	0.0000	False	True
+stratum	early	secondary	down	60	20	25	0.5411	0.5048	1.0719	0.5012	0.5807	0.0190		False	True
+stratum	early	secondary	down2	196	63	36	0.5007	0.5067	0.9881	0.4826	0.5190	0.8002		False	False
+stratum	early	secondary	down_signor	44	13	19	0.5507	0.5072	1.0857	0.4699	0.6231	0.0100		False	True
+stratum	late	annotated	exact	24	10	12	0.5397	0.5157	1.0466	0.4019	0.6654	0.3217	0.0833	False	True
+stratum	late	annotated	down	518	66	100	0.5080	0.5253	0.9671	0.4852	0.5287	0.9970		False	False
+stratum	late	annotated	down2	954	133	168	0.5185	0.5190	0.9991	0.5063	0.5302	0.5604		False	False
+stratum	late	annotated	down_signor	473	60	96	0.5047	0.5191	0.9722	0.4787	0.5303	0.9890		False	False
+stratum	late	primary	exact	12	4	6	0.4167	0.4853	0.8586	0.2966	0.6152	0.8362	0.0000	False	True
+stratum	late	primary	exact_sgn	12	4	6	0.5442	0.4779	1.1389	0.3973	0.8012	0.3327	0.0000	False	True
+stratum	late	primary	down	116	25	29	0.5068	0.5199	0.9748	0.4500	0.5531	0.8012		False	True
+stratum	late	primary	down_sgn	112	25	27	0.4213	0.4894	0.8609	0.3876	0.4622	0.9840		False	True
+stratum	late	primary	down2	306	64	48	0.5289	0.5195	1.0181	0.5142	0.5433	0.0619		False	False
+stratum	late	primary	down_signor	88	20	22	0.4938	0.5006	0.9864	0.4365	0.5388	0.6454		False	True
+stratum	late	secondary	exact	14	7	7	0.4560	0.4915	0.9278	0.2114	0.7050	0.6683	0.1429	False	True
+stratum	late	secondary	down	64	22	26	0.5208	0.5036	1.0341	0.4716	0.5687	0.1499		False	True
+stratum	late	secondary	down2	222	71	44	0.5205	0.5131	1.0143	0.5044	0.5371	0.1199		False	False
+stratum	late	secondary	down_signor	50	15	21	0.4942	0.5103	0.9685	0.4391	0.5537	0.8232		False	True

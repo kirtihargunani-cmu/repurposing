@@ -1,0 +1,39 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T164952-3322909",
+ "finished_at": "2026-11-23T16:51:16-05:00",
+ "duration_s": 84,
+ "script": "C_target_recovery.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/C_target_recovery.py",
+ "env": "",
+ "git_sha": "cbd2fb5",
+ "git_state": "dirty",
+ "note": "mechanistic_incremental_v1 Experiment C (protocol 5cc2227 + cbd2fb5)",
+ "expect": null,
+ "n_files": 5,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "C_coverage.tsv": {
+   "bytes": 595,
+   "mtime": "2026-11-23T16:51:15-05:00"
+  },
+  "C_pairs.tsv.gz": {
+   "bytes": 691003,
+   "mtime": "2026-11-23T16:51:13-05:00"
+  },
+  "C_potency.tsv": {
+   "bytes": 394,
+   "mtime": "2026-11-23T16:51:15-05:00"
+  },
+  "C_summary.tsv": {
+   "bytes": 5549,
+   "mtime": "2026-11-23T16:51:14-05:00"
+  },
+  "run.json": {
+   "bytes": 143,
+   "mtime": "2026-11-23T16:51:15-05:00"
+  }
+ }
+}
