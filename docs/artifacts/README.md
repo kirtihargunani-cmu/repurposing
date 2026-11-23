@@ -25,7 +25,9 @@ cd results/lincs/gene_rankings_page && python -m http.server 8000   # then open 
 (49 instances); the current figure is 36/49 per compound and 16/20 per target unit on the lead score (D208, D209),
 and the D211 gene-level ranking does not pass it (C30 in `docs/notes/drug_side_decisions_and_caveats.md`).
 
-Not included: the two Claude Docs specifications (disease side Steps 1-7, drug side), which sit in a separate
-claude.ai organization that this export could not reach. Their content was mirrored into
+Not included as files: the two Claude Docs specifications (disease side Steps 1-7:
+https://claude.ai/artifact/FpQv6BnyiFnnrbH1svGBQu; drug side: https://claude.ai/artifact/MStneGE2bZDFg3wHuvC1LC). Both
+were updated on 2026-11-23 with a "Changes since 2026-11-02" section whose figures come only from the 2026-11-23 full
+run. They sit in a separate claude.ai organization. Their content is mirrored into
 [`../PIPELINE_V2.md`](../PIPELINE_V2.md), [`../PIPELINE_DRUG_SIDE_V2.md`](../PIPELINE_DRUG_SIDE_V2.md) and the two
 `*_PLAIN_LANGUAGE.md` files, which are current as of 2026-11-23.
