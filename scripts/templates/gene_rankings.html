@@ -1,0 +1,387 @@
+<title>FDA Gene-Level Rankings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: cancer list on the left, ranked table on the right; a row opens a detail drawer below it.
+   Early is amber and late is indigo everywhere; D, A and O keep one hue each. */
+:root {
+  --bg: #f6f7f5; --panel: #ffffff; --ink: #18211f; --muted: #5b6764; --line: #dde2df; --soft: #eef1ee;
+  --accent: #0f6e60; --accent-soft: #dcefea;
+  --early: #b4710c; --early-soft: #f6e8cf; --late: #4552a8; --late-soft: #e2e5f6;
+  --cD: #b0513a; --cA: #7b4c93; --cO: #23807a;
+  --warn: #9a5b00; --warn-soft: #fbefd9; --bad: #a23b32;
+  --f-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121816; --panel: #18201e; --ink: #e5ece9; --muted: #9aa8a4; --line: #2b3633; --soft: #1f2926;
+  --accent: #4fc2ad; --accent-soft: #173a34;
+  --early: #e3a43f; --early-soft: #3a2c14; --late: #8f9cf0; --late-soft: #232848;
+  --cD: #e08a71; --cA: #b993d0; --cO: #5cc2b9; --warn: #e3a43f; --warn-soft: #3a2c14; --bad: #ef8a80;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #121816; --panel: #18201e; --ink: #e5ece9; --muted: #9aa8a4; --line: #2b3633; --soft: #1f2926;
+  --accent: #4fc2ad; --accent-soft: #173a34;
+  --early: #e3a43f; --early-soft: #3a2c14; --late: #8f9cf0; --late-soft: #232848;
+  --cD: #e08a71; --cA: #b993d0; --cO: #5cc2b9; --warn: #e3a43f; --warn-soft: #3a2c14; --bad: #ef8a80;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--f-body); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px; max-width: 1480px; margin: 0 auto; display: grid; gap: 18px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 1.6rem; font-weight: 600; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+h3 { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+.num, td.n, .mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: grid; gap: 10px; }
+.lede { color: var(--muted); max-width: 78ch; margin: 0; }
+.method { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.step { display: flex; gap: 8px; align-items: baseline; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+.step b { font-family: var(--f-mono); font-size: 0.75rem; color: var(--accent); }
+.arrow { color: var(--muted); }
+.notice { border: 1px solid var(--warn); background: var(--warn-soft); border-radius: 6px; padding: 10px 12px; max-width: 110ch; }
+.notice summary { cursor: pointer; font-weight: 600; }
+.notice table { border-collapse: collapse; margin-top: 8px; font-size: 0.85rem; }
+.notice td, .notice th { padding: 2px 10px 2px 0; text-align: left; }
+
+.layout { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } .units { max-height: 260px; } }
+.units { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px; display: grid; gap: 8px;
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); overflow: hidden; grid-template-rows: auto minmax(0, 1fr); }
+.units input { width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
+.ulist { overflow-y: auto; display: grid; gap: 1px; align-content: start; }
+.ugroup { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 8px 6px 4px; }
+.ubtn { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; text-align: left; border: 0; background: transparent;
+  padding: 5px 8px; border-radius: 5px; cursor: pointer; }
+.ubtn:hover { background: var(--soft); }
+.ubtn[aria-current="true"] { background: var(--accent-soft); font-weight: 600; }
+.ubtn .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ubtn .ct { font-family: var(--f-mono); font-size: 0.75rem; color: var(--muted); display: flex; gap: 6px; }
+.ct .e { color: var(--early); } .ct .l { color: var(--late); }
+.ubtn.sub .nm { padding-left: 10px; }
+
+main.view { display: grid; gap: 14px; min-width: 0; }
+.uhead { display: grid; gap: 6px; }
+.uhead .sub { color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 0.82rem; }
+.chip .num { font-weight: 500; }
+.chip.e { border-color: var(--early); } .chip.l { border-color: var(--late); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 8px; padding: 10px 12px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 5px 10px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--panel); }
+.controls label { display: inline-flex; gap: 6px; align-items: center; }
+.controls input[type="search"] { padding: 5px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); min-width: 0; width: 180px; }
+.ctl-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+
+.tablewrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+table.rank { border-collapse: collapse; width: 100%; min-width: 860px; }
+table.rank th { position: sticky; top: 0; background: var(--panel); text-align: left; font-weight: 600; font-size: 0.76rem;
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); padding: 9px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.rank th.sortable { cursor: pointer; }
+table.rank th.sortable:hover { color: var(--ink); }
+table.rank td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tr.row { cursor: pointer; }
+tr.row:hover td { background: var(--soft); }
+tr.row.open td { background: var(--soft); }
+tr.row.inel td { color: var(--muted); }
+.drug { font-weight: 600; }
+.moa { font-size: 0.8rem; color: var(--muted); }
+.pct { display: grid; grid-template-columns: 44px 70px; gap: 6px; align-items: center; }
+.bar { height: 7px; border-radius: 4px; background: var(--soft); overflow: hidden; }
+.bar i { display: block; height: 100%; }
+.bar.e i { background: var(--early); } .bar.l i { background: var(--late); }
+.na { font-size: 0.78rem; color: var(--muted); font-style: italic; }
+.dao { display: grid; grid-template-columns: repeat(3, 26px); gap: 3px; align-items: end; height: 26px; }
+.dao span { display: block; border-radius: 2px 2px 0 0; position: relative; }
+.dao span.missing { background: repeating-linear-gradient(45deg, var(--line), var(--line) 2px, transparent 2px, transparent 4px); height: 100% !important; opacity: 0.6; }
+.dao .D { background: var(--cD); } .dao .A { background: var(--cA); } .dao .O { background: var(--cO); }
+.Tval { font-family: var(--f-mono); }
+.genes { font-family: var(--f-mono); font-size: 0.82rem; }
+.tag { display: inline-block; font-size: 0.72rem; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); white-space: nowrap; }
+.tag.known { border-color: var(--accent); color: var(--accent); }
+.tag.novel { border-color: var(--line); color: var(--muted); }
+.tag.warn { border-color: var(--warn); color: var(--warn); }
+.tag.raise { border-color: var(--late); color: var(--late); }
+
+tr.detail td { padding: 0; background: var(--bg); }
+.drawer { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; padding: 14px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 12px; font-size: 0.85rem; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; overflow-wrap: anywhere; }
+.axis { display: grid; grid-template-columns: 24px minmax(0, 1fr) 46px; gap: 8px; align-items: center; font-size: 0.85rem; }
+.axis .lab { font-family: var(--f-mono); font-weight: 600; }
+.axis .track { height: 10px; background: var(--soft); border-radius: 5px; position: relative; overflow: hidden; }
+.axis .track i { position: absolute; inset: 0 auto 0 0; border-radius: 5px; }
+.axis .track::after { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--muted); opacity: 0.5; }
+.gtable { border-collapse: collapse; font-size: 0.8rem; width: 100%; }
+.gtable th, .gtable td { text-align: left; padding: 3px 6px 3px 0; border-bottom: 1px solid var(--line); }
+.gtable th { color: var(--muted); font-weight: 500; }
+.tp { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tpbox { border-radius: 6px; padding: 8px 10px; display: grid; gap: 2px; }
+.tpbox.e { background: var(--early-soft); } .tpbox.l { background: var(--late-soft); }
+.tpbox .big { font-family: var(--f-mono); font-size: 1.3rem; font-weight: 500; }
+.tpbox.e .big { color: var(--early); } .tpbox.l .big { color: var(--late); }
+.tpbox .small { font-size: 0.78rem; color: var(--muted); }
+.tchips { display: flex; flex-wrap: wrap; gap: 5px; }
+.tchip { font-family: var(--f-mono); font-size: 0.78rem; padding: 2px 7px; border-radius: 4px; background: var(--soft); border: 1px solid var(--line); }
+.tchip.prim { border-color: var(--accent); background: var(--accent-soft); }
+.note { font-size: 0.8rem; color: var(--muted); margin: 0; }
+.empty { padding: 28px; text-align: center; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted); align-items: center; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 4px; }
+@media (prefers-reduced-motion: no-preference) { tr.row td { transition: background 120ms; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>FDA Gene-Level Rankings</h1>
+    <p class="lede">Production ranking (D211). For each cancer, an FDA drug is eligible when the tumor leans on its target, and eligible drugs are ranked by how closely their gene-level response opposes the cancer's regulator pattern. Early and late timepoints are ranked separately and never pooled.</p>
+    <div class="method" aria-label="How the ranking is built">
+      <span class="step"><b>Filter</b> Target evidence T ≥ 50: dependency, alteration, overactivity</span><span class="arrow">→</span>
+      <span class="step"><b>Score</b> Gene-level reversal (rev_gene)</span><span class="arrow">→</span>
+      <span class="step"><b>Rank</b> Percentile among eligible drugs, per timepoint</span>
+    </div>
+    <details class="notice" id="d127">
+      <summary>Under review: the biomarker check does not hold on this ranking</summary>
+      <p class="note" style="margin-top:6px">D127 asks whether a targeted drug ranks higher in the cancer carrying its biomarker. On this ranking it does in few target groups; the previous lead score did in 16 of 20. The filter carries most of the biomarker signal. Adopted as production by decision and flagged for review.</p>
+      <div id="d127tbl"></div>
+    </details>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--early)"></span>Early (≤ 6 h)</span>
+      <span><span class="sw" style="background:var(--late)"></span>Late (≥ 24 h)</span>
+      <span><span class="sw" style="background:var(--cD)"></span>D dependency</span>
+      <span><span class="sw" style="background:var(--cA)"></span>A alteration</span>
+      <span><span class="sw" style="background:var(--cO)"></span>O overactivity</span>
+      <span>Hatched bar: axis not scored for this target</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="units" aria-label="Cancers">
+      <input type="search" id="ufilter" placeholder="Find a cancer or subgroup" aria-label="Find a cancer or subgroup">
+      <div class="ulist" id="ulist"></div>
+    </nav>
+    <main class="view" id="view"><div class="empty">Loading rankings…</div></main>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (x) => String(x == null ? "" : x).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const fmt = (x, d = 1) => (x == null ? "–" : Number(x).toFixed(d));
+  const REASON = {
+    no_window_run: "No timepoint run for this cancer (no matched-line conditions at either timepoint)",
+    no_condition_profile: "The drug has no condition-level profile in LINCS",
+    no_condition_in_lines: "Profiled in LINCS, but never in this cancer's matched cell lines",
+  };
+  const SRC = { chembl_mechanism: "ChEMBL curated mechanism", chembl_binding: "ChEMBL binding", confirmed_annotation: "Annotation confirmed by binding",
+    annotation: "Annotation only", non_protein_mechanism: "Non-protein mechanism", non_human_target: "Non-human target", none: "None" };
+  const OSRC = { NES: "VIPER regulator activity (NES)", logFC_vs_gtex: "Expression vs GTEx normal", logFC_vs_adjacent: "Expression vs adjacent normal" };
+
+  const state = { index: null, unit: null, rows: [], cache: {}, tp: "both", set: "eligible", q: "", hideKnown: false, sort: "late", open: null };
+  try { const s = JSON.parse(localStorage.getItem("gr-prefs") || "{}"); Object.assign(state, { tp: s.tp || "both", set: s.set || "eligible", hideKnown: !!s.hideKnown }); } catch (e) {}
+  const savePrefs = () => { try { localStorage.setItem("gr-prefs", JSON.stringify({ tp: state.tp, set: state.set, hideKnown: state.hideKnown })); } catch (e) {} };
+
+  function unitList() {
+    const q = $("#ufilter").value.trim().toLowerCase();
+    const U = state.index.units.filter((u) => !q || u.id.toLowerCase().includes(q) || (u.desc || "").toLowerCase().includes(q));
+    const dis = U.filter((u) => u.lv === "disease").sort((a, b) => a.id.localeCompare(b.id));
+    const sub = U.filter((u) => u.lv === "subgroup").sort((a, b) => (a.parent || "").localeCompare(b.parent || "") || a.id.localeCompare(b.id));
+    const btn = (u) => `<button class="ubtn${u.lv === "subgroup" ? " sub" : ""}" data-u="${esc(u.id)}" aria-current="${u.id === state.unit}">
+        <span class="nm" title="${esc(u.desc || u.id)}">${esc(u.id)}</span>
+        <span class="ct" title="ranked drugs: early / late"><span class="e">${u.n_e}</span><span class="l">${u.n_l}</span></span></button>`;
+    $("#ulist").innerHTML = `<div class="ugroup">Cancers (${dis.length})</div>${dis.map(btn).join("")}<div class="ugroup">Subgroups (${sub.length})</div>${sub.map(btn).join("")}`;
+  }
+
+  async function openUnit(id) {
+    if (!state.index.units.some((u) => u.id === id)) id = state.index.units.slice().sort((a, b) => (b.n_l + b.n_e) - (a.n_l + a.n_e))[0].id;
+    state.unit = id; state.open = null;
+    if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
+    unitList();
+    if (!state.cache[id]) {
+      $("#view").innerHTML = `<div class="empty">Loading ${esc(id)}…</div>`;
+      try { const r = await fetch(`data/${encodeURIComponent(id)}.json`); if (!r.ok) throw new Error(r.status); state.cache[id] = await r.json(); }
+      catch (e) { $("#view").innerHTML = `<div class="empty">Could not load ${esc(id)} (${esc(e.message)}). Reload the page to try again.</div>`; return; }
+    }
+    state.rows = state.cache[id];
+    render();
+  }
+
+  const pv = (r, w) => (r.w[w] && r.w[w].p != null ? r.w[w].p : null);
+  function filtered() {
+    let R = state.rows.filter((r) => state.set === "eligible" ? r.t === "main" && r.el : state.set === "all" ? r.t === "main" : r.t === "chemo");
+    if (state.hideKnown) R = R.filter((r) => !(r.ph >= 3));
+    if (state.q) { const q = state.q.toLowerCase(); R = R.filter((r) => [r.drug, r.cm, r.moa, r.genes.join(" "), r.hubt].join(" ").toLowerCase().includes(q)); }
+    const key = state.sort;
+    const val = (r) => key === "early" ? pv(r, "early") : key === "late" ? pv(r, "late") : key === "T" ? r.T : key === "best" ? Math.max(pv(r, "early") ?? -1, pv(r, "late") ?? -1) : null;
+    if (key === "drug") R.sort((a, b) => (a.drug || "").localeCompare(b.drug || ""));
+    else R.sort((a, b) => { const x = val(a), y = val(b); if (x == null && y == null) return (b.T ?? 0) - (a.T ?? 0); if (x == null) return 1; if (y == null) return -1; return y - x; });
+    return R;
+  }
+
+  function pctCell(r, w) {
+    const x = r.w[w];
+    if (!x) return `<span class="na">${r.unk && !r.w.early && !r.w.late ? "unknown" : "not measured"}</span>`;
+    if (x.p == null) return `<span class="na">${r.t === "main" && !r.el ? "filtered out" : "–"}</span>`;
+    return `<div class="pct"><span class="num">${fmt(x.p, 0)}</span><span class="bar ${w[0]}"><i style="width:${x.p}%"></i></span></div>`;
+  }
+  function daoBars(r) {
+    const h = (v) => (v == null ? null : Math.max(6, (v / 100) * 26));
+    return `<div class="dao" title="D ${fmt(r.D)} · A ${fmt(r.A)} · O ${fmt(r.O)}">` + ["D", "A", "O"].map((k) => {
+      const v = h(r[k]); return v == null ? `<span class="${k} missing"></span>` : `<span class="${k}" style="height:${v}px"></span>`;
+    }).join("") + `</div>`;
+  }
+  const knownTag = (r) => r.ph >= 3 ? `<span class="tag known" title="Phase ${r.ph} for this cancer (${esc(r.phs || "")})">used · ph ${fmt(r.ph, 0)}</span>`
+    : r.ph > 0 ? `<span class="tag novel" title="Trialled in this cancer, phase ${r.ph}">trialled · ph ${fmt(r.ph, 1)}</span>` : `<span class="tag novel">new here</span>`;
+
+  function render() {
+    const u = state.index.units.find((x) => x.id === state.unit);
+    const R = filtered();
+    const all = state.rows.filter((r) => r.t === "main");
+    const unknown = all.filter((r) => r.el && !r.w.early && !r.w.late).length;
+    const showE = state.tp !== "late", showL = state.tp !== "early";
+    const seg = (name, opts) => `<span class="seg" role="group">${opts.map(([v, l]) => `<button data-${name}="${v}" aria-pressed="${state[name] === v}">${l}</button>`).join("")}</span>`;
+    $("#view").innerHTML = `
+      <section class="uhead">
+        <h2>${esc(u.id)}</h2>
+        <div class="sub">${u.lv === "subgroup" ? `Subgroup of ${esc(u.parent)} · ${esc(u.desc || "")}` : "Disease group"}</div>
+        <div class="chips">
+          <span class="chip"><span class="num">${u.n_el}</span> eligible drugs</span>
+          <span class="chip e"><span class="num">${u.n_e}</span> ranked early</span>
+          <span class="chip l"><span class="num">${u.n_l}</span> ranked late</span>
+          <span class="chip"><span class="num">${unknown}</span> eligible, no timepoint data</span>
+          <span class="chip"><span class="num">${state.rows.filter((r) => r.t === "chemo").length}</span> chemo / DNA / essential</span>
+        </div>
+      </section>
+      <section class="controls" aria-label="Table controls">
+        <span class="ctl-label">Timepoint</span>${seg("tp", [["both", "Both"], ["early", "Early"], ["late", "Late"]])}
+        <span class="ctl-label">Drugs</span>${seg("set", [["eligible", "Eligible"], ["all", "All targeted"], ["chemo", "Chemo / DNA"]])}
+        <label><input type="checkbox" id="hideKnown" ${state.hideKnown ? "checked" : ""}> Hide drugs already used here (phase ≥ 3)</label>
+        <input type="search" id="q" placeholder="Drug, target or MOA" value="${esc(state.q)}" aria-label="Search drugs">
+      </section>
+      ${state.set === "chemo" ? `<p class="note">These drugs act through DNA damage or an essential gene, so the D/A/O filter cannot apply. They are ranked among themselves by the same gene-level score.</p>` : ""}
+      ${state.set === "all" ? `<p class="note">Includes drugs the filter removed (T below 50); those show "filtered out" in place of a percentile.</p>` : ""}
+      <div class="tablewrap"><table class="rank">
+        <thead><tr>
+          <th class="sortable" data-sort="drug">Drug</th>
+          ${showE ? `<th class="sortable" data-sort="early">Early pct${state.sort === "early" ? " ↓" : ""}</th>` : ""}
+          ${showL ? `<th class="sortable" data-sort="late">Late pct${state.sort === "late" ? " ↓" : ""}</th>` : ""}
+          <th class="sortable" data-sort="T">T${state.sort === "T" ? " ↓" : ""}</th>
+          <th>D · A · O</th><th>Scored target</th><th>Use here</th><th>Flags</th>
+        </tr></thead>
+        <tbody>${R.length ? R.map((r, i) => rowHtml(r, i, showE, showL)).join("") : `<tr><td colspan="8" class="empty">No drugs match these settings.</td></tr>`}</tbody>
+      </table></div>`;
+    bind();
+  }
+
+  function rowHtml(r, i, showE, showL) {
+    const open = state.open === i;
+    const cls = ["row", open ? "open" : "", r.t === "main" && !r.el ? "inel" : ""].join(" ");
+    const flags = [r.ori === "raise" ? `<span class="tag raise" title="Activator: dependency and alteration are not scored for raising a target">activator</span>` : "",
+      r.ub ? `<span class="tag warn">binding unverified</span>` : "", r.fl ? r.fl.split("|").filter(Boolean).map((f) => `<span class="tag warn">${esc(f.replace(/_/g, " "))}</span>`).join(" ") : ""].join(" ");
+    return `<tr class="${cls}" data-i="${i}" tabindex="0" aria-expanded="${open}">
+      <td><div class="drug">${esc(r.drug)}</div><div class="moa">${esc(r.moa || r.cm || "")}</div></td>
+      ${showE ? `<td>${pctCell(r, "early")}</td>` : ""}${showL ? `<td>${pctCell(r, "late")}</td>` : ""}
+      <td class="Tval">${fmt(r.T)}</td><td>${daoBars(r)}</td>
+      <td class="genes">${esc(r.genes.join(", ") || "–")}</td><td>${knownTag(r)}</td><td>${flags}</td></tr>
+      ${open ? `<tr class="detail"><td colspan="8">${drawer(r)}</td></tr>` : ""}`;
+  }
+
+  function axis(k, v, col, label) {
+    return `<div class="axis"><span class="lab" style="color:${col}">${k}</span>
+      <span class="track" title="${label}">${v == null ? "" : `<i style="width:${v}%;background:${col}"></i>`}</span>
+      <span class="num">${v == null ? "n/a" : fmt(v)}</span></div>`;
+  }
+  function parseTargets(s, prim) {
+    if (!s) return "";
+    return s.split(/[|;]/).filter(Boolean).map((t) => `<span class="tchip${prim ? " prim" : ""}">${esc(t)}</span>`).join("");
+  }
+  function tpBox(r, w) {
+    const x = r.w[w], name = w === "early" ? "Early ≤ 6 h" : "Late ≥ 24 h";
+    if (!x) return `<div class="tpbox ${w[0]}"><span class="small">${name}</span><span class="na">Not measured at this timepoint</span></div>`;
+    return `<div class="tpbox ${w[0]}"><span class="small">${name}</span>
+      <span class="big">${x.p == null ? "–" : fmt(x.p, 0)}<span class="small"> pct${x.k ? ` · #${x.k}` : ""}</span></span>
+      <span class="small mono">rev_gene ${fmt(x.rg, 3)} · rev ${fmt(x.rv, 2)}</span>
+      <span class="small">${x.nc} condition${x.nc === 1 ? "" : "s"} · ${x.nl} cell line${x.nl === 1 ? "" : "s"}</span></div>`;
+  }
+  function drawer(r) {
+    const why = r.nax == null ? "This drug is scored through its essential-gene or DNA-acting path, so it has no D/A/O breakdown."
+      : `T = 50 + √(${r.nax}/3) × (mean of scored axes − 50). Fewer scored axes pull T toward 50.`;
+    const g = r.graw.length ? `<table class="gtable"><thead><tr><th>Gene</th><th>Dep. z</th><th>Altered</th><th>Over-activity</th><th>Source</th></tr></thead><tbody>${
+      r.graw.map((x) => `<tr><td class="mono">${esc(x.g)}</td><td class="mono">${fmt(x.dz, 2)}</td><td class="mono">${x.af == null ? "–" : (x.af * 100).toFixed(1) + "%"}</td><td class="mono">${fmt(x.o, 2)}</td><td>${esc(OSRC[x.os] || x.os || "–")}</td></tr>`).join("")
+    }</tbody></table><p class="note">Raw values behind the percentiles: CRISPR dependency z in matched lines (higher = more dependent), share of tumors altered, and overactivity in tumor vs normal. Subgroups use their parent's raw table where available.</p>` : "";
+    return `<div class="drawer">
+      <section class="card"><h3>Target evidence (filter)</h3>
+        ${axis("D", r.D, "var(--cD)", "Dependency percentile")}${axis("A", r.A, "var(--cA)", "Alteration percentile")}${axis("O", r.O, "var(--cO)", "Overactivity percentile")}
+        <div class="kv"><dt>Combined T</dt><dd class="mono">${fmt(r.T)} ${r.t === "main" ? (r.el ? "· passes (≥ 50)" : "· below 50, filtered out") : ""}</dd>
+          <dt>Axes scored</dt><dd>${r.nax ?? "–"} of 3</dd><dt>Direction</dt><dd>${r.ori === "raise" ? "Activator (raises the target)" : r.ori === "lower" ? "Inhibitor (lowers the target)" : "–"}</dd>
+          <dt>Scored unit</dt><dd class="mono">${esc(r.genes.join(" + ") || "–")}</dd><dt>Previous lead pct</dt><dd class="mono">${fmt(r.lead)}</dd></div>
+        <p class="note">${why}</p>${g}</section>
+      <section class="card"><h3>Gene-level reversal by timepoint</h3>
+        <div class="tp">${tpBox(r, "early")}${tpBox(r, "late")}</div>
+        ${!r.w.early && !r.w.late ? `<p class="note"><b>Unknown timepoint.</b> ${esc(REASON[r.unk] || r.unk || "No timepoint data")}.</p>` : ""}
+        <p class="note">Percentile among eligible drugs in this cancer at that timepoint; higher means the drug's gene-level response opposes the cancer's pattern more. rev is the regulator-level score it refines.</p></section>
+      <section class="card"><h3>Target annotations</h3>
+        <div class="kv"><dt>Primary (ChEMBL)</dt><dd><div class="tchips">${parseTargets(r.ev, true) || "–"}</div></dd>
+          <dt>Evidence type</dt><dd>${esc(SRC[r.tsrc] || r.tsrc || "–")}</dd>
+          <dt>Secondary</dt><dd><div class="tchips">${parseTargets(r.sec, false) || "–"}</div></dd>
+          <dt>Repurposing Hub</dt><dd class="mono">${esc((r.hubt || "–").replace(/\|/g, ", "))}</dd>
+          <dt>LINCS</dt><dd class="mono">${esc((r.lt || "–").replace(/\|/g, ", "))}</dd><dt>MOA</dt><dd>${esc(r.moa || "–")}</dd>
+          ${r.car != null ? `<dt>Tumors carrying</dt><dd class="mono">${(r.car * 100).toFixed(1)}%</dd>` : ""}</div>
+        <p class="note">Primary: gene, then median TPM in this cancer's tumors / its presence reference (the gene's 90th-percentile median across cancers). Secondary: binding potency as pChEMBL; * = a single measurement; "ann" = annotated without binding data.</p></section>
+      <section class="card"><h3>FDA and clinical use</h3>
+        <div class="kv"><dt>Ingredient</dt><dd>${esc(r.drug)}</dd><dt>LINCS name</dt><dd class="mono">${esc(r.cm || "–")}</dd>
+          <dt>Status</dt><dd>${esc(r.fs || "–")}</dd><dt>First approval</dt><dd class="mono">${esc(r.fy || "–")}</dd>
+          <dt>Approved for</dt><dd>${esc((r.ind || "–").replace(/\|/g, ", "))}</dd>
+          <dt>Use in this cancer</dt><dd>${r.ph != null ? `Phase ${fmt(r.ph, r.ph % 1 ? 1 : 0)} (${esc(r.phs || "")})` : "No record: a repurposing candidate"}</dd>
+          ${r.url ? `<dt>Drugs@FDA</dt><dd><a href="${esc(r.url)}" target="_blank" rel="noopener">Open record</a></dd>` : ""}</div></section>
+    </div>`;
+  }
+
+  function bind() {
+    document.querySelectorAll("[data-tp]").forEach((b) => b.onclick = () => { state.tp = b.dataset.tp; if (state.tp !== "both" && state.sort !== "T" && state.sort !== "drug") state.sort = state.tp; state.open = null; savePrefs(); render(); });
+    document.querySelectorAll("[data-set]").forEach((b) => b.onclick = () => { state.set = b.dataset.set; state.open = null; savePrefs(); render(); });
+    document.querySelectorAll("th[data-sort]").forEach((th) => th.onclick = () => { state.sort = th.dataset.sort; state.open = null; render(); });
+    $("#hideKnown").onchange = (e) => { state.hideKnown = e.target.checked; state.open = null; savePrefs(); render(); };
+    const q = $("#q"); q.oninput = () => { state.q = q.value; state.open = null; const pos = q.selectionStart; render(); const n = $("#q"); n.focus(); n.setSelectionRange(pos, pos); };
+    document.querySelectorAll("tr.row").forEach((tr) => {
+      const go = () => { const i = +tr.dataset.i; state.open = state.open === i ? null : i; render(); const t = document.querySelector(`tr.row[data-i="${i}"]`); if (t) t.focus({ preventScroll: true }); };
+      tr.onclick = go; tr.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } };
+    });
+  }
+
+  function d127Table(rows) {
+    if (!rows || !rows.length) return "";
+    const P = rows.filter((r) => r.set === "primary");
+    return `<table><thead><tr><th>Timepoint</th><th>Reading</th><th>Target groups correct</th><th>p</th></tr></thead><tbody>${
+      P.map((r) => `<tr><td>${esc(r.window)}</td><td>${r.reading === "e2e" ? "counting filter demotions" : "ranked in both cancers"}</td><td class="mono">${r.correct} / ${r.units}</td><td class="mono">${fmt(r.p, 3)}</td></tr>`).join("")
+    }</tbody></table>`;
+  }
+
+  async function boot() {
+    try { const r = await fetch("data/index.json"); if (!r.ok) throw new Error(r.status); state.index = await r.json(); }
+    catch (e) { $("#view").innerHTML = `<div class="empty">Could not load the ranking index (${esc(e.message)}). Reload the page to try again.</div>`; return; }
+    $("#d127tbl").innerHTML = d127Table(state.index.meta.d127);
+    $("#ufilter").oninput = unitList;
+    $("#ulist").onclick = (e) => { const b = e.target.closest(".ubtn"); if (b) openUnit(b.dataset.u); };
+    window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (h && h !== state.unit) openUnit(h); });
+    openUnit(location.hash.slice(1) || "TCGA-LUAD");
+  }
+  boot();
+})();
+</script>

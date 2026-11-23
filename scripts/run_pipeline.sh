@@ -203,6 +203,10 @@ fi
 if want pages && [[ "$PAGES" == 1 ]]; then
 run "79x2 window page" "$RES/drug_rankings_by_window_v2_tf.html" \
                   -- env SPLIT_SFX=_v2_tf $PY scripts/79x2_window_page.py
+# D212: the production FDA page (D211 gene-level ranking): D/A/O breakdown, both timepoints, target annotations.
+# Published copy: https://claude.ai/artifact/86j6Ns4BozZ6TrjZcHgrxm (republish index.html with data/*.json).
+run "79as gene ranking page" "$RES/gene_rankings_page" \
+                  -- env SFX=_v2_tf $PY scripts/79as_gene_ranking_page.py
 fi
 
 echo; echo "== pipeline complete $(date +%H:%M:%S).  Audit:"
