@@ -174,6 +174,7 @@ def run_cohort(args):
         ww = ww if ww.sum() > 0 else np.ones(len(g))
         ww = ww / ww.sum()
         C = ww @ N.contrib(g.col.values)
+        cos_term = None                       # D195: per-gene share of the regulon cosine
         act = np.add.reduceat(C, N.starts)
         rc = -nes * act / norm
         reg = pd.DataFrame({"cohort": cohort, "pert_id": r.pert_id, "cmap_name": r.cmap_name,
@@ -199,6 +200,14 @@ def run_cohort(args):
             assert len(cos) == len(N.regs), (len(cos), len(N.regs))
             reg["cos_contrib"] = cos[tested]
             reg["n_genes_regulon"] = np.diff(np.r_[N.starts, len(N.reg)])[tested]
+            # D195: the SAME nesting one level down. Each gene's share of its regulon's cosine,
+            #   cos_term_j = d_j * x_j / (||d|| * ||x||),      sum_j in r  cos_term_j = cos_contrib_r
+            # so the per-gene scores add back to the regulon score exactly, as the D179 target
+            # contributions add back to the NES. NEGATIVE = that gene is pushed opposite to its
+            # disease contribution, and |cos_term| says how much of the regulon's opposition it
+            # carries. This is the gene-level opposition score, not just the inputs to one.
+            cos_term = np.divide(dvec * C, den[N.reg],
+                                 out=np.zeros(len(dvec)), where=den[N.reg] > 0)
         R.append(reg)
         if NO_TARGETS:
             continue
@@ -212,6 +221,10 @@ def run_cohort(args):
                               "tfmode": N.m[e], "likelihood": N.l[e],
                               "drug_z": ww @ np.asarray(P[g.col.values][:, N.U[N.gene[e]]], dtype=np.float64),
                               "activity_contrib": C[e], "rev_contrib": -nes[N.reg[e]] * C[e] / norm})
+            if cos_term is not None:
+                # exact decomposition: these sum to the regulon's cos_contrib
+                t["cos_term"] = cos_term[e]
+                t["opposes"] = cos_term[e] < 0
             if dz is not None:
                 t = t.merge(dz, on=["regulator", "target"], how="left")
             T.append(t)
