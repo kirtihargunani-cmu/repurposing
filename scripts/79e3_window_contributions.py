@@ -352,7 +352,11 @@ def main():
     T = pd.concat([o[1] for o in out if len(o[1])]) if any(len(o[1]) for o in out) else pd.DataFrame()
     SH = pd.concat([o[2] for o in out if len(o[2])]) if any(len(o[2]) for o in out) else pd.DataFrame()
     if SPLITHALF and len(SH):
-        sfx2 = "_all" if os.environ.get("ALL") == "1" else ""
+        # A QUERY run covers one or two drugs. Writing it to the FULL-RUN path silently replaced
+        # a 1,075,576-row production table with 1,708 rows from one drug, and the next test built
+        # its reliability weights from that - caught only because every weight came back
+        # degenerate. A partial run must never write a path a complete run owns.
+        sfx2 = "_query" if q else ("_all" if os.environ.get("ALL") == "1" else "")
         f = OUT / f"splithalf_reliability{sfx2}.tsv.gz"
         SH.to_csv(f, sep="\t", index=False, float_format="%.6g")
         ok = SH.cos_half.dropna()

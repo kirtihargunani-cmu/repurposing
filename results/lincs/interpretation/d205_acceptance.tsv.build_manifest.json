@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T234501-2984323",
+ "finished_at": "2026-11-22T23:46:02-05:00",
+ "duration_s": 61,
+ "script": "79ap_covariance_correction.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79ap_covariance_correction.py",
+ "env": "",
+ "git_sha": "ccf41c3",
+ "git_state": "dirty",
+ "note": "D205 registered test",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "d205_acceptance.tsv": {
+   "bytes": 15146,
+   "mtime": "2026-11-22T23:46:01-05:00"
+  }
+ }
+}

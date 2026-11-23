@@ -1,0 +1,146 @@
+{
+ "script": "79ap_covariance_correction.py",
+ "spec": "docs/SPEC_covariance_correction.md",
+ "n_cells": 25,
+ "dropped": [
+  {
+   "cohort": "CESC-AD",
+   "window": "early",
+   "n": 46,
+   "n_pos": 0
+  },
+  {
+   "cohort": "CESC-SCC",
+   "window": "early",
+   "n": 46,
+   "n_pos": 0
+  },
+  {
+   "cohort": "ESCA-AD",
+   "window": "early",
+   "n": 98,
+   "n_pos": 0
+  },
+  {
+   "cohort": "ESCA-SCC",
+   "window": "early",
+   "n": 98,
+   "n_pos": 0
+  },
+  {
+   "cohort": "LGG-IDHmut-codel",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "LGG-IDHmut-noncodel",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "LGG-IDHwt",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "PCPG-PGL",
+   "window": "late",
+   "n": 21,
+   "n_pos": 0
+  },
+  {
+   "cohort": "PCPG-PHEO",
+   "window": "late",
+   "n": 21,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TARGET-NBL",
+   "window": "late",
+   "n": 21,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-BLCA",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-GBM",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-OV",
+   "window": "early",
+   "n": 50,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-OV",
+   "window": "late",
+   "n": 3,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-PAAD",
+   "window": "early",
+   "n": 50,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-STAD",
+   "window": "early",
+   "n": 98,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-UCS",
+   "window": "early",
+   "n": 39,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-UCS",
+   "window": "late",
+   "n": 2,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-EEC",
+   "window": "early",
+   "n": 39,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-EEC",
+   "window": "late",
+   "n": 2,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-SER",
+   "window": "early",
+   "n": 39,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-SER",
+   "window": "late",
+   "n": 2,
+   "n_pos": 0
+  }
+ ],
+ "acceptance": {
+  "c1": false,
+  "c2": false,
+  "c3": false,
+  "c4": true,
+  "passed": false
+ }
+}
