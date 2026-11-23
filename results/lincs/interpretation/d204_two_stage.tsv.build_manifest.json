@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T231842-2978847",
+ "finished_at": "2026-11-22T23:19:43-05:00",
+ "duration_s": 61,
+ "script": "79ao_two_stage.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79ao_two_stage.py",
+ "env": "",
+ "git_sha": "09f1b1e",
+ "git_state": "dirty",
+ "note": "D204 two-stage scorer (exploratory)",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "d204_two_stage.tsv": {
+   "bytes": 18631,
+   "mtime": "2026-11-22T23:19:42-05:00"
+  }
+ }
+}
