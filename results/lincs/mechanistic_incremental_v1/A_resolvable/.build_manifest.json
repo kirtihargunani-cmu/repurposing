@@ -1,0 +1,51 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T163736-3317604",
+ "finished_at": "2026-11-23T16:38:54-05:00",
+ "duration_s": 78,
+ "script": "A_resolvable.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/A_resolvable.py",
+ "env": "",
+ "git_sha": "14b5879",
+ "git_state": "dirty",
+ "note": "mechanistic_incremental_v1 Experiment A (protocol 5cc2227)",
+ "expect": null,
+ "n_files": 8,
+ "mtime_span_hours": 0.01,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "A_curve.tsv": {
+   "bytes": 2664,
+   "mtime": "2026-11-23T16:38:54-05:00"
+  },
+  "A_halves.tsv.gz": {
+   "bytes": 430961,
+   "mtime": "2026-11-23T16:38:12-05:00"
+  },
+  "A_labels.tsv": {
+   "bytes": 3490,
+   "mtime": "2026-11-23T16:38:54-05:00"
+  },
+  "A_progeny.tsv.gz": {
+   "bytes": 1506055,
+   "mtime": "2026-11-23T16:38:13-05:00"
+  },
+  "A_reliability_cells.tsv": {
+   "bytes": 5920,
+   "mtime": "2026-11-23T16:38:19-05:00"
+  },
+  "A_shared_target_pairs.tsv.gz": {
+   "bytes": 3828283,
+   "mtime": "2026-11-23T16:38:22-05:00"
+  },
+  "A_target_rank.tsv.gz": {
+   "bytes": 10890,
+   "mtime": "2026-11-23T16:38:50-05:00"
+  },
+  "run.json": {
+   "bytes": 187,
+   "mtime": "2026-11-23T16:38:54-05:00"
+  }
+ }
+}
