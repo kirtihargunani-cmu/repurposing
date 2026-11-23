@@ -1131,3 +1131,8 @@ We also tried adding new biomarker comparisons. The test included a deliberate "
 and it passed anyway. Looking closer, several drugs in that check hit the same target, so they get
 the same score and count as one piece of evidence rather than five. So the new comparisons are not
 counted. The same issue applies to the original test, so we will re-run it counting each target once.
+
+**Update, same day (D209).** We re-ran the biomarker test counting each drug target once instead of
+each drug. The 49 comparisons come from 20 distinct targets; 16 of the 20 go the right way (80%), so
+the test still passes. The "should fail" check turned out to rest on only 2 distinct targets, which is
+too few to tell us anything, so it neither passes nor fails.

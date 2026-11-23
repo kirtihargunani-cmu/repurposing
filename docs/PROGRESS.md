@@ -2406,3 +2406,20 @@ affects the original 7 pairs, so a target-deduplicated D127 is the next registra
 
 CollecTRI / DoRothEA moved to `archive/collectri/` (143 MB); consensus outputs deleted (git history
 only). Stand-ins (79y) are off: they were built on CollecTRI activity. Rebuild: 58 min, 6 cores.
+
+## 2026-11-23 — D127 counted one vote per target still passes (D209)
+
+Registered before computing (`docs/SPEC_d127_target_dedup.md`). Compounds sharing a scored target
+unit in both cohorts get one vote (the median gap).
+
+| | units (compounds) | correct | share | p | median gap | verdict |
+|---|---|---|---|---|---|---|
+| **primary** | **20 (49)** | **16** | **0.80** | **0.0059** | **17.4** | **PASS** |
+| seen | 13 (22) | 13 | 1.00 | 0.0001 | 66.4 | reported |
+| expansion-primary | 11 (11) | 6 | 0.55 | 0.50 | 11.9 | fails |
+| expansion-secondary | 27 (28) | 24 | 0.89 | 2e-5 | 26.6 | not decision-bearing |
+| HDAC negative control | 2 (5) | 2 | 1.00 | 0.25 | 12.6 | underpowered |
+
+The only primary pair that misses is THCA BRAF-like vs RAS-like (1/4 units). The negative control
+was two observations, so it can neither confirm nor sink the instrument; a control with ≥ 5
+distinct target units would need its own registration.

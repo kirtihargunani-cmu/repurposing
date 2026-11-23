@@ -1,40 +1,52 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261123T113921-3178359",
- "finished_at": "2026-11-23T11:39:24-05:00",
+ "run_id": "20261123T114408-3181023",
+ "finished_at": "2026-11-23T11:44:11-05:00",
  "duration_s": 3,
  "script": "d127_biomarker.py",
  "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/d127/d127_biomarker.py",
- "env": "N_CORES=6",
- "git_sha": "7398cd8",
- "git_state": "clean",
- "note": "D208 D127/D207 on the _v2_tf arm",
+ "env": "",
+ "git_sha": "cfe60f5",
+ "git_state": "dirty",
+ "note": "D209 target-deduplicated D127 (registered cfe60f5)",
  "expect": null,
- "n_files": 4,
+ "n_files": 7,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
  "supersedes": {
-  "run_id": "20261123T003951-3000324",
-  "finished_at": "2026-11-23T00:39:54-05:00",
+  "run_id": "20261123T113921-3178359",
+  "finished_at": "2026-11-23T11:39:24-05:00",
   "n_files": 4,
-  "env": ""
+  "env": "N_CORES=6"
  },
  "files": {
+  "dedup_pairs.tsv": {
+   "bytes": 1258,
+   "mtime": "2026-11-23T11:44:11-05:00"
+  },
+  "dedup_summary.tsv": {
+   "bytes": 295,
+   "mtime": "2026-11-23T11:44:11-05:00"
+  },
+  "dedup_units.tsv": {
+   "bytes": 6794,
+   "mtime": "2026-11-23T11:44:11-05:00"
+  },
   "instances.tsv": {
-   "bytes": 15159,
-   "mtime": "2026-11-23T11:39:24-05:00"
+   "bytes": 17420,
+   "mtime": "2026-11-23T11:44:11-05:00"
   },
   "pairs.tsv": {
    "bytes": 1560,
-   "mtime": "2026-11-23T11:39:24-05:00"
+   "mtime": "2026-11-23T11:44:11-05:00"
   },
   "run.json": {
-   "bytes": 774,
-   "mtime": "2026-11-23T11:39:24-05:00"
+   "bytes": 1604,
+   "mtime": "2026-11-23T11:44:11-05:00"
   },
   "summary.tsv": {
    "bytes": 1276,
-   "mtime": "2026-11-23T11:39:24-05:00"
+   "mtime": "2026-11-23T11:44:11-05:00"
   }
  }
 }
