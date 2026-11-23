@@ -73,18 +73,18 @@
  ],
  "group_id": {
   "rows": 64094,
-  "fda_gate_passing": 10495,
-  "scored": 9169,
-  "no_protein_target": 1326,
-  "minority_alteration": 358,
-  "essential_target": 3149
+  "fda_gate_passing": 10819,
+  "scored": 9191,
+  "no_protein_target": 1628,
+  "minority_alteration": 379,
+  "essential_target": 3158
  },
  "stratum": {
   "rows": 20702,
-  "fda_gate_passing": 3411,
-  "scored": 2983,
-  "no_protein_target": 428,
-  "minority_alteration": 122,
+  "fda_gate_passing": 3481,
+  "scored": 2964,
+  "no_protein_target": 517,
+  "minority_alteration": 125,
   "essential_target": 1054
  },
  "rho_dna_acting": 0.5775

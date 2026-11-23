@@ -25,8 +25,15 @@ consensus arm, which **D160 had already retired from scoring**. So the windows, 
 were all computed on an arm the repo never called production.
 
 **D186 resolves (b): `_v2_tf` (ARACNe-only, per D160) IS production.** The five defaults are flipped. The
-consensus arm stays reachable with `SFX=_v2_consensus` and keeps its legacy un-suffixed output names, so it
-is a frozen reference rather than a deletion.
+~~consensus arm stays reachable with `SFX=_v2_consensus` and keeps its legacy un-suffixed output names, so it
+is a frozen reference rather than a deletion.~~
+
+**D208 (2026-11-23) supersedes that: the consensus arm is deleted.** Every script refuses a consensus suffix
+and `collectri` / `dorothea_ABC` regulons; CollecTRI / DoRothEA artefacts live in `archive/collectri/`, outside
+the build tree. Removal exposed three steps still reading the consensus arm (`fda_rows.py` → D127; the O
+component's CollecTRI half; `79f3` evidence flags over consensus rows only). All three are fixed and rebuilt.
+Before a re-run: `79f3` (`STAGE=flags`, then `STAGE=exposure`) and `79f4` now read `_v2_tf`, so they belong
+before `run_pipeline.sh` whenever the split universe changes.
 
 ## 2. The boundary — what is upstream and is NOT rerun
 

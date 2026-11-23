@@ -36,6 +36,7 @@ SFX <- if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else ""
 REGSET <- Sys.getenv("REGSET", "full"); stopifnot(REGSET %in% c("full", "tf", "tf_base", "tf_sig1", "tf_sig2"), REGSET == "full" || SFX == "_v2")
 TFX <- if (REGSET == "full") "" else paste0("_", REGSET)
 REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri", "dorothea_ABC"))
+if (REGULON %in% c("collectri", "dorothea_ABC")) stop("D208: CollecTRI / DoRothEA are separated from the current builds (archive/collectri/); ARACNe is the only regulon set")
 TAG <- if (REGULON == "aracne_project") paste0(SFX, TFX) else paste0("_", REGULON)  # curated: not versioned
 ONLY_NETS <- Filter(nzchar, strsplit(Sys.getenv("ONLY_NETS", ""), ",")[[1]])
 # RUN_TAG (D85, 2026-11-02): appended to the output folder (e.g. drug_viper_raw_v2_tf_d85); the regulator table then goes

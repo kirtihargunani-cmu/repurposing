@@ -18,6 +18,7 @@ args <- commandArgs(trailingOnly = FALSE)
 root <- normalizePath(file.path(dirname(sub("--file=", "", args[grep("--file=", args)])), ".."))
 setwd(root)
 REGULON <- Sys.getenv("REGULON", "aracne_project"); N_PC <- 5
+if (REGULON %in% c("collectri", "dorothea_ABC")) stop("D208: CollecTRI / DoRothEA are separated from the current builds (archive/collectri/); ARACNe is the only regulon set")
 ABSOLUTE_GROUPS <- c("LGG-IDHmut-codel", "LGG-IDHmut-noncodel", "LGG-IDHwt")
 in_dir <- file.path("data/processed/step6", REGULON); out_dir <- file.path("data/processed/step6", paste0(REGULON, "_purity"))
 res_dir <- file.path("results/step6", REGULON, "purity_correction")

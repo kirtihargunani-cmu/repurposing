@@ -206,7 +206,7 @@ def labels(D, ann):
     on = {g: onc(g) for g in D.fda_ingredient.unique()}
     D["anticancer"] = D.fda_ingredient.map(on)
     # subtype table (main targets = D105b evidence targets of any compound)
-    sp = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False, usecols=["pert_id", "evidence_targets"])
+    sp = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False, usecols=["pert_id", "evidence_targets"])
     mt = sp.dropna().drop_duplicates("pert_id").set_index("pert_id").evidence_targets.map(lambda s: {t.split(":")[0] for t in s.split(";") if t})
     tg = {g: set().union(*[mt.get(p, set()) for p in IC[g][0]]) for g in D.fda_ingredient.unique()}
     for src in ("hub", "chembl"):
@@ -307,7 +307,7 @@ def tests(D, src, rng):
 def main():
     rng = np.random.default_rng(SEED)
     OUT.mkdir(parents=True, exist_ok=True)
-    sp = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    sp = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False,
                      usecols=["group_id", "pert_id", "n_targets", "targets_expressed"]).drop_duplicates(["group_id", "pert_id"])
     nexp = dd.targets_expressed.fillna("").map(lambda x: len([t for t in str(x).split("|") if t]))

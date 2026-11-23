@@ -120,9 +120,11 @@ def dna_acting(names):
                     and (T.get(m["target_chembl_id"]) or {}).get("target_type") == "NUCLEIC-ACID":
                 out.add(d)
     return out
-# SPLIT_SFX (D139, 2026-11-17): default is production (_v2_consensus = ARACNe + CollecTRI);
-#   set SPLIT_SFX=_v2_tf to write layered_pct into the ARACNe-only split tables.
-SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_tf")   # D186: ARACNe-only is production (D160)
+# SPLIT_SFX (D139; D186; D208): which split tables get layered_pct. _v2_tf (ARACNe-only) is the only arm;
+#   the consensus arm was removed in D208.
+SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_tf")   # D186/D208: ARACNe-only is the only arm
+if "consensus" in SPLIT_SFX:
+    raise SystemExit("D208: the consensus arm has been removed")
 SPLITS = {"group_id": RES / f"drug_reversal_split{SPLIT_SFX}.tsv",
           "stratum": RES / f"stratum_reversal_split{SPLIT_SFX}.tsv"}
 
@@ -147,7 +149,7 @@ def layer1_strata(strata, F_groups):
     med = ref.where(ref >= T79.MIN_F, 0).median(1)
     A = F.where(F >= T79.MIN_F, 0).sub(med, axis=0)
     Pa = {u: T79.pct(A[u]) for u in A}
-    _, Po, Os = T79.comp_overactivity(strata, mr_dirs=("aracne_project_v2_tf_strata", "collectri_v2_strata"),
+    _, Po, Os = T79.comp_overactivity(strata, mr_dirs=("aracne_project_v2_tf_strata",),   # D208: ARACNe only
                                      summary="results/step10_v2/signature_summary.tsv", proc="data/processed/step10_v2")
     return Pd, Pa, Po, {u: F[u] for u in F}, Os
 
@@ -321,7 +323,7 @@ def main():
         print(unit, run[unit], flush=True)
     # D139: a non-default SPLIT_SFX (e.g. the ARACNe-only _v2_tf_ms25 arm) must not overwrite the
     #   production layered_score_v2.tsv / lead_score_run.json, so it tags them too.
-    sfx = OUT_SFX if SANDBOX else ("" if SPLIT_SFX == "_v2_consensus" else SPLIT_SFX)
+    sfx = OUT_SFX if SANDBOX else SPLIT_SFX   # D208: always tagged; the un-suffixed name was the consensus arm
     if ESSENTIAL and PROLIF_WEIGHT:
         run["rho_dna_acting"] = RHO_DNA
     pd.concat(allrows).to_csv(RES / f"layered_score_v2{sfx}.tsv", sep="\t", index=False, float_format="%.3f")

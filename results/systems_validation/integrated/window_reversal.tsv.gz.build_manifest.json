@@ -1,23 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261120T205806-2168484",
- "finished_at": "2026-11-20T20:58:28-05:00",
- "duration_s": 22,
+ "run_id": "20261123T111343-3172976",
+ "finished_at": "2026-11-23T11:13:58-05:00",
+ "duration_s": 15,
  "script": "window_reversal.py",
- "cmd": "env OMP_NUM_THREADS=6 /home/kirti/miniforge3/envs/celligner/bin/python scripts/systems_validation/integrate/window_reversal.py",
- "env": "",
- "git_sha": "5831f44",
- "git_state": "dirty",
- "note": "D171: net_for uses the group's cohort field as production does; recovers BRCA-Her2 + 3",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/systems_validation/integrate/window_reversal.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
+ "git_sha": "7398cd8",
+ "git_state": "clean",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
- "supersedes": null,
+ "supersedes": {
+  "run_id": "20261122T144215-2824333",
+  "finished_at": "2026-11-22T14:42:31-05:00",
+  "n_files": 1,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
  "files": {
   "window_reversal.tsv.gz": {
    "bytes": 329058,
-   "mtime": "2026-11-20T20:58:27-05:00"
+   "mtime": "2026-11-23T11:13:58-05:00"
   }
  }
 }

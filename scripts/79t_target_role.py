@@ -98,7 +98,8 @@ def comp_alteration(groups):
     return {c: F[c] for c in F}, {c: pct(A[c]) for c in A}, info
 
 
-def comp_overactivity(groups, mr_dirs=("aracne_project_v2_tf", "collectri_v2"), summary="results/step4_v2/signature_summary.tsv",
+# D208: overactivity reads ARACNe NES only; the CollecTRI half of the old mean is removed with the consensus arm.
+def comp_overactivity(groups, mr_dirs=("aracne_project_v2_tf",), summary="results/step4_v2/signature_summary.tsv",
                       proc="data/processed/step4_v2"):
     nes = []
     for d in mr_dirs:
@@ -183,7 +184,7 @@ def gene_score(c, g, orient_, Pd, Pa, Po, signed=True, drop=None):
 def main():
     rng = np.random.default_rng(SEED)
     OUT.mkdir(parents=True, exist_ok=True)
-    sp = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    sp = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
     groups = sorted(sp.group_id.unique())
     Rd, Pd = comp_dependency(groups)
     Ra, Pa, ainfo = comp_alteration(groups)

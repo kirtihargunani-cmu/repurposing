@@ -22,3 +22,7 @@ results/lincs/d128/**/cache/
 results/systems_validation/**/work/
 logs/runs/
 results/lincs/regulon_contributions_*/query_*
+
+# D208: CollecTRI / DoRothEA separated from the current builds. Results stay tracked under
+# archive/collectri/results; data mirrors the data/** rule and stays on the server.
+archive/collectri/data/**

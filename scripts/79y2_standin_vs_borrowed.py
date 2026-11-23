@@ -35,8 +35,8 @@ N_BOOT, SEED = 1000, 0
 
 def run(level):
     sub = level == "subgroup"
-    f, rf, col = (("stratum_reversal_split_v2_consensus.tsv", "stratum_reversal_v2_consensus.tsv", "spec_sib_mech") if sub
-                  else ("drug_reversal_split_v2_consensus.tsv", "drug_reversal_v2_consensus.tsv", "spec_mech"))
+    f, rf, col = (("stratum_reversal_split_v2_tf.tsv", "stratum_reversal_v2_tf.tsv", "spec_sib_mech") if sub
+                  else ("drug_reversal_split_v2_tf.tsv", "drug_reversal_v2_tf.tsv", "spec_mech"))
     ren = {"stratum": "group_id"}
     orig = pd.read_csv(RES / f, sep="\t", low_memory=False).rename(columns=ren)
     cf = pd.read_csv(SBX / "results/lincs" / f, sep="\t", low_memory=False).rename(columns=ren)
@@ -108,7 +108,7 @@ def run(level):
 
 def main():
     run("disease")
-    if (SBX / "results/lincs/stratum_reversal_split_v2_consensus.tsv").exists():
+    if (SBX / "results/lincs/stratum_reversal_split_v2_tf.tsv").exists():
         run("subgroup")
 
 

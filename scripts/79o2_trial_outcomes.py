@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Why trials failed: stopped-trial reasons and completed-trial outcomes for the top FDA drugs (D108, user 2026-11-06).
 
-Pairs: fda_rank <= TOP_N in results/lincs/fda_ranking_v2_consensus.tsv (diseases) and fda_ranking_strata_v2_consensus.tsv
+Pairs: fda_rank <= TOP_N in results/lincs/fda_ranking_v2_tf.tsv (diseases) and fda_ranking_strata_v2_tf.tsv
 (subgroups, parent's trial condition). Trial condition per disease from 79o (DISEASE).
 STAGE=fetch
   ClinicalTrials.gov API v2 (intervention = FDA drug name, condition), all pages, cached in
@@ -127,8 +127,8 @@ def ctgov(drug, cond):
 
 
 def pairs():
-    g = pd.read_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t").rename(columns={"group_id": "unit"}).assign(level="disease", parent_group=None)
-    s = pd.read_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t").rename(columns={"stratum": "unit"}).assign(level="subgroup")
+    g = pd.read_csv(RES / "fda_ranking_v2_tf.tsv", sep="\t").rename(columns={"group_id": "unit"}).assign(level="disease", parent_group=None)
+    s = pd.read_csv(RES / "fda_ranking_strata_v2_tf.tsv", sep="\t").rename(columns={"stratum": "unit"}).assign(level="subgroup")
     x = pd.concat([g, s], ignore_index=True)
     sel, mx = [], x.groupby("unit").fda_rank.transform("max")
     if "top" in BANDS:

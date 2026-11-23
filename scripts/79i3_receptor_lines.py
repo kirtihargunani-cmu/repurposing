@@ -26,7 +26,9 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 RES, PROC, RAW = ROOT / "results/lincs", ROOT / "data/processed/lincs", ROOT / "data/raw"
-SFX = os.environ.get("SFX", "_v2_tf")   # D186: ARACNe-only is production (D160); set SFX=_v2_consensus for the frozen reference arm
+SFX = os.environ.get("SFX", "_v2_tf")   # D186/D208: ARACNe-only is the only arm (consensus removed)
+if "consensus" in SFX:
+    raise SystemExit("D208: the consensus arm has been removed")
 RHO_MIN, SUPPORT_MIN, INDUCE_Z = 0.4, 0.5, 2.0
 ENDO = ["PECAM1", "VWF", "CDH5"]
 RHO_FILE = PROC / "receptor_environment_rho.tsv.gz"
@@ -143,7 +145,7 @@ def main():
     i2.refresh_summaries(g, s)
     run = dict(rule="D104b / D104c (rho 0.4)", tables=SFX, groups=g.receptor_status.value_counts().to_dict(),
                subgroups=s.receptor_status.value_counts().to_dict())
-    json.dump(run, open(RES / f"receptor_lines_run{'' if SFX == '_v2_consensus' else SFX}.json", "w"), indent=1)
+    json.dump(run, open(RES / f"receptor_lines_run{SFX}.json", "w"), indent=1)
     print(run)
 
 

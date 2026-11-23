@@ -117,7 +117,7 @@ def flags():
     wg = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
     ws = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long_v2.tsv", sep="\t").rename(columns={"stratum": "group_id"})
     res = []
-    for split, w in (("drug_reversal_split_v2_consensus.tsv", wg), ("stratum_reversal_split_v2_consensus.tsv", ws)):
+    for split, w in (("drug_reversal_split_v2_tf.tsv", wg), ("stratum_reversal_split_v2_tf.tsv", ws)):
         df = pd.read_csv(RES / split, sep="\t", low_memory=False, usecols=lambda c: c in ("group_id", "stratum", "pert_id", "source"))
         df = df.rename(columns={"stratum": "group_id"})
         for g, d in df.groupby("group_id"):

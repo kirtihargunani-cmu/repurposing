@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """D117: final tiers and evidence status, recomputed from scratch after every gate and flag (run after 79f3 STAGE=exposure).
 
-Split tables (79i; SFX = _v2_consensus, _v2_consensus_d100early, _v2_consensus_d100late):
+Split tables (79i; SFX = _v2_tf, _v2_tf_d100early, _v2_tf_d100late):
   tier_mech (rev_mech_pct), tier_spec_mech (spec_mech_pct), subgroups also tier_spec_sib_mech (spec_sib_mech_pct):
   hit = rev_mech > 0 and the current percentile (after the 79i2 / 79i3 re-ranking) >= 100 - TOP_PCT (79i);
   eligible = fda_rows.eligible (D115) without its rev > 0 term (the hit rule uses rev_mech): passes_gate, not

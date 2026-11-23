@@ -1,23 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261120T164448-2101574",
- "finished_at": "2026-11-20T16:45:32-05:00",
- "duration_s": 44,
+ "run_id": "20261123T104436-3163016",
+ "finished_at": "2026-11-23T10:45:06-05:00",
+ "duration_s": 30,
  "script": "79e_drug_reversal.py",
  "cmd": "env STRATA=1 /home/kirti/miniforge3/envs/celligner/bin/python scripts/79e_drug_reversal.py",
- "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
- "git_sha": "ecfb884",
- "git_state": "dirty",
- "note": "D156 rebuild chain, ARACNe-only (D160)",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 STRATA=1",
+ "git_sha": "7398cd8",
+ "git_state": "clean",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
- "supersedes": null,
+ "supersedes": {
+  "run_id": "20261122T140649-2814168",
+  "finished_at": "2026-11-22T14:07:41-05:00",
+  "n_files": 1,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
  "files": {
   "stratum_reversal_v2_tf.tsv": {
    "bytes": 5108886,
-   "mtime": "2026-11-20T16:45:32-05:00"
+   "mtime": "2026-11-23T10:45:06-05:00"
   }
  }
 }

@@ -91,8 +91,8 @@ def unit_obs(X, Z, w):
 def main():
     rng = np.random.default_rng(SEED)
     VAL.mkdir(parents=True, exist_ok=True)
-    g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
-    s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    g = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
+    s = pd.read_csv(RES / "stratum_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
     dd = pd.read_csv(RES / "disease_drugs.tsv", sep="\t", low_memory=False,
                      usecols=["group_id", "pert_id", "n_targets", "targets_expressed"])
     sd = pd.read_csv(RES / "stratum_drugs_v2.tsv", sep="\t", low_memory=False,

@@ -1,22 +1,24 @@
 label	script	env_sig	n_runs	median_s	max_s	s_per_group	ms_per_drug	n_groups	n_drugs
 50b contrib groups	50b_regulon_contributions.R	STRATA=0 EDGES=1	2	94	146	2.29	25.26	41	3721
 50b contrib strata	50b_regulon_contributions.R	STRATA=1	2	94	146	2.29	25.26	41	3721
-79e groups	79e_drug_reversal.py	STRATA=0	4	98	180	2.40	26.47	41	3721
-79e strata	79e_drug_reversal.py	STRATA=1	4	98	180	2.40	26.47	41	3721
-79i split	79i_split_reversal.py	STRATA=1	2	83	86	2.02	22.31	41	3721
-79i2 presence	79i2_target_presence.py	SFX=_v2_tf	2	16	19	0.39	4.30	41	3721
-79i3 receptor lines	79i3_receptor_lines.py	SFX=_v2_tf	1	283	283	6.90	76.05	41	3721
-79t3 lead	79t3_lead_score.py	SPLIT_SFX=_v2_tf	4	603	708	14.71	162.05	41	3721
-79p fda	79p_fda_ranking.py	SFX=_v2_tf	4	10	13	0.23	2.55	41	3721
+79e groups	79e_drug_reversal.py	STRATA=0	2	161	205	3.93	43.27	41	3721
+79e strata	79e_drug_reversal.py	STRATA=1	1	30	30	0.73	8.06	41	3721
+79i split	79i_split_reversal.py	STRATA=1	1	67	67	1.63	18.01	41	3721
+79i2 presence	79i2_target_presence.py	SFX=_v2_tf	1	9	9	0.22	2.42	41	3721
+79i3 receptor lines	79i3_receptor_lines.py	SFX=_v2_tf	1	34	34	0.83	9.14	41	3721
+79t3 lead	79t3_lead_score.py	SPLIT_SFX=_v2_tf	1	590	590	14.39	158.56	41	3721
+79p fda	79p_fda_ranking.py	SFX=_v2_tf	1	10	10	0.24	2.69	41	3721
 79i4 tiers	79i4_tiers.py	SFXS=_v2_tf	1	4	4	0.10	1.07	41	3721
-79e2 contrib drug	79e2_regulon_contributions.py		1	1054	1054	25.71	283.26	41	3721
-window_reversal	window_reversal.py		2	19	22	0.46	5.11	41	3721
-79j window cols	79j_window_scores.py	SPLIT_SFX=_v2_tf	3	4	6	0.10	1.07	41	3721
-79k window long	79k_window_long.py	SPLIT_SFX=_v2_tf	2	2	3	0.06	0.67	41	3721
-79e3 window contrib	79e3_window_contributions.py	SFX=_v2_tf	2	400	415	9.76	107.50	41	3721
-79e3 window contrib ALL	79e3_window_contributions.py	SFX=_v2_tf ALL=1 NO_TARGETS=1	2	400	415	9.76	107.50	41	3721
-79aa label pairs	79aa_label_pairs.py	SFX=_v2_tf	1	9	9	0.22	2.42	41	3721
-79ac window imputation (D183)	79ac_window_imputation.py		1	65	65	1.59	17.47	41	3721
-79ad approved concordance (D184)	79ad_approved_concordance.py		1	103	103	2.51	27.68	41	3721
-79ae moa-disjoint shortlist (D185)	79ae_moa_disjoint_shortlist.py		1	0	0	0.00	0.00	41	3721
+79e2 contrib drug	79e2_regulon_contributions.py		2	1028	1054	25.07	276.27	41	3721
+window_reversal	window_reversal.py		3	16	22	0.39	4.30	41	3721
+79j window cols	79j_window_scores.py	SPLIT_SFX=_v2_tf	1	4	4	0.10	1.07	41	3721
+79k window long	79k_window_long.py	SPLIT_SFX=_v2_tf	1	2	2	0.05	0.54	41	3721
+79e3 window contrib	79e3_window_contributions.py	SFX=_v2_tf	2	388	413	9.48	104.41	41	3721
+79e3 window contrib ALL	79e3_window_contributions.py	SFX=_v2_tf ALL=1 NO_TARGETS=1	2	730	770	17.80	196.18	41	3721
+79ah cosine summary	79ah_cosine_summary.py		1	32	32	0.78	8.60	41	3721
+79aa label pairs	79aa_label_pairs.py	SFX=_v2_tf	1	10	10	0.24	2.69	41	3721
+79ac window imputation (D183)	79ac_window_imputation.py		2	60	65	1.45	15.99	41	3721
+79ad approved concordance (D184)	79ad_approved_concordance.py		2	92	103	2.24	24.72	41	3721
+79ae moa-disjoint shortlist (D185)	79ae_moa_disjoint_shortlist.py		2	0	1	0.01	0.13	41	3721
+79ag window accuracy (D192)	79ag_window_accuracy.py	SPLIT_SFX=_v2_tf	1	1	1	0.02	0.27	41	3721
 79x2 window page	79x2_window_page.py	SPLIT_SFX=_v2_tf	2	53	55	1.29	14.24	41	3721

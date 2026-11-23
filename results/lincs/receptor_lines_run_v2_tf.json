@@ -1,0 +1,16 @@
+{
+ "rule": "D104b / D104c (rho 0.4)",
+ "tables": "_v2_tf",
+ "groups": {
+  "": 59535,
+  "ok": 3419,
+  "receptor_mismatch": 598,
+  "acts_on_tumor_environment": 542
+ },
+ "subgroups": {
+  "": 19258,
+  "ok": 1075,
+  "receptor_mismatch": 193,
+  "acts_on_tumor_environment": 176
+ }
+}

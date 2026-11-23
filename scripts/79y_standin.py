@@ -23,7 +23,7 @@ bootstrap 95% CI, against random shared-target pairs (no similarity rule; 200 dr
 its CI lies above the random pairs' median. Also by number of shared lines and similarity band.
 Reports show a stand-in next to the drug's own score; it never replaces it.
 Inputs: drug_line_profiles_index.tsv, drug_viper_specific_collectri/ALL.f32, drug_annotations.tsv,
-        drug_reversal_split_v2_consensus.tsv, stratum_reversal_split_v2_consensus.tsv, fda_matches.tsv (scripts/fda_rows.py)
+        drug_reversal_split_v2_tf.tsv, stratum_reversal_split_v2_tf.tsv, fda_matches.tsv (scripts/fda_rows.py)
 Outputs: results/lincs/standin_pairs_v2.tsv (accepted pairs with both sides' scores), standin_validation_v2.tsv,
          standin_run.json
 """
@@ -57,6 +57,9 @@ def adme_genes():
 
 
 def similarity():
+    # D208: stand-in similarity was built on CollecTRI drug activity, which is separated from the current builds.
+    #   Stand-ins are frozen in archive/collectri/ until an ARACNe-based similarity is specified and registered.
+    raise SystemExit("D208: 79y stand-ins depend on CollecTRI drug activity (archived); not part of the current build")
     """(perts, S, N): S[i, j] = mean per-line Pearson r of compounds i, j over shared lines, N = shared line count"""
     idx = pd.read_csv(PROC / "drug_line_profiles_index.tsv", sep="\t")
     d = PROC / "drug_viper_specific_collectri"
@@ -110,7 +113,7 @@ def main():
     # ---- shared targets: annotated on both; with shared_target_evidence = chembl, ChEMBL-backed binding by both too
     G, Sg = fda_rows()
     uni = set(G.pert_id) | set(Sg.pert_id)
-    for f in ("drug_reversal_split_v2_consensus.tsv", "stratum_reversal_split_v2_consensus.tsv"):
+    for f in ("drug_reversal_split_v2_tf.tsv", "stratum_reversal_split_v2_tf.tsv"):
         x = pd.read_csv(RES / f, sep="\t", low_memory=False, usecols=["pert_id", "source", "unmatched_lines", "passes_gate"])
         uni |= set(x[(x.source == "direct") & ~x.unmatched_lines.map(truthy) & x.passes_gate.map(truthy)].pert_id)
     uni = {p for p in uni if tg.get(p)}
@@ -128,8 +131,8 @@ def main():
     fda_by = {"disease": G, "subgroup": Sg}
     cols = ["group_id", "pert_id", "cmap_name", "source", "unmatched_lines", "low_transfer", "line_match", "rev_pct",
             "spec_pct", "spec_mech", "spec_mech_pct"]
-    full = {"disease": pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False),
-            "subgroup": pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    full = {"disease": pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False),
+            "subgroup": pd.read_csv(RES / "stratum_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
             .rename(columns={"stratum": "group_id"})}
     for k, df in full.items():
         df = df[df.passes_gate.map(truthy)].copy()

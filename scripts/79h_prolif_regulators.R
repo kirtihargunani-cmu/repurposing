@@ -20,6 +20,7 @@ RS <- Sys.getenv("REGSET", "full"); stopifnot(RS %in% c("full", "tf", "tf_base",
 SFX <- paste0(if (identical(Sys.getenv("VERSION", "v1"), "v2")) "_v2" else "", if (RS != "full") paste0("_", RS) else "")
 stopifnot(SFX != "_tf")
 REGULON <- Sys.getenv("REGULON", "aracne_project"); stopifnot(REGULON %in% c("aracne_project", "collectri"))
+if (REGULON %in% c("collectri", "dorothea_ABC")) stop("D208: CollecTRI / DoRothEA are separated from the current builds (archive/collectri/); ARACNe is the only regulon set")
 if (REGULON == "collectri") SFX <- "_collectri"
 arac <- if (REGULON == "collectri") list(ALL = readRDS("results/step5/regulons_core.rds")$collectri) else
   readRDS(paste0("data/processed/step5/regulons_aracne_project", SFX, ".rds"))

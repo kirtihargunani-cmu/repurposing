@@ -6,9 +6,9 @@ BRCA-Basal	Ixabepilone	TUBB8	lower	96.331		96.331			0.205			69.000	True	True	Tru
 BRCA-Basal	Paclitaxel	TUBB8	lower	96.331		96.331			0.205			77.533	True	True	True	False
 BRCA-Basal	Vinblastine	TUBB8	lower	96.331		96.331			0.205			59.367	False	False	True	False
 BRCA-Basal	Vincristine	TUBB8	lower	96.331		96.331			0.205			47.000	False	False	False	False
-BRCA-Basal	Digitoxin	ATP1B1	lower	93.716	97.070	94.750	89.329	0.991	0.147	1.376	logFC_vs_gtex	21.200	False	False	False	False
-BRCA-Basal	Digoxin	ATP1B1	lower	93.716	97.070	94.750	89.329	0.991	0.147	1.376	logFC_vs_gtex	25.625	False	False	False	False
-BRCA-Basal	Bortezomib	PSMD4	lower	92.654	90.746	99.283	87.935	0.663	0.295	1.275	logFC_vs_gtex	23.900	False	False	True	True
+BRCA-Basal	Alitretinoin	RARA	raise	93.763	97.650		89.876	-0.986	0.016	-2.018	NES	33.500	False	False	True	False
+BRCA-Basal	Isotretinoin	RARA	raise	93.763	97.650		89.876	-0.986	0.016	-2.018	NES	41.700	False	True	False	False
+BRCA-Basal	Tazarotene	RARA	raise	93.763	97.650		89.876	-0.986	0.016	-2.018	NES	27.500	False	False	False	False
 BRCA-Her2	Afatinib	ERBB2	lower	99.783	99.989	100.000	99.360	3.575	0.716	4.779	logFC_vs_gtex	44.350	False	True	True	False
 BRCA-Her2	Dacomitinib	ERBB2	lower	99.783	99.989	100.000	99.360	3.575	0.716	4.779	logFC_vs_gtex	25.700	False	False	False	False
 BRCA-Her2	Lapatinib	ERBB2	lower	99.783	99.989	100.000	99.360	3.575	0.716	4.779	logFC_vs_gtex	86.900	True	True	True	False
@@ -28,7 +28,7 @@ BRCA-LumA	Neratinib	ERBB2	lower	96.242	99.866	93.461	95.398	1.514	0.070	1.968	lo
 BRCA-LumA	Vandetanib	ERBB2	lower	96.242	99.866	93.461	95.398	1.514	0.070	1.968	logFC_vs_gtex	43.000	False	False	True	False
 BRCA-LumA	Digitoxin	ATP1B1	lower	95.387	95.172	96.707	94.283	0.581	0.096	1.757	logFC_vs_gtex	25.100	False	False	False	False
 BRCA-LumA	Digoxin	ATP1B1	lower	95.387	95.172	96.707	94.283	0.581	0.096	1.757	logFC_vs_gtex	24.175	False	False	False	False
-BRCA-LumA	Acamprosate	GABRG1	raise	91.408	92.828		89.988	-0.441	0.005	-1.828	logFC_vs_gtex	81.900	False	False	False	False
+BRCA-LumA	Tretinoin	RARB	raise	92.077	88.731		95.424	-0.359	0.005	-3.157	NES	61.000	False	True	True	False
 BRCA-LumB	Palbociclib	CCND1	lower	98.380	99.799	99.998	95.343	1.604	0.281	2.103	logFC_vs_gtex	50.800	True	True	True	False
 BRCA-LumB	Afatinib	ERBB2	lower	97.255	99.877	97.586	94.301	1.780	0.148	1.886	logFC_vs_gtex	36.550	False	False	True	False
 BRCA-LumB	Dacomitinib	ERBB2	lower	97.255	99.877	97.586	94.301	1.780	0.148	1.886	logFC_vs_gtex	47.600	False	False	False	False
@@ -40,16 +40,16 @@ BRCA-LumB	Bortezomib	PSMD3	lower	93.700	99.420	96.688	84.992	1.198	0.129	1.074	l
 BRCA-LumB	Carfilzomib	PSMD3	lower	93.700	99.420	96.688	84.992	1.198	0.129	1.074	logFC_vs_gtex	24.200	False	False	True	True
 BRCA-LumB	Ixazomib	PSMD3	lower	93.700	99.420	96.688	84.992	1.198	0.129	1.074	logFC_vs_gtex	17.800	False	False	True	True
 CESC-AD	Pentobarbital	GABRQ	raise	94.093	89.177		99.008	-0.331	0.064	-5.154	logFC_vs_gtex	75.900	False	False	False	False
-CESC-AD	Amcinonide	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	12.700	False	False	False	False
-CESC-AD	Ciclesonide	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	3.100	False	False	False	False
-CESC-AD	Dexamethasone	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	8.850	False	False	False	False
-CESC-AD	Fluocinolone acetonide	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	18.300	False	False	False	False
-CESC-AD	Fluticasone	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	20.000	False	False	False	False
-CESC-AD	Halcinonide	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	31.100	False	False	False	False
-CESC-AD	Medrysone	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	5.300	False	False	False	False
-CESC-AD	Methylprednisolone	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	8.600	False	False	False	False
-CESC-AD	Rimexolone	NR3C1	raise	86.086	78.372		93.800	-0.201	0.000	-1.825	NES	3.800	False	False	False	False
-CESC-SCC	Estradiol	ESR1	raise	92.045	89.869		94.220	-0.422	0.004	-1.907	NES	14.500	False	False	False	False
+CESC-AD	Floxuridine	TYMS	lower	81.357	98.639	48.890	96.540	0.674	0.021	3.191	logFC_vs_gtex	21.400	False	False	True	False
+CESC-AD	Fluorouracil	TYMS	lower	81.357	98.639	48.890	96.540	0.674	0.021	3.191	logFC_vs_gtex	47.000	False	True	True	False
+CESC-AD	Amcinonide	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	12.700	False	False	False	False
+CESC-AD	Ciclesonide	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	3.100	False	False	False	False
+CESC-AD	Dexamethasone	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	8.850	False	False	False	False
+CESC-AD	Fluocinolone acetonide	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	18.300	False	False	False	False
+CESC-AD	Fluticasone	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	20.000	False	False	False	False
+CESC-AD	Halcinonide	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	31.100	False	False	False	False
+CESC-AD	Medrysone	NR3C1	raise	80.215	78.372		82.059	-0.201	0.000	-1.307	NES	5.300	False	False	False	False
+CESC-SCC	Estradiol	ESR1	raise	94.543	89.869		99.216	-0.422	0.004	-3.195	NES	14.500	False	False	False	False
 CESC-SCC	Pentobarbital	GABRE	raise	90.298	95.744		84.853	-0.573	0.024	-1.723	logFC_vs_gtex	34.500	False	False	False	False
 CESC-SCC	Ropinirole	DRD3	raise	88.463	88.463			-0.398	0.056			90.900	False	False	False	False
 CESC-SCC	Alpelisib	PIK3CA	lower	86.454	94.344	100.000	65.017	0.537	0.406	0.352	logFC_vs_gtex	86.100	False	False	True	False
@@ -107,8 +107,8 @@ LGG-IDHwt	Quizartinib	PDGFRA	lower	97.158	98.699	99.672	93.102	2.119	0.052	1.107
 LGG-IDHwt	Regorafenib	PDGFRA	lower	97.158	98.699	99.672	93.102	2.119	0.052	1.107	logFC_vs_gtex	60.400	False	False	True	False
 LGG-IDHwt	Sunitinib	PDGFRA	lower	97.158	98.699	99.672	93.102	2.119	0.052	1.107	logFC_vs_gtex	59.300	False	False	True	False
 LGG-IDHwt	Palbociclib	CDK4	lower	96.526	92.080	99.931	97.566	1.234	0.125	1.823	logFC_vs_gtex	51.000	False	False	True	True
-LGG-IDHwt	Pioglitazone	PPARG	raise	87.503	87.827		87.179	-0.999	0.000	-0.629	NES	23.300	False	False	False	False
-LGG-IDHwt	Rosiglitazone	PPARG	raise	87.503	87.827		87.179	-0.999	0.000	-0.629	NES	22.600	False	False	False	False
+LGG-IDHwt	Pioglitazone	PPARG	raise	84.041	87.827		80.255	-0.999	0.000	-0.217	NES	23.300	False	False	False	False
+LGG-IDHwt	Rosiglitazone	PPARG	raise	84.041	87.827		80.255	-0.999	0.000	-0.217	NES	22.600	False	False	False	False
 PCPG-PGL	Dasatinib	KIT	lower	80.484	97.532	50.406	93.515	0.995	0.000	2.752	logFC_vs_gtex	57.300	False	False	True	False
 PCPG-PGL	Midostaurin	KIT	lower	80.484	97.532	50.406	93.515	0.995	0.000	2.752	logFC_vs_gtex	30.500	False	False	True	False
 PCPG-PGL	Pazopanib	KIT	lower	80.484	97.532	50.406	93.515	0.995	0.000	2.752	logFC_vs_gtex	43.300	False	False	True	False
@@ -135,20 +135,20 @@ SARC-DDLPS	Givinostat	HDAC2	lower	91.782	89.470	96.878	88.997	0.392	0.105	1.138	
 SARC-DDLPS	Panobinostat	HDAC2	lower	91.782	89.470	96.878	88.997	0.392	0.105	1.138	logFC_vs_gtex	36.600	False	False	True	False
 SARC-DDLPS	Romidepsin	HDAC2	lower	91.782	89.470	96.878	88.997	0.392	0.105	1.138	logFC_vs_gtex	19.400	False	False	True	False
 SARC-DDLPS	Vorinostat	HDAC2	lower	91.782	89.470	96.878	88.997	0.392	0.105	1.138	logFC_vs_gtex	25.300	False	False	True	False
-SARC-DDLPS	Amcinonide	NR3C1	raise	90.951	85.422		96.480	-0.328	0.053	-2.476	NES	77.200	False	False	False	False
-SARC-DDLPS	Ciclesonide	NR3C1	raise	90.951	85.422		96.480	-0.328	0.053	-2.476	NES	33.100	False	False	False	False
-SARC-DDLPS	Dexamethasone	NR3C1	raise	90.951	85.422		96.480	-0.328	0.053	-2.476	NES	76.250	False	False	False	False
-SARC-DDLPS	Fluocinolone acetonide	NR3C1	raise	90.951	85.422		96.480	-0.328	0.053	-2.476	NES	80.100	False	False	False	False
+SARC-DDLPS	Pentobarbital	GABRA4	raise	89.366	83.145		95.586	-0.299	0.000	-2.645	logFC_vs_gtex	79.600	False	False	False	False
+SARC-DDLPS	Clofarabine	POLA1	lower	88.280	98.572	91.016	75.253	0.719	0.070	0.555	logFC_vs_gtex	47.900	False	False	True	True
+SARC-DDLPS	Cytarabine	POLA1	lower	88.280	98.572	91.016	75.253	0.719	0.070	0.555	logFC_vs_gtex	26.300	False	True	True	True
+SARC-DDLPS	Fludarabine	POLA1	lower	88.280	98.572	91.016	75.253	0.719	0.070	0.555	logFC_vs_gtex	8.200	False	False	True	True
+SARC-LMS	Tazarotene	RARG	raise	94.875	94.052		95.698	-0.418	0.000	-1.847	NES	70.000	False	False	False	False
+SARC-LMS	Tretinoin	RARG	raise	94.875	94.052		95.698	-0.418	0.000	-1.847	NES	83.800	False	False	True	False
 SARC-LMS	Clofarabine	POLA1	lower	94.624	98.859	97.717	87.296	0.661	0.058	1.612	logFC_vs_gtex	59.750	False	False	True	True
 SARC-LMS	Cytarabine	POLA1	lower	94.624	98.859	97.717	87.296	0.661	0.058	1.612	logFC_vs_gtex	15.950	False	True	True	True
 SARC-LMS	Fludarabine	POLA1	lower	94.624	98.859	97.717	87.296	0.661	0.058	1.612	logFC_vs_gtex	37.400	False	False	True	True
 SARC-LMS	Gemcitabine	POLA1	lower	94.624	98.859	97.717	87.296	0.661	0.058	1.612	logFC_vs_gtex	23.300	False	True	True	True
-SARC-LMS	Amcinonide	NR3C1	raise	88.455	79.783		97.127	-0.223	0.010	-1.833	NES	56.600	False	False	False	False
-SARC-LMS	Ciclesonide	NR3C1	raise	88.455	79.783		97.127	-0.223	0.010	-1.833	NES	3.400	False	False	False	False
-SARC-LMS	Dexamethasone	NR3C1	raise	88.455	79.783		97.127	-0.223	0.010	-1.833	NES	76.100	False	False	False	False
-SARC-LMS	Fluocinolone acetonide	NR3C1	raise	88.455	79.783		97.127	-0.223	0.010	-1.833	NES	28.300	False	False	False	False
-SARC-LMS	Fluticasone	NR3C1	raise	88.455	79.783		97.127	-0.223	0.010	-1.833	NES	88.300	False	False	False	False
-SARC-LMS	Halcinonide	NR3C1	raise	88.455	79.783		97.127	-0.223	0.010	-1.833	NES	91.800	False	False	False	False
+SARC-LMS	Pentobarbital	GABRA4	raise	84.011	89.363		78.659	-0.330	0.000	-0.953	logFC_vs_gtex	78.600	False	False	False	False
+SARC-LMS	Amcinonide	NR3C1	raise	81.287	79.783		82.792	-0.223	0.010	-0.889	NES	56.600	False	False	False	False
+SARC-LMS	Ciclesonide	NR3C1	raise	81.287	79.783		82.792	-0.223	0.010	-0.889	NES	3.400	False	False	False	False
+SARC-LMS	Dexamethasone	NR3C1	raise	81.287	79.783		82.792	-0.223	0.010	-0.889	NES	76.100	False	False	False	False
 SARC-UPS	Pentobarbital	GABRA4	raise	93.619	92.186		95.051	-0.478	0.013	-2.737	logFC_vs_gtex	75.600	False	False	False	False
 SARC-UPS	Vinblastine	TUBB8	lower	93.377		93.377			0.066			7.833	False	False	True	False
 SARC-UPS	Vincristine	TUBB8	lower	93.377		93.377			0.066			23.467	False	False	False	False
@@ -181,14 +181,14 @@ TARGET-WT	Phenytoin	SCN5A	lower	89.903	87.204		92.602	0.936		2.334	logFC_vs_gtex
 TARGET-WT	Daunorubicin	TOP2A	lower	88.931	79.238		98.625	0.651		4.772	logFC_vs_gtex	98.040	False	False	True	True
 TCGA-ACC	Pentobarbital	GABRB3	raise	98.652			98.652		0.013	-3.574	logFC_vs_gtex	96.200	False	False	False	False
 TCGA-ACC	Palbociclib	CDK4	lower	96.422		99.857	92.988		0.078	1.191	logFC_vs_gtex	38.700	False	False	True	True
+TCGA-ACC	Azacitidine	DNMT1	lower	96.336		98.612	94.059		0.052	2.110	NES	98.400	False	False	True	True
+TCGA-ACC	Decitabine	DNMT1	lower	96.336		98.612	94.059		0.052	2.110	NES	34.100	False	False	True	True
 TCGA-ACC	Clofarabine	POLD2	lower	94.233		98.612	89.854		0.052	0.977	logFC_vs_gtex	42.550	False	False	True	True
 TCGA-ACC	Cytarabine	POLD2	lower	94.233		98.612	89.854		0.052	0.977	logFC_vs_gtex	33.450	False	False	True	True
 TCGA-ACC	Gemcitabine	POLD2	lower	94.233		98.612	89.854		0.052	0.977	logFC_vs_gtex	35.800	False	False	True	True
-TCGA-ACC	Belinostat	HDAC9	lower	87.707		98.612	76.802		0.052	0.795	NES	6.200	False	False	True	False
-TCGA-ACC	Givinostat	HDAC9	lower	87.707		98.612	76.802		0.052	0.795	NES	6.800	False	False	False	False
-TCGA-ACC	Panobinostat	HDAC9	lower	87.707		98.612	76.802		0.052	0.795	NES	2.600	False	False	True	False
-TCGA-ACC	Romidepsin	HDAC9	lower	87.707		98.612	76.802		0.052	0.795	NES	3.100	False	False	True	False
-TCGA-ACC	Azacitidine	DNMT1	lower	84.842		98.612	71.072		0.052	0.577	NES	98.400	False	False	True	True
+TCGA-ACC	Bortezomib	PSMD4	lower	82.758		98.612	66.904		0.052	0.303	logFC_vs_gtex	74.150	False	False	True	True
+TCGA-ACC	Carfilzomib	PSMD4	lower	82.758		98.612	66.904		0.052	0.303	logFC_vs_gtex	50.600	False	False	True	True
+TCGA-ACC	Ixazomib	PSMD4	lower	82.758		98.612	66.904		0.052	0.303	logFC_vs_gtex	88.850	False	False	True	True
 TCGA-BLCA	Pentobarbital	GABRA1	raise	98.696	98.696			-0.701	0.010			53.500	False	False	False	False
 TCGA-BLCA	Palbociclib	CCND1	lower	85.612	95.828	99.476	61.532	0.580	0.115	0.210	logFC_vs_adjacent	39.400	False	False	True	False
 TCGA-BLCA	Afatinib	ERBB2	lower	84.435	73.846	99.668	79.790	0.193	0.133	0.598	logFC_vs_adjacent	14.300	False	False	True	False
@@ -197,18 +197,18 @@ TCGA-BLCA	Lapatinib	ERBB2	lower	84.435	73.846	99.668	79.790	0.193	0.133	0.598	lo
 TCGA-BLCA	Masoprocol	ERBB2	lower	84.435	73.846	99.668	79.790	0.193	0.133	0.598	logFC_vs_adjacent	26.800	False	False	False	False
 TCGA-BLCA	Neratinib	ERBB2	lower	84.435	73.846	99.668	79.790	0.193	0.133	0.598	logFC_vs_adjacent	60.500	False	False	True	False
 TCGA-BLCA	Vandetanib	ERBB2	lower	84.435	73.846	99.668	79.790	0.193	0.133	0.598	logFC_vs_adjacent	68.400	False	False	True	False
-TCGA-BLCA	Azacitidine	DNMT3A	lower	81.329	97.397	47.136	99.455	0.654	0.022	3.093	NES	35.350	False	False	True	False
-TCGA-BLCA	Decitabine	DNMT3A	lower	81.329	97.397	47.136	99.455	0.654	0.022	3.093	NES	57.600	False	False	True	False
-TCGA-COAD	Amcinonide	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	40.500	False	False	False	False
-TCGA-COAD	Ciclesonide	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	88.200	False	False	False	False
-TCGA-COAD	Dexamethasone	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	33.050	False	False	False	False
-TCGA-COAD	Fluocinolone acetonide	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	39.100	False	False	False	False
-TCGA-COAD	Fluticasone	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	29.000	False	False	False	False
-TCGA-COAD	Halcinonide	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	40.700	False	False	False	False
-TCGA-COAD	Hydrocortisone	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	72.400	False	False	False	False
-TCGA-COAD	Prednicarbate	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	41.500	False	False	False	False
-TCGA-COAD	Prednisone	NR3C1	raise	94.577	93.704		95.450	-0.439	0.000	-1.938	NES	50.900	False	False	False	False
+TCGA-BLCA	Lonafarnib	FNTA	lower	80.983	81.492	96.905	64.552	0.278	0.074	0.266	logFC_vs_adjacent	29.300	False	False	False	True
+TCGA-BLCA	Bortezomib	PSMB4	lower	79.205	54.770	98.368	84.478	0.031	0.093	0.747	logFC_vs_adjacent	26.000	False	False	True	True
 TCGA-COAD	Dasatinib	SRMS	lower	93.977	89.741	99.020	93.169	0.340	0.080	1.366	logFC_vs_gtex	95.900	False	False	True	False
+TCGA-COAD	Cabazitaxel	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			80.000	False	False	True	False
+TCGA-COAD	Colchicine	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			38.800	False	False	False	False
+TCGA-COAD	Docetaxel	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			44.300	False	False	True	False
+TCGA-COAD	Ixabepilone	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			86.800	False	False	True	False
+TCGA-COAD	Paclitaxel	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			72.400	False	False	True	False
+TCGA-COAD	Vinblastine	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			30.733	False	False	True	False
+TCGA-COAD	Vincristine	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			19.067	False	False	False	False
+TCGA-COAD	Vinorelbine	TUBA3C	lower	93.075	88.072	98.078		0.313	0.055			4.200	False	False	True	False
+TCGA-COAD	Amcinonide	NR3C1	raise	93.013	93.704		92.323	-0.439	0.000	-1.738	NES	40.500	False	False	False	False
 TCGA-GBM	Pentobarbital	GABRG1	raise	99.416	98.962		99.870	-1.906	0.000	-5.676	logFC_vs_gtex	9.200	False	False	False	False
 TCGA-GBM	Midostaurin	PDGFRA	lower	97.564	98.766	99.891	94.034	2.104	0.130	1.620	logFC_vs_gtex	65.700	False	False	True	False
 TCGA-GBM	Nintedanib	PDGFRA	lower	97.564	98.766	99.891	94.034	2.104	0.130	1.620	logFC_vs_gtex	92.000	False	False	True	False
@@ -217,8 +217,8 @@ TCGA-GBM	Quizartinib	PDGFRA	lower	97.564	98.766	99.891	94.034	2.104	0.130	1.620	
 TCGA-GBM	Regorafenib	PDGFRA	lower	97.564	98.766	99.891	94.034	2.104	0.130	1.620	logFC_vs_gtex	44.400	False	False	True	False
 TCGA-GBM	Sunitinib	PDGFRA	lower	97.564	98.766	99.891	94.034	2.104	0.130	1.620	logFC_vs_gtex	75.800	False	False	True	False
 TCGA-GBM	Palbociclib	CDK4	lower	96.847	91.873	99.966	98.702	1.204	0.167	3.415	logFC_vs_gtex	45.100	False	False	True	True
-TCGA-GBM	Pioglitazone	PPARG	raise	88.234	87.854		88.613	-0.984	0.006	-1.084	NES	16.200	False	False	False	False
-TCGA-GBM	Rosiglitazone	PPARG	raise	88.234	87.854		88.613	-0.984	0.006	-1.084	NES	32.300	False	False	False	False
+TCGA-GBM	Axitinib	KDR	lower	84.278	83.897	99.712	69.226	0.815	0.068	0.454	logFC_vs_gtex	92.500	False	False	True	False
+TCGA-GBM	Cabozantinib	KDR	lower	84.278	83.897	99.712	69.226	0.815	0.068	0.454	logFC_vs_gtex	78.100	False	False	True	False
 TCGA-HNSC	Afatinib	EGFR	lower	96.592	99.961	98.461	91.355	1.182	0.110	1.148	logFC_vs_gtex	66.100	False	True	True	False
 TCGA-HNSC	Dacomitinib	EGFR	lower	96.592	99.961	98.461	91.355	1.182	0.110	1.148	logFC_vs_gtex	72.600	False	False	False	False
 TCGA-HNSC	Erlotinib	EGFR	lower	96.592	99.961	98.461	91.355	1.182	0.110	1.148	logFC_vs_gtex	91.700	False	True	True	False
@@ -279,16 +279,16 @@ TCGA-LUAD	Ixazomib	PSMA6	lower	88.577	87.464	98.968	79.298	0.243	0.122	0.666	log
 TCGA-LUAD	Pentobarbital	GABRA4	raise	86.563	83.713		89.414	-0.220	0.014	-1.421	logFC_vs_gtex	77.400	False	False	False	False
 TCGA-LUAD	Minoxidil	KCNJ11	raise	85.526	78.645		92.407	-0.181	0.002	-1.728	logFC_vs_gtex	44.000	False	False	False	False
 TCGA-LUAD	Vandetanib	EPHA10	lower	81.538	99.040	46.405	99.169	0.533	0.012	3.584	logFC_vs_gtex	58.500	False	True	True	False
-TCGA-LUSC	Amcinonide	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	72.500	False	False	False	False
-TCGA-LUSC	Betamethasone	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	77.050	False	False	False	False
-TCGA-LUSC	Budesonide	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	26.050	False	False	False	False
-TCGA-LUSC	Ciclesonide	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	50.700	False	False	False	False
-TCGA-LUSC	Clocortolone	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	48.600	False	False	False	False
-TCGA-LUSC	Dexamethasone	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	43.440	False	False	False	False
-TCGA-LUSC	Diflorasone	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	18.900	False	False	False	False
-TCGA-LUSC	Flunisolide	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	35.250	False	False	False	False
-TCGA-LUSC	Fluocinolone acetonide	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	17.700	False	False	False	False
-TCGA-LUSC	Fluocinonide	NR3C1	raise	90.943	92.325		89.560	-0.470	0.002	-2.076	NES	55.600	False	False	False	False
+TCGA-LUSC	Acitretin	RARA	raise	93.788	90.790		96.786	-0.442	0.016	-3.432	NES	78.400	False	False	False	False
+TCGA-LUSC	Tazarotene	RARA	raise	93.788	90.790		96.786	-0.442	0.016	-3.432	NES	44.900	False	False	False	False
+TCGA-LUSC	Tretinoin	RARA	raise	93.788	90.790		96.786	-0.442	0.016	-3.432	NES	55.800	False	True	True	False
+TCGA-LUSC	Pentobarbital	GABRB2	raise	90.541	85.549		95.533	-0.357	0.002	-2.672	logFC_vs_gtex	79.700	False	False	False	False
+TCGA-LUSC	Digitoxin	ATP1B3	lower	89.605	85.784	98.474	84.557	0.369	0.193	0.986	logFC_vs_gtex	82.400	False	False	False	False
+TCGA-LUSC	Digoxin	ATP1B3	lower	89.605	85.784	98.474	84.557	0.369	0.193	0.986	logFC_vs_gtex	52.600	False	False	False	False
+TCGA-LUSC	Palbociclib	CCND1	lower	88.688	91.365	97.595	77.104	0.478	0.141	0.679	logFC_vs_gtex	16.000	False	True	True	False
+TCGA-LUSC	Bortezomib	PSMC4	lower	88.088	85.159	95.624	83.482	0.359	0.076	0.927	logFC_vs_gtex	45.000	False	False	True	True
+TCGA-LUSC	Carfilzomib	PSMC4	lower	88.088	85.159	95.624	83.482	0.359	0.076	0.927	logFC_vs_gtex	58.800	False	False	True	True
+TCGA-LUSC	Ixazomib	PSMC4	lower	88.088	85.159	95.624	83.482	0.359	0.076	0.927	logFC_vs_gtex	15.300	False	False	True	True
 TCGA-OV	Pentobarbital	GABRG1	raise	97.555	96.043		99.068	-0.474	0.007	-5.103	logFC_vs_gtex	95.500	False	False	False	False
 TCGA-OV	Midostaurin	PRKCI	lower	97.495	95.256	99.735		0.486	0.330			28.700	False	False	True	False
 TCGA-OV	Bortezomib	PSMD8	lower	92.794	98.459	95.732	84.191	0.663	0.120	1.570	logFC_vs_gtex	83.000	False	False	True	True
@@ -314,31 +314,31 @@ TCGA-PRAD	Fingolimod	S1PR5	raise	87.583	93.643		81.524	-0.905	0.002	-0.969	logFC
 TCGA-PRAD	Alprazolam	GABRE	raise	86.553	73.270		99.836	-0.369	0.010	-4.194	logFC_vs_gtex	61.000	False	False	False	False
 TCGA-PRAD	Lorazepam	GABRE	raise	86.553	73.270		99.836	-0.369	0.010	-4.194	logFC_vs_gtex	55.500	False	False	False	False
 TCGA-PRAD	Pentobarbital	GABRE	raise	86.553	73.270		99.836	-0.369	0.010	-4.194	logFC_vs_gtex	79.200	False	False	False	False
-TCGA-PRAD	Acitretin	RARB	raise	81.730	95.579		67.880	-1.004	0.002	-0.938	NES	9.600	False	False	False	False
-TCGA-PRAD	Tazarotene	RARB	raise	81.730	95.579		67.880	-1.004	0.002	-0.938	NES	22.900	False	False	False	False
-TCGA-PRAD	Tretinoin	RARB	raise	81.730	95.579		67.880	-1.004	0.002	-0.938	NES	76.900	False	False	True	False
-TCGA-PRAD	Flutamide	AR	lower	81.665	99.994	49.550	95.450	7.602	0.014	2.236	NES	86.300	True	True	True	False
-TCGA-PRAD	Nandrolone	AR	lower	81.665	99.994	49.550	95.450	7.602	0.014	2.236	NES	7.400	False	False	False	False
+TCGA-PRAD	Acitretin	RARB	raise	86.123	95.579		76.667	-1.004	0.002	-1.475	NES	9.600	False	False	False	False
+TCGA-PRAD	Tazarotene	RARB	raise	86.123	95.579		76.667	-1.004	0.002	-1.475	NES	22.900	False	False	False	False
+TCGA-PRAD	Tretinoin	RARB	raise	86.123	95.579		76.667	-1.004	0.002	-1.475	NES	76.900	False	False	True	False
+TCGA-PRAD	Flutamide	AR	lower	81.319	99.994	49.550	94.412	7.602	0.014	2.382	NES	86.300	True	True	True	False
+TCGA-PRAD	Nandrolone	AR	lower	81.319	99.994	49.550	94.412	7.602	0.014	2.382	NES	7.400	False	False	False	False
 TCGA-READ	Dasatinib	SRMS	lower	92.955	86.677	98.863	93.326	0.304	0.097	1.485	logFC_vs_gtex	81.700	False	False	True	False
-TCGA-READ	Amcinonide	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	48.000	False	False	False	False
-TCGA-READ	Ciclesonide	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	92.500	False	False	False	False
-TCGA-READ	Dexamethasone	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	36.100	False	False	False	False
-TCGA-READ	Fluocinolone acetonide	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	44.500	False	False	False	False
-TCGA-READ	Fluticasone	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	36.700	False	False	False	False
-TCGA-READ	Halcinonide	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	48.900	False	False	False	False
-TCGA-READ	Hydrocortisone	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	87.200	False	False	False	False
-TCGA-READ	Prednicarbate	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	23.700	False	False	False	False
-TCGA-READ	Prednisone	NR3C1	raise	92.533	90.963		94.102	-0.404	0.000	-1.737	NES	53.700	False	False	False	False
+TCGA-READ	Bortezomib	PSMA7	lower	92.099	83.975	98.200	94.122	0.267	0.075	1.574	logFC_vs_gtex	12.850	False	False	True	True
+TCGA-READ	Carfilzomib	PSMA7	lower	92.099	83.975	98.200	94.122	0.267	0.075	1.574	logFC_vs_gtex	60.200	False	False	True	True
+TCGA-READ	Ixazomib	PSMA7	lower	92.099	83.975	98.200	94.122	0.267	0.075	1.574	logFC_vs_gtex	11.550	False	False	True	True
+TCGA-READ	Cabazitaxel	TUBA3C	lower	90.110	82.312	97.908		0.248	0.065			93.300	False	False	True	False
+TCGA-READ	Colchicine	TUBA3C	lower	90.110	82.312	97.908		0.248	0.065			51.900	False	False	False	False
+TCGA-READ	Docetaxel	TUBA3C	lower	90.110	82.312	97.908		0.248	0.065			55.800	False	False	True	False
+TCGA-READ	Ixabepilone	TUBA3C	lower	90.110	82.312	97.908		0.248	0.065			96.000	False	False	True	False
+TCGA-READ	Paclitaxel	TUBA3C	lower	90.110	82.312	97.908		0.248	0.065			85.450	False	False	True	False
+TCGA-READ	Vinblastine	TUBA3C	lower	90.110	82.312	97.908		0.248	0.065			48.633	False	False	True	False
 TCGA-SKCM	Palbociclib	CCND1	lower	96.455	99.528	99.148	90.690	0.826	0.053	1.538	logFC_vs_gtex	44.900	False	False	True	False
 TCGA-SKCM	Defactinib	PTK2	lower	91.262	97.858	98.495	77.432	0.552	0.058	0.802	logFC_vs_gtex	88.100	False	False	False	False
-TCGA-SKCM	Amcinonide	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	40.000	False	False	False	False
-TCGA-SKCM	Ciclesonide	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	36.100	False	False	False	False
-TCGA-SKCM	Dexamethasone	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	58.950	False	False	False	False
-TCGA-SKCM	Fluocinolone acetonide	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	57.250	False	False	False	False
-TCGA-SKCM	Fluticasone	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	55.900	False	False	False	False
-TCGA-SKCM	Halcinonide	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	34.000	False	False	False	False
-TCGA-SKCM	Hydrocortisone	NR3C1	raise	91.028	86.597		95.459	-0.284	0.006	-1.944	NES	41.600	False	False	False	False
-TCGA-SKCM	Tazarotene	RARG	raise	90.683	92.090		89.275	-0.359	0.000	-1.352	NES	62.000	False	False	False	False
+TCGA-SKCM	Tazarotene	RARG	raise	89.762	92.090		87.435	-0.359	0.000	-1.439	NES	62.000	False	False	False	False
+TCGA-SKCM	Tretinoin	RARG	raise	89.762	92.090		87.435	-0.359	0.000	-1.439	NES	79.900	False	False	True	False
+TCGA-SKCM	Binimetinib	MAP2K1	lower	88.792	99.831	99.148	67.398	1.051	0.053	0.465	logFC_vs_gtex	32.900	False	True	True	False
+TCGA-SKCM	Cobimetinib	MAP2K1	lower	88.792	99.831	99.148	67.398	1.051	0.053	0.465	logFC_vs_gtex	56.900	True	True	True	False
+TCGA-SKCM	Mirdametinib	MAP2K1	lower	88.792	99.831	99.148	67.398	1.051	0.053	0.465	logFC_vs_gtex	42.400	False	False	True	False
+TCGA-SKCM	Selumetinib	MAP2K1	lower	88.792	99.831	99.148	67.398	1.051	0.053	0.465	logFC_vs_gtex	10.300	False	True	True	False
+TCGA-SKCM	Trametinib	MAP2K1	lower	88.792	99.831	99.148	67.398	1.051	0.053	0.465	logFC_vs_gtex	15.300	True	True	True	False
+TCGA-SKCM	Pentobarbital	GABRB2	raise	88.447	87.530		89.364	-0.294	0.030	-2.825	logFC_vs_gtex	72.500	False	False	False	False
 TCGA-STAD	Palbociclib	CCND1	lower	97.529	99.029	98.488	95.071	0.721	0.068	2.015	logFC_vs_gtex	75.400	False	False	True	False
 TCGA-STAD	Dasatinib	SRMS	lower	97.484	96.115	98.841	97.497	0.507	0.070	2.952	logFC_vs_gtex	76.500	False	False	True	False
 TCGA-STAD	Daunorubicin	TOP2A	lower	92.489	78.276	99.615	99.577	0.215	0.080	5.028	logFC_vs_gtex	96.140	False	False	True	True
@@ -349,6 +349,8 @@ TCGA-STAD	Mitoxantrone	TOP2A	lower	92.489	78.276	99.615	99.577	0.215	0.080	5.028
 TCGA-STAD	Teniposide	TOP2A	lower	92.489	78.276	99.615	99.577	0.215	0.080	5.028	logFC_vs_gtex	92.500	False	False	False	True
 TCGA-STAD	Valrubicin	TOP2A	lower	92.489	78.276	99.615	99.577	0.215	0.080	5.028	logFC_vs_gtex	77.000	False	False	True	True
 TCGA-STAD	Pentobarbital	GABRE	raise	92.477	90.048		94.906	-0.345	0.031	-2.520	logFC_vs_gtex	31.900	False	False	False	False
+TCGA-THCA	Tazarotene	RARB	raise	89.984	84.213		95.755	-0.286	0.000	-2.908	NES	45.200	False	False	False	False
+TCGA-THCA	Tretinoin	RARB	raise	89.984	84.213		95.755	-0.286	0.000	-2.908	NES	80.300	False	False	True	False
 TCGA-THCA	Pentobarbital	GABRG2	raise	89.703	86.754		92.652	-0.318	0.004	-2.020	logFC_vs_gtex	95.400	False	False	False	False
 TCGA-THCA	Dabrafenib	BRAF	lower	77.889	92.669	100.000	40.999	0.452	0.566	-0.251	logFC_vs_gtex	80.400	False	True	True	False
 TCGA-THCA	Regorafenib	BRAF	lower	77.889	92.669	100.000	40.999	0.452	0.566	-0.251	logFC_vs_gtex	40.300	False	False	True	False
@@ -357,8 +359,6 @@ TCGA-THCA	Vemurafenib	BRAF	lower	77.889	92.669	100.000	40.999	0.452	0.566	-0.251
 TCGA-THCA	Vandetanib	EPHB3	lower	77.808	84.719	50.519	98.188	0.312	0.002	2.491	logFC_vs_gtex	11.500	True	True	True	False
 TCGA-THCA	Momelotinib	ACVR1	lower	77.202	87.896	50.519	93.191	0.358	0.000	1.242	logFC_vs_gtex	62.200	False	False	True	False
 TCGA-THCA	Pacritinib	ACVR1	lower	77.202	87.896	50.519	93.191	0.358	0.000	1.242	logFC_vs_gtex	7.200	False	False	True	False
-TCGA-THCA	Gedatolisib	PIK3CB	lower	76.069	93.270	50.519	84.417	0.465	0.002	0.737	logFC_vs_gtex	89.800	False	False	False	False
-TCGA-THCA	Fingolimod	S1PR4	raise	75.742	79.294		72.190	-0.234	0.000	-0.653	logFC_vs_gtex	59.000	False	False	False	False
 TCGA-UCS	Pentobarbital	GABRE	raise	95.203	92.761		97.646	-0.530	0.018	-3.446	logFC_vs_gtex	95.100	False	False	False	False
 TCGA-UCS	Fingolimod	S1PR1	raise	93.182	95.300		91.064	-0.606	0.018	-1.927	logFC_vs_gtex	45.700	False	False	False	False
 TCGA-UCS	Fludarabine	ADA	lower	87.704	77.891	97.967	87.254	0.288	0.158	1.791	logFC_vs_gtex	6.400	False	False	True	False
@@ -369,10 +369,10 @@ TCGA-UCS	Digitoxin	ATP1A3	lower	85.856	69.162	93.434	94.973	0.185	0.088	3.249	lo
 TCGA-UCS	Digoxin	ATP1A3	lower	85.856	69.162	93.434	94.973	0.185	0.088	3.249	logFC_vs_gtex	81.033	False	False	False	False
 TCGA-UCS	Midostaurin	PRKCI	lower	85.585	72.779	98.391		0.226	0.175			30.500	False	False	True	False
 TCGA-UCS	Gedatolisib	PIK3R3	lower	82.547	98.800	84.842	64.000	0.903	0.053	0.510	logFC_vs_gtex	71.900	False	False	False	False
+TGCT-NSGCT	Pioglitazone	PPARG	raise	87.795	83.590		92.000	-0.898	0.014	-3.408	NES	4.200	False	False	False	False
+TGCT-NSGCT	Rosiglitazone	PPARG	raise	87.795	83.590		92.000	-0.898	0.014	-3.408	NES	1.800	False	False	False	False
+TGCT-NSGCT	Troglitazone	PPARG	raise	87.795	83.590		92.000	-0.898	0.014	-3.408	NES	12.100	False	False	False	False
 TGCT-NSGCT	Fingolimod	S1PR1	raise	86.562	96.651		76.473	-1.773	0.000	-1.178	logFC_vs_gtex	53.300	False	False	False	False
-TGCT-NSGCT	Pioglitazone	PPARG	raise	85.855	83.590		88.120	-0.898	0.014	-2.498	NES	4.200	False	False	False	False
-TGCT-NSGCT	Rosiglitazone	PPARG	raise	85.855	83.590		88.120	-0.898	0.014	-2.498	NES	1.800	False	False	False	False
-TGCT-NSGCT	Troglitazone	PPARG	raise	85.855	83.590		88.120	-0.898	0.014	-2.498	NES	12.100	False	False	False	False
 TGCT-NSGCT	Pentobarbital	GABRG1	raise	80.546	71.774		89.318	-0.549	0.000	-2.245	logFC_vs_gtex	48.700	False	False	False	False
 TGCT-NSGCT	Thioridazine	HTR2C	lower	79.959	90.344	49.868	99.666	1.002	0.000	5.237	logFC_vs_gtex	28.300	False	False	False	False
 TGCT-NSGCT	Trifluoperazine	HTR2C	lower	79.959	90.344	49.868	99.666	1.002	0.000	5.237	logFC_vs_gtex	67.200	False	False	False	False
@@ -390,15 +390,15 @@ TGCT-SEM	Tivozanib	KIT	lower	98.830	98.102	99.998	98.389	1.534	0.266	3.988	logFC
 TGCT-SEM	Fingolimod	S1PR1	raise	92.255	97.248		87.262	-1.816	0.000	-2.502	logFC_vs_gtex	88.200	False	False	False	False
 TGCT-SEM	Pentobarbital	GABRA6	raise	88.655	79.984		97.326	-0.764	0.000	-4.736	logFC_vs_gtex	9.400	False	False	False	False
 UCEC-EEC	Pentobarbital	GABRE	raise	93.628	88.413		98.844	-0.406	0.009	-5.161	logFC_vs_gtex	95.500	False	False	False	False
+UCEC-EEC	Bazedoxifene	ESR1	lower	90.295	80.289	99.577	91.021	0.325	0.065	1.655	NES	62.900	False	False	False	False
+UCEC-EEC	Clomiphene	ESR1	lower	90.295	80.289	99.577	91.021	0.325	0.065	1.655	NES	20.250	False	False	False	False
+UCEC-EEC	Estramustine	ESR1	lower	90.295	80.289	99.577	91.021	0.325	0.065	1.655	NES	68.100	False	False	True	False
+UCEC-EEC	Raloxifene	ESR1	lower	90.295	80.289	99.577	91.021	0.325	0.065	1.655	NES	21.900	False	False	True	False
+UCEC-EEC	Tamoxifen	ESR1	lower	90.295	80.289	99.577	91.021	0.325	0.065	1.655	NES	7.200	False	False	True	False
 UCEC-EEC	Fingolimod	S1PR1	raise	85.136	81.273		88.999	-0.297	0.028	-2.167	logFC_vs_gtex	37.900	False	False	False	False
 UCEC-EEC	Gedatolisib	PIK3R2	lower	84.607	80.463	99.577	73.782	0.327	0.065	0.855	logFC_vs_gtex	83.800	False	False	False	False
-UCEC-EEC	Bazedoxifene	ESR1	lower	83.617	80.289	99.577	70.985	0.325	0.065	0.245	NES	62.900	False	False	False	False
-UCEC-EEC	Clomiphene	ESR1	lower	83.617	80.289	99.577	70.985	0.325	0.065	0.245	NES	20.250	False	False	False	False
-UCEC-EEC	Estramustine	ESR1	lower	83.617	80.289	99.577	70.985	0.325	0.065	0.245	NES	68.100	False	False	True	False
-UCEC-EEC	Raloxifene	ESR1	lower	83.617	80.289	99.577	70.985	0.325	0.065	0.245	NES	21.900	False	False	True	False
-UCEC-EEC	Tamoxifen	ESR1	lower	83.617	80.289	99.577	70.985	0.325	0.065	0.245	NES	7.200	False	False	True	False
-UCEC-EEC	Vandetanib	ERBB3	lower	81.320	47.203	99.931	96.825	-0.012	0.102	4.101	logFC_vs_gtex	12.000	False	False	True	False
-UCEC-EEC	Afatinib	ERBB2	lower	79.225	61.050	99.098	77.527	0.114	0.056	1.037	logFC_vs_gtex	23.500	False	False	True	False
+UCEC-EEC	Amcinonide	NR3C1	raise	82.061	67.904		96.219	-0.150	0.019	-3.762	NES	19.300	False	False	False	False
+UCEC-EEC	Ciclesonide	NR3C1	raise	82.061	67.904		96.219	-0.150	0.019	-3.762	NES	5.600	False	False	False	False
 UCEC-SER	Pentobarbital	GABRE	raise	95.669	95.744		95.595	-0.600	0.017	-3.201	logFC_vs_gtex	93.200	False	False	False	False
 UCEC-SER	Alectinib	ALK	lower	93.347	95.913	91.411	92.717	0.680	0.100	2.768	logFC_vs_gtex	26.300	False	False	True	False
 UCEC-SER	Ceritinib	ALK	lower	93.347	95.913	91.411	92.717	0.680	0.100	2.768	logFC_vs_gtex	7.600	False	False	True	False

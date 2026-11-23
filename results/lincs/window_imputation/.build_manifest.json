@@ -1,0 +1,48 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T113220-3176844",
+ "finished_at": "2026-11-23T11:33:14-05:00",
+ "duration_s": 54,
+ "script": "79ac_window_imputation.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79ac_window_imputation.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
+ "git_sha": "7398cd8",
+ "git_state": "clean",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
+ "expect": null,
+ "n_files": 6,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": {
+  "run_id": "20261122T145610-2830043",
+  "finished_at": "2026-11-22T14:57:15-05:00",
+  "n_files": 6,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
+ "files": {
+  "acceptance.tsv": {
+   "bytes": 292,
+   "mtime": "2026-11-23T11:33:14-05:00"
+  },
+  "models.tsv": {
+   "bytes": 1718,
+   "mtime": "2026-11-23T11:33:14-05:00"
+  },
+  "predictions.tsv.gz": {
+   "bytes": 691058,
+   "mtime": "2026-11-23T11:33:14-05:00"
+  },
+  "reliability.tsv": {
+   "bytes": 139,
+   "mtime": "2026-11-23T11:33:09-05:00"
+  },
+  "reliability_halves.tsv.gz": {
+   "bytes": 541414,
+   "mtime": "2026-11-23T11:33:09-05:00"
+  },
+  "run.json": {
+   "bytes": 706,
+   "mtime": "2026-11-23T11:33:14-05:00"
+  }
+ }
+}

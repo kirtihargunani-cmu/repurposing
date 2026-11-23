@@ -24,8 +24,9 @@
 # they reuse their caches and stay manual.
 #
 # D186: _v2_tf (ARACNe-only, D160) IS PRODUCTION. 79i2 / 79i3 / 79p / 79t3 / 79i4 now default to
-# it. The consensus arm is reachable with SFX=_v2_consensus and keeps the legacy un-suffixed
-# output names, so it stays a frozen reference rather than being deleted.
+# it. D208 (2026-11-23, user: "remove the consensus arm completely"): the consensus arm is GONE -
+# its outputs are deleted (recoverable from git history only) and every script refuses SFX/REGULON
+# values naming it. The overactivity component no longer averages in CollecTRI NES.
 #
 #   scripts/run_pipeline.sh              # the whole thing
 #   SKIP_GATE=1 scripts/run_pipeline.sh  # with a known, accepted failing pre-flight check

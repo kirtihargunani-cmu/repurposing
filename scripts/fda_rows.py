@@ -20,8 +20,10 @@ from evidence_flags import apply_evidence  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
 # SPLIT_SFX (D165, 2026-11-20): which split tables to read. Default is production, unchanged.
-# Set SPLIT_SFX=_v2_tf to read the ARACNe-only arm (D160) without touching production.
-SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_consensus")
+# SPLIT_SFX selects a variant of the production _v2_tf tables (e.g. _v2_tf_ms25). D208: no consensus arm.
+SPLIT_SFX = os.environ.get("SPLIT_SFX", "_v2_tf")   # D208: the consensus arm is removed; _v2_tf is the only arm
+if "consensus" in SPLIT_SFX:
+    raise SystemExit("D208: the consensus (ARACNe + CollecTRI) arm has been removed; use SPLIT_SFX=_v2_tf")
 SALTS = {"HYDROCHLORIDE", "DIHYDROCHLORIDE", "HCL", "SODIUM", "DISODIUM", "POTASSIUM", "CALCIUM", "MAGNESIUM", "ZINC",
          "MESYLATE", "DIMESYLATE", "MALEATE", "TARTRATE", "BITARTRATE", "CITRATE", "SULFATE", "BISULFATE", "PHOSPHATE",
          "ACETATE", "DIACETATE", "SUCCINATE", "FUMARATE", "HEMIFUMARATE", "HYDROBROMIDE", "BROMIDE", "CHLORIDE", "TOSYLATE",

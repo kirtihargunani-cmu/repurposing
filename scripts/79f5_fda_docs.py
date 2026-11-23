@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """D109b: Cmax passages from Drugs@FDA archived labels and reviews for FDA drugs without a verified label Cmax.
 
-Drugs: 79p eligible set (fda_ranking_v2_consensus / strata) minus drugs with cmax_uM in results/lincs/d109/cmax.tsv.
+Drugs: 79p eligible set (fda_ranking_v2_tf / strata) minus drugs with cmax_uM in results/lincs/d109/cmax.tsv.
 Documents: ApplicationDocs of the drug's NDA / BLA applications (fda_matches.tsv fda_appl_nda_bla), type 2 (Label,
 most recent) and 3 (Review; table-of-contents pages followed to clinical pharmacology / biopharmaceutics PDFs).
 Text by pdftotext, cached in data/interim/lincs/d109_docs/. Queue (existing entries kept on a rerun, D114): results/lincs/d109/doc_queue.jsonl
@@ -83,8 +83,8 @@ def passages(t):
 
 
 def main():
-    g = pd.read_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t")
-    s = pd.read_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t")
+    g = pd.read_csv(RES / "fda_ranking_v2_tf.tsv", sep="\t")
+    s = pd.read_csv(RES / "fda_ranking_strata_v2_tf.tsv", sep="\t")
     drugs = pd.concat([g, s]).drop_duplicates("drug")[["drug", "cmap_name", "fda_ingredient"]]
     cm = pd.read_csv(RES / "d109/cmax.tsv", sep="\t")
     have = set(cm.drug[cm.cmax_uM.notna()])
