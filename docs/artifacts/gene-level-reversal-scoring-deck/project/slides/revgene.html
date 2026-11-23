@@ -1,0 +1,17 @@
+<section id="revgene" class="tinted">
+<p class="eyebrow">The correction</p>
+<h2>A product of sums, or a sum of products</h2>
+<div class="eq">
+rev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= &minus;&Sigma;<sub>i</sub> (&Sigma;<sub>j</sub> d<sub>ij</sub>)(&Sigma;<sub>j</sub> C<sub>ij</sub>) / &#8214;s&#8214;&nbsp;&nbsp;&nbsp;<span class="c">multiplies the totals</span>
+<br><b>rev_gene = &minus;&Sigma;<sub>i</sub> &nbsp;&Sigma;<sub>j</sub> d<sub>ij</sub> &middot; C<sub>ij</sub> &nbsp;&nbsp;&nbsp;/ &#8214;s&#8214;</b>&nbsp;&nbsp;&nbsp;<span class="c">pairs the genes, one by one</span>
+<br><span class="c">d = disease gene contributions · C = drug gene contributions · both carry tfmode × likelihood</span>
+</div>
+<div style="height:32px"></div>
+<p style="font-size:30px">A regulator whose activity comes from genes orthogonal to the disease pattern has &Sigma;<sub>j</sub> d<sub>ij</sub>C<sub>ij</sub> &asymp; 0 even when both totals are large — <b>down-weighted by geometry, with no threshold and no tuned parameter</b>.</p>
+<div style="height:32px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Example: demoted</h3><p style="font-size:28px"><b>TGIF1</b> — disease NES +3.52, drug activity &minus;1.17, so reversal scores it high. Gene cosine <b>0.016</b>: the genes are orthogonal.</p></div>
+<div class="card grow"><h3>Example: promoted</h3><p style="font-size:28px"><b>KLF4</b> — totals say agreement, yet the genes oppose at <b>&minus;0.264</b>. Reversal misses it entirely.</p></div>
+</div>
+<aside>Recorded error: the first version multiplied by minus nes as well, double-counting the disease direction, because d already carries it — sum of d over j equals nes. Caught on the first smoke test when TAL1 read +0.29 by reversal and minus 0.03 by the new score.</aside>
+</section>

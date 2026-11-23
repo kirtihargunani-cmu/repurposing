@@ -1,0 +1,36 @@
+{
+  "v": 5,
+  "createdOnFiles": { "v": 1, "at": "2026-11-23T01:20:00Z" },
+  "lists": "css",
+  "format": { "v": 1, "shared": ["project/deck.css"] },
+  "title": "Three Pipeline Validations",
+  "order": [
+    "cover",
+    "agenda",
+    "w1",
+    "w2",
+    "a1",
+    "a2",
+    "n1",
+    "n2",
+    "summary"
+  ],
+  "sections": {
+    "s1": { "description": "The three validations and the score they test.", "start": "cover" },
+    "s2": { "description": "Whether drug activity should be resolved by exposure time.", "start": "w1" },
+    "s3": { "description": "Whether the network and activity inference encode regulatory structure.", "start": "a1" },
+    "s4": { "description": "Whether one regulator score determines the gene pattern beneath it.", "start": "n1" },
+    "s5": { "description": "What the three validations jointly support.", "start": "summary" }
+  },
+  "faces": {
+    "eb-garamond": {
+      "family": "EB Garamond",
+      "href": "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    },
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    }
+  },
+  "designSystems": []
+}

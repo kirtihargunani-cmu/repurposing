@@ -1,0 +1,33 @@
+<section id="timepoints" data-transition="fade">
+  <p class="eyebrow">Confounder 1 &middot; LINCS time resolution</p>
+  <h2 class="title" style="font-size:50px;">Pooling 6 h and 24 h averages two different responses</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts">
+        <li><span class="dot"></span>LINCS L1000 reads <b>978 landmark genes</b> after drug perturbation, across doses, at <b>6 h, 24 h, or an unrecorded time</b>.</li>
+        <li><span class="dot"></span>Early (&le;6 h) response tracks <b>direct mechanism</b>; late (&ge;24 h) tracks <b>phenotype</b> (De Wolf 2016). They are not interchangeable.</li>
+        <li><span class="dot"></span>A pooled profile averages the two &mdash; which dilutes the signal and, when the two windows disagree in sign, <b>inverts</b> it.</li>
+        <li><span class="dot"></span>Measured worst case: anti-estrogens over the ESR1 program in MCF7 read <b>correct at 6 h</b> but <b>inverted at 24 h</b>, and the late window outvotes the early one roughly <b>10&#8239;:&#8239;1</b>.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">ESR1 / anti-estrogens in MCF7, by window</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">Window</th><th>Mean signed<br>response</th><th>Cosine vs<br>LumA disease</th><th>Anti-estrogen<br>signatures</th></tr>
+        <tr class="good"><td class="l"><b>6 h (early)</b></td><td>&minus;0.056</td><td>&minus;0.132</td><td>6</td></tr>
+        <tr class="bad"><td class="l"><b>24 h (late)</b></td><td>+0.094</td><td>+0.093</td><td>59</td></tr>
+      </table>
+      <div class="panel" style="margin-top:24px;">
+        <p><b style="color:var(--teal);">Negative</b> = reversing the disease (the intended direction). The 6 h window is correct; pooled, the 59 inverted late signatures outweigh the 6 early correct ones.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D152 &middot; Level-5 measurement, MCF7</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>This is the single clearest piece of EDA from the fortnight: it shows the pooled drug profile is not just noisier but can carry the wrong sign, because the two time windows of the same drug disagree. Everything on the next two slides follows from splitting the windows.</aside>
+</section>

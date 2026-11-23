@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gene-Level Reversal Scoring</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#2b2b2b;color:#eee;font:15px/1.5 system-ui,-apple-system,sans-serif}
+header{padding:20px max(16px,3vw)} header h1{margin:0;font-size:1.3rem} header p{margin:4px 0 0;color:#bbb}
+.deck{display:grid;gap:28px;padding:0 max(16px,3vw) 48px}
+.wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#fff;box-shadow:0 2px 12px #0008}
+.wrap > section{position:absolute;top:0;left:0;width:1920px;height:1080px;transform-origin:0 0;box-sizing:border-box}
+.wrap > section aside{display:none}
+.notes{background:#1f1f1f;border-left:3px solid #6aa;padding:10px 14px;white-space:pre-wrap;color:#ddd;font-size:14px}
+.num{color:#9cc;font-weight:600;margin-bottom:6px}
+</style>
+<style>
+:root {
+  --cream: #FBFAF4;
+  --cream-2: #F4F1E6;
+  --ink: #1C1B17;
+  --body: #4A4740;
+  --teal: #1C6A61;
+  --rust: #8C4A22;
+  --rule: #DDD8C8;
+}
+
+section {
+  background: var(--cream);
+  padding: 128px;
+  font-family: 'IBM Plex Sans', Verdana, sans-serif;
+  color: var(--ink);
+}
+
+section.tinted { background: var(--cream-2); }
+
+section.statement {
+  background: var(--teal);
+  color: var(--cream);
+}
+
+h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 108px;
+  font-weight: 600;
+  line-height: 1.04;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0 0 36px 0;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: 'IBM Plex Sans', Verdana, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: var(--teal);
+}
+
+p { font-size: 32px; line-height: 1.5; margin: 0; color: var(--body); }
+
+.eyebrow {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 28px 0;
+}
+
+ul { margin: 0; padding-left: 40px; }
+li { font-size: 34px; line-height: 1.45; color: var(--body); margin-bottom: 20px; }
+li b { color: var(--ink); font-weight: 600; }
+
+.lead { font-size: 40px; line-height: 1.4; color: var(--ink); }
+
+.col { display: flex; flex-direction: column; }
+.row { display: flex; flex-direction: row; }
+.gap28 { gap: 28px; }
+.gap48 { gap: 48px; }
+.grow { flex: 1; }
+
+.eq {
+  font-family: 'IBM Plex Sans', Verdana, sans-serif;
+  background: var(--cream-2);
+  border-left: 8px solid var(--teal);
+  padding: 32px 40px;
+  font-size: 36px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.eq .c { color: var(--body); font-size: 28px; font-style: italic; }
+.eq b { color: var(--teal); font-weight: 600; }
+
+.card {
+  background: var(--cream-2);
+  border-radius: 14px;
+  padding: 32px 36px;
+}
+
+.card.dark { background: var(--ink); }
+.card.dark h3 { color: #C9E6E1; }
+.card.dark p { color: var(--cream); }
+
+.num {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 88px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--teal);
+}
+
+.num.rust { color: var(--rust); }
+.numlabel { font-size: 26px; line-height: 1.35; color: var(--body); margin-top: 14px; }
+
+table { font-family: 'IBM Plex Sans', Verdana, sans-serif; font-size: 30px; color: var(--ink); width: 100%; }
+th { font-weight: 600; color: var(--teal); text-align: left; }
+td { color: var(--body); }
+td.pos { color: var(--teal); }
+td.neg { color: var(--rust); }
+
+.bar { height: 34px; border-radius: 6px; background: var(--teal); }
+.bar.rust { background: var(--rust); }
+.bar.pale { background: var(--rule); }
+.barlabel { font-size: 26px; color: var(--body); }
+
+.source { font-size: 24px; color: var(--body); }
+.flag { border-left: 8px solid var(--rust); background: #FAF2E9; padding: 26px 32px; }
+.flag p { font-size: 28px; color: var(--ink); }
+
+</style></head><body>
+<header><h1>Gene-Level Reversal Scoring</h1><p>14 slides · speaker notes under each slide · source: <code>docs/artifacts/gene-level-reversal-scoring-deck</code></p></header>
+<main class="deck">
+<div><div class="num">Slide 1 · cover</div><div class="wrap"><section id="cover" data-transition="fade">
+<p class="eyebrow">Drug repurposing · week of 17–22 November 2026</p>
+<h1>One NES score<br>is not one mechanism</h1>
+<div style="height:48px"></div>
+<p class="lead" style="max-width:1180px">The reversal score multiplies totals: how dysregulated a regulator is, times how much a drug moves it. It never asks whether the same genes are involved. This week measured what that omission costs.</p>
+<div style="height:56px"></div>
+<div class="row gap48">
+<div class="col"><div class="num">45%</div><p class="numlabel">of reproducible gene-level<br>pattern unexplained by the NES</p></div>
+<div class="col"><div class="num">21/25</div><p class="numlabel">cohort–windows where the gene term<br>tracks target biology better</p></div>
+<div class="col"><div class="num rust">5×10<sup>−22</sup></div><p class="numlabel">significance of the demotion<br>of cytotoxic chemotherapy</p></div>
+</div>
+<aside>Framing: the headline is that the production score has been rewarding chemotherapy, and the gene-level term specifically corrects that. Four scoring attempts returned null this week; two were implementation errors, both found and recorded.</aside>
+</section></div><div class="notes">Framing: the headline is that the production score has been rewarding chemotherapy, and the gene-level term specifically corrects that. Four scoring attempts returned null this week; two were implementation errors, both found and recorded.</div></div>
+<div><div class="num">Slide 2 · question</div><div class="wrap"><section id="question">
+<p class="eyebrow">The score under examination</p>
+<h2>Reversal multiplies totals</h2>
+<div class="eq">
+rev = &minus;(<b>D</b> &middot; <b>s</b>) / &#8214;<b>s</b>&#8214; = &minus;&Sigma;<sub>i</sub> nes<sub>i</sub> &middot; act<sub>i</sub> / &#8214;<b>s</b>&#8214;
+<br><span class="c">D = drug regulator activity &nbsp;·&nbsp; s = disease master-regulator NES</span>
+</div>
+<div style="height:40px"></div>
+<ul>
+<li><b>nes<sub>i</sub></b> summarises a whole regulon in one number.</li>
+<li><b>act<sub>i</sub></b> does the same on the drug side.</li>
+<li>Their product asks only whether the magnitudes oppose — <b>never whether the same genes are involved</b>.</li>
+</ul>
+<div style="height:36px"></div>
+<div class="flag"><p>Two drugs can reach identical activity on a regulator through disjoint sets of its target genes. The score cannot tell them apart.</p></div>
+<aside>This is the setup. Everything that follows is about what that collapse costs and whether restoring the gene level recovers anything.</aside>
+</section></div><div class="notes">This is the setup. Everything that follows is about what that collapse costs and whether restoring the gene level recovers anything.</div></div>
+<div><div class="num">Slide 3 · networks</div><div class="wrap"><section id="networks" class="tinted">
+<p class="eyebrow">Validation 1 · the builds</p>
+<h2>The networks carry mechanism</h2>
+<div class="row gap48">
+<div class="col grow gap28" style="width:880px">
+<ul>
+<li>Regulon membership is <b>context, not noise</b>: same-cohort Jaccard <b>0.552</b> against cross-tissue <b>0.029</b>.</li>
+<li>Against LINCS knockdowns — independent of our pipeline — ARACNe reads TF knockdowns at AUC <b>0.55</b> (shRNA) and <b>0.63</b> (CRISPR).</li>
+<li>VIPER activity reconstructs <b>exactly</b> from its gene terms: max |difference| <b>4.8&times;10<sup>&minus;7</sup></b> over 21,588 drug × cohort × window cells.</li>
+</ul>
+</div>
+<div class="col gap28" style="width:680px">
+<div class="card"><h3>The decisive case</h3><p style="font-size:29px">ARACNe’s ESR1 regulon reads an <b>ESR1 knockdown correctly</b>.</p><div style="height:14px"></div><p style="font-size:29px">So when anti-estrogens read as ESR1 <i>activation</i>, that is a real drug effect — GATA3 and FOXA1 rise — not a broken network.</p></div>
+<div class="card"><h3>Independent confirmation</h3><p style="font-size:29px">Programs clustered across <b>patients</b> and across <b>drugs</b> — unrelated axes — recover the same hubs: PRRX1↔PRRX1 Jaccard <b>0.71</b>.</p></div>
+</div>
+</div>
+<aside>The knockdown benchmark is too thin for per-TF regulon choices — 1 to 5 signatures per TF, ARACNe vs CollecTRI paired p = 0.6 — so it is reported and never used to pick regulons.</aside>
+</section></div><div class="notes">The knockdown benchmark is too thin for per-TF regulon choices — 1 to 5 signatures per TF, ARACNe vs CollecTRI paired p = 0.6 — so it is reported and never used to pick regulons.</div></div>
+<div><div class="num">Slide 4 · split</div><div class="wrap"><section id="split">
+<p class="eyebrow">The instrument</p>
+<h2>Splitting one NES into its genes</h2>
+<div class="eq">
+t2<sub>j</sub> = &Phi;<sup>&minus;1</sup>(r<sub>j</sub>)&nbsp;&nbsp;&nbsp;&nbsp;a<sub>j</sub> = m<sub>j</sub> l<sub>j</sub> t2<sub>j</sub>&nbsp;&nbsp;&nbsp;&nbsp;b<sub>j</sub> = (1 &minus; |m<sub>j</sub>|) l<sub>j</sub> t1<sub>j</sub>
+<br><b>c<sub>ij</sub> = ( a<sub>j</sub> + &sigma;<sub>i</sub> b<sub>j</sub> [S2<sub>i</sub> &gt; 0] ) &middot; k<sub>i</sub></b>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">&Sigma;<sub>j</sub> c<sub>ij</sub> = the regulator’s score</span>
+<br><span class="c">m = tfmode (signed) · l = likelihood · r = rank over the scored gene universe</span>
+</div>
+<div style="height:36px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Drug side — exact</h3><p style="font-size:29px">Condition-level VIPER has no null model, so the per-gene split <b>is</b> the activity. Verified to 4.8&times;10<sup>&minus;7</sup>.</p></div>
+<div class="card grow"><h3>Disease side — an allocation</h3><p style="font-size:29px">msviper’s permutation null cannot be replayed, so d<sub>ij</sub> = c<sub>ij</sub> · NES<sub>i</sub>/ES<sub>i</sub>. Stated wherever d is used.</p></div>
+</div>
+<aside>This decomposition is what makes every later measurement possible. It is arithmetic, not biology — the exactness proves the bookkeeping, nothing more.</aside>
+</section></div><div class="notes">This decomposition is what makes every later measurement possible. It is arithmetic, not biology — the exactness proves the bookkeeping, nothing more.</div></div>
+<div><div class="num">Slide 5 · windows</div><div class="wrap"><section id="windows" class="tinted">
+<p class="eyebrow">Validation 2 · exposure time</p>
+<h2>Timepoint is a real dimension — and cannot be imputed</h2>
+<div class="row gap48">
+<div class="col grow gap28" style="width:900px">
+<ul>
+<li>A per-timepoint activity floor raises active 6&nbsp;h signatures from 4,938 to <b>10,889</b>; a single floor discards 76% of them.</li>
+<li><b>37%</b> of regulator terms flip sign between early and late. For anti-estrogens in MCF7 the ESR1 programme reads <b>&minus;0.056 at 6 h</b> (correct) and <b>+0.094 at 24 h</b> (inverted).</li>
+<li>Pooling averages a correct reading with an inverted one — the inverted window outvotes it roughly <b>10 : 1</b>.</li>
+</ul>
+</div>
+<div class="col gap28" style="width:660px">
+<div class="card dark"><h3>Pre-registered, and closed</h3>
+<p style="font-size:28px">Best model predicting the missing window: Spearman <b>0.380</b>.</p>
+<p style="font-size:28px">Simply copying the other window: <b>0.382</b>.</p>
+<div style="height:10px"></div>
+<p style="font-size:28px">Sign agreement 0.62–0.63 against a 0.75 bar. <b>Verdict: closed, both directions.</b></p></div>
+<div class="card"><h3>Not a drug property either</h3><p style="font-size:28px">A drug’s behaviour in its other cohorts predicts this one at Spearman <b>&minus;0.05</b>. “Drug X is early-acting” is not supported.</p></div>
+</div>
+</div>
+<aside>About 80% of a window's reliable variance is absent from the other, and discordance does not shrink with more conditions (38.8% to 35.8%). So an unmeasured window is labelled unknown rather than guessed — the empirically correct label, not the cautious one. Coverage limit: 29 of 41 cohorts have window data; 12 have none at all.</aside>
+</section></div><div class="notes">About 80% of a window's reliable variance is absent from the other, and discordance does not shrink with more conditions (38.8% to 35.8%). So an unmeasured window is labelled unknown rather than guessed — the empirically correct label, not the cautious one. Coverage limit: 29 of 41 cohorts have window data; 12 have none at all.</div></div>
+<div><div class="num">Slide 6 · lossy</div><div class="wrap"><section id="lossy">
+<p class="eyebrow">The central measurement</p>
+<h2>How much one NES discards</h2>
+<div class="row gap48">
+<div class="col grow" style="width:960px">
+<p style="font-size:30px">Gene-level fingerprint similarity within one regulon, as a cosine:</p>
+<div style="height:28px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar" style="width:530px"></div><p class="barlabel"><b>0.53</b> &nbsp;same drug vs itself (ceiling)</p></div>
+<div style="height:18px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar rust" style="width:300px"></div><p class="barlabel"><b>0.30</b> &nbsp;different drugs, matched activity</p></div>
+<div style="height:36px"></div>
+<p style="font-size:30px">The ceiling is a sample-size effect, not a flaw:</p>
+<div style="height:16px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar pale" style="width:160px"></div><p class="barlabel">0.33 at 2 conditions</p></div>
+<div style="height:12px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar" style="width:400px"></div><p class="barlabel"><b>0.79</b> at 10+ conditions</p></div>
+</div>
+<div class="col gap28" style="width:600px">
+<div class="card"><div class="num">45%</div><p class="numlabel">of the <b>reproducible</b> gene pattern is not determined by the activity value</p></div>
+<div class="card"><h3>Within one direction of effect</h3><p style="font-size:29px">Among drugs moving a regulator the same way by the same amount, activity predicts essentially none of the residual: Spearman <b>+0.0001</b> (late window).</p></div>
+</div>
+</div>
+<aside>Registered as a failure: the pre-registered version failed, because one criterion was partly tautological — opposite-sign activity forces opposing gene vectors — and because it pooled early and late windows whose reliability differs, 0.38 against 0.59. Corrected and split, it holds in late and is inconclusive in early.</aside>
+</section></div><div class="notes">Registered as a failure: the pre-registered version failed, because one criterion was partly tautological — opposite-sign activity forces opposing gene vectors — and because it pooled early and late windows whose reliability differs, 0.38 against 0.59. Corrected and split, it holds in late and is inconclusive in early.</div></div>
+<div><div class="num">Slide 7 · targetrole</div><div class="wrap"><section id="targetrole">
+<p class="eyebrow">Consequence</p>
+<h2>The production score opposes target biology</h2>
+<p style="font-size:30px">Spearman correlation with the target-role components, 25 cohort × window cells. No approval data; the reversal score carries no target annotation, so there is no shared-input circularity.</p>
+<div style="height:36px"></div>
+<table>
+<tr><th width="34%">score</th><th width="22%">dependency (CRISPR)</th><th width="22%">alteration</th><th width="22%">combined target role</th></tr>
+<tr><td>reversal (production)</td><td class="neg">&minus;0.073</td><td class="neg">&minus;0.114</td><td class="neg">&minus;0.124</td></tr>
+<tr><td>gene-level covariance</td><td class="pos">+0.069</td><td class="pos">+0.015</td><td class="pos">+0.059</td></tr>
+</table>
+<div style="height:40px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Better in 21 of 25 cells</h3><p style="font-size:29px">Sign test p = <b>0.0009</b>. The gain is largest exactly where reversal is <b>most</b> anti-correlated: lung adenocarcinoma late <b>&minus;0.244 &rarr; +0.214</b>.</p></div>
+<div class="card grow"><h3>Honest limit</h3><p style="font-size:29px">The corrected value reaches <b>≈ 0</b>, not positive. The gene term is <b>less wrong</b>, not right, and absolute correlations stay small.</p></div>
+</div>
+<aside>Over-activity is the one component that gets worse. That is coherent: it is the component closest to what reversal already measures, so down-weighting off-pattern regulators should cost there while gaining on dependency and alteration.</aside>
+</section></div><div class="notes">Over-activity is the one component that gets worse. That is coherent: it is the component closest to what reversal already measures, so down-weighting off-pattern regulators should cost there while gaining on dependency and alteration.</div></div>
+<div><div class="num">Slide 8 · revgene</div><div class="wrap"><section id="revgene" class="tinted">
+<p class="eyebrow">The correction</p>
+<h2>A product of sums, or a sum of products</h2>
+<div class="eq">
+rev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= &minus;&Sigma;<sub>i</sub> (&Sigma;<sub>j</sub> d<sub>ij</sub>)(&Sigma;<sub>j</sub> C<sub>ij</sub>) / &#8214;s&#8214;&nbsp;&nbsp;&nbsp;<span class="c">multiplies the totals</span>
+<br><b>rev_gene = &minus;&Sigma;<sub>i</sub> &nbsp;&Sigma;<sub>j</sub> d<sub>ij</sub> &middot; C<sub>ij</sub> &nbsp;&nbsp;&nbsp;/ &#8214;s&#8214;</b>&nbsp;&nbsp;&nbsp;<span class="c">pairs the genes, one by one</span>
+<br><span class="c">d = disease gene contributions · C = drug gene contributions · both carry tfmode × likelihood</span>
+</div>
+<div style="height:32px"></div>
+<p style="font-size:30px">A regulator whose activity comes from genes orthogonal to the disease pattern has &Sigma;<sub>j</sub> d<sub>ij</sub>C<sub>ij</sub> &asymp; 0 even when both totals are large — <b>down-weighted by geometry, with no threshold and no tuned parameter</b>.</p>
+<div style="height:32px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Example: demoted</h3><p style="font-size:28px"><b>TGIF1</b> — disease NES +3.52, drug activity &minus;1.17, so reversal scores it high. Gene cosine <b>0.016</b>: the genes are orthogonal.</p></div>
+<div class="card grow"><h3>Example: promoted</h3><p style="font-size:28px"><b>KLF4</b> — totals say agreement, yet the genes oppose at <b>&minus;0.264</b>. Reversal misses it entirely.</p></div>
+</div>
+<aside>Recorded error: the first version multiplied by minus nes as well, double-counting the disease direction, because d already carries it — sum of d over j equals nes. Caught on the first smoke test when TAL1 read +0.29 by reversal and minus 0.03 by the new score.</aside>
+</section></div><div class="notes">Recorded error: the first version multiplied by minus nes as well, double-counting the disease direction, because d already carries it — sum of d over j equals nes. Caught on the first smoke test when TAL1 read +0.29 by reversal and minus 0.03 by the new score.</div></div>
+<div><div class="num">Slide 9 · cytotoxic</div><div class="wrap"><section id="cytotoxic">
+<p class="eyebrow">What the correction does</p>
+<h2>It demotes cytotoxic chemotherapy</h2>
+<div class="row gap48">
+<div class="col grow" style="width:980px">
+<p style="font-size:30px">Median rank movement when the gene term is applied:</p>
+<div style="height:30px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar rust" style="width:368px"></div><p class="barlabel"><b>&minus;9.2</b> pts &nbsp;classic cytotoxics &nbsp;<span style="font-size:22px">(n = 515)</span></p></div>
+<div style="height:20px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar" style="width:104px"></div><p class="barlabel"><b>+2.6</b> pts &nbsp;everything else &nbsp;<span style="font-size:22px">(n = 2,599)</span></p></div>
+<div style="height:34px"></div>
+<p style="font-size:30px">Mann–Whitney <b>p = 5.4 &times; 10<sup>&minus;22</sup></b></p>
+<div style="height:34px"></div>
+<table>
+<tr><th width="50%">demoted</th><th width="50%">promoted</th></tr>
+<tr><td>daunorubicin, doxorubicin, epirubicin</td><td>azacitidine (41 cohorts, +52 pts)</td></tr>
+<tr><td>topotecan, cytarabine, trifluridine</td><td>bortezomib, ixazomib</td></tr>
+<tr><td>sirolimus, temsirolimus, everolimus</td><td>digoxin, tretinoin, corticosteroids</td></tr>
+</table>
+</div>
+<div class="col gap28" style="width:580px">
+<div class="card dark"><div class="num" style="color:#9FD9D1">71.3</div><p class="numlabel" style="color:#D8E8E5">mean target dependency of <b>promoted</b> drugs</p><div style="height:22px"></div><div class="num" style="color:#E0A878">59.2</div><p class="numlabel" style="color:#D8E8E5">of <b>demoted</b> drugs</p></div>
+</div>
+</div>
+<aside>Classic cytotoxics here are anthracyclines, topoisomerase inhibitors, antimetabolites, platins, taxanes and vincas. Several top movers are implausible low-count drugs with no target annotation; the pattern is in the aggregate, not in any single name.</aside>
+</section></div><div class="notes">Classic cytotoxics here are anthracyclines, topoisomerase inhibitors, antimetabolites, platins, taxanes and vincas. Several top movers are implausible low-count drugs with no target annotation; the pattern is in the aggregate, not in any single name.</div></div>
+<div><div class="num">Slide 10 · whyauc</div><div class="wrap"><section id="whyauc" class="statement">
+<p class="eyebrow" style="color:#A8D8D1">The reconciliation</p>
+<h2 style="color:#FBFAF4">Why this looked like failure for most of the week</h2>
+<ul style="color:#E6F0EE">
+<li style="color:#DCEAE7">Every score was judged on <b style="color:#FBFAF4">approval recovery</b> — do drugs already approved for this cancer rank high?</li>
+<li style="color:#DCEAE7">Measured properly, that yardstick is bimodal: <b style="color:#FBFAF4">9 of 41</b> cohorts significantly above chance and <b style="color:#FBFAF4">9 significantly below</b> (endometrial at z = &minus;7.7).</li>
+<li style="color:#DCEAE7">In the failing cohorts the approved sets are largely cytotoxic, and a single generic <b style="color:#FBFAF4">proliferation axis beats</b> the mechanism score.</li>
+</ul>
+<div style="height:44px"></div>
+<p class="lead" style="color:#FBFAF4;max-width:1500px">So a score that demotes chemotherapy <b>must</b> lose approval AUC while gaining on target biology. The null result and the positive result are the same fact, measured two ways.</p>
+<aside>The methodological takeaway: approval recovery is the wrong instrument for a mechanistic claim, and we can now demonstrate that rather than assert it. Biomarker pairs and target-role components are the right anchors.</aside>
+</section></div><div class="notes">The methodological takeaway: approval recovery is the wrong instrument for a mechanistic claim, and we can now demonstrate that rather than assert it. Biomarker pairs and target-role components are the right anchors.</div></div>
+<div><div class="num">Slide 11 · held</div><div class="wrap"><section id="held">
+<p class="eyebrow">What held up</p>
+<h2>Novel drugs converge on approved mechanism</h2>
+<p style="font-size:30px">Top-ranked drugs with <b>no clinical label</b> for a disease, compared against the mechanism profile of drugs already approved for it:</p>
+<div style="height:34px"></div>
+<table>
+<tr><th width="40%">arm</th><th width="30%">early</th><th width="30%">late</th></tr>
+<tr><td>effect vs rank-matched null</td><td class="pos">+0.277</td><td class="pos">+0.312</td></tr>
+<tr><td>cohorts positive</td><td>10 / 10</td><td>11 / 11</td></tr>
+<tr><td><b>sharing no target or MOA class</b></td><td class="pos">+0.263</td><td class="pos">+0.312</td></tr>
+</table>
+<div style="height:40px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Why the third row matters</h3><p style="font-size:29px">Drugs with <b>nothing in common on paper</b> with the approved set still land on the same mechanism profile. Convergence by a different route — which is what repurposing needs.</p></div>
+<div class="card grow"><h3>What it is not</h3><p style="font-size:29px">Resembling an approved drug is <b>not</b> the objective. This validates that the ranking is not mechanistically arbitrary — nothing more.</p></div>
+</div>
+<aside>Permutation p below 1e-4 in both windows. 26 of 47 cells dropped, every one for fewer than three approved drugs. Removing the shared proliferation axis halves the early effect but leaves late untouched, which separates the two windows.</aside>
+</section></div><div class="notes">Permutation p below 1e-4 in both windows. 26 of 47 cells dropped, every one for fewer than three approved drugs. Removing the shared proliferation axis halves the early effect but leaves late untouched, which separates the two windows.</div></div>
+<div><div class="num">Slide 12 · didnt</div><div class="wrap"><section id="didnt" class="tinted">
+<p class="eyebrow">What did not hold</p>
+<h2>Two ideas closed with numbers</h2>
+<div class="row gap48">
+<div class="col grow gap28" style="width:780px">
+<div class="card"><h3>Collapsing regulators into programs</h3>
+<p style="font-size:29px">800+ regulators do carry <b>20–40 dimensional</b> structure, and programs found across patients and drugs recover the same hubs.</p>
+<div style="height:14px"></div>
+<p style="font-size:29px">But cosine is <b>invariant under rotation</b>, so a program basis cannot change the ranking — and truncation gave no gain at any k.</p>
+<div style="height:14px"></div>
+<p style="font-size:29px">Programs stay for <b>interpretation</b>, not scoring.</p></div>
+</div>
+<div class="col grow gap28" style="width:780px">
+<div class="card"><h3>Transferring across cohorts</h3>
+<p style="font-size:29px">With <b>identical cell lines</b> but different networks, the same drug’s regulator activity correlates only <b>+0.667</b>.</p>
+<div style="height:14px"></div>
+<p style="font-size:29px">Cross-tissue: <b>+0.330</b>. Regulon content overlaps at Jaccard <b>0.06–0.09</b> even between two breast subtypes.</p>
+<div style="height:14px"></div>
+<p style="font-size:29px">Regulon redefinition alone costs a third of the signal.</p></div>
+</div>
+</div>
+<div style="height:34px"></div>
+<div class="flag"><p>Both were measured before being abandoned, and both are recorded with the number that closed them. The 605 regulators shared by all 41 cohorts are a common <b>vocabulary</b>, not a common <b>measurement</b>.</p></div>
+<aside>The cell-line comparison is the clean experiment: BRCA-LumA and BRCA-Basal use the same 69 in-key lines, so the drop from about 1.0 to 0.667 is attributable to the network alone.</aside>
+</section></div><div class="notes">The cell-line comparison is the clean experiment: BRCA-LumA and BRCA-Basal use the same 69 in-key lines, so the drop from about 1.0 to 0.667 is attributable to the network alone.</div></div>
+<div><div class="num">Slide 13 · open</div><div class="wrap"><section id="open">
+<p class="eyebrow">Open, and stated plainly</p>
+<h2>Where the uncertainty actually sits</h2>
+<p style="flex:0 1 auto; font-family:'IBM Plex Sans', Verdana, sans-serif;font-size:34px;line-height:1.45;color:#4a4740;margin-top:0;margin-bottom:0"><br></p>
+<ul style="margin-top:20px">
+<li><b>The anchors disagree.</b> Approval recovery says the gene term is worse; target role says it is better. We can explain the disagreement, but not yet adjudicate it.</li>
+<li><b>Data bottleneck.</b> Cell-line mapping is fine — median 64 matched lines. But only <b>41 drugs</b> per cohort have condition-level profiles in those lines, and <b>15 of 41</b> cohorts have none.</li>
+</ul>
+<aside>The pooled per-drug association with dependency is small, Spearman +0.089, while per-cohort gains are much larger. Liver moves the wrong way in both windows. The honest position is that the gene-level term is doing something real and we cannot yet say it is better overall.</aside>
+</section></div><div class="notes">The pooled per-drug association with dependency is small, Spearman +0.089, while per-cohort gains are much larger. Liver moves the wrong way in both windows. The honest position is that the gene-level term is doing something real and we cannot yet say it is better overall.</div></div>
+<div><div class="num">Slide 14 · next</div><div class="wrap"><section id="next" class="tinted">
+<p class="eyebrow">Next</p>
+<h2>Settle the evaluation before the next score</h2>
+<div class="row gap48">
+<div class="col grow gap28" style="width:800px">
+<div class="card"><h3>1 · Make resolution first-class</h3><p style="font-size:28px">Every row already declares what backs it — window coverage, conditions, lines. Surface it as a confidence tier and <b>stop pooling tiers</b> in evaluation. Keep all 41 cohorts.</p></div>
+<div class="card"><h3>2 · Strengthen the biomarker test</h3><p style="font-size:28px">It is the one anchor with a mechanistic signal. Expand it, and report it against the <b>permutation null</b> rather than a sign test.</p></div>
+<div class="card"><h3>3 · Specify the PRISM / GDSC evaluation</h3><p style="font-size:28px">12,926 rows unused. It needs a spec — what the measure means, per-line or per-drug, what the null is — not a merge.</p></div>
+</div>
+<div class="col grow gap28" style="width:760px">
+<div class="card"><h3>4 · Finish the one unfinished score</h3><p style="font-size:28px">Scale-free composition of reversal and the covariance. About an hour. Leaving it open makes four nulls look like five.</p></div>
+<div class="card"><h3>5 · Report tiered evidence, not one list</h3><p style="font-size:28px">The scores disagree <b>interpretably</b>. Report reversal strength, gene concordance, target dependency and window separately.</p></div>
+<div class="card dark"><h3>6 · Prospective validation</h3><p style="font-size:28px">The yardstick problem has no computational fix. A small set of predictions tested in a well-covered cohort converts an unfalsifiable ranking into a falsifiable one.</p></div>
+</div>
+</div>
+<aside>The line to say out loud: I cannot yet say which scoring variant is better, and I can show why — the two anchors I trust disagree, and the disagreement is explainable. Rather than build a fifth score, settle the evaluation.</aside>
+</section></div><div class="notes">The line to say out loud: I cannot yet say which scoring variant is better, and I can show why — the two anchors I trust disagree, and the disagreement is explainable. Rather than build a fifth score, settle the evaluation.</div></div>
+</main>
+<script>
+function fit(){document.querySelectorAll('.wrap').forEach(w=>{const s=w.firstElementChild;s.style.transform='scale('+(w.clientWidth/1920)+')';});}
+addEventListener('resize',fit);fit();
+</script>
+</body></html>

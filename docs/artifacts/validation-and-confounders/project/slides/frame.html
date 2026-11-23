@@ -1,0 +1,35 @@
+<section id="frame" data-transition="fade">
+  <p class="eyebrow">What changed in the approach</p>
+  <h2 class="title" style="font-size:50px;">Validating each step before returning to scoring</h2>
+  <div class="rule"></div>
+  <p class="lead" style="font-size:28px;margin-bottom:34px;">For each component I asked one question &mdash; <b style="color:var(--ink);">does it measure what I think it measures?</b> &mdash; and let the EDA answer before ranking anything.</p>
+
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">1</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>LINCS timepoints</b> &mdash; pooling 6 h and 24 h diluted, and could invert, the signal.</p>
+      <p class="chip amber" style="width:230px;text-align:center;">Confounder found</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">2</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Activity-score (TAS) floor</b> &mdash; a single 0.4 cutoff was never derived; calibrated per timepoint.</p>
+      <p class="chip teal" style="width:230px;text-align:center;">Validated</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">3</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Mechanism derivation</b> &mdash; is the ARACNe &rarr; VIPER activity readout correct?</p>
+      <p class="chip teal" style="width:230px;text-align:center;">Validated, scoped</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">4</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Regulator NES alone</b> &mdash; is a per-regulon score enough, or lossy? Keep gene-level detail.</p>
+      <p class="chip cool" style="width:230px;text-align:center;">Lossy &rarr; enriched</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--red);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--red);font-weight:700;width:40px;">5</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Scoring metric &amp; its validation</b> &mdash; which similarity, and against what ground truth?</p>
+      <p class="chip red" style="width:230px;text-align:center;">Still open</p>
+    </div>
+  </div>
+  <aside>The through-line: I stopped treating the score as the deliverable and started treating each upstream measurement as something that has to be shown to be sound. Items 1–4 are now on firm ground (or scoped honestly); item 5 is the live question.</aside>
+</section>

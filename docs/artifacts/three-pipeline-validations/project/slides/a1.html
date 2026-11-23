@@ -1,0 +1,39 @@
+<section id="a1">
+<p class="eyebrow">2 · Network and activity inference</p>
+<h2>Regulon context and knockdown response</h2>
+<div style="height:24px"></div>
+<div class="eq">
+J(R<sub>a</sub>, R<sub>b</sub>) = |R<sub>a</sub> &cap; R<sub>b</sub>| / |R<sub>a</sub> &cup; R<sub>b</sub>|
+<br><span class="c">R = the target set of one regulator, compared within a cohort and across tissues</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:880px">
+<h3>Regulon membership</h3>
+<div style="height:14px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar" style="width:360px"></div><p class="barlabel"><b>0.552</b> — within cohort (inference noise floor)</p></div>
+<div style="height:16px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar rust" style="width:20px"></div><p class="barlabel"><b>0.029</b> — across tissues</p></div>
+<div style="height:22px"></div>
+<p style="font-size:29px">Cross-tissue divergence exceeds the inference’s own instability by roughly a factor of 19, indicating that regulon membership encodes tissue context.</p>
+</div>
+<div class="col gap20" style="width:680px">
+<div class="panel"><h3>LINCS knockdown response</h3>
+<table>
+<tr><th width="58%">perturbation</th><th width="42%">AUC</th></tr>
+<tr><td>shRNA consensus</td><td>0.55</td></tr>
+<tr><td>CRISPR</td><td class="pos">0.63</td></tr>
+</table>
+<div style="height:12px"></div>
+<p style="font-size:27px">38 of 175 testable transcription factors pass individually.</p></div>
+<div class="panel dark"><p style="font-size:29px">The ARACNe ESR1 regulon reads an <b>ESR1 knockdown in the correct direction</b>, which attributes the anti-estrogen inversion of the previous slide to drug biology rather than to the network.</p></div>
+</div>
+</div>
+<aside>On the Jaccard comparison: the within-cohort figure is the appropriate null. It is what the same inference procedure produces on data drawn from the same biology, so it measures the instability of the method itself. Comparing cross-tissue overlap against zero would overstate the result; comparing it against 0.552 is the conservative framing.
+
+On the knockdown benchmark: an AUC of 0.55 to 0.63 is modest in absolute terms and should be presented as such. The benchmark is also too thin to support per-transcription-factor decisions — one to five signatures per factor, and ARACNe against CollecTRI gives a paired p of 0.6. It is therefore reported and has never been used to select a regulon set for a given factor. An earlier proposal to do so would have dropped 143 factors on noise.
+
+On the ESR1 case specifically: this is the single most useful result on this slide, because it converts an apparent defect into an interpretable finding. Under anti-estrogens, GATA3 and FOXA1 rise, which the regulon reads as increased ESR1 programme activity. The network is behaving correctly; the compound's late-timepoint effect is genuinely in that direction.
+
+Consequence for the pipeline: per-cohort networks are retained rather than one global network, and this result also predicts the transfer limitation measured later — regulator-level quantities do not carry across cohorts.</aside>
+</section>

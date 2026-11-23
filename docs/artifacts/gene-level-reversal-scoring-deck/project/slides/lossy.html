@@ -1,0 +1,24 @@
+<section id="lossy">
+<p class="eyebrow">The central measurement</p>
+<h2>How much one NES discards</h2>
+<div class="row gap48">
+<div class="col grow" style="width:960px">
+<p style="font-size:30px">Gene-level fingerprint similarity within one regulon, as a cosine:</p>
+<div style="height:28px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar" style="width:530px"></div><p class="barlabel"><b>0.53</b> &nbsp;same drug vs itself (ceiling)</p></div>
+<div style="height:18px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar rust" style="width:300px"></div><p class="barlabel"><b>0.30</b> &nbsp;different drugs, matched activity</p></div>
+<div style="height:36px"></div>
+<p style="font-size:30px">The ceiling is a sample-size effect, not a flaw:</p>
+<div style="height:16px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar pale" style="width:160px"></div><p class="barlabel">0.33 at 2 conditions</p></div>
+<div style="height:12px"></div>
+<div class="row gap28" style="align-items:center"><div class="bar" style="width:400px"></div><p class="barlabel"><b>0.79</b> at 10+ conditions</p></div>
+</div>
+<div class="col gap28" style="width:600px">
+<div class="card"><div class="num">45%</div><p class="numlabel">of the <b>reproducible</b> gene pattern is not determined by the activity value</p></div>
+<div class="card"><h3>Within one direction of effect</h3><p style="font-size:29px">Among drugs moving a regulator the same way by the same amount, activity predicts essentially none of the residual: Spearman <b>+0.0001</b> (late window).</p></div>
+</div>
+</div>
+<aside>Registered as a failure: the pre-registered version failed, because one criterion was partly tautological — opposite-sign activity forces opposing gene vectors — and because it pooled early and late windows whose reliability differs, 0.38 against 0.59. Corrected and split, it holds in late and is inconclusive in early.</aside>
+</section>

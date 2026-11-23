@@ -1,0 +1,41 @@
+<section id="n1">
+<p class="eyebrow">3 · The summary score</p>
+<h2>Measurement ceiling, then similarity at matched activity</h2>
+<div style="height:24px"></div>
+<div class="eq">
+R = median<sub>i</sub> cos( C<sub>i</sub><sup>(A)</sup>, C<sub>i</sub><sup>(B)</sup> )&nbsp;&nbsp;&nbsp;<span class="c">A, B = disjoint halves of one drug's conditions</span>
+<br>s<sub>gene</sub> = cos( C<sub>i</sub><sup>(drug 1)</sup>, C<sub>i</sub><sup>(drug 2)</sup> )&nbsp;&nbsp;&nbsp;<span class="c">compared only as a fraction of R</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:900px">
+<h3>Ceiling</h3>
+<div style="height:14px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar pale" style="width:120px"></div><p class="barlabel">0.33 — 2 conditions</p></div>
+<div style="height:12px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar pale" style="width:208px"></div><p class="barlabel">0.57 — 4 to 5 conditions</p></div>
+<div style="height:12px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar" style="width:290px"></div><p class="barlabel"><b>0.79</b> — 10 or more conditions</p></div>
+<div style="height:22px"></div>
+<p style="font-size:28px">Median R = <b>0.53</b> overall; 0.38 early, 0.59 late. The ceiling is governed by the number of conditions behind a drug, not by any property of the method.</p>
+</div>
+<div class="col gap20" style="width:660px">
+<div class="panel"><h3>Matched-activity comparison</h3>
+<table>
+<tr><th width="62%">gene-contribution cosine</th><th width="38%">value</th></tr>
+<tr><td>same drug, split halves</td><td class="pos">0.53</td></tr>
+<tr><td>different drugs, matched activity</td><td class="neg">0.30</td></tr>
+</table>
+<div style="height:14px"></div>
+<p style="font-size:27px">1,956 regulator units across 14 cohorts.</p></div>
+<div class="panel dark"><p style="font-size:29px">Approximately <b>45%</b> of the reproducible gene-level pattern is not determined by the activity value.</p></div>
+</div>
+</div>
+<aside>On why the ceiling comes first: a between-drug similarity judged against 1.0 would be misleading, because a single drug's own gene vector does not reproduce at 1.0 either. The ceiling is the appropriate denominator, and computing it before the comparison was specified in advance so that it could not be chosen to suit the result.
+
+On the ceiling's dependence on sample size: the progression from 0.33 at two conditions to 0.79 at ten or more indicates that the limitation is data volume rather than the decomposition. It also explains the early-late difference — early cells have a median of three conditions against five for late — and means gene-level quantities are most trustworthy in the late window and in well-sampled compounds.
+
+On the registered status of this test: it failed as pre-registered, for two reasons that were recorded rather than corrected quietly. One criterion was partly tautological, because activity is the sum of the gene contributions and opposite-sign activity therefore forces opposing vectors. The specification also pooled early and late windows whose reliabilities differ materially. Both defects are documented, and the corrected analysis appears on the next slide.
+
+If asked whether 0.30 against 0.53 is a large gap: expressed as a fraction of the attainable ceiling it is 0.57, so roughly 43 to 45 per cent of reproducible structure is unexplained. That is the quantity to quote rather than the raw cosine.</aside>
+</section>

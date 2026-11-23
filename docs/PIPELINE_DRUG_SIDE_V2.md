@@ -1,16 +1,30 @@
 # Drug side v2: steps, decisions and outputs
 
-Last updated 2026-11-02 (checked against the code and results). How drugs are matched to diseases, step by step: what
+Last updated 2026-11-23 (production section below; the numbered steps describe the v2 build and are marked where later decisions replaced them). How drugs are matched to diseases, step by step: what
 each step does and why, the command, inputs, outputs and decisions. Docs live on `main`; drug-side code can also be
 run from the `celligner` worktree (`~/projects/repurposing-celligner`). The disease side (signatures, master
 regulators, subgroups) is in [`PIPELINE_V2.md`](PIPELINE_V2.md); decisions in [`DECISIONS.md`](DECISIONS.md)
 (D-numbers) and [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md) (drug-side
-choices and caveats C1-C25); reporting requirements in [`LLM_COORDINATION_NOTES.md`](LLM_COORDINATION_NOTES.md).
+choices and caveats C1-C33); reporting requirements in [`LLM_COORDINATION_NOTES.md`](LLM_COORDINATION_NOTES.md).
 
 Plain-language version with results: [`DRUG_SIDE_PLAIN_LANGUAGE.md`](DRUG_SIDE_PLAIN_LANGUAGE.md).
 
-To run: [`scripts/run_v2_drug.sh`](../scripts/run_v2_drug.sh) (`list`, `show <step>`, or step names in order). Run the
-disease side first (`scripts/run_v2.sh`); in the `celligner` worktree, then `sync_disease` (a no-op on `main`).
+To run (production, since D186): [`scripts/run_pipeline.sh`](../scripts/run_pipeline.sh), everything after the ARACNe / VIPER
+builds, in order, with a parameter gate before it starts; prose twin [`PIPELINE_RUN_ORDER.md`](PIPELINE_RUN_ORDER.md). The
+older step runner [`scripts/run_v2_drug.sh`](../scripts/run_v2_drug.sh) is kept for the record.
+
+## Production as of 2026-11-23
+
+| | |
+|---|---|
+| Regulons | ARACNe cohort networks only (D160). The consensus arm is deleted and CollecTRI / DoRothEA are in `archive/collectri/` (D208); every script refuses them. |
+| Drug activity | Condition-level VIPER per drug x cell line; early (<= 6 h) and late (>= 24 h) kept apart, activity floor TAS 0.25 at 6 h, 0.40 otherwise (D156, D170, D180). Subgroups have their own timepoint runs (D211). |
+| Filter | Target evidence `T` >= 50: dependency, alteration and overactivity of the drug's target in this cancer, orientation-aware (`79t3`; D120, D177, D211). Chemotherapy / DNA-acting / essential-gene drugs go to a separate table. |
+| Score | Gene-level reversal `rev_gene` (`docs/FORMULAS.md` s3), percentile among eligible drugs per (cancer, timepoint) (`79ar`, D211). No timepoint data -> `unknown` with a reason. |
+| Flags | Route, exposure, dose, plate, inactive in matched line, generic mechanism (D107, D109), shown, not removed. |
+| Validation | D127 biomarker pairs, one vote per target unit (D209). Lead score: 16/20 units. Gene-level ranking: early 2/8, late 1/8 (C30), under review. |
+| Outputs | `results/lincs/gene_ranking_v2_tf.tsv`, `gene_ranking_chemo_v2_tf.tsv`, page `results/lincs/gene_rankings_page/` (D212). The lead-score FDA ranking (`fda_ranking_v2_tf.tsv`) is still built for comparison. |
+| Reproducibility | Two full runs from the same start match on content (D210). |
 
 ## The idea in one paragraph
 
@@ -25,7 +39,7 @@ flowchart LR
   DS["Disease side (main)<br/>regulator NES per disease and subgroup"]
   CL["Celligner<br/>which cell lines resemble each disease"]
   L["LINCS drug profiles<br/>per drug x cell line"]
-  A["Drug regulator activity<br/>ARACNe TF + CollecTRI"]
+  A["Drug regulator activity<br/>ARACNe cohort networks (D160)"]
   T["Target check<br/>drug target expressed"]
   S["Scores<br/>rev, spec, spec_mech, spec_sib_mech"]
   F["Flags + evidence status<br/>unmatched_lines, low_transfer, local_route"]
@@ -111,11 +125,11 @@ flowchart LR
 - **Flag `low_transfer` (D77):** borrowed and confidence < 0.5 (fixed from the distribution before rankings; 11.5% of
   borrowed pairs). Output `results/lincs/drug_transfer_confidence_v2.tsv`.
 
-### 7. Ranking per disease (`ranking`, `79e` VERSION=v2 REGULON=consensus)
+### 7. Ranking per disease (`ranking`, `79e` VERSION=v2; production `REGULON=aracne_project`, D160 / D208)
 - **Drug activity per disease:** tested in the disease's tissue -> average over those lines, weighted by the disease's
   Celligner weights; borrowed -> plain average over all its other cancer lines.
-- **Consensus (D75):** per regulator, the mean of the ARACNe TF and CollecTRI values, over the sets where the regulator
-  is scored on both the disease and the drug side.
+- ~~**Consensus (D75):** per regulator, the mean of the ARACNe TF and CollecTRI values, over the sets where the regulator
+  is scored on both the disease and the drug side.~~ **Replaced:** ARACNe only (D160); arm deleted (D208).
 - **Reversal (`rev`, D74):** `rev = - sum_i NES_i * a_i / sqrt(sum_i NES_i^2)` over every regulator tested in the
   disease (NES_i = disease activity change, a_i = drug activity). Positive = the drug pushes regulators back toward
   healthy. **No master-regulator cutoff:** FDR-cut lists changed a lot with small changes to the null while the
@@ -130,14 +144,14 @@ flowchart LR
   Flagged drugs stay in the ranking but never in tiers 1-2.
 - **Evidence status per disease (D78):** `matched` (a tier 1-2 drug was tested in a matching line), `borrowed only`, or
   `no adequate compound`, with a sentence for reports (`evidence_note`). v2: 14 of 41 diseases matched.
-- Outputs: `results/lincs/drug_reversal_v2_consensus.tsv`, `drug_reversal_summary_v2_consensus.tsv`,
-  `drug_reversal_controls_v2_consensus.tsv`.
+- Outputs: `results/lincs/drug_reversal_v2_tf.tsv`, `drug_reversal_summary_v2_tf.tsv`, `drug_reversal_controls_v2_tf.tsv`
+  (the `_v2_consensus` files were deleted in D208).
 
 ### 8. Ranking per subgroup (`ranking_subgroups`, `79e` STRATA=1)
 - Same as step 7 for the 14 subgroups (main D79), using each subgroup's master regulators and line weights and its
   parent's tissue key, network and transfer confidence. Adds **sibling specificity (`spec_sib`)**: this subgroup vs its
   sibling subgroup. Replaces `79g` for v2.
-- Outputs: `results/lincs/stratum_reversal_v2_consensus.tsv`, `stratum_reversal_summary_v2_consensus.tsv`.
+- Outputs: `results/lincs/stratum_reversal_v2_tf.tsv`, `stratum_reversal_summary_v2_tf.tsv`.
 
 ### 9. Proliferation split (`split`, `79i`)
 - Proliferation-linked regulators (step 5, or whose drug activity tracks the drug's effect on proliferation genes,
@@ -147,8 +161,8 @@ flowchart LR
   A regulator counts as proliferation-linked if linked in either regulon set.
 - **Reports lead with `spec_mech` / `spec_sib_mech` (D80):** by `rev` the same drugs top most cancers (statins,
   palbociclib, MEK inhibitors, anthracyclines; 32 drugs in the top 10% of >= 20 groups); by `spec_mech` none.
-- Outputs: `results/lincs/drug_reversal_split_v2_consensus.tsv`, `stratum_reversal_split_v2_consensus.tsv`,
-  `split_overview_v2_consensus.tsv`, `split_controls_v2_consensus.tsv`.
+- Outputs: `results/lincs/drug_reversal_split_v2_tf.tsv`, `stratum_reversal_split_v2_tf.tsv`,
+  `split_overview_v2_tf.tsv`, `split_controls_v2_tf.tsv`.
 
 ### 9a. Target presence in the ranking (`79i2`; D102a, adopted as D102c 2026-11-04)
 - Runs after `79i`, in place on the two split tables (backups `*_pre_d102.tsv`; idempotent from `*_pregate` columns).
@@ -216,7 +230,7 @@ flowchart LR
 - **Target-role score (`target_role`, 79t; D120, 2026-11-08; reported only, never ranks, gates or tiers):** per group x
   gene, three within-group percentiles: D = 79n dependency (weighted mean -z Chronos over in-key lines), A = share of
   TCGA tumors with an MC3 PASS missense / in-frame indel at a recurrent position (>= 3 tumors pan-cancer) or GISTIC +2
-  (< 5% -> 0), minus its median over groups, O = mean NES (ARACNe TF v2, CollecTRI v2) for regulators, else logFC vs
+  (< 5% -> 0), minus its median over groups, O = ARACNe TF v2 NES for regulators (until D208 this averaged in CollecTRI v2 NES), else logFC vs
   GTEx (adjacent if skipped). ChEMBL action raising activity -> D, O = 100 - pct, A unscored; unknown -> lowering,
   flagged. T = mean of available parts; drug row = best main target (D105b); drug level = mean over gate-passing
   compounds. Known use (anticancer, gate-passing): Hub 0.674, ChEMBL 0.617 vs spec 0.489 / 0.474. Caveats: half the
@@ -237,7 +251,7 @@ flowchart LR
   `stratum_line_weights_long_v2.tsv`, `stratum_patients.tsv`, the strata MR tables and step 10 v2 contrasts.
   `fda_rows.eligible` = passes_gate, not target_absent / local_route / low_exposure; the D115 test is
   `eligible_reversal` (d100 uses it); LINCS evidence = `lincs_flags`; new flags minority_alteration, essential_target.
-  No-protein-target FDA drugs: `fda_ranking[_strata]_noprotein_v2_consensus.tsv`, by the reversal lead.
+  No-protein-target FDA drugs: `fda_ranking[_strata]_noprotein_v2_tf.tsv`, by the reversal lead.
 - **Free fraction and occupancy (D123; reported only):** `scripts/d123/d123_fu.py` (STAGE=fetch / merge; readings by
   subagents with `results/lincs/d123/fu_prompt.md`, quotes checked); free occupancy = Cmax x fu / (Cmax x fu + Kd).
 - **Essential targets and DNA-acting drugs (D124, D124a, D124b; in production):** in 79t3 (ESSENTIAL=1 PROLIF_WEIGHT=1),
@@ -336,12 +350,12 @@ flowchart LR
 - **Literature (`79o`):** per disease, the top 10 by `spec_mech` and by `rev` (eligible, named drugs): PubMed (drug and
   disease in title / abstract) and ClinicalTrials.gov, with the 3 most relevant papers and trials. `MODE=fda`: the top 3
   FDA drugs of every disease and subgroup by FDA ingredient name. ClinicalTrials.gov matches loosely; counts are an
-  upper bound. Outputs `results/lincs/literature_v2_consensus.tsv`, `literature_fda_top_v2.tsv`.
+  upper bound. Outputs `results/lincs/literature_v2.tsv`, `literature_fda_top_v2.tsv`.
 - **FDA rankings (`79p`):** Drugs@FDA (downloaded 2026-10-29 to `data/raw/drugsatfda`, not in git) matched by
   ingredient name with salts removed (542 of 3,058 LINCS drugs; 471 marketed). Salt words, INN / USAN aliases and
   exclusions are kept in `scripts/fda_rows.py` (D112). Per disease the eligible FDA drugs
-  ranked by `spec_mech`, per subgroup by `spec_sib_mech`. Outputs `results/lincs/fda_ranking_v2_consensus.tsv`,
-  `fda_ranking_strata_v2_consensus.tsv`, `fda_matches.tsv`.
+  ranked by `spec_mech`, per subgroup by `spec_sib_mech`. Outputs `results/lincs/fda_ranking_v2_tf.tsv`,
+  `fda_ranking_strata_v2_tf.tsv`, `fda_matches.tsv`.
 - **Page (`79q`):** `results/lincs/fda_rankings_v2.html`, self-contained (template `scripts/templates/fda_rankings.html`);
   published copy https://claude.ai/artifact/AMk5E9yEXv1JhN8qf3FG96 (private).
 - **Receptor evidence gate (`79w`, step `receptor_gate`; C26):** per cohort / subgroup x drug x expressed receptor
@@ -358,7 +372,7 @@ flowchart LR
   `data/interim/lincs/literature_fda_all_*.jsonl`, output `results/lincs/literature_fda_all_v2.tsv`).
   Published copy https://claude.ai/artifact/LnfCejaAaBThJGpgM91naA (private).
 - **Stand-ins (`79y`, step `standin`; C27):** pairs each FDA drug with LINCS compounds tested in a cohort's matched
-  lines that share a target and change CollecTRI regulator activity alike (mean r >= 0.4 over >= 2 shared lines).
+  lines that share a target and change CollecTRI regulator activity alike (mean r >= 0.4 over >= 2 shared lines). **Off since D208:** the similarity used CollecTRI activity, now archived.
   Validated before use (Spearman 0.66 vs 0.34 for random target-sharing pairs). Outputs
   `results/lincs/standin_pairs_v2.tsv`, `standin_validation_v2.tsv`, `standin_validation_pairs_v2.tsv`, `standin_run.json`.
 - **Stand-in vs borrowed (`79y2`, step `standin_vs_borrowed`; C27):** `scripts/79y2_borrowed_counterfactual.sh` rescores

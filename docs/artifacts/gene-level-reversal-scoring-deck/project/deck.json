@@ -1,0 +1,40 @@
+{
+  "v": 5,
+  "createdOnFiles": { "v": 1, "at": "2026-11-23T01:10:00Z" },
+  "lists": "css",
+  "format": { "v": 1, "shared": ["project/deck.css"] },
+  "title": "Gene-Level Reversal Scoring",
+  "order": [
+    "cover",
+    "question",
+    "networks",
+    "split",
+    "windows",
+    "lossy",
+    "targetrole",
+    "revgene",
+    "cytotoxic",
+    "whyauc",
+    "held",
+    "didnt",
+    "open",
+    "next"
+  ],
+  "sections": {
+    "s1": { "description": "The question and the two builds everything rests on.", "start": "cover" },
+    "s2": { "description": "What the master-regulator score discards, measured.", "start": "lossy" },
+    "s3": { "description": "The gene-level correction and what it does to the ranking.", "start": "revgene" },
+    "s4": { "description": "What held, what did not, and where this goes next.", "start": "held" }
+  },
+  "faces": {
+    "eb-garamond": {
+      "family": "EB Garamond",
+      "href": "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    },
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    }
+  },
+  "designSystems": []
+}

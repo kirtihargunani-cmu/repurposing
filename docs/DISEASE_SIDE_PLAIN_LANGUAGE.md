@@ -139,3 +139,12 @@ GATA3 -2.4 -> +0.2, XBP1 -2.6 -> -0.2; luminal A barely changed (overall agreeme
   - whether to adopt the identity-free target lists (D83);
   - whether to keep the "confirmed" rule (D18), whose curated part adds almost nothing;
   - the glioma purity measure (A37, tabled).
+
+## One set of regulator networks (D208, 2026-11-23)
+
+We now use only the networks learned from each cancer's own tumors (ARACNe). The general, literature-curated networks
+(CollecTRI and DoRothEA) were moved out of the project's working files into an archive. They had stopped counting
+toward any result on 20 November; removing them completely showed that one disease-side script still used CollecTRI
+by default, which is now fixed. Nothing about which regulators each cancer turns on or off changes, because those
+results already came from the tumor-learned networks.
+

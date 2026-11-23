@@ -1,0 +1,153 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gene-Level Reversal Scoring</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* layout: single narrow column, numbered acts, each act = claim + evidence table + caveat */
+:root{
+  --bg:#fcfbf9; --fg:#1a1a18; --mut:#6e6d68; --line:#e5e3dd; --card:#fff;
+  --acc:#1d6b63; --acc-soft:#eef5f3; --flag:#8c4a22; --flag-soft:#fbf2ea;
+  --font-d:"Newsreader",Georgia,serif; --font-b:"Inter",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141513; --fg:#eae8e3; --mut:#9a9890; --line:#2c2e2b; --card:#1c1e1b;
+  --acc:#63bdb1; --acc-soft:#17241f; --flag:#d49a69; --flag-soft:#241a12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141513; --fg:#eae8e3; --mut:#9a9890; --line:#2c2e2b; --card:#1c1e1b;
+  --acc:#63bdb1; --acc-soft:#17241f; --flag:#d49a69; --flag-soft:#241a12; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-b);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{padding-block:44px 28px;border-bottom:1px solid var(--line)}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600;margin:0 0 10px}
+h1{font-family:var(--font-d);font-weight:600;font-size:2.15rem;line-height:1.12;margin:0 0 12px;text-wrap:balance;letter-spacing:-.015em}
+.thesis{font-family:var(--font-d);font-size:1.12rem;line-height:1.5;color:var(--fg);margin:0;max-width:60ch}
+.thesis em{font-style:italic;color:var(--acc)}
+main{padding-block:8px 48px;display:flex;flex-direction:column;gap:38px}
+.act{display:flex;flex-direction:column;gap:12px}
+.act-h{display:flex;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:8px}
+.act-n{font-family:var(--font-d);font-size:1.5rem;color:var(--acc);font-weight:600;min-width:1.2em;font-variant-numeric:tabular-nums}
+.act-t{font-family:var(--font-d);font-size:1.3rem;font-weight:600;margin:0;letter-spacing:-.01em}
+ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:9px}
+li{padding-left:.15rem}
+li::marker{color:var(--acc)}
+b{font-weight:600}
+.n{font-variant-numeric:tabular-nums;font-weight:600;color:var(--acc)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.84rem;font-variant-numeric:tabular-nums}
+th{text-align:left;padding:7px 11px;background:var(--acc-soft);font-weight:600;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 11px;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.pos{color:var(--acc);font-weight:600}
+td.neg{color:var(--flag);font-weight:600}
+.flag{background:var(--flag-soft);border-left:3px solid var(--flag);border-radius:0 7px 7px 0;padding:11px 14px;font-size:.9rem}
+.flag b{color:var(--flag)}
+.pull{background:var(--acc-soft);border-radius:8px;padding:14px 16px;font-family:var(--font-d);font-size:1.05rem;line-height:1.5}
+footer{border-top:1px solid var(--line);padding-block:20px 44px;color:var(--mut);font-size:.84rem}
+@media(max-width:560px){h1{font-size:1.6rem}.act-t{font-size:1.12rem}body{font-size:15px}}
+</style>
+
+<header><div class="wrap">
+<p class="kicker">Drug repurposing · week of 17–22 Nov 2026</p>
+<h1>One NES score is not one mechanism</h1>
+<p class="thesis">The reversal score multiplies <em>totals</em>: how dysregulated a regulator is, times how much a drug moves it. It never asks whether the same genes are involved. This week we measured what that costs — and found the score has been rewarding chemotherapy.</p>
+</div></header>
+
+<main class="wrap">
+
+<section class="act">
+  <div class="act-h"><span class="act-n">1</span><h2 class="act-t">The master-regulator score is lossy, and we can say by how much</h2></div>
+  <ul>
+    <li>A drug's gene-level fingerprint inside one regulon, compared <b>against itself</b> (split conditions in half): cosine <span class="n">0.53</span>. That is the measurement ceiling — nothing can match a vector better than it matches itself.</li>
+    <li>Two <b>different</b> drugs with near-identical activity on that regulator: <span class="n">0.30</span>.</li>
+    <li>So roughly <span class="n">45%</span> of the <b>reproducible</b> gene pattern is not determined by the NES. Among drugs moving a regulator the same direction by the same amount, activity predicts essentially none of the residual (Spearman <span class="n">+0.0001</span>, late window).</li>
+    <li>The ceiling is a sample-size effect, not a flaw: <span class="n">0.33</span> at 2 conditions rising to <span class="n">0.79</span> at 10+.</li>
+  </ul>
+  <div class="flag"><b>Registered as a failure.</b> The pre-registered version of this test failed, for two reasons we recorded rather than quietly fixed: one criterion was partly tautological, and it pooled early and late windows whose reliability differs (0.38 vs 0.59). Corrected and split by window, it holds in late and is inconclusive in early.</div>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">2</span><h2 class="act-t">The networks hold real mechanism, not co-expression noise</h2></div>
+  <ul>
+    <li>Regulon membership is <b>context</b>, not estimation error: the same-cohort noise floor is Jaccard <span class="n">0.552</span> while cross-tissue is <span class="n">0.029</span>. The same transcription factor is genuinely wired to different genes in different diseases.</li>
+    <li>Against LINCS knockdown signatures — the one test that does not depend on our pipeline being right — the ARACNe TF set reads knockdowns at AUC <span class="n">0.55</span> (shRNA) and <span class="n">0.63</span> (CRISPR), passing 38 of 175 testable TFs.</li>
+    <li><b>The decisive case.</b> ARACNe's ESR1 regulon reads an <b>ESR1 knockdown correctly</b>. So when anti-estrogens read as ESR1 <i>activation</i>, that is a real drug effect — GATA3 and FOXA1 rise under the drugs — not a broken network. The benchmark was too thin for per-TF choices (1–5 signatures per TF, ARACNe vs CollecTRI paired p = 0.6), so it is reported and never used to pick regulons.</li>
+    <li>VIPER's activity is <b>exactly</b> reconstructable from its gene-level terms: max |difference| <span class="n">4.8 × 10⁻⁷</span> against the stored values, across 21,588 drug × cohort × window cells. The nested breakdown is the same arithmetic, not an approximation of it.</li>
+    <li>Independent confirmation from clustering: regulator programs found across <b>patients</b> and across <b>drugs</b> — two unrelated axes — recover the same hubs (PRRX1↔PRRX1 Jaccard <span class="n">0.71</span>, DMTF1↔DMTF1 <span class="n">0.61</span>). The endothelial program found in luminal breast contains three of the five regulons that most oppose fulvestrant.</li>
+  </ul>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">3</span><h2 class="act-t">Timepoint is a real dimension, and it cannot be imputed</h2></div>
+  <ul>
+    <li>At 6 h a drug's response is genuinely smaller, so a single activity floor discards <span class="n">76%</span> of early signatures. A per-timepoint floor (0.25 at 6 h) raises active early signatures from 4,938 to <span class="n">10,889</span>.</li>
+    <li>The windows disagree, and the disagreement is biology: <span class="n">37%</span> of regulator terms flip sign between early and late. For anti-estrogens in MCF7 the ESR1 programme reads <span class="n">−0.056</span> at 6 h (correct) and <span class="n">+0.094</span> at 24 h (inverted) — and within that line the inverted window outvotes the correct one roughly <b>10 : 1</b> in a pooled average.</li>
+    <li><b>We asked whether the missing window can be predicted, and pre-registered the answer either way. It cannot.</b> Split-half reliability is 0.679 early / 0.795 late, giving attainable ceilings of 0.824 / 0.892. The best model reaches Spearman <span class="n">0.380</span> — against <span class="n">0.382</span> for simply copying the other window. Sign agreement 0.62–0.63 against a 0.75 bar. <b>Verdict: CLOSED</b>, in both directions.</li>
+    <li>About <span class="n">80%</span> of a window's reliable variance is absent from the other, and the discordance does not shrink with more conditions (38.8% → 35.8%). It is not noise waiting for more data.</li>
+    <li>Nor is it a property of the drug: a drug's behaviour in its other cohorts predicts this one at Spearman <span class="n">−0.05</span>, and within-drug spread (7.90) is smaller than between-drug (12.88). <b>"Drug X is early-acting" is not a statement this data supports.</b></li>
+    <li>So every score is window-separated, and an unmeasured window is labelled <b>unknown</b> rather than guessed — the empirically correct label, not merely the cautious one.</li>
+  </ul>
+  <div class="flag"><b>Coverage is the limit.</b> Only 29 of 41 cohorts have any window data, and 12 have no condition-level profiles in their matched cell lines at all — there, <i>unknown</i> is permanent, not pending.</div>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">4</span><h2 class="act-t">The production score anti-correlates with target biology</h2></div>
+  <ul>
+    <li>Correlation of each score with the target-role components — CRISPR dependency, alteration, over-activity of the drug's own target — across 25 cohort × window cells. None of this uses approval data, and the reversal score carries no target annotation, so there is no shared-input circularity.</li>
+  </ul>
+  <div class="scroll"><table>
+    <thead><tr><th>score</th><th>dependency</th><th>alteration</th><th>combined target role</th></tr></thead>
+    <tbody>
+      <tr><td>reversal (production)</td><td class="neg">−0.073</td><td class="neg">−0.114</td><td class="neg">−0.124</td></tr>
+      <tr><td>gene-level covariance</td><td class="pos">+0.069</td><td>+0.015</td><td class="pos">+0.059</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Better in <span class="n">21 of 25</span> cells. The gain is largest exactly where the reversal score is <b>most</b> anti-correlated: lung adenocarcinoma late <span class="n">−0.244 → +0.214</span>, basal breast early <span class="n">−0.464 → −0.037</span>.</li>
+  </ul>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">5</span><h2 class="act-t">What the gene level actually does: it demotes chemotherapy</h2></div>
+  <ul>
+    <li>Classic cytotoxics — anthracyclines, topoisomerase inhibitors, antimetabolites, platins, taxanes, vincas — move <span class="n">−9.2</span> percentile points. Everything else moves <span class="n">+2.6</span>. <b>Mann-Whitney p = 5.4 × 10⁻²²</b>.</li>
+    <li>Demoted: daunorubicin, doxorubicin, epirubicin, topotecan, cytarabine, and the whole mTOR family. Promoted: azacitidine (41 cohorts, +52 points), bortezomib and ixazomib, cardiac glycosides, retinoids, corticosteroids.</li>
+    <li>Promoted drugs have mean target dependency <span class="n">71.3</span> against <span class="n">59.2</span> for demoted ones.</li>
+  </ul>
+  <div class="pull">A score that moves away from cytotoxics and toward drugs whose targets are genuinely depended on is doing what a repurposing pipeline is supposed to do.</div>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">6</span><h2 class="act-t">Why this looked like a failure for most of the week</h2></div>
+  <ul>
+    <li>We had been judging every score on <b>approval recovery</b> — do drugs already approved for this cancer rank high. Measured properly, that yardstick is bimodal: <span class="n">9 of 41</span> cohorts score significantly above chance and <span class="n">9</span> significantly <b>below</b> (endometrial at z = −7.7).</li>
+    <li>In the failing cohorts the approved sets are largely cytotoxic, and a single generic proliferation axis <b>beats</b> the mechanism score there.</li>
+    <li>So a score that demotes chemotherapy <b>must</b> lose approval AUC while gaining on target biology. The null result and the positive result are the same fact measured two ways.</li>
+  </ul>
+  <div class="flag"><b>The methodological takeaway.</b> Approval recovery is the wrong instrument for a mechanistic claim, and we can now show why rather than assert it. Biomarker pairs and target-role components are the right anchors.</div>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">7</span><h2 class="act-t">What else held up, and what did not</h2></div>
+  <ul>
+    <li><b>Held.</b> Top-ranked novel drugs converge on the mechanism profile of drugs already approved for that disease — effect +0.277 early, +0.312 late, every cell positive — and it survives restricting to drugs sharing <b>no annotated target or MOA class</b> with the approved set (+0.263 / +0.312). Convergence by a different route.</li>
+    <li><b>Did not hold.</b> Collapsing 800+ regulators into 20–40 programs does not improve ranking — the collapse is an orthonormal rotation, and truncation gave no gain. Programs stay for interpretation, not scoring.</li>
+    <li><b>Did not hold.</b> Cross-cohort transfer. With <b>identical cell lines</b> but different networks, the same drug's regulator activity correlates only <span class="n">+0.667</span>; cross-tissue <span class="n">+0.330</span>. Regulon content overlaps at Jaccard 0.06–0.09 even between two breast subtypes.</li>
+  </ul>
+</section>
+
+<section class="act">
+  <div class="act-h"><span class="act-n">8</span><h2 class="act-t">Open, and honest about it</h2></div>
+  <ul>
+    <li><b>Four scoring attempts returned null, and two were implementation errors of mine</b>, not tests of the idea — a double-counted sign, and a term scaled 100× too small. Both were found by decomposition after the result looked wrong, and both are recorded.</li>
+    <li>The composition that should work — reversal at full weight plus the covariance weighted by its measured reliability, scale-free — is <b>written but not yet tested</b>. It needs its own registration.</li>
+    <li>The pooled per-drug association is small (Spearman +0.089 with dependency). The per-cohort gains are much larger. Liver moves the wrong way in both windows.</li>
+    <li>Several top movers are implausible low-count drugs with no target annotation. The pattern is in the aggregate, not in any single name.</li>
+  </ul>
+</section>
+
+</main>
+<footer><div class="wrap">Every figure here is from a committed run with its own pre-registration or recorded amendment. Nothing was tuned after a number was seen; where a threshold failed, the failure is in the record alongside the corrected analysis.</div></footer>
+
+</body></html>

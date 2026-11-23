@@ -1,0 +1,17 @@
+<section id="targetrole">
+<p class="eyebrow">Consequence</p>
+<h2>The production score opposes target biology</h2>
+<p style="font-size:30px">Spearman correlation with the target-role components, 25 cohort × window cells. No approval data; the reversal score carries no target annotation, so there is no shared-input circularity.</p>
+<div style="height:36px"></div>
+<table>
+<tr><th width="34%">score</th><th width="22%">dependency (CRISPR)</th><th width="22%">alteration</th><th width="22%">combined target role</th></tr>
+<tr><td>reversal (production)</td><td class="neg">&minus;0.073</td><td class="neg">&minus;0.114</td><td class="neg">&minus;0.124</td></tr>
+<tr><td>gene-level covariance</td><td class="pos">+0.069</td><td class="pos">+0.015</td><td class="pos">+0.059</td></tr>
+</table>
+<div style="height:40px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Better in 21 of 25 cells</h3><p style="font-size:29px">Sign test p = <b>0.0009</b>. The gain is largest exactly where reversal is <b>most</b> anti-correlated: lung adenocarcinoma late <b>&minus;0.244 &rarr; +0.214</b>.</p></div>
+<div class="card grow"><h3>Honest limit</h3><p style="font-size:29px">The corrected value reaches <b>≈ 0</b>, not positive. The gene term is <b>less wrong</b>, not right, and absolute correlations stay small.</p></div>
+</div>
+<aside>Over-activity is the one component that gets worse. That is coherent: it is the component closest to what reversal already measures, so down-weighting off-pattern regulators should cost there while gaining on dependency and alteration.</aside>
+</section>

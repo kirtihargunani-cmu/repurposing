@@ -1,0 +1,18 @@
+<section id="networks" class="tinted">
+<p class="eyebrow">Validation 1 · the builds</p>
+<h2>The networks carry mechanism</h2>
+<div class="row gap48">
+<div class="col grow gap28" style="width:880px">
+<ul>
+<li>Regulon membership is <b>context, not noise</b>: same-cohort Jaccard <b>0.552</b> against cross-tissue <b>0.029</b>.</li>
+<li>Against LINCS knockdowns — independent of our pipeline — ARACNe reads TF knockdowns at AUC <b>0.55</b> (shRNA) and <b>0.63</b> (CRISPR).</li>
+<li>VIPER activity reconstructs <b>exactly</b> from its gene terms: max |difference| <b>4.8&times;10<sup>&minus;7</sup></b> over 21,588 drug × cohort × window cells.</li>
+</ul>
+</div>
+<div class="col gap28" style="width:680px">
+<div class="card"><h3>The decisive case</h3><p style="font-size:29px">ARACNe’s ESR1 regulon reads an <b>ESR1 knockdown correctly</b>.</p><div style="height:14px"></div><p style="font-size:29px">So when anti-estrogens read as ESR1 <i>activation</i>, that is a real drug effect — GATA3 and FOXA1 rise — not a broken network.</p></div>
+<div class="card"><h3>Independent confirmation</h3><p style="font-size:29px">Programs clustered across <b>patients</b> and across <b>drugs</b> — unrelated axes — recover the same hubs: PRRX1↔PRRX1 Jaccard <b>0.71</b>.</p></div>
+</div>
+</div>
+<aside>The knockdown benchmark is too thin for per-TF regulon choices — 1 to 5 signatures per TF, ARACNe vs CollecTRI paired p = 0.6 — so it is reported and never used to pick regulons.</aside>
+</section>

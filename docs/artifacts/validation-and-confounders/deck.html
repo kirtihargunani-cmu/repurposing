@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drug Repurposing — Validation &amp; Confounders</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#2b2b2b;color:#eee;font:15px/1.5 system-ui,-apple-system,sans-serif}
+header{padding:20px max(16px,3vw)} header h1{margin:0;font-size:1.3rem} header p{margin:4px 0 0;color:#bbb}
+.deck{display:grid;gap:28px;padding:0 max(16px,3vw) 48px}
+.wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#fff;box-shadow:0 2px 12px #0008}
+.wrap > section{position:absolute;top:0;left:0;width:1920px;height:1080px;transform-origin:0 0;box-sizing:border-box}
+.wrap > section aside{display:none}
+.notes{background:#1f1f1f;border-left:3px solid #6aa;padding:10px 14px;white-space:pre-wrap;color:#ddd;font-size:14px}
+.num{color:#9cc;font-weight:600;margin-bottom:6px}
+</style>
+<style>
+:root{
+  --ink:#16233B;        /* deep navy ink */
+  --ink-soft:#3C4A63;   /* secondary text */
+  --muted:#6B7689;      /* captions / sources */
+  --paper:#FAF7F1;      /* warm paper */
+  --paper-2:#F1ECE1;    /* panel fill */
+  --line:#D8D0C2;       /* hairlines / borders */
+  --teal:#2E6E66;       /* primary accent */
+  --teal-tint:#E2EBE7;  /* teal panel */
+  --amber:#B9772A;      /* warm accent (up in tumor) */
+  --amber-tint:#F3E7D4;
+  --cool:#3A6EA5;       /* cool accent (down) */
+  --cool-tint:#E2EAF2;
+  --red:#A6422E;        /* failure / inverted */
+  --red-tint:#F0E0DA;
+  --good-tint:#E3EDE6;  /* adopted row */
+}
+
+section{
+  box-sizing:border-box;
+  width:1920px;height:1080px;padding:128px;
+  background:var(--paper);color:var(--ink);
+  font-family:"Inter",sans-serif;
+  position:relative;
+  counter-increment:page;
+}
+
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;margin:0;}
+p{margin:0;}
+
+/* ---- common blocks ---- */
+.eyebrow{font-size:24px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--teal);margin-bottom:22px;}
+.title{font-size:56px;font-weight:600;line-height:1.08;color:var(--ink);max-width:1600px;}
+.subtitle{font-size:30px;font-weight:400;color:var(--ink-soft);line-height:1.35;margin-top:18px;}
+.lead{font-size:30px;line-height:1.4;color:var(--ink-soft);max-width:1560px;}
+
+.rule{width:84px;height:5px;background:var(--amber);margin:28px 0 30px;}
+
+/* footer band */
+.foot{position:absolute;left:128px;right:128px;bottom:66px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:24px;color:var(--muted);}
+.foot .tag{letter-spacing:.5px;}
+.pageno{font-variant-numeric:tabular-nums;}
+
+/* source caption */
+.src{font-size:24px;color:var(--muted);line-height:1.35;}
+
+/* ---- bullets ---- */
+ul.pts{margin:0;padding:0;list-style:none;}
+ul.pts li{font-size:28px;line-height:1.33;color:var(--ink-soft);
+  margin-bottom:17px;padding-left:34px;position:relative;}
+ul.pts li b{color:var(--ink);font-weight:600;}
+.dot{position:absolute;left:0;top:13px;width:12px;height:12px;background:var(--teal);}
+
+/* ---- cards ---- */
+.cards{display:flex;gap:26px;}
+.card{flex:1;background:var(--paper-2);border-top:5px solid var(--teal);
+  padding:30px 30px 32px;}
+.card h3{font-size:28px;color:var(--ink);margin-bottom:12px;}
+.card p{font-size:26px;line-height:1.36;color:var(--ink-soft);}
+.card.amber{border-top-color:var(--amber);}
+.card.cool{border-top-color:var(--cool);}
+.card.red{border-top-color:var(--red);}
+
+/* ---- tables / matrices ---- */
+table.mx{width:100%;border-collapse:collapse;
+  font-family:"Inter",sans-serif;font-size:26px;color:var(--ink-soft);
+  font-variant-numeric:tabular-nums;}
+table.mx th{color:var(--ink);font-weight:600;text-align:right;padding:14px 18px;}
+table.mx td{text-align:right;padding:13px 18px;color:var(--ink-soft);}
+table.mx tr.head{background:var(--ink);}
+table.mx tr.head th{color:var(--paper);}
+table.mx tr.band{background:var(--paper-2);}
+table.mx tr.good{background:var(--good-tint);color:var(--ink);}
+table.mx tr.bad{background:var(--red-tint);}
+.l{text-align:left;}
+
+/* small label chips */
+.chip{display:inline-block;font-size:24px;font-weight:600;
+  padding:7px 16px;border-radius:999px;}
+.chip.teal{background:var(--teal-tint);color:var(--teal);}
+.chip.amber{background:var(--amber-tint);color:var(--amber);}
+.chip.cool{background:var(--cool-tint);color:var(--cool);}
+.chip.red{background:var(--red-tint);color:var(--red);}
+
+/* verdict panel */
+.panel{background:var(--teal-tint);padding:26px 30px;border-left:6px solid var(--teal);}
+.panel.amber{background:var(--amber-tint);border-left-color:var(--amber);}
+.panel.red{background:var(--red-tint);border-left-color:var(--red);}
+.panel h3{font-size:26px;color:var(--ink);margin-bottom:8px;}
+.panel p{font-size:26px;line-height:1.36;color:var(--ink-soft);}
+
+.col2{display:flex;gap:48px;}
+.col2 > div{flex:1;}
+
+.kick{font-size:30px;font-weight:600;color:var(--ink);margin-bottom:16px;}
+
+</style></head><body>
+<header><h1>Drug Repurposing — Validation &amp; Confounders</h1><p>9 slides · speaker notes under each slide · source: <code>docs/artifacts/validation-and-confounders</code></p></header>
+<main class="deck">
+<div><div class="num">Slide 1 · cover</div><div class="wrap"><section id="cover" data-transition="fade">
+  <p class="eyebrow">Weekly research update &middot; 23 November 2026</p>
+  <h1 class="title" style="font-size:88px;line-height:1.05;max-width:1540px;">Validating the methods<br>before scoring</h1>
+  <div class="rule" style="margin:34px 0 34px;"></div>
+  <p class="subtitle" style="font-size:34px;max-width:1500px;">Drug repurposing &mdash; the confounders and method validation from the past two weeks.</p>
+  <p style="position:absolute;left:128px;bottom:150px;font-size:28px;color:var(--ink);font-weight:600;">Kirti Hargunani</p>
+  <p style="position:absolute;left:128px;bottom:112px;font-size:26px;color:var(--muted);">Advisor: Dr. Farimani &middot; Carnegie Mellon University</p>
+  <p style="position:absolute;right:128px;bottom:112px;font-size:26px;color:var(--teal);font-weight:600;text-align:right;">github.com/kirtihargunani-cmu/repurposing</p>
+  <aside>Framing for the week: two weeks ago I was scoring candidates before I had validated that each step measures what I think it measures. This deck steps back and reports what the data can and cannot support, with the EDA behind each claim. Four validations and one still-open question.</aside>
+</section></div><div class="notes">Framing for the week: two weeks ago I was scoring candidates before I had validated that each step measures what I think it measures. This deck steps back and reports what the data can and cannot support, with the EDA behind each claim. Four validations and one still-open question.</div></div>
+<div><div class="num">Slide 2 · frame</div><div class="wrap"><section id="frame" data-transition="fade">
+  <p class="eyebrow">What changed in the approach</p>
+  <h2 class="title" style="font-size:50px;">Validating each step before returning to scoring</h2>
+  <div class="rule"></div>
+  <p class="lead" style="font-size:28px;margin-bottom:34px;">For each component I asked one question &mdash; <b style="color:var(--ink);">does it measure what I think it measures?</b> &mdash; and let the EDA answer before ranking anything.</p>
+
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">1</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>LINCS timepoints</b> &mdash; pooling 6 h and 24 h diluted, and could invert, the signal.</p>
+      <p class="chip amber" style="width:230px;text-align:center;">Confounder found</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">2</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Activity-score (TAS) floor</b> &mdash; a single 0.4 cutoff was never derived; calibrated per timepoint.</p>
+      <p class="chip teal" style="width:230px;text-align:center;">Validated</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">3</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Mechanism derivation</b> &mdash; is the ARACNe &rarr; VIPER activity readout correct?</p>
+      <p class="chip teal" style="width:230px;text-align:center;">Validated, scoped</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--teal);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--teal);font-weight:700;width:40px;">4</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Regulator NES alone</b> &mdash; is a per-regulon score enough, or lossy? Keep gene-level detail.</p>
+      <p class="chip cool" style="width:230px;text-align:center;">Lossy &rarr; enriched</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:26px;background:var(--paper-2);padding:20px 28px;border-left:5px solid var(--red);">
+      <p style="font-family:'Source Serif 4',serif;font-size:34px;color:var(--red);font-weight:700;width:40px;">5</p>
+      <p style="flex:1;font-size:28px;color:var(--ink);"><b>Scoring metric &amp; its validation</b> &mdash; which similarity, and against what ground truth?</p>
+      <p class="chip red" style="width:230px;text-align:center;">Still open</p>
+    </div>
+  </div>
+  <aside>The through-line: I stopped treating the score as the deliverable and started treating each upstream measurement as something that has to be shown to be sound. Items 1–4 are now on firm ground (or scoped honestly); item 5 is the live question.</aside>
+</section></div><div class="notes">The through-line: I stopped treating the score as the deliverable and started treating each upstream measurement as something that has to be shown to be sound. Items 1–4 are now on firm ground (or scoped honestly); item 5 is the live question.</div></div>
+<div><div class="num">Slide 3 · timepoints</div><div class="wrap"><section id="timepoints" data-transition="fade">
+  <p class="eyebrow">Confounder 1 &middot; LINCS time resolution</p>
+  <h2 class="title" style="font-size:50px;">Pooling 6 h and 24 h averages two different responses</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts">
+        <li><span class="dot"></span>LINCS L1000 reads <b>978 landmark genes</b> after drug perturbation, across doses, at <b>6 h, 24 h, or an unrecorded time</b>.</li>
+        <li><span class="dot"></span>Early (&le;6 h) response tracks <b>direct mechanism</b>; late (&ge;24 h) tracks <b>phenotype</b> (De Wolf 2016). They are not interchangeable.</li>
+        <li><span class="dot"></span>A pooled profile averages the two &mdash; which dilutes the signal and, when the two windows disagree in sign, <b>inverts</b> it.</li>
+        <li><span class="dot"></span>Measured worst case: anti-estrogens over the ESR1 program in MCF7 read <b>correct at 6 h</b> but <b>inverted at 24 h</b>, and the late window outvotes the early one roughly <b>10&#8239;:&#8239;1</b>.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">ESR1 / anti-estrogens in MCF7, by window</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">Window</th><th>Mean signed<br>response</th><th>Cosine vs<br>LumA disease</th><th>Anti-estrogen<br>signatures</th></tr>
+        <tr class="good"><td class="l"><b>6 h (early)</b></td><td>&minus;0.056</td><td>&minus;0.132</td><td>6</td></tr>
+        <tr class="bad"><td class="l"><b>24 h (late)</b></td><td>+0.094</td><td>+0.093</td><td>59</td></tr>
+      </table>
+      <div class="panel" style="margin-top:24px;">
+        <p><b style="color:var(--teal);">Negative</b> = reversing the disease (the intended direction). The 6 h window is correct; pooled, the 59 inverted late signatures outweigh the 6 early correct ones.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D152 &middot; Level-5 measurement, MCF7</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>This is the single clearest piece of EDA from the fortnight: it shows the pooled drug profile is not just noisier but can carry the wrong sign, because the two time windows of the same drug disagree. Everything on the next two slides follows from splitting the windows.</aside>
+</section></div><div class="notes">This is the single clearest piece of EDA from the fortnight: it shows the pooled drug profile is not just noisier but can carry the wrong sign, because the two time windows of the same drug disagree. Everything on the next two slides follows from splitting the windows.</div></div>
+<div><div class="num">Slide 4 · tasfloor</div><div class="wrap"><section id="tasfloor" data-transition="fade">
+  <p class="eyebrow">Validation 1 &middot; Per-timepoint activity floor</p>
+  <h2 class="title" style="font-size:50px;">Calibrating the activity (TAS) floor per timepoint</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts">
+        <li><span class="dot"></span>A signature was kept if <b>TAS &ge; 0.4</b>, applied uniformly. It was fixed by decision (9 Oct) with <b>no sweep, no derivation</b>.</li>
+        <li><span class="dot"></span>TAS measures response <b>magnitude</b>, which genuinely rises with time; reproducibility is handled separately. A flat floor demands a 6 h response be as big as a 24 h one.</li>
+        <li><span class="dot"></span>Cost: <b>13,313 cells</b> had 6 h data that was discarded &mdash; <b>76%</b> of 6 h signatures, clustered just under 0.4.</li>
+        <li><span class="dot"></span>Calibrated with a <b>label-blind</b> test: each 6 h signature's drug-specific signal, &delta; = r(own 24 h) &minus; r(other drugs). Signal degrades gracefully, not off a cliff.</li>
+        <li><span class="dot"></span><b>Adopted: 6 h floor 0.25</b> (keeps 75% of 6 h signatures vs 42%); 24 h stays 0.40.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">6 h signal retained at each candidate floor</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">6 h floor</th><th>Signatures<br>kept</th><th>Median<br>signal &delta;</th><th>% positive</th></tr>
+        <tr class="band"><td class="l">0.40 (old)</td><td>42.5%</td><td>0.364</td><td>96.2%</td></tr>
+        <tr><td class="l">0.331</td><td>56.8%</td><td>0.334</td><td>96.0%</td></tr>
+        <tr><td class="l">0.284</td><td>68.0%</td><td>0.316</td><td>95.3%</td></tr>
+        <tr class="good"><td class="l"><b>0.250 (new)</b></td><td>75.4%</td><td>0.303</td><td>95.1%</td></tr>
+        <tr class="bad"><td class="l">0.200</td><td>86.6%</td><td>0.283</td><td>94.2%</td></tr>
+      </table>
+      <p class="src" style="margin-top:18px;">Accepted band (&ge;0.4) has &delta;&#8239;=&#8239;0.364. <b style="color:var(--teal);">Pass</b> = admitted band keeps &ge;50% of that and &ge;90% positive &rarr; 0.25 qualifies, 0.20 fails on both.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D156 &middot; tas_floor_signal_test, 2,221 paired 6 h signatures</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>Rigor notes worth saying aloud: the procedure is pre-registered, the floor is reported as a profile across anchor quantiles rather than a single tuned value, and one originally-planned guard (79n) was withdrawn when I found it never reads a compound signature and so could not have detected admitted noise — it was replaced with the drug-specific-signal hard-fail shown here. 24 h is held at 0.40 as the status-quo anchor; only the early window had the signal measurement that justifies lowering it.</aside>
+</section></div><div class="notes">Rigor notes worth saying aloud: the procedure is pre-registered, the floor is reported as a profile across anchor quantiles rather than a single tuned value, and one originally-planned guard (79n) was withdrawn when I found it never reads a compound signature and so could not have detected admitted noise — it was replaced with the drug-specific-signal hard-fail shown here. 24 h is held at 0.40 as the status-quo anchor; only the early window had the signal measurement that justifies lowering it.</div></div>
+<div><div class="num">Slide 5 · impute</div><div class="wrap"><section id="impute" data-transition="fade">
+  <p class="eyebrow">Validation 1, continued &middot; Window imputation</p>
+  <h2 class="title" style="font-size:50px;">Imputing a missing timepoint window: the overlap is too thin</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts" style="font-size:27px;">
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span>Most drugs are scored in a <b>single</b> window: only <b>939 drugs</b> (4,128 rows) carry both; <b>13,332 rows</b> carry one.</li>
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span><b>The target is noisy</b> &mdash; the median both-row rests on <b>one condition per window</b>, below any predictor's reach.</li>
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span><b>Train &ne; apply:</b> both-window data spans 14 cohorts; the rows to impute span <b>29</b> &mdash; extrapolation by construction.</li>
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span>"Early &asymp; late" is weak (<b>37% sign-discordant</b>), and a continuous curve is impossible &mdash; only <b>196</b> pairs have &ge;2 dose-fittable timepoints.</li>
+        <li style="font-size:27px;margin-bottom:0;"><span class="dot"></span><b>Decision:</b> a pre-registered test with acceptance fixed before fitting; until it clears, a missing window stays <b>unknown</b>, not guessed.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">What the overlap actually looks like</p>
+      <table class="mx" style="font-size:26px;">
+        <tr class="head"><th class="l">Quantity</th><th>Value</th></tr>
+        <tr><td class="l">Rows with BOTH windows</td><td>4,128</td></tr>
+        <tr class="band"><td class="l">&mdash; distinct drugs</td><td>939</td></tr>
+        <tr><td class="l">Rows with ONE window</td><td>13,332</td></tr>
+        <tr class="band"><td class="l">&mdash; early-only / late-only</td><td>5,823 / 7,509</td></tr>
+        <tr><td class="l">Cohorts: both-set &rarr; impute-set</td><td>14 &rarr; 29</td></tr>
+        <tr class="bad"><td class="l">Median conditions per window</td><td>1</td></tr>
+        <tr class="bad"><td class="l">Both-rows discordant in sign</td><td>37%</td></tr>
+      </table>
+      <p class="src" style="margin-top:18px;">Identity baseline Spearman(early,&nbsp;late) = +0.388 &mdash; the bar any imputation must beat.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D183 (pre-registration) &middot; window_reversal.tsv.gz</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>The honest framing: this is not "imputation failed" — it is "the data are too thin to even ask the question loosely, so the test is locked down before any model is fit." Three recent tests in the project came back null after the fact, which is exactly why the acceptance criteria (beat the identity baseline by ≥0.10 Spearman, ≥0.75 sign agreement, hold up leave-one-tissue-out) are frozen in advance. Two red rows are the binding constraints: one condition per window, and 37% sign disagreement.</aside>
+</section></div><div class="notes">The honest framing: this is not "imputation failed" — it is "the data are too thin to even ask the question loosely, so the test is locked down before any model is fit." Three recent tests in the project came back null after the fact, which is exactly why the acceptance criteria (beat the identity baseline by ≥0.10 Spearman, ≥0.75 sign agreement, hold up leave-one-tissue-out) are frozen in advance. Two red rows are the binding constraints: one condition per window, and 37% sign disagreement.</div></div>
+<div><div class="num">Slide 6 · mechanism</div><div class="wrap"><section id="mechanism" data-transition="fade">
+  <p class="eyebrow">Validation 2 &middot; ARACNe &rarr; VIPER</p>
+  <h2 class="title" style="font-size:50px;">Validating the ARACNe &rarr; VIPER mechanism derivation</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.02;">
+      <p class="kick">Regulon reproducibility (median Jaccard)</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">Regulator</th><th>Same tissue<br>(noise floor)</th><th>Nested<br>breast</th><th>Across<br>tissues</th></tr>
+        <tr><td class="l">ESR1</td><td>0.490</td><td>0.056</td><td>0.010</td></tr>
+        <tr><td class="l">MYC</td><td>0.553</td><td>0.170</td><td>0.026</td></tr>
+        <tr><td class="l">FOXA1</td><td>0.581</td><td>0.079</td><td>0.015</td></tr>
+        <tr><td class="l">GATA3</td><td>0.528</td><td>0.096</td><td>0.010</td></tr>
+        <tr><td class="l">SOX10</td><td>0.648</td><td>0.197</td><td>0.032</td></tr>
+        <tr class="good"><td class="l"><b>Median</b></td><td><b>0.552</b></td><td><b>0.170</b></td><td><b>0.029</b></td></tr>
+      </table>
+      <p class="src" style="margin-top:16px;">Control: 3 networks from 769 BRCA tumors each, biology held fixed. Estimation noise alone gives <b style="color:var(--teal);">~0.55</b>, not 0.03 &mdash; so the cross-tissue fall is real context, not an unreliable algorithm.</p>
+    </div>
+    <div style="flex:1;">
+      <ul class="pts">
+        <li><span class="dot"></span><b>Readout is robust:</b> swapping the entire regulon set moved the reversal score by only Spearman <b>0.99</b>. The cohort-matched network is the right design, not a compromise.</li>
+        <li><span class="dot"></span><b>Supported:</b> "a drug acts through this regulator, whose program <i>in this disease</i> includes these genes."</li>
+        <li><span class="dot"></span><b>Not supported:</b> a context-free target list &mdash; ~half of any single regulon is resampling churn.</li>
+        <li><span class="dot"></span><b>Not supported &mdash; the causal chain:</b> ARACNe co-expression matches curated <i>inhibitory</i> signs on <b>0&ndash;2.5%</b> of edges and CARNIVAL returned an empty solution; 0 of 4 drivers were recovered on a network holding only 33% of the regulators.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D149, D139, D144, D147 &middot; systems-validation arm</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>This corrects an earlier reading of mine. I had treated ~1% cross-tissue regulon overlap as ARACNe failing to reproduce itself; the same-tissue resample control shows the floor is ~0.55, so the low cross-tissue number is biology (context-specific rewiring), which actually validates the per-cohort design. The separate, firmer limit is causal: co-expression cannot encode direction/inhibition however reproducible it is, so we read regulator activity, not a drug→target→regulator→gene mechanism.</aside>
+</section></div><div class="notes">This corrects an earlier reading of mine. I had treated ~1% cross-tissue regulon overlap as ARACNe failing to reproduce itself; the same-tissue resample control shows the floor is ~0.55, so the low cross-tissue number is biology (context-specific rewiring), which actually validates the per-cohort design. The separate, firmer limit is causal: co-expression cannot encode direction/inhibition however reproducible it is, so we read regulator activity, not a drug→target→regulator→gene mechanism.</div></div>
+<div><div class="num">Slide 7 · genelevel</div><div class="wrap"><section id="genelevel" data-transition="fade">
+  <p class="eyebrow">Validation 3 &middot; Gene-level information</p>
+  <h2 class="title" style="font-size:50px;">Regulator NES alone is lossy; keeping gene-level detail</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts">
+        <li><span class="dot"></span>Two drugs can earn the <b>same regulator NES</b> while perturbing <b>different genes</b> inside the regulon. A per-regulon score cannot tell them apart &mdash; it is lossy.</li>
+        <li><span class="dot"></span>The production score <b>rev</b> multiplies totals &mdash; blind to <i>which</i> genes carry a regulator's activity.</li>
+        <li><span class="dot"></span><b>rev_gene</b> requires the genes to line up with the disease pattern one-by-one. A regulator whose activity sits on off-pattern genes drops out <b>by geometry</b> &mdash; no threshold, no tuned parameter.</li>
+        <li><span class="dot"></span>Exactly the intended behaviour: hit disease-relevant genes &rarr; counts fully; reach activity through unrelated genes &rarr; down-weighted.</li>
+        <li><span class="dot"></span><b>Enriched, not redundant:</b> rev vs rev_gene correlate at Spearman <b>+0.70</b> &mdash; most of the ranking survives while the ties separate.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <div class="panel" style="background:var(--paper-2);border-left-color:var(--ink);">
+        <p style="font-size:25px;color:var(--ink);margin-bottom:10px;"><b>rev</b> &nbsp;=&nbsp; &minus;&Sigma; (disease total &times; drug total) &nbsp;&middot;&nbsp; a product of sums</p>
+        <p style="font-size:25px;color:var(--ink);"><b>rev_gene</b> &nbsp;=&nbsp; &minus;&Sigma;&Sigma; (disease gene &middot; drug gene) &nbsp;&middot;&nbsp; a sum of products</p>
+      </div>
+      <p class="kick" style="margin-top:26px;">What the gene view changes</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">Regulator</th><th>Gene concordance</th><th>Effect on score</th></tr>
+        <tr class="bad"><td class="l">TGIF1</td><td>0.016 (orthogonal)</td><td class="l">&nbsp;demoted</td></tr>
+        <tr class="good"><td class="l">KLF4</td><td>&minus;0.264 (concordant)</td><td class="l">&nbsp;promoted</td></tr>
+      </table>
+      <p class="src" style="margin-top:16px;">Pre-registered separation test (D203): do rev-tied pairs that share no target/MOA separate more under rev_gene? Permutation p&nbsp;&lt;&nbsp;0.01, &ge;200 annotated pairs required.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D203 &middot; 10.97M gene rows, 346 drugs, 29 cohorts</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>KLF4 is the instructive case: the totals miss it, but its genes are concordant with the disease pattern, so the gene view promotes it; TGIF1 is the opposite, near-orthogonal, so it is demoted. The separation test is registered so that "rev_gene separates tied drugs" only counts if the separation tracks something mechanistic (shared target/MOA), not just noise with structure.</aside>
+</section></div><div class="notes">KLF4 is the instructive case: the totals miss it, but its genes are concordant with the disease pattern, so the gene view promotes it; TGIF1 is the opposite, near-orthogonal, so it is demoted. The separation test is registered so that "rev_gene separates tied drugs" only counts if the separation tracks something mechanistic (shared target/MOA), not just noise with structure.</div></div>
+<div><div class="num">Slide 8 · scoring</div><div class="wrap"><section id="scoring" data-transition="fade">
+  <p class="eyebrow">Open question &middot; Scoring &amp; validation</p>
+  <h2 class="title" style="font-size:50px;">The scoring metric and its validation remain open</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.02;">
+      <ul class="pts">
+        <li><span class="dot"></span>Tried cosine similarity across several information levels &mdash; contribution cosine (<b>null</b>), program score (<b>null</b>), window-separated nested cosine, plus production rev / rev_gene / layered_pct.</li>
+        <li><span class="dot"></span>Reparameterizing the vectors is <b>not</b> where a gain lives (contribution vs raw-z cosine agree at Spearman 0.94). The live axes are <b>time</b> and <b>gene-level detail</b>.</li>
+        <li><span class="dot"></span>Deeper confound, literature-backed: reversal largely reflects <b>generic anti-proliferation</b> (Koudijs 2023; Szalai 2019). The proliferation split helps; disease-specific signal beyond it is not yet shown.</li>
+        <li><span class="dot"></span>The binding gap is <b>ground truth</b>: IC50, PRISM and indication lists all reward anti-proliferation. Next: <b>PANACEA</b>, an activity-space benchmark independent of GDSC.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">Validation signals so far &mdash; moderate</p>
+      <table class="mx" style="font-size:24px;">
+        <tr class="head"><th class="l">Signal</th><th class="l">Result</th></tr>
+        <tr><td class="l">Approved-drug recovery<br><span style="color:var(--muted);">known-use AUC</span></td><td class="l"><b>~0.60</b><br><span style="color:var(--muted);">bimodal; 9 of 41 cohorts inverted</span></td></tr>
+        <tr class="band"><td class="l">Literature biomarkers<br><span style="color:var(--muted);">D127 &middot; 7 pairs, 49 instances</span></td><td class="l"><b>78% correct</b><br><span style="color:var(--muted);">small; expanding + a decoy control</span></td></tr>
+        <tr><td class="l">Specificity / PRISM<br><span style="color:var(--muted);">viability correlation</span></td><td class="l"><b>~0</b><br><span style="color:var(--muted);">the confound, visible</span></td></tr>
+      </table>
+      <div class="panel red" style="margin-top:24px;">
+        <p>Both headline signals <b>moderately track</b> truth but neither is clean &mdash; the validation itself needs to be scoped before it can arbitrate a metric.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D192, D127/D207, LITERATURE_SCORING</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>The point I want to land with the PI: the open problem is not only "which similarity function" — it's that every ground truth we have rewards the generic anti-proliferation confound, so a metric that scores better on those truths may just be a better cytotoxicity detector. PANACEA is attractive because it tests the activity-space step directly (does VIPER on a drug profile recover the drug's known mechanism) and is independent of GDSC, so it does not inherit the circularity that rules GDSC out for us.</aside>
+</section></div><div class="notes">The point I want to land with the PI: the open problem is not only "which similarity function" — it's that every ground truth we have rewards the generic anti-proliferation confound, so a metric that scores better on those truths may just be a better cytotoxicity detector. PANACEA is attractive because it tests the activity-space step directly (does VIPER on a drug profile recover the drug's known mechanism) and is independent of GDSC, so it does not inherit the circularity that rules GDSC out for us.</div></div>
+<div><div class="num">Slide 9 · takeaways</div><div class="wrap"><section id="takeaways" data-transition="fade">
+  <p class="eyebrow">Summary</p>
+  <h2 class="title" style="font-size:52px;">What is validated, bounded, and open</h2>
+  <div class="rule"></div>
+
+  <div class="cards" style="gap:30px;align-items:stretch;">
+    <div class="card" style="background:var(--teal-tint);border-top-color:var(--teal);">
+      <h3 style="color:var(--teal);">Validated</h3>
+      <ul class="pts" style="margin-top:8px;">
+        <li style="margin-bottom:16px;padding-left:28px;font-size:26px;"><span class="dot"></span>VIPER activity readout &mdash; robust to the regulon set (Spearman 0.99)</li>
+        <li style="margin-bottom:16px;padding-left:28px;font-size:26px;"><span class="dot"></span>Per-timepoint TAS floors: <b>6 h 0.25</b>, <b>24 h 0.40</b></li>
+        <li style="margin-bottom:0;padding-left:28px;font-size:26px;"><span class="dot"></span>Splitting windows removes a sign-inverting confound</li>
+      </ul>
+    </div>
+    <div class="card amber" style="background:var(--amber-tint);">
+      <h3 style="color:var(--amber);">Scoped honestly</h3>
+      <ul class="pts" style="margin-top:8px;">
+        <li style="margin-bottom:16px;padding-left:28px;font-size:26px;"><span class="dot" style="background:var(--amber);"></span>Window imputation &mdash; too thin; <b>unknown</b> stays</li>
+        <li style="margin-bottom:16px;padding-left:28px;font-size:26px;"><span class="dot" style="background:var(--amber);"></span>Context-free regulon gene lists &mdash; ~half is resampling churn</li>
+        <li style="margin-bottom:0;padding-left:28px;font-size:26px;"><span class="dot" style="background:var(--amber);"></span>The ARACNe / CARNIVAL causal map &mdash; no inhibition encoded</li>
+      </ul>
+    </div>
+    <div class="card red" style="background:var(--red-tint);">
+      <h3 style="color:var(--red);">Open &amp; next</h3>
+      <ul class="pts" style="margin-top:8px;">
+        <li style="margin-bottom:16px;padding-left:28px;font-size:26px;"><span class="dot" style="background:var(--red);"></span>A scoring metric with gene-level detail (D203 test)</li>
+        <li style="margin-bottom:16px;padding-left:28px;font-size:26px;"><span class="dot" style="background:var(--red);"></span>PANACEA &mdash; an independent activity-space benchmark</li>
+        <li style="margin-bottom:0;padding-left:28px;font-size:26px;"><span class="dot" style="background:var(--red);"></span>Run the pre-registered imputation &amp; separation tests</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:46px;font-family:'Source Serif 4',serif;font-size:34px;line-height:1.35;color:var(--ink);max-width:1580px;">Net result: each step is now validated, bounded, or explicitly deferred, so the scoring question can be addressed on validated footing.</p>
+
+  <div class="foot">
+    <span class="tag">Drug repurposing &middot; Kirti Hargunani &middot; for Dr. Farimani</span>
+    <span class="pageno">23 November 2026</span>
+  </div>
+  <aside>Closing line for the PI: rather than more candidate rankings this week, the deliverable is a validated foundation — each upstream measurement is now either trusted, bounded, or explicitly deferred — which is what makes the next scoring iteration worth running.</aside>
+</section></div><div class="notes">Closing line for the PI: rather than more candidate rankings this week, the deliverable is a validated foundation — each upstream measurement is now either trusted, bounded, or explicitly deferred — which is what makes the next scoring iteration worth running.</div></div>
+</main>
+<script>
+function fit(){document.querySelectorAll('.wrap').forEach(w=>{const s=w.firstElementChild;s.style.transform='scale('+(w.clientWidth/1920)+')';});}
+addEventListener('resize',fit);fit();
+</script>
+</body></html>
