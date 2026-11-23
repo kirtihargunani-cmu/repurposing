@@ -1,0 +1,123 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pipeline Walkthrough</title><style>
+:root{--bg:#fbfbfa;--fg:#1b1b1a;--mut:#6b6b68;--line:#e3e3e0;--card:#fff;--acc:#1f6f6b;
+--warn:#8a4b1f;--warnbg:#fdf6ef;--keybg:#f1f7f6}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17181a;--fg:#e8e8e6;
+--mut:#9b9b97;--line:#2e3034;--card:#1e2023;--acc:#5fbdb6;--warn:#d79a62;--warnbg:#241c14;
+--keybg:#17221f}}
+:root[data-theme=dark]{--bg:#17181a;--fg:#e8e8e6;--mut:#9b9b97;--line:#2e3034;--card:#1e2023;
+--acc:#5fbdb6;--warn:#d79a62;--warnbg:#241c14;--keybg:#17221f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);padding:32px 0 20px;margin-bottom:24px}
+h1{margin:0 0 6px;font-size:1.6rem;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0;max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 20px}
+.card h2{margin:0 0 2px;font-size:1.12rem}
+.num{display:inline-block;min-width:1.7em;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.script{color:var(--mut);font-size:.84rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin:0 0 12px}
+.eq{background:var(--keybg);border-left:3px solid var(--acc);padding:12px 14px;margin:10px 0;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;line-height:1.9;overflow-x:auto}
+.eq b{color:var(--acc)}
+.c{color:var(--mut);font-style:italic}
+.key{background:var(--keybg);border-radius:6px;padding:10px 12px;margin:10px 0}
+.warn{background:var(--warnbg);border-left:3px solid var(--warn);border-radius:0 6px 6px 0;padding:10px 12px;margin:10px 0}
+h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);margin:18px 0 6px}
+.src{font-family:ui-monospace,Menlo,monospace;font-size:.76rem;color:var(--mut);margin-bottom:4px;word-break:break-all}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:.8rem;font-variant-numeric:tabular-nums}
+th{background:var(--keybg);text-align:left;padding:6px 9px;white-space:nowrap;font-weight:600;border-bottom:1px solid var(--line)}
+td{padding:5px 9px;white-space:nowrap;border-bottom:1px solid var(--line);color:var(--fg)}
+tr:last-child td{border-bottom:0}
+.missing{color:var(--warn);font-size:.85rem;font-style:italic}
+footer{color:var(--mut);font-size:.82rem;border-top:1px solid var(--line);padding:18px 0 40px;margin-top:10px}
+@media(max-width:560px){.wrap{padding:0 16px}h1{font-size:1.3rem}}
+</style></head><body>
+<header><div class="wrap"><h1>Pipeline walkthrough — data in, the math, data out</h1>
+<p class="sub">Every table below is read from the actual file the pipeline wrote, so this page
+cannot drift from what was produced; a stage that has not been built says so rather than showing a
+plausible example. Formulas are those in <code>docs/FORMULAS.md</code>, which is checked against
+the implementations.</p></div></header>
+<main class="wrap"><section class="card" id="viper"><h2><span class="num">1</span>Disease master regulators (upstream)</h2><p class="script">50_viper.R → group_mr.tsv</p><h3>The transformation</h3><p>msviper over the cohort's ARACNe network, tumour vs its GTEx-matched normals.
+        The output is one <code>nes<sub>i</sub></code> per regulator — a single number summarising
+        how dysregulated that regulator's whole programme is.</p>
+        <p class="key">This is the number the rest of the pipeline tries to reverse, and the number
+        D202/C1 showed is <em>lossy</em>: within a direction of effect it leaves ~45% of the
+        reproducible gene pattern undetermined.</p><h3>Data out</h3><div class="src">results/step6/aracne_project_v2_tf/group_mr.tsv</div><div class="scroll"><table><thead><tr><th>group_id</th><th>regulator</th><th>nes</th><th>p</th><th>size</th><th>fdr</th></tr></thead><tbody><tr><td>BRCA-Her2</td><td>ZNF662</td><td>-4.94</td><td>7.796e-07</td><td>43</td><td>0.0007702</td></tr><tr><td>BRCA-Her2</td><td>ZNF846</td><td>-4.623</td><td>3.776e-06</td><td>77</td><td>0.001829</td></tr><tr><td>BRCA-Her2</td><td>POU6F1</td><td>-4.543</td><td>5.553e-06</td><td>119</td><td>0.001829</td></tr><tr><td>BRCA-Her2</td><td>CENPA</td><td>4.243</td><td>2.202e-05</td><td>638</td><td>0.003517</td></tr><tr><td>BRCA-Her2</td><td>POGK</td><td>4.213</td><td>2.526e-05</td><td>155</td><td>0.003517</td></tr><tr><td>BRCA-Her2</td><td>FOXC1</td><td>-4.193</td><td>2.749e-05</td><td>603</td><td>0.003517</td></tr></tbody></table></div></section><section class="card" id="split"><h2><span class="num">2</span>The aREA split — one NES into its genes</h2><p class="script">50b_regulon_contributions.R (disease) · 79e3 Net.contrib (drug)</p><h3>Data in</h3><div class="src">data/processed/step5/regulons_aracne_project_v2_tf_edges.tsv.gz</div><div class="scroll"><table><thead><tr><th>net</th><th>regulator</th><th>target</th><th>tfmode</th><th>likelihood</th></tr></thead><tbody><tr><td>ACC</td><td>NFYA</td><td>ENSG00000100479</td><td>0.2104</td><td>0.4156</td></tr><tr><td>ACC</td><td>NFYA</td><td>ENSG00000112701</td><td>0.9807</td><td>0.5818</td></tr><tr><td>ACC</td><td>NFYA</td><td>ENSG00000112763</td><td>0.9593</td><td>0.5573</td></tr><tr><td>ACC</td><td>NFYA</td><td>ENSG00000112640</td><td>0.9933</td><td>0.5755</td></tr><tr><td>ACC</td><td>NFYA</td><td>ENSG00000112312</td><td>0.926</td><td>0.4905</td></tr><tr><td>ACC</td><td>NFYA</td><td>ENSG00000112200</td><td>0.9903</td><td>0.5082</td></tr></tbody></table></div><h3>The transformation</h3><p>Rank the profile's genes over the scored universe <code>U</code>:</p>
+        <div class="eq">r<sub>j</sub> = rank<sub>j</sub> / (|U| + 1)<br>
+        t2<sub>j</sub> = &Phi;<sup>&minus;1</sup>(r<sub>j</sub>) &nbsp;&nbsp;<span class="c">directional</span><br>
+        t1<sub>j</sub> = &Phi;<sup>&minus;1</sup>(|2r<sub>j</sub> &minus; 1| + (1 &minus; max|2r &minus; 1|)/2)
+        &nbsp;&nbsp;<span class="c">magnitude</span></div>
+        <p>Per edge <code>(i,j)</code> with mode <code>m<sub>j</sub></code> and likelihood
+        <code>l<sub>j</sub></code>:</p>
+        <div class="eq">a<sub>j</sub> = m<sub>j</sub> l<sub>j</sub> t2<sub>j</sub> &nbsp;&nbsp;&nbsp;
+        b<sub>j</sub> = (1 &minus; |m<sub>j</sub>|) l<sub>j</sub> t1<sub>j</sub><br>
+        S1<sub>i</sub> = &Sigma;<sub>j</sub> a<sub>j</sub> &nbsp;&nbsp; S2<sub>i</sub> = &Sigma;<sub>j</sub> b<sub>j</sub>
+        &nbsp;&nbsp; &sigma;<sub>i</sub> = sign(S1<sub>i</sub>)<br><br>
+        <b>c<sub>ij</sub> = ( a<sub>j</sub> + &sigma;<sub>i</sub> b<sub>j</sub> [S2<sub>i</sub> &gt; 0] ) &middot; k<sub>i</sub></b>
+        &nbsp;&nbsp; k<sub>i</sub> = w<sub>i</sub> / &Sigma;<sub>j</sub> l<sub>j</sub>,
+        w<sub>i</sub> = &radic;(&Sigma;<sub>j</sub> (l<sub>j</sub>/l<sub>max</sub>)&sup2;)</div>
+        <p><b>Drug side: exact</b> — condition-level VIPER has no null model, so
+        &Sigma;<sub>j</sub> c<sub>ij</sub> <em>is</em> the activity (verified, max |diff| 4.8e&minus;07).
+        <b>Disease side: an allocation</b> — msviper's permutation null cannot be replayed, so
+        <code>d<sub>ij</sub> = c<sub>ij</sub> &middot; NES<sub>i</sub>/ES<sub>i</sub></code>.</p><h3>Data out</h3><div class="src">results/step6/aracne_project_v2_tf/regulon_contributions.tsv.gz</div><div class="scroll"><table><thead><tr><th>group_id</th><th>regulator</th><th>nes</th><th>es</th><th>target</th><th>target_symbol</th><th>tfmode</th><th>likelihood</th><th>z</th><th>t2</th><th>contrib_es</th><th>contrib_nes</th><th>share</th></tr></thead><tbody><tr><td>BRCA-Basal</td><td>FOXM1</td><td>4.964</td><td>1.566</td><td>ENSG00000150753</td><td>CCT5</td><td>0.9942</td><td>0.3067</td><td>15.87</td><td>1.948</td><td>0.007312</td><td>0.02317</td><td>0.004669</td></tr><tr><td>BRCA-Basal</td><td>FOXM1</td><td>4.964</td><td>1.566</td><td>ENSG00000151065</td><td>DCP1B</td><td>0.9985</td><td>0.3423</td><td>2.018</td><td>0.1005</td><td>0.0004115</td><td>0.001304</td><td>0.0002627</td></tr><tr><td>BRCA-Basal</td><td>FOXM1</td><td>4.964</td><td>1.566</td><td>ENSG00000151725</td><td>CENPU</td><td>0.9874</td><td>0.2589</td><td>18.04</td><td>2.254</td><td>0.007137</td><td>0.02262</td><td>0.004557</td></tr><tr><td>BRCA-Basal</td><td>FOXM1</td><td>4.964</td><td>1.566</td><td>ENSG00000153044</td><td>CENPH</td><td>0.9939</td><td>0.2658</td><td>16.72</td><td>2.083</td><td>0.006778</td><td>0.02148</td><td>0.004328</td></tr><tr><td>BRCA-Basal</td><td>FOXM1</td><td>4.964</td><td>1.566</td><td>ENSG00000154473</td><td>BUB3</td><td>0.9957</td><td>0.298</td><td>12.18</td><td>1.335</td><td>0.004866</td><td>0.01542</td><td>0.003107</td></tr><tr><td>BRCA-Basal</td><td>FOXM1</td><td>4.964</td><td>1.566</td><td>ENSG00000155959</td><td>VBP1</td><td>0.9973</td><td>0.323</td><td>14.31</td><td>1.681</td><td>0.006648</td><td>0.02107</td><td>0.004245</td></tr></tbody></table></div></section><section class="card" id="window"><h2><span class="num">3</span>Timepoint windows — never pooled</h2><p class="script">systems_validation/integrate/window_reversal.py</p><h3>Data in</h3><div class="src">data/processed/lincs/drug_condition_profiles_index.tsv</div><div class="scroll"><table><thead><tr><th>pert_id</th><th>ModelID</th><th>pert_dose</th><th>pert_time</th><th>n_sig</th><th>median_tas</th></tr></thead><tbody><tr><td>BRD-A00267231</td><td>ACH-000090</td><td>10</td><td>6</td><td>1</td><td>0.317</td></tr><tr><td>BRD-A00420644</td><td>ACH-000019</td><td>10</td><td>24</td><td>1</td><td>0.5042</td></tr><tr><td>BRD-A00420644</td><td>ACH-000219</td><td>10</td><td>6</td><td>1</td><td>0.3</td></tr><tr><td>BRD-A00420644</td><td>ACH-000872</td><td>10</td><td>6</td><td>1</td><td>0.2903</td></tr><tr><td>BRD-A00758722</td><td>ACH-000115</td><td>10</td><td>24</td><td>1</td><td>0.6883</td></tr><tr><td>BRD-A00938334</td><td>ACH-001086</td><td>10</td><td>24</td><td>1</td><td>0.5603</td></tr></tbody></table></div><h3>The transformation</h3><div class="eq">early: pert_time &le; 6 h &nbsp;&nbsp;&nbsp; late: pert_time &ge; 24 h<br>
+        <span class="c">`other` and the unrecorded sentinel (&minus;1) are DROPPED, never pooled</span></div>
+        <p class="key">D183 measured ~80% of a window's reliable variance as absent from the other,
+        and 37.1% of regulator terms flip sign between windows. Pooling averages a correct reading
+        with an inverted one — for anti-estrogens in MCF7 the inverted window outvotes the correct
+        one roughly 10:1 (D169).</p><h3>Data out</h3><div class="src">results/systems_validation/integrated/window_reversal.tsv.gz</div><div class="scroll"><table><thead><tr><th>cohort</th><th>network</th><th>pert_id</th><th>cmap_name</th><th>n_conditions_early</th><th>n_conditions_late</th><th>n_doses_early</th><th>n_doses_late</th><th>rev_early</th><th>rev_late</th><th>window_coverage</th><th>window_agreement</th></tr></thead><tbody><tr><td>BRCA-Basal</td><td>BRCA_BAS</td><td>BRD-A00420644</td><td>SA-3676</td><td>nan</td><td>1</td><td>nan</td><td>1</td><td>nan</td><td>-9.23</td><td>late_only</td><td>not_evaluable</td></tr><tr><td>BRCA-Basal</td><td>BRCA_BAS</td><td>BRD-A01145011</td><td>zebularine</td><td>1</td><td>nan</td><td>1</td><td>nan</td><td>11.1</td><td>nan</td><td>early_only</td><td>not_evaluable</td></tr><tr><td>BRCA-Basal</td><td>BRCA_BAS</td><td>BRD-A02333338</td><td>cyclopamine</td><td>1</td><td>nan</td><td>1</td><td>nan</td><td>13.69</td><td>nan</td><td>early_only</td><td>not_evaluable</td></tr><tr><td>BRCA-Basal</td><td>BRCA_BAS</td><td>BRD-A02367930</td><td>BRD-A02367930</td><td>1</td><td>1</td><td>1</td><td>1</td><td>3.318</td><td>1.044</td><td>both</td><td>concordant</td></tr><tr><td>BRCA-Basal</td><td>BRCA_BAS</td><td>BRD-A02481876</td><td>importazole</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7.437</td><td>9.544</td><td>both</td><td>concordant</td></tr><tr><td>BRCA-Basal</td><td>BRCA_BAS</td><td>BRD-A02579693</td><td>etoposide</td><td>1</td><td>nan</td><td>1</td><td>nan</td><td>13.97</td><td>nan</td><td>early_only</td><td>not_evaluable</td></tr></tbody></table></div></section><section class="card" id="rev"><h2><span class="num">4</span>Reversal — the production score</h2><p class="script">79e_drug_reversal.py:285</p><h3>The transformation</h3><div class="eq"><b>rev = &minus;(D &middot; s) / &#8214;s&#8214;
+        = &minus;&Sigma;<sub>i</sub> nes<sub>i</sub> &middot; act<sub>i</sub> / &#8214;s&#8214;</b></div>
+        <p><code>D</code> = the drug's regulator activity, <code>s</code> = the disease NES vector.
+        Each regulator's share is <code>rev_contrib<sub>i</sub></code>, and they sum to
+        <code>rev</code> exactly.</p>
+        <p class="key">Note what this multiplies: the <em>total</em> disease dysregulation by the
+        <em>total</em> drug activity. It never asks whether the same genes are involved.</p><h3>Data out</h3><div class="src">/home/kirti/projects/repurposing/results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window.tsv.gz</div><div class="scroll"><table><thead><tr><th>cohort</th><th>cmap_name</th><th>window</th><th>regulator</th><th>disease_nes</th><th>drug_activity</th><th>rev_contrib</th></tr></thead><tbody><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>3.4</td><td>2.312</td><td>-0.1537</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>MEOX1</td><td>-3.408</td><td>1.973</td><td>0.1315</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>SOX8</td><td>-0.4463</td><td>0.416</td><td>0.003632</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>ZNF195</td><td>1.42</td><td>0.08606</td><td>-0.002391</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>ZFX</td><td>-0.6226</td><td>0.8789</td><td>0.0107</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>YBX2</td><td>0.9877</td><td>-1.347</td><td>0.02602</td></tr></tbody></table></div></section><section class="card" id="revgene"><h2><span class="num">5</span>rev_gene — the genes must match</h2><p class="script">79e3_window_contributions.py (COSINE=1)</p><h3>The transformation</h3><div class="eq">
+        rev &nbsp;&nbsp;&nbsp;&nbsp;= &minus;&Sigma;<sub>i</sub>
+        (&Sigma;<sub>j</sub> d<sub>ij</sub>)(&Sigma;<sub>j</sub> C<sub>ij</sub>) / &#8214;s&#8214;
+        &nbsp;&nbsp;<span class="c">a PRODUCT OF SUMS</span><br>
+        <b>rev_gene = &minus;&Sigma;<sub>i</sub> &Sigma;<sub>j</sub>
+        d<sub>ij</sub> &middot; C<sub>ij</sub> / &#8214;s&#8214;</b>
+        &nbsp;&nbsp;<span class="c">a SUM OF PRODUCTS</span></div>
+        <p>A regulator whose activity comes from genes orthogonal to the disease pattern has
+        <code>&Sigma;<sub>j</sub> d<sub>ij</sub>C<sub>ij</sub> &asymp; 0</code> even when both
+        totals are large — down-weighted <b>by geometry, with no threshold and no tuned
+        parameter</b>.</p>
+        <p class="warn"><b>Sign note (recorded because it was wrong once).</b>
+        <code>d<sub>i</sub></code> already carries the disease direction, since
+        &Sigma;<sub>j</sub> d<sub>ij</sub> = nes<sub>i</sub>. Multiplying by &minus;nes<sub>i</sub>
+        as well double-counts it and flips the sign. There is <em>no</em> nes factor in
+        rev_gene.</p><h3>Data out</h3><div class="src">/home/kirti/projects/repurposing/results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window.tsv.gz   [not yet written: act_gene, rev_gene_contrib]</div><div class="scroll"><table><thead><tr><th>cohort</th><th>cmap_name</th><th>window</th><th>regulator</th><th>disease_nes</th><th>drug_activity</th><th>rev_contrib</th><th>cos_contrib</th></tr></thead><tbody><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>3.4</td><td>2.312</td><td>-0.1537</td><td>0.2921</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>MEOX1</td><td>-3.408</td><td>1.973</td><td>0.1315</td><td>-0.2219</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>SOX8</td><td>-0.4463</td><td>0.416</td><td>0.003632</td><td>-0.1664</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>ZNF195</td><td>1.42</td><td>0.08606</td><td>-0.002391</td><td>0.04134</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>ZFX</td><td>-0.6226</td><td>0.8789</td><td>0.0107</td><td>0.1338</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>YBX2</td><td>0.9877</td><td>-1.347</td><td>0.02602</td><td>-0.2663</td></tr></tbody></table></div></section><section class="card" id="cos"><h2><span class="num">6</span>Opposition — per regulon, then per gene</h2><p class="script">79e3 (COSINE=1), D194/D195</p><h3>The transformation</h3><div class="eq">
+        cos_contrib<sub>i</sub> = &#10216;d<sub>i</sub>, C<sub>i</sub>&#10217; /
+        (&#8214;d<sub>i</sub>&#8214; &#8214;C<sub>i</sub>&#8214;)<br>
+        cos_term<sub>ij</sub> = d<sub>ij</sub> C<sub>ij</sub> /
+        (&#8214;d<sub>i</sub>&#8214; &#8214;C<sub>i</sub>&#8214;)
+        &nbsp;&nbsp;&nbsp; <b>&Sigma;<sub>j</sub> cos_term<sub>ij</sub> = cos_contrib<sub>i</sub></b>
+        <span class="c">(exact to 1.6e&minus;06 over 61,000 regulons)</span></div>
+        <p>Negative = the drug moves the very genes that account for that regulator's
+        dysregulation, in the opposite direction.</p>
+        <p class="warn">This divides by <code>&#8214;C<sub>i</sub>&#8214;</code> too, and that is
+        the difference from rev_gene. D202 attributed the cosine score's whole ranking loss to it:
+        <code>rev/&#8214;D&#8214;</code> cost <b>+0.004</b> AUC, adding the per-regulon
+        normalisation cost <b>&minus;0.035</b>. Scale-free per regulon means a regulon the drug
+        never moved still contributes on the full &plusmn;1 scale.</p><h3>Data out</h3><div class="src">/home/kirti/projects/repurposing/results/lincs/regulon_contributions_v2_tf/target_contributions_by_window.tsv.gz</div><div class="scroll"><table><thead><tr><th>cohort</th><th>cmap_name</th><th>window</th><th>regulator</th><th>target_symbol</th><th>tfmode</th><th>likelihood</th><th>activity_contrib</th><th>cos_term</th><th>disease_contrib_nes</th></tr></thead><tbody><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>SNX16</td><td>0.9971</td><td>0.393</td><td>-0.07372</td><td>-0.005868</td><td>0.03663</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>CSRNP2</td><td>0.9997</td><td>0.4168</td><td>0.1154</td><td>0.005979</td><td>0.02383</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>BICRAL</td><td>0.9999</td><td>0.5386</td><td>-0.04995</td><td>0.003036</td><td>-0.02798</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>PPP2R5D</td><td>0.9999</td><td>0.457</td><td>0.06271</td><td>0.01336</td><td>0.09807</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>PTK7</td><td>0.9714</td><td>0.2813</td><td>-0.03796</td><td>-0.005301</td><td>0.06427</td></tr><tr><td>BRCA-Basal</td><td>etoposide</td><td>early</td><td>NFYA</td><td>EXOC2</td><td>0.9993</td><td>0.383</td><td>0.1354</td><td>0.004706</td><td>0.016</td></tr></tbody></table></div></section><section class="card" id="prog"><h2><span class="num">7</span>Programs — regulators that move together</h2><p class="script">58_regulator_modules.R → 79ai_programs.py / 79ak_drug_programs.py</p><h3>The transformation</h3><div class="eq">average-linkage clustering on 1 &minus; |r|, cut at |r| &ge; 0.7<br>
+        disease_score<sub>P</sub> = mean<sub>i&isin;P</sub> nes<sub>i</sub> &nbsp;&nbsp;
+        drug_score<sub>P</sub> = mean<sub>i&isin;P</sub> act<sub>i</sub><br>
+        opposition<sub>P</sub> = &minus; disease_score<sub>P</sub> &middot; drug_score<sub>P</sub> /
+        |disease_score<sub>P</sub>|</div>
+        <p>Disease programs cluster regulators over <b>patients</b>; drug programs over
+        <b>drugs</b>, per window. 461 and 1,035 respectively.</p>
+        <p class="warn">Programs span only <b>27.4%</b> of a cohort's regulators (clean ones
+        14.1%), which is why collapsing to them <em>lost</em> ranking power (D201).</p><h3>Data out</h3><div class="src">results/lincs/programs/programs.tsv</div><div class="scroll"><table><thead><tr><th>cohort</th><th>program</th><th>n_regulators</th><th>hub</th><th>disease_score</th><th>hallmark</th><th>is_proliferation</th><th>is_technical</th></tr></thead><tbody><tr><td>BRCA-Basal</td><td>8</td><td>45</td><td>MEIS3</td><td>-2.126</td><td>EPITHELIAL_MESENCHYMAL_TRANSITION</td><td>False</td><td>True</td></tr><tr><td>BRCA-Basal</td><td>63</td><td>21</td><td>ZNF865</td><td>-0.4757</td><td>P53_PATHWAY</td><td>False</td><td>True</td></tr><tr><td>BRCA-Basal</td><td>23</td><td>15</td><td>SP140</td><td>0.6413</td><td>INTERFERON_GAMMA_RESPONSE</td><td>False</td><td>False</td></tr><tr><td>BRCA-Basal</td><td>14</td><td>15</td><td>STAT1</td><td>0.9347</td><td>INTERFERON_GAMMA_RESPONSE</td><td>False</td><td>False</td></tr><tr><td>BRCA-Basal</td><td>30</td><td>14</td><td>ZBTB17</td><td>-0.732</td><td>OXIDATIVE_PHOSPHORYLATION</td><td>False</td><td>True</td></tr><tr><td>BRCA-Basal</td><td>77</td><td>14</td><td>EBF1</td><td>-3.022</td><td>EPITHELIAL_MESENCHYMAL_TRANSITION</td><td>False</td><td>False</td></tr></tbody></table></div></section><section class="card" id="ceiling"><h2><span class="num">8</span>The reliability ceiling — what bounds every comparison</h2><p class="script">79e3 (SPLITHALF=1), D202</p><h3>The transformation</h3><div class="eq">R = median<sub>i</sub> cosine( C<sub>i</sub>(half A),
+        C<sub>i</sub>(half B) )</div>
+        <p>Split one drug's conditions in half, build each half's gene vector independently, and
+        compare them. A drug against <em>itself</em>.</p>
+        <p class="key">R = <b>0.531</b> overall (<b>0.376</b> early, <b>0.590</b> late), and it is
+        sample-size driven: 0.326 at 2 conditions &rarr; <b>0.793 at 10+</b> (Spearman +0.528).
+        Nothing can match a vector better than it matches itself, so every similarity is reported
+        as a fraction of R, never in absolute terms.</p><h3>Data out</h3><div class="src">/home/kirti/projects/repurposing/results/lincs/regulon_contributions_v2_tf/splithalf_reliability.tsv.gz</div><div class="scroll"><table><thead><tr><th>cohort</th><th>pert_id</th><th>window</th><th>n_conditions</th><th>regulator</th><th>cos_half</th></tr></thead><tbody><tr><td>BRCA-LumA</td><td>BRD-A85667082</td><td>late</td><td>6</td><td>NFYA</td><td>0.6449</td></tr><tr><td>BRCA-LumA</td><td>BRD-A85667082</td><td>late</td><td>6</td><td>MEOX1</td><td>0.7007</td></tr><tr><td>BRCA-LumA</td><td>BRD-A85667082</td><td>late</td><td>6</td><td>ZNF195</td><td>0.454</td></tr><tr><td>BRCA-LumA</td><td>BRD-A85667082</td><td>late</td><td>6</td><td>ZFX</td><td>0.3979</td></tr><tr><td>BRCA-LumA</td><td>BRD-A85667082</td><td>late</td><td>6</td><td>YBX2</td><td>0.8429</td></tr><tr><td>BRCA-LumA</td><td>BRD-A85667082</td><td>late</td><td>6</td><td>ZNF263</td><td>0.6823</td></tr></tbody></table></div></section></main>
+<footer><div class="wrap">Generated by <code>scripts/79x3_pipeline_explainer.py</code>.
+Stages upstream of this walkthrough (ARACNe networks, VIPER, drug VIPER) are taken as given —
+see <code>docs/PIPELINE_RUN_ORDER.md</code> for the boundary and the full run order.</div></footer>
+</body></html>
