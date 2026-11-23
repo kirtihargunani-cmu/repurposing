@@ -49,6 +49,7 @@ import pandas as pd
 ROOT = Path("/home/kirti/projects/repurposing")
 RES = ROOT / "results/lincs"
 WIN = ROOT / "results/systems_validation/integrated/window_reversal.tsv.gz"
+WIN_STRATA = ROOT / "results/systems_validation/integrated/window_reversal_strata.tsv.gz"   # D211
 SFX = os.environ.get("SPLIT_SFX", "_v2_tf")
 COLS = ["rev_early", "rev_late", "rev_early_pct", "rev_late_pct", "window_coverage",
         "window_agreement", "best_window", "window_gap_pct", "window_unknown_reason"]
@@ -61,7 +62,10 @@ def annotate(path, unit):
         return None
     d = pd.read_csv(path, sep="\t", low_memory=False)
     d = d.drop(columns=[c for c in COLS if c in d.columns])          # idempotent
-    w = pd.read_csv(WIN, sep="\t", low_memory=False).rename(columns={"cohort": unit})
+    # D211: subgroups have their own window run (window_reversal STRATA=1); read it for the stratum table.
+    #   Before D211 every subgroup row was `unknown / no_window_run`.
+    wf = WIN_STRATA if (unit == "stratum" and WIN_STRATA.exists()) else WIN
+    w = pd.read_csv(wf, sep="\t", low_memory=False).rename(columns={"cohort": unit})
     w = w[[unit, "pert_id", "rev_early", "rev_late", "window_coverage", "window_agreement"]]
     w = w.drop_duplicates([unit, "pert_id"])
     d = d.merge(w, on=[unit, "pert_id"], how="left")

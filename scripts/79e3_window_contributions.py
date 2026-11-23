@@ -67,8 +67,12 @@ ROOT = Path(__file__).resolve().parent.parent
 PROC, RES = ROOT / "data/processed/lincs", ROOT / "results/lincs"
 SFX = os.environ.get("SFX", "_v2_tf")
 VDIR = PROC / f"drug_viper_specific{SFX}_cond"
-WIN = ROOT / "results/systems_validation/integrated/window_reversal.tsv.gz"
-MR_DIR = ROOT / f"results/step6/aracne_project{SFX}"
+# D211: STRATA=1 reads the subgroup window table and the subgroup MRs / disease contributions, uses the
+# subgroup line weights and the parent group's network, and tags every output with _strata.
+STRATA = os.environ.get("STRATA") == "1"
+TAG = "_strata" if STRATA else ""
+WIN = ROOT / f"results/systems_validation/integrated/window_reversal{TAG}.tsv.gz"
+MR_DIR = ROOT / f"results/step6/aracne_project{SFX}{TAG}"
 OUT = RES / f"regulon_contributions{SFX}"
 TOP_REGS = int(os.environ.get("TOP_REGS", "25"))
 SPLITHALF = os.environ.get("SPLITHALF") == "1"  # D202/C1: the reliability CEILING. Split a drug's
@@ -322,12 +326,19 @@ def main():
 
     S = {}
     S["mr"] = pd.read_csv(MR_DIR / "group_mr.tsv", sep="\t")
-    S["lw"] = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
+    if STRATA:
+        S["lw"] = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long_v2.tsv", sep="\t") \
+            .rename(columns={"stratum": "group_id"})
+        S["lw"]["in_key"] = S["lw"].in_key.astype(str).str.lower().eq("true")
+        parent_of = S["lw"].drop_duplicates("group_id").set_index("group_id").parent.to_dict()
+    else:
+        S["lw"] = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
+        parent_of = {}
     ovr = pd.read_csv(ROOT / "config/group_networks.tsv", sep="\t").set_index("group_id").net.to_dict()
     cohort_of = (pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t")
                  .drop_duplicates("group_id").set_index("group_id").cohort.to_dict())
     avail = {p.stem for p in VDIR.glob("*.f32")}
-    sel = sel.assign(net=[net_for(c, ovr, avail, cohort_of) for c in sel.cohort])
+    sel = sel.assign(net=[net_for(parent_of.get(c, c), ovr, avail, cohort_of) for c in sel.cohort])
     sel = sel[sel.net.notna()]
     G["S"] = S
     edges = pd.read_csv(ROOT / f"data/processed/step5/regulons_aracne_project{SFX}_edges.tsv.gz", sep="\t")
@@ -383,7 +394,7 @@ def main():
             print(f"-> {f} ({len(g):,} edges)")
         return
 
-    sfx = "_all" if os.environ.get("ALL") == "1" else ""
+    sfx = ("_all" if os.environ.get("ALL") == "1" else "") + TAG
     R.to_csv(OUT / f"regulator_contributions_by_window{sfx}.tsv.gz", sep="\t", index=False, float_format="%.6g")
     if len(T):
         T.to_csv(OUT / f"target_contributions_by_window{sfx}.tsv.gz", sep="\t", index=False, float_format="%.6g")
@@ -398,7 +409,7 @@ def main():
         lambda v: v.abs().rank(ascending=False, method="first"))
     sh = p[p.rank_shift <= SHIFT_TOP].drop(columns="rank_shift").sort_values(
         ["cohort", "cmap_name", "delta"], ascending=[True, True, False])
-    sh.to_csv(OUT / "window_shift.tsv", sep="\t", index=False, float_format="%.6g")
+    sh.to_csv(OUT / f"window_shift{TAG}.tsv", sep="\t", index=False, float_format="%.6g")
 
     both = p.groupby(["cohort", "pert_id"]).size()
     print(f"\nregulator level {len(R):,} rows, target level {len(T):,} rows (top {TOP_REGS} regulators per row)")

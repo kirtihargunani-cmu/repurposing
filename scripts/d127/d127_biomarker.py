@@ -157,6 +157,62 @@ def alt_test(d, sc):
                 median_gap=round(float(x[f"{sc}_gap"].median()), 1))
 
 
+def gene_ranking_d127(a):
+    """D211: D127 on the production gene-level ranking, per timepoint, one vote per target unit (D209 rule).
+
+    DESCRIPTIVE, not a gate (user: adopt now). Same pairs and thresholds. Matched on FDA ingredient; the target
+    class comes from the same evidence_targets as the main test. Two readings:
+      both_ranked  the drug is eligible and ranked (gene_pct) in BOTH cohorts of the pair
+      e2e          also counts eligible-in-high but filtered-out-in-low as correct (the filter demoted it there)
+    Writes d211_gene_instances.tsv / d211_gene_summary.tsv."""
+    f = ROOT / f"results/lincs/gene_ranking{os.environ.get('SFX', '_v2_tf')}.tsv"
+    if not f.exists():
+        return {}
+    G = pd.read_csv(f, sep="\t", low_memory=False)
+    G = G[G.window.isin(["early", "late"])]
+    genes_of = a.dropna(subset=["fda_ingredient"]).groupby("fda_ingredient").genes.apply(lambda s: set().union(*s))
+    rows = []
+    for w, Gw in G.groupby("window"):
+        key = Gw.set_index(["unit", "fda_ingredient"])
+        for cls, hi, lo, kind in PAIRS:
+            gs = CLASSES[cls]
+            ings = [i for i, t in genes_of.items() if t & gs]
+            for ing in ings:
+                if (hi, ing) not in key.index:
+                    continue
+                h = key.loc[(hi, ing)]
+                if not (bool(h.eligible) and pd.notna(h.gene_pct)):
+                    continue
+                l = key.loc[(lo, ing)] if (lo, ing) in key.index else None
+                lo_ranked = l is not None and bool(l.eligible) and pd.notna(l.gene_pct)
+                lo_filtered = l is not None and not bool(l.eligible)
+                gap = float(h.gene_pct - l.gene_pct) if lo_ranked else np.nan
+                rows.append(dict(window=w, pair_set=kind, drug_class=cls, high=hi, low=lo, ingredient=ing,
+                                 hi_pct=float(h.gene_pct), lo_pct=float(l.gene_pct) if lo_ranked else np.nan,
+                                 lo_state="ranked" if lo_ranked else ("filtered_out" if lo_filtered else "not_in_window"),
+                                 gap=gap, hi_unit=str(h.layered_genes), lo_unit=str(l.layered_genes) if l is not None else ""))
+    I = pd.DataFrame(rows)
+    I.to_csv(OUT / "d211_gene_instances.tsv", sep="\t", index=False)
+    out, summ = {}, []
+    for (w, ps), d in I.groupby(["window", "pair_set"]) if len(I) else []:
+        for reading in ("both_ranked", "e2e"):
+            x = d[d.lo_state == "ranked"].copy() if reading == "both_ranked" else d[d.lo_state != "not_in_window"].copy()
+            if not len(x):
+                continue
+            x["vote"] = np.where(x.lo_state == "filtered_out", 1.0, np.sign(x.gap))
+            x["key"] = x.hi_unit + " || " + x.lo_unit
+            u = x.groupby(["drug_class", "high", "low", "key"]).vote.median()
+            n, k = len(u), int((u > 0).sum())
+            p = round(binomtest(k, n, 0.5, alternative="greater").pvalue, 5) if n else np.nan
+            mg = round(float(x.gap.median()), 1) if x.gap.notna().any() else np.nan
+            r = dict(window=w, set=ps, reading=reading, units=n, compounds=len(x), correct=k,
+                     share=round(k / n, 4) if n else np.nan, p=p, median_gap_ranked=mg)
+            summ.append(r)
+            out[f"{w}|{ps}|{reading}"] = r
+    pd.DataFrame(summ).to_csv(OUT / "d211_gene_summary.tsv", sep="\t", index=False)
+    return out
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     a = load()
@@ -273,10 +329,12 @@ def main():
                                  ("underpowered (<= 2 units)" if t["n"] <= 2 else ("meets" if ok else "does not meet"))))
     pd.DataFrame(drow).to_csv(OUT / "dedup_summary.tsv", sep="\t", index=False)
 
+    gene = gene_ranking_d127(a)
+
     run = dict(score=SCORE, share_min=SHARE_MIN, p_max=P_MAX, gap_min=GAP_MIN, primary=pri, verdict=verdict,
                ties=ties, n_pairs_primary=int((per.pair_set == "primary").sum()),
                per_pair_median_share=float(per[per.pair_set == "primary"].share.median()),
-               split_sfx=F.SPLIT_SFX, d207=exp_verdicts, d209_dedup=dsum)
+               split_sfx=F.SPLIT_SFX, d207=exp_verdicts, d209_dedup=dsum, d211_gene_ranking=gene)
     (OUT / "run.json").write_text(json.dumps(run, indent=1, default=float))
 
     pd.set_option("display.width", 250)

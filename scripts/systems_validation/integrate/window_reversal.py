@@ -29,6 +29,11 @@ PROC = ROOT / "data/processed/lincs"
 VDIR = PROC / "drug_viper_specific_v2_tf_cond"
 OUT = ROOT / "results/systems_validation/integrated"
 MIN_MRS = 2
+# D211 (2026-11-23): STRATA=1 scores the 14 Step 10 subgroups with their OWN master regulators
+# (aracne_project_v2_tf_strata/group_mr.tsv) and their own in-key line weights, on the PARENT group's
+# network - the production rule (79e: NETMAP.get(parent, net_of(cohort))). Writes *_strata outputs.
+STRATA = os.environ.get("STRATA") == "1"
+TAG = "_strata" if STRATA else ""
 for v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
     os.environ[v] = "8"
 
@@ -67,8 +72,15 @@ def main():
                              np.where(t <= 6, "early", np.where(t >= 24, "late", "other")))
     annot = pd.read_csv(ROOT / "results/lincs/drug_annotations.tsv", sep="\t")
     nm = dict(annot.drop_duplicates("pert_id")[["pert_id", "cmap_name"]].values)
-    mr = pd.read_csv(ROOT / "results/step6/aracne_project_v2_tf/group_mr.tsv", sep="\t")
-    lw = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
+    mr = pd.read_csv(ROOT / f"results/step6/aracne_project_v2_tf{TAG}/group_mr.tsv", sep="\t")
+    if STRATA:
+        lw = pd.read_csv(ROOT / "results/celligner/stratum_line_weights_long_v2.tsv", sep="\t") \
+            .rename(columns={"stratum": "group_id"})
+        lw["in_key"] = lw.in_key.astype(str).str.lower().eq("true")
+        parent_of = lw.drop_duplicates("group_id").set_index("group_id").parent.to_dict()
+    else:
+        lw = pd.read_csv(ROOT / "results/celligner/disease_line_weights_long.tsv", sep="\t")
+        parent_of = {}
     ovr = pd.read_csv(ROOT / "config/group_networks.tsv", sep="\t").set_index("group_id").net.to_dict()
     # D171: group_id -> TCGA cohort, so net_for resolves networks the way 79d:62 / 79e do.
     cohort_of = pd.read_csv(ROOT / "results/step1/disease_groups_toil.tsv", sep="\t") \
@@ -79,7 +91,7 @@ def main():
 
     rows = []
     for cohort in sorted(mr.group_id.unique()):
-        net = net_for(cohort, ovr, avail, cohort_of)
+        net = net_for(parent_of.get(cohort, cohort), ovr, avail, cohort_of)
         if net is None:
             continue
         regs = (VDIR / f"{net}.regulators.txt").read_text().split()
@@ -122,7 +134,7 @@ def main():
     piv["window_agreement"] = np.where(~both, "not_evaluable",
                               np.where(np.sign(piv.rev_early) == np.sign(piv.rev_late),
                                        "concordant", "discordant"))
-    piv.to_csv(OUT / "window_reversal.tsv.gz", sep="\t", index=False)
+    piv.to_csv(OUT / f"window_reversal{TAG}.tsv.gz", sep="\t", index=False)
 
     b = piv[both]
     res = dict(step="per-window reversal score", formula="rev = -(D . s)/||s|| as 79e:285",
@@ -133,7 +145,7 @@ def main():
                frac_discordant_of_both=round(float((piv[both].window_agreement == "discordant").mean()), 4),
                median_n_conditions=dict(early=float(piv.n_conditions_early.median()),
                                         late=float(piv.n_conditions_late.median())))
-    (OUT / "window_reversal_run.json").write_text(json.dumps(res, indent=1, default=str))
+    (OUT / f"window_reversal{TAG}_run.json").write_text(json.dumps(res, indent=1, default=str))
     print(f"\n{len(piv):,} (cohort, drug) rows over {piv.cohort.nunique()} cohorts")
     print(f"  coverage: {res['coverage']}")
     print(f"  Spearman(rev_early, rev_late) over the {int(both.sum()):,} 'both' rows = {res['spearman_early_late']:+.4f}")

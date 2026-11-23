@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T150136-3240515",
+ "finished_at": "2026-11-23T15:01:38-05:00",
+ "duration_s": 2,
+ "script": "window_reversal.py",
+ "cmd": "env STRATA=1 /home/kirti/miniforge3/envs/celligner/bin/python scripts/systems_validation/integrate/window_reversal.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 STRATA=1",
+ "git_sha": "5d9f33c",
+ "git_state": "dirty",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "window_reversal_strata.tsv.gz": {
+   "bytes": 45481,
+   "mtime": "2026-11-23T15:01:38-05:00"
+  }
+ }
+}

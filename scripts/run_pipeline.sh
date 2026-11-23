@@ -103,12 +103,26 @@ run "79i3 receptor lines" "$RES/drug_reversal_split_v2_tf.tsv" "$RES/stratum_rev
                   -- env SFX=_v2_tf $PY scripts/79i3_receptor_lines.py
 run "79t3 lead"   "$RES/layered_score_v2_v2_tf.tsv" \
                   -- env ESSENTIAL=1 PROLIF_WEIGHT=1 SPLIT_SFX=_v2_tf $PY scripts/79t3_lead_score.py
-run "79p fda"     "$RES/fda_ranking_v2_tf.tsv" "$RES/fda_ranking_strata_v2_tf.tsv" \
-                  -- env SFX=_v2_tf $PY scripts/79p_fda_ranking.py
+# D210: evidence flags were run by hand outside this runner, and D208 found they had covered only the
+# consensus rows. Placement is forced both ways: 79f3's label queue goes through fda_rows(), which sorts
+# by layered_pct, so it must follow 79t3 (a fresh run crashed with KeyError 'layered_pct' when it sat
+# before 79t3 - the hand-run order had only worked on stale columns); 79i4 applies the flags, so they
+# must precede it. 79t3 reads no flag. STAGE=exposure follows STAGE=flags; 79f4 adds plate_confined.
+run "79f3 flags"    "$RES/evidence_flags_v2.tsv" -- env STAGE=flags $PY scripts/79f3_evidence_flags.py
+run "79f3 exposure" "$RES/evidence_flags_v2.tsv" -- env STAGE=exposure $PY scripts/79f3_evidence_flags.py
+run "79f4 plate"    "$RES/evidence_flags_v2.tsv" -- $PY scripts/79f4_plate_confined.py
 # 79i4 edits the split tables IN PLACE (tier_mech / tier_spec_mech / tier_lead) and refreshes the
 # summary tables' evidence_status; it writes no table of its own.
+# D210: it now runs BEFORE 79p. 79p copies evidence_status from the summaries, so running it first
+# stamped the stale pre-79i4 status onto every FDA row (26 cohorts 'borrowed only', 15 'matched'
+# where D122 gives 'candidates'), and a second pass gave a different file. 79i4 reads no 79p output.
 run "79i4 tiers"  "$RES/drug_reversal_split_v2_tf.tsv" "$RES/stratum_reversal_split_v2_tf.tsv" \
                   -- env SFXS=_v2_tf $PY scripts/79i4_tiers.py
+run "79p fda"     "$RES/fda_ranking_v2_tf.tsv" "$RES/fda_ranking_strata_v2_tf.tsv" \
+                  -- env SFX=_v2_tf $PY scripts/79p_fda_ranking.py
+# D210: target role (layer 1 alone; D127 reports it) reads the split tables and the ARACNe-only
+# overactivity (D208). It was run by hand outside this runner.
+run "79t target role" "$RES/target_role" -- $PY scripts/79t_target_role.py
 # D179 pooled nested array. Reads 79p's FDA rows, so it comes after 79p; it stops if its
 # regulator terms no longer sum to the stored rev, which is the check that it describes THIS build.
 run "79e2 contrib drug" "$RES/regulon_contributions_v2_tf" \
@@ -123,6 +137,9 @@ fi
 if want windows; then
 run "window_reversal" "results/systems_validation/integrated/window_reversal.tsv.gz" \
                   -- $PY scripts/systems_validation/integrate/window_reversal.py
+# D211: the 14 subgroups get their own window run (own MRs and matched lines, parent network). 79j reads it.
+run "window_reversal strata" "results/systems_validation/integrated/window_reversal_strata.tsv.gz" \
+                  -- env STRATA=1 $PY scripts/systems_validation/integrate/window_reversal.py
 run "79j window cols" "$RES/drug_reversal_split_v2_tf.tsv" "$RES/stratum_reversal_split_v2_tf.tsv" \
                   -- env SPLIT_SFX=_v2_tf $PY scripts/79j_window_scores.py
 run "79k window long" "$RES/drug_ranking_by_window_v2_tf.tsv" \
@@ -138,8 +155,17 @@ run "79e3 window contrib" "$RES/regulon_contributions_v2_tf/regulator_contributi
 # rebuilt from z-scores. 18.5M rows; 79ah reduces it to what the page can embed.
 run "79e3 window contrib ALL" "$RES/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz" \
                   -- env SFX=_v2_tf ALL=1 COSINE=1 NO_TARGETS=1 $PY scripts/79e3_window_contributions.py
+# D211: subgroup gene-level contributions per window, the subgroup input to 79ar. COSINE=1 is required:
+# 79e3 only computes rev_gene_contrib inside the COSINE branch (the first D211 run crashed without it).
+run "79e3 window contrib ALL strata" "$RES/regulon_contributions_v2_tf/regulator_contributions_by_window_all_strata.tsv.gz" \
+                  -- env SFX=_v2_tf ALL=1 COSINE=1 NO_TARGETS=1 STRATA=1 $PY scripts/79e3_window_contributions.py
 run "79ah cosine summary" "$RES/contribution_cosine_per_drug.tsv.gz" "$RES/contribution_cosine_summary.tsv" \
                   -- $PY scripts/79ah_cosine_summary.py
+# D211: THE PRODUCTION RANKING. Filter on combined dependency / alteration / overactivity (layered_T >= 50),
+# rank the eligible pairs by gene-level reversal (rev_gene), separately per timepoint. Needs 79t3, 79j's
+# unknown reasons and both 79e3 ALL tables.
+run "79ar gene ranking (D211)" "$RES/gene_ranking_v2_tf.tsv" "$RES/gene_ranking_chemo_v2_tf.tsv" \
+                  -- env SFX=_v2_tf $PY scripts/79ar_gene_ranking.py
 fi
 
 # ---------------------------------------------------------------------------------- labels
@@ -166,6 +192,9 @@ run "79ae moa-disjoint shortlist (D185)" "$RES/approved_concordance/moa_disjoint
 # SAME rows. Needs 79aa's labels and 79j's window columns, so it sits here, after both.
 run "79ag window accuracy (D192)" "$RES/window_accuracy.tsv" \
                   -- env SPLIT_SFX=_v2_tf $PY scripts/79ag_window_accuracy.py
+# D210: D127 is the drug side's primary validation (D209: one vote per target unit is its headline)
+# and was never in this runner. Needs 79t3 (layered_pct), 79f3 flags and 79t target role.
+run "D127 biomarker (D127/D207/D209)" "$RES/d127" -- $PY scripts/d127/d127_biomarker.py
 fi
 
 # ------------------------------------------------------------------------------------ pages

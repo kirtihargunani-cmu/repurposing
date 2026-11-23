@@ -1,28 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261123T111404-3173125",
- "finished_at": "2026-11-23T11:20:08-05:00",
- "duration_s": 364,
+ "run_id": "20261123T150141-3240648",
+ "finished_at": "2026-11-23T15:05:55-05:00",
+ "duration_s": 254,
  "script": "79e3_window_contributions.py",
  "cmd": "env SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79e3_window_contributions.py",
  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SFX=_v2_tf",
- "git_sha": "7398cd8",
- "git_state": "clean",
+ "git_sha": "5d9f33c",
+ "git_state": "dirty",
  "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
  "supersedes": {
-  "run_id": "20261122T144240-2824757",
-  "finished_at": "2026-11-22T14:49:35-05:00",
+  "run_id": "20261123T143958-3233220",
+  "finished_at": "2026-11-23T14:44:11-05:00",
   "n_files": 1,
-  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SFX=_v2_tf"
  },
  "files": {
   "regulator_contributions_by_window.tsv.gz": {
    "bytes": 44403529,
-   "mtime": "2026-11-23T11:15:53-05:00"
+   "mtime": "2026-11-23T15:02:38-05:00"
   }
  }
 }

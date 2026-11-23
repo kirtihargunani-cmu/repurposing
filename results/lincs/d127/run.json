@@ -88,5 +88,117 @@
    "n_compounds": 5,
    "meets_thresholds": false
   }
+ },
+ "d211_gene_ranking": {
+  "early|expansion|e2e": {
+   "window": "early",
+   "set": "expansion",
+   "reading": "e2e",
+   "units": 2,
+   "compounds": 2,
+   "correct": 2,
+   "share": 1.0,
+   "p": 0.25,
+   "median_gap_ranked": NaN
+  },
+  "early|primary|both_ranked": {
+   "window": "early",
+   "set": "primary",
+   "reading": "both_ranked",
+   "units": 8,
+   "compounds": 16,
+   "correct": 2,
+   "share": 0.25,
+   "p": 0.96484,
+   "median_gap_ranked": -2.5
+  },
+  "early|primary|e2e": {
+   "window": "early",
+   "set": "primary",
+   "reading": "e2e",
+   "units": 10,
+   "compounds": 19,
+   "correct": 4,
+   "share": 0.4,
+   "p": 0.82812,
+   "median_gap_ranked": -2.5
+  },
+  "early|seen|both_ranked": {
+   "window": "early",
+   "set": "seen",
+   "reading": "both_ranked",
+   "units": 4,
+   "compounds": 5,
+   "correct": 1,
+   "share": 0.25,
+   "p": 0.9375,
+   "median_gap_ranked": -8.9
+  },
+  "early|seen|e2e": {
+   "window": "early",
+   "set": "seen",
+   "reading": "e2e",
+   "units": 9,
+   "compounds": 14,
+   "correct": 6,
+   "share": 0.6667,
+   "p": 0.25391,
+   "median_gap_ranked": -8.9
+  },
+  "late|expansion|e2e": {
+   "window": "late",
+   "set": "expansion",
+   "reading": "e2e",
+   "units": 2,
+   "compounds": 2,
+   "correct": 2,
+   "share": 1.0,
+   "p": 0.25,
+   "median_gap_ranked": NaN
+  },
+  "late|primary|both_ranked": {
+   "window": "late",
+   "set": "primary",
+   "reading": "both_ranked",
+   "units": 8,
+   "compounds": 20,
+   "correct": 1,
+   "share": 0.125,
+   "p": 0.99609,
+   "median_gap_ranked": -3.6
+  },
+  "late|primary|e2e": {
+   "window": "late",
+   "set": "primary",
+   "reading": "e2e",
+   "units": 11,
+   "compounds": 27,
+   "correct": 4,
+   "share": 0.3636,
+   "p": 0.88672,
+   "median_gap_ranked": -3.6
+  },
+  "late|seen|both_ranked": {
+   "window": "late",
+   "set": "seen",
+   "reading": "both_ranked",
+   "units": 6,
+   "compounds": 6,
+   "correct": 4,
+   "share": 0.6667,
+   "p": 0.34375,
+   "median_gap_ranked": 17.3
+  },
+  "late|seen|e2e": {
+   "window": "late",
+   "set": "seen",
+   "reading": "e2e",
+   "units": 13,
+   "compounds": 17,
+   "correct": 11,
+   "share": 0.8462,
+   "p": 0.01123,
+   "median_gap_ranked": 17.3
+  }
  }
 }

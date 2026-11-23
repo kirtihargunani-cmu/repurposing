@@ -1,0 +1,33 @@
+{
+ "script": "79ar_gene_ranking.py",
+ "decision": "D211",
+ "t_min": 50.0,
+ "score": "rev_gene (FORMULAS s3)",
+ "filter": "layered_T >= t_min and layered_n_axes >= 1 (D/A/O path)",
+ "representative": "most conditions in the window, then pert_id",
+ "rows_main": 8595,
+ "rows_chemo": 4164,
+ "eligible_unit_ingredients": 4418,
+ "units_with_ranked_rows": {
+  "early": 20,
+  "late": 33
+ },
+ "ranked_rows": {
+  "early": 615,
+  "late": 882
+ },
+ "unknown_by_reason": {
+  "no_condition_in_lines": 2046,
+  "no_window_run": 1336
+ },
+ "by_level": {
+  "group_id": {
+   "early": 547,
+   "late": 777
+  },
+  "stratum": {
+   "early": 68,
+   "late": 105
+  }
+ }
+}
