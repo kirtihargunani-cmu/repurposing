@@ -1,17 +1,17 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261123T105701-3169145",
- "finished_at": "2026-11-23T11:13:43-05:00",
- "duration_s": 1002,
+ "run_id": "20261123T142826-3230051",
+ "finished_at": "2026-11-23T14:39:47-05:00",
+ "duration_s": 681,
  "script": "79e2_regulon_contributions.py",
  "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79e2_regulon_contributions.py",
  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
- "git_sha": "7398cd8",
- "git_state": "clean",
- "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
+ "git_sha": "5d9f33c",
+ "git_state": "dirty",
+ "note": "D210 content-determinism check",
  "expect": null,
  "n_files": 12,
- "mtime_span_hours": 20.4,
+ "mtime_span_hours": 18.75,
  "files_not_rewritten_by_this_run": [
   "query_window_BRCA-LumA_fulvestrant.tsv",
   "regulator_contributions_by_window.tsv.gz",
@@ -25,10 +25,10 @@
   "window_shift.tsv"
  ],
  "supersedes": {
-  "run_id": "20261122T174927-2883900",
-  "finished_at": "2026-11-22T17:58:45-05:00",
-  "n_files": 9,
-  "env": "ALL=1 NO_TARGETS=1 N_CORES=6"
+  "run_id": "20261123T135845-3221642",
+  "finished_at": "2026-11-23T14:10:13-05:00",
+  "n_files": 12,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
  },
  "files": {
   "query_window_BRCA-LumA_fulvestrant.tsv": {
@@ -37,23 +37,23 @@
   },
   "regulator_contributions.tsv.gz": {
    "bytes": 129299941,
-   "mtime": "2026-11-23T11:01:58-05:00"
+   "mtime": "2026-11-23T14:30:52-05:00"
   },
   "regulator_contributions_by_window.tsv.gz": {
-   "bytes": 76446973,
-   "mtime": "2026-11-22T23:53:07-05:00"
+   "bytes": 44403529,
+   "mtime": "2026-11-23T14:11:23-05:00"
   },
   "regulator_contributions_by_window.tsv.gz.build_manifest.json": {
-   "bytes": 732,
-   "mtime": "2026-11-22T14:49:35-05:00"
+   "bytes": 920,
+   "mtime": "2026-11-23T14:14:39-05:00"
   },
   "regulator_contributions_by_window_all.tsv.gz": {
    "bytes": 669956376,
-   "mtime": "2026-11-22T23:00:31-05:00"
+   "mtime": "2026-11-23T14:20:57-05:00"
   },
   "regulator_contributions_by_window_all.tsv.gz.build_manifest.json": {
-   "bytes": 895,
-   "mtime": "2026-11-22T23:01:10-05:00"
+   "bytes": 991,
+   "mtime": "2026-11-23T14:21:16-05:00"
   },
   "splithalf_reliability.tsv.gz": {
    "bytes": 22903556,
@@ -65,19 +65,19 @@
   },
   "target_contributions.tsv.gz": {
    "bytes": 1117362303,
-   "mtime": "2026-11-23T11:13:41-05:00"
+   "mtime": "2026-11-23T14:39:47-05:00"
   },
   "target_contributions_by_window.tsv.gz": {
-   "bytes": 464369772,
-   "mtime": "2026-11-22T19:54:41-05:00"
+   "bytes": 410449278,
+   "mtime": "2026-11-23T14:14:37-05:00"
   },
   "target_contributions_by_window.tsv.gz.build_manifest.json": {
    "bytes": 688,
    "mtime": "2026-11-22T19:54:45-05:00"
   },
   "window_shift.tsv": {
-   "bytes": 763238,
-   "mtime": "2026-11-22T23:53:11-05:00"
+   "bytes": 5192261,
+   "mtime": "2026-11-23T14:21:15-05:00"
   }
  }
 }

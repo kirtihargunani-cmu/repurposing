@@ -238,7 +238,7 @@ BRCA-Basal	BRD-K53792571	borrowed	1	0	0	False	False	False	False	False	80.0						
 BRCA-Basal	BRD-K86961442	direct	1	0	0	False	False	False	False	False	20.0						False
 BRCA-Basal	BRD-K92571446	direct	4	4	2	True	False	False	False	False	0.08						False
 BRCA-Basal	BRD-K32636001	borrowed	3	0	0	False	False	False	False	False	10.0						False
-BRCA-Basal	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+BRCA-Basal	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 BRCA-Basal	BRD-A84189516	direct	1	0	0	False	False	False	False	False	10.0						True
 BRCA-Basal	BRD-K36333904	borrowed	3	0	0	False	False	False	False	False	5.01						False
 BRCA-Basal	BRD-K02924457	direct	0	0	0	False	False	False	False	False							False
@@ -1045,7 +1045,7 @@ BRCA-Basal	BRD-A47832959	direct	0	0	0	False	False	False	False	False							True
 BRCA-Basal	BRD-K95138506	direct	0	0	0	False	False	False	False	False							False
 BRCA-Basal	BRD-K03063480	direct	2	1	1	True	False	False	False	False	0.12						False
 BRCA-Basal	BRD-A75301702	direct	1	0	0	False	False	False	False	False	10.0						False
-BRCA-Basal	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+BRCA-Basal	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 BRCA-Basal	BRD-A08545410	borrowed	4	1	1	True	False	False	False	False	2.30769	Doxycycline	8.122581225812258	openfda_label	0.2841079622160665	False	False
 BRCA-Basal	BRD-K83289131	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-Basal	BRD-K46556387	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -2528,7 +2528,7 @@ BRCA-Her2	BRD-A97437073	borrowed	3	1	0	False	False	False	False	False	1.11111	Ros
 BRCA-Her2	BRD-A84465106	direct	0	0	0	False	False	False	False	False		Nisoldipine					False
 BRCA-Her2	BRD-K49865102	direct	2	2	1	True	False	False	False	False	0.00949668	Mirdametinib	0.389879717959353	fda_label	0.0243579739148936	False	False
 BRCA-Her2	BRD-K73945663	direct	0	0	0	False	False	False	False	False							False
-BRCA-Her2	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+BRCA-Her2	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 BRCA-Her2	BRD-K19876534	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-Her2	BRD-K65242613	borrowed	1	0	0	False	False	False	False	False	10.0						False
 BRCA-Her2	BRD-A29901043	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -3156,7 +3156,7 @@ BRCA-Her2	BRD-K20000640	direct	1	0	0	False	False	False	False	False	10.0						Fal
 BRCA-Her2	BRD-K20197338	direct	1	0	0	False	False	False	False	False	20.0						True
 BRCA-Her2	BRD-K49669041	direct	4	0	0	False	False	False	False	False	0.08						False
 BRCA-Her2	BRD-K82135108	direct	1	0	0	False	False	False	False	False	10.0						False
-BRCA-Her2	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+BRCA-Her2	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 BRCA-Her2	BRD-K48654774	borrowed	0	0	0	False	False	False	False	False							False
 BRCA-Her2	BRD-K69097969	borrowed	6	0	0	False	False	False	False	False	10.0						False
 BRCA-Her2	BRD-A69815203	direct	1	0	0	False	False	False	False	False	10.0	Cyclosporine	1.498382711224566	openfda_label	6.673862375138736	False	False
@@ -5209,12 +5209,12 @@ BRCA-LumA	BRD-K94544211	direct	1	0	0	False	False	False	False	False	10.0						Fal
 BRCA-LumA	BRD-K05151076	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-LumA	BRD-K99633092	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-LumA	BRD-K92301463	borrowed	0	0	0	False	True	True	False	False							False
-BRCA-LumA	BRD-K09416995	borrowed	3	0	0	False	False	True	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+BRCA-LumA	BRD-K09416995	borrowed	3	0	0	False	False	True	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 BRCA-LumA	BRD-A66419424	direct	2	2	0	False	False	False	False	False	0.0854701	Ixazomib					False
 BRCA-LumA	BRD-A31159102	direct	0	0	0	False	False	False	False	False		Fluoxetine	0.9763036239614652	openfda_label			False
 BRCA-LumA	BRD-K36354764	direct	0	0	0	False	False	False	False	False							False
 BRCA-LumA	BRD-K79131428	direct	0	0	0	False	False	False	False	False							False
-BRCA-LumA	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+BRCA-LumA	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 BRCA-LumA	BRD-K89997465	direct	1	0	0	False	False	False	False	False	10.0	Chlorpromazine					False
 BRCA-LumA	BRD-K20000640	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-LumA	BRD-K57011718	borrowed	0	0	0	False	True	True	False	False							False
@@ -6371,7 +6371,7 @@ BRCA-LumB	BRD-K16277767	borrowed	4	0	0	False	False	False	False	False	0.625						
 BRCA-LumB	BRD-K81651477	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-LumB	BRD-K44366801	borrowed	5	0	0	False	False	False	True	False	10.0						False
 BRCA-LumB	BRD-K72951360	direct	2	0	0	False	False	False	False	False	1.11111	Valrubicin					False
-BRCA-LumB	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+BRCA-LumB	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 BRCA-LumB	BRD-K53281329	borrowed	4	0	0	False	True	True	False	False	3.33						True
 BRCA-LumB	BRD-K78930611	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-LumB	BRD-K73610817	borrowed	3	0	0	False	True	True	False	False	10.0						False
@@ -7038,7 +7038,7 @@ BRCA-LumB	BRD-K03652504	borrowed	2	0	0	False	False	False	True	False	2.5124						
 BRCA-LumB	BRD-K15616905	direct	1	0	0	False	False	False	False	False	10.0						False
 BRCA-LumB	BRD-K68174511	direct	5	2	1	True	False	False	False	False	0.04						False
 BRCA-LumB	BRD-K00028814	direct	1	0	0	False	False	False	False	False	10.0						False
-BRCA-LumB	BRD-K09416995	borrowed	3	0	0	False	False	True	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+BRCA-LumB	BRD-K09416995	borrowed	3	0	0	False	False	True	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 BRCA-LumB	BRD-A69815203	direct	1	0	0	False	False	False	False	False	10.0	Cyclosporine	1.498382711224566	openfda_label	6.673862375138736	False	False
 BRCA-LumB	BRD-K99252563	direct	5	1	0	False	False	False	False	False	0.12						False
 BRCA-LumB	BRD-K39841531	borrowed	5	0	0	False	True	True	False	False	0.04						False
@@ -7520,7 +7520,7 @@ CESC-AD	BRD-K37691127	borrowed	4	0	0	False	False	False	False	False	10.0						Fal
 CESC-AD	BRD-A13254067	borrowed	5	0	0	False	False	False	False	False	1.0						False
 CESC-AD	BRD-K32710582	borrowed	2	0	0	False	False	False	False	False	10.0						True
 CESC-AD	BRD-K82685933	borrowed	4	0	0	False	False	False	False	False	10.0						False
-CESC-AD	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+CESC-AD	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 CESC-AD	BRD-A62184259	borrowed	8	0	0	False	False	False	False	False	10.0						False
 CESC-AD	BRD-K46062088	borrowed	2	0	0	False	False	False	False	False	0.3704						False
 CESC-AD	BRD-K18518344	borrowed	5	0	0	False	False	False	False	False	10.0						False
@@ -8043,7 +8043,7 @@ CESC-AD	BRD-K28360340	borrowed	10	3	0	False	False	False	False	False	0.0922787			
 CESC-AD	BRD-K99532291	borrowed	3	0	0	False	False	False	False	False	10.0						True
 CESC-AD	BRD-K55233780	borrowed	5	0	0	False	False	False	False	False	20.0						False
 CESC-AD	BRD-A20697603	borrowed	5	0	0	False	False	False	False	False	10.0						False
-CESC-AD	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+CESC-AD	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 CESC-AD	BRD-K59058766	direct	1	1	1	True	False	False	False	False	0.0854701						False
 CESC-AD	BRD-K60038276	borrowed	3	0	0	False	False	False	True	False	10.0	Irbesartan					False
 CESC-AD	BRD-K72420232	borrowed	7	0	0	False	False	False	True	False	3.33333						False
@@ -8967,7 +8967,7 @@ CESC-SCC	BRD-A18328003	borrowed	9	0	0	False	False	False	False	False	0.04						Fa
 CESC-SCC	BRD-K89451433	borrowed	2	0	0	False	False	False	False	False	10.0						False
 CESC-SCC	BRD-K06009608	borrowed	4	0	0	False	False	False	False	False	10.0						False
 CESC-SCC	BRD-K63068307	borrowed	9	0	0	False	False	False	False	False	0.4						False
-CESC-SCC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+CESC-SCC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 CESC-SCC	BRD-K99636700	borrowed	6	0	0	False	False	False	False	False	0.37						False
 CESC-SCC	BRD-K02562327	borrowed	2	0	0	False	False	False	False	False	10.0						False
 CESC-SCC	BRD-K08589866	borrowed	3	0	0	False	False	False	False	False	3.33333						False
@@ -9267,7 +9267,7 @@ CESC-SCC	BRD-A81177136	borrowed	1	0	0	False	False	False	False	False	10.0						Fa
 CESC-SCC	BRD-K14821540	borrowed	10	1	0	False	False	False	False	False	1.33333						False
 CESC-SCC	BRD-K60297835	borrowed	2	0	0	False	False	False	False	False	10.0						False
 CESC-SCC	BRD-K69001009	borrowed	4	0	0	False	False	False	False	False	10.0						False
-CESC-SCC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+CESC-SCC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 CESC-SCC	BRD-K79619196	borrowed	0	0	0	False	False	False	False	False							False
 CESC-SCC	BRD-K73319509	borrowed	1	0	0	False	False	False	False	False	10.0						False
 CESC-SCC	BRD-K32944375	borrowed	5	0	0	False	False	False	False	False	10.0						False
@@ -11254,7 +11254,7 @@ ESCA-AD	BRD-K08417745	borrowed	5	0	0	False	True	True	False	False	88.8						False
 ESCA-AD	BRD-K09078998	borrowed	5	1	0	False	False	False	False	False	0.00949668						False
 ESCA-AD	BRD-K49328571	borrowed	22	2	0	False	False	False	True	False	0.00976562	Dasatinib	0.1684357198475472	openfda_label	0.0579783196155717	False	False
 ESCA-AD	BRD-K50691590	borrowed	8	1	0	False	False	False	False	False	0.0015	Bortezomib	0.3122966818477554	fda_label	0.004803125	False	False
-ESCA-AD	BRD-A70155556	borrowed	5	0	0	False	False	False	True	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+ESCA-AD	BRD-A70155556	borrowed	5	0	0	False	False	False	True	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 ESCA-AD	BRD-A59145032	borrowed	0	0	0	False	False	False	False	False							False
 ESCA-AD	BRD-K73255294	borrowed	4	1	0	False	False	False	True	False	3.33						False
 ESCA-AD	BRD-K52321331	borrowed	4	0	0	False	False	False	False	False	10.0						False
@@ -11624,7 +11624,7 @@ ESCA-AD	BRD-K97365803	borrowed	5	0	0	False	False	False	False	False	10.0						Fal
 ESCA-AD	BRD-K93747373	borrowed	8	0	0	False	False	False	False	False	2.0						False
 ESCA-AD	BRD-K84633118	borrowed	6	1	0	False	False	False	False	False	1.11						False
 ESCA-AD	BRD-K87125912	borrowed	7	0	0	False	False	False	False	False	5.0						False
-ESCA-AD	BRD-K09416995	borrowed	3	0	0	False	False	False	True	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+ESCA-AD	BRD-K09416995	borrowed	3	0	0	False	False	False	True	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 ESCA-AD	BRD-K09951645	borrowed	6	2	0	False	False	False	True	False	0.00949668	Dabrafenib					False
 ESCA-AD	BRD-K71456612	borrowed	5	0	0	False	False	False	False	False	10.0093						False
 ESCA-AD	BRD-K09790412	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -12896,7 +12896,7 @@ ESCA-SCC	BRD-K23228615	borrowed	6	0	0	False	False	False	False	False	0.123457				
 ESCA-SCC	BRD-K26997899	borrowed	6	0	0	False	False	False	False	False	1.11111						False
 ESCA-SCC	BRD-K47000838	borrowed	4	0	0	False	False	False	False	False	1.39002						False
 ESCA-SCC	BRD-K54263226	borrowed	6	0	0	False	False	False	False	False	10.3772						False
-ESCA-SCC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+ESCA-SCC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 ESCA-SCC	BRD-K10749593	borrowed	7	0	0	False	False	False	False	False	20.0						False
 ESCA-SCC	BRD-K17026858	borrowed	3	0	0	False	False	False	False	False	10.0						False
 ESCA-SCC	BRD-U60236422	borrowed	6	0	0	False	False	False	False	False	0.37						False
@@ -13184,7 +13184,7 @@ ESCA-SCC	BRD-K66214645	borrowed	4	0	0	False	False	False	False	False	10.0						Fa
 ESCA-SCC	BRD-K87124298	borrowed	1	0	0	False	False	False	False	False	2.0						False
 ESCA-SCC	BRD-K71035033	borrowed	7	2	1	True	False	False	False	False	0.1						False
 ESCA-SCC	BRD-K25504083	borrowed	4	0	0	False	False	False	False	False	10.0						False
-ESCA-SCC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+ESCA-SCC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 ESCA-SCC	BRD-K59317601	borrowed	9	0	0	False	False	False	False	False	0.00949668						False
 ESCA-SCC	BRD-K98936959	borrowed	3	0	0	False	False	False	False	False	5.01349						False
 ESCA-SCC	BRD-K50204028	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -14107,7 +14107,7 @@ LGG-IDHmut-codel	BRD-K69776681	borrowed	12	1	0	False	False	False	False	False	0.0
 LGG-IDHmut-codel	BRD-K01188359	borrowed	7	3	0	False	False	False	False	False	0.0411523	Vinblastine					False
 LGG-IDHmut-codel	BRD-K93060291	borrowed	4	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-codel	BRD-U74615290	borrowed	2	0	0	False	False	False	False	False	10.0						False
-LGG-IDHmut-codel	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+LGG-IDHmut-codel	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 LGG-IDHmut-codel	BRD-K49477330	borrowed	7	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-codel	BRD-K19216856	borrowed	0	0	0	False	False	False	False	False							False
 LGG-IDHmut-codel	BRD-K47598052	borrowed	3	0	0	False	False	False	False	False	10.0						False
@@ -14244,7 +14244,7 @@ LGG-IDHmut-codel	BRD-K42828737	borrowed	10	0	0	False	False	False	False	False	1.1
 LGG-IDHmut-codel	BRD-K64634304	borrowed	1	1	1	True	False	False	False	False	3.0	Tretinoin	0.4593263213952869	openfda_label	6.531304347826088	False	False
 LGG-IDHmut-codel	BRD-K04923131	borrowed	12	0	0	False	False	False	False	False	0.4						False
 LGG-IDHmut-codel	BRD-K11432829	borrowed	4	1	0	False	False	False	False	False	2.52102						True
-LGG-IDHmut-codel	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+LGG-IDHmut-codel	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 LGG-IDHmut-codel	BRD-K10211010	borrowed	6	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-codel	BRD-K78867378	borrowed	3	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-codel	BRD-K85563610	borrowed	0	0	0	False	False	False	False	False							False
@@ -15416,7 +15416,7 @@ LGG-IDHmut-noncodel	BRD-K74717603	borrowed	6	0	0	False	False	False	False	False	1
 LGG-IDHmut-noncodel	BRD-K37618799	borrowed	2	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-noncodel	BRD-K11696279	borrowed	3	0	0	False	False	False	False	False	0.0411523						False
 LGG-IDHmut-noncodel	BRD-K78930611	borrowed	1	0	0	False	False	False	False	False	10.0						False
-LGG-IDHmut-noncodel	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+LGG-IDHmut-noncodel	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 LGG-IDHmut-noncodel	BRD-K32944375	borrowed	5	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-noncodel	BRD-K68336408	borrowed	10	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-noncodel	BRD-K23673040	borrowed	1	0	0	False	False	False	False	False	10.0						False
@@ -15620,7 +15620,7 @@ LGG-IDHmut-noncodel	BRD-K75999307	borrowed	1	0	0	False	False	False	False	False	1
 LGG-IDHmut-noncodel	BRD-K78867378	borrowed	3	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-noncodel	BRD-K86472598	borrowed	4	0	0	False	False	False	False	False	10.0						False
 LGG-IDHmut-noncodel	BRD-K85563610	borrowed	0	0	0	False	False	False	False	False							False
-LGG-IDHmut-noncodel	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+LGG-IDHmut-noncodel	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 LGG-IDHmut-noncodel	BRD-K27316855	borrowed	1	1	1	True	False	False	False	False	1.0	Calcitriol	0.0001440057602304	openfda_label	6944.166666666666	True	False
 LGG-IDHmut-noncodel	BRD-K31999759	borrowed	6	1	0	False	False	False	False	False	5.05865						False
 LGG-IDHmut-noncodel	BRD-K34185671	borrowed	7	7	4	True	False	False	False	False	0.02849						False
@@ -16681,7 +16681,7 @@ LGG-IDHwt	BRD-K77947974	borrowed	4	1	1	True	False	False	False	False	4.21						Fa
 LGG-IDHwt	BRD-K68103045	borrowed	4	1	1	True	False	False	False	False	3.33333						True
 LGG-IDHwt	BRD-K59574735	borrowed	3	3	3	True	False	False	False	False	0.02849						True
 LGG-IDHwt	BRD-K05434375	borrowed	4	1	1	True	False	False	False	False	0.0411523						False
-LGG-IDHwt	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+LGG-IDHwt	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 LGG-IDHwt	BRD-K62221994	borrowed	2	0	0	False	False	False	False	False	10.0						False
 LGG-IDHwt	BRD-K67439147	borrowed	4	0	0	False	False	False	False	False	2.5						False
 LGG-IDHwt	BRD-K53461563	borrowed	0	0	0	False	False	False	False	False							False
@@ -16899,7 +16899,7 @@ LGG-IDHwt	BRD-K19624190	borrowed	2	0	0	False	False	False	False	False	10.0						F
 LGG-IDHwt	BRD-K54256913	borrowed	13	1	0	False	False	False	False	False	0.04						False
 LGG-IDHwt	BRD-K89692698	borrowed	0	0	0	False	False	False	False	False							False
 LGG-IDHwt	BRD-A29901043	borrowed	3	0	0	False	False	False	False	False	10.0						False
-LGG-IDHwt	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+LGG-IDHwt	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 LGG-IDHwt	BRD-K28428262	borrowed	3	0	0	False	False	False	False	False	10.0						False
 LGG-IDHwt	BRD-K32330832	borrowed	2	0	0	False	False	False	False	False	11.1						False
 LGG-IDHwt	BRD-K91623615	borrowed	7	0	0	False	False	False	False	False	0.0984272						False
@@ -18573,7 +18573,7 @@ PCPG-PGL	BRD-K84106030	borrowed	0	0	0	False	False	False	False	False							False
 PCPG-PGL	BRD-K01253243	borrowed	2	0	0	False	False	False	False	False	10.0						False
 PCPG-PGL	BRD-K72827473	borrowed	9	0	0	False	False	False	False	False	0.1						False
 PCPG-PGL	BRD-K71847383	borrowed	7	0	0	False	False	False	False	False	0.123457	Cytarabine	255.7355480634816	fda_label	0.0004827525971061	False	False
-PCPG-PGL	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+PCPG-PGL	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 PCPG-PGL	BRD-K29395450	borrowed	5	0	0	False	False	False	False	False	10.0						False
 PCPG-PGL	BRD-K95858622	borrowed	3	0	0	False	False	False	False	False	10.0						False
 PCPG-PGL	BRD-K28907958	borrowed	9	0	0	False	False	False	False	False	0.13704						False
@@ -18673,7 +18673,7 @@ PCPG-PGL	BRD-K17119186	borrowed	2	1	0	False	False	False	False	False	1.11						Fa
 PCPG-PGL	BRD-K78062244	borrowed	7	0	0	False	False	False	False	False	10.0						False
 PCPG-PGL	BRD-A70449690	borrowed	1	0	0	False	False	False	False	False	10.0						False
 PCPG-PGL	BRD-K12867552	borrowed	12	4	0	False	False	False	False	False	0.25641						False
-PCPG-PGL	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+PCPG-PGL	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 PCPG-PGL	BRD-K67439147	borrowed	4	0	0	False	False	False	False	False	2.5						False
 PCPG-PGL	BRD-K08799216	borrowed	10	1	0	False	False	False	False	False	0.04						False
 PCPG-PGL	BRD-K82823804	borrowed	7	0	0	False	False	False	False	False	3.33						False
@@ -20007,7 +20007,7 @@ PCPG-PHEO	BRD-K98762074	borrowed	3	0	0	False	False	False	False	False	0.4						Fa
 PCPG-PHEO	BRD-K11432829	borrowed	4	1	0	False	False	False	False	False	2.52102						True
 PCPG-PHEO	BRD-K63158888	borrowed	6	0	0	False	False	False	False	False	20.0						False
 PCPG-PHEO	BRD-K83699324	borrowed	8	0	0	False	False	False	False	False	0.02849						False
-PCPG-PHEO	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+PCPG-PHEO	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 PCPG-PHEO	BRD-K49350383	borrowed	8	2	0	False	False	False	False	False	0.769231	Thioguanine					False
 PCPG-PHEO	BRD-K34452916	borrowed	2	0	0	False	False	False	False	False	10.0						False
 PCPG-PHEO	BRD-K95435023	borrowed	3	1	1	True	False	False	False	False	0.04						False
@@ -20109,7 +20109,7 @@ PCPG-PHEO	BRD-K49456274	borrowed	3	0	0	False	False	False	False	False	0.1						Fa
 PCPG-PHEO	BRD-K07005393	borrowed	1	0	0	False	False	False	False	False	10.0						False
 PCPG-PHEO	BRD-K76401790	borrowed	4	0	0	False	False	False	False	False	1.11						False
 PCPG-PHEO	BRD-K29173907	borrowed	2	0	0	False	False	False	False	False	10.0						False
-PCPG-PHEO	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+PCPG-PHEO	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 PCPG-PHEO	BRD-A81177136	borrowed	1	0	0	False	False	False	False	False	10.0						False
 PCPG-PHEO	BRD-K37561857	borrowed	4	1	0	False	False	False	False	False	0.37037						False
 PCPG-PHEO	BRD-K74260000	borrowed	3	0	0	False	False	False	False	False	20.0						False
@@ -20911,7 +20911,7 @@ SARC-DDLPS	BRD-K19724398	borrowed	7	0	0	False	False	False	False	False	10.0						
 SARC-DDLPS	BRD-K60870698	borrowed	4	0	0	False	False	False	False	False	10.0						False
 SARC-DDLPS	BRD-K68548958	borrowed	11	0	0	False	False	False	False	False	10.0						False
 SARC-DDLPS	BRD-A47829399	borrowed	5	1	1	True	False	False	False	False	0.0412	Artesunate	8.063886793434435	fda_label	0.0051091987096774	False	False
-SARC-DDLPS	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+SARC-DDLPS	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 SARC-DDLPS	BRD-K25433859	borrowed	2	1	1	True	False	False	False	False	0.00949668	Maprotiline					False
 SARC-DDLPS	BRD-K78716413	borrowed	1	1	1	True	False	False	False	False	10.0						False
 SARC-DDLPS	BRD-K65182930	borrowed	9	2	1	True	False	False	False	False	0.04						False
@@ -21060,7 +21060,7 @@ SARC-DDLPS	BRD-A36010170	borrowed	3	1	0	False	False	False	False	False	0.02849	Am
 SARC-DDLPS	BRD-A13133631	borrowed	3	0	0	False	False	False	False	False	0.25641						False
 SARC-DDLPS	BRD-K01404579	borrowed	4	0	0	False	False	False	False	False	20.0						False
 SARC-DDLPS	BRD-K99633092	borrowed	5	0	0	False	False	False	False	False	10.0						False
-SARC-DDLPS	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+SARC-DDLPS	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 SARC-DDLPS	BRD-K49630153	borrowed	4	0	0	False	False	False	False	False	10.0						False
 SARC-DDLPS	BRD-K52850071	borrowed	2	0	0	False	False	False	False	False	10.0						False
 SARC-DDLPS	BRD-K86930074	borrowed	6	0	0	False	False	False	False	False	10.0						False
@@ -22365,7 +22365,7 @@ SARC-LMS	BRD-K00889002	borrowed	4	0	0	False	False	False	False	False	10.0497					
 SARC-LMS	BRD-K45399554	borrowed	5	0	0	False	False	False	False	False	0.123457						False
 SARC-LMS	BRD-A56020723	borrowed	2	0	0	False	False	False	False	False	10.0						False
 SARC-LMS	BRD-K95638669	borrowed	5	0	0	False	False	False	False	False	9.99756						False
-SARC-LMS	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+SARC-LMS	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 SARC-LMS	BRD-K31999759	borrowed	6	1	0	False	False	False	False	False	5.05865						False
 SARC-LMS	BRD-K34624563	borrowed	5	0	0	False	False	False	False	False	2.5						False
 SARC-LMS	BRD-K41859756	borrowed	9	1	0	False	False	False	False	False	0.0412						False
@@ -23318,7 +23318,7 @@ SARC-LMS	BRD-K19227686	borrowed	2	0	0	False	False	False	False	False	10.0						Fa
 SARC-LMS	BRD-K64881305	borrowed	4	0	0	False	False	False	False	False	1.13763						False
 SARC-LMS	BRD-K95921201	borrowed	1	0	0	False	False	False	False	False	10.0	Reserpine					False
 SARC-LMS	BRD-A18763547	borrowed	5	0	0	False	False	False	False	False	3.3333						False
-SARC-LMS	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+SARC-LMS	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 SARC-LMS	BRD-K17119186	borrowed	2	1	0	False	False	False	False	False	1.11						False
 SARC-LMS	BRD-K95785537	borrowed	4	0	0	False	False	False	False	False	10.0						False
 SARC-LMS	BRD-K67870070	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -23646,7 +23646,7 @@ SARC-UPS	BRD-A12230535	borrowed	7	2	2	True	False	False	False	False	0.00949668			
 SARC-UPS	BRD-K32944375	borrowed	5	0	0	False	False	False	False	False	10.0						False
 SARC-UPS	BRD-K72420232	borrowed	7	0	0	False	False	False	False	False	3.33333						False
 SARC-UPS	BRD-K40175214	borrowed	15	3	0	False	False	False	False	False	0.008						False
-SARC-UPS	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+SARC-UPS	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 SARC-UPS	BRD-K29173907	borrowed	2	0	0	False	False	False	False	False	10.0						False
 SARC-UPS	BRD-K03449891	borrowed	12	0	0	False	False	False	False	False	0.0411523						False
 SARC-UPS	BRD-K57282030	borrowed	6	0	0	False	False	False	False	False	3.33						False
@@ -23874,7 +23874,7 @@ SARC-UPS	BRD-K13927029	borrowed	0	0	0	False	False	False	False	False							False
 SARC-UPS	BRD-K31542390	borrowed	7	0	0	False	False	False	False	False	2.5						False
 SARC-UPS	BRD-A11678676	borrowed	2	0	0	False	False	False	False	False	10.0						False
 SARC-UPS	BRD-A63998256	borrowed	5	0	0	False	False	False	False	False	10.0						False
-SARC-UPS	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+SARC-UPS	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 SARC-UPS	BRD-K47000838	borrowed	4	0	0	False	False	False	False	False	1.39002						False
 SARC-UPS	BRD-K09132007	borrowed	3	3	1	False	False	False	False	False	0.08						False
 SARC-UPS	BRD-K20505391	borrowed	4	0	0	False	False	False	False	False	10.0						False
@@ -25783,7 +25783,7 @@ TARGET-NBL	BRD-K22134346	borrowed	4	0	0	False	False	False	False	False	2.30769	Si
 TARGET-NBL	BRD-K28120860	borrowed	0	0	0	False	False	False	False	False							False
 TARGET-NBL	BRD-K76840893	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TARGET-NBL	BRD-K00152668	borrowed	6	0	0	False	False	False	False	False	0.123457						False
-TARGET-NBL	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TARGET-NBL	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TARGET-NBL	BRD-K83837640	borrowed	10	2	0	False	False	False	False	False	0.00949668						False
 TARGET-NBL	BRD-K40919711	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TARGET-NBL	BRD-K94294671	borrowed	5	0	0	False	False	False	False	False	0.08						False
@@ -26330,7 +26330,7 @@ TARGET-NBL	BRD-K58435339	borrowed	6	0	0	False	False	False	False	False	0.123457		
 TARGET-NBL	BRD-K71387353	borrowed	6	6	5	True	False	False	False	False	5.0						True
 TARGET-NBL	BRD-K99818283	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TARGET-NBL	BRD-K63861289	borrowed	5	4	1	False	False	False	False	False	0.25641						False
-TARGET-NBL	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TARGET-NBL	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TARGET-NBL	BRD-K63068307	borrowed	9	0	0	False	False	False	False	False	0.4						False
 TARGET-NBL	BRD-K22010301	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TARGET-NBL	BRD-K56751279	borrowed	6	0	0	False	False	False	False	False	10.0						False
@@ -27445,7 +27445,7 @@ TARGET-WT	BRD-K32744045	borrowed	3	1	0	False	False	False	True	False	0.0411523	Di
 TARGET-WT	BRD-K08219523	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TARGET-WT	BRD-K95921201	borrowed	1	0	0	False	False	False	True	False	10.0	Reserpine					False
 TARGET-WT	BRD-K82685933	borrowed	4	0	0	False	False	False	False	False	10.0						False
-TARGET-WT	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TARGET-WT	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TARGET-WT	BRD-K13044802	borrowed	7	0	0	False	False	False	False	False	3.33333	Ciclopirox					False
 TARGET-WT	BRD-K01292756	borrowed	3	1	1	True	False	False	False	False	0.123457	Pimozide					False
 TARGET-WT	BRD-K67392871	borrowed	4	0	0	False	False	False	False	False	10.0						False
@@ -27639,7 +27639,7 @@ TARGET-WT	BRD-K66214645	borrowed	4	0	0	False	False	False	False	False	10.0						F
 TARGET-WT	BRD-A81541225	borrowed	5	0	0	False	False	False	False	False	0.0411523						False
 TARGET-WT	BRD-K84633118	borrowed	6	1	0	False	False	False	False	False	1.11						False
 TARGET-WT	BRD-K81651477	borrowed	10	0	0	False	False	False	False	False	10.0						False
-TARGET-WT	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TARGET-WT	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TARGET-WT	BRD-K61255301	borrowed	6	0	0	False	False	False	False	False	10.0						False
 TARGET-WT	BRD-A11512624	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TARGET-WT	BRD-K78659596	borrowed	16	4	1	False	False	False	True	False	0.0854701	Ixazomib					False
@@ -28307,7 +28307,7 @@ TCGA-ACC	BRD-K98762074	borrowed	3	0	0	False	False	False	False	False	0.4						Fal
 TCGA-ACC	BRD-A67862938	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-ACC	BRD-K58900438	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TCGA-ACC	BRD-K25325018	borrowed	6	0	0	False	False	False	False	False	10.0						False
-TCGA-ACC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-ACC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-ACC	BRD-A49848186	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-ACC	BRD-K67075780	borrowed	6	0	0	False	False	False	False	False	160.0						False
 TCGA-ACC	BRD-K05649647	borrowed	6	0	0	False	False	False	False	False	0.0412						False
@@ -28497,7 +28497,7 @@ TCGA-ACC	BRD-K08417745	borrowed	5	0	0	False	False	False	False	False	88.8						Fa
 TCGA-ACC	BRD-A28467416	borrowed	3	0	0	False	False	False	False	False	0.0854701						False
 TCGA-ACC	BRD-K56343971	borrowed	9	0	0	False	False	False	False	False	0.0411523	Vemurafenib	126.54869062927357	fda_label	0.0003251894570806	False	False
 TCGA-ACC	BRD-K83694683	borrowed	7	2	0	False	False	False	False	False	1.11						False
-TCGA-ACC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-ACC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-ACC	BRD-K33277808	borrowed	3	1	0	False	False	False	False	False	0.1						False
 TCGA-ACC	BRD-K56593336	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TCGA-ACC	BRD-K01404579	borrowed	4	0	0	False	False	False	False	False	20.0						False
@@ -29493,7 +29493,7 @@ TCGA-BLCA	BRD-K67860401	borrowed	5	0	0	False	False	False	False	False	9.99						F
 TCGA-BLCA	BRD-K31380618	borrowed	6	0	0	False	False	False	False	False	5.32883						False
 TCGA-BLCA	BRD-K99532291	borrowed	3	0	0	False	False	False	False	False	10.0						True
 TCGA-BLCA	BRD-K71387353	borrowed	6	6	5	True	False	False	False	False	5.0						True
-TCGA-BLCA	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-BLCA	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-BLCA	BRD-K06188599	borrowed	4	0	0	False	False	False	False	False	10.1209						False
 TCGA-BLCA	BRD-A47829399	borrowed	5	1	1	True	False	False	False	False	0.0412	Artesunate	8.063886793434435	fda_label	0.0051091987096774	False	False
 TCGA-BLCA	BRD-K07303502	borrowed	10	0	0	False	False	False	False	False	80.0						False
@@ -29548,7 +29548,7 @@ TCGA-BLCA	BRD-K00313977	borrowed	3	0	0	False	False	False	False	False	10.0						F
 TCGA-BLCA	BRD-A11007541	borrowed	5	0	0	False	False	False	False	False	3.3333						False
 TCGA-BLCA	BRD-K95138506	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TCGA-BLCA	BRD-A98283014	borrowed	1	0	0	False	False	False	True	False	10.0						False
-TCGA-BLCA	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-BLCA	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-BLCA	BRD-K81473043	borrowed	9	0	0	False	False	False	False	False	0.0411523						False
 TCGA-BLCA	BRD-A20697603	borrowed	5	0	0	False	False	False	False	False	10.0						False
 TCGA-BLCA	BRD-M64432851	borrowed	0	0	0	False	False	False	False	False		Sunitinib					False
@@ -31156,7 +31156,7 @@ TCGA-COAD	BRD-K36363294	direct	1	0	0	False	False	False	False	False	1.11						Fal
 TCGA-COAD	BRD-K83699324	direct	1	0	0	False	False	False	False	False	0.0411523						False
 TCGA-COAD	BRD-K52560704	borrowed	6	1	1	True	False	False	True	False	0.04						False
 TCGA-COAD	BRD-A02481876	direct	1	0	0	False	False	False	False	False	10.0						False
-TCGA-COAD	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-COAD	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-COAD	BRD-K39936803	borrowed	3	2	0	False	True	True	False	False	0.0418742						True
 TCGA-COAD	BRD-K72318460	direct	1	0	0	False	False	False	False	False	20.0						False
 TCGA-COAD	BRD-U82589721	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -31930,7 +31930,7 @@ TCGA-COAD	BRD-K93468883	borrowed	3	0	0	False	False	False	False	False	0.625	Duvel
 TCGA-COAD	BRD-A67862938	borrowed	2	0	0	False	True	True	False	False	10.0						False
 TCGA-COAD	BRD-K28120860	borrowed	0	0	0	False	False	False	True	False							False
 TCGA-COAD	BRD-K49657628	direct	1	0	0	False	False	False	False	False	10.0						True
-TCGA-COAD	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0294153998269682	fda_label			False
+TCGA-COAD	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0281616811813706	fda_label			False
 TCGA-COAD	BRD-K57282030	borrowed	6	0	0	False	False	True	False	False	3.33						False
 TCGA-COAD	BRD-K77947974	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-COAD	BRD-K93578426	borrowed	1	0	0	False	True	True	False	False	10.0						False
@@ -32771,7 +32771,7 @@ TCGA-GBM	BRD-K85095987	borrowed	5	0	0	False	False	False	False	False	9.95632					
 TCGA-GBM	BRD-K06426971	borrowed	7	0	0	False	False	False	False	False	2.5						False
 TCGA-GBM	BRD-K23192422	borrowed	8	0	0	False	False	False	False	False	1.1111						False
 TCGA-GBM	BRD-K54687541	borrowed	5	0	0	False	False	False	False	False	10.0						False
-TCGA-GBM	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-GBM	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-GBM	BRD-K67392871	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-GBM	BRD-K72703948	borrowed	7	0	0	False	False	False	False	False	1.11						False
 TCGA-GBM	BRD-K83194053	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -33014,7 +33014,7 @@ TCGA-GBM	BRD-K55696337	borrowed	7	0	0	False	False	False	False	False	0.0411523	To
 TCGA-GBM	BRD-K28360340	borrowed	10	3	0	False	False	False	False	False	0.0922787						False
 TCGA-GBM	BRD-K40919711	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-GBM	BRD-K35189033	borrowed	2	0	0	False	False	False	False	False	2.30769	Levonorgestrel					False
-TCGA-GBM	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-GBM	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-GBM	BRD-K73610817	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-GBM	BRD-K49294207	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-GBM	BRD-A28746609	borrowed	16	4	1	False	False	False	False	False	0.0390625	Paclitaxel	4.274405096496159	openfda_label	0.0091386986301369	False	False
@@ -34029,7 +34029,7 @@ TCGA-HNSC	BRD-K72827473	borrowed	9	0	0	False	False	False	False	False	0.1						Fa
 TCGA-HNSC	BRD-A79768653	borrowed	24	2	0	False	False	False	False	False	0.0045	Sirolimus	0.0164079677091195	openfda_label	0.274257	False	False
 TCGA-HNSC	BRD-K63675182	borrowed	3	0	0	False	False	False	False	False	10.0	Triflupromazine					False
 TCGA-HNSC	BRD-K65182930	borrowed	9	2	1	True	False	False	False	False	0.04						False
-TCGA-HNSC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-HNSC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-HNSC	BRD-K66046182	borrowed	3	1	0	False	False	False	False	False	0.0417064						True
 TCGA-HNSC	BRD-K36280065	borrowed	3	3	2	True	False	False	False	False	0.00949668	Tofacitinib	0.2711441193418273	openfda_label	0.035024473416765	False	False
 TCGA-HNSC	BRD-A74914197	borrowed	9	2	1	True	False	False	False	False	0.00949668	Pralatrexate					False
@@ -34312,7 +34312,7 @@ TCGA-HNSC	BRD-A59985574	borrowed	4	0	0	False	False	False	False	False	10.0	Topote
 TCGA-HNSC	BRD-K35189033	borrowed	2	0	0	False	False	False	False	False	2.30769	Levonorgestrel					False
 TCGA-HNSC	BRD-K91601245	borrowed	5	1	1	True	False	False	False	False	2.30769	Mercaptopurine	0.6111184124063609	fda_label	3.776174883870968	False	False
 TCGA-HNSC	BRD-K84924563	borrowed	0	0	0	False	False	False	False	False							False
-TCGA-HNSC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-HNSC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-HNSC	BRD-A69951442	borrowed	3	0	0	False	False	False	False	False	0.0411523	Dexamethasone					False
 TCGA-HNSC	BRD-K74486276	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-HNSC	BRD-K23875128	borrowed	3	1	1	True	False	False	False	False	0.0411523						False
@@ -36273,7 +36273,7 @@ TCGA-KICH	BRD-K95138506	borrowed	1	0	0	False	False	False	False	False	10.0						F
 TCGA-KICH	BRD-K95785537	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-KICH	BRD-K15600710	borrowed	5	0	0	False	False	False	True	False	1.0						False
 TCGA-KICH	BRD-K21001652	borrowed	4	0	0	False	False	False	False	False	10.0						False
-TCGA-KICH	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-KICH	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-KICH	BRD-A68930007	borrowed	5	0	0	False	False	False	False	False	10.0						False
 TCGA-KICH	BRD-K57080016	borrowed	13	1	0	False	False	False	True	False	0.02849	Selumetinib	1.730428892918788	fda_label	0.0164641263888888	False	False
 TCGA-KICH	BRD-K52163391	borrowed	5	0	0	False	False	False	False	False	10.0						False
@@ -36645,7 +36645,7 @@ TCGA-KICH	BRD-K13533483	borrowed	2	0	0	False	False	False	False	False	0.0823045	C
 TCGA-KICH	BRD-K74305673	borrowed	18	1	0	False	False	False	False	False	0.37037						False
 TCGA-KICH	BRD-K59023263	borrowed	6	1	0	False	False	False	False	False	1.11						False
 TCGA-KICH	BRD-K34624563	borrowed	5	0	0	False	False	False	False	False	2.5						False
-TCGA-KICH	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-KICH	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-KICH	BRD-K50204028	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-KICH	BRD-K66214645	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-KICH	BRD-K91041732	borrowed	3	0	0	False	False	False	False	False	0.37037						False
@@ -38041,7 +38041,7 @@ TCGA-KIRC	BRD-K24666289	borrowed	6	2	0	False	False	False	False	False	2.5	Copanli
 TCGA-KIRC	BRD-K64140008	borrowed	6	0	0	False	False	False	False	False	5.00438						False
 TCGA-KIRC	BRD-U86922168	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-KIRC	BRD-K87124298	borrowed	1	0	0	False	False	False	False	False	2.0						False
-TCGA-KIRC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-KIRC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-KIRC	BRD-A93942655	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-KIRC	BRD-K99636700	borrowed	6	0	0	False	False	False	False	False	0.37						False
 TCGA-KIRC	BRD-K19166598	borrowed	3	0	0	False	False	False	False	False	10.0						False
@@ -38097,7 +38097,7 @@ TCGA-KIRC	BRD-K19894101	borrowed	7	0	0	False	False	False	False	False	1.11111				
 TCGA-KIRC	BRD-K32318651	borrowed	0	0	0	False	False	False	False	False		Acyclovir					True
 TCGA-KIRC	BRD-K46373671	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TCGA-KIRC	BRD-K55930204	borrowed	3	3	3	True	False	False	False	False	0.0854701	Phenytoin					True
-TCGA-KIRC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-KIRC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-KIRC	BRD-K13094524	borrowed	7	1	0	False	False	False	False	False	0.37						False
 TCGA-KIRC	BRD-K04210847	borrowed	2	0	0	False	False	False	False	False	10.0	Tamoxifen	0.314822460776218	openfda_label	31.763934426229508	True	False
 TCGA-KIRC	BRD-K42918627	borrowed	11	5	1	False	False	False	False	False	0.04						False
@@ -39240,7 +39240,7 @@ TCGA-KIRP	BRD-K50841342	borrowed	4	0	0	False	False	False	False	False	10.0						F
 TCGA-KIRP	BRD-A62809825	borrowed	5	1	0	False	False	False	False	False	0.04						False
 TCGA-KIRP	BRD-K76674262	borrowed	12	9	6	True	False	False	False	True	0.013	Omacetaxine mepesuccinate					False
 TCGA-KIRP	BRD-K86003836	borrowed	4	0	0	False	False	False	False	False	10.0						False
-TCGA-KIRP	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-KIRP	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-KIRP	BRD-K90546933	borrowed	3	0	0	False	False	False	False	False	10.1528						False
 TCGA-KIRP	BRD-K81709173	borrowed	3	1	1	True	False	False	False	False	0.1	Halcinonide					False
 TCGA-KIRP	BRD-A08545410	borrowed	4	1	1	True	False	False	False	False	2.30769	Doxycycline	8.122581225812258	openfda_label	0.2841079622160665	False	False
@@ -39404,7 +39404,7 @@ TCGA-KIRP	BRD-K77480336	borrowed	2	0	0	False	False	False	False	False	10.0						F
 TCGA-KIRP	BRD-K03067624	borrowed	6	2	0	False	False	False	False	False	0.1						False
 TCGA-KIRP	BRD-K85606544	borrowed	15	1	0	False	False	False	False	False	0.12	Neratinib					False
 TCGA-KIRP	BRD-K04534322	borrowed	1	0	0	False	False	False	False	False	10.0						False
-TCGA-KIRP	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-KIRP	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-KIRP	BRD-K72420232	borrowed	7	0	0	False	False	False	False	False	3.33333						False
 TCGA-KIRP	BRD-K02708799	borrowed	14	4	0	False	False	False	False	False	0.12						False
 TCGA-KIRP	BRD-K24844714	borrowed	5	1	1	True	False	False	False	False	0.0411523	Fluorouracil					False
@@ -40094,7 +40094,7 @@ TCGA-LIHC	BRD-K72615639	borrowed	2	0	0	False	False	False	False	False	10.0						F
 TCGA-LIHC	BRD-A39935389	borrowed	3	0	0	False	False	False	False	False	10.0						True
 TCGA-LIHC	BRD-K03857568	direct	0	0	0	False	False	False	False	False							False
 TCGA-LIHC	BRD-A32214171	direct	0	0	0	False	False	False	False	False							False
-TCGA-LIHC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-LIHC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-LIHC	BRD-K21906513	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-LIHC	BRD-K53308430	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-LIHC	BRD-K26664453	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -40243,7 +40243,7 @@ TCGA-LIHC	BRD-A45889380	direct	1	0	0	False	False	False	False	False	10.0						Fal
 TCGA-LIHC	BRD-K77480336	direct	0	0	0	False	False	False	False	False							False
 TCGA-LIHC	BRD-K92301463	borrowed	0	0	0	False	False	False	True	False							False
 TCGA-LIHC	BRD-K74717603	borrowed	6	0	0	False	False	False	False	False	10.0	Etravirine	1.30717452732661	openfda_label	7.650087873462214	False	False
-TCGA-LIHC	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-LIHC	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-LIHC	BRD-K83691318	direct	0	0	0	False	False	False	False	False							False
 TCGA-LIHC	BRD-K15616905	borrowed	5	0	0	False	False	False	True	False	10.0						False
 TCGA-LIHC	BRD-K06593056	borrowed	5	0	0	False	False	False	True	False	20.0						True
@@ -41898,7 +41898,7 @@ TCGA-LUAD	BRD-K71035033	direct	1	0	0	False	False	False	False	False	10.0						Fal
 TCGA-LUAD	BRD-A03216249	direct	1	1	0	False	False	False	False	False	0.00949668	Mepivacaine					False
 TCGA-LUAD	BRD-A25337146	direct	0	0	0	False	False	False	False	False							False
 TCGA-LUAD	BRD-K23478508	direct	1	0	0	False	False	False	False	True	0.1	Digoxin					False
-TCGA-LUAD	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-LUAD	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-LUAD	BRD-K64634304	direct	1	1	1	True	False	False	False	False	3.0	Tretinoin	0.4593263213952869	openfda_label	6.531304347826088	False	False
 TCGA-LUAD	BRD-K92981876	direct	0	0	0	False	False	False	False	False							False
 TCGA-LUAD	BRD-A69815203	direct	2	0	0	False	False	False	False	False	10.0	Cyclosporine	1.498382711224566	openfda_label	6.673862375138736	False	False
@@ -42408,7 +42408,7 @@ TCGA-LUAD	BRD-K61829047	direct	0	0	0	False	False	False	False	False							False
 TCGA-LUAD	BRD-A51666293	direct	0	0	0	False	False	False	False	False							False
 TCGA-LUAD	BRD-K28806945	direct	0	0	0	False	False	False	False	False							False
 TCGA-LUAD	BRD-K54095730	direct	1	0	0	False	False	False	False	False	10.0						False
-TCGA-LUAD	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-LUAD	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-LUAD	BRD-K44408410	borrowed	3	0	0	False	False	False	True	False	2.30769						False
 TCGA-LUAD	BRD-K61195623	borrowed	9	1	0	False	False	False	False	False	0.00949668						False
 TCGA-LUAD	BRD-A05821830	borrowed	5	4	0	False	False	False	False	False	0.0854701	Docetaxel	3.0561091237668494	fda_review	0.0279669660141757	False	False
@@ -43668,7 +43668,7 @@ TCGA-LUSC	BRD-K95435023	direct	1	0	0	False	False	False	False	False	10.0						Fal
 TCGA-LUSC	BRD-U73238814	direct	0	0	0	False	False	False	False	False							False
 TCGA-LUSC	BRD-K08589866	borrowed	3	0	0	False	False	False	False	False	3.33333						False
 TCGA-LUSC	BRD-K11413513	direct	2	0	0	False	False	False	False	False	10.0						False
-TCGA-LUSC	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-LUSC	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-LUSC	BRD-K92093830	direct	2	0	0	False	False	False	False	False	0.0411523	Doxorubicin	15.344139237944548	openfda_label	0.0026819555898081	False	False
 TCGA-LUSC	BRD-K98404142	direct	1	1	0	False	False	False	False	False	0.045679						False
 TCGA-LUSC	BRD-K84447616	direct	1	0	0	False	False	False	False	False	10.0099						False
@@ -44363,7 +44363,7 @@ TCGA-LUSC	BRD-K19724398	direct	2	0	0	False	False	False	False	False	10.0						Fal
 TCGA-LUSC	BRD-K91410384	direct	1	0	0	False	False	False	False	False	20.0						True
 TCGA-LUSC	BRD-A02333338	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-LUSC	BRD-K70464547	borrowed	5	1	0	False	False	False	False	False	0.769231	Sertraline	0.4636886102403345	openfda_label	1.658938742535211	False	False
-TCGA-LUSC	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-LUSC	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-LUSC	BRD-K10870738	direct	1	0	0	False	False	False	False	False	10.0						True
 TCGA-LUSC	BRD-A60245366	direct	1	0	0	False	False	False	False	False	1.11						False
 TCGA-LUSC	BRD-A70858459	borrowed	4	0	0	False	False	False	False	False	10.0	Estramustine					False
@@ -45407,7 +45407,7 @@ TCGA-OV	BRD-K45205755	borrowed	1	0	0	False	False	False	False	False	10.0						Fal
 TCGA-OV	BRD-K69406317	borrowed	5	0	0	False	False	False	False	False	10.0						True
 TCGA-OV	BRD-K45962729	borrowed	4	0	0	False	False	False	False	False	1.11						False
 TCGA-OV	BRD-K59058766	borrowed	5	5	5	True	False	False	False	False	0.0854701						False
-TCGA-OV	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-OV	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-OV	BRD-K89224880	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TCGA-OV	BRD-K19085898	borrowed	4	0	0	False	False	False	False	False	10.0						True
 TCGA-OV	BRD-K01121114	borrowed	3	0	0	False	False	False	False	False	3.33333						False
@@ -45906,7 +45906,7 @@ TCGA-OV	BRD-K60623809	borrowed	8	1	1	True	False	False	False	False	1.11111						F
 TCGA-OV	BRD-K78867378	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-OV	BRD-K02389548	borrowed	7	1	0	False	False	False	False	False	3.33333						False
 TCGA-OV	BRD-K84683831	borrowed	3	0	0	False	False	False	False	False	10.0						False
-TCGA-OV	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-OV	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-OV	BRD-K08177763	borrowed	5	4	2	True	False	False	False	False	0.00976562	Temsirolimus					False
 TCGA-OV	BRD-A13021932	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-OV	BRD-K45399554	borrowed	5	0	0	False	False	False	False	False	0.123457						False
@@ -46980,7 +46980,7 @@ TCGA-PAAD	BRD-U61997977	borrowed	3	0	0	False	False	False	False	False	10.0						F
 TCGA-PAAD	BRD-U68942961	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-PAAD	BRD-K35716340	borrowed	2	0	0	False	False	False	False	False	12.0						False
 TCGA-PAAD	BRD-K53734668	borrowed	8	2	0	False	False	False	False	False	2.5						False
-TCGA-PAAD	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-PAAD	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-PAAD	BRD-K97399794	borrowed	4	0	0	False	True	True	False	False	0.25641						False
 TCGA-PAAD	BRD-K53932786	borrowed	5	0	0	False	False	False	False	False	10.0						False
 TCGA-PAAD	BRD-K03063480	borrowed	6	2	2	True	False	False	False	False	0.04						False
@@ -47507,7 +47507,7 @@ TCGA-PAAD	BRD-K23165181	borrowed	3	0	0	False	False	False	False	False	10.0						F
 TCGA-PAAD	BRD-K50199947	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-PAAD	BRD-A36630025	borrowed	16	1	0	False	False	False	False	False	0.13704						False
 TCGA-PAAD	BRD-K17849083	borrowed	3	2	0	False	False	False	True	False	0.769231						False
-TCGA-PAAD	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-PAAD	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-PAAD	BRD-K83643280	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-PAAD	BRD-K99481965	borrowed	5	0	0	False	False	False	False	False	4.88						False
 TCGA-PAAD	BRD-A60414806	borrowed	3	0	0	False	False	False	False	False	10.0	Vincristine	1.478841654848055	fda_label	6.762049180327869	False	False
@@ -49188,7 +49188,7 @@ TCGA-PRAD	BRD-K65983740	direct	0	0	0	False	False	False	False	False							False
 TCGA-PRAD	BRD-K45205755	borrowed	1	0	0	False	True	True	False	False	10.0						False
 TCGA-PRAD	BRD-K95352812	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-PRAD	BRD-K74741811	direct	0	0	0	False	False	False	False	False		Norgestrel					False
-TCGA-PRAD	BRD-A70155556	direct	2	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-PRAD	BRD-A70155556	direct	2	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-PRAD	BRD-K95606637	borrowed	1	0	0	False	True	True	False	False	10.0						False
 TCGA-PRAD	BRD-A64553394	direct	1	0	0	False	False	False	False	False	10.7164						False
 TCGA-PRAD	BRD-K72238567	direct	1	0	0	False	False	False	False	False	10.0	Fludarabine					False
@@ -49801,7 +49801,7 @@ TCGA-PRAD	BRD-K65182930	direct	1	0	0	False	False	False	False	False	0.04						Fal
 TCGA-PRAD	BRD-K78062244	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-PRAD	BRD-K10467831	direct	0	0	0	False	False	False	False	False							False
 TCGA-PRAD	BRD-K36354764	direct	1	0	0	False	False	False	False	False	10.0						False
-TCGA-PRAD	BRD-K17113870	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-PRAD	BRD-K17113870	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-PRAD	BRD-K73037408	direct	1	0	0	False	False	False	False	False	1.11						True
 TCGA-PRAD	BRD-K00889002	direct	1	0	0	False	False	False	False	False	10.0497						False
 TCGA-PRAD	BRD-A45333398	direct	2	0	0	False	False	False	False	False	10.0						False
@@ -50440,7 +50440,7 @@ TCGA-PRAD	BRD-K45818044	direct	1	0	0	False	False	False	False	False	10.0						Fal
 TCGA-PRAD	BRD-K33272502	direct	2	0	0	False	False	False	False	False	40.0						False
 TCGA-PRAD	BRD-K03651937	direct	0	0	0	False	False	False	False	False							False
 TCGA-PRAD	BRD-K97614198	direct	0	0	0	False	False	False	False	False							True
-TCGA-PRAD	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-PRAD	BRD-K09416995	direct	1	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-PRAD	BRD-K83972459	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-PRAD	BRD-A94624445	direct	1	0	0	False	False	False	False	False	10.0						True
 TCGA-PRAD	BRD-K12994359	direct	1	0	0	False	False	False	False	False	177.6	Valdecoxib	0.512453478385342	fda_label	346.56804469273743	True	False
@@ -50937,7 +50937,7 @@ TCGA-READ	BRD-K64634304	borrowed	1	1	1	True	True	True	False	False	3.0	Tretinoin	
 TCGA-READ	BRD-A50033377	direct	1	0	0	False	False	False	False	False	10.0	Rivaroxaban					False
 TCGA-READ	BRD-A54927599	direct	0	0	0	False	False	False	False	False							False
 TCGA-READ	BRD-K20197338	direct	1	0	0	False	False	False	False	False	20.0						True
-TCGA-READ	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-READ	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-READ	BRD-K80169513	direct	1	0	0	False	False	False	False	False	9.9532						True
 TCGA-READ	BRD-K59385073	direct	1	0	0	False	False	False	False	False	9.96382						False
 TCGA-READ	BRD-K56411643	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -51989,7 +51989,7 @@ TCGA-READ	BRD-A25088322	borrowed	1	0	0	False	True	True	False	False	10.0						Fal
 TCGA-READ	BRD-K44432556	direct	1	0	0	False	False	False	False	False	3.33333						False
 TCGA-READ	BRD-K89451433	borrowed	2	0	0	False	False	False	True	False	10.0						False
 TCGA-READ	BRD-K80348542	direct	1	0	0	False	False	False	False	False	10.0						False
-TCGA-READ	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0294153998269682	fda_label			False
+TCGA-READ	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0281616811813706	fda_label			False
 TCGA-READ	BRD-K74797618	direct	0	0	0	False	False	False	False	False							False
 TCGA-READ	BRD-K74305673	direct	3	0	0	False	False	False	False	False	3.33333						False
 TCGA-READ	BRD-K67860401	borrowed	5	0	0	False	False	False	True	False	9.99						False
@@ -52610,7 +52610,7 @@ TCGA-SKCM	BRD-A75517195	direct	1	0	0	False	False	False	False	False	40.0						Fal
 TCGA-SKCM	BRD-K27305650	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-SKCM	BRD-K76381171	direct	1	0	0	False	False	False	False	False	20.0						False
 TCGA-SKCM	BRD-K93788137	borrowed	5	0	0	False	True	True	False	False	10.0						False
-TCGA-SKCM	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-SKCM	BRD-A70155556	direct	1	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-SKCM	BRD-K50387473	direct	0	0	0	False	False	False	False	False							False
 TCGA-SKCM	BRD-K86027709	direct	0	0	0	False	False	False	False	False							False
 TCGA-SKCM	BRD-K83694683	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -52640,7 +52640,7 @@ TCGA-SKCM	BRD-K19826688	borrowed	4	1	1	True	True	True	False	False	0.0411523					
 TCGA-SKCM	BRD-K65955264	direct	0	0	0	False	False	False	False	False							False
 TCGA-SKCM	BRD-A68930007	direct	1	0	0	False	False	False	False	False	10.0						False
 TCGA-SKCM	BRD-K64451768	borrowed	2	0	0	False	True	True	False	False	0.0411523						False
-TCGA-SKCM	BRD-K09416995	borrowed	3	0	0	False	False	True	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-SKCM	BRD-K09416995	borrowed	3	0	0	False	False	True	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-SKCM	BRD-K19295594	direct	2	0	0	False	False	False	False	False	10.0						False
 TCGA-SKCM	BRD-K68164687	direct	1	0	0	False	False	False	False	False	0.00949668						False
 TCGA-SKCM	BRD-K19499941	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -54714,7 +54714,7 @@ TCGA-STAD	BRD-K19352500	borrowed	2	0	0	False	False	False	False	False	10.0	Prochl
 TCGA-STAD	BRD-K24576554	borrowed	9	1	0	False	False	False	False	False	0.04						False
 TCGA-STAD	BRD-K78930611	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TCGA-STAD	BRD-A18725729	borrowed	4	0	0	False	False	False	False	False	10.0						False
-TCGA-STAD	BRD-A70155556	borrowed	5	0	0	False	False	False	True	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-STAD	BRD-A70155556	borrowed	5	0	0	False	False	False	True	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-STAD	BRD-K23282736	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-STAD	BRD-K58435339	borrowed	6	0	0	False	False	False	False	False	0.123457						False
 TCGA-STAD	BRD-A72180425	borrowed	5	0	0	False	False	False	False	False	10.0						False
@@ -54826,7 +54826,7 @@ TCGA-STAD	BRD-A77216878	direct	0	0	0	False	False	False	False	False							False
 TCGA-STAD	BRD-K11533227	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-STAD	BRD-K49049886	borrowed	3	0	0	False	False	False	True	False	1.0						False
 TCGA-STAD	BRD-K56334280	borrowed	10	1	0	False	False	False	False	False	0.25641						False
-TCGA-STAD	BRD-K09416995	borrowed	3	0	0	False	False	False	True	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-STAD	BRD-K09416995	borrowed	3	0	0	False	False	False	True	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-STAD	BRD-K49350383	borrowed	8	2	0	False	False	False	False	False	0.769231	Thioguanine					False
 TCGA-STAD	BRD-A54927599	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-STAD	BRD-K11911061	borrowed	4	0	0	False	False	False	False	False	10.0						False
@@ -55647,7 +55647,7 @@ TCGA-THCA	BRD-K02246294	borrowed	3	1	0	False	False	False	False	False	10.0						F
 TCGA-THCA	BRD-K80786583	borrowed	6	3	2	True	False	False	False	False	5.0						False
 TCGA-THCA	BRD-K60623809	borrowed	8	1	1	True	False	False	False	False	1.11111						False
 TCGA-THCA	BRD-K61397605	borrowed	11	7	2	False	False	False	False	False	0.00949668	Romidepsin	0.6972314179504725	fda_label	0.0136205566122015	False	False
-TCGA-THCA	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-THCA	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-THCA	BRD-K03736784	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-THCA	BRD-K63150726	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TCGA-THCA	BRD-K17203476	borrowed	3	0	0	False	False	False	False	False	0.37037						False
@@ -56204,7 +56204,7 @@ TCGA-THCA	BRD-K62014504	borrowed	4	0	0	False	False	False	False	False	10.0						F
 TCGA-THCA	BRD-K72703948	borrowed	7	0	0	False	False	False	False	False	1.11						False
 TCGA-THCA	BRD-K85751432	borrowed	9	2	0	False	False	False	False	False	0.123457						False
 TCGA-THCA	BRD-K23228615	borrowed	6	0	0	False	False	False	False	False	0.123457						False
-TCGA-THCA	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-THCA	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-THCA	BRD-K61662457	borrowed	2	0	0	False	False	False	False	False	20.0						False
 TCGA-THCA	BRD-K78567475	borrowed	9	2	0	False	False	False	False	False	0.00949668						False
 TCGA-THCA	BRD-K29968218	borrowed	8	5	1	False	False	False	False	False	0.0854701	Tirbanibulin					False
@@ -57233,7 +57233,7 @@ TCGA-UCS	BRD-A71459254	borrowed	4	0	0	False	False	False	False	False	10.0						Fa
 TCGA-UCS	BRD-K15600710	borrowed	5	0	0	False	False	False	True	False	1.0						False
 TCGA-UCS	BRD-K91145395	borrowed	7	0	0	False	False	False	False	False	0.123457						False
 TCGA-UCS	BRD-K00337317	borrowed	8	0	0	False	False	False	False	False	3.33333						False
-TCGA-UCS	BRD-K09416995	borrowed	3	0	0	False	False	False	True	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TCGA-UCS	BRD-K09416995	borrowed	3	0	0	False	False	False	True	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TCGA-UCS	BRD-K39256324	borrowed	2	0	0	False	False	False	True	False	3.33333						False
 TCGA-UCS	BRD-K35960502	direct	0	0	0	False	False	False	False	False		Niclosamide					False
 TCGA-UCS	BRD-K49327517	borrowed	3	1	0	False	False	False	False	False	0.08						False
@@ -57468,7 +57468,7 @@ TCGA-UCS	BRD-A60414806	borrowed	3	0	0	False	False	False	False	False	10.0	Vincris
 TCGA-UCS	BRD-A68065211	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TCGA-UCS	BRD-U29336476	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TCGA-UCS	BRD-K20995441	borrowed	1	0	0	False	False	False	False	False	10.0						False
-TCGA-UCS	BRD-A70155556	borrowed	5	0	0	False	False	False	True	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TCGA-UCS	BRD-A70155556	borrowed	5	0	0	False	False	False	True	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TCGA-UCS	BRD-K64606589	borrowed	7	1	0	False	False	False	False	False	0.04						False
 TCGA-UCS	BRD-K37865504	borrowed	10	0	0	False	False	False	True	False	3.33333						False
 TCGA-UCS	BRD-K49094915	borrowed	1	0	0	False	False	False	False	False	10.0						False
@@ -58437,7 +58437,7 @@ TGCT-NSGCT	BRD-K73293050	borrowed	0	0	0	False	False	False	False	False							Fals
 TGCT-NSGCT	BRD-A22684332	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TGCT-NSGCT	BRD-K70914287	borrowed	3	1	1	True	False	False	False	False	0.0411523						False
 TGCT-NSGCT	BRD-K56195681	borrowed	0	0	0	False	False	False	False	False							True
-TGCT-NSGCT	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TGCT-NSGCT	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TGCT-NSGCT	BRD-K49456274	borrowed	3	0	0	False	False	False	False	False	0.1						False
 TGCT-NSGCT	BRD-K50199947	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TGCT-NSGCT	BRD-U60236422	borrowed	6	0	0	False	False	False	False	False	0.37						False
@@ -58596,7 +58596,7 @@ TGCT-NSGCT	BRD-K19061412	borrowed	3	3	0	False	False	False	False	False	0.25641			
 TGCT-NSGCT	BRD-K28822270	borrowed	11	3	1	False	False	False	False	False	0.67						False
 TGCT-NSGCT	BRD-A68061604	borrowed	1	0	0	False	False	False	False	False	10.0						False
 TGCT-NSGCT	BRD-K19826688	borrowed	4	1	1	True	False	False	False	False	0.0411523						False
-TGCT-NSGCT	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TGCT-NSGCT	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TGCT-NSGCT	BRD-K56957086	borrowed	14	2	0	False	False	False	False	False	0.02849						False
 TGCT-NSGCT	BRD-K03243820	borrowed	3	0	0	False	False	False	False	False	1.0	Trifluridine					False
 TGCT-NSGCT	BRD-K76694128	borrowed	3	0	0	False	False	False	False	False	1.11						False
@@ -60302,7 +60302,7 @@ TGCT-SEM	BRD-K89626439	borrowed	0	0	0	False	False	False	False	False		Sirolimus	0
 TGCT-SEM	BRD-K65955264	borrowed	4	0	0	False	False	False	False	False	10.0						False
 TGCT-SEM	BRD-K70301465	borrowed	8	3	1	False	False	False	False	False	0.37037	Ibrutinib	0.1491453088465642	fda_label	2.483282933028919	False	False
 TGCT-SEM	BRD-K12184916	borrowed	25	4	0	False	False	False	False	False	0.013						False
-TGCT-SEM	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TGCT-SEM	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TGCT-SEM	BRD-K19826688	borrowed	4	1	1	True	False	False	False	False	0.0411523						False
 TGCT-SEM	BRD-K29423519	borrowed	3	3	3	True	False	False	False	False	9.37945						True
 TGCT-SEM	BRD-K48488978	borrowed	5	0	0	False	False	False	False	False	10.0						True
@@ -60523,7 +60523,7 @@ TGCT-SEM	BRD-K87124298	borrowed	1	0	0	False	False	False	False	False	2.0						Fal
 TGCT-SEM	BRD-K16410418	borrowed	7	0	0	False	False	False	False	False	2.5028						False
 TGCT-SEM	BRD-K03109492	borrowed	6	0	0	False	False	False	False	False	2.5						False
 TGCT-SEM	BRD-M64432851	borrowed	0	0	0	False	False	False	False	False		Sunitinib					False
-TGCT-SEM	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TGCT-SEM	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TGCT-SEM	BRD-K36740062	borrowed	10	1	0	False	False	False	False	False	2.30769						False
 TGCT-SEM	BRD-K00152668	borrowed	6	0	0	False	False	False	False	False	0.123457						False
 TGCT-SEM	BRD-K64106162	borrowed	5	5	5	True	False	False	False	False	3.33						False
@@ -61510,7 +61510,7 @@ UCEC-EEC	BRD-A15079084	direct	1	0	0	False	False	False	False	False	10.0						Fals
 UCEC-EEC	BRD-K45962729	borrowed	4	0	0	False	False	False	False	False	1.11						False
 UCEC-EEC	BRD-A19500257	borrowed	16	3	0	False	False	False	False	False	0.013						False
 UCEC-EEC	BRD-K95138506	borrowed	1	0	0	False	False	False	False	False	10.0						False
-UCEC-EEC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+UCEC-EEC	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 UCEC-EEC	BRD-K09854848	borrowed	4	0	0	False	False	False	False	False	10.0						False
 UCEC-EEC	BRD-K43471985	borrowed	9	1	0	False	False	False	False	False	0.0411523						False
 UCEC-EEC	BRD-A50737080	borrowed	6	0	0	False	False	False	False	False	10.0						False
@@ -61876,7 +61876,7 @@ UCEC-EEC	BRD-K93788137	borrowed	5	0	0	False	False	False	False	False	10.0						Fa
 UCEC-EEC	BRD-K11911061	borrowed	4	0	0	False	False	False	False	False	10.0						False
 UCEC-EEC	BRD-K49810818	borrowed	2	1	0	False	False	False	True	False	0.08	Sorafenib					False
 UCEC-EEC	BRD-K89824424	borrowed	3	0	0	False	False	False	False	False	20.0						False
-UCEC-EEC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+UCEC-EEC	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 UCEC-EEC	BRD-K21672174	borrowed	8	0	0	False	False	False	False	False	1.11						False
 UCEC-EEC	BRD-K19499941	borrowed	5	0	0	False	False	False	False	False	10.0						False
 UCEC-EEC	BRD-K23190681	borrowed	4	0	0	False	False	False	False	False	0.0411523						False
@@ -62871,7 +62871,7 @@ UCEC-SER	BRD-K78659596	borrowed	16	4	1	False	False	False	True	False	0.0854701	Ix
 UCEC-SER	BRD-A11512624	borrowed	1	0	0	False	False	False	False	False	10.0						False
 UCEC-SER	BRD-K86961442	borrowed	5	0	0	False	False	False	False	False	20.0						False
 UCEC-SER	BRD-K32821942	borrowed	4	1	1	True	False	False	True	False	0.1	Azathioprine					False
-UCEC-SER	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+UCEC-SER	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 UCEC-SER	BRD-K64857848	borrowed	8	0	0	False	False	False	False	False	1.11						False
 UCEC-SER	BRD-K61255301	borrowed	6	0	0	False	False	False	False	False	10.0						False
 UCEC-SER	BRD-K94012289	borrowed	3	0	0	False	False	False	False	False	1.11						False
@@ -63138,7 +63138,7 @@ UCEC-SER	BRD-K84106030	borrowed	0	0	0	False	False	False	False	False							False
 UCEC-SER	BRD-A08545410	borrowed	4	1	1	True	False	False	True	False	2.30769	Doxycycline	8.122581225812258	openfda_label	0.2841079622160665	False	False
 UCEC-SER	BRD-K61717269	borrowed	4	0	0	False	False	False	False	False	0.37						False
 UCEC-SER	BRD-K04887706	borrowed	10	2	2	True	False	False	False	False	0.04						False
-UCEC-SER	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+UCEC-SER	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 UCEC-SER	BRD-K63308290	borrowed	3	0	0	False	False	False	False	False	10.0						False
 UCEC-SER	BRD-K69840642	direct	0	0	0	False	False	False	False	False							False
 UCEC-SER	BRD-K37561857	borrowed	4	1	0	False	False	False	True	False	0.37037						False
@@ -64200,7 +64200,7 @@ BLCA-basal-squamous-like	BRD-K19724398	borrowed	7	0	0	False	False	False	False	Fa
 BLCA-basal-squamous-like	BRD-K64863641	borrowed	4	0	0	False	False	False	False	False	10.2504						False
 BLCA-basal-squamous-like	BRD-K67392871	borrowed	4	0	0	False	False	False	False	False	10.0						False
 BLCA-basal-squamous-like	BRD-K49111930	borrowed	3	0	0	False	False	False	False	False	5.0						False
-BLCA-basal-squamous-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+BLCA-basal-squamous-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 BLCA-basal-squamous-like	BRD-K59369769	borrowed	15	1	1	True	False	False	True	False	0.0045						False
 BLCA-basal-squamous-like	BRD-K54263226	borrowed	6	0	0	False	False	False	False	False	10.3772						False
 BLCA-basal-squamous-like	BRD-K80700417	borrowed	8	0	0	False	False	False	True	False	0.04						False
@@ -64274,7 +64274,7 @@ BLCA-basal-squamous-like	BRD-K65404805	borrowed	1	0	0	False	False	False	False	Fa
 BLCA-basal-squamous-like	BRD-K74117820	borrowed	4	0	0	False	False	False	True	False	10.0	Nelfinavir	7.044734061289187	openfda_label	1.4194999999999998	False	False
 BLCA-basal-squamous-like	BRD-K33218708	borrowed	4	0	0	False	False	False	False	False	20.0						True
 BLCA-basal-squamous-like	BRD-K73293050	borrowed	0	0	0	False	False	False	False	False							False
-BLCA-basal-squamous-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+BLCA-basal-squamous-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 BLCA-basal-squamous-like	BRD-K89732114	borrowed	6	1	0	False	False	False	True	False	2.0	Trifluoperazine					False
 BLCA-basal-squamous-like	BRD-K52836380	borrowed	0	0	0	False	False	False	False	False							False
 BLCA-basal-squamous-like	BRD-K48950795	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -66078,7 +66078,7 @@ BLCA-luminal-like	BRD-K59333713	borrowed	6	1	0	False	False	False	False	False	5.0
 BLCA-luminal-like	BRD-A61304759	borrowed	29	2	0	False	False	False	False	False	0.013						False
 BLCA-luminal-like	BRD-A80213327	borrowed	4	0	0	False	False	False	False	False	160.0						False
 BLCA-luminal-like	BRD-A29901043	borrowed	3	0	0	False	False	False	False	False	10.0						False
-BLCA-luminal-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+BLCA-luminal-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 BLCA-luminal-like	BRD-K51918615	borrowed	1	0	0	False	False	False	False	False	10.0						False
 BLCA-luminal-like	BRD-K54263226	borrowed	6	0	0	False	False	False	False	False	10.3772						False
 BLCA-luminal-like	BRD-K76964878	borrowed	2	1	1	True	False	False	True	False	0.0411523						False
@@ -66099,7 +66099,7 @@ BLCA-luminal-like	BRD-K19624190	borrowed	2	0	0	False	False	False	False	False	10.
 BLCA-luminal-like	BRD-K20197338	borrowed	6	0	0	False	False	False	False	False	10.0						True
 BLCA-luminal-like	BRD-K31912990	borrowed	5	0	0	False	False	False	False	False	10.0						False
 BLCA-luminal-like	BRD-K56301217	borrowed	7	1	0	False	False	False	True	False	1.0						False
-BLCA-luminal-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+BLCA-luminal-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 BLCA-luminal-like	BRD-K28120222	borrowed	2	0	0	False	False	False	False	False	10.0						False
 BLCA-luminal-like	BRD-K77830450	borrowed	1	0	0	False	False	False	False	False	10.0						False
 BLCA-luminal-like	BRD-K04853698	borrowed	11	3	2	True	False	False	True	False	1.11111						False
@@ -67235,7 +67235,7 @@ COAD-CIN-like	BRD-K89997465	direct	0	0	0	False	False	False	False	False		Chlorpro
 COAD-CIN-like	BRD-K97194822	direct	1	0	0	False	False	False	False	False	10.0244						False
 COAD-CIN-like	BRD-K05402890	direct	1	0	0	False	False	False	False	False	0.123457						False
 COAD-CIN-like	BRD-K74733595	borrowed	2	0	0	False	False	False	True	False	10.0						False
-COAD-CIN-like	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+COAD-CIN-like	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 COAD-CIN-like	BRD-K43568579	borrowed	3	0	0	False	False	False	False	False	2.0						False
 COAD-CIN-like	BRD-K62459624	direct	1	0	0	False	False	False	False	False	10.0						False
 COAD-CIN-like	BRD-K71480163	direct	1	0	0	False	False	False	False	False	3.33333						False
@@ -68225,7 +68225,7 @@ COAD-CIN-like	BRD-K71799778	direct	1	0	0	False	False	False	False	False	80.0					
 COAD-CIN-like	BRD-K89464729	borrowed	6	0	0	False	True	True	False	False	0.37037						False
 COAD-CIN-like	BRD-K44408410	borrowed	3	0	0	False	False	False	True	False	2.30769						False
 COAD-CIN-like	BRD-K96740880	direct	0	0	0	False	False	False	False	False							False
-COAD-CIN-like	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0294153998269682	fda_label			False
+COAD-CIN-like	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0281616811813706	fda_label			False
 COAD-CIN-like	BRD-A68061604	direct	0	0	0	False	False	False	False	False							False
 COAD-CIN-like	BRD-K39944607	borrowed	1	0	0	False	False	False	True	False	10.0						False
 COAD-CIN-like	BRD-A25687296	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -69441,7 +69441,7 @@ COAD-MSI-like	BRD-K98733875	direct	1	1	1	True	False	False	False	False	0.123457		
 COAD-MSI-like	BRD-K78599730	direct	2	0	0	False	False	False	False	False	9.08						False
 COAD-MSI-like	BRD-A02333338	borrowed	3	0	0	False	False	False	True	False	10.0						False
 COAD-MSI-like	BRD-A43331270	direct	1	0	0	False	False	False	False	False	10.0						True
-COAD-MSI-like	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+COAD-MSI-like	BRD-K09416995	borrowed	3	0	0	False	True	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 COAD-MSI-like	BRD-K02950022	direct	0	0	0	False	False	False	False	False							False
 COAD-MSI-like	BRD-A43126523	borrowed	2	0	0	False	True	True	False	False	10.0						False
 COAD-MSI-like	BRD-K52163391	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -69561,7 +69561,7 @@ COAD-MSI-like	BRD-K62221994	direct	0	0	0	False	False	False	False	False							Fal
 COAD-MSI-like	BRD-K73610817	borrowed	3	0	0	False	False	False	True	False	10.0						False
 COAD-MSI-like	BRD-K05653692	direct	1	0	0	False	False	False	False	False	64.0						False
 COAD-MSI-like	BRD-A13084692	borrowed	3	1	1	True	True	True	False	False	0.4	Troglitazone					False
-COAD-MSI-like	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0294153998269682	fda_label			False
+COAD-MSI-like	BRD-A70155556	direct	0	0	0	False	False	False	False	False		Lovastatin	0.0281616811813706	fda_label			False
 COAD-MSI-like	BRD-K92213669	borrowed	5	0	0	False	False	False	True	False	10.0	Lomitapide	0.0082741124068441	fda_label	1208.588850174216	True	False
 COAD-MSI-like	BRD-K56429665	borrowed	2	0	0	False	True	True	False	False	10.0	Calcipotriene					False
 COAD-MSI-like	BRD-K11663430	direct	1	0	0	False	False	False	False	False	10.0						False
@@ -70346,7 +70346,7 @@ HNSC-atypical-classical-like	BRD-K07881437	borrowed	6	1	0	False	False	False	Fals
 HNSC-atypical-classical-like	BRD-K87125912	borrowed	7	0	0	False	False	False	False	False	5.0						False
 HNSC-atypical-classical-like	BRD-K28392481	borrowed	5	0	0	False	False	False	False	False	10.0						False
 HNSC-atypical-classical-like	BRD-K35424586	borrowed	3	0	0	False	False	False	False	False	10.0						False
-HNSC-atypical-classical-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+HNSC-atypical-classical-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 HNSC-atypical-classical-like	BRD-K74733595	borrowed	2	0	0	False	False	False	False	False	10.0						False
 HNSC-atypical-classical-like	BRD-K53308430	borrowed	3	0	0	False	False	False	False	False	10.0						False
 HNSC-atypical-classical-like	BRD-K82928847	borrowed	12	1	1	True	False	False	False	False	2.30769						False
@@ -70435,7 +70435,7 @@ HNSC-atypical-classical-like	BRD-K11533227	borrowed	3	0	0	False	False	False	Fals
 HNSC-atypical-classical-like	BRD-K62818989	borrowed	1	0	0	False	False	False	False	False	9.6446						False
 HNSC-atypical-classical-like	BRD-K85015012	borrowed	3	0	0	False	False	False	False	False	10.0						False
 HNSC-atypical-classical-like	BRD-K86899078	borrowed	0	0	0	False	False	False	False	False							False
-HNSC-atypical-classical-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+HNSC-atypical-classical-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 HNSC-atypical-classical-like	BRD-K79239947	borrowed	3	0	0	False	False	False	False	False	10.0						False
 HNSC-atypical-classical-like	BRD-A13084692	borrowed	3	1	1	True	False	False	False	False	0.4	Troglitazone					False
 HNSC-atypical-classical-like	BRD-K56196992	borrowed	1	0	0	False	False	False	False	False	10.0						False
@@ -72145,7 +72145,7 @@ HNSC-basal-mesenchymal-like	BRD-K86930074	borrowed	6	0	0	False	False	False	False
 HNSC-basal-mesenchymal-like	BRD-K15592317	borrowed	7	0	0	False	False	False	False	False	0.4						False
 HNSC-basal-mesenchymal-like	BRD-K13662825	borrowed	12	4	1	False	False	False	False	False	0.00976563						False
 HNSC-basal-mesenchymal-like	BRD-K51276371	borrowed	1	0	0	False	False	False	False	False	10.0						False
-HNSC-basal-mesenchymal-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+HNSC-basal-mesenchymal-like	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 HNSC-basal-mesenchymal-like	BRD-A30051119	borrowed	3	3	2	True	False	False	False	False	0.00949668	Amikacin	64.88960229504278	openfda_label	0.0001463513361789	False	False
 HNSC-basal-mesenchymal-like	BRD-K76841105	borrowed	3	2	1	True	False	False	False	False	0.0854701	Tazarotene					False
 HNSC-basal-mesenchymal-like	BRD-K83643280	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -72480,7 +72480,7 @@ HNSC-basal-mesenchymal-like	BRD-K59333713	borrowed	6	1	0	False	False	False	False
 HNSC-basal-mesenchymal-like	BRD-K62310379	borrowed	4	1	0	False	False	False	False	False	0.02849	Fluticasone					False
 HNSC-basal-mesenchymal-like	BRD-K99252563	borrowed	7	2	0	False	False	False	False	False	0.12						False
 HNSC-basal-mesenchymal-like	BRD-K02113016	borrowed	4	2	1	True	False	False	False	False	0.04	Olaparib	17.492577162980183	openfda_label	0.0022866842105263	False	False
-HNSC-basal-mesenchymal-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+HNSC-basal-mesenchymal-like	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 HNSC-basal-mesenchymal-like	BRD-K33272502	borrowed	9	0	0	False	False	False	False	False	40.0						False
 HNSC-basal-mesenchymal-like	BRD-K17516382	borrowed	7	0	0	False	False	False	False	False	1.11111						False
 HNSC-basal-mesenchymal-like	BRD-K18163752	borrowed	3	0	0	False	False	False	False	False	10.0						False
@@ -73781,9 +73781,9 @@ LGG-noncodel-LGr2	BRD-K62196610	borrowed	7	3	0	False	False	False	False	False	0.0
 LGG-noncodel-LGr2	BRD-K83988098	borrowed	1	0	0	False	False	False	False	False	10.0						False
 LGG-noncodel-LGr2	BRD-K17896185	borrowed	2	0	0	False	False	False	False	False	10.0						False
 LGG-noncodel-LGr2	BRD-K34452916	borrowed	2	0	0	False	False	False	False	False	10.0						False
-LGG-noncodel-LGr2	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+LGG-noncodel-LGr2	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 LGG-noncodel-LGr2	BRD-A11512624	borrowed	1	0	0	False	False	False	False	False	10.0						False
-LGG-noncodel-LGr2	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+LGG-noncodel-LGr2	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 LGG-noncodel-LGr2	BRD-K24576554	borrowed	9	1	0	False	False	False	False	False	0.04						False
 LGG-noncodel-LGr2	BRD-K00540336	borrowed	4	0	0	False	False	False	False	False	10.0						False
 LGG-noncodel-LGr2	BRD-K16277767	borrowed	4	0	0	False	False	False	False	False	0.625						False
@@ -75266,7 +75266,7 @@ LGG-noncodel-LGr3	BRD-K99532291	borrowed	3	0	0	False	False	False	False	False	10.
 LGG-noncodel-LGr3	BRD-K31126514	borrowed	3	1	0	False	False	False	False	False	5.0						False
 LGG-noncodel-LGr3	BRD-K73255294	borrowed	4	1	0	False	False	False	False	False	3.33						False
 LGG-noncodel-LGr3	BRD-K17944737	borrowed	3	0	0	False	False	False	False	False	0.769231	Artesunate	8.063886793434435	fda_label	0.0953920881709677	False	False
-LGG-noncodel-LGr3	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+LGG-noncodel-LGr3	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 LGG-noncodel-LGr3	BRD-K75958547	borrowed	8	1	0	False	False	False	False	False	0.00949668	Pitavastatin					False
 LGG-noncodel-LGr3	BRD-K10211010	borrowed	6	0	0	False	False	False	False	False	10.0						False
 LGG-noncodel-LGr3	BRD-K31380618	borrowed	6	0	0	False	False	False	False	False	5.32883						False
@@ -75531,7 +75531,7 @@ LGG-noncodel-LGr3	BRD-K78431006	borrowed	16	0	0	False	False	False	False	False	0.
 LGG-noncodel-LGr3	BRD-U82589721	borrowed	6	0	0	False	False	False	False	False	10.0						False
 LGG-noncodel-LGr3	BRD-K13049116	borrowed	7	0	0	False	False	False	False	False	0.0411523						False
 LGG-noncodel-LGr3	BRD-K77634909	borrowed	3	0	0	False	False	False	False	False	2.5						False
-LGG-noncodel-LGr3	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+LGG-noncodel-LGr3	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 LGG-noncodel-LGr3	BRD-K37865504	borrowed	10	0	0	False	False	False	False	False	3.33333						False
 LGG-noncodel-LGr3	BRD-K83699324	borrowed	8	0	0	False	False	False	False	False	0.02849						False
 LGG-noncodel-LGr3	BRD-K95138506	borrowed	1	0	0	False	False	False	False	False	10.0						False
@@ -76921,7 +76921,7 @@ PHEO-kinase-signaling	BRD-K87737963	borrowed	9	1	0	False	False	False	False	False
 PHEO-kinase-signaling	BRD-K64645183	borrowed	7	0	0	False	False	False	False	False	20.0						False
 PHEO-kinase-signaling	BRD-K72615639	borrowed	2	0	0	False	False	False	False	False	10.0						False
 PHEO-kinase-signaling	BRD-A40431293	borrowed	3	0	0	False	False	False	False	False	10.0						False
-PHEO-kinase-signaling	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+PHEO-kinase-signaling	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 PHEO-kinase-signaling	BRD-K93468883	borrowed	3	0	0	False	False	False	False	False	0.625	Duvelisib	3.5982440569002327	openfda_label	0.1736958333333333	False	False
 PHEO-kinase-signaling	BRD-A85439007	borrowed	3	0	0	False	False	False	False	False	10.0						False
 PHEO-kinase-signaling	BRD-K57064803	borrowed	3	1	0	False	False	False	False	False	3.33						False
@@ -77137,7 +77137,7 @@ PHEO-kinase-signaling	BRD-K52618540	borrowed	6	6	4	True	False	False	False	False	
 PHEO-kinase-signaling	BRD-K68191783	borrowed	1	0	0	False	False	False	False	False	10.0						False
 PHEO-kinase-signaling	BRD-K95655893	borrowed	3	0	0	False	False	False	False	False	10.0						False
 PHEO-kinase-signaling	BRD-K63861289	borrowed	5	4	1	False	False	False	False	False	0.25641						False
-PHEO-kinase-signaling	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+PHEO-kinase-signaling	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 PHEO-kinase-signaling	BRD-K43586850	borrowed	4	1	1	True	False	False	False	False	0.02849						False
 PHEO-kinase-signaling	BRD-K03601870	borrowed	4	4	0	False	False	False	False	False	0.0854701	Ixabepilone	0.4973258866018038	openfda_label	0.1718593427420634	False	False
 PHEO-kinase-signaling	BRD-K36740062	borrowed	10	1	0	False	False	False	False	False	2.30769						False
@@ -78421,7 +78421,7 @@ PHEO-pseudohypoxia-Wnt	BRD-K59705555	borrowed	1	0	0	False	False	False	False	Fals
 PHEO-pseudohypoxia-Wnt	BRD-K49111930	borrowed	3	0	0	False	False	False	False	False	5.0						False
 PHEO-pseudohypoxia-Wnt	BRD-K66175015	borrowed	21	1	0	False	False	False	False	False	0.123457	Afatinib					False
 PHEO-pseudohypoxia-Wnt	BRD-K88560311	borrowed	4	1	1	True	False	False	False	False	1.11	Rucaparib	5.999319664780282	fda_label	0.1850209793814433	False	False
-PHEO-pseudohypoxia-Wnt	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+PHEO-pseudohypoxia-Wnt	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 PHEO-pseudohypoxia-Wnt	BRD-K37312348	borrowed	9	1	1	True	False	False	False	False	1.7						False
 PHEO-pseudohypoxia-Wnt	BRD-K25504083	borrowed	4	0	0	False	False	False	False	False	10.0						False
 PHEO-pseudohypoxia-Wnt	BRD-K97428065	borrowed	3	0	0	False	False	False	False	False	10.0	Netupitant	0.8572416176978914	openfda_label	11.665322580645162	True	False
@@ -78496,7 +78496,7 @@ PHEO-pseudohypoxia-Wnt	BRD-A62336480	borrowed	4	0	0	False	False	False	False	Fals
 PHEO-pseudohypoxia-Wnt	BRD-K95655893	borrowed	3	0	0	False	False	False	False	False	10.0						False
 PHEO-pseudohypoxia-Wnt	BRD-K61717269	borrowed	4	0	0	False	False	False	False	False	0.37						False
 PHEO-pseudohypoxia-Wnt	BRD-K10882151	borrowed	5	0	0	False	False	False	False	False	40.0						False
-PHEO-pseudohypoxia-Wnt	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+PHEO-pseudohypoxia-Wnt	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 PHEO-pseudohypoxia-Wnt	BRD-K11663430	borrowed	6	0	0	False	False	False	False	False	3.33						False
 PHEO-pseudohypoxia-Wnt	BRD-K43471985	borrowed	9	1	0	False	False	False	False	False	0.0411523						False
 PHEO-pseudohypoxia-Wnt	BRD-K40919711	borrowed	2	0	0	False	False	False	False	False	10.0						False
@@ -79496,7 +79496,7 @@ TGCT-SEM-C1	BRD-A67097164	borrowed	5	5	4	True	False	False	False	False	0.769231	I
 TGCT-SEM-C1	BRD-K09186807	borrowed	1	1	1	True	False	False	False	False	0.4						False
 TGCT-SEM-C1	BRD-K47000838	borrowed	4	0	0	False	False	False	False	False	1.39002						False
 TGCT-SEM-C1	BRD-K56104152	borrowed	3	0	0	False	False	False	False	False	2.30769	Oxiconazole					False
-TGCT-SEM-C1	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TGCT-SEM-C1	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TGCT-SEM-C1	BRD-K81795824	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TGCT-SEM-C1	BRD-K47983010	borrowed	8	0	0	False	False	False	False	False	3.33333						False
 TGCT-SEM-C1	BRD-K99113996	borrowed	8	2	0	False	False	False	False	False	0.37037						False
@@ -79744,7 +79744,7 @@ TGCT-SEM-C1	BRD-A67862938	borrowed	2	0	0	False	False	False	False	False	10.0					
 TGCT-SEM-C1	BRD-A97437073	borrowed	3	1	0	False	False	False	False	False	1.11111	Rosiglitazone	1.6730080572963295	fda_label	0.6641390608695652	False	False
 TGCT-SEM-C1	BRD-K74148702	borrowed	13	0	0	False	False	False	False	False	48.0						False
 TGCT-SEM-C1	BRD-A34205397	borrowed	3	0	0	False	False	False	False	False	10.0						False
-TGCT-SEM-C1	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TGCT-SEM-C1	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TGCT-SEM-C1	BRD-K67548518	borrowed	5	0	0	False	False	False	False	False	0.123457						True
 TGCT-SEM-C1	BRD-A18763547	borrowed	5	0	0	False	False	False	False	False	3.3333						False
 TGCT-SEM-C1	BRD-A15079084	borrowed	12	0	0	False	False	False	False	False	0.0015						False
@@ -81053,7 +81053,7 @@ TGCT-SEM-C2	BRD-K12184916	borrowed	25	4	0	False	False	False	False	False	0.013			
 TGCT-SEM-C2	BRD-K10749593	borrowed	7	0	0	False	False	False	False	False	20.0						False
 TGCT-SEM-C2	BRD-K35716340	borrowed	2	0	0	False	False	False	False	False	12.0						False
 TGCT-SEM-C2	BRD-K89626439	borrowed	0	0	0	False	False	False	False	False		Sirolimus	0.0164079677091195	openfda_label			False
-TGCT-SEM-C2	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+TGCT-SEM-C2	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 TGCT-SEM-C2	BRD-K42918627	borrowed	11	5	1	False	False	False	False	False	0.04						False
 TGCT-SEM-C2	BRD-K04218075	borrowed	3	1	0	False	False	False	False	False	1.11	Clomiphene					True
 TGCT-SEM-C2	BRD-K76401790	borrowed	4	0	0	False	False	False	False	False	1.11						False
@@ -81202,7 +81202,7 @@ TGCT-SEM-C2	BRD-K11740178	borrowed	7	2	1	True	False	False	False	False	0.37037			
 TGCT-SEM-C2	BRD-A67862938	borrowed	2	0	0	False	False	False	False	False	10.0						False
 TGCT-SEM-C2	BRD-K36529613	borrowed	3	0	0	False	False	False	False	False	10.0						False
 TGCT-SEM-C2	BRD-K39936803	borrowed	3	2	0	False	False	False	False	False	0.0418742						True
-TGCT-SEM-C2	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+TGCT-SEM-C2	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 TGCT-SEM-C2	BRD-K89824424	borrowed	3	0	0	False	False	False	False	False	20.0						False
 TGCT-SEM-C2	BRD-K27316855	borrowed	1	1	1	True	False	False	False	False	1.0	Calcitriol	0.0001440057602304	openfda_label	6944.166666666666	True	False
 TGCT-SEM-C2	BRD-K70511574	borrowed	12	0	0	False	False	False	False	False	0.37						False
@@ -82403,7 +82403,7 @@ THCA-BRAF-like-classical	BRD-K18157228	borrowed	3	1	1	True	False	False	False	Fal
 THCA-BRAF-like-classical	BRD-K42499654	borrowed	0	0	0	False	False	False	False	False							False
 THCA-BRAF-like-classical	BRD-U64289953	borrowed	1	0	0	False	False	False	False	False	10.0						False
 THCA-BRAF-like-classical	BRD-A47829399	borrowed	5	1	1	True	False	False	False	False	0.0412	Artesunate	8.063886793434435	fda_label	0.0051091987096774	False	False
-THCA-BRAF-like-classical	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+THCA-BRAF-like-classical	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 THCA-BRAF-like-classical	BRD-K93830491	borrowed	6	0	0	False	False	False	False	False	5.0						False
 THCA-BRAF-like-classical	BRD-K55070890	borrowed	1	0	0	False	False	False	False	False	10.0	Thiothixene					False
 THCA-BRAF-like-classical	BRD-K33379087	borrowed	8	0	0	False	False	False	False	False	0.37037						False
@@ -82714,7 +82714,7 @@ THCA-BRAF-like-classical	BRD-A43331270	borrowed	2	0	0	False	False	False	False	Fa
 THCA-BRAF-like-classical	BRD-K09132007	borrowed	3	3	1	False	False	False	False	False	0.08						False
 THCA-BRAF-like-classical	BRD-K09499853	borrowed	11	0	0	False	False	False	False	False	1.11						False
 THCA-BRAF-like-classical	BRD-A40431293	borrowed	3	0	0	False	False	False	False	False	10.0						False
-THCA-BRAF-like-classical	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+THCA-BRAF-like-classical	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 THCA-BRAF-like-classical	BRD-K54233340	borrowed	17	0	0	False	False	False	False	False	10.0						False
 THCA-BRAF-like-classical	BRD-U25771771	borrowed	3	0	0	False	False	False	False	False	10.0						False
 THCA-BRAF-like-classical	BRD-A69275535	borrowed	4	4	4	True	False	False	False	False	0.0411523						True
@@ -83455,7 +83455,7 @@ THCA-RAS-like-follicular	BRD-K88378636	borrowed	15	5	2	False	False	False	False	F
 THCA-RAS-like-follicular	BRD-K15935639	borrowed	3	0	0	False	False	False	False	False	9.06227						False
 THCA-RAS-like-follicular	BRD-K48853221	borrowed	7	0	0	False	False	False	False	False	10.0						False
 THCA-RAS-like-follicular	BRD-K43568579	borrowed	3	0	0	False	False	False	False	False	2.0						False
-THCA-RAS-like-follicular	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0294153998269682	fda_label	1359.8319327731092	True	False
+THCA-RAS-like-follicular	BRD-A70155556	borrowed	5	0	0	False	False	False	False	False	40.0	Lovastatin	0.0281616811813706	fda_label	1420.3697478991596	True	False
 THCA-RAS-like-follicular	BRD-K78133682	borrowed	6	0	0	False	False	False	False	False	5.0						False
 THCA-RAS-like-follicular	BRD-K42436189	borrowed	6	1	0	False	False	False	False	False	3.33						False
 THCA-RAS-like-follicular	BRD-K81651477	borrowed	10	0	0	False	False	False	False	False	10.0						False
@@ -84197,7 +84197,7 @@ THCA-RAS-like-follicular	BRD-K70511574	borrowed	12	0	0	False	False	False	False	F
 THCA-RAS-like-follicular	BRD-K70836798	borrowed	3	1	0	False	False	False	False	False	5.0						True
 THCA-RAS-like-follicular	BRD-K41859756	borrowed	9	1	0	False	False	False	False	False	0.0412						False
 THCA-RAS-like-follicular	BRD-K67870070	borrowed	2	0	0	False	False	False	False	False	10.0						False
-THCA-RAS-like-follicular	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0294153998269682	fda_label	339.9579831932773	True	False
+THCA-RAS-like-follicular	BRD-K09416995	borrowed	3	0	0	False	False	False	False	False	10.0	Lovastatin	0.0281616811813706	fda_label	355.0924369747899	True	False
 THCA-RAS-like-follicular	BRD-K13646352	borrowed	17	4	2	True	False	False	False	False	0.37037	Midostaurin					False
 THCA-RAS-like-follicular	BRD-K16478699	borrowed	6	0	0	False	False	False	False	False	0.0411523						False
 THCA-RAS-like-follicular	BRD-A43331270	borrowed	2	0	0	False	False	False	False	False	10.0						True

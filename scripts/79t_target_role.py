@@ -200,6 +200,9 @@ def main():
             rows.append((c, g, Rd.get(c, {}).get(g, np.nan), Pd.get(c, {}).get(g, np.nan), Ra.get(c, {}).get(g, np.nan),
                          Pa.get(c, {}).get(g, np.nan), Ro.get(c, {}).get(g, np.nan), Po.get(c, {}).get(g, np.nan), Osrc.get(c, {}).get(g, "")))
     GC = pd.DataFrame(rows, columns=["group_id", "gene", "dep_z", "D", "alt_share", "A", "o_raw", "O", "o_source"])
+    # D210: `idx` is a set, whose string order changes between processes (hash randomisation), so two runs
+    #   wrote the same rows in different orders. Sorted so the file is byte-stable.
+    GC = GC.sort_values(["group_id", "gene"], kind="mergesort").reset_index(drop=True)
     GC.to_csv(OUT / "gene_components.tsv.gz", sep="\t", index=False, float_format="%.4g")
 
     fm = KU.fda_map()

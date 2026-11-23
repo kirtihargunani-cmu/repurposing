@@ -8,7 +8,7 @@
 path	owner_script	expect	note
 data/processed/lincs/drug_viper_specific_v2_tf	79d_drug_viper.R	76	proliferation-adjusted arm; 38 .f32 + 38 .regulators.txt. Read by 79e via NETMAP, never globbed.
 data/processed/lincs/drug_viper_raw_v2_tf	79d_drug_viper.R	76	UNADJUSTED arm, read by 79e:220 alongside the above. D162: was 18 days stale.
-data/processed/lincs/drug_viper_specific_collectri	79d_drug_viper.R		CollecTRI arm, retired from scoring by D160; kept for attribution only.
+archive/collectri/data/processed/lincs/drug_viper_specific_collectri	79d_drug_viper.R		CollecTRI arm, retired by D160; separated to archive by D208. Not part of the current build.
 # NOT registered: results/lincs -- it is an accumulating results directory, not a single
 # atomic build, so a wide mtime span there is normal rather than a staleness signal.
 # Register individual tables from it if their freshness starts to matter.

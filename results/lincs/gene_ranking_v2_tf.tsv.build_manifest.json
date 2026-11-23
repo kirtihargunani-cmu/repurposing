@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T151534-3247347",
+ "finished_at": "2026-11-23T15:16:00-05:00",
+ "duration_s": 26,
+ "script": "79ar_gene_ranking.py",
+ "cmd": "env SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79ar_gene_ranking.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SFX=_v2_tf",
+ "git_sha": "5d9f33c",
+ "git_state": "dirty",
+ "note": "D211 production gene ranking",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "gene_ranking_v2_tf.tsv": {
+   "bytes": 1414855,
+   "mtime": "2026-11-23T15:15:59-05:00"
+  }
+ }
+}

@@ -1,23 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261123T113437-3177309",
- "finished_at": "2026-11-23T11:34:38-05:00",
- "duration_s": 1,
+ "run_id": "20261123T151746-3248589",
+ "finished_at": "2026-11-23T15:17:46-05:00",
+ "duration_s": 0,
  "script": "79ag_window_accuracy.py",
  "cmd": "env SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79ag_window_accuracy.py",
  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SPLIT_SFX=_v2_tf",
- "git_sha": "7398cd8",
- "git_state": "clean",
+ "git_sha": "5d9f33c",
+ "git_state": "dirty",
  "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
- "supersedes": null,
+ "supersedes": {
+  "run_id": "20261123T142325-3228868",
+  "finished_at": "2026-11-23T14:23:25-05:00",
+  "n_files": 1,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SPLIT_SFX=_v2_tf"
+ },
  "files": {
   "window_accuracy.tsv": {
    "bytes": 1472,
-   "mtime": "2026-11-23T11:34:38-05:00"
+   "mtime": "2026-11-23T15:17:46-05:00"
   }
  }
 }

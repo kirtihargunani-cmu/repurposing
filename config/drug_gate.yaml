@@ -86,7 +86,7 @@ receptor_gate:
                                # borrowed: out-of-key, equal weights)
     # Passes resting on one matched line are kept and flagged (single_line; user 2026-11-02).
 
-standin:
+standin:   # D208 (2026-11-23): INACTIVE - 79y is switched off because similarity used CollecTRI activity (archived)
   # Closest-compound stand-ins (scripts/79y_standin.py; user 2026-11-02). Fixed before looking at results.
   # Pair = an FDA drug and another LINCS compound. Similarity = mean over their shared profiled lines of the Pearson
   # correlation of their line-specific regulator activity (CollecTRI, context-free; 79d drug_viper_specific_collectri).

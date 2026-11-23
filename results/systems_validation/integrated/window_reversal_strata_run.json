@@ -1,0 +1,18 @@
+{
+ "step": "per-window reversal score",
+ "formula": "rev = -(D . s)/||s|| as 79e:285",
+ "n_rows": 2402,
+ "n_cohorts": 8,
+ "coverage": {
+  "late_only": 1050,
+  "early_only": 946,
+  "both": 406
+ },
+ "n_both": 406,
+ "spearman_early_late": 0.423,
+ "frac_discordant_of_both": 0.367,
+ "median_n_conditions": {
+  "early": 1.0,
+  "late": 1.0
+ }
+}

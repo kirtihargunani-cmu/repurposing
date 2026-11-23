@@ -1136,3 +1136,18 @@ counted. The same issue applies to the original test, so we will re-run it count
 each drug. The 49 comparisons come from 20 distinct targets; 16 of the 20 go the right way (80%), so
 the test still passes. The "should fail" check turned out to rest on only 2 distinct targets, which is
 too few to tell us anything, so it neither passes nor fails.
+
+## A new main ranking: check the target first, then score how well the drug reverses the disease gene by gene (D211, 2026-11-23)
+
+Each drug now goes through two steps for each cancer. First, a filter: does the cancer actually lean on
+the drug's target (the tumor depends on it, it is mutated or amplified, or it is overactive)? Drugs
+that pass are then ranked by how closely their effect on genes is the opposite of the cancer's
+pattern, gene by gene, measured separately at early (6 hours or less) and late (24 hours or more)
+timepoints.
+
+What we found: the filter does useful work (for example, melanoma's BRAF drugs pass in melanoma and are
+filtered out in lung squamous cancer), but the gene-by-gene ranking that follows does not put drugs
+higher in the cancer that carries their biomarker. Our biomarker check gets only 1-4 of 8-11 target
+groups right on it, against 16 of 20 for the previous ranking. Many drug-cancer pairs also have no
+timepoint-specific data and are marked "unknown". We adopted it as decided and flagged these results
+for review.

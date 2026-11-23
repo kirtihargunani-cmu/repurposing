@@ -1,0 +1,11 @@
+window	set	reading	units	compounds	correct	share	p	median_gap_ranked
+early	expansion	e2e	2	2	2	1.0	0.25	
+early	primary	both_ranked	8	16	2	0.25	0.96484	-2.5
+early	primary	e2e	10	19	4	0.4	0.82812	-2.5
+early	seen	both_ranked	4	5	1	0.25	0.9375	-8.9
+early	seen	e2e	9	14	6	0.6667	0.25391	-8.9
+late	expansion	e2e	2	2	2	1.0	0.25	
+late	primary	both_ranked	8	20	1	0.125	0.99609	-3.6
+late	primary	e2e	11	27	4	0.3636	0.88672	-3.6
+late	seen	both_ranked	6	6	4	0.6667	0.34375	17.3
+late	seen	e2e	13	17	11	0.8462	0.01123	17.3

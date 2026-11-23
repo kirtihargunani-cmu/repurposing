@@ -2448,3 +2448,32 @@ PROGRESS had stopped at D184; the decisions themselves are in `DECISIONS.md`. On
 - **D205** covariance correction: registered test broken (scale, and a file-clobbering bug, both
   fixed); the covariance term itself is the strongest interpretive signal of the session.
 - **D206** PRISM / GDSC sensitivity check: no usable signal, and the table has no producing script.
+
+## 2026-11-23 — The pipeline reproduces itself (D210)
+
+Two full runs from the same start, every output compared. After separating gzip's timestamp
+header from real content, **every result file matches**; the one genuine difference was a table
+written in a different row order each run, now sorted. Getting there exposed four defects: six
+stages that only ran by hand (now in `run_pipeline.sh`), an FDA ranking that stamped a stale
+evidence status on all 41 cohorts (stage order fixed), a stage that only worked because old
+columns were still on disk (found by the first fresh pass crashing), and two pointers broken by the
+CollecTRI archive move. Still open: 15 old bookkeeping errors keep the staleness gate red.
+
+## 2026-11-23 — New production ranking: filter on target evidence, rank by gene-level reversal per timepoint (D211)
+
+Eligible = combined dependency / alteration / overactivity score ≥ 50; ranked by `rev_gene`
+separately for early (≤ 6 h) and late (≥ 24 h). Subgroups now have their own timepoint runs (8 of
+14 have data).
+
+| | early | late |
+|---|---|---|
+| units with a ranked list | 20 | 33 |
+| ranked (unit, drug) rows | 615 | 882 |
+| D127 primary, both cohorts ranked (units correct) | 2 / 8 | 1 / 8 |
+| D127 primary, counting filter demotions | 4 / 10 | 4 / 11 |
+
+For comparison, the lead score gets 16 / 20 units on the same pairs (D209). The filter carries the
+biomarker signal (BRAF/MEK inhibitors are filtered out of lung squamous); the gene-level score
+among eligible drugs does not rank a drug higher in its biomarker cohort. 3,382 eligible pairs have
+no timepoint data and are `unknown` with a reason. Adopted as production by the user's decision;
+flagged for review.
