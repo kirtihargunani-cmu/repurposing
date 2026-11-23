@@ -1,0 +1,182 @@
+{
+ "script": "79al_program_specificity.py",
+ "spec": "docs/SPEC_program_specificity.md",
+ "n_cells": 25,
+ "dropped": [
+  {
+   "cohort": "CESC-AD",
+   "window": "early",
+   "n": 46,
+   "n_pos": 0
+  },
+  {
+   "cohort": "CESC-SCC",
+   "window": "early",
+   "n": 46,
+   "n_pos": 0
+  },
+  {
+   "cohort": "ESCA-AD",
+   "window": "early",
+   "n": 98,
+   "n_pos": 0
+  },
+  {
+   "cohort": "ESCA-SCC",
+   "window": "early",
+   "n": 98,
+   "n_pos": 0
+  },
+  {
+   "cohort": "LGG-IDHmut-codel",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "LGG-IDHmut-noncodel",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "LGG-IDHwt",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "PCPG-PGL",
+   "window": "late",
+   "n": 21,
+   "n_pos": 0
+  },
+  {
+   "cohort": "PCPG-PHEO",
+   "window": "late",
+   "n": 21,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TARGET-NBL",
+   "window": "late",
+   "n": 21,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-BLCA",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-GBM",
+   "window": "late",
+   "n": 1,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-OV",
+   "window": "early",
+   "n": 50,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-OV",
+   "window": "late",
+   "n": 3,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-PAAD",
+   "window": "early",
+   "n": 50,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-STAD",
+   "window": "early",
+   "n": 98,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-UCS",
+   "window": "early",
+   "n": 39,
+   "n_pos": 0
+  },
+  {
+   "cohort": "TCGA-UCS",
+   "window": "late",
+   "n": 2,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-EEC",
+   "window": "early",
+   "n": 39,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-EEC",
+   "window": "late",
+   "n": 2,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-SER",
+   "window": "early",
+   "n": 39,
+   "n_pos": 0
+  },
+  {
+   "cohort": "UCEC-SER",
+   "window": "late",
+   "n": 2,
+   "n_pos": 0
+  }
+ ],
+ "scores": {
+  "B0_rev_pct": {
+   "median_auc": 0.5294,
+   "median_delta_vs_B0": 0.0,
+   "better": 0,
+   "n": 25
+  },
+  "B1_rev_window": {
+   "median_auc": 0.5374,
+   "median_delta_vs_B0": -0.022299999999999986,
+   "better": 7,
+   "n": 25
+  },
+  "B2_S_total": {
+   "median_auc": 0.5036,
+   "median_delta_vs_B0": -0.01660000000000006,
+   "better": 7,
+   "n": 25
+  },
+  "T1_S_clean": {
+   "median_auc": 0.5195,
+   "median_delta_vs_B0": -0.04080000000000006,
+   "better": 11,
+   "n": 25
+  },
+  "T2_S_prolif": {
+   "median_auc": 0.5,
+   "median_delta_vs_B0": -0.03080000000000005,
+   "better": 10,
+   "n": 25
+  },
+  "T3_specificity": {
+   "median_auc": 0.5113,
+   "median_delta_vs_B0": -0.07579999999999998,
+   "better": 11,
+   "n": 25
+  }
+ },
+ "acceptance": {
+  "c1_rank_gain": false,
+  "c2_not_proliferation": true,
+  "passed": false
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "script": "79ak_drug_programs.py",
+ "mod_r": 0.7,
+ "min_size": 5,
+ "min_drugs": 40,
+ "n_drug_programs": 1035,
+ "median_jaccard_to_disease": 0.0741
+}

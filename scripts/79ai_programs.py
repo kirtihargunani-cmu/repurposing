@@ -27,8 +27,15 @@ WHAT IS COMPUTED, per (cohort, program):
     n_regulators     module size
     hallmark         best-matching MSigDB hallmark set over the members' TARGETS, with its q
     is_proliferation |r_proliferation| >= 0.5   from 58
-    is_technical     r2_plate >= 0.3            from 58 - a module that tracks plate is an
-                     artefact and must not be read as biology
+    is_technical     r2_plate >= that cohort's OWN plate chance level + PLATE_MARGIN. D37 warns
+                     that plate R^2 sits above chance for structural reasons (small groups overlap
+                     plates), and the chance level ranges 0.000-0.378 ACROSS cohorts, so an
+                     absolute threshold over- and under-flags at the same time. Chance comes from
+                     `quality_correction/checks.tsv` (`plate_chance`). NOTE: the pipeline never
+                     regresses plate out - D8 fixed the signature model with no plate term, and
+                     61_quality_correct.R corrects purity + an RNA-quality index that was built
+                     because it explained the plate pattern. Plate is handled by PROXY, so a
+                     residual association survives into patient NES and into these modules.
 and per (cohort, program, drug, WINDOW), window-separated throughout (D183/D191):
     drug_score       mean drug regulator-activity over the module's regulators
     opposition       -disease_score * drug_score / |disease_score|, the program-level analogue of
@@ -60,6 +67,7 @@ EDGES = ROOT / "data/processed/lincs/trace_aracne/aracne_regulon_edges.tsv.gz"
 GMT = ROOT / "data/raw/msigdb/h.all.v2025.1.Hs.symbols.gmt"
 ACT = RES / "regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz"
 MIN_SIZE = int(os.environ.get("MIN_SIZE", "5"))
+PLATE_MARGIN = float(os.environ.get("PLATE_MARGIN", "0.10"))   # excess over the cohort's chance level
 
 
 def hallmarks():
@@ -78,6 +86,11 @@ def main() -> int:
         return 1
     M = M[M["size"] >= MIN_SIZE].copy()
     M["members"] = M.members_all.str.split(",")
+
+    import glob
+    ck = pd.concat([pd.read_csv(f, sep="\t") for f in
+                    glob.glob(str(ROOT / "results/step6/aracne_project_v2_tf/quality_correction*/checks.tsv"))])
+    plate_chance = ck.groupby("group_id").plate_chance.median().to_dict()
 
     idm = pd.read_csv(ROOT / "results/step5/id_map.tsv", sep="\t", usecols=["gene_id", "symbol"])
     ens2sym = dict(idm.dropna().values)
@@ -126,7 +139,9 @@ def main() -> int:
                                   hub=r.hub, disease_score=round(ds, 4),
                                   hallmark=best, hallmark_q=float(min(1.0, bestp * len(HM))),
                                   is_proliferation=bool(abs(r.r_proliferation) >= 0.5),
-                                  is_technical=bool(r.r2_plate >= 0.3),
+                                  plate_chance=round(float(plate_chance.get(coh, float("nan"))), 4),
+                                  r2_plate=round(float(r.r2_plate), 4),
+                                  is_technical=bool(r.r2_plate >= plate_chance.get(coh, 0.0) + PLATE_MARGIN),
                                   members=",".join(mem)))
             v = piv[mem].mean(axis=1)
             opp = -ds * v / abs(ds) if ds != 0 else v * np.nan
