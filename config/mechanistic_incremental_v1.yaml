@@ -86,3 +86,23 @@ resolved_rule: "95% cluster-bootstrap interval excludes the matched null"
 benchmarks_not_gates: ["+0.05 delta", "odds ratio >= 1.5", "FDR < 0.05 enrichment"]
 unresolved_wording: "not resolved at current data depth (with the noise and coverage that limit it)"
 lead_with: resolved signal, effect, interval, denominator, share of the reliability ceiling
+
+# ---- Experiment B settings (amendment 1b, 2026-11-23; committed before any B computation) ----
+B:
+  arms:
+    matched_dose: "window aggregates rebuilt from only the (line, dose) pairs a drug has in BOTH windows in the cancer's in-key lines (primary controlled arm)"
+    production: "all in-key conditions per window, as the production window scorer (secondary)"
+    high_confidence: "rows with >= 2 conditions in BOTH windows (production aggregation)"
+  noise_model:
+    sigma: "pooled within-drug variance across single conditions, per (unit, window), for each regulator's activity and for rev and rev_gene; from every drug with >= 2 in-key conditions in that window"
+    se: "sigma / sqrt(n_eff), n_eff = (sum w)^2 / sum w^2 over the conditions behind the estimate"
+    calibration: "|z| of half-differences on rows with >= 2 conditions; expected share within 1.96 = 0.95"
+  call_rule: "a window estimate is positive / negative when |estimate / SE| > 1.96, else uncertain"
+  transition_classes: [sign_reversal, persistent_same_sign, early_only, late_only, both_uncertain]
+  pseudo_replicate_null: "split one window's conditions into two halves labelled early / late; classify with the same rule; false sign-reversal rate"
+  score: rev_gene            # production score; rev reported beside it
+  mechanism_classes: "every Repurposing Hub hub_moa value held by >= 8 distinct ingredients with both windows in cancers (counted from coverage only, before transitions)"
+  enrichment: "per class x transition class: odds ratio vs all other drugs, rows = (cancer, drug); permutation of class labels across ingredient clusters (n_perm); BH-FDR within the family; resolved = OR interval (cluster bootstrap) excludes 1; OR >= 1.5 and FDR < 0.05 are benchmarks"
+  regulator_level: "per (unit, drug): share of tested regulators in each transition class; concentration of the change: top-5 share of |delta rev_gene_contrib| and n_eff = (sum|d|)^2 / sum d^2"
+  cases: {BRCA-LumA: [fulvestrant, tamoxifen, clomifene], BRCA-Basal: [fulvestrant, tamoxifen, clomifene, doxorubicin], TCGA-LUAD: [erlotinib], TCGA-SKCM: [vemurafenib, trametinib]}
+  case_rule: "only where the drug has both windows in that unit; top 20 regulators by |delta rev_gene_contrib|"
