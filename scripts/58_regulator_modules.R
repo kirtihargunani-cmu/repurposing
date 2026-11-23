@@ -75,7 +75,11 @@ run <- function(f) {
       hub_targets_members = round(hub_in, 3), baseline_targets = round(base, 3), shared_targets = round(jac, 3),
       r2_plate = round(r2f(score, meta$batch), 2), r_length = round(cor(score, lidx), 2),
       r_proliferation = round(cor(score, pscore), 2),
-      members_top = paste(head(mem[order(-rr)], 10), collapse = ","))
+      members_top = paste(head(mem[order(-rr)], 10), collapse = ","),
+      # D198: the FULL membership, ordered by correlation with the module score. `members_top`
+      # keeps only 10, which is enough to read a module but not to score one; a program cannot be
+      # projected onto the drug side from a truncated member list.
+      members_all = paste(mem[order(-rr)], collapse = ","))
   }))
 }
 files <- Sys.glob(file.path(NES_DIR, "*.patient_nes.tsv.gz"))
