@@ -156,3 +156,14 @@ Add a dated "Amendment 1 (2026-11-23)" section to the spec carrying findings 1-1
 accepts), rerun `79k_sensitivity_validation.py` on `_v2_tf` under `runlog.sh`, then commit the amended spec plus
 `config/mechanistic_incremental_v1.yaml` as the registration. Nothing in this audit computed any outcome of the
 proposed experiments; the only quantities examined are coverage counts and previously published results.
+
+## Resolution (2026-11-23, spec Amendment 1)
+
+The owner's decisions are in the spec as Amendment 1. Findings 1 (production is D211: the scorer under study is
+the T >= 50 filter plus `rev_gene` per window), 2-4 (PRISM/GDSC dropped, so no seen outcome, no `79k` rerun and no
+primary-outcome choice are needed), 5 (empirical noise model for B), 6 (the +0.05 gate is now a descriptive
+benchmark; the decision rule is separation from a matched null), 7 (`rev_gene` is the score) and 8 (FDA-only
+universe stated) are resolved. Experiment A becomes a step-by-step measurement of resolvable signal, reported
+optimistically. Still open: finding 9 should be added to the dependence graph at Stage 0; finding 10 (feature
+branch versus `main`) awaits the owner; medium items 11-16 are unchanged.
+

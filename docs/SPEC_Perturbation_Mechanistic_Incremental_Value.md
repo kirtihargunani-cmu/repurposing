@@ -1,11 +1,137 @@
 # Research Specification — Does Perturbation-Derived Regulatory Information Add Disease-Relevant Mechanistic Evidence?
 
 **Project:** `kirtihargunani-cmu/repurposing`  
-**Status:** implementation-ready **proposed pre-registration**, not yet registered, executed, or adopted.  
+**Status:** implementation-ready **proposed pre-registration**, not yet registered, executed, or adopted. **Amended 2026-11-23 (Amendment 1, directly below): it overrides any conflicting text in sections 0-15.**  
 **Prepared:** 2026-11-23.  
-**Primary scientific question:** *Can observed drug perturbations and their ARACNe-derived regulatory effects identify disease-relevant drug mechanisms that are not already explained by drug-target annotations and baseline disease biology?*
+**Primary scientific question:** *Can observed drug perturbations and their ARACNe-derived regulatory effects identify disease-relevant drug mechanisms that are not already explained by drug-target annotations and baseline disease biology?*  
+**As amended:** *How much drug-mechanism signal can the production scorer resolve from noisy, incomplete perturbation data, step by step, and where is it resolved?*
 
 > **Agent handoff:** Execute phases in order. Do not change production rankings, gates, or thresholds. Do not tune analysis choices after examining outcome results. Write completed results, negative controls, limitations, and interpretations for every test, including tests that cannot be executed. Commit a dated protocol and frozen configuration **before** running any new decision-bearing test, and record code SHA, input hashes, output manifests, data counts, and exact command lines. This document is a proposed protocol; committing it is not evidence that the experiments have run.
+
+---
+
+## Amendment 1 — 2026-11-23 (owner decisions; overrides any conflicting text below)
+
+Owner, 2026-11-23: run it *"on the most recent results, use our new scoring function (filter with D/A/O and then gene
+level regulon reversal), maintain our separated timepoint windows. let's not run PRISM/GDSC selective killing ...
+report results optimistically, measure the amount of signal we can actually resolve via a processing step. take into
+account the data are fundamentally noisy and we also have a limited amount/missing information so really any
+information we can extract is a good sign for further analysis."* This amendment also resolves findings 1-9 of
+`docs/AUDIT_SPEC_Perturbation_Mechanistic_Incremental_Value.md`.
+
+### A1.1 Inputs: the most recent full run only
+
+Every input comes from the 2026-11-23 build of `scripts/run_pipeline.sh` (13:45-15:17; reproducible per D210), or
+from the disease-side outputs that run consumed unchanged (`results/step6/aracne_project_v2_tf[_strata]/group_mr.tsv`;
+per-gene breakdown `regulon_contributions.tsv.gz`, built 2026-11-22). `inputs_manifest.json` records each input's
+`.build_manifest.json` run id; Stage 0 **refuses** an input whose manifest predates that run (other than those
+disease-side inputs). Exploratory outputs built outside the runner (D196-D206: programs, NES ambiguity, two-stage,
+covariance, `interpretation/`) are not inputs; programs (Experiment E) are rebuilt through `runlog.sh` first. If any
+production stage is rebuilt during the study, the study re-reads from the new run and records both run ids.
+
+Reference counts from that run (to be re-verified in Stage 0): 3,721 compounds x 41 cancers (64,094 rows) plus 14
+subgroups; timepoint data for 29 cancers (4,128 drug rows with both windows, 5,823 early only, 7,509 late only) and
+8 of 14 subgroups (2,402 rows); 4,418 eligible (cancer, ingredient) pairs, 615 ranked early over 20 units and 882
+late over 33; 3,382 eligible pairs with no timepoint data.
+
+### A1.2 The scorer under study is production (D211)
+
+- **Filter:** a (unit, compound) pair is eligible when `layered_T >= 50` on the D/A/O path (`79t3`; D120, D177).
+  Chemotherapy / DNA-acting / essential-gene rows (no D/A/O) are analysed separately, never mixed in.
+- **Score:** gene-level regulon reversal `rev_gene = - sum_i sum_j d_ij * C_ij / ||s||` (`docs/FORMULAS.md` s3),
+  per (unit, window), percentile among eligible drugs (`79ar`; `results/lincs/gene_ranking_v2_tf.tsv`). Its exact
+  per-regulator terms are `rev_gene_contrib` in `regulator_contributions_by_window_all[_strata].tsv.gz`.
+- **Roles:** D, A, O and T are the *filter*, so none of them is ever an outcome. Regulator-level `rev` and `rev_mech`
+  are reported as reference points only. Production is not changed by this study.
+- The universe is FDA-only by construction (target evidence exists for FDA, gate-passing rows only).
+
+### A1.3 Timepoints stay separated
+
+Early (<= 6 h) and late (>= 24 h) are analysed separately at every step; no pooled score enters any analysis; a pair
+with no timepoint data stays `unknown` with its D180 reason and is counted in coverage, not dropped. Subgroups are
+included wherever their window run has data.
+
+### A1.4 No PRISM/GDSC selective killing
+
+The functional outcome of Experiment A is removed: section 2.2 `outcome.tsv` (PRISM/GDSC part), 2.3 (D206 rebuild),
+4.2 `U_A_sens`, 5 A0-A2 (sensitivity outcome), A4, A6 (sensitivity coverage gate and +0.05 rule), and the D206 /
+efficacy instructions in section 14. `scripts/79k_sensitivity_validation.py` is not run. Nothing in this study is an
+efficacy claim.
+
+### A1.5 Experiment A, redefined: how much signal each processing step resolves (PRIMARY)
+
+Follow one drug-cancer pair through the production scorer and measure the signal that survives each step, per
+window:
+
+| Step | What it is | Source |
+|---|---|---|
+| S1 | Condition profile (LINCS level 5, activity floor 0.25 at 6 h, 0.40 otherwise) | `drug_condition_profiles_*` |
+| S2 | Drug regulator activity on the cancer's ARACNe network | `drug_viper_specific_v2_tf_cond/` |
+| S3 | Window aggregate over the cancer's matched in-key lines | `window_reversal[_strata].tsv.gz` |
+| S4 | Regulator-level reversal `rev` (reference) | `regulator_contributions_by_window_all*.tsv.gz` |
+| S5 | Gene-level reversal `rev_gene` | same, `rev_gene_contrib` |
+| S6 | `rev_gene` within the T >= 50 eligible set (production) | `gene_ranking_v2_tf.tsv` |
+
+At each step, three measurements, each with a cluster bootstrap 95% interval over independent drug / target-unit
+clusters:
+
+1. **Reproducibility.** Split-half reliability (Spearman-Brown) where >= 2 conditions exist, and the attainable
+   ceiling `sqrt(reliability)`. This is the noise floor the later steps work against.
+2. **Signal above a matched null.** Separation from permutations that preserve drug, line, window, condition count
+   and target-unit clusters (section 3 rules).
+3. **Agreement with mechanism labels that share no input with the filter or the score:** (a) the drug's own primary
+   target ranks high in its regulator response (D158 style, enrichment over chance in the measured regulator
+   universe); (b) on-target pathway moves in the expected direction (PROGENy, D99 style); (c) drugs sharing a primary
+   target unit look more alike at the gene level than matched drugs that do not; (d) D127 biomarker pairs,
+   descriptive only (already seen in D211).
+
+The headline is a **resolvable-signal curve**: for each step, the signal as a fraction of the step's reliability
+ceiling, with intervals, separately for early and late and for groups and subgroups. A step that keeps or sharpens
+signal is the finding; a step where the curve falls to the null shows where the data stop resolving it.
+
+### A1.6 Experiment B: an empirical noise model
+
+Only 10.1% of conditions carry >= 2 signatures (median 1) and 400 drug x line pairs have >= 2 conditions in both
+windows, so B's per-row confidence rule is replaced: estimate the noise distribution from split halves and
+replicate signatures on those 400 pairs, apply it as a calibrated uncertainty to single-condition rows (including the
+2,639 matched drug x line x dose pairs), and report the false sign-flip rate from the pseudo-replicate null. The
+transition classes in B2 are then assigned under that model.
+
+### A1.7 Reporting stance
+
+The data are fundamentally noisy (median one signature per condition) and incomplete (12 of 41 cancers have no
+window run; 3,382 of 4,418 eligible pairs have no timepoint data), so **any resolved signal is a good sign for
+further analysis** and is reported as such:
+- Lead every report with what was resolved: effect, interval, denominator, and its size relative to the
+  reliability ceiling.
+- **Decision rule:** a quantity counts as *resolved* when its 95% interval excludes the matched null. The practical
+  thresholds elsewhere (+0.05 deltas, odds ratio >= 1.5, FDR < 0.05 enrichment bars) become descriptive benchmarks,
+  not pass / fail gates.
+- A result that does not separate from the null is reported as *not resolved at current data depth*, together with
+  the noise and coverage that limit it, and the data that would resolve it; never as evidence that the mechanism is
+  absent.
+- What stays from the original protocol: rules are fixed before results, controls are run and reported beside every
+  positive result, and no threshold moves after a number is seen.
+
+### A1.8 Superseded text (for readers of the sections below)
+
+Section 0.2 row A (now A1.5); section 1 row D202-D205 (`rev_gene` is production since D211); section 2.3 subgroup
+bullet (8 of 14 subgroups have window data) and D206 bullet; section 4.2 `U_A_sens`; section 5 outcome parts and A6;
+section 11.1 "+0.05 ... underpowered" language (A1.7 applies); section 13 rows on A ("do not add reversal to the lead
+score": reversal is already production); section 14 (replaced below). Section 12.1 (feature branch and PR versus the
+project's commit-to-`main` convention) is **still open** for the owner.
+
+### A1.9 Handoff prompt (replaces section 14)
+
+> Implement `docs/SPEC_Perturbation_Mechanistic_Incremental_Value.md` as amended by Amendment 1. Use only the outputs
+> of the most recent full run of `scripts/run_pipeline.sh` (record its run ids; refuse older inputs). The scorer under
+> study is production D211: T >= 50 on the D/A/O path, then gene-level regulon reversal `rev_gene`, per timepoint;
+> D/A/O/T are never outcomes. Keep early and late separate everywhere and keep unknown windows as unknown. Do not run
+> PRISM/GDSC or any efficacy endpoint. Run Stage 0, then the resolvable-signal analysis (A1.5) for steps S1-S6 with
+> reproducibility, matched-null separation and mechanism-label agreement, then B with the empirical noise model
+> (A1.6), then C, D, E and F. Report optimistically per A1.7: lead with resolved signal and its share of the
+> reliability ceiling; describe unresolved results as limited by noise and coverage. Fix rules before results, run
+> every control, change no production score.
 
 ---
 
@@ -622,6 +748,8 @@ Every figure needs a caption containing `n` independent units, axes/units, teste
 ---
 
 ## 14. Final agent handoff prompt (copy and paste)
+
+**Replaced by Amendment 1, A1.9 (2026-11-23). Do not use the prompt below: it asks for the PRISM/GDSC rebuild that A1.4 removes.**
 
 > Implement the repository research specification in `SPEC_Perturbation_Mechanistic_Incremental_Value.md` for `kirtihargunani-cmu/repurposing`. Start by reading the current default branch's `docs/DECISIONS.md`, `docs/PROGRESS.md`, `config/adopted_parameters.yaml`, source-producing scripts, and D208/D209 production updates. Record the repo SHA. Treat this spec as a proposed registration: commit the protocol and locked config on a new feature branch **before** looking at any new outcome results. Do not modify production scores, thresholds, current rankings, or archived regulon data. Use current ARACNe-only `_v2_tf`, re-use exact contributions and existing D183/D158/D209 outputs with verified provenance, and respect unknown/unmeasured windows. Execute Stage 0 and experiments A, B, C, then D and E, followed by synthesis F, in that order. Do not skip stages that fail: write negative-control results, coverage, uncertainty, and plain-language interpretation. Rebuild D206 sensitivity benchmarking from identifiable raw inputs or declare independent efficacy evaluation non-evaluable. Match rows across baselines and augmented models; group split by drug and target unit; leave out tissue/target families when support exists; include placebo quality-only and drug-class baselines. For each test write all required TSV/Parquet results, plots, `report.md`, `run.json`, hashes and a consolidated final report. Do not adjust acceptance thresholds after results. On completion, open a PR with exact reproduction commands and an explanation of what was established, what failed, what remains unknown, and what future experiment is warranted. **No auto-merge.**
 
