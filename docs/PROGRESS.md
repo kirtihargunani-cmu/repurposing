@@ -2423,3 +2423,28 @@ unit in both cohorts get one vote (the median gap).
 The only primary pair that misses is THCA BRAF-like vs RAS-like (1/4 units). The negative control
 was two observations, so it can neither confirm nor sink the instrument; a control with ≥ 5
 distinct target units would need its own registration.
+
+## 2026-11-22 — Catch-up: what happened between D185 and D206 (back-filled 2026-11-23)
+
+PROGRESS had stopped at D184; the decisions themselves are in `DECISIONS.md`. One line each:
+
+- **D185** MOA-disjoint shortlist: 201 drugs across 21 (cohort, window) cells.
+- **D186–D190** formal runner `run_pipeline.sh`; `_v2_tf` promoted; per-stage timing; adopted-parameter
+  registry and gate; 79e/79d record their arm.
+- **D191** nested cosine, window-separated, Her2 network bug fixed: timing does not rescue D150;
+  anti-estrogens *agree* with LumA disease in the late window (the D152 MCF7 inversion at cohort scale).
+- **D192** per-cohort approval recovery, window-resolved, on the ranking page.
+- **D193–D195** per-edge weights kept through the cosine; per-gene opposition terms that sum exactly.
+- **D196–D198** program-space scoring not adopted; cross-cohort transfer bounded; programs found within
+  each cohort (461 over 29 cohorts).
+- **D199** objective program filter (94 plate, 105 proliferation, 47 generic). **D200** drug programs
+  don't match disease programs (Jaccard median 0.074).
+- **D201** specificity-decomposed program score: does not improve ranking.
+- **D202/C1** one NES hides different gene-level effects: registered FAIL; corrected analysis supports
+  it in the late window.
+- **D203** `rev_gene`: fails (AUC 0.537 → 0.500; ρ with `rev` 0.82).
+- **D204** two-stage scorer, exploratory: `rev` AUC rises behind a lead-score gate (0.53 → 0.65 at the
+  75th percentile, 15 cells); not registered.
+- **D205** covariance correction: registered test broken (scale, and a file-clobbering bug, both
+  fixed); the covariance term itself is the strongest interpretive signal of the session.
+- **D206** PRISM / GDSC sensitivity check: no usable signal, and the table has no producing script.
