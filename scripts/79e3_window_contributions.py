@@ -171,6 +171,7 @@ def run_cohort(args):
         dm = dz.drop_duplicates(["regulator", "target"]).set_index(["regulator", "target"]).disease_contrib_nes
         dvec = np.nan_to_num(dm.reindex(
             pd.MultiIndex.from_arrays([N.regs[N.reg], N.target])).to_numpy(dtype=np.float64))
+    nd0 = (np.sqrt(np.add.reduceat(dvec * dvec, N.starts)) if dvec is not None else None)
     R, T, SH = [], [], []
     for r in sel.itertuples():
         g = sub[(sub.pert_id == r.pert_id) & (sub.window == r.window)]
@@ -198,9 +199,16 @@ def run_cohort(args):
             nb = np.sqrt(np.add.reduceat(CB * CB, N.starts))
             den = na * nb
             ch = np.divide(dot, den, out=np.full(len(den), np.nan), where=den > 0)
-            SH.append(pd.DataFrame({"cohort": cohort, "pert_id": r.pert_id, "window": r.window,
-                                    "n_conditions": len(g), "n_half_a": len(ha), "n_half_b": len(hb),
-                                    "regulator": N.regs, "cos_half": ch})[tested])
+            shd = {"cohort": cohort, "pert_id": r.pert_id, "window": r.window,
+                   "n_conditions": len(g), "n_half_a": len(ha), "n_half_b": len(hb),
+                   "regulator": N.regs, "cos_half": ch}
+            if dvec is not None:        # D203 noise floor for rev_gene, per half
+                for tag, CC in (("a", CA), ("b", CB)):
+                    dt = np.add.reduceat(dvec * CC, N.starts)
+                    shd[f"act_gene_{tag}"] = np.divide(dt, nd0, out=np.zeros(len(dt)), where=nd0 > 0)
+                shd["nes"] = nes
+                shd["norm"] = norm
+            SH.append(pd.DataFrame(shd)[tested])
         act = np.add.reduceat(C, N.starts)
         rc = -nes * act / norm
         reg = pd.DataFrame({"cohort": cohort, "pert_id": r.pert_id, "cmap_name": r.cmap_name,
@@ -226,6 +234,28 @@ def run_cohort(args):
             assert len(cos) == len(N.regs), (len(cos), len(N.regs))
             reg["cos_contrib"] = cos[tested]
             reg["n_genes_regulon"] = np.diff(np.r_[N.starts, len(N.reg)])[tested]
+            # D203: act_gene = <d_i, C_i> / ||d_i||, the drug's gene vector PROJECTED onto the
+            # disease gene pattern. Divided by ||d_i|| only - the disease vector, identical for
+            # every drug in the cohort - so the regulon-size effect goes while drug magnitude
+            # stays. NOT divided by ||C_i||: D202 attributed the cosine score's entire loss to
+            # exactly that per-regulon per-drug normalisation. A regulator reaching its activity
+            # through genes orthogonal to the disease pattern gets <d,C> ~ 0 and drops out by
+            # geometry, with no threshold. Computed here, over ALL regulators, because the gene
+            # table keeps only the top 25 per drug and would give each drug its own feature set.
+            # SIGN FIX (D203 amendment 1): d_i ALREADY carries the disease direction, because
+            # sum_j d_ij = nes_i (D179). Multiplying by -nes_i again double-counts it and flips
+            # the sign - caught on the first smoke test, where TAL1 read rev_contrib +0.29 but
+            # rev_gene_contrib -0.032. The correct form replaces rev's PRODUCT OF SUMS with a
+            # SUM OF PRODUCTS:
+            #   rev      = -sum_i (sum_j d_ij)(sum_j C_ij) / ||s||
+            #   rev_gene = -sum_i  sum_j d_ij * C_ij       / ||s||
+            # A regulator whose activity comes from off-pattern genes has sum_j d_ij C_ij ~ 0
+            # even when both totals are large. ||s|| is a per-cohort constant, so it does not
+            # affect within-cohort ranking; it is kept so the two scores stay on one scale.
+            reg["rev_gene_contrib"] = (-dot / norm)[tested]
+            # reported, not used in the sum: the drug's gene vector projected onto the disease
+            # pattern, drug magnitude preserved (divided by ||d_i|| only).
+            reg["act_gene"] = np.divide(dot, nd, out=np.zeros(len(dot)), where=nd > 0)[tested]
             # D195: the SAME nesting one level down. Each gene's share of its regulon's cosine,
             #   cos_term_j = d_j * x_j / (||d|| * ||x||),      sum_j in r  cos_term_j = cos_contrib_r
             # so the per-gene scores add back to the regulon score exactly, as the D179 target
@@ -322,7 +352,11 @@ def main():
     T = pd.concat([o[1] for o in out if len(o[1])]) if any(len(o[1]) for o in out) else pd.DataFrame()
     SH = pd.concat([o[2] for o in out if len(o[2])]) if any(len(o[2]) for o in out) else pd.DataFrame()
     if SPLITHALF and len(SH):
-        sfx2 = "_all" if os.environ.get("ALL") == "1" else ""
+        # A QUERY run covers one or two drugs. Writing it to the FULL-RUN path silently replaced
+        # a 1,075,576-row production table with 1,708 rows from one drug, and the next test built
+        # its reliability weights from that - caught only because every weight came back
+        # degenerate. A partial run must never write a path a complete run owns.
+        sfx2 = "_query" if q else ("_all" if os.environ.get("ALL") == "1" else "")
         f = OUT / f"splithalf_reliability{sfx2}.tsv.gz"
         SH.to_csv(f, sep="\t", index=False, float_format="%.6g")
         ok = SH.cos_half.dropna()
@@ -336,8 +370,11 @@ def main():
     R = R.drop(columns="rev_stored")
 
     if q:
+        # every optional regulator-level column, so adding one does not silently vanish from
+        # the query output the way cos_contrib and act_gene each did once
+        _opt = ("cos_contrib", "n_genes_regulon", "act_gene", "rev_gene_contrib")
         _rc = ["cohort", "pert_id", "window", "regulator", "disease_nes", "drug_activity",
-               "rev_contrib", "rank_in_drug"] + [c for c in ("cos_contrib", "n_genes_regulon") if c in R]
+               "rev_contrib", "rank_in_drug"] + [c for c in _opt if c in R]
         full = T.merge(R[_rc].rename(columns={"rev_contrib": "regulator_rev_contrib"}),
                        on=["cohort", "pert_id", "window", "regulator"])
         for (c, dn), g in full.groupby(["cohort", "cmap_name"]):

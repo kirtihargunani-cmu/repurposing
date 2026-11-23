@@ -1,0 +1,12 @@
+{
+ "script": "79ao_two_stage.py",
+ "exploratory": true,
+ "gates": [
+  0,
+  25,
+  50,
+  75
+ ],
+ "n_cells": 87,
+ "note": "not a registered test; measures a design before registering"
+}
