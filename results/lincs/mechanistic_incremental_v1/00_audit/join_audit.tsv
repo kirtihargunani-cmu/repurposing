@@ -1,0 +1,7 @@
+table	key	rows	duplicate_keys	unique	cells
+window_reversal	cohort+pert_id	17460	0	True	
+window_reversal_strata	cohort+pert_id	2402	0	True	
+layered_score	unit+pert_id	14300	0	True	
+gene_ranking	unit+level+ing+window	8595	0	True	
+regulator_contributions (groups)	cohort+pert_id+window	18512024	0	True	21588.0
+regulator_contributions (subgroups)	cohort+pert_id+window	2478356	0	True	2808.0

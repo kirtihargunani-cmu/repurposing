@@ -1,0 +1,7 @@
+level	check	n	max_abs_err	tol	unmatched	pass
+groups	sum rev_contrib = stored rev	21588	5.6899000000498745e-05	0.001		True
+groups	sum rev_contrib = window_reversal rev (5 dp)	21588	1.5811699999090933e-05	0.001	0.0	True
+groups	sum rev_gene_contrib = gene_ranking rev_gene (rel)	2172	1.5694937384038944e-06	0.0001		True
+subgroups	sum rev_contrib = stored rev	2808	5.531771000022445e-05	0.001		True
+subgroups	sum rev_contrib = window_reversal rev (5 dp)	2808	1.35730497028419e-05	0.001	0.0	True
+subgroups	sum rev_gene_contrib = gene_ranking rev_gene (rel)	278	2.1032074167624193e-06	0.0001		True
