@@ -106,3 +106,21 @@ B:
   regulator_level: "per (unit, drug): share of tested regulators in each transition class; concentration of the change: top-5 share of |delta rev_gene_contrib| and n_eff = (sum|d|)^2 / sum d^2"
   cases: {BRCA-LumA: [fulvestrant, tamoxifen, clomifene], BRCA-Basal: [fulvestrant, tamoxifen, clomifene, doxorubicin], TCGA-LUAD: [erlotinib], TCGA-SKCM: [vemurafenib, trametinib]}
   case_rule: "only where the drug has both windows in that unit; top 20 regulators by |delta rev_gene_contrib|"
+
+# ---- Experiment C settings (amendment 1c, 2026-11-23; committed before any C computation) ----
+C:
+  unit: "(unit, drug, window): production window regulator activity (drug_activity in regulator_contributions_by_window_all[_strata]); cancers and subgroups; early and late separately"
+  target_roles:
+    primary: "evidence_targets genes where target_source in {chembl_mechanism, confirmed_annotation}"
+    secondary: "secondary_targets entries with a measured pChEMBL (numeric); '*' = single measurement, flagged"
+    annotated: "Repurposing Hub hub_target genes in neither set"
+  exact_recovery: "percentile of the target among the drug's scored regulators by |activity|; signed by layered_orient (lower: -activity, raise: +activity) for primary targets where known; hit rates at top 1% and 5%"
+  downstream_recovery: "H_g = 1-hop OmniPath targets of g (data/raw/omnipath/omnipath_signed_directed.tsv.gz, retrieved 2026-11-10, never re-pulled) among the drug's scored regulators, g excluded, |H| >= 3; statistic = mean |activity| percentile over H; signed variant for oriented primary targets: percentile of (orient_sign x edge_sign x activity)"
+  sensitivity: ["2-hop H (cap 200 regulators), descriptive", "SIGNOR-only network, descriptive"]
+  null_model: "target labels permuted among drugs of the same (unit, window) and role (n_perm); value compared with the permutation median"
+  clusters: target gene
+  resolved_rule: "cluster-bootstrap 95% interval of the mean excludes the permutation null"
+  potency: "within secondary targets: Spearman(log10(dose_uM / 10^(6 - pChEMBL)), recovery percentile); dose = median recorded in-key dose in the window (-1 = unrecorded, dropped); exposure-to-potency proxy only, not occupancy"
+  strata: "target is a scored regulator in that network (exact route possible) vs not"
+  yardstick: "primary-target downstream recovery must resolve before a secondary null is read as informative"
+  feasibility: "fewer than 30 distinct target genes in a stratum -> feasibility-limited, not a negative"
