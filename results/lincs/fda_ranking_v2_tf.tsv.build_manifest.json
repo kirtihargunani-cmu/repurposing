@@ -1,23 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261120T170338-2109091",
- "finished_at": "2026-11-20T17:03:51-05:00",
- "duration_s": 13,
+ "run_id": "20261123T105646-3169046",
+ "finished_at": "2026-11-23T10:56:56-05:00",
+ "duration_s": 10,
  "script": "79p_fda_ranking.py",
  "cmd": "env SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79p_fda_ranking.py",
- "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
- "git_sha": "ecfb884",
- "git_state": "dirty",
- "note": "D156 chain resume after 79t3 crash (missing 79i2)",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SFX=_v2_tf",
+ "git_sha": "7398cd8",
+ "git_state": "clean",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
- "supersedes": null,
+ "supersedes": {
+  "run_id": "20261122T142426-2819224",
+  "finished_at": "2026-11-22T14:24:36-05:00",
+  "n_files": 1,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
  "files": {
   "fda_ranking_v2_tf.tsv": {
-   "bytes": 4129926,
-   "mtime": "2026-11-20T17:03:49-05:00"
+   "bytes": 4106778,
+   "mtime": "2026-11-23T10:56:54-05:00"
   }
  }
 }

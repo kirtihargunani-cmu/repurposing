@@ -4,7 +4,7 @@
 Pairs: per disease (41 groups), the union of the top TOP_N drugs by spec_mech (reports lead with it, D80) and by rev,
 among drugs that pass the target gate, are not flagged (unmatched_lines / low_transfer / local_route, D107), are not demoted by D102c / D104c
 (target_absent, receptor_mismatch) and have rev > 0
-(results/lincs/drug_reversal_split_v2_consensus.tsv). Unnamed LINCS compounds (BRD-...) are skipped.
+(results/lincs/drug_reversal_split_v2_tf.tsv). Unnamed LINCS compounds (BRD-...) are skipped.
 Searches (same for every pair; no manual curation):
   PubMed       esearch, drug name in title/abstract (also without hyphen for codes such as AZD-9291) AND the disease's
                terms (DISEASE below) in title/abstract; count and the RETMAX most relevant PMIDs with titles
@@ -13,7 +13,7 @@ Searches (same for every pair; no manual curation):
 A hit means the pair has been studied, not that it worked; counts are a pointer for reading, not evidence.
 ClinicalTrials.gov's relevance search matches loosely (related drugs, e.g. daunorubicin -> anthracycline-regimen trials;
 'Wilms tumor' -> WT1 trials), so trial_count is an upper bound; read the linked trials. PubMed (title / abstract) is stricter.
-Output: results/lincs/literature_v2_consensus.tsv (one row per pair, links as URLs), literature_v2_summary.tsv
+Output: results/lincs/literature_v2.tsv (one row per pair, links as URLs), literature_v2_summary.tsv
 MODE=fda (user 2026-10-29): the top FDA_N FDA-approved drugs of every disease and subgroup (79p rankings), searched by
   their FDA ingredient name (salt removed) OR their LINCS name when it is a real name (not BRD-... or a code); subgroups
   use their parent disease's terms. Also drug_review_url: PubMed reviews about the drug itself. Output
@@ -185,7 +185,7 @@ def _trials_live(drug, cond):
 
 
 def main():
-    o = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    o = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
     df = o
     ok = o[o.passes_gate & ~o.unmatched_lines & ~o.low_transfer & (o.rev > 0) & ~o.cmap_name.str.startswith("BRD-") & (~df.get("target_absent", pd.Series(False, index=df.index)).astype(str).str.lower().eq("true")) & ~df.get("receptor_status", pd.Series("", index=df.index)).eq("receptor_mismatch")]   # D102c / D104c demotions excluded
     import sys
@@ -243,7 +243,7 @@ def main():
             d[f"trial{j + 1}_info"] = f"{t[1]}, {t[2]}: {t[3]}" if t else ""
         out.append(d)
     out = pd.DataFrame(out).sort_values(["group_id", "layered_pct", "spec_mech"], ascending=[True, False, False])
-    out.to_csv(RES / "literature_v2_consensus.tsv", sep="\t", index=False)
+    out.to_csv(RES / "literature_v2.tsv", sep="\t", index=False)
     sm = out.groupby("group_id").agg(pairs=("cmap_name", "size"), with_pubmed=("pubmed_count", lambda v: int((v > 0).sum())),
                                      with_trials=("trial_count", lambda v: int((v > 0).sum())),
                                      top_lead_with_pubmed=("pubmed_count", lambda v: int((v[out.loc[v.index, "top_lead"]] > 0).sum())))
@@ -256,8 +256,8 @@ def is_code(n):
 
 
 def main_fda():
-    g = pd.read_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t").rename(columns={"group_id": "unit"}).assign(level="disease", parent_group=None)
-    s = pd.read_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t").rename(columns={"stratum": "unit"}).assign(level="subgroup")
+    g = pd.read_csv(RES / "fda_ranking_v2_tf.tsv", sep="\t").rename(columns={"group_id": "unit"}).assign(level="disease", parent_group=None)
+    s = pd.read_csv(RES / "fda_ranking_strata_v2_tf.tsv", sep="\t").rename(columns={"stratum": "unit"}).assign(level="subgroup")
     sel = pd.concat([g, s], ignore_index=True)
     sel = sel[sel.fda_rank <= FDA_N].copy()
     sel["disease_key"] = sel.parent_group.fillna(sel.unit)

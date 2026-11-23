@@ -7,9 +7,9 @@ each with up to 3 closest FDA drugs from 79y (shared annotated target, similar r
 profiled lines). For each FDA drug: similarity, shared lines and targets, the drug's own score and data source in the
 cohort, whether it needs a stand-in (borrowed / weak evidence), and its literature counts (79o MODE=fda_all).
 Cohorts without matched compounds say so. The 79y validation is shown on the page.
-Inputs: results/lincs/standin_pairs_v2.tsv, standin_run.json, drug_reversal_split_v2_consensus.tsv,
-        stratum_reversal_split_v2_consensus.tsv, drug_annotations.tsv, drug_reversal_summary_v2_consensus.tsv,
-        stratum_reversal_summary_v2_consensus.tsv, literature_fda_all_v2.tsv (if present), standin_vs_borrowed_summary_v2.tsv
+Inputs: results/lincs/standin_pairs_v2.tsv, standin_run.json, drug_reversal_split_v2_tf.tsv,
+        stratum_reversal_split_v2_tf.tsv, drug_annotations.tsv, drug_reversal_summary_v2_tf.tsv,
+        stratum_reversal_summary_v2_tf.tsv, literature_fda_all_v2.tsv (if present), standin_vs_borrowed_summary_v2.tsv
         (79y2, if present), results/step10_v2/strata.tsv;
         template scripts/templates/standin_compounds.html (placeholder __DATA__)
 Output: results/lincs/standin_compounds_v2.html (published copy: https://claude.ai/artifact/VatFtXvstvr8as21TVKeUN)
@@ -48,11 +48,11 @@ def main():
             lit[(r.unit, r.pert_id)] = [None if pd.isna(r.pubmed_count) else int(r.pubmed_count),
                                         None if pd.isna(r.trial_count) else int(r.trial_count),
                                         r.pubmed_search_url, r.trials_search_url]
-    full = {"group": pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False),
-            "subgroup": pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    full = {"group": pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False),
+            "subgroup": pd.read_csv(RES / "stratum_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
             .rename(columns={"stratum": "group_id"})}
-    gs = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
-    ss = pd.read_csv(RES / "stratum_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
+    gs = pd.read_csv(RES / "drug_reversal_summary_v2_tf.tsv", sep="\t").set_index("group_id")
+    ss = pd.read_csv(RES / "stratum_reversal_summary_v2_tf.tsv", sep="\t").set_index("group_id")
     st = pd.read_csv(ROOT / "results/step10_v2/strata.tsv", sep="\t").set_index("stratum")
     close = sp[sp.closest_rank <= 3].sort_values("closest_rank")
     C = {}

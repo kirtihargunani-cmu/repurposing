@@ -2386,3 +2386,23 @@ lung (2), colorectal (2), prostate, liver and melanoma.
 Per the spec's own section 1, this does **not** by itself validate the ranking — resembling an approved drug
 is not the objective. What makes it worth having is the MOA-disjoint arm: top-reversing drugs converge on the
 approved mechanism profile **without sharing their annotated targets or MOA class**.
+
+## 2026-11-23 — Consensus arm removed; three hidden defects fixed; D127 passes on production (D207, D208)
+
+Removing the consensus (ARACNe + CollecTRI) arm exposed three places where the "ARACNe-only"
+production pipeline was still reading it:
+
+| defect | before | after |
+|---|---|---|
+| `fda_rows.py` defaulted to the consensus split, so **D127 scored the wrong arm** | 33/49, NOT MET | **36/49 (73.5%), p = 0.0007, PASS** |
+| overactivity (O) averaged ARACNe and **CollecTRI** NES | — | 7,478 rows change O; ρ(old, new `layered_pct`) 0.958; 910 rows move > 10 pts |
+| evidence flags computed over consensus rows only | 79.2% of rows flagged-or-checked | 100%; `low_exposure` 721 → 1,085 |
+
+**D207 (biomarker expansion): invalidated by its negative control**, as pre-committed. HDAC LUAD vs
+LUSC "passes" 5/5, but 4 of the 5 drugs share one target unit and carry identical scores — about 2
+independent observations, not 5. PI3K fails (6/11 with AR), AR has 1 instance, and the
+multi-kinase secondary pairs pass (25/28) but are not decision-bearing. The same non-independence
+affects the original 7 pairs, so a target-deduplicated D127 is the next registration.
+
+CollecTRI / DoRothEA moved to `archive/collectri/` (143 MB); consensus outputs deleted (git history
+only). Stand-ins (79y) are off: they were built on CollecTRI activity. Rebuild: 58 min, 6 cores.

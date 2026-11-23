@@ -7,6 +7,8 @@
  "groups": 41,
  "alteration": {
   "recurrent_positions": 37240,
+  "mutation_pairs": 135651,
+  "amp_pairs": 3530208,
   "tumors_profiled": {
    "BRCA-Basal": 190,
    "BRCA-Her2": 81,
@@ -47,8 +49,6 @@
    "TGCT-SEM": 64,
    "UCEC-EEC": 108,
    "UCEC-SER": 60
-  },
-  "mutation_pairs": 135651,
-  "amp_pairs": 3050797
+  }
  }
 }

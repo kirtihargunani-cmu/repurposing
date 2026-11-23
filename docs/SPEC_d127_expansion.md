@@ -105,3 +105,15 @@ reported as underpowered, never dropped; the §2 thresholds are not re-opened.
 
 The git commit adding this file is the registration. Later changes to §2–§3 go in a new dated
 section, never an edit in place.
+
+## 8. Amendment 1 — 2026-11-23 (after the run; §2–§3 unchanged)
+
+**s1 was stale when written.** It quoted D127 as "49 instances, 38 correct, 78%". The figure the
+project was carrying at registration was 33/49 (D177, NOT MET) - and D208 then showed that figure
+came from the retired consensus arm, because `scripts/fda_rows.py` defaulted to it. On the
+production `_v2_tf` arm the original 7 pairs give **36/49 (73.5%), p = 0.0007: PASS**.
+
+**The registered run happened on the wrong arm.** The 00:39 run read consensus tables. The
+expansion was re-run once on production after D208, with no pair, threshold or rule changed. The
+verdict is the same on both arms: **the negative control passes (5/5), so the expansion is
+invalidated** (s6.3). Results: `results/lincs/d127/`; write-up: DECISIONS D207 result.

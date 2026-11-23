@@ -1,16 +1,21 @@
 item	value
 PRIMARY: instances	49
-PRIMARY: correct (high > low)	33
-PRIMARY: share (pass >= 0.7)	0.6735
-PRIMARY: sign-test p (pass < 0.05)	0.01065
-PRIMARY: median gap (pass >= 10.0)	14.2
-PRIMARY VERDICT	NOT MET
-  criteria met	share False, p True, gap True
+PRIMARY: correct (high > low)	36
+PRIMARY: share (pass >= 0.7)	0.7347
+PRIMARY: sign-test p (pass < 0.05)	0.0007
+PRIMARY: median gap (pass >= 10.0)	15.3
+PRIMARY VERDICT	PASS
+  criteria met	share True, p True, gap True
 ties (gap == 0), counted as not-correct	2
-sign test excluding ties	0.7021 (n=47, p=0.00397)
+sign test excluding ties	0.766 (n=47, p=0.00017)
 per-pair median of the share	0.8333
-end-to-end share (reported)	0.6735
-reported: spec_mech_pct_pregate	share 0.6122 (n=49, p=0.0762, median gap 7.1)
-reported: target_role_pct	share 0.8333 (n=36, p=3e-05, median gap 39.4)
-previously seen pairs (reported, not primary)	share 1.0 (n=18, median gap 64.7)
+end-to-end share (reported)	0.7347
+reported: spec_mech_pct_pregate	share 0.6939 (n=49, p=0.0047, median gap 5.3)
+reported: target_role_pct	share 0.9722 (n=36, p=0.0, median gap 36.0)
+previously seen pairs (reported, not primary)	share 0.9091 (n=22, median gap 66.3)
+EXPANSION-PRIMARY	share 0.5455 (n=11, p=0.5, median gap 11.9) -> does not meet the D127 thresholds
+expansion-secondary (not decision-bearing)	share 0.8929 (n=28, p=1e-05, median gap 27.1) -> meets the D127 thresholds
+NEGATIVE CONTROL (declared to fail)	share 1.0 (n=5, p=0.03125, median gap 18.2) -> meets the D127 thresholds
+NEGATIVE CONTROL VERDICT (spec s6.3: share >= 0.70 invalidates the expansion)	EXPANSION INVALIDATED
+primary + expansion-primary pooled (secondary; primary restated above unchanged)	share 0.7 (n=60, p=0.00134, median gap 14.5)
 not computable: AR antagonist TCGA-PRAD vs TCGA-BLCA	no AR drug is scored in BLCA

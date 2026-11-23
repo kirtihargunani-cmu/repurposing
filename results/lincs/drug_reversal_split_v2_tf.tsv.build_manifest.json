@@ -1,28 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261120T213723-2181587",
- "finished_at": "2026-11-20T21:37:26-05:00",
- "duration_s": 3,
- "script": "79m_specificity_components.py",
- "cmd": "env SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79m_specificity_components.py",
- "env": "",
- "git_sha": "78bc89f",
- "git_state": "dirty",
- "note": "D173: tau + promiscuity, both top-N definitions",
+ "run_id": "20261123T111358-3173042",
+ "finished_at": "2026-11-23T11:14:02-05:00",
+ "duration_s": 4,
+ "script": "79j_window_scores.py",
+ "cmd": "env SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79j_window_scores.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SPLIT_SFX=_v2_tf",
+ "git_sha": "7398cd8",
+ "git_state": "clean",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
  "supersedes": {
-  "run_id": "20261120T213630-2180681",
-  "finished_at": "2026-11-20T21:36:34-05:00",
+  "run_id": "20261123T105656-3169103",
+  "finished_at": "2026-11-23T10:57:00-05:00",
   "n_files": 1,
-  "env": ""
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SFXS=_v2_tf"
  },
  "files": {
   "drug_reversal_split_v2_tf.tsv": {
-   "bytes": 23919733,
-   "mtime": "2026-11-20T21:37:26-05:00"
+   "bytes": 23449134,
+   "mtime": "2026-11-23T11:14:01-05:00"
   }
  }
 }

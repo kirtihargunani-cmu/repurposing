@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 # Step 6 (+ mechanism heterogeneity): regulator activity per group and per patient.
 #
-# REGULON=collectri (default) | dorothea_ABC | aracne_project
+# REGULON=aracne_project (default; D208 - collectri / dorothea_ABC are separated and refused)
 #   aracne_project: project ARACNe regulons (scripts/44_aracne_regulons.R), one network per cohort - each group
 #   uses its cohort's network (subtypes share it; COAD/READ -> COADREAD). Full regulator set, no target cap.
 #   Run with ONLY_GROUPS limited to groups whose network is built.
@@ -41,7 +41,8 @@ setwd(root)
 # GROUP_ONLY=1 (D83): group mechanism only (steps 1-2); no patient VIPER, concordance or axes.
 # STRATA=<file> (v2; Step 10 subgroups, D72): one run per subgroup (columns stratum, group_id, sample): signature from
 #   results/step10_v2, the subgroup's tumors, the parent group's normals and network; outputs <res_dir>_strata
-REGULON <- Sys.getenv("REGULON", "collectri")
+REGULON <- Sys.getenv("REGULON", "aracne_project")   # D208: was "collectri"
+if (REGULON %in% c("collectri", "dorothea_ABC")) stop("D208: CollecTRI / DoRothEA are separated from the current builds (archive/collectri/); ARACNe is the only regulon set")
 # MIN_TARGETS (D139, 2026-11-17): regulon-size floor, env-configurable; DEFAULT RAISED 10 -> 25
 #   (viper's own package default) for consistency with 79d after the user's 2026-11-17 decision.
 #   WARNING: the Step 6 outputs in results/step6/ and data/processed/step6/ were built at 10 and

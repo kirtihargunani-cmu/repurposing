@@ -42,7 +42,11 @@ EXCLUSION_FLAGS = ["target_absent", "local_route", "low_exposure"]   # kept in t
 
 CLASSES = {"BRAF/MEK": {"BRAF", "MAP2K1", "MAP2K2"}, "EGFR": {"EGFR"}, "HER2": {"ERBB2"},
            "PARP": {"PARP1", "PARP2"}, "anti-estrogen": {"ESR1", "ESR2", "CYP19A1"}, "ALK": {"ALK"},
-           "CDK4/6": {"CDK4", "CDK6"}}
+           "CDK4/6": {"CDK4", "CDK6"},
+           # D207 expansion (docs/SPEC_d127_expansion.md), declared before scoring
+           "AR": {"AR"}, "PI3K": {"PIK3CA", "PIK3CB", "PIK3CD", "PIK3CG"},
+           "VEGFR": {"KDR", "FLT1", "FLT4"}, "MET": {"MET"}, "RET": {"RET"},
+           "HDAC": {"HDAC1", "HDAC2", "HDAC3"}}
 # (class, expected-high cohort, expected-low cohort, set). "primary" = the 49-instance decision set;
 # "seen" = values already known or prior decisions taken on them (D122 controls, D92-D97, D102c, D110): reported only.
 PAIRS = [
@@ -57,6 +61,23 @@ PAIRS = [
     ("anti-estrogen", "BRCA-LumB", "BRCA-Basal", "seen"),
     ("ALK", "TCGA-LUAD", "TCGA-LUSC", "seen"),
     ("CDK4/6", "BRCA-LumA", "BRCA-Basal", "seen"),
+    # --- D207 expansion. Every pair below was declared in docs/SPEC_d127_expansion.md BEFORE any
+    #     of them was scored, including the ones expected to fail. The 7 pairs above are untouched.
+    # expansion-primary: clean single-target rationale
+    ("AR", "TCGA-PRAD", "TCGA-LUSC", "expansion"),
+    ("PI3K", "BRCA-LumA", "BRCA-Basal", "expansion"),
+    ("PI3K", "BRCA-LumB", "BRCA-Basal", "expansion"),
+    # expansion-secondary: promiscuous multi-kinase drugs (cabozantinib hits VEGFR, MET and RET;
+    #   regorafenib hits VEGFR, KIT, RET, BCR-ABL), so these test less than their drug count
+    #   suggests. Reported, never decision-bearing.
+    ("VEGFR", "TCGA-KIRC", "TCGA-LUSC", "expansion_secondary"),
+    ("VEGFR", "TCGA-KIRP", "TCGA-LUSC", "expansion_secondary"),
+    ("MET", "TCGA-KIRP", "TCGA-LUSC", "expansion_secondary"),
+    ("RET", "TCGA-THCA", "TCGA-LUSC", "expansion_secondary"),
+    # NEGATIVE CONTROL, declared to FAIL: no HDAC biomarker distinguishes LUAD from LUSC. If this
+    #   "passes", the test is reading cohort-level score inflation rather than biomarker biology,
+    #   and the positive pairs cannot be trusted either.
+    ("HDAC", "TCGA-LUAD", "TCGA-LUSC", "negative_control"),
 ]
 NOT_COMPUTABLE = [("AR antagonist", "TCGA-PRAD", "TCGA-BLCA", "no AR drug is scored in BLCA")]
 # OUT_SFX (D165, 2026-11-20): write beside the production d127 output instead of over it,
@@ -145,7 +166,22 @@ def main():
         per.append(dict(pair_set=ps, drug_class=cls, high=hi, low=lo, **test(d),
                         n_lo_excluded=int(d.lo_excluded.sum()), n_hi_excluded=int(d.hi_excluded.sum()),
                         share_e2e=round(float(d.correct_e2e.mean()), 4)))
+    # D207 s6 (pre-committed): a declared pair with too few instances is REPORTED as underpowered, never dropped.
+    #   groupby only sees pairs that produced instances, so declared pairs with none are added explicitly.
+    seen_keys = {(r["pair_set"], r["drug_class"], r["high"], r["low"]) for r in per}
+    for cls, hi, lo, kind in PAIRS:
+        if (kind, cls, hi, lo) not in seen_keys:
+            gs = CLASSES[cls]
+            m = a.genes.map(lambda t: bool(t & gs)) & a[SCORE].notna()
+            nh, nl = int(((a.group_id == hi) & m).sum()), int(((a.group_id == lo) & m).sum())
+            per.append(dict(pair_set=kind, drug_class=cls, high=hi, low=lo, **test(inst.iloc[0:0]),
+                            n_lo_excluded=0, n_hi_excluded=0, share_e2e=np.nan,
+                            note=f"underpowered: 0 instances ({nh} scored in {hi}, {nl} in {lo})"))
     per = pd.DataFrame(per)
+    if "note" not in per:
+        per["note"] = ""
+    per["note"] = per["note"].fillna("")
+    per.loc[(per.n > 0) & (per.n < 5) & (per.note == ""), "note"] = "underpowered: < 5 instances"
     per.to_csv(OUT / "pairs.tsv", sep="\t", index=False)
 
     P = inst[inst.pair_set == "primary"]
@@ -176,6 +212,31 @@ def main():
         ts = test(S)
         rows.append(dict(item="previously seen pairs (reported, not primary)",
                          value=f"share {ts['share']} (n={ts['n']}, median gap {ts['median_gap']})"))
+    # D207 expansion sets (docs/SPEC_d127_expansion.md s6): same thresholds, reported per set.
+    exp_verdicts = {}
+    for ps, label in (("expansion", "EXPANSION-PRIMARY"), ("expansion_secondary", "expansion-secondary (not decision-bearing)"),
+                      ("negative_control", "NEGATIVE CONTROL (declared to fail)")):
+        X = inst[inst.pair_set == ps]
+        if not len(X) and not (per.pair_set == ps).any():
+            continue
+        t = test(X)
+        ok = bool(len(X) and t["share"] >= SHARE_MIN and t["p"] < P_MAX and t["median_gap"] >= GAP_MIN)
+        exp_verdicts[ps] = dict(**t, meets_thresholds=ok)
+        rows.append(dict(item=f"{label}", value=f"share {t['share']} (n={t['n']}, p={t['p']}, median gap {t['median_gap']}) "
+                                                f"-> {'meets' if ok else 'does not meet'} the D127 thresholds"))
+    if "negative_control" in exp_verdicts:
+        nc = exp_verdicts["negative_control"]
+        bad = bool(nc["n"] and nc["share"] >= SHARE_MIN)
+        exp_verdicts["negative_control"]["invalidates_expansion"] = bad
+        rows.append(dict(item="NEGATIVE CONTROL VERDICT (spec s6.3: share >= 0.70 invalidates the expansion)",
+                         value="EXPANSION INVALIDATED" if bad else "control behaves as declared (expansion stands)"))
+    if "expansion" in exp_verdicts:
+        PE = inst[inst.pair_set.isin(["primary", "expansion"])]
+        t = test(PE)
+        rows.append(dict(item="primary + expansion-primary pooled (secondary; primary restated above unchanged)",
+                         value=f"share {t['share']} (n={t['n']}, p={t['p']}, median gap {t['median_gap']})"))
+    for r in per[per.note.str.startswith("underpowered: 0")].itertuples():
+        rows.append(dict(item=f"declared, 0 instances: {r.drug_class} {r.high} vs {r.low}", value=r.note))
     for cls, hi, lo, why in NOT_COMPUTABLE:
         rows.append(dict(item=f"not computable: {cls} {hi} vs {lo}", value=why))
     summ = pd.DataFrame(rows)
@@ -183,7 +244,8 @@ def main():
 
     run = dict(score=SCORE, share_min=SHARE_MIN, p_max=P_MAX, gap_min=GAP_MIN, primary=pri, verdict=verdict,
                ties=ties, n_pairs_primary=int((per.pair_set == "primary").sum()),
-               per_pair_median_share=float(per[per.pair_set == "primary"].share.median()))
+               per_pair_median_share=float(per[per.pair_set == "primary"].share.median()),
+               split_sfx=F.SPLIT_SFX, d207=exp_verdicts)
     (OUT / "run.json").write_text(json.dumps(run, indent=1, default=float))
 
     pd.set_option("display.width", 250)

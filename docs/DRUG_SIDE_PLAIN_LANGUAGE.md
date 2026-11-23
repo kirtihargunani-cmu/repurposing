@@ -1111,3 +1111,23 @@ genes such as FOXM1, MYBL2 and MKI67 that are strongly up in the tumor. That is 
 work, and it is also the general "stop dividing" signal that many cancer drugs share. The breakdown makes that
 visible for any drug. Across drugs, scores are usually spread thin: the ten biggest switches typically carry under a
 tenth of the total.
+
+## We now use one set of gene networks, and that fixed three hidden problems (D208, 2026-11-23)
+
+The pipeline used to be able to run on a blend of two kinds of gene networks: ones learned from
+each cancer's own tumors (ARACNe) and a general, literature-curated set (CollecTRI). We had already
+decided to use only the tumor-learned ones. Removing the blended version completely showed that
+some steps were still quietly using it:
+
+- **Our main validation check was reading the old version.** Re-run on the current pipeline, the
+  biomarker test (do drugs score higher in the cancer that has their target biomarker?) now
+  **passes**: 36 of 49 comparisons go the right way (73%), against a 70% bar.
+- **Part of the main score still mixed in the curated networks.** It no longer does. Most rankings
+  barely move, but about 900 drug-disease scores shift by more than 10 percentile points.
+- **About a fifth of drug-disease pairs were missing their warning flags** (for example, "the dose
+  needed in the lab is far above what patients can reach"). Every pair now has them.
+
+We also tried adding new biomarker comparisons. The test included a deliberate "should fail" check,
+and it passed anyway. Looking closer, several drugs in that check hit the same target, so they get
+the same score and count as one piece of evidence rather than five. So the new comparisons are not
+counted. The same issue applies to the original test, so we will re-run it counting each target once.

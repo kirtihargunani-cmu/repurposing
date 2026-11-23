@@ -78,18 +78,22 @@ SFX = ("_v2" if os.environ.get("VERSION", "v1") == "v2" else "") + ("_tf" if os.
 assert SFX != "_tf", "REGSET=tf needs VERSION=v2"
 # REGULON=collectri | dorothea_ABC (VERSION=v2; user 2026-10-28): disease MRs from results/step6/<REGULON>_v2, drug activity
 # from drug_viper_specific_<REGULON>/ALL (79d; one context-free regulon for all diseases); outputs suffixed _v2_<REGULON>
-# REGULON=consensus (VERSION=v2; user 2026-10-28, D75): per regulator, the mean over ARACNe v2 TF (the disease's network)
+# REMOVED in D208 (2026-11-23) - kept for the record, refused at runtime. REGULON=consensus (VERSION=v2; user 2026-10-28, D75): per regulator, the mean over ARACNe v2 TF (the disease's network)
 # and CollecTRI of the drug activity, and the mean of the disease NES over the same sets; a regulator's sets = those
 # where it is tested in the disease and scored on the drug side, so drug and disease values average the same regulons.
 # Inputs results/step6/aracne_project_v2_tf + collectri_v2 and drug_viper_specific_v2_tf + _collectri; outputs _v2_consensus
 REGULON = os.environ.get("REGULON", "aracne_project")
 CONS = REGULON == "consensus"
+if CONS:
+    raise SystemExit("D208: REGULON=consensus (ARACNe + CollecTRI) has been removed; ARACNe-only (_v2_tf) is the only arm")
 # ARACNE_SET=tf (default) | tf_base | tf_sig1 | tf_sig2 (D83): which ARACNe TF-only target lists the consensus uses;
 #   other than tf, outputs get the suffix _<ARACNE_SET> (e.g. drug_reversal_v2_consensus_tf_sig1.tsv).
 ARACNE_SET = os.environ.get("ARACNE_SET", "tf"); assert ARACNE_SET in ("tf", "tf_base", "tf_sig1", "tf_sig2")
 XS = "" if ARACNE_SET == "tf" else f"_{ARACNE_SET}"
 CONS_SETS = {"aracne": (f"results/step6/aracne_project_v2_{ARACNE_SET}", f"_v2_{ARACNE_SET}"), "collectri": ("results/step6/collectri_v2", "_collectri")}
 CURATED = REGULON not in ("aracne_project", "consensus")
+if REGULON in ("collectri", "dorothea_ABC"):
+    raise SystemExit("D208: CollecTRI / DoRothEA are separated from the current builds (archive/collectri/); ARACNe is the only regulon set")
 assert not CONS or SFX == "_v2", "consensus: VERSION=v2 (REGSET not used)"
 assert not CURATED or SFX == "_v2", "curated regulons: VERSION=v2 (REGSET not used)"
 MR_DIR = f"results/step6/{REGULON}_v2" if CURATED else f"results/step6/aracne_project{SFX}"

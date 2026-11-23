@@ -11,12 +11,12 @@ non-alphanumerics removed. fda_status = "marketed" if any product of the ingredi
 ingredient's products; local_route = none of them systemic (D107). first_fda_approval = earliest original
 (ORIG) approval of an NDA / BLA containing the ingredient.
 Ranking (D122, 2026-11-08: the layered score layered_pct (79t3) leads; FDA drugs without a protein main target are
-listed separately by the reversal lead in fda_ranking[_strata]_noprotein_v2_consensus.tsv; gates passes_gate / target_absent /
+listed separately by the reversal lead in fda_ranking[_strata]_noprotein_v2_tf.tsv; gates passes_gate / target_absent /
 local_route / low_exposure, the LINCS evidence shown as lincs_flags). Before D122 (D80: specificity first): per disease, FDA-approved drugs that pass the target gate, are not flagged
 (unmatched_lines / low_transfer / local_route, D107: no systemic formulation, scripts/route_flag.py; D109: dose_inconsistent / inactive_matched_line / low_exposure, scripts/evidence_flags.py), not demoted by D102c / D104c (target_absent, receptor_mismatch) and have rev > 0, ordered by spec_mech (then spec, rev as context); subgroups by
 spec_sib_mech (vs the sibling), with spec_mech. A drug listed under several LINCS ids keeps its best row. Literature /
 trial counts are joined from 79o where that pair was searched.
-Outputs: results/lincs/fda_ranking_v2_consensus.tsv (41 groups), fda_ranking_strata_v2_consensus.tsv (14 subgroups),
+Outputs: results/lincs/fda_ranking_v2_tf.tsv (41 groups), fda_ranking_strata_v2_tf.tsv (14 subgroups),
          fda_matches.tsv (LINCS drug -> FDA ingredient, status, first approval, application numbers)
 """
 import re
@@ -32,9 +32,10 @@ from evidence_flags import apply_evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results/lincs"
-# SFX (D139, 2026-11-17): which reversal/split tables to rank. Default is production
-#   (_v2_consensus = ARACNe + CollecTRI). Set SFX=_v2_tf for the ARACNe-only ranking.
-SFX = os.environ.get("SFX", "_v2_tf")   # D186: ARACNe-only is production (D160); set SFX=_v2_consensus for the frozen reference arm
+# SFX (D139; D208): which reversal/split tables to rank. _v2_tf (ARACNe-only) is the only arm.
+SFX = os.environ.get("SFX", "_v2_tf")   # D186/D208: ARACNe-only is the only arm
+if "consensus" in SFX:
+    raise SystemExit("D208: the consensus arm has been removed")
 
 FDA = ROOT / "data/raw/drugsatfda/extracted"
 from fda_rows import SALTS, FDA_ALIAS, FDA_EXCLUDE, drug_name, eligible, lincs_flags, ORDER, ORDER_REVERSAL  # noqa: E402  (D112: one list for 79p, fda_rows, 79o2; D115)

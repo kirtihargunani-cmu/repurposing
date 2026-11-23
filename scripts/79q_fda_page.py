@@ -4,10 +4,10 @@
 One self-contained HTML file (data embedded, no server needed): cohort list (41 diseases, 14 subgroups) with evidence
 status, and per cohort the ranked FDA drugs (79p) with scores, data source, FDA status, Drugs@FDA link, PubMed / trial
 counts and links, and a PubMed reviews link per drug. Literature: the top 3 FDA drugs per cohort from the FDA-name
-search (79o MODE=fda, literature_fda_top_v2.tsv); other rows from the LINCS-name search (79o, literature_v2_consensus.tsv)
+search (79o MODE=fda, literature_fda_top_v2.tsv); other rows from the LINCS-name search (79o, literature_v2.tsv)
 where that pair was searched.
-Inputs: results/lincs/fda_ranking_v2_consensus.tsv, fda_ranking_strata_v2_consensus.tsv, literature_fda_top_v2.tsv,
-        literature_v2_consensus.tsv, drug_reversal_summary_v2_consensus.tsv, stratum_reversal_summary_v2_consensus.tsv,
+Inputs: results/lincs/fda_ranking_v2_tf.tsv, fda_ranking_strata_v2_tf.tsv, literature_fda_top_v2.tsv,
+        literature_v2.tsv, drug_reversal_summary_v2_tf.tsv, stratum_reversal_summary_v2_tf.tsv,
         results/step10_v2/strata.tsv; template scripts/templates/fda_rankings.html (placeholder __DATA__)
 Output: results/lincs/fda_rankings_v2.html (published copy since D122: https://claude.ai/artifact/AMk5E9yEXv1JhN8qf3FG96; the pre-D122 copy 4UVF5F6SxD639VKKJEZenw is in another organization)
 """
@@ -63,12 +63,12 @@ def links(lr):
 
 
 def main():
-    g = pd.read_csv(RES / "fda_ranking_v2_consensus.tsv", sep="\t")
-    s = pd.read_csv(RES / "fda_ranking_strata_v2_consensus.tsv", sep="\t")
-    lit = pd.read_csv(RES / "literature_v2_consensus.tsv", sep="\t").set_index(["group_id", "cmap_name"])
+    g = pd.read_csv(RES / "fda_ranking_v2_tf.tsv", sep="\t")
+    s = pd.read_csv(RES / "fda_ranking_strata_v2_tf.tsv", sep="\t")
+    lit = pd.read_csv(RES / "literature_v2.tsv", sep="\t").set_index(["group_id", "cmap_name"])
     top = pd.read_csv(RES / "literature_fda_top_v2.tsv", sep="\t").set_index(["unit", "drug"])
-    gs = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
-    ss = pd.read_csv(RES / "stratum_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
+    gs = pd.read_csv(RES / "drug_reversal_summary_v2_tf.tsv", sep="\t").set_index("group_id")
+    ss = pd.read_csv(RES / "stratum_reversal_summary_v2_tf.tsv", sep="\t").set_index("group_id")
     st = pd.read_csv(ROOT / "results/step10_v2/strata.tsv", sep="\t").set_index("stratum")
 
     def rows(df, unit, scorecol):

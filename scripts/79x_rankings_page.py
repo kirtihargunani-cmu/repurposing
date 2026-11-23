@@ -9,9 +9,9 @@ transfer confidence and the flags (unmatched_lines, low_transfer, multi_target, 
 the receptor evidence gate (79w) per drug; and literature where a search was run: the LINCS-name search of each
 disease's top 10 by spec_mech and by rev (79o) and the FDA-name search of each cohort's top 3 FDA drugs (79o MODE=fda).
 Pairs never searched link to a PubMed search instead.
-Inputs: results/lincs/drug_reversal_split_v2_consensus.tsv, stratum_reversal_split_v2_consensus.tsv,
-        drug_reversal_summary_v2_consensus.tsv, stratum_reversal_summary_v2_consensus.tsv, drug_annotations.tsv,
-        fda_matches.tsv, literature_v2_consensus.tsv, literature_fda_top_v2.tsv, literature_fda_all_v2.tsv (79o
+Inputs: results/lincs/drug_reversal_split_v2_tf.tsv, stratum_reversal_split_v2_tf.tsv,
+        drug_reversal_summary_v2_tf.tsv, stratum_reversal_summary_v2_tf.tsv, drug_annotations.tsv,
+        fda_matches.tsv, literature_v2.tsv, literature_fda_top_v2.tsv, literature_fda_all_v2.tsv (79o
         MODE=fda_all, every row; preferred where present), receptor_gate_v2.tsv, standin_pairs_v2.tsv + standin_run.json
         (79y: up to 3 stand-ins for borrowed / weak-evidence FDA drugs; where one exists the page also shows the
         average of the drug's own lead percentile and the best stand-in's, and can rank by it: user 2026-11-02),
@@ -70,8 +70,8 @@ def standin_vs_borrowed():
 
 
 def main():
-    g = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
-    s = pd.read_csv(RES / "stratum_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False).rename(columns={"stratum": "group_id"})
+    g = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
+    s = pd.read_csv(RES / "stratum_reversal_split_v2_tf.tsv", sep="\t", low_memory=False).rename(columns={"stratum": "group_id"})
     # FDA-approved drugs only (user 2026-11-02): scripts/fda_rows.py (Drugs@FDA match, one LINCS id per ingredient)
     n_all = (int(g.passes_gate.map(truthy).sum()), int(s.passes_gate.map(truthy).sum()))
     g, s = fda_rows()
@@ -107,27 +107,30 @@ def main():
                 if c in df:
                     df[c + "_pct"] = (df.groupby("group_id")[c].rank(method="max", pct=True) * 100).round(1)
     # flags not carried into the split tables come from the reversal tables
-    for df, f in ((g, "drug_reversal_v2_consensus.tsv"), (s, "stratum_reversal_v2_consensus.tsv")):
+    for df, f in ((g, "drug_reversal_v2_tf.tsv"), (s, "stratum_reversal_v2_tf.tsv")):
         r = pd.read_csv(RES / f, sep="\t", low_memory=False, usecols=["group_id", "pert_id", "n_lines_used"])
         df["n_lines_used"] = pd.MultiIndex.from_frame(df[["group_id", "pert_id"]]).map(
             r.drop_duplicates(["group_id", "pert_id"]).set_index(["group_id", "pert_id"]).n_lines_used)
-    gs = pd.read_csv(RES / "drug_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
-    ss = pd.read_csv(RES / "stratum_reversal_summary_v2_consensus.tsv", sep="\t").set_index("group_id")
+    gs = pd.read_csv(RES / "drug_reversal_summary_v2_tf.tsv", sep="\t").set_index("group_id")
+    ss = pd.read_csv(RES / "stratum_reversal_summary_v2_tf.tsv", sep="\t").set_index("group_id")
     st = pd.read_csv(ROOT / "results/step10_v2/strata.tsv", sep="\t").set_index("stratum")
     ann = pd.read_csv(RES / "drug_annotations.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id")
     fda = pd.read_csv(RES / "fda_matches.tsv", sep="\t").drop_duplicates("pert_id").set_index("pert_id")
-    lit = pd.read_csv(RES / "literature_v2_consensus.tsv", sep="\t")
+    lit = pd.read_csv(RES / "literature_v2.tsv", sep="\t")
     top = pd.read_csv(RES / "literature_fda_top_v2.tsv", sep="\t")
     fa = RES / "literature_fda_all_v2.tsv"
     lall = pd.read_csv(fa, sep="\t") if fa.exists() else None
-    sp = pd.read_csv(RES / "standin_pairs_v2.tsv", sep="\t")
-    sp = sp[sp.fda_needs_standin & (sp.standin_rank <= 3)].sort_values("standin_rank")
+    # D208: stand-ins were built on CollecTRI drug activity and are archived (archive/collectri/); the page
+    #   renders without them when the files are absent.
+    spf = RES / "standin_pairs_v2.tsv"
+    sp = pd.read_csv(spf, sep="\t") if spf.exists() else pd.DataFrame(columns=["fda_needs_standin", "standin_rank"])
+    sp = sp[sp.fda_needs_standin.astype(bool) & (sp.standin_rank <= 3)].sort_values("standin_rank")
     SI = {}
     for r in sp.itertuples(index=False):
         SI.setdefault((r.group_id, r.fda_pert), []).append(
             [r.cmp_name, rnd(r.similarity), int(r.n_shared_lines), r.shared_targets, rnd(r.cmp_spec_mech_pct, 1),
              rnd(r.cmp_spec_pct, 1), rnd(r.cmp_rev_pct, 1), rnd(r.cmp_spec_sib_mech_pct, 1), int(bool(r.cmp_is_fda))])
-    vrun = json.load(open(RES / "standin_run.json"))
+    vrun = json.load(open(RES / "standin_run.json")) if (RES / "standin_run.json").exists() else {}
     rg = pd.read_csv(RES / "receptor_gate_v2.tsv", sep="\t", low_memory=False)
     # D108 (user 2026-11-06): trial outcomes for each cohort's top 10 FDA drugs; failed trials with the reason
     TO = {}
@@ -233,14 +236,17 @@ def main():
     meta.update({u: dict(kind="subgroup", parent=st.loc[u, "group_id"], status=ss.loc[u, "evidence_status"],
                          note=ss.loc[u, "evidence_note"], bl=clean(ss.loc[u, "best_line"]) or "",
                          desc=clean(st.loc[u, "description"]) or "") for u in S})
-    val = {v["set"]: v for v in vrun["validation"]}
+    if vrun:
+        val = {v["set"]: v for v in vrun["validation"]}
+        SIN = dict(adopted=vrun["adopted"], rho=val["accepted stand-ins"]["spearman"],
+                   lo=val["accepted stand-ins"]["ci_lo"], hi=val["accepted stand-ins"]["ci_hi"],
+                   rand=val["random shared-target pairs (median of 200)"]["spearman"],
+                   n=val["accepted stand-ins"]["n"], r=vrun["config"]["min_similarity"],
+                   k=vrun["config"]["min_shared_lines"], **standin_vs_borrowed())
+    else:
+        SIN = {}   # D208: stand-ins archived with CollecTRI
     data = json.dumps(dict(drugs=D, lit=L, rows={**G, **S}, meta=meta, flags=FLAGS,
-                           standin=dict(adopted=vrun["adopted"], rho=val["accepted stand-ins"]["spearman"],
-                                        lo=val["accepted stand-ins"]["ci_lo"], hi=val["accepted stand-ins"]["ci_hi"],
-                                        rand=val["random shared-target pairs (median of 200)"]["spearman"],
-                                        n=val["accepted stand-ins"]["n"], r=vrun["config"]["min_similarity"],
-                                        k=vrun["config"]["min_shared_lines"],
-                                        **standin_vs_borrowed())), separators=(",", ":"),
+                           standin=SIN), separators=(",", ":"),
                       ensure_ascii=False, allow_nan=False).replace("</", "<\\/")
     page = (ROOT / "scripts/templates/disease_drug_rankings.html").read_text().replace("__DATA__", data, 1)
     if PRESENT_ONLY:

@@ -123,5 +123,5 @@ parameters:
         pending: true
         writer: 79d_drug_viper.R
     note: >
-      Promoted 2026-11-22. 79i2 / 79i3 / 79p / 79t3 / 79i4 default here; _v2_consensus remains
-      reachable as a frozen reference arm.
+      Promoted 2026-11-22 (D186). D208 (2026-11-23): the _v2_consensus arm is removed - outputs
+      deleted, every script refuses it, and the overactivity component is ARACNe-only.

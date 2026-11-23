@@ -1,23 +1,28 @@
 {
  "schema": "repurposing/build_manifest/1",
- "run_id": "20261120T210009-2169135",
- "finished_at": "2026-11-20T21:00:11-05:00",
+ "run_id": "20261123T111402-3173089",
+ "finished_at": "2026-11-23T11:14:04-05:00",
  "duration_s": 2,
  "script": "79k_window_long.py",
  "cmd": "env SPLIT_SFX=_v2_tf /home/kirti/miniforge3/envs/celligner/bin/python scripts/79k_window_long.py",
- "env": "",
- "git_sha": "5831f44",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6 SPLIT_SFX=_v2_tf",
+ "git_sha": "7398cd8",
  "git_state": "dirty",
- "note": "D171: window as an explicit output dimension (early/late/pooled)",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
  "expect": null,
  "n_files": 1,
  "mtime_span_hours": 0.0,
  "files_not_rewritten_by_this_run": [],
- "supersedes": null,
+ "supersedes": {
+  "run_id": "20261122T144237-2824704",
+  "finished_at": "2026-11-22T14:42:40-05:00",
+  "n_files": 1,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
  "files": {
   "drug_ranking_by_window_v2_tf.tsv": {
-   "bytes": 7808693,
-   "mtime": "2026-11-20T21:00:10-05:00"
+   "bytes": 8773218,
+   "mtime": "2026-11-23T11:14:03-05:00"
   }
  }
 }

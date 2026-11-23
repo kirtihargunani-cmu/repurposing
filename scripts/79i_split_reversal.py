@@ -34,7 +34,7 @@ VERSION=v2 [REGSET=tf]: v2 MRs, activity, P1 list and 79e scores (suffix _v2[_tf
 part is skipped (no v2 Step 10 strata yet).
 SCORE=weighted (default for v2, D74): every regulator tested in the disease, weight = disease NES (no MR_FDR cutoff), in
   every score (rev_prolif / rev_nonprolif / rev_mech: the weighted sum over the proliferation-linked / other regulators).
-REGULON=consensus (VERSION=v2, D75): ARACNe v2 TF (disease network) and CollecTRI side by side; per set: P1 from its own
+REMOVED in D208 (2026-11-23), refused at runtime. REGULON=consensus (VERSION=v2, D75): ARACNe v2 TF (disease network) and CollecTRI side by side; per set: P1 from its own
   79h list (prolif_regulators_v2_tf / _collectri), P2 and the proliferation adjustment on its own activity; then, per
   disease, the per-regulator mean over the sets scored on both sides (as 79e). A regulator is proliferation-linked if it
   is linked in any of its sets (fixed 2026-10-28). Inputs: 79e drug_reversal_v2_consensus.tsv; outputs suffix _v2_consensus.
@@ -86,6 +86,10 @@ STRATA_V2 = os.environ.get("STRATA", "0") == "1"
 STRATA = SFX == "" or STRATA_V2
 assert not STRATA_V2 or SFX.startswith("_v2"), "STRATA=1 needs VERSION=v2"
 REGULON = os.environ.get("REGULON", "aracne_project"); CONS = REGULON == "consensus"
+if REGULON in ("collectri", "dorothea_ABC"):
+    raise SystemExit("D208: CollecTRI / DoRothEA are separated from the current builds (archive/collectri/); ARACNe is the only regulon set")
+if CONS:
+    raise SystemExit("D208: REGULON=consensus (ARACNe + CollecTRI) has been removed; ARACNe-only (_v2_tf) is the only arm")
 assert not CONS or SFX == "_v2", "consensus: VERSION=v2"
 SCORE = os.environ.get("SCORE", "weighted" if SFX.startswith("_v2") else "fdr"); assert SCORE in ("weighted", "fdr")
 OUT = ("_v2_consensus" if CONS else SFX)

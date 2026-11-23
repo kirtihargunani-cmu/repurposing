@@ -2,8 +2,8 @@
 """Relative target-presence step in the ranking (D102a rule, adopted as D102c by the user 2026-11-04).
 
 Runs after 79i on the production split tables, in place:
-  results/lincs/drug_reversal_split_v2_consensus.tsv     (41 groups; presence from the group's tumors)
-  results/lincs/stratum_reversal_split_v2_consensus.tsv  (subgroups; presence from the subgroup's own tumors)
+  results/lincs/drug_reversal_split_v2_tf.tsv     (41 groups; presence from the group's tumors)
+  results/lincs/stratum_reversal_split_v2_tf.tsv  (subgroups; presence from the subgroup's own tumors)
 Rule (docs/DECISIONS.md D102, D102a):
   judged drugs   >= 1 annotated receptor target (the 79w drug set; ChEMBL 37 cache of 79w)
   evidence E     curated direct ChEMBL mechanism genes (any target type) among the drug's annotated non-ADME targets;
@@ -16,7 +16,7 @@ Reported: evidence_targets (gene:median/R), target_carrier_share (41 groups: sha
 from the D102b carrier table; shown on the page as "Minority target" when >= 3 tumors carry it).
 Also refreshes the 79i summaries that use these percentiles: split_controls{SFX}.tsv (spec_mech, spec_sib_mech) and
 split_overview{SFX}.tsv (drugs_top10_spec_mech_in_ge20_groups, controls_*_spec_mech_pct_mean).
-Env SFX (default _v2_consensus) selects the tables, e.g. _v2_consensus_d100early for the D100 time-split rankings.
+Env SFX (default _v2_tf) selects the tables. D208: the consensus arm is removed.
 D110 (2026-11-07): a ChEMBL CHIMERIC PROTEIN mechanism target counts only through its kinase (config chimeric_kinase).
 Idempotent: reruns start from the *_pregate columns. 79b / 79w are read, never edited (other agent's scripts).
 """
@@ -31,7 +31,9 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 RES, PROC = ROOT / "results/lincs", ROOT / "data/processed/lincs"
 CARRIERS = RES / "d102/carriers_d102b.tsv.gz"
-SFX = os.environ.get("SFX", "_v2_tf")   # D186: ARACNe-only is production (D160); set SFX=_v2_consensus for the frozen reference arm
+SFX = os.environ.get("SFX", "_v2_tf")   # D186/D208: ARACNe-only is the only arm (consensus removed)
+if "consensus" in SFX:
+    raise SystemExit("D208: the consensus arm has been removed")
 TARGETS = os.environ.get("TARGETS", "d105a")   # production (D105b): "d105a" FDA tiered main targets; "default": D102a evidence targets; "d105": D105 test
 SOURCE, SECONDARY = {}, {}
 FDA_NAMES = set()   # D105a scope (cmap names of FDA drugs)
@@ -339,7 +341,7 @@ def main():
     run = dict(rule="D102a / D102c", tables=SFX, drugs_with_evidence_targets=len(E),
                groups_absent_rows=int(g.target_absent.sum()), subgroup_absent_rows=int(s.target_absent.sum()),
                groups_minority_rows=int((g.target_absent & (g.target_carriers >= 3)).sum()))
-    json.dump(run, open(RES / f"target_presence_run{'' if SFX == '_v2_consensus' else SFX}.json", "w"), indent=1)
+    json.dump(run, open(RES / f"target_presence_run{SFX}.json", "w"), indent=1)
     print(run)
 
 

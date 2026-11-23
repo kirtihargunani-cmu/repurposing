@@ -1,0 +1,51 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T113314-3177019",
+ "finished_at": "2026-11-23T11:34:36-05:00",
+ "duration_s": 81,
+ "script": "79ad_approved_concordance.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79ad_approved_concordance.py",
+ "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6",
+ "git_sha": "7398cd8",
+ "git_state": "clean",
+ "note": "D186 formal end-to-end pipeline, ARACNe-only (D160/D186)",
+ "expect": null,
+ "n_files": 6,
+ "mtime_span_hours": 20.59,
+ "files_not_rewritten_by_this_run": [
+  "moa_disjoint_shortlist.tsv",
+  "moa_disjoint_shortlist.tsv.build_manifest.json"
+ ],
+ "supersedes": {
+  "run_id": "20261122T145715-2830514",
+  "finished_at": "2026-11-22T14:58:58-05:00",
+  "n_files": 5,
+  "env": "VERSION=v2 REGSET=tf REGULON=aracne_project N_CORES=6"
+ },
+ "files": {
+  "acceptance.tsv": {
+   "bytes": 432,
+   "mtime": "2026-11-23T11:34:36-05:00"
+  },
+  "moa_disjoint_shortlist.tsv": {
+   "bytes": 16622,
+   "mtime": "2026-11-22T14:58:58-05:00"
+  },
+  "moa_disjoint_shortlist.tsv.build_manifest.json": {
+   "bytes": 702,
+   "mtime": "2026-11-22T14:58:58-05:00"
+  },
+  "per_cell.tsv": {
+   "bytes": 2327,
+   "mtime": "2026-11-23T11:34:36-05:00"
+  },
+  "per_drug.tsv": {
+   "bytes": 1654240,
+   "mtime": "2026-11-23T11:34:36-05:00"
+  },
+  "run.json": {
+   "bytes": 3563,
+   "mtime": "2026-11-23T11:34:36-05:00"
+  }
+ }
+}

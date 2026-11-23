@@ -86,7 +86,7 @@ def chembl_units(names, main):
 def main():
     rng = np.random.default_rng(SEED)
     OUT.mkdir(parents=True, exist_ok=True)
-    sp = pd.read_csv(RES / "drug_reversal_split_v2_consensus.tsv", sep="\t", low_memory=False)
+    sp = pd.read_csv(RES / "drug_reversal_split_v2_tf.tsv", sep="\t", low_memory=False)
     groups = sorted(sp.group_id.unique())
     _, Pd = T79.comp_dependency(groups)
     _, Pa, _ = T79.comp_alteration(groups)

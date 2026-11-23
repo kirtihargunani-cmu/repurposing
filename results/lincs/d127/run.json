@@ -5,13 +5,41 @@
  "gap_min": 10.0,
  "primary": {
   "n": 49,
-  "n_correct": 33,
-  "share": 0.6735,
-  "p": 0.01065,
-  "median_gap": 14.2
+  "n_correct": 36,
+  "share": 0.7347,
+  "p": 0.0007,
+  "median_gap": 15.3
  },
- "verdict": false,
+ "verdict": true,
  "ties": 2,
  "n_pairs_primary": 7,
- "per_pair_median_share": 0.8333
+ "per_pair_median_share": 0.8333,
+ "split_sfx": "_v2_tf",
+ "d207": {
+  "expansion": {
+   "n": 11,
+   "n_correct": 6,
+   "share": 0.5455,
+   "p": 0.5,
+   "median_gap": 11.9,
+   "meets_thresholds": false
+  },
+  "expansion_secondary": {
+   "n": 28,
+   "n_correct": 25,
+   "share": 0.8929,
+   "p": 1e-05,
+   "median_gap": 27.1,
+   "meets_thresholds": true
+  },
+  "negative_control": {
+   "n": 5,
+   "n_correct": 5,
+   "share": 1.0,
+   "p": 0.03125,
+   "median_gap": 18.2,
+   "meets_thresholds": true,
+   "invalidates_expansion": true
+  }
+ }
 }
