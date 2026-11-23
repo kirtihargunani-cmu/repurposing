@@ -1,0 +1,36 @@
+{
+ "stage": "B_temporal",
+ "protocol": "5cc2227+2e55c43",
+ "units": 16,
+ "rows": 9880,
+ "pseudo_rows": 7743,
+ "classes": [
+  "CDK inhibitor",
+  "EGFR inhibitor",
+  "HDAC inhibitor",
+  "HSP inhibitor",
+  "MEK inhibitor",
+  "PI3K inhibitor",
+  "glucocorticoid receptor agonist",
+  "topoisomerase inhibitor",
+  "tubulin polymerization inhibitor"
+ ],
+ "calibration": [
+  {
+   "level": "group_id",
+   "rev_gene_within": 0.9532669839896148,
+   "rev_within": 0.9477859512476562,
+   "act_within": 0.9705521472392638,
+   "n": 6933
+  },
+  {
+   "level": "stratum",
+   "rev_gene_within": 0.9580246913580247,
+   "rev_within": 0.9469135802469136,
+   "act_within": 0.9693181818181819,
+   "n": 810
+  }
+ ],
+ "runtime_s": 102.5,
+ "finished": "2026-11-23T16:45:59-0500"
+}

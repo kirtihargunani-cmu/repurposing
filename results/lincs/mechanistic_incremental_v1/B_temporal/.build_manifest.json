@@ -1,0 +1,47 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261123T164416-3320422",
+ "finished_at": "2026-11-23T16:45:59-05:00",
+ "duration_s": 103,
+ "script": "B_temporal.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/B_temporal.py",
+ "env": "",
+ "git_sha": "2e55c43",
+ "git_state": "dirty",
+ "note": "mechanistic_incremental_v1 Experiment B (protocol 5cc2227 + 2e55c43)",
+ "expect": null,
+ "n_files": 7,
+ "mtime_span_hours": 0.02,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "B_case_studies.tsv": {
+   "bytes": 18954,
+   "mtime": "2026-11-23T16:44:54-05:00"
+  },
+  "B_enrichment.tsv": {
+   "bytes": 6886,
+   "mtime": "2026-11-23T16:45:59-05:00"
+  },
+  "B_noise.tsv": {
+   "bytes": 1750,
+   "mtime": "2026-11-23T16:44:54-05:00"
+  },
+  "B_pseudoreplicate.tsv.gz": {
+   "bytes": 156067,
+   "mtime": "2026-11-23T16:44:54-05:00"
+  },
+  "B_summary.tsv": {
+   "bytes": 7558,
+   "mtime": "2026-11-23T16:45:02-05:00"
+  },
+  "B_transitions.tsv.gz": {
+   "bytes": 493194,
+   "mtime": "2026-11-23T16:44:53-05:00"
+  },
+  "run.json": {
+   "bytes": 752,
+   "mtime": "2026-11-23T16:45:59-05:00"
+  }
+ }
+}
