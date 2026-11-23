@@ -356,7 +356,7 @@ table.mx tr.bad{background:var(--red-tint);}
       <table class="mx" style="font-size:24px;">
         <tr class="head"><th class="l">Signal</th><th class="l">Result</th></tr>
         <tr><td class="l">Approved-drug recovery<br><span style="color:var(--muted);">known-use AUC</span></td><td class="l"><b>~0.60</b><br><span style="color:var(--muted);">bimodal; 9 of 41 cohorts inverted</span></td></tr>
-        <tr class="band"><td class="l">Literature biomarkers<br><span style="color:var(--muted);">D127 &middot; 7 pairs, 49 instances</span></td><td class="l"><b>78% correct</b><br><span style="color:var(--muted);">small; expanding + a decoy control</span></td></tr>
+        <tr class="band"><td class="l">Literature biomarkers<br><span style="color:var(--muted);">D127 &middot; 7 pairs, one vote per target</span></td><td class="l"><b>16 of 20 targets (80%)</b><br><span style="color:var(--muted);">p = 0.006; 36 of 49 drugs</span></td></tr>
         <tr><td class="l">Specificity / PRISM<br><span style="color:var(--muted);">viability correlation</span></td><td class="l"><b>~0</b><br><span style="color:var(--muted);">the confound, visible</span></td></tr>
       </table>
       <div class="panel red" style="margin-top:24px;">
@@ -366,7 +366,7 @@ table.mx tr.bad{background:var(--red-tint);}
   </div>
 
   <div class="foot">
-    <span class="tag">Source: repo D192, D127/D207, LITERATURE_SCORING</span>
+    <span class="tag">Source: repo D192, D127/D209 (run 2026-11-23), LITERATURE_SCORING</span>
     <span class="pageno">Drug repurposing &middot; validation update</span>
   </div>
   <aside>The point I want to land with the PI: the open problem is not only "which similarity function" — it's that every ground truth we have rewards the generic anti-proliferation confound, so a metric that scores better on those truths may just be a better cytotoxicity detector. PANACEA is attractive because it tests the activity-space step directly (does VIPER on a drug profile recover the drug's known mechanism) and is independent of GDSC, so it does not inherit the circularity that rules GDSC out for us.</aside>
