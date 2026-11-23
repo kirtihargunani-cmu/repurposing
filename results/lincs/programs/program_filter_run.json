@@ -1,0 +1,14 @@
+{
+ "script": "79aj_program_filter.py",
+ "covar_max": 0.5,
+ "plate_margin": 0.1,
+ "thresholds_from": "D37 axis keep-rule",
+ "n_programs": 461,
+ "n_artefact": 94,
+ "fails": {
+  "fail_plate": 94,
+  "fail_quality": 0,
+  "fail_proliferation": 105,
+  "fail_generic": 47
+ }
+}

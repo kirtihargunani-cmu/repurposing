@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T211849-2944261",
+ "finished_at": "2026-11-22T21:19:39-05:00",
+ "duration_s": 50,
+ "script": "79ak_drug_programs.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/79ak_drug_programs.py",
+ "env": "",
+ "git_sha": "af58fa5",
+ "git_state": "dirty",
+ "note": "D200 drug-side programs",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "drug_programs.tsv": {
+   "bytes": 112891,
+   "mtime": "2026-11-22T21:19:39-05:00"
+  }
+ }
+}
