@@ -145,3 +145,36 @@ Scripts: `scripts/79an_rev_gene.py` (score + floor), `scripts/79ao_rev_gene_sepa
 
 The git commit adding this file is the registration. Later changes to §2–§5 go in a new dated
 section, never an edit in place.
+
+---
+
+## 9. AMENDMENT 1, 2026-11-22 — sign error in the section 2 formula, found on the first smoke test
+
+**Section 2 is NOT edited.** As registered it read
+
+```
+act_geneᵢ = ⟨dᵢ , Cᵢ⟩ / ‖dᵢ‖ ;   rev_gene = −Σᵢ nesᵢ · act_geneᵢ / ‖s‖
+```
+
+which **double-counts the disease direction**: `dᵢ` already carries it, since `Σⱼ dᵢⱼ = nesᵢ`
+(D179). Multiplying by `−nesᵢ` again flips the sign. Caught on the first smoke test — TAL1 in
+BRCA-LumA read `rev_contrib` **+0.29** (correct reversal: disease NES −3.27, drug activity +4.47)
+against `rev_gene_contrib` **−0.032**.
+
+**Corrected, and simpler than the registered version:**
+
+```
+rev       = −Σᵢ (Σⱼ dᵢⱼ)(Σⱼ Cᵢⱼ) / ‖s‖      a product of sums
+rev_gene  = −Σᵢ  Σⱼ dᵢⱼ · Cᵢⱼ    / ‖s‖      a sum of products
+```
+
+`rev` multiplies the totals; `rev_gene` requires the genes to match one by one. A regulator whose
+activity comes from off-pattern genes has `Σⱼ dᵢⱼCᵢⱼ ≈ 0` even when both totals are large. The
+`‖dᵢ‖` divisor is dropped from the score (it was there to make regulons comparable, which the dot
+product already does) and `act_gene = ⟨dᵢ,Cᵢ⟩/‖dᵢ‖` is **reported only**. `‖s‖` is a per-cohort
+constant and does not affect within-cohort ranking.
+
+**Nothing in sections 3–6 changes**; the criteria, bars, nulls and the attribution guard all stand
+as registered. Post-fix sanity: Spearman(`rev_contrib`, `rev_gene_contrib`) = **+0.70** per drug,
+and the score demotes near-orthogonal regulators (TGIF1, `cos_contrib` 0.016) while promoting
+gene-concordant ones the totals miss (KLF4, `cos_contrib` −0.264).
