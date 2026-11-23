@@ -1,0 +1,23 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261122T205607-2935378",
+ "finished_at": "2026-11-22T20:57:19-05:00",
+ "duration_s": 72,
+ "script": "58_regulator_modules.R",
+ "cmd": "env NES_DIR=data/processed/step6/aracne_project_v2_tf_patient /home/kirti/miniforge3/envs/repurposing/bin/Rscript scripts/58_regulator_modules.R",
+ "env": "",
+ "git_sha": "a33bdb1",
+ "git_state": "dirty",
+ "note": "D198 full module membership",
+ "expect": null,
+ "n_files": 1,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "regulator_modules_v2_tf.tsv": {
+   "bytes": 189420,
+   "mtime": "2026-11-22T20:57:18-05:00"
+  }
+ }
+}
