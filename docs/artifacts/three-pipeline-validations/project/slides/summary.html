@@ -1,0 +1,26 @@
+<section id="summary" class="statement">
+<p class="eyebrow" style="color:#A8D8D1">Conclusion</p>
+<h2 style="color:#FBFAF4">What the three validations support</h2>
+<div style="height:32px"></div>
+<div class="col gap20">
+<div class="step">
+<div class="stepnum" style="color:#9FD9D1">1</div>
+<div class="steptext"><p class="steph" style="color:#FBFAF4">Exposure time carries information</p><p style="color:#DCEAE7;font-size:29px">37% of regulator terms change sign between windows; no model exceeds the identity baseline for imputation; window behaviour is cohort-specific. Scores are reported per window.</p></div>
+</div>
+<div class="step">
+<div class="stepnum" style="color:#9FD9D1">2</div>
+<div class="steptext"><p class="steph" style="color:#FBFAF4">The inference encodes regulatory structure</p><p style="color:#DCEAE7;font-size:29px">Regulon context exceeds inference noise by a factor of 19; knockdowns are read in the correct direction; activity decomposes exactly; two independent clusterings recover shared modules.</p></div>
+</div>
+<div class="step">
+<div class="stepnum" style="color:#9FD9D1">3</div>
+<div class="steptext"><p class="steph" style="color:#FBFAF4">The summary score is lossy</p><p style="color:#DCEAE7;font-size:29px">About 45% of reproducible gene-level pattern is unexplained by the activity value, and the omission has a measurable cost against an external target-biology anchor.</p></div>
+</div>
+</div>
+<div style="height:36px"></div>
+<p class="lead" style="color:#FBFAF4;max-width:1540px">Each layer is sound, and the summary at the top discards structure that is reproducible and externally relevant. This motivates retaining the gene level, independently of whether any particular gene-level score ranks better.</p>
+<aside>What this deck does not establish, and should be stated explicitly: that a gene-level score improves ranking. Four scoring variants have been tested and none clearly outperforms the production score on the available yardsticks. Two of those four failed on implementation errors rather than on the hypothesis, both identified by decomposition and recorded.
+
+The remaining difficulty is evaluative rather than methodological. The two anchors that are trusted disagree: approval recovery favours the production score, target-role biology favours the gene-level term. That disagreement is itself explainable, because approval recovery is bimodal across cohorts and rewards cytotoxic compounds, which the gene-level term demotes. Settling which anchor to trust is the next priority, ahead of building a fifth scoring variant.
+
+Closing framing if asked what changes tomorrow: resolution becomes explicit in the output rather than pooled away, the biomarker-pair anchor is strengthened and evaluated against a permutation null, and the one unfinished scoring composition is completed so that the set of negative results is complete rather than open.</aside>
+</section>

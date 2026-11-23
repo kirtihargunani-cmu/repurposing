@@ -1,0 +1,35 @@
+<section id="tasfloor" data-transition="fade">
+  <p class="eyebrow">Validation 1 &middot; Per-timepoint activity floor</p>
+  <h2 class="title" style="font-size:50px;">Calibrating the activity (TAS) floor per timepoint</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts">
+        <li><span class="dot"></span>A signature was kept if <b>TAS &ge; 0.4</b>, applied uniformly. It was fixed by decision (9 Oct) with <b>no sweep, no derivation</b>.</li>
+        <li><span class="dot"></span>TAS measures response <b>magnitude</b>, which genuinely rises with time; reproducibility is handled separately. A flat floor demands a 6 h response be as big as a 24 h one.</li>
+        <li><span class="dot"></span>Cost: <b>13,313 cells</b> had 6 h data that was discarded &mdash; <b>76%</b> of 6 h signatures, clustered just under 0.4.</li>
+        <li><span class="dot"></span>Calibrated with a <b>label-blind</b> test: each 6 h signature's drug-specific signal, &delta; = r(own 24 h) &minus; r(other drugs). Signal degrades gracefully, not off a cliff.</li>
+        <li><span class="dot"></span><b>Adopted: 6 h floor 0.25</b> (keeps 75% of 6 h signatures vs 42%); 24 h stays 0.40.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">6 h signal retained at each candidate floor</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">6 h floor</th><th>Signatures<br>kept</th><th>Median<br>signal &delta;</th><th>% positive</th></tr>
+        <tr class="band"><td class="l">0.40 (old)</td><td>42.5%</td><td>0.364</td><td>96.2%</td></tr>
+        <tr><td class="l">0.331</td><td>56.8%</td><td>0.334</td><td>96.0%</td></tr>
+        <tr><td class="l">0.284</td><td>68.0%</td><td>0.316</td><td>95.3%</td></tr>
+        <tr class="good"><td class="l"><b>0.250 (new)</b></td><td>75.4%</td><td>0.303</td><td>95.1%</td></tr>
+        <tr class="bad"><td class="l">0.200</td><td>86.6%</td><td>0.283</td><td>94.2%</td></tr>
+      </table>
+      <p class="src" style="margin-top:18px;">Accepted band (&ge;0.4) has &delta;&#8239;=&#8239;0.364. <b style="color:var(--teal);">Pass</b> = admitted band keeps &ge;50% of that and &ge;90% positive &rarr; 0.25 qualifies, 0.20 fails on both.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D156 &middot; tas_floor_signal_test, 2,221 paired 6 h signatures</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>Rigor notes worth saying aloud: the procedure is pre-registered, the floor is reported as a profile across anchor quantiles rather than a single tuned value, and one originally-planned guard (79n) was withdrawn when I found it never reads a compound signature and so could not have detected admitted noise — it was replaced with the drug-specific-signal hard-fail shown here. 24 h is held at 0.40 as the status-quo anchor; only the early window had the signal measurement that justifies lowering it.</aside>
+</section>

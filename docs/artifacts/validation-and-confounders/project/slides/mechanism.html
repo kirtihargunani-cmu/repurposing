@@ -1,0 +1,35 @@
+<section id="mechanism" data-transition="fade">
+  <p class="eyebrow">Validation 2 &middot; ARACNe &rarr; VIPER</p>
+  <h2 class="title" style="font-size:50px;">Validating the ARACNe &rarr; VIPER mechanism derivation</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.02;">
+      <p class="kick">Regulon reproducibility (median Jaccard)</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">Regulator</th><th>Same tissue<br>(noise floor)</th><th>Nested<br>breast</th><th>Across<br>tissues</th></tr>
+        <tr><td class="l">ESR1</td><td>0.490</td><td>0.056</td><td>0.010</td></tr>
+        <tr><td class="l">MYC</td><td>0.553</td><td>0.170</td><td>0.026</td></tr>
+        <tr><td class="l">FOXA1</td><td>0.581</td><td>0.079</td><td>0.015</td></tr>
+        <tr><td class="l">GATA3</td><td>0.528</td><td>0.096</td><td>0.010</td></tr>
+        <tr><td class="l">SOX10</td><td>0.648</td><td>0.197</td><td>0.032</td></tr>
+        <tr class="good"><td class="l"><b>Median</b></td><td><b>0.552</b></td><td><b>0.170</b></td><td><b>0.029</b></td></tr>
+      </table>
+      <p class="src" style="margin-top:16px;">Control: 3 networks from 769 BRCA tumors each, biology held fixed. Estimation noise alone gives <b style="color:var(--teal);">~0.55</b>, not 0.03 &mdash; so the cross-tissue fall is real context, not an unreliable algorithm.</p>
+    </div>
+    <div style="flex:1;">
+      <ul class="pts">
+        <li><span class="dot"></span><b>Readout is robust:</b> swapping the entire regulon set moved the reversal score by only Spearman <b>0.99</b>. The cohort-matched network is the right design, not a compromise.</li>
+        <li><span class="dot"></span><b>Supported:</b> "a drug acts through this regulator, whose program <i>in this disease</i> includes these genes."</li>
+        <li><span class="dot"></span><b>Not supported:</b> a context-free target list &mdash; ~half of any single regulon is resampling churn.</li>
+        <li><span class="dot"></span><b>Not supported &mdash; the causal chain:</b> ARACNe co-expression matches curated <i>inhibitory</i> signs on <b>0&ndash;2.5%</b> of edges and CARNIVAL returned an empty solution; 0 of 4 drivers were recovered on a network holding only 33% of the regulators.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D149, D139, D144, D147 &middot; systems-validation arm</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>This corrects an earlier reading of mine. I had treated ~1% cross-tissue regulon overlap as ARACNe failing to reproduce itself; the same-tissue resample control shows the floor is ~0.55, so the low cross-tissue number is biology (context-specific rewiring), which actually validates the per-cohort design. The separate, firmer limit is causal: co-expression cannot encode direction/inhibition however reproducible it is, so we read regulator activity, not a drug→target→regulator→gene mechanism.</aside>
+</section>

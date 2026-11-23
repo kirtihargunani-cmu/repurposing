@@ -1,0 +1,41 @@
+<section id="n2" class="tinted">
+<p class="eyebrow">3 · The summary score</p>
+<h2>The residual, and its downstream cost</h2>
+<div style="height:24px"></div>
+<div class="eq">
+restricted to sign(act<sup>(1)</sup>) = sign(act<sup>(2)</sup>) &nbsp;&nbsp;·&nbsp;&nbsp; &rho; = Spearman( |&Delta;act| , s<sub>gene</sub> )
+<br><span class="c">removing the sign component, which is tautological: act<sub>i</sub> = &Sigma;<sub>j</sub> c<sub>ij</sub></span>
+</div>
+<div style="height:24px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:880px">
+<h3>Same-sign pairs</h3>
+<table>
+<tr><th width="40%">window</th><th width="30%">matched / ceiling</th><th width="30%">&rho;</th></tr>
+<tr><td>pooled</td><td class="pos">0.545</td><td class="pos">+0.041</td></tr>
+<tr><td>late</td><td class="pos">0.554</td><td class="pos">+0.0001</td></tr>
+<tr><td>early</td><td>0.632</td><td>+0.095</td></tr>
+</table>
+<div style="height:16px"></div>
+<p style="font-size:28px">Within a direction of effect, the magnitude of the activity difference carries essentially no information about the gene-pattern difference. Early does not meet the criterion, and its ceiling of 0.38 makes that result inconclusive rather than negative.</p>
+</div>
+<div class="col gap20" style="width:680px">
+<div class="panel"><h3>Correlation with target role</h3>
+<table>
+<tr><th width="40%">score</th><th width="30%">dependency</th><th width="30%">combined</th></tr>
+<tr><td>reversal</td><td class="neg">&minus;0.073</td><td class="neg">&minus;0.124</td></tr>
+<tr><td>gene-level term</td><td class="pos">+0.069</td><td class="pos">+0.059</td></tr>
+</table>
+<div style="height:12px"></div>
+<p style="font-size:27px">Better in 21 of 25 cohort–windows, sign test p = 0.0009. Neither score uses approval data or target annotation.</p></div>
+<div class="panel dark"><p style="font-size:28px">The corrected value reaches approximately zero rather than becoming positive. The gene-level term reduces an anti-correlation; it does not establish a positive one.</p></div>
+</div>
+</div>
+<aside>On the restriction to same-sign pairs: this removes a tautology in the original specification. Because activity is the sum of its gene contributions, two drugs with opposite-sign activity must have gene vectors pointing in opposite directions, so an unrestricted correlation largely measures sign agreement. The restricted correlation of +0.0001 in the late window is the informative figure.
+
+On the target-role anchor: the components are CRISPR dependency, alteration frequency and transcriptional over-activity of the drug's own annotated target in that cohort. This anchor was chosen because it is independent of approval status and shares no inputs with either score — the reversal score carries no target annotation at all. By contrast, the lead score does share inputs with this anchor, at Spearman 0.47, so comparisons involving it are partly circular and are excluded here.
+
+On magnitude: the correlations are small in absolute terms and the honest statement is that the gene-level term is less wrong rather than right. The pooled per-drug association with dependency is only +0.089; the per-cohort gains are considerably larger, with lung adenocarcinoma moving from minus 0.244 to plus 0.214. Liver moves in the opposite direction in both windows.
+
+Over-activity is the one component that deteriorates, which is coherent: it is the component closest to what reversal already measures, so down-weighting regulators reached through off-pattern genes should cost there while gaining on dependency and alteration.</aside>
+</section>

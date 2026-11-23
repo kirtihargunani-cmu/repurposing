@@ -11,6 +11,20 @@ How the steps run (v2): [`../PIPELINE_DRUG_SIDE_V2.md`](../PIPELINE_DRUG_SIDE_V2
 - **Part 3:** caveats in the data and results.
 - **Part 4:** open questions.
 
+## 0. Where things stand (2026-11-23)
+
+- **Production ranking (D211):** a drug is eligible for a cancer when its target evidence `T` (dependency,
+  alteration, overactivity of its target; `79t3`) is at least 50; eligible drugs are ranked by gene-level reversal
+  (`rev_gene`), separately at early (<= 6 h) and late (>= 24 h) timepoints. Chemotherapy / DNA-acting /
+  essential-gene drugs are ranked in their own table. Page: `results/lincs/gene_rankings_page/` (D212).
+- **Regulons:** ARACNe only (D160). The consensus arm (ARACNe + CollecTRI) is deleted and CollecTRI / DoRothEA are
+  archived in `archive/collectri/` (D208).
+- **Primary validation (D127, counted one vote per target, D209):** the previous lead score passes, 16 of 20 target
+  units (p 0.006). On the new production ranking it does not (early 2/8, late 1/8 units; C30) - adopted by decision,
+  under review.
+- **Runner:** `scripts/run_pipeline.sh` reproduces every result from the ARACNe / VIPER builds onward (D186, D210).
+- Full decision record: [`../DECISIONS.md`](../DECISIONS.md) (drug-side rows D84 onward are at the end of that file).
+
 ## 1. Decisions (yours)
 
 | Date | Decision | Where it lives |
@@ -39,13 +53,38 @@ How the steps run (v2): [`../PIPELINE_DRUG_SIDE_V2.md`](../PIPELINE_DRUG_SIDE_V2
 | 2026-10-20 | Borrowing stays; no same-organ or same-body-area restriction. Instead, a confidence for each borrowed drug (predicted transfer accuracy), first version diagnostic only (C17) | `scripts/79l` |
 | 2026-10-28 | v2: the drug side scores the TF-only regulator set (build `v2_tf_xmap`), so drug and disease are compared on the same TFs. Replaces "full regulator set" of 2026-10-12 for v2 | `scripts/79d` REGSET=tf |
 | 2026-10-28 | Every regulator counts, weighted by its disease NES; no master-regulator FDR cutoff (main D74). Why: the FDR lists changed a lot with small changes to the null (colon 425 / 0 / 1 master regulators) while the ranking of regulators did not | `scripts/79e`, `79i` (SCORE=weighted) |
-| 2026-10-28 | Drugs are scored with a consensus of two regulon sets, ARACNe TF and CollecTRI (main D75; C18, C19). Why: the tumor network misreads anti-estrogens; CollecTRI reads them correctly; the knockdown benchmark was too thin to pick one set per TF, so both are averaged | `scripts/79e`, `79i` (REGULON=consensus) |
+| 2026-10-28 | ~~Drugs are scored with a consensus of two regulon sets, ARACNe TF and CollecTRI (main D75; C18, C19). Why: the tumor network misreads anti-estrogens; CollecTRI reads them correctly; the knockdown benchmark was too thin to pick one set per TF, so both are averaged~~ **Replaced:** ARACNe only (D160, 2026-11-20); consensus arm deleted (D208, 2026-11-23) | `scripts/79e`, `79i` (REGULON=consensus) |
 | 2026-10-28 | Flag drugs tested only in cell lines that do not resemble the disease (`unmatched_lines`, line match < 0.1); they stay ranked but not in tiers 1-2 (main D76; C20) | `scripts/79e` |
 | 2026-10-28 | Borrowed drugs: transfer confidence refit with a distance term; flag `low_transfer` when confidence < 0.5; same treatment as `unmatched_lines` (main D77; C21) | `scripts/79l` VERSION=v2, `79e` |
 | 2026-10-28 | Every disease and subgroup reports its evidence status: matched / borrowed only / no adequate compound, with a sentence for reports (main D78; C22). Requirement R1 for the LLM layer (`main:docs/LLM_COORDINATION_NOTES.md`) | `scripts/79e` summary |
 | 2026-10-29 | Reports lead with disease specificity (`spec_mech`, then `spec`); overall reversal is context (main D80; R2) | reports / LLM layer |
 | 2026-10-29 | Subgroups (strata) for v2 are the 14 of main D79; ranked by `79e` STRATA=1 (replaces `79g` for v2) with sibling specificity | `scripts/79e`, `74b`, `79b` |
 | 2026-10-29 | PRISM / GDSC validation of the v2 scores on hold | - |
+| 2026-11-03 | Cell-type ARACNe networks (subtypes with > 50 tumors get their own network) become production (main D92a, D96, D97) | `config/group_networks.tsv`, `scripts/44` |
+| 2026-11-04 | Target presence in the ranking: a drug whose targets are absent from the tumor is ranked below every other drug; carriers exception (main D102a-c) | `scripts/79i2` |
+| 2026-11-04 | Receptor drugs need evidence in the cell lines or the tumor environment (main D104b-c); FDA drugs take ChEMBL-backed targets (D105a-b) | `scripts/79i3`, `79w` |
+| 2026-11-06 | Flags, not removals: no systemic formulation (`local_route`, D107); dose inconsistent, inactive in matched line, generic mechanism, low exposure vs label Cmax (D109); plate-confined activity (D109a) | `scripts/79f3`, `79f4`, `fda_rows.py` |
+| 2026-11-06 | Why trials failed is read for each disease's top 10 FDA drugs (main D108) | `scripts/d108` |
+| 2026-11-07 | Fusion targets count only through the kinase the drug binds (main D110) | `79i2` |
+| 2026-11-08 | Three-layer score: target role (dependency, alteration, overactivity; D120) x engagement (target units, binding, direction) x disease reversal (main D121); lab binding stays in by design (D121a) | `scripts/79t`, `79t3` |
+| 2026-11-08 | The layered score becomes the lead ranking; LINCS-only gates become flags; drugs without a protein target listed separately (main D122) | `scripts/79t3`, `79p` |
+| 2026-11-08 | Drugs on essential or DNA targets are scored on the cancer's proliferation, weighted by each target's coupling to it (main D124, D124a-b) | `scripts/79t3` |
+| 2026-11-09 | The biomarker-expectation test replaces known use as the drug side's primary validation; known-use AUC is reported only (main D127) | `scripts/d127/d127_biomarker.py` |
+| 2026-11-20 | Activity floor per timepoint: TAS 0.25 at 6 h, 0.40 otherwise (main D156) | `scripts/79c2`, `tas_floor.py` |
+| 2026-11-20 | ARACNe only for scoring; CollecTRI and DoRothEA retired from the score (main D160) | `79e`, `79i`, `79t3` |
+| 2026-11-20 | Every result is built through `runlog.sh` with a provenance manifest; crashes and stale inputs are audited (main D162-D164) | `scripts/runlog.sh`, `check_builds.py` |
+| 2026-11-20 | Early (<= 6 h) and late (>= 24 h) are explicit output dimensions, never pooled (main D170, D171) | `window_reversal.py`, `79j`, `79k` |
+| 2026-11-21 | Agonists: dependency and alteration are not used to raise a target; one-axis evidence is shrunk toward 50 (main D177) | `scripts/79t3` |
+| 2026-11-22 | The gene-level breakdown under every regulator score is kept, on both sides (main D179) | `50b`, `79e2`, `79e3` |
+| 2026-11-22 | A drug with no timepoint-specific data is labelled `unknown` with a reason, not blank or pooled (main D180) | `79j` |
+| 2026-11-22 | Labelled (disease, drug) pairs graded by clinical phase; FDA-approved view first (main D181) | `scripts/79aa` |
+| 2026-11-22 | Missing timepoints are not imputed: the pre-registered test closed it (main D183) | `scripts/79ac` |
+| 2026-11-22 | One end-to-end runner; ARACNe-only `_v2_tf` is production; adopted thresholds are checked before every run (main D186, D188, D189) | `scripts/run_pipeline.sh`, `config/adopted_parameters.yaml` |
+| 2026-11-22 | Programs (co-varying regulators) are for interpretation, not scoring (main D196-D198, D201) | `scripts/79ai`, `79al` |
+| 2026-11-23 | Consensus arm deleted; CollecTRI / DoRothEA separated from the current builds; stand-ins switched off (main D208) | `archive/collectri/` |
+| 2026-11-23 | D127 counts one vote per target unit (instances that share a target are not independent) (main D209) | `scripts/d127/d127_biomarker.py` |
+| 2026-11-23 | Production ranking: filter on target evidence T >= 50, rank by gene-level reversal per timepoint; subgroups get their own timepoint runs; adopted with D127 as a description (main D211) | `scripts/79ar_gene_ranking.py` |
+| 2026-11-23 | Production FDA page for that ranking (main D212) | `scripts/79as_gene_ranking_page.py` |
 
 ## 2. Method choices made while building (for your review)
 
@@ -487,6 +526,16 @@ may be technical (see the disease-side note).
 
 ## 4. Open questions
 
+**Open as of 2026-11-23:**
+- Keep the D211 ranking as production, or keep its filter and rank eligible drugs by the lead score? D127 holds on
+  the lead score (16/20 target units) and not on gene-level reversal (C30).
+- A D127 negative control with at least 5 distinct target units (the HDAC control was 2 units; D209).
+- 3,382 eligible (disease, drug) pairs have no timepoint data (C31). More LINCS coverage, or report them unranked?
+- Stand-ins: rebuild on an ARACNe-based similarity, or leave off (C33)?
+- Drug VIPER (`79d`) predates its run record (D190), so its regulon set is checked by manifest, not by the parameter
+  gate.
+
+**Earlier items:**
 - Should the top-10% "reversing" cutoff change (e.g. 20-25%) to keep more approved drugs in tier 1?
 - If C1 distorts breast results: restrict ER-driven strata to ER-positive drug-tested lines?
 - Should the target check be stricter (C10), e.g. a higher TPM or fraction for hormone receptors?
@@ -731,3 +780,30 @@ built to do (C26: is the binding real, is the receptor present) and should not b
 receptor matters in that cancer. A concrete, cheap next step the two runs point at: dependency is an *outside*
 signal that is strong, cohort-specific and currently unused - 154 rows pair an approved drug with a target its
 cohort's lines need >= 2 SD more than average, and the ranking does not favour them.
+
+### C30. The gene-level production ranking does not pass the biomarker test (D211, 2026-11-23)
+
+On the D211 ranking, D127's primary pairs (one vote per target unit) go the right way in 2 of 8 units early and
+1 of 8 late; counting a filter demotion in the low cohort as correct, 4 of 10 and 4 of 11. The lead score gets 16 of
+20 on the same pairs (D209). The biomarker signal sits in the filter (BRAF/MEK inhibitors are filtered out of lung
+squamous); `rev_gene` among eligible drugs does not order a drug higher in its biomarker cohort. It tracks `rev` at
+Spearman 0.815. Adopted by decision; flagged on the page.
+
+### C31. Most eligible pairs have no timepoint-specific score (D211)
+
+Of 4,418 eligible (disease, ingredient) pairs, 615 are ranked early and 882 late, over 20 and 33 units. 2,046 have
+LINCS conditions but none in the disease's matched lines; 1,336 belong to a unit with no window run. 8 of 14
+subgroups have timepoint data. These rows are `unknown` with the reason, never pooled.
+
+### C32. A retired arm survived through defaults (D208)
+
+D160 retired the consensus arm, but `fda_rows.py` still defaulted to it (so D127 read it until D208), the
+overactivity component still averaged in CollecTRI, and evidence flags covered only consensus rows (79% of
+production rows). Removing the arm outright surfaced all three. When retiring anything: search for defaults and
+literal file paths, not just runner flags.
+
+### C33. Stand-ins are off (D208)
+
+The closest-compound stand-ins (C27) measured drug similarity on CollecTRI activity, which is now archived. They are
+switched off and the page renders without them until an ARACNe-based similarity is specified.
+

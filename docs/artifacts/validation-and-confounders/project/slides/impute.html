@@ -1,0 +1,37 @@
+<section id="impute" data-transition="fade">
+  <p class="eyebrow">Validation 1, continued &middot; Window imputation</p>
+  <h2 class="title" style="font-size:50px;">Imputing a missing timepoint window: the overlap is too thin</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts" style="font-size:27px;">
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span>Most drugs are scored in a <b>single</b> window: only <b>939 drugs</b> (4,128 rows) carry both; <b>13,332 rows</b> carry one.</li>
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span><b>The target is noisy</b> &mdash; the median both-row rests on <b>one condition per window</b>, below any predictor's reach.</li>
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span><b>Train &ne; apply:</b> both-window data spans 14 cohorts; the rows to impute span <b>29</b> &mdash; extrapolation by construction.</li>
+        <li style="font-size:27px;margin-bottom:17px;"><span class="dot"></span>"Early &asymp; late" is weak (<b>37% sign-discordant</b>), and a continuous curve is impossible &mdash; only <b>196</b> pairs have &ge;2 dose-fittable timepoints.</li>
+        <li style="font-size:27px;margin-bottom:0;"><span class="dot"></span><b>Decision:</b> a pre-registered test with acceptance fixed before fitting; until it clears, a missing window stays <b>unknown</b>, not guessed.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <p class="kick">What the overlap actually looks like</p>
+      <table class="mx" style="font-size:26px;">
+        <tr class="head"><th class="l">Quantity</th><th>Value</th></tr>
+        <tr><td class="l">Rows with BOTH windows</td><td>4,128</td></tr>
+        <tr class="band"><td class="l">&mdash; distinct drugs</td><td>939</td></tr>
+        <tr><td class="l">Rows with ONE window</td><td>13,332</td></tr>
+        <tr class="band"><td class="l">&mdash; early-only / late-only</td><td>5,823 / 7,509</td></tr>
+        <tr><td class="l">Cohorts: both-set &rarr; impute-set</td><td>14 &rarr; 29</td></tr>
+        <tr class="bad"><td class="l">Median conditions per window</td><td>1</td></tr>
+        <tr class="bad"><td class="l">Both-rows discordant in sign</td><td>37%</td></tr>
+      </table>
+      <p class="src" style="margin-top:18px;">Identity baseline Spearman(early,&nbsp;late) = +0.388 &mdash; the bar any imputation must beat.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D183 (pre-registration) &middot; window_reversal.tsv.gz</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>The honest framing: this is not "imputation failed" — it is "the data are too thin to even ask the question loosely, so the test is locked down before any model is fit." Three recent tests in the project came back null after the fact, which is exactly why the acceptance criteria (beat the identity baseline by ≥0.10 Spearman, ≥0.75 sign agreement, hold up leave-one-tissue-out) are frozen in advance. Two red rows are the binding constraints: one condition per window, and 37% sign disagreement.</aside>
+</section>

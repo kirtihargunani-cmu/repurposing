@@ -1,0 +1,15 @@
+<section id="split">
+<p class="eyebrow">The instrument</p>
+<h2>Splitting one NES into its genes</h2>
+<div class="eq">
+t2<sub>j</sub> = &Phi;<sup>&minus;1</sup>(r<sub>j</sub>)&nbsp;&nbsp;&nbsp;&nbsp;a<sub>j</sub> = m<sub>j</sub> l<sub>j</sub> t2<sub>j</sub>&nbsp;&nbsp;&nbsp;&nbsp;b<sub>j</sub> = (1 &minus; |m<sub>j</sub>|) l<sub>j</sub> t1<sub>j</sub>
+<br><b>c<sub>ij</sub> = ( a<sub>j</sub> + &sigma;<sub>i</sub> b<sub>j</sub> [S2<sub>i</sub> &gt; 0] ) &middot; k<sub>i</sub></b>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c">&Sigma;<sub>j</sub> c<sub>ij</sub> = the regulator’s score</span>
+<br><span class="c">m = tfmode (signed) · l = likelihood · r = rank over the scored gene universe</span>
+</div>
+<div style="height:36px"></div>
+<div class="row gap48">
+<div class="card grow"><h3>Drug side — exact</h3><p style="font-size:29px">Condition-level VIPER has no null model, so the per-gene split <b>is</b> the activity. Verified to 4.8&times;10<sup>&minus;7</sup>.</p></div>
+<div class="card grow"><h3>Disease side — an allocation</h3><p style="font-size:29px">msviper’s permutation null cannot be replayed, so d<sub>ij</sub> = c<sub>ij</sub> · NES<sub>i</sub>/ES<sub>i</sub>. Stated wherever d is used.</p></div>
+</div>
+<aside>This decomposition is what makes every later measurement possible. It is arithmetic, not biology — the exactness proves the bookkeeping, nothing more.</aside>
+</section>

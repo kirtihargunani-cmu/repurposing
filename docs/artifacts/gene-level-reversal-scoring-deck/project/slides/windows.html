@@ -1,0 +1,22 @@
+<section id="windows" class="tinted">
+<p class="eyebrow">Validation 2 · exposure time</p>
+<h2>Timepoint is a real dimension — and cannot be imputed</h2>
+<div class="row gap48">
+<div class="col grow gap28" style="width:900px">
+<ul>
+<li>A per-timepoint activity floor raises active 6&nbsp;h signatures from 4,938 to <b>10,889</b>; a single floor discards 76% of them.</li>
+<li><b>37%</b> of regulator terms flip sign between early and late. For anti-estrogens in MCF7 the ESR1 programme reads <b>&minus;0.056 at 6 h</b> (correct) and <b>+0.094 at 24 h</b> (inverted).</li>
+<li>Pooling averages a correct reading with an inverted one — the inverted window outvotes it roughly <b>10 : 1</b>.</li>
+</ul>
+</div>
+<div class="col gap28" style="width:660px">
+<div class="card dark"><h3>Pre-registered, and closed</h3>
+<p style="font-size:28px">Best model predicting the missing window: Spearman <b>0.380</b>.</p>
+<p style="font-size:28px">Simply copying the other window: <b>0.382</b>.</p>
+<div style="height:10px"></div>
+<p style="font-size:28px">Sign agreement 0.62–0.63 against a 0.75 bar. <b>Verdict: closed, both directions.</b></p></div>
+<div class="card"><h3>Not a drug property either</h3><p style="font-size:28px">A drug’s behaviour in its other cohorts predicts this one at Spearman <b>&minus;0.05</b>. “Drug X is early-acting” is not supported.</p></div>
+</div>
+</div>
+<aside>About 80% of a window's reliable variance is absent from the other, and discordance does not shrink with more conditions (38.8% to 35.8%). So an unmeasured window is labelled unknown rather than guessed — the empirically correct label, not the cautious one. Coverage limit: 29 of 41 cohorts have window data; 12 have none at all.</aside>
+</section>

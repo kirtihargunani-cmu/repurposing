@@ -1,6 +1,6 @@
 # Pipeline v2: steps, decisions and outputs
 
-Last updated 2026-11-02 (checked against the code and results). This is the reference for how the v2 pipeline runs, step by step: what each step does and
+Last updated 2026-11-23. **Regulon sets (D208, 2026-11-23): ARACNe only.** CollecTRI and DoRothEA are moved to `archive/collectri/` and every script refuses them; where the steps below describe them, that is the v2 build's history. The disease side's runs from Step 6 onward feed `scripts/run_pipeline.sh` (D186), which reproduces the drug side end to end (D210). This is the reference for how the v2 pipeline runs, step by step: what each step does and
 why, the exact command, what it reads and writes, which decisions shape it, the checks it reports, and where it
 stands. The full reasoning behind each decision is in [`DECISIONS.md`](DECISIONS.md) (D-numbers below); the run
 history with all numbers is in [`PROGRESS.md`](PROGRESS.md); the agreed rebuild plan is
@@ -38,7 +38,7 @@ flowchart TD
   them. Active build: `v2_tf_xmap` (v2 gene set, cross-mappable edges removed, TF-only regulators, D64). v1 outputs
   are kept for comparison; v2 writes to `_v2` paths (D53).
 - **Script switches.** Most scripts take environment variables: `VERSION=v2` (v2 inputs and outputs),
-  `REGSET=tf` (TF-only regulator set), `REGULON=aracne_project | collectri | dorothea_ABC` (regulon set),
+  `REGSET=tf` (TF-only regulator set), `REGULON=aracne_project` (regulon set; `collectri` and `dorothea_ABC` are refused since D208),
   `STRATA=<file>` (subgroups instead of groups), `ONLY_GROUPS`, `N_CORES`. Each script's header lists its own.
 - **Machines.** ARACNe builds ran on MAIL-15; everything else runs on MAIL-10. Large intermediate files
   (`data/processed`, `*.tsv.gz`) are not in git.
@@ -177,7 +177,8 @@ reasons in `genes_v2_dropped.tsv`):
 ## Step 6. Regulator activity (VIPER)
 
 **6a. Group level: master regulators** (`REGULON=aracne_project VERSION=v2 REGSET=tf Rscript scripts/50_viper.R`; also
-`REGULON=collectri` and `REGULON=dorothea_ABC` with `VERSION=v2`, and the full set without `REGSET`):
+the curated sets `REGULON=collectri` / `dorothea_ABC` were also run here until D208; `50_viper.R` now defaults to
+`aracne_project` and refuses them):
 - msviper on each group's signature. Regulators kept if expressed in the tumors (median logCPM >= 1) with >= 10 targets
   and >= 50% of targets measured.
 - **Null (what counts as chance):** 1,000 random splits of the group's healthy samples into two halves.
@@ -192,9 +193,9 @@ reasons in `genes_v2_dropped.tsv`):
   group), `regulator_filter.tsv`, `group_summary.tsv`, `patient_concordance.tsv`, `axes.tsv`. `50` also writes
   **uncorrected** patient NES to `data/processed/step6/<set>/`; they are used only for its own diagnostics. Every
   downstream step uses the corrected patient NES from 6b (`data/processed/step6/<set>_patient/`).
-- **Roles of the regulon sets:** ARACNe is primary; CollecTRI and DoRothEA are supporting evidence (D17); confirmed
+- ~~**Roles of the regulon sets:** ARACNe is primary; CollecTRI and DoRothEA are supporting evidence (D17); confirmed
   regulator rule D18. CollecTRI reaches FDR < 0.10 in few groups on the corrected null, which no longer matters for
-  ranking (D74).
+  ranking (D74).~~ **Since D208:** ARACNe is the only regulon set; the curated outputs are in `archive/collectri/`.
 
 **6a-bis. Per-target breakdown of every master-regulator NES (D179, 2026-11-22;** `VERSION=v2 REGSET=tf [STRATA=1]
 [EDGES=1] Rscript scripts/50b_regulon_contributions.R`**).** `group_mr.tsv` keeps one number per regulator. This step
@@ -242,7 +243,7 @@ scripts/59_compare_regulon_sets.R` -> `results/step6/comparison_v2[_tf][_strata]
   confirmed list is ARACNe FDR < 0.05; the second part of D18 adds almost nothing. Few confirmed regulators in CESC-AD
   (0), BLCA, UCS, STAD (1 each), HNSC (4).
 - **The sets disagree on ranking:** NES Spearman ARACNe vs CollecTRI median 0.18, vs DoRothEA 0.27, CollecTRI vs
-  DoRothEA 0.37. Relevant to the drug-side consensus (D75), which averages ARACNe and CollecTRI.
+  DoRothEA 0.37. This disagreement is part of why the drug-side consensus (D75) was retired (D160) and then deleted (D208). The `comparison*/consensus.tsv` tables were deleted with it; `confirmed.tsv` is historical.
 
 **Regulator modules** (`NES_DIR=data/processed/step6/aracne_project_v2_tf_patient Rscript scripts/58_regulator_modules.R`
 -> `results/step6/aracne_project_v2_tf/diagnostics/regulator_modules_v2_tf.tsv`): groups of regulators whose activity

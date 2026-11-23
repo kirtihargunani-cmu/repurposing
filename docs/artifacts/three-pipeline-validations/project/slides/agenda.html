@@ -1,0 +1,29 @@
+<section id="agenda" class="tinted">
+<p class="eyebrow">Structure</p>
+<h2>Three validations, in sequence</h2>
+<div style="height:30px"></div>
+<div class="eq">
+rev = &minus;(<b>D</b> &middot; <b>s</b>) / &#8214;<b>s</b>&#8214; = &minus;&Sigma;<sub>i</sub> nes<sub>i</sub> &middot; act<sub>i</sub> / &#8214;<b>s</b>&#8214;
+<br><span class="c">D = drug regulator activity · s = disease master-regulator NES · i indexes regulators</span>
+</div>
+<div style="height:30px"></div>
+<div class="col gap20">
+<div class="step">
+<div class="stepnum">1</div>
+<div class="steptext"><p class="steph">Exposure time</p><p>Whether <b>act<sub>i</sub></b> should be averaged over timepoints, or resolved by them. Tested: the activity threshold, window concordance, imputability, and whether timing is a drug property.</p></div>
+</div>
+<div class="step">
+<div class="stepnum">2</div>
+<div class="steptext"><p class="steph">Network and activity inference</p><p>Whether the regulons behind <b>nes<sub>i</sub></b> and <b>act<sub>i</sub></b> encode regulatory structure. Tested: regulon context, knockdown response, exact decomposition, convergent recovery.</p></div>
+</div>
+<div class="step">
+<div class="stepnum">3</div>
+<div class="steptext"><p class="steph">The summary score</p><p>Whether <b>act<sub>i</sub></b> determines the gene pattern that produced it. Tested: measurement ceiling, similarity at matched activity, the residual, and the downstream cost.</p></div>
+</div>
+</div>
+<aside>The sequence is a dependency chain. If exposure time carried no information, averaging over it would be correct and the window arm would be unnecessary complexity. If the networks encoded only co-expression noise, per-cohort regulons would be meaningless and the gene-level decomposition would describe nothing. Only once both hold is it meaningful to ask what the summary discards.
+
+Note on notation: nes_i is the tumour-versus-normal enrichment of regulator i, estimated by msviper against GTEx-matched normals. act_i is the drug's inferred activity on the same regulator in cohort-matched cell lines. The normalisation by the norm of s is a per-cohort constant and does not affect within-cohort ranking.
+
+If asked why this particular score: rev is the production score and the baseline every variant is compared against. It is unchanged throughout this deck.</aside>
+</section>

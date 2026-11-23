@@ -1,0 +1,35 @@
+<section id="a2" class="tinted">
+<p class="eyebrow">2 · Network and activity inference</p>
+<h2>Exact decomposition and convergent recovery</h2>
+<div style="height:24px"></div>
+<div class="eq">
+a<sub>j</sub> = m<sub>j</sub> l<sub>j</sub> t2<sub>j</sub>&nbsp;&nbsp;&nbsp; b<sub>j</sub> = (1 &minus; |m<sub>j</sub>|) l<sub>j</sub> t1<sub>j</sub>&nbsp;&nbsp;&nbsp; c<sub>ij</sub> = ( a<sub>j</sub> + &sigma;<sub>i</sub> b<sub>j</sub> [S2<sub>i</sub> &gt; 0] ) k<sub>i</sub>
+<br><b>&Sigma;<sub>j</sub> c<sub>ij</sub> = act<sub>i</sub></b>&nbsp;&nbsp;&nbsp;<span class="c">m = tfmode, l = likelihood, t1 / t2 = rank transforms over the scored gene universe</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:860px">
+<h3>Decomposition</h3>
+<p style="font-size:30px">Maximum deviation from the stored activity across 21,588 drug × cohort × window cells: <b>4.8 × 10<sup>&minus;7</sup></b>.</p>
+<div style="height:16px"></div>
+<p style="font-size:28px">Exact on the drug side, where condition-level inference uses no null model. On the disease side the permutation null cannot be replayed, so the enrichment score is allocated proportionally and is labelled as an allocation wherever used.</p>
+</div>
+<div class="col gap20" style="width:700px">
+<div class="panel"><h3>Modules recovered on two axes</h3>
+<table>
+<tr><th width="58%">patient covariation ↔ drug covariation</th><th width="42%">Jaccard</th></tr>
+<tr><td>PRRX1 hub</td><td class="pos">0.71</td></tr>
+<tr><td>DMTF1 hub</td><td class="pos">0.61</td></tr>
+<tr><td>median module</td><td>0.07</td></tr>
+</table></div>
+<div class="panel"><p style="font-size:28px">The endothelial module in luminal breast — LHX6, SOX17, ERG, TAL1, EPAS1 — contains three of the five regulons most opposing fulvestrant, whose opposition is carried by LDB2, TIE1, CDH5 and CD34.</p></div>
+</div>
+</div>
+<aside>On exactness: this is an arithmetic property, not a biological result, and should be presented that way. It establishes that every gene-level quantity used later is traceable to the activity value it came from, and that the decomposition introduces no approximation on the drug side. It does not by itself show that the gene level carries information.
+
+On the asymmetry between sides: msviper applies a permutation null whose rescaling cannot be reproduced from the stored output, so the disease-side gene contributions are a proportional allocation of the enrichment score. This is stated in the formula documentation and wherever the quantity appears, because treating an allocation as an exact decomposition would overstate what the disease side supports.
+
+On convergent recovery: the median module match is 0.07, which is the honest headline — most of what compounds move is not what tumours vary along. The two named cases are the exception, and they matter because the two clusterings use entirely different data: one over patients within a cohort, one over drugs within a window. Neither procedure has access to the other's input.
+
+The fulvestrant coincidence was not sought. The endothelial module was identified by patient covariation; the opposing regulons were identified independently from gene-level drug contributions. If asked how often such an overlap would occur by chance, the answer is that a permutation null for this has not yet been run and is on the list.</aside>
+</section>

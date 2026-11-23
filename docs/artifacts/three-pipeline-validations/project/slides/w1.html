@@ -1,0 +1,34 @@
+<section id="w1">
+<p class="eyebrow">1 · Exposure time</p>
+<h2>Thresholding and window concordance</h2>
+<div style="height:24px"></div>
+<div class="eq">
+early: t &le; 6 h &nbsp;&nbsp;·&nbsp;&nbsp; late: t &ge; 24 h &nbsp;&nbsp;·&nbsp;&nbsp; floor(t) = 0.25 if t = 6 h, else 0.40
+<br><span class="c">other and unrecorded timepoints are excluded, not pooled</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:880px">
+<h3>Threshold</h3>
+<p style="font-size:30px">Transcriptional response magnitude is lower at 6 h, so a uniform activity floor removes <b>76%</b> of early signatures. A per-timepoint floor raises active 6 h signatures from <b>4,938</b> to <b>10,889</b>.</p>
+<div style="height:24px"></div>
+<h3>Concordance</h3>
+<p style="font-size:30px">Across matched conditions, <b>37%</b> of regulator-level terms change sign between the two windows.</p>
+</div>
+<div class="col gap20" style="width:680px">
+<div class="panel"><h3>ESR1 control, MCF7</h3>
+<table>
+<tr><th width="54%">anti-estrogens</th><th width="46%">signed response</th></tr>
+<tr><td>6 h</td><td class="pos">&minus;0.056</td></tr>
+<tr><td>24 h</td><td class="neg">+0.094</td></tr>
+</table>
+<div style="height:14px"></div>
+<p style="font-size:27px">The expected direction is negative. Signature counts are 6 at 6 h against 59 at 24 h, so a pooled mean is dominated by the discordant window.</p></div>
+</div>
+</div>
+<aside>On the threshold: the 0.25 value at 6 h was set from measurement. Over 2,221 six-hour signatures that have a same-drug 24 h reference in the same cell line, drug-specific signal is 0.216 in the 0.250 to 0.284 activity band against 0.364 in the accepted band, with 93.3 per cent of signatures positive. The pass rule holds down to 0.250 and fails below it. No other timepoint has an equivalent measurement, so no other floor was altered.
+
+On the ESR1 control: this is a known-answer case rather than a discovery. Anti-estrogens should oppose the ESR1 programme in a luminal line. The early window recovers that direction and the late window reverses it. The ratio of 6 to 59 signatures means that in a plain average the discordant window outweighs the concordant one by roughly an order of magnitude.
+
+Anticipated question — could the late inversion be an artefact of the network rather than the drug? Addressed on the next-but-one slide: the ARACNe ESR1 regulon reads an ESR1 knockdown in the correct direction, so the inversion is attributable to drug biology, with GATA3 and FOXA1 rising under the compounds.</aside>
+</section>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three Pipeline Validations</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#2b2b2b;color:#eee;font:15px/1.5 system-ui,-apple-system,sans-serif}
+header{padding:20px max(16px,3vw)} header h1{margin:0;font-size:1.3rem} header p{margin:4px 0 0;color:#bbb}
+.deck{display:grid;gap:28px;padding:0 max(16px,3vw) 48px}
+.wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#fff;box-shadow:0 2px 12px #0008}
+.wrap > section{position:absolute;top:0;left:0;width:1920px;height:1080px;transform-origin:0 0;box-sizing:border-box}
+.wrap > section aside{display:none}
+.notes{background:#1f1f1f;border-left:3px solid #6aa;padding:10px 14px;white-space:pre-wrap;color:#ddd;font-size:14px}
+.num{color:#9cc;font-weight:600;margin-bottom:6px}
+</style>
+<style>
+:root {
+  --cream: #FBFAF4;
+  --cream-2: #F4F1E6;
+  --ink: #1C1B17;
+  --body: #4A4740;
+  --teal: #1C6A61;
+  --rust: #8C4A22;
+  --rule: #DDD8C8;
+}
+
+section {
+  background: var(--cream);
+  padding: 128px;
+  font-family: 'IBM Plex Sans', Verdana, sans-serif;
+  color: var(--ink);
+}
+
+section.tinted { background: var(--cream-2); }
+section.statement { background: var(--teal); color: var(--cream); }
+
+h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 104px; font-weight: 600; line-height: 1.05; margin: 0;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 58px; font-weight: 600; line-height: 1.12; margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: 'IBM Plex Sans', Verdana, sans-serif;
+  font-size: 26px; font-weight: 600; margin: 0 0 14px 0;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal);
+}
+
+p { font-size: 32px; line-height: 1.5; margin: 0; color: var(--body); }
+
+.eyebrow {
+  font-size: 23px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--teal); margin: 0 0 26px 0;
+}
+
+.lead { font-size: 38px; line-height: 1.4; color: var(--ink); }
+.ask { font-size: 34px; line-height: 1.45; color: var(--ink); }
+
+.col { display: flex; flex-direction: column; }
+.row { display: flex; flex-direction: row; }
+.gap20 { gap: 20px; }
+.gap32 { gap: 32px; }
+.gap56 { gap: 56px; }
+.grow { flex: 1; }
+
+.panel {
+  background: var(--cream-2);
+  border-radius: 14px;
+  padding: 36px 40px;
+}
+
+.panel.dark { background: var(--ink); }
+.panel.dark h3 { color: #9FD9D1; }
+.panel.dark p { color: #E3EDEB; }
+.panel.dark .big { color: #9FD9D1; }
+
+.big {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 92px; font-weight: 600; line-height: 1; color: var(--teal);
+}
+.big.rust { color: var(--rust); }
+.biglabel { font-size: 26px; line-height: 1.35; color: var(--body); margin-top: 12px; }
+
+.eq {
+  background: var(--cream-2);
+  border-left: 8px solid var(--teal);
+  padding: 26px 34px;
+  font-size: 32px; line-height: 1.7; color: var(--ink);
+}
+.eq .c { color: var(--body); font-size: 26px; font-style: italic; }
+.eq b { color: var(--teal); font-weight: 600; }
+
+table { font-size: 29px; color: var(--ink); width: 100%; }
+th { font-weight: 600; color: var(--teal); text-align: left; }
+td { color: var(--body); }
+td.pos { color: var(--teal); }
+td.neg { color: var(--rust); }
+
+.bar { height: 30px; border-radius: 5px; background: var(--teal); }
+.bar.rust { background: var(--rust); }
+.bar.pale { background: var(--rule); }
+.barlabel { font-size: 25px; color: var(--body); }
+
+.step { display: flex; flex-direction: row; gap: 28px; }
+.stepnum {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 64px; font-weight: 600; color: var(--teal); line-height: 1;
+  width: 70px;
+}
+.steptext { flex: 1; }
+.steptext p { font-size: 30px; }
+.steph {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 44px; font-weight: 600; color: var(--ink); margin: 0 0 8px 0; line-height: 1.15;
+}
+
+.verdict {
+  border-left: 8px solid var(--rust);
+  background: #FAF2E9;
+  padding: 24px 32px;
+}
+.verdict p { font-size: 29px; color: var(--ink); }
+
+</style></head><body>
+<header><h1>Three Pipeline Validations</h1><p>9 slides · speaker notes under each slide · source: <code>docs/artifacts/three-pipeline-validations</code></p></header>
+<main class="deck">
+<div><div class="num">Slide 1 · cover</div><div class="wrap"><section id="cover" data-transition="fade">
+<p class="eyebrow">Drug repurposing · pipeline validation</p>
+<h1>Testing the Biology</h1>
+<div style="height:44px"></div>
+<p class="lead" style="max-width:1200px">In order to confirm scoring, we asked whether each layer it rests on carries real biology. Three layers were tested: exposure time, the network and activity build, and the master-regulator score.</p>
+<div style="height:40px"></div>
+<p style="font-size:27px">Companion deck: scoring results and their interpretation.</p>
+<aside>Purpose: establish that the inputs are sound before discussing whether any score ranks well. The ordering is a dependency chain, so a failure at an earlier layer would invalidate the later ones rather than merely weaken them.
+
+Scope: all results are from TCGA cohorts scored against LINCS L1000 compound profiles in Celligner-matched cell lines. Nothing here leaves cell lines and tumour expression, and no claim is made about patient response.
+
+Framing if asked why validation preceded scoring: four scoring variants have been tested and none clearly outperforms the others on the available yardsticks. That outcome is only interpretable if the inputs are known to be sound, which is what this deck establishes.</aside>
+</section></div><div class="notes">Purpose: establish that the inputs are sound before discussing whether any score ranks well. The ordering is a dependency chain, so a failure at an earlier layer would invalidate the later ones rather than merely weaken them.
+
+Scope: all results are from TCGA cohorts scored against LINCS L1000 compound profiles in Celligner-matched cell lines. Nothing here leaves cell lines and tumour expression, and no claim is made about patient response.
+
+Framing if asked why validation preceded scoring: four scoring variants have been tested and none clearly outperforms the others on the available yardsticks. That outcome is only interpretable if the inputs are known to be sound, which is what this deck establishes.</div></div>
+<div><div class="num">Slide 2 · agenda</div><div class="wrap"><section id="agenda" class="tinted">
+<p class="eyebrow">Structure</p>
+<h2>Three validations, in sequence</h2>
+<div style="height:30px"></div>
+<div class="eq">
+rev = &minus;(<b>D</b> &middot; <b>s</b>) / &#8214;<b>s</b>&#8214; = &minus;&Sigma;<sub>i</sub> nes<sub>i</sub> &middot; act<sub>i</sub> / &#8214;<b>s</b>&#8214;
+<br><span class="c">D = drug regulator activity · s = disease master-regulator NES · i indexes regulators</span>
+</div>
+<div style="height:30px"></div>
+<div class="col gap20">
+<div class="step">
+<div class="stepnum">1</div>
+<div class="steptext"><p class="steph">Exposure time</p><p>Whether <b>act<sub>i</sub></b> should be averaged over timepoints, or resolved by them. Tested: the activity threshold, window concordance, imputability, and whether timing is a drug property.</p></div>
+</div>
+<div class="step">
+<div class="stepnum">2</div>
+<div class="steptext"><p class="steph">Network and activity inference</p><p>Whether the regulons behind <b>nes<sub>i</sub></b> and <b>act<sub>i</sub></b> encode regulatory structure. Tested: regulon context, knockdown response, exact decomposition, convergent recovery.</p></div>
+</div>
+<div class="step">
+<div class="stepnum">3</div>
+<div class="steptext"><p class="steph">The summary score</p><p>Whether <b>act<sub>i</sub></b> determines the gene pattern that produced it. Tested: measurement ceiling, similarity at matched activity, the residual, and the downstream cost.</p></div>
+</div>
+</div>
+<aside>The sequence is a dependency chain. If exposure time carried no information, averaging over it would be correct and the window arm would be unnecessary complexity. If the networks encoded only co-expression noise, per-cohort regulons would be meaningless and the gene-level decomposition would describe nothing. Only once both hold is it meaningful to ask what the summary discards.
+
+Note on notation: nes_i is the tumour-versus-normal enrichment of regulator i, estimated by msviper against GTEx-matched normals. act_i is the drug's inferred activity on the same regulator in cohort-matched cell lines. The normalisation by the norm of s is a per-cohort constant and does not affect within-cohort ranking.
+
+If asked why this particular score: rev is the production score and the baseline every variant is compared against. It is unchanged throughout this deck.</aside>
+</section></div><div class="notes">The sequence is a dependency chain. If exposure time carried no information, averaging over it would be correct and the window arm would be unnecessary complexity. If the networks encoded only co-expression noise, per-cohort regulons would be meaningless and the gene-level decomposition would describe nothing. Only once both hold is it meaningful to ask what the summary discards.
+
+Note on notation: nes_i is the tumour-versus-normal enrichment of regulator i, estimated by msviper against GTEx-matched normals. act_i is the drug's inferred activity on the same regulator in cohort-matched cell lines. The normalisation by the norm of s is a per-cohort constant and does not affect within-cohort ranking.
+
+If asked why this particular score: rev is the production score and the baseline every variant is compared against. It is unchanged throughout this deck.</div></div>
+<div><div class="num">Slide 3 · w1</div><div class="wrap"><section id="w1">
+<p class="eyebrow">1 · Exposure time</p>
+<h2>Thresholding and window concordance</h2>
+<div style="height:24px"></div>
+<div class="eq">
+early: t &le; 6 h &nbsp;&nbsp;·&nbsp;&nbsp; late: t &ge; 24 h &nbsp;&nbsp;·&nbsp;&nbsp; floor(t) = 0.25 if t = 6 h, else 0.40
+<br><span class="c">other and unrecorded timepoints are excluded, not pooled</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:880px">
+<h3>Threshold</h3>
+<p style="font-size:30px">Transcriptional response magnitude is lower at 6 h, so a uniform activity floor removes <b>76%</b> of early signatures. A per-timepoint floor raises active 6 h signatures from <b>4,938</b> to <b>10,889</b>.</p>
+<div style="height:24px"></div>
+<h3>Concordance</h3>
+<p style="font-size:30px">Across matched conditions, <b>37%</b> of regulator-level terms change sign between the two windows.</p>
+</div>
+<div class="col gap20" style="width:680px">
+<div class="panel"><h3>ESR1 control, MCF7</h3>
+<table>
+<tr><th width="54%">anti-estrogens</th><th width="46%">signed response</th></tr>
+<tr><td>6 h</td><td class="pos">&minus;0.056</td></tr>
+<tr><td>24 h</td><td class="neg">+0.094</td></tr>
+</table>
+<div style="height:14px"></div>
+<p style="font-size:27px">The expected direction is negative. Signature counts are 6 at 6 h against 59 at 24 h, so a pooled mean is dominated by the discordant window.</p></div>
+</div>
+</div>
+<aside>On the threshold: the 0.25 value at 6 h was set from measurement. Over 2,221 six-hour signatures that have a same-drug 24 h reference in the same cell line, drug-specific signal is 0.216 in the 0.250 to 0.284 activity band against 0.364 in the accepted band, with 93.3 per cent of signatures positive. The pass rule holds down to 0.250 and fails below it. No other timepoint has an equivalent measurement, so no other floor was altered.
+
+On the ESR1 control: this is a known-answer case rather than a discovery. Anti-estrogens should oppose the ESR1 programme in a luminal line. The early window recovers that direction and the late window reverses it. The ratio of 6 to 59 signatures means that in a plain average the discordant window outweighs the concordant one by roughly an order of magnitude.
+
+Anticipated question — could the late inversion be an artefact of the network rather than the drug? Addressed on the next-but-one slide: the ARACNe ESR1 regulon reads an ESR1 knockdown in the correct direction, so the inversion is attributable to drug biology, with GATA3 and FOXA1 rising under the compounds.</aside>
+</section></div><div class="notes">On the threshold: the 0.25 value at 6 h was set from measurement. Over 2,221 six-hour signatures that have a same-drug 24 h reference in the same cell line, drug-specific signal is 0.216 in the 0.250 to 0.284 activity band against 0.364 in the accepted band, with 93.3 per cent of signatures positive. The pass rule holds down to 0.250 and fails below it. No other timepoint has an equivalent measurement, so no other floor was altered.
+
+On the ESR1 control: this is a known-answer case rather than a discovery. Anti-estrogens should oppose the ESR1 programme in a luminal line. The early window recovers that direction and the late window reverses it. The ratio of 6 to 59 signatures means that in a plain average the discordant window outweighs the concordant one by roughly an order of magnitude.
+
+Anticipated question — could the late inversion be an artefact of the network rather than the drug? Addressed on the next-but-one slide: the ARACNe ESR1 regulon reads an ESR1 knockdown in the correct direction, so the inversion is attributable to drug biology, with GATA3 and FOXA1 rising under the compounds.</div></div>
+<div><div class="num">Slide 4 · w2</div><div class="wrap"><section id="w2">
+<p class="eyebrow">1 · Exposure time</p>
+<h2>Imputability and the locus of variation</h2>
+<div style="height:24px"></div>
+<div class="eq">
+ceiling = &radic;(reliability) &nbsp;&nbsp;·&nbsp;&nbsp; reliability from Spearman&ndash;Brown on split-half conditions
+<br><span class="c">no predictor of a window can exceed the square root of that window's own reliability</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:900px">
+<h3>Imputation, pre-registered</h3>
+<table>
+<tr><th width="56%">predictor of the missing window</th><th width="44%">Spearman</th></tr>
+<tr><td>best fitted model</td><td>0.380</td></tr>
+<tr><td>identity — copy the other window</td><td>0.382</td></tr>
+<tr><td>attainable ceiling</td><td>0.824 / 0.892</td></tr>
+</table>
+<div style="height:16px"></div>
+<p style="font-size:28px">Sign agreement 0.62–0.63 against a pre-set bar of 0.75. No model exceeded the identity baseline; the procedure was closed in both directions.</p>
+</div>
+<div class="col gap20" style="width:660px">
+<div class="panel"><h3>Where the variation sits</h3>
+<table>
+<tr><th width="64%">spread of (early &minus; late)</th><th width="36%">sd</th></tr>
+<tr><td>within a drug, across cohorts</td><td class="pos">7.90</td></tr>
+<tr><td>between drugs</td><td>12.88</td></tr>
+</table>
+<div style="height:14px"></div>
+<p style="font-size:27px">A drug's window behaviour in its other cohorts predicts the present one at Spearman <b>&minus;0.05</b>.</p></div>
+<div class="panel dark"><p style="font-size:29px">Window behaviour is cohort-specific rather than a stable property of the compound, so scores are reported per window and an unmeasured window is labelled unknown.</p></div>
+</div>
+</div>
+<aside>On the design: the reliability ceiling was computed before any model was fitted, and the acceptance rule was fixed in advance, because the test was expected to be susceptible to post-hoc tuning. Three earlier tests in this project had returned null results, and the temptation to adjust thresholds is highest immediately after a null.
+
+On the result: the informative comparison is the best model against the identity baseline, not against zero. A model reaching 0.380 where simply copying the other window reaches 0.382 has added nothing. The ceiling figures indicate the test was not merely underpowered — there was room to improve and no method found it.
+
+On residual discordance: roughly 80 per cent of a window's reliable variance is absent from the other window, and discordance does not decline as conditions accumulate — 38.8 per cent at one condition against 35.8 per cent at five or more. That rules out the interpretation that the disagreement is sampling noise.
+
+The locus-of-variation result was not anticipated by the specification. It emerged from the same analysis and closed a second possible route, namely borrowing a drug's window behaviour across cohorts.
+
+Coverage limitation to state if asked: 29 of 41 cohorts have any condition-level window data; 12 have none, so for those the label is permanent rather than pending.</aside>
+</section></div><div class="notes">On the design: the reliability ceiling was computed before any model was fitted, and the acceptance rule was fixed in advance, because the test was expected to be susceptible to post-hoc tuning. Three earlier tests in this project had returned null results, and the temptation to adjust thresholds is highest immediately after a null.
+
+On the result: the informative comparison is the best model against the identity baseline, not against zero. A model reaching 0.380 where simply copying the other window reaches 0.382 has added nothing. The ceiling figures indicate the test was not merely underpowered — there was room to improve and no method found it.
+
+On residual discordance: roughly 80 per cent of a window's reliable variance is absent from the other window, and discordance does not decline as conditions accumulate — 38.8 per cent at one condition against 35.8 per cent at five or more. That rules out the interpretation that the disagreement is sampling noise.
+
+The locus-of-variation result was not anticipated by the specification. It emerged from the same analysis and closed a second possible route, namely borrowing a drug's window behaviour across cohorts.
+
+Coverage limitation to state if asked: 29 of 41 cohorts have any condition-level window data; 12 have none, so for those the label is permanent rather than pending.</div></div>
+<div><div class="num">Slide 5 · a1</div><div class="wrap"><section id="a1">
+<p class="eyebrow">2 · Network and activity inference</p>
+<h2>Regulon context and knockdown response</h2>
+<div style="height:24px"></div>
+<div class="eq">
+J(R<sub>a</sub>, R<sub>b</sub>) = |R<sub>a</sub> &cap; R<sub>b</sub>| / |R<sub>a</sub> &cup; R<sub>b</sub>|
+<br><span class="c">R = the target set of one regulator, compared within a cohort and across tissues</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:880px">
+<h3>Regulon membership</h3>
+<div style="height:14px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar" style="width:360px"></div><p class="barlabel"><b>0.552</b> — within cohort (inference noise floor)</p></div>
+<div style="height:16px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar rust" style="width:20px"></div><p class="barlabel"><b>0.029</b> — across tissues</p></div>
+<div style="height:22px"></div>
+<p style="font-size:29px">Cross-tissue divergence exceeds the inference’s own instability by roughly a factor of 19, indicating that regulon membership encodes tissue context.</p>
+</div>
+<div class="col gap20" style="width:680px">
+<div class="panel"><h3>LINCS knockdown response</h3>
+<table>
+<tr><th width="58%">perturbation</th><th width="42%">AUC</th></tr>
+<tr><td>shRNA consensus</td><td>0.55</td></tr>
+<tr><td>CRISPR</td><td class="pos">0.63</td></tr>
+</table>
+<div style="height:12px"></div>
+<p style="font-size:27px">38 of 175 testable transcription factors pass individually.</p></div>
+<div class="panel dark"><p style="font-size:29px">The ARACNe ESR1 regulon reads an <b>ESR1 knockdown in the correct direction</b>, which attributes the anti-estrogen inversion of the previous slide to drug biology rather than to the network.</p></div>
+</div>
+</div>
+<aside>On the Jaccard comparison: the within-cohort figure is the appropriate null. It is what the same inference procedure produces on data drawn from the same biology, so it measures the instability of the method itself. Comparing cross-tissue overlap against zero would overstate the result; comparing it against 0.552 is the conservative framing.
+
+On the knockdown benchmark: an AUC of 0.55 to 0.63 is modest in absolute terms and should be presented as such. The benchmark is also too thin to support per-transcription-factor decisions — one to five signatures per factor, and ARACNe against CollecTRI gives a paired p of 0.6. It is therefore reported and has never been used to select a regulon set for a given factor. An earlier proposal to do so would have dropped 143 factors on noise.
+
+On the ESR1 case specifically: this is the single most useful result on this slide, because it converts an apparent defect into an interpretable finding. Under anti-estrogens, GATA3 and FOXA1 rise, which the regulon reads as increased ESR1 programme activity. The network is behaving correctly; the compound's late-timepoint effect is genuinely in that direction.
+
+Consequence for the pipeline: per-cohort networks are retained rather than one global network, and this result also predicts the transfer limitation measured later — regulator-level quantities do not carry across cohorts.</aside>
+</section></div><div class="notes">On the Jaccard comparison: the within-cohort figure is the appropriate null. It is what the same inference procedure produces on data drawn from the same biology, so it measures the instability of the method itself. Comparing cross-tissue overlap against zero would overstate the result; comparing it against 0.552 is the conservative framing.
+
+On the knockdown benchmark: an AUC of 0.55 to 0.63 is modest in absolute terms and should be presented as such. The benchmark is also too thin to support per-transcription-factor decisions — one to five signatures per factor, and ARACNe against CollecTRI gives a paired p of 0.6. It is therefore reported and has never been used to select a regulon set for a given factor. An earlier proposal to do so would have dropped 143 factors on noise.
+
+On the ESR1 case specifically: this is the single most useful result on this slide, because it converts an apparent defect into an interpretable finding. Under anti-estrogens, GATA3 and FOXA1 rise, which the regulon reads as increased ESR1 programme activity. The network is behaving correctly; the compound's late-timepoint effect is genuinely in that direction.
+
+Consequence for the pipeline: per-cohort networks are retained rather than one global network, and this result also predicts the transfer limitation measured later — regulator-level quantities do not carry across cohorts.</div></div>
+<div><div class="num">Slide 6 · a2</div><div class="wrap"><section id="a2" class="tinted">
+<p class="eyebrow">2 · Network and activity inference</p>
+<h2>Exact decomposition and convergent recovery</h2>
+<div style="height:24px"></div>
+<div class="eq">
+a<sub>j</sub> = m<sub>j</sub> l<sub>j</sub> t2<sub>j</sub>&nbsp;&nbsp;&nbsp; b<sub>j</sub> = (1 &minus; |m<sub>j</sub>|) l<sub>j</sub> t1<sub>j</sub>&nbsp;&nbsp;&nbsp; c<sub>ij</sub> = ( a<sub>j</sub> + &sigma;<sub>i</sub> b<sub>j</sub> [S2<sub>i</sub> &gt; 0] ) k<sub>i</sub>
+<br><b>&Sigma;<sub>j</sub> c<sub>ij</sub> = act<sub>i</sub></b>&nbsp;&nbsp;&nbsp;<span class="c">m = tfmode, l = likelihood, t1 / t2 = rank transforms over the scored gene universe</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:860px">
+<h3>Decomposition</h3>
+<p style="font-size:30px">Maximum deviation from the stored activity across 21,588 drug × cohort × window cells: <b>4.8 × 10<sup>&minus;7</sup></b>.</p>
+<div style="height:16px"></div>
+<p style="font-size:28px">Exact on the drug side, where condition-level inference uses no null model. On the disease side the permutation null cannot be replayed, so the enrichment score is allocated proportionally and is labelled as an allocation wherever used.</p>
+</div>
+<div class="col gap20" style="width:700px">
+<div class="panel"><h3>Modules recovered on two axes</h3>
+<table>
+<tr><th width="58%">patient covariation ↔ drug covariation</th><th width="42%">Jaccard</th></tr>
+<tr><td>PRRX1 hub</td><td class="pos">0.71</td></tr>
+<tr><td>DMTF1 hub</td><td class="pos">0.61</td></tr>
+<tr><td>median module</td><td>0.07</td></tr>
+</table></div>
+<div class="panel"><p style="font-size:28px">The endothelial module in luminal breast — LHX6, SOX17, ERG, TAL1, EPAS1 — contains three of the five regulons most opposing fulvestrant, whose opposition is carried by LDB2, TIE1, CDH5 and CD34.</p></div>
+</div>
+</div>
+<aside>On exactness: this is an arithmetic property, not a biological result, and should be presented that way. It establishes that every gene-level quantity used later is traceable to the activity value it came from, and that the decomposition introduces no approximation on the drug side. It does not by itself show that the gene level carries information.
+
+On the asymmetry between sides: msviper applies a permutation null whose rescaling cannot be reproduced from the stored output, so the disease-side gene contributions are a proportional allocation of the enrichment score. This is stated in the formula documentation and wherever the quantity appears, because treating an allocation as an exact decomposition would overstate what the disease side supports.
+
+On convergent recovery: the median module match is 0.07, which is the honest headline — most of what compounds move is not what tumours vary along. The two named cases are the exception, and they matter because the two clusterings use entirely different data: one over patients within a cohort, one over drugs within a window. Neither procedure has access to the other's input.
+
+The fulvestrant coincidence was not sought. The endothelial module was identified by patient covariation; the opposing regulons were identified independently from gene-level drug contributions. If asked how often such an overlap would occur by chance, the answer is that a permutation null for this has not yet been run and is on the list.</aside>
+</section></div><div class="notes">On exactness: this is an arithmetic property, not a biological result, and should be presented that way. It establishes that every gene-level quantity used later is traceable to the activity value it came from, and that the decomposition introduces no approximation on the drug side. It does not by itself show that the gene level carries information.
+
+On the asymmetry between sides: msviper applies a permutation null whose rescaling cannot be reproduced from the stored output, so the disease-side gene contributions are a proportional allocation of the enrichment score. This is stated in the formula documentation and wherever the quantity appears, because treating an allocation as an exact decomposition would overstate what the disease side supports.
+
+On convergent recovery: the median module match is 0.07, which is the honest headline — most of what compounds move is not what tumours vary along. The two named cases are the exception, and they matter because the two clusterings use entirely different data: one over patients within a cohort, one over drugs within a window. Neither procedure has access to the other's input.
+
+The fulvestrant coincidence was not sought. The endothelial module was identified by patient covariation; the opposing regulons were identified independently from gene-level drug contributions. If asked how often such an overlap would occur by chance, the answer is that a permutation null for this has not yet been run and is on the list.</div></div>
+<div><div class="num">Slide 7 · n1</div><div class="wrap"><section id="n1">
+<p class="eyebrow">3 · The summary score</p>
+<h2>Measurement ceiling, then similarity at matched activity</h2>
+<div style="height:24px"></div>
+<div class="eq">
+R = median<sub>i</sub> cos( C<sub>i</sub><sup>(A)</sup>, C<sub>i</sub><sup>(B)</sup> )&nbsp;&nbsp;&nbsp;<span class="c">A, B = disjoint halves of one drug's conditions</span>
+<br>s<sub>gene</sub> = cos( C<sub>i</sub><sup>(drug 1)</sup>, C<sub>i</sub><sup>(drug 2)</sup> )&nbsp;&nbsp;&nbsp;<span class="c">compared only as a fraction of R</span>
+</div>
+<div style="height:26px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:900px">
+<h3>Ceiling</h3>
+<div style="height:14px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar pale" style="width:120px"></div><p class="barlabel">0.33 — 2 conditions</p></div>
+<div style="height:12px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar pale" style="width:208px"></div><p class="barlabel">0.57 — 4 to 5 conditions</p></div>
+<div style="height:12px"></div>
+<div class="row gap20" style="align-items:center"><div class="bar" style="width:290px"></div><p class="barlabel"><b>0.79</b> — 10 or more conditions</p></div>
+<div style="height:22px"></div>
+<p style="font-size:28px">Median R = <b>0.53</b> overall; 0.38 early, 0.59 late. The ceiling is governed by the number of conditions behind a drug, not by any property of the method.</p>
+</div>
+<div class="col gap20" style="width:660px">
+<div class="panel"><h3>Matched-activity comparison</h3>
+<table>
+<tr><th width="62%">gene-contribution cosine</th><th width="38%">value</th></tr>
+<tr><td>same drug, split halves</td><td class="pos">0.53</td></tr>
+<tr><td>different drugs, matched activity</td><td class="neg">0.30</td></tr>
+</table>
+<div style="height:14px"></div>
+<p style="font-size:27px">1,956 regulator units across 14 cohorts.</p></div>
+<div class="panel dark"><p style="font-size:29px">Approximately <b>45%</b> of the reproducible gene-level pattern is not determined by the activity value.</p></div>
+</div>
+</div>
+<aside>On why the ceiling comes first: a between-drug similarity judged against 1.0 would be misleading, because a single drug's own gene vector does not reproduce at 1.0 either. The ceiling is the appropriate denominator, and computing it before the comparison was specified in advance so that it could not be chosen to suit the result.
+
+On the ceiling's dependence on sample size: the progression from 0.33 at two conditions to 0.79 at ten or more indicates that the limitation is data volume rather than the decomposition. It also explains the early-late difference — early cells have a median of three conditions against five for late — and means gene-level quantities are most trustworthy in the late window and in well-sampled compounds.
+
+On the registered status of this test: it failed as pre-registered, for two reasons that were recorded rather than corrected quietly. One criterion was partly tautological, because activity is the sum of the gene contributions and opposite-sign activity therefore forces opposing vectors. The specification also pooled early and late windows whose reliabilities differ materially. Both defects are documented, and the corrected analysis appears on the next slide.
+
+If asked whether 0.30 against 0.53 is a large gap: expressed as a fraction of the attainable ceiling it is 0.57, so roughly 43 to 45 per cent of reproducible structure is unexplained. That is the quantity to quote rather than the raw cosine.</aside>
+</section></div><div class="notes">On why the ceiling comes first: a between-drug similarity judged against 1.0 would be misleading, because a single drug's own gene vector does not reproduce at 1.0 either. The ceiling is the appropriate denominator, and computing it before the comparison was specified in advance so that it could not be chosen to suit the result.
+
+On the ceiling's dependence on sample size: the progression from 0.33 at two conditions to 0.79 at ten or more indicates that the limitation is data volume rather than the decomposition. It also explains the early-late difference — early cells have a median of three conditions against five for late — and means gene-level quantities are most trustworthy in the late window and in well-sampled compounds.
+
+On the registered status of this test: it failed as pre-registered, for two reasons that were recorded rather than corrected quietly. One criterion was partly tautological, because activity is the sum of the gene contributions and opposite-sign activity therefore forces opposing vectors. The specification also pooled early and late windows whose reliabilities differ materially. Both defects are documented, and the corrected analysis appears on the next slide.
+
+If asked whether 0.30 against 0.53 is a large gap: expressed as a fraction of the attainable ceiling it is 0.57, so roughly 43 to 45 per cent of reproducible structure is unexplained. That is the quantity to quote rather than the raw cosine.</div></div>
+<div><div class="num">Slide 8 · n2</div><div class="wrap"><section id="n2" class="tinted">
+<p class="eyebrow">3 · The summary score</p>
+<h2>The residual, and its downstream cost</h2>
+<div style="height:24px"></div>
+<div class="eq">
+restricted to sign(act<sup>(1)</sup>) = sign(act<sup>(2)</sup>) &nbsp;&nbsp;·&nbsp;&nbsp; &rho; = Spearman( |&Delta;act| , s<sub>gene</sub> )
+<br><span class="c">removing the sign component, which is tautological: act<sub>i</sub> = &Sigma;<sub>j</sub> c<sub>ij</sub></span>
+</div>
+<div style="height:24px"></div>
+<div class="row gap56">
+<div class="col grow" style="width:880px">
+<h3>Same-sign pairs</h3>
+<table>
+<tr><th width="40%">window</th><th width="30%">matched / ceiling</th><th width="30%">&rho;</th></tr>
+<tr><td>pooled</td><td class="pos">0.545</td><td class="pos">+0.041</td></tr>
+<tr><td>late</td><td class="pos">0.554</td><td class="pos">+0.0001</td></tr>
+<tr><td>early</td><td>0.632</td><td>+0.095</td></tr>
+</table>
+<div style="height:16px"></div>
+<p style="font-size:28px">Within a direction of effect, the magnitude of the activity difference carries essentially no information about the gene-pattern difference. Early does not meet the criterion, and its ceiling of 0.38 makes that result inconclusive rather than negative.</p>
+</div>
+<div class="col gap20" style="width:680px">
+<div class="panel"><h3>Correlation with target role</h3>
+<table>
+<tr><th width="40%">score</th><th width="30%">dependency</th><th width="30%">combined</th></tr>
+<tr><td>reversal</td><td class="neg">&minus;0.073</td><td class="neg">&minus;0.124</td></tr>
+<tr><td>gene-level term</td><td class="pos">+0.069</td><td class="pos">+0.059</td></tr>
+</table>
+<div style="height:12px"></div>
+<p style="font-size:27px">Better in 21 of 25 cohort–windows, sign test p = 0.0009. Neither score uses approval data or target annotation.</p></div>
+<div class="panel dark"><p style="font-size:28px">The corrected value reaches approximately zero rather than becoming positive. The gene-level term reduces an anti-correlation; it does not establish a positive one.</p></div>
+</div>
+</div>
+<aside>On the restriction to same-sign pairs: this removes a tautology in the original specification. Because activity is the sum of its gene contributions, two drugs with opposite-sign activity must have gene vectors pointing in opposite directions, so an unrestricted correlation largely measures sign agreement. The restricted correlation of +0.0001 in the late window is the informative figure.
+
+On the target-role anchor: the components are CRISPR dependency, alteration frequency and transcriptional over-activity of the drug's own annotated target in that cohort. This anchor was chosen because it is independent of approval status and shares no inputs with either score — the reversal score carries no target annotation at all. By contrast, the lead score does share inputs with this anchor, at Spearman 0.47, so comparisons involving it are partly circular and are excluded here.
+
+On magnitude: the correlations are small in absolute terms and the honest statement is that the gene-level term is less wrong rather than right. The pooled per-drug association with dependency is only +0.089; the per-cohort gains are considerably larger, with lung adenocarcinoma moving from minus 0.244 to plus 0.214. Liver moves in the opposite direction in both windows.
+
+Over-activity is the one component that deteriorates, which is coherent: it is the component closest to what reversal already measures, so down-weighting regulators reached through off-pattern genes should cost there while gaining on dependency and alteration.</aside>
+</section></div><div class="notes">On the restriction to same-sign pairs: this removes a tautology in the original specification. Because activity is the sum of its gene contributions, two drugs with opposite-sign activity must have gene vectors pointing in opposite directions, so an unrestricted correlation largely measures sign agreement. The restricted correlation of +0.0001 in the late window is the informative figure.
+
+On the target-role anchor: the components are CRISPR dependency, alteration frequency and transcriptional over-activity of the drug's own annotated target in that cohort. This anchor was chosen because it is independent of approval status and shares no inputs with either score — the reversal score carries no target annotation at all. By contrast, the lead score does share inputs with this anchor, at Spearman 0.47, so comparisons involving it are partly circular and are excluded here.
+
+On magnitude: the correlations are small in absolute terms and the honest statement is that the gene-level term is less wrong rather than right. The pooled per-drug association with dependency is only +0.089; the per-cohort gains are considerably larger, with lung adenocarcinoma moving from minus 0.244 to plus 0.214. Liver moves in the opposite direction in both windows.
+
+Over-activity is the one component that deteriorates, which is coherent: it is the component closest to what reversal already measures, so down-weighting regulators reached through off-pattern genes should cost there while gaining on dependency and alteration.</div></div>
+<div><div class="num">Slide 9 · summary</div><div class="wrap"><section id="summary" class="statement">
+<p class="eyebrow" style="color:#A8D8D1">Conclusion</p>
+<h2 style="color:#FBFAF4">What the three validations support</h2>
+<div style="height:32px"></div>
+<div class="col gap20">
+<div class="step">
+<div class="stepnum" style="color:#9FD9D1">1</div>
+<div class="steptext"><p class="steph" style="color:#FBFAF4">Exposure time carries information</p><p style="color:#DCEAE7;font-size:29px">37% of regulator terms change sign between windows; no model exceeds the identity baseline for imputation; window behaviour is cohort-specific. Scores are reported per window.</p></div>
+</div>
+<div class="step">
+<div class="stepnum" style="color:#9FD9D1">2</div>
+<div class="steptext"><p class="steph" style="color:#FBFAF4">The inference encodes regulatory structure</p><p style="color:#DCEAE7;font-size:29px">Regulon context exceeds inference noise by a factor of 19; knockdowns are read in the correct direction; activity decomposes exactly; two independent clusterings recover shared modules.</p></div>
+</div>
+<div class="step">
+<div class="stepnum" style="color:#9FD9D1">3</div>
+<div class="steptext"><p class="steph" style="color:#FBFAF4">The summary score is lossy</p><p style="color:#DCEAE7;font-size:29px">About 45% of reproducible gene-level pattern is unexplained by the activity value, and the omission has a measurable cost against an external target-biology anchor.</p></div>
+</div>
+</div>
+<div style="height:36px"></div>
+<p class="lead" style="color:#FBFAF4;max-width:1540px">Each layer is sound, and the summary at the top discards structure that is reproducible and externally relevant. This motivates retaining the gene level, independently of whether any particular gene-level score ranks better.</p>
+<aside>What this deck does not establish, and should be stated explicitly: that a gene-level score improves ranking. Four scoring variants have been tested and none clearly outperforms the production score on the available yardsticks. Two of those four failed on implementation errors rather than on the hypothesis, both identified by decomposition and recorded.
+
+The remaining difficulty is evaluative rather than methodological. The two anchors that are trusted disagree: approval recovery favours the production score, target-role biology favours the gene-level term. That disagreement is itself explainable, because approval recovery is bimodal across cohorts and rewards cytotoxic compounds, which the gene-level term demotes. Settling which anchor to trust is the next priority, ahead of building a fifth scoring variant.
+
+Closing framing if asked what changes tomorrow: resolution becomes explicit in the output rather than pooled away, the biomarker-pair anchor is strengthened and evaluated against a permutation null, and the one unfinished scoring composition is completed so that the set of negative results is complete rather than open.</aside>
+</section></div><div class="notes">What this deck does not establish, and should be stated explicitly: that a gene-level score improves ranking. Four scoring variants have been tested and none clearly outperforms the production score on the available yardsticks. Two of those four failed on implementation errors rather than on the hypothesis, both identified by decomposition and recorded.
+
+The remaining difficulty is evaluative rather than methodological. The two anchors that are trusted disagree: approval recovery favours the production score, target-role biology favours the gene-level term. That disagreement is itself explainable, because approval recovery is bimodal across cohorts and rewards cytotoxic compounds, which the gene-level term demotes. Settling which anchor to trust is the next priority, ahead of building a fifth scoring variant.
+
+Closing framing if asked what changes tomorrow: resolution becomes explicit in the output rather than pooled away, the biomarker-pair anchor is strengthened and evaluated against a permutation null, and the one unfinished scoring composition is completed so that the set of negative results is complete rather than open.</div></div>
+</main>
+<script>
+function fit(){document.querySelectorAll('.wrap').forEach(w=>{const s=w.firstElementChild;s.style.transform='scale('+(w.clientWidth/1920)+')';});}
+addEventListener('resize',fit);fit();
+</script>
+</body></html>

@@ -1,0 +1,36 @@
+<section id="genelevel" data-transition="fade">
+  <p class="eyebrow">Validation 3 &middot; Gene-level information</p>
+  <h2 class="title" style="font-size:50px;">Regulator NES alone is lossy; keeping gene-level detail</h2>
+  <div class="rule"></div>
+
+  <div class="col2">
+    <div style="flex:1.05;">
+      <ul class="pts">
+        <li><span class="dot"></span>Two drugs can earn the <b>same regulator NES</b> while perturbing <b>different genes</b> inside the regulon. A per-regulon score cannot tell them apart &mdash; it is lossy.</li>
+        <li><span class="dot"></span>The production score <b>rev</b> multiplies totals &mdash; blind to <i>which</i> genes carry a regulator's activity.</li>
+        <li><span class="dot"></span><b>rev_gene</b> requires the genes to line up with the disease pattern one-by-one. A regulator whose activity sits on off-pattern genes drops out <b>by geometry</b> &mdash; no threshold, no tuned parameter.</li>
+        <li><span class="dot"></span>Exactly the intended behaviour: hit disease-relevant genes &rarr; counts fully; reach activity through unrelated genes &rarr; down-weighted.</li>
+        <li><span class="dot"></span><b>Enriched, not redundant:</b> rev vs rev_gene correlate at Spearman <b>+0.70</b> &mdash; most of the ranking survives while the ties separate.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <div class="panel" style="background:var(--paper-2);border-left-color:var(--ink);">
+        <p style="font-size:25px;color:var(--ink);margin-bottom:10px;"><b>rev</b> &nbsp;=&nbsp; &minus;&Sigma; (disease total &times; drug total) &nbsp;&middot;&nbsp; a product of sums</p>
+        <p style="font-size:25px;color:var(--ink);"><b>rev_gene</b> &nbsp;=&nbsp; &minus;&Sigma;&Sigma; (disease gene &middot; drug gene) &nbsp;&middot;&nbsp; a sum of products</p>
+      </div>
+      <p class="kick" style="margin-top:26px;">What the gene view changes</p>
+      <table class="mx" style="font-size:25px;">
+        <tr class="head"><th class="l">Regulator</th><th>Gene concordance</th><th>Effect on score</th></tr>
+        <tr class="bad"><td class="l">TGIF1</td><td>0.016 (orthogonal)</td><td class="l">&nbsp;demoted</td></tr>
+        <tr class="good"><td class="l">KLF4</td><td>&minus;0.264 (concordant)</td><td class="l">&nbsp;promoted</td></tr>
+      </table>
+      <p class="src" style="margin-top:16px;">Pre-registered separation test (D203): do rev-tied pairs that share no target/MOA separate more under rev_gene? Permutation p&nbsp;&lt;&nbsp;0.01, &ge;200 annotated pairs required.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="tag">Source: repo D203 &middot; 10.97M gene rows, 346 drugs, 29 cohorts</span>
+    <span class="pageno">Drug repurposing &middot; validation update</span>
+  </div>
+  <aside>KLF4 is the instructive case: the totals miss it, but its genes are concordant with the disease pattern, so the gene view promotes it; TGIF1 is the opposite, near-orthogonal, so it is demoted. The separation test is registered so that "rev_gene separates tied drugs" only counts if the separation tracks something mechanistic (shared target/MOA), not just noise with structure.</aside>
+</section>

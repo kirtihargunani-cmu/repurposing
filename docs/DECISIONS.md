@@ -1,8 +1,10 @@
-# Disease-side decisions and assumptions (running list)
+# Decisions and assumptions, disease and drug side (running list)
 
 What we decided, why, and what we are assuming. One line per item, in plain language. Add new items at the end of each
 section; never delete. If a decision is replaced, strike it through (`~~...~~`) and add the new one with a pointer.
-Details and numbers: [`PROGRESS.md`](PROGRESS.md). Drug-side decisions are kept in the `celligner` worktree.
+Details and numbers: [`PROGRESS.md`](PROGRESS.md).
+
+**Layout.** Section 1 holds the disease-side decisions by pipeline step (D1-D83 and later disease-side rows), then sections 2 (assumptions) and 3 (open / parked). **Drug-side decisions from D84 onward are the rows at the end of this file**, in the order they were made; the short drug-side list with caveats is [`notes/drug_side_decisions_and_caveats.md`](notes/drug_side_decisions_and_caveats.md). Updated 2026-11-23 (through D212). Since 2026-11-02 all docs, disease and drug, live on `main`.
 
 "PI" = decided by the PI / user. "Claude" = chosen by Claude after the user delegated the choice.
 
@@ -35,11 +37,12 @@ Details and numbers: [`PROGRESS.md`](PROGRESS.md). Drug-side decisions are kept 
 | D14 | 10-02 | Build our own ARACNe networks per cancer, with the full regulator set (TFs, kinases, signaling; ~6,200), no target cap | Drivers may be kinases or signaling proteins; published networks failed our checks | PI |
 | D15 | 10-02 | Significance from a "normal vs normal" null (1,000 random splits of the healthy samples); the faster analytic null is never reported | The analytic null assumes genes are independent and overstates significance | PI |
 | D16 | 10-02 | Regulator kept only if expressed in the tumors (median logCPM >= 1) and >= 10 targets / >= 50% of targets measured | Avoid scoring regulators that are absent or barely measured | PI |
-| D17 | 10-08 | ARACNe is the primary network; CollecTRI and DoRothEA are supporting evidence | ARACNe passes known-biology checks; curated sets do not fit tissue context | PI |
-| D18 | 10-08 | Confirmed regulator = ARACNe FDR < 0.05, or FDR < 0.10 with a same-direction FDR < 0.10 call in CollecTRI or DoRothEA; FDR < 0.10 for exploratory selection | Balance discovery and confidence | PI |
+| D17 | 10-08 | ~~ARACNe is the primary network; CollecTRI and DoRothEA are supporting evidence~~ **Superseded:** ARACNe only (D160); CollecTRI / DoRothEA separated from the builds (D208) | ARACNe passes known-biology checks; curated sets do not fit tissue context | PI |
+| D18 | 10-08 | ~~Confirmed regulator = ARACNe FDR < 0.05, or FDR < 0.10 with a same-direction FDR < 0.10 call in CollecTRI or DoRothEA; FDR < 0.10 for exploratory selection~~ **Superseded:** ARACNe only (D160); CollecTRI / DoRothEA separated from the builds (D208) | Balance discovery and confidence | PI |
 | D19 | 10-08 | Failing known-biology checks are reported as limitations; no tuning to make them pass | Avoid fitting the method to expectations | PI |
 | D20 | 10-08 | Small/weak groups (CESC-AD, ESCA-SCC, UCS) kept for drug matching | See what they match; flagged | PI |
 | D21 | 10-08 | ARACNe consolidation threshold kept as built | Networks pass confounding checks | PI |
+| D208 | 11-23 | ARACNe is the only regulon set. CollecTRI and DoRothEA are moved to `archive/collectri/` (regulon files, `step6/collectri*`, `dorothea_ABC*`); `50_viper.R` now defaults to `aracne_project` and refuses the curated sets; the cross-set `comparison*/consensus.tsv` tables are deleted. Replaces D17 / D18 | User: "only want to keep ARACNe". Curated sets are tissue-agnostic, and D149 showed regulon context is real signal | PI |
 
 ### Patient-level corrections (Step 6, input to clustering)
 | # | Date | Decision | Why | By |
