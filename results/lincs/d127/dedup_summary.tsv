@@ -1,0 +1,6 @@
+set	units	compounds	correct	share	p	median_gap	verdict
+primary	20	49	16	0.8	0.00591	17.4	PASS
+seen	13	22	13	1.0	0.00012	66.4	meets
+expansion	11	11	6	0.5455	0.5	11.9	does not meet
+expansion_secondary	27	28	24	0.8889	2e-05	26.6	meets
+negative_control	2	5	2	1.0	0.25	12.6	underpowered (<= 2 units)

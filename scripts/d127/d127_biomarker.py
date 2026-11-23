@@ -122,7 +122,9 @@ def instances(a):
                      hi_pct=float(h[SCORE]), lo_pct=float(l[SCORE]),
                      hi_excluded=bool(h.excluded), lo_excluded=bool(l.excluded),
                      hi_flags=";".join(c for c in EXCLUSION_FLAGS if h[c]),
-                     lo_flags=";".join(c for c in EXCLUSION_FLAGS if l[c]))
+                     lo_flags=";".join(c for c in EXCLUSION_FLAGS if l[c]),
+                     hi_unit=str(h.get("layered_genes", "")) if pd.notna(h.get("layered_genes", np.nan)) else "",
+                     lo_unit=str(l.get("layered_genes", "")) if pd.notna(l.get("layered_genes", np.nan)) else "")
             r["gap"] = round(r["hi_pct"] - r["lo_pct"], 1)
             r["correct"] = r["hi_pct"] > r["lo_pct"]
             # end-to-end (reported): an exclusion flag in the low cohort, absent in the high one, is a correct demotion
@@ -242,14 +244,45 @@ def main():
     summ = pd.DataFrame(rows)
     summ.to_csv(OUT / "summary.tsv", sep="\t", index=False)
 
+    # D209 (docs/SPEC_d127_target_dedup.md): one vote per target unit. Unit = (hi_unit, lo_unit) within a pair;
+    #   unit gap = median compound gap; a compound with a missing unit on either side is its own unit.
+    U = inst.copy()
+    miss = (U.hi_unit == "") | (U.lo_unit == "")
+    U["unit_key"] = np.where(miss, "drug:" + U.drug, U.hi_unit + " || " + U.lo_unit)
+    U = (U.groupby(["pair_set", "drug_class", "high", "low", "unit_key"], sort=False)
+           .agg(n_compounds=("drug", "size"), drugs=("drug", lambda x: ";".join(sorted(x))), gap=("gap", "median"))
+           .reset_index())
+    U["correct"] = U.gap > 0
+    U.to_csv(OUT / "dedup_units.tsv", sep="\t", index=False)
+    drow, dper = [], []
+    for (ps, cls, hi, lo), d in U.groupby(["pair_set", "drug_class", "high", "low"], sort=False):
+        dper.append(dict(pair_set=ps, drug_class=cls, high=hi, low=lo, n_units=len(d),
+                         n_compounds=int(d.n_compounds.sum()), **test(d)))
+    pd.DataFrame(dper).to_csv(OUT / "dedup_pairs.tsv", sep="\t", index=False)
+    dsum = {}
+    for ps in ["primary", "seen", "expansion", "expansion_secondary", "negative_control"]:
+        d = U[U.pair_set == ps]
+        if not len(d):
+            continue
+        t = test(d)
+        ok = bool(t["share"] >= SHARE_MIN and t["p"] < P_MAX and t["median_gap"] >= GAP_MIN)
+        dsum[ps] = dict(**t, n_compounds=int(d.n_compounds.sum()), meets_thresholds=ok)
+        drow.append(dict(set=ps, units=t["n"], compounds=int(d.n_compounds.sum()), correct=t["n_correct"],
+                         share=t["share"], p=t["p"], median_gap=t["median_gap"],
+                         verdict=("PASS" if ok else "NOT MET") if ps == "primary" else
+                                 ("underpowered (<= 2 units)" if t["n"] <= 2 else ("meets" if ok else "does not meet"))))
+    pd.DataFrame(drow).to_csv(OUT / "dedup_summary.tsv", sep="\t", index=False)
+
     run = dict(score=SCORE, share_min=SHARE_MIN, p_max=P_MAX, gap_min=GAP_MIN, primary=pri, verdict=verdict,
                ties=ties, n_pairs_primary=int((per.pair_set == "primary").sum()),
                per_pair_median_share=float(per[per.pair_set == "primary"].share.median()),
-               split_sfx=F.SPLIT_SFX, d207=exp_verdicts)
+               split_sfx=F.SPLIT_SFX, d207=exp_verdicts, d209_dedup=dsum)
     (OUT / "run.json").write_text(json.dumps(run, indent=1, default=float))
 
     pd.set_option("display.width", 250)
     print(summ.to_string(index=False))
+    print("\nD209 one vote per target unit:")
+    print(pd.DataFrame(drow).to_string(index=False))
     print("\nPer pair:")
     print(per.to_string(index=False))
 
