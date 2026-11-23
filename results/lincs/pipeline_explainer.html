@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pipeline Walkthrough</title><style>
+<title>Reversal Pipeline Walkthrough</title><style>
 :root{--bg:#fbfbfa;--fg:#1b1b1a;--mut:#6b6b68;--line:#e3e3e0;--card:#fff;--acc:#1f6f6b;
 --warn:#8a4b1f;--warnbg:#fdf6ef;--keybg:#f1f7f6}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17181a;--fg:#e8e8e6;
@@ -10,7 +10,7 @@
 --acc:#5fbdb6;--warn:#d79a62;--warnbg:#241c14;--keybg:#17221f}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 header{border-bottom:1px solid var(--line);padding:32px 0 20px;margin-bottom:24px}
 h1{margin:0 0 6px;font-size:1.6rem;letter-spacing:-.01em}
 .sub{color:var(--mut);margin:0;max-width:70ch}
@@ -33,7 +33,7 @@ td{padding:5px 9px;white-space:nowrap;border-bottom:1px solid var(--line);color:
 tr:last-child td{border-bottom:0}
 .missing{color:var(--warn);font-size:.85rem;font-style:italic}
 footer{color:var(--mut);font-size:.82rem;border-top:1px solid var(--line);padding:18px 0 40px;margin-top:10px}
-@media(max-width:560px){.wrap{padding:0 16px}h1{font-size:1.3rem}}
+@media(max-width:560px){h1{font-size:1.3rem}.card{padding:14px 15px}}
 </style></head><body>
 <header><div class="wrap"><h1>Pipeline walkthrough — data in, the math, data out</h1>
 <p class="sub">Every table below is read from the actual file the pipeline wrote, so this page
