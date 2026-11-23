@@ -21,9 +21,10 @@ data file per cancer, which browsers refuse from a local file, so serve the fold
 cd results/lincs/gene_rankings_page && python -m http.server 8000   # then open http://localhost:8000
 ```
 
-**Read with the dates in mind.** These are snapshots. The "Validation & Confounders" deck quotes D127 as 78% correct
-(49 instances); the current figure is 36/49 per compound and 16/20 per target unit on the lead score (D208, D209),
-and the D211 gene-level ranking does not pass it (C30 in `docs/notes/drug_side_decisions_and_caveats.md`).
+**Read with the dates in mind.** These are snapshots. The "Validation & Confounders" copy here was corrected on
+2026-11-23 to the full-run D127 figure (16 of 20 targets, 36 of 49 drugs, lead score; it had said 78%); the live deck
+still needs the same edit. The D211 gene-level ranking does not pass D127 (C30 in
+`docs/notes/drug_side_decisions_and_caveats.md`).
 
 Not included as files: the two Claude Docs specifications (disease side Steps 1-7:
 https://claude.ai/artifact/FpQv6BnyiFnnrbH1svGBQu; drug side: https://claude.ai/artifact/MStneGE2bZDFg3wHuvC1LC). Both
