@@ -1,0 +1,88 @@
+# Frozen configuration for docs/SPEC_Perturbation_Mechanistic_Incremental_Value.md as amended (Amendment 1).
+# Committed BEFORE any study computation; this commit is the registration (protocol id = its SHA).
+# Values here are design choices fixed in advance. Do not change them after a result is seen; changes go in a dated
+# amendment with a new commit, and the report names both SHAs.
+
+study: mechanistic_incremental_v1
+branch: study/mechanistic-incremental-v1
+registered: 2026-11-23
+spec: docs/SPEC_Perturbation_Mechanistic_Incremental_Value.md   # Amendment 1 governs
+seed: 20261123                     # all splits and permutations; per-row seeds = crc32(key) ^ seed (never hash())
+n_boot: 1000                       # cluster bootstrap resamples
+n_perm: 1000                       # permutation nulls
+n_cores: 6                         # project thread budget: < half of 64 in total; BLAS threads = 1
+output_root: results/lincs/mechanistic_incremental_v1
+
+# ---- A1.1 inputs: the most recent full run (read-only, from the main checkout) ----
+input_root: /home/kirti/projects/repurposing
+reference_run: {runner: scripts/run_pipeline.sh, date: 2026-11-23, window: "13:45-15:17", decision: D210}
+inputs:                            # path: run id that must match its .build_manifest.json (Stage 0 refuses others)
+  results/systems_validation/integrated/window_reversal.tsv.gz: 20261123T150125-3240405
+  results/systems_validation/integrated/window_reversal_strata.tsv.gz: 20261123T150136-3240515
+  results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz: 20261123T150555-3243208
+  results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all_strata.tsv.gz: 20261123T151429-3246841
+  results/lincs/gene_ranking_v2_tf.tsv: 20261123T151534-3247347
+  results/lincs/layered_score_v2_v2_tf.tsv: 20261123T134713-3218645
+  results/lincs/drug_reversal_split_v2_tf.tsv: 20261123T150138-3240574
+  results/lincs/stratum_reversal_split_v2_tf.tsv: 20261123T150138-3240574
+  results/lincs/d127: 20261123T151746-3248616
+  results/lincs/target_role: 20261123T145758-3239456
+upstream_consumed:                 # built before the run, consumed by it unchanged; recorded by date + checksum
+  results/step6/aracne_project_v2_tf/group_mr.tsv: disease master regulators (groups)
+  results/step6/aracne_project_v2_tf_strata/group_mr.tsv: disease master regulators (subgroups)
+  results/step6/aracne_project_v2_tf/regulon_contributions.tsv.gz: 50b per-gene breakdown, run 20261122T140041-2812034
+  results/step6/aracne_project_v2_tf_strata/regulon_contributions.tsv.gz: 50b subgroups, run 20261122T140307-2813316
+  data/processed/lincs/drug_condition_profiles_index.tsv: 79c2 condition profiles (2026-11-20), 26,130 conditions
+  data/processed/lincs/drug_condition_profiles_specific.f32: 79c2 gene matrix (26,130 x 10,112 float32)
+  data/processed/lincs/drug_viper_specific_v2_tf_cond: 79d condition-level VIPER, 38 networks (2026-11-20)
+  data/processed/step5/regulons_aracne_project_v2_tf_edges.tsv.gz: network edges (tfmode, likelihood)
+  results/celligner/disease_line_weights_long.tsv: in-key line weights (groups)
+  results/celligner/stratum_line_weights_long_v2.tsv: in-key line weights (subgroups)
+  config/group_networks.tsv: production network map
+  data/raw/progeny/progeny_human_top100.tsv: PROGENy weights (label source b)
+  config/progeny_on_target.tsv: D99 on-target pathway expectations (label source b)
+excluded_inputs: [results/lincs/interpretation, results/lincs/programs, results/lincs/sensitivity_validation_v2]
+
+# ---- A1.2 the scorer under study (production D211) ----
+scorer:
+  filter: "layered_T >= 50 and layered_n_axes >= 1"     # D/A/O path; T, D, A, O are never outcomes
+  score: rev_gene                                       # FORMULAS s3; per (unit, window); percentile among eligible
+  reference_scores: [rev]                               # reported only
+  chemo_table: analysed separately, never pooled with the D/A/O path
+  universe: FDA gate-passing rows (target evidence exists only there)
+
+# ---- A1.3 windows ----
+windows: {early: "pert_time <= 6", late: "pert_time >= 24"}   # other/unrecorded dropped; unknown kept in coverage
+pooled_scores_allowed: false
+include_subgroups: true
+
+# ---- A1.5 Experiment A: resolvable signal per processing step ----
+steps:
+  S1: condition gene profile (10,112 genes)
+  S2: single-condition regulator activity on the cancer's network
+  S3: window-aggregated regulator activity over the cancer's in-key lines (weights renormalised within a half)
+  S4: regulator-level reversal rev (reference)
+  S5: gene-level reversal rev_gene
+  S6: rev_gene within the eligible set (T >= 50), FDA rows only
+reproducibility:
+  split: "a (unit, drug, window) row with >= 2 in-key conditions; conditions permuted with its row seed; half A = first floor(n/2)"
+  vector_steps: [S1, S3]                # same-drug half-A vs half-B cosine, against the different-drug matched null
+  scalar_steps: [S4, S5, S6]            # across drugs in a (unit, window) cell: Spearman(half A, half B), Spearman-Brown
+  min_drugs_per_cell: 10
+  condition_pair_step: S2               # two single conditions of the same drug vs of different drugs, same cell
+null_matching: "same unit, window and condition-count stratum (2, 3-4, 5+); different drug ingredient"
+mechanism_labels:
+  a_primary_target: "drug's primary target (evidence_targets, target_source in chembl_mechanism / confirmed_annotation) that is a scored regulator; percentile in the regulator response, signed by layered_orient (lower: -activity; raise: +activity; else |activity|); steps S3 (activity), S4 (rev_contrib), S5 (rev_gene_contrib); null = target labels permuted among drugs of the same cell"
+  b_progeny_pathway: "D99 on-target pathway (config/progeny_on_target.tsv) scored on the window gene profile as sum(weight x z) over PROGENy top-100 genes; share in the expected direction; null = pathway labels permuted among labelled drugs; step S1 only"
+  c_shared_target: "pairs of drugs in one cell sharing a target unit (layered_genes) vs non-sharing pairs matched on condition-count stratum; similarity = cosine at S1, S3 and S5 (rev_gene_contrib vector)"
+  d_d127: descriptive only, already seen (results/lincs/d127/d211_gene_summary.tsv)
+clusters: "FDA ingredient where mapped, else pert_id; target unit for label (c)"
+
+# ---- A1.6 Experiment B noise model ----
+noise_model: "split-half residual distribution from rows with >= 2 conditions in BOTH windows, by condition-count stratum; applied to single-condition rows as a calibrated uncertainty; false sign-flip rate from pseudo-replicates"
+
+# ---- A1.7 reporting ----
+resolved_rule: "95% cluster-bootstrap interval excludes the matched null"
+benchmarks_not_gates: ["+0.05 delta", "odds ratio >= 1.5", "FDR < 0.05 enrichment"]
+unresolved_wording: "not resolved at current data depth (with the noise and coverage that limit it)"
+lead_with: resolved signal, effect, interval, denominator, share of the reliability ceiling

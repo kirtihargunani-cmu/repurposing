@@ -118,8 +118,10 @@ further analysis** and is reported as such:
 Section 0.2 row A (now A1.5); section 1 row D202-D205 (`rev_gene` is production since D211); section 2.3 subgroup
 bullet (8 of 14 subgroups have window data) and D206 bullet; section 4.2 `U_A_sens`; section 5 outcome parts and A6;
 section 11.1 "+0.05 ... underpowered" language (A1.7 applies); section 13 rows on A ("do not add reversal to the lead
-score": reversal is already production); section 14 (replaced below). Section 12.1 (feature branch and PR versus the
-project's commit-to-`main` convention) is **still open** for the owner.
+score": reversal is already production); section 14 (replaced below). Section 12.1 is **decided (owner, 2026-11-23): the study
+runs on the feature branch `study/mechanistic-incremental-v1`** (worktree `~/projects/repurposing-mechinc`), reads the
+production run read-only from the main checkout, writes only `results/lincs/mechanistic_incremental_v1/`, and ends in a
+pull request without merging. Frozen choices: `config/mechanistic_incremental_v1.yaml`.
 
 ### A1.9 Handoff prompt (replaces section 14)
 
