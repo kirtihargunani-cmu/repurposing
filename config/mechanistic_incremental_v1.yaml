@@ -124,3 +124,18 @@ C:
   strata: "target is a scored regulator in that network (exact route possible) vs not"
   yardstick: "primary-target downstream recovery must resolve before a secondary null is read as informative"
   feasibility: "fewer than 30 distinct target genes in a stratum -> feasibility-limited, not a negative"
+
+# ---- Experiment D settings (amendment 1d, 2026-11-24; committed before any D computation) ----
+D:
+  pairs: "every pair of distinct networks within one TCGA family (cell-type networks and the pooled cohort network): BRCA {BRCA_LUMA, BRCA_LUMB, BRCA_BAS, BRCA}, LGG {LGG_IDHMUT_CODEL, LGG_IDHMUT_NONCODEL, LGG_IDHWT}, ESCA {ESCA_AD, ESCA_SCC}, CESC {CESC, CESC_SCC}, PCPG {PCPG, PCPG_PHEO}, SARC {SARC, SARC_LMS}, UCEC {UCEC, UCEC_EEC}: 14 pairs"
+  reference_pair: "BRCA_LUMA vs LUAD on breast conditions (cross-tissue; descriptive only)"
+  input: "identical conditions through both networks: every condition in a line that is in-key for any unit of the family (groups and subgroups); early and late separately"
+  regulators: "regulators scored in both networks"
+  regulon_measures: "J_r = target-set Jaccard; sign_agreement_r = share of shared targets with the same tfmode sign; regulon sizes"
+  agreement: "per (pair, window, regulator): Spearman of activity across conditions between the two networks; mean |delta activity|"
+  decomposition: "exact: activity = sum of edge contributions in each network; delta = (shared-target part A - shared part B) + (unique part A - unique part B); share_unique = sum|unique diff| / (sum|shared diff| + sum|unique diff|) over conditions, against the regulator's share of unique edges"
+  test: "per pair and window, Spearman across regulators of J_r vs agreement_r; cluster bootstrap over regulators; null = J permuted among regulators within regulon-size quintiles (n_perm); resolved = interval excludes the null"
+  held_out: "drugs split into two halves by ingredient (seeded); agreement_r recomputed per half; reliability across regulators and the J-agreement correlation in each half"
+  flags: "context_robust: agreement >= 0.7 in both halves; rewired: agreement < 0.3 in both halves and J below the pair median; unexplained: agreement < 0.3 in both halves and J at or above the median; descriptive"
+  worked_example: "ESR1, BRCA_LUMA vs BRCA_BAS: J, sign agreement, agreement, decomposition, and anti-estrogen activities (fulvestrant, tamoxifen, clomifene, raloxifene) in each network and window"
+  no_network_selection: "no network is chosen or preferred on any label; D describes network dependence only"
