@@ -1,0 +1,35 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261124T182657-3920138",
+ "finished_at": "2026-11-24T18:27:03-05:00",
+ "duration_s": 6,
+ "script": "F_synthesis.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/F_synthesis.py",
+ "env": "",
+ "git_sha": "f771d89",
+ "git_state": "dirty",
+ "note": "mechanistic_incremental_v1 Experiment F synthesis (protocol 5cc2227 + 6c29417)",
+ "expect": null,
+ "n_files": 4,
+ "mtime_span_hours": 0.0,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "F_evidence_summary.tsv": {
+   "bytes": 1322,
+   "mtime": "2026-11-24T18:27:03-05:00"
+  },
+  "F_mechanism_cases.md": {
+   "bytes": 4049,
+   "mtime": "2026-11-24T18:27:03-05:00"
+  },
+  "F_mechanism_evidence.tsv.gz": {
+   "bytes": 54091,
+   "mtime": "2026-11-24T18:27:03-05:00"
+  },
+  "run.json": {
+   "bytes": 143,
+   "mtime": "2026-11-24T18:27:03-05:00"
+  }
+ }
+}
