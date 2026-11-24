@@ -1,0 +1,11 @@
+{
+ "stage": "E_program_access",
+ "protocol": "5cc2227+6583b74",
+ "cancers": 29,
+ "programs": 461,
+ "response_rows": 313350,
+ "reliability_rows": 474,
+ "link_programs": 216,
+ "runtime_s": 61.5,
+ "finished": "2026-11-24T18:26:09-0500"
+}

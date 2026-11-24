@@ -1,0 +1,57 @@
+{
+ "stage": "00_audit",
+ "status": "pass",
+ "blockers": [],
+ "notes": [
+  "79e3 SPLITHALF seeds each row with Python hash() of strings, which changes between processes (PYTHONHASHSEED), so its split-half assignment is not reproducible run to run. This study seeds with crc32(key) ^ seed instead and does not use 79e3's splithalf output."
+ ],
+ "d209": {
+  "units": 20,
+  "correct": 16
+ },
+ "unknown_eligible_by_reason": {
+  "no_condition_in_lines": 2046,
+  "no_window_run": 1336
+ },
+ "coverage_totals": [
+  {
+   "level": "group_id",
+   "window": "early",
+   "window_rows": 9951,
+   "rows_ge2_conditions": 2293,
+   "ranked": 547
+  },
+  {
+   "level": "group_id",
+   "window": "late",
+   "window_rows": 11637,
+   "rows_ge2_conditions": 4717,
+   "ranked": 777
+  },
+  {
+   "level": "stratum",
+   "window": "early",
+   "window_rows": 1352,
+   "rows_ge2_conditions": 260,
+   "ranked": 68
+  },
+  {
+   "level": "stratum",
+   "window": "late",
+   "window_rows": 1456,
+   "rows_ge2_conditions": 572,
+   "ranked": 105
+  }
+ ],
+ "units_in_window_run": {
+  "group_id": 29,
+  "stratum": 8
+ },
+ "git": {
+  "study_sha": "5cc2227cac9905f418b367d45a13f1f6b4f10c15",
+  "input_checkout_sha": "db45df29d124f517305dde1e1c1d55b0e9b21afb"
+ },
+ "config_seed": 20261123,
+ "runtime_s": 24.9,
+ "finished": "2026-11-23T16:33:17-0500"
+}

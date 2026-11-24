@@ -1,0 +1,25 @@
+level	window	step	measure	n_rows	n_clusters	same	null	signal	ci_lo	ci_hi	resolved
+group_id	early	S1	same-drug minus different-drug cosine	2286	613	0.3600	-0.0055	0.3506	0.3285	0.3771	True
+group_id	early	S2	same-drug minus different-drug cosine	2286	613	0.4306	0.0026	0.3696	0.3378	0.3958	True
+group_id	early	S3	same-drug minus different-drug cosine	2286	613	0.5102	-0.0057	0.4271	0.3964	0.4636	True
+group_id	early	S4	split-half reliability across drugs (Spearman-Brown)	14	14	0.6457	0.0000	0.6457	0.6190	0.6895	True
+group_id	early	S5	split-half reliability across drugs (Spearman-Brown)	14	14	0.6077	0.0000	0.6077	0.5790	0.6946	True
+group_id	early	S6	split-half reliability across drugs (Spearman-Brown)	7	7	0.4341	0.0000	0.4341	0.3060	0.5916	True
+group_id	late	S1	same-drug minus different-drug cosine	4710	915	0.5882	-0.0090	0.5579	0.5392	0.5788	True
+group_id	late	S2	same-drug minus different-drug cosine	4710	915	0.5872	0.0062	0.4994	0.4768	0.5159	True
+group_id	late	S3	same-drug minus different-drug cosine	4710	915	0.7069	0.0049	0.6163	0.5929	0.6510	True
+group_id	late	S4	split-half reliability across drugs (Spearman-Brown)	17	17	0.8021	0.0000	0.8021	0.7500	0.8173	True
+group_id	late	S5	split-half reliability across drugs (Spearman-Brown)	17	17	0.7405	0.0000	0.7405	0.7052	0.8438	True
+group_id	late	S6	split-half reliability across drugs (Spearman-Brown)	13	13	0.6199	0.0000	0.6199	0.5822	0.7580	True
+stratum	early	S1	same-drug minus different-drug cosine	260	130	0.3281	0.0247	0.2980	0.2411	0.3585	True
+stratum	early	S2	same-drug minus different-drug cosine	260	130	0.3970	0.0244	0.2922	0.2046	0.3664	True
+stratum	early	S3	same-drug minus different-drug cosine	260	130	0.4663	0.0672	0.3526	0.2591	0.4603	True
+stratum	early	S4	split-half reliability across drugs (Spearman-Brown)	2	2	0.5885	0.0000	0.5885			False
+stratum	early	S5	split-half reliability across drugs (Spearman-Brown)	2	2	0.5673	0.0000	0.5673			False
+stratum	early	S6	split-half reliability across drugs (Spearman-Brown)	2	2	0.3214	0.0000	0.3214			False
+stratum	late	S1	same-drug minus different-drug cosine	568	275	0.6485	-0.0236	0.6207	0.5762	0.6578	True
+stratum	late	S2	same-drug minus different-drug cosine	568	275	0.6552	-0.0056	0.5816	0.5394	0.6152	True
+stratum	late	S3	same-drug minus different-drug cosine	568	275	0.7730	-0.0245	0.6921	0.6239	0.7462	True
+stratum	late	S4	split-half reliability across drugs (Spearman-Brown)	4	4	0.8557	0.0000	0.8557	0.8129	0.8723	True
+stratum	late	S5	split-half reliability across drugs (Spearman-Brown)	4	4	0.7299	0.0000	0.7299	0.1667	0.8536	True
+stratum	late	S6	split-half reliability across drugs (Spearman-Brown)	2	2	0.8014	0.0000	0.8014			False

@@ -1,0 +1,10 @@
+{
+ "stage": "A_resolvable",
+ "protocol": "5cc2227",
+ "rows_split": 7842,
+ "runtime_s": 76.8,
+ "seed": 20261123,
+ "n_boot": 1000,
+ "n_perm": 1000,
+ "finished": "2026-11-23T16:38:54-0500"
+}

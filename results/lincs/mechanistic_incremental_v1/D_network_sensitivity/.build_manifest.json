@@ -1,0 +1,47 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261124T175241-3873623",
+ "finished_at": "2026-11-24T17:56:25-05:00",
+ "duration_s": 224,
+ "script": "D_network_sensitivity.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/D_network_sensitivity.py",
+ "env": "",
+ "git_sha": "d3763b7",
+ "git_state": "dirty",
+ "note": "mechanistic_incremental_v1 Experiment D rerun after empty-family guard (protocol 5cc2227 + d3763b7)",
+ "expect": null,
+ "n_files": 7,
+ "mtime_span_hours": 0.01,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "D_flags.tsv": {
+   "bytes": 654,
+   "mtime": "2026-11-24T17:56:24-05:00"
+  },
+  "D_pairs.tsv": {
+   "bytes": 2818,
+   "mtime": "2026-11-24T17:56:24-05:00"
+  },
+  "D_regulator_flags.tsv.gz": {
+   "bytes": 134226,
+   "mtime": "2026-11-24T17:56:24-05:00"
+  },
+  "D_regulators.tsv.gz": {
+   "bytes": 468534,
+   "mtime": "2026-11-24T17:56:02-05:00"
+  },
+  "D_worked_ESR1.md": {
+   "bytes": 1096,
+   "mtime": "2026-11-24T17:56:24-05:00"
+  },
+  "D_worked_ESR1.tsv": {
+   "bytes": 491,
+   "mtime": "2026-11-24T17:56:02-05:00"
+  },
+  "run.json": {
+   "bytes": 648,
+   "mtime": "2026-11-24T17:56:24-05:00"
+  }
+ }
+}

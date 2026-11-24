@@ -1,0 +1,7 @@
+level	window	metric	n_pairs	n_drugs	spearman	ci_lo	ci_hi	resolved
+group_id	early	down	483	62	-0.0817	-0.2387	0.0726	False
+group_id	early	exact	161	33	-0.0135	-0.2313	0.2492	False
+group_id	late	down	528	60	0.0313	-0.0879	0.1660	False
+group_id	late	exact	150	37	0.1255	-0.1317	0.2925	False
+stratum	early	down	60	25	0.1293	-0.2600	0.4495	False
+stratum	late	down	64	26	-0.0496	-0.4929	0.3976	False

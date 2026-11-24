@@ -1,0 +1,9 @@
+{
+ "script": "79ai_programs.py",
+ "min_size": 5,
+ "n_programs": 461,
+ "n_cohorts": 29,
+ "n_rows": 313350,
+ "source_modules": "results/step6/aracne_project_v2_tf/diagnostics/regulator_modules_v2_tf.tsv",
+ "note": "programs are disease-defined (patient co-variation) and never transferred across cohorts; see D197 for why"
+}

@@ -1,0 +1,39 @@
+{
+ "stage": "D_network_sensitivity",
+ "protocol": "5cc2227+d3763b7",
+ "regulator_rows": 14909,
+ "pairs": 19,
+ "decomposition_max_error": 8.101855542008707e-07,
+ "family_conditions": [
+  {
+   "cohort": "TCGA-BRCA",
+   "n_conditions": 5081
+  },
+  {
+   "cohort": "TCGA-LGG",
+   "n_conditions": 1
+  },
+  {
+   "cohort": "TCGA-ESCA",
+   "n_conditions": 99
+  },
+  {
+   "cohort": "TCGA-CESC",
+   "n_conditions": 964
+  },
+  {
+   "cohort": "TCGA-PCPG",
+   "n_conditions": 76
+  },
+  {
+   "cohort": "TCGA-SARC",
+   "n_conditions": 0
+  },
+  {
+   "cohort": "TCGA-UCEC",
+   "n_conditions": 50
+  }
+ ],
+ "runtime_s": 222.6,
+ "finished": "2026-11-24T17:56:24-0500"
+}

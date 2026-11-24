@@ -1,0 +1,620 @@
+{
+ "reference_run": {
+  "runner": "scripts/run_pipeline.sh",
+  "date": "2026-11-23",
+  "window": "13:45-15:17",
+  "decision": "D210"
+ },
+ "inputs": {
+  "results/systems_validation/integrated/window_reversal.tsv.gz": {
+   "expected_run_id": "20261123T150125-3240405",
+   "manifest_run_id": "20261123T150125-3240405",
+   "ok": true,
+   "files": {
+    "results/systems_validation/integrated/window_reversal.tsv.gz": {
+     "bytes": 329058,
+     "sha256": "24b71740bee94fcf468a8b333f0e9d98303ddddf84466f1fb657b0c05305bb9e"
+    }
+   }
+  },
+  "results/systems_validation/integrated/window_reversal_strata.tsv.gz": {
+   "expected_run_id": "20261123T150136-3240515",
+   "manifest_run_id": "20261123T150136-3240515",
+   "ok": true,
+   "files": {
+    "results/systems_validation/integrated/window_reversal_strata.tsv.gz": {
+     "bytes": 45481,
+     "sha256": "860cdef34c3dcadeceaead7b3672eb3cfbc2bb16cbb200705c5a4f23ce032834"
+    }
+   }
+  },
+  "results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz": {
+   "expected_run_id": "20261123T150555-3243208",
+   "manifest_run_id": "20261123T150555-3243208",
+   "ok": true,
+   "files": {
+    "results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz": {
+     "bytes": 669956376,
+     "sha256": "40362ab4bdaaa683a7da95aa9c6d05a58ebd6d55501cdce69a0112b1dcbf06cf"
+    }
+   }
+  },
+  "results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all_strata.tsv.gz": {
+   "expected_run_id": "20261123T151429-3246841",
+   "manifest_run_id": "20261123T151429-3246841",
+   "ok": true,
+   "files": {
+    "results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all_strata.tsv.gz": {
+     "bytes": 89778594,
+     "sha256": "c5a2307d643e234ef81c90df6bdc52f442233af18a281a35aa04de8934a91d14"
+    }
+   }
+  },
+  "results/lincs/gene_ranking_v2_tf.tsv": {
+   "expected_run_id": "20261123T151534-3247347",
+   "manifest_run_id": "20261123T151534-3247347",
+   "ok": true,
+   "files": {
+    "results/lincs/gene_ranking_v2_tf.tsv": {
+     "bytes": 1414855,
+     "sha256": "552a42c9fa9e7244cc8ffb5e40f4eefefc757ed2d2fa7b23faf2488140b477a5"
+    }
+   }
+  },
+  "results/lincs/layered_score_v2_v2_tf.tsv": {
+   "expected_run_id": "20261123T134713-3218645",
+   "manifest_run_id": "20261123T134713-3218645",
+   "ok": true,
+   "files": {
+    "results/lincs/layered_score_v2_v2_tf.tsv": {
+     "bytes": 2209550,
+     "sha256": "566a8c010c1d3021ed47e3e4a719e0f0cf116e1f1151bd30411b52a0625b88be"
+    }
+   }
+  },
+  "results/lincs/drug_reversal_split_v2_tf.tsv": {
+   "expected_run_id": "20261123T150138-3240574",
+   "manifest_run_id": "20261123T150138-3240574",
+   "ok": true,
+   "files": {
+    "results/lincs/drug_reversal_split_v2_tf.tsv": {
+     "bytes": 23449134,
+     "sha256": "c58706c61ece60483f3229e66a0feb12c165fd41cbbf130b2949ac1fc092a750"
+    }
+   }
+  },
+  "results/lincs/stratum_reversal_split_v2_tf.tsv": {
+   "expected_run_id": "20261123T150138-3240574",
+   "manifest_run_id": "20261123T150138-3240574",
+   "ok": true,
+   "files": {
+    "results/lincs/stratum_reversal_split_v2_tf.tsv": {
+     "bytes": 8815672,
+     "sha256": "e84b2793df243c66be9c3d88c8d59c70cf06d6314a7e85172bb86a2457192d5f"
+    }
+   }
+  },
+  "results/lincs/d127": {
+   "expected_run_id": "20261123T151746-3248616",
+   "manifest_run_id": "20261123T151746-3248616",
+   "ok": true,
+   "files": {
+    "results/lincs/d127/d211_gene_instances.tsv": {
+     "bytes": 8418,
+     "sha256": "8b57b71c05b9898810f9d61a5b431e41129e76e8f1e7c1295d6299c933f6603b"
+    },
+    "results/lincs/d127/d211_gene_summary.tsv": {
+     "bytes": 509,
+     "sha256": "42ec32b81be3e8d350f650f984d1ce4a49a6da5fe7aecadb022b3dd57dd9cd0d"
+    },
+    "results/lincs/d127/dedup_pairs.tsv": {
+     "bytes": 1258,
+     "sha256": "bdc37dd75eb8a071bb9253a3dde255d62ede89e9c4842a2e5905ed1f32c5fd06"
+    },
+    "results/lincs/d127/dedup_summary.tsv": {
+     "bytes": 295,
+     "sha256": "0994b45e45e309be3aaf0e6eb524ce6012d0684e4fb11e7566d8cd5efbf5c593"
+    },
+    "results/lincs/d127/dedup_units.tsv": {
+     "bytes": 6794,
+     "sha256": "fe6be4255fbcd10f6267569895a669921547484ba48f12e2dd1aaae335afea2f"
+    },
+    "results/lincs/d127/instances.tsv": {
+     "bytes": 17420,
+     "sha256": "6862e5a6eced4b7dd5ba1cc399a7d309a8eea1448f2dc571c81ca292c9d6eff4"
+    },
+    "results/lincs/d127/pairs.tsv": {
+     "bytes": 1560,
+     "sha256": "befe687b44247c50688ad2e9b95db03e2e33b33bf3f2c4a65b9f5ed618c9f706"
+    },
+    "results/lincs/d127/run.json": {
+     "bytes": 3766,
+     "sha256": "c853b41f4ee76363cdf2997eeadec19e2f6f457cb6a7e566846a31e939bba576"
+    },
+    "results/lincs/d127/summary.tsv": {
+     "bytes": 1276,
+     "sha256": "d202a74843b93ba427e558938871e16dc0a271cd29c887b318e22fff95e018f7"
+    }
+   }
+  },
+  "results/lincs/target_role": {
+   "expected_run_id": "20261123T145758-3239456",
+   "manifest_run_id": "20261123T145758-3239456",
+   "ok": true,
+   "files": {
+    "results/lincs/target_role/compound_target_role.tsv": {
+     "bytes": 2002242,
+     "sha256": "73c9b166ded59f91c33ce8edec7fa79e9d45773f95757cf26bf2ae9520c3bb5d"
+    },
+    "results/lincs/target_role/controls.tsv": {
+     "bytes": 2183,
+     "sha256": "c8118c02a604fe3caf64c72f9c300e6768cf2d52b0b9e9d4308474643a4c8dce"
+    },
+    "results/lincs/target_role/decomposition.tsv": {
+     "bytes": 1749,
+     "sha256": "5e555477c4b1eed753bc1ad62ebc497f02d94e19ca9f59088a2c0149a3245b4d"
+    },
+    "results/lincs/target_role/drug_target_role.tsv": {
+     "bytes": 1809080,
+     "sha256": "1574bbdd90c5c7636433418340a4e9d76820e112ced93c4ae0f62a93b68a35b3"
+    },
+    "results/lincs/target_role/eval_known_use.tsv": {
+     "bytes": 5870,
+     "sha256": "3656fa7be9b11407906ab73027d3a9effc9db8cd25e3a1c9eb3141e5de935252"
+    },
+    "results/lincs/target_role/gene_components.tsv.gz": {
+     "bytes": 13097504,
+     "sha256": "c5b51cc753fbbb2a8c5197c9ead5901470164ec59d14de3bc021c2ecd53a3690"
+    },
+    "results/lincs/target_role/run.json": {
+     "bytes": 1053,
+     "sha256": "225f439dc1a89e96a654885b7e9f3de54ad8bc2b47f5aabe3ab0bf3af8458af1"
+    },
+    "results/lincs/target_role/top10.tsv": {
+     "bytes": 47744,
+     "sha256": "6428c85d789ab8ed25490a0d868246cb4d05426c02e0bf2750e39cbe5a306454"
+    }
+   }
+  }
+ },
+ "upstream_consumed": {
+  "results/step6/aracne_project_v2_tf/group_mr.tsv": {
+   "what": "disease master regulators (groups)",
+   "exists": true,
+   "files": {
+    "results/step6/aracne_project_v2_tf/group_mr.tsv": {
+     "bytes": 3177765,
+     "sha256": "78c172a87eae3bd3d83934ff960faaae6d7d8a022522081782b925b66e09b37b"
+    }
+   }
+  },
+  "results/step6/aracne_project_v2_tf_strata/group_mr.tsv": {
+   "what": "disease master regulators (subgroups)",
+   "exists": true,
+   "files": {
+    "results/step6/aracne_project_v2_tf_strata/group_mr.tsv": {
+     "bytes": 1230097,
+     "sha256": "9170eed16588cc549fecf9e661fd0a4054883572a3fa00034837bc2d91e9bda6"
+    }
+   }
+  },
+  "results/step6/aracne_project_v2_tf/regulon_contributions.tsv.gz": {
+   "what": "50b per-gene breakdown, run 20261122T140041-2812034",
+   "exists": true,
+   "files": {
+    "results/step6/aracne_project_v2_tf/regulon_contributions.tsv.gz": {
+     "bytes": 208057167,
+     "sha256": "cad069f0c6611cb89d52baa782684678a97a9849c31aa8e78b1249a2ce72b950"
+    }
+   }
+  },
+  "results/step6/aracne_project_v2_tf_strata/regulon_contributions.tsv.gz": {
+   "what": "50b subgroups, run 20261122T140307-2813316",
+   "exists": true,
+   "files": {
+    "results/step6/aracne_project_v2_tf_strata/regulon_contributions.tsv.gz": {
+     "bytes": 77160651,
+     "sha256": "c887e62adec19ff392994adde0f13e9c199845796b0409cf47737666293571a1"
+    }
+   }
+  },
+  "data/processed/lincs/drug_condition_profiles_index.tsv": {
+   "what": "79c2 condition profiles (2026-11-20), 26,130 conditions",
+   "exists": true,
+   "files": {
+    "data/processed/lincs/drug_condition_profiles_index.tsv": {
+     "bytes": 1719956,
+     "sha256": "46e9017c3c59d620996d4ef1c237370204c07434789324fbb06d161148d6587f"
+    }
+   }
+  },
+  "data/processed/lincs/drug_condition_profiles_specific.f32": {
+   "what": "79c2 gene matrix (26,130 x 10,112 float32)",
+   "exists": true,
+   "files": {
+    "data/processed/lincs/drug_condition_profiles_specific.f32": {
+     "bytes": 1056906240,
+     "sha256": "df7827958f414629c3d529e962c80f76b9888f5d2c3f111ee9d2bcadb11f56a3"
+    }
+   }
+  },
+  "data/processed/lincs/drug_viper_specific_v2_tf_cond": {
+   "what": "79d condition-level VIPER, 38 networks (2026-11-20)",
+   "exists": true,
+   "files": {
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/ACC.f32": {
+     "bytes": 77344800,
+     "sha256": "8edaef4e048844e964f06e91e3d3ef94593b464756b5b8d0f1c0b71e8666b8a6"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/ACC.regulators.txt": {
+     "bytes": 4505,
+     "sha256": "4583d82c89a9fb62251e2f0d0c9de46eb53c2228b1ae725449819a34fb106bff"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BLCA.f32": {
+     "bytes": 92709240,
+     "sha256": "a90b9cb77d8272bc34d40cb23c1ef41ea7177aefdd1c8220b54ae115056f0081"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BLCA.regulators.txt": {
+     "bytes": 5402,
+     "sha256": "166419f313d79da88a5dd3876f4ed1c2310fb26e2467472a18febb6bc2c896be"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA.f32": {
+     "bytes": 85183800,
+     "sha256": "7ae25672baaa915ff80d2ade82940aadbc49c4f3ac1974b2749f5758149a8be9"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA.regulators.txt": {
+     "bytes": 4962,
+     "sha256": "19831edf84d7c25a56979f66e4321adaa0781a0a96a0c74486cadecfed10d157"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA_BAS.f32": {
+     "bytes": 91664040,
+     "sha256": "b7eb7e5f2771561111c785660cde992832359ac4be3becedbe1264a9629cdf60"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA_BAS.regulators.txt": {
+     "bytes": 5323,
+     "sha256": "95f649427dc78a2220b3469681fbacecb85b8ac685bb47dc9a3888296aadc95f"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA_LUMA.f32": {
+     "bytes": 89260080,
+     "sha256": "9700c4e00f242258a66a23226d3d3fc359a8232eb26f65fc27c6f5d00134aa0f"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA_LUMA.regulators.txt": {
+     "bytes": 5211,
+     "sha256": "3eca7fc4526cf84b29d6e6f3face2259158dbd2db415d44a90729de613032002"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA_LUMB.f32": {
+     "bytes": 92395680,
+     "sha256": "82254d7ba042957d02dc5bec62bea5d305dce1d9b49d6c2a07c5ab2dcb410a1c"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/BRCA_LUMB.regulators.txt": {
+     "bytes": 5397,
+     "sha256": "dc9c16654c0d6df49ad667af2fd60fe168a9b28c2b40d5be68ee1ea25c612e10"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/CESC.f32": {
+     "bytes": 97621680,
+     "sha256": "d6bb17786d0970831c3baa7146e3ab5614b698740a0698b07df76ee7c0bea83c"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/CESC.regulators.txt": {
+     "bytes": 5697,
+     "sha256": "da62bd806097d1d9b848cd6a6321ab4be7a916f2437d86a04eb18c84892b4d01"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/CESC_SCC.f32": {
+     "bytes": 91873080,
+     "sha256": "f4794a19359552f5d33fa66a650d30c7e4440652609170301f512bc2bd6b1141"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/CESC_SCC.regulators.txt": {
+     "bytes": 5345,
+     "sha256": "8412661f0b91e68a3f6d900fa6a7454e5b802063cad01fe71ffb013535a8f3b8"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/COADREAD.f32": {
+     "bytes": 95113200,
+     "sha256": "03b9180f6a3dd068e8eebdd31fe8f100343e63817e0e59180c6aaf6936f16446"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/COADREAD.regulators.txt": {
+     "bytes": 5565,
+     "sha256": "d7a995bf34722d3a649f5d0ed736a781efeced72ab49f1f073723096e4b1a956"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/ESCA_AD.f32": {
+     "bytes": 94068000,
+     "sha256": "12576d76e8fcb18cc5ce08a3605712cb423800528256969a2fd059f93386e156"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/ESCA_AD.regulators.txt": {
+     "bytes": 5528,
+     "sha256": "2e5dd20a7d3cbfbc140fe8d2c149961bf30ba0e37d6b2aa4f72e0dcadf871474"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/ESCA_SCC.f32": {
+     "bytes": 91977600,
+     "sha256": "9b09c0439454bfc8e74afdb9a2874c63b6f9e7249969ba0100bde47a025631f4"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/ESCA_SCC.regulators.txt": {
+     "bytes": 5370,
+     "sha256": "5cf1dd36dd7b17136a9b4744a6f7e944a4c34ee6fa50524a5149ecac279c409a"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/GBM.f32": {
+     "bytes": 97935240,
+     "sha256": "2430b951db149eafb97f40c4dc14942dbbda3201c228f29a01c6bbd72938bd23"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/GBM.regulators.txt": {
+     "bytes": 5727,
+     "sha256": "9a6d5de7dd8006c8623e12fa6544940cec8f3b38f30628d22956dc24f71f1f9f"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/HNSC.f32": {
+     "bytes": 89887200,
+     "sha256": "38b5f04f76997ee0f0a34d605e6246124502e225c816b73d8f4c49b29372fe24"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/HNSC.regulators.txt": {
+     "bytes": 5223,
+     "sha256": "ad030fda623c1e2629b8d58f8a273cc59eac5122f85e5caa7d37c0dc7af32625"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/KICH.f32": {
+     "bytes": 81943680,
+     "sha256": "72c61dd7abcd2dda0670903c16775464af05ec313d85741041437ab1bb32177f"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/KICH.regulators.txt": {
+     "bytes": 4829,
+     "sha256": "27e60f7462f814de9044444dd970a1cbeeef18f62d8a61441637211edab394e5"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/KIRC.f32": {
+     "bytes": 86542560,
+     "sha256": "f45683875d34aa00c36271844f4a6b63340311eab7079c26230ea7a2fe71bbce"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/KIRC.regulators.txt": {
+     "bytes": 5066,
+     "sha256": "5794c97e1d8d358ea4c063a9b483b27de1fd25832696f28ebd10078d20d1f4b4"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/KIRP.f32": {
+     "bytes": 88005840,
+     "sha256": "4aeb8de035f6b3184dc7336d1138a31384d207df32eb9ad3e73ef18ac5b8e153"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/KIRP.regulators.txt": {
+     "bytes": 5179,
+     "sha256": "f30a692bbc6c4129ba6b70adc634dd42c5339ae44a430d48a1be492fdd66b5a5"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LGG_IDHMUT_CODEL.f32": {
+     "bytes": 99398520,
+     "sha256": "8d814d7841a59adf45cfb1580efc82716576ee5539df906160cfe214231ed5a3"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LGG_IDHMUT_CODEL.regulators.txt": {
+     "bytes": 5875,
+     "sha256": "274ec630454650b582379be2ea0a9e5dfb58aee75828f859cdb6f1d9811123e4"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LGG_IDHMUT_NONCODEL.f32": {
+     "bytes": 94172520,
+     "sha256": "98bcb7d643343168bee5c55fba0a5970c45b2e10193b5256bcd1eff78fb07d07"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LGG_IDHMUT_NONCODEL.regulators.txt": {
+     "bytes": 5542,
+     "sha256": "fd0b61e26d7e12b9a32586b508eed459b49c7cbef0e57cf92d3099a6f6481009"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LGG_IDHWT.f32": {
+     "bytes": 92709240,
+     "sha256": "e2badac5008943cb985b9fa86eae6dc2d366d834bcec46dfac3804bb52db3813"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LGG_IDHWT.regulators.txt": {
+     "bytes": 5446,
+     "sha256": "9d1e3b86d3272ee8882473232d19e044e88e3c34c68c4955865cf3d978939de6"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LIHC.f32": {
+     "bytes": 74836320,
+     "sha256": "e092c23bcf48f216ee9aae47ac78df97846eeddfd4c21f30a3c8bc763c696b1d"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LIHC.regulators.txt": {
+     "bytes": 4349,
+     "sha256": "2978a0f5c0a3c52bdbbd2ca8d979b5adc82918f499d13078e7a073773a648f82"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LUAD.f32": {
+     "bytes": 93545400,
+     "sha256": "d1050a99c518605ba96c700cfbbedcef01f739b5a3543a0c116a2400efee67dc"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LUAD.regulators.txt": {
+     "bytes": 5477,
+     "sha256": "7645714149c78e3fe1e8e4d5190cf74cdf00a89f718bfb288cd4b341988b4b21"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LUSC.f32": {
+     "bytes": 98562360,
+     "sha256": "9280a89968bfa122932ebeb70e6b866f6e539b624d680a2141391eedd420e6ab"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/LUSC.regulators.txt": {
+     "bytes": 5755,
+     "sha256": "4eceba8e7f8c597f47e4ecf90e33810e46353e4cc928a76b0443a0b97e26b25e"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/NBL.f32": {
+     "bytes": 100130160,
+     "sha256": "aa6f534aa024350ad205a4e01b66cf307c39f51ea866fdf98836b2faa4fec753"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/NBL.regulators.txt": {
+     "bytes": 5919,
+     "sha256": "1e1a91bfb0e5d6282e5bcc4145077a1cb9bf3bb2e3c63a7c7ea3c2faa6d2d79e"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/OV.f32": {
+     "bytes": 88214880,
+     "sha256": "b6e8e890a7a9a1cd152d2328423265aa4a56a7bda123e091550c1cc0a85e4121"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/OV.regulators.txt": {
+     "bytes": 5127,
+     "sha256": "c0cd4eeecd7e477f0e1251471b613a8e8de140029e0fbc784cdf67e8612891a6"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PAAD.f32": {
+     "bytes": 97935240,
+     "sha256": "e2e4142c48c2af3467ddb56904575b9915535e2b8bb20fa7c112029cfb3d6cd9"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PAAD.regulators.txt": {
+     "bytes": 5755,
+     "sha256": "ad869d3f84d907b96399a672c989bf41e3ba65cf16204109300344a6ef9b9f87"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PCPG.f32": {
+     "bytes": 87796800,
+     "sha256": "267aa0874c3ab0f3d498fa947f2464d860b670602a5e2ffad39646cde41a499a"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PCPG.regulators.txt": {
+     "bytes": 5142,
+     "sha256": "f088f773dcbe84a385735d3eade9d414cd43b3eeb4f818100204aeb0d6fe11e9"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PCPG_PHEO.f32": {
+     "bytes": 91559520,
+     "sha256": "d30a966b743c43310ce3b82e3fb5f5f1e079b4442d4fafdfc095a3d21a8f7c81"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PCPG_PHEO.regulators.txt": {
+     "bytes": 5356,
+     "sha256": "d7272a4656292d72ee45e4fa0a7090ff5427586af4f205921a085e8e189582fa"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PRAD.f32": {
+     "bytes": 81734640,
+     "sha256": "7369c8abd87484897ce2202ea1a67a8a13c6634146b22b70a5f7504fc101fd0c"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/PRAD.regulators.txt": {
+     "bytes": 4752,
+     "sha256": "3aef42f5627a432d751080dc8dc9cefddae90f49743134e05245464ec31e7416"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/SARC.f32": {
+     "bytes": 90409800,
+     "sha256": "9cd209e2fba1520a1c34c8116815ccae9f2e09ef62d25d58cb3d5c6f46ed84d0"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/SARC.regulators.txt": {
+     "bytes": 5261,
+     "sha256": "c38f94be7039700b3bea0348af8450aac118ad12deac99ed3afa378937ce72d7"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/SARC_LMS.f32": {
+     "bytes": 88632960,
+     "sha256": "1af32490f59c70baaa86e91d43ab013b6d8c521c2fe7fca7820a49baa1cbeafd"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/SARC_LMS.regulators.txt": {
+     "bytes": 5187,
+     "sha256": "fd8ff8c436d002c822be1707cd25b3580d49ceb4c6a71cb7de97599beef94658"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/SKCM.f32": {
+     "bytes": 86542560,
+     "sha256": "08dc0f47a175467211de6b552db16ff1d8083b5447f97f856229b697caf15ba8"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/SKCM.regulators.txt": {
+     "bytes": 5048,
+     "sha256": "cee0f8879a7a4d2afcd393e4d757bfc8bedf8b73f6d152ca0fe990033803a883"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/STAD.f32": {
+     "bytes": 94486080,
+     "sha256": "515ac8ebd07d00a73861e807706add8d565d6184d028493991fc7fbeec35442f"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/STAD.regulators.txt": {
+     "bytes": 5510,
+     "sha256": "c8a9ce269184a73227a05d68861c6f555d2e8c4ca7076be5f80b8b47eaec6a24"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/TGCT.f32": {
+     "bytes": 111627360,
+     "sha256": "b870fd66f65d850f512c5fdcbc5f80cf028931d352118e3e34626e811a31bfc8"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/TGCT.regulators.txt": {
+     "bytes": 6565,
+     "sha256": "214f96df59c0db55313fb86b67fcc2880ae5779af24635de1134935f35b9e2c3"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/THCA.f32": {
+     "bytes": 86124480,
+     "sha256": "cdfb8875bed739130229dac71bbe6e10cdecebca8eec927e7de2673f33b1021d"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/THCA.regulators.txt": {
+     "bytes": 5021,
+     "sha256": "9d07209f17f6ce7f71bc43fd714302d09871a15a3dbc989c4a20e4aaff51c5b7"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/UCEC.f32": {
+     "bytes": 86751600,
+     "sha256": "9415a298f92d40cffda967e6ed48050d72c15902d0155d626615909565f8aeb2"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/UCEC.regulators.txt": {
+     "bytes": 5042,
+     "sha256": "a75feec0125c85809ba2acfe8ab099717d5250e53e685b85b3e8e4168545c388"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/UCEC_EEC.f32": {
+     "bytes": 84452160,
+     "sha256": "500473920c52c4b9aff8718909951924a434ed11c489a2555c14cfe852991418"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/UCEC_EEC.regulators.txt": {
+     "bytes": 4923,
+     "sha256": "0b366eecf1a56bc743661ac16c7ab935cd293a197c73ea6f01dc19663d7a1a23"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/UCS.f32": {
+     "bytes": 54768480,
+     "sha256": "d55e14494e107681e0f41d8938d715243d47aa5dc1b0b8c7f9b28f71167dfeef"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/UCS.regulators.txt": {
+     "bytes": 3185,
+     "sha256": "ae042e5575a399dda8f8b9750061f18ae2a8da78e4a43a7ccef7256c6e4ccfe8"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/WT.f32": {
+     "bytes": 96367440,
+     "sha256": "f3869b4353d26c86e8d07d1d8997a9503ebdd7c197263bdb6b2b55f48be91138"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/WT.regulators.txt": {
+     "bytes": 5664,
+     "sha256": "47280fc393ee575084795283dee0392e581fd040216f877bda1d538260868bd8"
+    },
+    "data/processed/lincs/drug_viper_specific_v2_tf_cond/regulators.tsv": {
+     "bytes": 1437588,
+     "sha256": "85ee4a4a151038e959a357cdc7866922ba9a21a29a484211323ce5ec2818a0c8"
+    }
+   }
+  },
+  "data/processed/step5/regulons_aracne_project_v2_tf_edges.tsv.gz": {
+   "what": "network edges (tfmode, likelihood)",
+   "exists": true,
+   "files": {
+    "data/processed/step5/regulons_aracne_project_v2_tf_edges.tsv.gz": {
+     "bytes": 129406804,
+     "sha256": "702c28162498b148f777ef2948d9922724166abdc1ffd57162e91a6548e1eae5"
+    }
+   }
+  },
+  "results/celligner/disease_line_weights_long.tsv": {
+   "what": "in-key line weights (groups)",
+   "exists": true,
+   "files": {
+    "results/celligner/disease_line_weights_long.tsv": {
+     "bytes": 1240223,
+     "sha256": "1ded952b232542438d93f865736f90922b664002c597a8cf215436cb3541b079"
+    }
+   }
+  },
+  "results/celligner/stratum_line_weights_long_v2.tsv": {
+   "what": "in-key line weights (subgroups)",
+   "exists": true,
+   "files": {
+    "results/celligner/stratum_line_weights_long_v2.tsv": {
+     "bytes": 269442,
+     "sha256": "4691c2e3d7c2a24b8ddbbcec5441f75e00fab6391c7bc346ce5af409fdb91c92"
+    }
+   }
+  },
+  "config/group_networks.tsv": {
+   "what": "production network map",
+   "exists": true,
+   "files": {
+    "config/group_networks.tsv": {
+     "bytes": 275,
+     "sha256": "369e79141845095c5778b5605b5aae5a24109126d919dcb6ee0f4d06d1bd2b62"
+    }
+   }
+  },
+  "data/raw/progeny/progeny_human_top100.tsv": {
+   "what": "PROGENy weights (label source b)",
+   "exists": true,
+   "files": {
+    "data/raw/progeny/progeny_human_top100.tsv": {
+     "bytes": 68436,
+     "sha256": "c135542e40b08653a510853a710875f42c26163c99e7672c5b25574e202aa8c4"
+    }
+   }
+  },
+  "config/progeny_on_target.tsv": {
+   "what": "D99 on-target pathway expectations (label source b)",
+   "exists": true,
+   "files": {
+    "config/progeny_on_target.tsv": {
+     "bytes": 1012,
+     "sha256": "81e569951fc588443a5eb8f001447b5a44a0aa6bd9308dc9efc509cc2d5a3945"
+    }
+   }
+  }
+ },
+ "git": {
+  "study_sha": "5cc2227cac9905f418b367d45a13f1f6b4f10c15",
+  "input_checkout_sha": "db45df29d124f517305dde1e1c1d55b0e9b21afb"
+ }
+}
