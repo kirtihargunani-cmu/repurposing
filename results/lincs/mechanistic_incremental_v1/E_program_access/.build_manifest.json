@@ -1,0 +1,43 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261124T182507-3919010",
+ "finished_at": "2026-11-24T18:26:10-05:00",
+ "duration_s": 63,
+ "script": "E_program_access.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/E_program_access.py",
+ "env": "",
+ "git_sha": "6583b74",
+ "git_state": "dirty",
+ "note": "mechanistic_incremental_v1 Experiment E (protocol 5cc2227 + 6583b74)",
+ "expect": null,
+ "n_files": 6,
+ "mtime_span_hours": 0.01,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "E_line_selectivity.tsv": {
+   "bytes": 14856,
+   "mtime": "2026-11-24T18:25:51-05:00"
+  },
+  "E_program_response.tsv.gz": {
+   "bytes": 3884744,
+   "mtime": "2026-11-24T18:25:51-05:00"
+  },
+  "E_repeatability.tsv": {
+   "bytes": 44214,
+   "mtime": "2026-11-24T18:25:51-05:00"
+  },
+  "E_summary.tsv": {
+   "bytes": 427,
+   "mtime": "2026-11-24T18:26:09-05:00"
+  },
+  "E_target_link.tsv": {
+   "bytes": 762,
+   "mtime": "2026-11-24T18:26:09-05:00"
+  },
+  "run.json": {
+   "bytes": 234,
+   "mtime": "2026-11-24T18:26:09-05:00"
+  }
+ }
+}

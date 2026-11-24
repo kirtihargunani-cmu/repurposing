@@ -1,0 +1,43 @@
+{
+ "schema": "repurposing/build_manifest/1",
+ "run_id": "20261124T182017-3917475",
+ "finished_at": "2026-11-24T18:23:49-05:00",
+ "duration_s": 212,
+ "script": "E0_programs.py",
+ "cmd": "/home/kirti/miniforge3/envs/celligner/bin/python scripts/mechanistic_incremental_v1/E0_programs.py",
+ "env": "",
+ "git_sha": "6583b74",
+ "git_state": "dirty",
+ "note": "E0 rebuild of D198/D199 programs into the study namespace (amendment 1e)",
+ "expect": null,
+ "n_files": 6,
+ "mtime_span_hours": 0.01,
+ "files_not_rewritten_by_this_run": [],
+ "supersedes": null,
+ "files": {
+  "inputs.json": {
+   "bytes": 445,
+   "mtime": "2026-11-24T18:23:49-05:00"
+  },
+  "program_drug.tsv.gz": {
+   "bytes": 5218120,
+   "mtime": "2026-11-24T18:23:18-05:00"
+  },
+  "program_filter.tsv": {
+   "bytes": 115626,
+   "mtime": "2026-11-24T18:23:49-05:00"
+  },
+  "program_filter_run.json": {
+   "bytes": 268,
+   "mtime": "2026-11-24T18:23:49-05:00"
+  },
+  "programs.tsv": {
+   "bytes": 99189,
+   "mtime": "2026-11-24T18:23:14-05:00"
+  },
+  "run.json": {
+   "bytes": 322,
+   "mtime": "2026-11-24T18:23:18-05:00"
+  }
+ }
+}

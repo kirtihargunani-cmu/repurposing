@@ -1,0 +1,8 @@
+window	flag	programs	cancers	median_reliability	median_pseudo_q95	perturbable	perturbable_share
+early	clean	111	13	0.5784	0.7542	1	0.009009009009009009
+early	generic	8	1	0.6801	0.8507	0	0.0
+early	plate	58	11	0.6159	0.7078	1	0.017241379310344827
+early	proliferation	22	9	0.6764	0.7562	0	0.0
+late	clean	168	17	0.7397	0.8766	0	0.0
+late	plate	65	13	0.7705	0.8163	1	0.015384615384615385
+late	proliferation	42	10	0.7884	0.8662	0	0.0

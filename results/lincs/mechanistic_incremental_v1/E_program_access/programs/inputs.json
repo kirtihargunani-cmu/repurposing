@@ -1,0 +1,15 @@
+{
+ "modules": {
+  "path": "/home/kirti/projects/repurposing/results/step6/aracne_project_v2_tf/diagnostics/regulator_modules_v2_tf.tsv",
+  "sha256": "ca8bbaa5d0d4cedc2e8b2e514b6225adb4e39c0079005753f21c77e9cde7eb79"
+ },
+ "activity": "/home/kirti/projects/repurposing/results/lincs/regulon_contributions_v2_tf/regulator_contributions_by_window_all.tsv.gz",
+ "scripts": [
+  "79ai_programs.py",
+  "79aj_program_filter.py"
+ ],
+ "rc": [
+  0,
+  0
+ ]
+}
