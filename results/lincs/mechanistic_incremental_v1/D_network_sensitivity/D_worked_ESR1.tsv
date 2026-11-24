@@ -1,0 +1,9 @@
+drug	window	n_conditions	esr1_activity_a	esr1_activity_b	net_a	net_b
+fulvestrant	early	1	-1.2898	1.5212	BRCA_LUMA	BRCA_BAS
+tamoxifen	early	1	0.64975	0.50529	BRCA_LUMA	BRCA_BAS
+clomifene	early	1	-2.3517	0.57646	BRCA_LUMA	BRCA_BAS
+raloxifene	early	1	2.6602	-0.3479	BRCA_LUMA	BRCA_BAS
+fulvestrant	late	11	1.0172	0.72199	BRCA_LUMA	BRCA_BAS
+tamoxifen	late	7	1.8628	1.4615	BRCA_LUMA	BRCA_BAS
+clomifene	late	2	0.96738	0.11269	BRCA_LUMA	BRCA_BAS
+raloxifene	late	13	0.59744	1.1494	BRCA_LUMA	BRCA_BAS
