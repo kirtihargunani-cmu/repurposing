@@ -151,3 +151,16 @@ E:
   flag_comparison: "reliability by D199 flag (clean, plate, quality, proliferation, generic), descriptive; plate programs must not count as stronger evidence for being stable"
   line_selectivity: "share of program-opposition variance explained by cell line after drug means, among drugs with conditions in >= 2 lines; descriptive"
   no_ranking: "E is explanatory: no program score is proposed for ranking (D201)"
+
+# ---- Experiment F settings (amendment 1f, 2026-11-24; committed before any F computation) ----
+F:
+  evidence_table: "one row per (cancer, drug, window, target unit) for production-eligible FDA rows with a timepoint (gene_ranking_v2_tf); layers and their statuses from the stage outputs only: disease (T, D, A, O), perturbation (rev_gene percentile; split-half available), temporal (B transition class), network (D flag of the drug's primary-target regulator where scored), target (C exact/down percentiles), program (E linked program and its perturbability); status per layer in {supported, conflicting, unknown, not_tested}; no layer is counted as independent of another that shares its input"
+  status_rules:
+    disease: "supported when T >= 50 (all eligible rows by construction)"
+    perturbation: "supported when gene_pct >= 75; conflicting when <= 25; unknown otherwise"
+    temporal: "supported when B class is persistent_same_sign or the window's own call is confident; conflicting when sign_reversal; unknown otherwise; not_tested when the drug lacks both windows"
+    target: "supported when C exact or down percentile >= 0.75 for a primary target; conflicting when <= 0.25; not_tested when no primary target"
+    network: "supported when the primary-target regulator is context_robust in D; conflicting when rewired; not_tested otherwise"
+    program: "supported when the drug is linked to a reproducibly perturbable E program; not_tested when no linked program"
+  cases: "one per category per window, chosen by rule (highest gene_pct within the category, ties by ingredient name), categories: (i) known positive control (D127 primary pair drug in its high cohort), (ii) high T / low rev_gene (T >= 75, gene_pct <= 25), (iii) low T / high rev_gene among eligible (T < 60, gene_pct >= 90), (iv) both windows with a confident B transition, (v) secondary-target drug (C secondary with measured pChEMBL), (vi) target-absent (excluded by the filter, T < 50), (vii) chemotherapy table top drug, (viii) top novel (no phase record) with >= 2 conditions; an empty category is reported empty"
+  outputs: [F_mechanism_evidence.tsv.gz, F_evidence_summary.tsv, F_mechanism_cases.md, F_decision_matrix.md, F_final_report.md]
