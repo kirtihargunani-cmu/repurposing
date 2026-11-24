@@ -139,3 +139,15 @@ D:
   flags: "context_robust: agreement >= 0.7 in both halves; rewired: agreement < 0.3 in both halves and J below the pair median; unexplained: agreement < 0.3 in both halves and J at or above the median; descriptive"
   worked_example: "ESR1, BRCA_LUMA vs BRCA_BAS: J, sign agreement, agreement, decomposition, and anti-estrogen activities (fulvestrant, tamoxifen, clomifene, raloxifene) in each network and window"
   no_network_selection: "no network is chosen or preferred on any label; D describes network dependence only"
+
+# ---- Experiment E settings (amendment 1e, 2026-11-24; committed before any E computation) ----
+E:
+  programs: "D198 programs rebuilt through runlog.sh into the study namespace (79ai, then 79aj flags) from the 2026-11-23 regulator contributions; modules from 58_regulator_modules.R (2026-11-22, patient-level, upstream-consumed: checksum recorded); all members used; D199 flags kept as labels, nothing deleted"
+  per_drug: "per (unit, window, drug, program): coverage = |P n S| / |P|; opposition O = -sum_{r in P n S} d_r a_r / sqrt(sum d_r^2) from production window activity; n_used >= 3 else not evaluable"
+  reproducibility: "split-half (crc32-seeded, as A) program opposition per drug; per (unit, window, program) Spearman-Brown reliability across drugs with >= 2 conditions (>= 10 drugs)"
+  pseudo_program_null: "200 size-matched random regulator sets per (unit, window), drawn from the unit's scored regulators within |disease NES| tertiles matched to the program's members; reliability of each; a program is reproducibly perturbable when its reliability's bootstrap interval (over drugs) lies above the pseudo-program 95th percentile"
+  mechanism_link: "a drug is linked to a program when its primary target (C roles) or any 1-hop OmniPath target of it is a program member; per program with >= 3 linked drugs: mean |O| percentile of linked vs unlinked drugs; null = links permuted among drugs (n_perm); pooled across programs per window; resolved = interval excludes the null"
+  amplitude_control: "the same link test on |O| residualised on the drug's overall response magnitude ||a||"
+  flag_comparison: "reliability by D199 flag (clean, plate, quality, proliferation, generic), descriptive; plate programs must not count as stronger evidence for being stable"
+  line_selectivity: "share of program-opposition variance explained by cell line after drug means, among drugs with conditions in >= 2 lines; descriptive"
+  no_ranking: "E is explanatory: no program score is proposed for ranking (D201)"
