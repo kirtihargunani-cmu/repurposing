@@ -35,7 +35,7 @@ a cancer's matched lines, as the production scorer does, loses little.
 Program-level responses are reproducible and drug-driven, so programs remain a valid lens for interpreting a drug's
 effect (D198), but at current depth they add no accessibility signal beyond the regulator-level response itself and
 should not be used to rank (consistent with D196 and D201). Resolving program-specific accessibility would need more
-repeated conditions per drug (median one signature per condition) or programs defined to match drug-response
+repeated conditions per drug (half of eligible pairs rest on one condition) or programs defined to match drug-response
 covariation.
 
 **Files:** `E_summary.tsv`, `E_repeatability.tsv`, `E_target_link.tsv`, `E_line_selectivity.tsv`,

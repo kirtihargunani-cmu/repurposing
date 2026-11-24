@@ -10,8 +10,8 @@ unchanged.
 ## The answer
 
 **The perturbation data carry reproducible, drug-specific and mechanism-consistent signal at every step of the
-production scorer, with a structured time course and network dependence that can be explained.** Given one signature
-per condition for most drugs and timepoint data for about a quarter of eligible pairs, that is a strong basis for
+production scorer, with a structured time course and network dependence that can be explained.** Given that 52% of eligible
+pairs rest on a single condition and only 29% of (cancer, drug) pairs have both windows, that is a strong basis for
 further work.
 
 1. **Signal survives every processing step (A).** Two halves of one drug's conditions agree far more than two drugs in
@@ -37,8 +37,9 @@ further work.
 - Secondary targets with measured binding: only 15-16 are scored regulators; downstream recovery reaches the null
   (C). Annotation-only targets carry no recoverable signal.
 - Confident sign reversals in the strict matched-dose arm; subgroup arms with few units (B, A).
-- The D127 biomarker check on the production ranking (early 2 of 8, late 1 of 8 target units) is unchanged by this
-  study, which measured mechanism signal, not ranking quality.
+- The D211 biomarker reading (`rev_gene` within the eligible set ranks EGFR inhibitors higher in LUAD than LUSC at
+  24 h for 2 of 8 compounds; the biomarker signal sits in the filter) is unchanged by this study, which measured
+  mechanism signal, not ranking quality.
 
 ## What it does not show
 
